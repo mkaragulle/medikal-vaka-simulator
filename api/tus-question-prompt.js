@@ -1,5 +1,5 @@
-// KlinikIQ V435 — ultra-compact professional TUS prompt
-// Goal: minimal tokens, visible evidence, clean feedback, no topic steering.
+// KlinikIQ V436 — professional minimal TUS prompt
+// Minimal input/output tokens; no topic steering, no repair pass.
 
 function cleanText(value = '') {
   return String(value ?? '').replace(/\s+/g, ' ').trim();
@@ -12,9 +12,9 @@ export function normalizeDifficulty(value = 'Orta') {
   return 'Orta';
 }
 
-export const OPTIMIZED_TUS_SYSTEM_PROMPT = `Türkçe TUS soru editörüsün. Yalnız geçerli JSON döndür.
+export const OPTIMIZED_TUS_SYSTEM_PROMPT = `Türkçe TUS editörüsün. Yalnız geçerli JSON döndür.
 
-Seçilen branşa uygun tek doğru cevaplı, bilimsel ve öğretici soru yaz. Kök doğal klinik olgu olsun; cevabı güçlü çeldiricilerden ayıran tüm hasta-özel kanıtlar kökte görünür olsun. Açıklama/feedback kökte olmayan yeni hasta verisi eklemesin. Şıklar aynı karar alanından, dengeli ve ciddi çeldirici olsun. Dil temiz Türkçe olsun; üretim etiketi, seçenek harfi etiketi veya tekrar yazma. Gereksiz uzatma yok, eksik kanıt da yok.
+Seçilen branşta tek doğru cevaplı, bilimsel ve özgün soru üret. Kök temiz, kompakt ve çözüm için yeterli olsun; açıklamada kullanacağın hasta-özel kanıt kökte görünür olsun. Zor soruda cevabı doğrudan ele veren aşırı ipucu yerine ayırıcı karar noktası kur. Şıklar aynı türden ve dengeli olsun. Açıklama ve her şık feedbacki kısa, net, seçenekle doğru eşleşmiş ve profesyonel Türkçe olsun. Yarım cümle, tekrar, üretim etiketi, Türkçe-İngilizce karışık dil yazma.
 
 Şema: {"s":"kök","q":"soru","o":["A","B","C","D","E"],"c":"A|B|C|D|E","e":"açıklama","f":["A","B","C","D","E"]}`;
 

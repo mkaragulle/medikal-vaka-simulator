@@ -866,18 +866,18 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, child
       <div className="ai-spot-detailed-feedback-shell ai-spot-detailed-feedback-shell-v246">
         <section className="ai-spot-feedback-section-card ai-spot-feedback-science-card ai-spot-feedback-science-card-v246">
           <header>
-            <h4>{isCorrect ? 'Doğru cevap' : 'Doğru cevap ve açıklama'}</h4>
+            <h4>Açıklama</h4>
           </header>
           <p>
-            {!isCorrect && selectedText ? <><strong>Seçimin: </strong><GlossaryText text={selectedText} enabled={glossaryEnabled} />{' '}</> : null}
-            <strong>Doğru cevap: </strong><GlossaryText text={correctText || 'Doğru cevap bulunamadı'} enabled={glossaryEnabled} />
+            {!isCorrect && selectedText ? <><strong>Seçilen yanıt: </strong><GlossaryText text={selectedText} enabled={glossaryEnabled} />{' '}</> : null}
+            <strong>Beklenen yanıt: </strong><GlossaryText text={correctText || 'Doğru cevap bulunamadı'} enabled={glossaryEnabled} />
           </p>
           {explanation ? <p><GlossaryText text={explanation} enabled={glossaryEnabled} /></p> : null}
         </section>
 
         <section className="ai-spot-feedback-section-card ai-spot-feedback-options-card ai-spot-feedback-options-card-v246">
           <header>
-            <h4>Şık geri bildirimi</h4>
+            <h4>Seçenek değerlendirmesi</h4>
           </header>
           <div className="ai-spot-feedback-option-list">
             {rows.map((row) => (
@@ -888,8 +888,8 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, child
                 <div className="ai-spot-feedback-option-head">
                   <b>{row.letter}</b>
                   <strong><GlossaryText text={row.option} enabled={glossaryEnabled} /></strong>
-                  {row.isSelected ? <em>Seçimin</em> : null}
-                  {row.status === 'correct' ? <em className="correct">Doğru cevap</em> : null}
+                  {row.isSelected ? <em>Seçilen</em> : null}
+                  {row.status === 'correct' ? <em className="correct">Doğru</em> : null}
                 </div>
                 <p><GlossaryText text={ensureSentence(row.explanation)} enabled={glossaryEnabled} revealMode="postAnswer" maxTerms={6} /></p>
               </article>
