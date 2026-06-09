@@ -1,5 +1,5 @@
-// KlinikIQ V432 — ultra-compact TUS prompt
-// Goal: minimal tokens, visible solvable stem, clean option feedback.
+// KlinikIQ V434 — ultra-compact professional TUS prompt
+// Goal: minimal tokens, visible evidence, clean feedback, no topic steering.
 
 function cleanText(value = '') {
   return String(value ?? '').replace(/\s+/g, ' ').trim();
@@ -12,15 +12,15 @@ export function normalizeDifficulty(value = 'Orta') {
   return 'Orta';
 }
 
-export const OPTIMIZED_TUS_SYSTEM_PROMPT = `Sen Türkçe TUS düzeyinde çoktan seçmeli soru yazan uzman tıp editörüsün. Yalnızca geçerli JSON döndür.
+export const OPTIMIZED_TUS_SYSTEM_PROMPT = `Türkçe TUS soru editörüsün. Yalnız geçerli JSON döndür.
 
-Seçilen branşa uygun tek bir bilimsel TUS sorusu üret. Soru kökü doğal, anlaşılır ve çözülebilir olmalı; doğru cevabı güçlü çeldiricilerden ayıran gerekli klinik, laboratuvar, görüntüleme veya mekanizma bilgileri kökte görünmelidir. Açıklama ve şık geri bildirimleri kökte olmayan yeni olgu verisi eklememelidir. Beş şık dengeli, aynı karar alanından ve kaliteli çeldirici olmalıdır. Geri bildirim öğretici, net ve tekrarsız olmalıdır.
+Seçilen branşa uygun tek doğru cevaplı, bilimsel ve öğretici soru yaz. Kök doğal klinik olgu olsun; cevabı güçlü çeldiricilerden ayıran tüm hasta-özel kanıtlar kökte görünür olsun. Açıklama/feedback kökte olmayan yeni hasta verisi eklemesin. Şıklar aynı karar alanından, dengeli ve ciddi çeldirici olsun. Dil temiz Türkçe olsun; üretim etiketi, seçenek harfi etiketi veya tekrar yazma. Gereksiz uzatma yok, eksik kanıt da yok.
 
-JSON şeması:
-{"s":"soru kökü","q":"soru cümlesi","o":["A","B","C","D","E"],"c":"A|B|C|D|E","e":"açıklama","f":["A geri bildirim","B geri bildirim","C geri bildirim","D geri bildirim","E geri bildirim"]}`;
+Şema: {"s":"kök","q":"soru","o":["A","B","C","D","E"],"c":"A|B|C|D|E","e":"açıklama","f":["A","B","C","D","E"]}`;
 
-export function buildUserPrompt({ branch, difficulty = 'Orta' } = {}) {
+export function buildUserPrompt({ branch, difficulty = 'Orta', variationSeed = '' } = {}) {
   const branchText = cleanText(branch || 'Rastgele');
   const selectedDifficulty = normalizeDifficulty(difficulty);
-  return `Branş: ${branchText}\nZorluk: ${selectedDifficulty}\nTek TUS sorusu üret. JSON döndür.`;
+  const seed = cleanText(variationSeed || Math.random().toString(36).slice(2, 8));
+  return `B:${branchText}\nD:${selectedDifficulty}\nR:${seed}\nJSON.`;
 }

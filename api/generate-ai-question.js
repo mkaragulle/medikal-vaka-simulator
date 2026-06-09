@@ -6,8 +6,8 @@ import {
 import { envNumber, logAIUsage, resolveModelForScope } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-v432-ultra-compact-visible-stem';
-const SCHEMA_VERSION = 'simple-ai-spot-v8-minimal';
+const PROMPT_VERSION = 'klinikiq-v434-root-cause-min-token';
+const SCHEMA_VERSION = 'simple-ai-spot-v10-ultra-minimal';
 const TASK_NAME = 'tusSpotQuestion';
 
 const ALLOWED_BRANCHES = [
@@ -56,7 +56,10 @@ function cleanText(value = '') {
     .replace(/[‘’]/g, "'")
     .replace(/\u00a0/g, ' ')
     .replace(/```(?:json)?|```/giu, ' ')
-    .replace(/\b(?:Doğru cevap\s*:?\s*[A-E]?|Açıklama\s*:?|[A-E]\s*gerekçesi\s*:?|[A-E]\s+feedback\s*:?)\b/giu, ' ')
+    .replace(/\b(?:Doğru\s+cevap|Seçimin|Açıklama)\s*[:：-]?\s*/giu, ' ')
+    .replace(/\b[A-E]\s*(?:geri\s*bildirim|feedback|gerekçe)\s*[:：.-]?\s*/giu, ' ')
+    .replace(/^\s*[A-E]\s*\)\s*(?:doğru|yanlış)\s*[:：.-]?\s*/iu, '')
+    .replace(/^\s*(?:doğru|yanlış)\s*[:：.-]?\s*/iu, '')
     .replace(/\b([A-E])\s*\)\s*\1\s*\)?\s*/giu, '$1) ')
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
@@ -113,6 +116,42 @@ function uniqueSentences(value = '') {
     .trim();
 }
 
+function cleanFeedback(value = '') {
+  return cleanText(value)
+    .replace(/^\s*[A-E]\s*\)?\s*(?:geri\s*bildirim|feedback|gerekçe)\s*[:：.-]?\s*/iu, '')
+    .replace(/^\s*[A-E]\s*\)\s*(?:doğru|yanlış)\s*[:：.-]?\s*/iu, '')
+    .replace(/^\s*(?:doğru|yanlış)\s*[:：.-]?\s*/iu, '')
+    .replace(/^\s*(?:seçimin|doğru\s+cevap|açıklama)\s*[:：.-]?\s*/iu, '')
+    .trim();
+}
+
+
+const COMMON_TR_WORDS = new Set('ve veya ile için olan olarak hasta hastada bu şu bir daha çok en ise ancak çünkü nedenle göre olguda seçenek doğru yanlış tanı tedavi test bulgu klinik saptanır değildir beklenir düşündürür destekler'.split(' '));
+
+function contentTokens(value = '') {
+  return normalize(value).split(/\s+/u).filter((word) => word.length >= 4 && !COMMON_TR_WORDS.has(word));
+}
+
+function isEvidenceSentence(sentence = '') {
+  return /(?:yüksek|düşük|artmış|azalmış|pozitif|negatif|saptan|izlen|görül|bulun|mevcut|yok|normal|patolojik|belirgin|değer|sonuç|laboratuvar|görüntüleme)/iu.test(sentence)
+    || /\d/.test(sentence);
+}
+
+function stemSupportRatio(sentence = '', visibleText = '') {
+  const visible = new Set(contentTokens(visibleText));
+  const tokens = [...new Set(contentTokens(sentence))];
+  if (!tokens.length) return 1;
+  const supported = tokens.filter((token) => visible.has(token)).length;
+  return supported / tokens.length;
+}
+
+function pruneUnsupportedEvidence(text = '', visibleText = '', fallback = '') {
+  const sentences = cleanText(text).split(/(?<=[.!?])\s+/u).map(cleanFeedback).filter(Boolean);
+  const kept = sentences.filter((sentence) => !isEvidenceSentence(sentence) || stemSupportRatio(sentence, visibleText) >= 0.25);
+  const result = uniqueSentences(kept.join(' '));
+  return result || fallback || uniqueSentences(text);
+}
+
 function normalizeOptions(raw = []) {
   const arr = Array.isArray(raw)
     ? raw
@@ -143,7 +182,7 @@ function feedbackObject(rawFeedback = [], correctId = 'A', explanation = '') {
     ? rawFeedback
     : OPTION_IDS.map((id) => rawFeedback?.[id] || rawFeedback?.[id.toLowerCase()] || rawFeedback?.[`option${id}`] || '');
   return OPTION_IDS.reduce((acc, id, index) => {
-    const text = cleanText(arr[index] || (id === correctId ? explanation : 'Bu seçenek olgudaki ayırt ettirici bulgularla en iyi açıklama değildir.'));
+    const text = cleanFeedback(arr[index] || (id === correctId ? explanation : 'Bu seçenek olgudaki ayırt ettirici bulgularla en iyi açıklama değildir.'));
     acc[id] = ensureSentence(uniqueSentences(text));
     return acc;
   }, {});
@@ -200,7 +239,8 @@ function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, m
   const vitals = compactItems(payload.cv || payload.compactVitals || payload.vitals || []);
   const objective = compactItems(payload.co || payload.compactObjectiveData || payload.objectiveData || []);
   const stem = ensureSentence(uniqueSentences(addVisibleDataToStem(payload.s || payload.stem || '', vitals, objective)));
-  const explanation = ensureSentence(uniqueSentences(payload.e || payload.explanation || ''));
+  const visibleText = [stem, ...options.map((option) => option.text)].join(' ');
+  const explanation = ensureSentence(pruneUnsupportedEvidence(payload.e || payload.explanation || '', visibleText, 'Soru kökündeki ayırt edici bulgular doğru cevabı destekler.'));
   return {
     id: `ai-spot-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
     relatedBranch: cleanText(payload.b || payload.relatedBranch || branch),
@@ -217,7 +257,7 @@ function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, m
     options,
     correctAnswer,
     explanation,
-    wrongOptionFeedback: feedbackObject(payload.f || payload.wrongOptionFeedback || payload.optionFeedback || {}, correctAnswer, explanation),
+    wrongOptionFeedback: Object.fromEntries(Object.entries(feedbackObject(payload.f || payload.wrongOptionFeedback || payload.optionFeedback || {}, correctAnswer, explanation)).map(([id, value]) => [id, ensureSentence(pruneUnsupportedEvidence(value, visibleText, id === correctAnswer ? explanation : 'Bu seçenek olgudaki ayırt edici bulgularla en iyi uyumu göstermez.'))])),
     evidenceChain: [],
     examPearl: '',
     managementSteps: [],
@@ -284,6 +324,13 @@ function createAbortSignal(timeoutMs) {
   return { signal: controller.signal, cancel: () => clearTimeout(timeout) };
 }
 
+function samplingParams() {
+  return {
+    temperature: Number(process.env.TUS_OPENAI_TEMPERATURE || process.env.OPENAI_TEMPERATURE || 0.9),
+    top_p: Number(process.env.TUS_OPENAI_TOP_P || process.env.OPENAI_TOP_P || 0.95),
+  };
+}
+
 async function callOpenAI(prompt) {
   const apiKey = process.env.TUS_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
   if (!apiKey) {
@@ -295,7 +342,7 @@ async function callOpenAI(prompt) {
   const model = resolveModelForScope('TUS');
   const baseUrl = (process.env.TUS_OPENAI_BASE_URL || process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
   const timeoutMs = envNumber('TUS_OPENAI_PER_REQUEST_TIMEOUT_MS', envNumber('OPENAI_PER_REQUEST_TIMEOUT_MS', 60000));
-  const outputLimit = envNumber('TUS_OPENAI_MAX_OUTPUT_TOKENS', envNumber('OPENAI_MAX_OUTPUT_TOKENS', 850));
+  const outputLimit = envNumber('TUS_OPENAI_MAX_OUTPUT_TOKENS', envNumber('OPENAI_MAX_OUTPUT_TOKENS', 720));
   const explicitStyle = process.env.TUS_OPENAI_API_STYLE || process.env.OPENAI_API_STYLE || '';
   const useResponses = shouldUseResponsesApi(model, explicitStyle);
   const style = useResponses ? 'responses' : 'chat';
@@ -308,6 +355,8 @@ async function callOpenAI(prompt) {
           instructions: OPTIMIZED_TUS_SYSTEM_PROMPT,
           input: prompt,
           text: { format: { type: 'json_object' }, verbosity: 'low' },
+          temperature: Number(process.env.TUS_OPENAI_TEMPERATURE || process.env.OPENAI_TEMPERATURE || 0.9),
+          top_p: Number(process.env.TUS_OPENAI_TOP_P || process.env.OPENAI_TOP_P || 0.95),
           ...(modelSupportsReasoningEffort(model) ? { reasoning: { effort: 'low' } } : {}),
           max_output_tokens: outputLimit,
           store: false,
@@ -319,6 +368,8 @@ async function callOpenAI(prompt) {
             { role: 'user', content: prompt },
           ],
           response_format: { type: 'json_object' },
+          temperature: Number(process.env.TUS_OPENAI_TEMPERATURE || process.env.OPENAI_TEMPERATURE || 0.9),
+          top_p: Number(process.env.TUS_OPENAI_TOP_P || process.env.OPENAI_TOP_P || 0.95),
           max_completion_tokens: outputLimit,
           ...(modelSupportsReasoningEffort(model) ? { reasoning_effort: 'low' } : {}),
         };
@@ -365,7 +416,7 @@ export default async function handler(request, response) {
 
   const branch = chooseBranch(body.branchFilter || body.branch || 'Rastgele');
   const difficulty = normalizeDifficulty(body.difficulty || body.requestedDifficulty || body.aiDifficulty || 'Orta');
-  const prompt = buildUserPrompt({ branch, difficulty });
+  const prompt = buildUserPrompt({ branch, difficulty, variationSeed: Math.random().toString(36).slice(2, 8) });
 
   try {
     const result = await callOpenAI(prompt);
