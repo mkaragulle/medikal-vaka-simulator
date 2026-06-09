@@ -3,17 +3,11 @@ import {
   buildUserPrompt,
   normalizeDifficulty,
 } from './tus-question-prompt.js';
-import {
-  defaultReasoningEffortForProfile,
-  defaultVerbosityForProfile,
-  envNumber,
-  logAIUsage,
-  resolveModelForScope,
-} from './lib/ai-token-optimizer.js';
+import { envNumber, logAIUsage, resolveModelForScope } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-v430-json-input-visible-stem';
-const SCHEMA_VERSION = 'simple-ai-spot-v7-compact';
+const PROMPT_VERSION = 'klinikiq-v432-ultra-compact-visible-stem';
+const SCHEMA_VERSION = 'simple-ai-spot-v8-minimal';
 const TASK_NAME = 'tusSpotQuestion';
 
 const ALLOWED_BRANCHES = [
@@ -61,6 +55,9 @@ function cleanText(value = '') {
     .replace(/[“”]/g, '"')
     .replace(/[‘’]/g, "'")
     .replace(/\u00a0/g, ' ')
+    .replace(/```(?:json)?|```/giu, ' ')
+    .replace(/\b(?:Doğru cevap\s*:?\s*[A-E]?|Açıklama\s*:?|[A-E]\s*gerekçesi\s*:?|[A-E]\s+feedback\s*:?)\b/giu, ' ')
+    .replace(/\b([A-E])\s*\)\s*\1\s*\)?\s*/giu, '$1) ')
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .replace(/([,;:!?])(?=\S)/g, '$1 ')
@@ -75,11 +72,6 @@ function normalize(value = '') {
     .replace(/[^a-z0-9çğıöşü\s]/giu, ' ')
     .replace(/\s+/g, ' ')
     .trim();
-}
-
-function asArray(value) {
-  if (!value) return [];
-  return Array.isArray(value) ? value : [value];
 }
 
 function chooseBranch(value = '') {
@@ -101,34 +93,24 @@ function ensureQuestion(value = '') {
   return /\?$/u.test(text) ? text : `${text}?`;
 }
 
-function isEmptyLike(value = '') {
-  const text = cleanText(value);
-  return !text || /^[-–—:;.,]*$/u.test(text) || /^(boş|yok|belirtilmedi|null|undefined)$/iu.test(text);
+function asArray(value) {
+  if (!value) return [];
+  return Array.isArray(value) ? value : [value];
 }
 
-function compactItems(items = []) {
+function uniqueSentences(value = '') {
   const seen = new Set();
-  const out = [];
-  asArray(items).forEach((item) => {
-    let label = '';
-    let value = '';
-    if (typeof item === 'string') {
-      const [first, ...rest] = item.split(/[:：]/u);
-      label = first;
-      value = rest.join(':');
-    } else if (item && typeof item === 'object') {
-      label = item.label || item.name || item.parameter || item.title || '';
-      value = item.value || item.result || item.text || '';
-    }
-    label = cleanText(label);
-    value = cleanText(value);
-    if (isEmptyLike(label) || isEmptyLike(value)) return;
-    const key = normalize(`${label} ${value}`);
-    if (seen.has(key)) return;
-    seen.add(key);
-    out.push({ label, value });
-  });
-  return out;
+  return cleanText(value)
+    .split(/(?<=[.!?])\s+/u)
+    .map(ensureSentence)
+    .filter((sentence) => {
+      const key = normalize(sentence);
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .join(' ')
+    .trim();
 }
 
 function normalizeOptions(raw = []) {
@@ -161,12 +143,38 @@ function feedbackObject(rawFeedback = [], correctId = 'A', explanation = '') {
     ? rawFeedback
     : OPTION_IDS.map((id) => rawFeedback?.[id] || rawFeedback?.[id.toLowerCase()] || rawFeedback?.[`option${id}`] || '');
   return OPTION_IDS.reduce((acc, id, index) => {
-    const fallback = id === correctId
-      ? explanation
-      : 'Bu seçenek klinik olarak düşünülebilir; ancak olgudaki gerekçeler doğru cevabı daha güçlü destekler.';
-    acc[id] = ensureSentence(cleanText(arr[index] || fallback));
+    const text = cleanText(arr[index] || (id === correctId ? explanation : 'Bu seçenek olgudaki ayırt ettirici bulgularla en iyi açıklama değildir.'));
+    acc[id] = ensureSentence(uniqueSentences(text));
     return acc;
   }, {});
+}
+
+function compactItems(items = []) {
+  return asArray(items)
+    .map((item) => {
+      if (typeof item === 'string') {
+        const [label, ...rest] = item.split(/[:：]/u);
+        return { label: cleanText(label), value: cleanText(rest.join(':')) };
+      }
+      return { label: cleanText(item?.label || item?.name || item?.parameter || item?.title || ''), value: cleanText(item?.value || item?.result || item?.text || '') };
+    })
+    .filter((item) => item.label && item.value);
+}
+
+function formatPanelDataForStem(items = []) {
+  return items.map((item) => `${item.label}: ${item.value}`).filter(Boolean).join('; ');
+}
+
+function addVisibleDataToStem(stem = '', compactVitals = [], compactObjectiveData = []) {
+  let text = cleanText(stem);
+  const visible = normalize(text);
+  const missing = [...compactItems(compactVitals), ...compactItems(compactObjectiveData)].filter((item) => {
+    const label = normalize(item.label);
+    const value = normalize(item.value);
+    return label && value && !(visible.includes(label) && visible.includes(value));
+  });
+  const line = formatPanelDataForStem(missing);
+  return line ? `${text} Değerlendirmede ${line} saptanır.` : text;
 }
 
 function getJsonCandidate(text = '') {
@@ -181,71 +189,44 @@ function getJsonCandidate(text = '') {
 
 function parseModelJson(text = '') {
   const candidate = getJsonCandidate(text);
-  try {
-    return JSON.parse(candidate);
-  } catch {
-    const repaired = candidate
-      .replace(/,\s*([}\]])/g, '$1')
-      .replace(/[\u0000-\u001F\u007F]+/g, ' ');
-    return JSON.parse(repaired);
+  try { return JSON.parse(candidate); } catch {
+    return JSON.parse(candidate.replace(/,\s*([}\]])/g, '$1').replace(/[\u0000-\u001F\u007F]+/g, ' '));
   }
 }
 
-
-function formatPanelDataForStem(items = []) {
-  const parts = asArray(items)
-    .map((item) => `${cleanText(item.label)}: ${cleanText(item.value)}`.trim())
-    .filter((item) => item && !/^[:：]$/u.test(item));
-  return parts.join('; ');
-}
-
-function addVisibleDataToStem(stem = '', compactVitals = [], compactObjectiveData = []) {
-  let text = cleanText(stem);
-  const normalizedStem = normalize(text);
-  const missingItems = [...asArray(compactVitals), ...asArray(compactObjectiveData)].filter((item) => {
-    const label = normalize(item?.label || '');
-    const value = normalize(item?.value || '');
-    if (!label || !value) return false;
-    return !(normalizedStem.includes(label) && normalizedStem.includes(value));
-  });
-  const dataLine = formatPanelDataForStem(missingItems);
-  if (dataLine) text = `${text} Değerlendirmede ${dataLine} saptanır.`;
-  return text;
-}
-
 function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, mode } = {}) {
-  const compactVitals = compactItems(payload.cv || payload.compactVitals || payload.vitals || []);
-  const compactObjectiveData = compactItems(payload.co || payload.compactObjectiveData || payload.objectiveData || []);
   const options = normalizeOptions(payload.o || payload.options);
   const correctAnswer = resolveCorrectId(payload, options);
-  const explanation = ensureSentence(cleanText(payload.e || payload.explanation || ''));
-
+  const vitals = compactItems(payload.cv || payload.compactVitals || payload.vitals || []);
+  const objective = compactItems(payload.co || payload.compactObjectiveData || payload.objectiveData || []);
+  const stem = ensureSentence(uniqueSentences(addVisibleDataToStem(payload.s || payload.stem || '', vitals, objective)));
+  const explanation = ensureSentence(uniqueSentences(payload.e || payload.explanation || ''));
   return {
     id: `ai-spot-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
     relatedBranch: cleanText(payload.b || payload.relatedBranch || branch),
     difficulty: normalizeDifficulty(payload.d || payload.difficulty || difficulty),
-    learningTarget: cleanText(payload.lt || payload.learningTarget || ''),
+    learningTarget: '',
     answerTarget: cleanText(payload.at || payload.answerTarget || 'diagnosis'),
-    demographics: cleanText(payload.dem || payload.demographics || ''),
-    setting: cleanText(payload.set || payload.setting || ''),
-    chiefComplaint: cleanText(payload.cc || payload.chiefComplaint || ''),
-    stem: ensureSentence(addVisibleDataToStem(payload.s || payload.stem || '', compactVitals, compactObjectiveData)),
-    compactVitals,
-    compactObjectiveData,
-    question: ensureQuestion(cleanText(payload.q || payload.question || '')),
+    demographics: '',
+    setting: '',
+    chiefComplaint: '',
+    stem,
+    compactVitals: [],
+    compactObjectiveData: [],
+    question: ensureQuestion(payload.q || payload.question || ''),
     options,
     correctAnswer,
     explanation,
     wrongOptionFeedback: feedbackObject(payload.f || payload.wrongOptionFeedback || payload.optionFeedback || {}, correctAnswer, explanation),
-    evidenceChain: asArray(payload.k || payload.evidenceChain).map(cleanText).filter(Boolean),
-    examPearl: ensureSentence(cleanText(payload.p || payload.examPearl || '')),
-    managementSteps: asArray(payload.m || payload.managementSteps).map(cleanText).filter(Boolean),
+    evidenceChain: [],
+    examPearl: '',
+    managementSteps: [],
     provider: 'openai',
     openAIModel: model || '',
     openAIMode: mode || '',
     promptVersion: PROMPT_VERSION,
     schemaVersion: SCHEMA_VERSION,
-    aiMeta: { provider: 'openai', remote: true, fallback: false, simplified: true },
+    aiMeta: { provider: 'openai', remote: true, fallback: false, simplified: true, ultraCompact: true },
   };
 }
 
@@ -292,17 +273,6 @@ function modelSupportsReasoningEffort(model = '') {
   return /^gpt-5/i.test(String(model || '')) || /^o\d/i.test(String(model || ''));
 }
 
-function safeReasoningEffort(value = '') {
-  const normalized = String(value || '').trim().toLowerCase();
-  if (normalized === 'minimal') return 'low';
-  if (/^(none|low|medium|high|xhigh)$/.test(normalized)) return normalized;
-  return 'low';
-}
-
-function safeVerbosity(value = '') {
-  return /^(low|medium|high)$/i.test(String(value || '')) ? String(value).toLowerCase() : 'medium';
-}
-
 function createAbortSignal(timeoutMs) {
   const controller = new AbortController();
   const timeout = setTimeout(() => {
@@ -312,10 +282,6 @@ function createAbortSignal(timeoutMs) {
     try { controller.abort(error); } catch { controller.abort(); }
   }, timeoutMs);
   return { signal: controller.signal, cancel: () => clearTimeout(timeout) };
-}
-
-function isAbortLikeError(error) {
-  return error?.name === 'AbortError' || /aborted|abort|signal is aborted|timeout|timed out/i.test(String(error?.message || error || ''));
 }
 
 async function callOpenAI(prompt) {
@@ -328,14 +294,11 @@ async function callOpenAI(prompt) {
 
   const model = resolveModelForScope('TUS');
   const baseUrl = (process.env.TUS_OPENAI_BASE_URL || process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
-  const timeoutMs = envNumber('TUS_OPENAI_PER_REQUEST_TIMEOUT_MS', envNumber('OPENAI_PER_REQUEST_TIMEOUT_MS', 75000));
-  const configuredOutputLimit = Number(process.env.TUS_OPENAI_MAX_OUTPUT_TOKENS || process.env.OPENAI_MAX_OUTPUT_TOKENS || 0);
-  const outputLimit = Number.isFinite(configuredOutputLimit) && configuredOutputLimit > 0 ? configuredOutputLimit : null;
+  const timeoutMs = envNumber('TUS_OPENAI_PER_REQUEST_TIMEOUT_MS', envNumber('OPENAI_PER_REQUEST_TIMEOUT_MS', 60000));
+  const outputLimit = envNumber('TUS_OPENAI_MAX_OUTPUT_TOKENS', envNumber('OPENAI_MAX_OUTPUT_TOKENS', 850));
   const explicitStyle = process.env.TUS_OPENAI_API_STYLE || process.env.OPENAI_API_STYLE || '';
   const useResponses = shouldUseResponsesApi(model, explicitStyle);
   const style = useResponses ? 'responses' : 'chat';
-  const reasoningEffort = safeReasoningEffort(process.env.TUS_OPENAI_REASONING_EFFORT || process.env.OPENAI_REASONING_EFFORT || defaultReasoningEffortForProfile('TUS'));
-  const verbosity = safeVerbosity(process.env.TUS_OPENAI_VERBOSITY || process.env.OPENAI_VERBOSITY || defaultVerbosityForProfile('TUS'));
   const { signal, cancel } = createAbortSignal(timeoutMs);
 
   try {
@@ -344,9 +307,9 @@ async function callOpenAI(prompt) {
           model,
           instructions: OPTIMIZED_TUS_SYSTEM_PROMPT,
           input: prompt,
-          text: { format: { type: 'json_object' }, verbosity },
-          ...(modelSupportsReasoningEffort(model) ? { reasoning: { effort: reasoningEffort } } : {}),
-          ...(outputLimit ? { max_output_tokens: outputLimit } : {}),
+          text: { format: { type: 'json_object' }, verbosity: 'low' },
+          ...(modelSupportsReasoningEffort(model) ? { reasoning: { effort: 'low' } } : {}),
+          max_output_tokens: outputLimit,
           store: false,
         }
       : {
@@ -356,28 +319,17 @@ async function callOpenAI(prompt) {
             { role: 'user', content: prompt },
           ],
           response_format: { type: 'json_object' },
-          ...(outputLimit ? { max_completion_tokens: outputLimit } : {}),
+          max_completion_tokens: outputLimit,
+          ...(modelSupportsReasoningEffort(model) ? { reasoning_effort: 'low' } : {}),
         };
-    if (!useResponses && modelSupportsReasoningEffort(model)) body.reasoning_effort = reasoningEffort;
 
     const endpoint = `${baseUrl}${useResponses ? '/responses' : '/chat/completions'}`;
-    let res;
-    try {
-      res = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
-        body: JSON.stringify(body),
-        signal,
-      });
-    } catch (error) {
-      if (isAbortLikeError(error)) {
-        const timeoutError = new Error('TUS soru üretimi zaman aşımına uğradı. Lütfen tekrar deneyin veya daha hızlı model/timeout ayarı kullanın.');
-        timeoutError.statusCode = 504;
-        throw timeoutError;
-      }
-      throw error;
-    }
-
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
+      body: JSON.stringify(body),
+      signal,
+    });
     const raw = await res.text();
     if (!res.ok) {
       const error = new Error(`OpenAI ${res.status}: ${raw}`);
@@ -393,6 +345,13 @@ async function callOpenAI(prompt) {
       throw error;
     }
     return { payload: parseModelJson(text), model: data.model || model, mode: style };
+  } catch (error) {
+    if (/aborted|abort|timeout|timed out/i.test(String(error?.message || error))) {
+      const timeoutError = new Error('TUS soru üretimi zaman aşımına uğradı. Lütfen tekrar deneyin.');
+      timeoutError.statusCode = 504;
+      throw timeoutError;
+    }
+    throw error;
   } finally {
     cancel();
   }
@@ -406,8 +365,6 @@ export default async function handler(request, response) {
 
   const branch = chooseBranch(body.branchFilter || body.branch || 'Rastgele');
   const difficulty = normalizeDifficulty(body.difficulty || body.requestedDifficulty || body.aiDifficulty || 'Orta');
-
-  // V428: simple branch + difficulty prompt. No topic steering, cache, bank, repair or local fallback.
   const prompt = buildUserPrompt({ branch, difficulty });
 
   try {

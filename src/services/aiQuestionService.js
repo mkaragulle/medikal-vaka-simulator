@@ -1,4 +1,4 @@
-import { buildRecentQuestionContext, rememberAIQuestion } from '../utils/aiQuestionHistory.js';
+import { rememberAIQuestion } from '../utils/aiQuestionHistory.js';
 import { createSimpleFallbackQuestion, normalizeSimpleAIQuestion } from '../utils/simpleAIQuestionAdapter.js';
 
 const runtimeEnv = import.meta.env || {};
@@ -23,11 +23,6 @@ function isAbortLikeError(error) {
     || /aborted|abort|signal is aborted|timeout|timed out/i.test(String(error?.message || error || ''));
 }
 
-function makeAntiRepeatNonce() {
-  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') return crypto.randomUUID();
-  return `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
-}
-
 function canUseRemote() {
   return ENABLE_REAL_AI && typeof window !== 'undefined' && typeof fetch === 'function';
 }
@@ -39,16 +34,7 @@ function readPayloadError(payload, status) {
   return `AI endpoint ${status}`;
 }
 
-function buildRequestContext(context = {}) {
-  return {
-    // V419: Do not send previous question text/topic/correct-answer content to the model.
-    // Semantic recent summaries can prime the next generation toward the same topic.
-    recentQuestionSummaries: [],
-    recentQuestionCount: Array.isArray(context.recentQuestionSummaries) ? context.recentQuestionSummaries.length : 0,
-  };
-}
-
-async function fetchRemoteQuestion({ previousQuestionId, branchFilter, difficulty = 'Orta', context }) {
+async function fetchRemoteQuestion({ previousQuestionId, branchFilter, difficulty = 'Orta' }) {
   if (!canUseRemote()) throw new Error('Gerçek AI bağlantısı kapalı veya tarayıcı fetch desteği yok.');
 
   const { controller, timeoutId } = withTimeout();
@@ -57,14 +43,7 @@ async function fetchRemoteQuestion({ previousQuestionId, branchFilter, difficult
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       signal: controller.signal,
-      body: JSON.stringify({
-        previousQuestionId,
-        branchFilter,
-        difficulty,
-        ...buildRequestContext(context),
-        requestId: `klinikiq-ai-${Date.now()}`,
-        antiRepeatNonce: makeAntiRepeatNonce(),
-      }),
+      body: JSON.stringify({ previousQuestionId, branchFilter, difficulty }),
     });
 
     let payload = null;
@@ -105,12 +84,8 @@ async function fetchRemoteQuestion({ previousQuestionId, branchFilter, difficult
   }
 }
 
-function createClientFallback({ branchFilter, difficulty = 'Orta', context, reason }) {
-  const question = createSimpleFallbackQuestion({
-    branchFilter,
-    difficulty,
-    recentQuestionSummaries: context?.recentQuestionSummaries || [],
-  });
+function createClientFallback({ branchFilter, difficulty = 'Orta', reason }) {
+  const question = createSimpleFallbackQuestion({ branchFilter, difficulty });
   question.aiMeta = {
     ...(question.aiMeta || {}),
     fallback: true,
@@ -136,14 +111,13 @@ export function prefetchNextAIQuestion() {
 }
 
 export async function createAIQuestion({ previousQuestionId = null, branchFilter = 'random', difficulty = 'Orta' } = {}) {
-  const context = buildRecentQuestionContext(10);
   try {
-    return await fetchRemoteQuestion({ previousQuestionId, branchFilter, difficulty, context });
+    return await fetchRemoteQuestion({ previousQuestionId, branchFilter, difficulty });
   } catch (error) {
     const normalizedError = isAbortLikeError(error)
       ? new Error('AI isteği zaman aşımına uğradı. Bu kalite gate veya fallback hatası değildir; model yanıtı süre içinde tamamlayamadı. Tekrar deneyin veya VITE_AI_REQUEST_TIMEOUT_MS / TUS_OPENAI_PER_REQUEST_TIMEOUT_MS değerlerini artırın.')
       : error;
-    if (ENABLE_CLIENT_FALLBACK) return createClientFallback({ branchFilter, difficulty, context, reason: normalizedError });
+    if (ENABLE_CLIENT_FALLBACK) return createClientFallback({ branchFilter, difficulty, reason: normalizedError });
     return {
       ok: false,
       question: null,
@@ -157,5 +131,5 @@ export async function createAIQuestion({ previousQuestionId = null, branchFilter
 }
 
 export function getAIServiceMode() {
-  return ENABLE_REAL_AI ? 'openai-branch-only-no-topic-steering-v419' : 'real-ai-disabled';
+  return ENABLE_REAL_AI ? 'openai-ultra-compact-v432' : 'real-ai-disabled';
 }

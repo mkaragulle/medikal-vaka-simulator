@@ -837,36 +837,14 @@ function decorateAISpotCorrectExplanation(clinicalCase = {}, row = {}) {
 }
 
 function buildAISpotScienceText(clinicalCase = {}, whyCorrect = '') {
-  const feedback = getFeedback(clinicalCase);
-  const evidenceTexts = Array.isArray(clinicalCase.evidenceChain)
-    ? clinicalCase.evidenceChain.map((item) => item?.text || item)
-    : [];
   return mergeUniqueSentences([
-    clinicalCase.coreKnowledge,
     clinicalCase.explanation,
-    clinicalCase.diagnosis?.explanation,
-    feedback.whyCorrect,
-    feedback.rationale,
-    whyCorrect,
-    ...evidenceTexts,
-  ], 12, 2600);
+  ], 4, 900);
 }
 
 function groupSentencesForAISpotScience(sentences = []) {
   const clean = sentences.map((sentence) => ensureSentence(sentence)).filter(Boolean);
-  if (clean.length <= 2) return [{ title: 'Temel mantık', text: clean.join(' ') }];
-
-  const firstBlockSize = clean.length >= 6 ? 2 : 1;
-  const secondBlockSize = clean.length >= 5 ? 2 : 1;
-  const blocks = [
-    { title: 'Temel mantık', sentences: clean.slice(0, firstBlockSize) },
-    { title: 'Klinik sonuç', sentences: clean.slice(firstBlockSize, firstBlockSize + secondBlockSize) },
-    { title: 'Ayırıcı ayrım', sentences: clean.slice(firstBlockSize + secondBlockSize) },
-  ]
-    .map((block) => ({ title: block.title, text: block.sentences.join(' ') }))
-    .filter((block) => normalizeText(block.text));
-
-  return blocks.length ? blocks : [{ title: 'Temel mantık', text: clean.join(' ') }];
+  return clean.length ? [{ title: 'Gerekçe', text: clean.join(' ') }] : [];
 }
 
 function buildAISpotScienceBlocks(scienceText = '') {
@@ -875,63 +853,29 @@ function buildAISpotScienceBlocks(scienceText = '') {
   return groupSentencesForAISpotScience(sentences);
 }
 
-function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCorrect, whyWrong, pearl, children, glossaryEnabled = true }) {
+function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, children, glossaryEnabled = true }) {
   const rows = buildAISpotDetailedRows(clinicalCase, selectedOption);
   const selectedText = resolveAISpotOptionText(clinicalCase, selectedOption);
   const correctText = pickAISpotCorrectOption(clinicalCase);
-  const selectedRow = rows.find((row) => normalizeForCompare(row.option) === normalizeForCompare(selectedText));
-  const correctRow = rows.find((row) => row.status === 'correct') || rows.find((row) => normalizeForCompare(row.option) === normalizeForCompare(correctText));
-  const selectedExplanation = decorateAISpotSelectedExplanation(clinicalCase, selectedRow, isCorrect) || whyWrong;
-  const correctExplanation = decorateAISpotCorrectExplanation(clinicalCase, correctRow) || whyCorrect;
-  const scienceText = buildAISpotScienceText(clinicalCase, whyCorrect);
-  const scienceBlocks = buildAISpotScienceBlocks(scienceText);
+  const explanation = ensureSentence(normalizeText(clinicalCase.explanation || clinicalCase.diagnosis?.explanation || ''));
+
   return (
-    <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro ai-spot-detailed-feedback-panel ai-spot-detailed-feedback-panel-v246`} aria-live="polite">
+    <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro ai-spot-detailed-feedback-panel ai-spot-detailed-feedback-panel-v432`} aria-live="polite">
       <div className="ai-spot-detailed-feedback-shell ai-spot-detailed-feedback-shell-v246">
-        <div className={`ai-spot-feedback-choice-grid ai-spot-feedback-choice-grid-v246 ${isCorrect ? 'single' : ''}`.trim()}>
-          <article className={`ai-spot-feedback-choice-card ${isCorrect ? 'is-correct' : 'is-selected-wrong'}`.trim()}>
-            <span className="ai-spot-choice-kicker">Seçimin</span>
-            <strong><GlossaryText text={selectedText || 'Seçim bulunamadı'} enabled={glossaryEnabled} /></strong>
-            <p><GlossaryText text={ensureSentence(selectedExplanation || 'Seçilen seçenek için açıklama bulunamadı.')} enabled={glossaryEnabled} /></p>
-          </article>
-
-          {!isCorrect ? (
-            <article className="ai-spot-feedback-choice-card is-correct">
-              <span className="ai-spot-choice-kicker">Doğru cevap</span>
-              <strong><GlossaryText text={correctText || 'Doğru cevap bulunamadı'} enabled={glossaryEnabled} /></strong>
-              <p><GlossaryText text={ensureSentence(correctExplanation || 'Doğru seçenek için açıklama bulunamadı.')} enabled={glossaryEnabled} /></p>
-            </article>
-          ) : null}
-        </div>
-
-        {scienceBlocks.length ? (
-          <section className="ai-spot-feedback-section-card ai-spot-feedback-science-card ai-spot-feedback-science-card-v246 ai-spot-feedback-science-card-v249">
-            <header>
-              <h4>Mekanizma ve sınav mantığı</h4>
-            </header>
-            <div className="ai-spot-science-flow-v249">
-              {scienceBlocks.map((block, index) => (
-                <article className="ai-spot-science-item-v249" key={`${block.title}-${index}`}>
-                  <span className="ai-spot-science-step-v249">{block.title}</span>
-                  <p><GlossaryText text={block.text} enabled={glossaryEnabled} /></p>
-                </article>
-              ))}
-            </div>
-            {pearl ? (
-              <div className="ai-spot-feedback-pearl-card ai-spot-feedback-pearl-card-v246">
-                <div className="ai-spot-pearl-icon"><Icon name="Sparkles" size={15} /></div>
-                <div>
-                  <span>TUS ipucu</span>
-                  <p className="ai-spot-feedback-pearl-text-v402">{ensureSentence(pearl)}</p>
-                </div>
-              </div>
-            ) : null}
-          </section>
-        ) : null}
+        <section className="ai-spot-feedback-section-card ai-spot-feedback-science-card ai-spot-feedback-science-card-v246">
+          <header>
+            <h4>{isCorrect ? 'Doğru cevap' : 'Doğru cevap ve açıklama'}</h4>
+          </header>
+          <p>
+            {!isCorrect && selectedText ? <><strong>Seçimin: </strong><GlossaryText text={selectedText} enabled={glossaryEnabled} />{' '}</> : null}
+            <strong>Doğru cevap: </strong><GlossaryText text={correctText || 'Doğru cevap bulunamadı'} enabled={glossaryEnabled} />
+          </p>
+          {explanation ? <p><GlossaryText text={explanation} enabled={glossaryEnabled} /></p> : null}
+        </section>
 
         <section className="ai-spot-feedback-section-card ai-spot-feedback-options-card ai-spot-feedback-options-card-v246">
           <header>
-            <h4>Seçenekleri nasıl elemeliydin?</h4>
+            <h4>Şık geri bildirimi</h4>
           </header>
           <div className="ai-spot-feedback-option-list">
             {rows.map((row) => (

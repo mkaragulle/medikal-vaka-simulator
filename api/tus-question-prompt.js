@@ -1,12 +1,8 @@
-// KlinikIQ V430 — visible complete stem TUS prompt + json input fix
-// Purpose: simple TUS generation; the visible question stem must contain the solving evidence.
+// KlinikIQ V432 — ultra-compact TUS prompt
+// Goal: minimal tokens, visible solvable stem, clean option feedback.
 
 function cleanText(value = '') {
-  return String(value ?? '')
-    .replace(/[“”]/g, '"')
-    .replace(/[‘’]/g, "'")
-    .replace(/\s+/g, ' ')
-    .trim();
+  return String(value ?? '').replace(/\s+/g, ' ').trim();
 }
 
 export function normalizeDifficulty(value = 'Orta') {
@@ -16,19 +12,15 @@ export function normalizeDifficulty(value = 'Orta') {
   return 'Orta';
 }
 
-export const OPTIMIZED_TUS_SYSTEM_PROMPT = `Sen KlinikIQ için Türkçe TUS düzeyinde çoktan seçmeli soru hazırlayan uzman bir tıp editörüsün. Yalnızca geçerli JSON döndür.
+export const OPTIMIZED_TUS_SYSTEM_PROMPT = `Sen Türkçe TUS düzeyinde çoktan seçmeli soru yazan uzman tıp editörüsün. Yalnızca geçerli JSON döndür.
 
-Seçilen branşa uygun, bilimsel, özgün ve öğretici bir TUS sorusu üret. Soru kökü doğal bir klinik olgu gibi yazılsın ve doğru cevabı güçlü çeldiricilerden ayırmak için gereken tüm bilgiler kullanıcıya görünen "s" alanında açıkça yer alsın. Laboratuvar, görüntüleme, patoloji, seroloji, muayene veya ölçüm verileri cevap için gerekliyse bunları sadece açıklamada ya da ayrı veri alanlarında bırakma; soru köküne de yaz.
+Seçilen branşa uygun tek bir bilimsel TUS sorusu üret. Soru kökü doğal, anlaşılır ve çözülebilir olmalı; doğru cevabı güçlü çeldiricilerden ayıran gerekli klinik, laboratuvar, görüntüleme veya mekanizma bilgileri kökte görünmelidir. Açıklama ve şık geri bildirimleri kökte olmayan yeni olgu verisi eklememelidir. Beş şık dengeli, aynı karar alanından ve kaliteli çeldirici olmalıdır. Geri bildirim öğretici, net ve tekrarsız olmalıdır.
 
-Açıklama ve seçenek feedbackleri soru kökünde görünmeyen yeni hasta bulgusu eklemesin. Feedbackin görevi yeni veri üretmek değil, soru kökündeki verilerle doğru cevabı ve çeldiricileri öğretici biçimde açıklamaktır.
-
-Beş seçenek aynı bağlamda, dengeli ve makul çeldirici kalitesinde olsun. Tek doğru cevap bulunsun. Metin kullanıcıya gösterilecek son ürün gibi temiz, anlaşılır ve bilimsel olsun.
-
-JSON alanları:
-{"b":"branş","d":"Kolay|Orta|Zor","lt":"öğrenme hedefi","at":"soru hedefi","dem":"demografi","set":"klinik ortam","cc":"başvuru nedeni","s":"tam ve görünür soru kökü","cv":[],"co":[],"q":"soru cümlesi","o":["","","","",""] ,"c":"A|B|C|D|E","e":"açıklama","f":["","","","",""] ,"k":[],"p":"sınav ipucu","m":[]}`;
+JSON şeması:
+{"s":"soru kökü","q":"soru cümlesi","o":["A","B","C","D","E"],"c":"A|B|C|D|E","e":"açıklama","f":["A geri bildirim","B geri bildirim","C geri bildirim","D geri bildirim","E geri bildirim"]}`;
 
 export function buildUserPrompt({ branch, difficulty = 'Orta' } = {}) {
   const branchText = cleanText(branch || 'Rastgele');
   const selectedDifficulty = normalizeDifficulty(difficulty);
-  return `Branş: ${branchText}\nZorluk: ${selectedDifficulty}\n\nBu branşa uygun, bilimsel ve öğretici bir TUS sorusu üret. Geçerli JSON döndür. b alanı "${branchText}" olsun. Soru kökü tek başına çözülebilir ve kullanıcıya görünen tam klinik metin olsun.`;
+  return `Branş: ${branchText}\nZorluk: ${selectedDifficulty}\nTek TUS sorusu üret. JSON döndür.`;
 }
