@@ -12,7 +12,7 @@ import {
 } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-v423-complete-visible-stem';
+const PROMPT_VERSION = 'klinikiq-v426-simple-quality-tus-prompt';
 const SCHEMA_VERSION = 'simple-ai-spot-v7-compact';
 const TASK_NAME = 'tusSpotQuestion';
 
@@ -106,7 +106,7 @@ function isEmptyLike(value = '') {
   return !text || /^[-–—:;.,]*$/u.test(text) || /^(boş|yok|belirtilmedi|null|undefined)$/iu.test(text);
 }
 
-function compactItems(items = [], max = 8) {
+function compactItems(items = []) {
   const seen = new Set();
   const out = [];
   asArray(items).forEach((item) => {
@@ -128,7 +128,7 @@ function compactItems(items = [], max = 8) {
     seen.add(key);
     out.push({ label, value });
   });
-  return out.slice(0, max);
+  return out;
 }
 
 function normalizeOptions(raw = []) {
@@ -214,8 +214,8 @@ function addVisibleDataToStem(stem = '', compactVitals = [], compactObjectiveDat
 }
 
 function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, mode } = {}) {
-  const compactVitals = compactItems(payload.cv || payload.compactVitals || payload.vitals || [], 5);
-  const compactObjectiveData = compactItems(payload.co || payload.compactObjectiveData || payload.objectiveData || [], 8);
+  const compactVitals = compactItems(payload.cv || payload.compactVitals || payload.vitals || []);
+  const compactObjectiveData = compactItems(payload.co || payload.compactObjectiveData || payload.objectiveData || []);
   const options = normalizeOptions(payload.o || payload.options);
   const correctAnswer = resolveCorrectId(payload, options);
   const explanation = ensureSentence(cleanText(payload.e || payload.explanation || ''));
@@ -237,9 +237,9 @@ function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, m
     correctAnswer,
     explanation,
     wrongOptionFeedback: feedbackObject(payload.f || payload.wrongOptionFeedback || payload.optionFeedback || {}, correctAnswer, explanation),
-    evidenceChain: asArray(payload.k || payload.evidenceChain).map(cleanText).filter(Boolean).slice(0, 2),
+    evidenceChain: asArray(payload.k || payload.evidenceChain).map(cleanText).filter(Boolean),
     examPearl: ensureSentence(cleanText(payload.p || payload.examPearl || '')),
-    managementSteps: asArray(payload.m || payload.managementSteps).map(cleanText).filter(Boolean).slice(0, 3),
+    managementSteps: asArray(payload.m || payload.managementSteps).map(cleanText).filter(Boolean),
     provider: 'openai',
     openAIModel: model || '',
     openAIMode: mode || '',
@@ -300,7 +300,7 @@ function safeReasoningEffort(value = '') {
 }
 
 function safeVerbosity(value = '') {
-  return /^(low|medium|high)$/i.test(String(value || '')) ? String(value).toLowerCase() : 'low';
+  return /^(low|medium|high)$/i.test(String(value || '')) ? String(value).toLowerCase() : 'medium';
 }
 
 function createAbortSignal(timeoutMs) {
@@ -329,7 +329,8 @@ async function callOpenAI(prompt) {
   const model = resolveModelForScope('TUS');
   const baseUrl = (process.env.TUS_OPENAI_BASE_URL || process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
   const timeoutMs = envNumber('TUS_OPENAI_PER_REQUEST_TIMEOUT_MS', envNumber('OPENAI_PER_REQUEST_TIMEOUT_MS', 75000));
-  const outputLimit = envNumber('TUS_OPENAI_MAX_OUTPUT_TOKENS', envNumber('OPENAI_MAX_OUTPUT_TOKENS', 1000));
+  const configuredOutputLimit = Number(process.env.TUS_OPENAI_MAX_OUTPUT_TOKENS || process.env.OPENAI_MAX_OUTPUT_TOKENS || 0);
+  const outputLimit = Number.isFinite(configuredOutputLimit) && configuredOutputLimit > 0 ? configuredOutputLimit : null;
   const explicitStyle = process.env.TUS_OPENAI_API_STYLE || process.env.OPENAI_API_STYLE || '';
   const useResponses = shouldUseResponsesApi(model, explicitStyle);
   const style = useResponses ? 'responses' : 'chat';
@@ -345,9 +346,8 @@ async function callOpenAI(prompt) {
           input: prompt,
           text: { format: { type: 'json_object' }, verbosity },
           ...(modelSupportsReasoningEffort(model) ? { reasoning: { effort: reasoningEffort } } : {}),
-          max_output_tokens: outputLimit,
+          ...(outputLimit ? { max_output_tokens: outputLimit } : {}),
           store: false,
-          truncation: 'auto',
         }
       : {
           model,
@@ -356,7 +356,7 @@ async function callOpenAI(prompt) {
             { role: 'user', content: prompt },
           ],
           response_format: { type: 'json_object' },
-          max_completion_tokens: outputLimit,
+          ...(outputLimit ? { max_completion_tokens: outputLimit } : {}),
         };
     if (!useResponses && modelSupportsReasoningEffort(model)) body.reasoning_effort = reasoningEffort;
 
@@ -380,7 +380,7 @@ async function callOpenAI(prompt) {
 
     const raw = await res.text();
     if (!res.ok) {
-      const error = new Error(`OpenAI ${res.status}: ${raw.slice(0, 500)}`);
+      const error = new Error(`OpenAI ${res.status}: ${raw}`);
       error.statusCode = res.status;
       throw error;
     }
@@ -407,11 +407,7 @@ export default async function handler(request, response) {
   const branch = chooseBranch(body.branchFilter || body.branch || 'Rastgele');
   const difficulty = normalizeDifficulty(body.difficulty || body.requestedDifficulty || body.aiDifficulty || 'Orta');
 
-  // V423: no topic/disease/test steering is sent to the model.
-  // The prompt intentionally ignores target, answerTarget, recentQuestionSummaries,
-  // antiRepeatNonce and any previous-question content so the selected branch remains
-  // the only medical direction. The only added safety is display completeness:
-  // if the model uses cv/co fields, the same critical data is also visible in stem.
+  // V426: simple branch + difficulty prompt. No topic steering, cache, bank, repair or local fallback.
   const prompt = buildUserPrompt({ branch, difficulty });
 
   try {

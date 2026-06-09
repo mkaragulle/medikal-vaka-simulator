@@ -1,5 +1,5 @@
-// KlinikIQ V423 — minimal TUS prompt with complete visible stem
-// Purpose: no topic steering; the stem itself must contain all information needed to solve the question.
+// KlinikIQ V426 — simple quality TUS prompt
+// Purpose: generate one professional Turkish TUS question with a short, non-steering prompt.
 
 function cleanText(value = '') {
   return String(value ?? '')
@@ -16,17 +16,17 @@ export function normalizeDifficulty(value = 'Orta') {
   return 'Orta';
 }
 
-export const OPTIMIZED_TUS_SYSTEM_PROMPT = `Sen KlinikIQ için Türkçe TUS sorusu yazan profesyonel bir tıp editörüsün. Yalnızca geçerli JSON döndür.
+export const OPTIMIZED_TUS_SYSTEM_PROMPT = `Sen KlinikIQ için Türkçe TUS düzeyinde çoktan seçmeli soru hazırlayan uzman bir tıp editörüsün. Yalnızca geçerli JSON döndür.
 
-Seçilen branşa uygun, bilimsel, tek doğru cevaplı ve öğretici bir TUS sorusu üret. Soru kökü doğal bir klinik olgu gibi yazılsın; yaş, başvuru, kısa öykü, muayene ve doğru cevabı adil biçimde seçtiren kritik laboratuvar/görüntüleme/ölçüm bilgilerini görünür şekilde içersin. Çözüm için gerekli bilgi yalnızca veri panelinde kalmasın; panel kullanılsa bile karar verdirici bilgiler s alanında da anlaşılır biçimde bulunsun.
+Seçilen branşa uygun, bilimsel, özgün ve öğretici bir TUS sorusu üret. Klinik olgu doğal ve anlaşılır yazılsın; öğrenci doğru cevabı yalnızca verilen olgu ve görünür verilerle seçebilsin. Doğru cevabı güçlü çeldiricilerden ayıran gerekli anamnez, muayene, laboratuvar, görüntüleme veya mekanizma bilgileri soruda açıkça yer alsın.
 
-Doğru cevabı açıklarken soru kökünde bulunmayan yeni hasta verisi ekleme. İki seçenek birbirine yakınsa kökü netleştir. Beş seçenek dengeli, aynı türden ve kaliteli çeldiricilerden oluşsun. Açıklama kısa, net ve öğretici olsun; her seçenek için kısa gerekçeli feedback ver. Türkçe tıp dili temiz ve profesyonel olsun.
+Beş seçenek aynı bağlamda, dengeli ve makul çeldirici kalitesinde olsun. Tek doğru cevap bulunsun. Açıklama ve seçenek feedbackleri öğrencinin neden doğru veya yanlış olduğunu öğrenmesini sağlayacak şekilde gerekçeli, bilimsel ve profesyonel Türkçeyle yazılsın. Gereksiz tekrar, yapay üretim notu veya kullanıcıya gösterilmemesi gereken iç açıklama yazma.
 
 JSON şeması:
-{"b":"branş","d":"Kolay|Orta|Zor","lt":"kısa hedef","at":"diagnosis|diagnostic_test|confirmation_test|first_step|next_step|treatment|mechanism|expected_finding|unexpected_finding|contraindication|complication|prognosis|lab_interpretation|imaging_interpretation|anatomy_localization|embryology_defect","dem":"demografi","set":"ortam","cc":"başvuru","s":"çözülebilir klinik olgu","cv":[{"label":"","value":""}],"co":[{"label":"","value":""}],"q":"soru cümlesi?","o":["A seçeneği","B seçeneği","C seçeneği","D seçeneği","E seçeneği"],"c":"A|B|C|D|E","e":"kısa açıklama","f":["A feedback","B feedback","C feedback","D feedback","E feedback"],"k":["ipucu 1","ipucu 2"],"p":"kısa sınav ipucu","m":[]}`;
+{"b":"branş","d":"Kolay|Orta|Zor","lt":"öğrenme hedefi","at":"diagnosis|diagnostic_test|confirmation_test|first_step|next_step|treatment|mechanism|expected_finding|unexpected_finding|contraindication|complication|prognosis|lab_interpretation|imaging_interpretation|anatomy_localization|embryology_defect","dem":"demografi","set":"ortam","cc":"başvuru","s":"klinik olgu","cv":[{"label":"","value":""}],"co":[{"label":"","value":""}],"q":"soru cümlesi?","o":["A seçeneği","B seçeneği","C seçeneği","D seçeneği","E seçeneği"],"c":"A|B|C|D|E","e":"açıklama","f":["A gerekçesi","B gerekçesi","C gerekçesi","D gerekçesi","E gerekçesi"],"k":["anahtar bilgi"],"p":"sınav ipucu","m":[]}`;
 
 export function buildUserPrompt({ branch, difficulty = 'Orta' } = {}) {
   const branchText = cleanText(branch || 'Rastgele');
   const selectedDifficulty = normalizeDifficulty(difficulty);
-  return `Branş: ${branchText}\nZorluk: ${selectedDifficulty}\n\nBu branşa uygun kompakt JSON TUS sorusu üret. b alanı "${branchText}" olsun. Soru kökü tek başına çözülebilir olsun; kritik verileri yalnızca panel alanlarına bırakma.`;
+  return `Branş: ${branchText}\nZorluk: ${selectedDifficulty}\n\nBu branşa uygun kaliteli bir TUS sorusunu JSON şemasına göre üret. b alanı "${branchText}" olsun.`;
 }
