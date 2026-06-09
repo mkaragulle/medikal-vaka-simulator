@@ -1,6 +1,5 @@
 import {
   OPTIMIZED_TUS_SYSTEM_PROMPT,
-  buildRecentCompact,
   buildUserPrompt,
   normalizeDifficulty,
 } from './tus-question-prompt.js';
@@ -13,8 +12,8 @@ import {
 } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-v420-simple-direct-tus';
-const SCHEMA_VERSION = 'simple-ai-spot-v5-compact';
+const PROMPT_VERSION = 'klinikiq-v423-complete-visible-stem';
+const SCHEMA_VERSION = 'simple-ai-spot-v7-compact';
 const TASK_NAME = 'tusSpotQuestion';
 
 const ALLOWED_BRANCHES = [
@@ -31,8 +30,6 @@ const ALLOWED_BRANCHES = [
   'Histoloji ve Embriyoloji',
   'Küçük Stajlar',
 ];
-
-const RESIDUE_PATTERN = /\b(?:A feedback|B feedback|C feedback|D feedback|E feedback|TUS ipucu\.?|öğrenme hedefi\s*:|hedeflenen ayırıcı\s*:|kısıtlama\s*:|gereken klinik soru\s*:|ek klinik verilerde|tetkik ve destekleyici bulgularda)\b/iu;
 
 function sendJson(response, status, payload) {
   response.statusCode = status;
@@ -67,7 +64,6 @@ function cleanText(value = '') {
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .replace(/([,;:!?])(?=\S)/g, '$1 ')
-    .replace(/(?:\.\.\.|…)+/g, '')
     .trim();
 }
 
@@ -86,6 +82,13 @@ function asArray(value) {
   return Array.isArray(value) ? value : [value];
 }
 
+function chooseBranch(value = '') {
+  const rawValue = Array.isArray(value) ? value[0] : value;
+  const raw = cleanText(rawValue || '');
+  if (!raw || /^(random|rastgele)$/iu.test(raw)) return ALLOWED_BRANCHES[Math.floor(Math.random() * ALLOWED_BRANCHES.length)];
+  return ALLOWED_BRANCHES.find((branch) => normalize(branch) === normalize(raw)) || raw;
+}
+
 function ensureSentence(value = '') {
   const text = cleanText(value).replace(/[\s,;:]+$/u, '');
   if (!text) return '';
@@ -96,43 +99,6 @@ function ensureQuestion(value = '') {
   const text = cleanText(value).replace(/[\s,;:.]+$/u, '');
   if (!text) return 'Bu olguda en uygun seçenek hangisidir?';
   return /\?$/u.test(text) ? text : `${text}?`;
-}
-
-function stripResidue(value = '') {
-  return cleanText(value)
-    .replace(/^\s*[A-E]\s*\)\s*[A-E]\s*\)?\s*/iu, '')
-    .replace(/^\s*[A-E]\s+feedback\s*[:：.-]?\s*/iu, '')
-    .replace(/\b(?:öğrenme hedefi|hedeflenen ayırıcı|kısıtlama|gereken klinik soru)\s*[:：][^.?!]*(?:[.?!]|$)/giu, ' ')
-    .replace(/\b(?:Ek klinik verilerde|Tetkik ve destekleyici bulgularda)\s*[:：]?\s*/giu, '')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-function standardizeTurkishMedicalText(value = '') {
-  let text = stripResidue(value);
-  const replacements = [
-    [/\byonlendirme\b/giu, 'yönlendirme'], [/\byonlendir/giu, 'yönlendir'],
-    [/\blife[-\s]?threatening\b/giu, 'yaşamı tehdit eden'], [/\bstemde\b/giu, 'soru kökünde'],
-    [/\btherapeutic\b/giu, 'terapötik'], [/\bvaginal\b/giu, 'vajinal'], [/\bkontraendike\b/giu, 'kontrendike'],
-    [/\birreversibl\b/giu, 'geri dönüşümsüz'], [/\bchylomikron\b/giu, 'şilomikron'], [/\bchylomicron\b/giu, 'şilomikron'],
-    [/\bacinar\b/giu, 'asiner'], [/\bchemoresept[oö]r\b/giu, 'kemoreseptör'], [/\bkemoreseptor\b/giu, 'kemoreseptör'],
-    [/\bcavern[oö]z\b/giu, 'kavernöz'], [/\bkranial\b/giu, 'kraniyal'], [/\btubul(?:us)?\b/giu, 'tübül'],
-    [/\bglomerul\b/giu, 'glomerül'], [/\bdiffus\b/giu, 'diffüz'], [/\bembryolojik\b/giu, 'embriyolojik'],
-    [/\binfeksiyon\b/giu, 'enfeksiyon'], [/\bakciğusda\b/giu, 'akciğerde'], [/\bprofılaktik\b/giu, 'profilaktik'],
-    [/\bcontrastli\b/giu, 'kontrastlı'], [/\banjiografi\b/giu, 'anjiyografi'], [/\bnöral krista\b/giu, 'nöral krest'],
-    [/\bintraivazöz\b/giu, 'intravenöz'], [/\baktiv\b/giu, 'aktif'], [/\bintraabdomenel\b/giu, 'intraabdominal'],
-    [/\blaparatomi\b/giu, 'laparotomi'], [/\bspesifiktedir\b/giu, 'spesifiktir'], [/\bgösterür\b/giu, 'gösterir'],
-    [/\btoplumsal kazanımlı pnömoni\b/giu, 'toplum kökenli pnömoni'], [/\bbilinç bulan hasta\b/giu, 'bilinci bulanık hasta'],
-  ];
-  replacements.forEach(([pattern, replacement]) => { text = text.replace(pattern, replacement); });
-  return cleanText(text);
-}
-
-function chooseBranch(value = '') {
-  const rawValue = Array.isArray(value) ? value[0] : value;
-  const raw = cleanText(rawValue || '');
-  if (!raw || /^(random|rastgele)$/iu.test(raw)) return ALLOWED_BRANCHES[Math.floor(Math.random() * ALLOWED_BRANCHES.length)];
-  return ALLOWED_BRANCHES.find((branch) => normalize(branch) === normalize(raw)) || raw;
 }
 
 function isEmptyLike(value = '') {
@@ -154,54 +120,15 @@ function compactItems(items = [], max = 8) {
       label = item.label || item.name || item.parameter || item.title || '';
       value = item.value || item.result || item.text || '';
     }
-    label = standardizeTurkishMedicalText(label);
-    value = standardizeTurkishMedicalText(value);
-    if (isEmptyLike(label) || isEmptyLike(value) || RESIDUE_PATTERN.test(`${label} ${value}`)) return;
+    label = cleanText(label);
+    value = cleanText(value);
+    if (isEmptyLike(label) || isEmptyLike(value)) return;
     const key = normalize(`${label} ${value}`);
     if (seen.has(key)) return;
     seen.add(key);
     out.push({ label, value });
   });
   return out.slice(0, max);
-}
-
-function splitSentences(text = '') {
-  return cleanText(text).split(/(?<=[.!?])\s+/u).map((item) => item.trim()).filter(Boolean);
-}
-
-function looksLikeObjectiveSentence(sentence = '') {
-  const text = cleanText(sentence);
-  if (!text) return false;
-  if (/^(?:ek klinik verilerde|tetkik ve destekleyici bulgularda|laboratuvar|tetkiklerde|vital bulgu|serum|idrar|plazma|bt|mr|mri|usg|ekg|transvajinal|β-hcg|hcg)\b/iu.test(text)) return true;
-  const hasUnit = /\b(?:mmol\/L|mEq\/L|mOsm\/kg|IU\/L|mg\/dL|ng\/mL|mmHg|%|cm|mm)\b/iu.test(text);
-  const hasDataWord = /\b(?:serum|idrar|plazma|laktat|sodyum|osmolalite|trigliserid|troponin|hcg|β-hcg|bt|mr|mri|usg|ekg|doppler|kortizol|acth|renin|aldosteron)\b/iu.test(text);
-  return hasUnit && hasDataWord;
-}
-
-function parseObjectiveSentence(sentence = '') {
-  const cleaned = standardizeTurkishMedicalText(sentence)
-    .replace(/^(?:ek klinik verilerde|tetkik ve destekleyici bulgularda|laboratuvar verileri|tetkiklerde|vital bulgu(?:lar)?|ek klinik veri)\s*[:：]?\s*/iu, '')
-    .replace(/[.?!]$/u, '');
-  return cleaned.split(/;|,(?=\s*(?:serum|idrar|plazma|kan|bt|mr|mri|usg|ekg|transvajinal|vital|servikal|troponin|laktat|hcg|β-hcg)\b)/iu)
-    .map((part) => part.trim())
-    .filter(Boolean)
-    .map((part) => {
-      const colon = part.match(/^([^:：=]{2,60})\s*[:：=]\s*(.+)$/u);
-      if (colon) return { label: colon[1], value: colon[2] };
-      const unit = part.match(/^(.{2,60}?)\s+([-+]?\d[\d.,]*\s*(?:mmol\/L|mEq\/L|mOsm\/kg|IU\/L|mg\/dL|ng\/mL|mmHg|%|cm|mm)\b.*)$/iu);
-      if (unit) return { label: unit[1], value: unit[2] };
-      return { label: 'Veri', value: part };
-    });
-}
-
-function separateStemAndData(stem = '', currentData = []) {
-  const story = [];
-  const extracted = [];
-  splitSentences(stem).forEach((sentence) => {
-    if (looksLikeObjectiveSentence(sentence)) extracted.push(...parseObjectiveSentence(sentence));
-    else story.push(sentence);
-  });
-  return { storyText: story.join(' '), objectiveData: compactItems([...currentData, ...extracted], 10) };
 }
 
 function normalizeOptions(raw = []) {
@@ -213,7 +140,7 @@ function normalizeOptions(raw = []) {
   return OPTION_IDS.map((id, index) => {
     const source = arr.find((item) => typeof item === 'object' && String(item?.id || '').toUpperCase() === id) ?? arr[index];
     const rawText = typeof source === 'string' ? source : source?.text || source?.label || source?.value || '';
-    const text = standardizeTurkishMedicalText(rawText).replace(/^\s*[A-E]\s*\)\s*/iu, '').trim();
+    const text = cleanText(rawText).replace(/^\s*[A-E]\s*\)\s*/iu, '').trim();
     return { id, text };
   }).filter((option) => option.text);
 }
@@ -236,8 +163,8 @@ function feedbackObject(rawFeedback = [], correctId = 'A', explanation = '') {
   return OPTION_IDS.reduce((acc, id, index) => {
     const fallback = id === correctId
       ? explanation
-      : 'Bu seçenek klinik olarak düşünülebilir; ancak olgudaki ayırt ettirici ipuçları doğru cevabı desteklemez.';
-    acc[id] = ensureSentence(standardizeTurkishMedicalText(arr[index] || fallback));
+      : 'Bu seçenek klinik olarak düşünülebilir; ancak olgudaki gerekçeler doğru cevabı daha güçlü destekler.';
+    acc[id] = ensureSentence(cleanText(arr[index] || fallback));
     return acc;
   }, {});
 }
@@ -257,43 +184,62 @@ function parseModelJson(text = '') {
   try {
     return JSON.parse(candidate);
   } catch {
-    return JSON.parse(candidate.replace(/,\s*([}\]])/g, '$1').replace(/[\u0000-\u001F\u007F]+/g, ' '));
+    const repaired = candidate
+      .replace(/,\s*([}\]])/g, '$1')
+      .replace(/[\u0000-\u001F\u007F]+/g, ' ');
+    return JSON.parse(repaired);
   }
 }
 
-function normalizeGeneratedQuestion(rawPayload = {}, { branch, difficulty, model, mode } = {}) {
-  const payload = rawPayload?.question && typeof rawPayload.question === 'object' ? rawPayload.question : rawPayload;
-  let compactVitals = compactItems(payload.cv || payload.compactVitals || payload.vitals || [], 5);
-  let compactObjectiveData = compactItems(payload.co || payload.compactObjectiveData || payload.objectiveData || [], 10);
-  const separated = separateStemAndData(payload.s || payload.stem || '', compactObjectiveData);
-  compactObjectiveData = separated.objectiveData;
 
-  const stemSource = separated.storyText || payload.s || payload.stem || '';
-  const stem = ensureSentence(standardizeTurkishMedicalText(stemSource));
+function formatPanelDataForStem(items = []) {
+  const parts = asArray(items)
+    .map((item) => `${cleanText(item.label)}: ${cleanText(item.value)}`.trim())
+    .filter((item) => item && !/^[:：]$/u.test(item));
+  return parts.join('; ');
+}
+
+function addVisibleDataToStem(stem = '', compactVitals = [], compactObjectiveData = []) {
+  let text = cleanText(stem);
+  const normalizedStem = normalize(text);
+  const missingItems = [...asArray(compactVitals), ...asArray(compactObjectiveData)].filter((item) => {
+    const label = normalize(item?.label || '');
+    const value = normalize(item?.value || '');
+    if (!label || !value) return false;
+    return !(normalizedStem.includes(label) && normalizedStem.includes(value));
+  });
+  const dataLine = formatPanelDataForStem(missingItems);
+  if (dataLine) text = `${text} Değerlendirmede ${dataLine} saptanır.`;
+  return text;
+}
+
+function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, mode } = {}) {
+  const compactVitals = compactItems(payload.cv || payload.compactVitals || payload.vitals || [], 5);
+  const compactObjectiveData = compactItems(payload.co || payload.compactObjectiveData || payload.objectiveData || [], 8);
   const options = normalizeOptions(payload.o || payload.options);
   const correctAnswer = resolveCorrectId(payload, options);
-  const explanation = ensureSentence(standardizeTurkishMedicalText(payload.e || payload.explanation || ''));
+  const explanation = ensureSentence(cleanText(payload.e || payload.explanation || ''));
 
   return {
     id: `ai-spot-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-    relatedBranch: standardizeTurkishMedicalText(payload.b || payload.relatedBranch || branch),
+    relatedBranch: cleanText(payload.b || payload.relatedBranch || branch),
     difficulty: normalizeDifficulty(payload.d || payload.difficulty || difficulty),
-    learningTarget: standardizeTurkishMedicalText(payload.lt || payload.learningTarget || ''),
+    learningTarget: cleanText(payload.lt || payload.learningTarget || ''),
     answerTarget: cleanText(payload.at || payload.answerTarget || 'diagnosis'),
-    demographics: standardizeTurkishMedicalText(payload.dem || payload.demographics || ''),
-    setting: standardizeTurkishMedicalText(payload.set || payload.setting || ''),
-    chiefComplaint: standardizeTurkishMedicalText(payload.cc || payload.chiefComplaint || ''),
-    stem,
+    demographics: cleanText(payload.dem || payload.demographics || ''),
+    setting: cleanText(payload.set || payload.setting || ''),
+    chiefComplaint: cleanText(payload.cc || payload.chiefComplaint || ''),
+    stem: ensureSentence(addVisibleDataToStem(payload.s || payload.stem || '', compactVitals, compactObjectiveData)),
     compactVitals,
     compactObjectiveData,
-    question: ensureQuestion(standardizeTurkishMedicalText(payload.q || payload.question || '')),
+    question: ensureQuestion(cleanText(payload.q || payload.question || '')),
     options,
     correctAnswer,
     explanation,
     wrongOptionFeedback: feedbackObject(payload.f || payload.wrongOptionFeedback || payload.optionFeedback || {}, correctAnswer, explanation),
-    evidenceChain: asArray(payload.k || payload.evidenceChain).map(standardizeTurkishMedicalText).filter(Boolean).slice(0, 2),
-    examPearl: ensureSentence(standardizeTurkishMedicalText(payload.p || payload.examPearl || '')),
-    managementSteps: asArray(payload.m || payload.managementSteps).map(standardizeTurkishMedicalText).filter(Boolean).slice(0, 3),
+    evidenceChain: asArray(payload.k || payload.evidenceChain).map(cleanText).filter(Boolean).slice(0, 2),
+    examPearl: ensureSentence(cleanText(payload.p || payload.examPearl || '')),
+    managementSteps: asArray(payload.m || payload.managementSteps).map(cleanText).filter(Boolean).slice(0, 3),
     provider: 'openai',
     openAIModel: model || '',
     openAIMode: mode || '',
@@ -383,7 +329,7 @@ async function callOpenAI(prompt) {
   const model = resolveModelForScope('TUS');
   const baseUrl = (process.env.TUS_OPENAI_BASE_URL || process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
   const timeoutMs = envNumber('TUS_OPENAI_PER_REQUEST_TIMEOUT_MS', envNumber('OPENAI_PER_REQUEST_TIMEOUT_MS', 75000));
-  const outputLimit = envNumber('TUS_OPENAI_MAX_OUTPUT_TOKENS', envNumber('OPENAI_MAX_OUTPUT_TOKENS', 1100));
+  const outputLimit = envNumber('TUS_OPENAI_MAX_OUTPUT_TOKENS', envNumber('OPENAI_MAX_OUTPUT_TOKENS', 1000));
   const explicitStyle = process.env.TUS_OPENAI_API_STYLE || process.env.OPENAI_API_STYLE || '';
   const useResponses = shouldUseResponsesApi(model, explicitStyle);
   const style = useResponses ? 'responses' : 'chat';
@@ -460,14 +406,13 @@ export default async function handler(request, response) {
 
   const branch = chooseBranch(body.branchFilter || body.branch || 'Rastgele');
   const difficulty = normalizeDifficulty(body.difficulty || body.requestedDifficulty || body.aiDifficulty || 'Orta');
-  const recentCompact = buildRecentCompact(asArray(body.recentQuestionSummaries).slice(0, 8));
-  const prompt = buildUserPrompt({
-    branch,
-    target: body.target || body.answerTarget || '',
-    difficulty,
-    recentCompact,
-    antiRepeatNonce: body.antiRepeatNonce || body.requestId || `${Date.now()}`,
-  });
+
+  // V423: no topic/disease/test steering is sent to the model.
+  // The prompt intentionally ignores target, answerTarget, recentQuestionSummaries,
+  // antiRepeatNonce and any previous-question content so the selected branch remains
+  // the only medical direction. The only added safety is display completeness:
+  // if the model uses cv/co fields, the same critical data is also visible in stem.
+  const prompt = buildUserPrompt({ branch, difficulty });
 
   try {
     const result = await callOpenAI(prompt);
