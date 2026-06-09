@@ -1,4 +1,4 @@
-// KlinikIQ V429 — visible complete stem TUS prompt
+// KlinikIQ V430 — visible complete stem TUS prompt + json input fix
 // Purpose: simple TUS generation; the visible question stem must contain the solving evidence.
 
 function cleanText(value = '') {
@@ -30,5 +30,5 @@ JSON alanları:
 export function buildUserPrompt({ branch, difficulty = 'Orta' } = {}) {
   const branchText = cleanText(branch || 'Rastgele');
   const selectedDifficulty = normalizeDifficulty(difficulty);
-  return `Branş: ${branchText}\nZorluk: ${selectedDifficulty}\n\nBu branşa uygun, bilimsel ve öğretici bir TUS sorusu üret. b alanı "${branchText}" olsun. Soru kökü tek başına çözülebilir ve kullanıcıya görünen tam klinik metin olsun.`;
+  return `Branş: ${branchText}\nZorluk: ${selectedDifficulty}\n\nBu branşa uygun, bilimsel ve öğretici bir TUS sorusu üret. Geçerli JSON döndür. b alanı "${branchText}" olsun. Soru kökü tek başına çözülebilir ve kullanıcıya görünen tam klinik metin olsun.`;
 }

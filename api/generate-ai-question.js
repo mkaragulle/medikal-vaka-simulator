@@ -12,7 +12,7 @@ import {
 } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-v428-simple-professional-tus-prompt';
+const PROMPT_VERSION = 'klinikiq-v430-json-input-visible-stem';
 const SCHEMA_VERSION = 'simple-ai-spot-v7-compact';
 const TASK_NAME = 'tusSpotQuestion';
 
