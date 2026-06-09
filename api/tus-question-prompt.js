@@ -1,4 +1,4 @@
-// KlinikIQ V434 — ultra-compact professional TUS prompt
+// KlinikIQ V435 — ultra-compact professional TUS prompt
 // Goal: minimal tokens, visible evidence, clean feedback, no topic steering.
 
 function cleanText(value = '') {

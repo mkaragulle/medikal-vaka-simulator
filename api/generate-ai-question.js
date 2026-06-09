@@ -6,7 +6,7 @@ import {
 import { envNumber, logAIUsage, resolveModelForScope } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-v434-root-cause-min-token';
+const PROMPT_VERSION = 'klinikiq-v435-model-param-safe-min-token';
 const SCHEMA_VERSION = 'simple-ai-spot-v10-ultra-minimal';
 const TASK_NAME = 'tusSpotQuestion';
 
@@ -324,13 +324,6 @@ function createAbortSignal(timeoutMs) {
   return { signal: controller.signal, cancel: () => clearTimeout(timeout) };
 }
 
-function samplingParams() {
-  return {
-    temperature: Number(process.env.TUS_OPENAI_TEMPERATURE || process.env.OPENAI_TEMPERATURE || 0.9),
-    top_p: Number(process.env.TUS_OPENAI_TOP_P || process.env.OPENAI_TOP_P || 0.95),
-  };
-}
-
 async function callOpenAI(prompt) {
   const apiKey = process.env.TUS_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
   if (!apiKey) {
@@ -355,8 +348,6 @@ async function callOpenAI(prompt) {
           instructions: OPTIMIZED_TUS_SYSTEM_PROMPT,
           input: prompt,
           text: { format: { type: 'json_object' }, verbosity: 'low' },
-          temperature: Number(process.env.TUS_OPENAI_TEMPERATURE || process.env.OPENAI_TEMPERATURE || 0.9),
-          top_p: Number(process.env.TUS_OPENAI_TOP_P || process.env.OPENAI_TOP_P || 0.95),
           ...(modelSupportsReasoningEffort(model) ? { reasoning: { effort: 'low' } } : {}),
           max_output_tokens: outputLimit,
           store: false,
@@ -368,8 +359,6 @@ async function callOpenAI(prompt) {
             { role: 'user', content: prompt },
           ],
           response_format: { type: 'json_object' },
-          temperature: Number(process.env.TUS_OPENAI_TEMPERATURE || process.env.OPENAI_TEMPERATURE || 0.9),
-          top_p: Number(process.env.TUS_OPENAI_TOP_P || process.env.OPENAI_TOP_P || 0.95),
           max_completion_tokens: outputLimit,
           ...(modelSupportsReasoningEffort(model) ? { reasoning_effort: 'low' } : {}),
         };
