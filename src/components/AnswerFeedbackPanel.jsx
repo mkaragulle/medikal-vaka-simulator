@@ -162,7 +162,7 @@ function normalizeText(value = '') {
     .replace(/\bASİT\s*[-–—]?\s*baz\b/giu, 'Asit-baz')
     .replace(/\bASIT\s*[-–—]?\s*baz\b/giu, 'Asit-baz')
     .replace(/\bASİT\s*[-–—]?\s*BAZ\b/giu, 'Asit-baz')
-    .replace(/Bu seçenek, kökteki ana bulguları birlikte z\.?/giu, 'Kök bu seçeneği destekleyen beklenen paterni göstermiyor.')
+    .replace(/Bu seçenek,?\s*kökteki ana bulguları birlikte\s*z\.?/giu, 'Kökteki ayırıcı bulgular bu seçenekten çok doğru yanıta uyar.')
     .replace(/^\s*[A-E]\s*(?:geri\s*bildirim|feedback|gerekçe)\s*[:：.-]?\s*/giu, '')
     .replace(/\b(?:undefined|null|placeholder)\b/giu, '')
     .replace(/\s+/g, ' ')
@@ -796,7 +796,11 @@ function resolveAISpotOptionExplanation(clinicalCase = {}, optionText = '', fall
     getAISpotMapValue(clinicalCase.diagnosis?.answerFeedbackByOption, optionText, letter),
     fallback,
   ].filter(Boolean);
-  return mergeUniqueSentences(sources, 4, 760) || 'Bu seçenek için ayrıntılı açıklama eklenemedi.';
+  const merged = mergeUniqueSentences(sources, 3, 520);
+  if (/birlikte\s+z\.?$/iu.test(merged) || /ayrıntılı açıklama eklenemedi/iu.test(merged)) {
+    return 'Kökteki ayırıcı bulgular bu seçenekten çok doğru yanıta uyar.';
+  }
+  return merged || 'Kökteki ayırıcı bulgular bu seçenekten çok doğru yanıta uyar.';
 }
 
 function buildAISpotDetailedRows(clinicalCase = {}, selectedOption = '') {
@@ -865,7 +869,7 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, child
   const explanation = ensureSentence(normalizeText(clinicalCase.explanation || clinicalCase.diagnosis?.explanation || ''));
 
   return (
-    <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro ai-spot-detailed-feedback-panel ai-spot-detailed-feedback-panel-v433`} aria-live="polite">
+    <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro ai-spot-detailed-feedback-panel ai-spot-detailed-feedback-panel-v438`} aria-live="polite">
       <div className="ai-spot-detailed-feedback-shell ai-spot-detailed-feedback-shell-v246">
         <section className="ai-spot-feedback-section-card ai-spot-feedback-science-card ai-spot-feedback-science-card-v246">
           <header>

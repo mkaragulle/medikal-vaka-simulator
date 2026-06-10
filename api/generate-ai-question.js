@@ -6,8 +6,8 @@ import {
 import { envNumber, logAIUsage, resolveModelForScope } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-v437-skeleton-feedback-min-token';
-const SCHEMA_VERSION = 'simple-ai-spot-v12-skeleton-feedback';
+const PROMPT_VERSION = 'klinikiq-v438-smart-qc-min-token';
+const SCHEMA_VERSION = 'simple-ai-spot-v13-smart-qc';
 const TASK_NAME = 'tusSpotQuestion';
 
 const ALLOWED_BRANCHES = [
@@ -110,7 +110,17 @@ function normalizeMedicalTurkish(value = '') {
     .replace(/\btekrarlayan\s+laringeal\s+sinir\b/giu, 'rekürren laringeal sinir')
     .replace(/\bperitonitis\b/giu, 'peritonit')
     .replace(/\bCT[-\s]?angio\b/giu, 'BT anjiyografi')
-    .replace(/\bcil\s+laparotomi\b/giu, 'acil laparotomi');
+    .replace(/\bcil\s+laparotomi\b/giu, 'acil laparotomi')
+    .replace(/\bcreatinine\b/giu, 'kreatinin')
+    .replace(/\bhipokalseüri\b/giu, 'hipokalsiüri')
+    .replace(/\btubulus\b/giu, 'tübül')
+    .replace(/\bsupressed\s+renin\b/giu, 'baskılanmış renin')
+    .replace(/\bRetine\s+plasenta\b/giu, 'Retansiyone plasenta')
+    .replace(/\bretine\s+plasenta\b/giu, 'retansiyone plasenta')
+    .replace(/\blacerasyon\b/giu, 'laserasyon')
+    .replace(/\bmidline\b/giu, 'orta hatta')
+    .replace(/\bGenelize\b/gu, 'Yaygın')
+    .replace(/\bgenelize\b/giu, 'yaygın');
 }
 
 function cleanText(value = '') {
@@ -119,6 +129,7 @@ function cleanText(value = '') {
     .replace(/[‘’]/g, "'")
     .replace(/\u00a0/g, ' ')
     .replace(/```(?:json)?|```/giu, ' ')
+    .replace(/Bu seçenek,?\s*kökteki ana bulguları birlikte\s*z\.?/giu, ' ')
     .replace(/\b(?:Doğru\s+cevap|Seçimin|Açıklama)\s*[:：-]?\s*/giu, ' ')
     .replace(/\b[A-E]\s*(?:geri\s*bildirim|feedback|gerekçe)\s*[:：.-]?\s*/giu, ' ')
     .replace(/^\s*[A-E]\s*\)\s*(?:doğru|yanlış)\s*[:：.-]?\s*/iu, '')
@@ -189,7 +200,8 @@ function looksBrokenSentence(sentence = '') {
   if (!text) return true;
   const words = text.split(/\s+/u);
   const last = (words[words.length - 1] || '').replace(/[.!?]+$/u, '');
-  if (/\b(?:ve|veya|ile|için|olarak|fakat|ancak|çünkü|z)$/iu.test(last)) return true;
+  if (/\b(?:ve|veya|ile|için|olarak|fakat|ancak|çünkü|z|şeklinde|nedeniyle)$/iu.test(last)) return true;
+  if (/\bbirlikte\s+z\.?$/iu.test(text)) return true;
   if (last.length <= 1) return true;
   if (words.length < 3 && !/[.!?]$/u.test(text)) return true;
   if (/[,:;]\s*$/u.test(text)) return true;
@@ -230,15 +242,27 @@ function isBadFeedbackText(value = '') {
   if (!text) return true;
   if (/\b(?:geri bildirim|feedback|gerekçe|açıklama)\b/iu.test(text)) return true;
   if (/birlikte\s+z\.?$/iu.test(text) || /\bz\.?$/iu.test(text)) return true;
+  if (/Kök bu seçeneği destekleyen beklenen paterni göstermiyor/iu.test(text)) return true;
   if (/üretilemedi|placeholder|lorem|undefined|null/iu.test(text)) return true;
   if (norm.split(/\s+/u).length < 4) return true;
   return false;
 }
 
-function fallbackFeedback(id = '', correctId = '') {
+function extractKeyClues(visibleText = '') {
+  const text = cleanText(visibleText);
+  const chunks = text
+    .split(/(?<=[.!?;])\s+/u)
+    .map((item) => cleanText(item).replace(/[.;:]+$/u, ''))
+    .filter((item) => /\d|düşük|yüksek|artmış|azalmış|pozitif|negatif|hipo|hiper|asidoz|alkaloz|keton|laktat|glukoz|kreatinin|kan basıncı|peritonit|sert|normal|BT|MR|USG|idrar|serum|plazma|trombosit|lenfosit|kalsiüri|magnezemi|hipokalsiüri|hipomagnezemi/iu.test(item))
+    .slice(0, 2);
+  return chunks.length ? chunks.join('; ') : 'Kökteki ayırıcı bulgular';
+}
+
+function fallbackFeedback(id = '', correctId = '', visibleText = '') {
+  const clues = extractKeyClues(visibleText);
   return id === correctId
-    ? 'Kökteki ayırt edici bulgular bu cevabı destekler.'
-    : 'Kök bu seçeneği destekleyen beklenen paterni göstermiyor.';
+    ? `${clues} bu cevabı destekler.`
+    : `${clues} bu seçenekten çok doğru yanıta uyar.`;
 }
 
 function compactReason(value = '') {
@@ -249,10 +273,7 @@ function compactReason(value = '') {
 
 function composeFeedback(id = '', correctId = '', reason = '') {
   const r = compactReason(reason);
-  if (id === correctId) {
-    return ensureSentence(r || 'Kökteki ayırt edici bulgular bu cevabı destekler');
-  }
-  return ensureSentence(r || 'Kök bu seçeneği destekleyen beklenen paterni göstermiyor');
+  return r ? ensureSentence(r) : '';
 }
 
 
@@ -323,12 +344,13 @@ function feedbackObject(rawReasons = [], correctId = 'A', explanation = '', opti
     : asArray(rawReasons);
   return OPTION_IDS.reduce((acc, id, index) => {
     const option = options.find((item) => item.id === id) || { id, text: '' };
+    const fallback = fallbackFeedback(id, correctId, visibleText);
     let reason = source[index] || '';
     if (!reason && id === correctId) reason = explanation;
     let text = composeFeedback(id, correctId, reason);
-    if (detectFeedbackDrift(text, option, options)) text = fallbackFeedback(id, correctId);
-    text = pruneUnsupportedEvidence(text, visibleText, fallbackFeedback(id, correctId));
-    if (isBadFeedbackText(text)) text = fallbackFeedback(id, correctId);
+    if (detectFeedbackDrift(text, option, options)) text = fallback;
+    text = pruneUnsupportedEvidence(text, visibleText, fallback);
+    if (isBadFeedbackText(text)) text = fallback;
     acc[id] = ensureSentence(text);
     return acc;
   }, {});
@@ -387,7 +409,7 @@ function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, m
   const stem = ensureSentence(cleanBrokenSentences(uniqueSentences(addVisibleDataToStem(payload.s || payload.stem || '', vitals, objective)), 5));
   const visibleText = [stem, ...options.map((option) => option.text)].join(' ');
   const explanationRaw = payload.e || payload.explanation || '';
-  const explanation = ensureSentence(pruneUnsupportedEvidence(cleanBrokenSentences(explanationRaw, 2), visibleText, 'Kökteki ayırt edici bulgular doğru cevabı destekler.'));
+  const explanation = ensureSentence(pruneUnsupportedEvidence(cleanBrokenSentences(explanationRaw, 2), visibleText, `${extractKeyClues(visibleText)} doğru cevabı destekler.`));
   const reasonSource = payload.r || payload.reasons || payload.f || payload.wrongOptionFeedback || payload.optionFeedback || {};
   const feedback = feedbackObject(reasonSource, correctAnswer, explanation, options, visibleText);
   return {
@@ -415,7 +437,7 @@ function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, m
     openAIMode: mode || '',
     promptVersion: PROMPT_VERSION,
     schemaVersion: SCHEMA_VERSION,
-    aiMeta: { provider: 'openai', remote: true, fallback: false, simplified: true, skeletonFeedback: true, deterministicQC: true },
+    aiMeta: { provider: 'openai', remote: true, fallback: false, simplified: true, skeletonFeedback: true, deterministicQC: true, smartClueFallback: true },
   };
 }
 
@@ -554,7 +576,11 @@ export default async function handler(request, response) {
 
   const branch = chooseBranch(body.branchFilter || body.branch || 'Rastgele');
   const difficulty = normalizeDifficulty(body.difficulty || body.requestedDifficulty || body.aiDifficulty || 'Orta');
-  const prompt = buildUserPrompt({ branch, difficulty, variationSeed: Math.random().toString(36).slice(2, 8) });
+  const recentCorrects = asArray(body.recentCorrects || body.recentAnswers || [])
+    .map(cleanText)
+    .filter(Boolean)
+    .slice(0, 4);
+  const prompt = buildUserPrompt({ branch, difficulty, variationSeed: Math.random().toString(36).slice(2, 8), recentCorrects });
 
   try {
     const result = await callOpenAI(prompt);

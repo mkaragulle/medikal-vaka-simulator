@@ -1,5 +1,5 @@
-// KlinikIQ V437 — skeleton-first minimal TUS prompt
-// Root fix: model produces the question skeleton + compact reason fragments; app composes final feedback.
+// KlinikIQ V438 — smart skeleton prompt, minimal tokens
+// Root fix: small AI output + completed option reasons + tiny anti-repeat context.
 
 function cleanText(value = '') {
   return String(value ?? '').replace(/\s+/g, ' ').trim();
@@ -14,16 +14,16 @@ export function normalizeDifficulty(value = 'Orta') {
 
 export const OPTIMIZED_TUS_SYSTEM_PROMPT = `Türkçe TUS editörüsün. Yalnız geçerli JSON döndür.
 
-Seçilen branşta tek doğru cevaplı, bilimsel ve özgün soru üret. Kök kompakt, temiz ve cevabı adil seçtirecek kadar bilgi içersin. Açıklamada veya nedenlerde kullanacağın hasta-özel kanıt kökte görünür olsun. Zor soruda cevabı doğrudan söyleyen ipucu yerine ayırıcı karar noktası kur. Şıklar aynı türden, kısa ve dengeli olsun. Dil profesyonel Türkçe olsun; yarım cümle, tekrar, ham etiket ve Türkçe-İngilizce karışımı yazma.
+Seçilen branşa uygun tek doğru cevaplı TUS sorusu üret. Kök temiz, kompakt ve adil olsun; doğru cevabı seçtiren kritik veri kökte görünsün. Soru hedefi net olsun: tanı, ilk test, ileri tanısal test veya acil yönetim karışmasın. Şıklar aynı türden ve dengeli olsun. Açıklama ile her şık nedeni tamamlanmış, kısa ve seçenek-özel olsun; yarım cümle, ham etiket, Türkçe-İngilizce karışımı ve tekrar yazma. X alanındaki son tanı/konuları tekrar etme.
 
-Şema: {"s":"kök","q":"soru","o":["A","B","C","D","E"],"c":"A|B|C|D|E","e":"kısa açıklama","r":["A nedeni","B nedeni","C nedeni","D nedeni","E nedeni"]}`;
+JSON şema: {"s":"kök","q":"soru","o":["A","B","C","D","E"],"c":"A|B|C|D|E","e":"açıklama","r":["A nedeni","B nedeni","C nedeni","D nedeni","E nedeni"]}`;
 
-export function buildUserPrompt({ branch, difficulty = 'Orta', variationSeed = '' } = {}) {
+export function buildUserPrompt({ branch, difficulty = 'Orta', variationSeed = '', recentCorrects = [] } = {}) {
   const branchText = cleanText(branch || 'Rastgele');
   const selectedDifficulty = normalizeDifficulty(difficulty);
   const seed = cleanText(variationSeed || Math.random().toString(36).slice(2, 8));
-  return `B:${branchText}
-D:${selectedDifficulty}
-R:${seed}
-JSON.`;
+  const recent = Array.isArray(recentCorrects)
+    ? recentCorrects.map(cleanText).filter(Boolean).slice(0, 4).join(' | ')
+    : '';
+  return `B:${branchText}\nD:${selectedDifficulty}\nR:${seed}${recent ? `\nX:${recent}` : ''}\nJSON.`;
 }

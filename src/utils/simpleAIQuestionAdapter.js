@@ -57,28 +57,47 @@ function isBadFeedbackText(value = '') {
   if (!text) return true;
   if (/\b(?:geri bildirim|feedback|gerekçe|açıklama)\b/iu.test(text)) return true;
   if (/birlikte\s+z\.?$/iu.test(text) || /\bz\.?$/iu.test(text)) return true;
+  if (/Kök bu seçeneği destekleyen beklenen paterni göstermiyor/iu.test(text)) return true;
   if (/üretilemedi|placeholder|undefined|null/iu.test(text)) return true;
   return normalizeForCompare(text).split(/\s+/u).length < 4;
 }
 
-function fallbackFeedback(id = '', correctId = '') {
+function extractKeyClues(stem = '') {
+  const chunks = cleanText(stem)
+    .split(/(?<=[.!?;])\s+/u)
+    .map((item) => cleanText(item).replace(/[.;:]+$/u, ''))
+    .filter((item) => /\d|düşük|yüksek|artmış|azalmış|pozitif|negatif|hipo|hiper|asidoz|alkaloz|keton|laktat|glukoz|kreatinin|kan basıncı|peritonit|sert|normal|BT|MR|USG|idrar|serum|plazma|trombosit|lenfosit|kalsiüri|magnezemi|hipokalsiüri|hipomagnezemi/iu.test(item))
+    .slice(0, 2);
+  return chunks.length ? chunks.join('; ') : 'Kökteki ayırıcı bulgular';
+}
+
+function fallbackFeedback(id = '', correctId = '', stem = '') {
+  const clues = extractKeyClues(stem);
   return id === correctId
-    ? 'Kökteki ayırt edici bulgular bu cevabı destekler.'
-    : 'Kök bu seçeneği destekleyen beklenen paterni göstermiyor.';
+    ? `${clues} bu cevabı destekler.`
+    : `${clues} bu seçenekten çok doğru yanıta uyar.`;
 }
 
 function cleanFeedback(value = '') {
   return cleanText(value)
+    .replace(/creatinine/giu, 'kreatinin')
+    .replace(/hipokalseüri/giu, 'hipokalsiüri')
+    .replace(/tubulus/giu, 'tübül')
+    .replace(/supressed renin/giu, 'baskılanmış renin')
+    .replace(/Retine plasenta/giu, 'Retansiyone plasenta')
+    .replace(/lacerasyon/giu, 'laserasyon')
+    .replace(/midline/giu, 'orta hatta')
+    .replace(/Genelize/giu, 'yaygın')
     .replace(/^\s*[A-E]\s*\)?\s*(?:geri\s*bildirim|feedback|gerekçe)\s*[:：.-]?\s*/iu, '')
     .replace(/^\s*[A-E]\s*\)\s*(?:doğru|yanlış)\s*[:：.-]?\s*/iu, '')
     .replace(/^\s*(?:doğru|yanlış|seçimin|doğru\s+cevap|açıklama)\s*[:：.-]?\s*/iu, '')
-    .replace(/Bu seçenek, kökteki ana bulguları birlikte z\.?/giu, 'Kök bu seçeneği destekleyen beklenen paterni göstermiyor.')
+    .replace(/Bu seçenek,?\s*kökteki ana bulguları birlikte\s*z\.?/giu, ' ')
     .trim();
 }
 
-function composeFeedback(id = '', correctId = '', value = '') {
+function composeFeedback(id = '', correctId = '', value = '', stem = '') {
   const cleaned = ensureSentence(cleanFeedback(value));
-  return isBadFeedbackText(cleaned) ? fallbackFeedback(id, correctId) : cleaned;
+  return isBadFeedbackText(cleaned) ? fallbackFeedback(id, correctId, stem) : cleaned;
 }
 
 function normalizeDifficulty(value = 'Orta') {
@@ -108,13 +127,13 @@ function resolveCorrectOption(options = [], rawCorrect = '') {
   return options.find((option) => normalizeForCompare(option.text) === wanted) || null;
 }
 
-function feedbackMap(raw = {}, correctId = 'A', explanation = '') {
+function feedbackMap(raw = {}, correctId = 'A', explanation = '', stem = '') {
   const source = Array.isArray(raw)
     ? raw
     : OPTION_IDS.map((id) => raw?.[id] || raw?.[id.toLowerCase()] || raw?.[`option${id}`] || '');
   return OPTION_IDS.reduce((acc, id, index) => {
     const value = source[index] || (id === correctId ? explanation : '');
-    acc[id] = ensureSentence(composeFeedback(id, correctId, value));
+    acc[id] = ensureSentence(composeFeedback(id, correctId, value, stem));
     return acc;
   }, {});
 }
@@ -142,8 +161,8 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   const options = normalizeOptions(payload.options || payload.o || []);
   const correctOption = resolveCorrectOption(options, payload.correctAnswer || payload.c || payload.answer || '') || options[0] || { id: 'A', text: '' };
   const explanation = ensureSentence(payload.explanation || payload.e || '');
-  const optionRationales = feedbackMap(payload.wrongOptionFeedback || payload.optionFeedback || payload.r || payload.reasons || payload.f || {}, correctOption.id, explanation);
   const stem = ensureSentence(payload.stem || payload.s || '');
+  const optionRationales = feedbackMap(payload.wrongOptionFeedback || payload.optionFeedback || payload.r || payload.reasons || payload.f || {}, correctOption.id, explanation, stem);
   const branch = cleanText(payload.relatedBranch || payload.branch || payload.b || meta.branchFilter || 'TUS');
   const difficulty = normalizeDifficulty(payload.difficulty || payload.d || meta.difficulty || 'Orta');
   const correctText = cleanText(correctOption.text);

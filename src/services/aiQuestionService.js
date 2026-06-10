@@ -1,4 +1,4 @@
-import { rememberAIQuestion } from '../utils/aiQuestionHistory.js';
+import { buildRecentQuestionContext, rememberAIQuestion } from '../utils/aiQuestionHistory.js';
 import { createSimpleFallbackQuestion, normalizeSimpleAIQuestion } from '../utils/simpleAIQuestionAdapter.js';
 
 const runtimeEnv = import.meta.env || {};
@@ -43,7 +43,7 @@ async function fetchRemoteQuestion({ previousQuestionId, branchFilter, difficult
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       signal: controller.signal,
-      body: JSON.stringify({ previousQuestionId, branchFilter, difficulty }),
+      body: JSON.stringify({ previousQuestionId, branchFilter, difficulty, recentCorrects: buildRecentQuestionContext(6).recentQuestionSummaries.map((item) => item.correct).filter(Boolean).slice(0, 4) }),
     });
 
     let payload = null;
@@ -131,5 +131,5 @@ export async function createAIQuestion({ previousQuestionId = null, branchFilter
 }
 
 export function getAIServiceMode() {
-  return ENABLE_REAL_AI ? 'openai-skeleton-feedback-v437' : 'real-ai-disabled';
+  return ENABLE_REAL_AI ? 'openai-smart-qc-v438' : 'real-ai-disabled';
 }
