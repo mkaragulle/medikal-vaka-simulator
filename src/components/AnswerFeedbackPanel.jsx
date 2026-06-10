@@ -159,19 +159,6 @@ function normalizeMedicalAbbreviations(value = '') {
 
 function normalizeText(value = '') {
   return normalizeMedicalAbbreviations(repairAIGeneratedText(String(value ?? ''), { fallback: String(value ?? '') }))
-    .replace(/\bacil\s*[-‑]?\s*CoA\b/giu, 'açil-CoA')
-    .replace(/\bcreatinine\b/giu, 'kreatinin')
-    .replace(/\bhipokalseüri\b/giu, 'hipokalsiüri')
-    .replace(/\bdistal\s+tubulus(?:ta)?\b/giu, (m) => /ta$/iu.test(m) ? 'distal tübülde' : 'distal tübül')
-    .replace(/\bsupressed\s+renin\b/giu, 'baskılanmış renin')
-    .replace(/\blacerasyon\b/giu, 'laserasyon')
-    .replace(/\bRetine\s+plasenta\b/giu, 'Retansiyone plasenta')
-    .replace(/\bretine\s+plasenta\b/giu, 'retansiyone plasenta')
-    .replace(/\bmidline\b/giu, 'orta hatta')
-    .replace(/\bGenelize\b/g, 'Yaygın')
-    .replace(/\bgenelize\b/giu, 'yaygın')
-    .replace(/\bserum\s+Ca(?:2\+)?\s+normal\b/giu, 'serum kalsiyumu normal')
-    .replace(/\s+\.\s*\(/g, ' (')
     .replace(/\bASİT\s*[-–—]?\s*baz\b/giu, 'Asit-baz')
     .replace(/\bASIT\s*[-–—]?\s*baz\b/giu, 'Asit-baz')
     .replace(/\bASİT\s*[-–—]?\s*BAZ\b/giu, 'Asit-baz')
@@ -205,16 +192,15 @@ function containsAnswerLeak(text = '', correct = '') {
   return words.filter((word) => value.includes(word)).length >= Math.ceil(words.length * 0.8);
 }
 
-function singleSentence(value = '') {
-  return truncateSentence(value);
+function singleSentence(value = '', limit = 220) {
+  const first = splitIntoSentences(value)[0] || normalizeText(value);
+  return truncateSentence(first, limit);
 }
 
 function stripFeedbackHeading(value = '') {
   return normalizeText(value)
     .replace(/^\s*(?:TUS\s*ipucu|Spot\s*bilgi|Hap\s*bilgi|Sınav\s*notu|Klinik\/Bilimsel\s*gerekçe|Klinik\s*gerekçe|Kanıt\s*zinciri)\s*[:：-]\s*/iu, '')
     .replace(/^\s*(?:TUS\s*ipucu|Spot\s*bilgi)\s*[:：-]\s*/iu, '')
-    .replace(/^\s*[A-E]\s*(?:geri\s*bildirim|feedback|gerekçe)\s*[:：.-]?\s*/iu, '')
-    .replace(/^\s*[A-E]\s*\)\s*(?:doğru|yanlış)\s*[:：.-]?\s*/iu, '')
     .trim();
 }
 
@@ -283,8 +269,12 @@ function ensureSentence(value = '') {
   return /[.!?]$/u.test(text) ? text : `${text}.`;
 }
 
-function truncateSentence(value = '') {
-  return normalizeText(value).replace(/\.\.\.|…/g, '.');
+function truncateSentence(value = '', limit = 230) {
+  const text = normalizeText(value).replace(/\.\.\.|…/g, '.');
+  if (text.length <= limit) return text;
+  const cut = text.slice(0, limit).replace(/\s+\S*$/u, '').replace(/[,:;\-–—]+$/u, '').trim();
+  if (!cut) return text.slice(0, limit).trim();
+  return /[.!?]$/u.test(cut) ? cut : `${cut}.`;
 }
 
 function splitIntoSentences(text = '') {
@@ -301,10 +291,10 @@ function splitIntoSentences(text = '') {
     .filter((sentence) => sentence && !/^(?:[A-ZÇĞİÖŞÜ]|I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII)\.$/u.test(sentence));
 }
 
-function compactParagraph(value = '') {
-  const sentences = splitIntoSentences(value);
+function compactParagraph(value = '', maxSentences = 4, maxLength = 620) {
+  const sentences = splitIntoSentences(value).slice(0, maxSentences);
   const text = sentences.length ? sentences.join(' ') : normalizeText(value);
-  return truncateSentence(text);
+  return truncateSentence(text, maxLength);
 }
 
 function unique(items = []) {
@@ -492,7 +482,7 @@ function inferEvidenceTitle(text = '', index = 0) {
   return 'Klinik ipucu';
 }
 
-function normalizeTitledItem(item, index, fallbackTitle) {
+function normalizeTitledItem(item, index, fallbackTitle, maxLength = 190) {
   if (!item) return null;
   const originalTitle = itemTitle(item);
   let text = removeMetaLanguage(itemText(item));
@@ -508,8 +498,8 @@ function normalizeTitledItem(item, index, fallbackTitle) {
   if (!title) title = fallbackTitle || inferEvidenceTitle(text, index);
   const inferredFallback = fallbackTitle || inferEvidenceTitle(text, index);
   return {
-    title: refineLabel(title, inferredFallback),
-    text: stripWeakPrefix(text),
+    title: truncateSentence(refineLabel(title, inferredFallback), 46),
+    text: truncateSentence(stripWeakPrefix(text), maxLength),
   };
 }
 
@@ -768,7 +758,7 @@ function getAISpotMapValue(map, optionText = '', letter = '') {
   return matched ? itemText(matched[1]) : '';
 }
 
-function mergeUniqueSentences(parts = []) {
+function mergeUniqueSentences(parts = [], maxSentences = 7, maxLength = 1350) {
   const seen = new Set();
   const sentences = [];
   parts.forEach((part) => {
@@ -780,8 +770,8 @@ function mergeUniqueSentences(parts = []) {
       sentences.push(cleaned);
     });
   });
-  const text = sentences.join(' ');
-  return truncateSentence(text);
+  const text = sentences.slice(0, maxSentences).join(' ');
+  return truncateSentence(text, maxLength);
 }
 
 function resolveAISpotOptionExplanation(clinicalCase = {}, optionText = '', fallback = '') {
@@ -870,22 +860,22 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, child
   const explanation = ensureSentence(normalizeText(clinicalCase.explanation || clinicalCase.diagnosis?.explanation || ''));
 
   return (
-    <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro ai-spot-detailed-feedback-panel ai-spot-detailed-feedback-panel-v433`} aria-live="polite">
+    <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro ai-spot-detailed-feedback-panel ai-spot-detailed-feedback-panel-v432`} aria-live="polite">
       <div className="ai-spot-detailed-feedback-shell ai-spot-detailed-feedback-shell-v246">
         <section className="ai-spot-feedback-section-card ai-spot-feedback-science-card ai-spot-feedback-science-card-v246">
           <header>
-            <h4>Açıklama</h4>
+            <h4>{isCorrect ? 'Doğru cevap' : 'Doğru cevap ve açıklama'}</h4>
           </header>
           <p>
-            {!isCorrect && selectedText ? <><strong>Seçilen yanıt: </strong><GlossaryText text={selectedText} enabled={glossaryEnabled} />{' '}</> : null}
-            <strong>Beklenen yanıt: </strong><GlossaryText text={correctText || 'Doğru cevap bulunamadı'} enabled={glossaryEnabled} />
+            {!isCorrect && selectedText ? <><strong>Seçimin: </strong><GlossaryText text={selectedText} enabled={glossaryEnabled} />{' '}</> : null}
+            <strong>Doğru cevap: </strong><GlossaryText text={correctText || 'Doğru cevap bulunamadı'} enabled={glossaryEnabled} />
           </p>
           {explanation ? <p><GlossaryText text={explanation} enabled={glossaryEnabled} /></p> : null}
         </section>
 
         <section className="ai-spot-feedback-section-card ai-spot-feedback-options-card ai-spot-feedback-options-card-v246">
           <header>
-            <h4>Seçenek değerlendirmesi</h4>
+            <h4>Şık geri bildirimi</h4>
           </header>
           <div className="ai-spot-feedback-option-list">
             {rows.map((row) => (
@@ -896,8 +886,8 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, child
                 <div className="ai-spot-feedback-option-head">
                   <b>{row.letter}</b>
                   <strong><GlossaryText text={row.option} enabled={glossaryEnabled} /></strong>
-                  {row.isSelected ? <em>Seçilen</em> : null}
-                  {row.status === 'correct' ? <em className="correct">Doğru</em> : null}
+                  {row.isSelected ? <em>Seçimin</em> : null}
+                  {row.status === 'correct' ? <em className="correct">Doğru cevap</em> : null}
                 </div>
                 <p><GlossaryText text={ensureSentence(row.explanation)} enabled={glossaryEnabled} revealMode="postAnswer" maxTerms={6} /></p>
               </article>

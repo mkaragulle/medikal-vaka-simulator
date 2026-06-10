@@ -11,26 +11,6 @@ function cleanText(value = '') {
     .trim();
 }
 
-function normalizeMedicalTurkish(value = '') {
-  return cleanText(value)
-    .replace(/\bacil\s*[-‑]?\s*CoA\b/giu, 'açil-CoA')
-    .replace(/\bacylcarnitine\b/giu, 'açilkarnitin')
-    .replace(/\bcreatinine\b/giu, 'kreatinin')
-    .replace(/\bhipokalseüri\b/giu, 'hipokalsiüri')
-    .replace(/\bdistal\s+tubulus(?:ta)?\b/giu, (m) => /ta$/iu.test(m) ? 'distal tübülde' : 'distal tübül')
-    .replace(/\bsupressed\s+renin\b/giu, 'baskılanmış renin')
-    .replace(/\blacerasyon\b/giu, 'laserasyon')
-    .replace(/\bRetine\s+plasenta\b/giu, 'Retansiyone plasenta')
-    .replace(/\bretine\s+plasenta\b/giu, 'retansiyone plasenta')
-    .replace(/\bmidline\b/giu, 'orta hatta')
-    .replace(/\bGenelize\b/g, 'Yaygın')
-    .replace(/\bgenelize\b/giu, 'yaygın')
-    .replace(/\bserum\s+Ca(?:2\+)?\s+normal\b/giu, 'serum kalsiyumu normal')
-    .replace(/\s+\.\s*\(/g, ' (')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
 export function normalizeForCompare(value = '') {
   return cleanText(value)
     .toLocaleLowerCase('tr')
@@ -61,13 +41,13 @@ function asArray(value) {
 }
 
 function ensureSentence(value = '') {
-  const text = normalizeMedicalTurkish(value).replace(/[\s,;:]+$/u, '');
+  const text = cleanText(value).replace(/[\s,;:]+$/u, '');
   if (!text) return '';
   return /[.!?]$/u.test(text) ? text : `${text}.`;
 }
 
 function ensureQuestion(value = '') {
-  const text = normalizeMedicalTurkish(value).replace(/[\s,;:.]+$/u, '');
+  const text = cleanText(value).replace(/[\s,;:.]+$/u, '');
   if (!text) return 'Bu olguda en uygun seçenek hangisidir?';
   return /\?$/u.test(text) ? text : `${text}?`;
 }
@@ -87,7 +67,7 @@ function normalizeOptions(raw = []) {
       : [];
   return OPTION_IDS.map((id, index) => {
     const source = arr.find((item) => typeof item === 'object' && String(item?.id || '').toUpperCase() === id) ?? arr[index];
-    const text = normalizeMedicalTurkish(typeof source === 'string' ? source : source?.text || source?.label || source?.value || '');
+    const text = cleanText(typeof source === 'string' ? source : source?.text || source?.label || source?.value || '');
     return { id, text: text.replace(/^\s*[A-E]\s*\)\s*/iu, '') };
   }).filter((option) => option.text);
 }
@@ -104,7 +84,7 @@ function feedbackMap(raw = {}, correctId = 'A', explanation = '') {
     ? raw
     : OPTION_IDS.map((id) => raw?.[id] || raw?.[id.toLowerCase()] || raw?.[`option${id}`] || '');
   return OPTION_IDS.reduce((acc, id, index) => {
-    acc[id] = ensureSentence(normalizeMedicalTurkish(arr[index] || (id === correctId ? explanation : 'Bu seçenek olgudaki ayırt ettirici verilerle en iyi açıklama değildir.')));
+    acc[id] = ensureSentence(cleanText(arr[index] || (id === correctId ? explanation : 'Bu seçenek olgudaki ayırt ettirici verilerle en iyi açıklama değildir.')));
     return acc;
   }, {});
 }
@@ -134,9 +114,9 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   const explanation = ensureSentence(payload.explanation || payload.e || '');
   const optionRationales = feedbackMap(payload.wrongOptionFeedback || payload.optionFeedback || payload.f || {}, correctOption.id, explanation);
   const stem = ensureSentence(payload.stem || payload.s || '');
-  const branch = normalizeMedicalTurkish(payload.relatedBranch || payload.branch || payload.b || meta.branchFilter || 'TUS');
+  const branch = cleanText(payload.relatedBranch || payload.branch || payload.b || meta.branchFilter || 'TUS');
   const difficulty = normalizeDifficulty(payload.difficulty || payload.d || meta.difficulty || 'Orta');
-  const correctText = normalizeMedicalTurkish(correctOption.text);
+  const correctText = cleanText(correctOption.text);
 
   const question = {
     id: cleanText(payload.id) || `ai-spot-simple-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,

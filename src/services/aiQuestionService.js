@@ -131,5 +131,5 @@ export async function createAIQuestion({ previousQuestionId = null, branchFilter
 }
 
 export function getAIServiceMode() {
-  return ENABLE_REAL_AI ? 'openai-clean-no-text-limits-v437' : 'real-ai-disabled';
+  return ENABLE_REAL_AI ? 'openai-ultra-compact-v432' : 'real-ai-disabled';
 }

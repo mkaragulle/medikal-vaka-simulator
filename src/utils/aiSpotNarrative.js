@@ -714,7 +714,12 @@ function splitTusParagraphsFromSentences(sentences = []) {
   const bodySentences = sentences.filter((sentence) => sentence && !isQuestionSentence(sentence));
   if (!bodySentences.length) return ['Bu soru için klinik bağlam eksik üretildi; lütfen yeni bir TUS sorusu üretin.'];
   const body = bodySentences.join(' ').trim();
-  return body ? [body] : [];
+  if (body.length < 760) return [body];
+
+  const midpoint = Math.ceil(bodySentences.length / 2);
+  const first = bodySentences.slice(0, midpoint).join(' ').trim();
+  const second = bodySentences.slice(midpoint).join(' ').trim();
+  return [first, second].filter(Boolean).slice(0, 2);
 }
 
 export function buildSafeAISpotTitle(question = {}) {
