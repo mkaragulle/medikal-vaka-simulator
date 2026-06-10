@@ -24,28 +24,38 @@ const AI_DEFAULT_ESTIMATE_BY_DIFFICULTY = {
 const AI_LOADING_STAGES = [
   {
     min: 0,
-    title: 'Yeni TUS sorunuz hazırlanıyor.',
-    detail: 'Branş ve zorluk bilgisi üretim isteğine ekleniyor.',
+    title: 'Sunucuya istek gönderiliyor...',
+    detail: 'Seçtiğin branş ve zorluk ayarları üretim isteğine ekleniyor.',
   },
   {
     min: 2,
-    title: 'Klinik olgu hikâyeleştiriliyor...',
-    detail: 'Hasta öyküsü doğal cümlelerle kuruluyor; ölçülebilir veriler ayrı panelde tutuluyor.',
+    title: 'Klinik senaryo kuruluyor...',
+    detail: 'Olgunun tek köklü ve TUS mantığına uygun olması sağlanıyor.',
   },
   {
     min: 5,
-    title: 'Seçenekler oluşturuluyor...',
-    detail: 'Beş seçenek aynı karar alanında ve benzer uzunlukta hazırlanıyor.',
+    title: 'TUS dili ve klinik tutarlılık kontrol ediliyor...',
+    detail: 'Kök, ipuçları ve öğrenme hedefi aynı eksende tutuluyor.',
   },
   {
     min: 8,
-    title: 'Açıklama sadeleştiriliyor...',
-    detail: 'Doğru cevap ve şık geri bildirimleri kısa, öğretici ve tekrarsız yazılıyor.',
+    title: 'Son kontroller yapılıyor...',
+    detail: 'Cevap sızıntısı, gereksiz veri ve belirsizlikler eleniyor.',
   },
   {
-    min: 11,
-    title: 'Son temizlik yapılıyor...',
-    detail: 'Boş veri, placeholder ve bozuk Türkçe kalıntıları temizleniyor.',
+    min: 10,
+    title: 'Soru kalitesi denetleniyor...',
+    detail: 'Bilimsel doğruluk ve tek doğru cevap ilkesi yeniden kontrol ediliyor.',
+  },
+  {
+    min: 12,
+    title: 'Seçenekler düzenleniyor...',
+    detail: 'Şıkların aynı kategoride, ayırt ettirici ve dengeli olması sağlanıyor.',
+  },
+  {
+    min: 14,
+    title: 'Açıklama ve yanıt uyumu son kez kontrol ediliyor...',
+    detail: 'Gerekçe, doğru seçenek ve klinik ipuçları birbiriyle eşleştiriliyor.',
   },
 ];
 
@@ -636,14 +646,13 @@ function AIReadyState({ branchFilter, difficulty, onGenerateQuestion }) {
   );
 }
 
-function AIErrorState({ error, onGenerateQuestion }) {
-  const message = error?.message || 'AI servisi bu denemede geçerli bir soru döndüremedi.';
+function AIErrorState({ onGenerateQuestion }) {
   return (
     <section className="ai-generation-state card-surface error" aria-live="polite">
       <span className="ai-generation-orb" aria-hidden="true"><Icon name="AlertTriangle" /></span>
       <div>
-        <h2>AI sorusu oluşturulamadı.</h2>
-        <p>Bu artık kalite gate veya yerel fallback mesajı değildir. Gerçek hata: {message}</p>
+        <h2>Uygun soru üretilemedi.</h2>
+        <p>Bu denemede TUS dili, bilimsel doğruluk ve tekrar kontrolünden geçen yeni bir soru oluşturulamadı. Farklı bir branş seçerek yeniden deneyebilirsin.</p>
       </div>
       <button type="button" className="btn btn-primary" onClick={onGenerateQuestion}>
         <Icon name="RotateCcw" /> Tekrar dene
@@ -823,7 +832,7 @@ function AIGeneratedQuestionView({
           />
         </div>
       ) : null}
-      {!loading && error ? <AIErrorState error={error} onGenerateQuestion={onGenerateQuestion} /> : null}
+      {!loading && error ? <AIErrorState onGenerateQuestion={onGenerateQuestion} /> : null}
       {!loading && !error && !question ? (
         <AIReadyState branchFilter={branchFilter} difficulty={difficulty} onGenerateQuestion={onGenerateQuestion} />
       ) : null}
