@@ -14,9 +14,17 @@ export default defineConfig({
           if (id.includes('node_modules/firebase')) return 'vendor-firebase';
           if (id.includes('node_modules/pdfjs-dist')) return 'vendor-pdf';
           if (id.includes('node_modules/jszip')) return 'vendor-zip';
-          if (id.includes('/src/data/cases.js')) return 'case-bank';
+          if (id.includes('/src/data/cases.part')) {
+            const match = id.match(/cases\.part(\d+)\.js$/);
+            return match ? `case-bank-${match[1]}` : 'case-bank';
+          }
+          if (id.includes('/src/data/cases.js')) return 'case-bank-index';
           if (id.includes('/src/data/tusPearlCards.js')) return 'pearl-bank';
-          if (id.includes('/src/components/GlossaryTooltip.full.jsx') || id.includes('/src/utils/glossary.js') || id.includes('/src/data/tusGlossary')) return 'glossary-bank';
+          if (id.includes('/src/components/GlossaryTooltip.full.jsx') || id.includes('/src/utils/glossary.js')) return 'glossary-ui';
+          if (id.includes('/src/data/tusGlossary')) {
+            const base = id.split('/').pop()?.replace(/\.js$/, '') || 'glossary-bank';
+            return base.replace(/[^a-zA-Z0-9_-]/g, '-');
+          }
           return undefined;
         },
       },
