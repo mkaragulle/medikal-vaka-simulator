@@ -1,5 +1,5 @@
-// KlinikIQ V432 — ultra-compact TUS prompt
-// Goal: minimal tokens, visible solvable stem, clean option feedback.
+// KlinikIQ V438 — professional TUS prompt without content length rules
+// Root fix: minimal input schema, no stem/option/feedback length forcing.
 
 function cleanText(value = '') {
   return String(value ?? '').replace(/\s+/g, ' ').trim();
@@ -12,15 +12,18 @@ export function normalizeDifficulty(value = 'Orta') {
   return 'Orta';
 }
 
-export const OPTIMIZED_TUS_SYSTEM_PROMPT = `Sen Türkçe TUS düzeyinde çoktan seçmeli soru yazan uzman tıp editörüsün. Yalnızca geçerli JSON döndür.
+export const OPTIMIZED_TUS_SYSTEM_PROMPT = `Türkçe TUS editörüsün. Yalnız geçerli JSON döndür.
 
-Seçilen branşa uygun tek bir bilimsel TUS sorusu üret. Soru kökü doğal, anlaşılır ve çözülebilir olmalı; doğru cevabı güçlü çeldiricilerden ayıran gerekli klinik, laboratuvar, görüntüleme veya mekanizma bilgileri kökte görünmelidir. Açıklama ve şık geri bildirimleri kökte olmayan yeni olgu verisi eklememelidir. Beş şık dengeli, aynı karar alanından ve kaliteli çeldirici olmalıdır. Geri bildirim öğretici, net ve tekrarsız olmalıdır.
+Seçilen branşta bilimsel, özgün ve tek doğru cevaplı TUS sorusu üret. Kök, soru hedefi, seçenekler ve açıklamalar aynı klinik mantığa bağlı olsun. Açıklamada kullandığın hasta-özel kanıtlar kökte görünsün; kökte verilmeyen yeni bulguyla cevap savunma. Seçenekler aynı kategori içinde, anlaşılır ve ciddi çeldirici olsun. Yanlış seçenek açıklaması kendi şıkkına ait olsun; başka şıkka kaymasın. Profesyonel Türkçe kullan; ham etiket, yarım cümle, tekrar ve Türkçe-İngilizce karışımı bırakma.
 
-JSON şeması:
-{"s":"soru kökü","q":"soru cümlesi","o":["A","B","C","D","E"],"c":"A|B|C|D|E","e":"açıklama","f":["A geri bildirim","B geri bildirim","C geri bildirim","D geri bildirim","E geri bildirim"]}`;
+Şema: {"s":"soru kökü","q":"soru cümlesi","o":["A","B","C","D","E"],"c":"A|B|C|D|E","e":"açıklama","r":["A açıklaması","B açıklaması","C açıklaması","D açıklaması","E açıklaması"]}`;
 
-export function buildUserPrompt({ branch, difficulty = 'Orta' } = {}) {
+export function buildUserPrompt({ branch, difficulty = 'Orta', variationSeed = '' } = {}) {
   const branchText = cleanText(branch || 'Rastgele');
   const selectedDifficulty = normalizeDifficulty(difficulty);
-  return `Branş: ${branchText}\nZorluk: ${selectedDifficulty}\nTek TUS sorusu üret. JSON döndür.`;
+  const seed = cleanText(variationSeed || Math.random().toString(36).slice(2, 8));
+  return `B:${branchText}
+D:${selectedDifficulty}
+R:${seed}
+JSON.`;
 }
