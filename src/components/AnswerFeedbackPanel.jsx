@@ -159,12 +159,22 @@ function normalizeMedicalAbbreviations(value = '') {
 
 function normalizeText(value = '') {
   return normalizeMedicalAbbreviations(repairAIGeneratedText(String(value ?? ''), { fallback: String(value ?? '') }))
+    .replace(/\bacil\s*[-‑]?\s*CoA\b/giu, 'açil-CoA')
+    .replace(/\bcreatinine\b/giu, 'kreatinin')
+    .replace(/\bhipokalseüri\b/giu, 'hipokalsiüri')
+    .replace(/\bdistal\s+tubulus(?:ta)?\b/giu, (m) => /ta$/iu.test(m) ? 'distal tübülde' : 'distal tübül')
+    .replace(/\bsupressed\s+renin\b/giu, 'baskılanmış renin')
+    .replace(/\blacerasyon\b/giu, 'laserasyon')
+    .replace(/\bRetine\s+plasenta\b/giu, 'Retansiyone plasenta')
+    .replace(/\bretine\s+plasenta\b/giu, 'retansiyone plasenta')
+    .replace(/\bmidline\b/giu, 'orta hatta')
+    .replace(/\bGenelize\b/g, 'Yaygın')
+    .replace(/\bgenelize\b/giu, 'yaygın')
+    .replace(/\bserum\s+Ca(?:2\+)?\s+normal\b/giu, 'serum kalsiyumu normal')
+    .replace(/\s+\.\s*\(/g, ' (')
     .replace(/\bASİT\s*[-–—]?\s*baz\b/giu, 'Asit-baz')
     .replace(/\bASIT\s*[-–—]?\s*baz\b/giu, 'Asit-baz')
     .replace(/\bASİT\s*[-–—]?\s*BAZ\b/giu, 'Asit-baz')
-    .replace(/Bu seçenek, kökteki ana bulguları birlikte z\.?/giu, 'Bu seçenek kökteki klinik, laboratuvar veya anatomik örüntüyü en iyi açıklamaz.')
-    .replace(/^\s*[A-E]\s*(?:geri\s*bildirim|feedback|gerekçe)\s*[:：.-]?\s*/giu, '')
-    .replace(/\b(?:undefined|null|placeholder)\b/giu, '')
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .trim();
@@ -196,7 +206,7 @@ function containsAnswerLeak(text = '', correct = '') {
 }
 
 function singleSentence(value = '') {
-  return compactParagraph(value);
+  return truncateSentence(value);
 }
 
 function stripFeedbackHeading(value = '') {
@@ -274,8 +284,7 @@ function ensureSentence(value = '') {
 }
 
 function truncateSentence(value = '') {
-  const text = normalizeText(value).replace(/\.\.\.|…/g, '.').replace(/[,:;\-–—\s]+$/u, '');
-  return text ? ensureSentence(text) : '';
+  return normalizeText(value).replace(/\.\.\.|…/g, '.');
 }
 
 function splitIntoSentences(text = '') {
@@ -483,7 +492,7 @@ function inferEvidenceTitle(text = '', index = 0) {
   return 'Klinik ipucu';
 }
 
-function normalizeTitledItem(item, index, fallbackTitle, maxLength = 190) {
+function normalizeTitledItem(item, index, fallbackTitle) {
   if (!item) return null;
   const originalTitle = itemTitle(item);
   let text = removeMetaLanguage(itemText(item));
@@ -499,8 +508,8 @@ function normalizeTitledItem(item, index, fallbackTitle, maxLength = 190) {
   if (!title) title = fallbackTitle || inferEvidenceTitle(text, index);
   const inferredFallback = fallbackTitle || inferEvidenceTitle(text, index);
   return {
-    title: truncateSentence(refineLabel(title, inferredFallback), 46),
-    text: truncateSentence(stripWeakPrefix(text), maxLength),
+    title: refineLabel(title, inferredFallback),
+    text: stripWeakPrefix(text),
   };
 }
 
@@ -771,7 +780,8 @@ function mergeUniqueSentences(parts = []) {
       sentences.push(cleaned);
     });
   });
-  return sentences.join(' ');
+  const text = sentences.join(' ');
+  return truncateSentence(text);
 }
 
 function resolveAISpotOptionExplanation(clinicalCase = {}, optionText = '', fallback = '') {
@@ -791,7 +801,7 @@ function resolveAISpotOptionExplanation(clinicalCase = {}, optionText = '', fall
     getAISpotMapValue(clinicalCase.diagnosis?.answerFeedbackByOption, optionText, letter),
     fallback,
   ].filter(Boolean);
-  return mergeUniqueSentences(sources) || 'Bu seçenek kökteki klinik, laboratuvar veya anatomik örüntüyü en iyi açıklamaz.';
+  return mergeUniqueSentences(sources, 4, 760) || 'Bu seçenek için ayrıntılı açıklama eklenemedi.';
 }
 
 function buildAISpotDetailedRows(clinicalCase = {}, selectedOption = '') {

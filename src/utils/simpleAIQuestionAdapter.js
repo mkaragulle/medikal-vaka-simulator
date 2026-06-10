@@ -11,6 +11,26 @@ function cleanText(value = '') {
     .trim();
 }
 
+function normalizeMedicalTurkish(value = '') {
+  return cleanText(value)
+    .replace(/\bacil\s*[-‑]?\s*CoA\b/giu, 'açil-CoA')
+    .replace(/\bacylcarnitine\b/giu, 'açilkarnitin')
+    .replace(/\bcreatinine\b/giu, 'kreatinin')
+    .replace(/\bhipokalseüri\b/giu, 'hipokalsiüri')
+    .replace(/\bdistal\s+tubulus(?:ta)?\b/giu, (m) => /ta$/iu.test(m) ? 'distal tübülde' : 'distal tübül')
+    .replace(/\bsupressed\s+renin\b/giu, 'baskılanmış renin')
+    .replace(/\blacerasyon\b/giu, 'laserasyon')
+    .replace(/\bRetine\s+plasenta\b/giu, 'Retansiyone plasenta')
+    .replace(/\bretine\s+plasenta\b/giu, 'retansiyone plasenta')
+    .replace(/\bmidline\b/giu, 'orta hatta')
+    .replace(/\bGenelize\b/g, 'Yaygın')
+    .replace(/\bgenelize\b/giu, 'yaygın')
+    .replace(/\bserum\s+Ca(?:2\+)?\s+normal\b/giu, 'serum kalsiyumu normal')
+    .replace(/\s+\.\s*\(/g, ' (')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 export function normalizeForCompare(value = '') {
   return cleanText(value)
     .toLocaleLowerCase('tr')
@@ -41,44 +61,15 @@ function asArray(value) {
 }
 
 function ensureSentence(value = '') {
-  const text = cleanText(value).replace(/[\s,;:]+$/u, '');
+  const text = normalizeMedicalTurkish(value).replace(/[\s,;:]+$/u, '');
   if (!text) return '';
   return /[.!?]$/u.test(text) ? text : `${text}.`;
 }
 
 function ensureQuestion(value = '') {
-  const text = cleanText(value).replace(/[\s,;:.]+$/u, '');
+  const text = normalizeMedicalTurkish(value).replace(/[\s,;:.]+$/u, '');
   if (!text) return 'Bu olguda en uygun seçenek hangisidir?';
   return /\?$/u.test(text) ? text : `${text}?`;
-}
-
-function isBadFeedbackText(value = '') {
-  const text = cleanText(value);
-  if (!text) return true;
-  if (/\b(?:geri bildirim|feedback|gerekçe|açıklama)\b/iu.test(text)) return true;
-  if (/birlikte\s+z\.?$/iu.test(text) || /\bz\.?$/iu.test(text)) return true;
-  if (/üretilemedi|placeholder|undefined|null/iu.test(text)) return true;
-  return false;
-}
-
-function fallbackFeedback(id = '', correctId = '') {
-  return id === correctId
-    ? 'Bu seçenek kökteki bulgularla en uyumlu yanıttır.'
-    : 'Bu seçenek kökteki klinik, laboratuvar veya anatomik örüntüyü en iyi açıklamaz.';
-}
-
-function cleanFeedback(value = '') {
-  return cleanText(value)
-    .replace(/^\s*[A-E]\s*\)?\s*(?:geri\s*bildirim|feedback|gerekçe)\s*[:：.-]?\s*/iu, '')
-    .replace(/^\s*[A-E]\s*\)\s*(?:doğru|yanlış)\s*[:：.-]?\s*/iu, '')
-    .replace(/^\s*(?:doğru|yanlış|seçimin|doğru\s+cevap|açıklama)\s*[:：.-]?\s*/iu, '')
-    .replace(/Bu seçenek, kökteki ana bulguları birlikte z\.?/giu, 'Bu seçenek kökteki klinik, laboratuvar veya anatomik örüntüyü en iyi açıklamaz.')
-    .trim();
-}
-
-function composeFeedback(id = '', correctId = '', value = '') {
-  const cleaned = ensureSentence(cleanFeedback(value));
-  return isBadFeedbackText(cleaned) ? fallbackFeedback(id, correctId) : cleaned;
 }
 
 function normalizeDifficulty(value = 'Orta') {
@@ -96,7 +87,7 @@ function normalizeOptions(raw = []) {
       : [];
   return OPTION_IDS.map((id, index) => {
     const source = arr.find((item) => typeof item === 'object' && String(item?.id || '').toUpperCase() === id) ?? arr[index];
-    const text = cleanText(typeof source === 'string' ? source : source?.text || source?.label || source?.value || '');
+    const text = normalizeMedicalTurkish(typeof source === 'string' ? source : source?.text || source?.label || source?.value || '');
     return { id, text: text.replace(/^\s*[A-E]\s*\)\s*/iu, '') };
   }).filter((option) => option.text);
 }
@@ -109,12 +100,11 @@ function resolveCorrectOption(options = [], rawCorrect = '') {
 }
 
 function feedbackMap(raw = {}, correctId = 'A', explanation = '') {
-  const source = Array.isArray(raw)
+  const arr = Array.isArray(raw)
     ? raw
     : OPTION_IDS.map((id) => raw?.[id] || raw?.[id.toLowerCase()] || raw?.[`option${id}`] || '');
   return OPTION_IDS.reduce((acc, id, index) => {
-    const value = source[index] || (id === correctId ? explanation : '');
-    acc[id] = ensureSentence(composeFeedback(id, correctId, value));
+    acc[id] = ensureSentence(normalizeMedicalTurkish(arr[index] || (id === correctId ? explanation : 'Bu seçenek olgudaki ayırt ettirici verilerle en iyi açıklama değildir.')));
     return acc;
   }, {});
 }
@@ -142,11 +132,11 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   const options = normalizeOptions(payload.options || payload.o || []);
   const correctOption = resolveCorrectOption(options, payload.correctAnswer || payload.c || payload.answer || '') || options[0] || { id: 'A', text: '' };
   const explanation = ensureSentence(payload.explanation || payload.e || '');
-  const optionRationales = feedbackMap(payload.wrongOptionFeedback || payload.optionFeedback || payload.r || payload.reasons || payload.f || {}, correctOption.id, explanation);
+  const optionRationales = feedbackMap(payload.wrongOptionFeedback || payload.optionFeedback || payload.f || {}, correctOption.id, explanation);
   const stem = ensureSentence(payload.stem || payload.s || '');
-  const branch = cleanText(payload.relatedBranch || payload.branch || payload.b || meta.branchFilter || 'TUS');
+  const branch = normalizeMedicalTurkish(payload.relatedBranch || payload.branch || payload.b || meta.branchFilter || 'TUS');
   const difficulty = normalizeDifficulty(payload.difficulty || payload.d || meta.difficulty || 'Orta');
-  const correctText = cleanText(correctOption.text);
+  const correctText = normalizeMedicalTurkish(correctOption.text);
 
   const question = {
     id: cleanText(payload.id) || `ai-spot-simple-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
@@ -234,7 +224,7 @@ export function createSimpleFallbackQuestion({ branchFilter = 'TUS', difficulty 
     e: 'TUS sorusunda doğru cevap, soru kökündeki klinik ve bilimsel kanıtların birlikte yorumlanmasıyla seçilir.',
     f: [
       'Doğru yaklaşım, kökteki ayırt ettirici verileri birlikte değerlendirmektir.',
-      'Seçenekler soru kökündeki verilerle birlikte değerlendirilmelidir.',
+      'Seçenek uzunluğu tıbbi doğruluğu göstermez.',
       'Yaş ve cinsiyet tek başına çoğu TUS sorusunda yeterli değildir.',
       'Laboratuvar verileri klinik bağlamla birlikte yorumlanmalıdır.',
       'Çeldiriciler benzer görünse de kökteki ayırıcı kanıtlar doğru cevabı belirler.',

@@ -6,8 +6,8 @@ import {
 import { envNumber, logAIUsage, resolveModelForScope } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-v438-professional-no-content-limits';
-const SCHEMA_VERSION = 'simple-ai-spot-v13-no-content-limits';
+const PROMPT_VERSION = 'klinikiq-v437-clean-no-text-limits';
+const SCHEMA_VERSION = 'simple-ai-spot-v12-clean-no-text-limits';
 const TASK_NAME = 'tusSpotQuestion';
 
 const ALLOWED_BRANCHES = [
@@ -53,6 +53,14 @@ function parseJsonBody(request) {
 function normalizeMedicalTurkish(value = '') {
   return String(value ?? '')
     .replace(/\bacil\s*[-‑]?\s*CoA\b/giu, 'açil-CoA')
+    .replace(/\bacil‑CoA\b/giu, 'açil-CoA')
+    .replace(/\baçil‑CoA\b/giu, 'açil-CoA')
+    .replace(/\bcreatinine\b/giu, 'kreatinin')
+    .replace(/\bhipokalseüri\b/giu, 'hipokalsiüri')
+    .replace(/\bdistal\s+tubulus(?:ta)?\b/giu, (m) => /ta$/iu.test(m) ? 'distal tübülde' : 'distal tübül')
+    .replace(/\bsupressed\s+renin\b/giu, 'baskılanmış renin')
+    .replace(/\bserum\s+Ca(?:2\+)?\s+normal\b/giu, 'serum kalsiyumu normal')
+    .replace(/\bHCO3-\s*32\s*mmol\/L\s*\.\s*\(/giu, 'HCO3- 32 mmol/L (')
     .replace(/\bacylcarnitine\b/giu, 'açilkarnitin')
     .replace(/\bdicarboksilik\b/giu, 'dikarboksilik')
     .replace(/\basidüre\b/giu, 'asidüri')
@@ -61,6 +69,13 @@ function normalizeMedicalTurkish(value = '') {
     .replace(/\blife[-\s]?threatening\b/giu, 'yaşamı tehdit eden')
     .replace(/\bsole\s+bekleme\b/giu, 'tek başına bekleme')
     .replace(/\bvaginal\b/giu, 'vajinal')
+    .replace(/\blacerasyon\b/giu, 'laserasyon')
+    .replace(/\bRetine\s+plasenta\b/giu, 'Retansiyone plasenta')
+    .replace(/\bretine\s+plasenta\b/giu, 'retansiyone plasenta')
+    .replace(/\bmidline\b/giu, 'orta hatta')
+    .replace(/\bGenelize\b/gu, 'Yaygın')
+    .replace(/\bgenelize\b/giu, 'yaygın')
+    .replace(/\bLoop\s+diüretik\b/g, 'Loop diüretik')
     .replace(/\bmyometriyum\b/giu, 'miyometriyum')
     .replace(/\bmyometrium\b/giu, 'miyometriyum')
     .replace(/\btransvaginal\b/giu, 'transvajinal')
@@ -101,26 +116,7 @@ function normalizeMedicalTurkish(value = '') {
     .replace(/\brekürren\b/giu, 'tekrarlayan')
     .replace(/\babsolute lymphocyte count\b/giu, 'mutlak lenfosit sayısı')
     .replace(/\bplatelet count\b/giu, 'trombosit sayısı')
-    .replace(/\btrombozitoz\b/giu, 'trombositopeni')
-    .replace(/\banion\s*gap\b/giu, 'anyon açıklığı')
-    .replace(/\baminoasit\b/giu, 'amino asit')
-    .replace(/\bNH3\b/gu, 'amonyak')
-    .replace(/\bcreatinine\b/giu, 'kreatinin')
-    .replace(/\bhipokalseüri\b/giu, 'hipokalsiüri')
-    .replace(/\bdistal\s+tubulus(?:ta|ta)?\b/giu, 'distal tübülde')
-    .replace(/\btubulus\b/giu, 'tübül')
-    .replace(/\bsupressed\s+renin\b/giu, 'baskılanmış renin')
-    .replace(/\bretine\s+plasenta\b/giu, 'retansiyone plasenta')
-    .replace(/\blacerasyon\b/giu, 'laserasyon')
-    .replace(/\bmidline\b/giu, 'orta hatta')
-    .replace(/\bGenelize\b/gu, 'Yaygın')
-    .replace(/\bgenelize\b/gu, 'yaygın')
-    .replace(/\bhemitiroidectomy\b/giu, 'hemitiroidektomi')
-    .replace(/\binferior\s+thyroid\s+arter\b/giu, 'inferior tiroid arter')
-    .replace(/\btekrarlayan\s+laringeal\s+sinir\b/giu, 'rekürren laringeal sinir')
-    .replace(/\bperitonitis\b/giu, 'peritonit')
-    .replace(/\bCT[-\s]?angio\b/giu, 'BT anjiyografi')
-    .replace(/\bcil\s+laparotomi\b/giu, 'acil laparotomi');
+    .replace(/\btrombozitoz\b/giu, 'trombositopeni');
 }
 
 function cleanText(value = '') {
@@ -137,6 +133,7 @@ function cleanText(value = '') {
     .replace(/\b([A-E])\s*:\s*\(\s*(?:Doğru|Yanlış)\s*\)\s*/giu, '')
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
+    .replace(/\s+\.\s*\(/g, ' (')
     .replace(/([,;:!?])(?=\S)/g, '$1 ')
     .trim();
 }
@@ -234,34 +231,10 @@ function detectFeedbackDrift(feedback = '', currentOption = {}, allOptions = [])
   return other >= 0.5 && other > own + 0.2;
 }
 
-function isBadFeedbackText(value = '') {
-  const text = cleanText(value);
-  const norm = normalize(text);
-  if (!text) return true;
-  if (/\b(?:geri bildirim|feedback|gerekçe|açıklama)\b/iu.test(text)) return true;
-  if (/birlikte\s+z\.?$/iu.test(text) || /\bz\.?$/iu.test(text)) return true;
-  if (/üretilemedi|placeholder|lorem|undefined|null/iu.test(text)) return true;
-  return false;
-}
-
 function fallbackFeedback(id = '', correctId = '') {
   return id === correctId
-    ? 'Bu seçenek kökteki bulgularla en uyumlu yanıttır.'
-    : 'Bu seçenek kökteki klinik, laboratuvar veya anatomik örüntüyü en iyi açıklamaz.';
-}
-
-function compactReason(value = '') {
-  const sentence = cleanBrokenSentences(cleanFeedback(value));
-  if (isBadFeedbackText(sentence)) return '';
-  return sentence.replace(/[.!?]$/u, '');
-}
-
-function composeFeedback(id = '', correctId = '', reason = '') {
-  const r = compactReason(reason);
-  if (id === correctId) {
-    return ensureSentence(r || 'Bu seçenek kökteki bulgularla en uyumlu yanıttır');
-  }
-  return ensureSentence(r || 'Bu seçenek kökteki klinik, laboratuvar veya anatomik örüntüyü en iyi açıklamaz');
+    ? 'Bu seçenek, kökteki ayırt edici bulgularla en iyi uyumu gösterir.'
+    : 'Bu seçenek, kökteki ana bulguları birlikte açıklamaz.';
 }
 
 
@@ -326,17 +299,19 @@ function resolveCorrectId(payload = {}, options = []) {
   return loose?.id || '';
 }
 
-function feedbackObject(rawReasons = [], correctId = 'A', explanation = '', options = [], visibleText = '') {
-  const source = rawReasons && typeof rawReasons === 'object' && !Array.isArray(rawReasons)
-    ? OPTION_IDS.map((id) => rawReasons?.[id] || rawReasons?.[id.toLowerCase()] || rawReasons?.[`option${id}`] || '')
-    : asArray(rawReasons);
+function feedbackObject(rawFeedback = [], correctId = 'A', explanation = '', options = [], visibleText = '') {
+  const arr = Array.isArray(rawFeedback)
+    ? rawFeedback
+    : OPTION_IDS.map((id) => rawFeedback?.[id] || rawFeedback?.[id.toLowerCase()] || rawFeedback?.[`option${id}`] || '');
   return OPTION_IDS.reduce((acc, id, index) => {
     const option = options.find((item) => item.id === id) || { id, text: '' };
-    let reason = source[index] || '';
-    if (!reason && id === correctId) reason = explanation;
-    let text = composeFeedback(id, correctId, reason);
-    if (detectFeedbackDrift(text, option, options)) text = fallbackFeedback(id, correctId);
-    if (isBadFeedbackText(text)) text = fallbackFeedback(id, correctId);
+    const rawText = arr[index] || fallbackFeedback(id, correctId);
+    let text = cleanBrokenSentences(cleanFeedback(rawText));
+    if (!text || detectFeedbackDrift(text, option, options)) text = fallbackFeedback(id, correctId);
+    text = pruneUnsupportedEvidence(text, visibleText, fallbackFeedback(id, correctId));
+    if (id === correctId && normalize(text) === normalize(fallbackFeedback(id, correctId)) && explanation) {
+      text = cleanBrokenSentences(explanation) || text;
+    }
     acc[id] = ensureSentence(text);
     return acc;
   }, {});
@@ -395,9 +370,8 @@ function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, m
   const stem = ensureSentence(cleanBrokenSentences(uniqueSentences(addVisibleDataToStem(payload.s || payload.stem || '', vitals, objective))));
   const visibleText = [stem, ...options.map((option) => option.text)].join(' ');
   const explanationRaw = payload.e || payload.explanation || '';
-  const explanation = ensureSentence(cleanBrokenSentences(explanationRaw) || 'Bu yanıt kökteki bulgularla en uyumlu seçenektir.');
-  const reasonSource = payload.r || payload.reasons || payload.f || payload.wrongOptionFeedback || payload.optionFeedback || {};
-  const feedback = feedbackObject(reasonSource, correctAnswer, explanation, options, visibleText);
+  const explanation = ensureSentence(pruneUnsupportedEvidence(cleanBrokenSentences(explanationRaw), visibleText, 'Kökteki ayırt edici bulgular doğru cevabı destekler.'));
+  const feedback = feedbackObject(payload.f || payload.wrongOptionFeedback || payload.optionFeedback || {}, correctAnswer, explanation, options, visibleText);
   return {
     id: `ai-spot-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
     relatedBranch: cleanText(payload.b || payload.relatedBranch || branch),
@@ -423,7 +397,7 @@ function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, m
     openAIMode: mode || '',
     promptVersion: PROMPT_VERSION,
     schemaVersion: SCHEMA_VERSION,
-    aiMeta: { provider: 'openai', remote: true, fallback: false, simplified: true, noContentLengthRules: true, deterministicQC: true },
+    aiMeta: { provider: 'openai', remote: true, fallback: false, simplified: true, ultraCompact: true, deterministicQC: true, noTextLimits: true },
   };
 }
 
@@ -492,8 +466,6 @@ async function callOpenAI(prompt) {
   const model = resolveModelForScope('TUS');
   const baseUrl = (process.env.TUS_OPENAI_BASE_URL || process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
   const timeoutMs = envNumber('TUS_OPENAI_PER_REQUEST_TIMEOUT_MS', envNumber('OPENAI_PER_REQUEST_TIMEOUT_MS', 60000));
-  const rawOutputLimit = Number(process.env.TUS_OPENAI_MAX_OUTPUT_TOKENS || process.env.OPENAI_MAX_OUTPUT_TOKENS || 0);
-  const outputLimit = Number.isFinite(rawOutputLimit) && rawOutputLimit > 0 ? rawOutputLimit : null;
   const explicitStyle = process.env.TUS_OPENAI_API_STYLE || process.env.OPENAI_API_STYLE || '';
   const useResponses = shouldUseResponsesApi(model, explicitStyle);
   const style = useResponses ? 'responses' : 'chat';
@@ -507,7 +479,6 @@ async function callOpenAI(prompt) {
           input: prompt,
           text: { format: { type: 'json_object' } },
           ...(modelSupportsReasoningEffort(model) ? { reasoning: { effort: 'low' } } : {}),
-          ...(outputLimit ? { max_output_tokens: outputLimit } : {}),
           store: false,
         }
       : {
@@ -517,7 +488,6 @@ async function callOpenAI(prompt) {
             { role: 'user', content: prompt },
           ],
           response_format: { type: 'json_object' },
-          ...(outputLimit ? { max_completion_tokens: outputLimit } : {}),
           ...(modelSupportsReasoningEffort(model) ? { reasoning_effort: 'low' } : {}),
         };
 
