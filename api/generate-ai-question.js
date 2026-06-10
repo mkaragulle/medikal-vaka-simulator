@@ -6,8 +6,8 @@ import {
 import { envNumber, logAIUsage, resolveModelForScope } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-v438-smart-qc-min-token';
-const SCHEMA_VERSION = 'simple-ai-spot-v13-smart-qc';
+const PROMPT_VERSION = 'klinikiq-v438-professional-no-content-limits';
+const SCHEMA_VERSION = 'simple-ai-spot-v13-no-content-limits';
 const TASK_NAME = 'tusSpotQuestion';
 
 const ALLOWED_BRANCHES = [
@@ -105,22 +105,22 @@ function normalizeMedicalTurkish(value = '') {
     .replace(/\banion\s*gap\b/giu, 'anyon açıklığı')
     .replace(/\baminoasit\b/giu, 'amino asit')
     .replace(/\bNH3\b/gu, 'amonyak')
+    .replace(/\bcreatinine\b/giu, 'kreatinin')
+    .replace(/\bhipokalseüri\b/giu, 'hipokalsiüri')
+    .replace(/\bdistal\s+tubulus(?:ta|ta)?\b/giu, 'distal tübülde')
+    .replace(/\btubulus\b/giu, 'tübül')
+    .replace(/\bsupressed\s+renin\b/giu, 'baskılanmış renin')
+    .replace(/\bretine\s+plasenta\b/giu, 'retansiyone plasenta')
+    .replace(/\blacerasyon\b/giu, 'laserasyon')
+    .replace(/\bmidline\b/giu, 'orta hatta')
+    .replace(/\bGenelize\b/gu, 'Yaygın')
+    .replace(/\bgenelize\b/gu, 'yaygın')
     .replace(/\bhemitiroidectomy\b/giu, 'hemitiroidektomi')
     .replace(/\binferior\s+thyroid\s+arter\b/giu, 'inferior tiroid arter')
     .replace(/\btekrarlayan\s+laringeal\s+sinir\b/giu, 'rekürren laringeal sinir')
     .replace(/\bperitonitis\b/giu, 'peritonit')
     .replace(/\bCT[-\s]?angio\b/giu, 'BT anjiyografi')
-    .replace(/\bcil\s+laparotomi\b/giu, 'acil laparotomi')
-    .replace(/\bcreatinine\b/giu, 'kreatinin')
-    .replace(/\bhipokalseüri\b/giu, 'hipokalsiüri')
-    .replace(/\btubulus\b/giu, 'tübül')
-    .replace(/\bsupressed\s+renin\b/giu, 'baskılanmış renin')
-    .replace(/\bRetine\s+plasenta\b/giu, 'Retansiyone plasenta')
-    .replace(/\bretine\s+plasenta\b/giu, 'retansiyone plasenta')
-    .replace(/\blacerasyon\b/giu, 'laserasyon')
-    .replace(/\bmidline\b/giu, 'orta hatta')
-    .replace(/\bGenelize\b/gu, 'Yaygın')
-    .replace(/\bgenelize\b/giu, 'yaygın');
+    .replace(/\bcil\s+laparotomi\b/giu, 'acil laparotomi');
 }
 
 function cleanText(value = '') {
@@ -129,7 +129,6 @@ function cleanText(value = '') {
     .replace(/[‘’]/g, "'")
     .replace(/\u00a0/g, ' ')
     .replace(/```(?:json)?|```/giu, ' ')
-    .replace(/Bu seçenek,?\s*kökteki ana bulguları birlikte\s*z\.?/giu, ' ')
     .replace(/\b(?:Doğru\s+cevap|Seçimin|Açıklama)\s*[:：-]?\s*/giu, ' ')
     .replace(/\b[A-E]\s*(?:geri\s*bildirim|feedback|gerekçe)\s*[:：.-]?\s*/giu, ' ')
     .replace(/^\s*[A-E]\s*\)\s*(?:doğru|yanlış)\s*[:：.-]?\s*/iu, '')
@@ -200,8 +199,7 @@ function looksBrokenSentence(sentence = '') {
   if (!text) return true;
   const words = text.split(/\s+/u);
   const last = (words[words.length - 1] || '').replace(/[.!?]+$/u, '');
-  if (/\b(?:ve|veya|ile|için|olarak|fakat|ancak|çünkü|z|şeklinde|nedeniyle)$/iu.test(last)) return true;
-  if (/\bbirlikte\s+z\.?$/iu.test(text)) return true;
+  if (/\b(?:ve|veya|ile|için|olarak|fakat|ancak|çünkü|z)$/iu.test(last)) return true;
   if (last.length <= 1) return true;
   if (words.length < 3 && !/[.!?]$/u.test(text)) return true;
   if (/[,:;]\s*$/u.test(text)) return true;
@@ -209,11 +207,11 @@ function looksBrokenSentence(sentence = '') {
   return false;
 }
 
-function cleanBrokenSentences(value = '', maxSentences = 2) {
+function cleanBrokenSentences(value = '') {
   const sentences = splitSentences(value)
     .map((sentence) => ensureSentence(sentence.replace(/[,:;\s]+$/u, '')))
     .filter((sentence) => !looksBrokenSentence(sentence));
-  return uniqueSentences(sentences.slice(0, maxSentences).join(' '));
+  return uniqueSentences(sentences.join(' '));
 }
 
 function keyTerms(value = '') {
@@ -242,38 +240,28 @@ function isBadFeedbackText(value = '') {
   if (!text) return true;
   if (/\b(?:geri bildirim|feedback|gerekçe|açıklama)\b/iu.test(text)) return true;
   if (/birlikte\s+z\.?$/iu.test(text) || /\bz\.?$/iu.test(text)) return true;
-  if (/Kök bu seçeneği destekleyen beklenen paterni göstermiyor/iu.test(text)) return true;
   if (/üretilemedi|placeholder|lorem|undefined|null/iu.test(text)) return true;
-  if (norm.split(/\s+/u).length < 4) return true;
   return false;
 }
 
-function extractKeyClues(visibleText = '') {
-  const text = cleanText(visibleText);
-  const chunks = text
-    .split(/(?<=[.!?;])\s+/u)
-    .map((item) => cleanText(item).replace(/[.;:]+$/u, ''))
-    .filter((item) => /\d|düşük|yüksek|artmış|azalmış|pozitif|negatif|hipo|hiper|asidoz|alkaloz|keton|laktat|glukoz|kreatinin|kan basıncı|peritonit|sert|normal|BT|MR|USG|idrar|serum|plazma|trombosit|lenfosit|kalsiüri|magnezemi|hipokalsiüri|hipomagnezemi/iu.test(item))
-    .slice(0, 2);
-  return chunks.length ? chunks.join('; ') : 'Kökteki ayırıcı bulgular';
-}
-
-function fallbackFeedback(id = '', correctId = '', visibleText = '') {
-  const clues = extractKeyClues(visibleText);
+function fallbackFeedback(id = '', correctId = '') {
   return id === correctId
-    ? `${clues} bu cevabı destekler.`
-    : `${clues} bu seçenekten çok doğru yanıta uyar.`;
+    ? 'Bu seçenek kökteki bulgularla en uyumlu yanıttır.'
+    : 'Bu seçenek kökteki klinik, laboratuvar veya anatomik örüntüyü en iyi açıklamaz.';
 }
 
 function compactReason(value = '') {
-  const sentence = cleanBrokenSentences(cleanFeedback(value), 1);
+  const sentence = cleanBrokenSentences(cleanFeedback(value));
   if (isBadFeedbackText(sentence)) return '';
   return sentence.replace(/[.!?]$/u, '');
 }
 
 function composeFeedback(id = '', correctId = '', reason = '') {
   const r = compactReason(reason);
-  return r ? ensureSentence(r) : '';
+  if (id === correctId) {
+    return ensureSentence(r || 'Bu seçenek kökteki bulgularla en uyumlu yanıttır');
+  }
+  return ensureSentence(r || 'Bu seçenek kökteki klinik, laboratuvar veya anatomik örüntüyü en iyi açıklamaz');
 }
 
 
@@ -344,13 +332,11 @@ function feedbackObject(rawReasons = [], correctId = 'A', explanation = '', opti
     : asArray(rawReasons);
   return OPTION_IDS.reduce((acc, id, index) => {
     const option = options.find((item) => item.id === id) || { id, text: '' };
-    const fallback = fallbackFeedback(id, correctId, visibleText);
     let reason = source[index] || '';
     if (!reason && id === correctId) reason = explanation;
     let text = composeFeedback(id, correctId, reason);
-    if (detectFeedbackDrift(text, option, options)) text = fallback;
-    text = pruneUnsupportedEvidence(text, visibleText, fallback);
-    if (isBadFeedbackText(text)) text = fallback;
+    if (detectFeedbackDrift(text, option, options)) text = fallbackFeedback(id, correctId);
+    if (isBadFeedbackText(text)) text = fallbackFeedback(id, correctId);
     acc[id] = ensureSentence(text);
     return acc;
   }, {});
@@ -406,10 +392,10 @@ function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, m
   const correctAnswer = resolveCorrectId(payload, options);
   const vitals = compactItems(payload.cv || payload.compactVitals || payload.vitals || []);
   const objective = compactItems(payload.co || payload.compactObjectiveData || payload.objectiveData || []);
-  const stem = ensureSentence(cleanBrokenSentences(uniqueSentences(addVisibleDataToStem(payload.s || payload.stem || '', vitals, objective)), 5));
+  const stem = ensureSentence(cleanBrokenSentences(uniqueSentences(addVisibleDataToStem(payload.s || payload.stem || '', vitals, objective))));
   const visibleText = [stem, ...options.map((option) => option.text)].join(' ');
   const explanationRaw = payload.e || payload.explanation || '';
-  const explanation = ensureSentence(pruneUnsupportedEvidence(cleanBrokenSentences(explanationRaw, 2), visibleText, `${extractKeyClues(visibleText)} doğru cevabı destekler.`));
+  const explanation = ensureSentence(cleanBrokenSentences(explanationRaw) || 'Bu yanıt kökteki bulgularla en uyumlu seçenektir.');
   const reasonSource = payload.r || payload.reasons || payload.f || payload.wrongOptionFeedback || payload.optionFeedback || {};
   const feedback = feedbackObject(reasonSource, correctAnswer, explanation, options, visibleText);
   return {
@@ -437,7 +423,7 @@ function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, m
     openAIMode: mode || '',
     promptVersion: PROMPT_VERSION,
     schemaVersion: SCHEMA_VERSION,
-    aiMeta: { provider: 'openai', remote: true, fallback: false, simplified: true, skeletonFeedback: true, deterministicQC: true, smartClueFallback: true },
+    aiMeta: { provider: 'openai', remote: true, fallback: false, simplified: true, noContentLengthRules: true, deterministicQC: true },
   };
 }
 
@@ -506,7 +492,8 @@ async function callOpenAI(prompt) {
   const model = resolveModelForScope('TUS');
   const baseUrl = (process.env.TUS_OPENAI_BASE_URL || process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
   const timeoutMs = envNumber('TUS_OPENAI_PER_REQUEST_TIMEOUT_MS', envNumber('OPENAI_PER_REQUEST_TIMEOUT_MS', 60000));
-  const outputLimit = envNumber('TUS_OPENAI_MAX_OUTPUT_TOKENS', envNumber('OPENAI_MAX_OUTPUT_TOKENS', 650));
+  const rawOutputLimit = Number(process.env.TUS_OPENAI_MAX_OUTPUT_TOKENS || process.env.OPENAI_MAX_OUTPUT_TOKENS || 0);
+  const outputLimit = Number.isFinite(rawOutputLimit) && rawOutputLimit > 0 ? rawOutputLimit : null;
   const explicitStyle = process.env.TUS_OPENAI_API_STYLE || process.env.OPENAI_API_STYLE || '';
   const useResponses = shouldUseResponsesApi(model, explicitStyle);
   const style = useResponses ? 'responses' : 'chat';
@@ -518,9 +505,9 @@ async function callOpenAI(prompt) {
           model,
           instructions: OPTIMIZED_TUS_SYSTEM_PROMPT,
           input: prompt,
-          text: { format: { type: 'json_object' }, verbosity: 'low' },
+          text: { format: { type: 'json_object' } },
           ...(modelSupportsReasoningEffort(model) ? { reasoning: { effort: 'low' } } : {}),
-          max_output_tokens: outputLimit,
+          ...(outputLimit ? { max_output_tokens: outputLimit } : {}),
           store: false,
         }
       : {
@@ -530,7 +517,7 @@ async function callOpenAI(prompt) {
             { role: 'user', content: prompt },
           ],
           response_format: { type: 'json_object' },
-          max_completion_tokens: outputLimit,
+          ...(outputLimit ? { max_completion_tokens: outputLimit } : {}),
           ...(modelSupportsReasoningEffort(model) ? { reasoning_effort: 'low' } : {}),
         };
 
@@ -576,11 +563,7 @@ export default async function handler(request, response) {
 
   const branch = chooseBranch(body.branchFilter || body.branch || 'Rastgele');
   const difficulty = normalizeDifficulty(body.difficulty || body.requestedDifficulty || body.aiDifficulty || 'Orta');
-  const recentCorrects = asArray(body.recentCorrects || body.recentAnswers || [])
-    .map(cleanText)
-    .filter(Boolean)
-    .slice(0, 4);
-  const prompt = buildUserPrompt({ branch, difficulty, variationSeed: Math.random().toString(36).slice(2, 8), recentCorrects });
+  const prompt = buildUserPrompt({ branch, difficulty, variationSeed: Math.random().toString(36).slice(2, 8) });
 
   try {
     const result = await callOpenAI(prompt);

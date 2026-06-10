@@ -162,7 +162,7 @@ function normalizeText(value = '') {
     .replace(/\bASİT\s*[-–—]?\s*baz\b/giu, 'Asit-baz')
     .replace(/\bASIT\s*[-–—]?\s*baz\b/giu, 'Asit-baz')
     .replace(/\bASİT\s*[-–—]?\s*BAZ\b/giu, 'Asit-baz')
-    .replace(/Bu seçenek,?\s*kökteki ana bulguları birlikte\s*z\.?/giu, 'Kökteki ayırıcı bulgular bu seçenekten çok doğru yanıta uyar.')
+    .replace(/Bu seçenek, kökteki ana bulguları birlikte z\.?/giu, 'Bu seçenek kökteki klinik, laboratuvar veya anatomik örüntüyü en iyi açıklamaz.')
     .replace(/^\s*[A-E]\s*(?:geri\s*bildirim|feedback|gerekçe)\s*[:：.-]?\s*/giu, '')
     .replace(/\b(?:undefined|null|placeholder)\b/giu, '')
     .replace(/\s+/g, ' ')
@@ -195,9 +195,8 @@ function containsAnswerLeak(text = '', correct = '') {
   return words.filter((word) => value.includes(word)).length >= Math.ceil(words.length * 0.8);
 }
 
-function singleSentence(value = '', limit = 220) {
-  const first = splitIntoSentences(value)[0] || normalizeText(value);
-  return truncateSentence(first, limit);
+function singleSentence(value = '') {
+  return compactParagraph(value);
 }
 
 function stripFeedbackHeading(value = '') {
@@ -274,12 +273,9 @@ function ensureSentence(value = '') {
   return /[.!?]$/u.test(text) ? text : `${text}.`;
 }
 
-function truncateSentence(value = '', limit = 230) {
-  const text = normalizeText(value).replace(/\.\.\.|…/g, '.');
-  if (text.length <= limit) return text;
-  const cut = text.slice(0, limit).replace(/\s+\S*$/u, '').replace(/[,:;\-–—]+$/u, '').trim();
-  if (!cut) return text.slice(0, limit).trim();
-  return /[.!?]$/u.test(cut) ? cut : `${cut}.`;
+function truncateSentence(value = '') {
+  const text = normalizeText(value).replace(/\.\.\.|…/g, '.').replace(/[,:;\-–—\s]+$/u, '');
+  return text ? ensureSentence(text) : '';
 }
 
 function splitIntoSentences(text = '') {
@@ -296,10 +292,10 @@ function splitIntoSentences(text = '') {
     .filter((sentence) => sentence && !/^(?:[A-ZÇĞİÖŞÜ]|I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII)\.$/u.test(sentence));
 }
 
-function compactParagraph(value = '', maxSentences = 4, maxLength = 620) {
-  const sentences = splitIntoSentences(value).slice(0, maxSentences);
+function compactParagraph(value = '') {
+  const sentences = splitIntoSentences(value);
   const text = sentences.length ? sentences.join(' ') : normalizeText(value);
-  return truncateSentence(text, maxLength);
+  return truncateSentence(text);
 }
 
 function unique(items = []) {
@@ -763,7 +759,7 @@ function getAISpotMapValue(map, optionText = '', letter = '') {
   return matched ? itemText(matched[1]) : '';
 }
 
-function mergeUniqueSentences(parts = [], maxSentences = 7, maxLength = 1350) {
+function mergeUniqueSentences(parts = []) {
   const seen = new Set();
   const sentences = [];
   parts.forEach((part) => {
@@ -775,8 +771,7 @@ function mergeUniqueSentences(parts = [], maxSentences = 7, maxLength = 1350) {
       sentences.push(cleaned);
     });
   });
-  const text = sentences.slice(0, maxSentences).join(' ');
-  return truncateSentence(text, maxLength);
+  return sentences.join(' ');
 }
 
 function resolveAISpotOptionExplanation(clinicalCase = {}, optionText = '', fallback = '') {
@@ -796,11 +791,7 @@ function resolveAISpotOptionExplanation(clinicalCase = {}, optionText = '', fall
     getAISpotMapValue(clinicalCase.diagnosis?.answerFeedbackByOption, optionText, letter),
     fallback,
   ].filter(Boolean);
-  const merged = mergeUniqueSentences(sources, 3, 520);
-  if (/birlikte\s+z\.?$/iu.test(merged) || /ayrıntılı açıklama eklenemedi/iu.test(merged)) {
-    return 'Kökteki ayırıcı bulgular bu seçenekten çok doğru yanıta uyar.';
-  }
-  return merged || 'Kökteki ayırıcı bulgular bu seçenekten çok doğru yanıta uyar.';
+  return mergeUniqueSentences(sources) || 'Bu seçenek kökteki klinik, laboratuvar veya anatomik örüntüyü en iyi açıklamaz.';
 }
 
 function buildAISpotDetailedRows(clinicalCase = {}, selectedOption = '') {
@@ -869,7 +860,7 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, child
   const explanation = ensureSentence(normalizeText(clinicalCase.explanation || clinicalCase.diagnosis?.explanation || ''));
 
   return (
-    <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro ai-spot-detailed-feedback-panel ai-spot-detailed-feedback-panel-v438`} aria-live="polite">
+    <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro ai-spot-detailed-feedback-panel ai-spot-detailed-feedback-panel-v433`} aria-live="polite">
       <div className="ai-spot-detailed-feedback-shell ai-spot-detailed-feedback-shell-v246">
         <section className="ai-spot-feedback-section-card ai-spot-feedback-science-card ai-spot-feedback-science-card-v246">
           <header>
