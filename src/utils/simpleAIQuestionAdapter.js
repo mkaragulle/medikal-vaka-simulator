@@ -248,18 +248,21 @@ function looksLikeObjectiveSentence(sentence = '') {
 }
 
 function sanitizeNarrativeStem(stem = '', { demographics = '', setting = '', chiefComplaint = '', branch = '' } = {}) {
-  // V429 root fix: do not remove laboratory/imaging/objective sentences from the visible stem.
-  // Earlier versions treated dense data sentences as “panel data” and stripped them from the narrative.
-  // If the panel was hidden or not noticed, the question became unsolvable. The stem is now the
-  // source of truth: whatever the model puts in `s/stem` remains visible to the student.
-  const cleaned = standardizeTurkishMedicalText(stem);
-  if (cleaned) return ensureSentence(cleaned);
-
+  const sentences = cleanText(stem)
+    .split(/(?<=[.!?])\s+/u)
+    .map((item) => standardizeTurkishMedicalText(item))
+    .filter(Boolean)
+    .filter((item) => !looksLikeObjectiveSentence(item));
+  const story = sentences.join(' ').trim();
+  if (story && !/^(?:ek klinik verilerde|tetkik ve destekleyici bulgularda)/iu.test(story)) return ensureSentence(story);
   const dem = standardizeTurkishMedicalText(demographics || 'Hasta');
   const set = standardizeTurkishMedicalText(setting || 'klinik değerlendirmede');
   const cc = standardizeTurkishMedicalText(chiefComplaint || 'yakınmaları');
   const lowerSetting = set ? set.charAt(0).toLocaleLowerCase('tr') + set.slice(1) : 'klinik değerlendirmede';
-  return `${dem}, ${cc} nedeniyle ${lowerSetting} değerlendirilmektedir.`;
+  const context = /kadın hastalıkları|doğum/iu.test(branch)
+    ? 'Gebelik durumu, muayene bulguları ve objektif veriler birlikte yorumlanmaktadır.'
+    : 'Öykü, muayene ve objektif veriler birlikte klinik karar için değerlendirilmektedir.';
+  return `${dem}, ${cc} nedeniyle ${lowerSetting} değerlendirilmektedir. ${context}`;
 }
 
 function rationalesObject(raw = {}, explanation = '', correctId = 'A') {

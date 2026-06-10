@@ -771,18 +771,36 @@ export function buildAISpotContextLine(question = {}) {
 }
 
 export function buildAISpotNarrativeStem(question = {}) {
-  // V429 root fix: the visible TUS stem must remain complete.
-  // Do not strip lab/imaging/serology/vital sentences out of the stem just because they can be shown
-  // in a support panel. The support panel is optional; the stem is what makes the question solvable.
-  const raw = question.narrativeStem || question.primaryStem || question.stem || question.patientIntro?.historySummary || '';
-  const questionPrompt = buildAISpotQuestionPrompt(question);
-  const sentences = splitSentences(raw)
-    .map((sentence) => ensureSentence(sentence))
-    .filter(Boolean)
-    .filter((sentence) => !isQuestionSentence(sentence));
+  const correct = question.diagnosis?.correct || question.correctAnswerText || '';
+  const vitalsBox = getAISpotCompactVitals(question);
+  const objectiveBox = getAISpotCompactObjectiveData(question);
+  const supportItems = [...vitalsBox, ...objectiveBox];
+  const baseRaw = question.narrativeStem || question.primaryStem || question.stem || question.patientIntro?.historySummary || '';
+  let cleanBase = stripPreAnswerTeaching(baseRaw, correct);
+  cleanBase = removeDenseVitalSentences(cleanBase, vitalsBox.length > 0);
+  cleanBase = removeStructuredDataFragmentsFromText(cleanBase, Boolean(vitalsBox.length || objectiveBox.length), supportItems);
+  cleanBase = stripDuplicateSupportDataFromStem(cleanBase, supportItems);
+  cleanBase = simplifyInlineObjectiveText(cleanBase);
 
-  if (!sentences.length) return ['Bu soru için klinik bağlam eksik üretildi; lütfen yeni bir TUS sorusu üretin.'];
-  return splitTusParagraphsFromSentences(sentences);
+  const baseSentences = [];
+  splitSentences(cleanBase).forEach((sentence) => {
+    if (/^vital bulgularda/iu.test(sentence) && vitalsBox.length) return;
+    if (objectiveBox.length && looksLikeDenseObjectiveSentence(sentence)) return;
+    if (/^objektif değerlendirmede/iu.test(sentence)) return;
+    addUniqueSentence(baseSentences, sentence, correct);
+  });
+
+  if (baseSentences.length < 2) {
+    const history = Array.isArray(question.history || question.findings?.history) ? (question.history || question.findings?.history) : [];
+    history.slice(0, 2).forEach((item) => addUniqueSentence(baseSentences, item, correct));
+    const exam = Array.isArray(question.exam || question.findings?.exam) ? (question.exam || question.findings?.exam) : [];
+    exam.slice(0, 2).forEach((item) => addUniqueSentence(baseSentences, `Fizik muayenede ${item}`, correct));
+  }
+
+  const questionPrompt = stripPreAnswerTeaching(question.question || question.diagnosis?.question || '', correct)
+    .replace(/^[Bb]u olguda\s*,?\s*/u, 'Bu olguda ');
+  const finalSentences = limitNarrativeLength(baseSentences, questionPrompt);
+  return splitTusParagraphsFromSentences(finalSentences);
 }
 
 
@@ -791,21 +809,31 @@ function mergeCompactDataItems(...groups) {
 }
 
 export function applyAISpotDuplicateDataGate(question = {}) {
-  // V429 root fix: keep complete objective data visible in the stem.
-  // This function no longer removes structured-data sentences from AI spot stems.
   const vitals = getAISpotCompactVitals(question);
   const objective = getAISpotCompactObjectiveData(question);
+  const supportItems = [...vitals, ...objective];
+  const rawStem = question.narrativeStem || question.primaryStem || question.stem || question.patientIntro?.historySummary || '';
+  const cleanedStem = stripDuplicateSupportDataFromStem(
+    removeStructuredDataFragmentsFromText(removeDenseVitalSentences(stripPreAnswerTeaching(rawStem, question.diagnosis?.correct || question.correctAnswerText || ''), vitals.length > 0), Boolean(supportItems.length), supportItems),
+    supportItems,
+  );
   const next = {
     ...question,
-    compactVitals: mergeCompactDataItems(question.compactVitals || question.compactVitalData || [], vitals),
-    compactObjectiveData: mergeCompactDataItems(question.compactObjectiveData || question.compactObjective || [], objective),
+    compactVitals: mergeCompactDataItems(question.compactVitals || question.compactVitalData || [], vitals).slice(0, 5),
+    compactObjectiveData: mergeCompactDataItems(question.compactObjectiveData || question.compactObjective || [], objective).slice(0, 10),
   };
-  if (question.stem && question.patientIntro) {
-    next.patientIntro = { ...question.patientIntro, historySummary: question.stem };
+  if (cleanedStem && cleanedStem.split(/\s+/).filter(Boolean).length >= 8) {
+    next.stem = cleanedStem;
+    next.narrativeStem = cleanedStem;
+    if (next.patientIntro) {
+      next.patientIntro = {
+        ...next.patientIntro,
+        historySummary: cleanedStem,
+      };
+    }
   }
   return next;
 }
-
 
 export function getAISpotPreviewDiagnostics(question = {}) {
   const paragraphs = buildAISpotNarrativeStem(question);
