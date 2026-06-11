@@ -269,7 +269,7 @@ function ensureSentence(value = '') {
   return /[.!?]$/u.test(text) ? text : `${text}.`;
 }
 
-function truncateSentence(value = '', limit = 230) {
+function truncateSentence(value = '', limit = Infinity) {
   const text = normalizeText(value).replace(/\.\.\.|…/g, '.');
   if (!Number.isFinite(Number(limit)) || Number(limit) <= 0) return text;
   if (text.length <= limit) return text;
@@ -292,7 +292,7 @@ function splitIntoSentences(text = '') {
     .filter((sentence) => sentence && !/^(?:[A-ZÇĞİÖŞÜ]|I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII)\.$/u.test(sentence));
 }
 
-function compactParagraph(value = '', maxSentences = 4, maxLength = 620) {
+function compactParagraph(value = '', maxSentences = Infinity, maxLength = Infinity) {
   const allSentences = splitIntoSentences(value);
   const sentences = Number.isFinite(Number(maxSentences)) ? allSentences.slice(0, maxSentences) : allSentences;
   const text = sentences.length ? sentences.join(' ') : normalizeText(value);
@@ -407,10 +407,10 @@ function deriveWhyCorrect(clinicalCase) {
   const feedback = getFeedback(clinicalCase);
   const isSpotCase = clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular';
   const explicit = normalizeText(feedback.whyCorrect || '');
-  if (explicit) return compactParagraph(removeMetaLanguage(explicit), isSpotCase ? 6 : 4, isSpotCase ? 900 : 620);
+  if (explicit) return compactParagraph(removeMetaLanguage(explicit), isSpotCase ? Infinity : 4, isSpotCase ? Infinity : 620);
 
   const explanation = normalizeText(clinicalCase.diagnosis?.explanation || clinicalCase.explanation || '');
-  if (explanation) return compactParagraph(removeMetaLanguage(explanation), isSpotCase ? 6 : 4, isSpotCase ? 900 : 620);
+  if (explanation) return compactParagraph(removeMetaLanguage(explanation), isSpotCase ? Infinity : 4, isSpotCase ? Infinity : 620);
 
   const clue = getMainClue(clinicalCase);
   const correct = clinicalCase.diagnosis?.correct || 'doğru seçenek';
@@ -798,7 +798,7 @@ function resolveAISpotOptionExplanation(clinicalCase = {}, optionText = '', fall
     getAISpotMapValue(clinicalCase.diagnosis?.answerFeedbackByOption, optionText, letter),
     fallback,
   ].filter(Boolean);
-  return mergeUniqueSentences(sources) || 'Bu seçenek için ayrıntılı açıklama eklenemedi.';
+  return mergeUniqueSentences(sources) || '';
 }
 
 function buildAISpotDetailedRows(clinicalCase = {}, selectedOption = '') {

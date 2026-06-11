@@ -37,7 +37,9 @@ function standardizeTurkishMedicalText(value = '') {
     [/\bacinar\b/giu, 'asiner'], [/\bchemoresept[oö]r\b/giu, 'kemoreseptör'], [/\bkemoreseptor\b/giu, 'kemoreseptör'],
     [/\bcavern[oö]z\b/giu, 'kavernöz'], [/\bkranial\b/giu, 'kraniyal'], [/\btubul(?:us)?\b/giu, 'tübül'],
     [/\bglomerul\b/giu, 'glomerül'], [/\bdiffus\b/giu, 'diffüz'], [/\bembryolojik\b/giu, 'embriyolojik'],
-    [/\binfeksiyon\b/giu, 'enfeksiyon'], [/\bakciğusda\b/giu, 'akciğerde'], [/\bprofılaktik\b/giu, 'profilaktik'],
+    [/\binfeksiyon\b/giu, 'enfeksiyon'], [/\boportunistik\b/giu, 'fırsatçı'], [/\bopportunistik\b/giu, 'fırsatçı'],
+    [/\bdenozin\b/giu, 'adenozin'], [/\bomurga reseptör\b/giu, 'antijen reseptör'],
+    [/\bakciğusda\b/giu, 'akciğerde'], [/\bprofılaktik\b/giu, 'profilaktik'],
     [/\bcontrastli\b/giu, 'kontrastlı'], [/\banjiografi\b/giu, 'anjiyografi'], [/\bnöral krista\b/giu, 'nöral krest'],
     [/\bintraivazöz\b/giu, 'intravenöz'], [/\baktiv\b/giu, 'aktif'], [/\bintraabdomenel\b/giu, 'intraabdominal'],
     [/\blaparatomi\b/giu, 'laparotomi'], [/\bspesifiktedir\b/giu, 'spesifiktir'], [/\bgösterür\b/giu, 'gösterir'],
@@ -265,17 +267,29 @@ function sanitizeNarrativeStem(stem = '', { demographics = '', setting = '', chi
   return `${dem}, ${cc} nedeniyle ${lowerSetting} değerlendirilmektedir. ${context}`;
 }
 
+function isLowQualityFeedback(value = '') {
+  const text = cleanText(value);
+  return !text
+    || /\b(?:bu seçenek,? kökteki ana bulguları birlikte|ayırt ettirici açıklama üretilemedi|ayrıntılı açıklama eklenemedi)\b/iu.test(text)
+    || /^(?:doğru|yanlış|uygun değildir|uygun değil|çeldiricidir|akla gelebilir|kısmen doğru)[.!]?$/iu.test(text);
+}
+
 function rationalesObject(raw = {}, explanation = '', correctId = 'A') {
+  const normalizeFeedbackValue = (value = '', id = '') => {
+    const cleaned = ensureSentence(standardizeTurkishMedicalText(value));
+    if (isLowQualityFeedback(cleaned)) return id === correctId ? ensureSentence(standardizeTurkishMedicalText(explanation)) : '';
+    return cleaned;
+  };
   if (Array.isArray(raw)) {
     return OPTION_IDS.reduce((acc, id, index) => {
       const value = raw[index] || (id === correctId ? explanation : '');
-      acc[id] = ensureSentence(standardizeTurkishMedicalText(value));
+      acc[id] = normalizeFeedbackValue(value, id);
       return acc;
     }, {});
   }
   return OPTION_IDS.reduce((acc, id) => {
     const value = raw?.[id] || raw?.[id.toLowerCase()] || raw?.[`option${id}`] || (id === correctId ? explanation : '');
-    acc[id] = ensureSentence(standardizeTurkishMedicalText(value));
+    acc[id] = normalizeFeedbackValue(value, id);
     return acc;
   }, {});
 }
