@@ -1,5 +1,5 @@
 export const casesPart18 = [
-  {
+{
     "id": "v224-new-039-yenidoganda-tek-tarafli-toraks-icerigi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -333,7 +333,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-040-orta-hatta-hareketli-boyun-sisligi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -667,7 +667,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-041-isi-intoleransi-ve-derin-dermis-yapisi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -1001,7 +1001,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-042-sag-ust-kadran-agrisi-ve-kivrimli-mukoza",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -1335,7 +1335,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-043-ara-kanama-ve-endometrial-bez-duzeni",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -1669,7 +1669,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-044-dusuk-hacimli-azospermi-ve-kanal-yoklugu",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -2021,7 +2021,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-045-poliuri-ve-aksonal-hipofiz-dokusu",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -2373,7 +2373,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-046-yutma-guclugu-ve-katli-mukoza",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -2707,7 +2707,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-047-karin-agrisi-ve-lenfoid-plakli-mukoza",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -3041,7 +3041,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-048-basinc-dalgalanmasi-ve-tubuler-kutup",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -3375,7 +3375,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-049-mandibula-kucuklugu-ve-orta-kulak-bulgusu",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -3709,7 +3709,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-050-safrali-kusma-ve-cift-kabarcik-bulgusu",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -4043,7 +4043,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-051-gece-gorme-azalmasi-ve-dis-retina-kati",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -4223,7 +4223,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-052-infertilite-ve-kivrimli-silyali-mukoza",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -4403,7 +4403,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-053-laktasyon-ve-alveoler-salgi-birimi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -4583,7 +4583,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-054-prenatal-ek-parmak-ve-eksen-paterni",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -4763,7 +4763,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-055-yenidoganda-ortak-atriyoventrikuler-gecis",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -4943,7 +4943,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-056-tekrarlayan-bogaz-agrisi-ve-kriptli-doku",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -5125,7 +5125,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-057-epigastrik-agri-ve-submukozal-bezler",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -5307,7 +5307,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-058-travma-sonrasi-cizgili-lif-incelemesi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -5489,7 +5489,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-059-prenatal-kranial-kubbe-eksikligi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -5671,7 +5671,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-060-prenatal-alt-polde-birlesik-bobrekler",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -5853,7 +5853,7 @@ export const casesPart18 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-061-kasinti-ve-dendritik-epidermal-hucre",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -6039,7 +6039,7 @@ export const casesPart18 = [
       "Belirgin melanin granül kümelenmesi izlenmiyor"
     ]
   },
-  {
+{
     "id": "v224-new-062-ataksi-ve-katmanli-serebellar-doku",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -6225,7 +6225,7 @@ export const casesPart18 = [
       "Moleküler tabaka ile granüler tabaka arasında tek sıra büyük armut biçimli nöronlar seçiliyor"
     ]
   },
-  {
+{
     "id": "v224-new-063-dispne-ve-ince-alveoler-bariyer",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -6411,7 +6411,7 @@ export const casesPart18 = [
       "Kapiller endotel hücreleri epitel yüzeye çok yakın izleniyor"
     ]
   },
-  {
+{
     "id": "v224-new-064-siklik-agri-ve-vajinal-cikis-engeli",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -6597,7 +6597,7 @@ export const casesPart18 = [
       "Distal çıkış düzeyinde kapalı zar benzeri yapı ve gerisinde sıvı-kan birikimi izleniyor"
     ]
   },
-  {
+{
     "id": "v224-new-065-yenidoganda-ust-dudak-yarigi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -6783,7 +6783,7 @@ export const casesPart18 = [
       "Sekonder damakta geniş açıklık izlenmiyor"
     ]
   },
-  {
+{
     "id": "v224-new-066-kasinti-ve-kirmizi-turuncu-granullu-hucre",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -6969,7 +6969,7 @@ export const casesPart18 = [
       "Paraziter temas ve kaşıntı öyküsü var"
     ]
   },
-  {
+{
     "id": "v224-new-067-boy-kisaligi-ve-kolonlasan-kondrositler",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -7155,7 +7155,7 @@ export const casesPart18 = [
       "Belirgin mineralize septa veya osteoblastla kaplı trabekül baskın değil"
     ]
   },
-  {
+{
     "id": "v224-new-068-infertilite-ve-stereosilyali-kanal",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -7341,7 +7341,7 @@ export const casesPart18 = [
       "Yalancı çok katlı prizmatik epitel ve uzun apikal uzantılar"
     ]
   },
-  {
+{
     "id": "v224-new-069-cocukta-mine-cukurcuklari-ve-dis-kronu",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -7527,7 +7527,7 @@ export const casesPart18 = [
       "Dentin kalınlığı ve kök şekli korunmuş"
     ]
   },
-  {
+{
     "id": "v224-new-070-yenidoganda-gecici-atriyal-sant",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -7714,7 +7714,7 @@ export const casesPart18 = [
       "Aorta-pulmoner arter arasında belirgin geniş açıklık yok"
     ]
   },
-  {
+{
     "id": "v224-new-071-oksuruk-ve-submukozal-bezli-hava-yolu",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -7901,7 +7901,7 @@ export const casesPart18 = [
       "Hiyalin kıkırdak halka düzeni"
     ]
   },
-  {
+{
     "id": "v224-new-072-tekrarlayan-kayip-ve-fundal-centik",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -8088,7 +8088,7 @@ export const casesPart18 = [
       "Vajinal kanal açıklığı korunmuş"
     ]
   },
-  {
+{
     "id": "v224-new-346-direncli-hipertansiyon-ve-dusuk-potasyum",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -8532,7 +8532,7 @@ export const casesPart18 = [
       "Baskılı renin ve uygunsuz aldosteron yüksekliği"
     ]
   },
-  {
+{
     "id": "v224-new-347-erken-yasta-ldl-yuksekligi-ve-tendon-sertligi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -8977,7 +8977,7 @@ export const casesPart18 = [
       "Erken koroner aile öyküsü"
     ]
   },
-  {
+{
     "id": "v224-new-348-bacak-egriligi-ve-mineralizasyon-bozuklugu",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -9386,7 +9386,7 @@ export const casesPart18 = [
       "Bilek genişliği ve genu varum"
     ]
   },
-  {
+{
     "id": "v224-new-349-acilde-beklenmeyen-potasyum-yuksekligi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -9830,7 +9830,7 @@ export const casesPart18 = [
       "Normal tekrar plazma potasyumu"
     ]
   },
-  {
+{
     "id": "v224-new-350-norovisceral-karin-agrisi-ve-koyulasan-idrar",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -10257,7 +10257,7 @@ export const casesPart18 = [
       "Deri fotosensitivitesi olmaması"
     ]
   },
-  {
+{
     "id": "v224-new-351-poliuri-ve-derin-solunum",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -10623,7 +10623,7 @@ export const casesPart18 = [
       "Derin solunum"
     ]
   },
-  {
+{
     "id": "v224-new-352-beslenme-destegi-sonrasi-gucsuzluk",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -10989,7 +10989,7 @@ export const casesPart18 = [
       "Hipomagnezemi"
     ]
   },
-  {
+{
     "id": "v224-new-353-karaciger-enzim-yuksekligi-ve-eklem-agrisi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -11355,7 +11355,7 @@ export const casesPart18 = [
       "CRP normal"
     ]
   },
-  {
+{
     "id": "v224-new-354-tetani-ve-mineral-panel-uyumsuzlugu",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -11721,7 +11721,7 @@ export const casesPart18 = [
       "D vitamini referans içinde"
     ]
   },
-  {
+{
     "id": "v224-new-355-sarilik-ve-acik-renk-diski",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -12087,7 +12087,7 @@ export const casesPart18 = [
       "Açık renk dışkı"
     ]
   },
-  {
+{
     "id": "v224-new-356-egzersizde-kas-agrisi-ve-duzlesen-laktat",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -12452,7 +12452,7 @@ export const casesPart18 = [
       "Kısa yoğun egzersiz intoleransı"
     ]
   },
-  {
+{
     "id": "v224-new-357-yenidoganda-kusma-ve-tuz-kaybi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -12817,7 +12817,7 @@ export const casesPart18 = [
       "Çok yüksek 17-hidroksiprogesteron"
     ]
   },
-  {
+{
     "id": "v224-new-358-glukoz-destegi-sonrasi-dalginlik-ve-laktat",
     "branchId": "medical-biochemistry",
     "caseType": "standard",

@@ -1,5 +1,5 @@
 export const casesPart17 = [
-  {
+{
     "id": "v222-new-002-oksijen-dusuklugunde-hizli-soluma",
     "branchId": "physiology",
     "caseType": "standard",
@@ -437,7 +437,7 @@ export const casesPart17 = [
     "questionType": "physiology_mechanism",
     "answerTarget": "arteriyel_oksijen_basinci_dususunun_periferik_kemoreseptor_desarjini_artirmasi"
   },
-  {
+{
     "id": "v222-new-003-odem-ilaci-sonrasi-sik-idrar",
     "branchId": "physiology",
     "caseType": "standard",
@@ -875,7 +875,7 @@ export const casesPart17 = [
     "questionType": "physiology_mechanism",
     "answerTarget": "kalin_cikan_kolda_na_k_2cl_geri_emiliminin_azalmasiyla_meduller_gradyanin_zayiflamasi"
   },
-  {
+{
     "id": "v222-new-004-ani-donme-hissi-ve-goz-titremesi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -1313,7 +1313,7 @@ export const casesPart17 = [
     "questionType": "physiology_mechanism",
     "answerTarget": "tek_tarafli_vestibuler_afferent_tonusun_azalmasiyla_beyin_sapinda_asimetrik_hareket_sinyal"
   },
-  {
+{
     "id": "v222-new-005-yemek-sonrasi-gaz-ve-sulu-diskilama",
     "branchId": "physiology",
     "caseType": "standard",
@@ -1751,7 +1751,7 @@ export const casesPart17 = [
     "questionType": "physiology_mechanism",
     "answerTarget": "fircamsi_kenar_disakkaridaz_azalmasiyla_karbonhidratin_lumende_ozmotik_yuk_olusturmasi"
   },
-  {
+{
     "id": "v223-new-001-buyumus-kalpte-efor-nefes-darligi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -2189,7 +2189,7 @@ export const casesPart17 = [
     "questionType": "physiology_mechanism",
     "answerTarget": "ventrikul_yaricapi_arttikca_ayni_basincta_duvar_geriliminin_yukselmesi"
   },
-  {
+{
     "id": "v223-new-002-kansizlikla-artan-efor-nefes-darligi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -2627,7 +2627,7 @@ export const casesPart17 = [
     "questionType": "physiology_mechanism",
     "answerTarget": "eritrosit_2_3_bpg_artisiyla_hemoglobinin_oksijeni_dokuda_daha_kolay_birakmasi"
   },
-  {
+{
     "id": "v223-new-003-tansiyon-ilaci-sonrasi-halsizlik",
     "branchId": "physiology",
     "caseType": "standard",
@@ -3065,7 +3065,7 @@ export const casesPart17 = [
     "questionType": "physiology_mechanism",
     "answerTarget": "erken_distal_tubulde_nacl_geri_emiliminin_azalmasiyla_serbest_su_klirensinin_dusmesi"
   },
-  {
+{
     "id": "v223-new-004-gece-kortizolu-yuksek-hasta",
     "branchId": "physiology",
     "caseType": "standard",
@@ -3503,7 +3503,7 @@ export const casesPart17 = [
     "questionType": "physiology_mechanism",
     "answerTarget": "hipotalamik_crh_acth_pulslarinin_sirkadiyen_girdilerle_sabah_zirvesi_olusturmasi"
   },
-  {
+{
     "id": "v223-new-005-yutma-guclugu-ve-yuksek-basinc",
     "branchId": "physiology",
     "caseType": "standard",
@@ -3941,7 +3941,7 @@ export const casesPart17 = [
     "questionType": "physiology_mechanism",
     "answerTarget": "miyozin_hafif_zinciri_defosforile_olsa_da_bazi_capraz_koprulerin_bagli_kalmasi"
   },
-  {
+{
     "id": "v224-new-001-toksin-sonrasi-tubuler-kayip",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -4351,7 +4351,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-002-ust-karin-agrisi-ve-salgi-dokusu",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -4738,7 +4738,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-003-boyunda-buyuyen-lenfoid-doku",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -5130,7 +5130,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-004-prenatal-sivi-azalmasi-ve-bos-renal-fossa",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -5499,7 +5499,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-005-yenidoganda-diski-cikisi-olmamasi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -5868,7 +5868,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-006-deride-gergin-kabarcik-ve-ayrilma-duzeyi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -6201,7 +6201,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-007-kemik-agrisi-ve-rezorpsiyon-yuzeyi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -6552,7 +6552,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-008-travma-sonrasi-eritrosit-kalintilari",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -6885,7 +6885,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-009-gobekten-berrak-sivi-gelmesi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -7236,7 +7236,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-010-yenidoganda-distal-ekstremite-kisaligi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -7587,7 +7587,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-011-makrositoz-ve-gastrik-mukoza-kaybi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -8024,7 +8024,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-012-boyunda-nodul-ve-hormon-fazlaligi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -8461,7 +8461,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-013-beyin-dokusunda-sinirli-madde-gecisi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -8794,7 +8794,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-014-primer-amenore-ve-uterus-izlenmemesi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -9145,7 +9145,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-015-yenidoganda-membranla-kapli-karin-kitlesi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -9478,7 +9478,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-016-carpinti-sonrasi-miyokard-orneklemesi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -9811,7 +9811,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-017-gece-hisiltisi-ve-kucuk-hava-yolu",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -10144,7 +10144,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-018-tedavi-sonrasi-kan-yapimi-degerlendirmesi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -10495,7 +10495,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-019-beslenirken-burundan-sut-gelmesi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -10828,7 +10828,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-020-yenidoganda-kusma-ve-halka-basi-bulgusu",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -11179,7 +11179,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-021-uyusma-sonrasi-sinir-orneklemesi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -11513,7 +11513,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-022-agiz-kurulugu-ve-karisik-salgi-birimi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -11847,7 +11847,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-023-duzensiz-adet-ve-follikul-cevresi-hucreler",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -12181,7 +12181,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-024-ventral-yerlesimli-idrar-acikligi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -12515,7 +12515,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-025-yenidoganda-beyaz-pupilla-reflesi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -12867,7 +12867,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-026-aralikli-hematuri-ve-mukoza-ornegi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -13219,7 +13219,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-027-kronik-ishal-ve-kript-duzeni",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -13571,7 +13571,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-028-hormon-fazlaligi-ve-sinusoidli-doku",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -13923,7 +13923,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-029-yenidoganda-isitme-taramasi-basarisizligi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -14275,7 +14275,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-030-buyume-geriligi-ve-villus-yapisi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -14627,7 +14627,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-031-kulak-kivriminda-tekrarlayan-sislik",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -14961,7 +14961,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-032-on-mediastende-lobullu-doku",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -15295,7 +15295,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-033-tas-oykusu-ve-kucuk-endokrin-nodul",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -15647,7 +15647,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-034-beslenme-sirasinda-oksuruk-ve-arka-baski",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -15981,7 +15981,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-035-sakral-orta-hat-kitlesi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -16315,7 +16315,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-036-infertilite-ve-tubul-duzeni",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -16667,7 +16667,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-037-sarilik-ve-lobul-kenari-kesiti",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -17019,7 +17019,7 @@ export const casesPart17 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v224-new-038-hipokalemi-ve-kapsul-alti-hucreleri",
     "branchId": "histology-embryology",
     "caseType": "standard",

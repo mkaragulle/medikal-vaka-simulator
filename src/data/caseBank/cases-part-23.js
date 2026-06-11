@@ -1,5 +1,5 @@
 export const casesPart23 = [
-  {
+{
     "id": "v255-new-473-agrisiz-genital-ulser-ve-serolojik-algoritma",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -368,7 +368,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v255-new-474-ev-konservesi-sonrasi-inen-flask-paralizi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -755,7 +755,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v255-new-475-tirnakta-kronik-dermatofit-enfeksiyonu",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -1124,7 +1124,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v255-new-476-uzamis-ates-ve-masif-splenomegali",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -1511,7 +1511,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v256-new-477-erken-baslangicli-yenidogan-sepsisi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -2021,7 +2021,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v256-new-478-kene-temasi-sonrasi-ates-ve-periferik-dokuntu",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -2531,7 +2531,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v256-new-479-col-yolculugu-sonrasi-noduler-pnomoni",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -3041,7 +3041,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v256-new-480-yeni-nobet-ve-kalsifiye-beyin-lezyonlari",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -3551,7 +3551,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v256-new-481-bebekte-hisiltili-bronsiolit-salgini",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -4061,7 +4061,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v257-new-482-asisiz-ergende-gri-farengeal-membran",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -4384,7 +4384,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v257-new-483-kanli-ishal-sonrasi-akut-bobrek-hasari",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -4719,7 +4719,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v257-new-484-akut-retroviral-tablo-ve-uyumsuz-seroloji",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -5042,7 +5042,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v257-new-485-bahce-isi-sonrasi-lenfatik-noduller",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -5365,7 +5365,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v257-new-486-av-eti-sonrasi-miyalji-ve-eozinofili",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -5688,7 +5688,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v258-new-487-asisiz-cocukta-akut-ust-hava-yolu-obstruksiyonu",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -5935,7 +5935,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v258-new-488-deri-apsesindeki-uyumsuz-disk-difuzyon-sonucu",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -6182,7 +6182,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v258-new-489-dermatom-boyunca-vezikuler-agri",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -6429,7 +6429,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v258-new-490-govdede-ince-kepekli-hipopigmente-makuller",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -6676,7 +6676,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v258-new-491-guney-amerika-sonrasi-tek-tarafli-goz-kapagi-sisligi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -6923,7 +6923,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v259-new-492-hayvan-derisi-temasi-sonrasi-siyah-eskar",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -7170,7 +7170,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v259-new-493-agrisiz-ulser-sonrasi-agrili-kasik-sisligi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -7417,7 +7417,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v259-new-494-monoklonal-tedavi-altinda-progresif-norolojik-defisit",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -7664,7 +7664,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v259-new-495-orman-kampi-sonrasi-pnomoni-ve-verrukoz-cilt-lezyonu",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -7911,7 +7911,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v259-new-496-kum-havuzu-sonrasi-eozinofili-ve-karaciger-lezyonlari",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -8159,7 +8159,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v260-new-497-av-hayvani-sonrasi-ulser-ve-lenfadenit",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -8363,7 +8363,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v260-new-498-yogun-bakimda-karbapenem-direncli-pnomoni",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -8573,7 +8573,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v260-new-499-parotis-sisligi-sonrasi-orkit",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -8777,7 +8777,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v260-new-500-yogun-bakimda-tekrarlayan-maya-pozitifligi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -8987,7 +8987,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v260-new-501-ciplak-ayak-temasi-sonrasi-demir-eksikligi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -9197,7 +9197,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v261-new-502-hizli-ilerleyen-yumusak-doku-enfeksiyonu",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -9407,7 +9407,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v261-new-503-igne-batmasi-sonrasi-uyumsuz-hepatit-testleri",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -9617,7 +9617,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v261-new-504-sefalosporin-tedavisi-sirasinda-direnc-degisimi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -9827,7 +9827,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v261-new-505-guneydogu-asya-sonrasi-ates-ve-umblike-papuller",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -10037,7 +10037,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v261-new-506-su-bitkisi-tuketimi-sonrasi-safra-yolu-yakinmalari",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -10247,7 +10247,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v262-new-507-az-pismis-tavuk-sonrasi-kanli-ishal",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -10451,7 +10451,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v262-new-508-persistan-yuksek-riskli-servikal-dna-pozitifligi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -10655,7 +10655,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v262-new-509-kopuklu-akinti-ve-hareketli-trofozoitler",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -10859,7 +10859,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v262-new-510-magara-temasi-sonrasi-hemorajik-ates",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -11068,7 +11068,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v262-new-511-kene-sonrasi-hemolitik-ates-ve-tetradlar",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -11272,7 +11272,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v263-new-512-tropikal-seyahat-sonrasi-apseli-pnomoni",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -11482,7 +11482,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v263-new-513-hbsag-pozitif-hastada-agir-hepatit-alevlenmesi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -11692,7 +11692,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v263-new-514-domuz-eti-sonrasi-sag-alt-kadran-agrisi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -11902,7 +11902,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v263-new-515-cig-tatli-su-baligi-sonrasi-kolanjit",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -12112,7 +12112,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v263-new-516-yogun-bakimda-kolistin-duyarlilik-kaybi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -12322,7 +12322,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v265-new-517-lohusalikta-ani-dispne-ve-hipoksemi",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -12727,7 +12727,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v265-new-518-nakil-sonrasi-kreatinin-yukselmesi",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -13101,7 +13101,7 @@ export const casesPart23 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v265-new-519-pigmente-deri-lezyonunda-biyopsi-paterni",
     "branchId": "medical-pathology",
     "caseType": "standard",

@@ -1,5 +1,5 @@
 export const casesPart24 = [
-  {
+{
     "id": "v265-new-520-kanama-bulgulari-ve-granullu-blastlar",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -385,7 +385,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v265-new-521-epigastrik-agri-ve-peritoneal-kireclenme",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -759,7 +759,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v266-new-522-hemoptizi-ve-hizli-kreatinin-artisi",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -1150,7 +1150,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v266-new-523-tekrarlayan-karin-agrisi-ve-segmental-ileit",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -1541,7 +1541,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v266-new-524-memede-duzensiz-kitle-ve-stromal-yanit",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -1850,7 +1850,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v266-new-525-tiroid-nodulu-ve-amiloid-benzeri-stroma",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -2239,7 +2239,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v266-new-526-sag-kalp-yetmezligi-ve-hepatomegali",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -2630,7 +2630,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v267-new-527-uzun-sureli-diyabet-ve-proteinuri",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -2998,7 +2998,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v267-new-528-alkol-kullanimindan-sonra-sarilik-ve-hassas-hepatomegali",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -3366,7 +3366,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v267-new-529-asbest-oykusu-ve-plevral-kalinlasma",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -3685,7 +3685,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v267-new-530-cerrahi-skar-hattinda-kabarik-lezyon",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -4004,7 +4004,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v267-new-531-psa-yuksekligi-ve-sert-prostat-nodulu",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -4372,7 +4372,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v268-new-532-egzersizde-senkop-ve-septal-kalinlasma",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -4853,7 +4853,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v268-new-533-santral-akciger-kitlesi-ve-hiperkalsemi",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -5352,7 +5352,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v268-new-534-tekrarlayan-dismenore-ve-over-kisti",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -5851,7 +5851,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v268-new-535-sepsis-sonrasi-yaygin-morluk-ve-uzayan-pihtilasma",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -6350,7 +6350,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v268-new-536-agrisiz-lenfadenopati-ve-noduler-lenf-nodu-paterni",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -6885,7 +6885,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v269-new-537-bilateral-hiler-dolgunluk-ve-kuru-oksuruk",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -7365,7 +7365,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v269-new-538-anormal-servikal-tarama-ve-kolposkopik-biyopsi",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -7827,7 +7827,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v269-new-539-agrisiz-sarilik-ve-pankreas-basinda-kitle",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -8343,7 +8343,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v269-new-540-kemik-agrisi-anemi-ve-litik-odaklar",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -8920,7 +8920,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v269-new-541-sepsis-sonrasi-hipoksemi-ve-yaygin-infiltrasyon",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -9479,7 +9479,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v270-new-542-sakak-agrisi-ve-gorme-bulanikligi",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -10002,7 +10002,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v270-new-543-periferik-akciger-nodulu-ve-plevral-cekinti",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -10543,7 +10543,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v270-new-544-mamografide-mikrokalsifikasyon-ve-cerrahi-ornek",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -11066,7 +11066,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v270-new-545-sabah-tutuklugu-ve-sinovyal-kalinlasma",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -11607,7 +11607,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v270-new-546-yenidogan-mekonyum-cikaramama-ve-distansiyon",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -12148,7 +12148,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v271-new-547-efor-sonrasi-gogus-agrisi-ve-ani-koroner-tikanma",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -12636,7 +12636,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v271-new-548-erken-doyma-ve-sertlesmis-mide-duvari",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -13218,7 +13218,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v271-new-549-cocukta-karinda-kitle-ve-hipertansiyon",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -13838,7 +13838,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v271-new-550-yaslida-kasintili-gergin-buller",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -14324,7 +14324,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v271-new-551-agrisiz-tiroid-buyumesi-ve-yorgunluk",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -14926,7 +14926,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v272-new-552-tekrarlayan-hematuri-ve-ust-solunum-yolu-oykusu",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -15179,7 +15179,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v272-new-553-gunes-goren-yuzde-inci-papul",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -15389,7 +15389,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v272-new-554-kronik-hepatit-zemininde-karaciger-kitlesi",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -15649,7 +15649,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v272-new-555-hizli-ilerleyen-norolojik-defisit-ve-halka-kitle",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -15865,7 +15865,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v272-new-556-genc-kadinda-hareketli-meme-kitlesi",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -16087,7 +16087,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v273-new-557-fotosensitivite-ve-aktif-idrar-sedimenti",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -16334,7 +16334,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v273-new-558-agrisiz-testis-kitlesi-ve-septali-tumor",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -16549,7 +16549,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v273-new-559-dural-tabanli-kitle-ve-psammom-cisimcikleri",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -16745,7 +16745,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v273-new-560-ataklar-halinde-hipertansiyon-ve-adrenal-kitle",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -16967,7 +16967,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v273-new-561-kotu-kokulu-balgam-ve-dilate-bronslar",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -17188,7 +17188,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v274-new-562-agrisiz-hematuri-ve-papiller-mesane-lezyonu",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -17392,7 +17392,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v274-new-563-sag-ust-kadran-agrisi-ve-kalinlasmis-safra-kesesi",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -17595,7 +17595,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v274-new-564-gogus-sirt-agrisi-ve-genisleyen-aort",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -17798,7 +17798,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v274-new-565-cocukta-kemik-agrisi-ve-deri-dokuntusu",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -18003,7 +18003,7 @@ export const casesPart24 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v274-new-566-postmenopozal-kanama-ve-overde-solid-kitle",
     "branchId": "medical-pathology",
     "caseType": "standard",

@@ -1,5 +1,5 @@
 export const casesPart08 = [
-  {
+{
     "id": "v194-new-330-ikinci-trimesterde-agrisiz-servikal-acilma",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -307,7 +307,7 @@ export const casesPart08 = [
     "obgynInvestigationLayerEnhanced": true,
     "obgynInvestigationLayerVersion": "v397-obgyn-investigation-layer"
   },
-  {
+{
     "id": "v194-new-331-membran-rupturu-sonrasi-fetal-kalp-atiminda-dusme",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -656,7 +656,7 @@ export const casesPart08 = [
     "obgynInvestigationLayerEnhanced": true,
     "obgynInvestigationLayerVersion": "v397-obgyn-investigation-layer"
   },
-  {
+{
     "id": "v194-new-332-gun-icinde-artan-cift-gorme",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -1303,7 +1303,7 @@ export const casesPart08 = [
       "note": "Oküler-bulber myastenia vakasında akış klinik yorulabilirlik → solunum/bulber güvenlik → AChR/MuSK serolojisi → RNS/single-fiber EMG → timus taraması olarak düzenlendi."
     }
   },
-  {
+{
     "id": "v194-new-333-alinda-vezikuler-dokuntu-ve-goz-agrisi",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -1950,7 +1950,7 @@ export const casesPart08 = [
       "note": "HZO vakasında akış V1 dermatomu ve Hutchinson bulgusu → görme/pupilla → slit-lamp/fluorescein → GİB ve oftalmoloji izlemi şeklinde düzenlendi."
     }
   },
-  {
+{
     "id": "v194-new-334-uyumadan-enerjik-olma-ve-taskinlik",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -2615,7 +2615,7 @@ export const casesPart08 = [
       "note": "Mani vakasında akış mental durum → intihar/homicid/ajitasyon güvenliği → madde-organik neden dışlama → tedavi öncesi EKG/metabolik güvenlik olarak düzenlendi."
     }
   },
-  {
+{
     "id": "v195-new-335-sinus-enfeksiyonu-sonrasi-cift-gorme",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -2884,7 +2884,7 @@ export const casesPart08 = [
       "N. maxillaris": "N. maxillaris orta yüz, üst dişler ve yanak duyusunu taşır; kavernöz sinüs lateral duvarıyla komşu olabilir ancak ekstraoküler kas motor fonksiyonu yoktur. Dışa bakış kaybını açıklamaz."
     }
   },
-  {
+{
     "id": "v195-new-336-boyun-kaburgasi-ve-elde-gucsuzluk",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -3152,7 +3152,7 @@ export const casesPart08 = [
       "Medial kord": "Medial kord alt trunkusun devamındaki distal pleksus segmentidir ve ulnar/median katkılar taşır; bu nedenle çeldirici olabilir. Ancak servikal kaburga ile daralan alan proksimal torasik çıkıştır, bu topografi lezyonu korddan çok alt trunkus düzeyine lokalize eder."
     }
   },
-  {
+{
     "id": "v195-new-337-pelvik-lenf-nodu-diseksiyonu-sonrasi-bacak-gucsuzlugu",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -3438,7 +3438,7 @@ export const casesPart08 = [
       "Nervus cutaneus femoris lateralis": "Lateral femoral kutanöz sinir saf duyusal bir sinirdir ve lateral uyluk duyusunu taşır; motor kayıp yapmaz. Bu olguda medial duyu kaybı ve adduksiyon zayıflığı vardır."
     }
   },
-  {
+{
     "id": "v195-new-338-renal-tubuler-akim-azalmasina-yanit",
     "branchId": "physiology",
     "caseType": "standard",
@@ -3859,7 +3859,7 @@ export const casesPart08 = [
     "helpText": "Distal NaCl sinyalinin yüksek mi düşük mü olduğunu ve bunun juxtaglomerüler aparatta hangi yönde homeostatik yanıt oluşturacağını karşılaştır.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v195-new-339-uzamis-ekspiryum-ve-hava-hapsi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -4262,7 +4262,7 @@ export const casesPart08 = [
     "scientificComment": "Elastik geri çekilimin azalması ekspirasyonda küçük hava yollarının daha kolay kapanmasına neden olur; artmış kompliyans ve artmış rezidüel volüm birlikte hava hapsi paternini oluşturur.",
     "helpText": "Obstrüktif patern ile restriktif paterni karşılaştır: FEV₁/FVC, rezidüel volüm ve hiperinflasyon hangi mekanik yöne işaret ediyor?"
   },
-  {
+{
     "id": "v195-new-340-mesane-bosaltma-refleksi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -4619,7 +4619,7 @@ export const casesPart08 = [
     "helpText": "Depolama ve boşaltma fazlarını ayır; detrusor kasılması, iç sfinkter tonusu ve dış sfinkter kontrolünün hangi fazda nasıl değiştiğine odaklan.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v195-new-341-katekolamin-salgilayan-hucre-kokeni",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -5109,7 +5109,7 @@ export const casesPart08 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v195-new-342-tekrarlayan-kirik-ve-mavi-sklera",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -5637,7 +5637,7 @@ export const casesPart08 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v195-new-343-erkek-cocukta-kendini-isirma-ve-urik-asit-yuksekligi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -5984,7 +5984,7 @@ export const casesPart08 = [
       "Orotat fosforiboziltransferaz (OPRT) eksikliği": "OPRT pirimidin metabolizmasıyla ilişkilidir; pürin kaynaklı hiperürisemi ve hipoksantin/guanin kurtarma azalmasını açıklamaz."
     }
   },
-  {
+{
     "id": "v195-new-344-makrositoz-ve-norolojik-yakinma",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -6331,7 +6331,7 @@ export const casesPart08 = [
       "Orotatın UMP’ye fosforibozilasyonunun azalması": "Orotat metabolizması pirimidin senteziyle ilgilidir; homosistein ve metilmalonik asit birlikteliğini açıklamaz."
     }
   },
-  {
+{
     "id": "v195-new-345-yenidoganda-beslenme-sonrasi-asidoz",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -6838,7 +6838,7 @@ export const casesPart08 = [
       "Pirüvat karboksilaz eksikliği": "Pirüvat karboksilaz eksikliğinde belirgin laktik asidoz beklenir; burada laktat normal ve C3-propiyonil patern baskındır."
     }
   },
-  {
+{
     "id": "v195-new-346-dalgali-ates-ve-bel-agrisi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -7143,7 +7143,7 @@ export const casesPart08 = [
       "Mycobacterium bovis": "Mycobacterium bovis pastörize edilmemiş sütle bulaşabilen tüberküloz etkenidir; kronik lenfadenit, akciğer dışı tüberküloz veya granülomatöz tutulum beklenebilir. Ancak küçük gram-negatif kokobasil kültürü ve bruselloz seroloji paterni M. bovis ile uyumlu değildir."
     }
   },
-  {
+{
     "id": "v195-new-347-akciger-ve-beyin-lezyonlari",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -7448,7 +7448,7 @@ export const casesPart08 = [
       "Actinomyces israelii": "Actinomyces israelii dallanan gram-pozitif anaerobik bakteridir; cervicofasiyal enfeksiyon, aspirasyon ilişkili torasik hastalık ve sülfür granülleriyle düşünülür. Zayıf aside dirençlilik, aerobik kültür ve immünsüprese hastada akciğerden beyne diseminasyon Nocardia lehinedir."
     }
   },
-  {
+{
     "id": "v195-new-348-seyahat-sonrasi-periyodik-ates",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -7797,7 +7797,7 @@ export const casesPart08 = [
       "Toxoplasma gondii": "Toxoplasma gondii immünsüpresyonda beyin lezyonları veya konjenital enfeksiyonla öne çıkar; akut seyahat sonrası eritrosit içi parazitemi ve periyodik ateş paternini açıklamaz. Kan yayması bulgusu Toxoplasma yerine Plasmodium lehinedir."
     }
   },
-  {
+{
     "id": "v195-new-349-eriskinde-nefrotik-proteinuri",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -8215,7 +8215,7 @@ export const casesPart08 = [
       "Kresentik glomerülonefrit": "Kresentik glomerülonefrit hızlı ilerleyen nefritik tablo, hematüri, hızla bozulan böbrek fonksiyonu ve Bowman aralığında kresentlerle ilişkilidir. Bu olguda nefrotik sendrom paternine kresentsiz kapiller duvar kalınlaşması ve granüler IgG-C3 birikimi eşlik eder."
     }
   },
-  {
+{
     "id": "v195-new-350-anormal-servikal-tarama-sonucu",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -8516,7 +8516,7 @@ export const casesPart08 = [
       "Atrofik skuamöz değişiklik": "Atrofi özellikle postmenopozal veya hipoöstrojenik zeminde parabazal hücre baskınlığı ve kuruluk/irritasyon bulgularıyla beklenir. Bu 33 yaşındaki hastada HPV pozitifliği ve nükleer atipiyle birlikte perinükleer halo atrofiden çok viral sitopatik değişikliği destekler."
     }
   },
-  {
+{
     "id": "v195-new-351-postmenopozal-kanama-ve-over-kitlesi",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -8933,7 +8933,7 @@ export const casesPart08 = [
       "Yüksek dereceli seröz karsinom": "Yüksek dereceli seröz karsinom genellikle belirgin nükleer atipi, papiller/solid epitelyal büyüme, p53 anormal boyanma paterni ve yaygın peritoneal tutulumla düşünülür. Bu olguda düşük dereceli nükleer oluklu hücreler, inhibin/calretinin pozitifliği ve EMA negatifliği epitelyal seröz karsinomla uyumlu değildir."
     }
   },
-  {
+{
     "id": "v195-new-352-tarim-ilaci-sonrasi-salivasyon-ve-bronkore",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -9304,7 +9304,7 @@ export const casesPart08 = [
       "Neostigmin uygulanması": "Neostigmin periferik asetilkolinesteraz inhibisyonu yapar ve miyastenia gravis veya nöromüsküler blok geri çevirmede kullanılabilir. Organofosfat zehirlenmesinde aynı enzimi daha fazla inhibe etmek bronkore ve bradikardiyi artıracağı için bu vaka için doğru klinik hedef değildir."
     }
   },
-  {
+{
     "id": "v195-new-353-ldl-yuksekligi-icin-baslanan-ilac",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -9648,7 +9648,7 @@ export const casesPart08 = [
       "ATP-sitrat liyaz inhibisyonu": "ATP-sitrat liyaz inhibisyonu bempedoik asidin mekanizmasıdır ve kolesterol sentez yolunda HMG-CoA redüktazın daha yukarısında etki eder. Statin etkisini açıklamak için doğru basamak değildir."
     }
   },
-  {
+{
     "id": "v195-new-354-kemoterapi-sonrasi-mukozit",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -10073,7 +10073,7 @@ export const casesPart08 = [
       "Mikrotübül polimerizasyonunun stabilizasyonu": "Mikrotübül polimerizasyonunun stabilizasyonu taksanların mekanizmasıdır ve mitoz iğciği dinamiğini bozar. Metotreksatın mukozal ve hematolojik toksisitesi mikrotübül stabilizasyonundan değil folat bağımlı nükleotid sentezinin baskılanmasından kaynaklanır."
     }
   },
-  {
+{
     "id": "v195-new-355-kusma-sonrasi-gogus-agrisi",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -10999,7 +10999,7 @@ export const casesPart08 = [
       "note": "Genel Cerrahi vakasında objektif veri katmanı cerrahi ilk değerlendirme → acil güvenlik → laboratuvar → hedefli görüntüleme/doğrulama → girişim/kaynak kontrolü sırasına göre düzenlendi."
     }
   },
-  {
+{
     "id": "v195-new-356-kasik-altinda-agrili-sislik",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -11715,7 +11715,7 @@ export const casesPart08 = [
       "note": "Hedef kayıt için objektif veri katmanı muayene → temel laboratuvar → hedefli ultrasonografi sırasıyla düzenlendi."
     }
   },
-  {
+{
     "id": "v195-new-357-erken-evre-meme-kitlesi",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -12335,7 +12335,7 @@ export const casesPart08 = [
       "note": "Hedef kayıt için objektif veri katmanı klinik değerlendirme → meme/aksilla görüntüleme → kor biyopsi patolojisi sırasıyla düzenlendi."
     }
   },
-  {
+{
     "id": "v195-new-358-alt-karin-agrisi-ve-servikal-hassasiyet",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -12812,7 +12812,7 @@ export const casesPart08 = [
       "Tanısal laparoskopiyle doğrulama olmadan antibiyotik başlamamak": "Laparoskopi atipik, tanısı belirsiz veya komplikasyon şüphesi olan seçilmiş olgularda gerekebilir; ancak tipik klinik bulgularla stabil PID şüphesinde tedaviyi invaziv doğrulama için geciktirmek bu vaka için doğru klinik hedef değildir."
     }
   },
-  {
+{
     "id": "v195-new-359-menopoz-sonrasi-vajinal-kanama",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -13228,7 +13228,7 @@ export const casesPart08 = [
       "CA-125 ve batın BT ile over malignitesi taramasını ilk basamak yapmak": "CA-125 ve BT, adneksiyal kitle, asit veya ileri malignite şüphesi varsa hedefli kullanılabilir. Bu olguda temel problem endometrium kalınlığı ve postmenopozal kanamadır; ilk tanısal basamak endometriyal dokunun değerlendirilmesidir."
     }
   },
-  {
+{
     "id": "v195-new-360-yogun-adet-kanamasi-ve-pelvik-basi",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -13678,7 +13678,7 @@ export const casesPart08 = [
       "Epitelyal over neoplazisi": "Epitelyal over neoplazisi persistan adneksiyal kitle, asit, abdominal distansiyon veya kompleks over morfolojisi ile şüphelenilir. Muayene ve USG’de ayrı adneksiyal kitle olmaması bu seçeneği geri plana iter."
     }
   },
-  {
+{
     "id": "v195-new-361-ani-yuz-felci",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -14300,7 +14300,7 @@ export const casesPart08 = [
       "Trigeminal nevralji": "Trigeminal nevralji saniyeler süren, tetiklenebilir elektrik çarpması tarzında yüz ağrısı ataklarıyla seyreder. Mimik kaslarında güçsüzlük, ağız köşesinde kayma ve göz kapama kusuru oluşturmaz; bu vakadaki temel problem ağrı değil motor fasiyal paralizidir."
     }
   },
-  {
+{
     "id": "v195-new-362-tekrarlayan-vertigo-ve-kulakta-dolgunluk",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -14940,7 +14940,7 @@ export const casesPart08 = [
       "Vestibüler schwannom": "Vestibüler schwannom yavaş ilerleyen tek taraflı sensörinöral işitme kaybı, tinnitus ve dengesizlikle akla gelebilir; ancak tipik olarak tekrarlayan saatlik vertigo atakları ve dalgalanan düşük frekans paterninden çok progresif retrokoklear kayıp beklenir. Bu hastada hedefli MRG’de iç akustik kanal veya serebellopontin açı kitlesi saptanmamıştır."
     }
   },
-  {
+{
     "id": "v195-new-363-alci-sonrasi-artan-bacak-agrisi",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -15580,7 +15580,7 @@ export const casesPart08 = [
       "Kırık stabilitesini artırmak için alçıyı daha sıkı yeniden sarmak": "Sıkı alçı veya kompresif sargı dış basıyı artırarak kompartman perfüzyonunu daha da bozar. Mevcut patofizyoloji basınç artışı olduğundan alçıyı sıkılaştırmak ağrı, iskemi ve kalıcı kas-sinir hasarı riskini artırır."
     }
   },
-  {
+{
     "id": "v196-new-364-yemek-sonrasi-ani-solunum-sikintisi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -15869,7 +15869,7 @@ export const casesPart08 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v196-new-365-uzamis-jeneralize-nobet",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -16200,7 +16200,7 @@ export const casesPart08 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v196-new-366-havlar-tarzda-oksuruk-ve-cekilme",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -16486,7 +16486,7 @@ export const casesPart08 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v196-new-367-yutamama-ve-tripod-pozisyonu",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -16844,7 +16844,7 @@ export const casesPart08 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v196-new-368-ishal-sonrasi-dolasim-bozuklugu",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -17338,7 +17338,7 @@ export const casesPart08 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v196-new-369-kilo-kaybi-ve-derin-solunum",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -17907,7 +17907,7 @@ export const casesPart08 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v196-new-370-bobrek-yetmezliginde-ritim-riski",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -18476,7 +18476,7 @@ export const casesPart08 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v196-new-371-konusamama-ve-hisilti",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -19045,7 +19045,7 @@ export const casesPart08 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v196-new-372-yenidoganda-titreme-ve-emme-zayifligi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -19578,7 +19578,7 @@ export const casesPart08 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v196-new-373-kanli-ishal-sonrasi-idrar-azalmasi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -20298,7 +20298,7 @@ export const casesPart08 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v196-new-374-ates-ve-ense-sertligi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -20862,7 +20862,7 @@ export const casesPart08 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v196-new-375-tablet-alimi-sonrasi-kusma-ve-sok",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -21577,7 +21577,7 @@ export const casesPart08 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v196-new-376-kuruyemis-sonrasi-tek-tarafli-hisilti",
     "branchId": "pediatrics",
     "caseType": "standard",

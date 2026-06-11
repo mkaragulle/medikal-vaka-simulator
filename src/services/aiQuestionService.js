@@ -1,12 +1,10 @@
 import { rememberAIQuestion } from '../utils/aiQuestionHistory.js';
-import { createSimpleFallbackQuestion, normalizeSimpleAIQuestion } from '../utils/simpleAIQuestionAdapter.js';
+import { normalizeSimpleAIQuestion } from '../utils/simpleAIQuestionAdapter.js';
 
 const runtimeEnv = import.meta.env || {};
 const AI_ENDPOINT = runtimeEnv.VITE_AI_QUESTION_ENDPOINT || '/api/generate-ai-question';
 const ENABLE_REAL_AI = String(runtimeEnv.VITE_ENABLE_REAL_AI ?? 'true').toLowerCase() !== 'false';
-const AI_REQUEST_TIMEOUT_MS = Number(runtimeEnv.VITE_AI_REQUEST_TIMEOUT_MS || 90000);
-const ENABLE_CLIENT_FALLBACK = String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'false').toLowerCase() === 'true';
-const SHOW_FALLBACK_NOTICE = String(runtimeEnv.VITE_AI_SHOW_FALLBACK_NOTICE ?? 'false').toLowerCase() === 'true';
+const AI_REQUEST_TIMEOUT_MS = Number(runtimeEnv.VITE_AI_REQUEST_TIMEOUT_MS || 120000);
 
 function withTimeout(ms = AI_REQUEST_TIMEOUT_MS) {
   const controller = new AbortController();
@@ -15,7 +13,7 @@ function withTimeout(ms = AI_REQUEST_TIMEOUT_MS) {
     const error = new DOMException(`AI isteği ${Math.round(timeoutMs / 1000)} saniye içinde tamamlanamadı.`, 'AbortError');
     try { controller.abort(error); } catch { controller.abort(); }
   }, timeoutMs);
-  return { controller, timeoutId, timeoutMs };
+  return { controller, timeoutId };
 }
 
 function isAbortLikeError(error) {
@@ -28,14 +26,12 @@ function canUseRemote() {
 }
 
 function readPayloadError(payload, status) {
-  if (payload && typeof payload === 'object') {
-    return payload.error || payload.message || payload.detail || `AI endpoint ${status}`;
-  }
+  if (payload && typeof payload === 'object') return payload.error || payload.message || payload.detail || `AI endpoint ${status}`;
   return `AI endpoint ${status}`;
 }
 
 async function fetchRemoteQuestion({ previousQuestionId, branchFilter, difficulty = 'Orta' }) {
-  if (!canUseRemote()) throw new Error('Gerçek AI bağlantısı kapalı veya tarayıcı fetch desteği yok.');
+  if (!canUseRemote()) throw new Error('Gerçek TUS AI Spot bağlantısı kapalı veya tarayıcı fetch desteği yok.');
 
   const { controller, timeoutId } = withTimeout();
   try {
@@ -51,12 +47,11 @@ async function fetchRemoteQuestion({ previousQuestionId, branchFilter, difficult
     if (!response.ok || !payload?.ok) throw new Error(readPayloadError(payload, response.status));
 
     const rawQuestion = payload.question || payload;
-    const isFallback = Boolean(payload.fallback || rawQuestion.fallback || String(payload.provider || rawQuestion.provider || '').toLowerCase().includes('fallback'));
     const question = normalizeSimpleAIQuestion(rawQuestion, {
       provider: payload.provider || rawQuestion.provider || 'openai',
       model: rawQuestion.openAIModel || payload.model || null,
-      remote: !isFallback,
-      fallback: isFallback,
+      remote: true,
+      fallback: false,
       branchFilter,
       difficulty,
     });
@@ -65,48 +60,20 @@ async function fetchRemoteQuestion({ previousQuestionId, branchFilter, difficult
     question.aiMeta = {
       ...(question.aiMeta || {}),
       provider: payload.provider || question.aiMeta?.provider || 'openai',
-      remote: !isFallback,
-      fallback: isFallback,
+      remote: true,
+      fallback: false,
       historyItemId: historyItem.id,
-      serverError: payload.error || null,
+      sourceChecked: Boolean(payload.sourceChecked || rawQuestion.aiMeta?.sourceChecked),
+      sourceUrls: payload.sourceUrls || rawQuestion.aiMeta?.sourceUrls || [],
     };
 
-    return {
-      ok: true,
-      question,
-      source: question.aiMeta.provider,
-      usedRemoteAI: !isFallback,
-      fallback: isFallback,
-      showFallbackNotice: Boolean(isFallback && SHOW_FALLBACK_NOTICE),
-    };
+    return { ok: true, question, source: question.aiMeta.provider, usedRemoteAI: true, fallback: false, showFallbackNotice: false };
   } finally {
     window.clearTimeout(timeoutId);
   }
 }
 
-function createClientFallback({ branchFilter, difficulty = 'Orta', reason }) {
-  const question = createSimpleFallbackQuestion({ branchFilter, difficulty });
-  question.aiMeta = {
-    ...(question.aiMeta || {}),
-    fallback: true,
-    remote: false,
-    fallbackNotice: SHOW_FALLBACK_NOTICE,
-    fallbackReason: reason?.message || String(reason || ''),
-  };
-  rememberAIQuestion(question);
-  return {
-    ok: true,
-    question,
-    source: 'local-safe-fallback',
-    usedRemoteAI: false,
-    fallback: true,
-    showFallbackNotice: SHOW_FALLBACK_NOTICE,
-    error: reason || null,
-  };
-}
-
 export function prefetchNextAIQuestion() {
-  // V411: hidden prefetch is intentionally disabled for predictable cost.
   return null;
 }
 
@@ -115,21 +82,12 @@ export async function createAIQuestion({ previousQuestionId = null, branchFilter
     return await fetchRemoteQuestion({ previousQuestionId, branchFilter, difficulty });
   } catch (error) {
     const normalizedError = isAbortLikeError(error)
-      ? new Error('AI isteği zaman aşımına uğradı. Bu kalite gate veya fallback hatası değildir; model yanıtı süre içinde tamamlayamadı. Tekrar deneyin veya VITE_AI_REQUEST_TIMEOUT_MS / TUS_OPENAI_PER_REQUEST_TIMEOUT_MS değerlerini artırın.')
+      ? new Error('TUS AI Spot soru üretimi zaman aşımına uğradı. Lütfen tekrar deneyin veya VITE_AI_REQUEST_TIMEOUT_MS / TUS_OPENAI_PER_REQUEST_TIMEOUT_MS değerlerini artırın.')
       : error;
-    if (ENABLE_CLIENT_FALLBACK) return createClientFallback({ branchFilter, difficulty, reason: normalizedError });
-    return {
-      ok: false,
-      question: null,
-      source: 'openai-error',
-      usedRemoteAI: false,
-      fallback: false,
-      showFallbackNotice: false,
-      error: normalizedError,
-    };
+    return { ok: false, question: null, source: 'openai-error', usedRemoteAI: false, fallback: false, showFallbackNotice: false, error: normalizedError };
   }
 }
 
 export function getAIServiceMode() {
-  return ENABLE_REAL_AI ? 'openai-clean-no-text-limits-v437' : 'real-ai-disabled';
+  return ENABLE_REAL_AI ? 'tus-ai-spot-only' : 'real-ai-disabled';
 }

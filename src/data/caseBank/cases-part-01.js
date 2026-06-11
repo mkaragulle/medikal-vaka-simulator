@@ -1,5 +1,5 @@
 export const casesPart01 = [
-  {
+{
     "id": "v163-new-001-akut-sistemik-reaksiyon",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -567,7 +567,7 @@ export const casesPart01 = [
       "İntravenöz kortikosteroid verip geç faz reaksiyonunu önlemek": "Kortikosteroidlerin etkisi geç başlar ve akut hipotansiyon-bronkospazm döngüsünü dakikalar içinde düzeltmez. Geç faz reaksiyonunu azaltma amacıyla eklenebilir, fakat ilk acil basamak yerine geçmez."
     }
   },
-  {
+{
     "id": "v163-new-002-acil-elektrolit-bozuklugu",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -1488,7 +1488,7 @@ export const casesPart01 = [
       "note": "Hiperkalemi vakasında post-intervention seri izlem bloğu pre-decision klinik güvenlik verisiyle değiştirildi; nitel referans alanları temizlendi."
     }
   },
-  {
+{
     "id": "v163-new-003-atesli-dokuntulu-cocuk",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -2075,7 +2075,7 @@ export const casesPart01 = [
       ]
     }
   },
-  {
+{
     "id": "v163-new-004-gebelikte-akut-karin",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -2466,7 +2466,7 @@ export const casesPart01 = [
     "obgynInvestigationLayerVersion": "v398-obgyn-first5-ultra-refined",
     "obgynFirst5UltraQualityReviewed": true
   },
-  {
+{
     "id": "v163-new-005-ani-gelisen-norolojik-defisit",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -3034,7 +3034,7 @@ export const casesPart01 = [
       "Karotis Doppler ultrasonografi": "Karotis Doppler ekstrakraniyal karotis darlığını değerlendirebilir, fakat intrakraniyal kanamayı dışlamaz. Akut reperfüzyon kararı öncesinde ilk beyin görüntülemesi yerine geçmez; damar görüntüleme gerekiyorsa BT/MR anjiyografi daha hedeflidir."
     }
   },
-  {
+{
     "id": "v163-new-006-sag-alt-kadran-agrisi",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -3887,7 +3887,7 @@ export const casesPart01 = [
       "note": "Genel Cerrahi vakasında objektif veri katmanı cerrahi ilk değerlendirme → acil güvenlik → laboratuvar → hedefli görüntüleme/doğrulama → girişim/kaynak kontrolü sırasına göre düzenlendi."
     }
   },
-  {
+{
     "id": "v163-new-007-kolinergik-bulgularla-zehirlenme",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -4272,7 +4272,7 @@ export const casesPart01 = [
       "GABA-A reseptör etkinliğini artırarak santral uyarılmayı baskılaması": "GABA-A üzerinden etki benzodiazepinlerin nöbet kontrolündeki destekleyici mekanizmasıdır. Bu seçenek kolinerjik toksidromun sekresyon, bradikardi ve fasikülasyon zincirini temel antidot düzeyinde açıklamaz."
     }
   },
-  {
+{
     "id": "v163-new-008-kronik-malabsorpsiyon-tablosu",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -4581,7 +4581,7 @@ export const casesPart01 = [
       "Yüzey epitelinde trofozoit tutunması ve belirgin villus invazyonu olmaması": "Giardiasis kötü kokulu ishal ve malabsorpsiyon yapabilir; ancak tanı dışkı/duodenal örnekte parazitin gösterilmesiyle desteklenir. Pozitif çölyak serolojisi ve kronik demir eksikliği bu soruda çölyak mukozal hasarını daha güçlü açıklar."
     }
   },
-  {
+{
     "id": "v163-new-009-omuz-travmasi-sonrasi-guc-kaybi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -4868,7 +4868,7 @@ export const casesPart01 = [
       "Nervus thoracicus longus": "Serratus anterior paralizisi ve skapular kanatlanma beklenirdi; olgunun ana paterni deltoid-abdüksiyon eksenindedir."
     }
   },
-  {
+{
     "id": "v163-new-010-aclikla-belirginlesen-metabolik-tablo",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -5200,7 +5200,7 @@ export const casesPart01 = [
       "Branching enzyme eksikliği": "Branching enzyme eksikliği anormal yapılı glikojen birikimi ve ilerleyici karaciğer hastalığıyla ilişkilidir. Buradaki akut açlık hipoglisemisi, laktat/ürik asit/trigliserid yüksekliği ve beslenmeyle düzelme son çıkış basamağı blokajını daha iyi açıklar."
     }
   },
-  {
+{
     "id": "v164-new-011-aclik-ve-kusma-sonrasi-metabolik-bozulma",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -6363,7 +6363,7 @@ export const casesPart01 = [
       "note": "DKA vakasında hasta yaşı erişkin hale getirildi; ilk tedavi cevabını sızdıran yorumlar nötr metabolik güvenlik verisine dönüştürüldü."
     }
   },
-  {
+{
     "id": "v164-new-012-beslenme-sonrasi-kusan-bebek",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -6876,7 +6876,7 @@ export const casesPart01 = [
       ]
     }
   },
-  {
+{
     "id": "v164-new-013-atesli-monoartrit",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -7535,7 +7535,7 @@ export const casesPart01 = [
       "Antinükleer antikor ve romatoid faktör paneli istemek": "ANA ve romatoid faktör kronik veya sistemik romatolojik hastalık bağlamında değerlidir. Bu hastadaki saatler içinde gelişen ateşli tek büyük eklem tablosu önce sinovyal sıvı incelemesi gerektirir."
     }
   },
-  {
+{
     "id": "v164-new-014-purpura-ve-norolojik-bulgular",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -9004,7 +9004,7 @@ export const casesPart01 = [
       "note": "TTP vakasında tedavi kararını açık eden objective yorumlar temizlendi; ADAMTS13 satırı tanısal örnekleme sonucu olarak nötrleştirildi."
     }
   },
-  {
+{
     "id": "v164-new-015-dogum-sonrasi-izlem",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -9329,7 +9329,7 @@ export const casesPart01 = [
     "obgynInvestigationLayerVersion": "v398-obgyn-first5-ultra-refined",
     "obgynFirst5UltraQualityReviewed": true
   },
-  {
+{
     "id": "v164-new-016-akut-skrotal-agri",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -10006,7 +10006,7 @@ export const casesPart01 = [
       "Epididimit ön tanısıyla oral antibiyotik verip poliklinik kontrolü önermek": "Epididimitte daha kademeli ağrı, üriner yakınma, ateş veya üretral akıntı daha beklenir. Bu vakadaki ani ağrı, yüksek testis ve refleks kaybı oral antibiyotikle izlem için güvenli değildir."
     }
   },
-  {
+{
     "id": "v164-new-017-yeni-baslayan-temporal-bas-agrisi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -10855,7 +10855,7 @@ export const casesPart01 = [
       "note": "Dev hücreli arterit vakasında tedavi emri ve biyopsi planı sızıntısı kaldırıldı; objektif veri klinik-alarm, inflamasyon, USG ve oftalmolojik durum olarak nötrleştirildi."
     }
   },
-  {
+{
     "id": "v164-new-018-hemoptizi-ve-hematuri-birlikteligi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -11910,7 +11910,7 @@ export const casesPart01 = [
       "note": "Pulmoner-renal sendrom vakasında soru hedefi tanıdan tedaviye çevrildi; seroloji/biyopsi verileri tanısal doğrulama olarak bırakılıp tedavi cevabı sızdırılmadı."
     }
   },
-  {
+{
     "id": "v164-new-019-ilac-sonrasi-ajitasyon-ve-ates",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -12569,7 +12569,7 @@ export const casesPart01 = [
       "Serotonerjik ajanları kesip destek tedavisi, benzodiazepin ve gerekirse siproheptadin vermek": "Bu seçenek olası nedensel ilaçları keser, destek tedavisiyle hipertermi ve otonom bulguları yönetir, benzodiazepinle ajitasyon-kas aktivitesini azaltır ve orta-ağır tabloda serotonin antagonizması için siproheptadini ekler."
     }
   },
-  {
+{
     "id": "v164-new-020-antibiyotik-sonrasi-ishal",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -13441,7 +13441,7 @@ export const casesPart01 = [
       "note": "C. difficile vakasında tedavi sorusu için post-intervention sızıntısı kaldırıldı; fulminan kolit güvenliği ve oral tedavi mantığı güçlendirildi."
     }
   },
-  {
+{
     "id": "v165-new-021-aclik-ve-kusma-sonrasi-metabolik-bozulma",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -14493,7 +14493,7 @@ export const casesPart01 = [
       "note": "DKA vakasında erişkin profil düzeltildi; hipokalemi-insülin zamanlaması ve elektrolit güvenliği güçlendirildi."
     }
   },
-  {
+{
     "id": "v165-new-022-erken-donemde-sarilik",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -14996,7 +14996,7 @@ export const casesPart01 = [
       ]
     }
   },
-  {
+{
     "id": "v165-new-023-dogum-sonrasi-aktif-kanama",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -15428,7 +15428,7 @@ export const casesPart01 = [
     "obgynInvestigationLayerVersion": "v398-obgyn-first5-ultra-refined",
     "obgynFirst5UltraQualityReviewed": true
   },
-  {
+{
     "id": "v165-new-024-ates-ve-yeni-ufurum",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -16408,7 +16408,7 @@ export const casesPart01 = [
       "note": "Endokardit vakasında kan kültürü tür düzeyi sızıntısı azaltıldı; risk faktörü-kapak-emboli-etken zinciri güçlendirildi."
     }
   },
-  {
+{
     "id": "v165-new-025-yukselen-gucsuzluk-tablosu",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -17024,7 +17024,7 @@ export const casesPart01 = [
     "listTitle": "Yükselen güçsüzlük tablosu",
     "cardTitle": "Yükselen güçsüzlük tablosu"
   },
-  {
+{
     "id": "v165-new-026-bradikardi-ve-hipotansiyon",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -17409,7 +17409,7 @@ export const casesPart01 = [
       "Fosfodiesteraz inhibisyonuyla cAMP yıkımını azaltması": "Fosfodiesteraz inhibisyonu milrinon gibi ilaçlarda cAMP yıkımını azaltır. Glukagon cAMP’yi yıkımı engelleyerek değil Gs-adenilat siklaz aktivasyonuyla üretimi artırarak yükseltir."
     }
   },
-  {
+{
     "id": "v165-new-027-yuzde-sislik-ve-proteinuri",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -17920,7 +17920,7 @@ export const casesPart01 = [
       ]
     }
   },
-  {
+{
     "id": "v165-new-028-boyun-cerrahisi-sonrasi-ses-degisikligi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -18207,7 +18207,7 @@ export const casesPart01 = [
       "Ramus externus nervi laryngei superioris": "Cricothyroideus üzerinden ses perdesi kontrolünü etkiler; bu olguda ana bulgu vokal fold hareket azalmasıdır."
     }
   },
-  {
+{
     "id": "v165-new-029-gogus-agrisi-ve-hipotansiyon",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -19007,7 +19007,7 @@ export const casesPart01 = [
       "note": "RV MI vakasında objektif veride nitrat yanıt sızıntısı temizlendi; hemodinami-EKG-eko ve ilaç güvenliği zinciri güçlendirildi."
     }
   },
-  {
+{
     "id": "v165-new-030-hipotansiyon-ve-elektrolit-bozuklugu",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -20023,7 +20023,7 @@ export const casesPart01 = [
       "note": "Adrenal kriz vakasında objektif veride doğrudan tedavi cümleleri azaltıldı; acil steroid-sıvı-dekstroz önceliği ve çeldirici ayrımı güçlendirildi."
     }
   },
-  {
+{
     "id": "v166-new-031-gebelikte-kanama-sonrasi-degerlendirme",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -20367,7 +20367,7 @@ export const casesPart01 = [
     "obgynInvestigationLayerVersion": "v398-obgyn-first5-ultra-refined",
     "obgynFirst5UltraQualityReviewed": true
   },
-  {
+{
     "id": "v166-new-032-ishal-sonrasi-bobrek-yetmezligi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -20970,7 +20970,7 @@ export const casesPart01 = [
       ]
     }
   },
-  {
+{
     "id": "v166-new-033-hiperglisemik-acil-tablo",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -22069,7 +22069,7 @@ export const casesPart01 = [
       "note": "DKA ilk basamak vakasında anamnez doğal hale getirildi; pre-decision veri korunarak sıvı cevabını açık eden kısa yorumlar nötrleştirildi ve seçenek-feedback zinciri yeniden yazıldı."
     }
   },
-  {
+{
     "id": "v166-new-034-gun-icinde-artan-kas-gucsuzlugu",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -22633,7 +22633,7 @@ export const casesPart01 = [
     "listTitle": "Gün içinde artan kas güçsüzlüğü",
     "cardTitle": "Gün içinde artan kas güçsüzlüğü"
   },
-  {
+{
     "id": "v166-new-035-ates-ve-inspiratuvar-solunum-sikintisi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -23214,7 +23214,7 @@ export const casesPart01 = [
       ]
     }
   },
-  {
+{
     "id": "v166-new-036-ates-ve-yeni-ufurum",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -24169,7 +24169,7 @@ export const casesPart01 = [
       "note": "Sağ taraf endokarditi vakasında anamnez, kültür/eko/BT akışı ve etken seçenek feedbackleri vaka özelinde yeniden güçlendirildi; doğru etkeni kelime düzeyinde sızdıran yorum dili azaltıldı."
     }
   },
-  {
+{
     "id": "v166-new-037-pelvik-cerrahide-riskli-yapi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -24438,7 +24438,7 @@ export const casesPart01 = [
       "Arteria ovarica": "İnfundibulopelvik ligament ve over cerrahisiyle daha ilişkilidir; uterin arter ligasyonunda klasik riskli yapı değildir."
     }
   },
-  {
+{
     "id": "v166-new-038-gorme-yakinmasi-ve-metabolik-asidoz",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -24805,7 +24805,7 @@ export const casesPart01 = [
       "Opioid reseptörlerini kompetitif olarak antagonize etmesi": "Opioid antagonizması naloksona aittir ve solunum depresyonu-miyozis paterninde düşünülür. Bu hastada görme bulgusu, osmolar açıklık ve anyon açıklığı opioid toksidromundan farklı bir mekanizma gösterir."
     }
   },
-  {
+{
     "id": "v166-new-039-trombositopeni-ve-norolojik-bulgu",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -26228,7 +26228,7 @@ export const casesPart01 = [
       "note": "TTP vakasında ADAMTS13 sonucunu bekletmeyen acil tedavi mantığı feedbacke taşındı; objektif veride plazma değişimi cevabını açık eden yorumlar nötrleştirildi."
     }
   },
-  {
+{
     "id": "v166-new-040-kronik-halsizlik-ve-hipotansiyon",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -27039,7 +27039,7 @@ export const casesPart01 = [
       "note": "Adrenal yetmezlik vakasında anamnez doğal kronik seyirle güçlendirildi; ACTH/kortizol ve renin-aldosteron verileri referans/yorum açısından temizlendi."
     }
   },
-  {
+{
     "id": "v167-new-041-bilinc-degisikligi-ve-solunum-baskilanmasi",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -27603,7 +27603,7 @@ export const casesPart01 = [
     "listTitle": "Bilinç değişikliği ve solunum baskılanması",
     "cardTitle": "Bilinç değişikliği ve solunum baskılanması"
   },
-  {
+{
     "id": "v167-new-042-asidoz-ve-hiperglisemi-tablosu",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -28594,7 +28594,7 @@ export const casesPart01 = [
       "note": "DKA + hipokalemi vakasında potasyum güvenlik eşiği doğru cevabı açık eden yorum dili olmadan objektifleştirildi; seçenek ve feedbackler insülin zamanlamasına göre yeniden yazıldı."
     }
   },
-  {
+{
     "id": "v167-new-043-premature-bebekte-solunum-sikintisi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -29180,7 +29180,7 @@ export const casesPart01 = [
       ]
     }
   },
-  {
+{
     "seq": 16,
     "globalIndex": 43,
     "id": "v167-new-044-uzamis-ates-ve-ufurum",
@@ -30260,7 +30260,7 @@ export const casesPart01 = [
       "note": "Endokardit olgusunda süreç cümleleri gerçek sonuçlara dönüştürüldü; etken seçimi dental girişim, doğal kapak, subakut seyir ve kültür morfolojisi üzerinden kuruldu."
     }
   },
-  {
+{
     "id": "v167-new-045-yavas-ilerleyen-hareket-bozuklugu",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -30860,7 +30860,7 @@ export const casesPart01 = [
     "listTitle": "Yavaş ilerleyen hareket bozukluğu",
     "cardTitle": "Yavaş ilerleyen hareket bozukluğu"
   },
-  {
+{
     "id": "v167-new-046-gebelikte-hipertansif-tablo",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -31279,7 +31279,7 @@ export const casesPart01 = [
     "obgynInvestigationLayerVersion": "v398-obgyn-first5-ultra-refined",
     "obgynFirst5UltraQualityReviewed": true
   },
-  {
+{
     "id": "v167-new-047-ates-ve-sag-ust-kadran-agrisi",
     "branchId": "general-surgery",
     "caseType": "standard",

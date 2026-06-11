@@ -1,3 +1,3 @@
-// Neutral stub: legacy synthetic fallback bank removed.
-// Direct TUS AI generation should not fall back to hidden local templates.
+// Yerel synthetic fallback prompt/template içerikleri kaldırıldı.
 export const AI_SYNTHETIC_FALLBACK_SEEDS = [];
+export default AI_SYNTHETIC_FALLBACK_SEEDS;

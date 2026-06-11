@@ -1,5 +1,5 @@
 export const casesPart16 = [
-  {
+{
     "id": "v212-new-005-diz-cekiciyle-ani-motor-yanit",
     "branchId": "physiology",
     "caseType": "standard",
@@ -352,7 +352,7 @@ export const casesPart16 = [
     "helpText": "Uyaran ağrı mı, gerilme mi; yanıt fleksiyon mu, ekstansiyon mu; latans kısa mı uzun mu? Bu üç ayrım çeldiricileri ayırır.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v213-new-001-basinc-destekli-solunumda-dolasim-yaniti",
     "branchId": "physiology",
     "caseType": "standard",
@@ -723,7 +723,7 @@ export const casesPart16 = [
     "helpText": "Önce değişikliğin basınç uygulamasıyla başladığını, ardından atım hacmi-oksijenlenme-ejeksiyon fraksiyonu üçlüsünün hangi mekanizmayı desteklediğini karşılaştır.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v213-new-002-sulu-diskilama-sonrasi-oral-sivi-yaniti",
     "branchId": "physiology",
     "caseType": "standard",
@@ -1094,7 +1094,7 @@ export const casesPart16 = [
     "helpText": "Dışkılama devam ettiği halde idrar çıkışı artıyorsa, sekresyonun tamamen durmasından çok emilim yolunun korunup korunmadığını düşün.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v213-new-003-beslenme-sirasinda-kisa-sureli-yanit",
     "branchId": "physiology",
     "caseType": "standard",
@@ -1465,7 +1465,7 @@ export const casesPart16 = [
     "helpText": "Zaman ölçeğine bak: saniyeler-dakikalar içinde olan yanıtlar sentezden çok depolanmış içeriğin boşaltılmasıyla ilişkilidir.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v213-new-004-bas-cevirmede-goz-yaniti",
     "branchId": "physiology",
     "caseType": "standard",
@@ -1836,7 +1836,7 @@ export const casesPart16 = [
     "helpText": "Uyaran ışık, ses veya kas gerilimi değil başın açısal hareketidir; bu yüzden doğru devreyi duyu modalitesinden başlat.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v213-new-005-tekrarlayan-sprintte-guc-azalmasi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -2207,7 +2207,7 @@ export const casesPart16 = [
     "helpText": "Kuvvet düşüşünü yorumlarken CMAP ve kreatin kinazın ne söylediğini metabolik pH-laktat verisiyle birlikte değerlendir.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v214-new-001-idrar-yogunlugunda-beklenmeyen-degisim",
     "branchId": "physiology",
     "caseType": "standard",
@@ -2625,7 +2625,7 @@ export const casesPart16 = [
     "helpText": "İdrar hacmi ve osmolaliteyi glukoz, potasyum ve böbrek fonksiyonuyla birlikte değerlendir.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v214-new-002-karinda-sislik-ve-ayak-bilegi-odemi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -3025,7 +3025,7 @@ export const casesPart16 = [
     "helpText": "Ödemin dağılımını albümin, venöz konjesyon ve akciğer bulgularıyla birlikte değerlendir.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v214-new-003-gunun-sonunda-artan-goz-kapagi-dusuklugu",
     "branchId": "physiology",
     "caseType": "standard",
@@ -3425,7 +3425,7 @@ export const casesPart16 = [
     "helpText": "Duyu-refleks korunumu ile kullanım bağımlı güçsüzlüğü birlikte değerlendir.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v214-new-004-adet-duzensizligi-ve-meme-akintisi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -3807,7 +3807,7 @@ export const casesPart16 = [
     "helpText": "Prolaktin yüksekliğini değerlendirirken gebelik, tiroid aksı ve dopaminerjik tonik kontrolü birlikte düşün.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v214-new-005-ani-nefes-sikismasi-sonrasi-uyusma",
     "branchId": "physiology",
     "caseType": "standard",
@@ -4207,7 +4207,7 @@ export const casesPart16 = [
     "helpText": "pH, PaCO₂ ve HCO₃⁻ yönlerini önce primer bozukluk için; ardından iyonize kalsiyumu semptomlar için kullan.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v215-new-001-ates-sonrasi-tansiyon-dusuklugu",
     "branchId": "physiology",
     "caseType": "standard",
@@ -4607,7 +4607,7 @@ export const casesPart16 = [
     "helpText": "Sıcak ekstremite ve geniş nabız basıncı, soğuk periferili düşük debi paterninden farklı bir dolaşım mekanizmasına işaret eder.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v215-new-002-uykulu-halde-yavas-soluma",
     "branchId": "physiology",
     "caseType": "standard",
@@ -5025,7 +5025,7 @@ export const casesPart16 = [
     "helpText": "Yüksek PaCO₂ + düşük solunum sayısı + belirgin genişlemeyen A-a farkı birlikte düşünülmelidir.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v215-new-003-diyabetli-hastada-halsizlik-ve-yuksek-potasyum",
     "branchId": "physiology",
     "caseType": "standard",
@@ -5461,7 +5461,7 @@ export const casesPart16 = [
     "helpText": "pH-HCO₃⁻-PaCO₂ ile primer bozukluğu belirle; anyon açıklığı ve potasyum yönüyle renal alt mekanizmayı ayır.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v215-new-004-ilac-kesilmesi-sonrasi-halsizlik",
     "branchId": "physiology",
     "caseType": "standard",
@@ -5879,7 +5879,7 @@ export const casesPart16 = [
     "helpText": "Düşük kortizol + düşük ACTH + normal potasyum birlikteliği, primer adrenal yıkımdan farklı bir aks problemine işaret eder.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v215-new-005-ameliyat-sonrasi-ates-ve-kas-sertligi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -6279,7 +6279,7 @@ export const casesPart16 = [
     "helpText": "Kas hastasında metabolik hız artıyorsa gevşek paralizi yerine kalsiyum döngüsü ve ATP tüketimi yönünü düşün.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v216-new-001-gogus-travmasi-sonrasi-dolasim-bozulmasi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -6697,7 +6697,7 @@ export const casesPart16 = [
     "helpText": "Dar nabız basıncı ve yüksek juguler venöz basıncı birlikte görürsen kalbin dolma fazını düşün.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v216-new-002-ani-gogus-agrisi-ve-solunum-sikintisi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -7079,7 +7079,7 @@ export const casesPart16 = [
     "helpText": "Tek taraflı ani hacim kaybında önce plevral boşluğun negatif basıncının korunup korunmadığını düşün.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v216-new-003-goz-ilaci-sonrasi-uyusma-ve-sik-idrar",
     "branchId": "physiology",
     "caseType": "standard",
@@ -7533,7 +7533,7 @@ export const casesPart16 = [
     "helpText": "Asidozda anyon açıklığı normal ve idrar alkaliyse kaybedilen bikarbonatın hangi tübül segmentinden geri alınamadığını sorgula.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v216-new-004-elde-yanigi-gec-fark-etme",
     "branchId": "physiology",
     "caseType": "standard",
@@ -7933,7 +7933,7 @@ export const casesPart16 = [
     "helpText": "Duyu kaybında önce modaliteyi ayır: ağrı-sıcaklık mı, vibrasyon-pozisyon mu, motor sistem eşlik ediyor mu?",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v216-new-005-bagirsak-ameliyati-sonrasi-yagli-diskilama",
     "branchId": "physiology",
     "caseType": "standard",
@@ -8333,7 +8333,7 @@ export const casesPart16 = [
     "helpText": "Yağlı dışkıda pankreas verisi normalse, lipidlerin enterosite nasıl taşındığını düşün.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v217-new-001-kapali-ortam-sonrasi-bas-agrisi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -8733,7 +8733,7 @@ export const casesPart16 = [
     "helpText": "PaO₂ basıncı gösterir; oksijen içeriği hemoglobinin ne kadar oksijen taşıyabildiğini gösterir.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v217-new-002-cok-su-icme-ve-sik-idrara-cikma",
     "branchId": "physiology",
     "caseType": "standard",
@@ -9133,7 +9133,7 @@ export const casesPart16 = [
     "helpText": "İdrar çok ama seyrelmemişse, lümende suyu tutan bir solüt olup olmadığını ara.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v217-new-003-boyun-ameliyati-sonrasi-kas-kasilmasi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -9515,7 +9515,7 @@ export const casesPart16 = [
     "helpText": "Kalsiyum düşük, fosfat yüksekse PTH etkisinin hangi yönde çalıştığını hatırla.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v217-new-004-inme-sonrasi-bacakta-sertlik",
     "branchId": "physiology",
     "caseType": "standard",
@@ -9897,7 +9897,7 @@ export const casesPart16 = [
     "helpText": "Canlı refleks ve klonus varsa periferik sinir-kas kavşağından önce spinal refleks kazancını düşün.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v217-new-005-yemek-sonrasi-erken-doyma",
     "branchId": "physiology",
     "caseType": "standard",
@@ -10279,7 +10279,7 @@ export const casesPart16 = [
     "helpText": "Endoskopide darlık yoksa ama mide geç boşalıyorsa, refleks motilite kontrolünü düşün.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v218-new-001-eforla-bayilma-ve-gogus-baskisi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -10603,7 +10603,7 @@ export const casesPart16 = [
     "helpText": "Düşük atım hacmi varlığında önce EDV ve ESV yönüne bak; ESV artışı basınç yükünü düşündürür.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v218-new-002-oksijen-desteginde-sert-akciger",
     "branchId": "physiology",
     "caseType": "standard",
@@ -10927,7 +10927,7 @@ export const casesPart16 = [
     "helpText": "Hışıltı ve uzamış ekspiryum yoksa, ventilasyon zorluğunu yalnızca bronkospazm gibi düşünme; kompliyans verisine bak.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v218-new-003-ishal-sonrasi-halsizlik-ve-hizli-soluma",
     "branchId": "physiology",
     "caseType": "standard",
@@ -11287,7 +11287,7 @@ export const casesPart16 = [
     "helpText": "HCO₃⁻ düşükse böbreğin doğru yanıtı bikarbonatı daha fazla atmak değil, asit atıp yeni bikarbonat üretmektir.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v218-new-004-adetlerin-kesilmesi-ve-ates-basmalari",
     "branchId": "physiology",
     "caseType": "standard",
@@ -11611,7 +11611,7 @@ export const casesPart16 = [
     "helpText": "Endokrin feedback sorularında önce hedef hormon düşük mü yüksek mi, sonra hipofiz hormonu aynı mı ters mi gidiyor ona bak.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v218-new-005-bobrek-hastasinda-kas-gucsuzlugu",
     "branchId": "physiology",
     "caseType": "standard",
@@ -11953,7 +11953,7 @@ export const casesPart16 = [
     "helpText": "Potasyum sorularında yönü hatırla: dış K⁺ artarsa membran daha az negatif olur; ağırsa Na⁺ kanalları inaktive kalır.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v219-new-001-carpinti-ve-genis-nabiz-basinci",
     "branchId": "physiology",
     "caseType": "standard",
@@ -12370,7 +12370,7 @@ export const casesPart16 = [
     "helpText": "Nabız basıncını çözerken sistolik basıncı yükselten ve diyastolik basıncı düşüren faktörleri ayrı ayrı düşün.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v219-new-002-gece-nefes-durmasi-ve-cabuk-yorulma",
     "branchId": "physiology",
     "caseType": "standard",
@@ -12769,7 +12769,7 @@ export const casesPart16 = [
     "helpText": "Pulmoner dolaşımın hipoksiye verdiği yanıtın sistemik dolaşımdan farklı olduğunu hatırla.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v219-new-003-insulin-aksamasi-sonrasi-karin-agrisi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -13186,7 +13186,7 @@ export const casesPart16 = [
     "helpText": "Keton sorularında önce yağ dokusundan karaciğere gelen substrat akışını ve insülinin bu akış üzerindeki etkisini düşün.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v219-new-004-sicakta-ates-ve-kuru-cilt",
     "branchId": "physiology",
     "caseType": "standard",
@@ -13603,7 +13603,7 @@ export const casesPart16 = [
     "helpText": "Otonom sorularda lifin sempatik olup olmaması kadar, efektörde kullanılan reseptörü de ayır.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v219-new-005-ayaklarda-uyusma-ve-yavas-iletim",
     "branchId": "physiology",
     "caseType": "standard",
@@ -14002,7 +14002,7 @@ export const casesPart16 = [
     "helpText": "İleti hızı ve latans verilerini amplitüdle birlikte yorumla; hız-kılıf, amplitüd-akson ayrımı sınavda çok işe yarar.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v220-new-001-eforda-gec-nabiz-yaniti",
     "branchId": "physiology",
     "caseType": "standard",
@@ -14419,7 +14419,7 @@ export const casesPart16 = [
     "questionType": "physiology_mechanism",
     "answerTarget": "sa_dugumune_hizli_otonom_efferent_girisin_azalmasi_ve_yanitin_dolasimdaki_katekolaminlere_"
   },
-  {
+{
     "id": "v220-new-002-yatinca-artan-nefes-darligi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -14818,7 +14818,7 @@ export const casesPart16 = [
     "questionType": "physiology_mechanism",
     "answerTarget": "diyafram_kasilmasinin_yetersizligiyle_inspiryumda_negatif_plevral_basinc_olusturulamamasi"
   },
-  {
+{
     "id": "v220-new-003-tas-sonrasi-idrarda-kalsiyum-azalmasi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -15235,7 +15235,7 @@ export const casesPart16 = [
     "questionType": "physiology_mechanism",
     "answerTarget": "distal_tubulde_hucre_ici_na_azalmasiyla_bazolateral_na_ca_degisiminin_ca_geri_emilimini_ar"
   },
-  {
+{
     "id": "v220-new-004-el-ve-cene-buyumesi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -15634,7 +15634,7 @@ export const casesPart16 = [
     "questionType": "physiology_mechanism",
     "answerTarget": "somatotrof_hucrelerden_gh_saliniminin_oral_glukoz_sonrasi_yeterince_baskilanamamasi"
   },
-  {
+{
     "id": "v220-new-005-mide-ameliyati-sonrasi-uyusma",
     "branchId": "physiology",
     "caseType": "standard",
@@ -16033,7 +16033,7 @@ export const casesPart16 = [
     "questionType": "physiology_mechanism",
     "answerTarget": "intrinsik_faktor_azalmasiyla_terminal_ileumda_kobalamin_reseptor_aracili_emilimin_bozulmas"
   },
-  {
+{
     "id": "v221-new-001-hizli-carpinti-ve-gogus-baskisi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -16450,7 +16450,7 @@ export const casesPart16 = [
     "questionType": "physiology_mechanism",
     "answerTarget": "diyastol_suresinin_kisalmasiyla_koroner_perfuzyon_zamaninin_ve_subendokardiyal_akimin_azal"
   },
-  {
+{
     "id": "v221-new-002-boyunda-sislik-ve-islikli-soluma",
     "branchId": "physiology",
     "caseType": "standard",
@@ -16867,7 +16867,7 @@ export const casesPart16 = [
     "questionType": "physiology_mechanism",
     "answerTarget": "hava_yolu_yaricapindaki_kucuk_azalmanin_akim_direncini_cok_belirgin_artirmasi"
   },
-  {
+{
     "id": "v221-new-003-normal-sekere-ragmen-idrarda-glukoz",
     "branchId": "physiology",
     "caseType": "standard",
@@ -17284,7 +17284,7 @@ export const casesPart16 = [
     "questionType": "physiology_mechanism",
     "answerTarget": "proksimal_tubulde_sodyuma_bagli_coklu_solut_geri_emiliminin_azalmasi"
   },
-  {
+{
     "id": "v221-new-004-ilac-sonrasi-yuksek-tiroid-sonucu",
     "branchId": "physiology",
     "caseType": "standard",
@@ -17701,7 +17701,7 @@ export const casesPart16 = [
     "questionType": "physiology_mechanism",
     "answerTarget": "plazma_baglayici_protein_artisiyla_toplam_hormonun_yukselip_serbest_hormonun_korunmasi"
   },
-  {
+{
     "id": "v221-new-005-islem-sonrasi-kusak-tarzi-karin-agrisi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -18118,7 +18118,7 @@ export const casesPart16 = [
     "questionType": "physiology_mechanism",
     "answerTarget": "pankreas_icinde_tripsinojenin_erken_tripsine_donuserek_zimojen_aktivasyonunu_baslatmasi"
   },
-  {
+{
     "id": "v222-new-001-eforda-bas-donmesi-ve-degisen-ufurum",
     "branchId": "physiology",
     "caseType": "standard",

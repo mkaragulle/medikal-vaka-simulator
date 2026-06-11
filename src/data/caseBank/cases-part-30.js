@@ -1,5 +1,5 @@
 export const casesPart30 = [
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -230,7 +230,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -554,7 +554,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -902,7 +902,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -1250,7 +1250,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -1469,7 +1469,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -1805,7 +1805,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v324-gc-001-breslow-kalinligi-olan-melanom",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -2044,7 +2044,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v324-gc-002-cekal-volvulus-cerrahi-rezeksiyon",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -2331,7 +2331,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v324-gc-003-kronik-pankreatitte-dilate-kanal-puestow",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -2618,7 +2618,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v324-gc-004-adrenal-cushing-preop-postop-steroid",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -2893,7 +2893,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v324-gc-005-antikoagulan-hastada-rektus-kilifi-hematomu",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -3168,7 +3168,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v325-gc-001-gecirilmis-ameliyat-sonrasi-kusma-ve-distansiyon",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -3443,7 +3443,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v325-gc-002-antrum-kitlesinde-lokal-ileri-yonetim",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -3694,7 +3694,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v325-gc-003-pankreas-basinda-kanal-genisligi-ve-kistik-lezyon",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -3957,7 +3957,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v325-gc-004-agrisiz-hematokezya-ve-aktif-kontrast-kacisi",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -4232,7 +4232,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v325-gc-005-kati-sivi-yutma-guclugu-ve-kus-gagasi",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -4471,7 +4471,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
     "id": "v326-gc-001-bypass-sonrasi-internal-herni",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -4710,7 +4710,7 @@ export const casesPart30 = [
       "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
     }
   },
-  {
+{
     "id": "v326-gc-002-hiler-kolanjiyokarsinom-rezektabilite",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -4973,7 +4973,7 @@ export const casesPart30 = [
       "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
     }
   },
-  {
+{
     "id": "v326-gc-003-orta-hat-boyun-kisti-sistrunk",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -5212,7 +5212,7 @@ export const casesPart30 = [
       "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
     }
   },
-  {
+{
     "id": "v326-gc-004-tam-kat-rektal-prolapsus-rectopexy",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -5451,7 +5451,7 @@ export const casesPart30 = [
       "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
     }
   },
-  {
+{
     "id": "v326-gc-005-refrakter-ulser-diyare-gastrinoma",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -5702,7 +5702,7 @@ export const casesPart30 = [
       "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
     }
   },
-  {
+{
   "id": "v327-gc-001-yetiskinde-hedef-isareti-ve-sag-kolon-kitelesi",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -5965,7 +5965,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v327-gc-002-hartmann-tasina-bagli-hiler-basi",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -6240,7 +6240,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v327-gc-003-retroperitoneal-kitlede-core-biyopsi",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -6504,7 +6504,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v327-gc-004-sol-ust-kadran-ates-ve-splenik-koleksiyon",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -6779,7 +6779,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v327-gc-005-toksik-multinoduler-guatrda-ameliyat-hazirligi",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -7042,7 +7042,7 @@ export const casesPart30 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v328-gc-001-kostik-alkali-icimi-ve-erken-endoskopi",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -7281,7 +7281,7 @@ export const casesPart30 = [
     "schemaReference": "rawCases compatible schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v328-gc-002-bicaklanma-sonrasi-ince-barsak-eviserasyonu",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -7520,7 +7520,7 @@ export const casesPart30 = [
     "schemaReference": "rawCases compatible schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v328-gc-003-richter-fitiginda-tikaniklik-olmadan-iskemi",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -7783,7 +7783,7 @@ export const casesPart30 = [
     "schemaReference": "rawCases compatible schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v328-gc-004-hafif-biliyer-pankreatitte-ayni-yatis-kolesistektomi",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -8058,7 +8058,7 @@ export const casesPart30 = [
     "schemaReference": "rawCases compatible schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v328-gc-005-yuksek-debili-ileostomide-akut-bobrek-hasari",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -8333,7 +8333,7 @@ export const casesPart30 = [
     "schemaReference": "rawCases compatible schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v329-gc-001-kolonoskopi-sonrasi-serbest-hava-ve-peritonit",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -8584,7 +8584,7 @@ export const casesPart30 = [
     "schemaReference": "rawCases compatible schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v329-gc-002-crohn-kompleks-perianal-fistul-seton",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -8823,7 +8823,7 @@ export const casesPart30 = [
     "schemaReference": "rawCases compatible schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "id": "v329-gc-003-appendiks-mukoselinde-rupturden-kacinma",
   "branchId": "general-surgery",
   "caseType": "standard",

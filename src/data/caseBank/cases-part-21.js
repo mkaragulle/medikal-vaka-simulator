@@ -1,5 +1,5 @@
 export const casesPart21 = [
-  {
+{
     "id": "v232-peds-003-gumus-sac-ve-tekrarlayan-apse",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -621,7 +621,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v232-peds-004-sabit-cift-ses-ve-eforla-yorulma",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -1243,7 +1243,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v232-peds-005-secici-beslenme-ve-bacak-agrisi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -1865,7 +1865,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v233-peds-001-uykusuz-ve-titrek-yenidogan",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -2263,7 +2263,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v233-peds-002-yatinca-artan-stridor",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -2661,7 +2661,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v233-peds-003-kaybolan-kelimeler-ve-el-ovusturma",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -3059,7 +3059,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v233-peds-004-premature-bebekte-goz-taramasi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -3457,7 +3457,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v233-peds-005-kabizlik-ve-gevsek-emme",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -3855,7 +3855,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v234-peds-001-kisa-suren-morarma-atagi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -4253,7 +4253,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v234-peds-002-ates-karin-agrisi-ve-dolasim-bozuklugu",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -4651,7 +4651,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v234-peds-003-cok-su-icme-ve-hipernatremi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -5049,7 +5049,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v234-peds-004-yuzme-sirasinda-bayilma",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -5447,7 +5447,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v234-peds-005-solukluk-ve-karin-sisligi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -5845,7 +5845,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v235-peds-001-yuz-ve-dilde-tekrarlayan-sislik",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -6243,7 +6243,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v235-peds-002-kilo-kaybi-sonrasi-beslenme-baslanmasi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -6641,7 +6641,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v235-peds-003-kisa-boy-basparmak-anomalisi-ve-sitopeni",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -7045,7 +7045,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v235-peds-004-derste-dalip-kalan-cocuk",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -7443,7 +7443,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v235-peds-005-uzamis-ates-ve-hiperferritinemi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -7841,7 +7841,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v236-peds-001-yenidoganda-vezikul-ve-nobet",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -8347,7 +8347,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v236-peds-002-gogus-agrisi-ve-nabiz-uyumsuzlugu",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -8853,7 +8853,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v236-peds-003-aciklanamayan-morluk-ve-uykuya-egilim",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -9359,7 +9359,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v236-peds-004-buyume-geriligi-ve-idrarda-coklu-kayip",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -9865,7 +9865,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v236-peds-005-ates-sonrasi-agrili-yaygin-kizariklik",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -10371,7 +10371,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v237-peds-001-emme-azalmasi-ve-hizli-soluma",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -10819,7 +10819,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v237-peds-002-kusma-kilo-kaybi-ve-halsizlik",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -11267,7 +11267,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v237-peds-003-aralikli-aglama-ve-kanli-diski",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -11703,7 +11703,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v237-peds-004-bacaklarda-dokuntu-ve-karin-agrisi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -12151,7 +12151,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v237-peds-005-uzayan-oksuruk-ve-apne-ataklari",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -12587,7 +12587,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v238-peds-001-sarilik-titreme-ve-karaciger-testleri",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -13047,7 +13047,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v238-peds-002-gripten-sonra-kusma-ve-dalginlik",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -13507,7 +13507,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v238-peds-003-nobet-ufurum-ve-dusuk-kalsiyum",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -13955,7 +13955,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v238-peds-004-gogus-agrisi-ates-ve-oksijen-dusmesi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -14391,7 +14391,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v238-peds-005-mavi-dudaklar-ve-oksijen-uyumsuzlugu",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -14827,7 +14827,7 @@ export const casesPart21 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v239-peds-001-egzama-morarma-ve-tekrarlayan-enfeksiyon",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -15346,7 +15346,7 @@ export const casesPart21 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v239-peds-002-aclik-sonrasi-kusma-ve-nobet",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -15880,7 +15880,7 @@ export const casesPart21 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v239-peds-003-karinda-kitle-ve-kanli-idrar",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -16399,7 +16399,7 @@ export const casesPart21 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v239-peds-004-kilo-kaybi-titreme-ve-carpinti",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -16918,7 +16918,7 @@ export const casesPart21 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v239-peds-005-bas-agrisi-ve-gecici-gorme-bulanikligi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -17437,7 +17437,7 @@ export const casesPart21 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v240-peds-001-dogum-sonrasi-solukluk-ve-nobet",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -17947,7 +17947,7 @@ export const casesPart21 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v240-peds-002-goz-cevresinde-sislik-ve-bakis-kisitliligi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -18457,7 +18457,7 @@ export const casesPart21 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v240-peds-003-kanli-diski-ve-buyume-yavaslamasi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -18967,7 +18967,7 @@ export const casesPart21 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v240-peds-004-enfeksiyondan-sonra-dengesiz-yurume",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -19477,7 +19477,7 @@ export const casesPart21 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v240-peds-005-proteinli-beslenme-sonrasi-uykuya-egilim",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -19987,7 +19987,7 @@ export const casesPart21 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v241-peds-001-kucuk-bas-ve-yaygin-petesi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -20521,7 +20521,7 @@ export const casesPart21 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v241-peds-002-gece-horlama-ve-gunduz-uyuklama",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -20963,7 +20963,7 @@ export const casesPart21 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v241-peds-003-yan-agrisi-ve-mikroskopik-hematuri",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -21527,7 +21527,7 @@ export const casesPart21 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v241-peds-004-yemekte-lokma-takilmasi",
     "branchId": "pediatrics",
     "caseType": "standard",

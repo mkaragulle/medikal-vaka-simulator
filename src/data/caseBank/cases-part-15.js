@@ -1,5 +1,5 @@
 export const casesPart15 = [
-  {
+{
     "id": "v203-new-414-kasik-bandi-sonrasi-uylukta-yanma",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -254,7 +254,7 @@ export const casesPart15 = [
       "Nervus cutaneus femoris posterior": "Posterior uyluk ve inferior gluteal/perineal komşu duyu alanlarıyla ilişkilidir; oturma basısı veya posterior pelvis travmalarında akla gelebilir. Hastanın yakınması arka uylukta değil, kasık ön-dış hattından anterolateral uyluğa yayılmaktadır."
     }
   },
-  {
+{
     "id": "v203-new-415-ani-konusma-bozuklugu-ve-alt-yuz-gucsuzlugu",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -509,7 +509,7 @@ export const casesPart15 = [
       "Pars sublenticularis capsulae internae": "İşitsel radyasyon ve temporal bağlantılar nedeniyle işitme/temporal yolak ilişkili tablolarla gündeme gelebilir. Vakadaki akut dizartri ve alt yüz güçsüzlüğü bu bölgeden çok kortikobulber liflerin geçtiği kapsüler kıvrımı destekler."
     }
   },
-  {
+{
     "id": "v204-new-416-medial-ayak-bilegi-islemi-sonrasi-uyusma",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -778,7 +778,7 @@ export const casesPart15 = [
       "Nervus obturatorius": "Obturator sinir uyluk medial yüz duyusu ve adduktor kas fonksiyonu ile ilişkilidir. Bu hastada adduksiyon zayıflığı yoktur ve duyusal yakınma uyluk proksimalinde değil medial ayak bileği çevresindedir."
     }
   },
-  {
+{
     "id": "v204-new-417-mandibula-travmasi-sonrasi-alt-dudak-uyusmasi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -1047,7 +1047,7 @@ export const casesPart15 = [
       "Nervus infraorbitalis": "Infraorbital sinir üst dudak, alt göz kapağı ve lateral burun çevresi duyusuyla ilişkilidir. Burada üst dudak veya infraorbital bölgede değil, mandibula gövdesi komşuluğunda alt dudak-çene duyusu etkilenmiştir."
     }
   },
-  {
+{
     "id": "v204-new-418-sag-paratrakeal-kitle-ve-posterior-mediasten-venoz-yapi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -1316,7 +1316,7 @@ export const casesPart15 = [
       "Vena intercostalis superior sinistra": "Sol superior interkostal ven sol üst interkostal aralıkların drenajıyla ilişkilidir ve aortik ark/sol üst mediasten komşuluğunda düşünülebilir. Sağ posterior mediastenden yükselip SVC’ye ark yapan venöz yapı için beklenen seçenek değildir."
     }
   },
-  {
+{
     "id": "v204-new-419-kasik-sisliginde-epigastrik-damar-iliskisi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -1585,7 +1585,7 @@ export const casesPart15 = [
       "Canalis obturatorius": "Obturator kanal pelvis yan duvarından uyluk medialine geçişle ilişkilidir ve obturator fıtık/medial uyluk ağrısı tablolarında akla gelir. Bu hastanın ayakta belirginleşen ön kasık şişliği ve epigastrik damar ilişkisi obturator kanala uymaz."
     }
   },
-  {
+{
     "id": "v204-new-420-gorme-alaninda-dis-yarim-kaybi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -1854,7 +1854,7 @@ export const casesPart15 = [
       "Cortex visualis primarius sinister": "Sol primer görme korteksi lezyonu sağ homonim hemianopsi veya maküler korunma ile karışabilir. İki gözde dış yarı alanların tutulması kortikal tek taraflı bir lezyonla beklenmez."
     }
   },
-  {
+{
     "id": "v205-new-421-yanak-kesisi-sonrasi-yemekle-sivi-sizintisi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -2120,7 +2120,7 @@ export const casesPart15 = [
       "Ductus thyroglossus": "Embriyolojik artık yolu orta hat boyun kistleriyle ilişkilidir ve dil hareketiyle yükselen orta hat kitlelerde düşünülür. Bu vakada problem orta hat boyunda değil, yanak lateralinde travma sonrası gelişen uyarıyla artan sıvı kaçağıdır."
     }
   },
-  {
+{
     "id": "v205-new-422-karin-travmasinda-gecici-kanama-kontrolu",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -2386,7 +2386,7 @@ export const casesPart15 = [
       "Ligamentum phrenicocolicum": "Bu bağ kolon fleksurası ve diyafram komşuluğuyla ilişkilidir, dalak alt desteği olarak bilinebilir. Sağ üst kadran karaciğer hilusu kanama kontrolünde hedeflenen portal yapı paketini taşımaz."
     }
   },
-  {
+{
     "id": "v205-new-423-rektum-cerrahisi-sonrasi-mesane-bosalma-guclugu",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -2652,7 +2652,7 @@ export const casesPart15 = [
       "Nervus obturatorius": "Obturator sinir uyluk adduksiyonu ve medial uyluk duyusu ile ilişkilidir; pelvik yan duvar cerrahilerinde yaralanabilir. Hastada adduksiyon zayıflığı veya medial uyluk duyusal kaybı yoktur, bu nedenle mesane ve erektil bulguları açıklamaz."
     }
   },
-  {
+{
     "id": "v205-new-424-el-bilegi-dis-yaninda-kesi-ve-nabizli-kanama",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -2918,7 +2918,7 @@ export const casesPart15 = [
       "Arcus palmaris superficialis": "Yüzeyel palmar ark avuç içinde ulnar arter katkısıyla ilişkilidir ve palmar kesi kanamalarında önemlidir. Dorsal-radial el bileği çukurundaki kesi ve başparmak tendonları arasındaki lokalizasyon bu yapıyla uyumlu değildir."
     }
   },
-  {
+{
     "id": "v205-new-425-dil-hareketi-ve-karsi-taraf-guc-kaybi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -3184,7 +3184,7 @@ export const casesPart15 = [
       "Sol lateral mezensefalon": "Mezensefalon lezyonlarında okülomotor bulgular, tremor veya görsel-yol komşulukları daha ön planda olabilir. Hastada göz hareketleri korunmuş, bulgular dil motoru ve medial duyu-motor yollarla sınırlı kalmıştır; bu düzey bu vaka için doğru klinik hedef değildir."
     }
   },
-  {
+{
     "id": "v206-new-426-travma-sonrasi-topuk-uzerine-yuklenememe",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -3401,7 +3401,7 @@ export const casesPart15 = [
       "Nervus cutaneus femoris lateralis": "Bu sinir yalnızca uyluk dış yan yüzünde duyusal yakınma yapar ve motor kayıp oluşturmaz. Hastada hem diz fleksiyonu hem ayak bileği hareketleri zayıflamış, duyu kaybı uyluk dış yanıyla sınırlı kalmamıştır."
     }
   },
-  {
+{
     "id": "v206-new-427-boyun-yanindaki-islem-sonrasi-omuz-dusuklugu",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -3618,7 +3618,7 @@ export const casesPart15 = [
       "Nervus suprascapularis": "Supraskapular sinir omuz dış rotasyonu ve ilk abdüksiyon fazında rol alan kaslarla ilişkilidir; supraskapular çentik patolojilerinde çeldirici olabilir. Ancak omuz silkme zayıflığı ve lateral boyun işlem hattı bu sinirden çok boyun üçgeninde seyreden siniri düşündürür."
     }
   },
-  {
+{
     "id": "v206-new-428-yutma-sirasinda-takilma-ve-kalp-golgesinde-genisleme",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -3835,7 +3835,7 @@ export const casesPart15 = [
       "Bronchus principalis sinister": "Sol ana bronş sol atriyumla komşu olabilir ve büyümüş kalp odacığıyla solunum semptomları açısından çeldirici olabilir. Ancak hastada öksürük, atelektazi veya hışıltı değil; katı gıda geçişinde takılma ve kontrastlı yutma grafisinde lümen basısı vardır."
     }
   },
-  {
+{
     "id": "v206-new-429-skrotal-islem-sirasinda-kord-yapisinin-ayrilmasi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -4052,7 +4052,7 @@ export const casesPart15 = [
       "Ductus epididymidis": "Epididimal kanal testisin arka-üst komşuluğunda epididim içinde devam eden daha lokal bir kanal sistemidir. Skrotal üst kesiyle spermatik kord içinde ayrılan, damar demetinden kolayca seçilen kalın tüp hedefi epididim içi kanal değildir."
     }
   },
-  {
+{
     "id": "v206-new-430-bas-agrisi-ve-yukari-bakista-zorlanma",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -4269,7 +4269,7 @@ export const casesPart15 = [
       "Cerebellopontin açı": "Cerebellopontin açı lezyonlarında işitme kaybı, tinnitus, fasiyal güçsüzlük veya trigeminal duyu bulguları beklenebilir. Bu hastada işitme ve fasiyal muayene normaldir; görüntüleme posterior üçüncü ventrikül komşuluğundaki basıyı göstermektedir."
     }
   },
-  {
+{
     "id": "v207-new-431-boyun-islemi-sonrasi-skapula-asimetrisi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -4487,7 +4487,7 @@ export const casesPart15 = [
       "Nervus axillaris": "Aksiller sinir deltoid ve teres minor fonksiyonlarıyla lateral omuz duyusu üzerinden değerlendirilir. Bu vakada deltoid konturu, lateral omuz duyusu ve 15 dereceden sonra abdüksiyon büyük ölçüde korunmuştur; ana kayıp periskapular stabilizasyon düzeyindedir."
     }
   },
-  {
+{
     "id": "v207-new-432-bacak-islemi-sonrasi-lateral-ayak-uyusmasi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -4704,7 +4704,7 @@ export const casesPart15 = [
       "Nervus tibialis": "Tibial sinir plantar fleksiyon, ayak tabanı duyusu ve tarsal tünel bulgularıyla akla gelir. Bu hastada plantar fleksiyon güçlü, taban duyusu korunmuş ve yakınma yüzeyel posterolateral-lateral ayak çizgisinde sınırlıdır."
     }
   },
-  {
+{
     "id": "v207-new-433-yemekle-belirginlesen-kulak-onu-terlemesi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -4921,7 +4921,7 @@ export const casesPart15 = [
       "Nervus zygomaticotemporalis": "Zygomaticotemporal sinir lateral alın-temporal bölge duyusuyla ilişkilidir ve lakrimal parasempatik liflerle bağlantılı olabilir. Ancak bu vakada bulgu preauriküler alanda ve yemekle tetiklenen terleme-kızarma şeklindedir; parotis çevresiyle ilişkili dal daha uygundur."
     }
   },
-  {
+{
     "id": "v207-new-434-uzun-bisiklet-sonrasi-perineal-uyusma",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -5138,7 +5138,7 @@ export const casesPart15 = [
       "Nervus ilioinguinalis": "İlioinguinal sinir kasık, skrotum/labium majus ön bölümü ve üst medial uyluk duyusuyla ilişkili olabilir. Fakat dış anal sfinkterin istemli kasılması ve anal kanal alt kısmı duyusu bu sinirin beklenen dağılımı içinde değildir."
     }
   },
-  {
+{
     "id": "v207-new-435-ani-baslayan-firlatici-hareketler",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -5355,7 +5355,7 @@ export const casesPart15 = [
       "Substantia nigra pars compacta": "Substantia nigra pars compacta dopaminerjik modülasyonla parkinsonizm patofizyolojisinde kritik rol oynar. Bu hastada tremor, rijidite ve bradikinezi değil, ani başlayan tek taraflı fırlatıcı hiperkinetik hareketler vardır."
     }
   },
-  {
+{
     "id": "v208-new-436-kalp-cerrahisi-sonrasi-solunum-asimetrisi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -5557,7 +5557,7 @@ export const casesPart15 = [
       "Nervus thoracicus longus": "Bu sinir serratus anterior ve skapular stabilizasyonla ilişkilidir. Duvara itme testi veya skapula bulgusu verilmemiştir."
     }
   },
-  {
+{
     "id": "v208-new-437-damak-islemi-sonrasi-nazal-konusma",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -5759,7 +5759,7 @@ export const casesPart15 = [
       "Musculus salpingopharyngeus": "Salpingopharyngeus farinks ve işitme tüpü çevresiyle ilişkilidir; vakada kulak basıncı veya farinks yükselmesi bulgusu verilmemiştir."
     }
   },
-  {
+{
     "id": "v208-new-438-kasik-onarimi-sonrasi-refleks-kaybi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -5961,7 +5961,7 @@ export const casesPart15 = [
       "Nervus cutaneus femoris lateralis": "Bu sinir lateral uyluk yanması ve uyuşmasıyla beklenir; skrotal duyu ve kremaster yanıtı açıklanmaz."
     }
   },
-  {
+{
     "id": "v208-new-439-boyun-omuz-traksiyonu-sonrasi-kol-pozisyonu",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -6163,7 +6163,7 @@ export const casesPart15 = [
       "Truncus medius": "Orta trunk C7 paternini düşündürür; bu vakada omuz abdüksiyonu, dış rotasyon ve dirsek fleksiyonu baskındır."
     }
   },
-  {
+{
     "id": "v208-new-440-yuz-asimetrisi-ve-yatay-bakis-kisitliligi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -6365,7 +6365,7 @@ export const casesPart15 = [
       "Nucleus Edinger-Westphal bölgesi": "Pupiller parasempatik ve mezensefalik bulgular beklenir; hastada dorsal pontin yerleşim ve horizontal bakış sorunu vardır."
     }
   },
-  {
+{
     "id": "v209-new-441-kan-alma-sonrasi-on-kolda-yanma",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -6567,7 +6567,7 @@ export const casesPart15 = [
       "Ramus dorsalis nervi ulnaris": "Ulnar el sırtı duyusunu taşır; bu olgudaki lokalizasyonla uyumlu değildir."
     }
   },
-  {
+{
     "id": "v209-new-442-ayak-sirtinda-uyusma-ve-bilekte-guvensizlik",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -6769,7 +6769,7 @@ export const casesPart15 = [
       "Nervus tibialis": "Ayak tabanı ve plantar fleksiyon paternine uyar; burada dorsal ayak bulgusu baskındır."
     }
   },
-  {
+{
     "id": "v209-new-443-bogaz-islemi-sonrasi-oksuruk-refleksinde-azalma",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -6971,7 +6971,7 @@ export const casesPart15 = [
       "Nervus glossopharyngeus": "Orofarenks duyusu korunmuştur."
     }
   },
-  {
+{
     "id": "v209-new-444-mediastinal-kitle-ve-ust-vucut-odemleri",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -7173,7 +7173,7 @@ export const casesPart15 = [
       "Vena thoracica interna": "Yaygın üst gövde venöz dolgunluğunu açıklamaz."
     }
   },
-  {
+{
     "id": "v209-new-445-prostat-cerrahisi-sonrasi-cinsel-fonksiyon-kaybi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -7375,7 +7375,7 @@ export const casesPart15 = [
       "Nervus obturatorius": "Adduksiyon veya medial uyluk bulgusu yoktur."
     }
   },
-  {
+{
     "id": "v209-new-446-yan-bakista-gozlerin-birlikte-hareket-edememesi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -7577,7 +7577,7 @@ export const casesPart15 = [
       "Radiatio optica": "Görme alanı defekti değil diplopi ve bakış eşgüdüm kusuru vardır."
     }
   },
-  {
+{
     "id": "v210-new-001-susama-ve-artmis-idrar-hacmi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -7941,7 +7941,7 @@ export const casesPart15 = [
     "helpText": "İdrar hacmi artarken idrar osmolalitesi yüksekse, suyun değil lümendeki etkin solüt yükünün sürükleyici rolünü düşün.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v210-new-002-perioral-uyusma-ve-el-kasilmasi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -8305,7 +8305,7 @@ export const casesPart15 = [
     "helpText": "Hipokalsemide kasılma bulguları görülebilir; ana sınav ayrımı sinir membranının daha kolay ateşlenmesidir.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v210-new-003-yemek-sonrasi-duodenal-ph-degisimi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -8668,7 +8668,7 @@ export const casesPart15 = [
     "helpText": "Pankreatik sıvıda hacim ve bikarbonat baskınsa duktal yanıtı, enzim baskınsa asiner yanıtı düşün.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v210-new-004-derin-soluk-alma-manevrasinda-basinc-degisimi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -9032,7 +9032,7 @@ export const casesPart15 = [
     "helpText": "Hava akımı için yön belirleyici basınç alveoler basınçtır; inspirasyonda atmosferden daha düşük olur.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v210-new-005-oral-glukoz-sonrasi-insulin-yaniti",
     "branchId": "physiology",
     "caseType": "standard",
@@ -9396,7 +9396,7 @@ export const casesPart15 = [
     "helpText": "Aynı glukoz düzeyinde oral yol daha güçlü insülin yanıtı oluşturuyorsa, fark lümenden gelen endokrin sinyallerle açıklanır.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v211-new-001-tekrarlayan-kusma-sonrasi-halsizlik",
     "branchId": "physiology",
     "caseType": "standard",
@@ -9768,7 +9768,7 @@ export const casesPart15 = [
     "helpText": "Kusma sonrası alkalozda düşük idrar kloru, böbreğin klor tutmaya çalıştığını ve bikarbonat atılımının yeterli olmadığını gösterir.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v211-new-002-ates-ve-dusuk-oksijen-saturasyonu",
     "branchId": "physiology",
     "caseType": "standard",
@@ -10228,7 +10228,7 @@ export const casesPart15 = [
     "helpText": "Hipoventilasyonda PaCO₂ yükselir; perfüze ama ventile olmayan alanlarda ise A-a farkı artar ve oksijen yanıtı sınırlı kalır.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v211-new-003-boyun-cerrahisi-sonrasi-kasilma",
     "branchId": "physiology",
     "caseType": "standard",
@@ -10582,7 +10582,7 @@ export const casesPart15 = [
     "helpText": "Kalsiyum düşük, fosfat yüksekse kalsitoninden önce PTH etkisinin azalıp azalmadığı düşünülmelidir.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v211-new-004-on-kol-kasinda-uyari-frekansi-testi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -10936,7 +10936,7 @@ export const casesPart15 = [
     "helpText": "CMAP stabilken kuvvet artıyorsa, cevap genellikle nöromüsküler kavşak değil kas lifi içi Ca²⁺-troponin ilişkisidir.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v211-new-005-yagli-ogun-sonrasi-sindirim-yaniti",
     "branchId": "physiology",
     "caseType": "standard",
@@ -11290,7 +11290,7 @@ export const casesPart15 = [
     "helpText": "Safra kesesi kasılması ve pankreatik enzim artışı birlikte verilirse, sekretinden çok kolesistokinin etkisi düşünülür.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v212-new-001-iletim-ve-kasilma-degisikligi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -11643,7 +11643,7 @@ export const casesPart15 = [
     "helpText": "QRS, PR, plato süresi ve kasılma gerilimini ayrı ayrı değil aynı iyon akımıyla açıklanabilecek ortak patern olarak düşün.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v212-new-002-solunum-tupuyle-gaz-degisimi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -12014,7 +12014,7 @@ export const casesPart15 = [
     "helpText": "Toplam hareket eden hava ile alveole gerçekten ulaşan taze hava aynı şey değildir; hesapta tidal volümün kullanılmayan kısmını düşün.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v212-new-003-sivi-yuklemesi-sonrasi-idrar-degisimi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -12385,7 +12385,7 @@ export const casesPart15 = [
     "helpText": "Osmolalite değişmeden idrar sodyumu ve idrar akımı artıyorsa uyarının tonisiteden çok hacim olduğunu düşün.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v212-new-004-sogukta-usume-ve-yavaslama",
     "branchId": "physiology",
     "caseType": "standard",

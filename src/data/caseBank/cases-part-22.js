@@ -1,5 +1,5 @@
 export const casesPart22 = [
-  {
+{
     "id": "v241-peds-005-yavaslayan-buyume-hizi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -548,7 +548,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v242-peds-001-acik-diski-ve-koyu-idrar",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -1097,7 +1097,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v242-peds-002-kusma-halsizlik-ve-tuz-kaybi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -1646,7 +1646,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v242-peds-003-mor-noktalar-ve-izole-trombosit-dusuklugu",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -2180,7 +2180,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v242-peds-004-yagli-diski-ve-islak-oksuruk",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -2714,7 +2714,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v242-peds-005-ilk-adetlerden-beri-yogun-kanama",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -3248,7 +3248,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v243-peds-001-emme-azalmasi-ve-bacaklarda-sogukluk",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -3782,7 +3782,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v243-peds-002-gezici-eklem-agrisi-ve-yeni-ufurum",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -4316,7 +4316,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v243-peds-003-toprak-yeme-ve-karin-agrisi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -4850,7 +4850,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v243-peds-004-ilk-beslenmede-oksuruk-ve-salya",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -5384,7 +5384,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v243-peds-005-gece-islakligi-ve-normal-idrar-tahlili",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -5918,7 +5918,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v244-peds-001-dogumdan-sonra-tek-tarafli-solunum-azalmasi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -6307,7 +6307,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v244-peds-002-ates-ve-boyun-hareketinde-kisitlilik",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -6696,7 +6696,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v244-peds-003-adet-duzensizligi-ve-yuzde-tuylenme",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -7085,7 +7085,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v244-peds-004-kirli-ic-camasiri-ve-sert-diski",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -7474,7 +7474,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v244-peds-005-uzayan-oksuruk-ve-temas-oykusu",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -7863,7 +7863,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v245-peds-001-sabah-kumelenen-kisa-kasilmalar",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -8252,7 +8252,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v245-peds-002-ek-gida-sonrasi-tekrarlayan-kusma",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -8641,7 +8641,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v245-peds-003-premature-bebekte-artan-oksijen-ihtiyaci",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -9030,7 +9030,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v245-peds-004-ani-solukluk-ve-dusuk-retikulosit",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -9419,7 +9419,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v245-peds-005-topallama-ve-gece-artan-bacak-agrisi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -9808,7 +9808,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v250-new-447-kateter-iliskili-sepsis-ve-karbapenem-direnci",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -10366,7 +10366,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v250-new-448-toplu-yemek-sonrasi-kusma-ishal-salgini",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -10906,7 +10906,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v250-new-449-notropenide-halo-bulgusu-ve-bal-antijeni",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -11464,7 +11464,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v250-new-450-steroid-sonrasi-ishal-ve-solunum-kotulesmesi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -12004,7 +12004,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v250-new-451-kopek-isirigi-sonrasi-purpura-ve-sepsis",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -12544,7 +12544,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v251-new-452-cerrahi-yara-enfeksiyonu-ve-sefoksitin-direnci",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -13086,7 +13086,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v251-new-453-sarilikla-basvuran-hastada-hepatit-b-serolojisi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -13628,7 +13628,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v251-new-454-hiv-hastasinda-diffuz-interstisyel-pnomoni",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -14170,7 +14170,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v251-new-455-kanli-ishal-ve-karaciger-apsesi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -14712,7 +14712,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v251-new-456-tampon-kullanimi-sonrasi-sok-ve-dokuntu",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -15254,7 +15254,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v252-new-457-uriner-kateter-sonrasi-direncli-bakteriyemi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -15763,7 +15763,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v252-new-458-bakim-evinde-solunum-yolu-salgini",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -16176,7 +16176,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v252-new-459-diyabetik-ketoasidoz-sonrasi-siyah-nazal-lezyon",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -16685,7 +16685,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v252-new-460-tatli-su-temasi-sonrasi-hematuri",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -17098,7 +17098,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v252-new-461-abdominal-cerrahi-sonrasi-anaerobik-apse",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -17607,7 +17607,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v253-new-462-deniz-urunu-sonrasi-hizli-yara-enfeksiyonu",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -18049,7 +18049,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v253-new-463-sekonder-arboviral-ates-sonrasi-plazma-kacagi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -18551,7 +18551,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v253-new-464-travmatik-yarada-gazli-miyonekroz",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -18975,7 +18975,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v253-new-465-immunsupresif-hastada-uzamis-sulu-ishal",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -19399,7 +19399,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v253-new-466-temporal-lob-tutulumlu-akut-ensefalit",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -19805,7 +19805,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v254-new-467-aspleni-sonrasi-fulminan-sepsis",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -20247,7 +20247,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v254-new-468-akut-purulan-uretrit-ve-diplokok",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -20689,7 +20689,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v254-new-469-kaviteli-akciger-lezyonu-ve-rifampisin-direnci",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -21131,7 +21131,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v254-new-470-asisiz-cocukta-oksuruk-konjunktivit-dokuntu",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -21573,7 +21573,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v254-new-471-gece-perianal-kasinti-ve-bant-testi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -22015,7 +22015,7 @@ export const casesPart22 = [
     ],
     "images": []
   },
-  {
+{
     "id": "v255-new-472-hayvancilik-temasi-sonrasi-atipik-pnomoni",
     "branchId": "medical-microbiology",
     "caseType": "standard",

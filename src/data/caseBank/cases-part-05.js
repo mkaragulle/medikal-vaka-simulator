@@ -1,5 +1,5 @@
 export const casesPart05 = [
-  {
+{
     "id": "v183-new-189-yenidoganda-mekonyum-cikaramama",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -449,7 +449,7 @@ export const casesPart05 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v183-new-190-kasik-sisligi-ve-kusma",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -1346,7 +1346,7 @@ export const casesPart05 = [
       "note": "Genel Cerrahi vakasında objektif veri katmanı cerrahi ilk değerlendirme → acil güvenlik → laboratuvar → hedefli görüntüleme/doğrulama → girişim/kaynak kontrolü sırasına göre düzenlendi."
     }
   },
-  {
+{
     "id": "v184-new-191-erken-gebelikte-karin-agrisi-ve-bayilma",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -1724,7 +1724,7 @@ export const casesPart05 = [
     "obgynInvestigationLayerEnhanced": true,
     "obgynInvestigationLayerVersion": "v397-obgyn-investigation-layer"
   },
-  {
+{
     "id": "v184-new-192-ani-goz-agrisi-ve-gorme-bulanikligi",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -2345,7 +2345,7 @@ export const casesPart05 = [
       "note": "Yanlış kalan alt branş etiketi düzeltildi; öykü olay akışı olarak yeniden yazıldı ve ön segment/arka segment ayırıcı muayene-tetkik akışı netleştirildi."
     }
   },
-  {
+{
     "id": "v184-new-193-kirli-yara-sonrasi-cene-kilitlenmesi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -2633,7 +2633,7 @@ export const casesPart05 = [
       "Listeria monocytogenes": "Listeria gıda kaynaklı sepsis/menenjit ve gebelik-yenidoğan enfeksiyonlarıyla ilişkilidir; hücre içi yayılım ve gram pozitif basil morfolojisi önemlidir. Kirli yara sonrası spastik paralizi ve trismus tablosunu açıklayan etken değildir."
     }
   },
-  {
+{
     "id": "v184-new-194-sag-ust-kadran-agrisi",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -3674,7 +3674,7 @@ export const casesPart05 = [
       "note": "Genel Cerrahi vakasında objektif veri katmanı cerrahi ilk değerlendirme → acil güvenlik → laboratuvar → hedefli görüntüleme/doğrulama → girişim/kaynak kontrolü sırasına göre düzenlendi."
     }
   },
-  {
+{
     "id": "v184-new-195-nazal-biyopsi-ve-epitel-tipi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -4041,7 +4041,7 @@ export const casesPart05 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v184-new-196-duygudurum-ilaci-sonrasi-tremor-ve-konfuzyon",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -4369,7 +4369,7 @@ export const casesPart05 = [
       "Protamin sülfat vererek toksisiteyi geri çevirmek": "Protamin sülfat heparin antikoagülasyonunu geri çevirmek için kullanılır; lityumun hedefi, dağılımı veya eliminasyonu üzerinde etkili değildir. Bu olguda kanama veya heparin maruziyeti değil dar terapötik indeksli bir ilacın birikimi söz konusudur."
     }
   },
-  {
+{
     "id": "v184-new-197-apendektomi-materyalinde-inflamasyon",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -4732,7 +4732,7 @@ export const casesPart05 = [
       "Basit serozal periapandisit": "Basit serozal periapandisit komşu bir süreçten serozaya yansıyan inflamasyonu anlatır; mukozadan muskularis propriaya ilerleyen nötrofil infiltrasyonu beklenmez. Bu olguda duvarın kendisi akut inflamasyonla tutulmuştur."
     }
   },
-  {
+{
     "id": "v184-new-198-aclikta-hipoglisemi-ve-hepatomegali",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -5098,7 +5098,7 @@ export const casesPart05 = [
       "Glikojen dallanma giderici enzim eksikliği": "Glikojen dallanma giderici enzim eksikliği hepatomegali ve hipoglisemi yapabilir; ancak laktik asidoz çoğu zaman daha hafiftir. Buradaki belirgin laktat, ürik asit ve trigliserid artışı son ortak glukoz çıkış basamağını daha güçlü destekler."
     }
   },
-  {
+{
     "id": "v184-new-199-egzersizde-oksijen-birakilmasi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -5555,7 +5555,7 @@ export const casesPart05 = [
     "helpText": "İpucu: Aktif kasın kimyasal ortamı hemoglobinin oksijeni tutma gücünü mü artırır, yoksa dokuda bırakmasını mı kolaylaştırır?",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v184-new-200-laparoskopik-kolesistektomi-sirasinda-anatomik-alan",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -5843,7 +5843,7 @@ export const casesPart05 = [
       "Ductus cysticus, arteria cystica ve ductus choledochus": "Arteria cystica klasik Calot tanımında ve üçgen içeriğinde önemlidir; ductus choledochus ise yaralanmaması gereken komşu ana safra yoludur. Modern güvenli diseksiyon sınırlarını bu üçlü oluşturmaz."
     }
   },
-  {
+{
     "id": "v185-new-201-kol-uzerine-dusme-sonrasi-el-bilegi-dusuklugu",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -6114,7 +6114,7 @@ export const casesPart05 = [
       "Nervus medianus": "Nervus medianus pronasyon, başparmak opozisyonu ve lateral üç buçuk parmak palmar duyusuyla ilişkilidir. Bu hastada başparmak opozisyonu ve parmak fleksiyonu korunmuş, ekstansiyon kaybı ön plandadır."
     }
   },
-  {
+{
     "id": "v185-new-202-diz-dis-yan-travmasi-sonrasi-dusuk-ayak",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -6385,7 +6385,7 @@ export const casesPart05 = [
       "Nervus fibularis superficialis": "Yüzeyel fibular sinir eversiyon ve ayak sırtı duyusuyla ilişkilidir, fakat dorsifleksiyon kaybını ve steppage yürüyüşü tek başına açıklamaz. Dorsifleksiyon ve eversiyonun birlikte bozulması daha proksimal ana gövde etkilenimini gösterir."
     }
   },
-  {
+{
     "id": "v185-new-203-kasik-ameliyati-sonrasi-uyusma",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -6574,7 +6574,7 @@ export const casesPart05 = [
       "Ramus genitalis nervi genitofemoralis": "Kremasterik motor lifler ve kord içi seyir nedeniyle çeldiricidir; fakat dağılımın kasık-insizyon hattı ile anterior skrotal deriyi birlikte tutması ilioinguinal siniri daha iyi açıklar."
     }
   },
-  {
+{
     "id": "v185-new-204-asiri-susama-ve-seyrek-idrar-yogunlasmasi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -6997,7 +6997,7 @@ export const casesPart05 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v185-new-205-kronik-karbondioksit-retansiyonu",
     "branchId": "physiology",
     "caseType": "standard",
@@ -7432,7 +7432,7 @@ export const casesPart05 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v185-new-206-ani-kan-basinci-yukselmesi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -7826,7 +7826,7 @@ export const casesPart05 = [
     "helpText": "Bu bilgi tetkik sonucu değildir; verilen klinik ve objektif verilerin fizyolojik mekanizma düzeyindeki yorumudur. Artmış karotis sinüs gerilimi afferent baroreseptör ateşlemesini artırır; medüller merkezlerde vagal çıkış artarken sempatik çıkış baskılanır ve kalp hızı düşer.",
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v185-new-207-agrisiz-alt-gastrointestinal-kanama",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -8190,7 +8190,7 @@ export const casesPart05 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v185-new-208-yenidoganda-hipokalsemi-ve-enfeksiyon-egilimi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -8658,7 +8658,7 @@ export const casesPart05 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v185-new-209-premature-bebekte-solunum-sikintisi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -9066,7 +9066,7 @@ export const casesPart05 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v185-new-210-aclik-sonrasi-bilinc-degisikligi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -9432,7 +9432,7 @@ export const casesPart05 = [
       "Karnitin palmitoiltransferaz I eksikliği": "Karnitin palmitoiltransferaz I eksikliği uzun zincirli yağ asitlerinin mitokondriye girişini bozar ve uzun zincirli açilkarnitin paternleriyle ayrılır. Bu olguda C8 baskın orta zincirli profil MCAD eksikliği lehinedir."
     }
   },
-  {
+{
     "id": "v185-new-211-bebekte-gelisim-geriligi-ve-kuf-kokusu",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -9780,7 +9780,7 @@ export const casesPart05 = [
       "Tetrahidrobiyopterin (BH4) sentez/geri dönüşüm bozukluğu": "BH4 sentez veya geri dönüşüm bozukluğu da fenilalanin yüksekliği yapabilir; ayrıca dopamin/serotonin sentezi etkilendiği için pterin/DHPR anormalliği ve nörotransmitter ekseni daha belirgin olur. Bu vakada pterin-DHPR ayırımı klasik PAH eksikliğini öne çıkarır."
     }
   },
-  {
+{
     "id": "v185-new-212-koyu-idrar-ve-eklem-agrisi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -10076,7 +10076,7 @@ export const casesPart05 = [
       "Fumarylasetoasetat hidrolaz eksikliği": "Fumarylasetoasetat hidrolaz eksikliği tirozinemi tip I yapar; karaciğer yetmezliği, renal tübülopati ve süksinilaseton artışı beklenir. Bu vakada erişkin okronoz-artrit ekseni ön plandadır."
     }
   },
-  {
+{
     "id": "v185-new-213-hayvan-isirigi-sonrasi-hidrofobi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -10364,7 +10364,7 @@ export const casesPart05 = [
       "Varicella-zoster virus": "VZV dermatomal veziküler döküntü, ganglion latentliği ve immünsüpresyonda ensefalit/vaskülopatiyle ilişkilidir. Isırık sonrası hidrofobi, hipersalivasyon ve salya/ense deri örnekleme paterni VZV için tipik değildir."
     }
   },
-  {
+{
     "id": "v185-new-214-epigastrik-agri-ve-ureaz-pozitifligi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -10652,7 +10652,7 @@ export const casesPart05 = [
       "Salmonella enterica": "Salmonella gıda kaynaklı gastroenterit veya enterik ateş yapar; dışkı/kan kültürü bağlamı daha tipiktir. Mide mukusunda üreaz aktivitesiyle ilişkili kronik gastrit ve duodenal ülser etkeni değildir."
     }
   },
-  {
+{
     "id": "v185-new-215-transplant-sonrasi-gorme-bulanikligi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -10925,7 +10925,7 @@ export const casesPart05 = [
       "Epstein-Barr virus": "EBV mononükleoz, lenfoproliferatif hastalık ve bazı malignitelerle ilişkilidir; oküler hemorajik nekrotizan retinit ve vitreus PCR paterni EBV için beklenen ana tablo değildir."
     }
   },
-  {
+{
     "id": "v185-new-216-kronik-oksuruk-ve-granulom",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -11264,7 +11264,7 @@ export const casesPart05 = [
       "Yabancı cisim tipi dev hücre reaksiyonu": "Yabancı cisim tipi dev hücre reaksiyonu polarize materyal çevresinde yabancı cisim dev hücreleriyle beklenir. Bu olguda enfeksiyöz temas, üst lob kavitesi, nekrotik merkez ve aside dirençli basil bu seçeneği geri plana iter."
     }
   },
-  {
+{
     "id": "v185-new-217-uzun-sureli-reflu-sonrasi-biyopsi-bulgusu",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -11603,7 +11603,7 @@ export const casesPart05 = [
       "Gastrointestinal stromal tümör": "Gastrointestinal stromal tümör Cajal hücresi kökenli mezenkimal tümördür; KIT/DOG1 pozitif iğsi veya epiteloid hücrelerle düşünülür. Özofageal intestinal metaplazi-GERD ilişkisiyle açıklanmaz."
     }
   },
-  {
+{
     "id": "v185-new-218-tiroid-nodulunde-sitoloji-bulgusu",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -11962,7 +11962,7 @@ export const casesPart05 = [
       "Hashimoto tiroiditi": "Hashimoto tiroiditinde lenfositik infiltrasyon, Hurthle hücre değişikliği ve otoimmün zemin beklenir. Bu olgudaki nodüler kitle, punktat kalsifik odak ve nükleer psödoinklüzyon paterni tiroidit için açıklayıcı değildir."
     }
   },
-  {
+{
     "id": "v185-new-219-tansiyon-ilaci-sonrasi-hisilti",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -12290,7 +12290,7 @@ export const casesPart05 = [
       "Adenozin A1 reseptör aktivasyonuyla AV nod iletiminin geçici yavaşlaması": "Adenozin A1 aktivasyonu AV nod iletimini yavaşlatır ve paroksismal SVT’de kullanılan adenozinin etkisini açıklar. Hışıltı ve hipoksemiyle gelen astımlı hastada propranolol sonrası temel mekanizma AV nod değil bronş düz kası beta-2 blokajıdır."
     }
   },
-  {
+{
     "id": "v185-new-220-tedavi-sonrasi-isitme-azalmasi",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -12600,7 +12600,7 @@ export const casesPart05 = [
       "Peptidoglikan çapraz bağlanmasını sağlayan transpeptidazları inhibe etmek": "Transpeptidaz inhibisyonu beta-laktam antibiyotiklerin hücre duvarı sentezi mekanizmasıdır. Gentamisin hücre duvarı çapraz bağlanmasını değil ribozomal protein sentezini hedefler; ototoksisite/nefrotoksisite profili de aminoglikozid sınıfıyla uyumludur."
     }
   },
-  {
+{
     "id": "v185-new-221-stent-sonrasi-ikili-antiagregan-tedavi",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -12894,7 +12894,7 @@ export const casesPart05 = [
       "Trombinin fibrinojeni fibrine çevirmesini doğrudan inhibe etmek": "Trombinin fibrinojeni fibrine çevirmesini doğrudan inhibe etmek dabigatran veya parenteral direkt trombin inhibitörleriyle ilişkilidir. Klopidogrel fibrin oluşumunu doğrudan değil, primer hemostazdaki trombosit aktivasyonunu baskılar."
     }
   },
-  {
+{
     "id": "v185-new-222-ani-sirt-agrisi-ve-hipotansiyon",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -13827,7 +13827,7 @@ export const casesPart05 = [
       "note": "Genel Cerrahi vakasında objektif veri katmanı cerrahi ilk değerlendirme → acil güvenlik → laboratuvar → hedefli görüntüleme/doğrulama → girişim/kaynak kontrolü sırasına göre düzenlendi."
     }
   },
-  {
+{
     "id": "v185-new-223-ates-sarilik-ve-sag-ust-kadran-agrisi",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -15052,7 +15052,7 @@ export const casesPart05 = [
       "note": "Genel Cerrahi vakasında objektif veri katmanı cerrahi ilk değerlendirme → acil güvenlik → laboratuvar → hedefli görüntüleme/doğrulama → girişim/kaynak kontrolü sırasına göre düzenlendi."
     }
   },
-  {
+{
     "id": "v185-new-224-ani-epigastrik-agri-ve-tahta-karin",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -15799,7 +15799,7 @@ export const casesPart05 = [
       "note": "Yalnızca 16-20. Genel Cerrahi kayıtlarında anamnez, objektif veri, seçenek ve feedback zinciri yeniden denetlendi."
     }
   },
-  {
+{
     "id": "v185-new-225-gebelikte-agrili-kanama",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -16236,7 +16236,7 @@ export const casesPart05 = [
     "obgynInvestigationLayerEnhanced": true,
     "obgynInvestigationLayerVersion": "v397-obgyn-investigation-layer"
   },
-  {
+{
     "id": "v185-new-226-gebelikte-bas-agrisi-ve-hipertansiyon",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -16614,7 +16614,7 @@ export const casesPart05 = [
     "obgynInvestigationLayerEnhanced": true,
     "obgynInvestigationLayerVersion": "v397-obgyn-investigation-layer"
   },
-  {
+{
     "id": "v185-new-227-ani-pelvik-agri-ve-over-kisti",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -16998,7 +16998,7 @@ export const casesPart05 = [
     "obgynInvestigationLayerEnhanced": true,
     "obgynInvestigationLayerVersion": "v397-obgyn-investigation-layer"
   },
-  {
+{
     "id": "v185-new-228-ani-konusma-bozuklugu-ve-kol-gucsuzlugu",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -17567,7 +17567,7 @@ export const casesPart05 = [
       "note": "Öykü son-normal-zaman akışıyla güçlendirildi; hipoglisemi/stabilite taraması ve kanama dışlama görüntüleme sırası korunarak feedbackler netleştirildi."
     }
   },
-  {
+{
     "id": "v185-new-229-antidepresan-sonrasi-ajitasyon-ve-klonus",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -18136,7 +18136,7 @@ export const casesPart05 = [
       "note": "Öykü ilaç maruziyeti ve semptomların saatler içindeki akışıyla yeniden düzenlendi; klonus/hiperrefleksi merkezli ayırıcı tanı feedbackleri güçlendirildi."
     }
   },
-  {
+{
     "id": "v185-new-230-atesli-agrili-diz-sisligi",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -18793,7 +18793,7 @@ export const casesPart05 = [
       "note": "Öykü olay akışına çevrildi; kan kültürü ve artrosentez/antibiyotik sırası seçenek-feedback zincirine eklendi, görüntülemenin aspirasyonu geciktirmemesi vurgulandı."
     }
   },
-  {
+{
     "id": "v186-new-231-gebeligin-son-doneminde-agrisiz-kanama",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -19190,7 +19190,7 @@ export const casesPart05 = [
     "obgynInvestigationLayerEnhanced": true,
     "obgynInvestigationLayerVersion": "v397-obgyn-investigation-layer"
   },
-  {
+{
     "id": "v186-new-232-gebelikte-nobet-ve-hipertansiyon",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -19622,7 +19622,7 @@ export const casesPart05 = [
     "obgynInvestigationLayerEnhanced": true,
     "obgynInvestigationLayerVersion": "v397-obgyn-investigation-layer"
   },
-  {
+{
     "id": "v186-new-233-ani-gorme-alani-kaybi",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -19962,7 +19962,7 @@ export const casesPart05 = [
       "note": "Retina acili vakasında objektif veri görme alanı/keskinlik → dilate fundus → oküler USG → makula ve acil retina planı şeklinde düzenlendi."
     }
   },
-  {
+{
     "id": "v186-new-234-sosyal-cekilme-ve-duygulanim-azalmasi",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -20320,7 +20320,7 @@ export const casesPart05 = [
       "note": "Psikiyatri vakasında akış mental durum muayenesi → güvenlik riski → madde/organik neden dışlama şeklinde düzenlendi; rastgele laboratuvar yükü eklenmedi."
     }
   },
-  {
+{
     "id": "v186-new-235-uzayan-bogulur-tarzda-oksuruk",
     "branchId": "medical-microbiology",
     "caseType": "standard",

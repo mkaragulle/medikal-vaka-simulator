@@ -1,5 +1,5 @@
 export const casesPart20 = [
-  {
+{
     "id": "v224-new-406-eklem-agrisi-ve-kendini-isirma",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -339,7 +339,7 @@ export const casesPart20 = [
       "Lenfosit sayısı normal"
     ]
   },
-  {
+{
     "id": "v224-new-407-idrarda-tatli-koku-ve-letarji",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -691,7 +691,7 @@ export const casesPart20 = [
       "Ketotik asidoz"
     ]
   },
-  {
+{
     "id": "v224-new-408-cocukta-ksantom-ve-cok-yuksek-ldl",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -1031,7 +1031,7 @@ export const casesPart20 = [
       "Ailede erken koroner olay"
     ]
   },
-  {
+{
     "id": "v224-new-409-yenidoganda-sarilik-ve-reduktan-madde",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -1383,7 +1383,7 @@ export const casesPart20 = [
       "Redüktan madde pozitif"
     ]
   },
-  {
+{
     "id": "v224-new-410-kisa-bagirsak-ve-yemek-sonrasi-sersemlik",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -1750,7 +1750,7 @@ export const casesPart20 = [
       "Yüksek D-laktat"
     ]
   },
-  {
+{
     "id": "v224-new-411-uzun-tedavi-sonrasi-mikrositer-anemi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -2070,7 +2070,7 @@ export const casesPart20 = [
       "Halka sideroblast"
     ]
   },
-  {
+{
     "id": "v224-new-412-halsizlik-tuz-istegi-ve-dusuk-tansiyon",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -2394,7 +2394,7 @@ export const casesPart20 = [
       "Düşük aldosteron"
     ]
   },
-  {
+{
     "id": "v224-new-413-gogus-agrisi-ve-seri-biyobelirtec-artisi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -2714,7 +2714,7 @@ export const casesPart20 = [
       "Normal lipaz"
     ]
   },
-  {
+{
     "id": "v224-new-414-beklenmeyen-elektrolit-ve-enzim-uyumsuzlugu",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -3037,7 +3037,7 @@ export const casesPart20 = [
       "Tekrar örnekte normalleşme"
     ]
   },
-  {
+{
     "id": "v224-new-415-yuksek-glukoz-kaydina-ragmen-dusuk-hba1c",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -3372,7 +3372,7 @@ export const casesPart20 = [
       "İndirekt hiperbilirubinemi"
     ]
   },
-  {
+{
     "id": "v225-peds-001-koyu-idrar-ve-goz-cevresinde-sislik",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -4010,7 +4010,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v225-peds-002-solukluk-ve-fazla-sut-tuketimi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -4648,7 +4648,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v225-peds-003-ates-ve-yan-agrisi-sonrasi-solunum-sikintisi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -5268,7 +5268,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v225-peds-004-beslenirken-terleme-ve-hizli-nefes-alma",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -5978,7 +5978,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v225-peds-005-uykunun-ardindan-kumelenen-kisa-kasilmalar",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -6706,7 +6706,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v226-peds-001-mekonyum-gecikmesi-ve-karin-sisligi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -7423,7 +7423,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v226-peds-002-gezici-eklem-agrisi-ve-yeni-ufurum",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -8140,7 +8140,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v226-peds-003-ates-oksuruk-ve-yaygin-dokuntu",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -8857,7 +8857,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v226-peds-004-ameliyat-sonrasi-cok-idrar-ve-susama",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -9592,7 +9592,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v226-peds-005-pika-karin-agrisi-ve-ogrenme-gerilemesi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -10327,7 +10327,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v227-peds-001-sezaryen-sonrasi-hizli-soluma",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -11044,7 +11044,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v227-peds-002-sutle-beslenme-sonrasi-kusma-ve-sarilik",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -11761,7 +11761,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v227-peds-003-bacaklarda-zayif-nabiz-ve-beslenme-guclugu",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -12478,7 +12478,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v227-peds-004-tekrarlayan-kisa-ates-ve-karin-agrisi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -13195,7 +13195,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v227-peds-005-koyu-idrar-ve-ani-solukluk-atagi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -13948,7 +13948,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v228-peds-001-dusme-sonrasi-dizde-sislik",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -14647,7 +14647,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v228-peds-002-zayif-idrar-akimi-ve-karin-sisligi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -15346,7 +15346,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v228-peds-003-yenidoganda-emme-azalmasi-ve-uykuya-egilim",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -16045,7 +16045,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v228-peds-004-surup-ve-tablet-sonrasi-acile-getirilme",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -16744,7 +16744,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v228-peds-005-gece-artan-diz-cevresi-agrisi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -17443,7 +17443,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v229-peds-001-fiskirir-tarzda-kusma-ve-kilo-alamama",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -18055,7 +18055,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v229-peds-002-uzamis-sarilik-ve-kaba-aglama",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -18667,7 +18667,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v229-peds-003-tekrarlayan-hematueri-ve-isitme-azalmasi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -19279,7 +19279,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v229-peds-004-boyunda-sislik-ve-halsizlik",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -19892,7 +19892,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v229-peds-005-yutma-sonrasi-salya-akmasi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -20504,7 +20504,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v230-peds-001-dogumdan-sonra-agir-solunum-sikintisi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -21116,7 +21116,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v230-peds-002-katarakt-ufurum-ve-isitme-azalmasi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -21728,7 +21728,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v230-peds-003-gevseklik-ve-dil-fasikulasyonu",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -22340,7 +22340,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v230-peds-004-poliuri-ve-hipokalemik-alkaloz",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -22952,7 +22952,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v230-peds-005-kafatasinda-sislik-ve-kronik-dokuntu",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -23564,7 +23564,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v231-peds-001-beslenirken-morarma-ve-aglayinca-acilma",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -24128,7 +24128,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v231-peds-002-situs-inversus-ve-tekrarlayan-islak-oksuruk",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -24692,7 +24692,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v231-peds-003-acik-renkli-cilt-lekeleri-ve-nobet",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -25256,7 +25256,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v231-peds-004-kisa-boy-ve-puberte-gecikmesi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -25820,7 +25820,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v231-peds-005-buyume-geriligi-ve-alkali-idrar",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -26402,7 +26402,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v232-peds-001-dogumdan-sonra-yaygin-petesi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -27024,7 +27024,7 @@ export const casesPart20 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v232-peds-002-kan-cizgili-diski-ve-iyi-genel-durum",
     "branchId": "pediatrics",
     "caseType": "standard",

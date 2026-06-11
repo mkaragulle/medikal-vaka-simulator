@@ -1,5 +1,5 @@
 export const casesPart28 = [
-  {
+{
     "id": "v303-new-708-garajda-bulunma-ve-derin-asidoz",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -245,7 +245,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v304-new-709-parmaklarda-sikilasma-ve-efor-dispnesi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -472,7 +472,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v304-new-710-mor-catlaklar-ve-direnc-tansiyon",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -700,7 +700,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v304-new-711-uyusma-dengesizlik-ve-makrositoz",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -940,7 +940,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v304-new-712-diyabette-yuksek-potasyum-ve-hafif-asidoz",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -1186,7 +1186,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v304-new-713-kuru-oksuruk-ve-oksijen-dusuklugu",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -1470,7 +1470,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v305-new-714-boyun-venlerinde-dolgunluk-ve-tansiyon-dusuklugu",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -1724,7 +1724,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v305-new-715-kanli-kusma-ve-bas-donmesi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -1985,7 +1985,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v305-new-716-diz-ameliyati-sonrasi-trombosit-dususu-ve-bacak-agrisi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -2272,7 +2272,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v305-new-717-tekrarlayan-tas-ve-kemik-agrisi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -2547,7 +2547,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v305-new-718-yanakta-dokuntu-ve-kopuklu-idrar",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -2864,7 +2864,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v306-new-719-ates-balgam-ve-giderek-artan-solunum-sikintisi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -3125,7 +3125,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v306-new-720-aclik-sonrasi-bulanti-ve-derin-nefes-alma",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -3411,7 +3411,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v306-new-721-kanli-balgam-ve-hizla-azalan-idrar",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -3691,7 +3691,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v306-new-722-genis-morluklar-ve-uzayan-pihtilasma-testi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -3952,7 +3952,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v306-new-723-sirozlu-hastada-uyku-hali-ve-el-titremesi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -4219,7 +4219,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v307-new-724-istirahatte-gogus-baskisi-ve-dinamik-troponin-artisi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -4437,7 +4437,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v307-new-725-ishal-sonrasi-derin-asidoz-ve-bobrek-yetmezligi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -4749,7 +4749,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v307-new-726-yuz-kizarmasi-ishal-ve-hiriltili-nefes",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -5036,7 +5036,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v307-new-727-asitli-hastada-ates-ve-karin-agrisi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -5297,7 +5297,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v307-new-728-sogukta-moraran-parmaklar-ve-koyu-idrar",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -5596,7 +5596,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
   "id": "v308-new-729-atesli-oksuruk-sonrasi-yan-agrisi-ve-plevral-sivi",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -5864,7 +5864,7 @@ export const casesPart28 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v308-new-730-ilac-sonrasi-dokuntu-ve-kreatinin-yukselmesi",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -6144,7 +6144,7 @@ export const casesPart28 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v308-new-731-karin-sisligi-ve-hassas-hepatomegali",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -6424,7 +6424,7 @@ export const casesPart28 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v308-new-732-ataklar-halinde-bas-agrisi-ve-carpinti",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -6674,7 +6674,7 @@ export const casesPart28 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v308-new-733-bel-agrisi-anemi-ve-kreatinin-yuksekligi",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -6948,7 +6948,7 @@ export const casesPart28 = [
   "findings": [],
   "images": []
 },
-  {
+{
     "id": "v309-new-734-carpinti-ve-duzensiz-genis-qrs-tasikardi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -7222,7 +7222,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v309-new-735-yuz-boyun-sisligi-ve-gogus-duvari-damarlarinda-belirginlesme",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -7496,7 +7496,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v309-new-736-sarilik-ve-akut-viral-seroloji-paterni",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -7788,7 +7788,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v309-new-737-boyna-vuran-agri-ve-carpinti",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -8050,7 +8050,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v309-new-738-tekrarlayan-agiz-yarasi-genital-ulser-ve-goz-kizarikligi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -8362,7 +8362,7 @@ export const casesPart28 = [
     "findings": [],
     "images": []
   },
-  {
+{
   "id": "v310-new-739-bayilma-ve-kaba-sistolik-ufurum",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -8642,7 +8642,7 @@ export const casesPart28 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v310-new-740-oksuruk-goz-kurulugu-ve-kalsiyum-yuksekligi",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -8972,7 +8972,7 @@ export const casesPart28 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v310-new-741-egzersiz-sonrasi-koyu-idrar-ve-kreatinin-artisi",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -9314,7 +9314,7 @@ export const casesPart28 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v310-new-742-tekrarlayan-pihti-ve-gebelik-kaybi",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -9650,7 +9650,7 @@ export const casesPart28 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v310-new-743-ailevi-sislik-ataklari-ve-karin-agrisi",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -9992,7 +9992,7 @@ export const casesPart28 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v311-new-744-dis-eti-kanamasi-ve-yaygin-morarma",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -10207,7 +10207,7 @@ export const casesPart28 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v311-new-745-uzayan-oksuruk-ve-gece-terlemesi",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -10416,7 +10416,7 @@ export const casesPart28 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v311-new-746-bel-agrisiyla-gelen-kanser-hastasinda-bacak-gucsuzlugu",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -10625,7 +10625,7 @@ export const casesPart28 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v311-new-747-boyun-damarlarinda-dolgunluk-ve-asitle-gelen-hasta",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -10840,7 +10840,7 @@ export const casesPart28 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v311-new-748-ani-bas-agrisi-gorme-kaybi-ve-hipotansiyon",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -11056,7 +11056,7 @@ export const casesPart28 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v312-new-749-kalin-dil-kopuklu-idrar-ve-efor-dispnesi",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -11280,7 +11280,7 @@ export const casesPart28 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v312-new-750-uzun-suren-ishal-ve-demir-eksikligi",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -11504,7 +11504,7 @@ export const casesPart28 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v312-new-751-gunduz-uykululugu-ve-kronik-hiperkapni",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -11728,7 +11728,7 @@ export const casesPart28 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v312-new-752-bas-agrisi-ates-ve-dusuk-cd4",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -11958,7 +11958,7 @@ export const casesPart28 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v312-new-753-aksamlari-yukselen-ates-ve-somon-dokuntu",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -12200,7 +12200,7 @@ export const casesPart28 = [
   "findings": [],
   "images": []
 },
-  {
+{
     "id": "v313-new-754-heparin-sonrasi-bacak-agrisi-ve-trombosit-dususu",
     "branchId": "internal-medicine",
     "caseType": "standard",

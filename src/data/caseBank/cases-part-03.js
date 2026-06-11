@@ -1,5 +1,5 @@
 export const casesPart03 = [
-  {
+{
     "id": "v174-new-095-aclik-sonrasi-hipoglisemik-atak",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -313,7 +313,7 @@ export const casesPart03 = [
       "Hepatik glukoz-6-fosfataz eksikliği": "Glukoz-6-fosfataz eksikliği açlık hipoglisemisi yapar fakat hepatomegali, laktat ve ürik asit yüksekliği beklenir. Burada ketonların düşük olması ve orta zincirli açilkarnitin artışı yağ asidi oksidasyon kusurunu gösterir."
     }
   },
-  {
+{
     "id": "v174-new-096-agrisiz-servikal-lenfadenopati",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -725,7 +725,7 @@ export const casesPart03 = [
       "ALK pozitif anaplastik büyük hücreli lenfoma": "Anaplastik büyük hücreli lenfoma CD30 pozitif olabilir; ancak ALK pozitifliği, T-hücre/null fenotip ve CD45 ekspresyonu beklenir. Zayıf PAX5 ve CD15 pozitifliği bu tanıdan uzaklaştırır."
     }
   },
-  {
+{
     "id": "v174-new-097-egzersizde-bolgesel-kan-akimi-artisi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -1141,7 +1141,7 @@ export const casesPart03 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v174-new-098-dis-islemi-sonrasi-subakut-ates",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -1402,7 +1402,7 @@ export const casesPart03 = [
       "Candida türleri": "Candida endokarditi protez kapak, uzun süreli santral kateter, total parenteral nütrisyon veya intravenöz ilaç kullanımı bağlamında düşünülür. Kan kültüründe maya hücreleri beklenir; küçük Gram negatif kokobasil ve dental girişim ağırlıklı öykü Candida’yı desteklemez."
     }
   },
-  {
+{
     "id": "v174-new-099-kasik-altinda-agrili-sislik",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -1648,7 +1648,7 @@ export const casesPart03 = [
       "Pektineal ligament": "Pektineal ligament/Cooper ligamenti kanalın posterior-inferior komşuluğuyla ilişkilidir. Lateral sınır değildir; femoral kanalın derin taban ilişkisini temsil eder."
     }
   },
-  {
+{
     "id": "v174-new-100-gebeligin-gec-doneminde-agrisiz-kanama",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -2004,7 +2004,7 @@ export const casesPart03 = [
     "obgynInvestigationLayerEnhanced": true,
     "obgynInvestigationLayerVersion": "v397-obgyn-investigation-layer"
   },
-  {
+{
     "id": "v175-new-101-lateral-boyun-kitlesi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -2417,7 +2417,7 @@ export const casesPart03 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v175-new-102-prenatal-taramada-yuksek-alfa-fetoprotein",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -2895,7 +2895,7 @@ export const casesPart03 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v175-new-103-hipotansiyon-ve-hiperpigmentasyon",
     "branchId": "physiology",
     "caseType": "standard",
@@ -3388,7 +3388,7 @@ export const casesPart03 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v175-new-104-paroksismal-oksuruk-nobetleri",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -3641,7 +3641,7 @@ export const casesPart03 = [
       "Respiratory syncytial virus": "RSV özellikle süt çocuklarında bronşiolit, wheezing, hipoksemi ve beslenme güçlüğüyle öne çıkar. Bu çocukta haftalar süren paroksismal öksürük, whoop, posttussif kusma ve lenfositoz RSV’den çok pertussis lehinedir."
     }
   },
-  {
+{
     "id": "v175-new-105-bogaz-enfeksiyonu-sonrasi-koyu-idrar",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -4017,7 +4017,7 @@ export const casesPart03 = [
       "Subepitelyal spike-and-dome paterni": "Spike-and-dome paterni membranöz nefropatide nefrotik tabloyla ilişkilidir; bu olguda eritrosit silendirleri, hipertansiyon ve düşük C3 ile nefritik patern baskındır."
     }
   },
-  {
+{
     "id": "v175-new-106-sutle-beslenme-sonrasi-yenidogan-sariligi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -4440,7 +4440,7 @@ export const casesPart03 = [
       "UDP-galaktoz 4-epimeraz eksikliği": "UDP-galaktoz 4-epimeraz eksikliği galaktoz metabolizmasının daha distal ve değişken fenotipli bir kusurudur. Bu soruda galaktoz-1-fosfat birikimi ve yenidoğan hepatik tablo klasik GALT basamağını daha doğrudan destekler."
     }
   },
-  {
+{
     "id": "v175-new-107-yumusak-doku-enfeksiyonunda-hizla-kotulesme",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -5521,7 +5521,7 @@ export const casesPart03 = [
       "note": "Genel Cerrahi vakasında objektif veri katmanı cerrahi ilk değerlendirme → acil güvenlik → laboratuvar → hedefli görüntüleme/doğrulama → girişim/kaynak kontrolü sırasına göre düzenlendi."
     }
   },
-  {
+{
     "id": "v175-new-108-gebelikte-asiri-bulanti-ve-kanama",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -5840,7 +5840,7 @@ export const casesPart03 = [
     "obgynInvestigationLayerEnhanced": true,
     "obgynInvestigationLayerVersion": "v397-obgyn-investigation-layer"
   },
-  {
+{
     "id": "v175-new-109-tiroid-ameliyati-sonrasi-ses-degisikligi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -6047,7 +6047,7 @@ export const casesPart03 = [
       "Nervus glossopharyngeus": "Nervus glossopharyngeus farinks duyusu, tat ve stylopharyngeus kasıyla ilişkilidir; gag refleksi ve yutma bulguları ön planda olur. Vokal kord hareket azalmasını primer olarak açıklamaz."
     }
   },
-  {
+{
     "id": "v175-new-110-aralikli-karin-agrisi-ve-kanli-diski",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -6594,7 +6594,7 @@ export const casesPart03 = [
       ]
     }
   },
-  {
+{
     "id": "v176-new-111-akut-kan-kaybi-sonrasi-tasikardi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -7022,7 +7022,7 @@ export const casesPart03 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v176-new-112-asidozda-derin-hizli-solunum",
     "branchId": "physiology",
     "caseType": "standard",
@@ -7539,7 +7539,7 @@ export const casesPart03 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v176-new-113-antikoagulan-kullanirken-ciddi-kanama",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -7836,7 +7836,7 @@ export const casesPart03 = [
       "Asetilsalisilik asit ekleyerek tromboemboli riskini azaltmak": "Asetilsalisilik asit antiagregan etkiyle kanamayı artırabilir; pıhtılaşma faktörü eksikliğini düzeltmez."
     }
   },
-  {
+{
     "id": "v176-new-114-gorme-degisikligi-ve-aritmi",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -8133,7 +8133,7 @@ export const casesPart03 = [
       "Nalokson": "Opioid toksisitesinde solunum depresyonu için kullanılır; burada hiperkalemi ve bradiaritmiyle giden digoksin toksisitesi söz konusudur."
     }
   },
-  {
+{
     "id": "v176-new-115-kronik-inflamasyon-sonrasi-proteinuri",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -8515,7 +8515,7 @@ export const casesPart03 = [
       "PAS ile mantar hiflerinin belirginleşmesi": "PAS fungal organizmaları gösterebilir; immünsüpresif enfeksiyon bağlamı ve doku invazyonu verilmemiştir, glomerüler amorf birikimi açıklamaz."
     }
   },
-  {
+{
     "id": "v176-new-116-gogus-agrisi-sonrasi-ani-kotulesme",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -8843,7 +8843,7 @@ export const casesPart03 = [
       "Sadece dalgalı lifler, inflamatuvar hücre olmadan erken iskemik değişiklik": "Dalgalı lifler ve minimal inflamasyon ilk saatlerde görülebilir; 24 saate yaklaşan enfarktüste koagülasyon nekrozu ve nötrofil yanıtı beklenir."
     }
   },
-  {
+{
     "id": "v176-new-117-yenidoganda-beslenme-bozulmasi-ve-ozel-idrar-kokusu",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -9266,7 +9266,7 @@ export const casesPart03 = [
       "Homogentizat 1,2-dioksijenaz eksikliği": "Homogentizat 1,2-dioksijenaz eksikliği tirozin yıkımında alkaptonüri yapar; bekleyince koyulaşan idrar ve okronotik eklem bulguları beklenir. Yenidoğan dönemindeki BCAA/ketoasit birikimini açıklamaz."
     }
   },
-  {
+{
     "id": "v176-new-118-ilac-sonrasi-koyu-idrar-ve-sarilik",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -9627,7 +9627,7 @@ export const casesPart03 = [
       "Vitamin B12 bağımlı metiyonin sentaz reaksiyonunun bozulması": "B12 bağımlı metiyonin sentaz bozukluğu megaloblastik hematopoez, makrositoz ve homosistein artışıyla ilişkilidir. Akut koyu idrar, Heinz cisimciği ve oksidatif tetikleyici ilişkisi bu mekanizmayla açıklanamaz."
     }
   },
-  {
+{
     "id": "v176-new-119-kamp-sonrasi-kotu-kokulu-ishal",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -9888,7 +9888,7 @@ export const casesPart03 = [
       "Balantidium coli": "Balantidium coli domuz temasıyla ilişkili, silli protozoon olup dizanteri benzeri invaziv kolit yapabilir. Bu hastada domuz teması, kanlı dışkı ve silli büyük trofozoit morfolojisi yoktur; kamp suyu ve malabsorptif dışkı Giardia ile uyumludur."
     }
   },
-  {
+{
     "id": "v176-new-120-diskilama-sonrasi-anal-agri",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -10509,7 +10509,7 @@ export const casesPart03 = [
       "note": "Genel Cerrahi vakasında objektif veri katmanı cerrahi ilk değerlendirme → acil güvenlik → laboratuvar → hedefli görüntüleme/doğrulama → girişim/kaynak kontrolü sırasına göre düzenlendi."
     }
   },
-  {
+{
     "id": "v177-new-121-dogum-sonrasi-ates-ve-uterin-hassasiyet",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -10840,7 +10840,7 @@ export const casesPart03 = [
     "obgynInvestigationLayerEnhanced": true,
     "obgynInvestigationLayerVersion": "v397-obgyn-investigation-layer"
   },
-  {
+{
     "id": "v177-new-122-dogumda-omuz-takilmasi",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -11116,7 +11116,7 @@ export const casesPart03 = [
     "obgynInvestigationLayerEnhanced": true,
     "obgynInvestigationLayerVersion": "v397-obgyn-investigation-layer"
   },
-  {
+{
     "id": "v177-new-123-antikoagulan-sonrasi-uyluk-gucsuzlugu",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -11395,7 +11395,7 @@ export const casesPart03 = [
       "Truncus lumbosacralis": "Truncus lumbosacralis sakral pleksusa katkı verir ve daha çok gluteal-siyatik dağılımla ilişkilidir. Ayak bileği hareketlerinin korunması ve patella refleksi etkilenimi daha lokal anterior lumbal pleksus dalını düşündürür."
     }
   },
-  {
+{
     "id": "v177-new-124-parotis-ameliyati-sonrasi-yuz-asimetrisi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -11602,7 +11602,7 @@ export const casesPart03 = [
       "Nervus hypoglossus": "Nervus hypoglossus dil kaslarının motor siniridir; lezyonda dil deviasyonu ve artikülasyon/yutma sırasında bolus yönlendirme güçlüğü beklenir. Dilin orta hatta çıkması ve mimik kas kaybı hipoglossal lezyonu dışlar."
     }
   },
-  {
+{
     "id": "v177-new-125-cocukta-purpura-ve-karin-agrisi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -12276,7 +12276,7 @@ export const casesPart03 = [
       ]
     }
   },
-  {
+{
     "id": "v177-new-126-yenidoganda-agir-solunum-sikintisi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -12775,7 +12775,7 @@ export const casesPart03 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v177-new-127-ani-bacak-agrisi-ve-sogukluk",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -13608,7 +13608,7 @@ export const casesPart03 = [
       "note": "Genel Cerrahi vakasında objektif veri katmanı cerrahi ilk değerlendirme → acil güvenlik → laboratuvar → hedefli görüntüleme/doğrulama → girişim/kaynak kontrolü sırasına göre düzenlendi."
     }
   },
-  {
+{
     "id": "v177-new-128-analjezik-asiri-alimi",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -13905,7 +13905,7 @@ export const casesPart03 = [
       "Deferoksamin": "Demir şelatörüdür; parasetamol aşırı alımı demir yüküyle ilişkili değildir."
     }
   },
-  {
+{
     "id": "v177-new-129-diskilama-aliskanliginda-degisiklik",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -14293,7 +14293,7 @@ export const casesPart03 = [
       "Primer kolonik lenfoma": "Kolonik lenfoma mukozal/submukozal lenfoid hücre proliferasyonu ile beklenir; glandüler diferansiasyon, kribriform alanlar ve desmoplastik stromal invazyon epitelial malignite lehinedir."
     }
   },
-  {
+{
     "id": "v177-new-130-genc-eriskinde-atipik-pnomoni",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -14554,7 +14554,7 @@ export const casesPart03 = [
       "Klebsiella pneumoniae": "Klebsiella özellikle alkolizm, aspirasyon veya diyabet bağlamında ağır nekrotizan/lober pnömoni ve yoğun balgamla ilişkilidir. Genç yurt öğrencisinde kuru öksürük, interstisyel infiltrasyon ve Gram boyamada bakteri görülmemesi Klebsiella ile uyumlu değildir."
     }
   },
-  {
+{
     "id": "v178-new-131-efor-dispnesi-ve-periferik-odem",
     "branchId": "physiology",
     "caseType": "standard",
@@ -15053,7 +15053,7 @@ export const casesPart03 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v178-new-132-yenidoganda-agir-hiperammonemi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -15494,7 +15494,7 @@ export const casesPart03 = [
       "Ornitin transkarbamilaz eksikliği": "OTC eksikliğinde karbamoil fosfat mitokondride birikir ve sitozole geçerek orotik asit sentezini artırır. Bu vakada orotik asitin normal olması OTC yerine CPS I basamağını destekler."
     }
   },
-  {
+{
     "id": "v178-new-133-lipit-dusurucu-tedavi-sonrasi-kas-agrisi",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -15840,7 +15840,7 @@ export const casesPart03 = [
       "Hepatik enzim indüksiyonuyla simvastatin metabolizmasının hızlanıp toksik metabolit üretmesi": "Enzim indüksiyonu genellikle substrat düzeyini azaltır ve simvastatin toksisitesini artırmaktan çok etkinliği azaltma yönünde beklenir. Makrolid başlanmasından kısa süre sonra toksisite gelişmesi inhibitör etkileşime işaret eder; hızlanmış metabolizma bu paternle uyumlu değildir."
     }
   },
-  {
+{
     "id": "v178-new-134-postmenopozal-vajinal-kanama",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -16182,7 +16182,7 @@ export const casesPart03 = [
       "Atipik endometrial hiperplazi/EIN": "Atipik endometrial hiperplazi/EIN aynı risk zemininde gelişebilir ve adenokarsinom öncülüdür; bu nedenle güçlü bir çeldiricidir. Ancak stromal invazyon ve kribriform kompleks glandüler infiltrasyon varlığı olguyu preinvaziv hiperplaziden çıkarır."
     }
   },
-  {
+{
     "id": "v178-new-135-yasli-hastada-menenjit",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -16470,7 +16470,7 @@ export const casesPart03 = [
       "Streptococcus agalactiae": "Grup B streptokok yenidoğan sepsisi/menenjiti ve bazı erişkin invaziv enfeksiyonlarıyla ilişkili olabilir; Gram boyamada zincir yapan gram pozitif kok beklenir. Kısa basil morfolojisi ve gıda ilişkili yaşlı menenjit paterni bu seçenekten daha çok Listeria ile uyumludur."
     }
   },
-  {
+{
     "id": "v178-new-136-skrotumda-ele-gelmeyen-testis",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -16838,7 +16838,7 @@ export const casesPart03 = [
     },
     "preserveInvestigationOrder": true
   },
-  {
+{
     "id": "v178-new-137-epigastrik-agri-ve-kusma",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -17955,7 +17955,7 @@ export const casesPart03 = [
       "note": "Genel Cerrahi vakasında objektif veri katmanı cerrahi ilk değerlendirme → acil güvenlik → laboratuvar → hedefli görüntüleme/doğrulama → girişim/kaynak kontrolü sırasına göre düzenlendi."
     }
   },
-  {
+{
     "id": "v178-new-138-kanli-ishal-sonrasi-oliguri",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -18726,7 +18726,7 @@ export const casesPart03 = [
       "validationWarnings": []
     }
   },
-  {
+{
     "id": "v178-new-139-erken-gebelik-haftasinda-su-gelisi",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -19081,7 +19081,7 @@ export const casesPart03 = [
     "obgynInvestigationLayerEnhanced": true,
     "obgynInvestigationLayerVersion": "v397-obgyn-investigation-layer"
   },
-  {
+{
     "id": "v178-new-140-immunsuprese-hastada-subakut-menenjit",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -19369,7 +19369,7 @@ export const casesPart03 = [
       "Mucor türleri": "Mucorales diyabetik ketoasidoz veya ağır nötropeni zemininde rinomukormikoz yapar; geniş, septasız hifler ve damar invazyonu beklenir. Bu olguda hif değil kapsüllü tomurcuklanan maya morfolojisi vardır."
     }
   },
-  {
+{
     "id": "v179-new-141-besin-sonrasi-akut-reaksiyon",
     "branchId": "pediatrics",
     "caseType": "standard",

@@ -1,5 +1,5 @@
 export const casesPart29 = [
-  {
+{
     "id": "v313-new-755-kasinti-ve-kolestatik-enzim-yuksekligi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -301,7 +301,7 @@ export const casesPart29 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v313-new-756-yuz-hatlarinda-kabalasma-ve-terleme",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -603,7 +603,7 @@ export const casesPart29 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v313-new-757-eforla-bayilma-ve-degisken-sistolik-ufurum",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -917,7 +917,7 @@ export const casesPart29 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v313-new-758-direncli-hipertansiyon-ve-kas-gucsuzlugu",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -1219,7 +1219,7 @@ export const casesPart29 = [
     "findings": [],
     "images": []
   },
-  {
+{
   "id": "v314-new-759-atesle-bayilma-ve-sag-prekordiyal-st-yukselmesi",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -1521,7 +1521,7 @@ export const casesPart29 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v314-new-760-astimda-kahverengi-balgam-ve-santral-bronsiektazi",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -1823,7 +1823,7 @@ export const casesPart29 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v314-new-761-digoksin-kullanan-hastada-bulanti-ve-yavas-nabiz",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -2125,7 +2125,7 @@ export const casesPart29 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v314-new-762-uzayan-ates-splenomegali-ve-cok-yuksek-ferritin",
   "branchId": "internal-medicine",
   "caseType": "standard",
@@ -2522,7 +2522,7 @@ export const casesPart29 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v315-gc-001-sigmoid-divertikulit-apse",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -2941,7 +2941,7 @@ export const casesPart29 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v315-gc-002-dalak-yaralanmasi-kontrast-blush",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -3336,7 +3336,7 @@ export const casesPart29 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v315-gc-003-enfekte-pankreatik-nekroz",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -3773,7 +3773,7 @@ export const casesPart29 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v315-gc-004-laparoskopik-kolesistektomi-sonrasi-biliyer-kacak",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -4198,7 +4198,7 @@ export const casesPart29 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v315-gc-005-adrenal-kitle-paroksismal-hipertansiyon",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -4611,7 +4611,7 @@ export const casesPart29 = [
   "findings": [],
   "images": []
 },
-  {
+{
     "id": "v316-gc-001-surekli-karin-agrisi-ve-ince-barsak-obstruksiyonu",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -5079,7 +5079,7 @@ export const casesPart29 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v316-gc-002-rektum-kanseri-mrf-tehditli",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -5499,7 +5499,7 @@ export const casesPart29 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v316-gc-003-kolorektal-cerrahi-sonrasi-tasikardi-ve-ileus",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -5943,7 +5943,7 @@ export const casesPart29 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v316-gc-004-semptomatik-primer-hiperparatiroidi",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -6297,7 +6297,7 @@ export const casesPart29 = [
     "findings": [],
     "images": []
   },
-  {
+{
     "id": "v316-gc-005-mamografide-mikrokalsifikasyon-ve-dcis",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -6705,7 +6705,7 @@ export const casesPart29 = [
     "findings": [],
     "images": []
   },
-  {
+{
   "id": "v317-gc-001-ulseratif-kolit-megakolon-cerrahi-karar",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -7085,7 +7085,7 @@ export const casesPart29 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v317-gc-002-karaciger-apsesi-perkutan-drenaj",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -7483,7 +7483,7 @@ export const casesPart29 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v317-gc-003-mide-cikis-obstruksiyonu-metabolik-alkaloz",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -7881,7 +7881,7 @@ export const casesPart29 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v317-gc-004-meduller-tiroid-kanseri-cerrahi-plan",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -8261,7 +8261,7 @@ export const casesPart29 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "id": "v317-gc-005-laktasyonel-meme-apsesi-drenaj",
   "branchId": "general-surgery",
   "caseType": "standard",
@@ -8641,7 +8641,7 @@ export const casesPart29 = [
   "findings": [],
   "images": []
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -9013,7 +9013,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -9361,7 +9361,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Orta",
@@ -9652,7 +9652,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -9955,7 +9955,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -10282,7 +10282,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Orta-Zor",
@@ -10502,7 +10502,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -10734,7 +10734,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -11035,7 +11035,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Orta-Zor",
@@ -11348,7 +11348,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -11649,7 +11649,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -11948,7 +11948,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -12271,7 +12271,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -12570,7 +12570,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -12869,7 +12869,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -13180,7 +13180,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -13479,7 +13479,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -13790,7 +13790,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -14077,7 +14077,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -14340,7 +14340,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -14639,7 +14639,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -14962,7 +14962,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -15298,7 +15298,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
@@ -15609,7 +15609,7 @@ export const casesPart29 = [
     "schemaReference": "new375 compatible rawCases schema with diagnosis.optionFeedback object mapping"
   }
 },
-  {
+{
   "branchId": "general-surgery",
   "caseType": "standard",
   "difficulty": "Zor",
