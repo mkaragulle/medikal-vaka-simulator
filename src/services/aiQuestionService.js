@@ -8,12 +8,13 @@ import {
 const runtimeEnv = import.meta.env || {};
 const AI_ENDPOINT = runtimeEnv.VITE_AI_QUESTION_ENDPOINT || '/api/generate-ai-question';
 const ENABLE_REAL_AI = String(runtimeEnv.VITE_ENABLE_REAL_AI ?? 'true').toLowerCase() !== 'false';
-const AI_REQUEST_TIMEOUT_MS = Number(runtimeEnv.VITE_AI_REQUEST_TIMEOUT_MS || 25000);
-const AI_REMOTE_RETRY_COUNT = Math.max(1, Math.min(2, Number(runtimeEnv.VITE_AI_REMOTE_RETRY_COUNT || 1)));
+const requestedAIRequestTimeoutMs = Number(runtimeEnv.VITE_AI_REQUEST_TIMEOUT_MS || 55000);
+const AI_REQUEST_TIMEOUT_MS = Math.max(45000, Math.min(65000, requestedAIRequestTimeoutMs || 55000));
+const AI_REMOTE_RETRY_COUNT = Math.max(1, Math.min(2, Number(runtimeEnv.VITE_AI_REMOTE_RETRY_COUNT || 1))); // keep one visible request by default; backend handles validation
 const ENABLE_CLIENT_PREFETCH = String(runtimeEnv.VITE_AI_ENABLE_NEXT_QUESTION_PREFETCH ?? 'false').toLowerCase() === 'true';
 const MAX_PREFETCHED_PER_KEY = Math.max(0, Math.min(2, Number(runtimeEnv.VITE_AI_PREFETCH_QUEUE_SIZE || 0)));
-const PREFETCH_FIRST_WAIT_MS = Math.max(0, Math.min(4500, Number(runtimeEnv.VITE_AI_PREFETCH_FIRST_WAIT_MS || 1800)));
-const FALLBACK_GRACE_WAIT_MS = Math.max(0, Math.min(6500, Number(runtimeEnv.VITE_AI_FALLBACK_GRACE_WAIT_MS || 3200)));
+const PREFETCH_FIRST_WAIT_MS = Math.max(0, Math.min(4500, Number(runtimeEnv.VITE_AI_PREFETCH_FIRST_WAIT_MS || 1200)));
+const FALLBACK_GRACE_WAIT_MS = Math.max(0, Math.min(6500, Number(runtimeEnv.VITE_AI_FALLBACK_GRACE_WAIT_MS || 5000)));
 const SHOW_FALLBACK_NOTICE = String(runtimeEnv.VITE_AI_SHOW_FALLBACK_NOTICE ?? 'false').toLowerCase() === 'true';
 
 const prefetchedQuestionQueues = new Map();

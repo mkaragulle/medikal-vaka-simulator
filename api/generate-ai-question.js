@@ -7,7 +7,7 @@ import {
 import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from '../server/lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-tus-v42-length-free-quality';
+const PROMPT_VERSION = 'klinikiq-tus-v43-remote-stable-balanced';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
@@ -765,8 +765,8 @@ function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
   OPTION_IDS.forEach((id) => {
     if (!cleanText(sanitized.wrongOptionFeedback[id])) {
       sanitized.wrongOptionFeedback[id] = id === sanitized.correctAnswer
-        ? ensureSentence(sanitized.explanation || `${correctText} bu olguda en uygun yanıttır`)
-        : 'Bu seçenek bu olgudaki ana karar noktasını doğru seçenek kadar iyi karşılamaz.';
+        ? ensureSentence(sanitized.explanation || `${correctText} verilen klinik verilerle en uyumlu yanıttır`)
+        : 'Bu seçenek, verilen klinik bağlamda öncelikli karar noktasını yeterince açıklamaz.';
     }
   });
   if (!cleanText(sanitized.examPearl)) sanitized.examPearl = 'Soru kökünde verilen ayırt ettirici ipuçları, seçenekleri aynı karar ekseninde karşılaştırarak kullanılmalıdır.';
@@ -877,9 +877,10 @@ async function callOpenAI(prompt, { detailMode = tusQuestionDetailMode() } = {})
   if (!apiKey) return null;
   const model = currentTusModel();
   const baseUrl = (process.env.TUS_OPENAI_BASE_URL || process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
-  const timeoutMs = Number(process.env.TUS_OPENAI_PER_REQUEST_TIMEOUT_MS || process.env.OPENAI_PER_REQUEST_TIMEOUT_MS || 25000);
+  const requestedTimeoutMs = Number(process.env.TUS_OPENAI_PER_REQUEST_TIMEOUT_MS || process.env.OPENAI_PER_REQUEST_TIMEOUT_MS || 52000);
+  const timeoutMs = Math.max(45000, Math.min(58000, requestedTimeoutMs || 52000));
   const requestedMaxTokens = Number(process.env.TUS_OPENAI_MAX_OUTPUT_TOKENS || process.env.OPENAI_MAX_OUTPUT_TOKENS || 0);
-  const maxTokens = requestedMaxTokens > 0 ? requestedMaxTokens : applyCostProfileToMaxTokens('TUS', TASK_NAME, 2400);
+  const maxTokens = requestedMaxTokens > 0 ? Math.max(3000, requestedMaxTokens) : applyCostProfileToMaxTokens('TUS', TASK_NAME, 3200);
   const explicitStyle = process.env.TUS_OPENAI_API_STYLE || process.env.OPENAI_API_STYLE || '';
   const useResponses = shouldUseResponsesApi(model, explicitStyle);
   const style = useResponses ? 'responses' : 'chat';
@@ -962,7 +963,7 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
     // Educational polish issues are kept as quality notes so live AI generation
     // does not collapse into safe local fallback on every request.
     const hardBlockingErrors = validation.errors.filter((message) =>
-      /branch eksik|stem eksik|stem placeholder|görünür klinik patern yok|klinik olgu yetersiz|soruyu çözdürecek|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|soru kökü\/veri paneli doğru cevabı ele veriyor|veri paneli yön\/değişim cevabını fazla ele veriyor|fizyoloji sorusunda veri paneli sonucu belirleyen yorumu doğrudan veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|imkansız veya bozuk klinik değer|bozuk Türkçe veya makine çevirisi|hiperamonyemi acil tedavi sorusunda/iu.test(message)
+      /branch eksik|stem eksik|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|imkansız veya bozuk klinik değer/iu.test(message)
     );
 
     if (hardBlockingErrors.length) {
@@ -1005,7 +1006,7 @@ async function getReusableBankQuestion({ branch, target, difficulty, recentQuest
     const validation = validateQuestion(candidate, recentQuestionSummaries);
     if (validation.ok) return true;
     return !validation.errors.some((message) =>
-      /branch eksik|stem eksik|stem placeholder|görünür klinik patern yok|klinik olgu yetersiz|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|soru kökü\/veri paneli doğru cevabı ele veriyor|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|imkansız veya bozuk klinik değer|bozuk Türkçe veya makine çevirisi|hiperamonyemi acil tedavi sorusunda/iu.test(message)
+      /branch eksik|stem eksik|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|imkansız veya bozuk klinik değer/iu.test(message)
     );
   });
   if (!reusable) return null;
@@ -1034,7 +1035,7 @@ export default async function handler(request, response) {
   const branch = chooseBranch(body.branchFilter);
   const requestedDifficulty = normalizeDifficulty(body.difficulty || body.requestedDifficulty || body.aiDifficulty || 'Orta');
   const recentQuestionSummaries = asArray(body.recentQuestionSummaries).slice(0, 12);
-  const remoteAttempts = Math.max(1, Math.min(3, Number(process.env.REMOTE_AI_ATTEMPTS || process.env.TUS_REMOTE_AI_ATTEMPTS || 3)));
+  const remoteAttempts = Math.max(1, Math.min(2, Number(process.env.REMOTE_AI_ATTEMPTS || process.env.TUS_REMOTE_AI_ATTEMPTS || 1)));
   const errors = [];
   const target = body.target || body.answerTarget || '';
   const sourceText = cleanText(body.sourceText || body.userSourceText || body.referenceText || '');
