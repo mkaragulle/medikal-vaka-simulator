@@ -20382,3 +20382,31 @@ html.ki-route-transitioning .catalog-card-virtual-row > .tus-pearl-library-card.
 .app-shell[data-theme='dark'] .ai-spot-feedback-pearl-text-v402 {
   color: #cbd5e1 !important;
 }
+
+/* ==========================================================
+   V448 — AI Spot uzun optionFeedback render güvenliği
+   - Öğretici feedback metinleri kart içinde kırpılmaz.
+   - line-clamp / max-height / overflow kaynaklı görünürlük kaybı engellenir.
+   ========================================================== */
+.ai-spot-detailed-feedback-panel-v246,
+.ai-spot-detailed-feedback-panel-v246 .ai-spot-feedback-choice-card,
+.ai-spot-detailed-feedback-panel-v246 .ai-spot-feedback-section-card,
+.ai-spot-detailed-feedback-panel-v246 .ai-spot-feedback-option-row,
+.ai-spot-detailed-feedback-panel-v246 .ai-spot-feedback-pearl-card {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.ai-spot-detailed-feedback-panel-v246 :where(p, .glossary-text-flow, .glossary-term) {
+  display: inline !important;
+  max-height: none !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+}
+
+.ai-spot-detailed-feedback-panel-v246 :where(.ai-spot-feedback-choice-card p, .ai-spot-feedback-option-row p, .ai-spot-feedback-pearl-card p) {
+  display: block !important;
+}

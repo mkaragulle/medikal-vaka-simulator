@@ -9,6 +9,7 @@ const MAX_EVIDENCE_ITEMS = 5;
 const MAX_PEARL_ITEMS = 4;
 const MAX_MANAGEMENT_ITEMS = 4;
 const MAX_COMPARISON_ITEMS = 6;
+const MISSING_FEEDBACK_NOTICE = 'Bu seçenek için yayın kalitesinde optionFeedback gelmedi; soru backend kalite kapısından geçmemelidir.';
 
 const GENERIC_COMPARISON_PATTERNS = [
   /belirleyici klinik bulgular doğru tanı lehine/i,
@@ -461,18 +462,16 @@ function normalizeWrongMap(clinicalCase) {
 function deriveWhyWrong(clinicalCase, selectedOption, selectedComparison) {
   const feedback = getFeedback(clinicalCase);
   if (selectedOption && feedback.whyWrong && typeof feedback.whyWrong === 'object' && typeof feedback.whyWrong[selectedOption] === 'string') {
-    return compactParagraph(removeMetaLanguage(feedback.whyWrong[selectedOption]), 4, 620);
+    return compactParagraph(removeMetaLanguage(feedback.whyWrong[selectedOption]), Infinity, Infinity);
   }
-  if (typeof feedback.whyWrong === 'string') return compactParagraph(removeMetaLanguage(feedback.whyWrong), 4, 620);
-  if (selectedComparison?.explanation) return compactParagraph(removeMetaLanguage(selectedComparison.explanation), 4, 620);
+  if (typeof feedback.whyWrong === 'string') return compactParagraph(removeMetaLanguage(feedback.whyWrong), Infinity, Infinity);
+  if (selectedComparison?.explanation) return compactParagraph(removeMetaLanguage(selectedComparison.explanation), Infinity, Infinity);
 
-  const clue = getMainClue(clinicalCase);
-  const correctDiagnosis = clinicalCase.diagnosis?.correct || 'doğru seçenek';
   if (selectedOption) {
-    return 'Seçilen seçenek için ayırt ettirici açıklama üretilemedi.';
+    return '';
   }
 
-  return 'Seçilen seçenek için ayırt ettirici açıklama üretilemedi.';
+  return '';
 }
 
 function inferEvidenceTitle(text = '', index = 0) {
@@ -698,7 +697,7 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
     }
 
     const explicit = wrongMap[option] || normalizedWrongMap[normalizeForCompare(option)] || {};
-    const rawExplanation = removeMetaLanguage(explicit.explanation || 'Bu seçenek için ayırt ettirici açıklama üretilemedi.');
+    const rawExplanation = removeMetaLanguage(explicit.explanation || '');
     const explanation = isAISpot ? fullEducationalParagraph(rawExplanation) : singleSentence(rawExplanation, 190);
     return {
       option,
@@ -899,14 +898,14 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCo
           <article className={`ai-spot-feedback-choice-card ${isCorrect ? 'is-correct' : 'is-selected-wrong'}`.trim()}>
             <span className="ai-spot-choice-kicker">Seçimin</span>
             <strong><GlossaryText text={selectedText || 'Seçim bulunamadı'} enabled={glossaryEnabled} /></strong>
-            <p><GlossaryText text={ensureSentence(selectedExplanation || 'Seçilen seçenek için açıklama bulunamadı.')} enabled={glossaryEnabled} /></p>
+            <p><GlossaryText text={ensureSentence(selectedExplanation || MISSING_FEEDBACK_NOTICE)} enabled={glossaryEnabled} /></p>
           </article>
 
           {!isCorrect ? (
             <article className="ai-spot-feedback-choice-card is-correct">
               <span className="ai-spot-choice-kicker">Doğru cevap</span>
               <strong><GlossaryText text={correctText || 'Doğru cevap bulunamadı'} enabled={glossaryEnabled} /></strong>
-              <p><GlossaryText text={ensureSentence(correctExplanation || 'Doğru seçenek için açıklama bulunamadı.')} enabled={glossaryEnabled} /></p>
+              <p><GlossaryText text={ensureSentence(correctExplanation || MISSING_FEEDBACK_NOTICE)} enabled={glossaryEnabled} /></p>
             </article>
           ) : null}
         </div>
@@ -952,7 +951,7 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCo
                   {row.isSelected ? <em>Seçimin</em> : null}
                   {row.status === 'correct' ? <em className="correct">Doğru cevap</em> : null}
                 </div>
-                <p><GlossaryText text={ensureSentence(row.explanation)} enabled={glossaryEnabled} revealMode="postAnswer" maxTerms={6} /></p>
+                <p><GlossaryText text={ensureSentence(row.explanation || MISSING_FEEDBACK_NOTICE)} enabled={glossaryEnabled} revealMode="postAnswer" maxTerms={6} /></p>
               </article>
             ))}
           </div>

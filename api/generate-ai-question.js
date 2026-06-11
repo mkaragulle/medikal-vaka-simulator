@@ -192,29 +192,43 @@ function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, m
   const options = normalizeOptions(getByPaths(source, ['options', 'o', 'secenekler', 'seçenekler', 'choices', 'siklar', 'şıklar']) || []);
   const correctAnswer = resolveCorrectId(source, options);
   const optionFeedback = normalizeFeedback(getByPaths(source, ['optionFeedback', 'feedback', 'f', 'wrongOptionFeedback', 'secenekFeedback', 'seçenekFeedback', 'sikFeedback', 'şıkFeedback']) || {});
+  const physicalExam = normalizeItems(getByPaths(source, ['physicalExam', 'exam', 'muayene']) || []);
+  const vitals = normalizeItems(getByPaths(source, ['vitals', 'compactVitals', 'cv']) || []);
+  const objectiveData = normalizeItems(getByPaths(source, ['objectiveData', 'compactObjectiveData', 'co', 'supportingData']) || []);
+  const clinicalStem = cleanText(getByPaths(source, ['clinicalStem', 'stem', 's', 'soruKoku', 'soruKökü', 'olgu', 'vaka', 'case', 'clinicalCase']) || '');
+  const evidenceBasedReasoning = normalizeEvidence(getByPaths(source, ['evidenceBasedReasoning', 'evidenceChain', 'evidence', 'k']) || []);
+  const relatedBranch = cleanText(getByPaths(source, ['branch', 'b', 'relatedBranch']) || branch);
+  const explanation = cleanText(getByPaths(source, ['explanation', 'e', 'whyCorrect', 'aciklama', 'açıklama', 'rationale', 'gerekce', 'gerekçe']) || '');
+  const sourceUseNote = cleanText(getByPaths(source, ['sourceUseNote', 'sourceNote']) || '');
 
   return {
     id: `ai-spot-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-    relatedBranch: cleanText(getByPaths(source, ['branch', 'b', 'relatedBranch']) || branch),
+    branch: relatedBranch,
+    relatedBranch,
     difficulty: normalizeDifficulty(getByPaths(source, ['difficulty', 'd']) || difficulty),
     learningTarget: cleanText(getByPaths(source, ['learningTarget', 'lt', 'target']) || ''),
     answerTarget: cleanText(getByPaths(source, ['answerTarget', 'at', 'questionIntent', 'intent']) || 'diagnosis'),
     demographics: cleanText(getByPaths(source, ['demographics', 'dem']) || ''),
     setting: cleanText(getByPaths(source, ['setting', 'set']) || ''),
     chiefComplaint: cleanText(getByPaths(source, ['chiefComplaint', 'cc']) || ''),
-    stem: cleanText(getByPaths(source, ['clinicalStem', 'stem', 's', 'soruKoku', 'soruKökü', 'olgu', 'vaka', 'case', 'clinicalCase']) || ''),
-    compactVitals: normalizeItems(getByPaths(source, ['vitals', 'compactVitals', 'cv']) || []),
-    compactObjectiveData: normalizeItems(getByPaths(source, ['objectiveData', 'compactObjectiveData', 'co', 'supportingData']) || []),
-    physicalExam: asArray(getByPaths(source, ['physicalExam', 'exam', 'muayene']) || []).map(cleanText).filter(Boolean),
+    clinicalStem,
+    stem: clinicalStem,
+    physicalExam,
+    compactVitals: vitals,
+    vitals,
+    compactObjectiveData: objectiveData,
+    objectiveData,
     history: asArray(getByPaths(source, ['history', 'anamnesis', 'anamnez']) || []).map(cleanText).filter(Boolean),
     question: cleanText(getByPaths(source, ['question', 'q', 'soru', 'soruCumlesi', 'soruCümlesi']) || ''),
     options,
     correctAnswer,
-    explanation: cleanText(getByPaths(source, ['explanation', 'e', 'whyCorrect', 'aciklama', 'açıklama', 'rationale', 'gerekce', 'gerekçe']) || ''),
+    explanation,
+    optionFeedback,
     wrongOptionFeedback: optionFeedback,
-    evidenceChain: normalizeEvidence(getByPaths(source, ['evidenceBasedReasoning', 'evidenceChain', 'evidence', 'k']) || []),
+    evidenceBasedReasoning,
+    evidenceChain: evidenceBasedReasoning,
     examPearl: cleanText(getByPaths(source, ['examPearl', 'pearl', 'p', 'teachingPoint']) || ''),
-    sourceUseNote: cleanText(getByPaths(source, ['sourceUseNote', 'sourceNote']) || ''),
+    sourceUseNote,
     managementSteps: asArray(getByPaths(source, ['managementSteps', 'management', 'm']) || []).map(cleanText).filter(Boolean),
     provider: 'openai',
     openAIModel: model || '',
@@ -227,22 +241,24 @@ function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, m
       fallback: false,
       promptVersion: PROMPT_VERSION,
       schemaVersion: SCHEMA_VERSION,
-      sourceUseNote: cleanText(getByPaths(source, ['sourceUseNote', 'sourceNote']) || ''),
+      sourceUseNote,
     },
   };
 }
 
-function assertRenderableQuestion(question = {}) {
+function assertRenderableQuestion(question = {}, { strictEducational = true } = {}) {
   const errors = [];
-  if (!cleanText(question.stem)) errors.push('soru kökü boş');
+  if (!cleanText(question.stem || question.clinicalStem)) errors.push('soru kökü boş');
   if (!cleanText(question.question)) errors.push('soru cümlesi boş');
   if (!Array.isArray(question.options) || question.options.length !== 5) errors.push(`tam 5 seçenek yok (${question.options?.length || 0})`);
   if (!OPTION_IDS.includes(String(question.correctAnswer || '').toUpperCase())) errors.push(`correctAnswer A-E değil (${question.correctAnswer || 'boş'})`);
   if (!question.options?.some((option) => option.id === question.correctAnswer)) errors.push('correctAnswer seçeneklerle eşleşmiyor');
-  if (!cleanText(question.explanation)) errors.push('açıklama boş');
-  const feedback = question.wrongOptionFeedback || {};
-  const missingFeedback = OPTION_IDS.filter((id) => !cleanText(feedback[id]));
-  if (missingFeedback.length) errors.push(`seçenek geri bildirimi eksik (${missingFeedback.join(', ')})`);
+  if (strictEducational) {
+    if (!cleanText(question.explanation)) errors.push('açıklama boş');
+    const feedback = question.optionFeedback || question.wrongOptionFeedback || {};
+    const missingFeedback = OPTION_IDS.filter((id) => !cleanText(feedback[id]));
+    if (missingFeedback.length) errors.push(`seçenek geri bildirimi eksik (${missingFeedback.join(', ')})`);
+  }
   if (errors.length) {
     const error = new Error(`AI çıktısı ekranda gösterilebilir TUS sorusu formatına çevrilemedi: ${errors.join('; ')}`);
     error.statusCode = 422;
@@ -260,6 +276,16 @@ function wordCount(value = '') {
   return words.length;
 }
 
+function itemToQualityText(item = '') {
+  if (typeof item === 'string') return cleanText(item);
+  if (item && typeof item === 'object') return cleanText([item.label, item.value, item.result, item.text, item.finding, item.meaning].filter(Boolean).join(' '));
+  return '';
+}
+
+function itemArrayHasSubstance(items = [], minimum = 1) {
+  return asArray(items).map(itemToQualityText).filter((text) => wordCount(text) >= 2).length >= minimum;
+}
+
 function looksLikeNonNarrativeStem(value = '') {
   const text = cleanText(value);
   if (!text) return true;
@@ -270,78 +296,138 @@ function looksLikeNonNarrativeStem(value = '') {
   const hasPatientFlow = /\b(?:başvur|getiril|yakınma|şikayet|sonra|önce|süredir|gündür|haftadır|aydır|giderek|başlamış|başladı|artmış|azalmış|devam etmiş|eşlik etmiş|kullanıyor|öyküsünde|daha önce|sonrasında|nedeniyle|değerlendiriliyor|yatırılıyor|izleniyor|ameliyata|poliklini|servis|acil)\b/iu.test(text);
   const looksLikeFactCard = text.split(/[;；]/u).length >= 2 && !hasPatientFlow;
   const mostlyTelegraphic = /^[^.!?]+;\s*[^.!?]+;\s*[^.!?]+/u.test(text);
-  return looksLikeFactCard || mostlyTelegraphic;
+  const tooShort = wordCount(text) < 25 || sentenceList(text).length < 2;
+  return looksLikeFactCard || mostlyTelegraphic || tooShort;
 }
 
 function optionTextById(question = {}, id = '') {
   return question.options?.find((option) => option.id === id)?.text || '';
 }
 
-function looksTruncated(value = '') {
+export function isBrokenOrTruncatedFeedback(value = '') {
   const text = cleanText(value);
   if (!text) return true;
   if (!/[.!?]$/u.test(text)) return true;
-  if (/\b(?:z|ve|ile|için|çünkü|ancak|fakat|bu|şu|olan|olarak|birlikte|nedeniyle|açısından|göre)\.$/iu.test(text)) return true;
+  if (/\b(?:ve|ile|için|çünkü|ancak|fakat|ama|bu|şu|olan|olarak|birlikte|nedeniyle|açısından|göre|karşılık|uyumlu|destekler|dışlar|elendi|elemek)\.?$/iu.test(text)) return true;
   if (/\b[A-Za-zÇĞİÖŞÜçğıöşü]\.$/u.test(text) && !/\b(?:A|B|C|D|E|H|T|B)\.$/u.test(text)) return true;
+  if (/^(?:bu seçenek|bu şık|seçenek)\b[^.!?]{0,80}[.!?]?$/iu.test(text) && !/\b(?:çünkü|ancak|fakat|oysa|bu olguda|bu vakada|hangi durumda|tipik olarak|genellikle)\b/iu.test(text)) return true;
+  if (/\b(?:incomplete|truncated|devamı|yarım|tamamlanamadı|bozuk metin)\b/iu.test(text)) return true;
   return false;
 }
 
 function containsLowQualityResidue(value = '') {
   const text = cleanText(value);
-  return /\b(?:bu seçenek,? kökteki ana bulguları birlikte|ayırt ettirici açıklama üretilemedi|ayrıntılı açıklama eklenemedi|doğru seçenek budur|bu seçenek doğrudur|bu seçenek yanlıştır)\b/iu.test(text)
+  return /\b(?:bu seçenek,? kökteki ana bulguları birlikte|ayırt ettirici açıklama üretilemedi|ayrıntılı açıklama eklenemedi|doğru seçenek budur|bu seçenek doğrudur|bu seçenek yanlıştır|placeholder|debug|sistem promptu|json çıktısı)\b/iu.test(text)
     || /^(?:doğru|yanlış|uygun değildir|uygun değil|çeldiricidir|akla gelebilir|kısmen doğru)[.!]?$/iu.test(text);
 }
 
 function hasCaseContext(value = '') {
-  return /\b(?:bu olguda|bu vakada|burada|bu hastada|hastada|olgunun|vakanın|soru kökündeki|verilen|mevcut klinik|klinik tabloda)\b/iu.test(value);
+  return /\b(?:bu olguda|bu vakada|burada|bu hastada|hastada|olgunun|vakanın|soru kökündeki|verilen|mevcut klinik|klinik tabloda|öyküde|muayenede|vital|tetkikte|laboratuvarda|görüntülemede)\b/iu.test(value);
 }
 
 function hasWhenCorrectTeaching(value = '') {
-  return /\b(?:hangi durumda|ne zaman|genellikle|tipik olarak|daha çok|özellikle|beklenir|beklenmez|düşünülür|tercih edilir|endikedir|doğru olurdu|öncelik kazanır|uygun olurdu|kullanılır|tanısaldır)\b/iu.test(value);
+  return /\b(?:hangi durumda|ne zaman|genellikle|tipik olarak|daha çok|özellikle|beklenir|beklenmez|düşünülür|tercih edilir|endikedir|doğru olurdu|öncelik kazanır|uygun olurdu|kullanılır|tanısaldır|klasiktir|akla gelir)\b/iu.test(value);
 }
 
 function hasDifferentialContrast(value = '') {
-  return /\b(?:ancak|fakat|oysa|buna karşılık|bu nedenle|bu yüzden|ayırt|karışır|karışabilecek|dışlanır|geri planda|ön plana|destekler|desteklemez|uyumlu değildir|uyumludur|lehine|aleyhine|elendirir|eleştirir)\b/iu.test(value);
+  return /\b(?:ancak|fakat|ama|oysa|buna karşılık|bu nedenle|bu yüzden|ayırt|karışır|karışabilecek|dışlanır|geri planda|ön plana|destekler|desteklemez|uyumlu değildir|uyumludur|lehine|aleyhine|elendirir|eleştirir|eleyen|öne çıkaran)\b/iu.test(value);
 }
 
-function isShallowFeedback(value = '', optionText = '', isCorrect = false) {
+function hasClinicalMeaning(value = '', optionText = '') {
+  const text = normalize(value);
+  const option = normalize(optionText);
+  if (option && option.split(/\s+/u).some((word) => word.length >= 5 && text.includes(word))) return true;
+  return /\b(?:tanı|tedavi|test|mekanizma|komplikasyon|bulgu|yaklaşım|endikasyon|kontrendikasyon|laboratuvar|görüntüleme|klinik|patofizyoloji|enfeksiyon|inflamasyon|cerrahi|farmakolojik|hormonal|metabolik)\b/iu.test(value);
+}
+
+export function isEducationalFeedback(value = '', optionText = '', question = {}, id = '') {
   const text = cleanText(value);
+  const isCorrect = id && id === question.correctAnswer;
+  if (!text || containsLowQualityResidue(text) || isBrokenOrTruncatedFeedback(text)) return false;
   const comparable = normalize(text);
   const optionComparable = normalize(optionText);
-  if (!text) return true;
-  if (looksTruncated(text)) return true;
-  if (containsLowQualityResidue(text)) return true;
-  if (optionComparable && (comparable === optionComparable || comparable === `${optionComparable} dogru` || comparable === `${optionComparable} yanlis`)) return true;
-  const sentences = sentenceList(text);
-  const enoughSubstance = wordCount(text) >= (isCorrect ? 22 : 28) || sentences.length >= 2;
-  if (!enoughSubstance) return true;
-  if (!hasCaseContext(text)) return true;
-  if (!hasDifferentialContrast(text)) return true;
-  if (!isCorrect && !hasWhenCorrectTeaching(text)) return true;
-  return false;
+  if (optionComparable && (comparable === optionComparable || comparable === `${optionComparable} dogru` || comparable === `${optionComparable} yanlis`)) return false;
+  const enoughSubstance = wordCount(text) >= (isCorrect ? 24 : 34) || sentenceList(text).length >= (isCorrect ? 2 : 3);
+  if (!enoughSubstance) return false;
+  if (!hasClinicalMeaning(text, optionText)) return false;
+  if (!hasCaseContext(text)) return false;
+  if (!hasDifferentialContrast(text)) return false;
+  if (!isCorrect && !hasWhenCorrectTeaching(text)) return false;
+  return true;
 }
 
 function isShallowExplanation(value = '') {
   const text = cleanText(value);
   if (!text) return true;
-  if (looksTruncated(text)) return true;
+  if (isBrokenOrTruncatedFeedback(text)) return true;
   if (containsLowQualityResidue(text)) return true;
   const hasReasoning = /\b(?:çünkü|bu nedenle|bu olguda|bu vakada|ancak|fakat|oysa|ile uyumlu|destekler|beklenir|beklenmez|ayırt|tanı|tedavi|mekanizma|laboratuvar|görüntüleme|muayene|vital|patofizyoloji|klinik|mortalite|morbidite|endikasyon|kontrendikasyon|öncelik|histopatolojik|biyopsi|akım sitometri|cerrahi)\b/iu.test(text);
-  return !hasReasoning || wordCount(text) < 35;
+  return !hasReasoning || wordCount(text) < 40;
+}
+
+function questionLooksMixedTarget(questionText = '') {
+  const text = normalize(questionText);
+  const groups = [
+    /\b(tani|hangisidir|olasi tani)\b/u,
+    /\b(tedavi|yaklasim|basamak|ilk islem|sonraki adim|yapilmalidir)\b/u,
+    /\b(test|tetkik|dogrulama|inceleme|goruntuleme)\b/u,
+    /\b(mekanizma|patofizyoloji|enzim|reseptor)\b/u,
+    /\b(komplikasyon|prognoz|beklenen|beklenmeyen)\b/u,
+  ];
+  return groups.filter((pattern) => pattern.test(text)).length >= 3;
+}
+
+function hasAnswerLeak(question = {}) {
+  const correctText = optionTextById(question, question.correctAnswer);
+  const answer = normalize(correctText);
+  if (!answer || answer.length < 6) return false;
+  const fields = [question.stem, question.clinicalStem, question.question, ...(question.evidenceChain || []), ...(question.evidenceBasedReasoning || [])]
+    .map((item) => normalize(itemToQualityText(item)))
+    .filter(Boolean);
+  const answerWords = answer.split(/\s+/u).filter((word) => word.length >= 5);
+  return fields.some((field) => field.includes(answer) || (answerWords.length >= 2 && answerWords.filter((word) => field.includes(word)).length >= Math.ceil(answerWords.length * 0.85)));
+}
+
+function evidenceHasReasoning(evidence = []) {
+  const items = asArray(evidence).map(itemToQualityText).filter(Boolean);
+  if (items.length < 2) return false;
+  return items.some((item) => /\b(?:gösterir|destekler|düşündürür|uyumludur|neden olur|açıklar|lehinedir|aleyhinedir|önceliklendirir|dışlar|kanıtlar|işaret eder)\b/iu.test(item));
 }
 
 function findEducationalDefects(question = {}) {
   const defects = [];
-  if (looksLikeNonNarrativeStem(question.stem)) defects.push('clinicalStem gerçek anamnez akışı taşımıyor; kesik özet veya veri listesi gibi duruyor.');
-  if (isShallowExplanation(question.explanation)) defects.push('explanation vaka özelinde yeterli klinik gerekçe ve ayırıcı mantık vermiyor.');
-  const feedback = question.wrongOptionFeedback || {};
-  const shallow = OPTION_IDS.filter((id) => isShallowFeedback(feedback[id], optionTextById(question, id), id === question.correctAnswer));
+  const stem = question.stem || question.clinicalStem || '';
+  const feedback = question.optionFeedback || question.wrongOptionFeedback || {};
+  const vitals = question.vitals || question.compactVitals || [];
+  const objectiveData = question.objectiveData || question.compactObjectiveData || [];
+  const evidence = question.evidenceBasedReasoning || question.evidenceChain || [];
+
+  if (looksLikeNonNarrativeStem(stem)) defects.push('clinicalStem gerçek anamnez akışı taşımıyor; kısa veri fişi, tek satırlık özet veya başlıklı liste gibi duruyor.');
+  if (!itemArrayHasSubstance(question.physicalExam || [], 1)) defects.push('physicalExam boş veya soru için klinik muayene bulgusu yetersiz.');
+  if (!itemArrayHasSubstance(vitals, 3)) defects.push('vitals boş veya klinik ağırlığı gösterecek yeterli vital bulgu içermiyor.');
+  if (!itemArrayHasSubstance(objectiveData, 1)) defects.push('objectiveData boş veya soruyu çözdürecek objektif veri içermiyor.');
+  if (!cleanText(question.question) || questionLooksMixedTarget(question.question)) defects.push('question tek hedefli değil veya birden fazla karar alanını karıştırıyor.');
+  if (!Array.isArray(question.options) || question.options.length !== 5) defects.push(`options tam beş adet değil (${question.options?.length || 0}).`);
+  if (!OPTION_IDS.includes(String(question.correctAnswer || '').toUpperCase()) || !question.options?.some((option) => option.id === question.correctAnswer)) defects.push('correctAnswer A-E seçenekleriyle eşleşmiyor.');
+  if (isShallowExplanation(question.explanation)) defects.push('explanation vaka özelinde yeterli klinik zincir, patofizyoloji/karar mantığı ve ayırıcı gerekçe vermiyor.');
+
+  const missingFeedback = OPTION_IDS.filter((id) => !cleanText(feedback[id]));
+  if (missingFeedback.length) defects.push(`optionFeedback eksik: ${missingFeedback.join(', ')}.`);
+  const brokenFeedback = OPTION_IDS.filter((id) => cleanText(feedback[id]) && isBrokenOrTruncatedFeedback(feedback[id]));
+  if (brokenFeedback.length) defects.push(`optionFeedback yarım/bozuk görünüyor: ${brokenFeedback.join(', ')}.`);
+  const shallow = OPTION_IDS.filter((id) => cleanText(feedback[id]) && !isEducationalFeedback(feedback[id], optionTextById(question, id), question, id));
   if (shallow.length) defects.push(`optionFeedback yayınlanabilir öğreticilik düzeyinde değil: ${shallow.join(', ')}.`);
+
+  if (!evidenceHasReasoning(evidence)) defects.push('evidenceBasedReasoning vaka verisi ile klinik anlamı bağlayan yeterli kanıt zinciri içermiyor.');
+  if (hasAnswerLeak(question)) defects.push('answer leak riski var; doğru seçenek kök/kanıt alanlarında doğrudan veya biçimsel olarak ele veriliyor.');
+
   const optionTexts = question.options?.map((option) => cleanText(option.text)).filter(Boolean) || [];
   if (optionTexts.length === 5) {
     const average = optionTexts.reduce((sum, text) => sum + text.length, 0) / 5;
     const hasLongOutlier = optionTexts.some((text) => text.length > Math.max(150, average * 2.4));
+    const duplicateOptions = new Set(optionTexts.map(normalize)).size !== optionTexts.length;
     if (hasLongOutlier) defects.push('seçeneklerden biri diğerlerine göre belirgin uzun ve answer leak riski oluşturuyor.');
+    if (duplicateOptions) defects.push('seçeneklerde tekrar veya anlamca aynı görünen ifade var.');
   }
   return defects;
 }
@@ -360,8 +446,8 @@ function compactPayloadFromQuestion(question = {}) {
     options: question.options || [],
     correctAnswer: question.correctAnswer,
     explanation: question.explanation,
-    optionFeedback: question.wrongOptionFeedback || {},
-    evidenceBasedReasoning: question.evidenceChain || [],
+    optionFeedback: question.optionFeedback || question.wrongOptionFeedback || {},
+    evidenceBasedReasoning: question.evidenceBasedReasoning || question.evidenceChain || [],
     examPearl: question.examPearl,
     sourceUseNote: question.sourceUseNote || '',
   };
@@ -388,7 +474,7 @@ async function maybeRewriteForEducationalQuality(question, defects, context, att
   try {
     const result = await callOpenAI(prompt, { systemPrompt: TUS_QUALITY_REWRITE_SYSTEM_PROMPT, purpose: `${TASK_NAME}:quality-rewrite:${attempt}` });
     const rewritten = normalizeGeneratedQuestion(result.payload, { ...context, model: result.model, mode: result.mode });
-    assertRenderableQuestion(rewritten);
+    assertRenderableQuestion(rewritten, { strictEducational: false });
     rewritten.aiMeta = { ...(rewritten.aiMeta || {}), qualityRewritten: true, qualityRewriteAttempt: attempt, originalQualityDefects: defects };
     return { question: rewritten, rewritten: true };
   } catch (error) {
@@ -420,7 +506,7 @@ async function enforceEducationalQuality(question, context) {
 
   const remaining = findEducationalDefects(current);
   if (remaining.length) {
-    const error = new Error(`AI soru kalite kontrolünden geçemedi: ${remaining.join(' | ')}`);
+    const error = new Error('AI soru üretimi kalite standardını karşılamadı; lütfen tekrar deneyin.');
     error.statusCode = 422;
     error.qualityDefects = remaining;
     throw error;
@@ -563,12 +649,13 @@ export default async function handler(request, response) {
     difficulty,
     target: body.target || body.answerTarget || body.learningTarget || '',
     sourceText: extractSourceText(body),
+    repeatContext: body.repeatContext || body.lastReviewState || body.previousQuestionSummary || '',
   });
 
   try {
     const result = await callOpenAI(prompt);
     let question = normalizeGeneratedQuestion(result.payload, { branch, difficulty, model: result.model, mode: result.mode });
-    assertRenderableQuestion(question);
+    assertRenderableQuestion(question, { strictEducational: false });
     const quality = await enforceEducationalQuality(question, { branch, difficulty, model: result.model, mode: result.mode });
     question = quality.question;
     assertRenderableQuestion(question);
@@ -586,6 +673,7 @@ export default async function handler(request, response) {
       provider: 'openai',
       fallback: false,
       error: error?.message || 'AI soru üretimi başarısız oldu.',
+      qualityDefects: Array.isArray(error?.qualityDefects) ? error.qualityDefects : undefined,
     });
   }
 }

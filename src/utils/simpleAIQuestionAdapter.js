@@ -109,8 +109,8 @@ function compactItems(items = []) {
       label = first;
       value = rest.join(':');
     } else if (item && typeof item === 'object') {
-      label = item.label || item.name || item.parameter || item.title || '';
-      value = item.value || item.result || item.text || '';
+      label = item.label || item.name || item.parameter || item.title || item.key || '';
+      value = item.value || item.result || item.text || item.finding || item.data || item.meaning || '';
     }
     label = standardizeTurkishMedicalText(label);
     value = standardizeTurkishMedicalText(value);
@@ -124,14 +124,19 @@ function compactItems(items = []) {
 }
 
 function normalizeOptions(rawOptions = []) {
-  const arr = Array.isArray(rawOptions) ? rawOptions : [];
+  const arr = Array.isArray(rawOptions)
+    ? rawOptions
+    : rawOptions && typeof rawOptions === 'object'
+      ? OPTION_IDS.map((id) => rawOptions[id] || rawOptions[id.toLowerCase()] || rawOptions[`option${id}`] || rawOptions[`secenek${id}`])
+      : [];
   return OPTION_IDS.map((id, index) => {
-    const source = arr.find((item) => String(item?.id || '').toUpperCase() === id) ?? arr[index];
-    let text = standardizeTurkishMedicalText(typeof source === 'string' ? source : source?.text || source?.label || '');
-    text = text.replace(/^\s*[A-E]\s*\)\s*/iu, '').trim();
+    const source = arr.find((item) => typeof item === 'object' && String(item?.id || item?.harf || '').toUpperCase() === id) ?? arr[index];
+    let text = standardizeTurkishMedicalText(typeof source === 'string' ? source : source?.text || source?.label || source?.value || '');
+    text = text.replace(/^\s*[A-E]\s*[).:-]\s*/iu, '').trim();
     return { id, text };
   }).filter((item) => item.text);
 }
+
 
 function getCorrectOption(options = [], correctAnswer = '') {
   const correctId = String(correctAnswer || '').trim().toUpperCase();
@@ -275,24 +280,24 @@ function isLowQualityFeedback(value = '') {
 }
 
 function rationalesObject(raw = {}, explanation = '', correctId = 'A') {
-  const normalizeFeedbackValue = (value = '', id = '') => {
+  const normalizeFeedbackValue = (value = '') => {
     const cleaned = ensureSentence(standardizeTurkishMedicalText(value));
-    if (isLowQualityFeedback(cleaned)) return id === correctId ? ensureSentence(standardizeTurkishMedicalText(explanation)) : '';
+    if (isLowQualityFeedback(cleaned)) return '';
     return cleaned;
   };
   if (Array.isArray(raw)) {
     return OPTION_IDS.reduce((acc, id, index) => {
-      const value = raw[index] || (id === correctId ? explanation : '');
-      acc[id] = normalizeFeedbackValue(value, id);
+      acc[id] = normalizeFeedbackValue(raw[index] || '');
       return acc;
     }, {});
   }
   return OPTION_IDS.reduce((acc, id) => {
-    const value = raw?.[id] || raw?.[id.toLowerCase()] || raw?.[`option${id}`] || (id === correctId ? explanation : '');
-    acc[id] = normalizeFeedbackValue(value, id);
+    const value = raw?.[id] || raw?.[id.toLowerCase()] || raw?.[`option${id}`] || raw?.[`secenek${id}`] || '';
+    acc[id] = normalizeFeedbackValue(value);
     return acc;
   }, {});
 }
+
 
 export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   if (payload?.diagnosis?.correct && Array.isArray(payload?.diagnosis?.options)) {
@@ -310,13 +315,15 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   const correctText = cleanText(correctOption?.text || payload.correctAnswerText || '');
   const compactVitals = compactItems(payload.compactVitals || payload.cv || payload.vitals || []);
   const compactObjectiveData = compactItems(payload.compactObjectiveData || payload.co || payload.objectiveData || []);
+  const physicalExamItems = compactItems(payload.physicalExam || payload.exam || payload.muayene || []);
+  const physicalExamText = physicalExamItems.map((item) => `${item.label}: ${item.value}`);
   const branch = standardizeTurkishMedicalText(payload.relatedBranch || payload.branch || payload.b || meta.branchFilter || 'TUS');
   const normalizedBranch = BRANCH_ALIASES.get(normalizeForCompare(branch)) || branch;
   const demographics = standardizeTurkishMedicalText(payload.demographics || payload.dem || '');
   const setting = standardizeTurkishMedicalText(payload.setting || payload.set || '');
   const chiefComplaint = standardizeTurkishMedicalText(payload.chiefComplaint || payload.cc || '');
   const stem = sanitizeNarrativeStem(payload.clinicalStem || payload.stem || payload.s || '', { demographics, setting, chiefComplaint, branch: normalizedBranch });
-  const evidenceChain = buildEvidence(payload.evidenceChain || payload.evidence || payload.k)
+  const evidenceChain = buildEvidence(payload.evidenceBasedReasoning || payload.evidenceChain || payload.evidence || payload.k)
     .filter((item) => !containsAnswerLeak(item, correctText))
 
   const answerTarget = cleanText(payload.answerTarget || payload.at || payload.questionIntent || payload.intent || '');
@@ -325,7 +332,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
     : [];
   const examPearl = ensureSentence(standardizeTurkishMedicalText(payload.examPearl || payload.teachingPoint || payload.pearl || payload.p || ''));
   const explanation = ensureSentence(standardizeTurkishMedicalText(payload.explanation || payload.whyCorrect || payload.e || ''));
-  const optionRationales = rationalesObject(payload.optionRationales || payload.wrongOptionFeedback || payload.optionFeedback || payload.rationales || payload.f || {}, explanation, correctOption?.id || 'A');
+  const optionRationales = rationalesObject(payload.optionFeedback || payload.optionRationales || payload.wrongOptionFeedback || payload.rationales || payload.f || {}, explanation, correctOption?.id || 'A');
 
   const question = {
     id: cleanText(payload.id) || `ai-spot-simple-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
@@ -344,16 +351,18 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
     chiefComplaint,
     stem,
     narrativeStem: stem,
+    clinicalStem: stem,
     stemMode: 'narrative',
     compactVitals,
     compactObjectiveData,
+    physicalExam: physicalExamItems,
     vitals: makeVitalsObject(compactVitals),
-    exam: asArray(payload.exam || payload.physicalExam).map(standardizeTurkishMedicalText).filter(Boolean),
+    exam: physicalExamText,
     history: asArray(payload.history).map(standardizeTurkishMedicalText).filter(Boolean),
     investigations: compactObjectiveData,
     findings: {
       history: asArray(payload.history).map(standardizeTurkishMedicalText).filter(Boolean),
-      exam: asArray(payload.exam || payload.physicalExam).map(standardizeTurkishMedicalText).filter(Boolean),
+      exam: physicalExamText,
       vitals: makeVitalsObject(compactVitals),
       investigations: compactObjectiveData,
     },
@@ -378,8 +387,10 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
       pearls: [examPearl].filter(Boolean),
       answerFeedback: {
         whyCorrect: explanation,
-        correctOptionFeedback: ensureSentence(optionRationales?.[correctOption?.id] || explanation),
+        correctOptionFeedback: ensureSentence(optionRationales?.[correctOption?.id] || ''),
         optionRationales,
+        optionFeedback: optionRationales,
+        evidenceBasedReasoning: evidenceChain,
         evidenceChain: evidenceChain.length ? evidenceChain : [stem, chiefComplaint].filter(Boolean).map(ensureSentence),
         pearls: [examPearl].filter(Boolean),
         clinicalPearls: [examPearl].filter(Boolean),
