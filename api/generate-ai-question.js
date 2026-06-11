@@ -12,7 +12,7 @@ import {
 } from './lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-v430-json-input-visible-stem';
+const PROMPT_VERSION = 'klinikiq-v426-simple-quality-tus-prompt';
 const SCHEMA_VERSION = 'simple-ai-spot-v7-compact';
 const TASK_NAME = 'tusSpotQuestion';
 
@@ -407,7 +407,7 @@ export default async function handler(request, response) {
   const branch = chooseBranch(body.branchFilter || body.branch || 'Rastgele');
   const difficulty = normalizeDifficulty(body.difficulty || body.requestedDifficulty || body.aiDifficulty || 'Orta');
 
-  // V428: simple branch + difficulty prompt. No topic steering, cache, bank, repair or local fallback.
+  // V426: simple branch + difficulty prompt. No topic steering, cache, bank, repair or local fallback.
   const prompt = buildUserPrompt({ branch, difficulty });
 
   try {
