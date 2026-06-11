@@ -7,7 +7,7 @@ import {
 import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from '../server/lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v40-balanced-clinical-quality-gate';
+const PROMPT_VERSION = 'klinikiq-tus-v42-length-free-quality';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
@@ -342,10 +342,6 @@ function hasTruncatedText(text = '') {
   return false;
 }
 
-function sentenceCount(text = '') {
-  return cleanText(text).split(/(?<=[.!?])\s+/u).map((item) => item.trim()).filter(Boolean).length;
-}
-
 function getFeedbackText(question = {}, id = '') {
   return cleanText(question.wrongOptionFeedback?.[id] || question.optionFeedback?.[id] || question.optionRationales?.[id] || '');
 }
@@ -378,7 +374,7 @@ function hasClinicalContext(question = {}) {
 
 function isGenericFeedback(text = '') {
   const value = cleanText(text);
-  if (!value || value.length < 28) return true;
+  if (!value) return true;
   if (hasTruncatedText(value)) return true;
   return FORBIDDEN_PHRASES.some((pattern) => pattern.test(value));
 }
@@ -428,15 +424,14 @@ function hasFeedbackQuality(question = {}, options = [], correctId = '') {
 
 function hasPearlQuality(text = '') {
   const value = cleanText(text);
-  if (value.length < 25 || value.length > 240) return false;
-  if (isGenericFeedback(value)) return false;
-  // A pearl should be memorable, but lack of a specific keyword must not kill generation.
+  if (!value || isGenericFeedback(value)) return false;
+  // A pearl should be memorable, but no character/word/sentence limit is enforced.
   return hasMechanismLanguage(value) || hasDecisionLanguage(value) || /→|=|:|ise|daima|önce|sonra|en çok|tipik/iu.test(value);
 }
 
 function hasExplanationQuality(question = {}, correctText = '') {
   const explanation = cleanText(question.explanation);
-  if (explanation.length < 60 || sentenceCount(explanation) < 1 || isGenericFeedback(explanation)) return false;
+  if (!explanation || isGenericFeedback(explanation)) return false;
   if (hasTruncatedText(explanation)) return false;
   if (isMechanismSensitive(question)) return hasMechanismLanguage(explanation) || hasMechanismLanguage(question.examPearl);
   return true;
@@ -451,19 +446,6 @@ function optionCategory(text = '') {
   return 'other';
 }
 
-
-function wordCount(value = '') {
-  return cleanText(value).split(/\s+/u).filter(Boolean).length;
-}
-
-function richSentenceCount(value = '') {
-  const text = cleanText(value);
-  if (!text) return 0;
-  const punctuated = text.split(/(?<=[.!?])\s+/u).map((item) => item.trim()).filter(Boolean).length;
-  if (punctuated >= 2) return punctuated;
-  // Fallback for long Turkish clinical sentences separated by semicolons/commas.
-  return text.split(/\s*(?:;)\s*/u).map((item) => item.trim()).filter((item) => wordCount(item) >= 8).length || 1;
-}
 
 function isBasicScienceBranch(branch = '') {
   const value = normalize(branch);
@@ -495,7 +477,6 @@ function countClinicalCueGroups(question = {}) {
 
 function hasSufficientClinicalVignette(question = {}) {
   const errors = [];
-  const branch = cleanText(question.relatedBranch || '');
   const stem = cleanText(question.stem || '');
   const combined = cleanText([
     question.demographics,
@@ -503,28 +484,10 @@ function hasSufficientClinicalVignette(question = {}) {
     question.chiefComplaint,
     stem,
   ].filter(Boolean).join(' '));
-  const basicScience = isBasicScienceBranch(branch);
-  const stemWords = wordCount(stem);
-  const totalWords = wordCount(combined);
-  const minStemWords = basicScience ? 28 : 42;
-  const minTotalWords = basicScience ? 36 : 55;
-  const minCueGroups = basicScience ? 2 : 3;
-
-  if (stemWords < minStemWords || totalWords < minTotalWords) {
-    errors.push('klinik olgu yetersiz: ana metin çözülebilirlik için çok kısa');
-  }
-  if (richSentenceCount(stem) < 2) {
-    errors.push('klinik olgu yetersiz: ana metin en az iki tam cümle içermeli');
-  }
 
   const hasPatientContext = /\b(?:\d+\s*(?:yaş|yas|aylık|aylik|günlük|gunluk|haftalık|haftalik)|yenidoğan|yenidogan|bebek|çocuk|cocuk|ergen|kadın|kadin|erkek|hasta|gebe)\b/iu.test(combined);
   if (!hasPatientContext) {
     errors.push('klinik olgu yetersiz: yaş/cinsiyet veya hasta bağlamı eksik');
-  }
-
-  const cueGroups = countClinicalCueGroups(question);
-  if (cueGroups < minCueGroups) {
-    errors.push('klinik olgu yetersiz: ayırt ettirici klinik ipucu sayısı az');
   }
 
   const questionText = normalize(question.question || '');
@@ -551,7 +514,7 @@ function hasEvidenceBasedOnVisibleStem(question = {}) {
     question.stem,
   ].filter(Boolean).join(' '));
   const evidence = asArray(question.evidenceChain).map((item) => normalize(item)).filter(Boolean);
-  if (evidence.length !== 3) return false;
+  if (!evidence.length) return false;
   const clinicalTokens = /ateş|ates|ağrı|agri|muayene|laboratuvar|grafi|bt|mr|usg|ekg|eko|kültür|kultur|pcr|seroloji|sodyum|potasyum|glukoz|ph|hco3|amonyak|troponin|laktat|hipotansiyon|hipoksi|nöbet|nobet|bilinç|bilinc|öykü|oyku|z-skor|z skor|mmol|mg\/dl|µmol|umol/;
   return evidence.every((item) => {
     if (!clinicalTokens.test(item)) return true;
@@ -569,7 +532,7 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   const allText = collectStrings(question).join(' | ');
 
   if (!question.relatedBranch || cleanText(question.relatedBranch).length < 3) errors.push('branch eksik');
-  if (!question.stem || cleanText(question.stem).split(/\s+/).length < 25) errors.push('stem çok kısa');
+  if (!question.stem || !cleanText(question.stem)) errors.push('stem eksik');
   if (isGenericOrPlaceholderStem(question.stem)) errors.push('stem placeholder veya klinik bağlamdan yoksun');
   if (!hasVisibleClinicalPattern(question)) errors.push('soru kökünde görünür klinik patern yok');
   errors.push(...hasSufficientClinicalVignette(question));
@@ -578,9 +541,9 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   if (options.length !== 5) errors.push('tam 5 seçenek yok');
   if (!OPTION_IDS.includes(correctId)) errors.push('correctAnswer A-E değil');
   if (!correctText) errors.push('correctAnswer seçeneklerle eşleşmiyor');
-  if (!question.explanation || cleanText(question.explanation).length < 45) errors.push('explanation yetersiz');
-  if (!Array.isArray(question.evidenceChain) || question.evidenceChain.length !== 3) errors.push('evidenceChain tam 3 cümle değil');
-  if (!question.examPearl || cleanText(question.examPearl).length < 20) errors.push('examPearl yetersiz');
+  if (!question.explanation || !cleanText(question.explanation)) errors.push('explanation eksik');
+  if (!Array.isArray(question.evidenceChain) || !question.evidenceChain.length) errors.push('evidenceChain eksik');
+  if (!question.examPearl || !cleanText(question.examPearl)) errors.push('examPearl eksik');
   if (hasTruncatedText(allText)) errors.push('kesik veya üç noktalı metin var');
   if (!hasExplanationQuality(question, correctText)) errors.push('doğru cevap açıklaması klinik/mekanistik gerekçe içermiyor');
   if (!hasPearlQuality(question.examPearl)) errors.push('TUS ipucu karar cümlesi değil');
@@ -658,8 +621,6 @@ function integrateCompactDataIntoStem(stem = '', vitals = [], objectiveData = []
 function isGenericOrPlaceholderStem(stem = '') {
   const value = normalize(stem);
   if (!value) return true;
-  const wordCount = cleanText(stem).split(/\s+/).filter(Boolean).length;
-  if (wordCount < 32) return true;
   return [
     /kisa klinik baglam/,
     /karar verdirici bulgular birlikte degerlendirilir/,
@@ -791,18 +752,15 @@ function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
       acc[id] = ensureSentence(rawFeedback || fallbackFeedback);
       return acc;
     }, {}),
-    evidenceChain: asArray(question.evidenceChain).map(ensureSentence).filter(Boolean).slice(0, 3),
+    evidenceChain: asArray(question.evidenceChain).map(ensureSentence).filter(Boolean),
     examPearl: ensureSentence(stripFeedbackLabel(question.examPearl || question.teachingPoint)),
-    managementSteps: allowManagementSteps ? asArray(question.managementSteps).map(ensureSentence).filter(Boolean).slice(0, 3) : [],
+    managementSteps: allowManagementSteps ? asArray(question.managementSteps).map(ensureSentence).filter(Boolean) : [],
   };
   if (!sanitized.evidenceChain.length) {
     sanitized.evidenceChain = [sanitized.stem, ...sanitized.compactObjectiveData.map((item) => `${item.label}: ${item.value}`)]
       .map(ensureSentence)
       .filter(Boolean)
-      .slice(0, 3);
-  }
-  while (sanitized.evidenceChain.length < 3) {
-    sanitized.evidenceChain.push('Olgu kökü, seçenekler arasında tek en iyi yanıt seçmeyi gerektirir.');
+      ;
   }
   OPTION_IDS.forEach((id) => {
     if (!cleanText(sanitized.wrongOptionFeedback[id])) {
@@ -870,7 +828,7 @@ function tusQuestionDetailMode() {
   return mode === 'concise' ? 'standard' : mode;
 }
 
-function buildPrompt({ branch, target, difficulty = 'Orta', recentQuestionSummaries = [], attempt = 1, antiRepeatNonce = '', detailMode = tusQuestionDetailMode() }) {
+function buildPrompt({ branch, target, difficulty = 'Orta', recentQuestionSummaries = [], sourceText = '', attempt = 1, antiRepeatNonce = '', detailMode = tusQuestionDetailMode() }) {
   const answerTarget = cleanText(target || '');
   const selectedDifficulty = normalizeDifficulty(difficulty);
   const recentCompact = buildRecentCompact(recentQuestionSummaries);
@@ -880,6 +838,7 @@ function buildPrompt({ branch, target, difficulty = 'Orta', recentQuestionSummar
     difficulty: selectedDifficulty,
     recentCompact,
     attempt,
+    sourceText,
     antiRepeatNonce: antiRepeatNonce || Date.now(),
     detailMode,
   });
@@ -984,8 +943,8 @@ async function callOpenAI(prompt, { detailMode = tusQuestionDetailMode() } = {})
   }
 }
 
-async function generateRemote({ branch, target, difficulty, recentQuestionSummaries, attempt, antiRepeatNonce, detailMode = tusQuestionDetailMode() }) {
-  const prompt = buildPrompt({ branch, target, difficulty, recentQuestionSummaries, attempt, antiRepeatNonce, detailMode });
+async function generateRemote({ branch, target, difficulty, recentQuestionSummaries, sourceText = '', attempt, antiRepeatNonce, detailMode = tusQuestionDetailMode() }) {
+  const prompt = buildPrompt({ branch, target, difficulty, recentQuestionSummaries, sourceText, attempt, antiRepeatNonce, detailMode });
   const result = await callOpenAI(prompt, { detailMode });
   if (!result) throw new Error('OPENAI_API_KEY tanımlı değil; AI üretim yapılamadı.');
   const sanitized = sanitizeQuestion(result.question, branch, difficulty);
@@ -1003,7 +962,7 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
     // Educational polish issues are kept as quality notes so live AI generation
     // does not collapse into safe local fallback on every request.
     const hardBlockingErrors = validation.errors.filter((message) =>
-      /branch eksik|stem çok kısa|stem placeholder|görünür klinik patern yok|klinik olgu yetersiz|soruyu çözdürecek|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|soru kökü\/veri paneli doğru cevabı ele veriyor|veri paneli yön\/değişim cevabını fazla ele veriyor|fizyoloji sorusunda veri paneli sonucu belirleyen yorumu doğrudan veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|imkansız veya bozuk klinik değer|bozuk Türkçe veya makine çevirisi|hiperamonyemi acil tedavi sorusunda/iu.test(message)
+      /branch eksik|stem eksik|stem placeholder|görünür klinik patern yok|klinik olgu yetersiz|soruyu çözdürecek|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|soru kökü\/veri paneli doğru cevabı ele veriyor|veri paneli yön\/değişim cevabını fazla ele veriyor|fizyoloji sorusunda veri paneli sonucu belirleyen yorumu doğrudan veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|imkansız veya bozuk klinik değer|bozuk Türkçe veya makine çevirisi|hiperamonyemi acil tedavi sorusunda/iu.test(message)
     );
 
     if (hardBlockingErrors.length) {
@@ -1046,7 +1005,7 @@ async function getReusableBankQuestion({ branch, target, difficulty, recentQuest
     const validation = validateQuestion(candidate, recentQuestionSummaries);
     if (validation.ok) return true;
     return !validation.errors.some((message) =>
-      /branch eksik|stem çok kısa|stem placeholder|görünür klinik patern yok|klinik olgu yetersiz|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|soru kökü\/veri paneli doğru cevabı ele veriyor|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|imkansız veya bozuk klinik değer|bozuk Türkçe veya makine çevirisi|hiperamonyemi acil tedavi sorusunda/iu.test(message)
+      /branch eksik|stem eksik|stem placeholder|görünür klinik patern yok|klinik olgu yetersiz|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|soru kökü\/veri paneli doğru cevabı ele veriyor|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|imkansız veya bozuk klinik değer|bozuk Türkçe veya makine çevirisi|hiperamonyemi acil tedavi sorusunda/iu.test(message)
     );
   });
   if (!reusable) return null;
@@ -1078,13 +1037,14 @@ export default async function handler(request, response) {
   const remoteAttempts = Math.max(1, Math.min(3, Number(process.env.REMOTE_AI_ATTEMPTS || process.env.TUS_REMOTE_AI_ATTEMPTS || 3)));
   const errors = [];
   const target = body.target || body.answerTarget || '';
+  const sourceText = cleanText(body.sourceText || body.userSourceText || body.referenceText || '');
   const model = currentTusModel();
   const oneShotCacheKey = buildOutputCacheKey({
     scope: 'TUS',
     task: TASK_NAME,
     promptVersion: PROMPT_VERSION,
     model,
-    sourceFingerprint: `${branch}:${requestedDifficulty}:${target || 'general'}`,
+    sourceFingerprint: `${branch}:${requestedDifficulty}:${target || 'general'}:${sourceText.slice(0, 160)}`, 
     extra: { recent: recentQuestionSummaries.map((item) => item?.semanticFingerprint || item?.id || item?.learningTarget || '').slice(0, 6) },
   });
 
@@ -1118,7 +1078,7 @@ export default async function handler(request, response) {
     const detailMode = tusQuestionDetailMode();
     for (let attempt = 1; attempt <= remoteAttempts; attempt += 1) {
     try {
-      const question = await generateRemote({ branch, target, difficulty: requestedDifficulty, recentQuestionSummaries, attempt, antiRepeatNonce: body.antiRepeatNonce, detailMode });
+      const question = await generateRemote({ branch, target, difficulty: requestedDifficulty, recentQuestionSummaries, sourceText, attempt, antiRepeatNonce: body.antiRepeatNonce, detailMode });
         await storeReusableQuestion({ branch, target, difficulty: requestedDifficulty, question });
         await setDurableCachedOutput(oneShotCacheKey, { provider: 'openai-output-cache', question });
         return sendJson(response, 200, {

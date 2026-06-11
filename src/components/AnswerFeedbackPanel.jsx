@@ -193,8 +193,7 @@ function containsAnswerLeak(text = '', correct = '') {
 }
 
 function singleSentence(value = '', limit = 220) {
-  const first = splitIntoSentences(value)[0] || normalizeText(value);
-  return truncateSentence(first, limit);
+  return normalizeText(value);
 }
 
 function stripFeedbackHeading(value = '') {
@@ -270,11 +269,7 @@ function ensureSentence(value = '') {
 }
 
 function truncateSentence(value = '', limit = 230) {
-  const text = normalizeText(value).replace(/\.\.\.|…/g, '.');
-  if (text.length <= limit) return text;
-  const cut = text.slice(0, limit).replace(/\s+\S*$/u, '').replace(/[,:;\-–—]+$/u, '').trim();
-  if (!cut) return text.slice(0, limit).trim();
-  return /[.!?]$/u.test(cut) ? cut : `${cut}.`;
+  return normalizeText(value).replace(/\.\.\.|…/g, '.');
 }
 
 function splitIntoSentences(text = '') {
@@ -292,9 +287,7 @@ function splitIntoSentences(text = '') {
 }
 
 function compactParagraph(value = '', maxSentences = 4, maxLength = 620) {
-  const sentences = splitIntoSentences(value).slice(0, maxSentences);
-  const text = sentences.length ? sentences.join(' ') : normalizeText(value);
-  return truncateSentence(text, maxLength);
+  return normalizeText(value);
 }
 
 function unique(items = []) {
@@ -498,8 +491,8 @@ function normalizeTitledItem(item, index, fallbackTitle, maxLength = 190) {
   if (!title) title = fallbackTitle || inferEvidenceTitle(text, index);
   const inferredFallback = fallbackTitle || inferEvidenceTitle(text, index);
   return {
-    title: truncateSentence(refineLabel(title, inferredFallback), 46),
-    text: truncateSentence(stripWeakPrefix(text), maxLength),
+    title: normalizeText(refineLabel(title, inferredFallback)),
+    text: normalizeText(stripWeakPrefix(text)),
   };
 }
 
@@ -536,7 +529,7 @@ function deriveEvidenceChain(clinicalCase) {
     })
     .filter(Boolean);
 
-  rawEvidence.push(...highYieldInvestigations.slice(0, 3));
+  rawEvidence.push(...highYieldInvestigations);
 
   if (rawEvidence.length < 3) {
     const explanationSentences = splitIntoSentences(clinicalCase.diagnosis?.explanation || '');
@@ -545,11 +538,9 @@ function deriveEvidenceChain(clinicalCase) {
 
   const correct = clinicalCase.diagnosis?.correct || '';
   return unique(rawEvidence)
-    .slice(0, MAX_EVIDENCE_ITEMS)
     .map(cleanEvidenceText)
     .filter(Boolean)
-    .filter((item) => !containsAnswerLeak(`${item.title} ${item.text}`, correct))
-    .slice(0, 3);
+    .filter((item) => !containsAnswerLeak(`${item.title} ${item.text}`, correct));
 }
 
 function inferPearlLabel(text = '', index = 0) {
@@ -627,7 +618,7 @@ function buildNaturalComparisonPoints(clinicalCase, option, evidenceChain = []) 
     `${option} ancak farklı bir klinik öncelikte düşünülebilir; verilen olguda beklenen karar noktasını karşılamaz.`,
   ];
 
-  return unique(points.filter(Boolean)).slice(0, 3).map((item) => truncateSentence(item, 155));
+  return unique(points.filter(Boolean)).map((item) => normalizeText(item));
 }
 
 
@@ -770,8 +761,7 @@ function mergeUniqueSentences(parts = [], maxSentences = 7, maxLength = 1350) {
       sentences.push(cleaned);
     });
   });
-  const text = sentences.slice(0, maxSentences).join(' ');
-  return truncateSentence(text, maxLength);
+  return sentences.join(' ');
 }
 
 function resolveAISpotOptionExplanation(clinicalCase = {}, optionText = '', fallback = '') {
