@@ -96,7 +96,7 @@ function asArray(value) {
   return Array.isArray(value) ? value : [value];
 }
 
-function compactItems(items = [], max = 8) {
+function compactItems(items = []) {
   const seen = new Set();
   const out = [];
   asArray(items).forEach((item) => {
@@ -118,7 +118,7 @@ function compactItems(items = [], max = 8) {
     seen.add(key);
     out.push({ label, value });
   });
-  return out.slice(0, max);
+  return out;
 }
 
 function normalizeOptions(rawOptions = []) {
@@ -199,7 +199,7 @@ function buildEvidence(evidence = []) {
       unique.push(ensureSentence(item));
     }
   });
-  return unique.slice(0, 4);
+  return unique;
 }
 
 export function makeSimpleSignature(question = {}) {
@@ -292,20 +292,20 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   const options = normalizeOptions(payload.options || payload.o);
   const correctOption = getCorrectOption(options, payload.correctAnswer || payload.c);
   const correctText = cleanText(correctOption?.text || payload.correctAnswerText || '');
-  const compactVitals = compactItems(payload.compactVitals || payload.cv || payload.vitals || [], 5);
-  const compactObjectiveData = compactItems(payload.compactObjectiveData || payload.co || payload.objectiveData || [], 8);
+  const compactVitals = compactItems(payload.compactVitals || payload.cv || payload.vitals || []);
+  const compactObjectiveData = compactItems(payload.compactObjectiveData || payload.co || payload.objectiveData || []);
   const branch = standardizeTurkishMedicalText(payload.relatedBranch || payload.branch || payload.b || meta.branchFilter || 'TUS');
   const normalizedBranch = BRANCH_ALIASES.get(normalizeForCompare(branch)) || branch;
   const demographics = standardizeTurkishMedicalText(payload.demographics || payload.dem || '');
   const setting = standardizeTurkishMedicalText(payload.setting || payload.set || '');
   const chiefComplaint = standardizeTurkishMedicalText(payload.chiefComplaint || payload.cc || '');
-  const stem = sanitizeNarrativeStem(payload.stem || payload.s || '', { demographics, setting, chiefComplaint, branch: normalizedBranch });
+  const stem = sanitizeNarrativeStem(payload.clinicalStem || payload.stem || payload.s || '', { demographics, setting, chiefComplaint, branch: normalizedBranch });
   const evidenceChain = buildEvidence(payload.evidenceChain || payload.evidence || payload.k)
     .filter((item) => !containsAnswerLeak(item, correctText))
-    .slice(0, 3);
+
   const answerTarget = cleanText(payload.answerTarget || payload.at || payload.questionIntent || payload.intent || '');
   const managementSteps = isManagementTarget(answerTarget)
-    ? asArray(payload.managementSteps || payload.management || payload.m || []).map((item) => ensureSentence(standardizeTurkishMedicalText(item))).filter(Boolean).slice(0, 3)
+    ? asArray(payload.managementSteps || payload.management || payload.m || []).map((item) => ensureSentence(standardizeTurkishMedicalText(item))).filter(Boolean)
     : [];
   const examPearl = ensureSentence(standardizeTurkishMedicalText(payload.examPearl || payload.teachingPoint || payload.pearl || payload.p || ''));
   const explanation = ensureSentence(standardizeTurkishMedicalText(payload.explanation || payload.whyCorrect || payload.e || ''));
@@ -332,12 +332,12 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
     compactVitals,
     compactObjectiveData,
     vitals: makeVitalsObject(compactVitals),
-    exam: asArray(payload.exam || payload.physicalExam).map(standardizeTurkishMedicalText).filter(Boolean).slice(0, 4),
-    history: asArray(payload.history).map(standardizeTurkishMedicalText).filter(Boolean).slice(0, 4),
+    exam: asArray(payload.exam || payload.physicalExam).map(standardizeTurkishMedicalText).filter(Boolean),
+    history: asArray(payload.history).map(standardizeTurkishMedicalText).filter(Boolean),
     investigations: compactObjectiveData,
     findings: {
-      history: asArray(payload.history).map(standardizeTurkishMedicalText).filter(Boolean).slice(0, 4),
-      exam: asArray(payload.exam || payload.physicalExam).map(standardizeTurkishMedicalText).filter(Boolean).slice(0, 4),
+      history: asArray(payload.history).map(standardizeTurkishMedicalText).filter(Boolean),
+      exam: asArray(payload.exam || payload.physicalExam).map(standardizeTurkishMedicalText).filter(Boolean),
       vitals: makeVitalsObject(compactVitals),
       investigations: compactObjectiveData,
     },
@@ -351,7 +351,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
       profile: demographics || normalizedBranch,
       presentation: chiefComplaint,
       riskContext: '',
-      distinctiveClues: evidenceChain.slice(0, 4),
+      distinctiveClues: evidenceChain,
       historySummary: stem,
     },
     diagnosis: {
@@ -364,7 +364,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
         whyCorrect: explanation,
         correctOptionFeedback: ensureSentence(optionRationales?.[correctOption?.id] || explanation),
         optionRationales,
-        evidenceChain: evidenceChain.length ? evidenceChain : [stem, chiefComplaint].filter(Boolean).map(ensureSentence).slice(0, 3),
+        evidenceChain: evidenceChain.length ? evidenceChain : [stem, chiefComplaint].filter(Boolean).map(ensureSentence),
         pearls: [examPearl].filter(Boolean),
         clinicalPearls: [examPearl].filter(Boolean),
         differentialComparison: buildDifferentialComparison({ options, correctOption, optionRationales, wrongOptionFeedback: optionRationales }),
@@ -378,7 +378,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
       model: meta.model || payload.model || payload.openAIModel || null,
       remote: meta.remote !== false,
       fallback: Boolean(meta.fallback || payload.fallback),
-      validationWarnings: asArray(payload.qualityNotes || payload.warnings).slice(0, 5),
+      validationWarnings: asArray(payload.qualityNotes || payload.warnings),
       repaired: Boolean(payload.aiMeta?.repaired || payload.repaired),
     },
   };
@@ -391,74 +391,8 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   return question;
 }
 
-const FALLBACK_BANK = [
-  {
-    relatedBranch: 'İç Hastalıkları',
-    learningTarget: 'Laboratuvar paterni ve klinik bağlamı birlikte yorumlama.',
-    demographics: 'Erişkin hasta',
-    chiefComplaint: 'Halsizlik ve bilinç bulanıklığı',
-    stem: 'Erişkin hasta son günlerde artan halsizlik ve hafif bilinç bulanıklığı nedeniyle değerlendirilir. Öyküde sıvı alımında azalma ve yakın dönemde ilaç değişikliği vardır. Muayenede belirgin fokal nörolojik defisit saptanmaz.',
-    compactObjectiveData: [{ label: 'Serum sodyum', value: '122 mEq/L' }, { label: 'Serum osmolalitesi', value: 'Düşük' }],
-    question: 'Bu olguda laboratuvar paternini en iyi açıklayan seçenek hangisidir?',
-    options: [
-      { id: 'A', text: 'Hipotonik hiponatremi' },
-      { id: 'B', text: 'Hipertonik hiponatremi' },
-      { id: 'C', text: 'İzotonik psödohiponatremi' },
-      { id: 'D', text: 'Hipernatremik dehidratasyon' },
-      { id: 'E', text: 'Primer hiperkalemi' },
-    ],
-    correctAnswer: 'A',
-    explanation: 'Düşük sodyum düzeyine düşük serum osmolalitesinin eşlik etmesi hipotonik hiponatremiyi destekler. Klinik değerlendirmede sonraki ayrım volüm durumu ve idrar elektrolitleriyle yapılır.',
-    evidenceChain: ['Laboratuvar — Serum sodyum düşüktür.', 'Laboratuvar — Serum osmolalitesi düşüktür.', 'Klinik — Bilinç değişikliği semptomatik tabloyu destekler.'],
-    examPearl: 'Hiponatremi yorumunda ilk ayrım serum osmolalitesidir; düşük osmolalite gerçek hipotonik hiponatremiyi gösterir.',
-  },
-  {
-    relatedBranch: 'Çocuk Sağlığı ve Hastalıkları',
-    learningTarget: 'Pediatrik acilde risk bulgularını ayırt etme.',
-    demographics: 'Küçük çocuk',
-    chiefComplaint: 'Ateş ve halsizlik',
-    stem: 'Küçük çocuk yüksek ateş ve beslenmede azalma nedeniyle acile getirilir. Aile çocuğun son saatlerde daha halsiz olduğunu belirtir. Muayenede genel durum orta, kapiller dolum süresi uzamış ve cilt turgoru azalmıştır.',
-    compactVitals: [{ label: 'Ateş', value: '39 °C' }, { label: 'Nabız', value: 'Taşikardik' }],
-    question: 'Bu olguda öncelikle değerlendirilmesi gereken klinik öncelik hangisidir?',
-    options: [
-      { id: 'A', text: 'Perfüzyon ve hidrasyon durumu' },
-      { id: 'B', text: 'Uzun dönem büyüme izlemi' },
-      { id: 'C', text: 'Rutin aşı takvimi planı' },
-      { id: 'D', text: 'Elektif dermatoloji değerlendirmesi' },
-      { id: 'E', text: 'Okul çağı psikososyal taraması' },
-    ],
-    correctAnswer: 'A',
-    explanation: 'Ateşli çocukta halsizlik, uzamış kapiller dolum ve turgor azalması dolaşım ve hidrasyon değerlendirmesini öncelikli kılar. Diğer seçenekler akut acil karar düzeyini karşılamaz.',
-    evidenceChain: ['Öykü — Beslenme azalmıştır.', 'Muayene — Kapiller dolum süresi uzamıştır.', 'Muayene — Cilt turgoru azalmıştır.'],
-    examPearl: 'Pediatrik acilde genel durum ve perfüzyon bulguları, tanısal ayrıntılardan önce değerlendirilir.',
-  },
-  {
-    relatedBranch: 'Tıbbi Farmakoloji',
-    learningTarget: 'İlaç-mekanizma-yan etki ilişkisini kurma.',
-    demographics: 'Erişkin hasta',
-    chiefComplaint: 'Yeni başlayan yakınma',
-    stem: 'Erişkin hasta yeni başlanan bir tedaviden sonra gelişen yakınmalar nedeniyle başvurur. Öyküde benzer semptomların ilaç başlanmadan önce olmadığı öğrenilir. Klinik tablo ilacın beklenen farmakolojik etkisiyle ilişkilidir.',
-    question: 'Bu olguda istenmeyen etkiyi yorumlamak için en uygun yaklaşım hangisidir?',
-    options: [
-      { id: 'A', text: 'İlacın etki mekanizması ve zaman ilişkisini birlikte değerlendirmek' },
-      { id: 'B', text: 'Her ilacı aynı yan etki profiline sahip kabul etmek' },
-      { id: 'C', text: 'Doz ve başlangıç zamanını dikkate almamak' },
-      { id: 'D', text: 'Klinik yakınmayı ilaç öyküsünden bağımsız yorumlamak' },
-      { id: 'E', text: 'Sadece laboratuvar sonucu varsa ilaç yan etkisi düşünmek' },
-    ],
-    correctAnswer: 'A',
-    explanation: 'Farmakolojik yan etki değerlendirmesinde ilaç başlama zamanı, doz ve mekanizma birlikte ele alınır. Bu yaklaşım nedensellik değerlendirmesini diğer seçeneklerden daha doğru kurar.',
-    evidenceChain: ['Öykü — Yakınmalar tedaviden sonra başlamıştır.', 'Öykü — Öncesinde benzer yakınma yoktur.', 'Mekanizma — Beklenen farmakolojik etki klinik tabloyla ilişkilidir.'],
-    examPearl: 'TUS farmakoloji sorularında zaman ilişkisi tek başına yetmez; mekanizma ile klinik bulgunun uyumu aranır.',
-  },
-];
+const FALLBACK_BANK = [];
 
-export function createSimpleFallbackQuestion({ branchFilter = 'random', difficulty = 'Orta', recentQuestionSummaries = [] } = {}) {
-  const normalizedBranch = normalizeForCompare(branchFilter);
-  const candidates = FALLBACK_BANK.filter((item) => normalizedBranch === 'random' || normalizedBranch === 'rastgele' || normalizeForCompare(item.relatedBranch).includes(normalizedBranch) || normalizedBranch.includes(normalizeForCompare(item.relatedBranch)));
-  const pool = candidates.length ? candidates : FALLBACK_BANK;
-  const recentCorrectAnswers = new Set(asArray(recentQuestionSummaries).map((item) => normalizeForCompare(item.correct || item.correctAnswer || item.correctAnswerText || '')));
-  const selected = pool.find((item) => !recentCorrectAnswers.has(normalizeForCompare(item.options?.find?.((option) => option.id === item.correctAnswer)?.text || item.correctAnswer || ''))) || pool[Math.floor(Math.random() * pool.length)];
-  const selectedDifficulty = normalizeDifficulty(difficulty);
-  return normalizeSimpleAIQuestion({ ...selected, difficulty: selectedDifficulty, id: `ai-spot-fallback-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, { source: 'local-safe-fallback', provider: 'local-safe-fallback', remote: false, fallback: true, branchFilter, difficulty: selectedDifficulty });
+export function createSimpleFallbackQuestion() {
+  throw new Error('Yerel fallback soru bankası kaldırıldı. Yalnızca TUS AI Spot gerçek AI endpointi aktiftir.');
 }

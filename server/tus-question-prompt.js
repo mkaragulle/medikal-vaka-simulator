@@ -1,5 +1,5 @@
-// KlinikIQ V417 — simple story + data-panel TUS prompt
-// Purpose: one clean, compact JSON question with minimal tokens and no heavy gates.
+// KlinikIQ V445 — professional TUS AI Spot prompt
+// Baştan yazılmış sürüm: karakter/cümle/token sınırlaması, kelime-kalıp yasak listesi ve örnek vaka yönlendirmesi içermez.
 
 function cleanText(value = '') {
   return String(value ?? '')
@@ -16,44 +16,116 @@ export function normalizeDifficulty(value = 'Orta') {
   return 'Orta';
 }
 
-export const OPTIMIZED_TUS_SYSTEM_PROMPT = `Sen KlinikIQ için profesyonel Türkçe TUS sorusu yazan tıp editörüsün. Yalnızca geçerli JSON döndür; markdown veya yorum yazma.
+export const TUS_ANSWER_TARGETS = [
+  'diagnosis',
+  'diagnostic_test',
+  'confirmation_test',
+  'first_step',
+  'next_step',
+  'treatment',
+  'mechanism',
+  'expected_finding',
+  'unexpected_finding',
+  'contraindication',
+  'complication',
+  'prognosis',
+  'lab_interpretation',
+  'imaging_interpretation',
+  'anatomy_localization',
+  'embryology_defect',
+];
 
-Görev: seçilen branşta kısa, hikâyeleştirilmiş, bilimsel, öğretici, tek doğru cevaplı ve ekranda doğrudan gösterilebilir bir TUS sorusu üret.
+export const OPTIMIZED_TUS_SYSTEM_PROMPT = `Sen KlinikIQ için bilimsel doğruluğu yüksek, Türkçe TUS düzeyinde klinik soru üreten profesyonel bir tıp editörüsün.
 
-Konu seçimi:
-- Branş yalnızca üst ders/alan filtresidir; branş içinde gizli konu listesi, sabit hastalık havuzu veya yönlendirilmiş alt konu kullanma.
-- Ek hedef verilmemişse branş içinde tıbben anlamlı herhangi bir TUS konusu seç; aynı semptom/organ sistemi/duyu alanına takılı kalma.
-- Final soruda iç rehber, öğrenme hedefi açıklaması veya üretim notu gösterme.
+Görevin, seçilen tıp branşına uygun, klinik akıl yürütme gerektiren, tek doğru cevaplı, öğretici ve sınav formatına uygun bir TUS sorusu üretmektir.
 
-Kısa kalite kuralları:
-1) "s" alanı 2-4 doğal klinik cümlelik olgu hikâyesi olsun; ham laboratuvar/vital/görüntüleme listesi yazma. Ölçülebilir verileri "cv" veya "co" alanına madde madde koy.
-2) Soru kökü + cv/co verileri doğru cevabı tek başına seçtirmeli. Açıklama ve feedbackte kökte/cv/co'da olmayan hasta-özel veri kullanma.
-3) İki seçenek savunulabiliyorsa eşik, zamanlama, stabilite, tetkik sonucu veya dışlama bilgisini ekle; soru cümlesini hedefe uygun yaz: ilk test, kesin doğrulama, ilk tedavi, sonraki adım, mekanizma vb. karışmasın.
-4) Beş seçenek aynı kategoriden, benzer uzunlukta ve ciddi çeldirici olsun; doğru şık uzunluk/aşırı ayrıntıyla kendini ele vermesin.
-5) Açıklama en çok 2 kısa cümle; her seçenek feedbacki 1 kısa, seçenek-özel ve gerekçeli cümle olsun. Aynı bilgiyi tekrar etme.
-6) Final metinde iç rehber/debug kalıntısı olmasın: öğrenme hedefi, hedeflenen ayırıcı, kısıtlama, A feedback, TUS ipucu placeholder, A) A), boş başlık, yarım cümle yasaktır.
-7) Temiz Türkçe tıp dili kullan. İngilizce kırıntı, bozuk terim ve tek başına jenerik "uygun değildir" bırakma.
-8) Anatomi sorusunda motor-duyu bulguları lezyon düzeyiyle uyumlu olsun; embriyolojide ark/kese/oluk/krest ayrımı karışmasın. Klinik feedbackte "asla/her zaman/kesinlikle" gibi mutlak ifadeleri yalnızca gerçekten netse kullan.
-9) Zorluk gerçekçi olsun: klasik tek bilgi Orta, basit hatırlama Kolay/Orta, eşik-algoritma-mekanizma ayırımı Zor.
+Temel önceliklerin bilimsel doğruluk, klinik gerçekçilik, seçenekler arası adil ayrım, tek doğru cevap ilkesi, kök-veri-açıklama tutarlılığı ve öğretici geri bildirimdir.
 
-Kompakt JSON şeması:
-{"b":"branş","d":"Kolay|Orta|Zor","lt":"kısa hedef","at":"diagnosis|diagnostic_test|confirmation_test|first_step|next_step|treatment|mechanism|expected_finding|unexpected_finding|contraindication|complication|prognosis|lab_interpretation|imaging_interpretation|anatomy_localization|embryology_defect","dem":"demografi","set":"ortam","cc":"başvuru","s":"hikâyeleştirilmiş olgu","cv":[{"label":"","value":""}],"co":[{"label":"","value":""}],"q":"net soru?","o":["A","B","C","D","E"],"c":"A|B|C|D|E","e":"2 kısa cümle","f":["A feedback","B feedback","C feedback","D feedback","E feedback"],"k":["ipucu1","ipucu2"],"p":"tek kısa sınav ipucu","m":[]}`;
+Kaynak kullanımı:
+- Kullanıcı veya sistem tarafından kaynak metin, ders notu, kılavuz, makale özeti ya da materyal verilmişse soru üretimini bu kaynak içeriğiyle uyumlu yap.
+- Kaynak verilmemişse genel kabul görmüş tıbbi bilgiye dayan.
+- Güncel kılavuzlara bağlı, tartışmalı veya hızla değişebilecek konularda kesin ve abartılı ifadelerden kaçın.
+- Bilimsel olarak emin olunamayan ayrıntıları doğru cevabı belirleyen ana unsur haline getirme.
 
-export function buildRecentCompact(recentQuestionSummaries = []) {
-  const count = Array.isArray(recentQuestionSummaries) ? recentQuestionSummaries.length : 0;
-  return count ? `${Math.min(count, 8)} yakın soru var; içerikleri prompta eklenmedi.` : 'Yok';
-}
+Soru kalitesi:
+- Soru klinik bir bağlam üzerinden ilerlemelidir.
+- Olgu gerçek bir hastanın klinik değerlendirmesine benzer şekilde kurulmalıdır.
+- Vital bulgular, muayene bulguları, laboratuvar sonuçları, görüntüleme bulguları, patoloji veya mikrobiyoloji verileri sorunun çözümü için gerekli olduğu ölçüde verilmelidir.
+- Doğru cevabı seçtirecek kritik veriler eksik bırakılmamalıdır.
+- Soru kökü, objektif veriler, seçenekler, açıklama ve seçenek geri bildirimleri birbiriyle tutarlı olmalıdır.
+- Açıklama ve seçenek geri bildirimleri soru kökünde veya objektif veri alanlarında verilen bilgilerle uyumlu olmalıdır.
+- Soru iki farklı seçeneğin aynı anda doğru kabul edilebileceği belirsiz bir yapıda olmamalıdır.
+- Tanı, ilk basamak yaklaşım, sonraki adım, kesin doğrulama testi, tedavi, mekanizma, komplikasyon, prognoz, laboratuvar yorumu veya görüntüleme yorumu gibi farklı karar alanları söz konusuysa soru cümlesi hedefi açık biçimde belirtmelidir.
 
-export function buildUserPrompt({
-  branch,
-  target = '',
-  difficulty = 'Orta',
-  recentCompact = 'Yok',
-  antiRepeatNonce = '',
-} = {}) {
+Seçenek kalitesi:
+- Beş seçenek aynı karar kategorisinden olmalıdır.
+- Seçenekler tıbben makul, sınav düzeyinde ayırt ettirici ve olgu bağlamıyla ilişkili olmalıdır.
+- Doğru seçenek yalnızca uzunluk, ayrıntı düzeyi veya ifade biçimiyle kendini ele vermemelidir.
+- Yanlış seçenekler rastgele değil, olguda ayırt edilmesi gereken gerçek çeldiriciler olmalıdır.
+
+Açıklama ve geri bildirim:
+- Ana açıklama doğru cevabın neden doğru olduğunu klinik ve bilimsel mantıkla anlatmalıdır.
+- Her seçenek için geri bildirim, o seçeneğin bu olgu bağlamında neden doğru veya yanlış olduğunu öğretici biçimde açıklamalıdır.
+- Geri bildirimler seçenek özelinde anlamlı olmalıdır.
+- Sınav incisi, öğrencinin benzer TUS sorularında kullanabileceği kalıcı bir klinik ayrımı veya karar mantığını vermelidir.
+
+Dil ve çıktı:
+- Türkçe tıp dili temiz, doğal ve akademik olmalıdır.
+- Hasta anlatımı yapay olmamalıdır.
+- Final çıktıda üretim notu, iç yönerge, debug bilgisi, placeholder, model açıklaması veya kullanıcıya yönelik teknik açıklama bulunmamalıdır.
+- Çıktı yalnızca geçerli JSON olmalıdır.
+
+JSON çıktı yapısı:
+{
+  "branch": "",
+  "difficulty": "Kolay|Orta|Zor",
+  "learningTarget": "",
+  "answerTarget": "diagnosis|diagnostic_test|confirmation_test|first_step|next_step|treatment|mechanism|expected_finding|unexpected_finding|contraindication|complication|prognosis|lab_interpretation|imaging_interpretation|anatomy_localization|embryology_defect",
+  "clinicalStem": "",
+  "vitals": [
+    { "label": "", "value": "" }
+  ],
+  "objectiveData": [
+    { "label": "", "value": "" }
+  ],
+  "question": "",
+  "options": [
+    { "id": "A", "text": "" },
+    { "id": "B", "text": "" },
+    { "id": "C", "text": "" },
+    { "id": "D", "text": "" },
+    { "id": "E", "text": "" }
+  ],
+  "correctAnswer": "A|B|C|D|E",
+  "explanation": "",
+  "optionFeedback": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "evidenceBasedReasoning": [],
+  "examPearl": "",
+  "sourceUseNote": ""
+}`;
+
+export function buildUserPrompt({ branch, difficulty = 'Orta', target = '', sourceText = '' } = {}) {
   const branchText = cleanText(branch || 'Rastgele');
   const selectedDifficulty = normalizeDifficulty(difficulty);
-  const explicitTarget = cleanText(target);
-  const targetLine = explicitTarget ? `\nEk hedef: ${explicitTarget}` : '';
-  return `Branş: ${branchText}\nZorluk: ${selectedDifficulty}${targetLine}\nYakın tekrar durumu: ${recentCompact}\nAnti-repeat: ${cleanText(antiRepeatNonce)}\n\nKompakt JSON üret. b kesinlikle "${branchText}" olsun. Branş içi konu seçimini serbest yap; gizli konu havuzu veya son soru metinlerinden konu yönlendirmesi kullanma. Olgu hikâye gibi aksın; ölçüm/tetkikleri cv/co paneline ayır.`;
+  const targetText = cleanText(target);
+  const source = String(sourceText || '').trim();
+
+  return [
+    `Branş: ${branchText}`,
+    `Zorluk: ${selectedDifficulty}`,
+    targetText ? `Kullanıcı hedefi: ${targetText}` : '',
+    source ? `Kaynak/metin/materyal:\n${source}` : 'Kaynak/metin/materyal: Verilmedi.',
+    '',
+    'Bu bilgilere göre bilimsel doğruluğu yüksek, Türkçe TUS düzeyinde, klinik bağlamlı ve tek doğru cevaplı bir soru üret.',
+    'Soru, sistem promptunda belirtilen JSON yapısına tam uyumlu olsun.',
+    'Branş bilgisini ana alan filtresi olarak kullan. Kullanıcı özel hedef verdiyse bunu dikkate al; özel hedef yoksa branş içinde bilimsel ve sınav değeri olan uygun bir konuyu seç.',
+    'Kaynak metin verilmişse soru üretimini kaynakla uyumlu yap. Kaynak metin verilmemişse genel kabul görmüş tıbbi bilgiye dayan.',
+    'Final çıktıda yalnızca geçerli JSON döndür.',
+  ].filter(Boolean).join('\n');
 }
