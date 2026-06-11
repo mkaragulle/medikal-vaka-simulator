@@ -1,6 +1,6 @@
-import { sendJson, parseJsonBody, callOpenAIText, validateLessonShape, verifyCurrentSourceManifest } from './lib/komite-ai-common.js';
-import { GENERATE_LESSON_SYSTEM_PROMPT, buildGenerateLessonPrompt } from './prompts/generateLessonPrompt.js';
-import { buildOutputCacheKey, compactMaterialSources, createSourceFingerprint, defaultModelForScope, getDurableCachedOutput, logAIUsage, resolveModelForScope, resolveSourceCharLimit, setDurableCachedOutput, withInFlightDedupe } from './lib/ai-token-optimizer.js';
+import { sendJson, parseJsonBody, callOpenAIText, validateLessonShape, verifyCurrentSourceManifest } from '../server/lib/komite-ai-common.js';
+import { GENERATE_LESSON_SYSTEM_PROMPT, buildGenerateLessonPrompt } from '../server/prompts/generateLessonPrompt.js';
+import { buildOutputCacheKey, compactMaterialSources, createSourceFingerprint, defaultModelForScope, getDurableCachedOutput, logAIUsage, resolveModelForScope, resolveSourceCharLimit, setDurableCachedOutput, withInFlightDedupe } from '../server/lib/ai-token-optimizer.js';
 
 
 
