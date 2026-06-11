@@ -1,16 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-function normalizeChunkPath(id = '') {
-  return id.replace(/\\/g, '/');
-}
-
-function chunkNameFromFile(id, prefix) {
-  const normalized = normalizeChunkPath(id);
-  const fileName = normalized.split('/').pop() || '';
-  return `${prefix}-${fileName.replace(/\.js$/, '').replace(/^tusGlossary/, '').replace(/^cases-/, '')}`;
-}
-
 export default defineConfig({
   plugins: [react()],
   build: {
@@ -20,27 +10,13 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks(id) {
-          const normalized = normalizeChunkPath(id);
-
-          if (normalized.includes('node_modules/react') || normalized.includes('node_modules/react-dom')) return 'vendor-react';
-          if (normalized.includes('node_modules/firebase')) return 'vendor-firebase';
-          if (normalized.includes('node_modules/pdfjs-dist')) return 'vendor-pdf';
-          if (normalized.includes('node_modules/jszip')) return 'vendor-zip';
-
-          if (normalized.includes('/src/data/caseBank/cases-part-')) {
-            return chunkNameFromFile(normalized, 'case-bank');
-          }
-          if (normalized.endsWith('/src/data/cases.js')) return 'case-bank-index';
-
-          if (normalized.includes('/src/data/tusPearlCards.js')) return 'pearl-bank';
-
-          if (normalized.includes('/src/data/tusGlossary')) {
-            return chunkNameFromFile(normalized, 'glossary');
-          }
-          if (normalized.includes('/src/components/GlossaryTooltip.full.jsx') || normalized.includes('/src/utils/glossary.js')) {
-            return 'glossary-core';
-          }
-
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) return 'vendor-react';
+          if (id.includes('node_modules/firebase')) return 'vendor-firebase';
+          if (id.includes('node_modules/pdfjs-dist')) return 'vendor-pdf';
+          if (id.includes('node_modules/jszip')) return 'vendor-zip';
+          if (id.includes('/src/data/cases.js')) return 'case-bank';
+          if (id.includes('/src/data/tusPearlCards.js')) return 'pearl-bank';
+          if (id.includes('/src/components/GlossaryTooltip.full.jsx') || id.includes('/src/utils/glossary.js') || id.includes('/src/data/tusGlossary')) return 'glossary-bank';
           return undefined;
         },
       },

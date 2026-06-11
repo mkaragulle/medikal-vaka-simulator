@@ -37,9 +37,7 @@ function standardizeTurkishMedicalText(value = '') {
     [/\bacinar\b/giu, 'asiner'], [/\bchemoresept[oö]r\b/giu, 'kemoreseptör'], [/\bkemoreseptor\b/giu, 'kemoreseptör'],
     [/\bcavern[oö]z\b/giu, 'kavernöz'], [/\bkranial\b/giu, 'kraniyal'], [/\btubul(?:us)?\b/giu, 'tübül'],
     [/\bglomerul\b/giu, 'glomerül'], [/\bdiffus\b/giu, 'diffüz'], [/\bembryolojik\b/giu, 'embriyolojik'],
-    [/\binfeksiyon\b/giu, 'enfeksiyon'], [/\boportunistik\b/giu, 'fırsatçı'], [/\bopportunistik\b/giu, 'fırsatçı'],
-    [/\bdenozin\b/giu, 'adenozin'], [/\bomurga reseptör\b/giu, 'antijen reseptör'],
-    [/\bakciğusda\b/giu, 'akciğerde'], [/\bprofılaktik\b/giu, 'profilaktik'],
+    [/\binfeksiyon\b/giu, 'enfeksiyon'], [/\bakciğusda\b/giu, 'akciğerde'], [/\bprofılaktik\b/giu, 'profilaktik'],
     [/\bcontrastli\b/giu, 'kontrastlı'], [/\banjiografi\b/giu, 'anjiyografi'], [/\bnöral krista\b/giu, 'nöral krest'],
     [/\bintraivazöz\b/giu, 'intravenöz'], [/\baktiv\b/giu, 'aktif'], [/\bintraabdomenel\b/giu, 'intraabdominal'],
     [/\blaparatomi\b/giu, 'laparotomi'], [/\bspesifiktedir\b/giu, 'spesifiktir'], [/\bgösterür\b/giu, 'gösterir'],
@@ -98,7 +96,7 @@ function asArray(value) {
   return Array.isArray(value) ? value : [value];
 }
 
-function compactItems(items = []) {
+function compactItems(items = [], max = 8) {
   const seen = new Set();
   const out = [];
   asArray(items).forEach((item) => {
@@ -114,36 +112,13 @@ function compactItems(items = []) {
     }
     label = standardizeTurkishMedicalText(label);
     value = standardizeTurkishMedicalText(value);
-    if (isEmptyLike(label) || isEmptyLike(value)) return;
+    if (isEmptyLike(label) || isEmptyLike(value) || /\b(?:A feedback|B feedback|TUS ipucu\.?|öğrenme hedefi|hedeflenen ayırıcı|kısıtlama)\b/iu.test(`${label} ${value}`)) return;
     const key = normalizeForCompare(`${label} ${value}`);
     if (seen.has(key)) return;
     seen.add(key);
     out.push({ label, value });
   });
-  return out;
-}
-
-
-function compactDisplayItems(items = []) {
-  const seen = new Set();
-  const out = [];
-  asArray(items).forEach((item) => {
-    let text = '';
-    if (typeof item === 'string') {
-      text = standardizeTurkishMedicalText(item);
-    } else if (item && typeof item === 'object') {
-      const label = standardizeTurkishMedicalText(item.label || item.name || item.parameter || item.title || item.key || '');
-      const value = standardizeTurkishMedicalText(item.value || item.result || item.text || item.finding || item.data || '');
-      text = [label, value].filter(Boolean).join(': ');
-    }
-    text = ensureSentence(text);
-    if (isEmptyLike(text)) return;
-    const key = normalizeForCompare(text);
-    if (seen.has(key)) return;
-    seen.add(key);
-    out.push(text);
-  });
-  return out;
+  return out.slice(0, max);
 }
 
 function normalizeOptions(rawOptions = []) {
@@ -165,7 +140,11 @@ function getCorrectOption(options = [], correctAnswer = '') {
 function containsAnswerLeak(text = '', correct = '') {
   const value = normalizeForCompare(text);
   const answer = normalizeForCompare(correct);
-  return Boolean(value && answer && value.includes(answer));
+  if (!value || !answer || answer.length < 5) return false;
+  if (value.includes(answer)) return true;
+  const words = answer.split(/\s+/u).filter((word) => word.length >= 4);
+  if (words.length < 2) return false;
+  return words.filter((word) => value.includes(word)).length >= Math.ceil(words.length * 0.8);
 }
 
 function isManagementTarget(answerTarget = '') {
@@ -220,7 +199,7 @@ function buildEvidence(evidence = []) {
       unique.push(ensureSentence(item));
     }
   });
-  return unique;
+  return unique.slice(0, 4);
 }
 
 export function makeSimpleSignature(question = {}) {
@@ -250,36 +229,48 @@ export function isTooSimilarToRecent(question = {}, recent = []) {
     const itemSignature = item.contentSignature || item.semanticFingerprint || item.signature || '';
     if (itemSignature && signature && itemSignature === signature) return true;
     if (correct && itemCorrect && correct === itemCorrect && optionSet && itemOptions && (optionSet === itemOptions || optionSet.includes(itemOptions) || itemOptions.includes(optionSet))) return true;
-    if (stem && itemStem && (stem === itemStem || stem.includes(itemStem) || itemStem.includes(stem))) return true;
+    if (stem && itemStem && stem.length > 80 && itemStem.length > 80 && (stem.includes(itemStem.slice(0, 120)) || itemStem.includes(stem.slice(0, 120)))) return true;
     return false;
   });
 }
 
 
+function looksLikeObjectiveSentence(sentence = '') {
+  const text = cleanText(sentence);
+  if (!text) return false;
+  if (/^(?:ek klinik verilerde|tetkik ve destekleyici bulgularda|laboratuvar|tetkiklerde|vital bulgu|serum|idrar|plazma|bt|mr|mri|usg|ekg|transvajinal|β-hcg|hcg)\b/iu.test(text)) return true;
+  const hits = [
+    /\b(?:serum|idrar|plazma|laktat|sodyum|osmolalite|trigliserid|troponin|hcg|β-hcg|bt|mr|mri|usg|ekg|doppler|kortizol|acth|renin|aldosteron)\b/iu,
+    /\b(?:mmol\/L|mEq\/L|mOsm\/kg|IU\/L|mg\/dL|ng\/mL|mmHg|%)\b/iu,
+    /[:：=]/u,
+  ].filter((pattern) => pattern.test(text)).length;
+  return hits >= 2;
+}
+
 function sanitizeNarrativeStem(stem = '', { demographics = '', setting = '', chiefComplaint = '', branch = '' } = {}) {
-  const story = standardizeTurkishMedicalText(stem);
-  if (story) return ensureSentence(story);
+  // V429 root fix: do not remove laboratory/imaging/objective sentences from the visible stem.
+  // Earlier versions treated dense data sentences as “panel data” and stripped them from the narrative.
+  // If the panel was hidden or not noticed, the question became unsolvable. The stem is now the
+  // source of truth: whatever the model puts in `s/stem` remains visible to the student.
+  const cleaned = standardizeTurkishMedicalText(stem);
+  if (cleaned) return ensureSentence(cleaned);
+
   const dem = standardizeTurkishMedicalText(demographics || 'Hasta');
   const set = standardizeTurkishMedicalText(setting || 'klinik değerlendirmede');
   const cc = standardizeTurkishMedicalText(chiefComplaint || 'yakınmaları');
   const lowerSetting = set ? set.charAt(0).toLocaleLowerCase('tr') + set.slice(1) : 'klinik değerlendirmede';
-  const context = /kadın hastalıkları|doğum/iu.test(branch)
-    ? 'Gebelik durumu, muayene bulguları ve objektif veriler birlikte yorumlanmaktadır.'
-    : 'Öykü, muayene ve objektif veriler birlikte klinik karar için değerlendirilmektedir.';
-  return `${dem}, ${cc} nedeniyle ${lowerSetting} değerlendirilmektedir. ${context}`;
+  return `${dem}, ${cc} nedeniyle ${lowerSetting} değerlendirilmektedir.`;
 }
 
-function rationalesObject(raw = {}) {
-  const normalizeFeedbackValue = (value = '') => ensureSentence(standardizeTurkishMedicalText(value));
+function rationalesObject(raw = {}, explanation = '', correctId = 'A') {
   if (Array.isArray(raw)) {
     return OPTION_IDS.reduce((acc, id, index) => {
-      acc[id] = normalizeFeedbackValue(raw[index] || '');
+      acc[id] = ensureSentence(standardizeTurkishMedicalText(raw[index] || (id === correctId ? explanation : 'Bu seçenek aynı alanda düşünülür; ancak olgudaki ipuçları doğru cevabı desteklemez.')));
       return acc;
     }, {});
   }
   return OPTION_IDS.reduce((acc, id) => {
-    const value = raw?.[id] || raw?.[id.toLowerCase()] || raw?.[`option${id}`] || '';
-    acc[id] = normalizeFeedbackValue(value);
+    acc[id] = ensureSentence(standardizeTurkishMedicalText(raw?.[id] || raw?.[id.toLowerCase()] || raw?.[`option${id}`] || (id === correctId ? explanation : 'Bu seçenek aynı alanda düşünülür; ancak olgudaki ipuçları doğru cevabı desteklemez.')));
     return acc;
   }, {});
 }
@@ -298,28 +289,24 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   const options = normalizeOptions(payload.options || payload.o);
   const correctOption = getCorrectOption(options, payload.correctAnswer || payload.c);
   const correctText = cleanText(correctOption?.text || payload.correctAnswerText || '');
-  const compactVitals = compactItems(payload.compactVitals || payload.cv || payload.vitals || []);
-  const compactObjectiveData = compactItems(payload.compactObjectiveData || payload.co || payload.objectiveData || []);
-  const physicalExam = compactDisplayItems(payload.physicalExam || payload.exam || payload.muayene || []);
+  const compactVitals = compactItems(payload.compactVitals || payload.cv || payload.vitals || [], 5);
+  const compactObjectiveData = compactItems(payload.compactObjectiveData || payload.co || payload.objectiveData || [], 8);
   const branch = standardizeTurkishMedicalText(payload.relatedBranch || payload.branch || payload.b || meta.branchFilter || 'TUS');
   const normalizedBranch = BRANCH_ALIASES.get(normalizeForCompare(branch)) || branch;
-  const subtopic = standardizeTurkishMedicalText(payload.subtopic || payload.altKonu || payload.topic || '');
-  const generatedTitle = standardizeTurkishMedicalText(payload.title || payload.baslik || payload['başlık'] || '');
   const demographics = standardizeTurkishMedicalText(payload.demographics || payload.dem || '');
   const setting = standardizeTurkishMedicalText(payload.setting || payload.set || '');
   const chiefComplaint = standardizeTurkishMedicalText(payload.chiefComplaint || payload.cc || '');
-  const stem = sanitizeNarrativeStem(payload.clinicalStem || payload.stem || payload.s || '', { demographics, setting, chiefComplaint, branch: normalizedBranch });
+  const stem = sanitizeNarrativeStem(payload.stem || payload.s || '', { demographics, setting, chiefComplaint, branch: normalizedBranch });
   const evidenceChain = buildEvidence(payload.evidenceChain || payload.evidence || payload.k)
     .filter((item) => !containsAnswerLeak(item, correctText))
-
+    .slice(0, 3);
   const answerTarget = cleanText(payload.answerTarget || payload.at || payload.questionIntent || payload.intent || '');
   const managementSteps = isManagementTarget(answerTarget)
-    ? asArray(payload.managementSteps || payload.management || payload.m || []).map((item) => ensureSentence(standardizeTurkishMedicalText(item))).filter(Boolean)
+    ? asArray(payload.managementSteps || payload.management || payload.m || []).map((item) => ensureSentence(standardizeTurkishMedicalText(item))).filter(Boolean).slice(0, 3)
     : [];
-  const shortClinicalSummary = ensureSentence(standardizeTurkishMedicalText(payload.shortClinicalSummary || payload.clinicalSummary || payload.kisaKlinikOzet || payload['kısaKlinikÖzet'] || ''));
   const examPearl = ensureSentence(standardizeTurkishMedicalText(payload.examPearl || payload.teachingPoint || payload.pearl || payload.p || ''));
   const explanation = ensureSentence(standardizeTurkishMedicalText(payload.explanation || payload.whyCorrect || payload.e || ''));
-  const optionRationales = rationalesObject(payload.optionRationales || payload.wrongOptionFeedback || payload.optionFeedback || payload.rationales || payload.f || {});
+  const optionRationales = rationalesObject(payload.optionRationales || payload.wrongOptionFeedback || payload.optionFeedback || payload.rationales || payload.f || {}, explanation, correctOption?.id || 'A');
 
   const question = {
     id: cleanText(payload.id) || `ai-spot-simple-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
@@ -327,10 +314,9 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
     caseType: 'ai-spot',
     branchId: 'tus-spot-olgular',
     branchName: normalizedBranch,
-    title: generatedTitle || standardizeTurkishMedicalText(payload.learningTarget || payload.target || payload.lt || normalizedBranch),
+    title: '',
     relatedBranch: normalizedBranch,
-    subtopic,
-    spotCategory: subtopic ? `${normalizedBranch} • ${subtopic}` : `AI Spot • ${normalizedBranch}`,
+    spotCategory: `AI Spot • ${normalizedBranch}`,
     difficulty: normalizeDifficulty(payload.difficulty || payload.d || meta.difficulty || 'Orta'),
     learningTarget: standardizeTurkishMedicalText(payload.learningTarget || payload.target || payload.lt || ''),
     answerTarget,
@@ -340,17 +326,15 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
     stem,
     narrativeStem: stem,
     stemMode: 'narrative',
-    shortClinicalSummary,
-    coreKnowledge: shortClinicalSummary,
     compactVitals,
     compactObjectiveData,
     vitals: makeVitalsObject(compactVitals),
-    exam: physicalExam,
-    history: asArray(payload.history).map(standardizeTurkishMedicalText).filter(Boolean),
+    exam: asArray(payload.exam || payload.physicalExam).map(standardizeTurkishMedicalText).filter(Boolean).slice(0, 4),
+    history: asArray(payload.history).map(standardizeTurkishMedicalText).filter(Boolean).slice(0, 4),
     investigations: compactObjectiveData,
     findings: {
-      history: asArray(payload.history).map(standardizeTurkishMedicalText).filter(Boolean),
-      exam: physicalExam,
+      history: asArray(payload.history).map(standardizeTurkishMedicalText).filter(Boolean).slice(0, 4),
+      exam: asArray(payload.exam || payload.physicalExam).map(standardizeTurkishMedicalText).filter(Boolean).slice(0, 4),
       vitals: makeVitalsObject(compactVitals),
       investigations: compactObjectiveData,
     },
@@ -364,7 +348,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
       profile: demographics || normalizedBranch,
       presentation: chiefComplaint,
       riskContext: '',
-      distinctiveClues: evidenceChain,
+      distinctiveClues: evidenceChain.slice(0, 4),
       historySummary: stem,
     },
     diagnosis: {
@@ -375,10 +359,9 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
       pearls: [examPearl].filter(Boolean),
       answerFeedback: {
         whyCorrect: explanation,
-        shortClinicalSummary,
-        correctOptionFeedback: ensureSentence(optionRationales?.[correctOption?.id] || ''),
+        correctOptionFeedback: ensureSentence(optionRationales?.[correctOption?.id] || explanation),
         optionRationales,
-        evidenceChain: evidenceChain.length ? evidenceChain : [],
+        evidenceChain: evidenceChain.length ? evidenceChain : [stem, chiefComplaint].filter(Boolean).map(ensureSentence).slice(0, 3),
         pearls: [examPearl].filter(Boolean),
         clinicalPearls: [examPearl].filter(Boolean),
         differentialComparison: buildDifferentialComparison({ options, correctOption, optionRationales, wrongOptionFeedback: optionRationales }),
@@ -392,9 +375,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
       model: meta.model || payload.model || payload.openAIModel || null,
       remote: meta.remote !== false,
       fallback: Boolean(meta.fallback || payload.fallback),
-      validationWarnings: asArray(payload.qualityNotes || payload.warnings),
-      publishQualityReview: payload.aiMeta?.publishQualityReview || payload.publishQualityReview || null,
-      finalQualityCheck: payload.finalQualityCheck || payload.qualityCheck || null,
+      validationWarnings: asArray(payload.qualityNotes || payload.warnings).slice(0, 5),
       repaired: Boolean(payload.aiMeta?.repaired || payload.repaired),
     },
   };
@@ -407,8 +388,74 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   return question;
 }
 
-const FALLBACK_BANK = [];
+const FALLBACK_BANK = [
+  {
+    relatedBranch: 'İç Hastalıkları',
+    learningTarget: 'Laboratuvar paterni ve klinik bağlamı birlikte yorumlama.',
+    demographics: 'Erişkin hasta',
+    chiefComplaint: 'Halsizlik ve bilinç bulanıklığı',
+    stem: 'Erişkin hasta son günlerde artan halsizlik ve hafif bilinç bulanıklığı nedeniyle değerlendirilir. Öyküde sıvı alımında azalma ve yakın dönemde ilaç değişikliği vardır. Muayenede belirgin fokal nörolojik defisit saptanmaz.',
+    compactObjectiveData: [{ label: 'Serum sodyum', value: '122 mEq/L' }, { label: 'Serum osmolalitesi', value: 'Düşük' }],
+    question: 'Bu olguda laboratuvar paternini en iyi açıklayan seçenek hangisidir?',
+    options: [
+      { id: 'A', text: 'Hipotonik hiponatremi' },
+      { id: 'B', text: 'Hipertonik hiponatremi' },
+      { id: 'C', text: 'İzotonik psödohiponatremi' },
+      { id: 'D', text: 'Hipernatremik dehidratasyon' },
+      { id: 'E', text: 'Primer hiperkalemi' },
+    ],
+    correctAnswer: 'A',
+    explanation: 'Düşük sodyum düzeyine düşük serum osmolalitesinin eşlik etmesi hipotonik hiponatremiyi destekler. Klinik değerlendirmede sonraki ayrım volüm durumu ve idrar elektrolitleriyle yapılır.',
+    evidenceChain: ['Laboratuvar — Serum sodyum düşüktür.', 'Laboratuvar — Serum osmolalitesi düşüktür.', 'Klinik — Bilinç değişikliği semptomatik tabloyu destekler.'],
+    examPearl: 'Hiponatremi yorumunda ilk ayrım serum osmolalitesidir; düşük osmolalite gerçek hipotonik hiponatremiyi gösterir.',
+  },
+  {
+    relatedBranch: 'Çocuk Sağlığı ve Hastalıkları',
+    learningTarget: 'Pediatrik acilde risk bulgularını ayırt etme.',
+    demographics: 'Küçük çocuk',
+    chiefComplaint: 'Ateş ve halsizlik',
+    stem: 'Küçük çocuk yüksek ateş ve beslenmede azalma nedeniyle acile getirilir. Aile çocuğun son saatlerde daha halsiz olduğunu belirtir. Muayenede genel durum orta, kapiller dolum süresi uzamış ve cilt turgoru azalmıştır.',
+    compactVitals: [{ label: 'Ateş', value: '39 °C' }, { label: 'Nabız', value: 'Taşikardik' }],
+    question: 'Bu olguda öncelikle değerlendirilmesi gereken klinik öncelik hangisidir?',
+    options: [
+      { id: 'A', text: 'Perfüzyon ve hidrasyon durumu' },
+      { id: 'B', text: 'Uzun dönem büyüme izlemi' },
+      { id: 'C', text: 'Rutin aşı takvimi planı' },
+      { id: 'D', text: 'Elektif dermatoloji değerlendirmesi' },
+      { id: 'E', text: 'Okul çağı psikososyal taraması' },
+    ],
+    correctAnswer: 'A',
+    explanation: 'Ateşli çocukta halsizlik, uzamış kapiller dolum ve turgor azalması dolaşım ve hidrasyon değerlendirmesini öncelikli kılar. Diğer seçenekler akut acil karar düzeyini karşılamaz.',
+    evidenceChain: ['Öykü — Beslenme azalmıştır.', 'Muayene — Kapiller dolum süresi uzamıştır.', 'Muayene — Cilt turgoru azalmıştır.'],
+    examPearl: 'Pediatrik acilde genel durum ve perfüzyon bulguları, tanısal ayrıntılardan önce değerlendirilir.',
+  },
+  {
+    relatedBranch: 'Tıbbi Farmakoloji',
+    learningTarget: 'İlaç-mekanizma-yan etki ilişkisini kurma.',
+    demographics: 'Erişkin hasta',
+    chiefComplaint: 'Yeni başlayan yakınma',
+    stem: 'Erişkin hasta yeni başlanan bir tedaviden sonra gelişen yakınmalar nedeniyle başvurur. Öyküde benzer semptomların ilaç başlanmadan önce olmadığı öğrenilir. Klinik tablo ilacın beklenen farmakolojik etkisiyle ilişkilidir.',
+    question: 'Bu olguda istenmeyen etkiyi yorumlamak için en uygun yaklaşım hangisidir?',
+    options: [
+      { id: 'A', text: 'İlacın etki mekanizması ve zaman ilişkisini birlikte değerlendirmek' },
+      { id: 'B', text: 'Her ilacı aynı yan etki profiline sahip kabul etmek' },
+      { id: 'C', text: 'Doz ve başlangıç zamanını dikkate almamak' },
+      { id: 'D', text: 'Klinik yakınmayı ilaç öyküsünden bağımsız yorumlamak' },
+      { id: 'E', text: 'Sadece laboratuvar sonucu varsa ilaç yan etkisi düşünmek' },
+    ],
+    correctAnswer: 'A',
+    explanation: 'Farmakolojik yan etki değerlendirmesinde ilaç başlama zamanı, doz ve mekanizma birlikte ele alınır. Bu yaklaşım nedensellik değerlendirmesini diğer seçeneklerden daha doğru kurar.',
+    evidenceChain: ['Öykü — Yakınmalar tedaviden sonra başlamıştır.', 'Öykü — Öncesinde benzer yakınma yoktur.', 'Mekanizma — Beklenen farmakolojik etki klinik tabloyla ilişkilidir.'],
+    examPearl: 'TUS farmakoloji sorularında zaman ilişkisi tek başına yetmez; mekanizma ile klinik bulgunun uyumu aranır.',
+  },
+];
 
-export function createSimpleFallbackQuestion() {
-  throw new Error('Yerel fallback soru bankası kaldırıldı. Yalnızca TUS AI Spot gerçek AI endpointi aktiftir.');
+export function createSimpleFallbackQuestion({ branchFilter = 'random', difficulty = 'Orta', recentQuestionSummaries = [] } = {}) {
+  const normalizedBranch = normalizeForCompare(branchFilter);
+  const candidates = FALLBACK_BANK.filter((item) => normalizedBranch === 'random' || normalizedBranch === 'rastgele' || normalizeForCompare(item.relatedBranch).includes(normalizedBranch) || normalizedBranch.includes(normalizeForCompare(item.relatedBranch)));
+  const pool = candidates.length ? candidates : FALLBACK_BANK;
+  const recentCorrectAnswers = new Set(asArray(recentQuestionSummaries).map((item) => normalizeForCompare(item.correct || item.correctAnswer || item.correctAnswerText || '')));
+  const selected = pool.find((item) => !recentCorrectAnswers.has(normalizeForCompare(item.options?.find?.((option) => option.id === item.correctAnswer)?.text || item.correctAnswer || ''))) || pool[Math.floor(Math.random() * pool.length)];
+  const selectedDifficulty = normalizeDifficulty(difficulty);
+  return normalizeSimpleAIQuestion({ ...selected, difficulty: selectedDifficulty, id: `ai-spot-fallback-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, { source: 'local-safe-fallback', provider: 'local-safe-fallback', remote: false, fallback: true, branchFilter, difficulty: selectedDifficulty });
 }

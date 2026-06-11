@@ -185,11 +185,16 @@ function normalizeForCompare(value = '') {
 function containsAnswerLeak(text = '', correct = '') {
   const value = normalizeForCompare(text);
   const answer = normalizeForCompare(correct);
-  return Boolean(value && answer && value.includes(answer));
+  if (!value || !answer || answer.length < 5) return false;
+  if (value.includes(answer)) return true;
+  const words = answer.split(/\s+/u).filter((word) => word.length >= 4);
+  if (words.length < 2) return false;
+  return words.filter((word) => value.includes(word)).length >= Math.ceil(words.length * 0.8);
 }
 
-function singleSentence(value = '', _limit = Infinity) {
-  return ensureSentence(normalizeText(value));
+function singleSentence(value = '', limit = 220) {
+  const first = splitIntoSentences(value)[0] || normalizeText(value);
+  return truncateSentence(first, limit);
 }
 
 function stripFeedbackHeading(value = '') {
@@ -199,10 +204,17 @@ function stripFeedbackHeading(value = '') {
     .trim();
 }
 
-function textLooksSame(a = '', b = '', _threshold = 1) {
+function textLooksSame(a = '', b = '', threshold = 0.9) {
   const left = normalizeForCompare(a);
   const right = normalizeForCompare(b);
-  return Boolean(left && right && left === right);
+  if (!left || !right) return false;
+  if (left === right) return true;
+  const leftWords = new Set(left.split(/\s+/u).filter((word) => word.length > 2));
+  const rightWords = new Set(right.split(/\s+/u).filter((word) => word.length > 2));
+  if (!leftWords.size || !rightWords.size) return false;
+  let overlap = 0;
+  leftWords.forEach((word) => { if (rightWords.has(word)) overlap += 1; });
+  return overlap / Math.min(leftWords.size, rightWords.size) >= threshold;
 }
 
 function deriveSingleLinePearl(clinicalCase = {}, reasoningText = '') {
@@ -257,8 +269,12 @@ function ensureSentence(value = '') {
   return /[.!?]$/u.test(text) ? text : `${text}.`;
 }
 
-function truncateSentence(value = '', _limit = Infinity) {
-  return normalizeText(value).replace(/\.\.\.|…/g, '.');
+function truncateSentence(value = '', limit = 230) {
+  const text = normalizeText(value).replace(/\.\.\.|…/g, '.');
+  if (text.length <= limit) return text;
+  const cut = text.slice(0, limit).replace(/\s+\S*$/u, '').replace(/[,:;\-–—]+$/u, '').trim();
+  if (!cut) return text.slice(0, limit).trim();
+  return /[.!?]$/u.test(cut) ? cut : `${cut}.`;
 }
 
 function splitIntoSentences(text = '') {
@@ -275,12 +291,10 @@ function splitIntoSentences(text = '') {
     .filter((sentence) => sentence && !/^(?:[A-ZÇĞİÖŞÜ]|I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII)\.$/u.test(sentence));
 }
 
-function compactParagraph(value = '', _unusedSentenceLimit = Infinity, _unusedTextLimit = Infinity) {
-  return normalizeText(value);
-}
-
-function fullEducationalParagraph(value = '') {
-  return ensureSentence(mergeUniqueSentences([value]));
+function compactParagraph(value = '', maxSentences = 4, maxLength = 620) {
+  const sentences = splitIntoSentences(value).slice(0, maxSentences);
+  const text = sentences.length ? sentences.join(' ') : normalizeText(value);
+  return truncateSentence(text, maxLength);
 }
 
 function unique(items = []) {
@@ -387,10 +401,10 @@ function deriveWhyCorrect(clinicalCase) {
   const feedback = getFeedback(clinicalCase);
   const isSpotCase = clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular';
   const explicit = normalizeText(feedback.whyCorrect || '');
-  if (explicit) return compactParagraph(removeMetaLanguage(explicit), isSpotCase ? Infinity : 4, isSpotCase ? Infinity : 620);
+  if (explicit) return compactParagraph(removeMetaLanguage(explicit), isSpotCase ? 6 : 4, isSpotCase ? 900 : 620);
 
   const explanation = normalizeText(clinicalCase.diagnosis?.explanation || clinicalCase.explanation || '');
-  if (explanation) return compactParagraph(removeMetaLanguage(explanation), isSpotCase ? Infinity : 4, isSpotCase ? Infinity : 620);
+  if (explanation) return compactParagraph(removeMetaLanguage(explanation), isSpotCase ? 6 : 4, isSpotCase ? 900 : 620);
 
   const clue = getMainClue(clinicalCase);
   const correct = clinicalCase.diagnosis?.correct || 'doğru seçenek';
@@ -449,10 +463,10 @@ function deriveWhyWrong(clinicalCase, selectedOption, selectedComparison) {
   const clue = getMainClue(clinicalCase);
   const correctDiagnosis = clinicalCase.diagnosis?.correct || 'doğru seçenek';
   if (selectedOption) {
-    return '';
+    return 'Seçilen seçenek için ayırt ettirici açıklama üretilemedi.';
   }
 
-  return '';
+  return 'Seçilen seçenek için ayırt ettirici açıklama üretilemedi.';
 }
 
 function inferEvidenceTitle(text = '', index = 0) {
@@ -468,7 +482,7 @@ function inferEvidenceTitle(text = '', index = 0) {
   return 'Klinik ipucu';
 }
 
-function normalizeTitledItem(item, index, fallbackTitle, _unusedTextLimit = Infinity) {
+function normalizeTitledItem(item, index, fallbackTitle, maxLength = 190) {
   if (!item) return null;
   const originalTitle = itemTitle(item);
   let text = removeMetaLanguage(itemText(item));
@@ -484,13 +498,13 @@ function normalizeTitledItem(item, index, fallbackTitle, _unusedTextLimit = Infi
   if (!title) title = fallbackTitle || inferEvidenceTitle(text, index);
   const inferredFallback = fallbackTitle || inferEvidenceTitle(text, index);
   return {
-    title: refineLabel(title, inferredFallback),
-    text: stripWeakPrefix(text),
+    title: truncateSentence(refineLabel(title, inferredFallback), 46),
+    text: truncateSentence(stripWeakPrefix(text), maxLength),
   };
 }
 
 function cleanEvidenceText(item, index = 0) {
-  const normalized = normalizeTitledItem(item, index, null);
+  const normalized = normalizeTitledItem(item, index, null, 185);
   if (!normalized) return null;
   normalized.text = normalized.text
     .replace(/^Başvuru:\s*/iu, '')
@@ -648,7 +662,7 @@ function deriveCorrectOptionSummary(clinicalCase, option, evidenceChain = []) {
     return singleSentence(removeMetaLanguage(whyCorrect), 240);
   }
 
-  return '';
+  return 'Doğru seçenek için ayrıntılı açıklama üretilemedi.';
 }
 
 function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []) {
@@ -671,15 +685,15 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
         isSelected: selectedOption === option,
         title: 'En iyi seçenek',
         explanation: isAISpot
-          ? fullEducationalParagraph(removeMetaLanguage(deriveCorrectOptionSummary(clinicalCase, option, evidenceChain)))
+          ? compactParagraph(removeMetaLanguage(deriveCorrectOptionSummary(clinicalCase, option, evidenceChain)), 3, 420)
           : singleSentence(deriveCorrectOptionSummary(clinicalCase, option, evidenceChain), 210),
         comparisonPoints: [],
       };
     }
 
     const explicit = wrongMap[option] || normalizedWrongMap[normalizeForCompare(option)] || {};
-    const rawExplanation = removeMetaLanguage(explicit.explanation || '');
-    const explanation = isAISpot ? fullEducationalParagraph(rawExplanation) : singleSentence(rawExplanation, 190);
+    const rawExplanation = removeMetaLanguage(explicit.explanation || 'Bu seçenek için ayırt ettirici açıklama üretilemedi.');
+    const explanation = isAISpot ? compactParagraph(rawExplanation, 3, 360) : singleSentence(rawExplanation, 190);
     return {
       option,
       status: 'wrong',
@@ -744,7 +758,7 @@ function getAISpotMapValue(map, optionText = '', letter = '') {
   return matched ? itemText(matched[1]) : '';
 }
 
-function mergeUniqueSentences(parts = [], _unusedSentenceLimit = Infinity, _unusedTextLimit = Infinity) {
+function mergeUniqueSentences(parts = [], maxSentences = 7, maxLength = 1350) {
   const seen = new Set();
   const sentences = [];
   parts.forEach((part) => {
@@ -756,7 +770,8 @@ function mergeUniqueSentences(parts = [], _unusedSentenceLimit = Infinity, _unus
       sentences.push(cleaned);
     });
   });
-  return sentences.join(' ');
+  const text = sentences.slice(0, maxSentences).join(' ');
+  return truncateSentence(text, maxLength);
 }
 
 function resolveAISpotOptionExplanation(clinicalCase = {}, optionText = '', fallback = '') {
@@ -776,7 +791,7 @@ function resolveAISpotOptionExplanation(clinicalCase = {}, optionText = '', fall
     getAISpotMapValue(clinicalCase.diagnosis?.answerFeedbackByOption, optionText, letter),
     fallback,
   ].filter(Boolean);
-  return mergeUniqueSentences(sources) || '';
+  return mergeUniqueSentences(sources, 4, 760) || 'Bu seçenek için ayrıntılı açıklama eklenemedi.';
 }
 
 function buildAISpotDetailedRows(clinicalCase = {}, selectedOption = '') {
@@ -827,7 +842,6 @@ function buildAISpotScienceText(clinicalCase = {}, whyCorrect = '') {
     ? clinicalCase.evidenceChain.map((item) => item?.text || item)
     : [];
   return mergeUniqueSentences([
-    clinicalCase.shortClinicalSummary,
     clinicalCase.coreKnowledge,
     clinicalCase.explanation,
     clinicalCase.diagnosis?.explanation,
@@ -835,7 +849,7 @@ function buildAISpotScienceText(clinicalCase = {}, whyCorrect = '') {
     feedback.rationale,
     whyCorrect,
     ...evidenceTexts,
-  ]);
+  ], 12, 2600);
 }
 
 function groupSentencesForAISpotScience(sentences = []) {
@@ -878,14 +892,14 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCo
           <article className={`ai-spot-feedback-choice-card ${isCorrect ? 'is-correct' : 'is-selected-wrong'}`.trim()}>
             <span className="ai-spot-choice-kicker">Seçimin</span>
             <strong><GlossaryText text={selectedText || 'Seçim bulunamadı'} enabled={glossaryEnabled} /></strong>
-            <p><GlossaryText text={ensureSentence(selectedExplanation || '')} enabled={glossaryEnabled} /></p>
+            <p><GlossaryText text={ensureSentence(selectedExplanation || 'Seçilen seçenek için açıklama bulunamadı.')} enabled={glossaryEnabled} /></p>
           </article>
 
           {!isCorrect ? (
             <article className="ai-spot-feedback-choice-card is-correct">
               <span className="ai-spot-choice-kicker">Doğru cevap</span>
               <strong><GlossaryText text={correctText || 'Doğru cevap bulunamadı'} enabled={glossaryEnabled} /></strong>
-              <p><GlossaryText text={ensureSentence(correctExplanation || '')} enabled={glossaryEnabled} /></p>
+              <p><GlossaryText text={ensureSentence(correctExplanation || 'Doğru seçenek için açıklama bulunamadı.')} enabled={glossaryEnabled} /></p>
             </article>
           ) : null}
         </div>
@@ -931,7 +945,7 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCo
                   {row.isSelected ? <em>Seçimin</em> : null}
                   {row.status === 'correct' ? <em className="correct">Doğru cevap</em> : null}
                 </div>
-                <p><GlossaryText text={ensureSentence(row.explanation || '')} enabled={glossaryEnabled} revealMode="postAnswer" maxTerms={6} /></p>
+                <p><GlossaryText text={ensureSentence(row.explanation)} enabled={glossaryEnabled} revealMode="postAnswer" maxTerms={6} /></p>
               </article>
             ))}
           </div>
