@@ -3,8 +3,8 @@ import {
   buildRecentCompact,
   buildUserPrompt,
   normalizeDifficulty,
-} from './tus-question-prompt.js';
-import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from './lib/ai-token-optimizer.js';
+} from '../server/prompts/tus-question-prompt.js';
+import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from '../server/lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v40-balanced-clinical-quality-gate';

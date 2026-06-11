@@ -1,6 +1,6 @@
-import { sendJson, parseJsonBody, callOpenAIJson, validateQuestionsShape, verifyCurrentSourceManifest } from './lib/komite-ai-common.js';
-import { GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT, buildGenerateMaterialQuestionsPrompt } from './prompts/generateMaterialQuestionsPrompt.js';
-import { buildOutputCacheKey, compactMaterialSources, createSourceFingerprint, defaultModelForScope, getDurableCachedOutput, logAIUsage, resolveModelForScope, resolveSourceCharLimit, setDurableCachedOutput, withInFlightDedupe } from './lib/ai-token-optimizer.js';
+import { sendJson, parseJsonBody, callOpenAIJson, validateQuestionsShape, verifyCurrentSourceManifest } from '../server/lib/komite-ai-common.js';
+import { GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT, buildGenerateMaterialQuestionsPrompt } from '../server/prompts/generateMaterialQuestionsPrompt.js';
+import { buildOutputCacheKey, compactMaterialSources, createSourceFingerprint, defaultModelForScope, getDurableCachedOutput, logAIUsage, resolveModelForScope, resolveSourceCharLimit, setDurableCachedOutput, withInFlightDedupe } from '../server/lib/ai-token-optimizer.js';
 
 
 const TASK_NAME = 'materialQuestions';
