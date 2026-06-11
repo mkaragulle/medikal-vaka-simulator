@@ -10,6 +10,18 @@ import { rawCasesPart06 } from './caseBank/cases-part-06.js';
 import { rawCasesPart07 } from './caseBank/cases-part-07.js';
 import { rawCasesPart08 } from './caseBank/cases-part-08.js';
 import { rawCasesPart09 } from './caseBank/cases-part-09.js';
+import { rawCasesPart10 } from './caseBank/cases-part-10.js';
+import { rawCasesPart11 } from './caseBank/cases-part-11.js';
+import { rawCasesPart12 } from './caseBank/cases-part-12.js';
+import { rawCasesPart13 } from './caseBank/cases-part-13.js';
+import { rawCasesPart14 } from './caseBank/cases-part-14.js';
+import { rawCasesPart15 } from './caseBank/cases-part-15.js';
+import { rawCasesPart16 } from './caseBank/cases-part-16.js';
+import { rawCasesPart17 } from './caseBank/cases-part-17.js';
+import { rawCasesPart18 } from './caseBank/cases-part-18.js';
+import { rawCasesPart19 } from './caseBank/cases-part-19.js';
+import { rawCasesPart20 } from './caseBank/cases-part-20.js';
+import { rawCasesPart21 } from './caseBank/cases-part-21.js';
 
 export const rawCases = [
   ...rawCasesPart01,
@@ -20,7 +32,19 @@ export const rawCases = [
   ...rawCasesPart06,
   ...rawCasesPart07,
   ...rawCasesPart08,
-  ...rawCasesPart09
+  ...rawCasesPart09,
+  ...rawCasesPart10,
+  ...rawCasesPart11,
+  ...rawCasesPart12,
+  ...rawCasesPart13,
+  ...rawCasesPart14,
+  ...rawCasesPart15,
+  ...rawCasesPart16,
+  ...rawCasesPart17,
+  ...rawCasesPart18,
+  ...rawCasesPart19,
+  ...rawCasesPart20,
+  ...rawCasesPart21
 ];
 
 export const cases = attachClinicalVisualsToCases(rawCases.map(sanitizeClinicalCaseExam), clinicalVisualManifest);
