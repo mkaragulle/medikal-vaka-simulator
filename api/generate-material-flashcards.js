@@ -1,13 +1,13 @@
 import { sendJson, parseJsonBody, callOpenAIJson, validateFlashcardsShape, verifyCurrentSourceManifest } from './lib/komite-ai-common.js';
 import { GENERATE_FLASHCARDS_SYSTEM_PROMPT, buildGenerateFlashcardsPrompt } from './prompts/generateFlashcardsPrompt.js';
-import { buildOutputCacheKey, compactMaterialSources, createSourceFingerprint, defaultModelForScope, getDurableCachedOutput, logAIUsage, resolveModelForScope, resolveSourceCharLimit, setDurableCachedOutput, withInFlightDedupe } from './lib/ai-token-optimizer.js';
+import { buildOutputCacheKey, compactMaterialSources, createSourceFingerprint, getCachedOutput, logAIUsage, setCachedOutput } from './lib/ai-token-optimizer.js';
 
 
 const TASK_NAME = 'materialFlashcards';
-const PROMPT_VERSION = 'komite-material-flashcards-v3-cost-capped';
+const PROMPT_VERSION = 'komite-material-flashcards-v2-token-cache';
 
 function currentKomiteModel() {
-  return resolveModelForScope('KOMITE');
+  return process.env.KOMITE_OPENAI_MODEL || process.env.OPENAI_MODEL || 'gpt-4.1-mini';
 }
 
 const FLASHCARD_JSON_SCHEMA = {
@@ -69,7 +69,7 @@ function compactTextWindow(text = '', maxChars = 12000) {
   return [start, middle, end].join('\n\n');
 }
 
-function sourceTextFromMaterialPacket(packet = {}, maxTotalChars = resolveSourceCharLimit('KOMITE_FLASHCARDS_MAX_SOURCE_CHARS', 12000, 'KOMITE', TASK_NAME)) {
+function sourceTextFromMaterialPacket(packet = {}, maxTotalChars = envNumber('KOMITE_FLASHCARDS_MAX_SOURCE_CHARS', 12000)) {
   const files = Array.isArray(packet.files)
     ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
     : [];
@@ -89,24 +89,22 @@ export default async function handler(request, response) {
     const sourceCheck = verifyCurrentSourceManifest(body);
     if (!sourceCheck.ok) return sendJson(response, 409, { ok: false, error: 'Current source session validation failed', validation: sourceCheck });
     const sourceFingerprint = createSourceFingerprint({ clientFingerprint: body.sourceFingerprint || sourceCheck.fingerprint || '', files: body.materialPacket?.files || [] });
-    const currentSourceText = compactMaterialSources(body.materialPacket?.files || [], resolveSourceCharLimit('KOMITE_FLASHCARDS_MAX_SOURCE_CHARS', 12000, 'KOMITE', TASK_NAME));
+    const currentSourceText = compactMaterialSources(body.materialPacket?.files || [], envNumber('KOMITE_FLASHCARDS_MAX_SOURCE_CHARS', 12000));
     if (!currentSourceText) return sendJson(response, 422, { ok: false, error: 'Current material packet has no readable text.' });
     const cacheKey = buildOutputCacheKey({ scope: 'KOMITE', task: TASK_NAME, promptVersion: PROMPT_VERSION, model: currentKomiteModel(), sourceFingerprint });
-    return await withInFlightDedupe(cacheKey, async () => {
-      const cachedOutput = await getDurableCachedOutput(cacheKey);
-      if (cachedOutput) {
-        logAIUsage({ task: TASK_NAME, model: cachedOutput.model || currentKomiteModel(), cached: true, apiStyle: cachedOutput.apiStyle || 'output_cache' });
-        return sendJson(response, 200, { ok: true, cached: true, ...cachedOutput });
-      }
-      const prompt = buildGenerateFlashcardsPrompt({ sourceTextChunks: currentSourceText });
-      const result = await callOpenAIJson({ systemPrompt: GENERATE_FLASHCARDS_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: envNumber('KOMITE_FLASHCARDS_MAX_OUTPUT_TOKENS', 3200), jsonSchema: FLASHCARD_JSON_SCHEMA, scope: 'KOMITE', task: TASK_NAME, promptVersion: PROMPT_VERSION });
-      const deck = result.json.deck || result.json;
-      const validation = validateFlashcardsShape(deck);
-      const responseValidation = validation.ok ? validation : { ok: true, warnings: validation.errors || [], note: 'Non-blocking flashcard normalization warnings.' };
-      const payload = { provider: 'openai', model: result.model, apiStyle: result.apiStyle, deck, validation: responseValidation };
-      await setDurableCachedOutput(cacheKey, payload);
-      return sendJson(response, 200, { ok: true, cached: false, ...payload });
-    });
+    const cachedOutput = getCachedOutput(cacheKey);
+    if (cachedOutput) {
+      logAIUsage({ task: TASK_NAME, model: cachedOutput.model || currentKomiteModel(), cached: true, apiStyle: cachedOutput.apiStyle || 'output_cache' });
+      return sendJson(response, 200, { ok: true, cached: true, ...cachedOutput });
+    }
+    const prompt = buildGenerateFlashcardsPrompt({ sourceTextChunks: currentSourceText });
+    const result = await callOpenAIJson({ systemPrompt: GENERATE_FLASHCARDS_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: envNumber('KOMITE_FLASHCARDS_MAX_OUTPUT_TOKENS', 3200), jsonSchema: FLASHCARD_JSON_SCHEMA, scope: 'KOMITE', task: TASK_NAME, promptVersion: PROMPT_VERSION });
+    const deck = result.json.deck || result.json;
+    const validation = validateFlashcardsShape(deck);
+    const responseValidation = validation.ok ? validation : { ok: true, warnings: validation.errors || [], note: 'Non-blocking flashcard normalization warnings.' };
+    const payload = { provider: 'openai', model: result.model, apiStyle: result.apiStyle, deck, validation: responseValidation };
+    setCachedOutput(cacheKey, payload);
+    return sendJson(response, 200, { ok: true, cached: false, ...payload });
   } catch (error) {
     return sendJson(response, error.code === 'missing_api_key' ? 501 : (error.status || 502), { ok: false, error: error.message });
   }

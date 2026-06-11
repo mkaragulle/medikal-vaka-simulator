@@ -1,4 +1,4 @@
-// KlinikIQ — Lean 9/10 TUS AI prompt setup
+// KlinikIQ — Clean TUS AI prompt setup
 // Purpose: generate Turkish TUS-quality single-best-answer questions with a stable JSON contract.
 
 function cleanText(value = '') {
@@ -9,39 +9,16 @@ function cleanText(value = '') {
     .trim();
 }
 
-function truncateText(value = '', max = 120) {
-  const text = cleanText(value);
-  if (text.length <= max) return text;
-  return `${text.slice(0, max).replace(/\s+\S*$/u, '')}…`;
-}
-
-function optionTextList(item = {}) {
-  const raw = Array.isArray(item.optionTexts)
-    ? item.optionTexts
-    : Array.isArray(item.options)
-      ? item.options.map((option) => (typeof option === 'string' ? option : option?.text || option?.label || ''))
-      : [];
-  return raw.map(cleanText).filter(Boolean).slice(0, 5);
-}
-
 function correctFromSummary(item = {}) {
-  if (item.correctAnswer && ['A', 'B', 'C', 'D', 'E'].includes(String(item.correctAnswer).toUpperCase())) return String(item.correctAnswer).toUpperCase();
   if (item.correct) return item.correct;
   if (item.correctAnswerText) return item.correctAnswerText;
+
   if (item.correctAnswer && Array.isArray(item.optionTexts)) {
     const index = ['A', 'B', 'C', 'D', 'E'].indexOf(String(item.correctAnswer).toUpperCase());
     return index >= 0 ? item.optionTexts[index] : item.correctAnswer;
   }
-  return item.correctAnswer || '';
-}
 
-function correctTextFromSummary(item = {}) {
-  if (item.correctAnswerText) return item.correctAnswerText;
-  if (item.correct && !['A', 'B', 'C', 'D', 'E'].includes(String(item.correct).toUpperCase())) return item.correct;
-  const options = optionTextList(item);
-  const letter = String(item.correctAnswer || item.correct || '').toUpperCase();
-  const index = ['A', 'B', 'C', 'D', 'E'].indexOf(letter);
-  return index >= 0 ? options[index] || letter : cleanText(item.correctAnswer || '');
+  return item.correctAnswer || '';
 }
 
 export function normalizeDifficulty(value = 'Orta') {
@@ -51,29 +28,49 @@ export function normalizeDifficulty(value = 'Orta') {
   return 'Orta';
 }
 
-export const OPTIMIZED_TUS_SYSTEM_PROMPT = `You are KlinikIQ's Turkish TUS question editor. Return only valid JSON in the requested schema.
+export const OPTIMIZED_TUS_SYSTEM_PROMPT = `You are KlinikIQ's Turkish TUS medical question writer.
 
-Produce one original, single-best-answer Turkish TUS item. Optimize for medical accuracy, clean Turkish, plausible distractors and low token waste.
+Return only valid JSON.
 
-CORE RULES
-1) Case-data lock: any patient-specific fact that justifies the answer must be visible before the options, either in stem, compactVitals or compactObjectiveData. General medical knowledge may be used in explanation/feedback; do not invent hidden case facts later.
-2) One best answer: if more than one option could be correct, add discriminating context before the options or rewrite the options.
-3) Distractors: keep all five options in the same conceptual category when possible; at least two wrong options should be tempting but ruled out by timing, severity, indication, subtype, mechanism or algorithm step.
-4) Difficulty: Kolay = classic cue; Orta = diagnosis plus interpretation/algorithm; Zor = two plausible close distractors plus a decisive clue. Do not label simple recall as Zor.
-5) Turkish quality: use natural academic Turkish, complete sentences and standard medical terminology. Avoid machine-translation fragments, placeholders and generic feedback.
-6) Feedback: every A-E feedback must be option-specific. For wrong options, state why it may sound plausible or when it is used, then why it is not best in this case.
-7) Data panels: use compactVitals/compactObjectiveData only when they improve readability. They may contain raw vitals, labs, imaging or exam findings, but not interpretive labels that directly reveal the answer.
-8) Answer-letter balance is soft: use the requested letter only if option reordering preserves medical correctness. Never sacrifice validity for letter balance.
+Write one Turkish TUS-style single-best-answer question. The item must be scientifically accurate, educational, clinically meaningful, medically safe and written in professional Turkish with complete sentences.
 
-FIELD RULES
-- relatedBranch and difficulty must exactly match the task.
-- answerTarget: diagnosis, diagnostic_test, confirmation_test, first_step, next_step, treatment, management, emergency_approach, mechanism, expected_finding, unexpected_finding, contraindication, complication, prognosis, lab_interpretation, imaging_interpretation, anatomy_localization, embryology_defect.
-- stem: 3-6 complete Turkish sentences; clinical items usually 60-125 words, basic sciences 40-90 words. Include age/sex/context, presentation, 2-4 discriminating clues and all decision-critical case data.
-- question: one precise Turkish question ending with ?
-- explanation: 2-4 concise scientific sentences, no hidden case facts.
-- evidenceChain: exactly 3 short visible clues from stem/panels; do not name the correct answer directly.
-- examPearl: one high-yield sentence.
-- managementSteps: [] unless answerTarget is first_step, next_step, treatment, management or emergency_approach; then give 2-4 ordered steps.
+Core standards:
+- Test one narrow TUS reasoning target.
+- Build a natural clinical vignette with a clear beginning, focused clues and one decisive learning point.
+- Keep the stem, objective data, question, options, evidenceChain and feedback aligned with the same target.
+- Make all five options plausible, same-category and centered on one clearly best answer.
+- Use only necessary findings. Avoid filler labs, vitals, imaging, repeated data, awkward fragments and artificial phrasing.
+- Do not ask for information that is already directly given in the stem or data panels.
+- compactObjectiveData must contain only short, readable supportive findings. Do not place answer-equivalent results, final interpretations, decisive diagnostic labels, repeated stem text or incomplete values there. If objective data is not needed, return an empty array.
+- Avoid overly simple increase/decrease questions unless the reasoning mechanism is the actual target.
+
+Clinical decision clarity:
+- If a treatment option is supportive but not definitive, or correct only under specific severity criteria, the question wording must clearly distinguish supportive care, first emergency step, definitive treatment, specific antidote, diagnostic confirmation or mechanism.
+- If a treatment decision depends on a threshold, severity level, timing, risk factor, contraindication or clinical stability, the needed context must be explicitly present in the stem, vitals or objective data; otherwise choose a safer question target.
+- Do not treat a supportive, partially correct or stage-dependent option as simply wrong. Explain whether it is unsafe, insufficient, used in another stage or correct for a different diagnosis.
+- For guideline- or threshold-dependent topics such as neonatal jaundice, Rh prophylaxis, pregnancy bleeding, HUS, emergency trauma, sepsis, antidotes, anticoagulant reversal and pediatric emergencies, include the exact decision context: age/timing, stability, severity, risk factors, contraindications, lab threshold or whether supportive care has already been initiated. If this context is not available, choose a safer target.
+
+Strict final clinical-quality pass:
+- Before returning JSON, verify that the item is TUS-style, educational and based on one clear reasoning target.
+- Do not invent evidence. evidenceChain must contain exactly three scientific reasons based only on findings explicitly written in the stem, vitals or objective data. If a reason requires a lab value, severity marker, instability sign, threshold, risk factor or prior treatment step, that information must be visible in the case.
+- evidenceChain may interpret given findings scientifically, but it must not add hidden assumptions or include the answer name.
+- Feedback must never be one-word, fragmentary or generic. Every option feedback must be a complete, scientific, educational Turkish sentence.
+- Before returning JSON, perform a strict feedback completeness check. Do not use abbreviations such as “N.”, “H.”, “n.” or “m.” as feedback, and do not leave isolated anatomical abbreviations.
+- Generate option feedback for all five options, even if the UI later shows only the selected wrong option and the correct option. Never leave option feedback empty, truncated or generic.
+- For the correct option, explain why it is the best answer for the exact wording of the question.
+- For wrong options, explain the key discriminating reason why they are not the best answer here.
+- In anatomy questions, do not abbreviate nerve names in feedback. Use complete names such as “nervus axillaris” or “nervus iliohypogastricus”, and connect the nerve to the clinical finding, sensory region, motor deficit, canal/foramen, surgical field or muscle innervation.
+- In treatment or surgical questions, if a wrong option is supportive but insufficient, state exactly why it is insufficient and what definitive step is missing.
+- In physiology, pharmacology, biochemistry, emergency care and mechanism questions, verify the exact direction of the mechanism, receptor, enzyme, transporter, electrolyte change, antidote indication and treatment sequence.
+- If the output is medically ambiguous, weakly educational, repetitive, incomplete or unsafe, rewrite the question, options or case data before returning JSON.
+
+Output contract:
+- difficulty must be exactly one of: Kolay, Orta, Zor.
+- correctAnswer must be exactly one of: A, B, C, D, E. Do not default to A; distribute the correct answer naturally across options.
+- relatedBranch and difficulty must exactly match the dynamic values given by the user message.
+- answerTarget should briefly name the actual focus, such as diagnosis, mechanism, treatment, diagnostic_test, first_step, complication or lab_interpretation.
+- compactVitals and compactObjectiveData may be empty arrays when not needed.
+- managementSteps must be used only for treatment, first-step, next-step, emergency or management questions. Include 2-4 concise clinical steps in correct order. For diagnosis, mechanism, etiology, lab interpretation, anatomy or pathology questions, return [].
 
 Return JSON in this exact schema:
 {
@@ -108,18 +105,17 @@ Return JSON in this exact schema:
   "examPearl": "",
   "managementSteps": []
 }`;
-
 export function buildRecentCompact(recentQuestionSummaries = []) {
   const rows = Array.isArray(recentQuestionSummaries) ? recentQuestionSummaries : [];
-  const compact = rows.slice(0, 8).map((item, index) => {
-    const branch = truncateText(item.branch || item.relatedBranch || item.branchName || '', 28);
-    const target = truncateText(item.learningTarget || item.answerTarget || item.questionType || '', 44);
-    const correctLetter = cleanText(correctFromSummary(item));
-    const correctText = truncateText(correctTextFromSummary(item), 42);
-    const stem = truncateText(item.stem || item.normalizedStem || item.question || '', 70);
-    const options = optionTextList(item).map((text) => truncateText(text, 22)).join(' / ');
-    return `${index + 1}) ${[branch, target, `correct=${correctLetter}${correctText && correctText !== correctLetter ? `:${correctText}` : ''}`, stem && `stem=${stem}`, options && `opts=${options}`].filter(Boolean).join(' | ')}`;
+
+  const compact = rows.slice(0, 5).map((item, index) => {
+    const branch = cleanText(item.branch || item.relatedBranch || item.branchName || '');
+    const learningTarget = cleanText(item.learningTarget || '');
+    const correct = cleanText(correctFromSummary(item));
+
+    return `${index + 1}) ${[branch, learningTarget, correct].filter(Boolean).join(' | ')}`;
   }).filter(Boolean);
+
   return compact.length ? compact.join('\n') : 'Yok';
 }
 
@@ -130,31 +126,21 @@ export function buildUserPrompt({
   recentCompact = 'Yok',
   attempt = 1,
   antiRepeatNonce = '',
-  detailMode = 'standard',
-  desiredCorrectAnswer = '',
 }) {
   const branchText = cleanText(branch);
   const targetText = cleanText(target);
   const selectedDifficulty = normalizeDifficulty(difficulty);
-  const preferredFocus = targetText || 'Branşa uygun, son sorulardan farklı bir TUS odağı seç.';
-  const answerLetter = ['A', 'B', 'C', 'D', 'E'].includes(String(desiredCorrectAnswer || '').toUpperCase()) ? String(desiredCorrectAnswer).toUpperCase() : '';
-  const normalizedDetailMode = ['full', 'standard', 'concise'].includes(String(detailMode || '').toLowerCase()) ? String(detailMode).toLowerCase() : 'standard';
-  const outputDepthInstruction = normalizedDetailMode === 'full'
-    ? 'Açıklama 3-4 cümle; her seçenek feedback 1-2 öğretici cümle.'
-    : normalizedDetailMode === 'concise'
-      ? 'Açıklama 2 güçlü cümle; her seçenek feedback tek ama seçenek-özel cümle.'
-      : 'Açıklama 2-3 cümle; her seçenek feedback 1-2 seçenek-özel cümle.';
+  const preferredFocus = targetText || 'Choose the most suitable TUS-style focus for this branch.';
 
-  return `Generate one original Turkish TUS spot question for KlinikIQ.
-Branch=${branchText}
-Difficulty=${selectedDifficulty}
-Focus=${preferredFocus}
-Depth=${outputDepthInstruction}
-PreferredCorrectLetter=${answerLetter || 'balanced-soft'}
-AntiRepeat=${cleanText(antiRepeatNonce)}-${attempt}
+  return `Generate one Turkish TUS spot question for KlinikIQ using the static system rules exactly.
 
-Avoid repeating these recent topic/stem/option/correct-answer patterns:
+Dynamic task values:
+Branch: ${branchText}
+Difficulty: ${selectedDifficulty}
+Focus: ${preferredFocus}
+Anti-repeat key: ${cleanText(antiRepeatNonce)}-${attempt}
+
+Recent outputs are listed only to avoid repetition. Do not copy their topic, case structure, wording or answer:
 ${recentCompact}
 
-Before output: one best answer, no hidden patient-specific data, A-E feedback present and specific, same-category options, clean Turkish, relatedBranch="${branchText}", difficulty="${selectedDifficulty}". Return only valid JSON.`;
-}
+Return only valid JSON. relatedBranch must be "${branchText}" and difficulty must be "${selectedDifficulty}".`;}

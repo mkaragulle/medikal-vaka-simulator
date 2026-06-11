@@ -169,8 +169,6 @@ function DiagnosisQuiz({
   questionHeadingOverride = '',
   questionSubtextOverride = '',
   hideQuestionScoreChip = false,
-  hideQuestionHeader = false,
-  hideInlineQuestionStemLabel = false,
 }) {
   const [selected, setSelected] = useState(existingAnswer?.selected ?? null);
   const [submitted, setSubmitted] = useState(Boolean(existingAnswer));
@@ -233,24 +231,22 @@ function DiagnosisQuiz({
 
   return (
     <section className="question-panel diagnostic-decision-panel" id="case-quiz" aria-label="Klinik karar sorusu">
-      {!hideQuestionHeader ? (
-        <div className="question-panel-head diagnostic-head">
-          <div>
-            <h2>{questionHeading}</h2>
-            {questionSubtext ? (
-              <p>
-                <FormattedQuestionPrompt text={questionSubtext} glossaryEnabled={glossaryEnabled} revealMode={glossaryRevealMode} />
-              </p>
-            ) : null}
-          </div>
-
-          {!hideQuestionScoreChip ? (
-            <div className="question-score-chip compact-meta-pill single-score-chip">
-              <strong>{difficultyMeta.points} Puan</strong>
-            </div>
+      <div className="question-panel-head diagnostic-head">
+        <div>
+          <h2>{questionHeading}</h2>
+          {questionSubtext ? (
+            <p>
+              <FormattedQuestionPrompt text={questionSubtext} glossaryEnabled={glossaryEnabled} revealMode={glossaryRevealMode} />
+            </p>
           ) : null}
         </div>
-      ) : null}
+
+        {!hideQuestionScoreChip ? (
+          <div className="question-score-chip compact-meta-pill single-score-chip">
+            <strong>{difficultyMeta.points} Puan</strong>
+          </div>
+        ) : null}
+      </div>
 
       {examMeta?.active ? (
         <div className="exam-progress-box">
@@ -272,8 +268,8 @@ function DiagnosisQuiz({
       ) : null}
 
       {showInlineQuestionStem ? (
-        <div className={`ai-spot-inline-question-stem ${hideInlineQuestionStemLabel ? 'label-hidden' : ''}`.trim()} role="note" aria-label="Soru kökü">
-          {!hideInlineQuestionStemLabel ? <span className="ai-spot-inline-question-stem-label">Soru kökü</span> : null}
+        <div className="ai-spot-inline-question-stem" role="note" aria-label="Soru kökü">
+          <span className="ai-spot-inline-question-stem-label">Soru kökü</span>
           <strong>
             <FormattedQuestionPrompt text={questionPrompt} glossaryEnabled={glossaryEnabled} revealMode={glossaryRevealMode} />
           </strong>
@@ -312,18 +308,15 @@ function DiagnosisQuiz({
           disabled={!selected || submitted}
           onClick={handleSubmit}
         >
-          <span className="quiz-action-btn-inner">
-            <Icon name="TrendUp" />
-            <span>{examMeta?.active ? 'Yanıtı kaydet' : 'Yanıtı değerlendir'}</span>
-          </span>
+          <Icon name="TrendUp" />
+          <span>{examMeta?.active ? 'Yanıtı kaydet' : 'Yanıtı değerlendir'}</span>
         </button>
 
         {!examMeta?.active ? (
           <button className="btn btn-secondary answer-next-case-btn" type="button" onClick={onRandomCase}>
-            <span className="quiz-action-btn-inner">
-              <Icon name="RotateCcw" />
-              <span>{randomActionLabel}</span>
-            </span>
+            <Icon name="RotateCcw" />
+            <span>{randomActionLabel}</span>
+            <Icon name="ArrowRight" className="answer-next-case-arrow" />
           </button>
         ) : null}
       </div>

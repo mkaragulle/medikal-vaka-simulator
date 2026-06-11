@@ -1,4 +1,4 @@
-import { memo, useEffect, useMemo, useState } from 'react';
+import { memo, useMemo, useState } from 'react';
 import { Icon } from './ui.jsx';
 import { TUS_PEARL_CARDS } from '../data/tusPearlCards.js';
 import { branches } from '../data/branches.js';
@@ -6,7 +6,6 @@ import {
   addId,
   defaultPearlState,
   loadPearlState,
-  PEARL_PROGRESS_UPDATED_EVENT,
   savePearlState,
   upsertUserPearlCard,
 } from '../utils/pearlCardStorage.js';
@@ -47,17 +46,6 @@ function buildWeakBranchSummary(wrongAnswers = []) {
 function TusPearlHubPanel({ wrongAnswers = [], onOpenStudy }) {
   const [pearlState, setPearlState] = useState(() => loadPearlState());
   const [editorOpen, setEditorOpen] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return undefined;
-    const syncPearlProgress = () => setPearlState(loadPearlState());
-    window.addEventListener(PEARL_PROGRESS_UPDATED_EVENT, syncPearlProgress);
-    window.addEventListener('storage', syncPearlProgress);
-    return () => {
-      window.removeEventListener(PEARL_PROGRESS_UPDATED_EVENT, syncPearlProgress);
-      window.removeEventListener('storage', syncPearlProgress);
-    };
-  }, []);
 
   const allCards = useMemo(() => [...SYSTEM_PEARL_CARDS, ...(pearlState.userPearlCards || [])], [pearlState.userPearlCards]);
   const favoriteSet = useMemo(() => toSet(pearlState.favoritePearlCardIds), [pearlState.favoritePearlCardIds]);

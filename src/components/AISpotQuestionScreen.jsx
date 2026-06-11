@@ -1,12 +1,13 @@
 import DiagnosisQuiz from './DiagnosisQuiz.jsx';
 import GlossaryText from './GlossaryTooltip.jsx';
-import { Icon } from './ui.jsx';
+import { Icon, IconBadge } from './ui.jsx';
 import { getDifficultyMeta } from '../utils/scoring.js';
 import {
   buildAISpotContextLine,
   buildAISpotNarrativeStem,
   buildAISpotQuestionPrompt,
   getAISpotPreviewDiagnostics,
+  getAISpotSupportDataGroups,
 } from '../utils/aiSpotNarrative.js';
 
 const AI_SPOT_BRANCH = {
@@ -184,8 +185,7 @@ function CompactDataGroup({ title, items = [] }) {
 function AISpotNarrativePanel({ question, hardMode = false, embedded = false }) {
   const contextLine = buildAISpotContextLine(question);
   const paragraphs = buildAISpotNarrativeStem(question);
-  // V383: AI TUS sorularında sağ taraftaki destek/veri paneli gösterilmez; tüm veri soru paragrafına entegre edilir.
-  const supportDataGroups = [];
+  const supportDataGroups = getAISpotSupportDataGroups(question);
   const difficultyMeta = getDifficultyMeta(question.difficulty);
   const diagnostics = import.meta.env?.DEV ? getAISpotPreviewDiagnostics(question) : null;
 
@@ -195,15 +195,18 @@ function AISpotNarrativePanel({ question, hardMode = false, embedded = false }) 
       id="ai-spot-narrative"
       aria-label="AI TUS spot soru metni"
     >
-      <div className="ai-spot-narrative-simple-header" aria-label="Soru üst bilgisi">
-        <div className="ai-spot-narrative-simple-title">
-          <Icon name="ClipboardList" size={17} />
-          <span>Klinik olgu</span>
+      <div className="ai-spot-narrative-topline">
+        <div className="ai-spot-narrative-badges" aria-label="Soru üst bilgisi">
+          <AISpotMetaBadge icon="Stethoscope" tone="blue">{question.relatedBranch || question.branchName || 'TUS'}</AISpotMetaBadge>
+          <AISpotMetaBadge icon="Trophy" tone="amber">{difficultyMeta.label} · {difficultyMeta.points} Puan</AISpotMetaBadge>
         </div>
-        <div className="ai-spot-narrative-simple-meta">
-          <span>{question.relatedBranch || question.branchName || 'TUS'}</span>
-          <span className="ai-spot-simple-dot" aria-hidden="true" />
-          <span>{difficultyMeta.label} · {difficultyMeta.points} puan</span>
+      </div>
+
+      <div className="ai-spot-narrative-heading no-title">
+        <IconBadge icon="ClipboardList" tone="teal" size="lg" />
+        <div>
+          <span className="ai-spot-narrative-eyebrow">Klinik olgu</span>
+          <p><GlossaryText text={contextLine} enabled={!hardMode} revealMode="preAnswer" maxTerms={3} /></p>
         </div>
       </div>
 
@@ -268,11 +271,9 @@ function AISpotQuestionScreen({
             randomActionLabel={randomActionLabel}
             hideSpotQuestionCallout
             questionPromptOverride={questionPrompt}
-            questionHeadingOverride=""
-            questionSubtextOverride=""
+            questionHeadingOverride="Yanıt seçenekleri"
+            questionSubtextOverride={questionPrompt || 'En uygun seçeneği işaretle.'}
             hideQuestionScoreChip
-            hideQuestionHeader
-            hideInlineQuestionStemLabel
           />
         </div>
       </section>

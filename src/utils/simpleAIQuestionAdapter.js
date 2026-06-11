@@ -187,33 +187,6 @@ export function isTooSimilarToRecent(question = {}, recent = []) {
   });
 }
 
-
-function formatInlineClinicalData(items = [], prefix = '') {
-  const rows = compactItems(items, 8)
-    .map((item) => {
-      const label = cleanText(item.label || '');
-      const value = cleanText(item.value || '');
-      if (!label && !value) return '';
-      if (!value) return label;
-      return `${label}: ${value}`;
-    })
-    .filter(Boolean)
-    .filter((line) => !/^(görüntüleme|destekleyici veriler|laboratuvar|fizik muayene|eko|ekokardiyografi)$/iu.test(line));
-  if (!rows.length) return '';
-  return ensureSentence(`${prefix}${rows.join('; ')}`);
-}
-
-function integrateCompactDataIntoStem(stem = '', vitals = [], objectiveData = []) {
-  const base = ensureSentence(stem || '');
-  const vitalSentence = formatInlineClinicalData(vitals, 'Ek klinik verilerde ');
-  const objectiveSentence = formatInlineClinicalData(objectiveData, 'Tetkik ve destekleyici bulgularda ');
-  return [base, vitalSentence, objectiveSentence]
-    .filter(Boolean)
-    .join(' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
 export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   if (payload?.diagnosis?.correct && Array.isArray(payload?.diagnosis?.options)) {
     const signature = payload.contentSignature || makeSimpleSignature(payload);
@@ -228,13 +201,11 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   const options = normalizeOptions(payload.options || payload.o);
   const correctOption = getCorrectOption(options, payload.correctAnswer || payload.c);
   const correctText = cleanText(correctOption?.text || payload.correctAnswerText || '');
-  const rawCompactVitals = compactItems(payload.compactVitals || payload.cv || payload.vitals || [], 5);
-  const rawCompactObjectiveData = compactItems(payload.compactObjectiveData || payload.co || payload.objectiveData || [], 8);
+  const compactVitals = compactItems(payload.compactVitals || payload.cv || payload.vitals || [], 5);
+  const compactObjectiveData = compactItems(payload.compactObjectiveData || payload.co || payload.objectiveData || [], 8);
   const branch = cleanText(payload.relatedBranch || payload.branch || payload.b || meta.branchFilter || 'TUS');
   const normalizedBranch = BRANCH_ALIASES.get(normalizeForCompare(branch)) || branch;
-  const stem = integrateCompactDataIntoStem(payload.stem || payload.s || 'Kısa klinik olgu verileri birlikte değerlendirilir.', rawCompactVitals, rawCompactObjectiveData);
-  const compactVitals = [];
-  const compactObjectiveData = [];
+  const stem = ensureSentence(payload.stem || payload.s || 'Kısa klinik olgu verileri birlikte değerlendirilir.');
   const evidenceChain = buildEvidence(payload.evidenceChain || payload.evidence || payload.k)
     .filter((item) => !containsAnswerLeak(item, correctText))
     .slice(0, 3);

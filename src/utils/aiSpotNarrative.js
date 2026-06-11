@@ -732,7 +732,7 @@ function limitNarrativeLength(sentences = [], questionPrompt = '') {
 
 function splitTusParagraphsFromSentences(sentences = []) {
   const bodySentences = sentences.filter((sentence) => sentence && !isQuestionSentence(sentence));
-  if (!bodySentences.length) return ['Bu soru için klinik bağlam eksik üretildi; lütfen yeni bir TUS sorusu üretin.'];
+  if (!bodySentences.length) return ['Kısa klinik bağlam ve karar verdirici bulgular birlikte değerlendirilir.'];
   const body = bodySentences.join(' ').trim();
   if (body.length < 760) return [body];
 
@@ -759,7 +759,13 @@ export function buildSafeAISpotTitle(question = {}) {
 }
 
 export function buildAISpotContextLine(question = {}) {
-  return '';
+  const branch = asText(question.relatedBranch || question.branchName || 'TUS Spot');
+  const type = String(question.questionType || '').toLocaleLowerCase('tr');
+  if (type === 'test') return `${branch} bağlamında TUS tarzı veri yorumu.`;
+  if (type === 'treatment') return `${branch} bağlamında ilk yaklaşım kararı.`;
+  if (type === 'mechanism') return `${branch} bağlamında mekanizma sorusu.`;
+  if (type === 'diagnosis') return `${branch} bağlamında kısa klinik olgu yorumu.`;
+  return `${branch} branşında bilimsel ve TUS uyumlu spot sorusu.`;
 }
 
 export function buildAISpotNarrativeStem(question = {}) {

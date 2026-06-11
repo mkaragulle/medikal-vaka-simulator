@@ -3,7 +3,6 @@ import './index.css';
 import './styles/klinikiq-system.css';
 import './styles/klinikiq-refine.css';
 import './styles/klinikiq-dark-mode-system.css';
-import './styles/ai-tus-button-center-hard-fix.css';
 import BranchSelector from './components/BranchSelector.jsx';
 import CaseList from './components/CaseList.jsx';
 import WrongAnswersFullPage from './components/WrongAnswersFullPage.jsx';
@@ -18,7 +17,7 @@ import { cases, getCaseById } from './data/cases.js';
 import { scoreAttempt, calculateAccuracy } from './utils/scoring.js';
 import { pickRandom, shuffleArray } from './utils/randomize.js';
 import { localBackend } from './services/localBackend.js';
-import { createAIQuestion, prefetchNextAIQuestion } from './services/aiQuestionService.js';
+import { createAIQuestion } from './services/aiQuestionService.js';
 import { listAIQuestionBranches } from './utils/aiQuestionGenerator.js';
 import { isGoogleAuthConfigured, signInWithGoogle } from './services/googleAuth.js';
 
@@ -98,7 +97,6 @@ const defaultAIPracticeState = {
   generationSource: null,
   usedRemoteAI: false,
   fallback: false,
-  fallbackNotice: false,
 };
 
 function loadStoredValue(key, fallback) {
@@ -932,7 +930,6 @@ function App() {
         generationSource: 'Kişisel tekrar arşivi',
         usedRemoteAI: Boolean(restoredQuestion.aiMeta?.remote),
         fallback: Boolean(restoredQuestion.aiMeta?.fallback),
-        fallbackNotice: Boolean(restoredQuestion.aiMeta?.fallbackNotice),
       });
       scrollToTopSmart({ smooth: false });
       return;
@@ -1256,7 +1253,6 @@ function App() {
       generationSource: null,
       usedRemoteAI: false,
       fallback: false,
-      fallbackNotice: false,
     }));
 
     void (async () => {
@@ -1271,7 +1267,6 @@ function App() {
           generationSource: result.source || result.question?.source || null,
           usedRemoteAI: Boolean(result.usedRemoteAI),
           fallback: Boolean(result.fallback),
-          fallbackNotice: Boolean(result.fallback && result.showFallbackNotice !== false && result.question?.aiMeta?.fallbackNotice !== false),
         });
       } catch (error) {
         if (latestAIQuestionRequestId.current !== requestId) return;
@@ -1283,7 +1278,6 @@ function App() {
           generationSource: null,
           usedRemoteAI: false,
           fallback: false,
-          fallbackNotice: false,
         }));
       } finally {
         if (latestAIQuestionRequestId.current === requestId) aiQuestionTimer.current = null;
@@ -1310,6 +1304,7 @@ function App() {
 
   const handleGenerateNextAIQuestion = useCallback(() => {
     generateNextAIQuestion(aiPracticeState.question?.id ?? null, aiBranchFilter, aiDifficulty);
+    scrollToTopSmart({ smooth: false });
   }, [aiBranchFilter, aiDifficulty, aiPracticeState.question?.id, generateNextAIQuestion]);
 
   const handleAIBranchFilterChange = useCallback((nextFilter) => {
@@ -1326,7 +1321,6 @@ function App() {
       generationSource: null,
       usedRemoteAI: false,
       fallback: false,
-      fallbackNotice: false,
     }));
   }, []);
 
@@ -1346,19 +1340,10 @@ function App() {
       generationSource: null,
       usedRemoteAI: false,
       fallback: false,
-      fallbackNotice: false,
     }));
   }, []);
 
   const handleSubmitAIAnswer = useCallback(({ clinicalCase, selected, isCorrect }) => {
-    if (aiPracticeState.question?.id) {
-      void prefetchNextAIQuestion({
-        previousQuestionId: aiPracticeState.question.id,
-        branchFilter: aiBranchFilter,
-        difficulty: aiDifficulty,
-      });
-    }
-
     const scored = scoreAttempt(clinicalCase.difficulty, isCorrect, aiPracticeStats.streak);
     const earnedPoints = isCorrect ? 5 : 0;
 
@@ -1381,7 +1366,7 @@ function App() {
     });
 
     return { ...scored, earnedPoints, nextStreak: isCorrect ? aiPracticeStats.streak + 1 : 0 };
-  }, [addWrongAnswer, aiBranchFilter, aiDifficulty, aiPracticeState.question?.id, aiPracticeStats.streak]);
+  }, [addWrongAnswer, aiPracticeStats.streak]);
 
   function startBlockExam(sourceCases = accessibleCases, title = isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı') {
     const safeSourceCases = (Array.isArray(sourceCases) ? sourceCases : accessibleCases)
@@ -1695,7 +1680,6 @@ function App() {
           generationSource={aiPracticeState.generationSource}
           usedRemoteAI={aiPracticeState.usedRemoteAI}
           fallback={aiPracticeState.fallback}
-          fallbackNotice={aiPracticeState.fallbackNotice}
           branchFilter={aiBranchFilter}
           branchOptions={aiQuestionBranches}
           difficulty={aiDifficulty}

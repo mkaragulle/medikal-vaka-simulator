@@ -31,7 +31,6 @@ const iconPaths = {
   AlertTriangle: <><path d="M12 3.5 21 19H3L12 3.5Z"/><path d="M12 9v4M12 16h.01"/></>,
   ChevronDown: <path d="m6 9 6 6 6-6"/>,
   ChevronUp: <path d="m6 15 6-6 6 6"/>,
-  ArrowLeft: <><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></>,
   ArrowRight: <><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></>,
   Gauge: <><path d="M4 14a8 8 0 1 1 16 0"/><path d="M12 14l3-4"/><path d="M7 20h10"/></>,
   Wind: <><path d="M4 9h11a3 3 0 1 0-3-3"/><path d="M4 14h15a3 3 0 1 1-3 3"/></>,

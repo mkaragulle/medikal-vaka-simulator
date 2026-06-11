@@ -922,7 +922,7 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCo
                 <div className="ai-spot-pearl-icon"><Icon name="Sparkles" size={15} /></div>
                 <div>
                   <span>TUS ipucu</span>
-                  <p className="ai-spot-feedback-pearl-text-v402">{ensureSentence(pearl)}</p>
+                  <p><GlossaryText text={ensureSentence(pearl)} enabled={glossaryEnabled} revealMode="postAnswer" maxTerms={5} /></p>
                 </div>
               </div>
             ) : null}
