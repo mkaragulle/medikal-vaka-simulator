@@ -5,7 +5,7 @@ KlinikIQ, TUS/komite odaklı klinik vaka çözme ve öğrenme simülatörüdür.
 ## Projeyi çalıştırma
 
 ```bash
-npm install --package-lock=false --legacy-peer-deps --no-audit --no-fund
+npm install --legacy-peer-deps --no-audit --no-fund
 npm run dev
 ```
 
@@ -54,7 +54,7 @@ git push -u origin main
 Bu ayarlar `vercel.json` içinde de tanımlıdır:
 
 ```text
-Install Command: npm install --package-lock=false --legacy-peer-deps --no-audit --no-fund
+Install Command: npm install --legacy-peer-deps --no-audit --no-fund
 Build Command: npm run build
 Output Directory: dist
 ```

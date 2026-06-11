@@ -8,6 +8,7 @@ import {
   addId,
   defaultPearlState,
   loadPearlState,
+  PEARL_PROGRESS_UPDATED_EVENT,
   markCatalogStudied,
   rememberStudyStart,
   removeId,
@@ -763,6 +764,17 @@ function TusPearlStudyScreen({
   const lastDeckSignature = useRef('');
   const branchMenuTriggerRef = useRef(null);
   const branchMenuRef = useRef(null);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return undefined;
+    const syncPearlProgress = () => setPearlState(loadPearlState());
+    window.addEventListener(PEARL_PROGRESS_UPDATED_EVENT, syncPearlProgress);
+    window.addEventListener('storage', syncPearlProgress);
+    return () => {
+      window.removeEventListener(PEARL_PROGRESS_UPDATED_EVENT, syncPearlProgress);
+      window.removeEventListener('storage', syncPearlProgress);
+    };
+  }, []);
 
   const hiddenSet = useMemo(() => toSet(pearlState.hiddenPearlCardIds), [pearlState.hiddenPearlCardIds]);
   const allCards = useMemo(() => ([...SYSTEM_PEARL_CARDS, ...(pearlState.userPearlCards || [])].filter((card) => !hiddenSet.has(card.id))), [hiddenSet, pearlState.userPearlCards]);

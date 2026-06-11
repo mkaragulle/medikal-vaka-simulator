@@ -2,6 +2,15 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import AISpotQuestionScreen from './AISpotQuestionScreen.jsx';
 import { Icon, IconBadge } from './ui.jsx';
+import { TUS_PEARL_CARDS } from '../data/tusPearlCards.js';
+import { branches } from '../data/branches.js';
+import {
+  applyPearlLearningDecision,
+  dispatchPearlProgressUpdated,
+  flushPearlStateSave,
+  loadPearlState,
+  savePearlState,
+} from '../utils/pearlCardStorage.js';
 
 
 const AI_DURATION_STORAGE_GLOBAL_KEY = 'klinikiq.aiQuestion.duration.global.v1';
@@ -49,6 +58,154 @@ const AI_LOADING_STAGES = [
     detail: 'Gerekçe, doğru seçenek ve klinik ipuçları birbiriyle eşleştiriliyor.',
   },
 ];
+
+const AI_WAITING_FLASHCARD_STATUS_KEY = 'klinikiq.aiQuestion.waitingFlashcards.status.v1';
+const AI_WAITING_FLASHCARD_SHOWN_KEY = 'klinikiq.aiQuestion.waitingFlashcards.shown.v1';
+const AI_WAITING_FLASHCARD_COUNT = 10;
+
+const BRANCH_NAME_LOOKUP = new Map((branches || []).flatMap((branch) => [
+  [branch.id, branch.id],
+  [branch.name, branch.id],
+  [branch.shortName, branch.id],
+].filter(([key]) => key).map(([key, value]) => [normalizeLookupText(key), value])));
+
+function normalizeLookupText(value = '') {
+  return String(value || '')
+    .toLocaleLowerCase('tr')
+    .replace(/[ıİ]/g, 'i')
+    .replace(/ğ/g, 'g')
+    .replace(/ü/g, 'u')
+    .replace(/ş/g, 's')
+    .replace(/ö/g, 'o')
+    .replace(/ç/g, 'c')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function readLocalJSON(key, fallback) {
+  if (typeof window === 'undefined' || !window.localStorage) return fallback;
+  try {
+    const raw = window.localStorage.getItem(key);
+    return raw ? JSON.parse(raw) : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+function writeLocalJSON(key, value) {
+  if (typeof window === 'undefined' || !window.localStorage) return;
+  try {
+    window.localStorage.setItem(key, JSON.stringify(value));
+  } catch {
+    // Ignore storage errors; the learning UI can still render statelessly.
+  }
+}
+
+function resolvePearlBranchId(branchFilter = 'random') {
+  const normalized = normalizeLookupText(branchFilter);
+  if (!normalized || normalized === 'random' || normalized === 'rastgele') return null;
+  return BRANCH_NAME_LOOKUP.get(normalized) || null;
+}
+
+function difficultyScore(cardDifficulty = '', selectedDifficulty = 'Orta') {
+  const selected = normalizeLookupText(selectedDifficulty);
+  const card = normalizeLookupText(cardDifficulty);
+  if (!card) return 0;
+  if (selected.includes('zor')) return card.includes('zor') ? 12 : card.includes('orta') ? 7 : 3;
+  if (selected.includes('kolay')) return card.includes('kolay') ? 12 : card.includes('orta') ? 5 : 1;
+  return card.includes('orta') ? 12 : 5;
+}
+
+function hashString(value = '') {
+  let hash = 2166136261;
+  const text = String(value || '');
+  for (let index = 0; index < text.length; index += 1) {
+    hash ^= text.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+  return Math.abs(hash >>> 0);
+}
+
+function selectWaitingPearlCards(branchFilter = 'random', difficulty = 'Orta', count = AI_WAITING_FLASHCARD_COUNT) {
+  const allCards = Array.isArray(TUS_PEARL_CARDS) ? TUS_PEARL_CARDS : [];
+  if (!allCards.length) return [];
+
+  const targetBranchId = resolvePearlBranchId(branchFilter);
+  const shownState = readLocalJSON(AI_WAITING_FLASHCARD_SHOWN_KEY, { ids: [] });
+  const recentShown = Array.isArray(shownState?.ids) ? shownState.ids.slice(-90) : [];
+  const recentShownSet = new Set(recentShown);
+  const statusMap = readLocalJSON(AI_WAITING_FLASHCARD_STATUS_KEY, {});
+  const nowBucket = Math.floor(Date.now() / (1000 * 60 * 7));
+  const seed = `${branchFilter}|${difficulty}|${nowBucket}`;
+
+  const scoreCard = (card) => {
+    const status = statusMap?.[card.id]?.status || '';
+    let score = 0;
+    if (targetBranchId && card.branchId === targetBranchId) score += 90;
+    if (!targetBranchId) score += 12;
+    if (status === 'hard') score += 55;
+    if (status === 'review') score += 32;
+    if (status === 'known') score -= 8;
+    if (!recentShownSet.has(card.id)) score += 28;
+    score += difficultyScore(card.difficulty, difficulty);
+    score += hashString(`${seed}|${card.id}`) % 23;
+    return score;
+  };
+
+  const firstPass = allCards
+    .filter((card) => card?.id && (!targetBranchId || card.branchId === targetBranchId) && !recentShownSet.has(card.id))
+    .sort((a, b) => scoreCard(b) - scoreCard(a));
+
+  const fallbackPass = allCards
+    .filter((card) => card?.id && !firstPass.some((item) => item.id === card.id))
+    .sort((a, b) => scoreCard(b) - scoreCard(a));
+
+  const selected = [...firstPass, ...fallbackPass].slice(0, count);
+  const nextShownIds = [...recentShown, ...selected.map((card) => card.id)].slice(-160);
+  writeLocalJSON(AI_WAITING_FLASHCARD_SHOWN_KEY, { ids: nextShownIds, updatedAt: Date.now() });
+  return selected;
+}
+
+function readWaitingFlashcardRatings(cards = []) {
+  const statusMap = readLocalJSON(AI_WAITING_FLASHCARD_STATUS_KEY, {});
+  const pearlState = loadPearlState();
+  const knownSet = new Set(pearlState.knownPearlCardIds || []);
+  const wrongSet = new Set(pearlState.wrongPearlCardIds || []);
+  const reviewSet = new Set(pearlState.reviewPearlCardIds || []);
+  return cards.reduce((acc, card) => {
+    const status = statusMap?.[card.id]?.status;
+    if (status) acc[card.id] = status;
+    else if (knownSet.has(card.id)) acc[card.id] = 'known';
+    else if (wrongSet.has(card.id)) acc[card.id] = 'hard';
+    else if (reviewSet.has(card.id)) acc[card.id] = 'review';
+    return acc;
+  }, {});
+}
+
+function writeWaitingFlashcardRating(cardId, status) {
+  const statusMap = readLocalJSON(AI_WAITING_FLASHCARD_STATUS_KEY, {});
+  const next = {
+    ...statusMap,
+    [cardId]: { status, updatedAt: Date.now() },
+  };
+  writeLocalJSON(AI_WAITING_FLASHCARD_STATUS_KEY, next);
+}
+
+function getPearlCardFront(card = {}) {
+  return card.front || card.mainQuestion || card.extraQuestion || card.topic || 'Yüksek verimli TUS bilgisi';
+}
+
+function getPearlCardAnswer(card = {}) {
+  return card.answer || card.back || card.mainAnswer || card.extraAnswer || card.explanation || '';
+}
+
+function getPearlCardExplanation(card = {}) {
+  const answer = getPearlCardAnswer(card);
+  const candidates = [card.explanation, card.tusTip, card.differentialNote, card.trap].filter(Boolean);
+  const unique = candidates.find((item) => normalizeLookupText(item) !== normalizeLookupText(answer));
+  return unique || '';
+}
 
 function clampNumber(value, min, max) {
   const numeric = Number(value);
@@ -332,21 +489,82 @@ function AIDifficultyFilter({ difficulty = 'Orta', onChangeDifficulty, disabled 
   );
 }
 
-function AILoadingState({ progress }) {
+function WaitingPearlCard({ card, rating, onRate }) {
+  const [isFlipped, setIsFlipped] = useState(false);
+  const answer = getPearlCardAnswer(card);
+  const explanation = getPearlCardExplanation(card);
+  const frontText = getPearlCardFront(card);
+
+  return (
+    <article className={`ai-waiting-pearl-card ${isFlipped ? 'is-flipped' : ''}`.trim()}>
+      <button
+        type="button"
+        className="ai-waiting-pearl-flip"
+        onClick={() => setIsFlipped((current) => !current)}
+        aria-label={isFlipped ? 'Kartın soru yüzüne dön' : 'Kartın cevap yüzünü gör'}
+      >
+        <span className="ai-waiting-pearl-flip-inner" aria-hidden="true">
+          <span className="ai-waiting-pearl-face ai-waiting-pearl-front">
+            <span className="ai-waiting-pearl-face-text">{frontText}</span>
+          </span>
+          <span className="ai-waiting-pearl-face ai-waiting-pearl-back">
+            <span className="ai-waiting-pearl-back-scroll">
+              {answer ? <span className="ai-waiting-pearl-back-box ai-waiting-pearl-back-answer">{answer}</span> : null}
+              {explanation ? <span className="ai-waiting-pearl-back-box ai-waiting-pearl-back-explanation">{explanation}</span> : null}
+              {!answer && !explanation ? <span className="ai-waiting-pearl-back-box ai-waiting-pearl-back-answer">Bu kart için cevap metni hazırlanıyor.</span> : null}
+            </span>
+          </span>
+        </span>
+      </button>
+      <div className="ai-waiting-pearl-actions" aria-label="Kart tekrar durumu">
+        <button type="button" className={rating === 'known' ? 'active known' : ''} onClick={() => onRate(card.id, 'known')}>Biliyorum</button>
+        <button type="button" className={rating === 'review' ? 'active review' : ''} onClick={() => onRate(card.id, 'review')}>Tekrar et</button>
+        <button type="button" className={rating === 'hard' ? 'active hard' : ''} onClick={() => onRate(card.id, 'hard')}>Zorlandım</button>
+      </div>
+    </article>
+  );
+}
+
+function AILoadingState({ progress, flashcards = [], ratings = {}, onRateFlashcard, questionReady = false, onRevealQuestion }) {
   const elapsedSeconds = Math.max(0, Number(progress?.elapsedSeconds) || 0);
   const estimatedTotalSeconds = clampNumber(progress?.estimatedTotalSeconds || 12, 6, 45);
   const remainingSeconds = Math.max(0, Number(progress?.remainingSeconds) || 0);
-  const progressPercent = Math.min(96, Math.max(8, (elapsedSeconds / estimatedTotalSeconds) * 100));
-  const stage = getGenerationStage(elapsedSeconds);
-  const etaLabel = remainingSeconds > 0 ? `${remainingSeconds} sn` : 'Son kontroller';
+  const progressPercent = questionReady ? 100 : Math.min(96, Math.max(8, (elapsedSeconds / estimatedTotalSeconds) * 100));
+  const stage = questionReady ? { title: 'Soru hazır.' } : getGenerationStage(elapsedSeconds);
+  const etaLabel = questionReady ? 'Hazır' : remainingSeconds > 0 ? `${remainingSeconds} sn` : 'Son kontroller';
+  const statusLabel = questionReady ? 'Çözmeye hazır' : stage.title;
+  const getCardsPerView = useCallback(() => {
+    if (typeof window === 'undefined') return 3;
+    if (window.innerWidth <= 760) return 1;
+    if (window.innerWidth <= 1180) return 2;
+    return 3;
+  }, []);
+  const [cardsPerView, setCardsPerView] = useState(getCardsPerView);
+  const [carouselIndex, setCarouselIndex] = useState(0);
+
+  useEffect(() => {
+    const syncCardsPerView = () => setCardsPerView(getCardsPerView());
+    syncCardsPerView();
+    window.addEventListener('resize', syncCardsPerView);
+    return () => window.removeEventListener('resize', syncCardsPerView);
+  }, [getCardsPerView]);
+
+  useEffect(() => {
+    setCarouselIndex(0);
+  }, [flashcards]);
+
+  const maxCarouselIndex = Math.max(0, flashcards.length - cardsPerView);
+  const safeCarouselIndex = Math.min(carouselIndex, maxCarouselIndex);
+  const visibleFlashcards = flashcards.slice(safeCarouselIndex, safeCarouselIndex + cardsPerView);
+  const canGoPrev = safeCarouselIndex > 0;
+  const canGoNext = safeCarouselIndex < maxCarouselIndex;
 
   return (
-    <section className="ai-generation-state ai-generation-state-countdown ai-generation-state-live card-surface" aria-live="polite">
+    <section className={`ai-generation-state ai-generation-state-countdown ai-generation-state-live ai-generation-study-wait ${questionReady ? 'question-ready' : ''}`.trim()} aria-live="polite">
       <div className="ai-generation-live-main">
-        <span className="ai-generation-orb" aria-hidden="true"><Icon name="Sparkles" /></span>
+        <span className="ai-generation-orb" aria-hidden="true"><Icon name={questionReady ? 'CheckCircle' : 'Sparkles'} /></span>
         <div className="ai-generation-live-copy">
-          <h2>Yeni TUS spot sorusu üretiliyor</h2>
-          <p>{stage.title}</p>
+          <h2>{questionReady ? 'Sorunuz hazırlandı, çözmeye başlayabilirsiniz.' : 'Yeni TUS sorunuz hazırlanıyor.'}</h2>
           <div className="ai-generation-progress-track" aria-hidden="true">
             <span style={{ width: `${progressPercent}%` }} />
           </div>
@@ -354,11 +572,57 @@ function AILoadingState({ progress }) {
       </div>
 
       <div className="ai-generation-live-side">
-        <div className="ai-generation-countdown ai-generation-countdown-live" aria-label={`Tahmini süre ${etaLabel}`}>
-          <span>Tahmini süre</span>
-          <strong>{etaLabel}</strong>
-        </div>
+        {questionReady ? (
+          <button type="button" className="btn btn-primary ai-question-ready-cta ai-question-ready-cta-compact" onClick={onRevealQuestion}>
+            <span className="ai-question-ready-cta-main"><Icon name="Eye" /> Soruyu Gör</span>
+          </button>
+        ) : (
+          <div className="ai-generation-countdown ai-generation-countdown-live ai-generation-compact-status" aria-label={`Tahmini süre ${etaLabel}`}>
+            <span className="ai-generation-status-label">{statusLabel}</span>
+            <strong>{etaLabel}</strong>
+          </div>
+        )}
       </div>
+
+      {flashcards.length ? (
+        <div className="ai-waiting-pearl-review" aria-label="Soru hazırlanırken hap bilgi tekrarı">
+          <div className="ai-waiting-pearl-review-head">
+            <div>
+              <strong>Sorunuz oluşturulurken hap kartlar ile çalışın.</strong>
+            </div>
+          </div>
+          <div className="ai-waiting-pearl-carousel-shell">
+            <button
+              type="button"
+              className="ai-waiting-pearl-carousel-arrow ai-waiting-pearl-carousel-arrow-prev"
+              onClick={() => setCarouselIndex((current) => Math.max(0, current - 1))}
+              disabled={!canGoPrev}
+              aria-label="Önceki hap kartlar"
+            >
+              <span className="ai-waiting-pearl-carousel-arrow-icon" aria-hidden="true"><Icon name="ArrowLeft" size={18} strokeWidth={2.3} /></span>
+            </button>
+            <div className="ai-waiting-pearl-grid ai-waiting-pearl-grid-carousel">
+              {visibleFlashcards.map((card) => (
+                <WaitingPearlCard
+                  key={card.id}
+                  card={card}
+                  rating={ratings[card.id]}
+                  onRate={onRateFlashcard}
+                />
+              ))}
+            </div>
+            <button
+              type="button"
+              className="ai-waiting-pearl-carousel-arrow ai-waiting-pearl-carousel-arrow-next"
+              onClick={() => setCarouselIndex((current) => Math.min(maxCarouselIndex, current + 1))}
+              disabled={!canGoNext}
+              aria-label="Sonraki hap kartlar"
+            >
+              <span className="ai-waiting-pearl-carousel-arrow-icon" aria-hidden="true"><Icon name="ArrowRight" size={18} strokeWidth={2.3} /></span>
+            </button>
+          </div>
+        </div>
+      ) : null}
     </section>
   );
 }
@@ -373,7 +637,10 @@ function AIReadyState({ branchFilter, difficulty, onGenerateQuestion }) {
         <p className="ai-ready-selection"><strong>{branchLabel}</strong><span aria-hidden="true">·</span><strong>{difficulty}</strong></p>
       </div>
       <button type="button" className="btn btn-primary ai-ready-cta" onClick={onGenerateQuestion}>
-        <Icon name="Sparkles" /> Yeni TUS Sorusu Üret
+        <span className="ai-button-content-center">
+          <Icon name="Sparkles" />
+          <span>Yeni TUS Sorusu Üret</span>
+        </span>
       </button>
     </section>
   );
@@ -402,6 +669,7 @@ function AIGeneratedQuestionView({
   generationSource = null,
   usedRemoteAI = false,
   fallback = false,
+  fallbackNotice = false,
   branchFilter = 'random',
   branchOptions = [],
   difficulty = 'Orta',
@@ -421,6 +689,51 @@ function AIGeneratedQuestionView({
     estimatedTotalSeconds: readEstimatedGenerationSeconds(branchFilter, difficulty),
     remainingSeconds: readEstimatedGenerationSeconds(branchFilter, difficulty),
   }));
+  const [waitingFlashcards, setWaitingFlashcards] = useState([]);
+  const [waitingFlashcardRatings, setWaitingFlashcardRatings] = useState({});
+  const [questionRevealPending, setQuestionRevealPending] = useState(false);
+  const waitingReviewRef = useRef(null);
+  const generatedQuestionRef = useRef(null);
+
+  const scrollToAIPracticeSection = useCallback((targetRef, block = 'start') => {
+    if (typeof window === 'undefined') return;
+    const target = targetRef?.current;
+    if (!target || typeof target.scrollIntoView !== 'function') return;
+    const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+    target.scrollIntoView({
+      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+      block,
+      inline: 'nearest',
+    });
+  }, []);
+
+  const handleRateWaitingFlashcard = useCallback((cardId, status) => {
+    writeWaitingFlashcardRating(cardId, status);
+    const nextPearlState = savePearlState(applyPearlLearningDecision(loadPearlState(), cardId, status));
+    flushPearlStateSave();
+    dispatchPearlProgressUpdated({ source: 'ai-waiting-flashcards', cardId, status, state: nextPearlState });
+    setWaitingFlashcardRatings((current) => ({ ...current, [cardId]: status }));
+  }, []);
+
+  const handleRevealGeneratedQuestion = useCallback(() => {
+    setQuestionRevealPending(false);
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => scrollToAIPracticeSection(generatedQuestionRef, 'start'));
+    });
+  }, [scrollToAIPracticeSection]);
+
+  useEffect(() => {
+    if (!loading) return;
+    const cards = selectWaitingPearlCards(branchFilter, difficulty, AI_WAITING_FLASHCARD_COUNT);
+    setWaitingFlashcards(cards);
+    setWaitingFlashcardRatings(readWaitingFlashcardRatings(cards));
+    setQuestionRevealPending(true);
+    window.requestAnimationFrame(() => scrollToAIPracticeSection(waitingReviewRef, 'start'));
+  }, [loading, branchFilter, difficulty, scrollToAIPracticeSection]);
+
+  useEffect(() => {
+    if (error) setQuestionRevealPending(false);
+  }, [error]);
 
   useEffect(() => {
     if (!loading) {
@@ -455,6 +768,9 @@ function AIGeneratedQuestionView({
     return () => window.clearInterval(timer);
   }, [loading, branchFilter, difficulty]);
 
+  const showWaitingReview = loading || (!loading && !error && question && questionRevealPending && waitingFlashcards.length > 0);
+  const showGeneratedQuestion = !loading && !error && question && (!questionRevealPending || waitingFlashcards.length === 0);
+
   return (
     <section className="page-shell ai-practice-page-shell">
       <section className="ai-practice-hero card-surface">
@@ -488,32 +804,40 @@ function AIGeneratedQuestionView({
               <span aria-hidden="true">←</span> Dashboard’a dön
             </button>
             <button type="button" className="btn btn-primary ai-generate-cta ai-spot-generate-btn" onClick={onGenerateQuestion} disabled={loading}>
-              <Icon name="Sparkles" /> Yeni TUS Sorusu Üret
+              <span className="ai-button-content-center">
+                <Icon name="Sparkles" />
+                <span>Yeni TUS Sorusu Üret</span>
+              </span>
             </button>
           </div>
         </div>
       </section>
 
-      <section className="ai-practice-stats-grid" aria-label="AI pratik istatistikleri">
-        <AIStat icon="ClipboardList" tone="blue" label="TUS soru" value={aiStats?.attempts || 0} />
-        <AIStat icon="Target" tone="teal" label="Doğruluk" value={`%${accuracy}`} />
-        <AIStat icon="Trophy" tone="warning" label="Pratik puanı" value={aiStats?.score || 0} />
-      </section>
-
-      {fallback && !loading && !error ? (
+      {fallback && fallbackNotice && !loading && !error ? (
         <section className="ai-fallback-notice card-surface" aria-live="polite">
           <Icon name="ShieldCheck" />
           <span>AI yanıtı alınamadığından dolayı KlinikIQ soru üretim sistemi devreye girdi.</span>
         </section>
       ) : null}
 
-      {loading ? <AILoadingState progress={generationProgress} /> : null}
+      {showWaitingReview ? (
+        <div ref={waitingReviewRef} className="ai-practice-scroll-anchor">
+          <AILoadingState
+            progress={generationProgress}
+            flashcards={waitingFlashcards}
+            ratings={waitingFlashcardRatings}
+            onRateFlashcard={handleRateWaitingFlashcard}
+            questionReady={!loading && Boolean(question)}
+            onRevealQuestion={handleRevealGeneratedQuestion}
+          />
+        </div>
+      ) : null}
       {!loading && error ? <AIErrorState onGenerateQuestion={onGenerateQuestion} /> : null}
       {!loading && !error && !question ? (
         <AIReadyState branchFilter={branchFilter} difficulty={difficulty} onGenerateQuestion={onGenerateQuestion} />
       ) : null}
-      {!loading && !error && question ? (
-        <div key={question.id} className="ai-case-shell case-route-transition" data-case-id={question.id}>
+      {showGeneratedQuestion ? (
+        <div ref={generatedQuestionRef} key={question.id} className="ai-case-shell case-route-transition ai-practice-scroll-anchor" data-case-id={question.id}>
           <AISpotQuestionScreen
             question={question}
             onGenerateQuestion={onGenerateQuestion}

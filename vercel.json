@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "npm install --legacy-peer-deps --no-audit --no-fund",
+  "installCommand": "if [ -f package-lock.json ]; then npm ci --legacy-peer-deps --no-audit --no-fund; else npm install --legacy-peer-deps --no-audit --no-fund; fi",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "functions": {

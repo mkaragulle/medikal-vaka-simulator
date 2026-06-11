@@ -1,4 +1,4 @@
-import { buildPromptCacheConfig, callOpenAIWithPromptCacheFallback, logAIUsage } from './ai-token-optimizer.js';
+import { applyCostProfileToMaxTokens, buildPromptCacheConfig, callOpenAIWithPromptCacheFallback, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, getAICostProfile, logAIUsage, resolveModelForScope } from './ai-token-optimizer.js';
 export function sendJson(response, status, payload) {
   response.statusCode = status;
   response.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -279,6 +279,23 @@ function wantsResponsesApi(model = '', explicitStyle = '') {
   return supportsReasoningEffort(model);
 }
 
+
+function applyCostProfilePromptInstruction(scope = 'KOMITE', task = 'default', userPrompt = '') {
+  const profile = getAICostProfile(scope);
+  if (profile === 'quality') return userPrompt;
+  const isLesson = String(task || '').toLowerCase() === 'lesson';
+  const isQuestions = String(task || '').toLowerCase() === 'materialquestions';
+  const isFlashcards = String(task || '').toLowerCase() === 'materialflashcards';
+  const instruction = isLesson
+    ? 'COST/LATENCY MODE: Produce a compact but complete lesson. Prioritize high-yield mechanisms, causal flow, exam traps and clinical relevance. Avoid filler, repeated explanations and long introductions. Use concise paragraphs.'
+    : isQuestions
+      ? 'COST/LATENCY MODE: Produce complete valid JSON, but keep stems, explanations and optionFeedback concise. Do not remove optionFeedback; make each feedback one strong option-specific teaching sentence. Avoid filler and repeated wording.'
+      : isFlashcards
+        ? 'COST/LATENCY MODE: Produce complete valid JSON, but keep each flashcard concise, active recall-focused and non-repetitive. Avoid long explanations unless essential.'
+        : 'COST/LATENCY MODE: Return complete valid JSON with concise, high-yield wording. Avoid filler and repetition.';
+  return `${instruction}\n\n${userPrompt}`;
+}
+
 function describeIncompleteResponse(data = {}) {
   const reason = data?.incomplete_details?.reason || data?.status || '';
   if (reason === 'max_output_tokens') {
@@ -318,15 +335,16 @@ export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 250
     throw error;
   }
 
-  const model = firstEnv(`${envPrefix}_OPENAI_MODEL`, 'OPENAI_MODEL') || 'gpt-4.1-mini';
+  const model = resolveModelForScope(envPrefix);
   const baseUrl = (firstEnv(`${envPrefix}_OPENAI_BASE_URL`, 'OPENAI_BASE_URL') || 'https://api.openai.com/v1').replace(/\/$/, '');
   const timeoutMs = firstNumber(240_000, `${envPrefix}_AI_TIMEOUT_MS`, `${envPrefix}_OPENAI_TIMEOUT_MS`, 'AI_TIMEOUT_MS');
-  const effectiveMaxTokens = firstNumber(maxTokens, `${envPrefix}_OPENAI_MAX_OUTPUT_TOKENS`);
+  const effectiveMaxTokens = firstNumber(applyCostProfileToMaxTokens(envPrefix, task, maxTokens), `${envPrefix}_OPENAI_MAX_OUTPUT_TOKENS`);
   const apiStyle = firstEnv(`${envPrefix}_OPENAI_API_STYLE`, 'OPENAI_API_STYLE');
   const useResponses = wantsResponsesApi(model, apiStyle);
-  const rawReasoningEffort = firstEnv(`${envPrefix}_OPENAI_REASONING_EFFORT`, `${envPrefix}_REASONING_EFFORT`, 'OPENAI_REASONING_EFFORT') || (useResponses ? 'low' : '');
+  const rawReasoningEffort = firstEnv(`${envPrefix}_OPENAI_REASONING_EFFORT`, `${envPrefix}_REASONING_EFFORT`, 'OPENAI_REASONING_EFFORT') || (useResponses ? defaultReasoningEffortForProfile(envPrefix) : '');
   const reasoningEffort = rawReasoningEffort ? normalizeReasoningEffort(rawReasoningEffort) : '';
-  const verbosity = firstEnv(`${envPrefix}_OPENAI_VERBOSITY`, `${envPrefix}_AI_VERBOSITY`, 'OPENAI_VERBOSITY') || 'medium';
+  const verbosity = firstEnv(`${envPrefix}_OPENAI_VERBOSITY`, `${envPrefix}_AI_VERBOSITY`, 'OPENAI_VERBOSITY') || defaultVerbosityForProfile(envPrefix);
+  const effectiveUserPrompt = applyCostProfilePromptInstruction(envPrefix, task, userPrompt);
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
@@ -334,8 +352,8 @@ export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 250
     const url = useResponses ? `${baseUrl}/responses` : `${baseUrl}/chat/completions`;
     const promptCacheConfig = buildPromptCacheConfig(scope, task, promptVersion);
     const requestBody = useResponses
-      ? { ...buildResponsesBody({ model, systemPrompt, userPrompt, jsonSchema, effectiveMaxTokens, reasoningEffort, verbosity }), ...promptCacheConfig }
-      : { ...buildChatCompletionBody({ model, systemPrompt, userPrompt, jsonSchema, effectiveMaxTokens, reasoningEffort }), ...promptCacheConfig };
+      ? { ...buildResponsesBody({ model, systemPrompt, userPrompt: effectiveUserPrompt, jsonSchema, effectiveMaxTokens, reasoningEffort, verbosity }), ...promptCacheConfig }
+      : { ...buildChatCompletionBody({ model, systemPrompt, userPrompt: effectiveUserPrompt, jsonSchema, effectiveMaxTokens, reasoningEffort }), ...promptCacheConfig };
     const result = await callOpenAIWithPromptCacheFallback({
       body: requestBody,
       endpointType: useResponses ? 'responses' : 'chat_completions',
@@ -387,15 +405,16 @@ export async function callOpenAIText({ systemPrompt, userPrompt, maxTokens = 300
     throw error;
   }
 
-  const model = firstEnv(`${envPrefix}_OPENAI_MODEL`, 'OPENAI_MODEL') || 'gpt-4.1-mini';
+  const model = resolveModelForScope(envPrefix);
   const baseUrl = (firstEnv(`${envPrefix}_OPENAI_BASE_URL`, 'OPENAI_BASE_URL') || 'https://api.openai.com/v1').replace(/\/$/, '');
   const timeoutMs = firstNumber(240_000, `${envPrefix}_AI_TIMEOUT_MS`, `${envPrefix}_OPENAI_TIMEOUT_MS`, 'AI_TIMEOUT_MS');
-  const effectiveMaxTokens = firstNumber(maxTokens, `${envPrefix}_OPENAI_MAX_OUTPUT_TOKENS`);
+  const effectiveMaxTokens = firstNumber(applyCostProfileToMaxTokens(envPrefix, task, maxTokens), `${envPrefix}_OPENAI_MAX_OUTPUT_TOKENS`);
   const apiStyle = firstEnv(`${envPrefix}_OPENAI_API_STYLE`, 'OPENAI_API_STYLE');
   const useResponses = wantsResponsesApi(model, apiStyle);
-  const rawReasoningEffort = firstEnv(`${envPrefix}_OPENAI_REASONING_EFFORT`, `${envPrefix}_REASONING_EFFORT`, 'OPENAI_REASONING_EFFORT') || (useResponses ? 'low' : '');
+  const rawReasoningEffort = firstEnv(`${envPrefix}_OPENAI_REASONING_EFFORT`, `${envPrefix}_REASONING_EFFORT`, 'OPENAI_REASONING_EFFORT') || (useResponses ? defaultReasoningEffortForProfile(envPrefix) : '');
   const reasoningEffort = rawReasoningEffort ? normalizeReasoningEffort(rawReasoningEffort) : '';
-  const verbosity = firstEnv(`${envPrefix}_OPENAI_VERBOSITY`, `${envPrefix}_AI_VERBOSITY`, 'OPENAI_VERBOSITY') || 'medium';
+  const verbosity = firstEnv(`${envPrefix}_OPENAI_VERBOSITY`, `${envPrefix}_AI_VERBOSITY`, 'OPENAI_VERBOSITY') || defaultVerbosityForProfile(envPrefix);
+  const effectiveUserPrompt = applyCostProfilePromptInstruction(envPrefix, task, userPrompt);
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
@@ -403,8 +422,8 @@ export async function callOpenAIText({ systemPrompt, userPrompt, maxTokens = 300
     const url = useResponses ? `${baseUrl}/responses` : `${baseUrl}/chat/completions`;
     const promptCacheConfig = buildPromptCacheConfig(scope, task, promptVersion);
     const requestBody = useResponses
-      ? { ...buildResponsesTextBody({ model, systemPrompt, userPrompt, effectiveMaxTokens, reasoningEffort, verbosity }), ...promptCacheConfig }
-      : { ...buildChatTextBody({ model, systemPrompt, userPrompt, effectiveMaxTokens, reasoningEffort }), ...promptCacheConfig };
+      ? { ...buildResponsesTextBody({ model, systemPrompt, userPrompt: effectiveUserPrompt, effectiveMaxTokens, reasoningEffort, verbosity }), ...promptCacheConfig }
+      : { ...buildChatTextBody({ model, systemPrompt, userPrompt: effectiveUserPrompt, effectiveMaxTokens, reasoningEffort }), ...promptCacheConfig };
     const result = await callOpenAIWithPromptCacheFallback({
       body: requestBody,
       endpointType: useResponses ? 'responses' : 'chat_completions',

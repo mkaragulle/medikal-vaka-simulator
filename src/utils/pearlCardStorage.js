@@ -1,6 +1,7 @@
 import { normalizePearlCardFields } from './pearlCardContent.js';
 
 export const PEARL_STORAGE_KEY = 'klinikiq-pearl-card-progress-v1';
+export const PEARL_PROGRESS_UPDATED_EVENT = 'klinikiq:pearl-progress-updated';
 
 export const defaultPearlState = {
   favoritePearlCardIds: [],
@@ -197,6 +198,52 @@ export function addId(ids = [], id) {
 
 export function removeId(ids = [], id) {
   return normalizeIds(ids).filter((item) => item !== id);
+}
+
+
+export function applyPearlLearningDecision(state = defaultPearlState, cardId = '', decision = '') {
+  const id = String(cardId || '').trim();
+  if (!id) return normalizePearlState(state || defaultPearlState);
+  const current = normalizePearlState(state || defaultPearlState);
+  const normalizedDecision = String(decision || '').trim().toLowerCase();
+
+  if (normalizedDecision === 'known') {
+    return normalizePearlState({
+      ...current,
+      knownPearlCardIds: addId(current.knownPearlCardIds, id),
+      wrongPearlCardIds: removeId(current.wrongPearlCardIds, id),
+      reviewPearlCardIds: removeId(current.reviewPearlCardIds, id),
+    });
+  }
+
+  if (normalizedDecision === 'review' || normalizedDecision === 'repeat') {
+    return normalizePearlState({
+      ...current,
+      reviewPearlCardIds: addId(current.reviewPearlCardIds, id),
+      knownPearlCardIds: removeId(current.knownPearlCardIds, id),
+      wrongPearlCardIds: removeId(current.wrongPearlCardIds, id),
+    });
+  }
+
+  if (normalizedDecision === 'hard' || normalizedDecision === 'wrong' || normalizedDecision === 'difficult') {
+    return normalizePearlState({
+      ...current,
+      wrongPearlCardIds: addId(current.wrongPearlCardIds, id),
+      reviewPearlCardIds: addId(current.reviewPearlCardIds, id),
+      knownPearlCardIds: removeId(current.knownPearlCardIds, id),
+    });
+  }
+
+  return current;
+}
+
+export function dispatchPearlProgressUpdated(detail = {}) {
+  if (typeof window === 'undefined') return;
+  try {
+    window.dispatchEvent(new CustomEvent(PEARL_PROGRESS_UPDATED_EVENT, { detail }));
+  } catch {
+    // Older browsers may not support CustomEvent construction in unusual contexts.
+  }
 }
 
 export function upsertUserPearlCard(cards = [], nextCard = {}) {

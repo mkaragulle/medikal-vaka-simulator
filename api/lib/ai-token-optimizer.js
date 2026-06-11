@@ -1,15 +1,18 @@
 import crypto from 'node:crypto';
+import fs from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
 
 const outputCache = new Map();
 const DEFAULT_OUTPUT_CACHE_TTL_MS = 30 * 60 * 1000;
 
-function envFlag(name, defaultValue = false) {
+export function envFlag(name, defaultValue = false) {
   const raw = process.env[name];
   if (raw === undefined || raw === null || String(raw).trim() === '') return defaultValue;
   return /^(1|true|yes|on)$/i.test(String(raw).trim());
 }
 
-function envNumber(name, fallback) {
+export function envNumber(name, fallback) {
   const value = Number(process.env[name]);
   return Number.isFinite(value) && value > 0 ? value : fallback;
 }
@@ -124,6 +127,123 @@ export function setCachedOutput(cacheKey, value, ttlMs = envNumber('KLINIKIQ_AI_
   return true;
 }
 
+
+
+// KlinikIQ aggressive cost/latency profile helpers.
+// These helpers intentionally reduce live-generation cost without changing stored schema.
+// They cap output size, default to faster/cheaper models when no explicit model is set,
+// and keep high-detail generation available via env overrides.
+export function getAICostProfile(scope = 'GENERAL') {
+  const prefix = String(scope || 'GENERAL').toUpperCase();
+  const raw = process.env[`${prefix}_AI_COST_PROFILE`] || process.env.KLINIKIQ_AI_COST_PROFILE || 'ultra';
+  const value = safeString(raw).toLowerCase();
+  if (['quality', 'high', 'full'].includes(value)) return 'quality';
+  if (['balanced', 'standard'].includes(value)) return 'balanced';
+  return 'ultra';
+}
+
+export function defaultModelForScope(scope = 'GENERAL') {
+  const prefix = String(scope || 'GENERAL').toUpperCase();
+  const profile = getAICostProfile(prefix);
+  const fastModel = process.env[`${prefix}_OPENAI_FAST_MODEL`] || process.env.OPENAI_FAST_MODEL || 'gpt-5-mini';
+  const qualityModel = process.env[`${prefix}_OPENAI_QUALITY_MODEL`] || process.env.OPENAI_QUALITY_MODEL || 'gpt-4.1-mini';
+  return profile === 'quality' ? qualityModel : fastModel;
+}
+
+
+export function resolveModelForScope(scope = 'GENERAL') {
+  const prefix = String(scope || 'GENERAL').toUpperCase();
+  const profile = getAICostProfile(prefix);
+  const fastModel = process.env[`${prefix}_OPENAI_FAST_MODEL`] || process.env.OPENAI_FAST_MODEL || defaultModelForScope(prefix);
+  const exactModel = process.env[`${prefix}_OPENAI_MODEL`] || process.env.OPENAI_MODEL || process.env.DEFAULT_GENERATOR_MODEL || '';
+  const forceFastDefault = profile !== 'quality';
+  const forceFast = envFlag(`${prefix}_FORCE_FAST_MODEL`, envFlag('KLINIKIQ_FORCE_FAST_MODEL', forceFastDefault));
+  if (forceFast && profile !== 'quality') return fastModel;
+  return exactModel || defaultModelForScope(prefix);
+}
+
+export function defaultReasoningEffortForProfile(scope = 'GENERAL') {
+  const profile = getAICostProfile(scope);
+  if (profile === 'quality') return 'low';
+  return 'low';
+}
+
+export function defaultVerbosityForProfile(scope = 'GENERAL') {
+  const profile = getAICostProfile(scope);
+  return profile === 'quality' ? 'medium' : 'low';
+}
+
+export function applyCostProfileToMaxTokens(scope = 'GENERAL', task = 'default', fallback = 2000) {
+  const base = Math.max(256, Number(fallback || 2000));
+  if (envFlag('KLINIKIQ_AI_DISABLE_COST_CAPS', false)) return base;
+  const profile = getAICostProfile(scope);
+  const taskName = safeString(task).toLowerCase();
+  const explicit = Number(process.env[`KLINIKIQ_${safeString(scope).toUpperCase()}_${safeString(task).toUpperCase()}_MAX_OUTPUT_TOKENS`]);
+  if (Number.isFinite(explicit) && explicit > 0) return explicit;
+
+  const caps = {
+    ultra: {
+      tusspotquestion: 1450,
+      materialanalysis: 950,
+      materialflashcards: 2200,
+      materialquestions: 3400,
+      lesson: 2800,
+      default: Math.ceil(base * 0.58),
+    },
+    balanced: {
+      tusspotquestion: 1450,
+      materialanalysis: 1300,
+      materialflashcards: 2400,
+      materialquestions: 3400,
+      lesson: 3600,
+      default: Math.ceil(base * 0.78),
+    },
+    quality: {
+      default: base,
+    },
+  };
+  const profileCaps = caps[profile] || caps.ultra;
+  return Math.max(600, Math.min(base, profileCaps[taskName] || profileCaps.default || base));
+}
+
+export function resolveSourceCharLimit(envName = '', fallback = 12000, scope = 'GENERAL', task = 'default') {
+  const explicit = Number(process.env[envName]);
+  if (Number.isFinite(explicit) && explicit > 0) return explicit;
+  if (envFlag('KLINIKIQ_AI_DISABLE_COST_CAPS', false)) return Number(fallback || 12000);
+  const profile = getAICostProfile(scope);
+  const taskName = safeString(task).toLowerCase();
+  const base = Number(fallback || 12000);
+  const caps = {
+    ultra: {
+      materialanalysis: 6000,
+      materialflashcards: 6500,
+      materialquestions: 7500,
+      lesson: 9000,
+      default: Math.ceil(base * 0.55),
+    },
+    balanced: {
+      materialanalysis: 8500,
+      materialflashcards: 9500,
+      materialquestions: 11000,
+      lesson: 12500,
+      default: Math.ceil(base * 0.75),
+    },
+    quality: { default: base },
+  };
+  const selected = caps[profile] || caps.ultra;
+  return Math.max(2500, Math.min(base, selected[taskName] || selected.default || base));
+}
+
+export function detailModeForProfile(scope = 'GENERAL') {
+  const prefix = String(scope || 'GENERAL').toUpperCase();
+  const raw = process.env[`${prefix}_AI_OUTPUT_DETAIL_MODE`] || process.env.KLINIKIQ_AI_OUTPUT_DETAIL_MODE || '';
+  const normalized = safeString(raw).toLowerCase();
+  if (['full', 'detailed', 'quality'].includes(normalized)) return 'full';
+  if (['standard', 'balanced'].includes(normalized)) return 'standard';
+  if (['minimal', 'concise', 'fast'].includes(normalized)) return 'concise';
+  return getAICostProfile(scope) === 'quality' ? 'full' : 'concise';
+}
+
 function usageMetric(usage = {}, ...paths) {
   for (const path of paths) {
     const value = path.split('.').reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), usage);
@@ -149,8 +269,168 @@ export function logAIUsage({ task = 'unknown', model = '', usage = null, cached 
     cachedInputTokens,
     reasoningTokens,
     totalTokens,
+    estimatedCostUsd: estimateOpenAICostUsd({ usage: safeUsage }),
     cacheHit: Boolean(cached),
   }));
+}
+
+
+const inFlightJobs = new Map();
+const durableCacheMemory = new Map();
+const DEFAULT_DURABLE_CACHE_TTL_MS = 24 * 60 * 60 * 1000;
+const DEFAULT_QUESTION_BANK_TTL_MS = 14 * 24 * 60 * 60 * 1000;
+
+function cacheRootDir() {
+  return process.env.KLINIKIQ_AI_CACHE_DIR || path.join(os.tmpdir(), 'klinikiq-ai-cache');
+}
+
+function durableCacheFilePath(key = '') {
+  const safeKey = sha256(key).slice(0, 48);
+  return path.join(cacheRootDir(), `${safeKey}.json`);
+}
+
+function nowMs() {
+  return Date.now();
+}
+
+function safeJsonStringify(value) {
+  try { return JSON.stringify(value); } catch { return JSON.stringify(null); }
+}
+
+function getKvRestConfig() {
+  const url = safeString(process.env.KLINIKIQ_KV_REST_API_URL || process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || '');
+  const token = safeString(process.env.KLINIKIQ_KV_REST_API_TOKEN || process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN || '');
+  if (!url || !token || typeof fetch !== 'function') return null;
+  return { url: url.replace(/\/$/u, ''), token };
+}
+
+async function kvCommand(command, ...args) {
+  const config = getKvRestConfig();
+  if (!config) return null;
+  try {
+    const response = await fetch(config.url, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${config.token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify([command, ...args]),
+    });
+    if (!response.ok) return null;
+    const data = await response.json().catch(() => null);
+    if (data && Object.prototype.hasOwnProperty.call(data, 'result')) return data.result;
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+export function buildDurableCacheKey({ scope = 'klinikiq', task = 'default', promptVersion = 'v1', model = '', sourceFingerprint = '', extra = {} } = {}) {
+  return buildOutputCacheKey({ scope, task, promptVersion, model, sourceFingerprint, extra });
+}
+
+export async function getDurableCachedOutput(cacheKey) {
+  if (!shouldUseOutputCache() || !cacheKey) return null;
+
+  const memoryItem = durableCacheMemory.get(cacheKey) || outputCache.get(cacheKey);
+  if (memoryItem) {
+    const expiresAt = Number(memoryItem.expiresAt || 0);
+    if (!expiresAt || expiresAt > nowMs()) return memoryItem.value;
+    durableCacheMemory.delete(cacheKey);
+    outputCache.delete(cacheKey);
+  }
+
+  const kvResult = await kvCommand('GET', cacheKey);
+  if (typeof kvResult === 'string' && kvResult) {
+    try {
+      const parsed = JSON.parse(kvResult);
+      const expiresAt = Number(parsed?.expiresAt || 0);
+      if (!expiresAt || expiresAt > nowMs()) {
+        durableCacheMemory.set(cacheKey, { value: parsed.value, expiresAt });
+        return parsed.value;
+      }
+    } catch { /* ignore invalid KV cache */ }
+  }
+
+  try {
+    const raw = await fs.readFile(durableCacheFilePath(cacheKey), 'utf8');
+    const parsed = JSON.parse(raw);
+    const expiresAt = Number(parsed?.expiresAt || 0);
+    if (expiresAt && expiresAt <= nowMs()) {
+      await fs.unlink(durableCacheFilePath(cacheKey)).catch(() => {});
+      return null;
+    }
+    durableCacheMemory.set(cacheKey, { value: parsed.value, expiresAt });
+    return parsed.value;
+  } catch {
+    return null;
+  }
+}
+
+export async function setDurableCachedOutput(cacheKey, value, ttlMs = envNumber('KLINIKIQ_AI_OUTPUT_CACHE_TTL_MS', DEFAULT_DURABLE_CACHE_TTL_MS)) {
+  if (!shouldUseOutputCache() || !cacheKey || value === undefined || value === null) return false;
+  const expiresAt = nowMs() + Number(ttlMs || DEFAULT_DURABLE_CACHE_TTL_MS);
+  const payload = { value, expiresAt, createdAt: nowMs() };
+  durableCacheMemory.set(cacheKey, { value, expiresAt });
+  setCachedOutput(cacheKey, value, ttlMs);
+
+  const ttlSeconds = Math.max(1, Math.floor(Number(ttlMs || DEFAULT_DURABLE_CACHE_TTL_MS) / 1000));
+  void kvCommand('SET', cacheKey, safeJsonStringify(payload), 'EX', ttlSeconds);
+
+  try {
+    await fs.mkdir(cacheRootDir(), { recursive: true });
+    await fs.writeFile(durableCacheFilePath(cacheKey), JSON.stringify(payload), 'utf8');
+  } catch {
+    // Filesystem cache is best-effort on serverless platforms.
+  }
+  return true;
+}
+
+export async function withInFlightDedupe(jobKey, worker) {
+  if (!jobKey || typeof worker !== 'function') return worker();
+  if (inFlightJobs.has(jobKey)) return inFlightJobs.get(jobKey);
+  const promise = Promise.resolve().then(worker).finally(() => inFlightJobs.delete(jobKey));
+  inFlightJobs.set(jobKey, promise);
+  return promise;
+}
+
+function compactQuestionForBank(question = {}) {
+  if (!question || typeof question !== 'object') return null;
+  return {
+    ...question,
+    cachedFromQuestionBank: true,
+    aiMeta: {
+      ...(question.aiMeta || {}),
+      questionBank: true,
+    },
+  };
+}
+
+export function buildQuestionBankKey({ scope = 'TUS', branch = '', difficulty = '', target = '', promptVersion = 'v1', model = '' } = {}) {
+  const targetText = safeString(target || 'general').toLowerCase().slice(0, 120) || 'general';
+  const raw = normalizeForFingerprint({ scope, branch: safeString(branch), difficulty: safeString(difficulty), target: targetText, promptVersion, model });
+  return `qbank_${sha256(raw).slice(0, 48)}`;
+}
+
+export async function getQuestionBankItems(bankKey, { maxItems = 20 } = {}) {
+  const cached = await getDurableCachedOutput(bankKey);
+  const items = Array.isArray(cached?.items) ? cached.items : [];
+  return items.slice(0, Math.max(1, Number(maxItems || 20))).map(compactQuestionForBank).filter(Boolean);
+}
+
+export async function addQuestionToBank(bankKey, question, { maxItems = 60, ttlMs = envNumber('KLINIKIQ_AI_QUESTION_BANK_TTL_MS', DEFAULT_QUESTION_BANK_TTL_MS) } = {}) {
+  if (!bankKey || !question || typeof question !== 'object') return false;
+  const current = await getDurableCachedOutput(bankKey);
+  const items = Array.isArray(current?.items) ? current.items : [];
+  const signature = safeString(question.semanticFingerprint || question.id || createSourceFingerprint(question));
+  const nextItem = { ...question, bankedAt: nowMs(), semanticFingerprint: question.semanticFingerprint || signature };
+  const filtered = items.filter((item) => safeString(item?.semanticFingerprint || item?.id) !== signature);
+  const next = [nextItem, ...filtered].slice(0, Math.max(1, Number(maxItems || 60)));
+  return setDurableCachedOutput(bankKey, { items: next, updatedAt: nowMs() }, ttlMs);
+}
+
+export function estimateOpenAICostUsd({ usage = {}, inputPerMillion = Number(process.env.KLINIKIQ_AI_INPUT_USD_PER_MILLION || 0), outputPerMillion = Number(process.env.KLINIKIQ_AI_OUTPUT_USD_PER_MILLION || 0) } = {}) {
+  const inputTokens = usageMetric(usage || {}, 'input_tokens', 'prompt_tokens');
+  const outputTokens = usageMetric(usage || {}, 'output_tokens', 'completion_tokens');
+  if (!inputPerMillion && !outputPerMillion) return 0;
+  return Number(((inputTokens / 1_000_000) * inputPerMillion + (outputTokens / 1_000_000) * outputPerMillion).toFixed(6));
 }
 
 function hasPromptCacheParams(body = {}) {
