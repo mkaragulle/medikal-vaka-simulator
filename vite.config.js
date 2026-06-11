@@ -24,9 +24,10 @@ export default defineConfig({
           if (normalizedId.includes('/node_modules/pdfjs-dist/')) return 'vendor-pdf';
           if (normalizedId.includes('/node_modules/jszip/')) return 'vendor-zip';
 
-          if (normalizedId.includes('/src/data/caseBank/cases-part-')) {
+          if (/\/src\/data\/cases\.part\d+\.js$/.test(normalizedId)) {
             const fileName = normalizedId.split('/').pop();
-            return `case-bank-${safeChunkName(fileName).replace('cases-part-', '')}`;
+            const match = fileName.match(/cases\.part(\d+)\.js$/);
+            return match ? `case-bank-${match[1]}` : `case-bank-${safeChunkName(fileName)}`;
           }
 
           if (normalizedId.endsWith('/src/data/cases.js')) return 'case-bank-index';
