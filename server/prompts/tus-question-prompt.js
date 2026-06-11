@@ -56,6 +56,8 @@ Soru kökü:
 - Tanı adını, doğru cevabı veya seçenek metnini stem içinde sızdırma.
 - “Tetkik yapılır/BT çekilir/laboratuvarlar önemlidir” deme; gerekiyorsa gerçek sonuç gibi somut bulgu yaz.
 - Vital/lab/görüntüleme/EKG/patoloji/mikrobiyoloji verilerini mümkün olduğunca stem içine doğal cümleyle entegre et; compactVitals ve compactObjectiveData normalde [] kalsın.
+- Stem yalnızca klinik olgu/anamnez/veri anlatısıdır. Soru cümlesi, “hangi/hangisidir/nedir/en uygun/ilk yapılması gereken” gibi karar istemleri ve yarım soru kırıntıları stem içinde bırakılmamalıdır; bunlar yalnızca question alanında yer alır.
+- Stem sonu “Bu prezentasyonda ... yapılması gereken.”, “Bu olguda ... hangisidir?” veya benzeri yarım/tam soru cümlesiyle bitmemelidir.
 
 Soru hedefi ve seçenekler:
 - Soru cümlesi tek hedefli olsun: diagnosis, mechanism, treatment, diagnostic_test, first_step, complication, lab_interpretation, imaging_interpretation veya anatomy_localization gibi.
@@ -68,6 +70,7 @@ Açıklama ve feedback:
 - wrongOptionFeedback içinde A, B, C, D, E anahtarlarının tamamı dolu olsun; doğru seçenek için de öğretici feedback yaz.
 - Her yanlış seçenek feedbacki doğal biçimde şunu anlatsın: hangi durumda düşünülebilir, bu vakada neden uygun değildir, doğru seçenekle ayırıcı farkı nedir.
 - Boş, yarım, tek kelimelik, placeholder, “bu seçenek yanlıştır”, “ayırt ettirici açıklama üretilemedi” gibi metinler kullanma.
+- Feedback cümleleri “Da/De ...”, “Ancak ...” öncesi kopuk, öznesiz veya bağlaç artığıyla başlamamalıdır. Örneğin “Da renin/aldosteron ...” gibi metin kesinlikle üretme; gerekiyorsa “Bu tabloda renin/aldosteron ...” veya doğrudan klinik özneyle yaz.
 
 Dil ve güvenlik:
 - Akıcı, akademik ve doğal Türkçe tıp dili kullan. Makine çevirisi, bozuk belirti adı, yarım cümle, anlamsız kısaltma veya debug dili yazma.

@@ -17,13 +17,13 @@ function cleanText(value = '') {
 }
 
 function ensureSentence(value = '') {
-  const text = cleanText(value).replace(/[\s,;:]+$/u, '');
+  const text = cleanGeneratedText(value).replace(/[\s,;:]+$/u, '');
   if (!text) return '';
   return /[.!?]$/u.test(text) ? text : `${text}.`;
 }
 
 function ensureQuestion(value = '') {
-  const text = cleanText(value).replace(/[\s,;:.]+$/u, '');
+  const text = cleanGeneratedText(value).replace(/[\s,;:.]+$/u, '');
   if (!text) return 'Bu olguda en uygun seçenek hangisidir?';
   return /\?$/u.test(text) ? text : `${text}?`;
 }
@@ -58,6 +58,52 @@ export function stableHash(value = '') {
 function asArray(value) {
   if (!value) return [];
   return Array.isArray(value) ? value : [value];
+}
+
+function repairTurkishConnectorArtifacts(value = '') {
+  return cleanText(value)
+    .replace(/(^|[.!?]\s+)(?:Da|De)\s+(?=[a-zçğıöşü0-9%/>])/gu, '$1Bu tabloda ')
+    .replace(/(^|[.!?]\s+)(?:da|de)\s+(?=[a-zçğıöşü0-9%/>])/gu, '$1Bu tabloda ')
+    .replace(/\b(?:Da|De)\s+(?=renin\/aldosteron\b)/gu, 'Bu tabloda ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function cleanGeneratedText(value = '') {
+  return repairTurkishConnectorArtifacts(value)
+    .replace(/\s+([,.;:!?])/g, '$1')
+    .replace(/([,;:!?])(?=\S)/g, '$1 ')
+    .trim();
+}
+
+function splitSentencesSafe(value = '') {
+  const protectedText = cleanGeneratedText(value).replace(/(\d)\.\s?(\d)/g, '$1§DOT§$2');
+  const parts = protectedText.match(/[^.!?]+[.!?]?/g) || [protectedText];
+  return parts.map((part) => part.replace(/§DOT§/g, '.').trim()).filter(Boolean);
+}
+
+function isQuestionLikeStemFragment(value = '') {
+  const text = cleanGeneratedText(value);
+  const n = normalizeForCompare(text);
+  if (!text) return false;
+  const hasDecisionCue = /\b(?:hangi|hangisidir|hangisi|nedir|en uygun|en olasi|en duyarlı|ilk|sonraki|kesin tani|tanisal|laboratuvar|test|tetkik|inceleme|yaklasim|tedavi|mudahale|mekanizma|komplikasyon)\b/u.test(n);
+  const hasCaseCue = /\b(?:bu olguda|bu hastada|bu bebekte|bu cocukta|bu prezentasyonda|bu tabloda|asagidakilerden)\b/u.test(n);
+  if (hasCaseCue && hasDecisionCue) return true;
+  if (/\?$/.test(text) && hasDecisionCue) return true;
+  if (/\b(?:yapilmasi gereken|yapılması gereken|istenmesi gereken|bakılması gereken|secilmesi gereken|seçilmesi gereken)\.?$/iu.test(text)) return true;
+  return false;
+}
+
+function cleanStemQuestionPair(stem = '', question = '') {
+  const rawStem = cleanGeneratedText(stem);
+  let rawQuestion = cleanGeneratedText(question);
+  const sentences = splitSentencesSafe(rawStem);
+  const last = sentences[sentences.length - 1] || '';
+  if (isQuestionLikeStemFragment(last)) {
+    if ((!rawQuestion || /en uygun seçenek hangisidir\??/iu.test(rawQuestion)) && /\?$/u.test(last)) rawQuestion = last;
+    return { stem: sentences.filter((sentence, index) => index !== sentences.length - 1 || !isQuestionLikeStemFragment(sentence)).join(' ').trim() || rawStem, question: rawQuestion };
+  }
+  return { stem: rawStem, question: rawQuestion };
 }
 
 function compactItems(items = [], max = 8) {
@@ -232,7 +278,8 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   const rawCompactObjectiveData = compactItems(payload.compactObjectiveData || payload.co || payload.objectiveData || [], 8);
   const branch = cleanText(payload.relatedBranch || payload.branch || payload.b || meta.branchFilter || 'TUS');
   const normalizedBranch = BRANCH_ALIASES.get(normalizeForCompare(branch)) || branch;
-  const stem = integrateCompactDataIntoStem(payload.stem || payload.s || 'Kısa klinik olgu verileri birlikte değerlendirilir.', rawCompactVitals, rawCompactObjectiveData);
+  const stemQuestionPair = cleanStemQuestionPair(payload.stem || payload.s || 'Kısa klinik olgu verileri birlikte değerlendirilir.', payload.question || payload.q || '');
+  const stem = integrateCompactDataIntoStem(stemQuestionPair.stem, rawCompactVitals, rawCompactObjectiveData);
   const compactVitals = [];
   const compactObjectiveData = [];
   const evidenceChain = buildEvidence(payload.evidenceChain || payload.evidence || payload.k)
@@ -242,8 +289,8 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   const managementSteps = isManagementTarget(answerTarget)
     ? asArray(payload.managementSteps || payload.management || []).map((item) => ensureSentence(item)).filter(Boolean).slice(0, 3)
     : [];
-  const examPearl = ensureSentence(payload.examPearl || payload.teachingPoint || payload.pearl || payload.p || '');
-  const explanation = ensureSentence(payload.explanation || payload.whyCorrect || payload.e || '');
+  const examPearl = ensureSentence(cleanGeneratedText(payload.examPearl || payload.teachingPoint || payload.pearl || payload.p || ''));
+  const explanation = ensureSentence(cleanGeneratedText(payload.explanation || payload.whyCorrect || payload.e || ''));
   const optionRationales = payload.optionRationales || payload.wrongOptionFeedback || payload.optionFeedback || payload.rationales || {};
 
   const question = {
@@ -276,7 +323,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
       vitals: makeVitalsObject(compactVitals),
       investigations: [],
     },
-    question: ensureQuestion(payload.question || payload.q || 'Bu olguda en uygun seçenek hangisidir?'),
+    question: ensureQuestion(stemQuestionPair.question || 'Bu olguda en uygun seçenek hangisidir?'),
     questionType: cleanText(payload.questionType || payload.questionIntent || 'spot'),
     clinicalFocus: cleanText(payload.learningTarget || payload.target || ''),
     options,
@@ -297,8 +344,8 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
       pearls: [examPearl].filter(Boolean),
       answerFeedback: {
         whyCorrect: explanation,
-        correctOptionFeedback: ensureSentence(optionRationales?.[correctOption?.id] || explanation),
-        optionRationales,
+        correctOptionFeedback: ensureSentence(cleanGeneratedText(optionRationales?.[correctOption?.id] || explanation)),
+        optionRationales: Object.fromEntries(Object.entries(optionRationales || {}).map(([key, value]) => [key, ensureSentence(cleanGeneratedText(value))])),
         evidenceChain: evidenceChain.length ? evidenceChain : [stem, cleanText(payload.chiefComplaint || payload.cc || '')].filter(Boolean).map(ensureSentence).slice(0, 3),
         pearls: [examPearl].filter(Boolean),
         clinicalPearls: [examPearl].filter(Boolean),

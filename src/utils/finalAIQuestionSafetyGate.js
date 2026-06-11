@@ -47,6 +47,8 @@ function normalizeSpaces(value = '') {
     .replace(/\s+/gu, ' ')
     .replace(/\s+([,.;:!?])/gu, '$1')
     .replace(/([,;:!?])(?=\S)/gu, '$1 ')
+    .replace(/(^|[.!?]\s+)(?:Da|De|da|de)\s+(?=[a-zçğıöşü0-9%/>])/gu, '$1Bu tabloda ')
+    .replace(/\b(?:Da|De)\s+(?=renin\/aldosteron\b)/gu, 'Bu tabloda ')
     .trim();
 }
 
@@ -117,7 +119,7 @@ function splitSentences(value = '') {
     .filter(Boolean);
 }
 
-export function removeDuplicateSentences(text = '', { threshold = 0.88, maxSentences = 4, limit = 520 } = {}) {
+export function removeDuplicateSentences(text = '', { threshold = 0.88, maxSentences = Infinity, limit = Infinity } = {}) {
   const output = [];
   splitSentences(text).forEach((sentence) => {
     const clean = ensureSentence(sentence);
@@ -125,11 +127,7 @@ export function removeDuplicateSentences(text = '', { threshold = 0.88, maxSente
     if (output.some((item) => similarity(item, clean) >= threshold)) return;
     output.push(clean);
   });
-  let joined = output.slice(0, maxSentences).join(' ').trim();
-  if (!joined) joined = ensureSentence(text);
-  if (joined.length <= limit) return joined;
-  const trimmed = joined.slice(0, limit).replace(/\s+\S*$/u, '').replace(/[,:;\-–—\s]+$/u, '').trim();
-  return ensureSentence(trimmed || joined.slice(0, limit));
+  return ensureSentence((Number.isFinite(maxSentences) ? output.slice(0, maxSentences) : output).join(' ').trim() || text);
 }
 
 export function detectTruncatedText(text = '') {
@@ -536,12 +534,27 @@ export function validateNoSpoilerBeforeAnswer(question = {}) {
   return { ok: errors.length === 0, errors: Array.from(new Set(errors)) };
 }
 
-function sanitizeTextField(value = '', { limit = 520, maxSentences = 4 } = {}) {
+function sanitizeTextField(value = '', { limit = Infinity, maxSentences = Infinity } = {}) {
   const withoutGeneric = stripGenericPhrases(value);
   const cleaned = removeDuplicateSentences(withoutGeneric, { limit, maxSentences });
   const trunc = detectTruncatedText(cleaned);
   if (!cleaned || trunc.truncated) return '';
   return cleaned;
+}
+
+function isQuestionLikeStemFragment(value = '') {
+  const text = normalizeSpaces(value);
+  const key = asciiKey(text);
+  const hasDecisionCue = /\b(?:hangi|hangisidir|hangisi|nedir|en uygun|en olasi|en duyarli|ilk|sonraki|kesin tani|tanisal|laboratuvar|test|tetkik|inceleme|yaklasim|tedavi|mudahale|mekanizma|komplikasyon)\b/u.test(key);
+  const hasCaseCue = /\b(?:bu olguda|bu hastada|bu bebekte|bu cocukta|bu prezentasyonda|bu tabloda|asagidakilerden)\b/u.test(key);
+  return (hasCaseCue && hasDecisionCue) || (/\?$/.test(text) && hasDecisionCue) || /\b(?:yapilmasi gereken|istenmesi gereken|bakilmasi gereken|secilmesi gereken)\.?$/iu.test(key);
+}
+
+function stripQuestionLikeTailFromStem(stem = '') {
+  const sentences = splitSentences(stem);
+  if (!sentences.length) return normalizeSpaces(stem);
+  const kept = sentences.filter((sentence, index) => !(index === sentences.length - 1 && isQuestionLikeStemFragment(sentence)));
+  return normalizeSpaces(kept.join(' ') || stem);
 }
 
 function shouldKeepManagement(question = {}) {
@@ -555,15 +568,19 @@ export function applyFinalAIQuestionSafetyStandard(question = {}) {
   const roles = deriveRoles(repaired);
   repaired.optionClinicalRoles = { ...(repaired.optionClinicalRoles || {}), ...roles };
 
+  repaired.stem = stripQuestionLikeTailFromStem(repaired.stem || repaired.narrativeStem || repaired.patientIntro?.historySummary || '');
+  repaired.narrativeStem = stripQuestionLikeTailFromStem(repaired.narrativeStem || repaired.stem || '');
+  if (repaired.patientIntro?.historySummary) repaired.patientIntro.historySummary = stripQuestionLikeTailFromStem(repaired.patientIntro.historySummary);
+
   if (isGenericQuestionText(repaired.question || '') && detectDoubleCorrectOptions(repaired).riskyOptionIds.length) {
     repaired.question = targetQuestionText(target);
   } else {
     repaired.question = ensureQuestion(repaired.question || targetQuestionText(target));
   }
 
-  repaired.explanation = sanitizeTextField(repaired.explanation || repaired.diagnosis?.answerFeedback?.whyCorrect || repaired.diagnosis?.explanation || '', { limit: 520, maxSentences: 4 })
+  repaired.explanation = sanitizeTextField(repaired.explanation || repaired.diagnosis?.answerFeedback?.whyCorrect || repaired.diagnosis?.explanation || '')
     || ensureSentence(`Olgudaki veriler ${targetQuestionText(target).replace(/\?$/u, '').toLocaleLowerCase(TR_LOCALE)} hedefini tek bir seçenek üzerinde toplar`);
-  repaired.examPearl = sanitizeTextField(repaired.examPearl || repaired.examPearls?.[0] || repaired.diagnosis?.answerFeedback?.pearls?.[0] || '', { limit: 240, maxSentences: 2 })
+  repaired.examPearl = sanitizeTextField(repaired.examPearl || repaired.examPearls?.[0] || repaired.diagnosis?.answerFeedback?.pearls?.[0] || '')
     || ensureSentence('TUS tipi sorularda karar, tek bir ezber cümlesinden çok ipuçlarının aynı klinik hedefte birleşmesiyle verilir');
   repaired.examPearls = [repaired.examPearl];
 
@@ -576,7 +593,7 @@ export function applyFinalAIQuestionSafetyStandard(question = {}) {
 
   if (shouldKeepManagement(repaired)) {
     const steps = (Array.isArray(repaired.managementSteps) ? repaired.managementSteps : repaired.diagnosis?.answerFeedback?.managementSteps || [])
-      .map((step) => sanitizeTextField(typeof step === 'string' ? step : `${step?.title || ''} ${step?.text || step?.description || ''}`, { limit: 170, maxSentences: 1 }))
+      .map((step) => sanitizeTextField(typeof step === 'string' ? step : `${step?.title || ''} ${step?.text || step?.description || ''}`))
       .filter(Boolean)
       .filter((step, index, list) => list.findIndex((other) => similarity(other, step) > 0.86) === index)
       .slice(0, 4);

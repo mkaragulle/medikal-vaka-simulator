@@ -7,7 +7,7 @@ import {
 import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from '../server/lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-tus-v43-remote-stable-balanced';
+const PROMPT_VERSION = 'klinikiq-tus-v44-text-coherence-stem-feedback-fix';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
@@ -78,13 +78,13 @@ function cleanText(value = '') {
 }
 
 function ensureSentence(value = '') {
-  const text = cleanText(value).replace(/[\s,;:]+$/u, '');
+  const text = cleanGeneratedText(value).replace(/[\s,;:]+$/u, '');
   if (!text) return '';
   return /[.!?]$/u.test(text) ? text : `${text}.`;
 }
 
 function ensureQuestion(value = '') {
-  const text = cleanText(value).replace(/[\s,;:.]+$/u, '');
+  const text = cleanGeneratedText(value).replace(/[\s,;:.]+$/u, '');
   if (!text) return 'Bu olguda en uygun seçenek hangisidir?';
   return /\?$/u.test(text) ? text : `${text}?`;
 }
@@ -112,6 +112,82 @@ function stableHash(value = '') {
 function asArray(value) {
   if (!value) return [];
   return Array.isArray(value) ? value : [value];
+}
+
+function repairTurkishConnectorArtifacts(value = '') {
+  return cleanText(value)
+    // Model/token repair can occasionally leave a sentence starting with a bare Turkish clitic: "Da/De ...".
+    // Keep the medical content, but turn the orphan connector into a natural clinical reference.
+    .replace(/(^|[.!?]\s+)(?:Da|De)\s+(?=[a-zçğıöşü0-9%/>])/gu, '$1Bu tabloda ')
+    .replace(/(^|[.!?]\s+)(?:da|de)\s+(?=[a-zçğıöşü0-9%/>])/gu, '$1Bu tabloda ')
+    .replace(/\b(?:Da|De)\s+(?=renin\/aldosteron\b)/gu, 'Bu tabloda ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function cleanGeneratedText(value = '') {
+  return repairTurkishConnectorArtifacts(value)
+    .replace(/\s+([,.;:!?])/g, '$1')
+    .replace(/([,;:!?])(?=\S)/g, '$1 ')
+    .trim();
+}
+
+function splitSentencesSafe(value = '') {
+  const protectedText = cleanGeneratedText(value)
+    .replace(/(\d)\.\s?(\d)/g, '$1§DOT§$2')
+    .replace(/\b(Dr|Prof|Doç|Doç\.|vs|vb)\.\s+/giu, (m) => m.replace('.', '§DOT§'));
+  const parts = protectedText.match(/[^.!?]+[.!?]?/g) || [protectedText];
+  return parts.map((part) => part.replace(/§DOT§/g, '.').trim()).filter(Boolean);
+}
+
+function isQuestionLikeStemFragment(value = '') {
+  const text = cleanGeneratedText(value);
+  const n = normalize(text);
+  if (!text) return false;
+  const hasDecisionCue = /\b(?:hangi|hangisidir|hangisi|nedir|en uygun|en olasi|en duyarlı|ilk|sonraki|kesin tani|tanisal|laboratuvar|test|tetkik|inceleme|yaklasim|tedavi|mudahale|mekanizma|komplikasyon)\b/u.test(n);
+  const hasCaseCue = /\b(?:bu olguda|bu hastada|bu bebekte|bu cocukta|bu prezentasyonda|bu tabloda|asagidakilerden)\b/u.test(n);
+  if (hasCaseCue && hasDecisionCue) return true;
+  if (/\?$/.test(text) && hasDecisionCue) return true;
+  if (/\b(?:yapilmasi gereken|yapılması gereken|istenmesi gereken|bakılması gereken|secilmesi gereken|seçilmesi gereken)\.?$/iu.test(text)) return true;
+  if (/\b(?:en duyarlı|en duyarli|en spesifik|ilk yapılması gereken|ilk yapilmasi gereken)[^.?!]{0,80}\.?$/iu.test(text) && hasCaseCue) return true;
+  return false;
+}
+
+function stemHasQuestionFragment(value = '') {
+  return splitSentencesSafe(value).some(isQuestionLikeStemFragment);
+}
+
+function stripQuestionLikeTailFromStem(stem = '', question = '') {
+  const sentences = splitSentencesSafe(stem);
+  if (!sentences.length) return '';
+  const kept = [];
+  sentences.forEach((sentence, index) => {
+    const isLast = index === sentences.length - 1;
+    if (isLast && isQuestionLikeStemFragment(sentence)) return;
+    kept.push(sentence);
+  });
+  let output = kept.join(' ').trim();
+  if (!output && cleanGeneratedText(question)) output = sentences.filter((sentence) => !isQuestionLikeStemFragment(sentence)).join(' ').trim();
+  return output || cleanGeneratedText(stem);
+}
+
+function isGenericQuestion(value = '') {
+  const n = normalize(value);
+  return !n || /^(bu olguda|bu hastada)?\s*(en uygun secenek|tek en iyi yanit|en uygun yanit)\s+hangisidir$/.test(n);
+}
+
+function cleanStemQuestionPair(stem = '', question = '') {
+  const rawStem = cleanGeneratedText(stem);
+  let rawQuestion = cleanGeneratedText(question);
+  const sentences = splitSentencesSafe(rawStem);
+  const last = sentences[sentences.length - 1] || '';
+  if (isQuestionLikeStemFragment(last)) {
+    if (isGenericQuestion(rawQuestion) && /\?$/u.test(last) && /hangi|hangisidir|nedir/iu.test(last)) {
+      rawQuestion = last;
+    }
+    return { stem: stripQuestionLikeTailFromStem(rawStem, rawQuestion), question: rawQuestion };
+  }
+  return { stem: rawStem, question: rawQuestion };
 }
 
 function chooseBranch(branchFilter = 'random') {
@@ -538,6 +614,7 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   errors.push(...hasSufficientClinicalVignette(question));
   if (!hasEvidenceBasedOnVisibleStem(question)) errors.push('kanıt zinciri ana metindeki görünür verilere dayanmıyor');
   if (!question.question || !/\?$/u.test(ensureQuestion(question.question))) errors.push('question net soru cümlesi değil');
+  if (stemHasQuestionFragment(question.stem)) errors.push('stem içinde soru cümlesi veya yarım soru kırıntısı var');
   if (options.length !== 5) errors.push('tam 5 seçenek yok');
   if (!OPTION_IDS.includes(correctId)) errors.push('correctAnswer A-E değil');
   if (!correctText) errors.push('correctAnswer seçeneklerle eşleşmiyor');
@@ -607,7 +684,7 @@ function formatInlineClinicalData(items = [], prefix = '') {
 }
 
 function integrateCompactDataIntoStem(stem = '', vitals = [], objectiveData = []) {
-  const base = ensureSentence(stem || '');
+  const base = ensureSentence(cleanGeneratedText(stem || ''));
   const vitalSentence = formatInlineClinicalData(vitals, 'Ek klinik verilerde ');
   const objectiveSentence = formatInlineClinicalData(objectiveData, 'Tetkik ve destekleyici bulgularda ');
   return [base, vitalSentence, objectiveSentence]
@@ -688,6 +765,8 @@ function hasMalformedTurkishClinicalWording(question = {}) {
     if (!normalizedSentence) return false;
     if (/\b(?:sikayet|bulgu|tetkik|muayene|laboratuvar|goruntuleme)\b\s*[:|]\s*$/u.test(normalizedSentence)) return true;
     if (/\b(?:nedeniyle|ile|ve|veya|fakat|ancak|olarak|sonucu)\s*$/u.test(normalizedSentence)) return true;
+    if (/^(?:da|de)\s+[a-z0-9]/u.test(normalizedSentence)) return true;
+    if (/\bda renin\/aldosteron\b/u.test(normalizedSentence)) return true;
     return false;
   });
 }
@@ -727,7 +806,9 @@ function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
   const allowManagementSteps = isManagementTarget(answerTarget);
   const rawCompactVitals = compactItems(question.compactVitals || question.vitals || [], 5);
   const rawCompactObjectiveData = compactItems(question.compactObjectiveData || question.objectiveData || [], 8);
-  const integratedStem = integrateCompactDataIntoStem(question.stem, rawCompactVitals, rawCompactObjectiveData);
+  const stemQuestionPair = cleanStemQuestionPair(question.stem, question.question);
+  const integratedStem = integrateCompactDataIntoStem(stemQuestionPair.stem, rawCompactVitals, rawCompactObjectiveData);
+  const sanitizedQuestionText = stemQuestionPair.question || question.question;
   const sanitized = {
     id: cleanText(question.id) || `ai-spot-openai-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
     source: 'real-ai',
@@ -742,18 +823,18 @@ function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
     stem: isGenericOrPlaceholderStem(integratedStem) ? '' : integratedStem,
     compactVitals: [],
     compactObjectiveData: [],
-    question: ensureQuestion(question.question),
+    question: ensureQuestion(sanitizedQuestionText),
     options,
     correctAnswer: OPTION_IDS.includes(correctId) ? correctId : (options[0]?.id || 'A'),
-    explanation: ensureSentence(question.explanation || question.whyCorrect || ''),
+    explanation: ensureSentence(cleanGeneratedText(question.explanation || question.whyCorrect || '')),
     wrongOptionFeedback: OPTION_IDS.reduce((acc, id) => {
-      const rawFeedback = question.wrongOptionFeedback?.[id] || question.optionFeedback?.[id] || question.optionRationales?.[id] || '';
-      const fallbackFeedback = id === correctId ? (question.explanation || question.whyCorrect || '') : '';
+      const rawFeedback = cleanGeneratedText(question.wrongOptionFeedback?.[id] || question.optionFeedback?.[id] || question.optionRationales?.[id] || '');
+      const fallbackFeedback = id === correctId ? cleanGeneratedText(question.explanation || question.whyCorrect || '') : '';
       acc[id] = ensureSentence(rawFeedback || fallbackFeedback);
       return acc;
     }, {}),
     evidenceChain: asArray(question.evidenceChain).map(ensureSentence).filter(Boolean),
-    examPearl: ensureSentence(stripFeedbackLabel(question.examPearl || question.teachingPoint)),
+    examPearl: ensureSentence(stripFeedbackLabel(cleanGeneratedText(question.examPearl || question.teachingPoint))),
     managementSteps: allowManagementSteps ? asArray(question.managementSteps).map(ensureSentence).filter(Boolean) : [],
   };
   if (!sanitized.evidenceChain.length) {

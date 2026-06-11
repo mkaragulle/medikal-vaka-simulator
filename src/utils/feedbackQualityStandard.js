@@ -1,6 +1,6 @@
 const TR_LOCALE = 'tr';
-const MAX_EXPLANATION_LENGTH = 520;
-const MAX_FEEDBACK_LENGTH = 280;
+const MAX_EXPLANATION_LENGTH = 4000;
+const MAX_FEEDBACK_LENGTH = 4000;
 const MAX_EVIDENCE_ITEMS = 5;
 const MAX_MANAGEMENT_ITEMS = 4;
 
@@ -36,6 +36,8 @@ function normalizeSpaces(value = '') {
     .replace(/\s+/gu, ' ')
     .replace(/\s+([,.;:!?])/gu, '$1')
     .replace(/([,;:!?])(?=\S)/gu, '$1 ')
+    .replace(/(^|[.!?]\s+)(?:Da|De|da|de)\s+(?=[a-zçğıöşü0-9%/>])/gu, '$1Bu tabloda ')
+    .replace(/\b(?:Da|De)\s+(?=renin\/aldosteron\b)/gu, 'Bu tabloda ')
     .trim();
 }
 
@@ -137,18 +139,8 @@ function removeTemplateLanguage(value = '') {
 }
 
 function truncateAtSentence(value = '', limit = MAX_FEEDBACK_LENGTH) {
-  const text = ensureSentence(value);
-  if (text.length <= limit) return text;
-  const sentences = splitSentences(text);
-  const out = [];
-  for (const sentence of sentences) {
-    const candidate = normalizeSpaces([...out, sentence].join(' '));
-    if (candidate.length > limit) break;
-    out.push(sentence);
-  }
-  if (out.length) return ensureSentence(out.join(' '));
-  const cut = text.slice(0, limit).replace(/\s+\S*$/u, '').replace(/[,:;\-–—\s]+$/u, '').trim();
-  return ensureSentence(cut || text.slice(0, limit));
+  // Length is no longer a quality metric. Keep the full sentence-level content and only repair punctuation/spacing.
+  return ensureSentence(value);
 }
 
 function isBrokenOrEmpty(value = '') {
