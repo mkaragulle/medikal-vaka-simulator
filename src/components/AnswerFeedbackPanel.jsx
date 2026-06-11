@@ -194,7 +194,7 @@ function containsAnswerLeak(text = '', correct = '') {
 
 function singleSentence(value = '', limit = 220) {
   const first = splitIntoSentences(value)[0] || normalizeText(value);
-  return truncateSentence(first, limit);
+  return Number.isFinite(Number(limit)) ? truncateSentence(first, limit) : ensureSentence(first || normalizeText(value));
 }
 
 function stripFeedbackHeading(value = '') {
@@ -293,9 +293,14 @@ function splitIntoSentences(text = '') {
 }
 
 function compactParagraph(value = '', maxSentences = 4, maxLength = 620) {
-  const sentences = splitIntoSentences(value).slice(0, maxSentences);
+  const allSentences = splitIntoSentences(value);
+  const sentences = Number.isFinite(Number(maxSentences)) ? allSentences.slice(0, maxSentences) : allSentences;
   const text = sentences.length ? sentences.join(' ') : normalizeText(value);
   return truncateSentence(text, maxLength);
+}
+
+function fullEducationalParagraph(value = '') {
+  return ensureSentence(mergeUniqueSentences([value]));
 }
 
 function unique(items = []) {
@@ -686,7 +691,7 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
         isSelected: selectedOption === option,
         title: 'En iyi seçenek',
         explanation: isAISpot
-          ? compactParagraph(removeMetaLanguage(deriveCorrectOptionSummary(clinicalCase, option, evidenceChain)), 3, 420)
+          ? fullEducationalParagraph(removeMetaLanguage(deriveCorrectOptionSummary(clinicalCase, option, evidenceChain)))
           : singleSentence(deriveCorrectOptionSummary(clinicalCase, option, evidenceChain), 210),
         comparisonPoints: [],
       };
@@ -694,7 +699,7 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
 
     const explicit = wrongMap[option] || normalizedWrongMap[normalizeForCompare(option)] || {};
     const rawExplanation = removeMetaLanguage(explicit.explanation || 'Bu seçenek için ayırt ettirici açıklama üretilemedi.');
-    const explanation = isAISpot ? compactParagraph(rawExplanation, 3, 360) : singleSentence(rawExplanation, 190);
+    const explanation = isAISpot ? fullEducationalParagraph(rawExplanation) : singleSentence(rawExplanation, 190);
     return {
       option,
       status: 'wrong',

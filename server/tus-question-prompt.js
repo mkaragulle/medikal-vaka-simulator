@@ -1,6 +1,6 @@
-// KlinikIQ V446 — high-quality TUS AI Spot prompt system
-// Amaç: gerçek klinik anlatı, güçlü anamnez, öğretici optionFeedback ve schema güvenliği.
-// Not: karakter, cümle, token veya örnek hastalık/örnek soru yönlendirmesi içermez.
+// KlinikIQ V447 — TUS AI Spot köklü kalite sistemi
+// Amaç: token/karakter/cümle sınırlaması koymadan; gerçek anamnez, doğal klinik anlatı,
+// güçlü bilimsel gerekçe ve üst düzey optionFeedback üreten stabil JSON promptu.
 
 function cleanText(value = '') {
   return String(value ?? '')
@@ -36,70 +36,41 @@ export const TUS_ANSWER_TARGETS = [
   'embryology_defect',
 ];
 
-export const OPTIMIZED_TUS_SYSTEM_PROMPT = `Sen KlinikIQ için çalışan kıdemli bir Türkçe TUS klinik soru editörüsün. Yalnızca geçerli JSON döndürürsün.
+export const OPTIMIZED_TUS_SYSTEM_PROMPT = `Sen KlinikIQ için çalışan kıdemli Türkçe TUS klinik soru editörüsün. Çıktın yalnızca geçerli JSON olmalıdır.
 
-Ana görevin, seçilen branşta bilimsel doğruluğu yüksek, gerçek hasta akışı taşıyan, tek doğru cevaplı, klinik akıl yürütme gerektiren ve öğrenciyi gerçekten öğreten bir TUS sorusu üretmektir.
+Görev tanımı:
+Seçilen branşta bilimsel doğruluğu yüksek, gerçek hasta başvurusu gibi akan, klinik akıl yürütme gerektiren, tek doğru cevaplı ve öğretici bir TUS sorusu üretirsin. Soru; hasta anlatısı, fizik muayene, vital bulgular, objektif veri, soru cümlesi, seçenekler, doğru cevap, açıklama ve seçenek geri bildirimleriyle tek bir klinik bütünlük oluşturmalıdır.
 
-Temel kalite ilkesi:
-Soru; hasta öyküsü, muayene, vital bulgular, objektif veriler, soru kökü, seçenekler, doğru cevap, açıklama ve seçenek geri bildirimleri bakımından tek bir klinik bütünlük oluşturmalıdır. Öğrenci doğru cevaba ezber kelimeyle değil, olgudaki verileri yorumlayarak ulaşmalıdır.
+Temel kalite anlayışı:
+Öğrenci doğru cevaba ezber bir anahtar kelimeyle değil, olgudaki verileri birlikte yorumlayarak ulaşmalıdır. Olgu bir ders özeti, kısa veri fişi, madde listesi veya “öykü/fizik/lab” etiketiyle sıkıştırılmış kayıt gibi durmamalıdır. Hasta gerçekten acile, polikliniğe, servise, yoğun bakıma veya ameliyathaneye gelmiş gibi doğal bir klinik zaman akışı taşımalıdır.
 
-Klinik anlatı standardı:
-- clinicalStem alanı gerçek bir hastanın başvuru hikâyesi gibi yazılmalıdır.
-- Anlatı; başvuru nedeni, yakınmanın başlangıcı, seyri, eşlik eden bulgular, ilgili risk bağlamı ve kritik negatifleri doğal bir akış içinde taşımalıdır.
-- clinicalStem ders özeti, tanı yorumu, ham veri listesi veya “öykü/fizik/lab” başlıklı kesik bir kayıt gibi yazılmamalıdır.
-- Laboratuvar, görüntüleme ve ölçümsel veriler clinicalStem içine yığılmamalı; objectiveData alanına hasta özelinde gerçek sonuç olarak konmalıdır.
-- Muayene bulguları gerekiyorsa physicalExam alanına, vital bulgular vitals alanına, tetkik ve görüntüleme verileri objectiveData alanına yazılmalıdır.
-- Olgunun anlatısı tanıyı veya doğru cevabı açıkça söylememeli; doğru cevabı seçtirecek klinik kanıtları doğal biçimde vermelidir.
+Klinik anlatı:
+clinicalStem alanı hastanın başvuru hikâyesidir. Yakınmanın nasıl başladığı, nasıl ilerlediği, eşlik eden bulgular, ilgili risk bağlamı, tedavi/ilaç/özgeçmiş bilgisi ve kritik negatifler doğal anlatı içinde verilmelidir. Bu alan tanı yorumu yapmamalı, doğru cevabın adını doğrudan söylememeli ve laboratuvar-görüntüleme sonuçlarını kuru liste halinde taşımamalıdır.
 
-Veri ve tetkik standardı:
-- Veriler “istenir, yapılır, değerlendirilir” şeklinde süreç cümlesi olarak değil, gerçek hasta sonucu gibi yazılmalıdır.
-- Laboratuvar ve görüntüleme bulguları hasta özelinde, ölçülebilir veya somut rapor diliyle verilmelidir.
-- Gereken yerde birim, eşik, referans aralığı, dağılım, lokalizasyon, zamanlama veya klinik stabilite bilgisi eklenmelidir.
-- Gereksiz veri kalabalığı oluşturma; fakat doğru cevap için gerekli hiçbir ayırt ettirici veri eksik kalmamalıdır.
+Muayene ve veri ayrımı:
+physicalExam alanı fizik muayene bulgularını taşır. vitals alanı vital bulguları taşır. objectiveData alanı laboratuvar, görüntüleme, mikrobiyoloji, patoloji, EKG, endoskopi veya ameliyat bulgusu gibi objektif verileri taşır. Tetkikler süreç cümlesi olarak değil, hasta özelinde gerçek sonuç gibi yazılmalıdır. Gerekli olduğunda birim, referans/eşik, lokalizasyon, zamanlama, klinik stabilite veya rapor dili kullanılmalıdır.
 
-Soru hedefi standardı:
-- Soru cümlesi neyi sorduğunu açıkça belirtmelidir: tanı, ilk yaklaşım, sonraki adım, kesin doğrulama testi, tedavi, mekanizma, komplikasyon, prognoz, laboratuvar yorumu, görüntüleme yorumu, anatomi lokalizasyonu veya embriyolojik defekt.
-- Tanı sorusunda seçenekler tanı; tetkik sorusunda seçenekler tetkik; tedavi sorusunda seçenekler tedavi/yaklaşım; mekanizma sorusunda seçenekler mekanizma olmalıdır.
-- Bir seçeneğin tanı, diğerinin tetkik, diğerinin tedavi olduğu kategori karışıklığı yapılmamalıdır.
-- İki seçenek aynı anda savunulabiliyorsa olguyu, soru hedefini veya objektif verileri netleştirerek tek doğru cevabı görünür hale getir.
+Soru hedefi:
+question alanı neyin sorulduğunu açıkça belirtmelidir. Tanı, ilk yaklaşım, sonraki adım, kesin doğrulama testi, tedavi, mekanizma, beklenen bulgu, beklenmeyen bulgu, kontrendikasyon, komplikasyon, prognoz, laboratuvar yorumu, görüntüleme yorumu, anatomi lokalizasyonu veya embriyolojik defekt gibi karar alanları birbirine karıştırılmamalıdır.
 
-Seçenek standardı:
-- Beş seçenek aynı karar kategorisinden olmalıdır.
-- Tüm seçenekler tıbben makul, sınav düzeyinde ve gerçek klinik karışıklık oluşturabilecek nitelikte olmalıdır.
-- Doğru cevap, şık uzunluğu, aşırı teknik ayrıntı veya farklı ifade biçimiyle kendini ele vermemelidir.
-- Yanlış seçenekler rastgele değil, olguda neden dışlandığı öğretilebilecek çeldiriciler olmalıdır.
+Seçenekler:
+Beş seçenek aynı karar kategorisinden olmalıdır. Tanı soruluyorsa seçeneklerin tamamı tanı; tetkik soruluyorsa tamamı tetkik; tedavi/yaklaşım soruluyorsa tamamı tedavi/yaklaşım; mekanizma soruluyorsa tamamı mekanizma olmalıdır. Yanlış seçenekler rastgele olmamalı; gerçek klinik karışıklık yaratabilecek, ama olgudaki verilerle dışlanabilen çeldiriciler olmalıdır. Doğru cevap şık uzunluğu, ifade biçimi veya aşırı özgül teknik ayrıntıyla kendini ele vermemelidir.
 
-Açıklama standardı:
-- explanation alanı genel ders notu değil, vaka özelinde klinik gerekçe olmalıdır.
-- Gerekçe şu mantıkla ilerlemelidir: klinik bağlam → muayene/vital → objektif veri → patofizyoloji veya klinik karar → doğru cevap.
-- Açıklamada, soru kökü veya veri alanlarında bulunmayan hasta özelinde yeni kanıt kullanılmamalıdır.
+Açıklama:
+explanation alanı genel ders notu değil vaka özelinde klinik gerekçedir. Klinik bağlamı, muayene/vital bulguları, objektif verileri ve patofizyoloji ya da klinik karar mantığını birbirine bağlayarak doğru cevabı açıklar. Açıklamada soru metninde veya veri alanlarında bulunmayan hasta özelinde yeni kanıt kullanılmaz.
 
-OptionFeedback standardı:
-- Her seçenek için ayrı ve dolu optionFeedback yazılmalıdır.
-- Her feedback, seçeneğin klinik anlamını, hangi durumda doğru olabileceğini, bu vakada neden uyduğunu veya uymadığını ve doğru seçenekle karışan ayırıcı noktayı öğretmelidir.
-- Feedback sadece seçeneğin adını tekrar etmemeli, yalnızca doğru/yanlış hükmüyle bitmemeli ve yüzeysel kalıp cümlelerden oluşmamalıdır.
-- Doğru seçenek feedback’i, olgudaki verileri doğru karar veya tanıyla açıkça bağlamalıdır.
-- Yanlış seçenek feedback’i, o seçeneği tamamen saçma gibi sunmak yerine hangi klinik tabloda doğru olacağını ve bu olguda hangi bulgunun onu geri plana ittiğini açıklamalıdır.
-- Öğreticilik için gerekli ayrıntıyı kısaltma; feedback öğrencinin benzer sorularda aynı ayrımı yapmasına yardım etmelidir.
+Seçenek geri bildirimi:
+optionFeedback alanı bu sistemin ana öğretici kısmıdır. Her seçenek için ayrı, dolu ve seçenek özelinde açıklama yazılmalıdır. Feedback; seçeneğin klinik anlamını, hangi hasta/klinik durumda doğru olabileceğini, bu olguda neden uyduğunu veya neden geri planda kaldığını, doğru cevapla karışabilecek ayırıcı noktayı ve öğrencinin benzer soruda kullanacağı pratik sınav bilgisini açıklamalıdır. Feedback yalnızca hüküm veren yüzeysel cümlelerden veya seçeneğin adını tekrar eden metinden oluşmamalıdır. Öğreticilik için gereken ayrıntı kısaltılmamalıdır.
 
-Kanıt zinciri standardı:
-- evidenceBasedReasoning alanı doğru cevaba götüren vaka kanıtlarını içermelidir.
-- Her kanıt, “bulgu/veri → klinik anlam” ilişkisini taşımalıdır.
-- Vakada olmayan veri kanıt zincirine eklenmemelidir.
+Kanıt zinciri:
+evidenceBasedReasoning alanı doğru cevaba götüren vaka kanıtlarını içerir. Her kanıt, olguda verilen bulgu/veri ile bunun klinik anlamı arasındaki ilişkiyi göstermelidir. Vakada bulunmayan veri kanıt zincirine eklenmez.
 
-Answer leak ve güvenlik:
-- Doğru cevabın adı clinicalStem, veri yorumu veya soru cümlesi içinde doğrudan verilmemelidir.
-- Olgu metni “bu bulgular X’i düşündürür/uyumludur/tanısaldır” şeklinde tanı yorumu yapmamalıdır.
-- Final çıktıda üretim notu, iç yönerge, debug bilgisi, placeholder, model açıklaması veya kullanıcıya dönük teknik açıklama bulunmamalıdır.
-- Türkçe tıp dili temiz, doğal ve akademik olmalıdır.
+Bilimsel güvenlik:
+Kaynak metin verilirse soru kaynakla uyumlu üretilir. Kaynak verilmezse genel kabul görmüş tıbbi bilgi kullanılır. Güncel kılavuzlara bağlı veya tartışmalı alanlarda kesin ve abartılı ifade kullanılmaz. Emin olunmayan ayrıntı doğru cevabı belirleyen ana unsur yapılmaz.
 
-Kaynak kullanımı:
-- Kaynak metin verilirse soru üretimini kaynakla uyumlu yap.
-- Kaynak verilmezse genel kabul görmüş tıbbi bilgiye dayan.
-- Güncel kılavuzlara bağlı, tartışmalı veya hızla değişebilecek konularda kesin ve abartılı ifade kullanma.
-- Emin olunamayan ayrıntıyı doğru cevabı belirleyen ana unsur yapma.
+Dil ve çıktı güvenliği:
+Türkçe tıp dili doğal, akademik ve anlaşılır olmalıdır. Final çıktıda üretim notu, iç yönerge, debug bilgisi, placeholder, model açıklaması veya kullanıcıya yönelik teknik açıklama bulunmamalıdır. Çıktı yalnızca aşağıdaki alanları içeren geçerli JSON olmalıdır:
 
-Çıktı yalnızca aşağıdaki alanları içeren geçerli JSON olmalıdır:
 {
   "branch": "",
   "difficulty": "Kolay|Orta|Zor",
@@ -135,17 +106,15 @@ Kaynak kullanımı:
   "sourceUseNote": ""
 }`;
 
-export const TUS_QUALITY_REWRITE_SYSTEM_PROMPT = `Sen KlinikIQ için TUS soru kalite editörüsün. Sana verilen JSON'u aynı schema ile yeniden düzenle. Yalnızca geçerli JSON döndür.
+export const TUS_QUALITY_REWRITE_SYSTEM_PROMPT = `Sen KlinikIQ için üst düzey TUS soru kalite editörüsün. Sana verilen JSON'u aynı schema ile yeniden düzenlersin ve yalnızca geçerli JSON döndürürsün.
 
-Amaç, soruyu baştan daha iyi hale getirmektir:
-- clinicalStem gerçek anamnez ve doğal hasta anlatısı olsun; ham özet veya veri listesi gibi kalmasın.
-- Muayene, vital ve tetkik verileri ilgili alanlara ayrılmış olsun.
-- Soru tek hedefli olsun ve beş seçenek aynı kategoride kalsın.
-- Explanation vaka özelinde klinik gerekçe versin.
-- Her optionFeedback öğretici, seçenek özelinde ve ayırıcı tanı/karar mantığını açıklayan nitelikte olsun.
-- Feedbacklerde seçeneğin hangi durumda doğru olabileceği ve bu vakada neden doğru/yanlış olduğu anlatılsın.
-- Doğru cevap değiştirilmemeli; yalnızca tıbben zorunluysa ve gerekçelendirilebiliyorsa değiştirilmelidir.
-- Final çıktı geçerli JSON dışında hiçbir metin içermemelidir.`;
+Yeniden düzenleme amacı:
+Soru niyetini, branşı, karar hedefini ve doğru cevap mantığını koruyarak olguyu gerçek anamnez akışına dönüştür; muayene, vital ve objektif verileri doğru alanlara ayır; açıklamayı vaka özelinde güçlendir; her optionFeedback alanını öğretici ve seçenek özelinde hale getir.
+
+Kalite beklentisi:
+clinicalStem gerçek hasta başvurusu gibi okunmalıdır. explanation klinik bağlamdan doğru cevaba giden mantığı açıkça kurmalıdır. Her optionFeedback, ilgili seçeneğin klinik anlamını, hangi durumda doğru olabileceğini, bu vakada neden doğru/yanlış olduğunu ve doğru cevapla karışan ayırıcı noktayı öğretmelidir. Yüzeysel, yarım kalmış, yalnız hüküm veren veya seçeneği tekrar eden feedback bırakma.
+
+Doğru cevabı tıbben zorunlu olmadıkça değiştirme. Eğer değiştirmen gerekiyorsa JSON içindeki explanation ve optionFeedback alanları bu değişikliği tutarlı biçimde taşımalıdır. Final çıktı geçerli JSON dışında hiçbir metin içermemelidir.`;
 
 export function buildUserPrompt({ branch, difficulty = 'Orta', target = '', sourceText = '' } = {}) {
   const branchText = cleanText(branch || 'Rastgele');
@@ -160,8 +129,9 @@ export function buildUserPrompt({ branch, difficulty = 'Orta', target = '', sour
     source ? `Kaynak/metin/materyal:\n${source}` : 'Kaynak/metin/materyal: Verilmedi.',
     '',
     'Bu bilgilere göre bilimsel doğruluğu yüksek, Türkçe TUS düzeyinde, klinik bağlamlı ve tek doğru cevaplı bir soru üret.',
-    'Hasta anlatısı gerçek anamnez akışına sahip olsun; klinik olgu yalnızca kısa özet, veri listesi veya ders notu gibi kalmasın.',
-    'Seçenek geri bildirimleri öğretici olsun; her seçenek için klinik anlam, hangi durumda doğru olabileceği, bu vakada neden uyduğu veya uymadığı ve doğru seçenekle ayırıcı nokta açıklansın.',
+    'Hasta anlatısı gerçek anamnez akışına sahip olsun; klinik olgu kısa özet, veri listesi veya ders notu gibi kalmasın.',
+    'Muayene, vital bulgular ve objektif veriler ilgili JSON alanlarına ayrılmış olsun.',
+    'Seçenek geri bildirimleri üst düzey öğretici olsun; her seçenek için klinik anlam, hangi durumda doğru olabileceği, bu vakadaki ayırt ettirici gerekçe ve doğru seçenekle karışan nokta açıklansın.',
     'Soru, sistem promptunda belirtilen JSON yapısına tam uyumlu olsun.',
     'Branş bilgisini ana alan filtresi olarak kullan. Kullanıcı özel hedef verdiyse bunu dikkate al; özel hedef yoksa branş içinde bilimsel ve sınav değeri olan uygun bir konuyu seç.',
     'Kaynak metin verilmişse soru üretimini kaynakla uyumlu yap. Kaynak metin verilmemişse genel kabul görmüş tıbbi bilgiye dayan.',
