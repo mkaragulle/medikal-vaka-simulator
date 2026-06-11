@@ -86,13 +86,10 @@ function sanitizeCachePart(value = '') {
 }
 
 export function buildPromptCacheConfig(scope = 'klinikiq', task = 'default', promptVersion = 'v1') {
-  if (!envFlag('OPENAI_PROMPT_CACHE_KEY', false)) return {};
-  const config = {
-    prompt_cache_key: `klinikiq:${sanitizeCachePart(scope)}:${sanitizeCachePart(task)}:${sanitizeCachePart(promptVersion)}`,
-  };
-  const retention = safeString(process.env.OPENAI_PROMPT_CACHE_RETENTION || '24h');
-  if (retention) config.prompt_cache_retention = retention;
-  return config;
+  // Disabled intentionally: prompt_cache_key is not needed for KlinikIQ's simple direct AI flow.
+  // Avoid sending provider-specific cache parameters so no character-limit or unsupported-parameter
+  // error can block question generation.
+  return {};
 }
 
 export function buildOutputCacheKey({ scope = 'klinikiq', task = 'default', promptVersion = 'v1', model = '', sourceFingerprint = '', extra = {} } = {}) {
@@ -145,8 +142,8 @@ export function getAICostProfile(scope = 'GENERAL') {
 export function defaultModelForScope(scope = 'GENERAL') {
   const prefix = String(scope || 'GENERAL').toUpperCase();
   const profile = getAICostProfile(prefix);
-  const fastModel = process.env[`${prefix}_OPENAI_FAST_MODEL`] || process.env.OPENAI_FAST_MODEL || 'gpt-5-mini';
-  const qualityModel = process.env[`${prefix}_OPENAI_QUALITY_MODEL`] || process.env.OPENAI_QUALITY_MODEL || 'gpt-4.1-mini';
+  const fastModel = process.env[`${prefix}_OPENAI_FAST_MODEL`] || process.env.OPENAI_FAST_MODEL || 'gpt-5.4-mini';
+  const qualityModel = process.env[`${prefix}_OPENAI_QUALITY_MODEL`] || process.env.OPENAI_QUALITY_MODEL || 'gpt-5.4-mini';
   return profile === 'quality' ? qualityModel : fastModel;
 }
 
@@ -183,7 +180,7 @@ export function applyCostProfileToMaxTokens(scope = 'GENERAL', task = 'default',
 
   const caps = {
     ultra: {
-      tusspotquestion: 1450,
+      tusspotquestion: 1050,
       materialanalysis: 950,
       materialflashcards: 2200,
       materialquestions: 3400,
@@ -191,7 +188,7 @@ export function applyCostProfileToMaxTokens(scope = 'GENERAL', task = 'default',
       default: Math.ceil(base * 0.58),
     },
     balanced: {
-      tusspotquestion: 1450,
+      tusspotquestion: 1150,
       materialanalysis: 1300,
       materialflashcards: 2400,
       materialquestions: 3400,

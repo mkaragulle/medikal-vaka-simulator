@@ -145,7 +145,7 @@ function splitSentences(value = '') {
   const text = normalizeAiNarrativeText(value);
   if (!text) return [];
   return text
-    .split(/(?<=[.!?])\s+(?=[A-ZÇĞİÖŞÜ])/u)
+    .split(/(?<=[.!?])\s+/u)
     .map((item) => item.trim())
     .filter(Boolean);
 }
@@ -316,7 +316,7 @@ function uniqueCompactItems(items = [], max = 6) {
 
 
 const SEROLOGY_PARAM_PATTERN = /^(?:HBsAg|Anti-HBs|Anti-HBc(?:\s+IgM)?|HBeAg|Anti-HBe|HBV\s*DNA|Anti-HAV\s*IgM|Anti-HCV|HCV\s*RNA|HIV(?:\s*Ag\/Ab|\s*RNA)?|VDRL|RPR|ANA|Anti-dsDNA|Anti-Sm|C3|C4|IgG|IgM|IgA)$/iu;
-const LAB_PARAM_PATTERN = /^(?:Lökosit|Lokosit|WBC|CRP|pH|HCO₃|HCO3|Laktat|Glukoz|Sodyum|Na⁺|Potasyum|K⁺|Kreatinin|Üre|BUN|Troponin|D-dimer|Platelet|Trombosit|Hemoglobin|ALT|AST|Bilirubin|TSH|Serbest\s*T4|Serbest\s*T3)$/iu;
+const LAB_PARAM_PATTERN = /^(?:Lökosit|Lokosit|WBC|CRP|pH|HCO₃|HCO3|Laktat|Glukoz|Sodyum|Na|Na⁺|Serum\s*Na|İdrar\s*Na|İdrar\s*sodyumu|Potasyum|K⁺|Kreatinin|Üre|BUN|Troponin|D-dimer|Platelet|Trombosit|Hemoglobin|Serum\s*osmolalitesi|Serum\s*ozmolalitesi|İdrar\s*osmolalitesi|İdrar\s*ozmolalitesi|ALT|AST|Bilirubin|TSH|Serbest\s*T4|Serbest\s*T3)$/iu;
 const MICRO_PARAM_PATTERN = /^(?:Oksidaz|DNaz|Gram|Kültür|Duyarlılık|Fermentasyon|Non-fermenter|PCR|Antijen|Boyama)$/iu;
 const ECG_PARAM_PATTERN = /^(?:EKG|Elektrokardiyografi)$/iu;
 const IMAGING_PARAM_PATTERN = /(?:grafi|ultrasonografi|usg|bt|mr|tomografi|görüntüleme|ekokardiyografi|eko|radyografi|anjiyografi)/iu;
@@ -342,6 +342,14 @@ function canonicalSupportLabel(label = '') {
     .replace(/^k⁺$/iu, 'K⁺')
     .replace(/^potasyum$/iu, 'K⁺')
     .replace(/^sodyum$/iu, 'Na⁺')
+    .replace(/^na$/iu, 'Na⁺')
+    .replace(/^serum\s*na$/iu, 'Serum Na⁺')
+    .replace(/^idrar\s*na$/iu, 'İdrar Na⁺')
+    .replace(/^idrar\s*sodyumu$/iu, 'İdrar Na⁺')
+    .replace(/^serum\s*osmolalitesi$/iu, 'Serum osmolalitesi')
+    .replace(/^serum\s*ozmolalitesi$/iu, 'Serum osmolalitesi')
+    .replace(/^idrar\s*osmolalitesi$/iu, 'İdrar osmolalitesi')
+    .replace(/^idrar\s*ozmolalitesi$/iu, 'İdrar osmolalitesi')
     .replace(/^na\+$/iu, 'Na⁺')
     .replace(/^na⁺$/iu, 'Na⁺')
     .replace(/^ekg$/iu, 'EKG')
@@ -382,7 +390,7 @@ function extractStructuredDataFromText(value = '') {
     items.push({ label: canonicalSupportLabel(match[1]), value: normalizeDataValue(match[2]) });
   }
 
-  const labPattern = /\b(Lökosit|Lokosit|WBC|CRP|pH|HCO₃|HCO3|Laktat|Glukoz|Sodyum|Na\+|Na⁺|Potasyum|K\+|K⁺|Serum\s+K\+|Serum\s+K⁺|Kreatinin|Üre|Troponin|D-dimer|Platelet|Trombosit|Hemoglobin|ALT|AST|Bilirubin|TSH|Serbest\s*T4)\s*(?:[:=]|\s+)\s*([0-9]+(?:[.,][0-9]+)?(?:\.[0-9]{3})?\s*(?:\/mm³|\/µL|x10\^3\/µL|mg\/L|mg\/dL|mmol\/L|mEq\/L|IU\/L|U\/L|ng\/mL|pg\/mL|µIU\/mL|g\/dL)?)/giu;
+  const labPattern = /\b(Lökosit|Lokosit|WBC|CRP|pH|HCO₃|HCO3|Laktat|Glukoz|Sodyum|Na|Na\+|Na⁺|Serum\s+Na|İdrar\s+Na|İdrar\s+sodyumu|Potasyum|K\+|K⁺|Serum\s+K\+|Serum\s+K⁺|Kreatinin|Üre|Troponin|D-dimer|Platelet|Trombosit|Hemoglobin|Serum\s+osmolalitesi|Serum\s+ozmolalitesi|İdrar\s+osmolalitesi|İdrar\s+ozmolalitesi|ALT|AST|Bilirubin|TSH|Serbest\s*T4)\s*(?:[:=]|\s+)\s*([0-9]+(?:[.,][0-9]+)?(?:\.[0-9]{3})?\s*(?:\/mm³|\/µL|x10\^3\/µL|mg\/L|mg\/dL|mOsm\/kg|mosm\/kg|mmol\/L|mEq\/L|IU\/L|U\/L|ng\/mL|pg\/mL|µIU\/mL|g\/dL)?)/giu;
   while ((match = labPattern.exec(text))) {
     items.push({ label: canonicalSupportLabel(match[1]), value: normalizeDataValue(match[2]) });
   }
@@ -453,7 +461,7 @@ function sentenceLooksLikeRawSupportData(sentence = '', supportItems = []) {
   const comparable = normalizeDataComparable(clean);
   if (!clean) return false;
   if (supportItems.some((item) => supportItemAppearsInSentence(clean, item))) return true;
-  if (/^(?:laboratuvar|laboratuvar sonuçları|laboratuvar değerlendirmesinde|seroloji|serolojik|otoimmünite|otoimmunite|kan gazı|kan gazi|elektrolit|vital bulgular|vital bulgularda|ekg|görüntüleme|goruntuleme|bt|mr|usg|ultrasonografi)\b/iu.test(clean)) return true;
+  if (/^(?:ek klinik verilerde|ek klinik veri|ek verilerde|ek veri|laboratuvar|laboratuvar sonuçları|laboratuvar değerlendirmesinde|seroloji|serolojik|otoimmünite|otoimmunite|kan gazı|kan gazi|elektrolit|vital bulgular|vital bulgularda|ekg|görüntüleme|goruntuleme|bt|mr|usg|ultrasonografi)\b/iu.test(clean)) return true;
   const hasClinicalUnit = /\b(?:mg\/dL|mg\/L|mEq\/L|mmol\/L|IU\/mL|IU\/L|U\/L|ng\/mL|pg\/mL|µIU\/mL|g\/dL|\/mm³|\/µL|mmHg|log\s*IU\/mL)\b/iu.test(clean);
   const hasObjectiveLabel = /\b(?:ana|anti-dsdna|anti-hbc|hbsag|hbv\s*dna|hcv\s*rna|c3|c4|lökosit|lokosit|wbc|crp|ph|hco₃|hco3|laktat|glukoz|sodyum|na⁺|potasyum|k⁺|kreatinin|troponin|d-dimer|hemoglobin|trombosit|platelet|ast|alt|bilirubin|tsh)\b/iu.test(clean);
   if (hasClinicalUnit && hasObjectiveLabel) return true;
@@ -464,7 +472,7 @@ function sentenceLooksLikeRawSupportData(sentence = '', supportItems = []) {
 
 function cleanSupportDataOrphans(text = '') {
   return normalizeAiNarrativeText(text)
-    .replace(/\b(?:Laboratuvar|Seroloji|Serolojik veriler|Otoimmünite verileri|Objektif veriler|Vital bulgular)\s*[:：]\s*/giu, ' ')
+    .replace(/\b(?:Ek klinik verilerde|Ek klinik veri|Ek verilerde|Ek veri|Laboratuvar|Seroloji|Serolojik veriler|Otoimmünite verileri|Objektif veriler|Vital bulgular)\s*[:：]?\s*/giu, ' ')
     .replace(/\s+[,;]\s+/g, ' ')
     .replace(/\b(?:Doktor|Hekim),\s*/giu, '')
     .replace(/\bhangi ölçüt en uygundur\?/giu, 'Bu hastada en uygun ölçüt aşağıdakilerden hangisidir?')
@@ -480,7 +488,7 @@ export function stripDuplicateSupportDataFromStem(value = '', supportItems = [])
   const cleaned = cleanSupportDataOrphans(kept.join(' '));
   if (cleaned.split(/\s+/).filter(Boolean).length >= 8) return cleaned;
   return cleanSupportDataOrphans(text)
-    .replace(/\b(?:Laboratuvar|Seroloji|Serolojik incelemede|Otoimmünite verileri|Kan gazı|Elektrolit paneli|Vital bulgularda)\s*[:：]\s*[^.?!]*(?:[.?!]|$)/giu, ' ')
+    .replace(/\b(?:Ek klinik verilerde|Ek klinik veri|Ek verilerde|Ek veri|Laboratuvar|Seroloji|Serolojik incelemede|Otoimmünite verileri|Kan gazı|Elektrolit paneli|Vital bulgularda)\s*[:：]?\s*[^.?!]*(?:[.?!]|$)/giu, ' ')
     .replace(/\b(?:ANA|Anti-dsDNA|HBsAg|Anti-HBc\s*IgM|HBV\s*DNA|C3|C4|CRP|Lökosit|Lokosit|WBC|K⁺|K\+|Potasyum|Glukoz|pH|HCO₃|HCO3|Kreatinin)\s*(?:[:=]|\s+)\s*[^,.;?!]*(?:[,;]\s*)?/giu, ' ')
     .replace(/\s+/g, ' ')
     .trim();
@@ -490,7 +498,7 @@ function removeStructuredDataFragmentsFromText(value = '', hasSupportData = fals
   if (!hasSupportData) return value;
   let text = normalizeAiNarrativeText(value);
   text = text
-    .replace(/\b(?:Laboratuvar|Laboratuvar sonuçları|Laboratuvar değerlendirmesinde|Objektif değerlendirmede|Kan gazı|Elektrolit paneli|Seroloji|Otoimmünite verileri)\s*[:：]?\s*.*?(?=\s+(?:Abdominal|Toraks|Akciğer|Görüntüleme|Fizik|Muayenede|Bu\s|Hangi\s|Aşağıdakiler)|$)/giu, ' ')
+    .replace(/\b(?:Ek klinik verilerde|Ek klinik veri|Ek verilerde|Ek veri|Laboratuvar|Laboratuvar sonuçları|Laboratuvar değerlendirmesinde|Objektif değerlendirmede|Kan gazı|Elektrolit paneli|Seroloji|Otoimmünite verileri)\s*[:：]?\s*.*?(?=\s+(?:Abdominal|Toraks|Akciğer|Görüntüleme|Fizik|Muayenede|Bu\s|Hangi\s|Aşağıdakiler)|$)/giu, ' ')
     .replace(/\b(?:Serolojik inceleme(?:de)?|Serolojide|Serolojik veriler)\s*[:：]?\s*.*?(?=\s+(?:Bu\s|Hangi\s|Aşağıdakiler|Fizik|Muayenede|Görüntüleme)|$)/giu, ' ')
     .replace(/\b(?:Vital bulgularda|Vital bulgularında)\s+.*?(?=\s+(?:Fizik|Muayenede|Laboratuvar|Abdominal|Toraks|Akciğer|Görüntüleme|Bu\s|Hangi\s|Aşağıdakiler)|$)/giu, ' ')
     .replace(/\s*(?:Serolojik incelemede|Serolojide)\s+[^.?!]*(?:HBsAg|Anti-HBs|Anti-HBc|HBeAg|Anti-HBe|HBV\s*DNA|ANA|Anti-dsDNA|C3|C4)[^.?!]*(?:saptanıyor|bildiriliyor|bulunuyor|saptanır)[.?!]?/giu, ' ')
