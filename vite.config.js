@@ -1,12 +1,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-function safeChunkName(value = '') {
+function safeChunkName(value) {
   return value
-    .replace(/\.jsx?$/i, '')
+    .replace(/\.jsx?$/, '')
     .replace(/[^a-zA-Z0-9_-]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .slice(0, 70);
+    .replace(/^-+|-+$/g, '');
 }
 
 export default defineConfig({
@@ -19,26 +18,29 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           const normalizedId = id.replace(/\\/g, '/');
-          if (normalizedId.includes('node_modules/react') || normalizedId.includes('node_modules/react-dom')) return 'vendor-react';
-          if (normalizedId.includes('node_modules/firebase')) return 'vendor-firebase';
-          if (normalizedId.includes('node_modules/pdfjs-dist')) return 'vendor-pdf';
-          if (normalizedId.includes('node_modules/jszip')) return 'vendor-zip';
+
+          if (normalizedId.includes('/node_modules/react/') || normalizedId.includes('/node_modules/react-dom/')) return 'vendor-react';
+          if (normalizedId.includes('/node_modules/firebase/')) return 'vendor-firebase';
+          if (normalizedId.includes('/node_modules/pdfjs-dist/')) return 'vendor-pdf';
+          if (normalizedId.includes('/node_modules/jszip/')) return 'vendor-zip';
 
           if (normalizedId.includes('/src/data/caseBank/cases-part-')) {
-            const match = normalizedId.match(/cases-part-(\d+)\.js$/);
-            return match ? `case-bank-${match[1]}` : 'case-bank';
+            const fileName = normalizedId.split('/').pop();
+            return `case-bank-${safeChunkName(fileName).replace('cases-part-', '')}`;
           }
-          if (normalizedId.includes('/src/data/cases.js')) return 'case-bank-index';
 
-          if (normalizedId.includes('/src/data/tusGlossary')) {
-            const fileName = normalizedId.split('/').pop() || 'glossary-data';
-            return `glossary-${safeChunkName(fileName)}`;
+          if (normalizedId.endsWith('/src/data/cases.js')) return 'case-bank-index';
+          if (normalizedId.endsWith('/src/data/tusPearlCards.js')) return 'pearl-bank';
+
+          if (/\/src\/data\/tusGlossary.*\.js$/.test(normalizedId)) {
+            const fileName = normalizedId.split('/').pop();
+            return `glossary-${safeChunkName(fileName).replace(/^tusGlossary/, '')}`;
           }
+
           if (normalizedId.includes('/src/components/GlossaryTooltip.full.jsx') || normalizedId.includes('/src/utils/glossary.js')) {
             return 'glossary-core';
           }
 
-          if (normalizedId.includes('/src/data/tusPearlCards.js')) return 'pearl-bank';
           return undefined;
         },
       },

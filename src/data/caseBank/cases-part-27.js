@@ -1,0 +1,11195 @@
+export const rawCasesPart27 = [
+  {
+      "id": "v294-new-661-halsizlik-dalginlik-ve-dusuk-sodyum",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Halsizlik, dalgınlık ve düşük sodyum",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Hipotonik hiponatremide serum osmolalitesi, idrar osmolalitesi, idrar sodyumu ve volüm durumunu birlikte yorumlayarak mekanizmayı ayırt etme.",
+      "learningTarget": "Euvolemik hipotonik hiponatremide konsantre idrar ve yüksek idrar sodyumunun uygunsuz ADH etkisini desteklediğini öğrenme.",
+      "demographics": "67 yaşında erkek hasta",
+      "setting": "Dahiliye acil gözlem",
+      "chiefComplaint": "Hasta, halsizlik ve dalgınlık nedeniyle dahiliye acil gözlem alanında değerlendiriliyor.",
+      "stem": "Hasta son bir haftadır giderek artan halsizlik yaşadığını, evde konuşurken kelimeleri karıştırmaya başladığını ve ailesinin bu nedenle onu hastaneye getirdiğini anlatır. Son aylarda kuru öksürüğü ve iştahsızlığı olduğunu, kıyafetlerinin bol gelmeye başladığını söyler. Günde birkaç bardak su içtiğini, aşırı su içme alışkanlığı olmadığını belirtir. Bulantı ya da kusma tariflemez; ishal, yeni diüretik kullanımı veya yoğun terleme öyküsü yoktur. Baş ağrısı hafiftir, nöbet geçirmemiştir ve göğüs ağrısı eşlik etmemiştir.",
+      "patientIntro": {
+        "profile": "67 yaşında erkek hasta, dahiliye acil gözlem başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, halsizlik ve dalgınlık nedeniyle dahiliye acil gözlem alanında değerlendiriliyor.",
+        "historySummary": "Hasta son bir haftadır giderek artan halsizlik yaşadığını, evde konuşurken kelimeleri karıştırmaya başladığını ve ailesinin bu nedenle onu hastaneye getirdiğini anlatır. Son aylarda kuru öksürüğü ve iştahsızlığı olduğunu, kıyafetlerinin bol gelmeye başladığını söyler. Günde birkaç bardak su içtiğini, aşırı su içme alışkanlığı olmadığını belirtir. Bulantı ya da kusma tariflemez; ishal, yeni diüretik kullanımı veya yoğun terleme öyküsü yoktur. Baş ağrısı hafiftir, nöbet geçirmemiştir ve göğüs ağrısı eşlik etmemiştir."
+      },
+      "vitals": {
+        "TA": "126/74 mmHg",
+        "Nabız": "84/dk",
+        "Solunum": "18/dk",
+        "SpO2": "%94, oda havasında",
+        "Ateş": "36.9 °C",
+        "Şok indeksi": "0.67 - perfüzyon korunmuş"
+      },
+      "exam": [
+        "Hasta uyanık ancak yavaş yanıtlıdır; belirgin fokal nörolojik defisit saptanmaz.",
+        "Mukozalar nemlidir; ortostatik belirgin kan basıncı düşüşü yoktur.",
+        "Pretibial ödem, asit veya belirgin juguler venöz dolgunluk izlenmez.",
+        "Akciğer sağ üst zonda solunum sesleri hafif azalmış duyulur; wheezing belirgin değildir."
+      ],
+      "investigations": [
+        {
+          "id": "v294-new-661-halsizlik-dalginlik-ve-dusuk-sodyum-serum-elektrolit-osmolalite",
+          "label": "Serum elektrolitleri ve osmolalite",
+          "title": "Serum elektrolitleri ve osmolalite",
+          "orderLabel": "Serum elektrolitleri ve osmolalite",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Serum elektrolitleri ve osmolalite",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Sodyum düşüklüğüne düşük serum osmolalitesi eşlik etmektedir; glukoz yüksekliği veya ağır böbrek yetmezliği tabloyu açıklamamaktadır.",
+          "clinicalMeaning": "Sodyum düşüklüğüne düşük serum osmolalitesi eşlik etmektedir; glukoz yüksekliği veya ağır böbrek yetmezliği tabloyu açıklamamaktadır.",
+          "result": {
+            "title": "Serum elektrolitleri ve osmolalite",
+            "summary": "Sodyum düşüklüğüne düşük serum osmolalitesi eşlik etmektedir; glukoz yüksekliği veya ağır böbrek yetmezliği tabloyu açıklamamaktadır.",
+            "interpretation": "Sodyum düşüklüğüne düşük serum osmolalitesi eşlik etmektedir; glukoz yüksekliği veya ağır böbrek yetmezliği tabloyu açıklamamaktadır.",
+            "values": [
+              [
+                "Sodyum",
+                "122 mmol/L",
+                "135-145 mmol/L",
+                "Düşük"
+              ],
+              [
+                "Serum osmolalitesi",
+                "258 mOsm/kg",
+                "275-295 mOsm/kg",
+                "Hipotonik"
+              ],
+              [
+                "Glukoz",
+                "104 mg/dL",
+                "70-100 mg/dL",
+                "Belirgin hiperglisemi yok"
+              ],
+              [
+                "Kreatinin",
+                "0.9 mg/dL",
+                "0.6-1.2 mg/dL",
+                "Normal"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v294-new-661-halsizlik-dalginlik-ve-dusuk-sodyum-idrar-osmolalite-sodyum",
+          "label": "İdrar osmolalitesi ve idrar sodyumu",
+          "title": "İdrar osmolalitesi ve idrar sodyumu",
+          "orderLabel": "İdrar osmolalitesi ve idrar sodyumu",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "İdrar osmolalitesi ve idrar sodyumu",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hipotonik ortama rağmen idrar konsantredir ve idrar sodyumu yüksektir; serbest su atılımı baskılanmıştır.",
+          "clinicalMeaning": "Hipotonik ortama rağmen idrar konsantredir ve idrar sodyumu yüksektir; serbest su atılımı baskılanmıştır.",
+          "result": {
+            "title": "İdrar osmolalitesi ve idrar sodyumu",
+            "summary": "Hipotonik ortama rağmen idrar konsantredir ve idrar sodyumu yüksektir; serbest su atılımı baskılanmıştır.",
+            "interpretation": "Hipotonik ortama rağmen idrar konsantredir ve idrar sodyumu yüksektir; serbest su atılımı baskılanmıştır.",
+            "values": [
+              [
+                "İdrar osmolalitesi",
+                "610 mOsm/kg",
+                "<100 beklenir: ADH baskılı durumda",
+                "Konsantre"
+              ],
+              [
+                "İdrar sodyumu",
+                "68 mmol/L",
+                "<30 mmol/L hipovolemide sık",
+                "Yüksek"
+              ],
+              [
+                "İdrar dansitesi",
+                "1.025",
+                "1.005-1.030",
+                "Konsantre idrar"
+              ],
+              [
+                "Protein/kan",
+                "Negatif/negatif",
+                "Negatif",
+                "Aktif renal sediment yok"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v294-new-661-halsizlik-dalginlik-ve-dusuk-sodyum-endokrin-dislayici-testler",
+          "label": "Endokrin ve adrenal dışlayıcı testler",
+          "title": "Endokrin ve adrenal dışlayıcı testler",
+          "orderLabel": "Endokrin ve adrenal dışlayıcı testler",
+          "type": "lab",
+          "priority": "supportive",
+          "subtype": "Endokrin ve adrenal dışlayıcı testler",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Tiroid ve adrenal eksen verileri hiponatreminin başlıca nedeni olacak yönde bozulmamıştır.",
+          "clinicalMeaning": "Tiroid ve adrenal eksen verileri hiponatreminin başlıca nedeni olacak yönde bozulmamıştır.",
+          "result": {
+            "title": "Endokrin ve adrenal dışlayıcı testler",
+            "summary": "Tiroid ve adrenal eksen verileri hiponatreminin başlıca nedeni olacak yönde bozulmamıştır.",
+            "interpretation": "Tiroid ve adrenal eksen verileri hiponatreminin başlıca nedeni olacak yönde bozulmamıştır.",
+            "values": [
+              [
+                "TSH",
+                "1.8 mIU/L",
+                "0.4-4.0 mIU/L",
+                "Normal"
+              ],
+              [
+                "Serbest T4",
+                "1.1 ng/dL",
+                "0.8-1.8 ng/dL",
+                "Normal"
+              ],
+              [
+                "Sabah kortizolü",
+                "18 µg/dL",
+                ">15 µg/dL çoğu durumda yeterli yanıt",
+                "Adrenal yetmezlik lehine değil"
+              ],
+              [
+                "Potasyum",
+                "4.2 mmol/L",
+                "3.5-5.1 mmol/L",
+                "Normal"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v294-new-661-halsizlik-dalginlik-ve-dusuk-sodyum-akciger-goruntuleme",
+          "label": "Akciğer grafisi ve toraks BT özeti",
+          "title": "Akciğer grafisi ve toraks BT özeti",
+          "orderLabel": "Akciğer grafisi ve toraks BT özeti",
+          "type": "imaging",
+          "priority": "supportive",
+          "subtype": "Akciğer grafisi ve toraks BT özeti",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Sağ hiler bölgede kitle görünümü ve mediastinal lenf nodları izlenmiştir; pnömoni veya yaygın ödem görünümü belirgin değildir.",
+          "clinicalMeaning": "Sağ hiler bölgede kitle görünümü ve mediastinal lenf nodları izlenmiştir; pnömoni veya yaygın ödem görünümü belirgin değildir.",
+          "result": {
+            "title": "Akciğer grafisi ve toraks BT özeti",
+            "summary": "Sağ hiler bölgede kitle görünümü ve mediastinal lenf nodları izlenmiştir; pnömoni veya yaygın ödem görünümü belirgin değildir.",
+            "interpretation": "Sağ hiler bölgede kitle görünümü ve mediastinal lenf nodları izlenmiştir; pnömoni veya yaygın ödem görünümü belirgin değildir.",
+            "values": [
+              [
+                "Akciğer grafisi",
+                "Sağ hiler dolgunluk",
+                "",
+                "Kitle/lenf nodu şüphesi"
+              ],
+              [
+                "Toraks BT",
+                "Sağ santral kitle ve mediastinal lenfadenopati",
+                "",
+                "Paraneoplastik bağlam olası"
+              ],
+              [
+                "Plevral sıvı",
+                "Belirgin değil",
+                "",
+                "Efüzyon yok"
+              ],
+              [
+                "Parankim",
+                "Yaygın alveoler ödem yok",
+                "",
+                "Hipervolemi lehine değil"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu laboratuvar paternini en iyi açıklayan süreç aşağıdakilerden hangisidir?",
+      "questionType": "Mekanizma",
+      "answerTarget": "Euvolemik hipotonik hiponatremi mekanizması",
+      "diagnosis": {
+        "correct": "Uygunsuz antidiüretik hormon etkisiyle serbest su tutulması ve idrarın konsantre kalması",
+        "options": [
+          "Aşırı su içimine bağlı antidiüretik hormon baskılanması ve idrarın tamamen dilüe olması",
+          "Kusma ve diüretik kaybına bağlı hipovolemiyle böbreğin sodyum tutması",
+          "Hiperglisemiye bağlı suyun hücre dışına kaymasıyla ölçülen sodyumun yalancı düşmesi",
+          "Kortizol eksikliğine bağlı hiperkalemi ve mineralokortikoid kaybının baskın hale gelmesi",
+          "Uygunsuz antidiüretik hormon etkisiyle serbest su tutulması ve idrarın konsantre kalması"
+        ],
+        "question": "Bu laboratuvar paternini en iyi açıklayan süreç aşağıdakilerden hangisidir?",
+        "explanation": "Düşük serum sodyumu ve düşük serum osmolalitesi gerçek hipotonik hiponatreminin varlığını gösterir. Buna rağmen idrar osmolalitesi yüksek ve idrar sodyumu artmıştır; bu durum böbreğin serbest suyu uygun biçimde atamadığını düşündürür. Klinik olarak hipovolemi veya hipervolemi bulgusu yoktur, tiroid/adrenal/böbrek nedenleri desteklenmemektedir. Bu nedenle uygunsuz ADH etkisi mekanizma düzeyinde en uyumlu açıklamadır.",
+        "pearls": [
+          "Hipotonik hiponatremide ilk ayrım serum osmolalitesi ve volüm durumudur.",
+          "İdrar osmolalitesi yüksekse ADH etkisi baskılanmamış demektir.",
+          "SIADH tanısında hipotiroidi ve adrenal yetmezlik dışlanmalıdır."
+        ],
+        "optionFeedback": {
+          "Uygunsuz antidiüretik hormon etkisiyle serbest su tutulması ve idrarın konsantre kalması": "Bu seçenek en uygundur. Hastada hipotonik hiponatremi vardır; buna karşın idrar osmolalitesi yüksek ve idrar sodyumu artmıştır, yani böbrek serbest suyu uygun şekilde atamamaktadır. Klinik muayenede belirgin hipovolemi veya ödem yoktur; TSH, sabah kortizolü ve böbrek fonksiyonları da alternatif endokrin/renal nedenleri desteklememektedir. Akciğer kitlesi gibi ektopik ADH ilişkili bir bağlam da bulunduğundan uygunsuz ADH etkisi laboratuvar paternini en iyi açıklar.",
+          "Aşırı su içimine bağlı antidiüretik hormon baskılanması ve idrarın tamamen dilüe olması": "Primer polidipside yoğun su alımı sodyumu düşürebilir; ancak fizyolojik yanıt ADH baskılanması ve çok düşük idrar osmolalitesidir. Bu vakada idrar osmolalitesi 610 mOsm/kg olarak belirgin konsantredir; bu, böbreğin suyu atmak yerine tuttuğunu gösterir. Hastanın anlattığı sıvı alımı da aşırı su tüketimi şeklinde değildir. Bu seçenek düşük idrar osmolalitesi beklenen tabloyla uyumsuzdur.",
+          "Kusma ve diüretik kaybına bağlı hipovolemiyle böbreğin sodyum tutması": "Hipovolemik hiponatremide kusma, ishal, kanama veya diüretik gibi kayıplarla efektif dolaşım hacmi azalır; böbrek çoğu durumda sodyum tutmaya çalışır ve klinikte ortostazi, kuru mukozalar veya belirgin dehidratasyon beklenir. Bu hastada volüm kaybı öyküsü yok, mukozalar kuru değil ve idrar sodyumu yüksek bulunmuştur. Diüretik kullanımı da anlatılmamıştır. Bu nedenle hipovolemiye bağlı sodyum tutma mekanizması vakaya uymamaktadır.",
+          "Hiperglisemiye bağlı suyun hücre dışına kaymasıyla ölçülen sodyumun yalancı düşmesi": "Hiperglisemide osmotik etkiyle su hücre dışına kayar ve ölçülen sodyum düşebilir; bu trans-lokasyonel hiponatremidir. Bu vakada glukoz 104 mg/dL olup böyle bir osmotik kayma beklenmez. Ayrıca serum osmolalitesi düşük olduğundan gerçek hipotonik hiponatremi vardır. Yalancı veya hipertonik hiponatremi açıklaması laboratuvar paternini karşılamaz.",
+          "Kortizol eksikliğine bağlı hiperkalemi ve mineralokortikoid kaybının baskın hale gelmesi": "Adrenal yetmezlik hiponatremi yapabilir; primer adrenal yetmezlikte hiperkalemi, hipotansiyon, hiperpigmentasyon ve düşük sabah kortizolü gibi bulgular beklenir. Bu hastada potasyum normal, kan basıncı belirgin düşük değil ve sabah kortizolü yeterli düzeydedir. Mineralokortikoid kaybı paternini destekleyen klinik veri yoktur. Bu seçenek adrenal eksen dışlanmadan düşünülse de verilen verilerle ana açıklama değildir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Euvolemik hipotonik hiponatremide idrar osmolalitesi >100 mOsm/kg ve idrar sodyumu genellikle yüksekse uygunsuz ADH etkisi düşünülür; adrenal, tiroid ve renal nedenler dışlanmalıdır.",
+      "examPearl": "Düşük serum osm + yüksek idrar osm + yüksek idrar Na + euvolemik hasta: SIADH paternini düşün.",
+      "whyCorrect": "Doğru seçenek, hipotonik ortama rağmen idrarın konsantre kalmasını ve volüm muayenesinin euvolemik olmasını aynı mekanizmada birleştirir.",
+      "optionComparison": "Primer polidipside idrar dilüe; hipovolemide klinik kayıp ve genellikle düşük idrar sodyumu; hiperglisemide serum osmolalitesi düşük değil yüksek/normal olur; adrenal yetmezlikte kortizol-potasyum paterni farklıdır.",
+      "evidenceChain": [
+        "Na 122 mmol/L ve serum osmolalitesi 258 mOsm/kg → gerçek hipotonik hiponatremi.",
+        "İdrar osmolalitesi 610 mOsm/kg → ADH etkisi sürüyor.",
+        "İdrar sodyumu 68 mmol/L ve klinik euvolemi → hipovolemik sodyum tutma paterni değil.",
+        "TSH, serbest T4, kortizol ve kreatinin normal → sık dışlayıcı nedenler desteklenmiyor."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v294",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V280-V293 render-safe internal-medicine cases"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v294-new-662-bel-agrisi-halsizlik-ve-kreatinin-yuksekligi",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Bel ağrısı, halsizlik ve kreatinin yüksekliği",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Anemi, kemik ağrısı, hiperkalsemi, böbrek bozulması ve serbest hafif zincir paternini birleştirerek plazma hücre hastalığında renal hasar mekanizmasını seçme.",
+      "learningTarget": "Dipstick protein sonucunun albümin ağırlıklı olduğunu; hafif zincir yüküne bağlı tübüler silendir nefropatisinde total protein ve serbest hafif zincir verilerinin kritik olduğunu öğrenme.",
+      "demographics": "69 yaşında erkek hasta",
+      "setting": "Nefroloji-hematoloji konsültasyonu",
+      "chiefComplaint": "Hasta, bel ağrısı, halsizlik ve böbrek fonksiyonlarında bozulma nedeniyle değerlendiriliyor.",
+      "stem": "Hasta üç aydır giderek artan bel ağrısı olduğunu, son haftalarda merdiven çıkarken çabuk yorulduğunu ve iştahının azaldığını anlatır. Ağrının gece yatarken de devam ettiğini, basit ağrı kesicilerle ancak kısa süre rahatladığını söyler. Son birkaç gündür idrar miktarının azaldığını fark etmiş; idrarda yanma, ateş veya taş düşürmeye benzer kolik ağrı tariflememiştir. Daha önce bilinen kronik böbrek hastalığı olmadığını, yeni başlanmış ACE inhibitörü ya da diüretik kullanmadığını belirtir. Ailesi son aylarda renginin solduğunu ve kilo kaybettiğini fark etmiştir.",
+      "patientIntro": {
+        "profile": "69 yaşında erkek hasta, nefroloji-hematoloji konsültasyonu başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, bel ağrısı, halsizlik ve böbrek fonksiyonlarında bozulma nedeniyle değerlendiriliyor.",
+        "historySummary": "Hasta üç aydır giderek artan bel ağrısı olduğunu, son haftalarda merdiven çıkarken çabuk yorulduğunu ve iştahının azaldığını anlatır. Ağrının gece yatarken de devam ettiğini, basit ağrı kesicilerle ancak kısa süre rahatladığını söyler. Son birkaç gündür idrar miktarının azaldığını fark etmiş; idrarda yanma, ateş veya taş düşürmeye benzer kolik ağrı tariflememiştir. Daha önce bilinen kronik böbrek hastalığı olmadığını, yeni başlanmış ACE inhibitörü ya da diüretik kullanmadığını belirtir. Ailesi son aylarda renginin solduğunu ve kilo kaybettiğini fark etmiştir."
+      },
+      "vitals": {
+        "TA": "138/82 mmHg",
+        "Nabız": "96/dk",
+        "Solunum": "18/dk",
+        "SpO2": "%97, oda havasında",
+        "Ateş": "36.6 °C",
+        "Şok indeksi": "0.70 - perfüzyon korunmuş"
+      },
+      "exam": [
+        "Hasta soluk ve yorgun görünümdedir; bilinç açık ve kooperedir.",
+        "Torakolomber vertebralar üzerinde palpasyonla hassasiyet vardır; motor defisit saptanmaz.",
+        "Mukozalar hafif kurudur ancak belirgin ortostatik hipotansiyon yoktur.",
+        "Pretibial ödem veya döküntü izlenmez; akciğer oskültasyonu doğal sınırlardadır."
+      ],
+      "investigations": [
+        {
+          "id": "v294-new-662-bel-agrisi-halsizlik-ve-kreatinin-yuksekligi-hemogram-biyokimya",
+          "label": "Hemogram ve temel biyokimya",
+          "title": "Hemogram ve temel biyokimya",
+          "orderLabel": "Hemogram ve temel biyokimya",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Hemogram ve temel biyokimya",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Normositer anemiye kreatinin yüksekliği ve hiperkalsemi eşlik etmektedir; bu kombinasyon organ etkilenimi açısından önemlidir.",
+          "clinicalMeaning": "Normositer anemiye kreatinin yüksekliği ve hiperkalsemi eşlik etmektedir; bu kombinasyon organ etkilenimi açısından önemlidir.",
+          "result": {
+            "title": "Hemogram ve temel biyokimya",
+            "summary": "Normositer anemiye kreatinin yüksekliği ve hiperkalsemi eşlik etmektedir; bu kombinasyon organ etkilenimi açısından önemlidir.",
+            "interpretation": "Normositer anemiye kreatinin yüksekliği ve hiperkalsemi eşlik etmektedir; bu kombinasyon organ etkilenimi açısından önemlidir.",
+            "values": [
+              [
+                "Hemoglobin",
+                "9.1 g/dL",
+                "13.5-17.5 g/dL",
+                "Düşük"
+              ],
+              [
+                "MCV",
+                "90 fL",
+                "80-100 fL",
+                "Normositer"
+              ],
+              [
+                "Kreatinin",
+                "3.1 mg/dL",
+                "0.6-1.2 mg/dL",
+                "Yüksek"
+              ],
+              [
+                "Düzeltilmiş kalsiyum",
+                "11.7 mg/dL",
+                "8.5-10.5 mg/dL",
+                "Yüksek"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v294-new-662-bel-agrisi-halsizlik-ve-kreatinin-yuksekligi-protein-ve-hafif-zincir",
+          "label": "Protein çalışmaları ve serbest hafif zincirler",
+          "title": "Protein çalışmaları ve serbest hafif zincirler",
+          "orderLabel": "Protein çalışmaları ve serbest hafif zincirler",
+          "type": "lab",
+          "priority": "critical",
+          "subtype": "Protein çalışmaları ve serbest hafif zincirler",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Monoklonal protein yükü ve belirgin kappa baskın serbest hafif zincir artışı saptanmıştır.",
+          "clinicalMeaning": "Monoklonal protein yükü ve belirgin kappa baskın serbest hafif zincir artışı saptanmıştır.",
+          "result": {
+            "title": "Protein çalışmaları ve serbest hafif zincirler",
+            "summary": "Monoklonal protein yükü ve belirgin kappa baskın serbest hafif zincir artışı saptanmıştır.",
+            "interpretation": "Monoklonal protein yükü ve belirgin kappa baskın serbest hafif zincir artışı saptanmıştır.",
+            "values": [
+              [
+                "Total protein",
+                "10.2 g/dL",
+                "6.4-8.3 g/dL",
+                "Yüksek"
+              ],
+              [
+                "Albumin",
+                "3.4 g/dL",
+                "3.5-5.2 g/dL",
+                "Hafif düşük"
+              ],
+              [
+                "Serum kappa serbest hafif zincir",
+                "1280 mg/L",
+                "3.3-19.4 mg/L",
+                "Çok yüksek"
+              ],
+              [
+                "Kappa/lambda oranı",
+                "146",
+                "0.26-1.65",
+                "Belirgin bozuk"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v294-new-662-bel-agrisi-halsizlik-ve-kreatinin-yuksekligi-idrar-degerlendirmesi",
+          "label": "İdrar değerlendirmesi",
+          "title": "İdrar değerlendirmesi",
+          "orderLabel": "İdrar değerlendirmesi",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "İdrar değerlendirmesi",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Dipstick albümin ağırlıklı proteini sınırlı gösterirken total protein ve hafif zincir yükü belirgindir; aktif nefritik sediment izlenmemektedir.",
+          "clinicalMeaning": "Dipstick albümin ağırlıklı proteini sınırlı gösterirken total protein ve hafif zincir yükü belirgindir; aktif nefritik sediment izlenmemektedir.",
+          "result": {
+            "title": "İdrar değerlendirmesi",
+            "summary": "Dipstick albümin ağırlıklı proteini sınırlı gösterirken total protein ve hafif zincir yükü belirgindir; aktif nefritik sediment izlenmemektedir.",
+            "interpretation": "Dipstick albümin ağırlıklı proteini sınırlı gösterirken total protein ve hafif zincir yükü belirgindir; aktif nefritik sediment izlenmemektedir.",
+            "values": [
+              [
+                "Dipstick protein",
+                "1+",
+                "Negatif",
+                "Albümin ağırlıklı ölçüm"
+              ],
+              [
+                "İdrar albümin/kreatinin",
+                "85 mg/g",
+                "<30 mg/g",
+                "Orta düzey artış"
+              ],
+              [
+                "İdrar total protein/kreatinin",
+                "2.9 g/g",
+                "<0.2 g/g",
+                "Belirgin yüksek"
+              ],
+              [
+                "Sediment",
+                "Eritrosit silendiri yok; granüler silendirler mevcut",
+                "",
+                "Nefritik sediment değil"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v294-new-662-bel-agrisi-halsizlik-ve-kreatinin-yuksekligi-iskelet-goruntuleme",
+          "label": "Düşük doz tüm vücut BT/iskelet görüntüleme",
+          "title": "Düşük doz tüm vücut BT/iskelet görüntüleme",
+          "orderLabel": "Düşük doz tüm vücut BT/iskelet görüntüleme",
+          "type": "imaging",
+          "priority": "supportive",
+          "subtype": "Düşük doz tüm vücut BT/iskelet görüntüleme",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Torakal ve lomber vertebralarda çok sayıda zımba deliği tarzında litik odak raporlanmıştır.",
+          "clinicalMeaning": "Torakal ve lomber vertebralarda çok sayıda zımba deliği tarzında litik odak raporlanmıştır.",
+          "result": {
+            "title": "Düşük doz tüm vücut BT/iskelet görüntüleme",
+            "summary": "Torakal ve lomber vertebralarda çok sayıda zımba deliği tarzında litik odak raporlanmıştır.",
+            "interpretation": "Torakal ve lomber vertebralarda çok sayıda zımba deliği tarzında litik odak raporlanmıştır.",
+            "values": [
+              [
+                "Vertebra",
+                "Çok sayıda litik odak",
+                "",
+                "Kemik tutulumunu destekler"
+              ],
+              [
+                "Patolojik kırık",
+                "Akut çökme kırığı yok",
+                "",
+                "Acil kord basısı bulgusu yok"
+              ],
+              [
+                "Böbrek USG",
+                "Hidronefroz yok",
+                "",
+                "Postrenal obstrüksiyon lehine değil"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastadaki böbrek fonksiyon bozukluğunu en iyi açıklayan mekanizma aşağıdakilerden hangisidir?",
+      "questionType": "Mekanizma",
+      "answerTarget": "Plazma hücre hastalığında renal hasar mekanizması",
+      "diagnosis": {
+        "correct": "Serbest hafif zincirlerin Tamm-Horsfall proteiniyle tübüllerde obstrüktif silendir oluşturması",
+        "options": [
+          "Glomerüler immün kompleks birikimiyle yaygın eritrosit silendirleri oluşması",
+          "Serbest hafif zincirlerin Tamm-Horsfall proteiniyle tübüllerde obstrüktif silendir oluşturması",
+          "Ürat kristallerinin kemoterapi sonrası ani yıkımla tübül lümenini tıkaması",
+          "Renal arter stenozuna bağlı renin artışı ve iskemik nefropati gelişmesi",
+          "IgA birikiminin mukozal enfeksiyon sonrası mezangial proliferasyon yapması"
+        ],
+        "question": "Bu hastadaki böbrek fonksiyon bozukluğunu en iyi açıklayan mekanizma aşağıdakilerden hangisidir?",
+        "explanation": "Anemi, hiperkalsemi, böbrek bozulması, litik kemik lezyonları ve serbest hafif zincir oranında belirgin bozulma plazma hücre hastalığına bağlı organ etkilenimi paternini oluşturur. Renal bozulmada dipstick proteinin görece sınırlı olması albümin dışı protein yükünü dışlamaz. Serbest hafif zincirler tübüler lümende Tamm-Horsfall proteiniyle silendir oluşturarak obstrüksiyon ve inflamasyon yaratabilir; bu mekanizma kreatinin artışını ve idrar bulgularını en iyi açıklar.",
+        "pearls": [
+          "Dipstick protein hafif zincir yükünü olduğundan az gösterebilir.",
+          "CRAB bulguları plazma hücre hastalığında organ hasarını temsil eder.",
+          "Cast nefropatisi hızlı hematolojik tedavi ve destek gerektiren renal acildir."
+        ],
+        "optionFeedback": {
+          "Glomerüler immün kompleks birikimiyle yaygın eritrosit silendirleri oluşması": "İmmün kompleks glomerülonefritlerde hematüri, eritrosit silendirleri, aktif idrar sedimenti ve sıklıkla kompleman/otoantikor paternleri öne çıkar. Bu hastada idrar dipstick proteini görece sınırlı görünürken albümin dışı protein yükü ve serbest hafif zincir fazlalığı belirgindir; sediment aktif nefritik patern göstermemektedir. Kemik ağrısı, anemi, hiperkalsemi ve monoklonal protein verileri plazma hücre hastalığı bağlamını güçlendirir. Bu nedenle yaygın immün kompleks glomerülonefriti ana mekanizma yapmak vaka verileriyle uyumlu değildir.",
+          "Serbest hafif zincirlerin Tamm-Horsfall proteiniyle tübüllerde obstrüktif silendir oluşturması": "Bu seçenek en uygundur. Plazma hücre klonundan salınan serbest hafif zincirler glomerülden süzülür ve distal tübülde Tamm-Horsfall proteiniyle birleşerek obstrüktif, inflamatuvar silendirler oluşturabilir. Bu nedenle dipstickte albümin ağırlıklı protein beklenenden az görünebilirken total protein/hafif zincir yükü yüksek olabilir. Kreatinin yüksekliği, anemi, hiperkalsemi, litik kemik lezyonları ve yüksek kappa/lambda oranı bu mekanizma için güçlü bir klinik bağlam oluşturur.",
+          "Ürat kristallerinin kemoterapi sonrası ani yıkımla tübül lümenini tıkaması": "Ürat kristali tıkanması tümör lizis sendromunda, özellikle kemoterapi sonrası hızlı hücre yıkımı olan yüksek tümör yüklerinde görülür. Bu hastada yakın zamanda kemoterapi veya akut tümör yıkımı öyküsü yoktur; hiperfosfatemi-hipokalemi değil, plazma hücre hastalığına uyan serbest hafif zincir ve CRAB bulguları vardır. Ürik asit kristalleri bu vakadaki böbrek hasarını açıklamak için birincil mekanizma değildir. Tümör lizis başka bir hematolojik acildir ama veri akışı burada farklıdır.",
+          "Renal arter stenozuna bağlı renin artışı ve iskemik nefropati gelişmesi": "Renal arter stenozu dirençli hipertansiyon, böbrek boyut asimetrisi, ACE inhibitörü sonrası kreatinin artışı veya flash pulmoner ödem gibi ipuçlarıyla gündeme gelir. Bu hastada belirgin hipertansif kriz veya renovasküler öykü yoktur; bunun yerine kemik ağrısı, anemi, hiperkalsemi ve monoklonal protein yükü vardır. Renin aracılı iskemik nefropati, hafif zincir fazlalığı ve litik lezyonları açıklamaz. Bu seçenek farklı bir nefroloji mekanizmasını temsil eder.",
+          "IgA birikiminin mukozal enfeksiyon sonrası mezangial proliferasyon yapması": "IgA nefropatisinde mukozal enfeksiyonla yakın zamanlı makroskopik hematüri ve mezangial IgA birikimi beklenir. Bu hastanın öyküsünde enfeksiyonla senkronize hematüri yoktur; idrar sedimentinde eritrosit silendirleri verilmemiştir. Ayrıca hiperkalsemi, litik kemik lezyonları, anemi ve serum serbest hafif zincir oranındaki belirgin bozulma IgA nefropatisinden farklı bir bağlamdır. Bu seçenek daha önce üst solunum yolu sonrası kola rengi idrar gibi bir tabloda doğru olabilirdi."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Multiple myelom böbreğinde serbest hafif zincirlerin tübüler silendir oluşturması kreatinin artışının klasik mekanizmalarındandır; total protein/hafif zincir verileri dipstickten daha açıklayıcı olabilir.",
+      "examPearl": "Anemi + kemik ağrısı/lezion + hiperkalsemi + kreatinin yüksekliği + serbest hafif zincir: cast nefropatisini düşün.",
+      "whyCorrect": "Doğru seçenek, albümin dışı protein yükünü ve tübüler silendir mekanizmasını tek mekanizmada birleştirir.",
+      "optionComparison": "Eritrosit silendiri immün kompleks GN; ürat kristali tümör lizis; renal arter stenozu renovasküler; IgA birikimi mukozal enfeksiyonla ilişkili nefritik tabloyu anlatır.",
+      "evidenceChain": [
+        "Hb 9.1 g/dL ve litik vertebral odaklar → plazma hücre hastalığı bağlamı.",
+        "Kreatinin 3.1 mg/dL ve kalsiyum 11.7 mg/dL → organ etkilenimi.",
+        "Kappa hafif zincir 1280 mg/L ve oran 146 → yoğun monoklonal hafif zincir yükü.",
+        "Dipstick 1+ ama total protein/kreatinin 2.9 g/g → albümin dışı protein yükü lehine."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v294",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V280-V293 render-safe internal-medicine cases"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v294-new-663-ani-nefes-darligi-ve-bayilma",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Ani nefes darlığı ve bayılma",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Ani dispne, senkop, hipotansiyon, sağ ventrikül yüklenmesi ve BT anjiyografi bulgularını birlikte değerlendirerek yüksek riskli pulmoner embolide reperfüzyon kararını verme.",
+      "learningTarget": "Pulmoner embolide hemodinamik instabilitenin tedavi hedefini değiştirdiğini; düşük riskli antikoagülasyon yaklaşımı ile reperfüzyon gerektiren yüksek riskli tabloyu ayırt edebilme.",
+      "demographics": "44 yaşında kadın hasta",
+      "setting": "Acil servis resüsitasyon alanı",
+      "chiefComplaint": "Hasta, ani nefes darlığı ve kısa süreli bayılma sonrası acil serviste değerlendiriliyor.",
+      "stem": "Hasta evde banyoya yürürken birden nefesinin kesildiğini, göğsünde baskı değil daha çok boğulma hissi yaşadığını ve birkaç saniyeliğine yere yığıldığını anlatır. İki hafta önce diz ameliyatı geçirdiğini, o günden beri çoğunlukla evde yattığını ve son birkaç gündür sol baldırında gerginlik hissettiğini söyler. Öksürük ya da balgamının olmadığını, son günlerde ateş fark etmediğini belirtir. Daha önce astım atağı geçirmemiştir; hışıltıdan çok nefes alamama ve baş dönmesi onu korkutmuştur. Aktif kanama, yakın zamanda beyin kanaması veya geçirilmiş hemorajik inme öyküsü olmadığını ifade eder.",
+      "patientIntro": {
+        "profile": "44 yaşında kadın hasta, acil servis resüsitasyon alanı başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, ani nefes darlığı ve kısa süreli bayılma sonrası acil serviste değerlendiriliyor.",
+        "historySummary": "Hasta evde banyoya yürürken birden nefesinin kesildiğini, göğsünde baskı değil daha çok boğulma hissi yaşadığını ve birkaç saniyeliğine yere yığıldığını anlatır. İki hafta önce diz ameliyatı geçirdiğini, o günden beri çoğunlukla evde yattığını ve son birkaç gündür sol baldırında gerginlik hissettiğini söyler. Öksürük ya da balgamının olmadığını, son günlerde ateş fark etmediğini belirtir. Daha önce astım atağı geçirmemiştir; hışıltıdan çok nefes alamama ve baş dönmesi onu korkutmuştur. Aktif kanama, yakın zamanda beyin kanaması veya geçirilmiş hemorajik inme öyküsü olmadığını ifade eder."
+      },
+      "vitals": {
+        "TA": "82/50 mmHg",
+        "Nabız": "132/dk",
+        "Solunum": "30/dk",
+        "SpO2": "%86, oda havasında",
+        "Ateş": "36.7 °C",
+        "Şok indeksi": "1.61 - ciddi dolaşım riski"
+      },
+      "exam": [
+        "Hasta ajite, dispneik ve tek kelimelerle konuşmaktadır.",
+        "Juguler venöz dolgunluk belirgindir; akciğer oskültasyonunda yaygın ral duyulmaz.",
+        "Sol baldır çevresi sağa göre 3 cm daha geniş ve palpasyonla hassastır.",
+        "Periferik ekstremiteler soğuktur; kapiller dolum yaklaşık 4 saniyedir."
+      ],
+      "investigations": [
+        {
+          "id": "v294-new-663-ani-nefes-darligi-ve-bayilma-kan-gazi-ve-kardiyak-belirtecler",
+          "label": "Kan gazı ve kardiyak belirteçler",
+          "title": "Kan gazı ve kardiyak belirteçler",
+          "orderLabel": "Kan gazı ve kardiyak belirteçler",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Kan gazı ve kardiyak belirteçler",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hipoksemiye laktat yüksekliği ve sağ kalp yüklenmesini destekleyen belirteç artışı eşlik etmektedir.",
+          "clinicalMeaning": "Hipoksemiye laktat yüksekliği ve sağ kalp yüklenmesini destekleyen belirteç artışı eşlik etmektedir.",
+          "result": {
+            "title": "Kan gazı ve kardiyak belirteçler",
+            "summary": "Hipoksemiye laktat yüksekliği ve sağ kalp yüklenmesini destekleyen belirteç artışı eşlik etmektedir.",
+            "interpretation": "Hipoksemiye laktat yüksekliği ve sağ kalp yüklenmesini destekleyen belirteç artışı eşlik etmektedir.",
+            "values": [
+              [
+                "pH",
+                "7.47",
+                "7.35-7.45",
+                "Hafif alkali"
+              ],
+              [
+                "PaO2",
+                "58 mmHg",
+                "80-100 mmHg",
+                "Düşük"
+              ],
+              [
+                "Laktat",
+                "3.4 mmol/L",
+                "0.5-2.0 mmol/L",
+                "Yüksek"
+              ],
+              [
+                "Troponin I",
+                "0.19 ng/mL",
+                "<0.04 ng/mL",
+                "Yüksek"
+              ],
+              [
+                "NT-proBNP",
+                "1680 pg/mL",
+                "<125 pg/mL",
+                "Yüksek"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v294-new-663-ani-nefes-darligi-ve-bayilma-ekg-eko",
+          "label": "EKG ve yatak başı ekokardiyografi",
+          "title": "EKG ve yatak başı ekokardiyografi",
+          "orderLabel": "EKG ve yatak başı ekokardiyografi",
+          "type": "cardiology",
+          "priority": "critical",
+          "subtype": "EKG ve yatak başı ekokardiyografi",
+          "category": "cardiacTest",
+          "testTypeCategory": "cardiacTest",
+          "summary": "Sağ kalp basınç yüklenmesini destekleyen elektrokardiyografik ve ekokardiyografik bulgular vardır.",
+          "clinicalMeaning": "Sağ kalp basınç yüklenmesini destekleyen elektrokardiyografik ve ekokardiyografik bulgular vardır.",
+          "result": {
+            "title": "EKG ve yatak başı ekokardiyografi",
+            "summary": "Sağ kalp basınç yüklenmesini destekleyen elektrokardiyografik ve ekokardiyografik bulgular vardır.",
+            "interpretation": "Sağ kalp basınç yüklenmesini destekleyen elektrokardiyografik ve ekokardiyografik bulgular vardır.",
+            "values": [
+              [
+                "EKG",
+                "Sinüs taşikardisi, sağ aks deviasyonu ve anterior T negatiflikleri",
+                "",
+                "Sağ kalp yüklenmesi"
+              ],
+              [
+                "Sağ ventrikül",
+                "Dilate ve hipokinetik",
+                "",
+                "Akut basınç yükü"
+              ],
+              [
+                "Sol ventrikül EF",
+                "%60",
+                "%55-70",
+                "Korunmuş"
+              ],
+              [
+                "Perikard",
+                "Tamponad yok",
+                "",
+                "Alternatif şok nedeni değil"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v294-new-663-ani-nefes-darligi-ve-bayilma-bt-pulmoner-anjiyografi",
+          "label": "BT pulmoner anjiyografi",
+          "title": "BT pulmoner anjiyografi",
+          "orderLabel": "BT pulmoner anjiyografi",
+          "type": "imaging",
+          "priority": "critical",
+          "subtype": "BT pulmoner anjiyografi",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Ana pulmoner arter bifurkasyonu ve bilateral lober dallarda dolum defektleri, sağ ventrikül/sol ventrikül oranında artış ile birlikte raporlanmıştır.",
+          "clinicalMeaning": "Ana pulmoner arter bifurkasyonu ve bilateral lober dallarda dolum defektleri, sağ ventrikül/sol ventrikül oranında artış ile birlikte raporlanmıştır.",
+          "result": {
+            "title": "BT pulmoner anjiyografi",
+            "summary": "Ana pulmoner arter bifurkasyonu ve bilateral lober dallarda dolum defektleri, sağ ventrikül/sol ventrikül oranında artış ile birlikte raporlanmıştır.",
+            "interpretation": "Ana pulmoner arter bifurkasyonu ve bilateral lober dallarda dolum defektleri, sağ ventrikül/sol ventrikül oranında artış ile birlikte raporlanmıştır.",
+            "values": [
+              [
+                "Dolum defekti",
+                "Ana bifurkasyon ve bilateral lober dallarda",
+                "",
+                "Yüksek embolik yük"
+              ],
+              [
+                "RV/LV oranı",
+                "1.4",
+                "<1.0 beklenir",
+                "Sağ ventrikül dilatasyonu"
+              ],
+              [
+                "Akciğer parankimi",
+                "Yaygın konsolidasyon yok",
+                "",
+                "Pnömoni baskın değil"
+              ],
+              [
+                "Plevral sıvı",
+                "Minimal",
+                "",
+                "Ana bulgu değil"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v294-new-663-ani-nefes-darligi-ve-bayilma-kanama-kontrendikasyon-taramasi",
+          "label": "Kanama riski ve reperfüzyon kontrendikasyon taraması",
+          "title": "Kanama riski ve reperfüzyon kontrendikasyon taraması",
+          "orderLabel": "Kanama riski ve reperfüzyon kontrendikasyon taraması",
+          "type": "clinical",
+          "priority": "supportive",
+          "subtype": "Kanama riski ve reperfüzyon kontrendikasyon taraması",
+          "category": "clinicalAssessment",
+          "testTypeCategory": "clinicalAssessment",
+          "summary": "Aktif majör kanama veya yakın dönem intrakraniyal kanama öyküsü bildirilmemiştir; karar hasta özelinde risk-fayda ile verilir.",
+          "clinicalMeaning": "Aktif majör kanama veya yakın dönem intrakraniyal kanama öyküsü bildirilmemiştir; karar hasta özelinde risk-fayda ile verilir.",
+          "result": {
+            "title": "Kanama riski ve reperfüzyon kontrendikasyon taraması",
+            "summary": "Aktif majör kanama veya yakın dönem intrakraniyal kanama öyküsü bildirilmemiştir; karar hasta özelinde risk-fayda ile verilir.",
+            "interpretation": "Aktif majör kanama veya yakın dönem intrakraniyal kanama öyküsü bildirilmemiştir; karar hasta özelinde risk-fayda ile verilir.",
+            "values": [
+              [
+                "Aktif kanama",
+                "Yok",
+                "",
+                "Majör kanama bulgusu yok"
+              ],
+              [
+                "Geçirilmiş hemorajik inme",
+                "Yok",
+                "",
+                "Öyküde yok"
+              ],
+              [
+                "Yakın dönem büyük cerrahi",
+                "Diz ameliyatı, 14 gün önce",
+                "",
+                "Göreceli risk; klinik karar gerektirir"
+              ],
+              [
+                "Trombosit",
+                "218.000/µL",
+                "150.000-400.000/µL",
+                "Normal"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada acil yönetimde öncelikli yaklaşım aşağıdakilerden hangisidir?",
+      "questionType": "Acil yaklaşım",
+      "answerTarget": "Hemodinamik instabil pulmoner embolide tedavi seçimi",
+      "diagnosis": {
+        "correct": "Parenteral antikoagülasyonla birlikte kontrendikasyon yoksa sistemik reperfüzyon tedavisi başlamak",
+        "options": [
+          "Yalnız oral antibiyotik verip ayaktan pnömoni kontrolü planlamak",
+          "Sadece düşük doz oral diüretik verip kalp yetersizliği kontrolüne çağırmak",
+          "Parenteral antikoagülasyonla birlikte kontrendikasyon yoksa sistemik reperfüzyon tedavisi başlamak",
+          "Acil bronkodilatör nebülizasyon verip tüm tedaviyi astım atağı gibi sürdürmek",
+          "Semptom azalırsa antikoagülasyon vermeden elektif poliklinik takibi yapmak"
+        ],
+        "question": "Bu hastada acil yönetimde öncelikli yaklaşım aşağıdakilerden hangisidir?",
+        "explanation": "Ani dispne ve senkop, yakın cerrahi-immobilizasyon öyküsü, bacak bulgusu, hipotansiyon, hipoksemi, sağ ventrikül yüklenmesi ve BT anjiyografi bulguları hemodinamik olarak yüksek riskli akut pulmoner damar tıkanıklığı paternini oluşturur. Bu risk düzeyinde yalnız ayaktan takip veya sadece semptomatik tedavi yeterli değildir. Kontrendikasyonlar dikkatle değerlendirildikten sonra parenteral antikoagülasyon ve sistemik reperfüzyon tedavisi gündeme gelir; hasta monitörize/yoğun bakım koşullarında izlenmelidir.",
+        "pearls": [
+          "Pulmoner embolide hipotansiyon yüksek risk göstergesidir.",
+          "Sağ ventrikül disfonksiyonu ve kardiyak belirteç artışı kötü prognozla ilişkilidir.",
+          "Yüksek riskli tabloda reperfüzyon tedavisi, sadece düşük riskli antikoagülasyondan farklı bir basamaktır."
+        ],
+        "optionFeedback": {
+          "Yalnız oral antibiyotik verip ayaktan pnömoni kontrolü planlamak": "Pnömoni ateş, pürülan balgam, fokal infiltrasyon ve inflamatuvar belirteç artışıyla gelebilir; ancak bu hastada ani başlangıç, senkop, ciddi hipotansiyon, sağ ventrikül yüklenme bulgusu ve BT anjiyografide ana pulmoner arter dallarında dolum defekti vardır. Oral antibiyotik ayaktan yaklaşımı hemodinamik olarak etkilenmiş bir hastayı karşılamaz. Enfeksiyon bulgusu baskın olmadığından bu seçenek klinik riski hafife alır. Gecikme dolaşım kollapsına yol açabilir.",
+          "Parenteral antikoagülasyonla birlikte kontrendikasyon yoksa sistemik reperfüzyon tedavisi başlamak": "Bu seçenek en uygundur. Ani nefes darlığı ve senkopla gelen hastada hipotansiyon, taşikardi, hipoksemi, sağ ventrikül dilatasyonu ve büyük pulmoner arter dolum defektleri yüksek riskli akut pulmoner damar tıkanıklığı paternini oluşturur. Bu durumda yalnız antikoagülasyon çoğu zaman yetersiz kalabilir; kontrendikasyon yoksa sistemik trombolitik gibi reperfüzyon tedavisi mortaliteyi azaltmak için düşünülür. Eş zamanlı parenteral antikoagülasyon, oksijen, vazopressör ve yoğun bakım izlemi de yönetimin parçasıdır.",
+          "Sadece düşük doz oral diüretik verip kalp yetersizliği kontrolüne çağırmak": "Diüretik, volüm yükü olan sol kalp yetersizliği veya kardiyojenik pulmoner ödemde uygun olabilir. Bu vakada akciğer grafisinde yaygın ödem yok; problem sağ ventrikülün ani basınç yükü altında kalmasıdır. Hipotansiyon ve düşük perfüzyon varken gereksiz diürez preloadu daha da azaltarak hemodinamiyi kötüleştirebilir. Kalp yetersizliği poliklinik kontrolü bu acil tabloyu yönetmez.",
+          "Acil bronkodilatör nebülizasyon verip tüm tedaviyi astım atağı gibi sürdürmek": "Astım atağı hışıltı, uzamış ekspiryum ve bronkodilatöre yanıtla öne çıkar; ağır olgularda hipoksemi olabilir. Bu hastada asıl dikkat çeken veri ani senkop, bacak şişliği öyküsü, hipotansiyon, sağ ventrikül yüklenmesi ve BT anjiyografi bulgusudur. Nebül bronkodilatör, varsa eşlik eden bronkospazmı rahatlatabilir ama ana vasküler tıkanıklığı çözmez. Tüm tedaviyi astım gibi sürdürmek hayatı tehdit eden dolaşım problemini kaçırır.",
+          "Semptom azalırsa antikoagülasyon vermeden elektif poliklinik takibi yapmak": "Semptomların kısa süreli azalması yüksek riskli embolik yükün güvenli şekilde çözüldüğü anlamına gelmez. Hemodinamik instabilite, sağ ventrikül disfonksiyonu ve görüntüleme bulguları varken antikoagülasyon verilmemesi yeniden emboli, dolaşım kollapsı ve ölüm riskini artırır. Elektif poliklinik takibi ancak düşük riskli, stabil ve uygun seçilmiş hastalarda düşünülür. Bu vaka acil tedavi ve monitörize izlem gerektirir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Pulmoner embolide tedavi kararı yalnız görüntüde pıhtı görülmesine değil, hemodinamik duruma göre verilir. Şok/hipotansiyon varsa reperfüzyon tedavisi kontrendikasyonlar gözetilerek düşünülür.",
+      "examPearl": "Ani dispne + senkop + hipotansiyon + RV yüklenmesi: düşük riskli PE gibi davranma; reperfüzyon kararını düşün.",
+      "whyCorrect": "Doğru seçenek, embolik tıkanıklığın hemodinamik sonuçlarını ve tedavide acil reperfüzyon ihtiyacını birlikte hedefler.",
+      "optionComparison": "Antibiyotik pnömoniyi, diüretik sol kalp yetersizliğini, bronkodilatör astımı hedefler; antikoagülasyonsuz takip ise yüksek riskli hastada güvenli değildir.",
+      "evidenceChain": [
+        "Diz ameliyatı ve immobilizasyon → venöz tromboemboli riski.",
+        "TA 82/50, nabız 132 ve şok indeksi 1.61 → hemodinamik instabilite.",
+        "BT’de bilateral büyük dolum defektleri ve RV/LV 1.4 → sağ kalp yüklenmesi olan yüksek embolik yük.",
+        "Aktif majör kanama öyküsü yok → reperfüzyon tedavisi risk-fayda ile değerlendirilebilir."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v294",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V280-V293 render-safe internal-medicine cases"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v295-new-664-ates-titreme-ve-tansiyon-dusuklugu",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Ateş, titreme ve tansiyon düşüklüğü",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Ateşli üriner enfeksiyon odağı, kalıcı hipotansiyon, laktat yüksekliği ve kötü perfüzyon bulgularını birlikte yorumlayarak septik şokta vazopressör seçimini belirleme.",
+      "learningTarget": "Sepsiste enfeksiyon tedavisi, kaynak kontrolü ve hemodinamik resüsitasyonun birlikte yürütüldüğünü; sıvı sonrası hipotansiyonda norepinefrinin ilk vazopressör olduğunu ayırt edebilme.",
+      "demographics": "67 yaşında erkek hasta",
+      "setting": "Acil servis resüsitasyon alanı",
+      "chiefComplaint": "Hasta, iki gündür süren titreme, yan ağrısı ve son saatlerde belirgin halsizlik nedeniyle acil serviste değerlendiriliyor.",
+      "stem": "Hasta iki gündür sağ yan tarafında künt ağrı ve idrar yaparken yanma olduğunu, bugün öğleden sonra titremelerinin arttığını anlatır. Evde ateşini ölçememiş ama üşüme nöbetlerinden sonra terlediğini, akşam saatlerinde ayağa kalkınca gözlerinin karardığını söyler. Diyabeti ve iyi kontrol edilmeyen hipertansiyonu vardır; son günlerde iştahı azalmış ve çok az su içebilmiştir. Göğüs ağrısı veya balgamlı öksürük tariflemez; karın ağrısı sağ yan bölgede belirgindir ve hareketle çok değişmemektedir. Yakınları son birkaç saattir konuşmalarının yavaşladığını ve idrar miktarının belirgin azaldığını fark ettikleri için hastayı acile getirmiştir.",
+      "patientIntro": {
+        "profile": "67 yaşında erkek hasta, acil servis resüsitasyon alanı başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, iki gündür süren titreme, yan ağrısı ve son saatlerde belirgin halsizlik nedeniyle acil serviste değerlendiriliyor.",
+        "historySummary": "Hasta iki gündür sağ yan tarafında künt ağrı ve idrar yaparken yanma olduğunu, bugün öğleden sonra titremelerinin arttığını anlatır. Evde ateşini ölçememiş ama üşüme nöbetlerinden sonra terlediğini, akşam saatlerinde ayağa kalkınca gözlerinin karardığını söyler. Diyabeti ve iyi kontrol edilmeyen hipertansiyonu vardır; son günlerde iştahı azalmış ve çok az su içebilmiştir. Göğüs ağrısı veya balgamlı öksürük tariflemez; karın ağrısı sağ yan bölgede belirgindir ve hareketle çok değişmemektedir. Yakınları son birkaç saattir konuşmalarının yavaşladığını ve idrar miktarının belirgin azaldığını fark ettikleri için hastayı acile getirmiştir."
+      },
+      "vitals": {
+        "TA": "78/46 mmHg",
+        "Nabız": "124/dk",
+        "Solunum": "26/dk",
+        "SpO2": "%94, oda havasında",
+        "Ateş": "39.1 °C",
+        "Şok indeksi": "1.59 - ağır perfüzyon riski"
+      },
+      "exam": [
+        "Hasta uykuya meyilli ancak seslenmekle gözlerini açıp kısa yanıtlar verebilmektedir.",
+        "Cilt soğuk ve nemlidir; kapiller dolum yaklaşık 5 saniyedir.",
+        "Sağ kostovertebral açı hassasiyeti vardır; batında defans veya rebound saptanmaz.",
+        "Akciğerlerde belirgin ral veya wheezing duyulmaz; kalp sesleri taşikardiktir."
+      ],
+      "investigations": [
+        {
+          "id": "v295-new-664-ates-titreme-ve-tansiyon-dusuklugu-enfeksiyon-ve-perfuzyon-laboratuvari",
+          "label": "Enfeksiyon ve perfüzyon laboratuvarı",
+          "title": "Enfeksiyon ve perfüzyon laboratuvarı",
+          "orderLabel": "Enfeksiyon ve perfüzyon laboratuvarı",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Enfeksiyon ve perfüzyon laboratuvarı",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Sistemik inflamasyon, doku hipoperfüzyonu ve erken organ etkilenimini birlikte gösteren sonuçlar vardır.",
+          "clinicalMeaning": "Sistemik inflamasyon, doku hipoperfüzyonu ve erken organ etkilenimini birlikte gösteren sonuçlar vardır.",
+          "result": {
+            "title": "Enfeksiyon ve perfüzyon laboratuvarı",
+            "summary": "Sistemik inflamasyon, doku hipoperfüzyonu ve erken organ etkilenimini birlikte gösteren sonuçlar vardır.",
+            "interpretation": "Sistemik inflamasyon, doku hipoperfüzyonu ve erken organ etkilenimini birlikte gösteren sonuçlar vardır.",
+            "values": [
+              [
+                "Lökosit",
+                "19.800/µL",
+                "4.000-10.000/µL",
+                "Nötrofil baskın yüksek"
+              ],
+              [
+                "CRP",
+                "226 mg/L",
+                "<5 mg/L",
+                "Belirgin yüksek"
+              ],
+              [
+                "Prokalsitonin",
+                "18 ng/mL",
+                "<0.05 ng/mL",
+                "Bakteriyel sistemik yanıt lehine"
+              ],
+              [
+                "Laktat",
+                "5.1 mmol/L",
+                "0.5-2.0 mmol/L",
+                "Doku hipoperfüzyonu göstergesi"
+              ],
+              [
+                "Kreatinin",
+                "2.1 mg/dL",
+                "0.7-1.2 mg/dL",
+                "Bazal 1.0 mg/dL, akut artış"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v295-new-664-ates-titreme-ve-tansiyon-dusuklugu-idrar-ve-kultur",
+          "label": "İdrar incelemesi ve kültür örnekleri",
+          "title": "İdrar incelemesi ve kültür örnekleri",
+          "orderLabel": "İdrar incelemesi ve kültür örnekleri",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "İdrar incelemesi ve kültür örnekleri",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Üriner kaynak olasılığını destekleyen idrar bulguları vardır; kan ve idrar kültürleri antibiyotik öncesi alınmıştır.",
+          "clinicalMeaning": "Üriner kaynak olasılığını destekleyen idrar bulguları vardır; kan ve idrar kültürleri antibiyotik öncesi alınmıştır.",
+          "result": {
+            "title": "İdrar incelemesi ve kültür örnekleri",
+            "summary": "Üriner kaynak olasılığını destekleyen idrar bulguları vardır; kan ve idrar kültürleri antibiyotik öncesi alınmıştır.",
+            "interpretation": "Üriner kaynak olasılığını destekleyen idrar bulguları vardır; kan ve idrar kültürleri antibiyotik öncesi alınmıştır.",
+            "values": [
+              [
+                "Tam idrar",
+                "Lökosit esteraz +++, nitrit +",
+                "Negatif",
+                "Bakteriyel üriner enfeksiyon lehine"
+              ],
+              [
+                "Mikroskopi",
+                ">100 lökosit/HPF, bakteri yoğun",
+                "0-5 lökosit/HPF",
+                "Piyüri ve bakteriüri"
+              ],
+              [
+                "Kan kültürü",
+                "2 set alındı",
+                "",
+                "Tedaviyi geciktirmeden örneklendi"
+              ],
+              [
+                "İdrar kültürü",
+                "Alındı",
+                "",
+                "Kaynak doğrulaması için"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v295-new-664-ates-titreme-ve-tansiyon-dusuklugu-yatak-basi-usg",
+          "label": "Yatak başı üriner ultrasonografi",
+          "title": "Yatak başı üriner ultrasonografi",
+          "orderLabel": "Yatak başı üriner ultrasonografi",
+          "type": "imaging",
+          "priority": "supportive",
+          "subtype": "Yatak başı üriner ultrasonografi",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Sağ üriner sistemde akımı bozabilecek dilatasyon izlenmektedir; klinik kaynak kontrolü açısından önem taşır.",
+          "clinicalMeaning": "Sağ üriner sistemde akımı bozabilecek dilatasyon izlenmektedir; klinik kaynak kontrolü açısından önem taşır.",
+          "result": {
+            "title": "Yatak başı üriner ultrasonografi",
+            "summary": "Sağ üriner sistemde akımı bozabilecek dilatasyon izlenmektedir; klinik kaynak kontrolü açısından önem taşır.",
+            "interpretation": "Sağ üriner sistemde akımı bozabilecek dilatasyon izlenmektedir; klinik kaynak kontrolü açısından önem taşır.",
+            "values": [
+              [
+                "Sağ böbrek",
+                "Orta derecede hidronefroz",
+                "Yok",
+                "Obstrüksiyon olasılığı"
+              ],
+              [
+                "Mesane",
+                "Belirgin retansiyon yok",
+                "",
+                "Alt obstrüksiyon baskın değil"
+              ],
+              [
+                "Sol böbrek",
+                "Dilatasyon yok",
+                "",
+                "Tek taraflı etkilenim"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada dolaşım desteği açısından en uygun vazopressör yaklaşımı aşağıdakilerden hangisidir?",
+      "questionType": "Acil yaklaşım",
+      "answerTarget": "Septik şokta vazopressör seçimi",
+      "diagnosis": {
+        "correct": "Sıvı yanıtı yetersizse MAP ≥65 mmHg hedefiyle norepinefrin başlamak",
+        "options": [
+          "Hipotansiyon sürerken yalnız idrar çıkışını izleyip vazopressörü geciktirmek",
+          "Sıvı yanıtı yetersizse MAP ≥65 mmHg hedefiyle norepinefrin başlamak",
+          "İlk vazopressör olarak dopamin başlamak ve taşikardiyi tolere etmek",
+          "Tek başına fenilefrin başlamak ve enfeksiyon kaynağı araştırmasını ertelemek",
+          "Laktat yüksekliğini normalleşene kadar sadece tekrarlayıp antibiyotiği bekletmek"
+        ],
+        "question": "Bu hastada dolaşım desteği açısından en uygun vazopressör yaklaşımı aşağıdakilerden hangisidir?",
+        "explanation": "Bu olguda enfeksiyon odağına eşlik eden hipotansiyon, laktat yüksekliği, soğuk ekstremite, kapiller dolum gecikmesi ve akut kreatinin artışı doku hipoperfüzyonunun sürdüğünü gösterir. Uygun kristalloid resüsitasyonu, kültürlerin alınması, geniş spektrumlu antibiyotik ve kaynak kontrolü eş zamanlı yürütülür; fakat sıvıya rağmen MAP düşük kalırsa ilk vazopressör olarak norepinefrin tercih edilir. Amaç yalnız tansiyon değerini yükseltmek değil, organ perfüzyonunu geri kazanmaktır.",
+        "pearls": [
+          "Septik şokta vazopressör kararı perfüzyon bulgularıyla birlikte verilir.",
+          "Norepinefrin ilk tercih vazopressördür.",
+          "Vazopressör, antibiyotik ve kaynak kontrolünün yerine geçmez; bunlarla paralel yürür."
+        ],
+        "optionFeedback": {
+          "Sıvı yanıtı yetersizse MAP ≥65 mmHg hedefiyle norepinefrin başlamak": "Bu seçenek en uygundur. Hasta ateş, hipotansiyon, taşikardi, yüksek laktat, oligüri ve kapiller dolum uzamasıyla dolaşım bozukluğu göstermektedir; uygun kristalloid resüsitasyona rağmen ortalama arter basıncı düşük kalıyorsa septik şok fizyolojisi devam ediyor demektir. Norepinefrin arteriyel vazokonstriksiyonla vasküler tonusu artırır ve genellikle ilk seçilecek vazopressördür. Bu basamak antibiyotik, kültür, sıvı ve kaynak kontrolünün yerine geçmez; fakat kalıcı hipotansiyonda perfüzyonu korumak için geciktirilmemelidir.",
+          "Hipotansiyon sürerken yalnız idrar çıkışını izleyip vazopressörü geciktirmek": "İdrar çıkışı perfüzyon takibinde değerlidir; ancak hipotansiyon ve laktat yüksekliği sürerken yalnız izlem güvenli değildir. Oligüri, böbreğin düşük efektif perfüzyona verdiği erken yanıtlardan biridir ve tedaviyi geciktirmek akut böbrek hasarı ve çoklu organ yetmezliği riskini artırır. Stabil hastada yakın takip yapılabilir; bu vakada kapiller dolum gecikmesi, soğuk ekstremite ve düşük tansiyon aktif dolaşım desteği gerektirir. Bu nedenle vazopressörü yalnız idrar takibine bırakmak yanlış olur.",
+          "İlk vazopressör olarak dopamin başlamak ve taşikardiyi tolere etmek": "Dopamin bazı seçilmiş bradikardik hastalarda düşünülebilir; fakat taşikardisi olan septik şok hastasında aritmi riskini artırır ve ilk seçenek olarak tercih edilmez. Bu hastanın nabzı zaten 124/dk’dır, yani dopaminerjik ve beta-adrenerjik etki istenmeyen taşiaritmileri kolaylaştırabilir. Vazopressör seçimi yalnız tansiyonu yükseltmek değil, güvenli ve sürdürülebilir organ perfüzyonu sağlamaktır. Bu nedenle norepinefrin yerine dopamin başlamak güvenli bir tercih değildir.",
+          "Tek başına fenilefrin başlamak ve enfeksiyon kaynağı araştırmasını ertelemek": "Fenilefrin saf alfa agonisttir ve belirli durumlarda kullanılabilir; ancak septik şokta rutin ilk vazopressör değildir. Ayrıca kaynak kontrolünü ertelemek, özellikle obstrüksiyon veya enfekte odak varlığında, antibiyotik ve dolaşım desteğinin etkisini sınırlayabilir. Bu hastada görüntüleme bulgusu üriner obstrüksiyon zemininde enfeksiyon kaynağı olabileceğini gösterdiğinden ürolojik drenaj gibi kaynak kontrolü paralel düşünülmelidir. Tek başına fenilefrinle yetinmek hem vazopressör seçimi hem de enfeksiyon yönetimi açısından eksiktir.",
+          "Laktat yüksekliğini normalleşene kadar sadece tekrarlayıp antibiyotiği bekletmek": "Laktat seri takibi resüsitasyon yanıtını değerlendirmede yararlıdır; fakat laktatın normale dönmesini beklemek tedavi değildir. Septik tabloda antibiyotik ve kaynak kontrolü geciktikçe mortalite artar, dolaşım bozukluğu sürdükçe de organ hasarı derinleşir. Bu hastada ateş, piyüri, prokalsitonin yüksekliği ve obstrüksiyon düşündüren görüntüleme verisi varken yalnız laboratuvar takibi yapmak pasif kalır. Laktat izlenmeli ama antibiyotik, sıvı, vazopressör ve kaynak kontrolü geciktirilmemelidir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Septik şokta resüsitasyon çok eksenlidir: sıvı, antibiyotik, kültür, kaynak kontrolü ve gerekirse vazopressör birlikte düşünülür. Sıvıya rağmen hipotansiyon sürüyorsa norepinefrin ilk basamak vazopressördür.",
+      "examPearl": "Ateş + laktat yüksekliği + hipotansiyon + soğuk ekstremite: yalnız antibiyotik değil, perfüzyon hedefli resüsitasyon düşün.",
+      "whyCorrect": "Doğru seçenek, hastadaki kalıcı vazodilatasyon ve hipoperfüzyonu güvenli ilk vazopressörle hedefler.",
+      "optionComparison": "Dopamin ve fenilefrin seçilmiş durumlarda gündeme gelebilir; bu tabloda rutin ilk seçenek değildir. İzlem veya laboratuvar tekrarı aktif şok yönetiminin yerine geçmez.",
+      "evidenceChain": [
+        "TA 78/46, nabız 124 ve şok indeksi 1.59 → dolaşım bozukluğu.",
+        "Laktat 5.1 mmol/L ve kapiller dolum 5 saniye → doku hipoperfüzyonu.",
+        "Piyüri, nitrit pozitifliği ve prokalsitonin yüksekliği → bakteriyel enfeksiyon odağı.",
+        "Hidronefroz → kaynak kontrolü gerektirebilecek üriner obstrüksiyon olasılığı."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v295",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V280-V294 render-safe internal-medicine cases"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v295-new-665-bronzlasma-eklem-agrisi-ve-transaminaz-yuksekligi",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Bronzlaşma, eklem ağrısı ve transaminaz yüksekliği",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Cilt renginde koyulaşma, metakarpofalangeal eklem ağrısı, karaciğer enzim yüksekliği, ferritin ve transferrin satürasyonu paternini birleştirerek demir yüklenmesi mekanizmasını ayırt etme.",
+      "learningTarget": "Demir yüklenmesi hastalıklarında ferritin ile transferrin satürasyonunun birlikte yorumlandığını ve HFE-hepcidin aksı bozukluğunun bağırsak demir emilimini artırdığını açıklayabilme.",
+      "demographics": "52 yaşında erkek hasta",
+      "setting": "İç hastalıkları polikliniği",
+      "chiefComplaint": "Hasta, son aylarda artan halsizlik, el eklemlerinde ağrı ve cilt renginde koyulaşma nedeniyle polikliniğe başvuruyor.",
+      "stem": "Hasta yaklaşık altı aydır iş çıkışı belirgin halsizlik yaşadığını ve sabahları özellikle işaret ve orta parmak köklerinde tutukluk-ağrı hissettiğini anlatır. Yaz tatiline gitmediği halde ailesi yüzünün ve kollarının daha koyu göründüğünü söylemiştir. Alkolü haftada birkaç kadehten fazla kullanmadığını, sarılık atağı, kanlı dışkı veya belirgin kilo kaybı fark etmediğini belirtir. Babasında ileri yaşta nedeni tam söylenmeyen karaciğer hastalığı olduğunu hatırlar. Daha önce demir ilacı kullanmamış, sık kan transfüzyonu almamış ve bilinen viral hepatit öyküsü yoktur.",
+      "patientIntro": {
+        "profile": "52 yaşında erkek hasta, i̇ç hastalıkları polikliniği başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, son aylarda artan halsizlik, el eklemlerinde ağrı ve cilt renginde koyulaşma nedeniyle polikliniğe başvuruyor.",
+        "historySummary": "Hasta yaklaşık altı aydır iş çıkışı belirgin halsizlik yaşadığını ve sabahları özellikle işaret ve orta parmak köklerinde tutukluk-ağrı hissettiğini anlatır. Yaz tatiline gitmediği halde ailesi yüzünün ve kollarının daha koyu göründüğünü söylemiştir. Alkolü haftada birkaç kadehten fazla kullanmadığını, sarılık atağı, kanlı dışkı veya belirgin kilo kaybı fark etmediğini belirtir. Babasında ileri yaşta nedeni tam söylenmeyen karaciğer hastalığı olduğunu hatırlar. Daha önce demir ilacı kullanmamış, sık kan transfüzyonu almamış ve bilinen viral hepatit öyküsü yoktur."
+      },
+      "vitals": {
+        "TA": "128/76 mmHg",
+        "Nabız": "82/dk",
+        "Solunum": "16/dk",
+        "SpO2": "%98, oda havasında",
+        "Ateş": "36.6 °C",
+        "Şok indeksi": "0.64 - perfüzyon stabil"
+      },
+      "exam": [
+        "Genel durumu iyi, bilinci açık ve koopere görünmektedir.",
+        "Yüz, ön kol ekstansör yüzleri ve el sırtlarında yaygın bronz-kahverengi pigmentasyon dikkati çeker.",
+        "İkinci ve üçüncü metakarpofalangeal eklemlerde hassasiyet vardır; belirgin sıcaklık artışı veya pürülan eklem bulgusu yoktur.",
+        "Karında hafif hepatomegali palpe edilir; asit, splenomegali veya belirgin sarılık saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v295-new-665-bronzlasma-eklem-agrisi-ve-transaminaz-yuksekligi-karaciger-ve-glukoz-paneli",
+          "label": "Karaciğer ve metabolik panel",
+          "title": "Karaciğer ve metabolik panel",
+          "orderLabel": "Karaciğer ve metabolik panel",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Karaciğer ve metabolik panel",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hafif hepatoselüler enzim yüksekliği ve glukoz metabolizması bozulması vardır.",
+          "clinicalMeaning": "Hafif hepatoselüler enzim yüksekliği ve glukoz metabolizması bozulması vardır.",
+          "result": {
+            "title": "Karaciğer ve metabolik panel",
+            "summary": "Hafif hepatoselüler enzim yüksekliği ve glukoz metabolizması bozulması vardır.",
+            "interpretation": "Hafif hepatoselüler enzim yüksekliği ve glukoz metabolizması bozulması vardır.",
+            "values": [
+              [
+                "AST",
+                "74 U/L",
+                "<40 U/L",
+                "Hafif yüksek"
+              ],
+              [
+                "ALT",
+                "88 U/L",
+                "<41 U/L",
+                "Hafif yüksek"
+              ],
+              [
+                "ALP",
+                "96 U/L",
+                "40-129 U/L",
+                "Belirgin kolestaz yok"
+              ],
+              [
+                "Açlık glukozu",
+                "132 mg/dL",
+                "70-99 mg/dL",
+                "Bozulmuş/metabolik etkilenim"
+              ],
+              [
+                "HbA1c",
+                "%6.7",
+                "<%5.7",
+                "Diyabet aralığında"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v295-new-665-bronzlasma-eklem-agrisi-ve-transaminaz-yuksekligi-demir-calismalari",
+          "label": "Demir çalışmaları",
+          "title": "Demir çalışmaları",
+          "orderLabel": "Demir çalışmaları",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Demir çalışmaları",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Depo ve dolaşımdaki demir yükünü birlikte destekleyen sonuçlar vardır.",
+          "clinicalMeaning": "Depo ve dolaşımdaki demir yükünü birlikte destekleyen sonuçlar vardır.",
+          "result": {
+            "title": "Demir çalışmaları",
+            "summary": "Depo ve dolaşımdaki demir yükünü birlikte destekleyen sonuçlar vardır.",
+            "interpretation": "Depo ve dolaşımdaki demir yükünü birlikte destekleyen sonuçlar vardır.",
+            "values": [
+              [
+                "Ferritin",
+                "1.180 ng/mL",
+                "30-400 ng/mL",
+                "Belirgin yüksek"
+              ],
+              [
+                "Serum demiri",
+                "212 µg/dL",
+                "60-170 µg/dL",
+                "Yüksek"
+              ],
+              [
+                "Transferrin satürasyonu",
+                "%78",
+                "%20-45",
+                "Belirgin yüksek"
+              ],
+              [
+                "TIBC",
+                "272 µg/dL",
+                "250-450 µg/dL",
+                "Düşük-normal"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v295-new-665-bronzlasma-eklem-agrisi-ve-transaminaz-yuksekligi-ikincil-neden-taramasi",
+          "label": "İkincil neden taraması",
+          "title": "İkincil neden taraması",
+          "orderLabel": "İkincil neden taraması",
+          "type": "lab",
+          "priority": "supportive",
+          "subtype": "İkincil neden taraması",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Sık görülen alternatif karaciğer hasarı ve inflamasyon nedenleri baskın görünmemektedir.",
+          "clinicalMeaning": "Sık görülen alternatif karaciğer hasarı ve inflamasyon nedenleri baskın görünmemektedir.",
+          "result": {
+            "title": "İkincil neden taraması",
+            "summary": "Sık görülen alternatif karaciğer hasarı ve inflamasyon nedenleri baskın görünmemektedir.",
+            "interpretation": "Sık görülen alternatif karaciğer hasarı ve inflamasyon nedenleri baskın görünmemektedir.",
+            "values": [
+              [
+                "HBsAg",
+                "Negatif",
+                "Negatif",
+                "Aktif HBV lehine değil"
+              ],
+              [
+                "Anti-HCV",
+                "Negatif",
+                "Negatif",
+                "HCV lehine değil"
+              ],
+              [
+                "CRP",
+                "3 mg/L",
+                "<5 mg/L",
+                "Belirgin inflamasyon yok"
+              ],
+              [
+                "HFE gen analizi",
+                "C282Y homozigot",
+                "",
+                "Klinik bağlamla birlikte anlamlı"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu bulguları en iyi açıklayan temel patofizyolojik süreç aşağıdakilerden hangisidir?",
+      "questionType": "Mekanizma",
+      "answerTarget": "Kalıtsal demir yüklenmesinde mekanizma",
+      "diagnosis": {
+        "correct": "Hepcidin sinyalinin azalmasıyla bağırsaktan uygunsuz demir emiliminin artması",
+        "options": [
+          "Safra kanaliküllerinde otoimmün yıkıma bağlı kolestatik hasar gelişmesi",
+          "Seruloplazmin eksikliğiyle bakırın karaciğer ve bazal ganglionlarda birikmesi",
+          "İntrinsik faktör eksikliğiyle terminal ileumdan kobalamin emiliminin bozulması",
+          "Hepcidin sinyalinin azalmasıyla bağırsaktan uygunsuz demir emiliminin artması",
+          "Gluten ilişkili mukozal hasarla proksimal ince bağırsakta malabsorpsiyon gelişmesi"
+        ],
+        "question": "Bu bulguları en iyi açıklayan temel patofizyolojik süreç aşağıdakilerden hangisidir?",
+        "explanation": "Hastada yüksek transferrin satürasyonu ve ferritin, hafif transaminaz yüksekliği, bronz pigmentasyon, MCP eklem yakınması, glukoz bozukluğu ve aile öyküsü bir arada sistemik demir yüklenmesi paternini oluşturur. HFE-hepcidin aksındaki bozulma enterosit demir çıkışını gereğinden fazla açık bırakır; demir karaciğer, pankreas, cilt ve eklem gibi dokularda birikir. Bu nedenle doğru mekanizma hepcidin sinyalinin azalmasına bağlı uygunsuz intestinal demir emilimidir.",
+        "pearls": [
+          "Ferritin tek başına inflamasyonda da yükselebilir; transferrin satürasyonu ayırıcı değeri artırır.",
+          "MCP artropatisi demir yüklenmesi için klasik ipuçlarından biridir.",
+          "Demir fazlalığında temel tedavi uygun hastada flebotomidir."
+        ],
+        "optionFeedback": {
+          "Safra kanaliküllerinde otoimmün yıkıma bağlı kolestatik hasar gelişmesi": "Safra kanalikülü hasarı ve küçük intrahepatik safra yollarının otoimmün yıkımı primer biliyer kolanjit gibi kolestatik tabloları açıklar. Bu durumda ALP ve GGT belirgin yüksekliği, kaşıntı, antimitochondrial antikor pozitifliği ve çoğu zaman orta yaş kadın hasta profili beklenir. Bu vakada baskın veri ferritin ve transferrin satürasyonunun yüksekliği, karaciğer enzimlerinde hafif hepatoselüler patern ve metakarpofalangeal eklem yakınmasıdır. Bu nedenle kolestatik otoimmün kanal hastalığı temel mekanizma olarak uymaz.",
+          "Seruloplazmin eksikliğiyle bakırın karaciğer ve bazal ganglionlarda birikmesi": "Bakır birikimi özellikle genç hastada karaciğer hastalığı, nöropsikiyatrik bulgu, hemoliz ve Kayser-Fleischer halkasıyla akla gelir. Seruloplazmin düşüklüğü ve idrar bakır yüksekliği bu mekanizmayı desteklerdi. Bu hastada yaş, aile öyküsü, bronz cilt tonu, ikinci-üçüncü MCP ağrısı, yüksek transferrin satürasyonu ve HFE ilişkili genetik sonuç farklı bir metal metabolizması bozukluğunu öne çıkarır. Bu nedenle bakır metabolizması seçeneği ayırıcı tanıda kalır ama bu vakanın ana paternini açıklamaz.",
+          "İntrinsik faktör eksikliğiyle terminal ileumdan kobalamin emiliminin bozulması": "İntrinsik faktör eksikliği pernicious anemiye ve B12 emilim bozukluğuna yol açar. Makrositoz, hipersegmente nötrofiller, nörolojik bulgular, metilmalonik asit artışı ve düşük B12 beklenirdi. Bu hastada anemi baskın değildir; ferritin ve transferrin satürasyonu belirgin yüksektir, ayrıca eklem ve karaciğer bulguları demir depolanmasıyla daha iyi açıklanır. Bu nedenle kobalamin mekanizması doğru değildir.",
+          "Hepcidin sinyalinin azalmasıyla bağırsaktan uygunsuz demir emiliminin artması": "Bu seçenek en uygundur. HFE ilişkili kalıtsal demir yüklenmesinde hepcidin yanıtı yetersiz kaldığı için enterositlerden kana demir geçişi baskılanamaz ve vücut demiri giderek artar. Transferrin satürasyonunun belirgin yüksek olması, ferritin artışı, hafif transaminaz yüksekliği, bronz cilt tonu, diyabet eğilimi ve ikinci-üçüncü MCP eklem ağrısı bu mekanizmayı destekler. Tedavide amaç fazla demiri uzaklaştırmaktır; uygun hastada düzenli flebotomi temel yaklaşımdır.",
+          "Gluten ilişkili mukozal hasarla proksimal ince bağırsakta malabsorpsiyon gelişmesi": "Gluten ilişkili enteropati demir eksikliği, kronik ishal, kilo kaybı, şişkinlik ve anti-doku transglutaminaz IgA pozitifliğiyle gidebilir. Mekanizma proksimal ince bağırsak emilim yüzeyinin hasarlanmasıdır; bu durum yüksek transferrin satürasyonu ve ferritin artışı yerine çoğu zaman demir eksikliği oluşturur. Bu vakada ishal veya malabsorpsiyon paterninden çok sistemik demir yüklenmesi bulguları vardır. Bu nedenle çölyak mekanizması güvenli bir tercih değildir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Kalıtsal demir yüklenmesinde problem demirin atılamaması değil, hepcidin-ferroportin kontrolünün yetersizliği nedeniyle emilimin gereğinden fazla sürmesidir.",
+      "examPearl": "Ferritin yüksek + transferrin satürasyonu çok yüksek + bronz cilt + MCP ağrısı: inflamasyon değil demir yüklenmesi düşün.",
+      "whyCorrect": "Doğru seçenek, laboratuvar ve klinik bulguların ortak noktası olan sistemik demir birikiminin moleküler temelini açıklar.",
+      "optionComparison": "Diğer seçenekler kolestaz, bakır birikimi, B12 eksikliği veya malabsorpsiyonu açıklar; bu vakada demir yüklenmesi paternini karşılamaz.",
+      "evidenceChain": [
+        "Transferrin satürasyonu %78 → dolaşımdaki demir yükünün arttığını gösterir.",
+        "Ferritin 1.180 ng/mL → depo demiri artışı ile uyumlu, inflamasyon düşük olduğu için daha anlamlı.",
+        "Bronz pigmentasyon ve HbA1c yüksekliği → doku demir birikimiyle ilişkili sistemik etkiler.",
+        "C282Y homozigotluğu → HFE-hepcidin aksı bozukluğunu destekler."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v295",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V280-V294 render-safe internal-medicine cases"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v295-new-666-sinuzit-kanli-balgam-ve-aktif-sediment",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Sinüzit, kanlı balgam ve aktif sediment",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Üst hava yolu tutulumu, hemoptizi, nodüler akciğer bulguları, hızlı böbrek fonksiyon bozulması ve ANCA paternini birleştirerek beklenen böbrek biyopsisi bulgusunu seçme.",
+      "learningTarget": "Pulmoner-renal sendromda anti-GBM, IgA nefropatisi, immün kompleks nefropatiler ve ANCA ilişkili vaskülitlerin böbrek biyopsisi paternlerini ayırt edebilme.",
+      "demographics": "46 yaşında erkek hasta",
+      "setting": "Nefroloji-romatoloji konsültasyon servisi",
+      "chiefComplaint": "Hasta, geçmeyen sinüs yakınmaları üzerine eklenen kanlı balgam ve idrarda koyulaşma nedeniyle yatırılarak değerlendiriliyor.",
+      "stem": "Hasta yaklaşık iki aydır burun tıkanıklığı, kabuklanma ve yüz basıncı yaşadığını, birkaç kez antibiyotik kullanmasına rağmen tam düzelmediğini anlatır. Son on gündür öksürüğüne çizgi şeklinde kan karıştığını ve merdiven çıkarken daha çabuk yorulduğunu fark etmiştir. İki gündür idrar renginin koyulaştığını, idrar yaparken yanma olmadığını ve belinde kolik tarzda taş ağrısı hissetmediğini söyler. Sigara içmemektedir; yakın zamanda yeni ilaç başlamamış, yoğun NSAİİ kullanmamış ve bilinen diyabet öyküsü yoktur. Ateşi aralıklı yükselmiş ama balgamı pürülan olmaktan çok kan çizgili tariflemektedir.",
+      "patientIntro": {
+        "profile": "46 yaşında erkek hasta, nefroloji-romatoloji konsültasyon servisi başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, geçmeyen sinüs yakınmaları üzerine eklenen kanlı balgam ve idrarda koyulaşma nedeniyle yatırılarak değerlendiriliyor.",
+        "historySummary": "Hasta yaklaşık iki aydır burun tıkanıklığı, kabuklanma ve yüz basıncı yaşadığını, birkaç kez antibiyotik kullanmasına rağmen tam düzelmediğini anlatır. Son on gündür öksürüğüne çizgi şeklinde kan karıştığını ve merdiven çıkarken daha çabuk yorulduğunu fark etmiştir. İki gündür idrar renginin koyulaştığını, idrar yaparken yanma olmadığını ve belinde kolik tarzda taş ağrısı hissetmediğini söyler. Sigara içmemektedir; yakın zamanda yeni ilaç başlamamış, yoğun NSAİİ kullanmamış ve bilinen diyabet öyküsü yoktur. Ateşi aralıklı yükselmiş ama balgamı pürülan olmaktan çok kan çizgili tariflemektedir."
+      },
+      "vitals": {
+        "TA": "146/88 mmHg",
+        "Nabız": "96/dk",
+        "Solunum": "22/dk",
+        "SpO2": "%93, oda havasında",
+        "Ateş": "37.8 °C",
+        "Şok indeksi": "0.66 - perfüzyon stabil"
+      },
+      "exam": [
+        "Hasta yorgun görünmekle birlikte bilinci açık ve koopere durumdadır.",
+        "Nazal mukozada kabuklanma ve hafif kanama odakları izlenir; oral ülser saptanmaz.",
+        "Akciğerlerde bazallerde seyrek inspiratuvar raller duyulur; yaygın wheezing yoktur.",
+        "Pretibial hafif ödem vardır; purpurik yaygın döküntü izlenmez."
+      ],
+      "investigations": [
+        {
+          "id": "v295-new-666-sinuzit-kanli-balgam-ve-aktif-sediment-bobrek-ve-idrar",
+          "label": "Böbrek fonksiyonu ve idrar sedimenti",
+          "title": "Böbrek fonksiyonu ve idrar sedimenti",
+          "orderLabel": "Böbrek fonksiyonu ve idrar sedimenti",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Böbrek fonksiyonu ve idrar sedimenti",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Aktif nefritik sediment ve hızlı böbrek fonksiyon bozulması vardır.",
+          "clinicalMeaning": "Aktif nefritik sediment ve hızlı böbrek fonksiyon bozulması vardır.",
+          "result": {
+            "title": "Böbrek fonksiyonu ve idrar sedimenti",
+            "summary": "Aktif nefritik sediment ve hızlı böbrek fonksiyon bozulması vardır.",
+            "interpretation": "Aktif nefritik sediment ve hızlı böbrek fonksiyon bozulması vardır.",
+            "values": [
+              [
+                "Kreatinin",
+                "2.4 mg/dL",
+                "0.7-1.2 mg/dL",
+                "Bazal 0.9 mg/dL, hızlı artış"
+              ],
+              [
+                "eGFR",
+                "31 mL/dk/1.73 m²",
+                ">90 mL/dk/1.73 m²",
+                "Azalmış"
+              ],
+              [
+                "İdrar eritrositi",
+                "60-80/HPF",
+                "0-3/HPF",
+                "Belirgin hematüri"
+              ],
+              [
+                "Eritrosit silendiri",
+                "Pozitif",
+                "Negatif",
+                "Glomerüler kanama lehine"
+              ],
+              [
+                "Protein/kreatinin",
+                "1.2 g/g",
+                "<0.15 g/g",
+                "Nefritik düzeyde proteinüri"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v295-new-666-sinuzit-kanli-balgam-ve-aktif-sediment-seroloji",
+          "label": "Serolojik değerlendirme",
+          "title": "Serolojik değerlendirme",
+          "orderLabel": "Serolojik değerlendirme",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Serolojik değerlendirme",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Küçük damar vasküliti yönünde anlamlı otoantikor paterni vardır.",
+          "clinicalMeaning": "Küçük damar vasküliti yönünde anlamlı otoantikor paterni vardır.",
+          "result": {
+            "title": "Serolojik değerlendirme",
+            "summary": "Küçük damar vasküliti yönünde anlamlı otoantikor paterni vardır.",
+            "interpretation": "Küçük damar vasküliti yönünde anlamlı otoantikor paterni vardır.",
+            "values": [
+              [
+                "PR3-ANCA",
+                "Pozitif, yüksek titre",
+                "Negatif",
+                "ANCA ilişkili süreç lehine"
+              ],
+              [
+                "MPO-ANCA",
+                "Negatif",
+                "Negatif",
+                "PR3 baskın patern"
+              ],
+              [
+                "Anti-GBM",
+                "Negatif",
+                "Negatif",
+                "Lineer anti-GBM sürecini zayıflatır"
+              ],
+              [
+                "C3",
+                "96 mg/dL",
+                "90-180 mg/dL",
+                "Normal"
+              ],
+              [
+                "C4",
+                "24 mg/dL",
+                "10-40 mg/dL",
+                "Normal"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v295-new-666-sinuzit-kanli-balgam-ve-aktif-sediment-toraks-bt",
+          "label": "Toraks BT",
+          "title": "Toraks BT",
+          "orderLabel": "Toraks BT",
+          "type": "imaging",
+          "priority": "supportive",
+          "subtype": "Toraks BT",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Akciğerde enfeksiyon dışı inflamatuvar-vaskülitik tutulumla uyumlu olabilecek nodüler lezyonlar izlenmektedir.",
+          "clinicalMeaning": "Akciğerde enfeksiyon dışı inflamatuvar-vaskülitik tutulumla uyumlu olabilecek nodüler lezyonlar izlenmektedir.",
+          "result": {
+            "title": "Toraks BT",
+            "summary": "Akciğerde enfeksiyon dışı inflamatuvar-vaskülitik tutulumla uyumlu olabilecek nodüler lezyonlar izlenmektedir.",
+            "interpretation": "Akciğerde enfeksiyon dışı inflamatuvar-vaskülitik tutulumla uyumlu olabilecek nodüler lezyonlar izlenmektedir.",
+            "values": [
+              [
+                "Parankim",
+                "Bilateral düzensiz kenarlı nodüler opasiteler",
+                "Yok",
+                "Multifokal tutulum"
+              ],
+              [
+                "Kavitasyon",
+                "Bazı nodüllerde erken kavitasyon",
+                "Yok",
+                "Nekrotizan süreçle uyumlu olabilir"
+              ],
+              [
+                "Plevral sıvı",
+                "Yok",
+                "Yok",
+                "Belirgin efüzyon yok"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada böbrek biyopsisinde beklenen immünopatolojik patern aşağıdakilerden hangisidir?",
+      "questionType": "Patoloji/laboratuvar paterni",
+      "answerTarget": "ANCA ilişkili vaskülitte böbrek biyopsisi paterni",
+      "diagnosis": {
+        "correct": "Pauci-immün nekrotizan kresentik glomerülonefrit",
+        "options": [
+          "Pauci-immün nekrotizan kresentik glomerülonefrit",
+          "Lineer IgG birikimli anti-bazal membran glomerülonefriti",
+          "Granüler IgA mezangial birikimli glomerülonefrit",
+          "Subepitelyal immün kompleks birikimli membranöz nefropati",
+          "Minimal değişiklik hastalığına bağlı podosit ayak çıkıntısı silinmesi"
+        ],
+        "question": "Bu hastada böbrek biyopsisinde beklenen immünopatolojik patern aşağıdakilerden hangisidir?",
+        "explanation": "Hastanın sinüs-burun tutulumu, hemoptizi, nodüler akciğer lezyonları, hızlı kreatinin artışı, eritrosit silendirleri ve PR3-ANCA pozitifliği küçük damar vasküliti ile uyumludur. Böbrekte beklenen patern nekrotizan kresentik glomerülonefrittir; immün kompleks birikimi belirgin olmadığı için pauci-immün özellik taşır. Bu ayrım anti-GBM hastalığı, IgA nefropatisi ve nefrotik sendrom nedenlerinden farklıdır.",
+        "pearls": [
+          "ANCA vaskülitlerinde kompleman genellikle normal olabilir.",
+          "Eritrosit silendiri glomerüler kanama için kritik ipucudur.",
+          "Pauci-immün ifadesi immünfloresanda belirgin depozit olmamasını anlatır."
+        ],
+        "optionFeedback": {
+          "Pauci-immün nekrotizan kresentik glomerülonefrit": "Bu seçenek en uygundur. Üst hava yolu yakınmaları, kanlı balgam, akciğerde nodüler/kavitasyon eğilimli lezyonlar, aktif idrar sedimenti, hızlı kreatinin artışı ve PR3-ANCA pozitifliği ANCA ilişkili küçük damar vaskülitini destekler. Böbrek biyopsisinde genellikle nekrotizan kresentik glomerülonefrit görülür; immünfloresanda belirgin immün kompleks birikimi olmaması nedeniyle pauci-immün olarak tanımlanır. Organ tehdit eden tabloda immünsüpresif indüksiyon tedavisi geciktirilmemelidir.",
+          "Lineer IgG birikimli anti-bazal membran glomerülonefriti": "Lineer IgG birikimi anti-GBM hastalığı için karakteristiktir ve pulmoner-renal sendrom yapabilir. Ancak bu tabloda kronik sinüzit, nazal kabuklanma, nodüler akciğer lezyonları ve PR3-ANCA pozitifliği granulomatöz küçük damar vaskülitini daha güçlü destekler. Anti-GBM hastalığında burun-sinüs tutulumunun bu kadar belirgin olması beklenmez. Biyopside lineer IgG görülmesi bu vaka için en olası patern değildir.",
+          "Granüler IgA mezangial birikimli glomerülonefrit": "Granüler IgA mezangial birikim IgA nefropatisinde beklenir. Bu hastalık üst solunum yolu enfeksiyonuyla yakın zamanlı makroskopik hematüri yapabilir; fakat akciğer nodülleri, kanlı balgam, nazal kabuklanma ve PR3-ANCA pozitifliği tipik değildir. IgA nefropatisi genellikle böyle sistemik nekrotizan küçük damar vasküliti tablosu oluşturmaz. Bu nedenle bu seçenek ayırıcı tanıda kalır ama bu vakanın multisistem bulgularını açıklamaz.",
+          "Subepitelyal immün kompleks birikimli membranöz nefropati": "Membranöz nefropati erişkinde nefrotik sendromun önemli nedenidir; subepitelyal immün kompleks birikimi ve çoğu zaman ağır proteinüriyle gelir. Bu vakada aktif idrar sedimenti, eritrosit silendirleri ve hızlı kreatinin artışı nefritik/RPGN paternindedir. Ayrıca akciğer ve üst hava yolu bulguları membranöz nefropatiyle açıklanamaz. Bu nedenle subepitelyal immün kompleks birikimi doğru patern değildir.",
+          "Minimal değişiklik hastalığına bağlı podosit ayak çıkıntısı silinmesi": "Minimal değişiklik hastalığı nefrotik sendrom, ağır ödem ve selektif albüminüriyle öne çıkar; ışık mikroskopisi çoğu zaman normale yakındır, elektron mikroskopide podosit ayak çıkıntısı silinmesi görülür. Eritrosit silendirleri, hızlı kreatinin artışı ve sistemik akciğer-üst hava yolu bulguları beklenmez. Bu vaka nefrotik değil, aktif inflamatuvar nefritik süreçtir. Bu nedenle minimal değişiklik hastalığı güvenli bir tercih değildir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Pulmoner-renal sendrom tek tanı değildir; sinüs tutulumu, ANCA tipi, kompleman ve anti-GBM sonucu biyopsi paternini doğru sınıflamaya yardım eder.",
+      "examPearl": "Sinüzit + hemoptizi + eritrosit silendiri + PR3-ANCA: pauci-immün kresentik GN bekle.",
+      "whyCorrect": "Doğru seçenek, üst hava yolu-akciğer-böbrek tutulumunu tek bir küçük damar vasküliti paterninde birleştirir.",
+      "optionComparison": "Lineer IgG anti-GBM, granüler IgA IgA nefropatisi, subepitelyal depozit membranöz nefropati ve podosit silinmesi minimal değişiklik hastalığı için daha uygundur.",
+      "evidenceChain": [
+        "Nazal kabuklanma ve kronik sinüs yakınması → üst hava yolu tutulumunu gösterir.",
+        "Kanlı balgam ve nodüler/kavitasyon eğilimli opasiteler → akciğer tutulumunu destekler.",
+        "Eritrosit silendiri ve kreatinin artışı → glomerüler inflamatuvar böbrek hasarı.",
+        "PR3-ANCA pozitif, anti-GBM negatif ve kompleman normal → pauci-immün ANCA ilişkili patern lehine."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v295",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V280-V294 render-safe internal-medicine cases"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v295-new-667-bas-agrisi-ense-sertligi-ve-konfuzyon",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Baş ağrısı, ense sertliği ve konfüzyon",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Yaşlı erişkinde ateş, ense sertliği, bilinç değişikliği ve BOS ön verilerini değerlendirerek bakteriyel menenjitte ampirik tedavi kapsamını seçme.",
+      "learningTarget": "Erişkin bakteriyel menenjitte tedavinin BOS sonucunu beklememesi gerektiğini; ileri yaşta Listeria kapsamı için ampisilin ve pnömokok direnci için vankomisin eklenmesini açıklayabilme.",
+      "demographics": "71 yaşında kadın hasta",
+      "setting": "Acil servis nörolojik değerlendirme alanı",
+      "chiefComplaint": "Hasta, şiddetli baş ağrısı, ateş ve yakınlarının fark ettiği dalgınlık nedeniyle acile getiriliyor.",
+      "stem": "Hasta dün akşam başlayan yaygın baş ağrısının gece giderek şiddetlendiğini ve sabah ışığa bakmakta zorlandığını söylemiştir. Kızı, hastanın öğleden sonra sorulara geç yanıt verdiğini ve aynı cümleleri tekrarladığını fark ederek acile getirmiştir. Son bir haftadır hafif kulak ağrısı ve burun akıntısı olmuş ama antibiyotik kullanmamıştır. Düşme, kafa travması veya bilinen epilepsi öyküsü yoktur; kan sulandırıcı kullanmadığını yakınları belirtir. Evde kusması olmuş, döküntü fark edilmemiş ve yakın zamanda yurtdışı seyahati olmamıştır.",
+      "patientIntro": {
+        "profile": "71 yaşında kadın hasta, acil servis nörolojik değerlendirme alanı başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, şiddetli baş ağrısı, ateş ve yakınlarının fark ettiği dalgınlık nedeniyle acile getiriliyor.",
+        "historySummary": "Hasta dün akşam başlayan yaygın baş ağrısının gece giderek şiddetlendiğini ve sabah ışığa bakmakta zorlandığını söylemiştir. Kızı, hastanın öğleden sonra sorulara geç yanıt verdiğini ve aynı cümleleri tekrarladığını fark ederek acile getirmiştir. Son bir haftadır hafif kulak ağrısı ve burun akıntısı olmuş ama antibiyotik kullanmamıştır. Düşme, kafa travması veya bilinen epilepsi öyküsü yoktur; kan sulandırıcı kullanmadığını yakınları belirtir. Evde kusması olmuş, döküntü fark edilmemiş ve yakın zamanda yurtdışı seyahati olmamıştır."
+      },
+      "vitals": {
+        "TA": "138/82 mmHg",
+        "Nabız": "108/dk",
+        "Solunum": "20/dk",
+        "SpO2": "%97, oda havasında",
+        "Ateş": "38.9 °C",
+        "Şok indeksi": "0.78 - dolaşım stabil"
+      },
+      "exam": [
+        "Hasta letarjik görünür; kişi ve yer oryantasyonu dalgalıdır.",
+        "Ense fleksiyonu ağrılıdır ve belirgin ense sertliği vardır.",
+        "Fokal motor defisit, papil ödemi veya yeni nöbet saptanmamıştır.",
+        "Ciltte peteşi-purpura yoktur; kulak arkasında mastoid hassasiyet belirgin değildir."
+      ],
+      "investigations": [
+        {
+          "id": "v295-new-667-bas-agrisi-ense-sertligi-ve-konfuzyon-temel-laboratuvar",
+          "label": "Temel laboratuvar",
+          "title": "Temel laboratuvar",
+          "orderLabel": "Temel laboratuvar",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Temel laboratuvar",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Sistemik inflamatuvar yanıt vardır; tedavi öncesi kan kültürleri alınmıştır.",
+          "clinicalMeaning": "Sistemik inflamatuvar yanıt vardır; tedavi öncesi kan kültürleri alınmıştır.",
+          "result": {
+            "title": "Temel laboratuvar",
+            "summary": "Sistemik inflamatuvar yanıt vardır; tedavi öncesi kan kültürleri alınmıştır.",
+            "interpretation": "Sistemik inflamatuvar yanıt vardır; tedavi öncesi kan kültürleri alınmıştır.",
+            "values": [
+              [
+                "Lökosit",
+                "17.600/µL",
+                "4.000-10.000/µL",
+                "Nötrofil baskın yüksek"
+              ],
+              [
+                "CRP",
+                "184 mg/L",
+                "<5 mg/L",
+                "Belirgin yüksek"
+              ],
+              [
+                "Glukoz",
+                "126 mg/dL",
+                "70-140 mg/dL",
+                "Eş zamanlı BOS yorumu için"
+              ],
+              [
+                "Kan kültürü",
+                "2 set alındı",
+                "",
+                "Antibiyotik öncesi örneklendi"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v295-new-667-bas-agrisi-ense-sertligi-ve-konfuzyon-bos-incelemesi",
+          "label": "BOS incelemesi",
+          "title": "BOS incelemesi",
+          "orderLabel": "BOS incelemesi",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "BOS incelemesi",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "BOS verileri bakteriyel inflamasyon paternini destekleyen yöndedir.",
+          "clinicalMeaning": "BOS verileri bakteriyel inflamasyon paternini destekleyen yöndedir.",
+          "result": {
+            "title": "BOS incelemesi",
+            "summary": "BOS verileri bakteriyel inflamasyon paternini destekleyen yöndedir.",
+            "interpretation": "BOS verileri bakteriyel inflamasyon paternini destekleyen yöndedir.",
+            "values": [
+              [
+                "Açılış basıncı",
+                "280 mmH2O",
+                "70-180 mmH2O",
+                "Yüksek"
+              ],
+              [
+                "BOS lökosit",
+                "1.860/µL, %88 nötrofil",
+                "0-5/µL",
+                "Nötrofilik pleositoz"
+              ],
+              [
+                "BOS glukoz",
+                "28 mg/dL",
+                "Serumun yaklaşık %60'ı",
+                "Düşük"
+              ],
+              [
+                "BOS protein",
+                "214 mg/dL",
+                "15-45 mg/dL",
+                "Yüksek"
+              ],
+              [
+                "Gram boyama",
+                "Gram pozitif diplokok şüphesi",
+                "Negatif",
+                "Kesin kültür bekleniyor"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v295-new-667-bas-agrisi-ense-sertligi-ve-konfuzyon-bt-guvenlik-degerlendirmesi",
+          "label": "BT/LP güvenlik değerlendirmesi",
+          "title": "BT/LP güvenlik değerlendirmesi",
+          "orderLabel": "BT/LP güvenlik değerlendirmesi",
+          "type": "imaging",
+          "priority": "supportive",
+          "subtype": "BT/LP güvenlik değerlendirmesi",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Lomber ponksiyon öncesi klinik risk değerlendirmesinde kitle etkisi düşündüren bulgu saptanmamıştır.",
+          "clinicalMeaning": "Lomber ponksiyon öncesi klinik risk değerlendirmesinde kitle etkisi düşündüren bulgu saptanmamıştır.",
+          "result": {
+            "title": "BT/LP güvenlik değerlendirmesi",
+            "summary": "Lomber ponksiyon öncesi klinik risk değerlendirmesinde kitle etkisi düşündüren bulgu saptanmamıştır.",
+            "interpretation": "Lomber ponksiyon öncesi klinik risk değerlendirmesinde kitle etkisi düşündüren bulgu saptanmamıştır.",
+            "values": [
+              [
+                "Fokal nörolojik defisit",
+                "Yok",
+                "Yok",
+                "LP geciktiren belirti yok"
+              ],
+              [
+                "Papil ödem",
+                "Yok",
+                "Yok",
+                "Kitle etkisi bulgusu yok"
+              ],
+              [
+                "Kontrastsız BT",
+                "Akut kanama veya kitle etkisi yok",
+                "Yok",
+                "LP için engel izlenmedi"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada antibiyotik ve ek tedavi açısından en uygun başlangıç yaklaşımı aşağıdakilerden hangisidir?",
+      "questionType": "Tedavi/izlem",
+      "answerTarget": "Yaşlı erişkinde ampirik bakteriyel menenjit tedavisi",
+      "diagnosis": {
+        "correct": "Deksametazonla birlikte vankomisin, seftriakson ve ampisilin başlamak",
+        "options": [
+          "Yalnız asiklovir başlayıp antibakteriyel tedaviyi BOS sonucuna kadar bekletmek",
+          "Sadece seftriakson başlamak ve yaş nedeniyle ampisilini eklememek",
+          "Oral amoksisilin-klavulanat verip ayaktan yakın izlem planlamak",
+          "Önce lomber ponksiyon sonucunu bekleyip tüm tedaviyi kültüre göre başlamak",
+          "Deksametazonla birlikte vankomisin, seftriakson ve ampisilin başlamak"
+        ],
+        "question": "Bu hastada antibiyotik ve ek tedavi açısından en uygun başlangıç yaklaşımı aşağıdakilerden hangisidir?",
+        "explanation": "Ateş, ense sertliği, konfüzyon ve BOS’ta nötrofilik pleositoz-düşük glukoz-yüksek protein paterni bakteriyel menenjit açısından acil tedavi gerektirir. Yetmiş yaşındaki hastada pnömokok ve meningokok kapsamına ek olarak Listeria kapsamı da gerekir; bu nedenle vankomisin, seftriakson ve ampisilin birlikte düşünülür. Deksametazon antibiyotikle birlikte veya hemen öncesinde verilerek inflamatuvar nörolojik hasarı azaltmayı hedefler; tedavi kültür sonucunu beklememelidir.",
+        "pearls": [
+          "Menenjitte tedavi BOS kültür sonucunu beklemez.",
+          "İleri yaşta ampirik rejime Listeria kapsamı eklenir.",
+          "Deksametazon antibiyotikle eş zamanlı veya hemen önce verilmelidir."
+        ],
+        "optionFeedback": {
+          "Yalnız asiklovir başlayıp antibakteriyel tedaviyi BOS sonucuna kadar bekletmek": "Asiklovir ensefalit şüphesinde, özellikle temporal lob tutulumlu herpes ensefalitinde hayat kurtarıcı olabilir. Ancak bu hastada ateş, ense sertliği, nötrofil baskın BOS paterni beklenmesi ve ileri yaş nedeniyle bakteriyel menenjit öncelikle tedavi edilmelidir. Yalnız antiviral verip antibakteriyel tedaviyi bekletmek pnömokok, meningokok veya Listeria gibi etkenlerde ölümcül gecikmeye yol açabilir. Ensefalit ayırıcı tanıda kalıyorsa asiklovir eklenebilir; fakat antibakteriyel rejimin yerine geçmez.",
+          "Sadece seftriakson başlamak ve yaş nedeniyle ampisilini eklememek": "Seftriakson erişkin bakteriyel menenjitte temel ajanlardan biridir; ancak ileri yaşta Listeria riski arttığı için ampisilin eklenmesi gerekir. Ayrıca dirençli pnömokok olasılığı nedeniyle vankomisin de ampirik rejime dahil edilir. Tek başına seftriakson, bu hastanın yaş ve risk profilini tam karşılamaz. Bu nedenle seçenek kısmen doğru bileşen içerse de eksik tedavidir.",
+          "Oral amoksisilin-klavulanat verip ayaktan yakın izlem planlamak": "Oral amoksisilin-klavulanat sinüzit, otit veya bazı toplum kökenli solunum yolu enfeksiyonlarında kullanılabilir; fakat meningeal bulgusu ve konfüzyonu olan hastada yeterli ve güvenli değildir. Bu olgu acil intravenöz tedavi, monitörizasyon ve hızlı tanısal değerlendirme gerektirir. Ayaktan izlem, bilinç değişikliği ve ense sertliği gibi kırmızı bayraklar varken güvenli bir tercih değildir. Tedavinin gecikmesi nörolojik sekeli ve mortaliteyi artırabilir.",
+          "Önce lomber ponksiyon sonucunu bekleyip tüm tedaviyi kültüre göre başlamak": "Lomber ponksiyon tanıda çok değerlidir; fakat klinik olarak güçlü bakteriyel menenjit şüphesi varsa tedavi BOS sonucunu beklememelidir. Kan kültürleri hızla alınır, kontrendikasyon yoksa LP yapılır; ancak LP gecikecekse antibiyotik ve uygun ek tedavi başlanır. Bu hastada konfüzyon, ateş ve ense sertliği acil tedavi gerektirir. Kültür hedefli daraltma daha sonra yapılır.",
+          "Deksametazonla birlikte vankomisin, seftriakson ve ampisilin başlamak": "Bu seçenek en uygundur. İleri yaşta bakteriyel menenjit şüphesinde vankomisin ve üçüncü kuşak sefalosporin dirençli pnömokok ve yaygın etkenleri kapsar; ampisilin Listeria kapsamı için eklenir. Deksametazon antibiyotikle birlikte veya hemen öncesinde verilerek özellikle pnömokokal menenjitte inflamatuvar hasarı azaltmayı hedefler. Kan kültürü ve BOS örneklemesi tedaviyi geciktirmeden organize edilmelidir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Bakteriyel menenjitte doğru yaklaşım hızlı kültür örneklemesi ve gecikmeyen ampirik intravenöz tedavidir; yaş ve bağışıklık durumu ampirik kapsamı değiştirir.",
+      "examPearl": "Yaşlı menenjit hastasında seftriakson tek başına eksik kalır; Listeria için ampisilin eklemeyi unutma.",
+      "whyCorrect": "Doğru seçenek hastanın yaşını, olası dirençli pnömokok riskini, Listeria kapsamını ve steroid zamanlamasını birlikte karşılar.",
+      "optionComparison": "Diğer seçenekler ya bakteriyel tedaviyi geciktirir ya kapsamı eksik bırakır ya da oral/ayaktan yaklaşım gibi bu klinikte güvenli olmayan yollar önerir.",
+      "evidenceChain": [
+        "Ateş, baş ağrısı, ense sertliği ve konfüzyon → meningeal enfeksiyon için acil klinik tablo.",
+        "BOS nötrofilik pleositoz + düşük glukoz + yüksek protein → bakteriyel patern.",
+        "Yaş 71 → Listeria kapsamı gerektiren risk grubu.",
+        "Fokal defisit ve kitle etkisi yok → tanısal LP yapılabilir ama tedavi geciktirilmez."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v295",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V280-V294 render-safe internal-medicine cases"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v295-new-668-karin-sisligi-hepatomegali-ve-jak2-pozitifligi",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Karın şişliği, hepatomegali ve JAK2 pozitifliği",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Hızlı gelişen asit, ağrılı hepatomegali, hepatik ven akım kaybı ve miyeloproliferatif tromboz eğilimini birlikte yorumlayarak vasküler karaciğer hastalığını tanıma.",
+      "learningTarget": "Budd-Chiari sendromunda hepatik venöz çıkış obstrüksiyonunun klinik, görüntüleme ve trombofili bulgularıyla nasıl tanındığını; SBP, PBC, alkolik hepatit ve hepatorenal sendromdan nasıl ayrıldığını açıklayabilme.",
+      "demographics": "38 yaşında kadın hasta",
+      "setting": "Gastroenteroloji servisi",
+      "chiefComplaint": "Hasta, bir hafta içinde artan karın şişliği ve sağ üst kadran ağrısı nedeniyle yatırılarak değerlendiriliyor.",
+      "stem": "Hasta son bir haftada pantolonlarının belinin belirgin sıkmaya başladığını ve sağ kaburga altında dolgunluk-ağrı hissettiğini anlatır. Ağrı yemekle belirgin değişmemekte, derin nefes alınca sağ üst tarafta basınç hissi artmaktadır. Daha önce bilinen sirozu, kronik hepatiti veya ağır alkol kullanımı yoktur; son aylarda tekrarlayan baş ağrısı ve duş sonrası kaşıntı yaşadığını ama önemsemediğini söyler. Ateş, kanlı dışkı veya siyah dışkı fark etmemiştir. Oral kontraseptif kullandığını ve ailesinde genç yaşta bacak pıhtısı geçiren bir akrabası olduğunu belirtir.",
+      "patientIntro": {
+        "profile": "38 yaşında kadın hasta, gastroenteroloji servisi başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, bir hafta içinde artan karın şişliği ve sağ üst kadran ağrısı nedeniyle yatırılarak değerlendiriliyor.",
+        "historySummary": "Hasta son bir haftada pantolonlarının belinin belirgin sıkmaya başladığını ve sağ kaburga altında dolgunluk-ağrı hissettiğini anlatır. Ağrı yemekle belirgin değişmemekte, derin nefes alınca sağ üst tarafta basınç hissi artmaktadır. Daha önce bilinen sirozu, kronik hepatiti veya ağır alkol kullanımı yoktur; son aylarda tekrarlayan baş ağrısı ve duş sonrası kaşıntı yaşadığını ama önemsemediğini söyler. Ateş, kanlı dışkı veya siyah dışkı fark etmemiştir. Oral kontraseptif kullandığını ve ailesinde genç yaşta bacak pıhtısı geçiren bir akrabası olduğunu belirtir."
+      },
+      "vitals": {
+        "TA": "118/72 mmHg",
+        "Nabız": "102/dk",
+        "Solunum": "18/dk",
+        "SpO2": "%98, oda havasında",
+        "Ateş": "37.2 °C",
+        "Şok indeksi": "0.86 - yakın takip gerektirir"
+      },
+      "exam": [
+        "Hasta rahatsız görünür ancak bilinci açık ve koopere durumdadır.",
+        "Batında orta derecede distansiyon ve shifting dullness vardır.",
+        "Karaciğer kenarı hassas ve kot altında 4 cm palpe edilir; belirgin splenomegali yoktur.",
+        "Periferik ödem hafiftir; belirgin sarılık veya asteriksis saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v295-new-668-karin-sisligi-hepatomegali-ve-jak2-pozitifligi-karaciger-ve-koagulasyon",
+          "label": "Karaciğer ve koagülasyon paneli",
+          "title": "Karaciğer ve koagülasyon paneli",
+          "orderLabel": "Karaciğer ve koagülasyon paneli",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Karaciğer ve koagülasyon paneli",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hepatik konjesyonla uyumlu enzim yüksekliği ve hafif sentetik etkilenim vardır.",
+          "clinicalMeaning": "Hepatik konjesyonla uyumlu enzim yüksekliği ve hafif sentetik etkilenim vardır.",
+          "result": {
+            "title": "Karaciğer ve koagülasyon paneli",
+            "summary": "Hepatik konjesyonla uyumlu enzim yüksekliği ve hafif sentetik etkilenim vardır.",
+            "interpretation": "Hepatik konjesyonla uyumlu enzim yüksekliği ve hafif sentetik etkilenim vardır.",
+            "values": [
+              [
+                "AST",
+                "132 U/L",
+                "<40 U/L",
+                "Yüksek"
+              ],
+              [
+                "ALT",
+                "146 U/L",
+                "<41 U/L",
+                "Yüksek"
+              ],
+              [
+                "Total bilirubin",
+                "2.1 mg/dL",
+                "0.2-1.2 mg/dL",
+                "Hafif yüksek"
+              ],
+              [
+                "INR",
+                "1.4",
+                "0.8-1.2",
+                "Hafif uzamış"
+              ],
+              [
+                "Albümin",
+                "3.4 g/dL",
+                "3.5-5.0 g/dL",
+                "Hafif düşük"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v295-new-668-karin-sisligi-hepatomegali-ve-jak2-pozitifligi-hematoloji-ve-trombofili",
+          "label": "Hematoloji ve tromboz eğilimi",
+          "title": "Hematoloji ve tromboz eğilimi",
+          "orderLabel": "Hematoloji ve tromboz eğilimi",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Hematoloji ve tromboz eğilimi",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Miyeloproliferatif tromboz yatkınlığını destekleyen sonuçlar vardır.",
+          "clinicalMeaning": "Miyeloproliferatif tromboz yatkınlığını destekleyen sonuçlar vardır.",
+          "result": {
+            "title": "Hematoloji ve tromboz eğilimi",
+            "summary": "Miyeloproliferatif tromboz yatkınlığını destekleyen sonuçlar vardır.",
+            "interpretation": "Miyeloproliferatif tromboz yatkınlığını destekleyen sonuçlar vardır.",
+            "values": [
+              [
+                "Hemoglobin",
+                "17.6 g/dL",
+                "12-16 g/dL",
+                "Yüksek"
+              ],
+              [
+                "Hematokrit",
+                "%53",
+                "%36-46",
+                "Yüksek"
+              ],
+              [
+                "Trombosit",
+                "512.000/µL",
+                "150.000-400.000/µL",
+                "Yüksek"
+              ],
+              [
+                "JAK2 V617F",
+                "Pozitif",
+                "Negatif",
+                "Miyeloproliferatif yatkınlık"
+              ],
+              [
+                "D-dimer",
+                "1.820 ng/mL",
+                "<500 ng/mL",
+                "Yüksek"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v295-new-668-karin-sisligi-hepatomegali-ve-jak2-pozitifligi-asit-ve-doppler",
+          "label": "Asit incelemesi ve Doppler USG",
+          "title": "Asit incelemesi ve Doppler USG",
+          "orderLabel": "Asit incelemesi ve Doppler USG",
+          "type": "imaging",
+          "priority": "essential",
+          "subtype": "Asit incelemesi ve Doppler USG",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Asit enfeksiyon paterninden çok hepatik venöz akım bozukluğu ile birlikte görülmektedir.",
+          "clinicalMeaning": "Asit enfeksiyon paterninden çok hepatik venöz akım bozukluğu ile birlikte görülmektedir.",
+          "result": {
+            "title": "Asit incelemesi ve Doppler USG",
+            "summary": "Asit enfeksiyon paterninden çok hepatik venöz akım bozukluğu ile birlikte görülmektedir.",
+            "interpretation": "Asit enfeksiyon paterninden çok hepatik venöz akım bozukluğu ile birlikte görülmektedir.",
+            "values": [
+              [
+                "Asit PMN",
+                "110/mm³",
+                "<250/mm³",
+                "SBP lehine değil"
+              ],
+              [
+                "SAAG",
+                "1.6 g/dL",
+                ">1.1 portal hipertansiyon lehine",
+                "Portal basınç artışı"
+              ],
+              [
+                "Hepatik ven Doppler",
+                "Sağ ve orta hepatik vende akım alınamıyor",
+                "Normal akım",
+                "Venöz çıkış obstrüksiyonu"
+              ],
+              [
+                "Kaudat lob",
+                "Hafif hipertrofik",
+                "Normal",
+                "Kronikleşen çıkış yolu yükü olabilir"
+              ],
+              [
+                "Portal ven",
+                "Akım açık",
+                "Açık",
+                "Primer portal ven tıkanıklığı değil"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada en olası tanı aşağıdakilerden hangisidir?",
+      "questionType": "Tanı",
+      "answerTarget": "Hepatik venöz çıkış obstrüksiyonunun tanınması",
+      "diagnosis": {
+        "correct": "Budd-Chiari sendromu",
+        "options": [
+          "Alkol ilişkili akut hepatit",
+          "Spontan bakteriyel peritonit",
+          "Budd-Chiari sendromu",
+          "Primer biliyer kolanjit",
+          "Hepatorenal sendrom"
+        ],
+        "question": "Bu hastada en olası tanı aşağıdakilerden hangisidir?",
+        "explanation": "Hızlı gelişen asit, ağrılı hepatomegali, hepatik enzim yüksekliği ve Doppler’de hepatik ven akımının kaybolması hepatik venöz çıkış obstrüksiyonunu düşündürür. JAK2 pozitifliği, eritrositoz/trombositoz ve tromboz öyküsü bu obstrüksiyonun miyeloproliferatif tromboz yatkınlığıyla ilişkili olabileceğini destekler. Asit PMN sayısının düşük olması SBP’yi, belirgin kolestatik patern olmaması PBC’yi ve ağır alkol öyküsü olmaması alkolik hepatiti geri plana iter.",
+        "pearls": [
+          "Budd-Chiari’de üçlü ipucu: karın ağrısı, asit, hepatomegali.",
+          "Doppler USG tanıda hızlı ve değerlidir.",
+          "Altta miyeloproliferatif hastalık araştırılması gerekir."
+        ],
+        "optionFeedback": {
+          "Alkol ilişkili akut hepatit": "Alkol ilişkili hepatit sağ üst kadran ağrısı, sarılık, ateş ve AST/ALT oranının genellikle 2’den yüksek olduğu hepatoselüler paternle gelebilir. Ancak hepatik venlerde akım yokluğu, yeni asit ve prokoagülan/miyeloproliferatif risk bulguları bu tanıyı açıklamaz. Bu hastada öyküde ağır alkol kullanımı da yoktur ve karaciğer venöz çıkış obstrüksiyonu görüntüleme ile desteklenmiştir. Bu nedenle alkol ilişkili hepatit en olası tanı değildir.",
+          "Spontan bakteriyel peritonit": "Spontan bakteriyel peritonit sirozlu ve asitli hastada ateş, karın ağrısı ve asit sıvısında PMN ≥250/mm³ ile tanınır. Bu vakada asit yeni gelişmiş olsa da PMN sayısı düşük, kültür negatif ve esas bulgu hepatik ven çıkışında tıkanmadır. SBP bu hastada sonradan komplikasyon olabilir; fakat ilk tabloyu hepatomegali, asit ve hepatik ven akım kaybıyla açıklamaz. Bu nedenle doğru seçenek değildir.",
+          "Budd-Chiari sendromu": "Bu seçenek en uygundur. Karın şişliği, ağrılı hepatomegali, hızlı gelişen asit ve Doppler ultrasonografide hepatik venlerde akım alınamaması hepatik venöz çıkış obstrüksiyonunu gösterir. JAK2 pozitifliği ve eritrositoz/trombositoz eğilimi altta miyeloproliferatif tromboz yatkınlığını destekler. Yönetimde kontrendikasyon yoksa antikoagülasyon, altta yatan trombofili/miyeloproliferatif hastalığın tedavisi ve yanıta göre girişimsel basamaklar düşünülür.",
+          "Primer biliyer kolanjit": "Primer biliyer kolanjit kaşıntı, yorgunluk, kolestatik ALP-GGT yüksekliği ve antimitochondrial antikor pozitifliğiyle öne çıkar. Bu hastada asit ve hepatomegali hızlı gelişmiş, ALP baskın kolestaz belirgin değildir ve Doppler hepatik ven akımının kaybolduğunu göstermektedir. PBC uzun dönem kolestatik karaciğer hastalığı yapabilir; ancak akut venöz çıkış obstrüksiyonu ve JAK2 ilişkili tromboz paternini açıklamaz. Bu nedenle güvenli bir tercih değildir.",
+          "Hepatorenal sendrom": "Hepatorenal sendrom ileri siroz veya akut ağır karaciğer yetmezliği zemininde yapısal böbrek hastalığı olmadan gelişen fonksiyonel böbrek yetmezliğidir. Bu vakada başlangıç problemi böbrek dolaşımı değil, hepatik venöz çıkışın tıkanması ve buna bağlı karaciğer konjesyonu-asittir. Kreatinin normal sınırlardadır ve idrar sedimenti böbrek merkezli bir tabloyu desteklemez. Hepatorenal sendrom ileride gelişebilecek bir komplikasyon olabilir ama mevcut tabloyu en iyi açıklayan tanı değildir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Budd-Chiari sendromunda temel problem karaciğere gelen kan değil, karaciğerden çıkan venöz akımın tıkanmasıdır; bu nedenle karaciğer konjesyonu, ağrılı hepatomegali ve asit gelişir.",
+      "examPearl": "Yeni asit + ağrılı hepatomegali + hepatik ven akımı yokluğu: SBP’den önce hepatik ven çıkış obstrüksiyonunu düşün.",
+      "whyCorrect": "Doğru seçenek, klinik gidiş, Doppler bulgusu ve JAK2 ilişkili tromboz eğilimini tek tanıda birleştirir.",
+      "optionComparison": "Diğer seçenekler karaciğer hastalığı yapabilir; fakat hızlı gelişen asit ve hepatik ven akım kaybını birlikte açıklamaz.",
+      "evidenceChain": [
+        "Bir haftada belirgin karın şişliği → hızlı asit gelişimi.",
+        "Ağrılı hepatomegali → karaciğer konjesyonunu destekler.",
+        "Doppler’de hepatik ven akımı alınamaması → venöz çıkış obstrüksiyonu.",
+        "JAK2 pozitifliği ve eritrositoz/trombositoz → tromboza yatkın miyeloproliferatif zemin."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v295",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V280-V294 render-safe internal-medicine cases"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v296-new-669-ani-nefes-darligi-ve-cok-yuksek-tansiyon",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Ani nefes darlığı ve çok yüksek tansiyon",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Hipertansif akut kardiyojenik pulmoner ödemde solunum iş yükü, afterload artışı ve görüntüleme-laboratuvar bulgularını birlikte yorumlayarak ilk dakikalardaki tedavi önceliğini seçme.",
+      "learningTarget": "Ani pulmoner ödemde oksijenasyon desteği, noninvaziv pozitif basınç ve vazodilatör tedavinin hangi klinik bağlamda öne geçtiğini açıklayabilme.",
+      "demographics": "64 yaşında erkek hasta",
+      "setting": "Acil servis resüsitasyon alanı",
+      "chiefComplaint": "Hasta, gece uykudan uyandıran ani nefes darlığı ve göğüste baskı hissi nedeniyle ambulansla acile getiriliyor.",
+      "stem": "Hasta gece yarısı boğulur gibi uyandığını, oturur pozisyona geçince biraz rahatladığını fakat birkaç dakika içinde konuşamayacak kadar nefesinin daraldığını anlatır. Son iki haftadır tansiyon ilaçlarını düzensiz kullandığını, merdiven çıkınca çabuk yorulduğunu ancak bu kadar ani bir atak yaşamadığını söyler. Öksürürken pembe köpüklü balgam geldiğini fark etmiş; ateş, balgamda sarı-yeşil renk veya bacakta tek taraflı şişlik tariflemez. Daha önce hipertansiyon ve sol ventrikül hipertrofisi nedeniyle izlenmiş, bilinen KOAH veya aktif kanser öyküsü yoktur. Ambulans ekibi hastayı belirgin terli, huzursuz ve yatamıyor halde bulmuştur.",
+      "patientIntro": {
+        "profile": "64 yaşında erkek hasta, acil servis resüsitasyon alanı başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, gece uykudan uyandıran ani nefes darlığı ve göğüste baskı hissi nedeniyle ambulansla acile getiriliyor.",
+        "historySummary": "Hasta gece yarısı boğulur gibi uyandığını, oturur pozisyona geçince biraz rahatladığını fakat birkaç dakika içinde konuşamayacak kadar nefesinin daraldığını anlatır. Son iki haftadır tansiyon ilaçlarını düzensiz kullandığını, merdiven çıkınca çabuk yorulduğunu ancak bu kadar ani bir atak yaşamadığını söyler. Öksürürken pembe köpüklü balgam geldiğini fark etmiş; ateş, balgamda sarı-yeşil renk veya bacakta tek taraflı şişlik tariflemez. Daha önce hipertansiyon ve sol ventrikül hipertrofisi nedeniyle izlenmiş, bilinen KOAH veya aktif kanser öyküsü yoktur. Ambulans ekibi hastayı belirgin terli, huzursuz ve yatamıyor halde bulmuştur."
+      },
+      "vitals": {
+        "TA": "220/118 mmHg",
+        "Nabız": "118/dk",
+        "Solunum": "34/dk",
+        "SpO2": "%82, oda havasında",
+        "Ateş": "36.7 °C",
+        "Şok indeksi": "0.54 - hipertansif solunum krizi, hipoperfüzyon değil"
+      },
+      "exam": [
+        "Hasta ileri derecede dispneik, oturur pozisyonda ve kısa cümlelerle konuşabilmektedir.",
+        "Her iki akciğer alanında bazallerden apekslere uzanan ince-kaba raller duyulur; belirgin wheezing baskın değildir.",
+        "Boyun venleri hafif dolgun, periferde soğukluk belirgin değildir; pretibial ödem 1+ izlenir.",
+        "Kalp oskültasyonunda S3 duyulur; yeni fokal nörolojik defisit saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v296-new-669-ani-nefes-darligi-ve-cok-yuksek-tansiyon-kan-gazi-ve-oksijenasyon",
+          "label": "Arter kan gazı ve oksijenasyon",
+          "title": "Arter kan gazı ve oksijenasyon",
+          "orderLabel": "Arter kan gazı ve oksijenasyon",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Arter kan gazı ve oksijenasyon",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hipoksemi ve artmış solunum işiyle uyumlu gaz değişimi bozukluğu vardır.",
+          "clinicalMeaning": "Hipoksemi ve artmış solunum işiyle uyumlu gaz değişimi bozukluğu vardır.",
+          "result": {
+            "title": "Arter kan gazı ve oksijenasyon",
+            "summary": "Hipoksemi ve artmış solunum işiyle uyumlu gaz değişimi bozukluğu vardır.",
+            "interpretation": "Hipoksemi ve artmış solunum işiyle uyumlu gaz değişimi bozukluğu vardır.",
+            "values": [
+              [
+                "pH",
+                "7.30",
+                "7.35-7.45",
+                "Hafif asidemi"
+              ],
+              [
+                "PaO2",
+                "54 mmHg",
+                "80-100 mmHg",
+                "Düşük"
+              ],
+              [
+                "PaCO2",
+                "48 mmHg",
+                "35-45 mmHg",
+                "Hafif yüksek"
+              ],
+              [
+                "Laktat",
+                "2.1 mmol/L",
+                "0.5-2.0 mmol/L",
+                "Sınırda yüksek"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v296-new-669-ani-nefes-darligi-ve-cok-yuksek-tansiyon-kardiyak-ve-renal-laboratuvar",
+          "label": "Kardiyak ve renal laboratuvar",
+          "title": "Kardiyak ve renal laboratuvar",
+          "orderLabel": "Kardiyak ve renal laboratuvar",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Kardiyak ve renal laboratuvar",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Duvar stresi belirgin; akut STEMI lehine güçlü biyobelirteç paterni yoktur.",
+          "clinicalMeaning": "Duvar stresi belirgin; akut STEMI lehine güçlü biyobelirteç paterni yoktur.",
+          "result": {
+            "title": "Kardiyak ve renal laboratuvar",
+            "summary": "Duvar stresi belirgin; akut STEMI lehine güçlü biyobelirteç paterni yoktur.",
+            "interpretation": "Duvar stresi belirgin; akut STEMI lehine güçlü biyobelirteç paterni yoktur.",
+            "values": [
+              [
+                "NT-proBNP",
+                "4.860 pg/mL",
+                "<125 pg/mL",
+                "Belirgin yüksek"
+              ],
+              [
+                "Troponin I",
+                "0.045 ng/mL",
+                "<0.04 ng/mL",
+                "Sınırda yüksek"
+              ],
+              [
+                "Kreatinin",
+                "1.3 mg/dL",
+                "0.7-1.2 mg/dL",
+                "Hafif yüksek"
+              ],
+              [
+                "Sodyum",
+                "137 mmol/L",
+                "135-145 mmol/L",
+                "Normal"
+              ],
+              [
+                "Potasyum",
+                "4.4 mmol/L",
+                "3.5-5.0 mmol/L",
+                "Normal"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v296-new-669-ani-nefes-darligi-ve-cok-yuksek-tansiyon-ekg-ve-akciger-grafisi",
+          "label": "EKG ve akciğer grafisi",
+          "title": "EKG ve akciğer grafisi",
+          "orderLabel": "EKG ve akciğer grafisi",
+          "type": "imaging",
+          "priority": "essential",
+          "subtype": "EKG ve akciğer grafisi",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Sol ventrikül yüklenmesi ve bilateral pulmoner ödem paterni izlenir.",
+          "clinicalMeaning": "Sol ventrikül yüklenmesi ve bilateral pulmoner ödem paterni izlenir.",
+          "result": {
+            "title": "EKG ve akciğer grafisi",
+            "summary": "Sol ventrikül yüklenmesi ve bilateral pulmoner ödem paterni izlenir.",
+            "interpretation": "Sol ventrikül yüklenmesi ve bilateral pulmoner ödem paterni izlenir.",
+            "values": [
+              [
+                "EKG",
+                "Sinüs taşikardisi, sol ventrikül hipertrofisi voltajları",
+                "ST elevasyonu yok",
+                "Akut STEMI lehine değil"
+              ],
+              [
+                "Akciğer grafisi",
+                "Bilateral perihiler alveoler opasiteler ve Kerley B çizgileri",
+                "Normalde yok",
+                "Pulmoner ödem paterni"
+              ],
+              [
+                "Kalp silüeti",
+                "Hafif kardiyomegali",
+                "",
+                "Kronik basınç yükü ile uyumlu"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada ilk dakikalardaki en uygun solunum ve hemodinamik yaklaşım aşağıdakilerden hangisidir?",
+      "questionType": "Acil yaklaşım",
+      "answerTarget": "Hipertansif akut pulmoner ödemde ilk tedavi önceliği",
+      "diagnosis": {
+        "correct": "Noninvaziv pozitif basınçlı ventilasyonla birlikte intravenöz nitrogliserin başlamak",
+        "options": [
+          "Yalnız intravenöz furosemid verip oksijen gereksinimini düşük akımlı nazal kanülle izlemek",
+          "Sistolik basınç yüksekken vazopressör başlayıp diürezi yanıt sonrasına bırakmak",
+          "Noninvaziv pozitif basınçlı ventilasyonla birlikte intravenöz nitrogliserin başlamak",
+          "Morfini rutin analjezik-sedatif olarak verip solunum eforunun azalmasını beklemek",
+          "Acil trombolitik tedavi verip akciğer ödemini emboli kabul ederek izlemek"
+        ],
+        "question": "Bu hastada ilk dakikalardaki en uygun solunum ve hemodinamik yaklaşım aşağıdakilerden hangisidir?",
+        "explanation": "Bu hastanın tablosu ağır hipertansiyon zemininde ani gelişen kardiyojenik pulmoner ödem ile uyumludur. Hipoksemi, yaygın raller, pembe köpüklü balgam, bilateral alveoler opasiteler ve çok yüksek kan basıncı sol ventrikül dolum basıncı/afterload artışının hızla azaltılmasını gerektirir. Noninvaziv pozitif basınçlı ventilasyon oksijenasyonu ve solunum işini düzeltirken, intravenöz nitrogliserin kontrollü vazodilatasyonla hemodinamik yükü azaltır.",
+        "pearls": [
+          "Hipertansif pulmoner ödemde sorun sadece sıvı fazlalığı değil afterload krizidir.",
+          "NIV solunum işini azaltır ve alveolleri açık tutar.",
+          "Yüksek tansiyon eşlik ediyorsa IV nitratlar yakın monitörizasyonla güçlü bir basamaktır."
+        ],
+        "optionFeedback": {
+          "Yalnız intravenöz furosemid verip oksijen gereksinimini düşük akımlı nazal kanülle izlemek": "Furosemid akut kalp yetersizliğinde sıvı yükü belirgin olan hastalarda önemli bir tedavidir; ancak bu hastanın ilk dakikalardaki sorunu ağır hipertansiyonla tetiklenen ani pulmoner ödem ve solunum iş yükünün hızla artmasıdır. Düşük akımlı nazal oksijen bu düzeyde hipoksemi, ajitasyon ve yaygın ral varlığında yeterli destek sağlamaz. Sadece diürez beklemek afterload artışını ve alveoler sıvı geçişini hızlı biçimde düzeltmeyebilir. Bu nedenle furosemid tek başına en uygun ilk yaklaşım değildir.",
+          "Sistolik basınç yüksekken vazopressör başlayıp diürezi yanıt sonrasına bırakmak": "Vazopressörler hipotansiyon veya kardiyojenik şokta seçilmiş hastalarda gerekebilir; fakat bu olguda temel hemodinamik problem ağır hipertansiyon ve afterload artışıdır. Sistolik basınç 220 mmHg iken vazopressör başlamak sol ventrikül duvar stresini ve pulmoner konjesyonu artırabilir. Tedavide damar tonusunu artırmak değil, solunum desteğiyle oksijenasyonu düzeltmek ve vazodilatasyonla afterload/preload yükünü azaltmak gerekir. Bu nedenle bu seçenek fizyolojiye terstir.",
+          "Noninvaziv pozitif basınçlı ventilasyonla birlikte intravenöz nitrogliserin başlamak": "Bu seçenek en uygundur. Hasta ani başlayan ağır dispne, pembe köpüklü balgam, yaygın ral, çok yüksek kan basıncı, hipoksemi, akciğer grafisinde bilateral alveoler ödem ve BNP yüksekliğiyle hipertansif akut kardiyojenik pulmoner ödem tablosundadır. Noninvaziv pozitif basınçlı ventilasyon alveolleri açar, solunum işini azaltır ve venöz dönüşü/sol ventrikül yükünü düşürür; intravenöz nitrogliserin ise özellikle yüksek kan basıncı varlığında preload ve afterloadu hızla azaltır. Furosemid, altta yatan neden yönetimi ve yoğun izlem bu yaklaşımı tamamlar; fakat ilk dakikalardaki kritik kombinasyon solunum desteği ve kontrollü vazodilatasyondur.",
+          "Morfini rutin analjezik-sedatif olarak verip solunum eforunun azalmasını beklemek": "Morfini rutin olarak vermek akut kalp yetersizliğinde artık güvenli bir ilk basamak yaklaşım olarak kabul edilmez; solunum depresyonu, bulantı, hipotansiyon ve klinik kötüleşme riskleri vardır. Hastanın ajitasyonu hipoksemi ve solunum iş yükünden kaynaklanmaktadır, sedasyonla baskılanması altta yatan problemi düzeltmez. Bu vakada solunum desteği ve hemodinamik yükün azaltılması gerekir. Bu nedenle morfin merkezli yaklaşım güvenli bir tercih değildir.",
+          "Acil trombolitik tedavi verip akciğer ödemini emboli kabul ederek izlemek": "Ani nefes darlığı pulmoner embolide görülebilir; ancak bu hastada çok yüksek kan basıncı, S3, yaygın bilateral ral, pembe köpüklü balgam, BNP yüksekliği ve grafide bilateral alveoler ödem kardiyojenik pulmoner ödem lehinedir. Trombolitik tedavi yüksek riskli pulmoner emboli veya uygun akut iskemik olaylarda gündeme gelir; bu tabloda kanama riski yaratır ve gerçek fizyolojik problemi çözmez. Emboli şüphesi klinik veriyle desteklenmediği için bu seçenek yanlıştır."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Akut kardiyojenik pulmoner ödemde tedavi hastanın fenotipine göre seçilir; ağır hipertansiyon ve solunum sıkıntısı varsa pozitif basınç ve vazodilatasyon diürez kadar kritik, çoğu zaman daha acildir.",
+      "examPearl": "Ani dispne + pembe köpüklü balgam + çok yüksek TA + bilateral perihiler ödem: SCAPE/hipertansif pulmoner ödem mantığıyla düşün.",
+      "whyCorrect": "Doğru seçenek, hem alveoler sıvı birikiminin solunum sonucunu hem de ağır hipertansiyonun kardiyak yükünü aynı anda hedefler.",
+      "optionComparison": "Diğer seçenekler tek başına diürez, vazopressör, sedasyon veya yanlış reperfüzyon stratejisine odaklandığı için vakadaki temel fizyolojiyi karşılamaz.",
+      "evidenceChain": [
+        "TA 220/118 mmHg → afterload krizi ve hipertansif akut kalp yetersizliği fenotipi.",
+        "SpO2 %82 ve solunum 34/dk → acil ventilatuvar destek gerektiren solunum işi.",
+        "Pembe köpüklü balgam ve yaygın ral → alveoler pulmoner ödem.",
+        "Grafide bilateral perihiler opasiteler ve NT-proBNP yüksekliği → kardiyojenik konjesyonu destekler."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v296",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V280-V295 render-safe internal-medicine cases"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v296-new-670-balgam-artisi-ve-uykuya-meyil",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Balgam artışı ve uykuya meyil",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "KOAH alevlenmesinde hiperkapnik asidemi, kontrollü oksijen hedefi ve noninvaziv ventilasyon endikasyonunu kan gazı ile birlikte yorumlama.",
+      "learningTarget": "KOAH alevlenmesinde oksijen tedavisinin hedefli verilmesini, bronkodilatör-steroid-antibiyotik basamaklarını ve asidemik hiperkapnide NIV endikasyonunu açıklayabilme.",
+      "demographics": "72 yaşında erkek hasta",
+      "setting": "Acil servis gözlem alanı",
+      "chiefComplaint": "Hasta, üç gündür artan nefes darlığı, koyulaşan balgam ve son saatlerde uykuya meyil nedeniyle acile getiriliyor.",
+      "stem": "Hasta birkaç gündür normalde ev içinde yaptığı işleri yaparken daha çabuk yorulduğunu, dün geceden beri balgamının sarı-yeşil renge döndüğünü ve miktarının arttığını anlatır. Sabah inhalerini daha sık kullanmasına rağmen rahatlamamış, öğleden sonra ailesi konuşurken uyukladığını fark etmiştir. Uzun yıllardır sigara içmiş ve KOAH nedeniyle takip edilmektedir; evde sürekli oksijen kullanmaz. Göğüs ağrısı, baldırda tek taraflı şişlik veya kanlı balgam tariflemez. Son günlerde ateşini ölçmemiş ama burun akıntısı ve boğaz ağrısından sonra yakınmalarının başladığını söyler.",
+      "patientIntro": {
+        "profile": "72 yaşında erkek hasta, acil servis gözlem alanı başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, üç gündür artan nefes darlığı, koyulaşan balgam ve son saatlerde uykuya meyil nedeniyle acile getiriliyor.",
+        "historySummary": "Hasta birkaç gündür normalde ev içinde yaptığı işleri yaparken daha çabuk yorulduğunu, dün geceden beri balgamının sarı-yeşil renge döndüğünü ve miktarının arttığını anlatır. Sabah inhalerini daha sık kullanmasına rağmen rahatlamamış, öğleden sonra ailesi konuşurken uyukladığını fark etmiştir. Uzun yıllardır sigara içmiş ve KOAH nedeniyle takip edilmektedir; evde sürekli oksijen kullanmaz. Göğüs ağrısı, baldırda tek taraflı şişlik veya kanlı balgam tariflemez. Son günlerde ateşini ölçmemiş ama burun akıntısı ve boğaz ağrısından sonra yakınmalarının başladığını söyler."
+      },
+      "vitals": {
+        "TA": "138/78 mmHg",
+        "Nabız": "108/dk",
+        "Solunum": "30/dk",
+        "SpO2": "%84, oda havasında",
+        "Ateş": "37.8 °C",
+        "Şok indeksi": "0.78 - dolaşım stabil, ventilatuvar risk belirgin"
+      },
+      "exam": [
+        "Hasta uykulu görünür ancak seslenince uyanıp yönelim sorularına yavaş yanıt verir.",
+        "Yardımcı solunum kaslarını kullanmaktadır; ekspiryum uzamış ve yaygın wheezing duyulmaktadır.",
+        "Akciğer bazallerinde belirgin fokal ral veya plevral sürtünme sesi baskın değildir.",
+        "Periferik siyanoz hafiftir; belirgin pretibial ödem veya juguler venöz dolgunluk saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v296-new-670-balgam-artisi-ve-uykuya-meyil-arter-kan-gazi",
+          "label": "Arter kan gazı",
+          "title": "Arter kan gazı",
+          "orderLabel": "Arter kan gazı",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Arter kan gazı",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hiperkapnik asidemi ve hipoksemi vardır.",
+          "clinicalMeaning": "Hiperkapnik asidemi ve hipoksemi vardır.",
+          "result": {
+            "title": "Arter kan gazı",
+            "summary": "Hiperkapnik asidemi ve hipoksemi vardır.",
+            "interpretation": "Hiperkapnik asidemi ve hipoksemi vardır.",
+            "values": [
+              [
+                "pH",
+                "7.25",
+                "7.35-7.45",
+                "Asidemi"
+              ],
+              [
+                "PaCO2",
+                "68 mmHg",
+                "35-45 mmHg",
+                "Yüksek"
+              ],
+              [
+                "PaO2",
+                "52 mmHg",
+                "80-100 mmHg",
+                "Düşük"
+              ],
+              [
+                "HCO3",
+                "29 mmol/L",
+                "22-26 mmol/L",
+                "Kronik kompansasyon zemini"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v296-new-670-balgam-artisi-ve-uykuya-meyil-hemogram-ve-enfeksiyon",
+          "label": "Hemogram ve inflamasyon",
+          "title": "Hemogram ve inflamasyon",
+          "orderLabel": "Hemogram ve inflamasyon",
+          "type": "lab",
+          "priority": "supportive",
+          "subtype": "Hemogram ve inflamasyon",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Bakteriyel alevlenme olasılığını destekleyen ancak ağır sepsis göstermeyen sonuçlar vardır.",
+          "clinicalMeaning": "Bakteriyel alevlenme olasılığını destekleyen ancak ağır sepsis göstermeyen sonuçlar vardır.",
+          "result": {
+            "title": "Hemogram ve inflamasyon",
+            "summary": "Bakteriyel alevlenme olasılığını destekleyen ancak ağır sepsis göstermeyen sonuçlar vardır.",
+            "interpretation": "Bakteriyel alevlenme olasılığını destekleyen ancak ağır sepsis göstermeyen sonuçlar vardır.",
+            "values": [
+              [
+                "Lökosit",
+                "12.600/µL",
+                "4.000-10.000/µL",
+                "Hafif yüksek"
+              ],
+              [
+                "CRP",
+                "48 mg/L",
+                "<5 mg/L",
+                "Yüksek"
+              ],
+              [
+                "Prokalsitonin",
+                "0.18 ng/mL",
+                "<0.05 ng/mL",
+                "Hafif yüksek"
+              ],
+              [
+                "Hemoglobin",
+                "16.8 g/dL",
+                "13.5-17.5 g/dL",
+                "Kronik hipoksemi zemininde yüksek-normal"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v296-new-670-balgam-artisi-ve-uykuya-meyil-akciger-grafisi",
+          "label": "Akciğer grafisi",
+          "title": "Akciğer grafisi",
+          "orderLabel": "Akciğer grafisi",
+          "type": "imaging",
+          "priority": "supportive",
+          "subtype": "Akciğer grafisi",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Hiperinflasyon vardır; belirgin lobar konsolidasyon izlenmez.",
+          "clinicalMeaning": "Hiperinflasyon vardır; belirgin lobar konsolidasyon izlenmez.",
+          "result": {
+            "title": "Akciğer grafisi",
+            "summary": "Hiperinflasyon vardır; belirgin lobar konsolidasyon izlenmez.",
+            "interpretation": "Hiperinflasyon vardır; belirgin lobar konsolidasyon izlenmez.",
+            "values": [
+              [
+                "Akciğer hacimleri",
+                "Artmış, diyaframlar basık",
+                "Normal",
+                "KOAH ile uyumlu"
+              ],
+              [
+                "Konsolidasyon",
+                "Belirgin lobar infiltrasyon yok",
+                "Yok",
+                "Pnömoni baskın değil"
+              ],
+              [
+                "Plevral efüzyon",
+                "Yok",
+                "Yok",
+                "Kalp yetersizliği lehine değil"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada acil yönetimde en uygun öncelikli yaklaşım aşağıdakilerden hangisidir?",
+      "questionType": "Acil yaklaşım",
+      "answerTarget": "Asidemik hiperkapnik KOAH alevlenmesinde yönetim",
+      "diagnosis": {
+        "correct": "Kontrollü oksijen hedefiyle bronkodilatör ve steroid verip asidemi sürdüğü için noninvaziv ventilasyon başlamak",
+        "options": [
+          "Kontrollü oksijen hedefiyle bronkodilatör ve steroid verip asidemi sürdüğü için noninvaziv ventilasyon başlamak",
+          "SpO2 değerini hızla %100’e çıkarmak için yüksek akımlı oksijeni sınırsız sürdürmek",
+          "Sedatif benzodiazepin verip taşipnenin azalmasını beklemek",
+          "Akciğer grafisi pnömoni göstermediği için tüm akut tedaviyi kesip poliklinik kontrolü önermek",
+          "Uyanık ve sekresyon çıkarabilen hastada ilk basamak olarak acil entübasyon yapmak"
+        ],
+        "question": "Bu hastada acil yönetimde en uygun öncelikli yaklaşım aşağıdakilerden hangisidir?",
+        "explanation": "Hasta KOAH alevlenmesiyle birlikte akut hiperkapnik solunum yetmezliği göstermektedir. pH 7.25 ve PaCO2 68 mmHg, yalnız bronkodilatör izleminden daha ileri ventilatuvar destek gerektiren asidemik hiperkapniyi gösterir. Kontrollü oksijen, kısa etkili bronkodilatörler, sistemik kortikosteroid, pürülan balgam nedeniyle antibiyotik ve kontrendikasyon yoksa noninvaziv ventilasyon birlikte planlanmalıdır.",
+        "pearls": [
+          "KOAH alevlenmesinde oksijen hedefli verilir; amaç hipoksemiyi düzeltirken CO2 retansiyonunu artırmamaktır.",
+          "pH düşüklüğü NIV kararında kritik veridir.",
+          "NIV başarısızlığı veya bilinç/hava yolu kötüleşmesi entübasyon eşiğini düşürür."
+        ],
+        "optionFeedback": {
+          "Kontrollü oksijen hedefiyle bronkodilatör ve steroid verip asidemi sürdüğü için noninvaziv ventilasyon başlamak": "Bu seçenek en uygundur. Hasta KOAH zemininde balgam miktarında/pürülanlığında artış, wheezing, hipoksemi, PaCO2 yüksekliği ve pH 7.25 ile akut hiperkapnik solunum yetmezliği göstermektedir. Kontrollü oksijen genellikle aşırı oksijenlenmeye bağlı CO2 retansiyonunu artırmadan hedef satürasyona ulaşmak için kullanılır; kısa etkili bronkodilatörler, sistemik steroid ve enfeksiyon düşündüren balgam değişikliği varsa antibiyotik tedaviyi tamamlar. Asidemi ve hiperkapni sürdüğü için noninvaziv ventilasyon solunum işini azaltır ve entübasyon ihtiyacını düşürebilir.",
+          "SpO2 değerini hızla %100’e çıkarmak için yüksek akımlı oksijeni sınırsız sürdürmek": "KOAH alevlenmesinde hipoksemi düzeltilmelidir; ancak kontrolsüz yüksek oksijen bazı hastalarda ventilasyon-perfüzyon dengesini bozarak ve hipoventilasyonu artırarak CO2 yükselmesini ağırlaştırabilir. Bu hastada PaCO2 zaten 68 mmHg ve pH düşüktür; hedef kontrollü oksijenlenme olmalıdır. SpO2’yi kör biçimde %100’e zorlamak hiperkapnik asidemiyi derinleştirebilir. Bu nedenle bu yaklaşım doğru değildir.",
+          "Sedatif benzodiazepin verip taşipnenin azalmasını beklemek": "Benzodiazepin gibi sedatifler dispneik hastayı sakinleştirebilir gibi görünse de solunum dürtüsünü ve hava yolu koruma reflekslerini baskılayabilir. Hiperkapnik asidemisi olan KOAH hastasında sedasyon CO2 birikimini artırıp entübasyon gereksinimini hızlandırabilir. Taşipne burada anksiyete değil ventilatuvar yetersizliğe verilen kompansatuvar yanıttır. Bu nedenle sedatif bekleme stratejisi tehlikelidir.",
+          "Akciğer grafisi pnömoni göstermediği için tüm akut tedaviyi kesip poliklinik kontrolü önermek": "Akciğer grafisinde belirgin pnömoni olmaması KOAH alevlenmesini dışlamaz. Hastada balgam artışı, pürülan balgam, wheezing, hipoksemi ve kan gazında asidemik hiperkapni vardır; bu bulgular aktif acil tedavi gerektirir. Poliklinik izlem, stabil ve asidemisi olmayan hafif alevlenmelerde düşünülebilir. Bu vaka ise akut ventilatuvar destek sınırındadır.",
+          "Uyanık ve sekresyon çıkarabilen hastada ilk basamak olarak acil entübasyon yapmak": "Entübasyon ağır bilinç bozukluğu, hava yolunu koruyamama, yaşamı tehdit eden hipoksemi, şok veya noninvaziv ventilasyon başarısızlığı gibi durumlarda gerekir. Bu hasta uykuya meyilli olsa da komutlara yanıt verebilmekte, sekresyonunu çıkarabilmekte ve hemen invaziv ventilasyon gerektiren bir kontrendikasyon taşımamaktadır. İlk basamakta uygun monitörizasyonla noninvaziv ventilasyon denenmesi daha rasyoneldir. Entübasyon ihtimali yakın izlenir ama başlangıç seçeneği değildir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "KOAH alevlenmesinde tedavi yalnız oksijen vermek değildir; hava yolu obstrüksiyonu, inflamasyon, enfeksiyon tetikleyicisi ve ventilatuvar yetmezlik birlikte hedeflenir.",
+      "examPearl": "KOAH + pH <7.35 + PaCO2 yüksek: kontrollü oksijen ve NIV düşün; yüksek oksijeni kontrolsüz verme.",
+      "whyCorrect": "Doğru seçenek hastanın asidemik hiperkapnisini ve obstrüktif alevlenmesini aynı anda yönetir.",
+      "optionComparison": "Diğer seçenekler ya CO2 retansiyonunu artırır, ya solunumu baskılar, ya aktif ventilatuvar yetmezliği görmezden gelir ya da gereksiz invaziv basamakla başlar.",
+      "evidenceChain": [
+        "Balgam miktarı/pürülanlığı artışı → KOAH alevlenmesi tetikleyicisi.",
+        "pH 7.25 ve PaCO2 68 mmHg → asidemik hiperkapnik solunum yetmezliği.",
+        "SpO2 %84 → oksijen gerekli ancak hedefli olmalı.",
+        "Uyanık ve sekresyon çıkarabiliyor → NIV için uygun pencere mevcut."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v296",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V280-V295 render-safe internal-medicine cases"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v296-new-671-sirozlu-hastada-ates-ve-karin-agrisi",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Sirozlu hastada ateş ve karın ağrısı",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Siroz ve asit zemininde ateş, karın ağrısı, mental durum değişikliği ve asit PMN sayısını birlikte yorumlayarak spontan bakteriyel peritonit tedavisini seçme.",
+      "learningTarget": "Spontan bakteriyel peritonitte tanı eşiğinin asit PMN sayısıyla konduğunu, kültür sonucunun beklenmediğini ve renal riskte albümin eklenmesini açıklayabilme.",
+      "demographics": "59 yaşında erkek hasta",
+      "setting": "Gastroenteroloji servisi",
+      "chiefComplaint": "Hasta, bilinen sirozu nedeniyle takipliyken iki gündür artan karın ağrısı, ateş ve dalgınlık nedeniyle servise yatırılıyor.",
+      "stem": "Hasta iki gündür karnındaki şişliğin daha gergin hale geldiğini ve yaygın, künt bir ağrı başladığını anlatır. Eşi, aynı gün içinde hastanın sorulara daha yavaş yanıt verdiğini ve gece yerini karıştırdığını fark etmiştir. Son haftalarda idrar söktürücülerini düzenli kullandığını, kanlı kusma veya siyah dışkı görmediğini söyler. Evde 38 °C üzerinde ateşi olmuş; öksürük, yan ağrısı veya idrar yaparken yanma tariflemez. Daha önce asit nedeniyle parasentez yapılmış ancak aktif enfeksiyon atağı geçirdiğini hatırlamamaktadır.",
+      "patientIntro": {
+        "profile": "59 yaşında erkek hasta, gastroenteroloji servisi başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, bilinen sirozu nedeniyle takipliyken iki gündür artan karın ağrısı, ateş ve dalgınlık nedeniyle servise yatırılıyor.",
+        "historySummary": "Hasta iki gündür karnındaki şişliğin daha gergin hale geldiğini ve yaygın, künt bir ağrı başladığını anlatır. Eşi, aynı gün içinde hastanın sorulara daha yavaş yanıt verdiğini ve gece yerini karıştırdığını fark etmiştir. Son haftalarda idrar söktürücülerini düzenli kullandığını, kanlı kusma veya siyah dışkı görmediğini söyler. Evde 38 °C üzerinde ateşi olmuş; öksürük, yan ağrısı veya idrar yaparken yanma tariflemez. Daha önce asit nedeniyle parasentez yapılmış ancak aktif enfeksiyon atağı geçirdiğini hatırlamamaktadır."
+      },
+      "vitals": {
+        "TA": "96/58 mmHg",
+        "Nabız": "108/dk",
+        "Solunum": "22/dk",
+        "SpO2": "%96, oda havasında",
+        "Ateş": "38.4 °C",
+        "Şok indeksi": "1.12 - sınırda perfüzyon riski"
+      },
+      "exam": [
+        "Hasta yavaş yanıt verir; belirgin fokal nörolojik defisit yoktur.",
+        "Skleralar ikteriktir; batın distandü ve diffüz hassastır, belirgin defans-rebound yoktur.",
+        "Shifting dullness pozitiftir; pretibial ödem 2+ izlenir.",
+        "Asteriksis hafiftir; akciğer oskültasyonunda belirgin pnömoni bulgusu saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v296-new-671-sirozlu-hastada-ates-ve-karin-agrisi-hemogram-biyokimya",
+          "label": "Hemogram ve biyokimya",
+          "title": "Hemogram ve biyokimya",
+          "orderLabel": "Hemogram ve biyokimya",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Hemogram ve biyokimya",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Enfeksiyon ve renal komplikasyon riskiyle uyumlu sonuçlar vardır.",
+          "clinicalMeaning": "Enfeksiyon ve renal komplikasyon riskiyle uyumlu sonuçlar vardır.",
+          "result": {
+            "title": "Hemogram ve biyokimya",
+            "summary": "Enfeksiyon ve renal komplikasyon riskiyle uyumlu sonuçlar vardır.",
+            "interpretation": "Enfeksiyon ve renal komplikasyon riskiyle uyumlu sonuçlar vardır.",
+            "values": [
+              [
+                "Lökosit",
+                "13.900/µL",
+                "4.000-10.000/µL",
+                "Yüksek"
+              ],
+              [
+                "Total bilirubin",
+                "4.2 mg/dL",
+                "0.2-1.2 mg/dL",
+                "Yüksek"
+              ],
+              [
+                "INR",
+                "1.8",
+                "0.8-1.2",
+                "Uzamış"
+              ],
+              [
+                "Kreatinin",
+                "1.6 mg/dL",
+                "0.7-1.2 mg/dL",
+                "Yüksek"
+              ],
+              [
+                "Sodyum",
+                "130 mmol/L",
+                "135-145 mmol/L",
+                "Düşük"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v296-new-671-sirozlu-hastada-ates-ve-karin-agrisi-asit-sivisi-incelemesi",
+          "label": "Tanısal parasentez / asit sıvısı",
+          "title": "Tanısal parasentez / asit sıvısı",
+          "orderLabel": "Tanısal parasentez / asit sıvısı",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Tanısal parasentez / asit sıvısı",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Asit sıvısında nötrofil baskın inflamatuvar yanıt vardır.",
+          "clinicalMeaning": "Asit sıvısında nötrofil baskın inflamatuvar yanıt vardır.",
+          "result": {
+            "title": "Tanısal parasentez / asit sıvısı",
+            "summary": "Asit sıvısında nötrofil baskın inflamatuvar yanıt vardır.",
+            "interpretation": "Asit sıvısında nötrofil baskın inflamatuvar yanıt vardır.",
+            "values": [
+              [
+                "Asit PMN",
+                "920/mm³",
+                "<250/mm³",
+                "Belirgin yüksek"
+              ],
+              [
+                "Asit total protein",
+                "0.9 g/dL",
+                "",
+                "Düşük proteinli asit"
+              ],
+              [
+                "Gram boyama",
+                "Mikroorganizma görülmedi",
+                "",
+                "Negatiflik tanıyı dışlamaz"
+              ],
+              [
+                "Asit kültürü",
+                "Kan kültür şişesine ekildi, sonuç bekleniyor",
+                "",
+                "Tedavi bekletilmez"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v296-new-671-sirozlu-hastada-ates-ve-karin-agrisi-odak-taramasi",
+          "label": "Eşlik eden odak taraması",
+          "title": "Eşlik eden odak taraması",
+          "orderLabel": "Eşlik eden odak taraması",
+          "type": "imaging",
+          "priority": "supportive",
+          "subtype": "Eşlik eden odak taraması",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Belirgin sekonder intraabdominal odak veya pnömoni bulgusu yoktur.",
+          "clinicalMeaning": "Belirgin sekonder intraabdominal odak veya pnömoni bulgusu yoktur.",
+          "result": {
+            "title": "Eşlik eden odak taraması",
+            "summary": "Belirgin sekonder intraabdominal odak veya pnömoni bulgusu yoktur.",
+            "interpretation": "Belirgin sekonder intraabdominal odak veya pnömoni bulgusu yoktur.",
+            "values": [
+              [
+                "Akciğer grafisi",
+                "Yeni infiltrasyon yok",
+                "Yok",
+                "Pnömoni baskın değil"
+              ],
+              [
+                "Batın USG",
+                "Serbest asit, safra kesesi duvarı belirgin akut kolecistit lehine değil",
+                "",
+                "Sekonder odak düşünülmüyor"
+              ],
+              [
+                "İdrar mikroskopisi",
+                "0-3 lökosit/HPF",
+                "0-5 lökosit/HPF",
+                "Üriner kaynak baskın değil"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada en uygun tedavi yaklaşımı aşağıdakilerden hangisidir?",
+      "questionType": "Tedavi/izlem",
+      "answerTarget": "Spontan bakteriyel peritonitte antibiyotik ve albümin kararı",
+      "diagnosis": {
+        "correct": "Üçüncü kuşak sefalosporin başlamak ve böbrek riski nedeniyle albümin eklemek",
+        "options": [
+          "Sadece yüksek doz diüretik artırımı yapıp asit sıvısı sonucunu klinik dışı kabul etmek",
+          "Kültür sonucu çıkana kadar antibiyotik başlamadan yakın vital takibi yapmak",
+          "Oral laktüloz başlayıp asit sıvısındaki nötrofil artışını ensefalopatiye bağlamak",
+          "Primer profilaksi dozunda oral kinolon verip intravenöz tedaviden kaçınmak",
+          "Üçüncü kuşak sefalosporin başlamak ve böbrek riski nedeniyle albümin eklemek"
+        ],
+        "question": "Bu hastada en uygun tedavi yaklaşımı aşağıdakilerden hangisidir?",
+        "explanation": "Sirozlu ve asitli hastada ateş, karın ağrısı, mental durum değişikliği ve asit PMN sayısının belirgin yüksekliği spontan bakteriyel peritonit için yeterli klinik-laboratuvar zemin oluşturur. Kültür sonucu beklenmeden uygun intravenöz antibiyotik başlanmalı; renal fonksiyon bozulması ve yüksek bilirubin gibi riskler nedeniyle albümin eklenmelidir. Laktüloz ensefalopati için yardımcı olabilir ama enfeksiyon tedavisinin yerine geçmez.",
+        "pearls": [
+          "SBP tanısında asit PMN ≥250/mm³ kritik eşiği oluşturur.",
+          "Kültür negatifliği veya sonucunun bekleniyor olması tedaviyi geciktirme nedeni değildir.",
+          "Renal riskli SBP’de albümin tedavinin önemli parçasıdır."
+        ],
+        "optionFeedback": {
+          "Sadece yüksek doz diüretik artırımı yapıp asit sıvısı sonucunu klinik dışı kabul etmek": "Diüretikler sirotik asit yönetiminde kullanılır; ancak ateş, karın ağrısı, konfüzyon ve asit sıvısında PMN yüksekliği varken temel sorun hacim fazlalığı değil enfekte asittir. Diüretik artırımı intravasküler hacmi azaltarak böbrek fonksiyonlarını daha da bozabilir. Asit sıvısı sonucu bu vakada klinik dışı değil, tanıyı yönlendiren ana veridir. Bu nedenle sadece diüretik artırmak yanlış ve risklidir.",
+          "Kültür sonucu çıkana kadar antibiyotik başlamadan yakın vital takibi yapmak": "Kültür almak önemlidir; ancak asit PMN sayısı 250/mm³ üzerinde olduğunda kültür beklenmeden tedavi başlanmalıdır. Bu hastada PMN 920/mm³, ateş, karın ağrısı ve mental durum değişikliği vardır; tedaviyi kültüre ertelemek bakteriyemi, böbrek yetmezliği ve mortalite riskini artırır. Kültür sonucu antibiyotik daraltma veya direnç değerlendirmesi için kullanılır. Başlangıç tedavisini geciktirmek doğru değildir.",
+          "Oral laktüloz başlayıp asit sıvısındaki nötrofil artışını ensefalopatiye bağlamak": "Laktüloz hepatik ensefalopatide yararlıdır ve bu hastada mental durum değişikliğine katkı olabilir; ancak asit sıvısındaki nötrofil artışını açıklamaz. Enfeksiyon, sirozlu hastada ensefalopatiyi tetikleyebilir; bu durumda tetikleyici enfeksiyon tedavi edilmeden sadece laktüloz verilmesi eksik kalır. Karın ağrısı, ateş ve PMN yüksekliği aktif enfeksiyon lehinedir. Bu nedenle tek başına laktüloz doğru yaklaşım değildir.",
+          "Primer profilaksi dozunda oral kinolon verip intravenöz tedaviden kaçınmak": "Oral kinolon profilaksisi, yüksek riskli bazı siroz hastalarında veya SBP sonrası sekonder korunmada gündeme gelebilir. Ancak aktif SBP tablosunda profilaksi dozu tedavi değildir. Ateş, karın ağrısı ve PMN 920/mm³ olan hastada intravenöz etkin antibiyotik gerekir. Profilaksi yaklaşımı tedavinin yerine konursa enfeksiyon kontrolü yetersiz kalır.",
+          "Üçüncü kuşak sefalosporin başlamak ve böbrek riski nedeniyle albümin eklemek": "Bu seçenek en uygundur. Siroz ve asiti olan hastada ateş, karın ağrısı, konfüzyon ve asit PMN sayısının 250/mm³ üzerinde olması spontan bakteriyel peritonit lehinedir. Tedavide kültürler alınmış olsa bile üçüncü kuşak sefalosporin gibi uygun intravenöz antibiyotik geciktirilmemelidir. Kreatinin artışı, yüksek bilirubin veya üre gibi böbrek yetmezliği riski olan durumlarda albümin eklenmesi dolaşım ve renal komplikasyonları azaltmaya yöneliktir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Sirozlu hastada enfeksiyon belirtileri silik olabilir; yeni dalgınlık veya böbrek fonksiyon bozulması bile tanısal parasentez ve SBP tedavisi gerektirebilir.",
+      "examPearl": "Asit PMN ≥250/mm³: kültür bekleme, SBP tedavisine başla.",
+      "whyCorrect": "Doğru seçenek aktif peritoneal enfeksiyonu ve renal dolaşım riskini aynı anda hedefler.",
+      "optionComparison": "Diğer seçenekler asit tedavisi, kültür bekleme, ensefalopati tedavisi veya profilaksiye odaklanarak aktif SBP yönetimini eksik bırakır.",
+      "evidenceChain": [
+        "Siroz + asit + ateş ve karın ağrısı → SBP için klinik bağlam.",
+        "Asit PMN 920/mm³ → tedavi gerektiren nötrofilik asit.",
+        "Kreatinin 1.6 ve bilirubin 4.2 → renal komplikasyon riski.",
+        "Sekonder odak bulgusu olmaması → spontan enfekte asit olasılığını destekler."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v296",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V280-V295 render-safe internal-medicine cases"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v296-new-672-direnc-tansiyon-ve-dusuk-potasyum",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Dirençli tansiyon ve düşük potasyum",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Dirençli hipertansiyon, hipokalemik metabolik alkaloz, yüksek aldosteron ve baskılanmış renin paternini yorumlayarak sekonder hipertansiyon nedenini seçme.",
+      "learningTarget": "Primer aldosteronizmde aldosteron-renin oranı, potasyum kaybı ve metabolik alkalozun mekanistik bağını açıklayabilme.",
+      "demographics": "46 yaşında kadın hasta",
+      "setting": "Nefroloji-hipertansiyon polikliniği",
+      "chiefComplaint": "Hasta, üç ilaç kullanmasına rağmen tansiyonunun yüksek seyretmesi ve tekrarlayan kas güçsüzlüğü atakları nedeniyle değerlendiriliyor.",
+      "stem": "Hasta son bir yıldır ev ölçümlerinde tansiyonunun çoğu gün 160/95 mmHg üzerinde seyrettiğini, son aylarda özellikle merdiven çıkarken bacaklarında güçsüzlük ve kramplar olduğunu anlatır. Düzenli tuz kısıtlaması yapmaya çalıştığını, ilaçlarını genellikle aksatmadığını ve ağrı kesici kullanmadığını söyler. Baş ağrısı ataklarına yoğun terleme veya çarpıntı nöbetleri eşlik etmemiştir. Kilo alımı, mor stria, kolay morarma veya yüzünde belirgin yuvarlaklaşma fark etmemiştir. Ailesinde orta yaşta hipertansiyon öyküsü vardır ancak genç yaşta böbrek yetmezliği bilinmemektedir.",
+      "patientIntro": {
+        "profile": "46 yaşında kadın hasta, nefroloji-hipertansiyon polikliniği başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, üç ilaç kullanmasına rağmen tansiyonunun yüksek seyretmesi ve tekrarlayan kas güçsüzlüğü atakları nedeniyle değerlendiriliyor.",
+        "historySummary": "Hasta son bir yıldır ev ölçümlerinde tansiyonunun çoğu gün 160/95 mmHg üzerinde seyrettiğini, son aylarda özellikle merdiven çıkarken bacaklarında güçsüzlük ve kramplar olduğunu anlatır. Düzenli tuz kısıtlaması yapmaya çalıştığını, ilaçlarını genellikle aksatmadığını ve ağrı kesici kullanmadığını söyler. Baş ağrısı ataklarına yoğun terleme veya çarpıntı nöbetleri eşlik etmemiştir. Kilo alımı, mor stria, kolay morarma veya yüzünde belirgin yuvarlaklaşma fark etmemiştir. Ailesinde orta yaşta hipertansiyon öyküsü vardır ancak genç yaşta böbrek yetmezliği bilinmemektedir."
+      },
+      "vitals": {
+        "TA": "166/98 mmHg",
+        "Nabız": "78/dk",
+        "Solunum": "16/dk",
+        "SpO2": "%99, oda havasında",
+        "Ateş": "36.5 °C",
+        "Şok indeksi": "0.47 - perfüzyon stabil"
+      },
+      "exam": [
+        "Genel durumu iyi, bilinci açık ve koopere durumdadır.",
+        "Cushingoid görünüm, mor stria veya proksimal kaslarda belirgin atrofi izlenmez.",
+        "Karın oskültasyonunda belirgin üfürüm duyulmaz; periferik nabızlar simetriktir.",
+        "Nörolojik muayenede fokal defisit yoktur; kas gücü muayene sırasında 5/5 saptanır."
+      ],
+      "investigations": [
+        {
+          "id": "v296-new-672-direnc-tansiyon-ve-dusuk-potasyum-elektrolit-ve-asit-baz",
+          "label": "Elektrolit ve asit-baz paneli",
+          "title": "Elektrolit ve asit-baz paneli",
+          "orderLabel": "Elektrolit ve asit-baz paneli",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Elektrolit ve asit-baz paneli",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hipokalemik metabolik alkaloz paterni vardır.",
+          "clinicalMeaning": "Hipokalemik metabolik alkaloz paterni vardır.",
+          "result": {
+            "title": "Elektrolit ve asit-baz paneli",
+            "summary": "Hipokalemik metabolik alkaloz paterni vardır.",
+            "interpretation": "Hipokalemik metabolik alkaloz paterni vardır.",
+            "values": [
+              [
+                "Potasyum",
+                "2.8 mmol/L",
+                "3.5-5.0 mmol/L",
+                "Düşük"
+              ],
+              [
+                "Sodyum",
+                "143 mmol/L",
+                "135-145 mmol/L",
+                "Normal-yüksek"
+              ],
+              [
+                "Bikarbonat",
+                "31 mmol/L",
+                "22-26 mmol/L",
+                "Yüksek"
+              ],
+              [
+                "Kreatinin",
+                "0.9 mg/dL",
+                "0.6-1.1 mg/dL",
+                "Normal"
+              ],
+              [
+                "Magnezyum",
+                "1.9 mg/dL",
+                "1.7-2.4 mg/dL",
+                "Normal"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v296-new-672-direnc-tansiyon-ve-dusuk-potasyum-renin-aldosteron",
+          "label": "Renin-aldosteron değerlendirmesi",
+          "title": "Renin-aldosteron değerlendirmesi",
+          "orderLabel": "Renin-aldosteron değerlendirmesi",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Renin-aldosteron değerlendirmesi",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Aldosteron yüksek, renin baskılı ve oran belirgin artmıştır.",
+          "clinicalMeaning": "Aldosteron yüksek, renin baskılı ve oran belirgin artmıştır.",
+          "result": {
+            "title": "Renin-aldosteron değerlendirmesi",
+            "summary": "Aldosteron yüksek, renin baskılı ve oran belirgin artmıştır.",
+            "interpretation": "Aldosteron yüksek, renin baskılı ve oran belirgin artmıştır.",
+            "values": [
+              [
+                "Plazma aldosteron",
+                "28 ng/dL",
+                "Genellikle <15 ng/dL",
+                "Yüksek"
+              ],
+              [
+                "Plazma renin aktivitesi",
+                "0.2 ng/mL/saat",
+                "0.6-4.3 ng/mL/saat",
+                "Baskılı"
+              ],
+              [
+                "Aldosteron/renin oranı",
+                "140",
+                "<20-30",
+                "Belirgin yüksek"
+              ],
+              [
+                "24 saat idrar potasyumu",
+                "48 mmol/gün",
+                "<20 mmol/gün hipokalemide beklenir",
+                "Renal potasyum kaybı"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v296-new-672-direnc-tansiyon-ve-dusuk-potasyum-ek-degerlendirme",
+          "label": "Ek klinik değerlendirme",
+          "title": "Ek klinik değerlendirme",
+          "orderLabel": "Ek klinik değerlendirme",
+          "type": "imaging",
+          "priority": "supportive",
+          "subtype": "Ek klinik değerlendirme",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Fenotip ve ön testler diğer sık sekonder nedenleri geri plana iter.",
+          "clinicalMeaning": "Fenotip ve ön testler diğer sık sekonder nedenleri geri plana iter.",
+          "result": {
+            "title": "Ek klinik değerlendirme",
+            "summary": "Fenotip ve ön testler diğer sık sekonder nedenleri geri plana iter.",
+            "interpretation": "Fenotip ve ön testler diğer sık sekonder nedenleri geri plana iter.",
+            "values": [
+              [
+                "Plazma metanefrinleri",
+                "Referans aralıkta",
+                "",
+                "Feokromositoma lehine değil"
+              ],
+              [
+                "Gece 1 mg deksametazon testi",
+                "Kortizol baskılanmış",
+                "",
+                "Cushing lehine değil"
+              ],
+              [
+                "Adrenal BT",
+                "Sol adrenalde 1.4 cm hipodens nodül",
+                "",
+                "Lateralizasyon için tek başına yeterli değildir"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada en olası sekonder hipertansiyon nedeni aşağıdakilerden hangisidir?",
+      "questionType": "Tanı",
+      "answerTarget": "Hipokalemik dirençli hipertansiyonda primer aldosteronizm tanıması",
+      "diagnosis": {
+        "correct": "Primer aldosteronizm",
+        "options": [
+          "Renal arter stenozu",
+          "Primer aldosteronizm",
+          "Feokromositoma",
+          "Cushing sendromu",
+          "Liddle sendromu"
+        ],
+        "question": "Bu hastada en olası sekonder hipertansiyon nedeni aşağıdakilerden hangisidir?",
+        "explanation": "Bu hastada dirençli hipertansiyon, renal potasyum kaybı, metabolik alkaloz, yüksek aldosteron ve baskılanmış renin bir arada primer aldosteronizm paternini oluşturur. Renal arter stenozunda renin genellikle artar; Liddle sendromunda ise aldosteron da baskılı olur. Feokromositoma ve Cushing sendromu belirgin klinik-biyokimyasal ipuçlarıyla desteklenmemektedir.",
+        "pearls": [
+          "Hipokalemik hipertansiyonda renin ve aldosteron birlikte yorumlanmalıdır.",
+          "Primer aldosteronizmde renin baskılı, aldosteron görece/gerçek yüksek olur.",
+          "Adrenal nodül görülmesi lateralizasyonu tek başına kanıtlamaz; uygun hastada adrenal ven örneklemesi gerekebilir."
+        ],
+        "optionFeedback": {
+          "Renal arter stenozu": "Renal arter stenozu dirençli hipertansiyon ve böbrek fonksiyon bozulmasıyla gelebilir; özellikle ACE inhibitörü/ARB sonrası kreatinin artışı veya abdominal üfürüm ipucu olabilir. Ancak bu durumda renin genellikle böbrek hipoperfüzyonu nedeniyle artar ve aldosteron sekonder olarak yükselir. Bu hastada renin baskılı, aldosteron yüksek ve aldosteron-renin oranı belirgindir; ayrıca hipokalemik metabolik alkaloz vardır. Bu patern renal arter stenozundan çok otonom aldosteron fazlalığını destekler.",
+          "Primer aldosteronizm": "Bu seçenek en uygundur. Dirençli hipertansiyon, spontan veya diüretikle belirginleşen hipokalemi, metabolik alkaloz, yüksek plazma aldosteronu ve baskılanmış renin primer aldosteronizm için tipik biyokimyasal paterndir. Aldosteron distal nefronda sodyum geri emilimini artırırken potasyum ve hidrojen iyonu kaybını artırır; bu nedenle hipertansiyon, hipokalemi ve alkaloz birlikte görülür. Tanı doğrulama ve lateralizasyon için ilaç etkileri düzenlenerek doğrulama testleri, adrenal görüntüleme ve uygun hastada adrenal ven örneklemesi planlanabilir.",
+          "Feokromositoma": "Feokromositoma paroksismal baş ağrısı, terleme, çarpıntı ve ataklar halinde hipertansiyonla düşünülür; tanıda plazma serbest metanefrinleri veya idrar fraksiyone metanefrinleri öne çıkar. Hipokalemik metabolik alkaloz ve baskılanmış renin-yüksek aldosteron oranı feokromositomanın klasik paterni değildir. Bu hastada yakınmalar kalıcı dirençli hipertansiyon ve potasyum düşüklüğü eksenindedir. Bu nedenle feokromositoma uygun tanı değildir.",
+          "Cushing sendromu": "Cushing sendromu hipertansiyon, santral obezite, mor stria, proksimal kas güçsüzlüğü, glukoz intoleransı ve kortizol fazlalığı bulgularıyla düşünülür. Hipokalemi bazı ektopik ACTH tablolarında olabilir; ancak bu hastada kortizol fenotipi değil aldosteron-renin ayrışması belirgindir. Fizik muayenede Cushingoid bulgular tariflenmemiştir. Bu nedenle Cushing sendromu bu laboratuvar paternini en iyi açıklamaz.",
+          "Liddle sendromu": "Liddle sendromu epitelyal sodyum kanalının artmış aktivitesiyle hipertansiyon, hipokalemi ve metabolik alkaloz yapabilir; fakat aldosteron ve renin genellikle baskılıdır. Bu hastada aldosteron yüksek, renin baskılıdır; yani mineralokortikoid reseptör uyarısı endojen aldosteron fazlalığından kaynaklanmaktadır. Liddle daha genç yaşta ve ailevi hipertansiyonla gelebilir. Bu nedenle ayırıcı tanıda yer alsa da mevcut biyokimya primer aldosteronizmi destekler."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Aldosteron fazlalığı distal nefronda sodyum tutulumu ile hipertansiyon, potasyum ve hidrojen kaybı ile hipokalemik metabolik alkaloz yapar.",
+      "examPearl": "Dirençli HT + düşük K + yüksek aldosteron + düşük renin: primer aldosteronizm düşün.",
+      "whyCorrect": "Doğru seçenek dirençli hipertansiyon ve elektrolit paternini tek fizyolojik mekanizmada birleştirir.",
+      "optionComparison": "Diğer sekonder hipertansiyon nedenleri bu kadar net baskılanmış renin-yüksek aldosteron ayrışması oluşturmaz veya farklı klinik fenotip beklenir.",
+      "evidenceChain": [
+        "Üç ilaçla TA 166/98 → dirençli hipertansiyon bağlamı.",
+        "Potasyum 2.8 ve bikarbonat 31 → hipokalemik metabolik alkaloz.",
+        "Aldosteron 28 ve renin 0.2 → otonom aldosteron fazlalığı.",
+        "İdrar potasyumu yüksek → potasyum kaybının renal olduğunu destekler."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v296",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V280-V295 render-safe internal-medicine cases"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v296-new-673-kemoterapi-sonrasi-carpinti-ve-az-idrar",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Kemoterapi sonrası çarpıntı ve az idrar",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Yüksek tümör yükü sonrası gelişen elektrolit paternini, EKG bulgusunu ve akut böbrek etkilenimini birlikte yorumlayarak tümör lizis sendromunda acil tedaviyi seçme.",
+      "learningTarget": "Tümör lizis sendromunda hücre yıkımına bağlı potasyum, fosfat ve ürik asit artışını; hipokalsemi ve renal hasar mekanizmasını; rasburikaz ve hiperkalemi tedavisi önceliğini açıklayabilme.",
+      "demographics": "58 yaşında erkek hasta",
+      "setting": "Hematoloji servisi",
+      "chiefComplaint": "Hasta, yüksek dereceli lenfoma için kemoterapi aldıktan iki gün sonra çarpıntı, bulantı ve idrar miktarında azalma nedeniyle acil değerlendirmeye alınıyor.",
+      "stem": "Hasta kemoterapinin ilk küründen sonra ilk gün yalnız hafif bulantısı olduğunu, ikinci gün ise belirgin halsizlik, çarpıntı ve kaslarda seğirme hissettiğini anlatır. Hemşireler son 12 saatte idrar miktarının belirgin azaldığını fark etmiştir. Tedavi öncesinde boyunda ve batında büyük lenf nodları olduğu, LDH değerinin yüksek seyrettiği bilinir. Göğüs ağrısı, ateş veya yeni kanama tariflemez. Daha önce kronik böbrek hastalığı olmadığını, ancak kemoterapi sonrası ağızdan yeterli sıvı alamadığını söyler.",
+      "patientIntro": {
+        "profile": "58 yaşında erkek hasta, hematoloji servisi başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, yüksek dereceli lenfoma için kemoterapi aldıktan iki gün sonra çarpıntı, bulantı ve idrar miktarında azalma nedeniyle acil değerlendirmeye alınıyor.",
+        "historySummary": "Hasta kemoterapinin ilk küründen sonra ilk gün yalnız hafif bulantısı olduğunu, ikinci gün ise belirgin halsizlik, çarpıntı ve kaslarda seğirme hissettiğini anlatır. Hemşireler son 12 saatte idrar miktarının belirgin azaldığını fark etmiştir. Tedavi öncesinde boyunda ve batında büyük lenf nodları olduğu, LDH değerinin yüksek seyrettiği bilinir. Göğüs ağrısı, ateş veya yeni kanama tariflemez. Daha önce kronik böbrek hastalığı olmadığını, ancak kemoterapi sonrası ağızdan yeterli sıvı alamadığını söyler."
+      },
+      "vitals": {
+        "TA": "104/66 mmHg",
+        "Nabız": "116/dk",
+        "Solunum": "22/dk",
+        "SpO2": "%97, oda havasında",
+        "Ateş": "36.9 °C",
+        "Şok indeksi": "1.12 - metabolik acil ve perfüzyon riski"
+      },
+      "exam": [
+        "Hasta halsiz ve kaygılı görünür; bilinci açık ve koopere durumdadır.",
+        "Mukozalar kurudur; kapiller dolum yaklaşık 3 saniyedir.",
+        "Boyunda ve aksillada küçülmeye başlayan ancak hâlâ belirgin lenf nodları palpe edilir.",
+        "Akciğerlerde ral yoktur; batında belirgin defans-rebound saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v296-new-673-kemoterapi-sonrasi-carpinti-ve-az-idrar-elektrolit-ve-bobrek",
+          "label": "Elektrolit ve böbrek paneli",
+          "title": "Elektrolit ve böbrek paneli",
+          "orderLabel": "Elektrolit ve böbrek paneli",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Elektrolit ve böbrek paneli",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hücre yıkımı ve renal etkilenimle uyumlu elektrolit bozuklukları vardır.",
+          "clinicalMeaning": "Hücre yıkımı ve renal etkilenimle uyumlu elektrolit bozuklukları vardır.",
+          "result": {
+            "title": "Elektrolit ve böbrek paneli",
+            "summary": "Hücre yıkımı ve renal etkilenimle uyumlu elektrolit bozuklukları vardır.",
+            "interpretation": "Hücre yıkımı ve renal etkilenimle uyumlu elektrolit bozuklukları vardır.",
+            "values": [
+              [
+                "Potasyum",
+                "6.8 mmol/L",
+                "3.5-5.0 mmol/L",
+                "Acil yüksek"
+              ],
+              [
+                "Fosfor",
+                "7.4 mg/dL",
+                "2.5-4.5 mg/dL",
+                "Yüksek"
+              ],
+              [
+                "Kalsiyum",
+                "6.9 mg/dL",
+                "8.5-10.5 mg/dL",
+                "Düşük"
+              ],
+              [
+                "Ürik asit",
+                "15.6 mg/dL",
+                "3.5-7.2 mg/dL",
+                "Belirgin yüksek"
+              ],
+              [
+                "Kreatinin",
+                "2.4 mg/dL",
+                "0.7-1.2 mg/dL",
+                "Akut artış"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v296-new-673-kemoterapi-sonrasi-carpinti-ve-az-idrar-tumor-yuku-ve-asit-baz",
+          "label": "Tümör yükü ve asit-baz göstergeleri",
+          "title": "Tümör yükü ve asit-baz göstergeleri",
+          "orderLabel": "Tümör yükü ve asit-baz göstergeleri",
+          "type": "lab",
+          "priority": "supportive",
+          "subtype": "Tümör yükü ve asit-baz göstergeleri",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Yüksek hücre döngüsü/yıkımı ve hafif metabolik asidoz vardır.",
+          "clinicalMeaning": "Yüksek hücre döngüsü/yıkımı ve hafif metabolik asidoz vardır.",
+          "result": {
+            "title": "Tümör yükü ve asit-baz göstergeleri",
+            "summary": "Yüksek hücre döngüsü/yıkımı ve hafif metabolik asidoz vardır.",
+            "interpretation": "Yüksek hücre döngüsü/yıkımı ve hafif metabolik asidoz vardır.",
+            "values": [
+              [
+                "LDH",
+                "2.480 U/L",
+                "<250 U/L",
+                "Belirgin yüksek"
+              ],
+              [
+                "Bikarbonat",
+                "18 mmol/L",
+                "22-26 mmol/L",
+                "Düşük"
+              ],
+              [
+                "Laktat",
+                "1.9 mmol/L",
+                "0.5-2.0 mmol/L",
+                "Belirgin laktik şok yok"
+              ],
+              [
+                "İdrar çıkışı",
+                "0.3 mL/kg/saat",
+                ">0.5 mL/kg/saat",
+                "Oligüri"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v296-new-673-kemoterapi-sonrasi-carpinti-ve-az-idrar-ekg",
+          "label": "EKG",
+          "title": "EKG",
+          "orderLabel": "EKG",
+          "type": "ecg",
+          "priority": "essential",
+          "subtype": "EKG",
+          "category": "cardiology",
+          "testTypeCategory": "cardiology",
+          "summary": "Hiperkalemiye bağlı elektriksel etkilenim bulguları vardır.",
+          "clinicalMeaning": "Hiperkalemiye bağlı elektriksel etkilenim bulguları vardır.",
+          "result": {
+            "title": "EKG",
+            "summary": "Hiperkalemiye bağlı elektriksel etkilenim bulguları vardır.",
+            "interpretation": "Hiperkalemiye bağlı elektriksel etkilenim bulguları vardır.",
+            "values": [
+              [
+                "Ritim",
+                "Sinüs taşikardisi",
+                "",
+                "Taşikardi"
+              ],
+              [
+                "T dalgaları",
+                "Yaygın sivri T dalgaları",
+                "Normal",
+                "Hiperkalemi etkisi"
+              ],
+              [
+                "QRS",
+                "110 ms",
+                "<100 ms",
+                "Sınırda genişleme"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada acil yönetimde en uygun yaklaşım aşağıdakilerden hangisidir?",
+      "questionType": "Acil yaklaşım",
+      "answerTarget": "Tümör lizis sendromunda hiperkalemi ve hiperürisemi yönetimi",
+      "diagnosis": {
+        "correct": "EKG değişikliği için kardiyak membranı stabilize edip potasyumu düşürmek, agresif sıvı ve rasburikaz başlamak",
+        "options": [
+          "Hipokalsemiyi düzeltmek için asemptomatik hastada öncelikle yüksek doz kalsiyum infüzyonu başlamak",
+          "Allopurinolü tek başına başlayıp mevcut hiperürisemi ve böbrek etkilenimini izlemek",
+          "Potasyum yüksekliğini tümör yüküne bağlı beklenen bulgu kabul edip EKG izlemiyle yetinmek",
+          "EKG değişikliği için kardiyak membranı stabilize edip potasyumu düşürmek, agresif sıvı ve rasburikaz başlamak",
+          "İdrarı alkalileştirip kalsiyum-fosfat çökmesini önemsemeyerek tedaviyi buna dayandırmak"
+        ],
+        "question": "Bu hastada acil yönetimde en uygun yaklaşım aşağıdakilerden hangisidir?",
+        "explanation": "Kemoterapi sonrası yüksek tümör yükü olan hastada potasyum, fosfor ve ürik asit artışı; kalsiyum düşüklüğü; LDH yüksekliği; oligüri ve akut kreatinin artışı tümör lizis sendromunu düşündürür. EKG değişikliği olan hiperkalemi yaşamı tehdit ettiği için hemen kardiyak membran stabilizasyonu ve potasyum düşürücü tedavi gerekir. Eş zamanlı agresif hidrasyon, mevcut ağır hiperürisemide rasburikaz, fosfat kontrolü ve gerekirse diyaliz değerlendirmesi yapılmalıdır.",
+        "pearls": [
+          "Tümör lizisinde en acil ölüm nedeni hiperkalemiye bağlı aritmidir.",
+          "Rasburikaz mevcut ürik asidi hızlı düşürür; allopurinol daha çok yeni ürik asit oluşumunu azaltır.",
+          "Semptomsuz hipokalsemide rutin kalsiyum vermek kalsiyum-fosfat çökmesini artırabilir."
+        ],
+        "optionFeedback": {
+          "Hipokalsemiyi düzeltmek için asemptomatik hastada öncelikle yüksek doz kalsiyum infüzyonu başlamak": "Tümör lizis sendromunda hipokalsemi sıklıkla hiperfosfatemiye bağlıdır ve asemptomatikse rutin agresif kalsiyum replasmanı önerilmez; çünkü kalsiyum-fosfat çökmesini artırarak böbrek hasarını kötüleştirebilir. Kalsiyum, tetani, nöbet, ciddi aritmi gibi semptomatik hipokalsemide dikkatle verilir. Bu hastanın acil yaşamı tehdit eden problemi EKG değişikliğiyle birlikte hiperkalemidir. Bu nedenle kalsiyum infüzyonunu ana tedavi yapmak doğru değildir.",
+          "Allopurinolü tek başına başlayıp mevcut hiperürisemi ve böbrek etkilenimini izlemek": "Allopurinol yeni ürik asit oluşumunu azaltır ve profilakside değerli olabilir; ancak mevcut belirgin hiperürisemi ve akut böbrek etkilenimi geliştiğinde tek başına yeterli hızlı etki sağlamaz. Rasburikaz mevcut ürik asidi daha hızlı parçalayarak ağır veya yerleşmiş tümör lizisinde tercih edilir. Ayrıca bu vakada hiperkalemi ve EKG bulguları eş zamanlı acil tedavi gerektirir. Bu nedenle allopurinol tek başına eksik kalır.",
+          "Potasyum yüksekliğini tümör yüküne bağlı beklenen bulgu kabul edip EKG izlemiyle yetinmek": "Tümör lizisinde potasyum yüksekliği beklenen bir metabolik bozukluk olabilir; fakat bu onu güvenli hale getirmez. Sivri T dalgaları olan K 6.8 mmol/L acil kardiyak membran stabilizasyonu ve potasyum düşürücü tedavi gerektirir. Sadece EKG izlemiyle yetinmek ventriküler aritmi ve kardiyak arrest riskini artırır. Bu seçenek aktif acil yönetimi ihmal eder.",
+          "EKG değişikliği için kardiyak membranı stabilize edip potasyumu düşürmek, agresif sıvı ve rasburikaz başlamak": "Bu seçenek en uygundur. Kemoterapi sonrası kısa sürede gelişen hiperürisemi, hiperfosfatemi, hipokalsemi, hiperkalemi, LDH yüksekliği ve akut kreatinin artışı tümör lizis sendromunu destekler. EKG değişikliği olan hiperkalemide önce kardiyak membran stabilize edilmeli, ardından insülin-glukoz gibi potasyum düşürücü tedaviler uygulanmalıdır; eş zamanlı agresif intravenöz hidrasyon ve mevcut ağır hiperürisemi/böbrek etkilenimi için rasburikaz başlanması gerekir. Fosfat kontrolü ve nefroloji/diyaliz değerlendirmesi klinik yanıta göre eklenir.",
+          "İdrarı alkalileştirip kalsiyum-fosfat çökmesini önemsemeyerek tedaviyi buna dayandırmak": "İdrar alkalinizasyonu geçmişte ürik asit çözünürlüğünü artırma amacıyla düşünülmüş olsa da kalsiyum-fosfat çökmesini artırabileceği için rutin ana yaklaşım değildir. Bu hastada fosfat belirgin yüksek ve kalsiyum düşük olduğundan alkalinizasyon böbrek tübüllerinde çökelme riskini artırabilir. Güncel yaklaşımda temel basamaklar hidrasyon, ürik asit düşürücü uygun ajan, elektrolit acillerinin tedavisi ve gerekirse renal replasman desteğidir. Bu nedenle tedaviyi alkalinizasyona dayandırmak yanlıştır."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Tümör lizis sendromu hücre içeriğinin hızla kana karışmasıdır: potasyum aritmi, fosfat-kalsiyum değişimi renal çökme ve ürik asit nefropatisi oluşturabilir.",
+      "examPearl": "Kemoterapi sonrası K↑ + fosfor↑ + ürik asit↑ + kalsiyum↓: TLS; EKG varsa önce hiperkalemiyi güvenli hale getir.",
+      "whyCorrect": "Doğru seçenek aynı anda yaşamı tehdit eden hiperkalemiyi ve tümör lizisinin renal/metabolik yükünü hedefler.",
+      "optionComparison": "Diğer seçenekler hipokalsemi, profilaktik allopurinol, pasif izlem veya alkalinizasyon gibi tek boyutlu ve riskli yaklaşımlardır.",
+      "evidenceChain": [
+        "Kemoterapiden 48 saat sonra oligüri → tedavi ilişkili metabolik-renal acil zamanlaması.",
+        "K 6.8 ve sivri T dalgaları → acil hiperkalemi tedavisi.",
+        "Fosfor 7.4, ürik asit 15.6, kalsiyum 6.9 → tümör lizis paterni.",
+        "Kreatinin 2.4 ve LDH 2480 → yüksek hücre yıkımı ve böbrek etkilenimi."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v296",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V280-V295 render-safe internal-medicine cases"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v297-new-674-ust-karin-agrisi-ve-kusma",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Üst karın ağrısı ve kusma",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Biliyer kökenli akut üst karın ağrısında erken destek tedavisi ile gereksiz ERCP/antibiyotik ayrımını yapma.",
+      "learningTarget": "Akut pankreatik inflamasyonda sıvı stratejisi, kolanjit göstergeleri, antibiyotik endikasyonu ve beslenme kararını vaka verisiyle ilişkilendirme.",
+      "demographics": "46 yaşında kadın hasta",
+      "setting": "Acil servis gözlem alanı",
+      "chiefComplaint": "Hasta, yemek sonrası başlayan şiddetli üst karın ağrısı ve tekrarlayan kusma nedeniyle acile başvuruyor.",
+      "stem": "Hasta ağrının yağlı bir akşam yemeğinden birkaç saat sonra epigastriumda başladığını, kısa sürede kuşak tarzında sırta yayıldığını ve öne eğilince biraz hafiflediğini anlatır. Gece boyunca birkaç kez kusmuş, su içtiğinde bile bulantısının arttığını söylemiştir. Daha önce kısa süren sağ üst kadran ağrıları olmuş ancak bu kadar uzun ve şiddetli bir atak yaşamamıştır. Alkol kullanmadığını, yakın zamanda travma veya yeni ilaç başlamadığını belirtir. Dışkıda kan, göğüs ağrısı veya belirgin nefes darlığı tariflemez; ağrının şiddeti nedeniyle yakınları tarafından acile getirilmiştir.",
+      "patientIntro": {
+        "profile": "46 yaşında kadın hasta, Acil servis gözlem alanı başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, yemek sonrası başlayan şiddetli üst karın ağrısı ve tekrarlayan kusma nedeniyle acile başvuruyor.",
+        "historySummary": "Hasta ağrının yağlı bir akşam yemeğinden birkaç saat sonra epigastriumda başladığını, kısa sürede kuşak tarzında sırta yayıldığını ve öne eğilince biraz hafiflediğini anlatır. Gece boyunca birkaç kez kusmuş, su içtiğinde bile bulantısının arttığını söylemiştir. Daha önce kısa süren sağ üst kadran ağrıları olmuş ancak bu kadar uzun ve şiddetli bir atak yaşamamıştır. Alkol kullanmadığını, yakın zamanda travma veya yeni ilaç başlamadığını belirtir. Dışkıda kan, göğüs ağrısı veya belirgin nefes darlığı tariflemez; ağrının şiddeti nedeniyle yakınları tarafından acile getirilmiştir."
+      },
+      "vitals": {
+        "TA": "105/66 mmHg",
+        "Nabız": "112/dk",
+        "Solunum": "22/dk",
+        "SpO2": "%96, oda havasında",
+        "Ateş": "37.6 °C",
+        "Şok indeksi": "1.07 - erken hipovolemi/perfüzyon riski açısından dikkatli izlem gerekir"
+      },
+      "exam": [
+        "Hasta ağrılı, bulantılı ve hafif dehidrate görünümdedir; mukozalar kurudur.",
+        "Epigastriumda belirgin hassasiyet vardır; yaygın tahta karın, rebound veya defans belirgin değildir.",
+        "Sağ üst kadranda hafif hassasiyet alınır; sarılık belirgin değildir.",
+        "Akciğer bazalleri açık, periferik ödem yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v297-new-674-ust-karin-agrisi-ve-kusma-pankreatik-enzimler-ve-biyokimya",
+          "label": "Pankreatik enzimler ve biyokimya",
+          "title": "Pankreatik enzimler ve biyokimya",
+          "orderLabel": "Pankreatik enzimler ve biyokimya",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Pankreatik enzimler ve biyokimya",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Enzim yüksekliği ve erken hemokonsantrasyon-hacim kaybı paterni birlikte görülür.",
+          "clinicalMeaning": "Enzim yüksekliği ve erken hemokonsantrasyon-hacim kaybı paterni birlikte görülür.",
+          "result": {
+            "title": "Pankreatik enzimler ve biyokimya",
+            "summary": "Enzim yüksekliği ve erken hemokonsantrasyon-hacim kaybı paterni birlikte görülür.",
+            "interpretation": "Enzim yüksekliği ve erken hemokonsantrasyon-hacim kaybı paterni birlikte görülür.",
+            "values": [
+              [
+                "Lipaz",
+                "1.240 U/L",
+                "<60 U/L",
+                "Belirgin yüksek"
+              ],
+              [
+                "Amilaz",
+                "486 U/L",
+                "30-110 U/L",
+                "Yüksek"
+              ],
+              [
+                "BUN",
+                "32 mg/dL",
+                "7-20 mg/dL",
+                "Yüksek"
+              ],
+              [
+                "Kreatinin",
+                "1.1 mg/dL",
+                "0.6-1.1 mg/dL",
+                "Sınırda"
+              ],
+              [
+                "Hematokrit",
+                "%49",
+                "%36-46",
+                "Yüksek"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v297-new-674-ust-karin-agrisi-ve-kusma-karaciger-ve-safra-paneli",
+          "label": "Karaciğer-safra paneli",
+          "title": "Karaciğer-safra paneli",
+          "orderLabel": "Karaciğer-safra paneli",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Karaciğer-safra paneli",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Biliyer kaynak olasılığını artıran ancak ağır kolanjit göstermeyen enzim paterni vardır.",
+          "clinicalMeaning": "Biliyer kaynak olasılığını artıran ancak ağır kolanjit göstermeyen enzim paterni vardır.",
+          "result": {
+            "title": "Karaciğer-safra paneli",
+            "summary": "Biliyer kaynak olasılığını artıran ancak ağır kolanjit göstermeyen enzim paterni vardır.",
+            "interpretation": "Biliyer kaynak olasılığını artıran ancak ağır kolanjit göstermeyen enzim paterni vardır.",
+            "values": [
+              [
+                "ALT",
+                "186 U/L",
+                "<35 U/L",
+                "Yüksek"
+              ],
+              [
+                "AST",
+                "122 U/L",
+                "<35 U/L",
+                "Yüksek"
+              ],
+              [
+                "ALP",
+                "156 U/L",
+                "40-130 U/L",
+                "Hafif yüksek"
+              ],
+              [
+                "Total bilirubin",
+                "1.8 mg/dL",
+                "0.2-1.2 mg/dL",
+                "Hafif yüksek"
+              ],
+              [
+                "Direkt bilirubin",
+                "0.7 mg/dL",
+                "<0.3 mg/dL",
+                "Hafif yüksek"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v297-new-674-ust-karin-agrisi-ve-kusma-ultrasonografi",
+          "label": "Batın ultrasonografisi",
+          "title": "Batın ultrasonografisi",
+          "orderLabel": "Batın ultrasonografisi",
+          "type": "imaging",
+          "priority": "essential",
+          "subtype": "Batın ultrasonografisi",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Safra kesesi taşları izlenir; belirgin ana safra yolu genişlemesi veya kolanjit lehine görüntü yoktur.",
+          "clinicalMeaning": "Safra kesesi taşları izlenir; belirgin ana safra yolu genişlemesi veya kolanjit lehine görüntü yoktur.",
+          "result": {
+            "title": "Batın ultrasonografisi",
+            "summary": "Safra kesesi taşları izlenir; belirgin ana safra yolu genişlemesi veya kolanjit lehine görüntü yoktur.",
+            "interpretation": "Safra kesesi taşları izlenir; belirgin ana safra yolu genişlemesi veya kolanjit lehine görüntü yoktur.",
+            "values": [
+              [
+                "Safra kesesi",
+                "Çok sayıda milimetrik taş",
+                "Normalde taş yok",
+                "Taş mevcut"
+              ],
+              [
+                "Koledok çapı",
+                "5 mm",
+                "<6 mm",
+                "Geniş değil"
+              ],
+              [
+                "Safra kesesi duvarı",
+                "3 mm",
+                "<3-4 mm",
+                "Belirgin kalın değil"
+              ],
+              [
+                "Perikolesistik sıvı",
+                "Yok",
+                "Yok",
+                "Akut kolesistit lehine değil"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada ilk 24 saat için en uygun yönetim yaklaşımı aşağıdakilerden hangisidir?",
+      "questionType": "Tedavi/izlem",
+      "answerTarget": "Akut üst karın ağrısı-enzyme yüksekliği tablosunda erken destek tedavisi",
+      "diagnosis": {
+        "correct": "Analjeziyle birlikte laktatlı Ringer ağırlıklı kontrollü intravenöz sıvı, yakın hematokrit/BUN izlemi ve erken enteral beslenme planlamak",
+        "options": [
+          "Acil ERCP yapıp pankreatik kanal stenti yerleştirmek ve sıvı tedavisini işlem sonrasına bırakmak",
+          "Analjeziyle birlikte laktatlı Ringer ağırlıklı kontrollü intravenöz sıvı, yakın hematokrit/BUN izlemi ve erken enteral beslenme planlamak",
+          "Nekroz kanıtı olmadan profilaktik karbapenem başlayıp ağızdan alımı en az bir hafta kesmek",
+          "Hematokrit yüksek olduğu için sıvı kısıtlaması yapıp diüretikle hemokonsantrasyonu azaltmak",
+          "Ağrı kontrolü sağlanana kadar total parenteral beslenmeyi ana tedavi olarak başlatmak"
+        ],
+        "question": "Bu hastada ilk 24 saat için en uygun yönetim yaklaşımı aşağıdakilerden hangisidir?",
+        "explanation": "Bu hastada epigastrik-sırta yayılan ağrı, lipaz yüksekliği, kusma, BUN/hematokrit artışı ve safra taşı varlığı birlikte erken dönemde güçlü bir pankreatik inflamasyon tablosu oluşturur. İlk yaklaşım ağrı kontrolü, kontrollü intravenöz sıvı resüsitasyonu, hemokonsantrasyon ve renal perfüzyon takibi, bulantı azaldığında enteral beslenme ve biliyer obstrüksiyon-kolanjit bulgularının yakından izlenmesidir. Acil ERCP yalnızca kolanjit veya devam eden tıkanma varsa öne çıkar; profilaktik antibiyotik ve rutin TPN güvenli bir tercih değildir.",
+        "pearls": [
+          "Erken dönemde BUN ve hematokrit takibi sıvı gereksinimini değerlendirmede değerlidir.",
+          "Biliyer taş varlığı tek başına acil ERCP endikasyonu değildir; kolanjit veya kalıcı tıkanma aranır.",
+          "Enfekte nekroz yoksa profilaktik antibiyotik tedavinin merkezi değildir."
+        ],
+        "optionFeedback": {
+          "Acil ERCP yapıp pankreatik kanal stenti yerleştirmek ve sıvı tedavisini işlem sonrasına bırakmak": "ERCP biliyer obstrüksiyon ve kolanjit bulguları eşlik ettiğinde erken dönemde kritik olabilir; fakat bu hastada ateş yüksekliği, belirgin sarılık, hipotansiyon, mental durum bozukluğu veya koledok dilatasyonu yoktur. Lipaz yüksekliği ve safra taşı varlığı biliyer kökeni düşündürse de obstrüksiyon-kolanjit kanıtı olmadan rutin acil ERCP yapmak iatrojenik risk ve gecikmiş temel destek anlamına gelir. İlk saatlerde ağrı kontrolü, kontrollü sıvı resüsitasyonu ve yakın organ perfüzyonu izlemi önceliklidir.",
+          "Analjeziyle birlikte laktatlı Ringer ağırlıklı kontrollü intravenöz sıvı, yakın hematokrit/BUN izlemi ve erken enteral beslenme planlamak": "Bu seçenek en uygundur. Hastada şiddetli epigastrik ağrı, sırta yayılım, kusma, lipazın belirgin yüksekliği ve safra taşı varlığı akut pankreatik inflamasyon tablosunu destekler; hematokrit ve BUN yüksekliği erken intravasküler volüm kaybını gösterir. İlk 24 saatte analjezi, laktatlı Ringer ağırlıklı kontrollü sıvı resüsitasyonu, vital/BUN/hematokrit takibi ve tolere edebildiğinde erken enteral beslenme planı temel yaklaşımdır. Kolanjit veya devam eden tıkanma yoksa ERCP, nekroz enfekte değilse antibiyotik, barsak çalışıyorsa TPN ilk basamak değildir.",
+          "Nekroz kanıtı olmadan profilaktik karbapenem başlayıp ağızdan alımı en az bir hafta kesmek": "Profilaktik antibiyotik, enfekte nekroz veya başka bir bakteriyel odak kanıtı olmadan akut pankreatik inflamasyonda rutin olarak kullanılmaz. Ateşin olmaması, lökositin sınırlı yüksekliği ve görüntülemede gaz içeren nekroz ya da koleksiyon belirtilmemesi antibiyotik gereksinimini desteklemez. Ayrıca ağızdan alımı uzun süre kesmek de eski bir yaklaşımdır; bulantı azalınca erken enteral beslenme bağırsak bariyerini korur ve komplikasyonları azaltır. Bu nedenle profilaktik karbapenem ve uzun açlık yaklaşımı güvenli bir tercih değildir.",
+          "Hematokrit yüksek olduğu için sıvı kısıtlaması yapıp diüretikle hemokonsantrasyonu azaltmak": "Hematokrit yüksekliği bu bağlamda sıvı fazlalığını değil hemokonsantrasyon ve intravasküler hacim kaybını düşündürür. Akut pankreatik inflamasyonda üçüncü boşluğa sıvı kaçışı, kusma ve inflamatuvar yanıt hipovolemiye yol açabilir; bu nedenle sıvı kısıtlamak veya diüretik vermek renal hipoperfüzyonu ve organ yetmezliği riskini artırır. Diüretik ancak ayrı bir volüm yükü/kalp yetmezliği fenotipi varsa dikkatle düşünülür. Bu vakada temel gereksinim kontrollü hidrasyondur.",
+          "Ağrı kontrolü sağlanana kadar total parenteral beslenmeyi ana tedavi olarak başlatmak": "Total parenteral beslenme barsak kullanılamadığında veya enteral yol başarısız olduğunda gündeme gelir; akut pankreatik inflamasyonda barsak fonksiyonu izin veriyorsa enteral beslenme tercih edilir. Ağrı ve bulantı ilk saatlerde oral alımı sınırlayabilir, ancak bu durum otomatik olarak TPN gerektirmez. Gereksiz parenteral beslenme enfeksiyon, kateter komplikasyonu ve metabolik sorun riskini artırır. Bu nedenle ana tedavi olarak TPN başlamak güvenli bir tercih değildir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Akut pankreatik inflamasyonda ilk saatlerde amaç ağrıyı kontrol etmek, intravasküler hacmi korumak, organ yetmezliğini erken fark etmek ve gereksiz antibiyotik/işlemden kaçınmaktır.",
+      "examPearl": "Lipaz yüksek + epigastrik sırta vuran ağrı + BUN/hematokrit artışı: ilk odak sıvı-analjezi-yakın izlem; kolanjit yoksa acil ERCP refleksi yapma.",
+      "whyCorrect": "Doğru seçenek, erken hipovolemi ve organ yetmezliği riskini hedeflerken gereksiz antibiyotik, ERCP ve parenteral beslenme riskinden kaçınır.",
+      "optionComparison": "Diğer seçenekler işlem, antibiyotik, diürez veya TPN gibi seçilmiş durumlara ait basamakları erken destek tedavisinin yerine koyar.",
+      "evidenceChain": [
+        "Yağlı yemek sonrası epigastrik-sırta yayılan ağrı ve kusma → pankreatik-biliyer eksende akut süreç.",
+        "Lipaz 1.240 U/L → pankreatik enzim yüksekliği belirgin.",
+        "BUN 32 mg/dL ve hematokrit %49 → erken intravasküler hacim kaybı/hemokonsantrasyon riski.",
+        "Koledok 5 mm ve belirgin sarılık/kolanjit yokluğu → rutin acil ERCP öncelikli değil."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v297",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V280-V296 render-safe internal-medicine cases"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v297-new-675-carpinti-ates-ve-titreme",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Çarpıntı, ateş ve titreme",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Tirotoksik krizde tedavi hedeflerini ve ilaç sıralamasını ayırt etme.",
+      "learningTarget": "Ağır tirotoksik tabloda beta bloker, tionamid, iyot, glukokortikoid ve destek tedavisi basamaklarını mekanizmaya göre sıralama.",
+      "demographics": "34 yaşında kadın hasta",
+      "setting": "Acil servis monitörlü gözlem alanı",
+      "chiefComplaint": "Hasta, iki gündür artan çarpıntı, ateş, titreme ve huzursuzluk nedeniyle acile getiriliyor.",
+      "stem": "Hasta son bir aydır istemsiz kilo kaybettiğini, sıcak ortamlara tahammül edemediğini ve ellerindeki titremenin arttığını anlatır. Son iki gündür boğaz ağrısı ve halsizlik sonrası çarpıntısı belirginleşmiş, bugün evde ateşi yükselince ailesi tarafından acile getirilmiştir. Tuvalete normalden daha sık çıktığını ve dışkısının yumuşadığını söyler; kanlı dışkı, göğüs travması veya yeni uyarıcı ilaç kullanımı tariflemez. Daha önce boynunda şişlik fark etmiş ama düzenli endokrinoloji kontrolüne gitmemiştir. Acile geldiğinde yerinde duramamakta, konuşurken sık sık nefeslenmekte ve kalp atımlarının düzensiz olduğunu hissetmektedir.",
+      "patientIntro": {
+        "profile": "34 yaşında kadın hasta, Acil servis monitörlü gözlem alanı başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, iki gündür artan çarpıntı, ateş, titreme ve huzursuzluk nedeniyle acile getiriliyor.",
+        "historySummary": "Hasta son bir aydır istemsiz kilo kaybettiğini, sıcak ortamlara tahammül edemediğini ve ellerindeki titremenin arttığını anlatır. Son iki gündür boğaz ağrısı ve halsizlik sonrası çarpıntısı belirginleşmiş, bugün evde ateşi yükselince ailesi tarafından acile getirilmiştir. Tuvalete normalden daha sık çıktığını ve dışkısının yumuşadığını söyler; kanlı dışkı, göğüs travması veya yeni uyarıcı ilaç kullanımı tariflemez. Daha önce boynunda şişlik fark etmiş ama düzenli endokrinoloji kontrolüne gitmemiştir. Acile geldiğinde yerinde duramamakta, konuşurken sık sık nefeslenmekte ve kalp atımlarının düzensiz olduğunu hissetmektedir."
+      },
+      "vitals": {
+        "TA": "148/62 mmHg",
+        "Nabız": "164/dk, düzensiz",
+        "Solunum": "26/dk",
+        "SpO2": "%96, oda havasında",
+        "Ateş": "39.2 °C",
+        "Şok indeksi": "1.11 - hipermetabolik stres ve aritmi riski yüksek"
+      },
+      "exam": [
+        "Hasta ajite, terli ve ince tremoru belirgin görünümdedir.",
+        "Tiroid bezi difüz büyümüş ve hassastan çok vasküler-dolgun izlenimdedir; belirgin servikal lenfadenopati yoktur.",
+        "Kalp ritmi hızlı ve düzensizdir; akciğerlerde belirgin ral yoktur.",
+        "Gözlerde hafif kapak retraksiyonu vardır; fokal nörolojik defisit saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v297-new-675-carpinti-ates-ve-titreme-tiroid-hormonlari",
+          "label": "Tiroid hormon profili",
+          "title": "Tiroid hormon profili",
+          "orderLabel": "Tiroid hormon profili",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Tiroid hormon profili",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Baskılanmış TSH ile belirgin serbest hormon yüksekliği saptanır.",
+          "clinicalMeaning": "Baskılanmış TSH ile belirgin serbest hormon yüksekliği saptanır.",
+          "result": {
+            "title": "Tiroid hormon profili",
+            "summary": "Baskılanmış TSH ile belirgin serbest hormon yüksekliği saptanır.",
+            "interpretation": "Baskılanmış TSH ile belirgin serbest hormon yüksekliği saptanır.",
+            "values": [
+              [
+                "TSH",
+                "<0.005 mIU/L",
+                "0.4-4.0 mIU/L",
+                "Baskılı"
+              ],
+              [
+                "Serbest T4",
+                "5.8 ng/dL",
+                "0.8-1.8 ng/dL",
+                "Belirgin yüksek"
+              ],
+              [
+                "Serbest T3",
+                "14.2 pg/mL",
+                "2.3-4.2 pg/mL",
+                "Belirgin yüksek"
+              ],
+              [
+                "TSH reseptör antikoru",
+                "Pozitif",
+                "Negatif",
+                "Pozitif"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v297-new-675-carpinti-ates-ve-titreme-ritim-ve-sistemik-yanit",
+          "label": "EKG ve sistemik yanıt",
+          "title": "EKG ve sistemik yanıt",
+          "orderLabel": "EKG ve sistemik yanıt",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "EKG ve sistemik yanıt",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hızlı düzensiz ritim ve inflamatuvar tetikleyiciyle uyumlu yardımcı bulgular vardır.",
+          "clinicalMeaning": "Hızlı düzensiz ritim ve inflamatuvar tetikleyiciyle uyumlu yardımcı bulgular vardır.",
+          "result": {
+            "title": "EKG ve sistemik yanıt",
+            "summary": "Hızlı düzensiz ritim ve inflamatuvar tetikleyiciyle uyumlu yardımcı bulgular vardır.",
+            "interpretation": "Hızlı düzensiz ritim ve inflamatuvar tetikleyiciyle uyumlu yardımcı bulgular vardır.",
+            "values": [
+              [
+                "EKG",
+                "Atriyal fibrilasyon, ventrikül hızı 160-170/dk",
+                "Sinüs ritmi",
+                "Hızlı düzensiz ritim"
+              ],
+              [
+                "Lökosit",
+                "13.800/µL",
+                "4.000-10.000/µL",
+                "Yüksek"
+              ],
+              [
+                "CRP",
+                "42 mg/L",
+                "<5 mg/L",
+                "Yüksek"
+              ],
+              [
+                "AST/ALT",
+                "68/74 U/L",
+                "<35 U/L",
+                "Hafif yüksek"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v297-new-675-carpinti-ates-ve-titreme-organ-guvenligi",
+          "label": "Organ güvenliği ve metabolik izlem",
+          "title": "Organ güvenliği ve metabolik izlem",
+          "orderLabel": "Organ güvenliği ve metabolik izlem",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Organ güvenliği ve metabolik izlem",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hipermetabolik stresin eşlik eden etkilerini değerlendiren veriler izlenir.",
+          "clinicalMeaning": "Hipermetabolik stresin eşlik eden etkilerini değerlendiren veriler izlenir.",
+          "result": {
+            "title": "Organ güvenliği ve metabolik izlem",
+            "summary": "Hipermetabolik stresin eşlik eden etkilerini değerlendiren veriler izlenir.",
+            "interpretation": "Hipermetabolik stresin eşlik eden etkilerini değerlendiren veriler izlenir.",
+            "values": [
+              [
+                "Glukoz",
+                "168 mg/dL",
+                "70-110 mg/dL",
+                "Stres hiperglisemisi"
+              ],
+              [
+                "Sodyum",
+                "138 mmol/L",
+                "135-145 mmol/L",
+                "Normal"
+              ],
+              [
+                "Potasyum",
+                "3.6 mmol/L",
+                "3.5-5.0 mmol/L",
+                "Alt sınır"
+              ],
+              [
+                "Laktat",
+                "2.5 mmol/L",
+                "0.5-2.0 mmol/L",
+                "Hafif yüksek"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada acil tedavide en uygun farmakolojik ve destek yaklaşımı aşağıdakilerden hangisidir?",
+      "questionType": "Acil yaklaşım",
+      "answerTarget": "Ağır tirotoksik tabloda tedavi sırası ve hedefleri",
+      "diagnosis": {
+        "correct": "Beta bloker, tionamid, tionamidden sonra iyot, glukokortikoid ve destek tedavisini birlikte başlamak",
+        "options": [
+          "Yalnız geniş spektrumlu antibiyotik verip tiroid hormon sonuçlarını poliklinik kontrolüne bırakmak",
+          "Radyoaktif iyot tedavisini acilde başlatıp beta blokeri ritim düzeldikten sonra eklemek",
+          "İyot solüsyonunu hemen verip tionamid tedaviyi ertesi güne bırakmak",
+          "Levotiroksin yükleme dozu ve hidrokortizonla metabolik hızı desteklemek",
+          "Beta bloker, tionamid, tionamidden sonra iyot, glukokortikoid ve destek tedavisini birlikte başlamak"
+        ],
+        "question": "Bu hastada acil tedavide en uygun farmakolojik ve destek yaklaşımı aşağıdakilerden hangisidir?",
+        "explanation": "Bu hasta ağır tirotoksik sistemik yanıtın tipik klinik-laboratuvar zincirini taşır: hipertermi, ajitasyon, tremor, atriyal fibrilasyon, gastrointestinal hızlanma, baskılanmış TSH ve çok yüksek serbest T4/T3. Tedavi yalnız hormon düzeyini değil, adrenerjik etkiyi, yeni hormon sentezini, hormon salınımını, periferik dönüşümü ve tetikleyici nedeni birlikte hedeflemelidir. Bu nedenle beta bloker, tionamid, tionamidden sonra iyot, glukokortikoid ve destek tedavisi doğru sıralı acil yaklaşımdır.",
+        "pearls": [
+          "İyot tionamidden sonra verilmelidir; aksi halde yeni hormon sentezi için substrat sağlayabilir.",
+          "Beta bloker adrenerjik semptomları ve hızlı ritmi erken kontrol eder.",
+          "Glukokortikoid hem periferik dönüşümü azaltır hem de stres yanıtını destekler."
+        ],
+        "optionFeedback": {
+          "Yalnız geniş spektrumlu antibiyotik verip tiroid hormon sonuçlarını poliklinik kontrolüne bırakmak": "Enfeksiyon tirotoksik krizi tetikleyebilir ve bu hastada CRP yüksekliği ile üst solunum yolu yakınmaları eşlik etmektedir; ancak tabloyu yalnız enfeksiyon gibi yönetmek eksik ve tehlikelidir. Ateş, ciddi taşikardi/atriyal fibrilasyon, tremor, ajitasyon, ishal-kilo kaybı ve baskılanmış TSH ile yüksek serbest hormon düzeyleri ağır tirotoksik fizyolojiyi gösterir. Antibiyotik gerekiyorsa altta yatan tetikleyici için eklenir; fakat adrenerjik aktivite, hormon sentezi-salınımı ve periferik dönüşüm aynı anda hedeflenmelidir.",
+          "Radyoaktif iyot tedavisini acilde başlatıp beta blokeri ritim düzeldikten sonra eklemek": "Radyoaktif iyot akut tirotoksik krizin acil tedavisi değildir; etkisi gecikir ve ağır sistemik tabloyu ilk saatlerde kontrol etmez. Ayrıca akut dönemde beta blokerin ertelenmesi adrenerjik fırtınayı, taşikardiyi ve aritmi riskini kontrolsüz bırakır. Bu hastada hızlı kalp hızı, hipertermi ve bilinç/ajitasyon bulguları vardır; tedavi dakikalar-saatler içinde etkili olacak ilaçlarla yapılmalıdır. Bu nedenle radyoaktif iyot merkezli yaklaşım güvenli bir tercih değildir.",
+          "İyot solüsyonunu hemen verip tionamid tedaviyi ertesi güne bırakmak": "İyot, tiroid hormon salınımını azaltmak için kullanılabilir; ancak tionamidden önce verilirse tiroid bezine yeni hormon sentezi için substrat sağlayabilir. Bu nedenle ağır tirotoksik tabloda genellikle önce propiltiyourasil veya metimazol gibi hormon sentezini baskılayan ilaç verilir, ardından iyot eklenir. Bu hastada sıralama hatası önemli bir klinik ayrımdır. İyodu hemen verip tionamidi ertelemek doğru değildir.",
+          "Levotiroksin yükleme dozu ve hidrokortizonla metabolik hızı desteklemek": "Levotiroksin hipotiroidi/miksödem koması gibi hormon eksikliği durumlarında düşünülür; bu hastada tam tersi şekilde serbest T4/T3 belirgin yüksek ve TSH baskılıdır. Ek hormon vermek taşikardi, hipertermi ve katabolik durumu ağırlaştırabilir. Hidrokortizon bu tabloda periferik T4-T3 dönüşümünü azaltmak ve relatif adrenal yetmezlik riskini karşılamak için yararlı olabilir; ancak levotiroksin ile birlikte verilmesi fizyolojiye terstir. Bu seçenek bu nedenle yanlıştır.",
+          "Beta bloker, tionamid, tionamidden sonra iyot, glukokortikoid ve destek tedavisini birlikte başlamak": "Bu seçenek en uygundur. Hasta ateş, ajitasyon, belirgin tremor, atriyal fibrilasyonla hızlı ventrikül yanıtı, ishal-kilo kaybı, TSH baskılanması ve çok yüksek serbest hormon düzeyleriyle ağır tirotoksik kriz tablosundadır. Tedavide beta bloker adrenerjik etkileri ve taşikardiyi azaltır; tionamid yeni hormon sentezini baskılar; iyot tionamidden sonra verilerek hormon salınımı azaltılır; glukokortikoid T4’ün T3’e dönüşümünü ve stres yanıtını hedefler. Sıvı, soğutma, tetikleyici enfeksiyonun tedavisi ve yoğun izlem bu yaklaşımı tamamlar."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Ağır tirotoksik tabloda tedavi dört hedefli düşünülür: sempatik aktiviteyi azalt, hormon sentezini durdur, salınımı bloke et, periferik T4-T3 dönüşümünü azalt ve tetikleyiciyi tedavi et.",
+      "examPearl": "Tirotoksik kriz sorusunda “önce tionamid, sonra iyot” sırası en klasik tuzaktır.",
+      "whyCorrect": "Doğru seçenek, klinik olarak hayatı tehdit eden adrenerjik ve hormonal fazlalığı aynı anda ve doğru sırayla hedefler.",
+      "optionComparison": "Diğer seçenekler enfeksiyona tek başına odaklanır, akut etki göstermeyen radyoiyot seçer, iyot sırasını bozar veya hormon fazlalığında levotiroksin verir.",
+      "evidenceChain": [
+        "Ateş 39.2 °C, ajitasyon ve tremor → hipermetabolik sistemik stres.",
+        "Atriyal fibrilasyon ve nabız 164/dk → adrenerjik kardiyak yükün acil kontrol ihtiyacı.",
+        "TSH baskılı, serbest T4/T3 çok yüksek → ağır tirotoksik biyokimya.",
+        "Boğaz ağrısı/CRP yüksekliği → krizi tetikleyebilen eşlik eden stresör."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v297",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V280-V296 render-safe internal-medicine cases"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v297-new-676-halsizlik-kabizlik-ve-kalsiyum-yuksekligi",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Halsizlik, kabızlık ve kalsiyum yüksekliği",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "PTH baskılı hiperkalsemide paraneoplastik mekanizma ile primer hiperparatiroidi/D vitamini fazlalığını ayırma.",
+      "learningTarget": "Hiperkalsemi paternini PTH, fosfor, görüntüleme ve sistemik semptomlarla mekanizma düzeyinde yorumlama.",
+      "demographics": "67 yaşında erkek hasta",
+      "setting": "Dahiliye acil değerlendirme alanı",
+      "chiefComplaint": "Hasta, giderek artan halsizlik, kabızlık, susama ve dalgınlık nedeniyle acile getiriliyor.",
+      "stem": "Hasta son üç haftadır belirgin halsizlik yaşadığını, su içme isteğinin arttığını ve geceleri birkaç kez idrara kalktığını anlatır. Son günlerde kabızlığı belirginleşmiş, ailesi konuşurken bazen konudan koptuğunu fark etmiştir. Yaklaşık iki ayda istemsiz kilo kaybettiğini ve uzun süredir devam eden kuru öksürüğünün arttığını söyler. Kırık, böbrek taşı atağı veya kalsiyum-D vitamini takviyesi kullanımı tariflemez. Uzun süre sigara içmiş, son dönemde iştahının azaldığını ve merdiven çıkarken daha çabuk yorulduğunu belirtmiştir.",
+      "patientIntro": {
+        "profile": "67 yaşında erkek hasta, Dahiliye acil değerlendirme alanı başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, giderek artan halsizlik, kabızlık, susama ve dalgınlık nedeniyle acile getiriliyor.",
+        "historySummary": "Hasta son üç haftadır belirgin halsizlik yaşadığını, su içme isteğinin arttığını ve geceleri birkaç kez idrara kalktığını anlatır. Son günlerde kabızlığı belirginleşmiş, ailesi konuşurken bazen konudan koptuğunu fark etmiştir. Yaklaşık iki ayda istemsiz kilo kaybettiğini ve uzun süredir devam eden kuru öksürüğünün arttığını söyler. Kırık, böbrek taşı atağı veya kalsiyum-D vitamini takviyesi kullanımı tariflemez. Uzun süre sigara içmiş, son dönemde iştahının azaldığını ve merdiven çıkarken daha çabuk yorulduğunu belirtmiştir."
+      },
+      "vitals": {
+        "TA": "132/76 mmHg",
+        "Nabız": "104/dk",
+        "Solunum": "20/dk",
+        "SpO2": "%94, oda havasında",
+        "Ateş": "36.9 °C",
+        "Şok indeksi": "0.79 - dolaşım stabil, metabolik-dehidratasyon riski belirgin"
+      },
+      "exam": [
+        "Hasta dalgın ama uyandırılabilir; mukozalar kurudur.",
+        "Akciğer sağ üst zonda solunum sesleri hafif azalmıştır; yaygın ral yoktur.",
+        "Karında yaygın hafif hassasiyet vardır; defans veya rebound saptanmaz.",
+        "Belirgin kemik deformitesi, peteşi veya periferik ödem izlenmez."
+      ],
+      "investigations": [
+        {
+          "id": "v297-new-676-halsizlik-kabizlik-ve-kalsiyum-yuksekligi-kalsiyum-fosfor-parathormon",
+          "label": "Kalsiyum-fosfor-PTH profili",
+          "title": "Kalsiyum-fosfor-PTH profili",
+          "orderLabel": "Kalsiyum-fosfor-PTH profili",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Kalsiyum-fosfor-PTH profili",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Belirgin kalsiyum yüksekliğine paratiroid yanıtının baskılanması eşlik eder.",
+          "clinicalMeaning": "Belirgin kalsiyum yüksekliğine paratiroid yanıtının baskılanması eşlik eder.",
+          "result": {
+            "title": "Kalsiyum-fosfor-PTH profili",
+            "summary": "Belirgin kalsiyum yüksekliğine paratiroid yanıtının baskılanması eşlik eder.",
+            "interpretation": "Belirgin kalsiyum yüksekliğine paratiroid yanıtının baskılanması eşlik eder.",
+            "values": [
+              [
+                "Total kalsiyum",
+                "14.8 mg/dL",
+                "8.6-10.2 mg/dL",
+                "Belirgin yüksek"
+              ],
+              [
+                "Albumin",
+                "3.6 g/dL",
+                "3.5-5.0 g/dL",
+                "Normal-alt sınır"
+              ],
+              [
+                "Fosfor",
+                "2.0 mg/dL",
+                "2.5-4.5 mg/dL",
+                "Düşük"
+              ],
+              [
+                "PTH",
+                "6 pg/mL",
+                "15-65 pg/mL",
+                "Baskılı"
+              ],
+              [
+                "Kreatinin",
+                "1.6 mg/dL",
+                "0.7-1.2 mg/dL",
+                "Yüksek"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v297-new-676-halsizlik-kabizlik-ve-kalsiyum-yuksekligi-ekg-ve-metabolik-etki",
+          "label": "EKG ve metabolik etki",
+          "title": "EKG ve metabolik etki",
+          "orderLabel": "EKG ve metabolik etki",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "EKG ve metabolik etki",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Kalsiyum yüksekliğinin kardiyak ve renal etkileriyle uyumlu yardımcı bulgular vardır.",
+          "clinicalMeaning": "Kalsiyum yüksekliğinin kardiyak ve renal etkileriyle uyumlu yardımcı bulgular vardır.",
+          "result": {
+            "title": "EKG ve metabolik etki",
+            "summary": "Kalsiyum yüksekliğinin kardiyak ve renal etkileriyle uyumlu yardımcı bulgular vardır.",
+            "interpretation": "Kalsiyum yüksekliğinin kardiyak ve renal etkileriyle uyumlu yardımcı bulgular vardır.",
+            "values": [
+              [
+                "EKG",
+                "QT aralığı kısalmış",
+                "QTc genellikle 350-450 ms",
+                "Kısa QT eğilimi"
+              ],
+              [
+                "Sodyum",
+                "145 mmol/L",
+                "135-145 mmol/L",
+                "Üst sınır"
+              ],
+              [
+                "Potasyum",
+                "3.8 mmol/L",
+                "3.5-5.0 mmol/L",
+                "Normal"
+              ],
+              [
+                "BUN",
+                "34 mg/dL",
+                "7-20 mg/dL",
+                "Yüksek"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v297-new-676-halsizlik-kabizlik-ve-kalsiyum-yuksekligi-akciger-goruntuleme",
+          "label": "Akciğer görüntüleme",
+          "title": "Akciğer görüntüleme",
+          "orderLabel": "Akciğer görüntüleme",
+          "type": "imaging",
+          "priority": "essential",
+          "subtype": "Akciğer görüntüleme",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Malignite olasılığını artıran kitle görünümü vardır.",
+          "clinicalMeaning": "Malignite olasılığını artıran kitle görünümü vardır.",
+          "result": {
+            "title": "Akciğer görüntüleme",
+            "summary": "Malignite olasılığını artıran kitle görünümü vardır.",
+            "interpretation": "Malignite olasılığını artıran kitle görünümü vardır.",
+            "values": [
+              [
+                "Akciğer grafisi",
+                "Sağ hiler bölgede belirgin opasite",
+                "Normalde kitle yok",
+                "Anormal"
+              ],
+              [
+                "Toraks BT",
+                "Sağ üst lob santral kitle ve hiler lenf nodları",
+                "Normalde kitle yok",
+                "Malignite açısından şüpheli"
+              ],
+              [
+                "Kemik grafileri",
+                "Yaygın litik lezyon bildirilmedi",
+                "Yok",
+                "Plazma hücre hastalığı lehine güçlü değil"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastadaki laboratuvar ve klinik tabloyu en iyi açıklayan mekanizma aşağıdakilerden hangisidir?",
+      "questionType": "Mekanizma",
+      "answerTarget": "PTH baskılı hiperkalsemi mekanizması",
+      "diagnosis": {
+        "correct": "PTH benzeri peptid etkisiyle kemik rezorpsiyonu ve renal kalsiyum geri emiliminin artması",
+        "options": [
+          "Paratiroid bezinden bağımsız olmayan otonom PTH salınımı ile fosfat geri emiliminin artması",
+          "D vitamini fazlalığına bağlı intestinal kalsiyum ve fosfat emiliminin birlikte artması",
+          "PTH benzeri peptid etkisiyle kemik rezorpsiyonu ve renal kalsiyum geri emiliminin artması",
+          "Primer kemik iliği plazma hücre infiltrasyonu ile yalnız lokal osteolitik kemik yıkımı oluşması",
+          "Hiperventilasyona bağlı respiratuvar alkalozun iyonize kalsiyumu azaltması"
+        ],
+        "question": "Bu hastadaki laboratuvar ve klinik tabloyu en iyi açıklayan mekanizma aşağıdakilerden hangisidir?",
+        "explanation": "Bu hastada ağır hiperkalsemiye poliüri, dehidratasyon, kabızlık, dalgınlık ve kısa QT eşlik etmektedir. PTH’nin baskılı olması primer paratiroid kaynaklı mekanizmayı geri plana iter; düşük fosfor ise PTH benzeri renal etkiyi destekler. Sigara öyküsü, kilo kaybı ve santral akciğer kitlesiyle birlikte en uygun açıklama tümör kaynaklı PTH benzeri peptid etkisidir.",
+        "pearls": [
+          "PTH baskılı hiperkalsemide paratiroid dışı nedenler düşünülür.",
+          "Düşük fosfor PTH/PTHrP benzeri fosfatürik etkiyi destekler.",
+          "Akciğer kitlesi ve kilo kaybı humoral malignite hiperkalsemisi için güçlü klinik bağlamdır."
+        ],
+        "optionFeedback": {
+          "Paratiroid bezinden bağımsız olmayan otonom PTH salınımı ile fosfat geri emiliminin artması": "Otonom PTH salınımı primer hiperparatiroidiyi düşündürür; bu durumda PTH yüksek veya uygunsuz normal beklenir. Bu vakada PTH baskılıdır ve fosfor düşüklüğü PTH benzeri renal etkiyle uyumlu olabilir, ancak kaynağın paratiroid bezinin kendisi olduğu gösterilmemektedir. Ayrıca kilo kaybı, sigara öyküsü ve akciğer kitlesi paratiroid dışı bir süreci öne çıkarır. Bu nedenle primer PTH fazlalığı en uygun mekanizma değildir.",
+          "D vitamini fazlalığına bağlı intestinal kalsiyum ve fosfat emiliminin birlikte artması": "D vitamini fazlalığında hem kalsiyum hem fosfat emilimi arttığı için hiperfosfatemi beklenebilir; granülomatöz hastalık veya lenfoma gibi durumlarda da 1,25(OH)₂D artışı benzer şekilde fosfatı yüksek tutabilir. Bu vakada fosfor düşüktür, PTH baskılıdır ve akciğerde kitle ile kilo kaybı vardır. Bu patern D vitamini aracılı mekanizmadan çok PTH benzeri peptid etkisini düşündürür. Bu nedenle bu seçenek daha zayıftır.",
+          "PTH benzeri peptid etkisiyle kemik rezorpsiyonu ve renal kalsiyum geri emiliminin artması": "Bu seçenek en uygundur. Baskılanmış PTH’ye rağmen belirgin hiperkalsemi, düşük fosfor, kilo kaybı, sigara öyküsü ve akciğer kitlesi paratiroid dışı PTH benzeri humoral etkiyi düşündürür. PTH benzeri peptid kemikte rezorpsiyonu artırır, böbrekte kalsiyum geri emilimini yükseltir ve fosfat atılımını artırarak düşük fosforla birlikte hiperkalsemi oluşturabilir. Bu mekanizma özellikle skuamöz hücreli akciğer kanseri gibi solid tümörlerde klasik bir paraneoplastik tablodur.",
+          "Primer kemik iliği plazma hücre infiltrasyonu ile yalnız lokal osteolitik kemik yıkımı oluşması": "Plazma hücre hastalıklarında osteolitik lezyonlar ve kemik ağrısı hiperkalsemi yapabilir; ancak tipik olarak anemi, böbrek yetmezliği, serum/idrarda monoklonal protein veya litik kemik lezyonları beklenir. Bu hastada akciğer kitlesi, baskılanmış PTH ve düşük fosfor paterninin bir araya gelmesi humoral PTH benzeri peptid etkisini daha iyi açıklar. Yalnız lokal osteolitik yıkım düşük fosfor ve akciğer kitlesi bağlamını tek başına açıklamaz. Bu nedenle doğru mekanizma değildir.",
+          "Hiperventilasyona bağlı respiratuvar alkalozun iyonize kalsiyumu azaltması": "Respiratuvar alkaloz iyonize kalsiyumu azaltarak parestezi ve tetani gibi hipokalsemik belirtileri artırabilir; total kalsiyumu 14-15 mg/dL düzeyine çıkarmaz. Bu hastada kabızlık, poliüri, konfüzyon eğilimi ve kısa QT hiperkalsemi etkileriyle uyumludur. Ayrıca laboratuvar paterninde baskılanmış PTH ve düşük fosfor vardır. Alkaloz mekanizması bu tabloyu açıklamaz."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "PTH baskılı hiperkalsemide mekanizma, fosfor düzeyi ve klinik bağlamla ayrılır: düşük fosfor PTHrP etkisini, yüksek fosfor D vitamini aracılı emilimi daha çok düşündürür.",
+      "examPearl": "Hiperkalsemi + PTH düşük + fosfor düşük + akciğer kitlesi: PTHrP paraneoplastik mekanizma akla gelir.",
+      "whyCorrect": "Doğru seçenek kalsiyum yüksekliği, fosfor düşüklüğü, PTH baskılanması ve akciğer kitlesini tek mekanizmada birleştirir.",
+      "optionComparison": "Diğer seçenekler primer PTH fazlalığı, D vitamini fazlalığı, plazma hücre hastalığı veya iyonize kalsiyumu azaltan alkaloz gibi farklı paternleri açıklar.",
+      "evidenceChain": [
+        "Total kalsiyum 14.8 mg/dL → semptomatik ağır hiperkalsemi düzeyi.",
+        "PTH 6 pg/mL → paratiroid kaynaklı primer mekanizma baskılanmış.",
+        "Fosfor 2.0 mg/dL → PTH benzeri fosfatürik etkiyi destekler.",
+        "Kilo kaybı ve sağ üst lob santral kitle → humoral paraneoplastik bağlamı güçlendirir."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v297",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V280-V296 render-safe internal-medicine cases"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v297-new-677-kusma-halsizlik-ve-tansiyon-dusuklugu",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Kusma, halsizlik ve tansiyon düşüklüğü",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Adrenal kriz benzeri tabloda tanı örneklemesi ile tedaviyi geciktirmeme ayrımını yapma.",
+      "learningTarget": "Hipotansiyon, hiponatremi, hiperkalemi ve hipoglisemi birlikteliğinde kortizol ekseni acil yönetimini açıklama.",
+      "demographics": "39 yaşında kadın hasta",
+      "setting": "Acil servis resüsitasyon alanı",
+      "chiefComplaint": "Hasta, iki gündür kusma, belirgin halsizlik ve ayağa kalkınca bayılacak gibi olma nedeniyle acile getiriliyor.",
+      "stem": "Hasta iki gün önce başlayan bulantı ve kusma nedeniyle düzenli ilaçlarını alamadığını, bugün yataktan kalkarken gözlerinin karardığını anlatır. Son aylarda cildinin daha koyulaştığını, tuzlu yiyeceklere isteğinin arttığını ve iştahının azaldığını fark etmiştir. Bilinen otoimmün tiroidit öyküsü vardır; yakın zamanda kanama, ishalde kan veya yeni tansiyon ilacı kullanımı tariflemez. Evde ateşi olmamış ancak kusma nedeniyle su içmekte zorlanmıştır. Acile geldiğinde konuşurken yorgun görünmekte ve tekrar kusacağını söylemektedir.",
+      "patientIntro": {
+        "profile": "39 yaşında kadın hasta, Acil servis resüsitasyon alanı başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, iki gündür kusma, belirgin halsizlik ve ayağa kalkınca bayılacak gibi olma nedeniyle acile getiriliyor.",
+        "historySummary": "Hasta iki gün önce başlayan bulantı ve kusma nedeniyle düzenli ilaçlarını alamadığını, bugün yataktan kalkarken gözlerinin karardığını anlatır. Son aylarda cildinin daha koyulaştığını, tuzlu yiyeceklere isteğinin arttığını ve iştahının azaldığını fark etmiştir. Bilinen otoimmün tiroidit öyküsü vardır; yakın zamanda kanama, ishalde kan veya yeni tansiyon ilacı kullanımı tariflemez. Evde ateşi olmamış ancak kusma nedeniyle su içmekte zorlanmıştır. Acile geldiğinde konuşurken yorgun görünmekte ve tekrar kusacağını söylemektedir."
+      },
+      "vitals": {
+        "TA": "82/48 mmHg",
+        "Nabız": "124/dk",
+        "Solunum": "24/dk",
+        "SpO2": "%98, oda havasında",
+        "Ateş": "36.5 °C",
+        "Şok indeksi": "1.51 - hipovolemik/hormonal dolaşım riski yüksek"
+      },
+      "exam": [
+        "Hasta halsiz, soluk ve ortostatik yakınmalı görünümdedir; mukozalar kurudur.",
+        "Avuç içi çizgilerinde ve dirseklerde hiperpigmentasyon dikkati çeker.",
+        "Karında yaygın hafif hassasiyet vardır; defans veya rebound saptanmaz.",
+        "Akciğerler doğal; belirgin periferik ödem yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v297-new-677-kusma-halsizlik-ve-tansiyon-dusuklugu-elektrolit-glukoz",
+          "label": "Elektrolit ve glukoz",
+          "title": "Elektrolit ve glukoz",
+          "orderLabel": "Elektrolit ve glukoz",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Elektrolit ve glukoz",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hiponatremi, hiperkalemi ve hipoglisemi birlikte saptanır.",
+          "clinicalMeaning": "Hiponatremi, hiperkalemi ve hipoglisemi birlikte saptanır.",
+          "result": {
+            "title": "Elektrolit ve glukoz",
+            "summary": "Hiponatremi, hiperkalemi ve hipoglisemi birlikte saptanır.",
+            "interpretation": "Hiponatremi, hiperkalemi ve hipoglisemi birlikte saptanır.",
+            "values": [
+              [
+                "Sodyum",
+                "122 mmol/L",
+                "135-145 mmol/L",
+                "Düşük"
+              ],
+              [
+                "Potasyum",
+                "5.9 mmol/L",
+                "3.5-5.0 mmol/L",
+                "Yüksek"
+              ],
+              [
+                "Glukoz",
+                "54 mg/dL",
+                "70-110 mg/dL",
+                "Düşük"
+              ],
+              [
+                "Bikarbonat",
+                "18 mmol/L",
+                "22-26 mmol/L",
+                "Düşük"
+              ],
+              [
+                "Kreatinin",
+                "1.4 mg/dL",
+                "0.6-1.1 mg/dL",
+                "Yüksek"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v297-new-677-kusma-halsizlik-ve-tansiyon-dusuklugu-hormonal-degerlendirme",
+          "label": "Hormonal değerlendirme",
+          "title": "Hormonal değerlendirme",
+          "orderLabel": "Hormonal değerlendirme",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Hormonal değerlendirme",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Stres yanıtına göre yetersiz kortizol düzeyi ve aks aktivasyonunu düşündüren bulgular vardır.",
+          "clinicalMeaning": "Stres yanıtına göre yetersiz kortizol düzeyi ve aks aktivasyonunu düşündüren bulgular vardır.",
+          "result": {
+            "title": "Hormonal değerlendirme",
+            "summary": "Stres yanıtına göre yetersiz kortizol düzeyi ve aks aktivasyonunu düşündüren bulgular vardır.",
+            "interpretation": "Stres yanıtına göre yetersiz kortizol düzeyi ve aks aktivasyonunu düşündüren bulgular vardır.",
+            "values": [
+              [
+                "Saat 08.00 kortizol",
+                "2.1 µg/dL",
+                ">15-18 µg/dL beklenir",
+                "Düşük"
+              ],
+              [
+                "ACTH",
+                ">1.250 pg/mL",
+                "10-60 pg/mL",
+                "Yüksek"
+              ],
+              [
+                "TSH",
+                "3.1 mIU/L",
+                "0.4-4.0 mIU/L",
+                "Normal aralık"
+              ],
+              [
+                "Serbest T4",
+                "1.0 ng/dL",
+                "0.8-1.8 ng/dL",
+                "Normal"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v297-new-677-kusma-halsizlik-ve-tansiyon-dusuklugu-perfuzyon-izlem",
+          "label": "Perfüzyon ve EKG izlemi",
+          "title": "Perfüzyon ve EKG izlemi",
+          "orderLabel": "Perfüzyon ve EKG izlemi",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Perfüzyon ve EKG izlemi",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hipotansiyona eşlik eden hafif hipoperfüzyon ve hiperkalemi güvenliği izlenir.",
+          "clinicalMeaning": "Hipotansiyona eşlik eden hafif hipoperfüzyon ve hiperkalemi güvenliği izlenir.",
+          "result": {
+            "title": "Perfüzyon ve EKG izlemi",
+            "summary": "Hipotansiyona eşlik eden hafif hipoperfüzyon ve hiperkalemi güvenliği izlenir.",
+            "interpretation": "Hipotansiyona eşlik eden hafif hipoperfüzyon ve hiperkalemi güvenliği izlenir.",
+            "values": [
+              [
+                "Laktat",
+                "2.8 mmol/L",
+                "0.5-2.0 mmol/L",
+                "Yüksek"
+              ],
+              [
+                "EKG",
+                "Sinüs taşikardisi; belirgin geniş QRS yok",
+                "Normal sinüs ritmi",
+                "Taşikardi"
+              ],
+              [
+                "İdrar çıkışı",
+                "Son 6 saatte azalmış",
+                ">0.5 mL/kg/saat",
+                "Azalmış"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada acil yönetimde öncelikli basamak aşağıdakilerden hangisidir?",
+      "questionType": "Acil yaklaşım",
+      "answerTarget": "Hipotansiyon-elektrolit-glukoz bozukluğu birlikteliğinde steroid ve sıvı aciliyeti",
+      "diagnosis": {
+        "correct": "Kan örneği alınabiliyorsa alıp sonucu beklemeden intravenöz hidrokortizon, izotonik salin ve dekstroz başlamak",
+        "options": [
+          "Kan örneği alınabiliyorsa alıp sonucu beklemeden intravenöz hidrokortizon, izotonik salin ve dekstroz başlamak",
+          "Serum kortizol sonucu çıkana kadar yalnız oral tuz tableti ve antiemetik vermek",
+          "Hiperkalemiyi açıklamak için ACE inhibitörü başlayıp ayaktan nefroloji kontrolü planlamak",
+          "Öncelikle levotiroksin yükleme dozu verip steroid tedavisini tiroid yanıtına göre ertelemek",
+          "Sıvı kısıtlaması yapıp hiponatremiyi hızlı hipertonik salinle tamamen düzeltmek"
+        ],
+        "question": "Bu hastada acil yönetimde öncelikli basamak aşağıdakilerden hangisidir?",
+        "explanation": "Kusma sonrası ilaç alamama, hipotansiyon, hiponatremi, hiperkalemi, hipoglisemi, düşük kortizol ve yüksek ACTH birlikte primer adrenal eksen yetmezliğinin akut dekompansasyonunu düşündürür. Bu tabloda tanısal örnekler alınabiliyorsa alınır, ancak sonuç beklenmeden intravenöz hidrokortizon ve hacim/glukoz replasmanı başlanır. Tedaviyi geciktiren kortizol bekleme, oral destek veya yanlış ilaçlar dolaşım ve nöroglukopeni riskini artırır.",
+        "pearls": [
+          "Hiponatremi + hiperkalemi + hipoglisemi birlikteliği hormonal acil için güçlü paterndir.",
+          "Steroid başlanmadan önce kan örneği alınabilir; fakat sonuç beklenmez.",
+          "İzotonik salin ve dekstroz, hem hacim kaybını hem hipoglisemiyi hedefler."
+        ],
+        "optionFeedback": {
+          "Kan örneği alınabiliyorsa alıp sonucu beklemeden intravenöz hidrokortizon, izotonik salin ve dekstroz başlamak": "Bu seçenek en uygundur. Bilinen adrenal yetmezliği olan veya bu eksen açısından güçlü klinik verisi bulunan hastada kusma, hipotansiyon, hiponatremi, hiperkalemi ve hipoglisemi birlikte geliştiğinde tedavi geciktirilmez. ACTH-kortizol için kan örneği alınabiliyorsa alınır; ancak laboratuvar sonucu beklemek dolaşım kollapsı ve hipoglisemi riskini artırır. İntravenöz hidrokortizon mineralokortikoid/glukokortikoid eksenini destekler; izotonik salin ve dekstroz hacim kaybı ile hipoglisemiyi düzeltir.",
+          "Serum kortizol sonucu çıkana kadar yalnız oral tuz tableti ve antiemetik vermek": "Kortizol sonucunu beklemek bu klinik bağlamda güvenli değildir. Hastada hipotansiyon, kusma, hipoglisemi, hiponatremi ve hiperkalemi vardır; bunlar acil damar içi sıvı ve steroid gerektiren bir tablo oluşturur. Oral tuz tableti ve antiemetik, kusan ve hipoperfüzyon riski olan hastada yetersiz kalır. Tanısal kan örneği alınabilir, fakat tedavi sonucu beklemeden başlanmalıdır.",
+          "Hiperkalemiyi açıklamak için ACE inhibitörü başlayıp ayaktan nefroloji kontrolü planlamak": "ACE inhibitörleri hiperkalemiyi artırabilir ve hipotansif hastada renal perfüzyonu daha da bozabilir. Bu hastada hiperkalemi tek başına nefrolojik bir laboratuvar sapması değildir; hiponatremi, hipoglisemi, düşük kortizol ve hipotansiyonla birlikte hormonal-stres yanıtı eksikliğini düşündürür. Ayaktan izlem yerine acil damar içi tedavi gerekir. Bu nedenle ACE inhibitörü başlamak hem yanlış hem risklidir.",
+          "Öncelikle levotiroksin yükleme dozu verip steroid tedavisini tiroid yanıtına göre ertelemek": "Levotiroksin miksödem komasında gerekebilir; ancak adrenal eksiklik dışlanmadan veya steroid verilmeden tiroid hormonu yüklemek adrenal krizi ağırlaştırabilir. Bu vakada ana akut problem hipotansiyon, hipoglisemi, hiponatremi ve hiperkalemidir; tiroid hormon eksikliği lehine veri verilmemiştir. Steroid tedavisini ertelemek dolaşım ve glukoz güvenliğini bozar. Bu seçenek bu nedenle güvenli bir tercih değildir.",
+          "Sıvı kısıtlaması yapıp hiponatremiyi hızlı hipertonik salinle tamamen düzeltmek": "Hiponatremi bu hastada hacim kaybı ve kortizol/mineralokortikoid ekseni bozukluğu ile ilişkilidir; sıvı kısıtlaması hipotansiyonu ve böbrek perfüzyonunu kötüleştirir. Hipertonik salin yalnız ağır nörolojik semptomlu seçilmiş hiponatremilerde kontrollü kullanılır; burada temel acil yaklaşım izotonik sıvı, dekstroz ve steroid replasmanıdır. Ayrıca hiponatreminin hızlı ve tamamen düzeltilmesi osmotik demiyelinizasyon riski taşır. Bu nedenle bu seçenek yanlıştır."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Adrenal kriz şüphesinde laboratuvar doğrulaması tedaviyi geciktirmemelidir; hidrokortizon ve izotonik sıvı/dekstroz yaşamsal destek basamaklarıdır.",
+      "examPearl": "Adrenal kriz sorusunda “kortizol sonucunu bekleme” tuzağı çok önemlidir; örnek al, ama tedaviyi başlat.",
+      "whyCorrect": "Doğru seçenek, hormonal eksikliği ve akut dolaşım-glukoz güvenliğini aynı anda tedavi eder.",
+      "optionComparison": "Diğer seçenekler tedaviyi geciktirir, hiperkalemiyi kötüleştirir, tiroid hormonunu yanlış önceliklendirir veya hiponatremiyi tehlikeli biçimde yönetir.",
+      "evidenceChain": [
+        "TA 82/48 ve şok indeksi 1.51 → acil dolaşım desteği gerektiren tablo.",
+        "Na 122, K 5.9, glukoz 54 → mineralokortikoid/glukokortikoid eksikliği paternini destekler.",
+        "Kortizol 2.1 ve ACTH >1.250 → primer aks aktivasyonu ile yetersiz kortizol yanıtı.",
+        "Kusma ve ilaç alamama → akut dekompansasyonu tetikleyen pratik olay akışı."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v297",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V280-V296 render-safe internal-medicine cases"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v297-new-678-sarilik-koyu-idrar-ve-solukluk",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Sarılık, koyu idrar ve solukluk",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Hemolitik anemilerde DAT, periferik yayma, trombosit ve koagülasyon testlerini birlikte kullanarak mekanizmayı ayırma.",
+      "learningTarget": "Sıcak otoimmün hemolizi TMA/DIC, G6PD, B12 eksikliği ve demir eksikliğinden laboratuvar-yayma düzeyinde ayırt etme.",
+      "demographics": "52 yaşında kadın hasta",
+      "setting": "Dahiliye servis konsültasyonu",
+      "chiefComplaint": "Hasta, bir haftadır artan halsizlik, gözlerde sararma ve koyu renkli idrar nedeniyle değerlendirmeye alınıyor.",
+      "stem": "Hasta son bir haftada merdiven çıkarken çabuk yorulduğunu, aynaya baktığında göz aklarının sarardığını ve idrarının çay rengini aldığını anlatır. Dışkısında siyahlaşma veya taze kan fark etmemiş, karın ağrısı ya da ateş yaşamamıştır. Bilinen sistemik otoimmün hastalık nedeniyle zaman zaman eklem ağrıları olduğunu, ancak son günlerde yeni antibiyotik veya bakla tüketimi olmadığını söyler. Daha önce ağır anemi atağı geçirmemiştir. Yakınmaları giderek arttığı ve çarpıntı hissetmeye başladığı için poliklinikten servise yönlendirilmiştir.",
+      "patientIntro": {
+        "profile": "52 yaşında kadın hasta, Dahiliye servis konsültasyonu başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, bir haftadır artan halsizlik, gözlerde sararma ve koyu renkli idrar nedeniyle değerlendirmeye alınıyor.",
+        "historySummary": "Hasta son bir haftada merdiven çıkarken çabuk yorulduğunu, aynaya baktığında göz aklarının sarardığını ve idrarının çay rengini aldığını anlatır. Dışkısında siyahlaşma veya taze kan fark etmemiş, karın ağrısı ya da ateş yaşamamıştır. Bilinen sistemik otoimmün hastalık nedeniyle zaman zaman eklem ağrıları olduğunu, ancak son günlerde yeni antibiyotik veya bakla tüketimi olmadığını söyler. Daha önce ağır anemi atağı geçirmemiştir. Yakınmaları giderek arttığı ve çarpıntı hissetmeye başladığı için poliklinikten servise yönlendirilmiştir."
+      },
+      "vitals": {
+        "TA": "118/70 mmHg",
+        "Nabız": "112/dk",
+        "Solunum": "20/dk",
+        "SpO2": "%97, oda havasında",
+        "Ateş": "36.8 °C",
+        "Şok indeksi": "0.95 - anemiye bağlı kompansatuvar taşikardi belirgin"
+      },
+      "exam": [
+        "Hasta soluk ve hafif ikterik görünümdedir.",
+        "Skleralarda sarılık vardır; yaygın peteşi veya purpura izlenmez.",
+        "Dalak kot altında hafif ele gelir; karında defans veya rebound yoktur.",
+        "Nörolojik muayenede fokal defisit yoktur; periferik ödem saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v297-new-678-sarilik-koyu-idrar-ve-solukluk-hemogram-retikulosit",
+          "label": "Hemogram ve retikülosit",
+          "title": "Hemogram ve retikülosit",
+          "orderLabel": "Hemogram ve retikülosit",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Hemogram ve retikülosit",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Anemiye güçlü kemik iliği yanıtı ve trombositlerin korunması dikkat çeker.",
+          "clinicalMeaning": "Anemiye güçlü kemik iliği yanıtı ve trombositlerin korunması dikkat çeker.",
+          "result": {
+            "title": "Hemogram ve retikülosit",
+            "summary": "Anemiye güçlü kemik iliği yanıtı ve trombositlerin korunması dikkat çeker.",
+            "interpretation": "Anemiye güçlü kemik iliği yanıtı ve trombositlerin korunması dikkat çeker.",
+            "values": [
+              [
+                "Hemoglobin",
+                "7.4 g/dL",
+                "12-16 g/dL",
+                "Düşük"
+              ],
+              [
+                "MCV",
+                "104 fL",
+                "80-100 fL",
+                "Hafif yüksek"
+              ],
+              [
+                "Retikülosit",
+                "%9.8",
+                "%0.5-2.5",
+                "Yüksek"
+              ],
+              [
+                "Lökosit",
+                "6.900/µL",
+                "4.000-10.000/µL",
+                "Normal"
+              ],
+              [
+                "Trombosit",
+                "238.000/µL",
+                "150.000-400.000/µL",
+                "Normal"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v297-new-678-sarilik-koyu-idrar-ve-solukluk-hemoliz-paneli",
+          "label": "Hemoliz paneli",
+          "title": "Hemoliz paneli",
+          "orderLabel": "Hemoliz paneli",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Hemoliz paneli",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hemoliz göstergeleri belirgin; koagülasyon tüketimi ön planda değildir.",
+          "clinicalMeaning": "Hemoliz göstergeleri belirgin; koagülasyon tüketimi ön planda değildir.",
+          "result": {
+            "title": "Hemoliz paneli",
+            "summary": "Hemoliz göstergeleri belirgin; koagülasyon tüketimi ön planda değildir.",
+            "interpretation": "Hemoliz göstergeleri belirgin; koagülasyon tüketimi ön planda değildir.",
+            "values": [
+              [
+                "LDH",
+                "820 U/L",
+                "<250 U/L",
+                "Yüksek"
+              ],
+              [
+                "İndirekt bilirubin",
+                "4.2 mg/dL",
+                "<1.0 mg/dL",
+                "Yüksek"
+              ],
+              [
+                "Haptoglobin",
+                "<10 mg/dL",
+                "30-200 mg/dL",
+                "Düşük"
+              ],
+              [
+                "PT/INR",
+                "1.05",
+                "0.8-1.2",
+                "Normal"
+              ],
+              [
+                "aPTT",
+                "31 sn",
+                "25-35 sn",
+                "Normal"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v297-new-678-sarilik-koyu-idrar-ve-solukluk-yayma-dat",
+          "label": "Periferik yayma ve direkt antiglobulin testi",
+          "title": "Periferik yayma ve direkt antiglobulin testi",
+          "orderLabel": "Periferik yayma ve direkt antiglobulin testi",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Periferik yayma ve direkt antiglobulin testi",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Antikor aracılı eritrosit yıkımını destekleyen hematolojik bulgular vardır.",
+          "clinicalMeaning": "Antikor aracılı eritrosit yıkımını destekleyen hematolojik bulgular vardır.",
+          "result": {
+            "title": "Periferik yayma ve direkt antiglobulin testi",
+            "summary": "Antikor aracılı eritrosit yıkımını destekleyen hematolojik bulgular vardır.",
+            "interpretation": "Antikor aracılı eritrosit yıkımını destekleyen hematolojik bulgular vardır.",
+            "values": [
+              [
+                "Periferik yayma",
+                "Sferositler; belirgin şistosit artışı yok",
+                "Sferosit/şistosit yok",
+                "Sferosit baskın"
+              ],
+              [
+                "Direkt antiglobulin testi",
+                "IgG ve C3 pozitif",
+                "Negatif",
+                "Pozitif"
+              ],
+              [
+                "Ferritin",
+                "118 ng/mL",
+                "15-150 ng/mL",
+                "Normal"
+              ],
+              [
+                "B12",
+                "410 pg/mL",
+                "200-900 pg/mL",
+                "Normal"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastadaki anemi ve sarılık tablosunu en iyi açıklayan süreç aşağıdakilerden hangisidir?",
+      "questionType": "Mekanizma",
+      "answerTarget": "Pozitif direkt antiglobulin testi ve hemoliz paterninin yorumu",
+      "diagnosis": {
+        "correct": "IgG aracılı eritrosit opsonizasyonu sonucu dalakta ağırlıklı ekstravasküler hemoliz",
+        "options": [
+          "Demir eksikliğine bağlı mikrositer eritropoez ve gastrointestinal gizli kan kaybı",
+          "B12 eksikliğine bağlı intramedüller yıkım ve izole retikülosit düşüklüğü",
+          "Koagülasyon faktör tüketimine bağlı DIC ve yaygın fibrin trombüsleri",
+          "IgG aracılı eritrosit opsonizasyonu sonucu dalakta ağırlıklı ekstravasküler hemoliz",
+          "G6PD eksikliğinde oksidatif stres sonrası Heinz cisimcikli akut intravasküler hemoliz"
+        ],
+        "question": "Bu hastadaki anemi ve sarılık tablosunu en iyi açıklayan süreç aşağıdakilerden hangisidir?",
+        "explanation": "Bu hastada anemiye retikülositoz, indirekt bilirubin ve LDH yüksekliği, haptoglobin düşüklüğü ve koyu idrar eşlik ederek hemoliz paternini oluşturur. Trombositlerin ve koagülasyon testlerinin korunması DIC/TMA olasılığını zayıflatır; sferositler ve direkt antiglobulin testinde IgG-C3 pozitifliği antikor aracılı eritrosit yıkımını destekler. Mekanizma, IgG ile opsonize eritrositlerin dalak makrofajları tarafından parçalanması ve ağırlıklı ekstravasküler hemolizdir.",
+        "pearls": [
+          "Retikülosit yüksekliği periferik yıkıma kemik iliği yanıtını gösterir.",
+          "Sferosit + DAT pozitifliği sıcak otoimmün hemoliz için güçlü paterndir.",
+          "Şistosit ve koagülasyon bozukluğu yokluğu DIC/TMA olasılığını azaltır."
+        ],
+        "optionFeedback": {
+          "Demir eksikliğine bağlı mikrositer eritropoez ve gastrointestinal gizli kan kaybı": "Demir eksikliği genellikle mikrositer-hipokrom anemi, düşük ferritin ve düşük retikülosit yanıtı ile gider; koyu idrar ve indirekt bilirubin artışı temel bulgu değildir. Bu hastada MCV hafif yüksek, retikülosit belirgin artmış, LDH ve indirekt bilirubin yüksek, haptoglobin düşük ve direkt antiglobulin testi pozitiftir. Dışkıda kan tariflenmemesi tek başına kanamayı dışlamaz; ancak verilen hemoliz göstergeleri demir eksikliğinden çok immün hemolizi destekler. Bu nedenle bu seçenek güvenli bir tercih değildir.",
+          "B12 eksikliğine bağlı intramedüller yıkım ve izole retikülosit düşüklüğü": "B12 eksikliği makrositoz, hipersegmente nötrofil, nörolojik bulgular ve etkisiz eritropoezle ilişkili olabilir; ancak retikülosit yanıtı genellikle yetersizdir. Bu vakada retikülosit yüksekliği kemik iliğinin periferik eritrosit kaybına yanıt verdiğini gösterir. Pozitif direkt antiglobulin testi ve sferositler B12 eksikliğinden çok antikor aracılı eritrosit yıkımını destekler. Bu nedenle bu mekanizma en iyi açıklama değildir.",
+          "Koagülasyon faktör tüketimine bağlı DIC ve yaygın fibrin trombüsleri": "DIC’de trombositopeni, PT/aPTT uzaması, fibrinojen düşüklüğü ve D-dimer yüksekliği beklenir; yaygın fibrin trombüsleri mikroanjiyopatik hemoliz yapabilir. Bu hastada trombosit sayısı normal, PT/aPTT belirgin bozuk değil ve periferik yaymada şistosit değil sferosit baskındır. Ayrıca direkt antiglobulin testinin IgG/C3 pozitif olması koagülasyon faktör tüketiminden çok immün eritrosit opsonizasyonunu gösterir. Bu nedenle DIC güvenli bir tercih değildir.",
+          "IgG aracılı eritrosit opsonizasyonu sonucu dalakta ağırlıklı ekstravasküler hemoliz": "Bu seçenek en uygundur. Halsizlik, sarılık, koyu idrar, indirekt bilirubin ve LDH yüksekliği, düşük haptoglobin ve retikülositoz hemolizi gösterir; direkt antiglobulin testinde IgG ve C3 pozitifliği eritrositlerin antikor/kompleman ile işaretlendiğini destekler. Yaymada sferosit görülmesi, dalakta makrofajların antikor kaplı eritrositlerden membran parçaları koparmasıyla oluşan ekstravasküler hemoliz mantığına uyar. Bu tablo sıcak otoimmün hemolitik anemi mekanizmasını en iyi açıklar.",
+          "G6PD eksikliğinde oksidatif stres sonrası Heinz cisimcikli akut intravasküler hemoliz": "G6PD eksikliğinde oksidatif stres sonrası Heinz cisimcikleri ve ısırılmış hücreler beklenebilir; tipik tetikleyiciler bakla, oksidan ilaçlar veya enfeksiyonlardır. Bu vakada belirgin oksidan maruziyet öyküsü yoktur ve direkt antiglobulin testi pozitiftir; G6PD hemolizi ise immün test pozitifliğiyle açıklanmaz. Ayrıca sferosit baskınlığı ve eşlik eden otoimmün zemin IgG aracılı ekstravasküler yıkımı daha iyi destekler. Bu nedenle bu seçenek yanlıştır."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Sıcak immün hemolizde eritrositler genellikle IgG ile opsonize olur; dalak makrofajları membran kaybına ve sferosit oluşumuna yol açarak ekstravasküler hemoliz yapar.",
+      "examPearl": "Hemoliz + DAT pozitif + sferosit + trombosit normal: TTP/DIC değil, sıcak immün hemoliz düşün.",
+      "whyCorrect": "Doğru seçenek DAT pozitifliğini, sferositleri, korunmuş trombosit/koagülasyonu ve indirekt hemoliz paternini tek mekanizmada açıklar.",
+      "optionComparison": "Diğer seçenekler demir eksikliği, B12 eksikliği, DIC veya G6PD gibi farklı laboratuvar ve yayma paternleri bekleyen süreçlerdir.",
+      "evidenceChain": [
+        "Hb 7.4 g/dL ve retikülosit %9.8 → periferik kayba/yıkıma güçlü yanıt.",
+        "LDH ve indirekt bilirubin yüksek, haptoglobin düşük → hemoliz kanıtı.",
+        "Trombosit ve PT/aPTT normal → DIC/TMA paterninden uzaklaşma.",
+        "DAT IgG-C3 pozitif ve sferositler → antikor aracılı ekstravasküler hemoliz."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v297",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V280-V296 render-safe internal-medicine cases"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v298-new-679-pozisyonla-degisen-gogus-agrisi",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Pozisyonla değişen göğüs ağrısı",
+      "difficulty": "Orta-Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Plöritik ve pozisyonel göğüs ağrısında EKG dağılımı, troponin paterni ve oskültasyon bulgusunu birlikte değerlendirerek ilk tedaviyi seçme.",
+      "learningTarget": "Akut inflamatuvar göğüs ağrısı sendromunda STEMI, pulmoner emboli, reflü ve enfeksiyöz koleksiyon tuzaklarını ayırma.",
+      "demographics": "32 yaşında erkek hasta",
+      "setting": "Acil servis kardiyoloji gözlem alanı",
+      "chiefComplaint": "Hasta, iki gündür süren göğüs ağrısının bugün artması nedeniyle acile başvuruyor.",
+      "stem": "Hasta ağrının önce boğaz ağrısı ve halsizlikten birkaç gün sonra başladığını, göğsün ortasında baskıdan çok batma-yanma gibi hissedildiğini anlatır. Derin nefes almakla ve sırtüstü yatmakla ağrısı artmış, yatağın kenarında öne doğru oturduğunda belirgin rahatladığını fark etmiştir. Ağrı zaman zaman sol omza yayılmış ancak eforla düzenli artan bir sıkışma şeklinde olmamıştır. Daha önce benzer bir atak yaşamamış, kokain veya yeni ilaç kullanımı tariflememiştir. Bacakta şişlik, uzun yolculuk, kanlı balgam veya bayılma olmamıştır; ağrının gece uyutmaması üzerine acile gelmiştir.",
+      "patientIntro": {
+        "profile": "32 yaşında erkek hasta, Acil servis kardiyoloji gözlem alanı başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, iki gündür süren göğüs ağrısının bugün artması nedeniyle acile başvuruyor.",
+        "historySummary": "Hasta ağrının önce boğaz ağrısı ve halsizlikten birkaç gün sonra başladığını, göğsün ortasında baskıdan çok batma-yanma gibi hissedildiğini anlatır. Derin nefes almakla ve sırtüstü yatmakla ağrısı artmış, yatağın kenarında öne doğru oturduğunda belirgin rahatladığını fark etmiştir. Ağrı zaman zaman sol omza yayılmış ancak eforla düzenli artan bir sıkışma şeklinde olmamıştır. Daha önce benzer bir atak yaşamamış, kokain veya yeni ilaç kullanımı tariflememiştir. Bacakta şişlik, uzun yolculuk, kanlı balgam veya bayılma olmamıştır; ağrının gece uyutmaması üzerine acile gelmiştir."
+      },
+      "vitals": {
+        "TA": "118/72 mmHg",
+        "Nabız": "104/dk",
+        "Solunum": "20/dk",
+        "SpO2": "%98, oda havasında",
+        "Ateş": "37.8 °C",
+        "Şok indeksi": "0.88 - sistemik inflamasyonla uyumlu taşikardi, belirgin dolaşım çöküşü yok"
+      },
+      "exam": [
+        "Genel durumu iyi-orta, konuşması rahat ve periferik perfüzyonu korunmuştur.",
+        "Prekordiyumda oturur pozisyonda daha iyi duyulan yüzeyel sürtünme sesi alınır.",
+        "Akciğer alanları temizdir; bacaklarda tek taraflı ödem veya baldır hassasiyeti yoktur.",
+        "Boyun venöz dolgunluğu belirgin değildir; kalp sesleri derinden gelmez."
+      ],
+      "investigations": [
+        {
+          "id": "v298-new-679-pozisyonla-degisen-gogus-agrisi-ekg",
+          "label": "12 derivasyonlu EKG",
+          "title": "12 derivasyonlu EKG",
+          "orderLabel": "12 derivasyonlu EKG",
+          "type": "ekg",
+          "priority": "essential",
+          "subtype": "12 derivasyonlu EKG",
+          "category": "cardiology",
+          "testTypeCategory": "cardiology",
+          "summary": "ST değişiklikleri yaygın dağılımlı olup tek koroner alanla sınırlı değildir.",
+          "clinicalMeaning": "ST değişiklikleri yaygın dağılımlı olup tek koroner alanla sınırlı değildir.",
+          "result": {
+            "title": "12 derivasyonlu EKG",
+            "summary": "ST değişiklikleri yaygın dağılımlı olup tek koroner alanla sınırlı değildir.",
+            "interpretation": "ST değişiklikleri yaygın dağılımlı olup tek koroner alanla sınırlı değildir.",
+            "values": [
+              [
+                "Ritim",
+                "Sinüs taşikardisi, 104/dk",
+                "60-100/dk",
+                "Hafif taşikardi"
+              ],
+              [
+                "ST segmenti",
+                "DI, DII, aVL, V3-V6’da konkav elevasyon",
+                "İzoelektrik",
+                "Yaygın konkav elevasyon"
+              ],
+              [
+                "PR segmenti",
+                "DII ve lateral derivasyonlarda depresyon",
+                "İzoelektrik",
+                "Eşlik eden atriyal etkilenim bulgusu"
+              ],
+              [
+                "Resiprokal ST depresyonu",
+                "aVR dışında belirgin yok",
+                "Beklenmez",
+                "STEMI dağılımından farklı"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v298-new-679-pozisyonla-degisen-gogus-agrisi-inflamasyon-ve-miyokard",
+          "label": "İnflamasyon ve miyokard belirteçleri",
+          "title": "İnflamasyon ve miyokard belirteçleri",
+          "orderLabel": "İnflamasyon ve miyokard belirteçleri",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "İnflamasyon ve miyokard belirteçleri",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Sistemik inflamasyon belirgindir; miyokard nekrozu için güçlü dinamik yükselme yoktur.",
+          "clinicalMeaning": "Sistemik inflamasyon belirgindir; miyokard nekrozu için güçlü dinamik yükselme yoktur.",
+          "result": {
+            "title": "İnflamasyon ve miyokard belirteçleri",
+            "summary": "Sistemik inflamasyon belirgindir; miyokard nekrozu için güçlü dinamik yükselme yoktur.",
+            "interpretation": "Sistemik inflamasyon belirgindir; miyokard nekrozu için güçlü dinamik yükselme yoktur.",
+            "values": [
+              [
+                "CRP",
+                "68 mg/L",
+                "<5 mg/L",
+                "Yüksek"
+              ],
+              [
+                "Lökosit",
+                "11.800/mm³",
+                "4.000-10.000/mm³",
+                "Hafif yüksek"
+              ],
+              [
+                "Yüksek duyarlıklı troponin I",
+                "18 ng/L",
+                "<34 ng/L",
+                "Referans sınırında"
+              ],
+              [
+                "3. saat troponin I",
+                "20 ng/L",
+                "<34 ng/L",
+                "Belirgin dinamik artış yok"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v298-new-679-pozisyonla-degisen-gogus-agrisi-ekokardiyografi",
+          "label": "Yatak başı ekokardiyografi",
+          "title": "Yatak başı ekokardiyografi",
+          "orderLabel": "Yatak başı ekokardiyografi",
+          "type": "imaging",
+          "priority": "essential",
+          "subtype": "Yatak başı ekokardiyografi",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Sistolik fonksiyon korunmuş, küçük sıvı dışında bası bulgusu yoktur.",
+          "clinicalMeaning": "Sistolik fonksiyon korunmuş, küçük sıvı dışında bası bulgusu yoktur.",
+          "result": {
+            "title": "Yatak başı ekokardiyografi",
+            "summary": "Sistolik fonksiyon korunmuş, küçük sıvı dışında bası bulgusu yoktur.",
+            "interpretation": "Sistolik fonksiyon korunmuş, küçük sıvı dışında bası bulgusu yoktur.",
+            "values": [
+              [
+                "Sol ventrikül EF",
+                "%60",
+                ">%50",
+                "Korunmuş"
+              ],
+              [
+                "Bölgesel duvar hareket kusuru",
+                "Yok",
+                "Yok",
+                "Koroner oklüzyon lehine değil"
+              ],
+              [
+                "Perikardiyal sıvı",
+                "Posterior 4 mm",
+                "Yok/çok az",
+                "Küçük"
+              ],
+              [
+                "Sağ atriyum/ventrikül kollapsı",
+                "Yok",
+                "Yok",
+                "Tamponad bulgusu yok"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada ilk tedavi ve izlem için en uygun yaklaşım aşağıdakilerden hangisidir?",
+      "questionType": "Tedavi/izlem",
+      "answerTarget": "Pozisyonel-plöritik göğüs ağrısında antiinflamatuvar tedavi ve güvenli izlem",
+      "diagnosis": {
+        "correct": "Yüksek doz aspirin veya NSAİİ ile birlikte kolşisin başlanması ve inflamatuvar yanıtla izlem",
+        "options": [
+          "Sadece proton pompa inhibitörü başlanıp kardiyak değerlendirme yapılmadan taburculuk",
+          "Acil trombolitik tedavi ve tam doz antikoagülasyon başlanması",
+          "Yüksek doz aspirin veya NSAİİ ile birlikte kolşisin başlanması ve inflamatuvar yanıtla izlem",
+          "Ampirik geniş spektrumlu antibiyotik ve acil cerrahi drenaj planlanması",
+          "Primer tedavi olarak yüksek doz sistemik kortikosteroid başlanması"
+        ],
+        "question": "Bu hastada ilk tedavi ve izlem için en uygun yaklaşım aşağıdakilerden hangisidir?",
+        "explanation": "Vakadaki ağrı karakteri, sürtünme sesi, yaygın konkav ST elevasyonu ve PR depresyonu inflamatuvar perikard yüzey tutulumunu destekler. Hemodinamik çöküş, geniş efüzyon, belirgin miyokard nekrozu veya tek damar alanına sınırlı iskemik patern verilmediği için trombolitik/antikoagülasyon ya da acil drenaj ilk seçenek değildir. Uygun yaklaşım aspirin veya NSAİİ ile inflamasyonu baskılamak, kolşisin ekleyerek nüks riskini azaltmak ve ağrı-CRP yanıtıyla izlemektir.",
+        "pearls": [
+          "Pozisyonla değişen plöritik ağrı + sürtünme sesi önemli klinik ipucudur.",
+          "Yaygın konkav ST elevasyonu ve PR depresyonu tek damar STEMI paterninden ayrılır.",
+          "Küçük efüzyon ve kollaps yokluğu acil perikardiyosentez gereksinimini azaltır."
+        ],
+        "optionFeedback": {
+          "Sadece proton pompa inhibitörü başlanıp kardiyak değerlendirme yapılmadan taburculuk": "Bu yaklaşım göğüs ağrısını reflü gibi düşük riskli bir nedene bağlayarak verilen EKG, oskültasyon ve inflamasyon verilerini gözden kaçırır. Retrosternal ağrının öne eğilmekle azalması, sırt/omza yayılması, sürtünme sesi ve yaygın konkav ST elevasyonu yalnızca dispepsiyle açıklanamaz. Proton pompa inhibitörü eşlik eden mide koruması için bazı hastalarda eklenebilir; ancak burada primer tedavi ve izlem stratejisinin yerine geçmez.",
+          "Acil trombolitik tedavi ve tam doz antikoagülasyon başlanması": "Trombolitik ve tam doz antikoagülasyon ST elevasyonlu akut koroner oklüzyon veya yüksek riskli tromboembolik durumlarda düşünülür. Bu vakada ST değişikliği tek damar sulama alanına sınırlı değildir, PR depresyonu ve sürtünme sesi vardır; seri troponinde belirgin dinamik yükselme verilmemiştir. Gereksiz tromboliz/antikoagülasyon hem tanısal hedefi kaçırır hem de kanama ve sıvı birikimi varsa klinik kötüleşme riski oluşturabilir.",
+          "Yüksek doz aspirin veya NSAİİ ile birlikte kolşisin başlanması ve inflamatuvar yanıtla izlem": "Bu seçenek en uygun yaklaşımdır. Pozisyonla değişen plöritik göğüs ağrısı, perikardiyal sürtünme sesi, yaygın konkav ST elevasyonu-PR depresyonu ve CRP yüksekliği birlikte inflamatuvar perikard yüzey tutulumunu destekler. Hemodinamik bozulma, geniş sıvı veya miyokard hasarı bulgusu yoksa ilk basamak tedavi antiinflamatuvar doz aspirin/NSAİİ ve rekürrensi azaltmak için kolşisindir. Tedavi yanıtı ağrı ve CRP gerilemesiyle izlenir; efor kısıtlaması ve alarm bulguları açısından takip gerekir.",
+          "Ampirik geniş spektrumlu antibiyotik ve acil cerrahi drenaj planlanması": "Geniş spektrumlu antibiyotik ve cerrahi drenaj pürülan enfeksiyon, mediastinal kaynak veya hemodinamik olarak sorun yaratan koleksiyon düşünülürse gündeme gelir. Bu hastada ateş yüksekliği belirgin değildir, lökositoz ağır değildir ve ekokardiyografide tamponad ya da büyük efüzyon yoktur. Klinik akış viral/idiopatik inflamatuvar sürece daha çok uyar; bu nedenle antibiyotik-drenaj kombinasyonu ilk basamak değildir.",
+          "Primer tedavi olarak yüksek doz sistemik kortikosteroid başlanması": "Sistemik kortikosteroidler belirli otoimmün, üremik veya NSAİİ-kontrendike seçilmiş olgularda kullanılabilir; ancak tipik ilk epizotta primer tedavi olarak başlandığında nüks riskini artırabilir. Bu hastada NSAİİ için belirgin kontrendikasyon, aktif otoimmün alevlenme veya dirençli hastalık verisi yoktur. Bu nedenle steroidi ilk seçenek yapmak yerine aspirin/NSAİİ ve kolşisin temelli yaklaşım tercih edilir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Akut perikardiyal inflamasyon genellikle plöritik/pozisyonel ağrı, sürtünme sesi, yaygın ST-PR değişiklikleri ve CRP yüksekliğiyle tanınır. Komplike olmayan ilk epizotta aspirin/NSAİİ + kolşisin temel tedavidir; geniş efüzyon, tamponad, yüksek ateş, immünsupresyon, travma, antikoagülasyon veya tedavi yanıtsızlığı yüksek risk işaretidir.",
+      "examPearl": "Perikardit sorusunda yaygın konkav ST elevasyonu + PR depresyonu + öne eğilmekle rahatlama varsa STEMI refleksiyle tromboliz seçilmez; tamponad yoksa drenaj da ilk basamak değildir.",
+      "whyCorrect": "Doğru seçenek hem ağrının inflamatuvar mekanizmasını hem de nüksü azaltma hedefini karşılar.",
+      "optionComparison": "Diğer seçenekler reflüye indirgeme, STEMI gibi tromboliz, enfeksiyöz drenaj veya ilk basamak steroid gibi vaka verisiyle desteklenmeyen uçlara gider.",
+      "evidenceChain": [
+        "Öne eğilmekle azalan plöritik retrosternal ağrı → inflamatuvar perikard yüzeyi lehine klinik örüntü.",
+        "Sürtünme sesi → fizik muayenede perikard yapraklarının yüzeyel temas bulgusu.",
+        "Yaygın konkav ST elevasyonu ve PR depresyonu → tek damar oklüzyonundan farklı EKG dağılımı.",
+        "Ekokardiyografide küçük sıvı ve kollaps olmaması → acil drenaj değil medikal tedavi önceliği."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v298",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V297 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v298-new-680-ates-sarilik-ve-sag-ust-karin-agrisi",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Ateş, sarılık ve sağ üst karın ağrısı",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Safra yolu obstrüksiyonu zemininde sistemik enfeksiyon bulgularını tanıyıp antibiyotik ve kaynak kontrolü sıralamasını belirleme.",
+      "learningTarget": "Kolestatik laboratuvar, kanal genişliği ve perfüzyon verilerini kullanarak acil biliyer drenaj gereksinimini ayırt etme.",
+      "demographics": "68 yaşında kadın hasta",
+      "setting": "Acil servis resüsitasyon alanı",
+      "chiefComplaint": "Hasta, sağ üst kadran ağrısına ateş ve gözlerde sararma eklenmesi nedeniyle acile getiriliyor.",
+      "stem": "Hasta iki gündür sağ üst karın bölgesinde aralıklı başlayan ağrının son 12 saatte sürekli hale geldiğini ve sırtına doğru yayıldığını anlatır. Dün gece titreme ile yükselen ateşi olmuş, sabah aynaya baktığında gözlerinde sararma fark etmiştir. Son birkaç gündür idrarının koyulaştığını, dışkısının daha açık renkli geldiğini ve iştahının belirgin azaldığını söyler. Daha önce yemeklerden sonra kısa süren benzer ağrıları olmuş ancak ateş ve sararma hiç eşlik etmemiştir. Alkol kullanımı, kanlı kusma veya siyah dışkı tariflemez; halsizliği artıp ayağa kalkınca başı dönünce yakınları tarafından acile getirilmiştir.",
+      "patientIntro": {
+        "profile": "68 yaşında kadın hasta, Acil servis resüsitasyon alanı başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, sağ üst kadran ağrısına ateş ve gözlerde sararma eklenmesi nedeniyle acile getiriliyor.",
+        "historySummary": "Hasta iki gündür sağ üst karın bölgesinde aralıklı başlayan ağrının son 12 saatte sürekli hale geldiğini ve sırtına doğru yayıldığını anlatır. Dün gece titreme ile yükselen ateşi olmuş, sabah aynaya baktığında gözlerinde sararma fark etmiştir. Son birkaç gündür idrarının koyulaştığını, dışkısının daha açık renkli geldiğini ve iştahının belirgin azaldığını söyler. Daha önce yemeklerden sonra kısa süren benzer ağrıları olmuş ancak ateş ve sararma hiç eşlik etmemiştir. Alkol kullanımı, kanlı kusma veya siyah dışkı tariflemez; halsizliği artıp ayağa kalkınca başı dönünce yakınları tarafından acile getirilmiştir."
+      },
+      "vitals": {
+        "TA": "92/58 mmHg",
+        "Nabız": "118/dk",
+        "Solunum": "24/dk",
+        "SpO2": "%95, oda havasında",
+        "Ateş": "38.9 °C",
+        "Şok indeksi": "1.28 - enfeksiyon ve hipovolemiyle ilişkili perfüzyon riski yüksek"
+      },
+      "exam": [
+        "Hasta toksik görünümlü, terli ve belirgin halsizdir.",
+        "Skleralar ikteriktir; sağ üst kadranda belirgin hassasiyet vardır, yaygın defans yoktur.",
+        "Mukozalar hafif kuru, kapiller dolum yaklaşık 3 saniyedir.",
+        "Akciğer bazallerinde belirgin patolojik ses yoktur; periferik ödem saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v298-new-680-ates-sarilik-ve-sag-ust-karin-agrisi-hemogram-inflamasyon",
+          "label": "Hemogram ve inflamasyon paneli",
+          "title": "Hemogram ve inflamasyon paneli",
+          "orderLabel": "Hemogram ve inflamasyon paneli",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Hemogram ve inflamasyon paneli",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Sistemik inflamasyon ve doku perfüzyon etkilenimi birlikte izlenir.",
+          "clinicalMeaning": "Sistemik inflamasyon ve doku perfüzyon etkilenimi birlikte izlenir.",
+          "result": {
+            "title": "Hemogram ve inflamasyon paneli",
+            "summary": "Sistemik inflamasyon ve doku perfüzyon etkilenimi birlikte izlenir.",
+            "interpretation": "Sistemik inflamasyon ve doku perfüzyon etkilenimi birlikte izlenir.",
+            "values": [
+              [
+                "Lökosit",
+                "18.600/mm³",
+                "4.000-10.000/mm³",
+                "Yüksek"
+              ],
+              [
+                "Nötrofil oranı",
+                "%89",
+                "%40-75",
+                "Yüksek"
+              ],
+              [
+                "CRP",
+                "182 mg/L",
+                "<5 mg/L",
+                "Belirgin yüksek"
+              ],
+              [
+                "Laktat",
+                "2.8 mmol/L",
+                "0.5-2.0 mmol/L",
+                "Yüksek"
+              ],
+              [
+                "Trombosit",
+                "168.000/mm³",
+                "150.000-400.000/mm³",
+                "Alt-normal"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v298-new-680-ates-sarilik-ve-sag-ust-karin-agrisi-kolestaz-paneli",
+          "label": "Karaciğer-safra biyokimyası",
+          "title": "Karaciğer-safra biyokimyası",
+          "orderLabel": "Karaciğer-safra biyokimyası",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Karaciğer-safra biyokimyası",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Kolestatik enzim ve bilirubin paterni belirgindir.",
+          "clinicalMeaning": "Kolestatik enzim ve bilirubin paterni belirgindir.",
+          "result": {
+            "title": "Karaciğer-safra biyokimyası",
+            "summary": "Kolestatik enzim ve bilirubin paterni belirgindir.",
+            "interpretation": "Kolestatik enzim ve bilirubin paterni belirgindir.",
+            "values": [
+              [
+                "Total bilirubin",
+                "5.8 mg/dL",
+                "0.2-1.2 mg/dL",
+                "Yüksek"
+              ],
+              [
+                "Direkt bilirubin",
+                "4.7 mg/dL",
+                "<0.3 mg/dL",
+                "Yüksek"
+              ],
+              [
+                "ALP",
+                "436 U/L",
+                "40-130 U/L",
+                "Yüksek"
+              ],
+              [
+                "GGT",
+                "512 U/L",
+                "<55 U/L",
+                "Yüksek"
+              ],
+              [
+                "ALT",
+                "118 U/L",
+                "<45 U/L",
+                "Orta derecede yüksek"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v298-new-680-ates-sarilik-ve-sag-ust-karin-agrisi-sag-ust-kadran-usg",
+          "label": "Sağ üst kadran ultrasonografisi",
+          "title": "Sağ üst kadran ultrasonografisi",
+          "orderLabel": "Sağ üst kadran ultrasonografisi",
+          "type": "imaging",
+          "priority": "essential",
+          "subtype": "Sağ üst kadran ultrasonografisi",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Safra kesesi taşları ve ekstrahepatik kanal genişliği izlenir.",
+          "clinicalMeaning": "Safra kesesi taşları ve ekstrahepatik kanal genişliği izlenir.",
+          "result": {
+            "title": "Sağ üst kadran ultrasonografisi",
+            "summary": "Safra kesesi taşları ve ekstrahepatik kanal genişliği izlenir.",
+            "interpretation": "Safra kesesi taşları ve ekstrahepatik kanal genişliği izlenir.",
+            "values": [
+              [
+                "Safra kesesi",
+                "Çoklu taş, duvar 4 mm",
+                "Duvar <3 mm",
+                "Taş + hafif duvar kalınlığı"
+              ],
+              [
+                "Ortak safra kanalı",
+                "11 mm",
+                "<6-7 mm",
+                "Geniş"
+              ],
+              [
+                "İntrahepatik safra yolları",
+                "Hafif geniş",
+                "Geniş değil",
+                "Obstrüksiyonla uyumlu"
+              ],
+              [
+                "Perikolesistik sıvı",
+                "Minimal",
+                "Yok",
+                "Ağır perforasyon bulgusu yok"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada acil yönetimde en uygun öncelik aşağıdakilerden hangisidir?",
+      "questionType": "Acil yaklaşım",
+      "answerTarget": "Enfekte obstrüktif safra yolu paterninde antibiyotik ve erken kaynak kontrolü",
+      "diagnosis": {
+        "correct": "İntravenöz sıvı ve antibiyotik başlanıp erken endoskopik biliyer drenaj planlanması",
+        "options": [
+          "Ağrı kontrolü sağlanıp elektif poliklinik kolesistektomi randevusu verilmesi",
+          "İntravenöz sıvı ve antibiyotik başlanıp erken endoskopik biliyer drenaj planlanması",
+          "Oral ursodeoksikolik asit başlanıp kolestaz enzimlerinin ayaktan izlenmesi",
+          "Acil total kolektomi hazırlığı ve geniş spektrumlu barsak dekontaminasyonu",
+          "Antibiyotik verilmeden yalnızca manyetik rezonans kolanjiyografi sonucu beklenmesi"
+        ],
+        "question": "Bu hastada acil yönetimde en uygun öncelik aşağıdakilerden hangisidir?",
+        "explanation": "Vaka sağ üst kadran ağrısı, ateş, sarılık, kolestatik biyokimya ve genişlemiş ortak safra kanalı ile enfekte obstrüktif safra yolu paternini gösterir. Hipotansiyona eğilim ve laktat yüksekliği yalnız ağrı kontrolü veya ayaktan izlemle geçiştirilemeyecek sistemik etkilenimi destekler. Bu nedenle ilk yaklaşım resüsitasyon, kültür ve intravenöz antibiyotik; ardından erken endoskopik biliyer drenajla kaynak kontrolüdür.",
+        "pearls": [
+          "Ateş + sarılık + sağ üst kadran ağrısı klasik klinik üçlüdür.",
+          "Direkt bilirubin, ALP ve GGT yüksekliği obstrüktif/kolestatik paterni destekler.",
+          "Ortak safra kanalının 11 mm olması distal obstrüksiyona işaret eder.",
+          "Hipotansiyon eğilimi ve laktat yüksekliği acil kaynak kontrolü gereksinimini artırır."
+        ],
+        "optionFeedback": {
+          "Ağrı kontrolü sağlanıp elektif poliklinik kolesistektomi randevusu verilmesi": "Elektif poliklinik yaklaşımı basit biliyer kolik veya semptomsuz taş hastalığında düşünülebilir. Bu hastada ateş-titreme, sarılık, sağ üst kadran ağrısı, hipotansiyona eğilim, lökositoz, bilirubin yüksekliği ve ortak safra kanalında genişleme vardır. Bu patern basit taş ağrısından daha ağırdır ve kaynak kontrolü geciktirilirse sepsis ve organ bozukluğu gelişebilir.",
+          "İntravenöz sıvı ve antibiyotik başlanıp erken endoskopik biliyer drenaj planlanması": "Bu seçenek en doğru yaklaşımdır. Ateş, sarılık ve sağ üst kadran ağrısı; inflamasyon belirteçleri, kolestatik biyokimya ve genişlemiş ortak safra kanalıyla birleştiğinde enfekte obstrüksiyon paternini oluşturur. İlk basamakta damar yolu, sıvı resüsitasyonu, kan kültürü sonrası gecikmeden intravenöz geniş spektrumlu antibiyotik başlanır. Orta-ağır klinik veya yanıt yetersizliği olan olguda erken ERCP ile biliyer drenaj kaynak kontrolünü sağlar; yalnız antibiyotik obstrüksiyon devam ederken çoğu zaman yeterli değildir.",
+          "Oral ursodeoksikolik asit başlanıp kolestaz enzimlerinin ayaktan izlenmesi": "Ursodeoksikolik asit kronik kolestatik hastalıklarda veya seçilmiş safra taşı durumlarında bambaşka bir bağlamda gündeme gelir. Ateş, titreme, yüksek bilirubin, kanal genişlemesi ve perfüzyon etkilenimi olan bu hastada zaman kaybettirir. Kolestazı yalnız biyokimyasal bir süreç gibi izlemek, enfekte basınçlı safra yolunun acil kaynak kontrolü gereksinimini kaçırır.",
+          "Acil total kolektomi hazırlığı ve geniş spektrumlu barsak dekontaminasyonu": "Total kolektomi ülseratif kolit komplikasyonları, toksik megakolon veya kontrolsüz kolonik patoloji gibi durumlarda düşünülür; safra yolu kaynaklı obstrüksiyon bulgularını tedavi etmez. Bu hastanın karın bulgusu sağ üst kadran odaklıdır ve görüntülemede ortak safra kanalı genişliği vardır. Bu nedenle kolon cerrahisine yönelmek anatomik odağı tamamen yanlış belirler.",
+          "Antibiyotik verilmeden yalnızca manyetik rezonans kolanjiyografi sonucu beklenmesi": "MR kolanjiyografi anatomiyi gösterebilir; ancak hemodinamik etkilenme ve enfeksiyon bulguları olan hastada antibiyotik ve resüsitasyonu bekletmek güvenli değildir. Görüntüleme planı yapılabilir, fakat ilk saatlerde tedavi gecikmemelidir. Ayrıca ultrason ve biyokimya zaten obstrüktif safra yolu paternini desteklemektedir; ileri görüntüleme kaynak kontrolünü gereksiz şekilde ertelememelidir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Safra yolu enfeksiyonunda tedavi yalnız mikroorganizmayı değil tıkanıklık nedeniyle devam eden kaynak basıncını da hedeflemelidir. Orta-ağır olguda intravenöz antibiyotik ve erken ERCP ile drenaj birlikte düşünülür; stabil ve hafif olguların bir kısmı antibiyotiğe yanıt verebilir.",
+      "examPearl": "Safra yolu sorularında “ateş + sarılık + sağ üst kadran ağrısı + kanal genişliği” görüldüğünde yalnız antibiyotik veya yalnız görüntüleme bekleme tuzağına düşme; kaynak kontrolü ana ayrımdır.",
+      "whyCorrect": "Doğru seçenek hem sepsis fizyolojisini hem de obstrüksiyonun devam eden enfeksiyon kaynağı olmasını aynı anda hedefler.",
+      "optionComparison": "Yanlış seçenekler ayaktan biliyer kolik, kronik kolestaz, kolonik cerrahi veya tedaviyi geciktiren görüntüleme bekleme stratejilerine sapar.",
+      "evidenceChain": [
+        "Titreme-ateş ve toksik görünüm → lokal ağrıdan sistemik enfeksiyona geçiş.",
+        "Direkt bilirubin/ALP/GGT yüksekliği → kolestatik akım engeli.",
+        "Ortak safra kanalı 11 mm → distal obstrüksiyon lehine anatomik bulgu.",
+        "TA 92/58 ve laktat 2.8 → erken resüsitasyon ve kaynak kontrolünün ertelenmemesi."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v298",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V297 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v298-new-681-yeni-tansiyon-yuksekligi-ve-az-idrar",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Yeni tansiyon yüksekliği ve az idrar",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Sistemik skleroz zemininde ani ağır hipertansiyon, böbrek fonksiyon bozulması ve mikroanjiyopatiyi tanıyarak ACE inhibitörü önceliğini seçme.",
+      "learningTarget": "Renal kriz ile TTP, vaskülit, primer glomerülonefrit ve Raynaud tedavisi arasındaki ayrımı klinik-laboratuvar verisiyle kurma.",
+      "demographics": "41 yaşında kadın hasta",
+      "setting": "Dahiliye acil konsültasyon alanı",
+      "chiefComplaint": "Hasta, son günlerde belirginleşen baş ağrısı, bulantı ve idrar miktarında azalma nedeniyle değerlendiriliyor.",
+      "stem": "Hasta yaklaşık bir yıldır parmaklarında soğukta morarma, ellerinde şişlik ve yüz derisinde gerginleşme olduğunu; son iki haftada ise tansiyon ölçümlerinin daha önce hiç olmadığı kadar yükseldiğini anlatır. Son üç gündür enseden başlayan baş ağrısı, bulanık görme atakları ve bulantı eklenmiştir. İdrar miktarının belirgin azaldığını, sabahları yüzünde şişlik fark ettiğini söyler. Yakın zamanda eklem ağrıları için kısa süreli yüksek doz steroid kullandığını belirtir. Ateş, kanlı balgam, yan ağrısı veya köpüklü idrarda belirgin artış tariflemez; evde ölçülen tansiyonun 210 mmHg üzerine çıkması üzerine acile başvurmuştur.",
+      "patientIntro": {
+        "profile": "41 yaşında kadın hasta, Dahiliye acil konsültasyon alanı başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, son günlerde belirginleşen baş ağrısı, bulantı ve idrar miktarında azalma nedeniyle değerlendiriliyor.",
+        "historySummary": "Hasta yaklaşık bir yıldır parmaklarında soğukta morarma, ellerinde şişlik ve yüz derisinde gerginleşme olduğunu; son iki haftada ise tansiyon ölçümlerinin daha önce hiç olmadığı kadar yükseldiğini anlatır. Son üç gündür enseden başlayan baş ağrısı, bulanık görme atakları ve bulantı eklenmiştir. İdrar miktarının belirgin azaldığını, sabahları yüzünde şişlik fark ettiğini söyler. Yakın zamanda eklem ağrıları için kısa süreli yüksek doz steroid kullandığını belirtir. Ateş, kanlı balgam, yan ağrısı veya köpüklü idrarda belirgin artış tariflemez; evde ölçülen tansiyonun 210 mmHg üzerine çıkması üzerine acile başvurmuştur."
+      },
+      "vitals": {
+        "TA": "214/124 mmHg",
+        "Nabız": "108/dk",
+        "Solunum": "20/dk",
+        "SpO2": "%97, oda havasında",
+        "Ateş": "36.8 °C",
+        "Şok indeksi": "0.50 - hipertansif hedef organ hasarı baskın, dolaşım kollapsı yok"
+      },
+      "exam": [
+        "Yüzde maske benzeri gergin görünüm ve ellerde belirgin sklerodaktili vardır.",
+        "Parmak uçlarında iyileşmiş dijital ülser izleri ve Raynaud öyküsünü destekleyen renk değişikliği fotoğrafları gösterir.",
+        "Akciğer oskültasyonunda bazallerde ince raller çok hafiftir; belirgin periferik ödem yoktur.",
+        "Nörolojik muayenede lateralizan defisit yoktur; hasta baş ağrısı nedeniyle huzursuzdur."
+      ],
+      "investigations": [
+        {
+          "id": "v298-new-681-yeni-tansiyon-yuksekligi-ve-az-idrar-bobrek-elektrolit",
+          "label": "Böbrek fonksiyonu ve elektrolitler",
+          "title": "Böbrek fonksiyonu ve elektrolitler",
+          "orderLabel": "Böbrek fonksiyonu ve elektrolitler",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Böbrek fonksiyonu ve elektrolitler",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Akut böbrek fonksiyon bozulması ve hipertansiyonla ilişkili biyokimyasal etkilenim vardır.",
+          "clinicalMeaning": "Akut böbrek fonksiyon bozulması ve hipertansiyonla ilişkili biyokimyasal etkilenim vardır.",
+          "result": {
+            "title": "Böbrek fonksiyonu ve elektrolitler",
+            "summary": "Akut böbrek fonksiyon bozulması ve hipertansiyonla ilişkili biyokimyasal etkilenim vardır.",
+            "interpretation": "Akut böbrek fonksiyon bozulması ve hipertansiyonla ilişkili biyokimyasal etkilenim vardır.",
+            "values": [
+              [
+                "Kreatinin",
+                "2.6 mg/dL",
+                "0.6-1.1 mg/dL",
+                "Yüksek"
+              ],
+              [
+                "Önceki kreatinin",
+                "0.8 mg/dL",
+                "0.6-1.1 mg/dL",
+                "Bazale göre belirgin artış"
+              ],
+              [
+                "Üre",
+                "74 mg/dL",
+                "15-45 mg/dL",
+                "Yüksek"
+              ],
+              [
+                "Potasyum",
+                "5.3 mmol/L",
+                "3.5-5.1 mmol/L",
+                "Hafif yüksek"
+              ],
+              [
+                "Sodyum",
+                "137 mmol/L",
+                "135-145 mmol/L",
+                "Normal"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v298-new-681-yeni-tansiyon-yuksekligi-ve-az-idrar-hemoliz-trombosit",
+          "label": "Hemoliz ve trombosit paneli",
+          "title": "Hemoliz ve trombosit paneli",
+          "orderLabel": "Hemoliz ve trombosit paneli",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Hemoliz ve trombosit paneli",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Mikroanjiyopatik yıkım bulguları böbrek-tansiyon tablosuna eşlik eder.",
+          "clinicalMeaning": "Mikroanjiyopatik yıkım bulguları böbrek-tansiyon tablosuna eşlik eder.",
+          "result": {
+            "title": "Hemoliz ve trombosit paneli",
+            "summary": "Mikroanjiyopatik yıkım bulguları böbrek-tansiyon tablosuna eşlik eder.",
+            "interpretation": "Mikroanjiyopatik yıkım bulguları böbrek-tansiyon tablosuna eşlik eder.",
+            "values": [
+              [
+                "Hemoglobin",
+                "9.8 g/dL",
+                "12-16 g/dL",
+                "Düşük"
+              ],
+              [
+                "Trombosit",
+                "92.000/mm³",
+                "150.000-400.000/mm³",
+                "Düşük"
+              ],
+              [
+                "LDH",
+                "720 U/L",
+                "<250 U/L",
+                "Yüksek"
+              ],
+              [
+                "Haptoglobin",
+                "<10 mg/dL",
+                "30-200 mg/dL",
+                "Düşük"
+              ],
+              [
+                "Periferik yayma",
+                "Az sayıda şistosit",
+                "Yok",
+                "Mikroanjiyopatik yıkım"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v298-new-681-yeni-tansiyon-yuksekligi-ve-az-idrar-idrar-renin",
+          "label": "İdrar ve renin-anjiyotensin değerlendirmesi",
+          "title": "İdrar ve renin-anjiyotensin değerlendirmesi",
+          "orderLabel": "İdrar ve renin-anjiyotensin değerlendirmesi",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "İdrar ve renin-anjiyotensin değerlendirmesi",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Aktif glomerüler sediment baskın değildir; renin aktivasyonu belirgindir.",
+          "clinicalMeaning": "Aktif glomerüler sediment baskın değildir; renin aktivasyonu belirgindir.",
+          "result": {
+            "title": "İdrar ve renin-anjiyotensin değerlendirmesi",
+            "summary": "Aktif glomerüler sediment baskın değildir; renin aktivasyonu belirgindir.",
+            "interpretation": "Aktif glomerüler sediment baskın değildir; renin aktivasyonu belirgindir.",
+            "values": [
+              [
+                "Tam idrar",
+                "1+ protein, 0-2 eritrosit/HPF",
+                "Protein negatif, 0-3 eritrosit/HPF",
+                "Hafif proteinüri"
+              ],
+              [
+                "Eritrosit silendiri",
+                "Yok",
+                "Yok",
+                "Aktif nefrit lehine değil"
+              ],
+              [
+                "Plazma renin aktivitesi",
+                "Çok yüksek",
+                "Laboratuvara göre değişir",
+                "Belirgin artmış"
+              ],
+              [
+                "ANA",
+                "Pozitif, sentromer dışı patern",
+                "Negatif",
+                "Bağ dokusu hastalığı zemini"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada böbrek ve kan basıncı yönetiminde öncelikli basamak aşağıdakilerden hangisidir?",
+      "questionType": "Acil yaklaşım",
+      "answerTarget": "Sistemik skleroz ilişkili renal kriz yönetimi",
+      "diagnosis": {
+        "correct": "Kaptopril gibi ACE inhibitörünü hemen başlatıp kan basıncını yakın izlemle düşürme",
+        "options": [
+          "Yüksek doz glukokortikoid artırımı ve kreatinin normale dönene kadar antihipertansif verilmemesi",
+          "Plazmaferez ve trombosit transfüzyonu ile mikroanjiyopatiyi primer hematolojik hastalık gibi tedavi etme",
+          "Dihidropiridin kalsiyum kanal blokeriyle yavaş ayaktan kan basıncı takibi",
+          "Empirik siklofosfamid başlanıp böbrek biyopsisi sonucuna kadar kan basıncı tedavisini erteleme",
+          "Kaptopril gibi ACE inhibitörünü hemen başlatıp kan basıncını yakın izlemle düşürme"
+        ],
+        "question": "Bu hastada böbrek ve kan basıncı yönetiminde öncelikli basamak aşağıdakilerden hangisidir?",
+        "explanation": "Yaygın cilt kalınlaşması, Raynaud öyküsü, ani ağır hipertansiyon, hızla artan kreatinin, oligüri ve mikroanjiyopatik hemoliz birlikte sistemik skleroz zemininde renal kriz paternini oluşturur. Bu durumda tedavinin ana hedefi renin-anjiyotensin aktivasyonunu kırmaktır. Kreatinin yüksekliği ACE inhibitörü başlama kararını geciktirmemeli; yakın izlemle kan basıncı kontrolü ve böbrek fonksiyon takibi yapılmalıdır.",
+        "pearls": [
+          "Yeni ağır hipertansiyon + kreatinin artışı → renal hedef organ hasarı.",
+          "Sklerodaktili/Raynaud/dijital ülser izleri → sistemik skleroz zemini.",
+          "Şistosit, LDH yüksekliği ve trombositopeni → renal krizle ilişkili mikroanjiyopati.",
+          "Aktif idrar sedimenti olmaması → primer nefrit/vaskülit olasılığını azaltır."
+        ],
+        "optionFeedback": {
+          "Yüksek doz glukokortikoid artırımı ve kreatinin normale dönene kadar antihipertansif verilmemesi": "Glukokortikoid dozu artırımı bu klinik bağlamda sorunu çözmek yerine tabloyu ağırlaştırabilir; özellikle yaygın cilt tutulumu olan sistemik sklerozda yüksek doz steroid renal krizi tetikleyebilen risklerden biridir. Kreatinin yüksek diye antihipertansif vermemek de hedef organ hasarını derinleştirir. Buradaki öncelik immünsüpresyonu artırmak değil, renin-anjiyotensin aracılı malign hipertansiyon döngüsünü hızla kırmaktır.",
+          "Plazmaferez ve trombosit transfüzyonu ile mikroanjiyopatiyi primer hematolojik hastalık gibi tedavi etme": "Trombositopeni ve hemoliz bulguları TTP gibi primer trombotik mikroanjiyopatileri akla getirebilir; ancak bu hastada yaygın cilt kalınlaşması, yeni başlayan ağır hipertansiyon, yüksek renin paterni ve sistemik skleroz zemini ön plandadır. Plazmaferez TTP’de hayat kurtarıcıdır, fakat bu vakadaki böbrek krizinin temel tedavisi değildir. Trombosit transfüzyonu da aktif hayatı tehdit eden kanama yoksa mikroanjiyopatik süreçlerde trombozu artırabilecek yanlış bir refleks olabilir.",
+          "Dihidropiridin kalsiyum kanal blokeriyle yavaş ayaktan kan basıncı takibi": "Kalsiyum kanal blokerleri Raynaud fenomeni gibi vasküler semptomlarda yararlı olabilir; ancak burada birkaç hafta içinde gelişen ağır hipertansiyon, kreatinin artışı ve mikroanjiyopatik hemoliz vardır. Ayaktan yavaş takip yaklaşımı organ hasarı süren hastada güvenli değildir. Kan basıncının yakın izlemle kontrolü gerekir; fakat seçilecek ilaç sınıfı renin-anjiyotensin eksenini hedeflemelidir.",
+          "Empirik siklofosfamid başlanıp böbrek biyopsisi sonucuna kadar kan basıncı tedavisini erteleme": "Böbrek biyopsisi bazı glomerüler hastalıklarda tanısal olabilir, siklofosfamid ise belirli vaskülit veya hızlı ilerleyen glomerülonefritlerde kullanılabilir. Bu hastada aktif idrar sedimenti belirgin değildir; proteinüri hafif, renin yüksek, yaygın cilt bulgusu ve yeni ağır hipertansiyon öne çıkar. Tedaviyi biyopsiye kadar ertelemek böbrek ve yaşam prognozunu kötüleştirebilir.",
+          "Kaptopril gibi ACE inhibitörünü hemen başlatıp kan basıncını yakın izlemle düşürme": "Bu seçenek en uygun yaklaşımdır. Yaygın sistemik skleroz bulguları olan hastada ani ağır hipertansiyon, kreatinin artışı, baş ağrısı, oligüri ve mikroanjiyopatik hemoliz renal kriz için tipiktir. Patofizyolojide renal damar daralması ve renin-anjiyotensin aktivasyonu baskındır; bu nedenle ACE inhibitörü, kreatinin yüksek olsa bile gecikmeden başlanır ve kan basıncı yakın izlemle düşürülür. Amaç yalnız sayısal tansiyon kontrolü değil, ilerleyen böbrek iskemisi döngüsünü kırmaktır."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Sistemik skleroz renal krizinde ani hipertansiyon, AKI ve mikroanjiyopati görülebilir. Tedavide ACE inhibitörü gecikmeden başlanır; böbrek fonksiyonu bozuk olsa bile temel yaklaşım renin-anjiyotensin ekseninin baskılanmasıdır.",
+      "examPearl": "Skleroderma + ani malign hipertansiyon + kreatinin artışı sorusunda “kreatinin yüksek, ACEi verme” tuzağına düşme; asıl tedavi ACE inhibitörüdür.",
+      "whyCorrect": "Doğru seçenek patofizyolojideki renin-anjiyotensin aktivasyonunu doğrudan hedeflediği için böbrek krizinin temel tedavisidir.",
+      "optionComparison": "Diğer seçenekler steroid artırma, TTP refleksiyle plazmaferez, yetersiz antihipertansif strateji veya biyopsi bekleme gibi gecikme yaratabilecek yaklaşımlardır.",
+      "evidenceChain": [
+        "Raynaud ve sklerodaktili → sistemik skleroz zeminini destekler.",
+        "TA 214/124 mmHg ve baş ağrısı → akut ağır hipertansif hedef organ riski.",
+        "Kreatinin 0.8’den 2.6’ya yükselmiş → hızlı böbrek fonksiyon kaybı.",
+        "Şistosit + LDH yüksekliği + trombosit düşüklüğü → eşlik eden mikroanjiyopati, fakat klinik zemin renal krizi öne çıkarır."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v298",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V297 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v298-new-682-kanli-ishal-ve-karin-sisligi",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Kanlı ishal ve karın şişliği",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Ağır ülseratif kolit alevlenmesinde sistemik toksisite ve kolonik dilatasyon bulgularını tanıyıp güvenli acil yönetimi seçme.",
+      "learningTarget": "Toksik kolonik dilatasyonda antidiyareik, tam kolonoskopi ve ayaktan oral tedavi tuzaklarını ayırma.",
+      "demographics": "29 yaşında erkek hasta",
+      "setting": "Gastroenteroloji servisi acil yatış değerlendirmesi",
+      "chiefComplaint": "Hasta, artan kanlı ishal, ateş ve karında şişlik nedeniyle acil servisten yatırılmak üzere değerlendiriliyor.",
+      "stem": "Hasta beş yıldır ülseratif kolit tanısı olduğunu, son iki haftadır dışkılama sayısının giderek arttığını ve son üç gündür neredeyse her dışkılamada kan gördüğünü anlatır. Bugün karın şişliğinin belirginleştiğini, gaz çıkaramadığını ve ayağa kalkınca halsizlikten zorlandığını söyler. Evde ateşi yükselmiş, iştahı kesilmiş ve son günlerde su içmesine rağmen ağzının kuruduğunu fark etmiştir. Son alevlenmede kendi başına mesalazin dozunu artırmış ancak rahatlamamıştır. Son günlerde antibiyotik kullanımı veya seyahat öyküsü olmadığını belirtir; karın ağrısı ve şişliğin hızla artması üzerine acile gelmiştir.",
+      "patientIntro": {
+        "profile": "29 yaşında erkek hasta, Gastroenteroloji servisi acil yatış değerlendirmesi başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, artan kanlı ishal, ateş ve karında şişlik nedeniyle acil servisten yatırılmak üzere değerlendiriliyor.",
+        "historySummary": "Hasta beş yıldır ülseratif kolit tanısı olduğunu, son iki haftadır dışkılama sayısının giderek arttığını ve son üç gündür neredeyse her dışkılamada kan gördüğünü anlatır. Bugün karın şişliğinin belirginleştiğini, gaz çıkaramadığını ve ayağa kalkınca halsizlikten zorlandığını söyler. Evde ateşi yükselmiş, iştahı kesilmiş ve son günlerde su içmesine rağmen ağzının kuruduğunu fark etmiştir. Son alevlenmede kendi başına mesalazin dozunu artırmış ancak rahatlamamıştır. Son günlerde antibiyotik kullanımı veya seyahat öyküsü olmadığını belirtir; karın ağrısı ve şişliğin hızla artması üzerine acile gelmiştir."
+      },
+      "vitals": {
+        "TA": "98/62 mmHg",
+        "Nabız": "126/dk",
+        "Solunum": "24/dk",
+        "SpO2": "%97, oda havasında",
+        "Ateş": "38.5 °C",
+        "Şok indeksi": "1.29 - sistemik inflamasyon ve volüm kaybı açısından yüksek risk"
+      },
+      "exam": [
+        "Hasta bitkin ve dehidrate görünümdedir; mukozalar kurudur.",
+        "Karın distandüdür, yaygın hassasiyet vardır ancak belirgin rijidite yoktur.",
+        "Bağırsak sesleri azalmıştır.",
+        "Rektal tuşede kanlı mukus bulaşı izlenir; aktif masif kanama yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v298-new-682-kanli-ishal-ve-karin-sisligi-hemogram-inflamasyon",
+          "label": "Hemogram ve inflamasyon",
+          "title": "Hemogram ve inflamasyon",
+          "orderLabel": "Hemogram ve inflamasyon",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Hemogram ve inflamasyon",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Ağır inflamasyon, anemi ve sistemik etkilenim birlikte görülür.",
+          "clinicalMeaning": "Ağır inflamasyon, anemi ve sistemik etkilenim birlikte görülür.",
+          "result": {
+            "title": "Hemogram ve inflamasyon",
+            "summary": "Ağır inflamasyon, anemi ve sistemik etkilenim birlikte görülür.",
+            "interpretation": "Ağır inflamasyon, anemi ve sistemik etkilenim birlikte görülür.",
+            "values": [
+              [
+                "Hemoglobin",
+                "9.9 g/dL",
+                "13.5-17.5 g/dL",
+                "Düşük"
+              ],
+              [
+                "Lökosit",
+                "17.400/mm³",
+                "4.000-10.000/mm³",
+                "Yüksek"
+              ],
+              [
+                "CRP",
+                "156 mg/L",
+                "<5 mg/L",
+                "Belirgin yüksek"
+              ],
+              [
+                "ESR",
+                "78 mm/saat",
+                "<20 mm/saat",
+                "Yüksek"
+              ],
+              [
+                "Albumin",
+                "2.6 g/dL",
+                "3.5-5.0 g/dL",
+                "Düşük"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v298-new-682-kanli-ishal-ve-karin-sisligi-elektrolit-diski",
+          "label": "Elektrolit ve dışkı değerlendirmesi",
+          "title": "Elektrolit ve dışkı değerlendirmesi",
+          "orderLabel": "Elektrolit ve dışkı değerlendirmesi",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Elektrolit ve dışkı değerlendirmesi",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Sıvı-elektrolit kaybı vardır; belirgin enfeksiyöz toksin kanıtı verilmez.",
+          "clinicalMeaning": "Sıvı-elektrolit kaybı vardır; belirgin enfeksiyöz toksin kanıtı verilmez.",
+          "result": {
+            "title": "Elektrolit ve dışkı değerlendirmesi",
+            "summary": "Sıvı-elektrolit kaybı vardır; belirgin enfeksiyöz toksin kanıtı verilmez.",
+            "interpretation": "Sıvı-elektrolit kaybı vardır; belirgin enfeksiyöz toksin kanıtı verilmez.",
+            "values": [
+              [
+                "Sodyum",
+                "131 mmol/L",
+                "135-145 mmol/L",
+                "Düşük"
+              ],
+              [
+                "Potasyum",
+                "3.1 mmol/L",
+                "3.5-5.1 mmol/L",
+                "Düşük"
+              ],
+              [
+                "Kreatinin",
+                "1.2 mg/dL",
+                "0.7-1.2 mg/dL",
+                "Sınırda"
+              ],
+              [
+                "C. difficile toksin/PCR",
+                "Negatif",
+                "Negatif",
+                "Saptanmadı"
+              ],
+              [
+                "Dışkı lökositi",
+                "Pozitif",
+                "Negatif",
+                "İnflamatuvar dışkı"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v298-new-682-kanli-ishal-ve-karin-sisligi-direkt-karin-grafisi",
+          "label": "Direkt karın grafisi",
+          "title": "Direkt karın grafisi",
+          "orderLabel": "Direkt karın grafisi",
+          "type": "imaging",
+          "priority": "essential",
+          "subtype": "Direkt karın grafisi",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Kolon segmentinde belirgin gaz distansiyonu ve haustral silinme izlenir.",
+          "clinicalMeaning": "Kolon segmentinde belirgin gaz distansiyonu ve haustral silinme izlenir.",
+          "result": {
+            "title": "Direkt karın grafisi",
+            "summary": "Kolon segmentinde belirgin gaz distansiyonu ve haustral silinme izlenir.",
+            "interpretation": "Kolon segmentinde belirgin gaz distansiyonu ve haustral silinme izlenir.",
+            "values": [
+              [
+                "Transvers kolon çapı",
+                "7.2 cm",
+                "<6 cm",
+                "Genişlemiş"
+              ],
+              [
+                "Haustrasyon",
+                "Azalmış",
+                "Korunmuş",
+                "Ağır inflamasyonla uyumlu"
+              ],
+              [
+                "Serbest hava",
+                "Yok",
+                "Yok",
+                "Perforasyon bulgusu yok"
+              ],
+              [
+                "İnce bağırsak düzeyleri",
+                "Belirgin değil",
+                "Yok/minimal",
+                "Primer obstrüksiyon lehine değil"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada en uygun acil yönetim yaklaşımı aşağıdakilerden hangisidir?",
+      "questionType": "Acil yaklaşım",
+      "answerTarget": "Ağır kolit alevlenmesi ve toksik kolonik dilatasyon yönetimi",
+      "diagnosis": {
+        "correct": "Bowel rest, intravenöz sıvı-elektrolit desteği, intravenöz steroid, geniş spektrumlu antibiyotik ve erken cerrahi değerlendirme",
+        "options": [
+          "Loperamid ve opioid analjezik başlanıp kolonik transitin yavaşlatılması",
+          "Tam kolonoskopi ile çekuma kadar ilerlenip yaygın biyopsi alınması",
+          "Yalnız oral mesalazin artırılıp ayaktan 72 saat sonra kontrol önerilmesi",
+          "Bowel rest, intravenöz sıvı-elektrolit desteği, intravenöz steroid, geniş spektrumlu antibiyotik ve erken cerrahi değerlendirme",
+          "Yüksek doz oral demir ve probiyotik başlanıp inflamasyon belirteçlerinin ayaktan izlenmesi"
+        ],
+        "question": "Bu hastada en uygun acil yönetim yaklaşımı aşağıdakilerden hangisidir?",
+        "explanation": "Kanlı ishal, ateş, taşikardi, anemi, yüksek CRP, hipoalbüminemi, elektrolit kaybı ve transvers kolon dilatasyonu birlikte ağır inflamatuvar kolit komplikasyonunu düşündürür. Bu tablo ayaktan oral tedaviyle veya semptom baskılayıcı ilaçlarla yönetilemez. Güvenli yaklaşım bağırsak istirahati, intravenöz sıvı-elektrolit replasmanı, intravenöz steroid, uygun antibiyotik kapsamı ve erken cerrahi değerlendirmedir.",
+        "pearls": [
+          "Günde çok sayıda kanlı dışkılama + ateş/taşikardi → ağır sistemik alevlenme.",
+          "Albumin düşüklüğü ve CRP yüksekliği → yüksek inflamatuvar yük ve kötüleşme riski.",
+          "Kolon çapı 7.2 cm → toksik dilatasyon riski.",
+          "Hipokalemi → kolonik dismotilite ve aritmi açısından düzeltilmesi gereken eşlikçi faktör."
+        ],
+        "optionFeedback": {
+          "Loperamid ve opioid analjezik başlanıp kolonik transitin yavaşlatılması": "Antidiyareik ve opioidler inflamatuvar ağır kolitte kolonik motiliteyi azaltarak dilatasyonu ve perforasyon riskini artırabilir. Bu hastada ateş, taşikardi, karın distansiyonu, hassasiyet, ciddi inflamasyon ve grafide kolon çap artışı vardır. Semptomu baskılamak yerine inflamasyonu, enfeksiyon riskini, sıvı-elektrolit kaybını ve cerrahi komplikasyon olasılığını birlikte yönetmek gerekir.",
+          "Tam kolonoskopi ile çekuma kadar ilerlenip yaygın biyopsi alınması": "Tam kolonoskopi ağır distansiyon ve sistemik toksisite varlığında perforasyon riskini artırır. Tanısal olarak sınırlı fleksible sigmoidoskopi bazı durumlarda güvenli olabilir; ancak çekuma kadar ilerleyen tam kolonoskopi bu klinikte yanlış bir hamledir. Hastanın önceliği invaziv tam inceleme değil, stabilizasyon, inflamasyon kontrolü ve cerrahi ekip ile eş zamanlı izlem olmalıdır.",
+          "Yalnız oral mesalazin artırılıp ayaktan 72 saat sonra kontrol önerilmesi": "Oral mesalazin hafif-orta alevlenmelerde rol alabilir; ancak bu hasta ayaktan izlenecek düzeyde değildir. Günde çok sayıda kanlı dışkılama, ateş, taşikardi, anemi, yüksek CRP/ESR, hipoalbüminemi ve kolonik dilatasyon ağır hastalık ve komplikasyon riskini gösterir. Yalnız oral tedavi ve gecikmiş kontrol perforasyon ve sepsis riskini artırır.",
+          "Bowel rest, intravenöz sıvı-elektrolit desteği, intravenöz steroid, geniş spektrumlu antibiyotik ve erken cerrahi değerlendirme": "Bu seçenek en uygun acil yönetimdir. Uzun süredir ülseratif kolit öyküsü olan hastada kanlı ishalin sistemik toksisite, distansiyon ve transvers kolon dilatasyonu ile birleşmesi toksik dilatasyon tablosunu düşündürür. Tedavi bağırsak istirahati, agresif sıvı-elektrolit replasmanı, intravenöz kortikosteroid, gram-negatif/anaerobları kapsayan antibiyotik ve erken cerrahi değerlendirmeyi birlikte içermelidir. Amaç yalnız inflamasyonu azaltmak değil, perforasyon gelişmeden multidisipliner karar vermektir.",
+          "Yüksek doz oral demir ve probiyotik başlanıp inflamasyon belirteçlerinin ayaktan izlenmesi": "Demir ve probiyotikler kronik destek tedavilerinde veya eksiklik yönetiminde kullanılabilir; fakat bu vakadaki akut sistemik toksisiteyi ve kolon dilatasyonunu tedavi etmez. Hipoalbüminemi, yüksek inflamasyon belirteçleri ve radyografik dilatasyon varken ayaktan izlem güvenli değildir. Eksikliklerin düzeltilmesi daha sonra planlanabilir; ilk hedef komplikasyonun kontrolüdür."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Toksik kolonik dilatasyon, ağır kolit bulgularına sistemik toksisite ve kolon çap artışının eklenmesiyle tanınır. Yönetim medikal stabilizasyon ve cerrahi hazırlığın birlikte yürütülmesidir; antidiyareikler ve tam kolonoskopi perforasyon riskini artırabilir.",
+      "examPearl": "Ülseratif kolit + ateş/taşikardi + distansiyon + kolon çapı >6 cm varsa “oral tedaviyi artırıp izle” değil, hastane içi multidisipliner acil yönetim düşün.",
+      "whyCorrect": "Doğru seçenek inflamasyon, enfeksiyon riski, sıvı-elektrolit kaybı ve perforasyon olasılığını aynı anda ele alır.",
+      "optionComparison": "Diğer seçenekler transit yavaşlatma, riskli tam kolonoskopi, yetersiz ayaktan 5-ASA veya kronik destek tedavilerine sapar.",
+      "evidenceChain": [
+        "Kanlı ishalin artması ve ateş → aktif ağır kolit.",
+        "Nabız 126/dk ve TA 98/62 → sistemik toksisite/volüm kaybı.",
+        "Albumin 2.6 ve CRP 156 → ağır inflamatuvar yük.",
+        "Transvers kolon 7.2 cm → perforasyon riski nedeniyle cerrahi eşgüdüm gerektirir."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v298",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V297 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v298-new-683-uzayan-ishal-ve-demir-eksikligi",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Uzayan ishal ve demir eksikliği",
+      "difficulty": "Orta-Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Kronik ishal ve çoklu besin eksikliğinde ince bağırsak emilim bozukluğu için doğru serolojik ve histolojik doğrulama basamağını seçme.",
+      "learningTarget": "Gluten kısıtlaması öncesi test yapılması, IgA eksikliği kontrolü ve erişkinde duodenal biyopsi doğrulamasını ayırt etme.",
+      "demographics": "24 yaşında kadın hasta",
+      "setting": "Dahiliye polikliniği",
+      "chiefComplaint": "Hasta, aylardır süren ishal, şişkinlik ve halsizlik nedeniyle polikliniğe başvuruyor.",
+      "stem": "Hasta yaklaşık sekiz aydır özellikle ekmek ve makarna ağırlıklı öğünlerden sonra karında şişkinlik, gaz ve sulu dışkılama yaşadığını anlatır. Son aylarda ders sırasında halsizliğinin arttığını, merdiven çıkarken çabuk yorulduğunu ve istemsiz şekilde kilo verdiğini fark etmiştir. Dışkıda gözle görünür kan görmemiş, gece terlemesi veya yüksek ateş tariflememiştir. Annesinde otoimmün tiroid hastalığı olduğunu, kendisinin de zaman zaman ağız içinde aft benzeri yaralar çıkardığını söyler. Kendi kendine glutensiz diyete henüz başlamamıştır; demir ilacı kullandığında mide bulantısı nedeniyle düzenli devam edememiştir.",
+      "patientIntro": {
+        "profile": "24 yaşında kadın hasta, Dahiliye polikliniği başvurusu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, aylardır süren ishal, şişkinlik ve halsizlik nedeniyle polikliniğe başvuruyor.",
+        "historySummary": "Hasta yaklaşık sekiz aydır özellikle ekmek ve makarna ağırlıklı öğünlerden sonra karında şişkinlik, gaz ve sulu dışkılama yaşadığını anlatır. Son aylarda ders sırasında halsizliğinin arttığını, merdiven çıkarken çabuk yorulduğunu ve istemsiz şekilde kilo verdiğini fark etmiştir. Dışkıda gözle görünür kan görmemiş, gece terlemesi veya yüksek ateş tariflememiştir. Annesinde otoimmün tiroid hastalığı olduğunu, kendisinin de zaman zaman ağız içinde aft benzeri yaralar çıkardığını söyler. Kendi kendine glutensiz diyete henüz başlamamıştır; demir ilacı kullandığında mide bulantısı nedeniyle düzenli devam edememiştir."
+      },
+      "vitals": {
+        "TA": "108/68 mmHg",
+        "Nabız": "96/dk",
+        "Solunum": "18/dk",
+        "SpO2": "%99, oda havasında",
+        "Ateş": "36.6 °C",
+        "Şok indeksi": "0.89 - kronik anemi/hacim kaybıyla uyumlu hafif taşikardi, akut şok yok"
+      },
+      "exam": [
+        "Hasta zayıf görünümlüdür; konjonktivalar soluktur.",
+        "Karında yaygın hafif distansiyon vardır, defans veya rebound yoktur.",
+        "Ağız mukozasında iyileşmekte olan küçük aftöz lezyon izlenir.",
+        "Periferik ödem yoktur; tiroid palpasyonunda belirgin nodül saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v298-new-683-uzayan-ishal-ve-demir-eksikligi-hemogram-demir",
+          "label": "Hemogram ve demir çalışmaları",
+          "title": "Hemogram ve demir çalışmaları",
+          "orderLabel": "Hemogram ve demir çalışmaları",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Hemogram ve demir çalışmaları",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Mikrositer anemi ve belirgin demir deposu azalması vardır.",
+          "clinicalMeaning": "Mikrositer anemi ve belirgin demir deposu azalması vardır.",
+          "result": {
+            "title": "Hemogram ve demir çalışmaları",
+            "summary": "Mikrositer anemi ve belirgin demir deposu azalması vardır.",
+            "interpretation": "Mikrositer anemi ve belirgin demir deposu azalması vardır.",
+            "values": [
+              [
+                "Hemoglobin",
+                "9.7 g/dL",
+                "12-16 g/dL",
+                "Düşük"
+              ],
+              [
+                "MCV",
+                "72 fL",
+                "80-96 fL",
+                "Düşük"
+              ],
+              [
+                "Ferritin",
+                "8 ng/mL",
+                "15-150 ng/mL",
+                "Düşük"
+              ],
+              [
+                "Transferrin satürasyonu",
+                "%7",
+                "%20-45",
+                "Düşük"
+              ],
+              [
+                "Trombosit",
+                "424.000/mm³",
+                "150.000-400.000/mm³",
+                "Reaktif yüksek"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v298-new-683-uzayan-ishal-ve-demir-eksikligi-malabsorpsiyon-paneli",
+          "label": "Besin eksikliği ve inflamasyon paneli",
+          "title": "Besin eksikliği ve inflamasyon paneli",
+          "orderLabel": "Besin eksikliği ve inflamasyon paneli",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Besin eksikliği ve inflamasyon paneli",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Demire ek olarak folat ve D vitamini düşüklüğü vardır; yoğun sistemik inflamasyon belirgin değildir.",
+          "clinicalMeaning": "Demire ek olarak folat ve D vitamini düşüklüğü vardır; yoğun sistemik inflamasyon belirgin değildir.",
+          "result": {
+            "title": "Besin eksikliği ve inflamasyon paneli",
+            "summary": "Demire ek olarak folat ve D vitamini düşüklüğü vardır; yoğun sistemik inflamasyon belirgin değildir.",
+            "interpretation": "Demire ek olarak folat ve D vitamini düşüklüğü vardır; yoğun sistemik inflamasyon belirgin değildir.",
+            "values": [
+              [
+                "Folat",
+                "2.8 ng/mL",
+                ">4 ng/mL",
+                "Düşük"
+              ],
+              [
+                "Vitamin D",
+                "12 ng/mL",
+                ">30 ng/mL",
+                "Düşük"
+              ],
+              [
+                "Albumin",
+                "3.4 g/dL",
+                "3.5-5.0 g/dL",
+                "Hafif düşük"
+              ],
+              [
+                "CRP",
+                "3 mg/L",
+                "<5 mg/L",
+                "Normal"
+              ],
+              [
+                "TSH",
+                "2.1 mIU/L",
+                "0.4-4.0 mIU/L",
+                "Normal"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v298-new-683-uzayan-ishal-ve-demir-eksikligi-seroloji",
+          "label": "Hedefli serolojik değerlendirme",
+          "title": "Hedefli serolojik değerlendirme",
+          "orderLabel": "Hedefli serolojik değerlendirme",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Hedefli serolojik değerlendirme",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "IgA eksikliği olmadan hastalık özgül antikor yüksekliği saptanır.",
+          "clinicalMeaning": "IgA eksikliği olmadan hastalık özgül antikor yüksekliği saptanır.",
+          "result": {
+            "title": "Hedefli serolojik değerlendirme",
+            "summary": "IgA eksikliği olmadan hastalık özgül antikor yüksekliği saptanır.",
+            "interpretation": "IgA eksikliği olmadan hastalık özgül antikor yüksekliği saptanır.",
+            "values": [
+              [
+                "Total IgA",
+                "182 mg/dL",
+                "70-400 mg/dL",
+                "Normal"
+              ],
+              [
+                "Anti-doku transglutaminaz IgA",
+                ">100 U/mL",
+                "<10 U/mL",
+                "Belirgin yüksek"
+              ],
+              [
+                "Anti-endomisyum IgA",
+                "Pozitif",
+                "Negatif",
+                "Pozitif"
+              ],
+              [
+                "Dışkı kültürü",
+                "Patojen üremedi",
+                "Negatif",
+                "Akut bakteriyel enfeksiyon lehine değil"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada tanıyı doğru şekilde netleştirmek için en uygun yaklaşım aşağıdakilerden hangisidir?",
+      "questionType": "Tanısal yaklaşım",
+      "answerTarget": "Kronik malabsorpsiyon düşündüren hastada seroloji ve duodenal biyopsi sıralaması",
+      "diagnosis": {
+        "correct": "Gluten içeren diyet sürerken tTG-IgA ve total IgA bakılması, pozitiflikte duodenal biyopsiyle doğrulama",
+        "options": [
+          "Gluten içeren diyet sürerken tTG-IgA ve total IgA bakılması, pozitiflikte duodenal biyopsiyle doğrulama",
+          "Seroloji almadan glutensiz diyete başlanıp üç ay sonra semptom yanıtıyla tanı koyma",
+          "Kolonoskopi ve terminal ileum biyopsisiyle Crohn hastalığını dışlamadan başka test yapmama",
+          "Dışkı kültürü negatifse fonksiyonel barsak hastalığı kabul edip antispazmodik tedavi verme",
+          "Sadece demir replasmanı yapıp ferritin normale dönene kadar gastrointestinal değerlendirmeyi erteleme"
+        ],
+        "question": "Bu hastada tanıyı doğru şekilde netleştirmek için en uygun yaklaşım aşağıdakilerden hangisidir?",
+        "explanation": "Kronik ishal, şişkinlik, kilo kaybı, demir-folat-D vitamini eksiklikleri ve pozitif hastalık özgül seroloji ince bağırsak emilim bozukluğu paternini destekler. Tanısal testler gluten içeren diyet sürerken yapılmalıdır; aksi halde seroloji ve biyopsi duyarlılığı düşebilir. Total IgA normal olduğundan tTG-IgA güvenilir biçimde yorumlanabilir; erişkinde üst endoskopi ile çoklu duodenal biyopsi tanıyı doğrular.",
+        "pearls": [
+          "Kronik ishal + kilo kaybı → fonksiyonel ishalden önce organik neden aranmalı.",
+          "Ferritin, folat ve D vitamini düşüklüğü → proksimal ince bağırsak emilim bozukluğu ipucu.",
+          "Total IgA normal + tTG-IgA yüksek → hedefli serolojik kanıt güçlü.",
+          "Glutensiz diyete başlanmamış olması → testlerin güvenilir yapılabilmesi için önemli fırsat."
+        ],
+        "optionFeedback": {
+          "Gluten içeren diyet sürerken tTG-IgA ve total IgA bakılması, pozitiflikte duodenal biyopsiyle doğrulama": "Bu seçenek en uygun tanısal yaklaşımdır. Kronik ishal, kilo kaybı, şişkinlik, demir eksikliği, düşük folat, düşük D vitamini ve aile/otoimmün zemin ince bağırsak emilim bozukluğunu destekler. Tanısal seroloji gluten içeren diyet sırasında istenmelidir; total IgA eş zamanlı bakılarak IgA eksikliği nedeniyle yalancı negatiflik riski değerlendirilir. Seroloji pozitifse erişkin hastada üst endoskopiyle duodenal biyopsi tanıyı doğrular ve villöz hasarın derecesini gösterir.",
+          "Seroloji almadan glutensiz diyete başlanıp üç ay sonra semptom yanıtıyla tanı koyma": "Glutensiz diyete testlerden önce başlamak sık yapılan ama tanıyı zorlaştıran bir hatadır. Diyetle antikor düzeyi ve mukozal inflamasyon gerileyebilir; sonradan yapılan seroloji veya biyopsi yalancı negatif çıkabilir. Semptom yanıtı özgül değildir, irritabl barsak sendromu veya farklı malabsorpsiyon durumlarında da değişebilir. Bu nedenle testler gluten içeren diyet devam ederken planlanmalıdır.",
+          "Kolonoskopi ve terminal ileum biyopsisiyle Crohn hastalığını dışlamadan başka test yapmama": "Kolonoskopi Crohn hastalığı, ülseratif kolit veya kolonik kanama şüphesinde değerlidir; ancak bu vakada emilim bozukluğu, demir-folat-D vitamini eksikliği ve pozitif seroloji olasılığını hedefleyen üst gastrointestinal değerlendirme önceliklidir. Sağ alt kadran ağrısı, fistül, perianal hastalık veya belirgin yüksek fekal kalprotektin gibi Crohn lehine güçlü veri verilmemiştir. Kolonoskopi gerekebilir, fakat ilk ve en hedefli tanısal yol değildir.",
+          "Dışkı kültürü negatifse fonksiyonel barsak hastalığı kabul edip antispazmodik tedavi verme": "Dışkı kültürünün negatif olması kronik ishali fonksiyonel kabul etmek için yeterli değildir. Gece uykudan uyandıran dışkılama, kilo kaybı, ferritin düşüklüğü, folat-D vitamini eksikliği ve ailevi otoimmün zemin organik hastalık lehine uyarıcıdır. Antispazmodik tedavi semptomu geçici baskılayabilir ama emilim bozukluğunun nedenini açıklamaz ve tanıyı geciktirir.",
+          "Sadece demir replasmanı yapıp ferritin normale dönene kadar gastrointestinal değerlendirmeyi erteleme": "Demir replasmanı semptomatik anemi yönetiminin bir parçası olabilir; ancak genç bir hastada belirgin demir eksikliği ve kronik ishal birlikteyse altta yatan emilim bozukluğu araştırılmalıdır. Sadece ferritini düzeltmeye çalışmak, folat-D vitamini eksikliği ve kilo kaybı gibi eşlik eden ipuçlarını gözden kaçırır. Neden saptanmazsa eksiklikler tekrarlar ve uzun dönem kemik/metabolik komplikasyon riski devam eder."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Çölyak hastalığı şüphesinde ilk değerlendirme gluten içeren diyet devam ederken tTG-IgA ve total IgA ile yapılır. Erişkinlerde tanı çoğunlukla üst endoskopi ve çoklu duodenal biyopsiyle doğrulanır; test öncesi glutensiz diyet yalancı negatifliğe yol açabilir.",
+      "examPearl": "Malabsorpsiyon sorusunda “önce glutensiz diyet dene” cazip görünür ama tanıyı bozar; önce seroloji, IgA düzeyi ve gerekirse duodenal biyopsi düşün.",
+      "whyCorrect": "Doğru seçenek hem test zamanlamasını hem de erişkin tanı doğrulamasını doğru kurar.",
+      "optionComparison": "Diğer seçenekler tanıyı diyete yanıtla koyma, yanlış anatomik odağa yönelme, fonksiyonel hastalık etiketi veya yalnız eksiklik replasmanı gibi eksik stratejilerdir.",
+      "evidenceChain": [
+        "Uzun süren ishal ve kilo kaybı → organik/malabsorptif süreç arama gereği.",
+        "Demir + folat + D vitamini düşüklüğü → çoklu emilim bozukluğu paterni.",
+        "tTG-IgA >100 ve total IgA normal → serolojinin yorumlanabilir ve güçlü pozitif olması.",
+        "Glutensiz diyete başlamamış olması → doğrulayıcı testlerin duyarlılığını korur."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v298",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V297 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v299-new-684-eforla-bayilma-ve-sistolik-ufurum",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Eforla bayılma ve sistolik üfürüm",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Eforla senkop, göğüs sıkışması, karotise yayılan geç pikli sistolik üfürüm ve ekokardiyografik darlık parametrelerini birlikte değerlendirerek kesin tedavi kararını verme.",
+      "learningTarget": "Semptomatik ciddi aort kapak darlığında medikal rahatlatmanın prognozu değiştirmediğini, temel kararın kalp ekibiyle kapak girişimi olduğunu ayırt etme.",
+      "demographics": "74 yaşında erkek hasta",
+      "setting": "Kardiyoloji polikliniğinden acil gözleme yönlendirme",
+      "chiefComplaint": "Hasta, merdiven çıkarken bayılma ve göğüste sıkışma yakınması nedeniyle değerlendiriliyor.",
+      "stem": "Hasta son altı aydır yokuş çıkarken nefesinin eskisine göre daha çabuk kesildiğini, bunu yaşına bağlayarak doktora gelmediğini anlatır. Son haftalarda hızlı yürüdüğünde göğsünün ortasında baskı hissi olmuş, birkaç dakika dinlenince azalmıştır. Bugün apartman merdivenlerini çıkarken başı dönmüş, kısa süreli yere yığılmış ve kendine geldiğinde belirgin çarpıntı veya nörolojik güçsüzlük fark etmemiştir. Daha önce benzer bayılma yaşamamış, ateş, öksürük, bacak şişliği veya kanlı balgam tariflemez. Uzun süredir hipertansiyon ilacı kullanır; yakınlarının bayılmayı görmesi üzerine kardiyolojiye getirilmiştir.",
+      "patientIntro": {
+        "profile": "74 yaşında erkek hasta, kardiyoloji polikliniğinden acil gözleme yönlendirme sonrası değerlendiriliyor.",
+        "presentation": "Hasta, merdiven çıkarken bayılma ve göğüste sıkışma yakınması nedeniyle değerlendiriliyor.",
+        "historySummary": "Hasta son altı aydır yokuş çıkarken nefesinin eskisine göre daha çabuk kesildiğini, bunu yaşına bağlayarak doktora gelmediğini anlatır. Son haftalarda hızlı yürüdüğünde göğsünün ortasında baskı hissi olmuş, birkaç dakika dinlenince azalmıştır. Bugün apartman merdivenlerini çıkarken başı dönmüş, kısa süreli yere yığılmış ve kendine geldiğinde belirgin çarpıntı veya nörolojik güçsüzlük fark etmemiştir. Daha önce benzer bayılma yaşamamış, ateş, öksürük, bacak şişliği veya kanlı balgam tariflemez. Uzun süredir hipertansiyon ilacı kullanır; yakınlarının bayılmayı görmesi üzerine kardiyolojiye getirilmiştir."
+      },
+      "vitals": {
+        "TA": "136/78 mmHg",
+        "Nabız": "86/dk",
+        "Solunum": "18/dk",
+        "SpO2": "%96, oda havasında",
+        "Ateş": "36.6 °C",
+        "Şok indeksi": "0.63 - belirgin dolaşım çöküşü yok, eforla kardiyak debi kısıtlanması öyküsü ön planda"
+      },
+      "exam": [
+        "Genel durumu stabil, konuşması rahat; istirahatte belirgin siyanoz yoktur.",
+        "Sağ ikinci interkostal aralıkta karotislere yayılan, geç pik yapan sistolik ejeksiyon üfürümü duyulur.",
+        "Karotis nabız yükselimi yavaş ve amplitüdü azalmış hissedilir; ikinci kalp sesi yumuşamıştır.",
+        "Akciğer bazallerinde çok ince inspiratuvar ral vardır; pretibial ödem belirgin değildir."
+      ],
+      "investigations": [
+        {
+          "id": "v299-new-684-eforla-bayilma-ve-sistolik-ufurum-ekg",
+          "label": "12 derivasyonlu EKG",
+          "title": "12 derivasyonlu EKG",
+          "orderLabel": "12 derivasyonlu EKG",
+          "type": "ekg",
+          "priority": "essential",
+          "subtype": "12 derivasyonlu EKG",
+          "category": "cardiology",
+          "testTypeCategory": "cardiology",
+          "summary": "Sinüs ritmi vardır; iskemiye özgül akut ST elevasyonu verilmez, sol ventrikül yüklenme bulguları öne çıkar.",
+          "clinicalMeaning": "Sinüs ritmi vardır; iskemiye özgül akut ST elevasyonu verilmez, sol ventrikül yüklenme bulguları öne çıkar.",
+          "result": {
+            "title": "12 derivasyonlu EKG",
+            "summary": "Sinüs ritmi vardır; iskemiye özgül akut ST elevasyonu verilmez, sol ventrikül yüklenme bulguları öne çıkar.",
+            "interpretation": "Sinüs ritmi vardır; iskemiye özgül akut ST elevasyonu verilmez, sol ventrikül yüklenme bulguları öne çıkar.",
+            "values": [
+              [
+                "Ritim",
+                "Sinüs ritmi, 86/dk",
+                "60-100/dk",
+                "Düzenli"
+              ],
+              [
+                "PR/QRS",
+                "PR 170 ms, QRS 104 ms",
+                "PR <200 ms, QRS <120 ms",
+                "İleri blok yok"
+              ],
+              [
+                "Voltaj",
+                "Sol ventrikül hipertrofisi kriterleri mevcut",
+                "Yok",
+                "Basınç yükü lehine"
+              ],
+              [
+                "ST-T",
+                "Lateral derivasyonlarda strain paterni",
+                "İzoelektrik",
+                "Kronik yüklenme paterni"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v299-new-684-eforla-bayilma-ve-sistolik-ufurum-ekokardiyografi",
+          "label": "Transtorasik ekokardiyografi",
+          "title": "Transtorasik ekokardiyografi",
+          "orderLabel": "Transtorasik ekokardiyografi",
+          "type": "imaging",
+          "priority": "essential",
+          "subtype": "Transtorasik ekokardiyografi",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Kapak düzeyinde ileri darlık ve korunmuş sistolik fonksiyon birlikte izlenir.",
+          "clinicalMeaning": "Kapak düzeyinde ileri darlık ve korunmuş sistolik fonksiyon birlikte izlenir.",
+          "result": {
+            "title": "Transtorasik ekokardiyografi",
+            "summary": "Kapak düzeyinde ileri darlık ve korunmuş sistolik fonksiyon birlikte izlenir.",
+            "interpretation": "Kapak düzeyinde ileri darlık ve korunmuş sistolik fonksiyon birlikte izlenir.",
+            "values": [
+              [
+                "Aort kapak alanı",
+                "0.7 cm²",
+                ">1.5 cm²",
+                "Ciddi darlık aralığı"
+              ],
+              [
+                "Maksimum jet hızı",
+                "4.4 m/sn",
+                "<3.0 m/sn",
+                "Yüksek hız"
+              ],
+              [
+                "Ortalama gradiyent",
+                "48 mmHg",
+                "<20 mmHg",
+                "Yüksek gradiyent"
+              ],
+              [
+                "Sol ventrikül EF",
+                "%55",
+                ">%50",
+                "Korunmuş"
+              ],
+              [
+                "Kapak morfolojisi",
+                "Belirgin kalsifik kalınlaşma",
+                "İnce ve hareketli",
+                "Dejeneratif darlık lehine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v299-new-684-eforla-bayilma-ve-sistolik-ufurum-laboratuvar",
+          "label": "Temel laboratuvar ve kardiyak belirteçler",
+          "title": "Temel laboratuvar ve kardiyak belirteçler",
+          "orderLabel": "Temel laboratuvar ve kardiyak belirteçler",
+          "type": "lab",
+          "priority": "supportive",
+          "subtype": "Temel laboratuvar ve kardiyak belirteçler",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Akut nekroz belirteci baskın değildir; natriüretik peptid yüklenme ile uyumludur.",
+          "clinicalMeaning": "Akut nekroz belirteci baskın değildir; natriüretik peptid yüklenme ile uyumludur.",
+          "result": {
+            "title": "Temel laboratuvar ve kardiyak belirteçler",
+            "summary": "Akut nekroz belirteci baskın değildir; natriüretik peptid yüklenme ile uyumludur.",
+            "interpretation": "Akut nekroz belirteci baskın değildir; natriüretik peptid yüklenme ile uyumludur.",
+            "values": [
+              [
+                "Yüksek duyarlıklı troponin I",
+                "22 ng/L",
+                "<34 ng/L",
+                "Belirgin akut nekroz yok"
+              ],
+              [
+                "NT-proBNP",
+                "1480 pg/mL",
+                "Yaşa göre genellikle <450-900 pg/mL",
+                "Basınç/yüklenme artışı"
+              ],
+              [
+                "Kreatinin",
+                "1.0 mg/dL",
+                "0.7-1.2 mg/dL",
+                "Girişim planlaması için uygun"
+              ],
+              [
+                "Hemoglobin",
+                "13.4 g/dL",
+                "13.0-17.0 g/dL",
+                "Belirgin anemi yok"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada semptomların mekanizması ve ekokardiyografi verileri birlikte değerlendirildiğinde en uygun kesin tedavi yaklaşımı hangisidir?",
+      "questionType": "Tedavi/klinik karar",
+      "answerTarget": "Semptomatik ciddi aort kapak darlığında kapak girişimi kararı",
+      "diagnosis": {
+        "correct": "Kalp ekibi değerlendirmesiyle aort kapak replasmanı veya TAVI planlamak",
+        "options": [
+          "Furosemid ve nitrat dozlarını artırarak kapak girişimini ertelemek",
+          "Kalp ekibi değerlendirmesiyle aort kapak replasmanı veya TAVI planlamak",
+          "Sadece beta bloker başlanıp yıllık ekokardiyografiyle takip etmek",
+          "Atriyal fibrilasyon yokken primer tedavi olarak tam doz antikoagülasyon başlamak",
+          "Efor kısıtlaması önerip semptomlar hafiflediğinde rutin poliklinik kontrolüne bırakmak"
+        ],
+        "question": "Bu hastada semptomların mekanizması ve ekokardiyografi verileri birlikte değerlendirildiğinde en uygun kesin tedavi yaklaşımı hangisidir?",
+        "explanation": "Eforla senkop ve göğüs sıkışması, sabit çıkış yolu obstrüksiyonu nedeniyle kardiyak debinin efor sırasında yeterince artırılamadığını gösterir. Fizik muayenedeki geç pikli, karotise yayılan sistolik üfürüm ve yavaş karotis yükselimi kapak düzeyinde ağır mekanik darlık lehinedir. Ekokardiyografide düşük kapak alanı, yüksek jet hızı ve yüksek ortalama gradiyent bu mekanizmayı destekler. Semptomatik ciddi darlıkta prognozu değiştiren yaklaşım kapak girişimidir; yalnız medikal tedavi veya bekleme doğru strateji olmaz.",
+        "pearls": [
+          "Efor senkopu ileri kapak darlığında yüksek riskli semptomdur.",
+          "Geç pikli karotise yayılan sistolik üfürüm + yavaş karotis nabzı mekanik çıkış obstrüksiyonunu düşündürür.",
+          "Kapak alanı ≤1.0 cm² ve yüksek gradiyent ciddi darlık lehinedir.",
+          "Semptomatik ciddi darlıkta kesin çözüm kapak girişimidir."
+        ],
+        "optionFeedback": {
+          "Furosemid ve nitrat dozlarını artırarak kapak girişimini ertelemek": "Bu seçenek semptomatik ileri kapak darlığını yalnızca konjesyon tedavisiyle yönetmeye çalışır ve kalıcı mekanik obstrüksiyonu düzeltmez. Diüretik bazı hastalarda akciğer konjesyonunu azaltmak için dikkatli kullanılabilir; ancak preload bağımlı, sabit çıkış yolu obstrüksiyonu olan hastada agresif diürez veya nitrat hipotansiyon ve senkopu artırabilir. Bu vakada eforla senkop, göğüs sıkışması, geç pik yapan karotis yayılımlı üfürüm ve ciddi ekokardiyografik darlık vardır; bu nedenle sadece medikal rahatlatma yeterli değildir.",
+          "Kalp ekibi değerlendirmesiyle aort kapak replasmanı veya TAVI planlamak": "Bu seçenek en uygun kesin yaklaşımdır. Hastanın eforla senkop ve göğüs sıkışması yaşaması artık kapak darlığının semptomatik hale geldiğini gösterir. Ekokardiyografide yüksek jet hızı, yüksek ortalama gradiyent ve düşük kapak alanı sabit sol ventrikül çıkış yolu obstrüksiyonunu destekler. Semptomatik ciddi darlıkta prognozu değiştiren tedavi kapak girişimidir; yaş, cerrahi risk, anatomi ve eşlik eden hastalıklar kalp ekibi tarafından değerlendirilerek cerrahi kapak replasmanı veya TAVI seçilir.",
+          "Sadece beta bloker başlanıp yıllık ekokardiyografiyle takip etmek": "Beta bloker bazı aritmi veya eşlik eden hipertansiyon durumlarında dikkatli kullanılabilir; ancak bu vakadaki ana sorun hız kontrolü değil ileri mekanik kapak obstrüksiyonudur. Yıllık ekokardiyografi asemptomatik veya hafif-orta darlıkta izlem stratejisinin parçası olabilir. Burada eforla senkop, göğüs sıkışması ve ciddi darlık parametreleri verildiği için yalnız takip güvenli değildir ve kesin tedaviyi geciktirir.",
+          "Atriyal fibrilasyon yokken primer tedavi olarak tam doz antikoagülasyon başlamak": "Tam doz antikoagülasyon atriyal fibrilasyon, mekanik kapak, venöz tromboemboli veya başka net tromboembolik endikasyonlarda düşünülür. Hastada düzensiz ritim, atriyal fibrilasyon EKG bulgusu veya embolik olay verilmemiştir. Kapak darlığının oluşturduğu senkop ve efor dispnesi trombüs mekanizmasıyla değil sabit çıkış obstrüksiyonu ve sınırlı kardiyak debi artışıyla açıklanır; antikoagülasyon bu mekanizmayı düzeltmez.",
+          "Efor kısıtlaması önerip semptomlar hafiflediğinde rutin poliklinik kontrolüne bırakmak": "Efor kısıtlaması semptomatik hasta kapak girişimine hazırlanırken geçici güvenlik önerisi olabilir; ancak tek başına tedavi değildir. Senkop özellikle ileri kapak darlığında yüksek riskli bir semptomdur ve rutin kontrolle ertelenmemelidir. Bu yaklaşım hastanın prognozunu belirleyen mekanik darlığı düzeltmediği gibi ani kötüleşme ve kalp yetersizliği riskini de gözden kaçırır."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Semptomatik ciddi aort kapak darlığında dispne, anjina veya senkop ortaya çıktığında temel sorun sabit sol ventrikül çıkış obstrüksiyonudur. Medikal tedavi yalnız destekleyicidir; uygun hastada cerrahi kapak replasmanı veya TAVI prognozu değiştiren tedavidir.",
+      "examPearl": "Eforla senkop + karotise yayılan geç pikli sistolik üfürüm + ciddi EKO parametreleri varsa yıllık takip değil kapak girişimi düşünülür.",
+      "whyCorrect": "Doğru seçenek semptomatik ciddi mekanik darlığı gideren tek prognoz değiştirici yaklaşımı içerir.",
+      "optionComparison": "Diğer seçenekler semptomu geçici baskılama, hız kontrolü, gereksiz antikoagülasyon veya riskli bekleme stratejileridir.",
+      "evidenceChain": [
+        "Eforla senkop ve göğüs sıkışması → kardiyak debinin eforla artırılamadığı yüksek riskli kapak semptomları.",
+        "Karotise yayılan geç pikli sistolik üfürüm → kapak düzeyinde çıkış yolu darlığı lehine muayene paterni.",
+        "Aort kapak alanı 0.7 cm² ve ortalama gradiyent 48 mmHg → ileri mekanik darlık düzeyi.",
+        "EF korunmuş ve akut STEMI paterni yok → ana karar miyokard nekrozu değil kapak obstrüksiyonunun düzeltilmesi."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v299",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V298 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v299-new-685-uzayan-purulan-balgam-ve-tekrarlayan-enfeksiyon",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Uzayan pürülan balgam ve tekrarlayan enfeksiyon",
+      "difficulty": "Orta-Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Kronik pürülan balgam, tekrarlayan alt solunum yolu enfeksiyonu ve HRBT bulgularını birlikte değerlendirerek yapısal hava yolu hastalığında alevlenme yönetimini seçme.",
+      "learningTarget": "Bronşektazi alevlenmesinde yalnız öksürük baskılamanın değil, balgam kültürü, önceki mikrobiyolojiye göre antibiyotik ve hava yolu temizliğinin temel olduğunu ayırt etme.",
+      "demographics": "56 yaşında kadın hasta",
+      "setting": "Göğüs hastalıkları polikliniğinden acil değerlendirme",
+      "chiefComplaint": "Hasta, balgam miktarında artış, ateş ve halsizlik nedeniyle başvuruyor.",
+      "stem": "Hasta çocukluk döneminde ağır zatürre geçirdiğini, erişkin yaşlardan beri özellikle kış aylarında haftalarca süren balgamlı öksürük atakları yaşadığını anlatır. Son bir haftada balgamının miktarı belirgin artmış, rengi koyu sarı-yeşile dönmüş ve sabahları bir fincana yakın balgam çıkarmaya başlamıştır. Dün gece 38 dereceyi geçen ateşi olmuş, merdiven çıkarken nefesi daha çabuk kesilmiş ve balgam içinde birkaç çizgi şeklinde kan fark etmiştir. Sigara içmemiştir; son aylarda belirgin kilo kaybı, gece terlemesi veya tüberküloz temas öyküsü tariflemez. Daha önce bir balgam kültüründe dirençli olmayan Pseudomonas ürediğini hatırladığını söyler; halsizliği artınca kontrol için gelmiştir.",
+      "patientIntro": {
+        "profile": "56 yaşında kadın hasta, göğüs hastalıkları polikliniğinden acil değerlendirme sonrası izleniyor.",
+        "presentation": "Hasta, balgam miktarında artış, ateş ve halsizlik nedeniyle başvuruyor.",
+        "historySummary": "Hasta çocukluk döneminde ağır zatürre geçirdiğini, erişkin yaşlardan beri özellikle kış aylarında haftalarca süren balgamlı öksürük atakları yaşadığını anlatır. Son bir haftada balgamının miktarı belirgin artmış, rengi koyu sarı-yeşile dönmüş ve sabahları bir fincana yakın balgam çıkarmaya başlamıştır. Dün gece 38 dereceyi geçen ateşi olmuş, merdiven çıkarken nefesi daha çabuk kesilmiş ve balgam içinde birkaç çizgi şeklinde kan fark etmiştir. Sigara içmemiştir; son aylarda belirgin kilo kaybı, gece terlemesi veya tüberküloz temas öyküsü tariflemez. Daha önce bir balgam kültüründe dirençli olmayan Pseudomonas ürediğini hatırladığını söyler; halsizliği artınca kontrol için gelmiştir."
+      },
+      "vitals": {
+        "TA": "124/74 mmHg",
+        "Nabız": "102/dk",
+        "Solunum": "22/dk",
+        "SpO2": "%93, oda havasında",
+        "Ateş": "38.1 °C",
+        "Şok indeksi": "0.82 - hafif sistemik etkilenme var, belirgin şok yok"
+      },
+      "exam": [
+        "Hasta balgamlı öksürük nöbetleri arasında konuşabilmektedir; yardımcı solunum kas kullanımı belirgin değildir.",
+        "Her iki alt zonda kaba inspiratuvar raller ve yer yer ronşüs duyulur.",
+        "Parmaklarda hafif çomaklaşma izlenir; santral siyanoz yoktur.",
+        "Bacaklarda tek taraflı ödem veya baldır hassasiyeti saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v299-new-685-uzayan-purulan-balgam-ve-tekrarlayan-enfeksiyon-hemogram-crp",
+          "label": "Hemogram ve inflamasyon",
+          "title": "Hemogram ve inflamasyon",
+          "orderLabel": "Hemogram ve inflamasyon",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Hemogram ve inflamasyon",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Bakteriyel alevlenmeyi destekleyen inflamatuvar yanıt vardır.",
+          "clinicalMeaning": "Bakteriyel alevlenmeyi destekleyen inflamatuvar yanıt vardır.",
+          "result": {
+            "title": "Hemogram ve inflamasyon",
+            "summary": "Bakteriyel alevlenmeyi destekleyen inflamatuvar yanıt vardır.",
+            "interpretation": "Bakteriyel alevlenmeyi destekleyen inflamatuvar yanıt vardır.",
+            "values": [
+              [
+                "Lökosit",
+                "14.600/mm³",
+                "4.000-10.000/mm³",
+                "Yüksek"
+              ],
+              [
+                "Nötrofil",
+                "%82",
+                "%40-70",
+                "Nötrofilik yanıt"
+              ],
+              [
+                "CRP",
+                "92 mg/L",
+                "<5 mg/L",
+                "Yüksek"
+              ],
+              [
+                "Hemoglobin",
+                "12.1 g/dL",
+                "12.0-16.0 g/dL",
+                "Belirgin akut kan kaybı yok"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v299-new-685-uzayan-purulan-balgam-ve-tekrarlayan-enfeksiyon-hrbt",
+          "label": "Yüksek çözünürlüklü toraks BT",
+          "title": "Yüksek çözünürlüklü toraks BT",
+          "orderLabel": "Yüksek çözünürlüklü toraks BT",
+          "type": "imaging",
+          "priority": "essential",
+          "subtype": "Yüksek çözünürlüklü toraks BT",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Alt loblarda kronik hava yolu genişlemesi ve sekresyon yükü izlenir.",
+          "clinicalMeaning": "Alt loblarda kronik hava yolu genişlemesi ve sekresyon yükü izlenir.",
+          "result": {
+            "title": "Yüksek çözünürlüklü toraks BT",
+            "summary": "Alt loblarda kronik hava yolu genişlemesi ve sekresyon yükü izlenir.",
+            "interpretation": "Alt loblarda kronik hava yolu genişlemesi ve sekresyon yükü izlenir.",
+            "values": [
+              [
+                "Bronş çapı",
+                "Eşlik eden pulmoner arter çapından geniş",
+                "Arterle benzer/az",
+                "Bronş genişlemesi"
+              ],
+              [
+                "Bronş duvarı",
+                "Kalınlaşmış",
+                "İnce",
+                "Kronik inflamasyon"
+              ],
+              [
+                "Dağılım",
+                "Bilateral alt lob ağırlıklı",
+                "Normal",
+                "Yerleşik yapısal hastalık"
+              ],
+              [
+                "Sekresyon",
+                "Mukus tıkaçları ve ağaç tomurcuklanması alanları",
+                "Yok",
+                "Aktif enfeksiyöz yük"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v299-new-685-uzayan-purulan-balgam-ve-tekrarlayan-enfeksiyon-balgam",
+          "label": "Balgam Gram boyama ve kültür",
+          "title": "Balgam Gram boyama ve kültür",
+          "orderLabel": "Balgam Gram boyama ve kültür",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Balgam Gram boyama ve kültür",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Örnek tedavi öncesi alınmıştır; önceki üreme öyküsü antibiyotik seçiminde önemlidir.",
+          "clinicalMeaning": "Örnek tedavi öncesi alınmıştır; önceki üreme öyküsü antibiyotik seçiminde önemlidir.",
+          "result": {
+            "title": "Balgam Gram boyama ve kültür",
+            "summary": "Örnek tedavi öncesi alınmıştır; önceki üreme öyküsü antibiyotik seçiminde önemlidir.",
+            "interpretation": "Örnek tedavi öncesi alınmıştır; önceki üreme öyküsü antibiyotik seçiminde önemlidir.",
+            "values": [
+              [
+                "Gram boyama",
+                "Bol nötrofil, gram negatif basiller",
+                "Patolojik baskınlık beklenmez",
+                "Bakteriyel yük lehine"
+              ],
+              [
+                "Önceki kültür",
+                "Pseudomonas aeruginosa, siprofloksasine duyarlı",
+                "Üreme yok",
+                "Geçmiş mikrobiyoloji önemli"
+              ],
+              [
+                "ARB yayma",
+                "Negatif",
+                "Negatif",
+                "Verilen tabloda aktif basil yükü gösterilmedi"
+              ],
+              [
+                "Kültür sonucu",
+                "Duyarlılık çalışması bekleniyor",
+                "Üreme yok",
+                "Tedavi sonradan daraltılabilir"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada mevcut kötüleşme için en uygun yönetim yaklaşımı aşağıdakilerden hangisidir?",
+      "questionType": "Acil/klinik yönetim",
+      "answerTarget": "Bronşektazi alevlenmesinde kültür temelli antibiyotik ve hava yolu temizliği",
+      "diagnosis": {
+        "correct": "Balgam kültürü alıp önceki mikrobiyolojiye göre antibiyotik seçmek ve hava yolu temizliğini yoğunlaştırmak",
+        "options": [
+          "İnhale kortikosteroid dozu artırılıp antibiyotik verilmeden astım alevlenmesi gibi izlemek",
+          "Akciğer grafisi normale yakınsa kronik bronşiti dışlayıp semptomatik antitussif vermek",
+          "Uzun süreli makrolid profilaksisini kültür almadan ve hava yolu temizliği planlamadan başlamak",
+          "Balgam kültürü alıp önceki mikrobiyolojiye göre antibiyotik seçmek ve hava yolu temizliğini yoğunlaştırmak",
+          "Hemoptizi az olduğu için tüm tetkikleri erteleyip yalnız oral demir ve balgam söktürücü önermek"
+        ],
+        "question": "Bu hastada mevcut kötüleşme için en uygun yönetim yaklaşımı aşağıdakilerden hangisidir?",
+        "explanation": "Kronik pürülan balgam, tekrarlayan enfeksiyon öyküsü ve HRBT’de bronş genişlemesi yapısal hava yolu hastalığını destekler. Son günlerde balgam miktarı ve pürülansında artış, ateş, CRP yüksekliği ve sekresyon yükünün artması alevlenme yönetimini gerektirir. Tedavide balgam kültürü alınması, önceki mikrobiyoloji ve duyarlılığa göre antibiyotik seçilmesi ve hava yolu temizliğinin artırılması birlikte düşünülmelidir.",
+        "pearls": [
+          "Kronik bol pürülan balgam yapısal hava yolu hastalığı için güçlü ipucudur.",
+          "HRBT, düz grafiden daha duyarlı yapısal değerlendirme sağlar.",
+          "Alevlenmede balgam kültürü antibiyotik seçimini yönlendirir.",
+          "Hava yolu temizliği tedavinin destek değil merkez bileşenidir."
+        ],
+        "optionFeedback": {
+          "İnhale kortikosteroid dozu artırılıp antibiyotik verilmeden astım alevlenmesi gibi izlemek": "Bu yaklaşım hastayı yalnız astım alevlenmesi gibi ele alır; oysa öyküde yıllardır süren bol pürülan balgam, tekrarlayan enfeksiyonlar ve HRBT’de bronş duvarı genişlemesi vardır. İnhale kortikosteroid astım veya belirgin eozinofilik hava yolu hastalığı eşlik ediyorsa rol oynayabilir; ancak enfeksiyöz alevlenme ve kronik sekresyon yükünü tek başına çözmez. Antibiyotik gereksinimi, balgam miktarı-rengi ve sistemik bulgularla birlikte değerlendirilmelidir.",
+          "Akciğer grafisi normale yakınsa kronik bronşiti dışlayıp semptomatik antitussif vermek": "Akciğer grafisinin sınırlı veya normale yakın olması yapısal hava yolu hastalığını dışlamaz. Bronş duvar genişlemesi ve bronş çapının eşlik eden arterden büyük görünmesi gibi bulgular için yüksek çözünürlüklü BT daha değerlidir. Antitussiflerle öksürüğü baskılamak sekresyon drenajını azaltabilir ve alevlenmeyi uzatabilir; bu vakada asıl hedef enfekte sekresyon yükünü azaltmak ve uygun antibiyotik seçmektir.",
+          "Uzun süreli makrolid profilaksisini kültür almadan ve hava yolu temizliği planlamadan başlamak": "Uzun süreli makrolid profilaksisi sık alevlenen seçilmiş hastalarda uzman değerlendirmesiyle düşünülebilir; fakat aktif alevlenme sırasında kültür almadan ve hava yolu temizliğini optimize etmeden başlamak doğru değildir. Ayrıca non-tüberküloz mikobakteri varlığı dışlanmadan uzun süreli makrolid direnç seçilimine yol açabilir. Bu hasta önce akut kötüleşme açısından kültür, duyarlılık ve hedefli antibiyotik planı gerektirir.",
+          "Balgam kültürü alıp önceki mikrobiyolojiye göre antibiyotik seçmek ve hava yolu temizliğini yoğunlaştırmak": "Bu seçenek en uygun yaklaşımdır. Hastada kronik pürülan balgam zemininde birkaç gün içinde balgam miktarı ve renginde artış, ateş, CRP yüksekliği ve HRBT’de bronş genişlemesi vardır. Alevlenmede balgam kültürü, önceki üremeler ve duyarlılık bilgisi antibiyotik seçimini belirler; Pseudomonas öyküsü varsa kapsama buna göre ayarlanır. Antibiyotik tedavisiyle birlikte hava yolu temizliği, hidrasyon, fizyoterapi ve eşlik eden nedenlerin değerlendirilmesi tedavinin merkezindedir.",
+          "Hemoptizi az olduğu için tüm tetkikleri erteleyip yalnız oral demir ve balgam söktürücü önermek": "Az miktarda hemoptizi bronşektazide görülebilir; ancak eşlik eden enfeksiyöz kötüleşme, pürülan balgam artışı ve görüntüleme bulguları varken tüm değerlendirmeyi ertelemek güvenli değildir. Demir tedavisi hemoptizinin nedenini açıklamaz; balgam söktürücü de mikrobiyolojik hedefli tedavinin yerine geçmez. Kanama artarsa veya masif hale gelirse acil yaklaşım değişir, fakat bu vakada mevcut öncelik alevlenme tedavisidir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Bronşektazi, kalıcı bronş genişlemesi ve bozulmuş mukosiliyer temizlik nedeniyle kronik balgam ve tekrarlayan enfeksiyonlarla seyreder. Alevlenmede balgam pürülansı/miktarı artışı, sistemik bulgular ve kültür bilgisi antibiyotik kararını; hava yolu temizliği ise sekresyon kontrolünü belirler.",
+      "examPearl": "Bol pürülan balgam + tekrarlayan enfeksiyon + HRBT’de bronş çapının arterden geniş olması varsa grafi normal diye geçme; alevlenmede kültür ve hava yolu temizliği anahtardır.",
+      "whyCorrect": "Doğru seçenek hem mikrobiyolojik hedeflemeyi hem sekresyon temizliğini aynı anda ele alır.",
+      "optionComparison": "Diğer seçenekler astım gibi tek eksenli yaklaşır, düz grafiye aşırı güvenir, profilaksiyi yanlış zamanlar veya hemoptizi/ekspektorasyonu semptomatik geçiştirir.",
+      "evidenceChain": [
+        "Yıllardır bol pürülan balgam ve tekrarlayan enfeksiyon → kronik yapısal hava yolu hastalığı lehine öykü.",
+        "HRBT’de bronş çapının arterden geniş olması → kalıcı bronş genişlemesi bulgusu.",
+        "Balgam pürülansı, ateş ve CRP yüksekliği → enfeksiyöz alevlenme paterni.",
+        "Önceki Pseudomonas üremesi → ampirik/erken antibiyotik seçiminde mikrobiyolojik geçmişin önemi."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v299",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V298 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v299-new-686-yeni-bas-agrisi-ve-cigneme-agrisi",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Yeni baş ağrısı ve çiğneme ağrısı",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Yaşlı hastada yeni temporal baş ağrısı, çene kladikasyonu, görsel semptom ve akut faz yüksekliğini birlikte değerlendirerek tedaviyi geciktirmeme kararını verme.",
+      "learningTarget": "Görme tehdidi olan kraniyal damar inflamasyonunda biyopsi/ultrason planlansa bile glukokortikoidin sonuç beklenmeden başlanması gerektiğini ayırt etme.",
+      "demographics": "72 yaşında kadın hasta",
+      "setting": "Acil servis nöroloji-romatoloji konsültasyonu",
+      "chiefComplaint": "Hasta, yeni başlayan şiddetli baş ağrısı ve sağ gözde kısa süreli bulanıklık nedeniyle getiriliyor.",
+      "stem": "Hasta üç haftadır sağ şakak bölgesinde daha önce yaşamadığı tarzda zonklayıcı bir ağrı başladığını ve saçını tararken o bölgede belirgin hassasiyet hissettiğini anlatır. Son günlerde yemek yerken birkaç lokmadan sonra çenesinin yorulup ağrıdığını, dinlenince rahatladığını fark etmiştir. Bu sabah sağ gözünde birkaç dakika süren perde inmesi gibi bulanıklık olmuş, tamamen düzelince önce önemsememiştir. Son bir ayda iştahı azalmış, omuz-kalça çevresinde sabah tutukluğu yaşamış ancak ateş veya ense sertliği tariflememiştir. Daha önce migren tanısı yoktur; görme yakınmasının tekrarlamasından korktuğu için yakınlarıyla acile gelmiştir.",
+      "patientIntro": {
+        "profile": "72 yaşında kadın hasta, acil servis nöroloji-romatoloji konsültasyonu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, yeni başlayan şiddetli baş ağrısı ve sağ gözde kısa süreli bulanıklık nedeniyle getiriliyor.",
+        "historySummary": "Hasta üç haftadır sağ şakak bölgesinde daha önce yaşamadığı tarzda zonklayıcı bir ağrı başladığını ve saçını tararken o bölgede belirgin hassasiyet hissettiğini anlatır. Son günlerde yemek yerken birkaç lokmadan sonra çenesinin yorulup ağrıdığını, dinlenince rahatladığını fark etmiştir. Bu sabah sağ gözünde birkaç dakika süren perde inmesi gibi bulanıklık olmuş, tamamen düzelince önce önemsememiştir. Son bir ayda iştahı azalmış, omuz-kalça çevresinde sabah tutukluğu yaşamış ancak ateş veya ense sertliği tariflememiştir. Daha önce migren tanısı yoktur; görme yakınmasının tekrarlamasından korktuğu için yakınlarıyla acile gelmiştir."
+      },
+      "vitals": {
+        "TA": "148/82 mmHg",
+        "Nabız": "92/dk",
+        "Solunum": "18/dk",
+        "SpO2": "%98, oda havasında",
+        "Ateş": "37.3 °C",
+        "Şok indeksi": "0.62 - hemodinamik şok yok, iskemik komplikasyon riski klinik olarak önemli"
+      },
+      "exam": [
+        "Bilinç açık, konuşma akıcıdır; lateralizan motor defisit saptanmaz.",
+        "Sağ temporal arter trasesinde hassasiyet ve nabız dolgunluğunda azalma hissedilir.",
+        "Sağ göz görme keskinliği muayene sırasında normale yakındır; afferent pupil defekti saptanmaz.",
+        "Omuz kuşağı hareketlerinde hafif ağrı vardır; meningeal irritasyon bulgusu yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v299-new-686-yeni-bas-agrisi-ve-cigneme-agrisi-akut-faz",
+          "label": "Akut faz ve temel laboratuvar",
+          "title": "Akut faz ve temel laboratuvar",
+          "orderLabel": "Akut faz ve temel laboratuvar",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Akut faz ve temel laboratuvar",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Belirgin sistemik inflamasyon vardır; enfeksiyon odağına özgül net bir veri verilmez.",
+          "clinicalMeaning": "Belirgin sistemik inflamasyon vardır; enfeksiyon odağına özgül net bir veri verilmez.",
+          "result": {
+            "title": "Akut faz ve temel laboratuvar",
+            "summary": "Belirgin sistemik inflamasyon vardır; enfeksiyon odağına özgül net bir veri verilmez.",
+            "interpretation": "Belirgin sistemik inflamasyon vardır; enfeksiyon odağına özgül net bir veri verilmez.",
+            "values": [
+              [
+                "ESR",
+                "96 mm/saat",
+                "<30 mm/saat",
+                "Çok yüksek"
+              ],
+              [
+                "CRP",
+                "84 mg/L",
+                "<5 mg/L",
+                "Yüksek"
+              ],
+              [
+                "Hemoglobin",
+                "10.8 g/dL",
+                "12.0-16.0 g/dL",
+                "İnflamasyonla ilişkili anemi olabilir"
+              ],
+              [
+                "Lökosit",
+                "9.800/mm³",
+                "4.000-10.000/mm³",
+                "Belirgin lökositoz yok"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v299-new-686-yeni-bas-agrisi-ve-cigneme-agrisi-goz",
+          "label": "Acil göz değerlendirmesi",
+          "title": "Acil göz değerlendirmesi",
+          "orderLabel": "Acil göz değerlendirmesi",
+          "type": "exam",
+          "priority": "essential",
+          "subtype": "Acil göz değerlendirmesi",
+          "category": "ophthalmology",
+          "testTypeCategory": "ophthalmology",
+          "summary": "Muayene anında kalıcı ağır kayıp yoktur; öykü geçici iskemik görme tehdidini düşündürür.",
+          "clinicalMeaning": "Muayene anında kalıcı ağır kayıp yoktur; öykü geçici iskemik görme tehdidini düşündürür.",
+          "result": {
+            "title": "Acil göz değerlendirmesi",
+            "summary": "Muayene anında kalıcı ağır kayıp yoktur; öykü geçici iskemik görme tehdidini düşündürür.",
+            "interpretation": "Muayene anında kalıcı ağır kayıp yoktur; öykü geçici iskemik görme tehdidini düşündürür.",
+            "values": [
+              [
+                "Görme keskinliği",
+                "Sağ 8/10, sol 10/10",
+                "Kişiye göre normal",
+                "Muayenede belirgin kalıcı kayıp yok"
+              ],
+              [
+                "Fundus",
+                "Optik disk sınırları seçiliyor",
+                "Normal",
+                "Akut ağır disk ödemi yok"
+              ],
+              [
+                "Öyküde görsel olay",
+                "Dakikalar süren perde inmesi",
+                "Yok",
+                "Geçici iskemik yakınma"
+              ],
+              [
+                "Göz içi basıncı",
+                "Normal aralıkta",
+                "10-21 mmHg",
+                "Akut glokom paterni yok"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v299-new-686-yeni-bas-agrisi-ve-cigneme-agrisi-damar",
+          "label": "Temporal arter değerlendirme planı",
+          "title": "Temporal arter değerlendirme planı",
+          "orderLabel": "Temporal arter değerlendirme planı",
+          "type": "imaging",
+          "priority": "supportive",
+          "subtype": "Temporal arter değerlendirme planı",
+          "category": "vascular",
+          "testTypeCategory": "vascular",
+          "summary": "Tanısal doğrulama için damar görüntüleme veya biyopsi planlanır; tedavi bu sonucu beklemez.",
+          "clinicalMeaning": "Tanısal doğrulama için damar görüntüleme veya biyopsi planlanır; tedavi bu sonucu beklemez.",
+          "result": {
+            "title": "Temporal arter değerlendirme planı",
+            "summary": "Tanısal doğrulama için damar görüntüleme veya biyopsi planlanır; tedavi bu sonucu beklemez.",
+            "interpretation": "Tanısal doğrulama için damar görüntüleme veya biyopsi planlanır; tedavi bu sonucu beklemez.",
+            "values": [
+              [
+                "Yatak başı ultrason ön bulgusu",
+                "Sağ temporal arter duvarında hipoekoik kalınlaşma",
+                "Yok",
+                "Damar duvar inflamasyonu lehine"
+              ],
+              [
+                "Biyopsi planı",
+                "İlk günler içinde tek taraflı uzun segment örnekleme",
+                "Gerekmeyebilir",
+                "Doğrulama amaçlı"
+              ],
+              [
+                "Kraniyal BT",
+                "Akut kanama yok",
+                "Yok",
+                "Baş ağrısının kanama nedeni dışlanmış"
+              ],
+              [
+                "Tedavi zamanlaması",
+                "Görme yakınması nedeniyle bekletilmemeli",
+                "Planlı",
+                "Acil risk vurgusu"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada kalıcı komplikasyonu önlemek için en uygun ilk yaklaşım aşağıdakilerden hangisidir?",
+      "questionType": "Acil tedavi yaklaşımı",
+      "answerTarget": "Görme tehdidi olan büyük damar inflamasyonunda glukokortikoidi geciktirmeme",
+      "diagnosis": {
+        "correct": "Yüksek doz glukokortikoid tedavisine hemen başlayıp temporal arter değerlendirmesini geciktirmeden planlamak",
+        "options": [
+          "Yüksek doz glukokortikoid tedavisine hemen başlayıp temporal arter değerlendirmesini geciktirmeden planlamak",
+          "Biyopsi sonucu çıkana kadar yalnız parasetamol verip steroid başlamamak",
+          "Triptan tedavisi başlayıp migren yanıtına göre ileri incelemeyi ertelemek",
+          "Antikoagülasyon başlayıp embolik inme dışlanana kadar inflamasyon tedavisi vermemek",
+          "Düşük doz kolşisin ve NSAİİ ile iki hafta izleyip görme yakınması sürerse romatolojiye yönlendirmek"
+        ],
+        "question": "Bu hastada kalıcı komplikasyonu önlemek için en uygun ilk yaklaşım aşağıdakilerden hangisidir?",
+        "explanation": "Yaşlı hastada yeni başlayan temporal baş ağrısı, saçlı deri hassasiyeti, çene kladikasyonu, geçici görsel yakınma ve belirgin ESR/CRP yüksekliği birlikte kraniyal arter inflamasyonunu yüksek olasılıklı hale getirir. Bu tabloda en korkulan sonuç kalıcı görme kaybıdır. Tanısal doğrulama için temporal arter biyopsisi veya uygun görüntüleme planlanır; ancak tedavi bu sonuç beklenerek geciktirilmez. İlk yaklaşım yüksek doz glukokortikoid başlanması ve tanısal doğrulamanın paralel yürütülmesidir.",
+        "pearls": [
+          "70 yaş üzerinde yeni baş ağrısı her zaman eski migren gibi kabul edilmez.",
+          "Çene kladikasyonu kraniyal arter tutulumunda çok ayırt ettirici bir ipucudur.",
+          "Geçici görme bulanıklığı tedavi gecikirse kalıcı kayba dönüşebilir.",
+          "Biyopsi tanıyı destekler ama steroid başlamak için beklenmez."
+        ],
+        "optionFeedback": {
+          "Yüksek doz glukokortikoid tedavisine hemen başlayıp temporal arter değerlendirmesini geciktirmeden planlamak": "Bu seçenek en uygun acil yaklaşımdır. Yeni başlayan temporal baş ağrısı, saçlı deri hassasiyeti, çiğneme sırasında ağrı, çok yüksek ESR/CRP ve geçici görme bulanıklığı büyük damar inflamasyonu açısından alarm bulgularıdır. Görme kaybı kalıcı olabileceği için tanısal doğrulama planlanırken glukokortikoid tedavisi geciktirilmez. Temporal arter biyopsisi veya uygun merkezde ultrasonografi tanıyı desteklemek için planlanır; ancak tedaviye başlamak için sonucu beklemek güvenli değildir.",
+          "Biyopsi sonucu çıkana kadar yalnız parasetamol verip steroid başlamamak": "Biyopsi tanısal destek sağlar, fakat sonuç beklenirken steroid başlanmaması görme kaybı riskini artırır. Bu hastada görsel semptomlar ve çene kladikasyonu gibi yüksek riskli klinik ipuçları verilmiştir. Parasetamol ağrıyı azaltabilir ama vasküler inflamasyonu durdurmaz; bu nedenle tek başına semptomatik yaklaşım kritik komplikasyonu önlemez.",
+          "Triptan tedavisi başlayıp migren yanıtına göre ileri incelemeyi ertelemek": "Migren daha genç yaşta tekrarlayıcı ataklar, fotofobi-fonofobi veya tipik aura örüntüsüyle gündeme gelebilir. Bu vakada 70 yaş üzerinde yeni başlayan baş ağrısı, saçlı deri hassasiyeti, çiğnemeyle çene ağrısı ve inflamasyon belirteçlerinde belirgin yükseklik vardır. Triptan yanıtına göre beklemek hem tanıyı geciktirir hem de iskemik görme komplikasyonu riskini artırır.",
+          "Antikoagülasyon başlayıp embolik inme dışlanana kadar inflamasyon tedavisi vermemek": "Embolik inme değerlendirmesi görme kaybı veya nörolojik defisit varsa ayırıcı tanıda yer alabilir; ancak bu vakadaki çene kladikasyonu, temporal arter hassasiyeti ve yüksek akut faz yanıtı primer vasküler inflamasyon lehinedir. Antikoagülasyon bu inflamatuvar damar duvarı sürecini tedavi etmez. Ayrıca gereksiz antikoagülasyon kanama riski yaratabilir ve steroidin gecikmesi asıl komplikasyonu önleme fırsatını azaltır.",
+          "Düşük doz kolşisin ve NSAİİ ile iki hafta izleyip görme yakınması sürerse romatolojiye yönlendirmek": "Kolşisin ve NSAİİ perikardit veya kristal artrit gibi farklı inflamatuvar durumlarda kullanılabilir; fakat bu hastadaki görme tehdidi olan kraniyal arter inflamasyonu için uygun ilk tedavi değildir. İki hafta izlemek özellikle geçici görme bulanıklığı olan hastada kabul edilemez bir gecikmedir. Tedavi yüksek doz glukokortikoid ile hızla başlatılmalı ve tanısal doğrulama paralel yürütülmelidir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Giant cell arteritis şüphesinde yeni baş ağrısı, çene kladikasyonu, saçlı deri hassasiyeti, görsel semptom ve yüksek akut faz yanıtı birlikte değerlendirilir. Görme tehdidi varsa yüksek doz glukokortikoid hemen başlanır; temporal arter biyopsisi veya görüntüleme tanısal destek için paralel planlanır.",
+      "examPearl": "Çene kladikasyonu + yeni temporal baş ağrısı + geçici görme bulanıklığı varsa biyopsi beklenmez; önce steroidle görmeyi koru.",
+      "whyCorrect": "Doğru seçenek tedaviyi geciktirmeden başlatırken tanısal doğrulamayı da ihmal etmez.",
+      "optionComparison": "Diğer seçenekler biyopsi bekleme, migren gibi izleme, gereksiz antikoagülasyon veya uygunsuz antiinflamatuvarlarla gecikme yaratır.",
+      "evidenceChain": [
+        "Yeni temporal baş ağrısı ve saçlı deri hassasiyeti → kraniyal arter tutulumu için klinik uyarı.",
+        "Çiğneme sırasında çene ağrısı → çene kladikasyonu, damar inflamasyonu lehine ayırt ettirici bulgu.",
+        "Geçici görme bulanıklığı → kalıcı iskemik görme kaybı riski.",
+        "ESR 96 ve CRP 84 → sistemik inflamasyonun güçlü laboratuvar desteği."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v299",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V298 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v299-new-687-parmaklarda-yanma-ve-yuksek-trombosit",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Parmaklarda yanma ve yüksek trombosit",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Kalıcı izole trombositoz, mikrovasküler semptom, JAK2 pozitifliği ve BCR-ABL negatifliğini birlikte yorumlayarak risk temelli tedaviyi seçme.",
+      "learningTarget": "Klonal trombositozu reaktif trombositoz, polisitemik hastalık ve KML’den ayırıp yüksek riskli hastada aspirin-sitoredüksiyon mantığını kurma.",
+      "demographics": "66 yaşında erkek hasta",
+      "setting": "Hematoloji polikliniği",
+      "chiefComplaint": "Hasta, parmaklarda yanma-kızarma ve tekrarlayan baş ağrısı nedeniyle değerlendiriliyor.",
+      "stem": "Hasta son dört aydır özellikle sıcak duş sonrası el ve ayak parmaklarında yanma, kızarma ve batma hissi olduğunu anlatır. Son haftalarda birkaç kez kısa süren bulanık görme ve zonklayıcı baş ağrısı yaşamış, dinlenince yakınmaları gerilemiştir. Kilo kaybı, gece terlemesi, ateş veya belirgin kemik ağrısı tariflemez. Yakın zamanda ameliyat, aktif enfeksiyon, kanama ya da demir eksikliği tedavisi öyküsü yoktur. Aile hekimi kontrollerinde trombosit yüksekliğinin tekrarlaması üzerine hematolojiye yönlendirilmiştir.",
+      "patientIntro": {
+        "profile": "66 yaşında erkek hasta, hematoloji polikliniğinde değerlendiriliyor.",
+        "presentation": "Hasta, parmaklarda yanma-kızarma ve tekrarlayan baş ağrısı nedeniyle değerlendiriliyor.",
+        "historySummary": "Hasta son dört aydır özellikle sıcak duş sonrası el ve ayak parmaklarında yanma, kızarma ve batma hissi olduğunu anlatır. Son haftalarda birkaç kez kısa süren bulanık görme ve zonklayıcı baş ağrısı yaşamış, dinlenince yakınmaları gerilemiştir. Kilo kaybı, gece terlemesi, ateş veya belirgin kemik ağrısı tariflemez. Yakın zamanda ameliyat, aktif enfeksiyon, kanama ya da demir eksikliği tedavisi öyküsü yoktur. Aile hekimi kontrollerinde trombosit yüksekliğinin tekrarlaması üzerine hematolojiye yönlendirilmiştir."
+      },
+      "vitals": {
+        "TA": "132/76 mmHg",
+        "Nabız": "88/dk",
+        "Solunum": "18/dk",
+        "SpO2": "%98, oda havasında",
+        "Ateş": "36.8 °C",
+        "Şok indeksi": "0.67 - hemodinamik stabil, trombotik/mikrovasküler risk klinik olarak önemli"
+      },
+      "exam": [
+        "Genel durumu iyi, aktif kanama bulgusu yoktur.",
+        "El parmak uçlarında hafif eritem ve sıcaklık artışı vardır; ülserasyon izlenmez.",
+        "Dalak kosta altında belirgin ele gelmez; karında asit veya hassasiyet yoktur.",
+        "Nörolojik muayenede kalıcı fokal defisit saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v299-new-687-parmaklarda-yanma-ve-yuksek-trombosit-hemogram",
+          "label": "Hemogram ve periferik yayma",
+          "title": "Hemogram ve periferik yayma",
+          "orderLabel": "Hemogram ve periferik yayma",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Hemogram ve periferik yayma",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Baskın ve kalıcı trombosit yüksekliği vardır; belirgin eritrositoz veya granülositoz verilmez.",
+          "clinicalMeaning": "Baskın ve kalıcı trombosit yüksekliği vardır; belirgin eritrositoz veya granülositoz verilmez.",
+          "result": {
+            "title": "Hemogram ve periferik yayma",
+            "summary": "Baskın ve kalıcı trombosit yüksekliği vardır; belirgin eritrositoz veya granülositoz verilmez.",
+            "interpretation": "Baskın ve kalıcı trombosit yüksekliği vardır; belirgin eritrositoz veya granülositoz verilmez.",
+            "values": [
+              [
+                "Trombosit",
+                "980.000/mm³",
+                "150.000-450.000/mm³",
+                "Çok yüksek"
+              ],
+              [
+                "Hemoglobin",
+                "14.2 g/dL",
+                "13.0-17.0 g/dL",
+                "Eritrositoz yok"
+              ],
+              [
+                "Lökosit",
+                "9.600/mm³",
+                "4.000-10.000/mm³",
+                "Belirgin lökositoz yok"
+              ],
+              [
+                "Periferik yayma",
+                "Dev trombositler, belirgin blast artışı yok",
+                "Normal",
+                "Kronik klonal süreç lehine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v299-new-687-parmaklarda-yanma-ve-yuksek-trombosit-demir-inflamasyon",
+          "label": "Demir ve inflamasyon paneli",
+          "title": "Demir ve inflamasyon paneli",
+          "orderLabel": "Demir ve inflamasyon paneli",
+          "type": "lab",
+          "priority": "supportive",
+          "subtype": "Demir ve inflamasyon paneli",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Reaktif trombositozu destekleyen güçlü enfeksiyon veya demir eksikliği paterni verilmez.",
+          "clinicalMeaning": "Reaktif trombositozu destekleyen güçlü enfeksiyon veya demir eksikliği paterni verilmez.",
+          "result": {
+            "title": "Demir ve inflamasyon paneli",
+            "summary": "Reaktif trombositozu destekleyen güçlü enfeksiyon veya demir eksikliği paterni verilmez.",
+            "interpretation": "Reaktif trombositozu destekleyen güçlü enfeksiyon veya demir eksikliği paterni verilmez.",
+            "values": [
+              [
+                "Ferritin",
+                "118 ng/mL",
+                "30-400 ng/mL",
+                "Demir deposu korunmuş"
+              ],
+              [
+                "Transferrin satürasyonu",
+                "%28",
+                "%20-45",
+                "Demir eksikliği yok"
+              ],
+              [
+                "CRP",
+                "3 mg/L",
+                "<5 mg/L",
+                "Yüksek değil"
+              ],
+              [
+                "LDH",
+                "240 U/L",
+                "135-225 U/L",
+                "Hafif sınırda"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v299-new-687-parmaklarda-yanma-ve-yuksek-trombosit-molekuler-ilik",
+          "label": "Moleküler test ve kemik iliği",
+          "title": "Moleküler test ve kemik iliği",
+          "orderLabel": "Moleküler test ve kemik iliği",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "Moleküler test ve kemik iliği",
+          "category": "hematology",
+          "testTypeCategory": "hematology",
+          "summary": "Moleküler ve morfolojik veriler klonal megakaryositik proliferasyonu destekler.",
+          "clinicalMeaning": "Moleküler ve morfolojik veriler klonal megakaryositik proliferasyonu destekler.",
+          "result": {
+            "title": "Moleküler test ve kemik iliği",
+            "summary": "Moleküler ve morfolojik veriler klonal megakaryositik proliferasyonu destekler.",
+            "interpretation": "Moleküler ve morfolojik veriler klonal megakaryositik proliferasyonu destekler.",
+            "values": [
+              [
+                "JAK2 V617F",
+                "Pozitif",
+                "Negatif",
+                "Klonal belirteç"
+              ],
+              [
+                "BCR-ABL1",
+                "Negatif",
+                "Negatif",
+                "KML lehine değil"
+              ],
+              [
+                "Kemik iliği",
+                "Büyük, lobüle çekirdekli megakaryosit kümeleri",
+                "Normal dağılım",
+                "Megakaryositik proliferasyon"
+              ],
+              [
+                "Retikülin fibrozis",
+                "Belirgin artış yok",
+                "Yok/minimal",
+                "Primer miyelofibrozis lehine güçlü değil"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada risk ve laboratuvar paterni birlikte değerlendirildiğinde en uygun tedavi stratejisi aşağıdakilerden hangisidir?",
+      "questionType": "Tedavi/risk yönetimi",
+      "answerTarget": "Yüksek riskli klonal trombositozda aspirin ve sitoredüksiyon",
+      "diagnosis": {
+        "correct": "Düşük doz aspirin ile birlikte sitoredüktif tedavi planlamak",
+        "options": [
+          "Yalnız flebotomi yaparak hematokriti %45 altına indirmek",
+          "Trombosit yüksekliğini reaktif kabul edip demir replasmanı dışında tedavi vermemek",
+          "BCR-ABL pozitifliği bekleyerek imatinib tedavisi başlamak",
+          "Sadece tam doz antikoagülasyon verip antiplatelet ve sitoredüksiyon planlamamak",
+          "Düşük doz aspirin ile birlikte sitoredüktif tedavi planlamak"
+        ],
+        "question": "Bu hastada risk ve laboratuvar paterni birlikte değerlendirildiğinde en uygun tedavi stratejisi aşağıdakilerden hangisidir?",
+        "explanation": "Kalıcı izole trombositoz, mikrovasküler yakınmalar, JAK2 pozitifliği, BCR-ABL negatifliği ve megakaryositik kemik iliği paterni klonal trombositoz lehinedir. Reaktif nedenleri destekleyen demir eksikliği veya belirgin inflamasyon yoktur. Yaşın 60 üzerinde olması tromboz riskini artırır; bu nedenle yalnız gözlem değil düşük doz aspirin ve sitoredüktif tedavi planı gerekir. Tedavi seçimi tromboz ve kanama riskinin birlikte değerlendirilmesiyle yapılır.",
+        "pearls": [
+          "İzole kalıcı trombositozda reaktif nedenler dışlandıktan sonra klonal süreç aranır.",
+          "BCR-ABL negatifliği KML’den uzaklaştırır.",
+          "JAK2 pozitifliği trombotik risk değerlendirmesinde önemlidir.",
+          "Yaş ≥60 yüksek risk lehine güçlü tedavi belirleyicisidir."
+        ],
+        "optionFeedback": {
+          "Yalnız flebotomi yaparak hematokriti %45 altına indirmek": "Flebotomi, hematokrit yüksekliği ile seyreden polisitemik tabloda tromboz riskini azaltmak için kullanılır. Bu vakada hemoglobin ve hematokrit yüksek verilmemiş, baskın bulgu izole ve kalıcı trombositozdur. Eriromelalji benzeri parmak yanması ve geçici görsel yakınma trombosit aracılı mikrovasküler semptomlarla uyumludur; flebotomi bu mekanizmayı hedeflemez.",
+          "Trombosit yüksekliğini reaktif kabul edip demir replasmanı dışında tedavi vermemek": "Reaktif trombositoz enfeksiyon, inflamasyon, kanama, demir eksikliği veya cerrahi sonrası gelişebilir; ancak burada aylar boyunca kalıcı çok yüksek trombosit sayısı, JAK2 pozitifliği, BCR-ABL negatifliği ve kemik iliği megakaryosit paterni klonal süreci destekler. Demir eksikliği verisi de yoktur. Bu hastayı yalnız reaktif kabul etmek, yaş ve semptom nedeniyle artmış tromboz riskini gözden kaçırır.",
+          "BCR-ABL pozitifliği bekleyerek imatinib tedavisi başlamak": "İmatinib BCR-ABL pozitif kronik miyeloid lösemide hedefe yönelik tedavidir. Bu vakada BCR-ABL negatif verilmiş ve baskın bulgu granülositik seri artışı değil megakaryositik klonal proliferasyon paternidir. KML’de sıklıkla belirgin lökositoz, bazofili ve Philadelphia kromozomu beklenir; bu nedenle imatinib seçimi verilen moleküler veriyle uyumlu değildir.",
+          "Sadece tam doz antikoagülasyon verip antiplatelet ve sitoredüksiyon planlamamak": "Tam doz antikoagülasyon venöz tromboemboli veya atriyal fibrilasyon gibi durumlarda gerekir; ancak trombosit aracılı mikrovasküler semptomları ve klonal trombositozun arteriyel tromboz riskini tek başına yönetmez. Ayrıca belirgin trombositozda kazanılmış von Willebrand hastalığı araştırılmadan gereksiz yoğun antikoagülasyon kanama riskini artırabilir. Bu vakada risk temelli yaklaşım antiplatelet ve sitoredüktif tedavi mantığını içerir.",
+          "Düşük doz aspirin ile birlikte sitoredüktif tedavi planlamak": "Bu seçenek en uygun yaklaşımdır. Hastada kalıcı trombositoz, JAK2 pozitifliği, BCR-ABL negatifliği ve kemik iliğinde megakaryositik proliferasyon klonal trombositoz lehinedir. Yaşın 60 üzerinde olması ve mikrovasküler semptomların bulunması tromboz önleme stratejisini gerektirir. Düşük doz aspirin trombosit aracılı mikrovasküler yakınmaları ve arteriyel tromboz riskini azaltmaya yardımcı olur; yüksek riskli hastada hidroksiüre veya uygun alternatifle sitoredüksiyon planlanır. Trombosit çok daha aşırı olsaydı kazanılmış von Willebrand hastalığı açısından kanama riski ayrıca değerlendirilirdi."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Essential thrombocythemia klonal megakaryosit proliferasyonu ve kalıcı trombositozla seyreder. Tedavide temel amaç trombozu önlemektir; yüksek riskli hastalarda düşük doz aspirin ve sitoredüktif tedavi düşünülür, çok aşırı trombositozda kazanılmış von Willebrand hastalığı açısından kanama riski değerlendirilir.",
+      "examPearl": "Trombosit çok yüksek + JAK2 pozitif + BCR-ABL negatif + yaş >60 ise “reaktif trombositoz” deyip geçme; tromboz önleme tedavisi sorulur.",
+      "whyCorrect": "Doğru seçenek klonal trombositozun hem mikrovasküler semptomlarını hem yüksek riskli tromboz profilini hedefler.",
+      "optionComparison": "Diğer seçenekler polisitemi, reaktif trombositoz, KML veya izole antikoagülasyon mantığına kayarak vakadaki moleküler ve risk verilerini karşılamaz.",
+      "evidenceChain": [
+        "Trombosit 980.000/mm³ ve aylarca kalıcı yükseklik → geçici reaktif süreçten çok klonal olasılık.",
+        "Ferritin ve CRP normal → demir eksikliği veya inflamasyon kaynaklı reaktif trombositoz zayıf.",
+        "JAK2 pozitif ve BCR-ABL negatif → Ph-negatif miyeloproliferatif süreç lehine.",
+        "Yaş 66 ve mikrovasküler semptomlar → tromboz önleme stratejisi gereksinimi."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v299",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V298 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v299-new-688-aclikta-terleme-ve-bilinc-bulanikligi",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Açlıkta terleme ve bilinç bulanıklığı",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Açlıkla gelen nöroglikopenik ataklarda eş zamanlı glukoz, insülin, C-peptid, proinsülin, keton ve ilaç taramasını birlikte yorumlayarak mekanizmayı seçme.",
+      "learningTarget": "Hipoglisemi sırasında insülinin baskılanmaması, C-peptid/proinsülin yüksekliği ve negatif sülfonilüre taraması ile endojen hiperinsülinemiyi eksojen insülin ve ilaç alımından ayırma.",
+      "demographics": "42 yaşında kadın hasta",
+      "setting": "Endokrinoloji servis değerlendirmesi",
+      "chiefComplaint": "Hasta, sabahları açken gelişen terleme, titreme ve dalgınlık atakları nedeniyle yatırılıyor.",
+      "stem": "Hasta son üç aydır özellikle kahvaltısı geciktiğinde ellerinde titreme, soğuk terleme ve konuşurken kelimeleri toparlayamama atakları yaşadığını anlatır. Eşi iki kez sabah yataktan kalkmakta zorlandığını, anlamsız cevaplar verdiğini ve meyve suyu içirdikten kısa süre sonra belirgin düzeldiğini fark etmiştir. Ataklar genellikle uzun açlık sonrası veya akşam yemeğini hafif geçirdiği günlerin sabahında olmuştur. Diyabet tanısı, insülin veya şeker düşürücü ilaç kullanımı yoktur; alkol alımı ve yeni diyet ilacı tariflemez. Son aylarda ataklardan korktuğu için sık ara öğün yemeye başlamış ve birkaç kilo aldığını söyler.",
+      "patientIntro": {
+        "profile": "42 yaşında kadın hasta, endokrinoloji servis değerlendirmesi için yatırılıyor.",
+        "presentation": "Hasta, sabahları açken gelişen terleme, titreme ve dalgınlık atakları nedeniyle yatırılıyor.",
+        "historySummary": "Hasta son üç aydır özellikle kahvaltısı geciktiğinde ellerinde titreme, soğuk terleme ve konuşurken kelimeleri toparlayamama atakları yaşadığını anlatır. Eşi iki kez sabah yataktan kalkmakta zorlandığını, anlamsız cevaplar verdiğini ve meyve suyu içirdikten kısa süre sonra belirgin düzeldiğini fark etmiştir. Ataklar genellikle uzun açlık sonrası veya akşam yemeğini hafif geçirdiği günlerin sabahında olmuştur. Diyabet tanısı, insülin veya şeker düşürücü ilaç kullanımı yoktur; alkol alımı ve yeni diyet ilacı tariflemez. Son aylarda ataklardan korktuğu için sık ara öğün yemeye başlamış ve birkaç kilo aldığını söyler."
+      },
+      "vitals": {
+        "TA": "118/70 mmHg",
+        "Nabız": "112/dk",
+        "Solunum": "20/dk",
+        "SpO2": "%99, oda havasında",
+        "Ateş": "36.5 °C",
+        "Şok indeksi": "0.95 - atak sırasında adrenerjik yanıt belirgin, dolaşım şoku yok"
+      },
+      "exam": [
+        "Atak sırasında hasta terli, huzursuz ve sorulara yavaş yanıt verir; fokal nörolojik defisit saptanmaz.",
+        "Oral karbonhidrat sonrası dakikalar içinde iletişimi ve dikkati belirgin düzelir.",
+        "Ciltte hiperpigmentasyon yoktur; mukozalar nemlidir.",
+        "Tiroid muayenesinde belirgin guatr veya tremoru açıklayacak diffüz büyüme yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v299-new-688-aclikta-terleme-ve-bilinc-bulanikligi-atak-lab",
+          "label": "Atak sırasında eş zamanlı kan örnekleri",
+          "title": "Atak sırasında eş zamanlı kan örnekleri",
+          "orderLabel": "Atak sırasında eş zamanlı kan örnekleri",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Atak sırasında eş zamanlı kan örnekleri",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Düşük glukoz sırasında insülin aksı fizyolojik olarak baskılanmamıştır.",
+          "clinicalMeaning": "Düşük glukoz sırasında insülin aksı fizyolojik olarak baskılanmamıştır.",
+          "result": {
+            "title": "Atak sırasında eş zamanlı kan örnekleri",
+            "summary": "Düşük glukoz sırasında insülin aksı fizyolojik olarak baskılanmamıştır.",
+            "interpretation": "Düşük glukoz sırasında insülin aksı fizyolojik olarak baskılanmamıştır.",
+            "values": [
+              [
+                "Plazma glukozu",
+                "42 mg/dL",
+                "70-100 mg/dL",
+                "Hipoglisemi"
+              ],
+              [
+                "İnsülin",
+                "11 µIU/mL",
+                "Hipoglisemide baskılanması beklenir",
+                "Uygunsuz yüksek"
+              ],
+              [
+                "C-peptid",
+                "3.1 ng/mL",
+                "Hipoglisemide düşük beklenir",
+                "Endojen salınım lehine"
+              ],
+              [
+                "Proinsülin",
+                "38 pmol/L",
+                "Düşük beklenir",
+                "Uygunsuz yüksek"
+              ],
+              [
+                "Beta-hidroksibütirat",
+                "0.2 mmol/L",
+                "Açlıkta artabilir",
+                "Ketogenez baskılı"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v299-new-688-aclikta-terleme-ve-bilinc-bulanikligi-ilaç-aks",
+          "label": "İlaç taraması ve karşı aks hormonları",
+          "title": "İlaç taraması ve karşı aks hormonları",
+          "orderLabel": "İlaç taraması ve karşı aks hormonları",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "İlaç taraması ve karşı aks hormonları",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "İlaç alımı ve adrenal aks bulguları verilen paternin ana açıklaması değildir.",
+          "clinicalMeaning": "İlaç alımı ve adrenal aks bulguları verilen paternin ana açıklaması değildir.",
+          "result": {
+            "title": "İlaç taraması ve karşı aks hormonları",
+            "summary": "İlaç alımı ve adrenal aks bulguları verilen paternin ana açıklaması değildir.",
+            "interpretation": "İlaç alımı ve adrenal aks bulguları verilen paternin ana açıklaması değildir.",
+            "values": [
+              [
+                "Sülfonilüre/meglitinid taraması",
+                "Negatif",
+                "Negatif",
+                "İlaç uyarımı gösterilmedi"
+              ],
+              [
+                "Sabah kortizol",
+                "17 µg/dL",
+                "5-25 µg/dL",
+                "Adrenal yetmezlik lehine değil"
+              ],
+              [
+                "Sodyum",
+                "139 mmol/L",
+                "135-145 mmol/L",
+                "Normal"
+              ],
+              [
+                "Potasyum",
+                "4.2 mmol/L",
+                "3.5-5.0 mmol/L",
+                "Normal"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v299-new-688-aclikta-terleme-ve-bilinc-bulanikligi-pankreas-goruntuleme",
+          "label": "Kontrastlı pankreas görüntüleme",
+          "title": "Kontrastlı pankreas görüntüleme",
+          "orderLabel": "Kontrastlı pankreas görüntüleme",
+          "type": "imaging",
+          "priority": "supportive",
+          "subtype": "Kontrastlı pankreas görüntüleme",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Biokimyasal kanıt sonrası küçük pankreatik lezyon lokalizasyonu yapılır.",
+          "clinicalMeaning": "Biokimyasal kanıt sonrası küçük pankreatik lezyon lokalizasyonu yapılır.",
+          "result": {
+            "title": "Kontrastlı pankreas görüntüleme",
+            "summary": "Biokimyasal kanıt sonrası küçük pankreatik lezyon lokalizasyonu yapılır.",
+            "interpretation": "Biokimyasal kanıt sonrası küçük pankreatik lezyon lokalizasyonu yapılır.",
+            "values": [
+              [
+                "Pankreas kuyruk bölgesi",
+                "9 mm arteriyel fazda belirginleşen nodül",
+                "Lezyon yok",
+                "Fonksiyonel nöroendokrin lezyonla uyumlu olabilir"
+              ],
+              [
+                "Ana pankreatik kanal",
+                "Dilatasyon yok",
+                "Dilatasyon yok",
+                "Obstrüktif kitle paterni yok"
+              ],
+              [
+                "Karaciğer",
+                "Fokal metastaz izlenmedi",
+                "Lezyon yok",
+                "Yayılım bulgusu yok"
+              ],
+              [
+                "Adrenal bezler",
+                "Kitle yok",
+                "Kitle yok",
+                "Adrenal kitle bulgusu yok"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastadaki laboratuvar paternini en iyi açıklayan süreç aşağıdakilerden hangisidir?",
+      "questionType": "Mekanizma/laboratuvar yorumu",
+      "answerTarget": "Endojen hiperinsülinemik hipoglisemi paterni",
+      "diagnosis": {
+        "correct": "Endojen hiperinsülinemik hipoglisemi oluşturan pankreatik beta hücre kaynaklı lezyon",
+        "options": [
+          "Eksojen insülin kullanımına bağlı hipoglisemi",
+          "Sülfonilüre alımına bağlı ilaç ilişkili hipoglisemi",
+          "Endojen hiperinsülinemik hipoglisemi oluşturan pankreatik beta hücre kaynaklı lezyon",
+          "Primer adrenal yetmezliğe bağlı ketotik hipoglisemi",
+          "Yemek sonrası reaktif hipoglisemi ve fonksiyonel yakınma"
+        ],
+        "question": "Bu hastadaki laboratuvar paternini en iyi açıklayan süreç aşağıdakilerden hangisidir?",
+        "explanation": "Hastada semptom, düşük plazma glukozu ve karbonhidratla düzelme birlikte gerçek hipoglisemik atak paternini oluşturur. Hipoglisemi sırasında fizyolojik olarak insülin, C-peptid ve proinsülin baskılanmalıdır; burada bu değerlerin yüksek kalması pankreas kaynaklı insülin salınımını düşündürür. Sülfonilüre taramasının negatif olması ilaçla beta hücre uyarımını, C-peptidin yüksek olması ise eksojen insülin kullanımını geri plana iter. Ketonların baskılı olması da insülin fazlalığının metabolik etkisini destekler.",
+        "pearls": [
+          "Hipoglisemi değerlendirmesi semptom anında alınan eş zamanlı örnekle yapılır.",
+          "Eksojen insülinde C-peptid düşük, endojen salınımda C-peptid yüksektir.",
+          "Sülfonilüre hem insülin hem C-peptidi yükseltir ama tarama pozitif beklenir.",
+          "İnsülin fazlalığı ketogenezi baskılar."
+        ],
+        "optionFeedback": {
+          "Eksojen insülin kullanımına bağlı hipoglisemi": "Eksojen insülin kullanımında hipoglisemi sırasında insülin yüksek olabilir; ancak C-peptid genellikle baskılanır çünkü dışarıdan verilen insülin pankreas beta hücresinden C-peptid salınımını artırmaz. Bu vakada C-peptid ve proinsülin uygunsuz biçimde yüksektir. Hastanın diyabet veya insülin erişim öyküsü de yoktur. Bu nedenle laboratuvar paterni dışarıdan insülin kullanımından çok pankreas kaynaklı insülin salınımını destekler.",
+          "Sülfonilüre alımına bağlı ilaç ilişkili hipoglisemi": "Sülfonilüre ilaçları beta hücresini uyararak hem insülin hem C-peptidi yükseltebilir ve eksojen insülin kullanımından bu yönüyle ayrılır. Ancak bu vakada sülfonilüre/meglitinid taraması negatiftir ve ataklar özellikle açlıkla, egzersiz gecikmesiyle ve sabah saatlerinde ortaya çıkmaktadır. İlaç taraması pozitif olsaydı bu seçenek güçlü olurdu; verilen sonuç negatif olduğu için en iyi açıklama değildir.",
+          "Endojen hiperinsülinemik hipoglisemi oluşturan pankreatik beta hücre kaynaklı lezyon": "Bu seçenek en uygun açıklamadır. Hastada Whipple üçlüsü kurulmaktadır: nöroglikopenik/adrenerjik belirtiler, atak sırasında düşük plazma glukozu ve karbonhidrat alımıyla düzelme. Hipoglisemi sırasında insülinin baskılanmaması, C-peptid ve proinsülinin yüksek olması, beta-hidroksibütiratın düşük kalması ve sülfonilüre taramasının negatif olması endojen hiperinsülinemiyi destekler. Kontrastlı pankreas görüntülemesinde küçük lezyon görülmesi de pankreatik beta hücre kaynaklı fonksiyonel lezyon olasılığını güçlendirir.",
+          "Primer adrenal yetmezliğe bağlı ketotik hipoglisemi": "Primer adrenal yetmezlik hipoglisemi yapabilir; fakat genellikle kilo kaybı, hiperpigmentasyon, hipotansiyon, hiponatremi, hiperkalemi ve düşük kortizol gibi aks bulguları beklenir. Ayrıca adrenal kaynaklı hipoglisemide insülin baskılanmalı ve ketogenez daha belirgin olmalıdır. Bu vakada hipoglisemi sırasında insülin-C-peptid-proinsülin uygunsuz yüksek, beta-hidroksibütirat düşüktür; bu patern adrenal yetmezlikten çok insülin aracılı hipoglisemiyi gösterir.",
+          "Yemek sonrası reaktif hipoglisemi ve fonksiyonel yakınma": "Reaktif hipoglisemi tipik olarak yemeklerden birkaç saat sonra ortaya çıkar ve açlıkla tekrarlayan sabah nöroglikopenisi şeklinde değildir. Bu vakada hasta kahvaltı geciktiğinde veya uzun açlık sonrası dalgınlık, terleme ve davranış değişikliği yaşamaktadır. Laboratuvar değerleri de yalnız fonksiyonel yakınmayı değil, gerçek düşük plazma glukozu sırasında uygunsuz insülin salınımını göstermektedir. Bu nedenle reaktif/benign açıklama yetersizdir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Whipple üçlüsü varlığında hipoglisemi sırasında glukozla birlikte insülin, C-peptid, proinsülin, beta-hidroksibütirat ve sülfonilüre taraması yorumlanır. Endojen hiperinsülinemide insülin, C-peptid ve proinsülin uygunsuz yüksek, ketonlar baskılı ve ilaç taraması negatif olabilir.",
+      "examPearl": "Hipoglisemi sorusunda C-peptid ana ayraçtır: dışarıdan insülinde düşük, pankreas kaynaklı salınımda yüksek; sülfonilüre taraması negatifse lezyon düşün.",
+      "whyCorrect": "Doğru seçenek hipoglisemi sırasında insülinin baskılanmaması, C-peptid/proinsülin yüksekliği ve ilaç taraması negatifliğini tek mekanizmada açıklar.",
+      "optionComparison": "Diğer seçenekler C-peptid düşüklüğü, pozitif ilaç taraması, ketotik-adrenal patern veya postprandiyal zamanlama gerektirir; vakadaki açlık ve laboratuvar örüntüsüyle uyumlu değildir.",
+      "evidenceChain": [
+        "Atak sırasında glukoz 42 mg/dL ve karbonhidratla düzelme → gerçek hipoglisemik olay.",
+        "İnsülin 11 µIU/mL → hipoglisemi sırasında beklenen baskılanma yok.",
+        "C-peptid ve proinsülin yüksek → endojen beta hücre salınımı lehine.",
+        "Sülfonilüre taraması negatif ve beta-hidroksibütirat düşük → ilaç uyarımı yerine insülin fazlalığı paternini destekler."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v299",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V298 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v300-new-689-egzersizde-bayilma-ve-degisen-ufurum",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Egzersizde bayılma ve değişen üfürüm",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Genç hastada efor senkopu, ailede ani ölüm, dinamik manevralarla değişen sistolik üfürüm ve ekokardiyografik çıkış yolu gradiyentini birlikte yorumlayarak başlangıç tedavisi ve risk değerlendirmesini seçme.",
+      "learningTarget": "Dinamik sol ventrikül çıkış yolu obstrüksiyonunda preload/afterload azaltan ilaçların tuzak olabileceğini, semptomatik hastada non-vazodilatör beta bloker ve ani ölüm risk değerlendirmesinin önemini ayırt etme.",
+      "demographics": "23 yaşında erkek hasta",
+      "setting": "Acil servis kardiyoloji konsültasyonu",
+      "chiefComplaint": "Hasta, futbol antrenmanı sırasında kısa süreli bayılma ve göğüste baskı hissi nedeniyle getiriliyor.",
+      "stem": "Hasta son bir yıldır yoğun egzersiz sırasında göğsünde sıkışma ve baş dönmesi olduğunu, dinlenince yakınmalarının birkaç dakika içinde geçtiğini anlatır. Bugün futbol antrenmanında sprint sonrası gözlerinin karardığını, yere yığıldığını ve kısa sürede kendine geldiğini söyler. Bayılmadan önce çarpıntı hissetmiş, ancak uyandığında kol-bacak güçsüzlüğü veya konuşma bozukluğu fark etmemiştir. Daha önce bilinen kapak hastalığı yoktur; çocuklukta romatizmal ateş geçirmemiştir. Babasının 38 yaşında uykuda ani kaybedildiğini, bu nedenle ailesinin olaydan sonra endişelenip acile getirdiğini belirtir.",
+      "patientIntro": {
+        "profile": "23 yaşında erkek hasta, acil servis kardiyoloji konsültasyonu sonrası değerlendiriliyor.",
+        "presentation": "Hasta, futbol antrenmanı sırasında kısa süreli bayılma ve göğüste baskı hissi nedeniyle getiriliyor.",
+        "historySummary": "Hasta son bir yıldır yoğun egzersiz sırasında göğsünde sıkışma ve baş dönmesi olduğunu, dinlenince yakınmalarının birkaç dakika içinde geçtiğini anlatır. Bugün futbol antrenmanında sprint sonrası gözlerinin karardığını, yere yığıldığını ve kısa sürede kendine geldiğini söyler. Bayılmadan önce çarpıntı hissetmiş, ancak uyandığında kol-bacak güçsüzlüğü veya konuşma bozukluğu fark etmemiştir. Daha önce bilinen kapak hastalığı yoktur; çocuklukta romatizmal ateş geçirmemiştir. Babasının 38 yaşında uykuda ani kaybedildiğini, bu nedenle ailesinin olaydan sonra endişelenip acile getirdiğini belirtir."
+      },
+      "vitals": {
+        "TA": "118/72 mmHg",
+        "Nabız": "92/dk",
+        "Solunum": "18/dk",
+        "SpO2": "%98, oda havasında",
+        "Ateş": "36.7 °C",
+        "Şok indeksi": "0.78 - belirgin dolaşım şoku yok, eforla gelişen kardiyak semptom ön planda"
+      },
+      "exam": [
+        "Genel durumu iyi, konuşması rahattır; istirahatte siyanoz veya belirgin akciğer konjesyonu yoktur.",
+        "Sol sternal kenar ve apeks çevresinde sistolik üfürüm duyulur; üfürüm ayağa kalkma ve Valsalva ile belirginleşir, çömelme ile azalır.",
+        "S4 benzeri doluş sesi alınır; karotise belirgin yayılım ve yavaş karotis yükselimi saptanmaz.",
+        "Alt ekstremitelerde ödem yoktur; baldır hassasiyeti veya tek taraflı şişlik izlenmez."
+      ],
+      "investigations": [
+        {
+          "id": "v300-new-689-egzersizde-bayilma-ve-degisen-ufurum-12-derivasyonlu-ekg",
+          "label": "12 derivasyonlu EKG",
+          "title": "12 derivasyonlu EKG",
+          "orderLabel": "12 derivasyonlu EKG",
+          "type": "cardiology",
+          "priority": "essential",
+          "subtype": "12 derivasyonlu EKG",
+          "category": "cardiology",
+          "testTypeCategory": "cardiology",
+          "summary": "Sol ventrikül yüklenmesi ve repolarizasyon değişiklikleri izlenir; akut ST elevasyonlu infarkt paternine ait veri verilmez.",
+          "clinicalMeaning": "Sol ventrikül yüklenmesi ve repolarizasyon değişiklikleri izlenir; akut ST elevasyonlu infarkt paternine ait veri verilmez.",
+          "result": {
+            "title": "12 derivasyonlu EKG",
+            "summary": "Sol ventrikül yüklenmesi ve repolarizasyon değişiklikleri izlenir; akut ST elevasyonlu infarkt paternine ait veri verilmez.",
+            "interpretation": "Sol ventrikül yüklenmesi ve repolarizasyon değişiklikleri izlenir; akut ST elevasyonlu infarkt paternine ait veri verilmez.",
+            "values": [
+              [
+                "Ritim",
+                "Sinüs ritmi, 92/dk",
+                "60-100/dk",
+                "Düzenli"
+              ],
+              [
+                "QRS voltajı",
+                "Sol ventrikül hipertrofisi kriterleri mevcut",
+                "Yok",
+                "Yüklenme lehine"
+              ],
+              [
+                "Q dalgaları",
+                "Lateral derivasyonlarda dar, derin olmayan Q dalgaları",
+                "Patolojik Q yok",
+                "Hipertrofiyle ilişkili olabilir"
+              ],
+              [
+                "ST-T",
+                "Lateral T dalga inversiyonları",
+                "İzoelektrik",
+                "Repolarizasyon değişikliği"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v300-new-689-egzersizde-bayilma-ve-degisen-ufurum-transtorasik-ekokardiyografi",
+          "label": "Transtorasik ekokardiyografi",
+          "title": "Transtorasik ekokardiyografi",
+          "orderLabel": "Transtorasik ekokardiyografi",
+          "type": "imaging",
+          "priority": "essential",
+          "subtype": "Transtorasik ekokardiyografi",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Asimetrik septal kalınlaşma ve provokasyonla artan dinamik basınç farkı saptanır.",
+          "clinicalMeaning": "Asimetrik septal kalınlaşma ve provokasyonla artan dinamik basınç farkı saptanır.",
+          "result": {
+            "title": "Transtorasik ekokardiyografi",
+            "summary": "Asimetrik septal kalınlaşma ve provokasyonla artan dinamik basınç farkı saptanır.",
+            "interpretation": "Asimetrik septal kalınlaşma ve provokasyonla artan dinamik basınç farkı saptanır.",
+            "values": [
+              [
+                "Septum kalınlığı",
+                "19 mm",
+                "<12 mm",
+                "Belirgin artmış"
+              ],
+              [
+                "Arka duvar",
+                "11 mm",
+                "<12 mm",
+                "Asimetrik kalınlaşma"
+              ],
+              [
+                "LVOT gradiyenti",
+                "İstirahatte 58 mmHg; Valsalva ile 92 mmHg",
+                "Düşük",
+                "Dinamik artış"
+              ],
+              [
+                "Mitral kapak",
+                "Sistolik anterior hareket ve hafif-orta MR",
+                "Yok",
+                "Dinamik obstrüksiyonla ilişkili"
+              ],
+              [
+                "LVEF",
+                "%72",
+                "%55-70",
+                "Korunmuş/hiperdinamik"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v300-new-689-egzersizde-bayilma-ve-degisen-ufurum-risk-ve-eşlik-eden-belirteçler",
+          "label": "Risk ve eşlik eden belirteçler",
+          "title": "Risk ve eşlik eden belirteçler",
+          "orderLabel": "Risk ve eşlik eden belirteçler",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Risk ve eşlik eden belirteçler",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Akut nekroz veya enfeksiyon lehine belirgin veri yoktur; ritim izleminde risk açısından anlamlı kısa ataklar yakalanır.",
+          "clinicalMeaning": "Akut nekroz veya enfeksiyon lehine belirgin veri yoktur; ritim izleminde risk açısından anlamlı kısa ataklar yakalanır.",
+          "result": {
+            "title": "Risk ve eşlik eden belirteçler",
+            "summary": "Akut nekroz veya enfeksiyon lehine belirgin veri yoktur; ritim izleminde risk açısından anlamlı kısa ataklar yakalanır.",
+            "interpretation": "Akut nekroz veya enfeksiyon lehine belirgin veri yoktur; ritim izleminde risk açısından anlamlı kısa ataklar yakalanır.",
+            "values": [
+              [
+                "Troponin I",
+                "0.018 ng/mL",
+                "<0.04 ng/mL",
+                "Akut nekroz lehine değil"
+              ],
+              [
+                "NT-proBNP",
+                "610 pg/mL",
+                "Yaşa göre düşük beklenir",
+                "Duvar stresi artışı olabilir"
+              ],
+              [
+                "Holter",
+                "24 saatte 7 atımlık non-sustained VT atağı",
+                "Yok",
+                "Risk değerlendirmesinde önemli"
+              ],
+              [
+                "Hemoglobin",
+                "14.8 g/dL",
+                "13.5-17.5 g/dL",
+                "Anemi yok"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada semptomları ve muayene-ekokardiyografi paternini birlikte düşündüğümüzde en uygun başlangıç tedavi ve değerlendirme yaklaşımı hangisidir?",
+      "questionType": "Tedavi/risk değerlendirmesi",
+      "answerTarget": "Dinamik çıkış yolu obstrüksiyonunda ilk tedavi ve ani ölüm risk sınıflaması",
+      "diagnosis": {
+        "correct": "Non-vazodilatör beta bloker başlamak ve ani ölüm riski açısından uzman merkezde değerlendirmek",
+        "options": [
+          "Dihidropiridin kalsiyum kanal blokeriyle afterload azaltmak",
+          "Yüksek doz loop diüretik ve nitrat ile preloadu agresif azaltmak",
+          "Non-vazodilatör beta bloker başlamak ve ani ölüm riski açısından uzman merkezde değerlendirmek",
+          "Primer tedavi olarak digoksin başlamak",
+          "ACE inhibitörü dozunu hızla artırıp rutin yıllık kontrole bırakmak"
+        ],
+        "question": "Bu hastada semptomları ve muayene-ekokardiyografi paternini birlikte düşündüğümüzde en uygun başlangıç tedavi ve değerlendirme yaklaşımı hangisidir?",
+        "explanation": "Bu vaka sabit kapak darlığından çok dinamik çıkış yolu obstrüksiyonu paternini gösterir: üfürüm Valsalva ve ayağa kalkmayla artmakta, çömelmeyle azalmakta; ekokardiyografide asimetrik septal kalınlaşma, sistolik anterior mitral kapak hareketi ve provokasyonla artan LVOT gradiyenti görülmektedir. Efor senkopu ve ailede ani ölüm öyküsü risk değerlendirmesini zorunlu kılar. Semptomatik dinamik obstrüksiyonda non-vazodilatör beta bloker ilk basamak semptomatik tedavidir; vazodilatör, agresif diüretik, nitrat ve pozitif inotrop ajanlar obstrüksiyonu kötüleştirebilir.",
+        "pearls": [
+          "Üfürümün Valsalva/ayağa kalkmayla artması dinamik obstrüksiyon lehinedir.",
+          "Çömelme preload/afterloadu artırarak dinamik gradiyenti azaltabilir.",
+          "Efor senkopu ve ailede ani ölüm öyküsü risk sınıflamasında önemlidir.",
+          "Semptomatik obstrüksiyonda non-vazodilatör beta bloker temel başlangıç seçeneğidir."
+        ],
+        "optionFeedback": {
+          "Dihidropiridin kalsiyum kanal blokeriyle afterload azaltmak": "Dihidropiridin grubu kalsiyum kanal blokerleri belirgin vazodilatasyon yaparak afterloadu azaltır. Dinamik çıkış yolu basınç farkı olan hastada bu etki sol ventrikül kavitesini küçültüp obstrüksiyonu ve senkopu artırabilir. Bu seçenek hipertansiyon tedavisi gibi görünebilir; ancak vakadaki efor senkopu, üfürümün Valsalva/ayağa kalkmayla artması ve ekokardiyografide dinamik gradiyent olması nedeniyle uygun başlangıç yaklaşımı değildir.",
+          "Yüksek doz loop diüretik ve nitrat ile preloadu agresif azaltmak": "Diüretik ve nitratlar konjesyonu olan seçilmiş hastalarda dikkatli kullanılabilir; fakat bu hastada temel sorun volüm fazlalığı değil dinamik çıkış yolu daralmasıdır. Preloadun agresif azaltılması sol ventrikül boşluğunu küçültür, sistolik anterior mitral kapak hareketini artırabilir ve gradiyenti yükseltebilir. Bu nedenle senkop ve eforla göğüs sıkışması olan böyle bir tabloda nitrat-diüretik kombinasyonu güvenli bir ilk tercih değildir.",
+          "Non-vazodilatör beta bloker başlamak ve ani ölüm riski açısından uzman merkezde değerlendirmek": "Bu seçenek en uygundur. Hastada genç yaşta eforla senkop, ailede ani ölüm öyküsü, üfürümün Valsalva ve ayağa kalkmayla artması, ekokardiyografide asimetrik septal kalınlaşma, sistolik anterior hareket ve provokasyonla artan çıkış yolu gradiyenti vardır. Semptomatik dinamik obstrüksiyonda ilk semptomatik ilaç seçeneği genellikle non-vazodilatör beta blokerdir; ayrıca efor senkopu, aile öyküsü ve Holter bulguları nedeniyle ani kardiyak ölüm riski ve gerekirse ICD/septal redüksiyon açısından uzman merkez değerlendirmesi gerekir.",
+          "Primer tedavi olarak digoksin başlamak": "Digoksin pozitif inotrop etkiyle kasılmayı artırır. Dinamik obstrüksiyon fizyolojisinde kasılmanın artması çıkış yolu daralmasını ve mitral kapağın öne hareketini kötüleştirebilir. Digoksin atriyal fibrilasyonlu bazı kalp yetersizliği durumlarında düşünülebilir; ancak burada dar QRS taşiaritmi veya sistolik pompa yetmezliği değil dinamik obstrüksiyon vardır.",
+          "ACE inhibitörü dozunu hızla artırıp rutin yıllık kontrole bırakmak": "ACE inhibitörleri hipertansiyon ve birçok kalp yetersizliği senaryosunda yararlı olabilir; ancak vazodilatasyon dinamik gradiyenti olan hastada semptomları artırabilir. Rutin yıllık izlem de yakın zamanda efor senkopu geçiren ve ailede ani ölüm öyküsü bulunan genç bir hasta için güvenli değildir. Bu seçenek hem semptom kontrolünde hem de risk sınıflamasında yetersiz kalır."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Dinamik sol ventrikül çıkış yolu obstrüksiyonunda sorun yalnız kas hipertrofisi değil, preload/afterload ve kontraktilite değişimleriyle gradiyentin artıp azalmasıdır. Bu nedenle vazodilatörler, nitratlar, agresif diürez ve pozitif inotrop ilaçlar semptomları artırabilir.",
+      "examPearl": "Genç hastada efor senkopu + Valsalva ile artan sistolik üfürüm + asimetrik septal kalınlaşma varsa sabit kapak darlığı değil dinamik obstrüksiyon düşün; tedavi mantığı preloadu azaltmak değil gradiyenti azaltmaktır.",
+      "whyCorrect": "Doğru seçenek hastanın dinamik manevralarla değişen üfürümünü, ekokardiyografik LVOT gradiyentini ve ani ölüm risk ipuçlarını tek yaklaşımda birleştirir.",
+      "optionComparison": "Yanlış seçeneklerin ortak problemi preload/afterloadu azaltmaları, kontraktiliteyi artırmaları veya yüksek riskli efor senkopunu yalnız rutin izleme indirgemeleridir.",
+      "evidenceChain": [
+        "Egzersizde senkop ve ailede ani ölüm → risk değerlendirmesi gerektiren klinik bağlam.",
+        "Üfürümün Valsalva/ayağa kalkmayla artması → dinamik obstrüksiyon paternini destekler.",
+        "Septum 19 mm, SAM ve LVOT gradiyenti 58→92 mmHg → provokasyonla artan çıkış yolu daralması.",
+        "Holterde kısa süreli VT → uzman merkezde ani ölüm risk sınıflaması ihtiyacı."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v300",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V299 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v300-new-690-ani-karin-agrisi-ve-kirmizi-idrar",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Ani karın ağrısı ve koyulaşan idrar",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Tekrarlayan şiddetli karın ağrısı, peritonit yokluğu, otonom bulgular, hiponatremi, nöropsikiyatrik yakınma ve idrar öncül metabolit yüksekliğini birleştirerek akut nörovisseral metabolik atağı tanıma.",
+      "learningTarget": "Cerrahi akut batın taklidinde peritonit yokluğu ve eşlik eden otonom-nörolojik bulguların porfirin metabolizması bozukluğu açısından nasıl ayırt ettirici olduğunu öğrenme.",
+      "demographics": "28 yaşında kadın hasta",
+      "setting": "Acil servis dahiliye değerlendirmesi",
+      "chiefComplaint": "Hasta, ani başlayan yaygın karın ağrısı, bulantı ve idrar renginde koyulaşma nedeniyle başvuruyor.",
+      "stem": "Hasta son iki gündür giderek artan, dalgalar halinde gelen yaygın karın ağrısı yaşadığını ve ağrının belirli bir noktaya yerleşmediğini anlatır. Bulantısı ve kabızlığı vardır; birkaç kez kusmuş ancak dışkısında kan veya siyahlaşma fark etmemiştir. Geçen hafta idrar yolu şikâyeti için yeni bir antibiyotik kullandığını, ardından uykusuzluk ve huzursuzluk başladığını söyler. Sabah idrarının bekledikçe kırmızı-kahverengi göründüğünü fark etmiş ve annesiyle acile gelmiştir. Daha önce iki kez benzer karın ağrısı atağı yaşamış, o dönemlerde yapılan görüntülemelerde ameliyat gerektiren bir neden bulunmadığını belirtir.",
+      "patientIntro": {
+        "profile": "28 yaşında kadın hasta, acil servis dahiliye değerlendirmesi sonrası değerlendiriliyor.",
+        "presentation": "Hasta, ani başlayan yaygın karın ağrısı, bulantı ve idrar renginde koyulaşma nedeniyle başvuruyor.",
+        "historySummary": "Hasta son iki gündür giderek artan, dalgalar halinde gelen yaygın karın ağrısı yaşadığını ve ağrının belirli bir noktaya yerleşmediğini anlatır. Bulantısı ve kabızlığı vardır; birkaç kez kusmuş ancak dışkısında kan veya siyahlaşma fark etmemiştir. Geçen hafta idrar yolu şikâyeti için yeni bir antibiyotik kullandığını, ardından uykusuzluk ve huzursuzluk başladığını söyler. Sabah idrarının bekledikçe kırmızı-kahverengi göründüğünü fark etmiş ve annesiyle acile gelmiştir. Daha önce iki kez benzer karın ağrısı atağı yaşamış, o dönemlerde yapılan görüntülemelerde ameliyat gerektiren bir neden bulunmadığını belirtir."
+      },
+      "vitals": {
+        "TA": "152/92 mmHg",
+        "Nabız": "116/dk",
+        "Solunum": "20/dk",
+        "SpO2": "%99, oda havasında",
+        "Ateş": "36.8 °C",
+        "Şok indeksi": "0.76 - otonom aktivasyon belirgin, dolaşım şoku yok"
+      },
+      "exam": [
+        "Hasta huzursuz ve ağrılı görünür; bilinç açık ancak dikkatini toplamakta zorlanır.",
+        "Karın yaygın hassastır; defans, rebound ve belirgin lokal periton irritasyonu saptanmaz.",
+        "Barsak sesleri hafif azalmıştır; belirgin organomegali veya asit bulgusu yoktur.",
+        "Alt ekstremite proksimal kaslarında hafif güçsüzlük tarifler; derin duyu kaybı veya fokal inme bulgusu yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v300-new-690-ani-karin-agrisi-ve-kirmizi-idrar-temel-laboratuvar-ve-elektrolitler",
+          "label": "Temel laboratuvar ve elektrolitler",
+          "title": "Temel laboratuvar ve elektrolitler",
+          "orderLabel": "Temel laboratuvar ve elektrolitler",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Temel laboratuvar ve elektrolitler",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Belirgin cerrahi enfeksiyon paterni olmadan hiponatremi ve hafif karaciğer enzim yüksekliği vardır.",
+          "clinicalMeaning": "Belirgin cerrahi enfeksiyon paterni olmadan hiponatremi ve hafif karaciğer enzim yüksekliği vardır.",
+          "result": {
+            "title": "Temel laboratuvar ve elektrolitler",
+            "summary": "Belirgin cerrahi enfeksiyon paterni olmadan hiponatremi ve hafif karaciğer enzim yüksekliği vardır.",
+            "interpretation": "Belirgin cerrahi enfeksiyon paterni olmadan hiponatremi ve hafif karaciğer enzim yüksekliği vardır.",
+            "values": [
+              [
+                "Lökosit",
+                "8.900/mm³",
+                "4.000-10.000/mm³",
+                "Belirgin lökositoz yok"
+              ],
+              [
+                "CRP",
+                "9 mg/L",
+                "<5 mg/L",
+                "Hafif artış"
+              ],
+              [
+                "Sodyum",
+                "124 mmol/L",
+                "135-145 mmol/L",
+                "Düşük"
+              ],
+              [
+                "Potasyum",
+                "3.8 mmol/L",
+                "3.5-5.1 mmol/L",
+                "Normal"
+              ],
+              [
+                "AST/ALT",
+                "48/56 U/L",
+                "<35 U/L",
+                "Hafif yüksek"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v300-new-690-ani-karin-agrisi-ve-kirmizi-idrar-akut-karın-dışlama-verileri",
+          "label": "Akut karın dışlama verileri",
+          "title": "Akut karın dışlama verileri",
+          "orderLabel": "Akut karın dışlama verileri",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Akut karın dışlama verileri",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Pankreatit veya belirgin cerrahi akut batın lehine sonuç verilmez.",
+          "clinicalMeaning": "Pankreatit veya belirgin cerrahi akut batın lehine sonuç verilmez.",
+          "result": {
+            "title": "Akut karın dışlama verileri",
+            "summary": "Pankreatit veya belirgin cerrahi akut batın lehine sonuç verilmez.",
+            "interpretation": "Pankreatit veya belirgin cerrahi akut batın lehine sonuç verilmez.",
+            "values": [
+              [
+                "Amilaz",
+                "68 U/L",
+                "30-110 U/L",
+                "Normal"
+              ],
+              [
+                "Lipaz",
+                "41 U/L",
+                "<60 U/L",
+                "Normal"
+              ],
+              [
+                "Laktat",
+                "1.4 mmol/L",
+                "0.5-2.0 mmol/L",
+                "Normal"
+              ],
+              [
+                "Gebelik testi",
+                "Negatif",
+                "Negatif",
+                "Ektopik gebelik lehine değil"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v300-new-690-ani-karin-agrisi-ve-kirmizi-idrar-i̇drar-metabolit-incelemesi",
+          "label": "İdrar metabolit incelemesi",
+          "title": "İdrar metabolit incelemesi",
+          "orderLabel": "İdrar metabolit incelemesi",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "İdrar metabolit incelemesi",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Atak sırasında hem sentez yolu öncüllerinde belirgin artış saptanır.",
+          "clinicalMeaning": "Atak sırasında hem sentez yolu öncüllerinde belirgin artış saptanır.",
+          "result": {
+            "title": "İdrar metabolit incelemesi",
+            "summary": "Atak sırasında hem sentez yolu öncüllerinde belirgin artış saptanır.",
+            "interpretation": "Atak sırasında hem sentez yolu öncüllerinde belirgin artış saptanır.",
+            "values": [
+              [
+                "İdrar porfobilinojen",
+                "Belirgin pozitif",
+                "Negatif/düşük",
+                "Atakla uyumlu"
+              ],
+              [
+                "İdrar ALA",
+                "Yüksek",
+                "Düşük",
+                "Öncül birikimi"
+              ],
+              [
+                "İdrar eritrosit",
+                "0-2/hpf",
+                "0-2/hpf",
+                "Makroskopik hematüri lehine değil"
+              ],
+              [
+                "İdrar nitrit/lökosit esteraz",
+                "Negatif",
+                "Negatif",
+                "Aktif üriner enfeksiyon lehine değil"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v300-new-690-ani-karin-agrisi-ve-kirmizi-idrar-kontrastlı-abdomen-bt",
+          "label": "Kontrastlı abdomen BT",
+          "title": "Kontrastlı abdomen BT",
+          "orderLabel": "Kontrastlı abdomen BT",
+          "type": "imaging",
+          "priority": "essential",
+          "subtype": "Kontrastlı abdomen BT",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Obstrüksiyon, perforasyon veya apse lehine odak izlenmez.",
+          "clinicalMeaning": "Obstrüksiyon, perforasyon veya apse lehine odak izlenmez.",
+          "result": {
+            "title": "Kontrastlı abdomen BT",
+            "summary": "Obstrüksiyon, perforasyon veya apse lehine odak izlenmez.",
+            "interpretation": "Obstrüksiyon, perforasyon veya apse lehine odak izlenmez.",
+            "values": [
+              [
+                "Apendiks",
+                "Kalınlaşma yok",
+                "Normal",
+                "Apendisit lehine değil"
+              ],
+              [
+                "Serbest hava",
+                "Yok",
+                "Yok",
+                "Perforasyon lehine değil"
+              ],
+              [
+                "Barsak ansları",
+                "Belirgin obstrüksiyon yok",
+                "Yok",
+                "Mekanik ileus lehine değil"
+              ],
+              [
+                "Pankreas",
+                "Ödem/nekroz yok",
+                "Normal",
+                "Pankreatit lehine değil"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada acil yönetimde en uygun öncelikli yaklaşım aşağıdakilerden hangisidir?",
+      "questionType": "Acil yaklaşım/tedavi",
+      "answerTarget": "Akut nörovisseral atakta tetikleyici kesme ve spesifik tedavi",
+      "diagnosis": {
+        "correct": "Tetikleyici ilaçları kesip intravenöz hemin ve destek tedavisi başlamak",
+        "options": [
+          "Acil apendektomi için genel cerrahiye yönlendirmek",
+          "Yüksek doz kortikosteroid başlayıp sistemik vaskülit tedavisi planlamak",
+          "Nonsteroid antiinflamatuvar verip oral hidrasyonla taburcu etmek",
+          "Geniş spektrumlu antibiyotikle intraabdominal sepsis tedavisi başlamak",
+          "Tetikleyici ilaçları kesip intravenöz hemin ve destek tedavisi başlamak"
+        ],
+        "question": "Bu hastada acil yönetimde en uygun öncelikli yaklaşım aşağıdakilerden hangisidir?",
+        "explanation": "Vaka, peritonit bulgusu olmadan tekrarlayan şiddetli karın ağrısı, kabızlık, otonom aktivasyon, hiponatremi, nöropsikiyatrik yakınma ve idrarda porfobilinojen/ALA artışı ile akut porfiri atağı paternini verir. Tedavi cerrahi eksplorasyon değil, tetikleyici ilaçların kesilmesi ve ağır atakta hemin verilmesidir. Destek tedavisi ağrı, bulantı, sıvı-elektrolit ve nörolojik komplikasyonları güvenli ilaçlarla yönetmeyi içerir.",
+        "pearls": [
+          "Peritonit yokluğu ve normal laktat cerrahi akut batın olasılığını zayıflatır.",
+          "Hiponatremi ve otonom bulgular nörovisseral metabolik atağı destekler.",
+          "İdrar PBG/ALA artışı atak sırasında ayırt ettirici biyokimyasal veridir.",
+          "Ağır atakta hemin, tetikleyici kesme ve güvenli destek tedavisi temel yaklaşımdır."
+        ],
+        "optionFeedback": {
+          "Acil apendektomi için genel cerrahiye yönlendirmek": "Apendisit sağ alt kadran lokalizasyonu, periton irritasyonu, lökositoz ve görüntüleme bulgularıyla düşünülür. Bu hastada ağrı yaygın ve tekrarlayıcıdır; defans-rebound yoktur, görüntülemede cerrahi akut batın lehine veri verilmemiştir. Ayrıca koyulaşan idrar, hiponatremi, nöropsikiyatrik yakınmalar ve idrar porfirin öncül yüksekliği cerrahi nedenden çok metabolik bir atağı destekler.",
+          "Yüksek doz kortikosteroid başlayıp sistemik vaskülit tedavisi planlamak": "Sistemik vaskülit karın ağrısı, nöropati ve böbrek bulgularıyla gelebilir; fakat burada purpura, aktif idrar sedimenti, belirgin inflamasyon veya organ iskemisi verisi yoktur. Kortikosteroid bu klinik örüntüde ilk hedef tedavi değildir ve bazı ilaçlar gibi atağı kötüleştirme riski olan müdahalelerden kaçınmak gerekir. Verilen laboratuvar paterni vaskülitten çok hem sentez yolu öncül birikimini düşündürür.",
+          "Nonsteroid antiinflamatuvar verip oral hidrasyonla taburcu etmek": "Basit analjezi ve taburculuk, ciddi nörovisseral atak bulguları olan bir hasta için güvenli değildir. Hastada hiponatremi, taşikardi, hipertansiyon, koyulaşan idrar ve proksimal güçsüzlük gibi sistemik bulgular vardır. Ayrıca NSAİİ seçimi ağrıyı geçici azaltabilir ama altta yatan metabolik atak mekanizmasını durdurmaz; ilaç güvenliği de ayrıca önemlidir.",
+          "Geniş spektrumlu antibiyotikle intraabdominal sepsis tedavisi başlamak": "İntraabdominal sepsis ateş, peritonit, laktat artışı, görüntülemede enfeksiyon odağı veya belirgin nötrofilik yanıtla daha olası olurdu. Bu vakada ateş ve peritonit yoktur; amilaz/lipaz normal, BT cerrahi odak göstermemektedir. Antibiyotik başlanması gereken net enfeksiyon bulgusu verilmediği için geniş spektrumlu antibiyotik ana tedavi değildir.",
+          "Tetikleyici ilaçları kesip intravenöz hemin ve destek tedavisi başlamak": "Bu seçenek en uygundur. Tekrarlayan şiddetli karın ağrısı, kabızlık, otonom bulgular, hiponatremi, nöropsikiyatrik yakınma, koyulaşan idrar ve idrar porfobilinojen yüksekliği akut nörovisseral porfiri atağını destekler. Tedavide porfirinojenik ilaçlar ve açlık gibi tetikleyiciler kesilir; ağır atakta intravenöz hemin, yeterli karbonhidrat/kalori, güvenli analjezi, bulantı kontrolü, sıvı-elektrolit yönetimi ve nörolojik izlem gerekir. Cerrahi akut batın gibi davranmak hem gereksiz girişim hem de tedavi gecikmesi yaratabilir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Akut porfiri atakları cerrahi akut batını taklit edebilir; ayırıcı nokta peritonit olmadan şiddetli karın ağrısı, otonom bulgular, hiponatremi, nöropsikiyatrik yakınmalar ve idrar PBG/ALA artışıdır.",
+      "examPearl": "Şiddetli karın ağrısı + normal BT/peritonit yokluğu + hiponatremi + koyulaşan idrar + nöropsikiyatrik bulgu varsa akut porfiri atağını düşün; tanı ve tedavi gecikirse nöropati ilerleyebilir.",
+      "whyCorrect": "Doğru seçenek hem tetikleyiciyi ortadan kaldırır hem de hem sentez yolundaki öncül birikimini azaltan spesifik tedaviyi başlatır.",
+      "optionComparison": "Yanlış seçenekler vakayı cerrahi akut batın, enfeksiyon, vaskülit veya basit ağrı atağı gibi yönetir; oysa klinik ve biyokimya metabolik nörovisseral atağı destekler.",
+      "evidenceChain": [
+        "Yeni ilaç sonrası atak başlangıcı → tetiklenebilen metabolik süreç olasılığı.",
+        "Yaygın ağrı ama defans/rebound yok → cerrahi akut batın daha zayıf.",
+        "Na 124 mmol/L ve taşikardi/hipertansiyon → otonom-nöroendokrin eşlik.",
+        "İdrar PBG/ALA belirgin yüksek → spesifik akut atak biyokimyası."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v300",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V299 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v300-new-691-yuzde-sislik-ve-kopuklu-idrar",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Yüzde şişlik ve köpüklü idrar",
+      "difficulty": "Orta-Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Erişkin hastada ödem, köpüklü idrar, masif proteinüri, hipoalbuminemi, hiperlipidemi ve aktif olmayan sediment paternini kullanarak nefrotik sendrom nedenini ayırt etme.",
+      "learningTarget": "Nefrotik sendromda sedimentin aktif olmaması, anti-PLA2R pozitifliği ve tromboz riskinin primer membranöz nefropati lehine nasıl yorumlanacağını öğrenme.",
+      "demographics": "58 yaşında erkek hasta",
+      "setting": "Nefroloji polikliniği değerlendirmesi",
+      "chiefComplaint": "Hasta, son haftalarda yüz ve bacaklarda şişlik, idrarda köpürme ve kilo artışı nedeniyle başvuruyor.",
+      "stem": "Hasta yaklaşık altı haftadır sabahları göz kapaklarının şiş uyandığını, gün içinde ayakkabılarının sıkmaya başladığını anlatır. İdrarının eskisine göre daha köpüklü olduğunu fark etmiş ve son bir ayda iştahı değişmeden dört kilo aldığını söyler. Belirgin yan ağrısı, idrar yaparken yanma veya ateş tariflemez. Diyabet tanısı yoktur; düzenli kullandığı yeni bir ağrı kesici veya bitkisel ürün olmadığını belirtir. Son aylarda döküntü, ağız yarası, eklem şişliği, kanlı balgam veya kanlı idrar fark etmemiştir; bacaklarındaki şişlik artınca aile hekiminden nefrolojiye yönlendirilmiştir.",
+      "patientIntro": {
+        "profile": "58 yaşında erkek hasta, nefroloji polikliniği değerlendirmesi sonrası değerlendiriliyor.",
+        "presentation": "Hasta, son haftalarda yüz ve bacaklarda şişlik, idrarda köpürme ve kilo artışı nedeniyle başvuruyor.",
+        "historySummary": "Hasta yaklaşık altı haftadır sabahları göz kapaklarının şiş uyandığını, gün içinde ayakkabılarının sıkmaya başladığını anlatır. İdrarının eskisine göre daha köpüklü olduğunu fark etmiş ve son bir ayda iştahı değişmeden dört kilo aldığını söyler. Belirgin yan ağrısı, idrar yaparken yanma veya ateş tariflemez. Diyabet tanısı yoktur; düzenli kullandığı yeni bir ağrı kesici veya bitkisel ürün olmadığını belirtir. Son aylarda döküntü, ağız yarası, eklem şişliği, kanlı balgam veya kanlı idrar fark etmemiştir; bacaklarındaki şişlik artınca aile hekiminden nefrolojiye yönlendirilmiştir."
+      },
+      "vitals": {
+        "TA": "138/84 mmHg",
+        "Nabız": "84/dk",
+        "Solunum": "17/dk",
+        "SpO2": "%98, oda havasında",
+        "Ateş": "36.6 °C",
+        "Şok indeksi": "0.61 - perfüzyon stabil, kronik ödem tablosu ön planda"
+      },
+      "exam": [
+        "Periorbital ödem ve bilateral pretibial 2+ gode bırakan ödem izlenir.",
+        "Akciğerlerde belirgin ral yoktur; kalp sesleri ritmik, belirgin yeni üfürüm duyulmaz.",
+        "Karında belirgin defans veya asit bulgusu yoktur.",
+        "Ciltte palpable purpura, livedo, malar döküntü veya ülser saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v300-new-691-yuzde-sislik-ve-kopuklu-idrar-i̇drar-ve-proteinüri-değerlendirmesi",
+          "label": "İdrar ve proteinüri değerlendirmesi",
+          "title": "İdrar ve proteinüri değerlendirmesi",
+          "orderLabel": "İdrar ve proteinüri değerlendirmesi",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "İdrar ve proteinüri değerlendirmesi",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Nefrotik düzeyde protein kaybı vardır; aktif nefritik sediment belirgin değildir.",
+          "clinicalMeaning": "Nefrotik düzeyde protein kaybı vardır; aktif nefritik sediment belirgin değildir.",
+          "result": {
+            "title": "İdrar ve proteinüri değerlendirmesi",
+            "summary": "Nefrotik düzeyde protein kaybı vardır; aktif nefritik sediment belirgin değildir.",
+            "interpretation": "Nefrotik düzeyde protein kaybı vardır; aktif nefritik sediment belirgin değildir.",
+            "values": [
+              [
+                "İdrar protein/kreatinin",
+                "8.4 g/g",
+                "<0.2 g/g",
+                "Nefrotik düzey"
+              ],
+              [
+                "İdrar eritrosit",
+                "0-2/hpf",
+                "0-2/hpf",
+                "Hematüri yok"
+              ],
+              [
+                "Eritrosit silendiri",
+                "Yok",
+                "Yok",
+                "Aktif nefrit lehine değil"
+              ],
+              [
+                "Oval yağ cisimcikleri",
+                "Pozitif",
+                "Negatif",
+                "Lipidüri"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v300-new-691-yuzde-sislik-ve-kopuklu-idrar-serum-biyokimyası",
+          "label": "Serum biyokimyası",
+          "title": "Serum biyokimyası",
+          "orderLabel": "Serum biyokimyası",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Serum biyokimyası",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hipoalbuminemi ve hiperlipidemi nefrotik sendrom paternini tamamlar.",
+          "clinicalMeaning": "Hipoalbuminemi ve hiperlipidemi nefrotik sendrom paternini tamamlar.",
+          "result": {
+            "title": "Serum biyokimyası",
+            "summary": "Hipoalbuminemi ve hiperlipidemi nefrotik sendrom paternini tamamlar.",
+            "interpretation": "Hipoalbuminemi ve hiperlipidemi nefrotik sendrom paternini tamamlar.",
+            "values": [
+              [
+                "Albumin",
+                "2.0 g/dL",
+                "3.5-5.0 g/dL",
+                "Düşük"
+              ],
+              [
+                "Total kolesterol",
+                "318 mg/dL",
+                "<200 mg/dL",
+                "Yüksek"
+              ],
+              [
+                "LDL",
+                "214 mg/dL",
+                "<130 mg/dL",
+                "Yüksek"
+              ],
+              [
+                "Kreatinin",
+                "1.0 mg/dL",
+                "0.7-1.2 mg/dL",
+                "Korunmuş"
+              ],
+              [
+                "eGFR",
+                "82 mL/dk/1.73 m²",
+                ">60",
+                "Korunmuş"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v300-new-691-yuzde-sislik-ve-kopuklu-idrar-sekonder-neden-taraması",
+          "label": "Sekonder neden taraması",
+          "title": "Sekonder neden taraması",
+          "orderLabel": "Sekonder neden taraması",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Sekonder neden taraması",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Otoimmün/enfeksiyöz sekonder ipuçları verilmez; podosit hedefli antikor pozitifliği saptanır.",
+          "clinicalMeaning": "Otoimmün/enfeksiyöz sekonder ipuçları verilmez; podosit hedefli antikor pozitifliği saptanır.",
+          "result": {
+            "title": "Sekonder neden taraması",
+            "summary": "Otoimmün/enfeksiyöz sekonder ipuçları verilmez; podosit hedefli antikor pozitifliği saptanır.",
+            "interpretation": "Otoimmün/enfeksiyöz sekonder ipuçları verilmez; podosit hedefli antikor pozitifliği saptanır.",
+            "values": [
+              [
+                "Anti-PLA2R",
+                "Yüksek pozitif",
+                "Negatif",
+                "Primer süreç lehine"
+              ],
+              [
+                "ANA",
+                "Negatif",
+                "Negatif",
+                "SLE lehine değil"
+              ],
+              [
+                "C3/C4",
+                "Normal",
+                "Normal",
+                "Kompleman tüketimi yok"
+              ],
+              [
+                "HBsAg/anti-HCV/HIV",
+                "Negatif",
+                "Negatif",
+                "Sekonder enfeksiyöz neden lehine değil"
+              ],
+              [
+                "HbA1c",
+                "%5.4",
+                "<%5.7",
+                "Diyabet lehine değil"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v300-new-691-yuzde-sislik-ve-kopuklu-idrar-renal-ultrasonografi",
+          "label": "Renal ultrasonografi",
+          "title": "Renal ultrasonografi",
+          "orderLabel": "Renal ultrasonografi",
+          "type": "imaging",
+          "priority": "essential",
+          "subtype": "Renal ultrasonografi",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Böbrek boyutları korunmuştur; obstrüksiyon veya belirgin kronik küçülme izlenmez.",
+          "clinicalMeaning": "Böbrek boyutları korunmuştur; obstrüksiyon veya belirgin kronik küçülme izlenmez.",
+          "result": {
+            "title": "Renal ultrasonografi",
+            "summary": "Böbrek boyutları korunmuştur; obstrüksiyon veya belirgin kronik küçülme izlenmez.",
+            "interpretation": "Böbrek boyutları korunmuştur; obstrüksiyon veya belirgin kronik küçülme izlenmez.",
+            "values": [
+              [
+                "Sağ böbrek",
+                "11.4 cm",
+                "9-12 cm",
+                "Korunmuş"
+              ],
+              [
+                "Sol böbrek",
+                "11.2 cm",
+                "9-12 cm",
+                "Korunmuş"
+              ],
+              [
+                "Hidronefroz",
+                "Yok",
+                "Yok",
+                "Postrenal neden yok"
+              ],
+              [
+                "Kortikal ekojenite",
+                "Hafif artmış",
+                "Normal",
+                "Glomerüler hastalıkla uyumlu olabilir"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastadaki klinik ve laboratuvar paternini en iyi açıklayan glomerüler süreç aşağıdakilerden hangisidir?",
+      "questionType": "Tanı/mekanizma",
+      "answerTarget": "Erişkin nefrotik sendromda primer glomerüler süreç ayrımı",
+      "diagnosis": {
+        "correct": "Primer membranöz nefropatiye bağlı podosit-subepitelyal immün kompleks hasarı",
+        "options": [
+          "Diyabetik nodüler glomerüloskleroz",
+          "Primer membranöz nefropatiye bağlı podosit-subepitelyal immün kompleks hasarı",
+          "Minimal değişiklik hastalığına bağlı selektif albüminüri",
+          "IgA ilişkili mezangiyal proliferatif nefrit",
+          "Sistemik amiloidoza bağlı fibriler glomerüler birikim"
+        ],
+        "question": "Bu hastadaki klinik ve laboratuvar paternini en iyi açıklayan glomerüler süreç aşağıdakilerden hangisidir?",
+        "explanation": "Hastada nefrotik sendromun klasik bileşenleri vardır: masif proteinüri, hipoalbuminemi, ödem, hiperlipidemi ve lipidüri. Aktif hematüri veya eritrosit silendiri olmaması nefritik paternin geri planda olduğunu gösterir. Diyabet, lupus, viral hepatit ve HIV gibi sekonder ipuçları verilmezken anti-PLA2R pozitifliği primer membranöz nefropatiyi destekler. Mekanizma podosit yüzey antijenlerine karşı gelişen antikor ve subepitelyal immün kompleks hasarıdır.",
+        "pearls": [
+          "Protein/kreatinin 8.4 g/g → nefrotik düzey proteinüri.",
+          "Albumin 2.0 g/dL + ödem → protein kaybına bağlı onkotik basınç azalması.",
+          "Aktif sediment yok → nefritik süreç geri planda.",
+          "Anti-PLA2R yüksek pozitif → primer podosit hedefli immün süreç lehine."
+        ],
+        "optionFeedback": {
+          "Diyabetik nodüler glomerüloskleroz": "Diyabetik nefropati uzun süreli diyabet, retinopati, giderek artan albüminüri ve çoğu zaman hipertansiyonla birlikte düşünülür. Bu hastada bilinen diyabet, yüksek HbA1c veya retinopati verilmemiştir. Ayrıca anti-PLA2R pozitifliği ve aktif olmayan sedimentle birlikte ağır nefrotik proteinüri, diyabetik nodüler sklerozdan çok primer podosit hedefli immün süreci destekler.",
+          "Primer membranöz nefropatiye bağlı podosit-subepitelyal immün kompleks hasarı": "Bu seçenek en olası süreçtir. Erişkin hastada masif proteinüri, hipoalbuminemi, hiperlipidemi, ödem, aktif idrar sedimenti yokluğu ve anti-PLA2R pozitifliği primer membranöz nefropatiyi güçlü biçimde destekler. Bu hastalıkta podosit yüzey antijenlerine karşı antikor gelişir; subepitelyal immün kompleksler ve kompleman aracılı hasar filtrasyon bariyerini bozarak nefrotik sendroma yol açar. Düşük albümin ve yüksek proteinüri aynı zamanda tromboz riskini artırır.",
+          "Minimal değişiklik hastalığına bağlı selektif albüminüri": "Minimal değişiklik hastalığı özellikle çocuklarda ve bazı ilaç/lenfoma ilişkili erişkinlerde nefrotik sendrom yapabilir. Işık mikroskobisi genellikle normal, elektron mikroskobisinde diffüz podosit ayaksı çıkıntı silinmesi beklenir; anti-PLA2R pozitifliği beklenen temel bulgu değildir. Bu vaka erişkin yaş, anti-PLA2R yüksekliği ve ağır albümin düşüklüğüyle primer membranöz sürece daha uygundur.",
+          "IgA ilişkili mezangiyal proliferatif nefrit": "IgA ilişkili nefrit genellikle üst solunum yolu enfeksiyonuna yakın zamanda makroskopik hematüri, aktif sediment, eritrosit silendirleri ve değişken proteinüri ile gelir. Bu hastada idrar sedimentinde eritrosit silendiri yoktur; ana tablo nefrotik düzeyde proteinüri ve hipoalbuminemidir. Bu nedenle mezangiyal nefrit paterni bu vakadaki baskın süreci açıklamaz.",
+          "Sistemik amiloidoza bağlı fibriler glomerüler birikim": "Amiloidoz nefrotik sendrom yapabilir ve özellikle kronik inflamasyon, plazma hücre diskrazisi, kalp tutulumu, makroglossi veya otonom nöropati ipuçlarıyla düşünülür. Bu vakada serum/idrarda monoklonal protein, sistemik amiloid bulgusu veya kronik inflamatuvar hastalık verilmemiştir. Anti-PLA2R pozitifliği ve diğer sekonder taramaların negatifliği primer membranöz süreci daha güçlü kılar."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Erişkin nefrotik sendromda anti-PLA2R pozitifliği primer membranöz nefropati için çok güçlü bir ipucudur; aktif sediment yoksa IgA nefropatisi veya hızla ilerleyen nefritik süreçler daha az olasıdır.",
+      "examPearl": "Nefrotik sendrom = proteinüri >3.5 g/gün, hipoalbuminemi, ödem, hiperlipidemi; erişkinde anti-PLA2R pozitifliği primer membranöz nefropatiyi öne çıkarır.",
+      "whyCorrect": "Doğru seçenek hastanın nefrotik düzey proteinürisini, aktif olmayan sedimentini ve anti-PLA2R pozitifliğini aynı mekanizma altında açıklar.",
+      "optionComparison": "Yanlış seçenekler diyabet, çocukluk/minimal değişiklik, nefritik hematüri veya sistemik amiloid ipuçları gerektirir; bu veriler vakada desteklenmemektedir.",
+      "evidenceChain": [
+        "Köpüklü idrar ve yaygın ödem → ağır proteinüri klinik karşılığı.",
+        "Protein/kreatinin 8.4 g/g ve albumin 2.0 g/dL → nefrotik sendrom.",
+        "Eritrosit silendiri yok → aktif nefritik süreç zayıf.",
+        "Anti-PLA2R pozitif, ANA/hepatit/HIV negatif → primer membranöz mekanizma lehine."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v300",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V299 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v300-new-692-sogukluk-uykuya-meyil-ve-yavas-nabiz",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Soğukluk, uykuya meyil ve yavaş nabız",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Yaşlı hastada enfeksiyon sonrası bilinç değişikliği, hipotermi, bradikardi, hipoventilasyon, hiponatremi ve tiroid hormon paternini birlikte değerlendirerek acil tedavi sırasını seçme.",
+      "learningTarget": "Ağır dekompanse hipotiroidide tedavinin yalnız levotiroksin reçete etmek olmadığını; yoğun destek, glukokortikoid güvenliği ve IV hormon tedavisinin birlikte düşünülmesi gerektiğini öğrenme.",
+      "demographics": "67 yaşında kadın hasta",
+      "setting": "Acil servis yoğun bakım ön değerlendirmesi",
+      "chiefComplaint": "Hasta, iki gündür artan uykuya meyil, üşüme ve konuşmada yavaşlama nedeniyle yakınları tarafından getiriliyor.",
+      "stem": "Hastanın kızı annesinin son aylarda giderek halsizleştiğini, kabızlığının arttığını ve sesinin kalınlaştığını anlatır. Son bir haftadır öksürük ve balgamı olmuş, evde çoğu zamanı battaniye altında geçirmiştir. Son iki gündür sorulara geç cevap vermeye, yemek yemeyi unutmaya ve odanın sıcak olmasına rağmen sürekli üşüdüğünü söylemeye başlamıştır. Bilinen tiroid ilacını birkaç aydır düzensiz kullandığı öğrenilir. Göğüs ağrısı, ani tek taraflı güçsüzlük veya yeni ilaç alımı tariflenmez; sabah uyandırmakta zorlanınca ailesi acile getirmiştir.",
+      "patientIntro": {
+        "profile": "67 yaşında kadın hasta, acil servis yoğun bakım ön değerlendirmesi sonrası değerlendiriliyor.",
+        "presentation": "Hasta, iki gündür artan uykuya meyil, üşüme ve konuşmada yavaşlama nedeniyle yakınları tarafından getiriliyor.",
+        "historySummary": "Hastanın kızı annesinin son aylarda giderek halsizleştiğini, kabızlığının arttığını ve sesinin kalınlaştığını anlatır. Son bir haftadır öksürük ve balgamı olmuş, evde çoğu zamanı battaniye altında geçirmiştir. Son iki gündür sorulara geç cevap vermeye, yemek yemeyi unutmaya ve odanın sıcak olmasına rağmen sürekli üşüdüğünü söylemeye başlamıştır. Bilinen tiroid ilacını birkaç aydır düzensiz kullandığı öğrenilir. Göğüs ağrısı, ani tek taraflı güçsüzlük veya yeni ilaç alımı tariflenmez; sabah uyandırmakta zorlanınca ailesi acile getirmiştir."
+      },
+      "vitals": {
+        "TA": "94/58 mmHg",
+        "Nabız": "46/dk",
+        "Solunum": "10/dk",
+        "SpO2": "%90, oda havasında",
+        "Ateş": "34.6 °C",
+        "Şok indeksi": "0.49 - bradikardi nedeniyle indeks düşük görünse de hipotansiyon ve mental durum bozukluğu ciddi hipoperfüzyon riski taşır"
+      },
+      "exam": [
+        "Hasta somnolandır; ağrılı uyaranla gözlerini açar ve kısa cümlelerle yanıt verir.",
+        "Cilt kuru ve soğuktur; periorbital şişlik ve yüzde kaba görünüm dikkati çeker.",
+        "Akciğer bazallerinde seyrek raller duyulur; solunum yüzeyel ve yavaştır.",
+        "Derin tendon reflekslerinde gevşeme fazı uzamış izlenir; ense sertliği belirgin değildir."
+      ],
+      "investigations": [
+        {
+          "id": "v300-new-692-sogukluk-uykuya-meyil-ve-yavas-nabiz-tiroid-ve-adrenal-güvenlik-örnekleri",
+          "label": "Tiroid ve adrenal güvenlik örnekleri",
+          "title": "Tiroid ve adrenal güvenlik örnekleri",
+          "orderLabel": "Tiroid ve adrenal güvenlik örnekleri",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Tiroid ve adrenal güvenlik örnekleri",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Ağır tiroid hormon eksikliği paterni vardır; tedavi öncesi kortizol örneği alınmıştır.",
+          "clinicalMeaning": "Ağır tiroid hormon eksikliği paterni vardır; tedavi öncesi kortizol örneği alınmıştır.",
+          "result": {
+            "title": "Tiroid ve adrenal güvenlik örnekleri",
+            "summary": "Ağır tiroid hormon eksikliği paterni vardır; tedavi öncesi kortizol örneği alınmıştır.",
+            "interpretation": "Ağır tiroid hormon eksikliği paterni vardır; tedavi öncesi kortizol örneği alınmıştır.",
+            "values": [
+              [
+                "TSH",
+                ">100 mIU/L",
+                "0.4-4.0 mIU/L",
+                "Çok yüksek"
+              ],
+              [
+                "Serbest T4",
+                "0.18 ng/dL",
+                "0.8-1.8 ng/dL",
+                "Çok düşük"
+              ],
+              [
+                "Serbest T3",
+                "Düşük",
+                "Normal",
+                "Düşük"
+              ],
+              [
+                "Rastgele kortizol",
+                "Örnek alındı, sonuç bekleniyor",
+                "Klinik bağlama göre",
+                "Tedaviyi geciktirmez"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v300-new-692-sogukluk-uykuya-meyil-ve-yavas-nabiz-kan-gazı-ve-elektrolitler",
+          "label": "Kan gazı ve elektrolitler",
+          "title": "Kan gazı ve elektrolitler",
+          "orderLabel": "Kan gazı ve elektrolitler",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Kan gazı ve elektrolitler",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hipoventilasyon ve hiponatremi tabloya eşlik eder.",
+          "clinicalMeaning": "Hipoventilasyon ve hiponatremi tabloya eşlik eder.",
+          "result": {
+            "title": "Kan gazı ve elektrolitler",
+            "summary": "Hipoventilasyon ve hiponatremi tabloya eşlik eder.",
+            "interpretation": "Hipoventilasyon ve hiponatremi tabloya eşlik eder.",
+            "values": [
+              [
+                "pH",
+                "7.29",
+                "7.35-7.45",
+                "Asidemi"
+              ],
+              [
+                "PaCO2",
+                "58 mmHg",
+                "35-45 mmHg",
+                "Yüksek"
+              ],
+              [
+                "HCO3",
+                "27 mmol/L",
+                "22-26 mmol/L",
+                "Hafif yüksek/kompansasyon"
+              ],
+              [
+                "Sodyum",
+                "123 mmol/L",
+                "135-145 mmol/L",
+                "Düşük"
+              ],
+              [
+                "Glukoz",
+                "62 mg/dL",
+                "70-100 mg/dL",
+                "Düşük-normal"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v300-new-692-sogukluk-uykuya-meyil-ve-yavas-nabiz-enfeksiyon-ve-organ-etkilenimi",
+          "label": "Enfeksiyon ve organ etkilenimi",
+          "title": "Enfeksiyon ve organ etkilenimi",
+          "orderLabel": "Enfeksiyon ve organ etkilenimi",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Enfeksiyon ve organ etkilenimi",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Tetikleyici enfeksiyon olasılığını destekleyen inflamatuvar yanıt vardır; ağır miyokard nekrozu verilmez.",
+          "clinicalMeaning": "Tetikleyici enfeksiyon olasılığını destekleyen inflamatuvar yanıt vardır; ağır miyokard nekrozu verilmez.",
+          "result": {
+            "title": "Enfeksiyon ve organ etkilenimi",
+            "summary": "Tetikleyici enfeksiyon olasılığını destekleyen inflamatuvar yanıt vardır; ağır miyokard nekrozu verilmez.",
+            "interpretation": "Tetikleyici enfeksiyon olasılığını destekleyen inflamatuvar yanıt vardır; ağır miyokard nekrozu verilmez.",
+            "values": [
+              [
+                "Lökosit",
+                "12.800/mm³",
+                "4.000-10.000/mm³",
+                "Yüksek"
+              ],
+              [
+                "CRP",
+                "74 mg/L",
+                "<5 mg/L",
+                "Yüksek"
+              ],
+              [
+                "Kreatinin",
+                "1.4 mg/dL",
+                "0.6-1.1 mg/dL",
+                "Hafif yüksek"
+              ],
+              [
+                "Troponin I",
+                "0.025 ng/mL",
+                "<0.04 ng/mL",
+                "Akut MI lehine değil"
+              ],
+              [
+                "CK",
+                "480 U/L",
+                "<170 U/L",
+                "Yüksek"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v300-new-692-sogukluk-uykuya-meyil-ve-yavas-nabiz-akciğer-grafisi",
+          "label": "Akciğer grafisi",
+          "title": "Akciğer grafisi",
+          "orderLabel": "Akciğer grafisi",
+          "type": "imaging",
+          "priority": "essential",
+          "subtype": "Akciğer grafisi",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Bazal infiltrasyon ve hipoventilasyonla uyumlu görünüm izlenir.",
+          "clinicalMeaning": "Bazal infiltrasyon ve hipoventilasyonla uyumlu görünüm izlenir.",
+          "result": {
+            "title": "Akciğer grafisi",
+            "summary": "Bazal infiltrasyon ve hipoventilasyonla uyumlu görünüm izlenir.",
+            "interpretation": "Bazal infiltrasyon ve hipoventilasyonla uyumlu görünüm izlenir.",
+            "values": [
+              [
+                "Sağ alt zon",
+                "Yamalar tarzı infiltrasyon",
+                "Yok",
+                "Enfeksiyon tetikleyicisi olabilir"
+              ],
+              [
+                "Kalp boyutu",
+                "Hafif geniş",
+                "Normal",
+                "Kronik değişiklik olabilir"
+              ],
+              [
+                "Plevral sıvı",
+                "Belirgin değil",
+                "Yok",
+                "Masif efüzyon yok"
+              ],
+              [
+                "Pnömotoraks",
+                "Yok",
+                "Yok",
+                "Akut mekanik neden yok"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada acil yönetimde en uygun tedavi yaklaşımı aşağıdakilerden hangisidir?",
+      "questionType": "Acil tedavi",
+      "answerTarget": "Ağır dekompanse hipotiroidide yoğun destek ve hormon replasmanı sıralaması",
+      "diagnosis": {
+        "correct": "IV hidrokortizon sonrası IV levotiroksin ve yoğun destek tedavisi başlamak",
+        "options": [
+          "Oral levotiroksin başlayıp ayaktan kontrol randevusu vermek",
+          "Antitiroid ilaç ve beta bloker başlayarak hormon sentezini baskılamak",
+          "Yalnız hipertonik salin ve sıvı kısıtlamasıyla sodyumu düzeltmek",
+          "IV hidrokortizon sonrası IV levotiroksin ve yoğun destek tedavisi başlamak",
+          "Ampirik trombolitik tedaviyle pulmoner emboli yönetimi yapmak"
+        ],
+        "question": "Bu hastada acil yönetimde en uygun tedavi yaklaşımı aşağıdakilerden hangisidir?",
+        "explanation": "Hastada hipotermi, bradikardi, hipoventilasyon, bilinç değişikliği, hiponatremi ve çok yüksek TSH/düşük serbest T4 kombinasyonu ağır dekompanse hipotiroidi tablosunu gösterir. Enfeksiyon muhtemel tetikleyicidir. Tedavide solunum ve dolaşım desteği, pasif ısıtma, enfeksiyon tedavisi, stres doz hidrokortizon ve intravenöz tiroid hormonu birlikte düşünülmelidir. Adrenal yetmezlik dışlanmadan tiroid hormonu vermek adrenal krizi tetikleyebileceğinden hidrokortizon güvenlik basamağıdır.",
+        "pearls": [
+          "Ateş 34.6 °C ve nabız 46/dk → ağır metabolik yavaşlama.",
+          "PaCO2 58 mmHg ve solunum 10/dk → hipoventilasyon.",
+          "TSH >100, serbest T4 çok düşük → ağır primer hormon eksikliği.",
+          "Öksürük/balgam ve CRP yüksekliği → enfeksiyon tetikleyicisi."
+        ],
+        "optionFeedback": {
+          "Oral levotiroksin başlayıp ayaktan kontrol randevusu vermek": "Ayaktan oral levotiroksin, stabil primer hipotiroidi tedavisinde uygun olabilir; ancak bu hasta hipotermi, bradikardi, hipoventilasyon, bilinç değişikliği ve ağır hormon eksikliğiyle kritik tablodadır. Barsak emilimi güvenilir olmayabilir ve tedavinin gecikmesi mortaliteyi artırır. Bu nedenle yalnız oral tedavi ve ayaktan izlem yetersiz ve güvensizdir.",
+          "Antitiroid ilaç ve beta bloker başlayarak hormon sentezini baskılamak": "Antitiroid ilaç ve beta bloker tirotoksik kriz gibi hormon fazlalığı tablolarında kullanılır. Bu hastada nabız yavaş, vücut ısısı düşük, TSH çok yüksek ve serbest T4 çok düşüktür; klinik hormon fazlalığına değil ağır hormon eksikliğine uyar. Beta bloker bradikardiyi daha da kötüleştirebilir.",
+          "Yalnız hipertonik salin ve sıvı kısıtlamasıyla sodyumu düzeltmek": "Hiponatremi bu tabloda önemli bir bulgudur; ancak tek başına primer sorun değildir. Ağır hipotiroidi, azalmış serbest su atılımı ve hipoventilasyonla birlikte çok sistemli dekompansasyon oluşturmuştur. Sodyumu düzeltmeye odaklanıp tiroid hormonu ve adrenal güvenliği atlamak klinik kötüleşmeyi düzeltmez; düzeltme hızı da dikkatle yönetilmelidir.",
+          "IV hidrokortizon sonrası IV levotiroksin ve yoğun destek tedavisi başlamak": "Bu seçenek en uygundur. Bilinç değişikliği, hipotermi, bradikardi, hipoventilasyon, hiponatremi ve çok yüksek TSH/düşük serbest T4 ağır dekompanse hipotiroidi tablosunu destekler. Tedavide solunum-dolaşım desteği, pasif ısıtma, tetikleyici enfeksiyonun yönetimi, stres doz glukokortikoid ve ardından/beraber intravenöz tiroid hormonu gerekir. Hidrokortizon, eşlik eden adrenal yetmezlik dışlanmadan tiroid hormonu verilmesinin oluşturabileceği adrenal krizi önlemek için verilir.",
+          "Ampirik trombolitik tedaviyle pulmoner emboli yönetimi yapmak": "Pulmoner emboli ani dispne, hipoksemi, taşikardi, sağ kalp yüklenmesi veya tromboembolik riskle düşünülür. Bu hastada ana bulgular hipotermi, bradikardi, hipoventilasyon ve ağır hipotiroidi biyokimyasıdır. Trombolitik tedavi ciddi kanama riski taşır ve verilen klinik-laboratuvar örüntüsünü hedeflemez."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Ağır dekompanse hipotiroidide klinik karar laboratuvarı beklemekten ibaret değildir; hipotermi, bradikardi, hipoventilasyon ve mental durum bozukluğu varsa hasta yoğun destek ve IV tedavi gerektirir.",
+      "examPearl": "Hipotermi + bradikardi + hipoventilasyon + bilinç değişikliği + çok yüksek TSH/düşük T4 = ağır hipotiroidi acili; tiroid hormonu öncesi/beraberinde hidrokortizon düşün.",
+      "whyCorrect": "Doğru seçenek hormon eksikliğini, adrenal güvenlik riskini, hipoventilasyonu ve enfeksiyon tetikleyicisini aynı yönetim planında ele alır.",
+      "optionComparison": "Yanlış seçenekler stabil hipotiroidi, tirotoksikoz, izole hiponatremi veya alakasız tromboemboli yaklaşımı gibi davranarak çok sistemli acili kaçırır.",
+      "evidenceChain": [
+        "Yakınların anlattığı yavaşlama, üşüme ve somnolans → ağır metabolik dekompansasyon.",
+        "Hipotermi/bradikardi/hipoventilasyon → yoğun bakım düzeyinde destek ihtiyacı.",
+        "TSH >100 ve serbest T4 0.18 ng/dL → ağır primer hipotiroidi.",
+        "Kortizol örneği alınmış ama sonuç beklenmiyor → hidrokortizonla güvenli replasman yaklaşımı."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v300",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V299 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v300-new-693-kemoterapi-sonrasi-ates-ve-agiz-yarasi",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Kemoterapi sonrası ateş ve ağız yarası",
+      "difficulty": "Orta-Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Kemoterapi sonrası ateş, derin nötropeni, mukozit ve odağı silik enfeksiyon riskini birlikte değerlendirerek ilk saat antibiyotik kararını verme.",
+      "learningTarget": "Nötropenik ateşte kültür alınsa bile tedavinin kültür sonucuna ertelenmeyeceğini ve ampirik omurganın antipsödomonal IV beta-laktam olduğunu öğrenme.",
+      "demographics": "61 yaşında erkek hasta",
+      "setting": "Onkoloji acil değerlendirmesi",
+      "chiefComplaint": "Hasta, kemoterapiden sekiz gün sonra gelişen ateş, titreme ve ağız içinde ağrı nedeniyle başvuruyor.",
+      "stem": "Hasta diffüz büyük B hücreli lenfoma nedeniyle ilk kür tedavisini aldıktan sonra birkaç gündür yemek yerken ağzının yandığını ve halsizliğinin arttığını anlatır. Bu akşam evde ateşini 38.6 °C ölçmüş, titreme başlayınca eşiyle acile gelmiştir. Öksürük, balgam veya idrar yaparken yanma tariflemez; karın ağrısı ve ishal de belirgin değildir. Santral venöz kateter giriş yerinde belirgin akıntı fark etmemiştir, ancak ağız içinde küçük yaralar oluştuğunu söyler. Daha önce benzer ateş atağı yaşamamış; evde ateş düşürücü aldıktan sonra da üşümesi devam etmiştir.",
+      "patientIntro": {
+        "profile": "61 yaşında erkek hasta, onkoloji acil değerlendirmesi sonrası değerlendiriliyor.",
+        "presentation": "Hasta, kemoterapiden sekiz gün sonra gelişen ateş, titreme ve ağız içinde ağrı nedeniyle başvuruyor.",
+        "historySummary": "Hasta diffüz büyük B hücreli lenfoma nedeniyle ilk kür tedavisini aldıktan sonra birkaç gündür yemek yerken ağzının yandığını ve halsizliğinin arttığını anlatır. Bu akşam evde ateşini 38.6 °C ölçmüş, titreme başlayınca eşiyle acile gelmiştir. Öksürük, balgam veya idrar yaparken yanma tariflemez; karın ağrısı ve ishal de belirgin değildir. Santral venöz kateter giriş yerinde belirgin akıntı fark etmemiştir, ancak ağız içinde küçük yaralar oluştuğunu söyler. Daha önce benzer ateş atağı yaşamamış; evde ateş düşürücü aldıktan sonra da üşümesi devam etmiştir."
+      },
+      "vitals": {
+        "TA": "108/66 mmHg",
+        "Nabız": "112/dk",
+        "Solunum": "20/dk",
+        "SpO2": "%97, oda havasında",
+        "Ateş": "38.7 °C",
+        "Şok indeksi": "1.04 - erken sistemik etkilenme var, yakın sepsis izlemi gerekir"
+      },
+      "exam": [
+        "Hasta yorgun görünür ancak koopere ve oryantedir; kapiller dolum yaklaşık 3 saniyedir.",
+        "Oral mukozada yaygın eritem ve aftöz ülserler vardır; belirgin tonsil eksüdası yoktur.",
+        "Santral kateter giriş yerinde hafif hassasiyet vardır; belirgin pürülan akıntı saptanmaz.",
+        "Akciğer oskültasyonunda belirgin fokal ral yoktur; karında defans veya rebound izlenmez."
+      ],
+      "investigations": [
+        {
+          "id": "v300-new-693-kemoterapi-sonrasi-ates-ve-agiz-yarasi-hemogram-ve-nötrofil-sayısı",
+          "label": "Hemogram ve nötrofil sayısı",
+          "title": "Hemogram ve nötrofil sayısı",
+          "orderLabel": "Hemogram ve nötrofil sayısı",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Hemogram ve nötrofil sayısı",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Derin nötropeni ve trombositopeni vardır; inflamatuvar yanıt lökositozla görünmeyebilir.",
+          "clinicalMeaning": "Derin nötropeni ve trombositopeni vardır; inflamatuvar yanıt lökositozla görünmeyebilir.",
+          "result": {
+            "title": "Hemogram ve nötrofil sayısı",
+            "summary": "Derin nötropeni ve trombositopeni vardır; inflamatuvar yanıt lökositozla görünmeyebilir.",
+            "interpretation": "Derin nötropeni ve trombositopeni vardır; inflamatuvar yanıt lökositozla görünmeyebilir.",
+            "values": [
+              [
+                "Lökosit",
+                "0.7 x10³/mm³",
+                "4.0-10.0 x10³/mm³",
+                "Çok düşük"
+              ],
+              [
+                "Mutlak nötrofil sayısı",
+                "180/mm³",
+                ">1500/mm³",
+                "Derin nötropeni"
+              ],
+              [
+                "Hemoglobin",
+                "9.8 g/dL",
+                "13.5-17.5 g/dL",
+                "Düşük"
+              ],
+              [
+                "Trombosit",
+                "62.000/mm³",
+                "150.000-400.000/mm³",
+                "Düşük"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v300-new-693-kemoterapi-sonrasi-ates-ve-agiz-yarasi-sepsis-ve-organ-perfüzyon-verileri",
+          "label": "Sepsis ve organ perfüzyon verileri",
+          "title": "Sepsis ve organ perfüzyon verileri",
+          "orderLabel": "Sepsis ve organ perfüzyon verileri",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Sepsis ve organ perfüzyon verileri",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Erken sistemik etkilenme vardır; belirgin organ yetmezliği henüz gelişmemiştir.",
+          "clinicalMeaning": "Erken sistemik etkilenme vardır; belirgin organ yetmezliği henüz gelişmemiştir.",
+          "result": {
+            "title": "Sepsis ve organ perfüzyon verileri",
+            "summary": "Erken sistemik etkilenme vardır; belirgin organ yetmezliği henüz gelişmemiştir.",
+            "interpretation": "Erken sistemik etkilenme vardır; belirgin organ yetmezliği henüz gelişmemiştir.",
+            "values": [
+              [
+                "CRP",
+                "118 mg/L",
+                "<5 mg/L",
+                "Yüksek"
+              ],
+              [
+                "Prokalsitonin",
+                "1.8 ng/mL",
+                "<0.05 ng/mL",
+                "Yüksek"
+              ],
+              [
+                "Laktat",
+                "2.1 mmol/L",
+                "0.5-2.0 mmol/L",
+                "Sınırda yüksek"
+              ],
+              [
+                "Kreatinin",
+                "1.1 mg/dL",
+                "0.7-1.2 mg/dL",
+                "Korunmuş"
+              ],
+              [
+                "ALT",
+                "42 U/L",
+                "<45 U/L",
+                "Belirgin yüksek değil"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v300-new-693-kemoterapi-sonrasi-ates-ve-agiz-yarasi-kültür-ve-odak-taraması",
+          "label": "Kültür ve odak taraması",
+          "title": "Kültür ve odak taraması",
+          "orderLabel": "Kültür ve odak taraması",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Kültür ve odak taraması",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Odağı net olmayan ateş tablosunda kültürler alınır; sonuç beklenmeden tedavi gerekir.",
+          "clinicalMeaning": "Odağı net olmayan ateş tablosunda kültürler alınır; sonuç beklenmeden tedavi gerekir.",
+          "result": {
+            "title": "Kültür ve odak taraması",
+            "summary": "Odağı net olmayan ateş tablosunda kültürler alınır; sonuç beklenmeden tedavi gerekir.",
+            "interpretation": "Odağı net olmayan ateş tablosunda kültürler alınır; sonuç beklenmeden tedavi gerekir.",
+            "values": [
+              [
+                "Periferik kan kültürü",
+                "Alındı, sonuç bekleniyor",
+                "Üreme yok",
+                "Tedaviyi geciktirmez"
+              ],
+              [
+                "Kateter lümen kültürü",
+                "Alındı, sonuç bekleniyor",
+                "Üreme yok",
+                "Kateter ilişkili kaynak araştırılır"
+              ],
+              [
+                "Tam idrar tetkiki",
+                "Nitrit negatif, lökosit 0-2/hpf",
+                "Negatif",
+                "Üriner odak belirgin değil"
+              ],
+              [
+                "Akciğer grafisi",
+                "Fokal infiltrasyon yok",
+                "Normal",
+                "Pnömoni odağı belirgin değil"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada ilk yönetim basamağı olarak en uygun yaklaşım hangisidir?",
+      "questionType": "Acil yaklaşım/ampirik tedavi",
+      "answerTarget": "Yüksek riskli nötropenik ateşte ilk saat antibiyotik kararı",
+      "diagnosis": {
+        "correct": "Kan kültürleri alınıp ilk saat içinde antipsödomonal beta-laktam başlanması",
+        "options": [
+          "Kan kültürleri alınıp ilk saat içinde antipsödomonal beta-laktam başlanması",
+          "Kültür sonucu çıkana kadar antibiyotik başlamadan yakın izlem yapılması",
+          "Oral amoksisilin-klavulanatla eve gönderilip ertesi gün kontrol edilmesi",
+          "Yalnız G-CSF başlanıp ateşin düşmesi beklenmesi",
+          "Vankomisin monoterapisiyle gram-pozitif kapsama yapılması"
+        ],
+        "question": "Bu hastada ilk yönetim basamağı olarak en uygun yaklaşım hangisidir?",
+        "explanation": "Kemoterapi sonrası derin nötropenide ateş, enfeksiyon odağı olmasa bile acil durumdur. Nötrofil yokluğu nedeniyle fizik muayene ve radyolojik bulgular başlangıçta silik olabilir; bu nedenle kan kültürleri alınır ama antibiyotik kültür sonucuna ertelenmez. Hematolojik malignite tedavisi sonrası ANC 180/mm³ ve mukozit yüksek riskli tabloyu destekler. Uygun ilk yaklaşım ilk saat içinde Pseudomonas kapsayan intravenöz beta-laktam başlanmasıdır; klinik gereklilik varsa ek ajanlar daha sonra eklenir.",
+        "pearls": [
+          "Kemoterapi sonrası 8. gün → nötrofil nadiri dönemiyle uyumlu zamanlama.",
+          "Ateş 38.7 °C ve ANC 180/mm³ → nötropenik ateş acili.",
+          "Mukozit → mukozal bariyer bozulması ve bakteriyemi riski.",
+          "Odağın net olmaması → tedaviyi ertelemez, erken ampirik IV kapsama gerekir."
+        ],
+        "optionFeedback": {
+          "Kan kültürleri alınıp ilk saat içinde antipsödomonal beta-laktam başlanması": "Bu seçenek en uygundur. Sitotoksik tedavi sonrası ateş ve mutlak nötrofil sayısının 500/mm³ altında olması enfeksiyon odağı net olmasa bile acil kabul edilir. Kan kültürleri periferik ve kateter hattından alınmalı; ancak kültür sonucu beklenmeden ilk saat içinde Pseudomonas dahil gram-negatifleri kapsayan intravenöz beta-laktam başlanmalıdır. Hemodinami stabil olsa bile derin nötropeni ve mukozit bakteriyemi riskini artırır.",
+          "Kültür sonucu çıkana kadar antibiyotik başlamadan yakın izlem yapılması": "Nötropenik hastada kültür sonucu beklemek tehlikelidir çünkü enfeksiyon odağı başlangıçta silik olabilir ve inflamatuvar yanıt nötrofil yokluğu nedeniyle zayıf kalabilir. Bu hastada ateş, ANC 180/mm³ ve mukozit vardır; birkaç saatlik gecikme bile sepsis riskini artırabilir. Kültür alınır ama tedavi kültür sonucuna ertelenmez.",
+          "Oral amoksisilin-klavulanatla eve gönderilip ertesi gün kontrol edilmesi": "Ayaktan oral tedavi yalnız seçilmiş düşük riskli, stabil, yakın izlenebilen ve derin/uzamış nötropeni riski düşük hastalarda düşünülebilir. Bu hasta hematolojik malignite tedavisi sonrası derin nötropenik, mukozitli ve trombositopeniktir; bu nedenle yüksek riskli kabul edilir. Tek başına oral amoksisilin-klavulanat Pseudomonas kapsaması sağlamaz ve güvenli değildir.",
+          "Yalnız G-CSF başlanıp ateşin düşmesi beklenmesi": "G-CSF bazı yüksek riskli veya komplike durumlarda ek destek olarak değerlendirilebilir; ancak antibiyotiğin yerine geçmez. Nötropenik ateşte erken ölüm riski bakteriyel sepsisle ilişkilidir ve ilk basamak geniş etkili intravenöz antipsödomonal antibiyotiktir. Yalnız G-CSF verip ateşin düşmesini beklemek enfeksiyon kontrolünü geciktirir.",
+          "Vankomisin monoterapisiyle gram-pozitif kapsama yapılması": "Vankomisin gram-pozitif kapsama sağlar; kateter enfeksiyonu, ciddi mukozitli hemodinamik instabilite, cilt-yumuşak doku enfeksiyonu, MRSA kolonizasyonu veya pnömoni gibi özel durumlarda eklenebilir. Ancak monoterapi olarak gram-negatif ve Pseudomonas kapsaması yetersizdir. Bu vakada temel ampirik omurga antipsödomonal beta-laktam olmalıdır; gerekirse klinik bulguya göre vankomisin eklenir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Nötropenik ateşte enfeksiyon bulguları silik olabilir; ateş tek belirti olabilir. İlk saat içinde antipsödomonal IV beta-laktam başlanması mortaliteyi azaltan temel karar noktasıdır.",
+      "examPearl": "Nötropenik ateşte kültür al ama kültür bekleme: ANC <500 + ateş = erken IV antipsödomonal tedavi.",
+      "whyCorrect": "Doğru seçenek hem kültür tanısal basamağını hem de gecikmeden başlanması gereken ampirik antipsödomonal tedaviyi içerir.",
+      "optionComparison": "Yanlış seçenekler antibiyotiği geciktirir, yetersiz oral/gram-pozitif monoterapi verir veya destek tedavisini antibiyotiğin yerine koyar.",
+      "evidenceChain": [
+        "Kemoterapi sonrası ateş → immünsüpresif enfeksiyon acili.",
+        "ANC 180/mm³ → derin nötropeni.",
+        "Ağız mukoziti → mukozal bariyer hasarı ve bakteriyemi riski.",
+        "Odağın net olmaması ve grafi/idrarda belirgin bulgu olmaması → ampirik tedaviyi geciktirme gerekçesi değildir."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v300",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V299 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v301-new-694-usye-sonrasi-gogus-baskisi-ve-carpinti",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "ÜSYE sonrası göğüs baskısı ve çarpıntı",
+      "difficulty": "Orta-Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Viral prodrom sonrası gelişen göğüs yakınması, troponin yüksekliği, yaygın EKG değişiklikleri ve hafif ventrikül fonksiyon azalmasını birlikte değerlendirerek koroner dışı miyokard hasarında uygun ileri incelemeyi seçme.",
+      "learningTarget": "Akut göğüs ağrısında troponin yüksekliğinin yalnızca akut koroner sendrom anlamına gelmediğini; klinik bağlam ve EKG dağılımı koroner dışı miyokardiyal tutulum lehine olduğunda doku karakterizasyonu sağlayan kardiyak MR’ın ayırıcı değerini öğrenme.",
+      "demographics": "29 yaşında erkek hasta",
+      "setting": "Acil servis kardiyoloji konsültasyonu",
+      "chiefComplaint": "Hasta, birkaç gün önceki boğaz ağrısı ve kırgınlığın ardından başlayan göğüs baskısı ve çarpıntı nedeniyle başvuruyor.",
+      "stem": "Hasta üç gün önce boğaz ağrısı, hafif ateş ve yaygın kas ağrısı yaşadığını; dün akşamdan beri göğsünün orta kısmında baskı hissi ve aralıklı çarpıntı başladığını anlatır. Ağrı bazen sol omuza yayılıyor ancak merdiven çıkmakla belirgin artmadığını, dinlenmekle de tamamen geçmediğini söyler. Derin nefesle hafif rahatsızlık hisseder fakat belirgin nefes darlığı veya balgam tariflemez. Sigara kullanmadığını, bilinen diyabet veya hipertansiyonunun olmadığını, ailesinde erken yaşta koroner hastalık öyküsü bulunmadığını belirtir. Senkop geçirmemiştir; son günlerde enerji içeceği veya yeni ilaç kullanmadığını söyler. Ağrının beklediğinden uzun sürmesi ve çarpıntının sıklaşması üzerine acile gelmiştir.",
+      "patientIntro": {
+        "profile": "29 yaşında erkek hasta, acil servis kardiyoloji konsültasyonu ortamında değerlendiriliyor.",
+        "presentation": "Hasta, birkaç gün önceki boğaz ağrısı ve kırgınlığın ardından başlayan göğüs baskısı ve çarpıntı nedeniyle başvuruyor.",
+        "historySummary": "Hasta üç gün önce boğaz ağrısı, hafif ateş ve yaygın kas ağrısı yaşadığını; dün akşamdan beri göğsünün orta kısmında baskı hissi ve aralıklı çarpıntı başladığını anlatır. Ağrı bazen sol omuza yayılıyor ancak merdiven çıkmakla belirgin artmadığını, dinlenmekle de tamamen geçmediğini söyler. Derin nefesle hafif rahatsızlık hisseder fakat belirgin nefes darlığı veya balgam tariflemez. Sigara kullanmadığını, bilinen diyabet veya hipertansiyonunun olmadığını, ailesinde erken yaşta koroner hastalık öyküsü bulunmadığını belirtir. Senkop geçirmemiştir; son günlerde enerji içeceği veya yeni ilaç kullanmadığını söyler. Ağrının beklediğinden uzun sürmesi ve çarpıntının sıklaşması üzerine acile gelmiştir."
+      },
+      "vitals": {
+        "TA": "118/72 mmHg",
+        "Nabız": "106/dk",
+        "Solunum": "20/dk",
+        "SpO2": "%97, oda havasında",
+        "Ateş": "37.8 °C",
+        "Şok indeksi": "0.90 - perfüzyon korunmuş, taşikardi izlem gerektirir"
+      },
+      "exam": [
+        "Hasta uyanık ve koopere, konuşurken cümleleri tamamlayabiliyor; kapiller dolum yaklaşık 2 saniyedir.",
+        "Kardiyak oskültasyonda belirgin üfürüm yoktur; ritim hafif düzensiz aralıklarla taşikardiktir.",
+        "Akciğer oskültasyonunda belirgin ral veya wheezing duyulmaz.",
+        "Bacaklarda asimetrik ödem, baldır hassasiyeti veya periferik siyanoz saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v301-new-694-usye-sonrasi-gogus-baskisi-ve-carpinti-ekg-ve-ritim-degerlendirmesi",
+          "label": "12 derivasyonlu EKG ve ritim değerlendirmesi",
+          "title": "12 derivasyonlu EKG ve ritim değerlendirmesi",
+          "orderLabel": "12 derivasyonlu EKG ve ritim değerlendirmesi",
+          "type": "cardiology",
+          "priority": "essential",
+          "subtype": "12 derivasyonlu EKG ve ritim değerlendirmesi",
+          "category": "cardiology",
+          "testTypeCategory": "cardiology",
+          "summary": "EKG’de tek damar alanına sınırlı olmayan yaygın repolarizasyon değişikliği ve taşikardi vardır.",
+          "clinicalMeaning": "EKG’de tek damar alanına sınırlı olmayan yaygın repolarizasyon değişikliği ve taşikardi vardır.",
+          "result": {
+            "title": "12 derivasyonlu EKG ve ritim değerlendirmesi",
+            "summary": "EKG’de tek damar alanına sınırlı olmayan yaygın repolarizasyon değişikliği ve taşikardi vardır.",
+            "interpretation": "EKG’de tek damar alanına sınırlı olmayan yaygın repolarizasyon değişikliği ve taşikardi vardır.",
+            "values": [
+              [
+                "Ritim",
+                "Sinüs taşikardisi, nadir ventriküler erken atım",
+                "Sinüs ritmi",
+                "Aritmi izlemi gerekir"
+              ],
+              [
+                "ST-T dağılımı",
+                "Birden çok derivasyonda yaygın ST-T değişikliği",
+                "İskemik değişiklik yok",
+                "Tek koroner alana sınırlı değil"
+              ],
+              [
+                "Patolojik Q dalgası",
+                "Yok",
+                "Yok",
+                "Eski transmural enfarkt lehine değil"
+              ],
+              [
+                "PR segmenti",
+                "Belirgin yaygın depresyon yok",
+                "Normal",
+                "Perikardit paterni baskın değil"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v301-new-694-usye-sonrasi-gogus-baskisi-ve-carpinti-kardiyak-belirtecler",
+          "label": "Kardiyak belirteçler ve inflamasyon",
+          "title": "Kardiyak belirteçler ve inflamasyon",
+          "orderLabel": "Kardiyak belirteçler ve inflamasyon",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Kardiyak belirteçler ve inflamasyon",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Troponin ve inflamasyon belirteçleri yüksektir; patern klinik bağlamla birlikte yorumlanmalıdır.",
+          "clinicalMeaning": "Troponin ve inflamasyon belirteçleri yüksektir; patern klinik bağlamla birlikte yorumlanmalıdır.",
+          "result": {
+            "title": "Kardiyak belirteçler ve inflamasyon",
+            "summary": "Troponin ve inflamasyon belirteçleri yüksektir; patern klinik bağlamla birlikte yorumlanmalıdır.",
+            "interpretation": "Troponin ve inflamasyon belirteçleri yüksektir; patern klinik bağlamla birlikte yorumlanmalıdır.",
+            "values": [
+              [
+                "Yüksek duyarlıklı troponin I",
+                "1260 ng/L",
+                "<34 ng/L",
+                "Belirgin yüksek"
+              ],
+              [
+                "3 saat sonraki troponin I",
+                "1490 ng/L",
+                "<34 ng/L",
+                "Artış sürüyor"
+              ],
+              [
+                "CRP",
+                "44 mg/L",
+                "<5 mg/L",
+                "Yüksek"
+              ],
+              [
+                "NT-proBNP",
+                "520 pg/mL",
+                "<125 pg/mL",
+                "Hafif-orta artış"
+              ],
+              [
+                "CK-MB",
+                "28 ng/mL",
+                "<5 ng/mL",
+                "Yüksek"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v301-new-694-usye-sonrasi-gogus-baskisi-ve-carpinti-ekokardiyografi",
+          "label": "Transtorasik ekokardiyografi",
+          "title": "Transtorasik ekokardiyografi",
+          "orderLabel": "Transtorasik ekokardiyografi",
+          "type": "imaging",
+          "priority": "essential",
+          "subtype": "Transtorasik ekokardiyografi",
+          "category": "cardiology",
+          "testTypeCategory": "cardiology",
+          "summary": "Ekokardiyografide hafif sistolik fonksiyon azalması vardır; tek damar bölgesine sınırlı hareket kusuru belirgin değildir.",
+          "clinicalMeaning": "Ekokardiyografide hafif sistolik fonksiyon azalması vardır; tek damar bölgesine sınırlı hareket kusuru belirgin değildir.",
+          "result": {
+            "title": "Transtorasik ekokardiyografi",
+            "summary": "Ekokardiyografide hafif sistolik fonksiyon azalması vardır; tek damar bölgesine sınırlı hareket kusuru belirgin değildir.",
+            "interpretation": "Ekokardiyografide hafif sistolik fonksiyon azalması vardır; tek damar bölgesine sınırlı hareket kusuru belirgin değildir.",
+            "values": [
+              [
+                "Sol ventrikül EF",
+                "%48",
+                "%55-70",
+                "Hafif düşük"
+              ],
+              [
+                "Bölgesel duvar hareketi",
+                "Tek koroner dağılıma uyan belirgin segmenter kusur yok",
+                "Normal",
+                "Dağılım sınırlı değil"
+              ],
+              [
+                "Perikardiyal efüzyon",
+                "Minimal fizyolojik sıvı",
+                "Yok/minimal",
+                "Tamponad bulgusu yok"
+              ],
+              [
+                "Sağ ventrikül",
+                "Boyut ve fonksiyon normal",
+                "Normal",
+                "Sağ kalp yüklenmesi yok"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v301-new-694-usye-sonrasi-gogus-baskisi-ve-carpinti-temel-laboratuvar",
+          "label": "Temel laboratuvar ve alternatif neden taraması",
+          "title": "Temel laboratuvar ve alternatif neden taraması",
+          "orderLabel": "Temel laboratuvar ve alternatif neden taraması",
+          "type": "lab",
+          "priority": "supportive",
+          "subtype": "Temel laboratuvar ve alternatif neden taraması",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Temel laboratuvarlarda ağır elektrolit bozukluğu, renal yetmezlik veya belirgin emboli belirteci yoktur.",
+          "clinicalMeaning": "Temel laboratuvarlarda ağır elektrolit bozukluğu, renal yetmezlik veya belirgin emboli belirteci yoktur.",
+          "result": {
+            "title": "Temel laboratuvar ve alternatif neden taraması",
+            "summary": "Temel laboratuvarlarda ağır elektrolit bozukluğu, renal yetmezlik veya belirgin emboli belirteci yoktur.",
+            "interpretation": "Temel laboratuvarlarda ağır elektrolit bozukluğu, renal yetmezlik veya belirgin emboli belirteci yoktur.",
+            "values": [
+              [
+                "Hemoglobin",
+                "14.6 g/dL",
+                "13.5-17.5 g/dL",
+                "Normal"
+              ],
+              [
+                "Kreatinin",
+                "0.9 mg/dL",
+                "0.7-1.2 mg/dL",
+                "Normal"
+              ],
+              [
+                "D-dimer",
+                "310 ng/mL FEU",
+                "<500 ng/mL FEU",
+                "Belirgin yüksek değil"
+              ],
+              [
+                "TSH",
+                "1.8 mIU/L",
+                "0.4-4.0 mIU/L",
+                "Normal"
+              ],
+              [
+                "Potasyum",
+                "4.2 mmol/L",
+                "3.5-5.1 mmol/L",
+                "Normal"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada koroner dışı miyokard hasarını değerlendirmek için en uygun ileri inceleme hangisidir?",
+      "questionType": "Tanısal yaklaşım",
+      "answerTarget": "Viral prodrom sonrası miyokard hasarında hedefli ileri görüntüleme seçimi",
+      "diagnosis": {
+        "correct": "Kardiyak MR ile miyokardiyal inflamasyon ve ödemin değerlendirilmesi",
+        "options": [
+          "Acil koroner anjiyografi ile epikardiyal darlık araştırılması",
+          "Kardiyak MR ile miyokardiyal inflamasyon ve ödemin değerlendirilmesi",
+          "Egzersiz efor testiyle iskemi provokasyonu yapılması",
+          "Ventilasyon-perfüzyon sintigrafisiyle emboli taraması yapılması",
+          "Üst gastrointestinal endoskopiyle özofageal kaynak aranması"
+        ],
+        "question": "Bu hastada koroner dışı miyokard hasarını değerlendirmek için en uygun ileri inceleme hangisidir?",
+        "explanation": "Viral semptomları izleyen göğüs yakınması, çarpıntı, troponin yüksekliği, yaygın EKG değişikliği ve tek koroner alana sınırlı olmayan hafif ventrikül fonksiyon azalması koroner dışı miyokardiyal hasar olasılığını artırır. Stabil hastada kardiyak MR, ödem ve non-iskemik doku tutulumu gibi bulgularla miyokardiyal inflamasyonun non-invaziv değerlendirilmesini sağlar. Koroner anjiyografi, yüksek olasılıklı koroner tıkanıklık veya instabilite varsa öncelikli olabilir; bu vakadaki hedef soru koroner dışı miyokard hasarını doku düzeyinde göstermektir.",
+        "pearls": [
+          "Viral prodrom sonrası uzayan göğüs baskısı → koroner dışı hasar bağlamını güçlendirir.",
+          "Troponin yüksekliği tek başına ACS demek değildir; EKG dağılımı ve ekokardiyografi birlikte okunur.",
+          "CMR akut stabil olguda miyokardiyal ödem ve non-iskemik tutulum için en değerli non-invaziv incelemedir.",
+          "Aktif troponin yüksekliğinde efor testi yapılmaz."
+        ],
+        "optionFeedback": {
+          "Acil koroner anjiyografi ile epikardiyal darlık araştırılması": "Acil koroner anjiyografi ST elevasyonlu akut koroner sendrom, devam eden iskemik ağrı, ciddi hemodinamik bozulma veya yüksek olasılıklı koroner tıkanıklıkta önceliklidir. Bu hastada yaş gençtir, tipik koroner risk yükü belirgin değildir, ağrı viral enfeksiyon sonrası başlamış ve troponin yüksekliği yaygın ST-T değişiklikleriyle birliktedir. Epikardiyal darlık dışlanması bazı olgularda gerekebilir; ancak stabil, koroner dışı miyokard hasarı olasılığı güçlü bir tabloda ilk hedef miyokard dokusunun inflamasyon, ödem ve nekroz açısından değerlendirilmesidir.",
+          "Kardiyak MR ile miyokardiyal inflamasyon ve ödemin değerlendirilmesi": "Bu seçenek en uygundur. Viral enfeksiyonu izleyen göğüs baskısı, çarpıntı, troponin yüksekliği, yaygın ST-T değişiklikleri ve ekokardiyografide yeni hafif sistolik fonksiyon azalması koroner dışı miyokard hasarı olasılığını güçlendirir. Kardiyak MR, ödem ve non-iskemik geç gadolinyum tutulumu gibi doku karakterizasyonu sağlayarak inflamatuvar miyokardiyal tutulumu non-invaziv biçimde gösterebilir. TUS mantığında koroner dışı miyokard hasarı ile akut koroner sendrom ayrımında yalnız troponin yüksekliği yeterli değildir; klinik bağlam, EKG dağılımı ve görüntüleme birlikte yorumlanır.",
+          "Egzersiz efor testiyle iskemi provokasyonu yapılması": "Efor testi aktif göğüs ağrısı, yeni troponin yüksekliği veya akut miyokard hasarı şüphesinde uygun başlangıç testi değildir. Egzersizle iskemi provokasyonu stabil kronik koroner sendrom değerlendirmesinde kullanılabilir; ancak bu vakada akut dönemde aritmi ve klinik kötüleşme riski nedeniyle provokatif test yapmak güvenli değildir. Önce akut miyokardiyal hasarın nedeni ve ventrikül fonksiyonu netleştirilmelidir.",
+          "Ventilasyon-perfüzyon sintigrafisiyle emboli taraması yapılması": "Ventilasyon-perfüzyon sintigrafisi pulmoner emboli kuşkusu olan, özellikle BT anjiyografi yapılamayan hastalarda değerlidir. Bu hastada ani plöritik ağrı, belirgin hipoksemi, sağ kalp yüklenmesi veya D-dimer temelli emboli algoritmasını öne çıkaracak veri yoktur. Troponin yüksekliği pulmoner embolide de görülebilir; ancak burada viral prodrom, yaygın EKG değişikliği ve sol ventrikül fonksiyon etkilenimi miyokard dokusu değerlendirmesini daha hedefli kılar.",
+          "Üst gastrointestinal endoskopiyle özofageal kaynak aranması": "Özofageal kaynaklı ağrı retrosternal yanma, yutma ile ilişki, reflü semptomları veya gastrointestinal kanama bulguları olduğunda değerlendirilir. Bu vakada troponin yüksekliği ve EKG değişiklikleri vardır; bu nedenle ağrıyı öncelikle gastrointestinal kabul etmek güvenli değildir. Endoskopi, kardiyak akut hasar olasılığı dışlanmadan ilk basamak yaklaşım değildir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Troponin yüksekliği klinik bağlamdan bağımsız yorumlanamaz. Viral prodrom, yaygın EKG değişikliği ve tek damar alanına uymayan ekokardiyografi paterni varsa kardiyak MR koroner dışı miyokardiyal tutulumun değerlendirilmesinde kritik testtir.",
+      "examPearl": "Genç hastada viral enfeksiyon sonrası troponin yüksekliği + yaygın ST-T değişikliği + hafif EF düşüklüğü varsa aktif dönemde efor testi değil, doku karakterizasyonu düşün.",
+      "whyCorrect": "Bu vakada doğru yaklaşım kardiyak MR’dır; çünkü soru koroner tıkanıklığı değil, miyokard dokusunda inflamasyon/ödem varlığını göstermeyi hedefler.",
+      "optionComparison": "Koroner anjiyografi akut tıkanıklık olasılığı yüksek hastada; V/Q sintigrafisi emboli algoritmasında; efor testi stabil kronik iskemi değerlendirmesinde; endoskopi gastrointestinal semptom baskın olduğunda anlamlıdır. Burada klinik ve tetkik paterninin ortak hedefi miyokard dokusudur.",
+      "evidenceChain": [
+        "Viral prodrom + uzayan göğüs baskısı → koroner dışı miyokardiyal hasar için uygun klinik bağlam.",
+        "Troponin yüksekliği + CRP artışı → miyokard hasarı ve inflamatuvar aktivite birlikteliği.",
+        "Yaygın ST-T değişikliği → tek epikardiyal koroner alanına sınırlı olmayan patern.",
+        "Ekokardiyografide hafif EF düşüklüğü ve tek segmenter kusur olmaması → doku karakterizasyonu gereksinimi."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v301",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V300 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v301-new-695-sirozda-az-idrar-ve-kreatinin-artisi",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Sirozda az idrar ve kreatinin artışı",
+      "difficulty": "Orta-Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Dekompanse sirozlu hastada akut böbrek fonksiyon bozulmasını idrar bulguları, albümin yanıtı ve obstrüksiyon dışlama verileriyle yorumlayarak HRS-AKI mekanizmasını ayırt etme.",
+      "learningTarget": "Sirozda düşük idrar sodyumunun tek başına basit dehidratasyon anlamına gelmediğini; yapısal böbrek hasarı ve obstrüksiyon dışlandıktan sonra albümin yanıtsız fonksiyonel renal vazokonstriksiyon paternini tanıma.",
+      "demographics": "58 yaşında erkek hasta",
+      "setting": "Gastroenteroloji servisi",
+      "chiefComplaint": "Hasta, bilinen siroz nedeniyle takip edilirken son günlerde idrar miktarının azalması ve karın şişliğinin artması nedeniyle yatırılıyor.",
+      "stem": "Hasta son bir haftadır karın şişliğinin arttığını, ayakkabılarının dar geldiğini ve idrar miktarının belirgin azaldığını anlatır. Daha önce günde birkaç kez idrara çıktığını, son iki gündür idrarının koyulaştığını ve miktarın azaldığını fark etmiştir. Kusma, belirgin ishal veya dışkıda kan tariflemez; karın ağrısı yaygın dolgunluk şeklindedir. Evde ağrı kesici kullanmadığını, yeni antibiyotik başlamadığını ve alkol almadığını söyler. Düzenli aldığı diüretikleri son başvurudan sonra doktor önerisiyle kesilmiştir. Halsizlik ve iştahsızlık artınca ailesi tarafından servise getirilmiştir.",
+      "patientIntro": {
+        "profile": "58 yaşında erkek hasta, gastroenteroloji servisi ortamında değerlendiriliyor.",
+        "presentation": "Hasta, bilinen siroz nedeniyle takip edilirken son günlerde idrar miktarının azalması ve karın şişliğinin artması nedeniyle yatırılıyor.",
+        "historySummary": "Hasta son bir haftadır karın şişliğinin arttığını, ayakkabılarının dar geldiğini ve idrar miktarının belirgin azaldığını anlatır. Daha önce günde birkaç kez idrara çıktığını, son iki gündür idrarının koyulaştığını ve miktarın azaldığını fark etmiştir. Kusma, belirgin ishal veya dışkıda kan tariflemez; karın ağrısı yaygın dolgunluk şeklindedir. Evde ağrı kesici kullanmadığını, yeni antibiyotik başlamadığını ve alkol almadığını söyler. Düzenli aldığı diüretikleri son başvurudan sonra doktor önerisiyle kesilmiştir. Halsizlik ve iştahsızlık artınca ailesi tarafından servise getirilmiştir."
+      },
+      "vitals": {
+        "TA": "96/60 mmHg",
+        "Nabız": "104/dk",
+        "Solunum": "20/dk",
+        "SpO2": "%96, oda havasında",
+        "Ateş": "36.9 °C",
+        "Şok indeksi": "1.08 - düşük etkili dolaşım/perfüzyon riski"
+      },
+      "exam": [
+        "Hasta yorgun ve sarı skleralı görünür; bilinç açık, oryantasyon korunmuştur.",
+        "Karında belirgin asit, shifting dullness ve hafif yaygın hassasiyet vardır; defans veya rebound yoktur.",
+        "Bilateral pretibial 2+ ödem izlenir; periferik ekstremiteler hafif soğuktur.",
+        "Akciğer bazallerinde hafif solunum ses azalması vardır; belirgin fokal ral duyulmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v301-new-695-sirozda-az-idrar-ve-kreatinin-artisi-bobrek-fonksiyon-ve-elektrolit",
+          "label": "Böbrek fonksiyonları ve elektrolitler",
+          "title": "Böbrek fonksiyonları ve elektrolitler",
+          "orderLabel": "Böbrek fonksiyonları ve elektrolitler",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Böbrek fonksiyonları ve elektrolitler",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Bazale göre belirgin kreatinin artışı ve hiponatremi vardır.",
+          "clinicalMeaning": "Bazale göre belirgin kreatinin artışı ve hiponatremi vardır.",
+          "result": {
+            "title": "Böbrek fonksiyonları ve elektrolitler",
+            "summary": "Bazale göre belirgin kreatinin artışı ve hiponatremi vardır.",
+            "interpretation": "Bazale göre belirgin kreatinin artışı ve hiponatremi vardır.",
+            "values": [
+              [
+                "Kreatinin",
+                "2.3 mg/dL",
+                "0.7-1.2 mg/dL",
+                "Yüksek"
+              ],
+              [
+                "Önceki kreatinin",
+                "0.9 mg/dL",
+                "0.7-1.2 mg/dL",
+                "Bazale göre artmış"
+              ],
+              [
+                "Üre",
+                "74 mg/dL",
+                "10-45 mg/dL",
+                "Yüksek"
+              ],
+              [
+                "Sodyum",
+                "129 mmol/L",
+                "135-145 mmol/L",
+                "Düşük"
+              ],
+              [
+                "Potasyum",
+                "4.8 mmol/L",
+                "3.5-5.1 mmol/L",
+                "Üst normale yakın"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v301-new-695-sirozda-az-idrar-ve-kreatinin-artisi-karaciger-sentez-ve-asit",
+          "label": "Karaciğer sentez fonksiyonu ve asit verileri",
+          "title": "Karaciğer sentez fonksiyonu ve asit verileri",
+          "orderLabel": "Karaciğer sentez fonksiyonu ve asit verileri",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Karaciğer sentez fonksiyonu ve asit verileri",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Dekompanse karaciğer hastalığı bulguları vardır; asit hücre sayısı bakteriyel peritonit eşiğinde değildir.",
+          "clinicalMeaning": "Dekompanse karaciğer hastalığı bulguları vardır; asit hücre sayısı bakteriyel peritonit eşiğinde değildir.",
+          "result": {
+            "title": "Karaciğer sentez fonksiyonu ve asit verileri",
+            "summary": "Dekompanse karaciğer hastalığı bulguları vardır; asit hücre sayısı bakteriyel peritonit eşiğinde değildir.",
+            "interpretation": "Dekompanse karaciğer hastalığı bulguları vardır; asit hücre sayısı bakteriyel peritonit eşiğinde değildir.",
+            "values": [
+              [
+                "Albumin",
+                "2.5 g/dL",
+                "3.5-5.0 g/dL",
+                "Düşük"
+              ],
+              [
+                "INR",
+                "1.8",
+                "0.8-1.2",
+                "Uzamış"
+              ],
+              [
+                "Total bilirubin",
+                "4.1 mg/dL",
+                "0.2-1.2 mg/dL",
+                "Yüksek"
+              ],
+              [
+                "Asit PMN",
+                "88 hücre/mm³",
+                "<250 hücre/mm³",
+                "SBP eşiği altında"
+              ],
+              [
+                "Asit kültürü",
+                "Üreme yok, sonuç takipte",
+                "Üreme yok",
+                "Enfeksiyon kanıtı yok"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v301-new-695-sirozda-az-idrar-ve-kreatinin-artisi-idrar-ve-renal-degerlendirme",
+          "label": "İdrar incelemesi ve renal yapısal değerlendirme",
+          "title": "İdrar incelemesi ve renal yapısal değerlendirme",
+          "orderLabel": "İdrar incelemesi ve renal yapısal değerlendirme",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "İdrar incelemesi ve renal yapısal değerlendirme",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "İdrar sodyumu çok düşüktür; aktif glomerüler sediment veya obstrüksiyon bulgusu yoktur.",
+          "clinicalMeaning": "İdrar sodyumu çok düşüktür; aktif glomerüler sediment veya obstrüksiyon bulgusu yoktur.",
+          "result": {
+            "title": "İdrar incelemesi ve renal yapısal değerlendirme",
+            "summary": "İdrar sodyumu çok düşüktür; aktif glomerüler sediment veya obstrüksiyon bulgusu yoktur.",
+            "interpretation": "İdrar sodyumu çok düşüktür; aktif glomerüler sediment veya obstrüksiyon bulgusu yoktur.",
+            "values": [
+              [
+                "İdrar sodyumu",
+                "8 mmol/L",
+                ">40 mmol/L",
+                "Çok düşük"
+              ],
+              [
+                "Proteinüri",
+                "180 mg/g kreatinin",
+                "<150 mg/g",
+                "Hafif"
+              ],
+              [
+                "İdrar eritrositi",
+                "0-1/hpf",
+                "0-2/hpf",
+                "Belirgin hematüri yok"
+              ],
+              [
+                "Silendir",
+                "Eritrosit/granüler silendir izlenmedi",
+                "Yok",
+                "Aktif sediment yok"
+              ],
+              [
+                "Renal USG",
+                "Hidronefroz yok, böbrek boyutları korunmuş",
+                "Obstrüksiyon yok",
+                "Postrenal neden desteklenmiyor"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v301-new-695-sirozda-az-idrar-ve-kreatinin-artisi-albumin-yanit",
+          "label": "Diüretik kesilmesi ve albümin yanıtı",
+          "title": "Diüretik kesilmesi ve albümin yanıtı",
+          "orderLabel": "Diüretik kesilmesi ve albümin yanıtı",
+          "type": "clinical",
+          "priority": "essential",
+          "subtype": "Diüretik kesilmesi ve albümin yanıtı",
+          "category": "clinicalAssessment",
+          "testTypeCategory": "clinicalAssessment",
+          "summary": "Diüretik kesilmesi ve albümin uygulamasına rağmen böbrek fonksiyonunda anlamlı düzelme olmamıştır.",
+          "clinicalMeaning": "Diüretik kesilmesi ve albümin uygulamasına rağmen böbrek fonksiyonunda anlamlı düzelme olmamıştır.",
+          "result": {
+            "title": "Diüretik kesilmesi ve albümin yanıtı",
+            "summary": "Diüretik kesilmesi ve albümin uygulamasına rağmen böbrek fonksiyonunda anlamlı düzelme olmamıştır.",
+            "interpretation": "Diüretik kesilmesi ve albümin uygulamasına rağmen böbrek fonksiyonunda anlamlı düzelme olmamıştır.",
+            "values": [
+              [
+                "Diüretik",
+                "Kesildi",
+                "Kesilmesi beklenir",
+                "Prerenal katkı azaltıldı"
+              ],
+              [
+                "Albümin uygulaması",
+                "2 gün uygun doz verildi",
+                "Yanıt değerlendirilir",
+                "Hacim yanıtı test edildi"
+              ],
+              [
+                "Kreatinin yanıtı",
+                "2.2 → 2.3 mg/dL",
+                "Düşüş beklenir",
+                "Düzelme yok"
+              ],
+              [
+                "Ortalama arter basıncı",
+                "Yaklaşık 72 mmHg",
+                ">65 mmHg",
+                "Sınırda korunmuş"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastadaki böbrek fonksiyon bozulmasını en iyi açıklayan süreç aşağıdakilerden hangisidir?",
+      "questionType": "Mekanizma/klinik patern",
+      "answerTarget": "Dekompanse sirozda HRS-AKI mekanizmasını yapısal böbrek hasarından ayırma",
+      "diagnosis": {
+        "correct": "Splanchnic vazodilatasyon ve renal vazokonstriksiyonla gelişen fonksiyonel böbrek yetmezliği",
+        "options": [
+          "İshal sonrası gerçek intravasküler hacim kaybına bağlı prerenal azotemi",
+          "Aminoglikozid ilişkili akut tübüler nekroz",
+          "Glomerüler inflamasyona bağlı hızlı ilerleyen nefritik süreç",
+          "Bilateral üriner obstrüksiyona bağlı postrenal akut böbrek hasarı",
+          "Splanchnic vazodilatasyon ve renal vazokonstriksiyonla gelişen fonksiyonel böbrek yetmezliği"
+        ],
+        "question": "Bu hastadaki böbrek fonksiyon bozulmasını en iyi açıklayan süreç aşağıdakilerden hangisidir?",
+        "explanation": "İleri sirozda splanchnic vazodilatasyon etkili arteriyel hacmi azaltır; buna yanıt olarak nörohormonal vazokonstriktör sistemler aktive olur ve böbrek damar yatağında belirgin vazokonstriksiyon gelişir. Bu hastada aktif idrar sedimenti, anlamlı proteinüri, hidronefroz veya belirgin nefrotoksin öyküsü yoktur. Diüretik kesilmesi ve albümin desteğine yanıt alınmaması basit hacim kaybından uzaklaştırır. Bu nedenle patern siroz zemininde fonksiyonel renal vazokonstriksiyonla gelişen HRS-AKI ile en iyi açıklanır.",
+        "pearls": [
+          "Siroz + asit + hiponatremi → düşük etkili arteriyel hacim bağlamı.",
+          "İdrar sodyumu 8 mmol/L → böbrekte sodyum tutulumunun arttığını gösterir.",
+          "Proteinüri/hematüri ve silendir yokluğu → primer glomerüler/aktif tubüler hasarı zayıflatır.",
+          "Albümin denemesine rağmen kreatinin düzelmemesi → basit prerenal azotemiden uzaklaştırır."
+        ],
+        "optionFeedback": {
+          "İshal sonrası gerçek intravasküler hacim kaybına bağlı prerenal azotemi": "Prerenal azotemi gerçek sıvı kaybı, kanama, kusma, ishal veya aşırı diürez sonrası gelişebilir ve sıvı/albumin desteğine belirgin yanıt beklenir. Bu hastada belirgin gastrointestinal sıvı kaybı yoktur, diüretikler kesilmiş ve albümin verilmesine rağmen kreatinin artışı sürmüştür. Siroz ve asit zemininde düşük idrar sodyumu prerenal tabloya benzeyebilir; ancak yanıt olmaması ve yapısal böbrek hasarı bulgularının bulunmaması fonksiyonel hepatorenal mekanizmayı daha olası yapar.",
+          "Aminoglikozid ilişkili akut tübüler nekroz": "Akut tübüler nekroz nefrotoksin, sepsis, iskemi veya ağır hipotansiyon sonrası gelişebilir; idrar sedimentinde granüler silendirler ve idrar sodyumunda artış beklenebilir. Bu vakada yakın dönemde aminoglikozid kullanımı yoktur, idrar sedimentinde granüler silendir bildirilmemiştir ve ultrasonografide obstrüksiyon yoktur. Sirozda ATN önemli ayırıcı tanıdır; ancak burada albümin yanıtsızlığı, çok düşük idrar sodyumu ve proteinüri/hematürinin olmaması HRS-AKI paternine daha yakındır.",
+          "Glomerüler inflamasyona bağlı hızlı ilerleyen nefritik süreç": "Hızlı ilerleyen nefritik süreçte hematüri, dismorfik eritrosit, eritrosit silendiri, anlamlı proteinüri ve çoğu zaman sistemik otoimmün bulgular beklenir. Bu hastanın idrarında belirgin hematüri veya proteinüri yoktur; kompleman/otoantikor verisi de glomerülonefriti desteklememektedir. Kreatinin artışı siroz bağlamında geliştiği için glomerüler inflamasyon yerine renal perfüzyonun fonksiyonel bozulması ön plandadır.",
+          "Bilateral üriner obstrüksiyona bağlı postrenal akut böbrek hasarı": "Postrenal akut böbrek hasarı bilateral obstrüksiyon, tek böbrekte obstrüksiyon veya mesane çıkım tıkanıklığı ile gelişir; hidronefroz veya glob vezikale gibi bulgular aranır. Bu hastada renal ultrasonografide hidronefroz yoktur ve mesane doluluğu artmamıştır. İdrar miktarı azlığı postrenal tıkanıklıkla değil, ileri sirozda etkili arteriyel hacim azalması ve renal vazokonstriksiyonla açıklanır.",
+          "Splanchnic vazodilatasyon ve renal vazokonstriksiyonla gelişen fonksiyonel böbrek yetmezliği": "Bu seçenek en uygundur. İleri siroz ve asitte splanchnic arteriyel vazodilatasyon etkili arteriyel dolaşım hacmini azaltır; buna karşı renin-anjiyotensin-aldosteron sistemi, sempatik sistem ve vazopressin aktivasyonu artar. Sonuçta böbrek parankimi yapısal olarak belirgin hasarlı olmadan renal vazokonstriksiyon ve GFR düşüşü gelişebilir. Diüretik kesilmesi ve albümin denemesine rağmen kreatininin düzelmemesi, anlamlı proteinüri/hematüri olmaması ve ultrasonografide obstrüksiyon bulunmaması bu mekanizmayı destekler."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "HRS-AKI yapısal böbrek hastalığı değil, ileri sirozda dolaşım yeniden dağılımı ve renal vazokonstriksiyonla gelişen fonksiyonel GFR azalmasıdır. Tanıda aktif sediment, anlamlı proteinüri, obstrüksiyon ve nefrotoksinler dışlanmalı; hacim yanıtı değerlendirilmelidir.",
+      "examPearl": "Sirozlu hastada kreatinin yükselirse önce enfeksiyon, kanama, nefrotoksin, obstrüksiyon ve hacim yanıtı kontrol edilir; albümine yanıtsız düşük idrar sodyumlu aktif sedimentsiz AKI, HRS-AKI lehinedir.",
+      "whyCorrect": "Doğru seçenek, sirozda etkili arteriyel dolaşım azalmasıyla tetiklenen renal vazokonstriksiyon mekanizmasını açıklar.",
+      "optionComparison": "Prerenal azotemi gerçek sıvı kaybı ve hacim yanıtı ile; ATN nefrotoksin/iskemi ve aktif tubüler sedimentle; nefritik süreç hematüri-proteinüri-silendirle; postrenal AKI hidronefroz veya mesane çıkım tıkanıklığıyla ayrılır.",
+      "evidenceChain": [
+        "Dekompanse siroz ve asit → HRS-AKI için zemin.",
+        "Kreatinin bazal 0.9’dan 2.3 mg/dL’ye yükselmiş → akut böbrek fonksiyon bozulması.",
+        "Aktif sediment/proteinüri/obstrüksiyon yok → yapısal ve postrenal nedenler zayıf.",
+        "Diüretik kesilmesi + albümin sonrası düzelme yok → basit hacim kaybı yeterli açıklama değildir."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v301",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V300 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v301-new-696-sabah-koyu-idrar-ve-karin-agrisi",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Sabah koyu idrar ve karın ağrısı",
+      "difficulty": "Orta-Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Coombs negatif intravasküler hemoliz, hemoglobinüri ve alışılmadık venöz tromboz birlikteliğinde PNH doğrulama testini ayırt etme.",
+      "learningTarget": "Hemoliz değerlendirmesinde DAT negatifliği, LDH yüksekliği, haptoglobin düşüklüğü ve alışılmadık bölge trombozunun PNH lehine bir araya geldiğini; doğrulamanın akım sitometrisiyle yapıldığını öğrenme.",
+      "demographics": "37 yaşında kadın hasta",
+      "setting": "Hematoloji konsültasyonlu acil servis",
+      "chiefComplaint": "Hasta, sabahları koyu renkli idrar, halsizlik ve iki gündür artan sağ üst karın ağrısı nedeniyle başvuruyor.",
+      "stem": "Hasta birkaç aydır özellikle sabah ilk idrarının çay renginde olduğunu, gün içinde rengin açıldığını ve buna giderek artan halsizliğin eşlik ettiğini anlatır. Son iki gündür sağ üst karın bölgesinde derin ve künt bir ağrı başlamış, ağrı yemekle belirgin değişmemiş ve bulantı nedeniyle acile gelmiştir. Daha önce safra taşı tanısı almadığını, ateş veya sarı-yeşil kusma olmadığını söyler. Son haftalarda burun kanaması veya belirgin morarma fark etmemiştir. Ailesinde bilinen kalıtsal anemi yoktur; yeni ilaç veya bakla tüketimi tariflemez. Koyu idrarın tekrarlaması ve karın ağrısının artması onu başvurmaya zorlamıştır.",
+      "patientIntro": {
+        "profile": "37 yaşında kadın hasta, hematoloji konsültasyonlu acil servis ortamında değerlendiriliyor.",
+        "presentation": "Hasta, sabahları koyu renkli idrar, halsizlik ve iki gündür artan sağ üst karın ağrısı nedeniyle başvuruyor.",
+        "historySummary": "Hasta birkaç aydır özellikle sabah ilk idrarının çay renginde olduğunu, gün içinde rengin açıldığını ve buna giderek artan halsizliğin eşlik ettiğini anlatır. Son iki gündür sağ üst karın bölgesinde derin ve künt bir ağrı başlamış, ağrı yemekle belirgin değişmemiş ve bulantı nedeniyle acile gelmiştir. Daha önce safra taşı tanısı almadığını, ateş veya sarı-yeşil kusma olmadığını söyler. Son haftalarda burun kanaması veya belirgin morarma fark etmemiştir. Ailesinde bilinen kalıtsal anemi yoktur; yeni ilaç veya bakla tüketimi tariflemez. Koyu idrarın tekrarlaması ve karın ağrısının artması onu başvurmaya zorlamıştır."
+      },
+      "vitals": {
+        "TA": "112/68 mmHg",
+        "Nabız": "108/dk",
+        "Solunum": "18/dk",
+        "SpO2": "%98, oda havasında",
+        "Ateş": "37.1 °C",
+        "Şok indeksi": "0.96 - taşikardi var, dolaşım yakın izlenmeli"
+      },
+      "exam": [
+        "Hasta soluk ve yorgun görünür; skleralarda hafif ikter izlenir.",
+        "Karın sağ üst kadranda derin palpasyonla hassastır; defans veya rebound yoktur.",
+        "Dalak palpabl değildir; belirgin lenfadenopati saptanmaz.",
+        "Ciltte yaygın peteşi veya ekimoz yoktur; periferik nabızlar alınmaktadır."
+      ],
+      "investigations": [
+        {
+          "id": "v301-new-696-sabah-koyu-idrar-ve-karin-agrisi-hemoliz-paneli",
+          "label": "Hemoliz paneli",
+          "title": "Hemoliz paneli",
+          "orderLabel": "Hemoliz paneli",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Hemoliz paneli",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Normositer anemiye intravasküler hemoliz bulguları eşlik etmektedir.",
+          "clinicalMeaning": "Normositer anemiye intravasküler hemoliz bulguları eşlik etmektedir.",
+          "result": {
+            "title": "Hemoliz paneli",
+            "summary": "Normositer anemiye intravasküler hemoliz bulguları eşlik etmektedir.",
+            "interpretation": "Normositer anemiye intravasküler hemoliz bulguları eşlik etmektedir.",
+            "values": [
+              [
+                "Hemoglobin",
+                "8.9 g/dL",
+                "12.0-16.0 g/dL",
+                "Düşük"
+              ],
+              [
+                "MCV",
+                "91 fL",
+                "80-100 fL",
+                "Normositer"
+              ],
+              [
+                "Retikülosit",
+                "%6.8",
+                "%0.5-2.5",
+                "Yüksek"
+              ],
+              [
+                "LDH",
+                "1640 U/L",
+                "<250 U/L",
+                "Çok yüksek"
+              ],
+              [
+                "Haptoglobin",
+                "<10 mg/dL",
+                "30-200 mg/dL",
+                "Baskılı"
+              ],
+              [
+                "Total/indirekt bilirubin",
+                "3.2/2.6 mg/dL",
+                "<1.2/<0.8 mg/dL",
+                "İndirekt baskın"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v301-new-696-sabah-koyu-idrar-ve-karin-agrisi-immum-hemoliz-ve-yayma",
+          "label": "İmmün hemoliz ve periferik yayma",
+          "title": "İmmün hemoliz ve periferik yayma",
+          "orderLabel": "İmmün hemoliz ve periferik yayma",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "İmmün hemoliz ve periferik yayma",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "DAT negatiftir; yaymada belirgin mikroanjiyopatik parçalanma paterni yoktur.",
+          "clinicalMeaning": "DAT negatiftir; yaymada belirgin mikroanjiyopatik parçalanma paterni yoktur.",
+          "result": {
+            "title": "İmmün hemoliz ve periferik yayma",
+            "summary": "DAT negatiftir; yaymada belirgin mikroanjiyopatik parçalanma paterni yoktur.",
+            "interpretation": "DAT negatiftir; yaymada belirgin mikroanjiyopatik parçalanma paterni yoktur.",
+            "values": [
+              [
+                "Direkt antiglobulin testi",
+                "Negatif",
+                "Negatif",
+                "İmmün hemoliz lehine değil"
+              ],
+              [
+                "Periferik yayma",
+                "Polikromazi, belirgin şistosit artışı yok",
+                "Normal",
+                "Mikroanjiyopati baskın değil"
+              ],
+              [
+                "Trombosit",
+                "168.000/mm³",
+                "150.000-400.000/mm³",
+                "Normal sınıra yakın"
+              ],
+              [
+                "Lökosit",
+                "3.4 x10³/mm³",
+                "4.0-10.0 x10³/mm³",
+                "Hafif düşük"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v301-new-696-sabah-koyu-idrar-ve-karin-agrisi-idrar-ve-tromboz",
+          "label": "İdrar incelemesi ve abdominal vasküler görüntüleme",
+          "title": "İdrar incelemesi ve abdominal vasküler görüntüleme",
+          "orderLabel": "İdrar incelemesi ve abdominal vasküler görüntüleme",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "İdrar incelemesi ve abdominal vasküler görüntüleme",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Dipstick kan pozitifliği eritrosit sayısıyla açıklanamamaktadır; abdominal venöz tromboz saptanmıştır.",
+          "clinicalMeaning": "Dipstick kan pozitifliği eritrosit sayısıyla açıklanamamaktadır; abdominal venöz tromboz saptanmıştır.",
+          "result": {
+            "title": "İdrar incelemesi ve abdominal vasküler görüntüleme",
+            "summary": "Dipstick kan pozitifliği eritrosit sayısıyla açıklanamamaktadır; abdominal venöz tromboz saptanmıştır.",
+            "interpretation": "Dipstick kan pozitifliği eritrosit sayısıyla açıklanamamaktadır; abdominal venöz tromboz saptanmıştır.",
+            "values": [
+              [
+                "İdrar dipstick",
+                "Kan 3+",
+                "Negatif",
+                "Pozitif"
+              ],
+              [
+                "İdrar mikroskopisi",
+                "0-1 eritrosit/hpf",
+                "0-2/hpf",
+                "Hemoglobinüri lehine"
+              ],
+              [
+                "Abdominal Doppler USG",
+                "Portal ven içinde parsiyel trombüs",
+                "Akım açık",
+                "Alışılmadık venöz tromboz"
+              ],
+              [
+                "AST/ALT",
+                "68/55 U/L",
+                "<35/<45 U/L",
+                "Hafif yüksek"
+              ],
+              [
+                "INR",
+                "1.1",
+                "0.8-1.2",
+                "Normal"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v301-new-696-sabah-koyu-idrar-ve-karin-agrisi-ayirici-tarama",
+          "label": "Ayırıcı tanı için temel tarama",
+          "title": "Ayırıcı tanı için temel tarama",
+          "orderLabel": "Ayırıcı tanı için temel tarama",
+          "type": "lab",
+          "priority": "supportive",
+          "subtype": "Ayırıcı tanı için temel tarama",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Besinsel eksiklik veya yaygın koagülasyon bozukluğu tabloyu açıklamamaktadır.",
+          "clinicalMeaning": "Besinsel eksiklik veya yaygın koagülasyon bozukluğu tabloyu açıklamamaktadır.",
+          "result": {
+            "title": "Ayırıcı tanı için temel tarama",
+            "summary": "Besinsel eksiklik veya yaygın koagülasyon bozukluğu tabloyu açıklamamaktadır.",
+            "interpretation": "Besinsel eksiklik veya yaygın koagülasyon bozukluğu tabloyu açıklamamaktadır.",
+            "values": [
+              [
+                "Ferritin",
+                "96 ng/mL",
+                "15-150 ng/mL",
+                "Normal"
+              ],
+              [
+                "B12",
+                "410 pg/mL",
+                "200-900 pg/mL",
+                "Normal"
+              ],
+              [
+                "PT/aPTT",
+                "13 sn / 31 sn",
+                "11-14 sn / 25-35 sn",
+                "Normal"
+              ],
+              [
+                "Kreatinin",
+                "0.8 mg/dL",
+                "0.6-1.1 mg/dL",
+                "Normal"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada tanıyı doğrulamak için en uygun test aşağıdakilerden hangisidir?",
+      "questionType": "Doğrulayıcı tanısal test",
+      "answerTarget": "Hemoliz ve alışılmadık tromboz birlikteliğinde PNH doğrulama testi",
+      "diagnosis": {
+        "correct": "Akım sitometrisiyle GPI bağlı yüzey protein eksikliğinin gösterilmesi",
+        "options": [
+          "Direkt antiglobulin testiyle eritrosit yüzeyine bağlı antikor aranması",
+          "ADAMTS13 aktivitesi ve inhibitör düzeyinin değerlendirilmesi",
+          "Akım sitometrisiyle GPI bağlı yüzey protein eksikliğinin gösterilmesi",
+          "Hemoglobin elektroforeziyle beta globin zincir kusurunun araştırılması",
+          "Kemik iliği aspirasyonuyla blast oranının belirlenmesi"
+        ],
+        "question": "Bu hastada tanıyı doğrulamak için en uygun test aşağıdakilerden hangisidir?",
+        "explanation": "Bu vakada hemoliz intravasküler ağırlıktadır: LDH çok yüksektir, haptoglobin baskılıdır ve dipstick kan pozitifliği mikroskopik eritrosit sayısıyla açıklanamamaktadır. DAT negatifliği immün hemolizi zayıflatır. Portal ven trombozu gibi alışılmadık yer trombozu PNH için ayırt edici bir ipucudur. Tanıyı doğrulamak için periferik kanda CD55/CD59 ve FLAER temelli akım sitometrisiyle GPI bağlı protein eksikliği gösterilmelidir.",
+        "pearls": [
+          "Sabah koyu idrar + dipstick kan pozitif ama eritrosit yok → hemoglobinüri.",
+          "LDH çok yüksek ve haptoglobin baskılı → intravasküler hemoliz.",
+          "DAT negatif → otoimmün hemoliz zayıf.",
+          "Portal ven trombozu → PNH’de görülebilen alışılmadık bölge trombozu."
+        ],
+        "optionFeedback": {
+          "Direkt antiglobulin testiyle eritrosit yüzeyine bağlı antikor aranması": "Direkt antiglobulin testi otoimmün hemolitik anemide eritrosit yüzeyine bağlı IgG veya komplemanı göstermek için kullanılır. Bu hastada hemoliz bulguları vardır ancak DAT negatiftir, ayrıca karın ağrısı ve portal ven trombozu gibi alışılmadık bölgede tromboz tabloyu otoimmün hemolizden uzaklaştırır. DAT, immün hemolizi ayırmada önemlidir; fakat bu vakadaki ana doğrulama testi değildir.",
+          "ADAMTS13 aktivitesi ve inhibitör düzeyinin değerlendirilmesi": "ADAMTS13 aktivitesi trombotik trombositopenik purpura şüphesinde istenir. TTP’de mikroanjiyopatik hemoliz, trombositopeni, nörolojik bulgular ve şistositler beklenir. Bu hastada trombosit belirgin düşük değildir, şistosit baskınlığı verilmemiştir ve alışılmadık venöz tromboz ile hemoglobinüri ön plandadır. ADAMTS13 testi bu paternin ilk doğrulayıcı testi değildir.",
+          "Akım sitometrisiyle GPI bağlı yüzey protein eksikliğinin gösterilmesi": "Bu seçenek en uygundur. Coombs negatif intravasküler hemoliz, sabah koyu idrar, LDH yüksekliği, haptoglobin düşüklüğü ve portal ven gibi alışılmadık bölgede tromboz paroksismal noktürnal hemoglobinüri paternini destekler. PNH’de PIGA mutasyonu nedeniyle GPI bağlantılı yüzey proteinleri eksiktir; CD55, CD59 ve FLAER temelli akım sitometrisi klonal hücre popülasyonunu göstererek tanıyı doğrular. TUS açısından hemoliz + tromboz + DAT negatifliği kombinasyonu kritik ipucudur.",
+          "Hemoglobin elektroforeziyle beta globin zincir kusurunun araştırılması": "Hemoglobin elektroforezi talasemi ve bazı hemoglobinopatilerde değerlidir. Talasemide kronik mikrositer anemi, hedef hücreler ve aile/etnik öykü ön plana çıkar; intravasküler hemoliz, hemoglobinüri ve alışılmadık venöz tromboz tipik değildir. Bu hastada MCV normal sınıra yakın, LDH çok yüksek ve haptoglobin baskılıdır; elektroforez ana doğrulama testi değildir.",
+          "Kemik iliği aspirasyonuyla blast oranının belirlenmesi": "Kemik iliği aspirasyonu akut lösemi, aplastik anemi veya miyelodisplazi gibi kemik iliği patolojilerini değerlendirmede kullanılabilir. PNH bazı kemik iliği yetmezliği tablolarıyla ilişkili olabilir; ancak bu hastada acil ayırıcı nokta intravasküler hemoliz ve alışılmadık tromboz birlikteliğidir. İlk hedef periferik kanda GPI bağlı protein eksikliğini akım sitometrisiyle göstermektir; kemik iliği değerlendirmesi ek klinik gereklilik varsa sonra planlanır."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "PNH’de PIGA mutasyonu sonucunda GPI bağlı kompleman düzenleyici yüzey proteinleri eksiktir. Klinik üçlü; intravasküler hemoliz, sitopeni/kemik iliği yetmezliği eğilimi ve trombozdur. Tanısal test periferik kan akım sitometrisidir.",
+      "examPearl": "DAT negatif intravasküler hemoliz + hemoglobinüri + alışılmadık yer trombozu gördüğünde PNH ve akım sitometrisi düşün.",
+      "whyCorrect": "Doğru test akım sitometrisidir; çünkü vakadaki ana problem antikor bağlı hemoliz değil, kompleman düzenleyici GPI bağlı protein eksikliğine bağlı klonal eritrosit/granülosit popülasyonudur.",
+      "optionComparison": "DAT otoimmün hemolizi, ADAMTS13 TTP’yi, elektroforez hemoglobinopatileri, kemik iliği aspirasyonu ise marrow patolojilerini değerlendirir. Bu hasta için en ayırt edici doğrulama periferik kan akım sitometrisidir.",
+      "evidenceChain": [
+        "LDH 1640 U/L + haptoglobin <10 mg/dL → intravasküler hemoliz.",
+        "İdrarda kan 3+ ancak eritrosit 0-1/hpf → hemoglobinüri.",
+        "DAT negatif → immün hemoliz desteklenmiyor.",
+        "Portal ven trombozu → alışılmadık bölge trombozu ile PNH lehine kritik veri."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v301",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V300 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v301-new-697-pituiter-cerrahi-sonrasi-yogun-susama",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Pituiter cerrahi sonrası yoğun susama",
+      "difficulty": "Orta-Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Transsfenoidal cerrahi sonrası poliüri, hipernatremi, düşük idrar osmolalitesi ve desmopressin yanıtını yorumlayarak vazopressin eksikliği mekanizmasını ayırt etme.",
+      "learningTarget": "Poliüri değerlendirmesinde osmotik diürez, primer polidipsi, nefrojenik DI, santral DI ve SIADH paternlerini serum sodyumu-idrar osmolalitesi-desmopressin yanıtı üzerinden ayırma.",
+      "demographics": "46 yaşında kadın hasta",
+      "setting": "Endokrinoloji konsültasyonlu beyin cerrahisi servisi",
+      "chiefComplaint": "Hasta, hipofiz cerrahisinden sonra başlayan aşırı susama ve sık idrara çıkma nedeniyle değerlendiriliyor.",
+      "stem": "Hasta hipofiz adenomu nedeniyle yapılan transsfenoidal cerrahiden bir gün sonra ağzının sürekli kuruduğunu ve kısa aralıklarla su içme ihtiyacı duyduğunu anlatır. Gece boyunca hemşire çağıracak kadar sık idrara çıktığını, idrarının çok açık renkli olduğunu ve su içemediğinde başının döndüğünü söyler. Ameliyat öncesinde bu kadar yoğun susama veya gece idrara kalkma öyküsü yoktur. Diyabet tanısı olmadığını, yakın zamanda lityum veya idrar söktürücü kullanmadığını belirtir. Bulantı ve kusması yoktur; ateş veya idrar yaparken yanma tariflemez. Günlük idrar torbasındaki miktarın hızla artması üzerine endokrinoloji değerlendirmesi istenmiştir.",
+      "patientIntro": {
+        "profile": "46 yaşında kadın hasta, endokrinoloji konsültasyonlu beyin cerrahisi servisi ortamında değerlendiriliyor.",
+        "presentation": "Hasta, hipofiz cerrahisinden sonra başlayan aşırı susama ve sık idrara çıkma nedeniyle değerlendiriliyor.",
+        "historySummary": "Hasta hipofiz adenomu nedeniyle yapılan transsfenoidal cerrahiden bir gün sonra ağzının sürekli kuruduğunu ve kısa aralıklarla su içme ihtiyacı duyduğunu anlatır. Gece boyunca hemşire çağıracak kadar sık idrara çıktığını, idrarının çok açık renkli olduğunu ve su içemediğinde başının döndüğünü söyler. Ameliyat öncesinde bu kadar yoğun susama veya gece idrara kalkma öyküsü yoktur. Diyabet tanısı olmadığını, yakın zamanda lityum veya idrar söktürücü kullanmadığını belirtir. Bulantı ve kusması yoktur; ateş veya idrar yaparken yanma tariflemez. Günlük idrar torbasındaki miktarın hızla artması üzerine endokrinoloji değerlendirmesi istenmiştir."
+      },
+      "vitals": {
+        "TA": "104/66 mmHg",
+        "Nabız": "102/dk",
+        "Solunum": "18/dk",
+        "SpO2": "%98, oda havasında",
+        "Ateş": "36.8 °C",
+        "Şok indeksi": "0.98 - hafif volüm kaybı/perfüzyon izlemi gerekir"
+      },
+      "exam": [
+        "Hasta uyanık ve koopere, belirgin susuzluk hissi nedeniyle sık su istemektedir.",
+        "Mukozalar kuru, dil hafif kurudur; kapiller dolum yaklaşık 3 saniyedir.",
+        "Akciğer ve kardiyak muayenede belirgin patolojik bulgu saptanmaz.",
+        "Mesane sondasından çok açık renkli idrar geldiği izlenir; suprapubik distansiyon yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v301-new-697-pituiter-cerrahi-sonrasi-yogun-susama-sivi-cikisi-ve-osmolalite",
+          "label": "Sıvı çıkışı ve osmolalite verileri",
+          "title": "Sıvı çıkışı ve osmolalite verileri",
+          "orderLabel": "Sıvı çıkışı ve osmolalite verileri",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Sıvı çıkışı ve osmolalite verileri",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Yüksek serum osmolalitesine rağmen idrar çok dilüedir.",
+          "clinicalMeaning": "Yüksek serum osmolalitesine rağmen idrar çok dilüedir.",
+          "result": {
+            "title": "Sıvı çıkışı ve osmolalite verileri",
+            "summary": "Yüksek serum osmolalitesine rağmen idrar çok dilüedir.",
+            "interpretation": "Yüksek serum osmolalitesine rağmen idrar çok dilüedir.",
+            "values": [
+              [
+                "24 saatlik idrar miktarı",
+                "7.2 L/gün",
+                "0.8-2.0 L/gün",
+                "Belirgin poliüri"
+              ],
+              [
+                "Serum sodyumu",
+                "151 mmol/L",
+                "135-145 mmol/L",
+                "Yüksek"
+              ],
+              [
+                "Serum osmolalitesi",
+                "311 mOsm/kg",
+                "275-295 mOsm/kg",
+                "Yüksek"
+              ],
+              [
+                "İdrar osmolalitesi",
+                "92 mOsm/kg",
+                "300-900 mOsm/kg",
+                "Çok düşük"
+              ],
+              [
+                "İdrar dansitesi",
+                "1.002",
+                "1.005-1.030",
+                "Düşük"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v301-new-697-pituiter-cerrahi-sonrasi-yogun-susama-desmopressin-yaniti",
+          "label": "Desmopressin sonrası yanıt",
+          "title": "Desmopressin sonrası yanıt",
+          "orderLabel": "Desmopressin sonrası yanıt",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Desmopressin sonrası yanıt",
+          "category": "endocrinology",
+          "testTypeCategory": "endocrinology",
+          "summary": "Desmopressin sonrası idrar konsantrasyonu ve idrar miktarında belirgin düzelme olmuştur.",
+          "clinicalMeaning": "Desmopressin sonrası idrar konsantrasyonu ve idrar miktarında belirgin düzelme olmuştur.",
+          "result": {
+            "title": "Desmopressin sonrası yanıt",
+            "summary": "Desmopressin sonrası idrar konsantrasyonu ve idrar miktarında belirgin düzelme olmuştur.",
+            "interpretation": "Desmopressin sonrası idrar konsantrasyonu ve idrar miktarında belirgin düzelme olmuştur.",
+            "values": [
+              [
+                "Desmopressin öncesi idrar osmolalitesi",
+                "92 mOsm/kg",
+                "300-900 mOsm/kg",
+                "Çok düşük"
+              ],
+              [
+                "Desmopressin sonrası idrar osmolalitesi",
+                "540 mOsm/kg",
+                "Artış beklenir",
+                "Belirgin artış"
+              ],
+              [
+                "İdrar çıkışı",
+                "450 mL/saatten 110 mL/saate düştü",
+                "Azalma beklenir",
+                "Yanıt var"
+              ],
+              [
+                "Susama hissi",
+                "Belirgin azaldı",
+                "Azalabilir",
+                "Klinik yanıt"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v301-new-697-pituiter-cerrahi-sonrasi-yogun-susama-osmotik-diurez-dislama",
+          "label": "Osmotik diürez ve elektrolit dışlama verileri",
+          "title": "Osmotik diürez ve elektrolit dışlama verileri",
+          "orderLabel": "Osmotik diürez ve elektrolit dışlama verileri",
+          "type": "lab",
+          "priority": "supportive",
+          "subtype": "Osmotik diürez ve elektrolit dışlama verileri",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Glukozüri, hiperkalsemi veya hipokalemi gibi osmotik/nefrojenik katkı belirgin değildir.",
+          "clinicalMeaning": "Glukozüri, hiperkalsemi veya hipokalemi gibi osmotik/nefrojenik katkı belirgin değildir.",
+          "result": {
+            "title": "Osmotik diürez ve elektrolit dışlama verileri",
+            "summary": "Glukozüri, hiperkalsemi veya hipokalemi gibi osmotik/nefrojenik katkı belirgin değildir.",
+            "interpretation": "Glukozüri, hiperkalsemi veya hipokalemi gibi osmotik/nefrojenik katkı belirgin değildir.",
+            "values": [
+              [
+                "Serum glukozu",
+                "108 mg/dL",
+                "70-140 mg/dL",
+                "Belirgin hiperglisemi yok"
+              ],
+              [
+                "İdrar glukozu",
+                "Negatif",
+                "Negatif",
+                "Glukozüri yok"
+              ],
+              [
+                "Kalsiyum",
+                "9.3 mg/dL",
+                "8.5-10.5 mg/dL",
+                "Normal"
+              ],
+              [
+                "Potasyum",
+                "4.1 mmol/L",
+                "3.5-5.1 mmol/L",
+                "Normal"
+              ],
+              [
+                "Kreatinin",
+                "0.8 mg/dL",
+                "0.6-1.1 mg/dL",
+                "Normal"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v301-new-697-pituiter-cerrahi-sonrasi-yogun-susama-postoperatif-baglam",
+          "label": "Postoperatif klinik bağlam",
+          "title": "Postoperatif klinik bağlam",
+          "orderLabel": "Postoperatif klinik bağlam",
+          "type": "clinical",
+          "priority": "supportive",
+          "subtype": "Postoperatif klinik bağlam",
+          "category": "clinicalAssessment",
+          "testTypeCategory": "clinicalAssessment",
+          "summary": "Poliüri yeni başlamıştır ve hipofiz cerrahisiyle zamansal ilişkilidir.",
+          "clinicalMeaning": "Poliüri yeni başlamıştır ve hipofiz cerrahisiyle zamansal ilişkilidir.",
+          "result": {
+            "title": "Postoperatif klinik bağlam",
+            "summary": "Poliüri yeni başlamıştır ve hipofiz cerrahisiyle zamansal ilişkilidir.",
+            "interpretation": "Poliüri yeni başlamıştır ve hipofiz cerrahisiyle zamansal ilişkilidir.",
+            "values": [
+              [
+                "Cerrahi",
+                "Transsfenoidal hipofiz cerrahisi",
+                "Yok",
+                "Riskli bağlam"
+              ],
+              [
+                "Başlangıç",
+                "Postoperatif 1. gün",
+                "Cerrahi ilişkisi yok",
+                "Zamanlama uyumlu"
+              ],
+              [
+                "Önceki poliüri",
+                "Yok",
+                "Yok",
+                "Yeni başlangıç"
+              ],
+              [
+                "Lityum/diüretik",
+                "Kullanım yok",
+                "Yok",
+                "Alternatif neden zayıf"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu laboratuvar ve klinik paterni en iyi açıklayan mekanizma aşağıdakilerden hangisidir?",
+      "questionType": "Mekanizma/laboratuvar paterni",
+      "answerTarget": "Postoperatif poliüride santral DI mekanizmasını ayırt etme",
+      "diagnosis": {
+        "correct": "Arka hipofiz kaynaklı vazopressin eksikliği gelişmesi",
+        "options": [
+          "Böbrek toplayıcı kanalında vazopressin direnci gelişmesi",
+          "Aşırı su alımına bağlı medüller osmotik gradyentin baskılanması",
+          "Glukozüriye bağlı osmotik diürezin idrar miktarını artırması",
+          "Arka hipofiz kaynaklı vazopressin eksikliği gelişmesi",
+          "Uygunsuz vazopressin salınımı ile serbest su tutulması"
+        ],
+        "question": "Bu laboratuvar ve klinik paterni en iyi açıklayan mekanizma aşağıdakilerden hangisidir?",
+        "explanation": "Hipernatremi ve yüksek serum osmolalitesine rağmen idrarın çok dilüe kalması serbest su geri emiliminin yetersiz olduğunu gösterir. Transsfenoidal hipofiz cerrahisi sonrası yeni başlayan yoğun susama ve poliüri, arka hipofiz/hipotalamo-hipofizer trakt kaynaklı vazopressin eksikliğiyle uyumludur. Desmopressin sonrası idrar osmolalitesinin belirgin artması böbreğin hormona yanıt verdiğini gösterir; bu nedenle nefrojenik dirençten çok santral hormon eksikliği söz konusudur.",
+        "pearls": [
+          "Postoperatif yeni poliüri → hipofiz cerrahisiyle ilişkili su dengesi bozukluğu.",
+          "Serum sodyumu 151 mmol/L ve serum osmolalitesi 311 mOsm/kg → serbest su kaybı.",
+          "İdrar osmolalitesi 92 mOsm/kg → uygunsuz şekilde dilüe idrar.",
+          "Desmopressin sonrası idrar osmolalitesi 540 mOsm/kg → böbrek yanıtı korunmuş, hormon eksikliği lehine."
+        ],
+        "optionFeedback": {
+          "Böbrek toplayıcı kanalında vazopressin direnci gelişmesi": "Vazopressin direnci nefrojenik diabetes insipidusu açıklar; lityum kullanımı, hiperkalsemi, hipokalemi veya kalıtsal kanal kusurlarıyla görülebilir. Nefrojenik tabloda desmopressin sonrası idrar osmolalitesinde belirgin artış beklenmez. Bu hastada transsfenoidal cerrahi sonrası gelişen poliüri, hipernatremi, düşük idrar osmolalitesi ve desmopressine güçlü yanıt merkezi mekanizmayı daha olası kılar.",
+          "Aşırı su alımına bağlı medüller osmotik gradyentin baskılanması": "Primer polidipside aşırı su alımı serum sodyumunu genellikle düşük-normal yapar ve su kısıtlamasıyla idrar osmolalitesi artabilir. Bu hastada susama poliüriyi izlemekte, serum sodyumu yüksektir ve postoperatif bağlam vardır. Ayrıca desmopressin sonrası belirgin idrar konsantrasyon artışı primer polidipsiden ziyade vazopressin eksikliğini destekler.",
+          "Glukozüriye bağlı osmotik diürezin idrar miktarını artırması": "Osmotik diürezde glukozüri, mannitol, üre yükü veya yüksek solüt atılımı nedeniyle idrar miktarı artar; idrar osmolalitesi çoğu zaman düşük değil, solüt nedeniyle daha yüksek olur. Bu hastanın kan glukozu belirgin yüksek değildir ve idrar glukozu negatiftir. Çok düşük idrar osmolalitesi ve desmopressin yanıtı osmotik diürezden uzaklaştırır.",
+          "Arka hipofiz kaynaklı vazopressin eksikliği gelişmesi": "Bu seçenek en uygundur. Transsfenoidal pituiter cerrahi sonrası arka hipofiz veya hipotalamo-hipofizer trakt etkilenirse vazopressin salınımı azalabilir. Vazopressin eksikliğinde toplayıcı kanalda su geri emilimi azalır; çok miktarda dilüe idrar çıkar, serum sodyumu yükselir ve hasta yoğun susama hisseder. Desmopressin sonrası idrar osmolalitesinin belirgin artması, böbreğin hormona yanıt verebildiğini ve sorunun hormon eksikliği düzeyinde olduğunu gösterir.",
+          "Uygunsuz vazopressin salınımı ile serbest su tutulması": "Uygunsuz vazopressin salınımında serbest su tutulur; hiponatremi, düşük serum osmolalitesi ve uygunsuz yüksek idrar osmolalitesi beklenir. Bu vakada tam tersine hipernatremi, yüksek serum osmolalitesi ve çok dilüe idrar vardır. SIADH bu laboratuvar paterniyle uyumlu değildir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Santral diabetes insipidusta problem vazopressin eksikliğidir; nefrojenik tipte problem böbrek yanıtıdır. Hipernatremi + düşük idrar osmolalitesi + desmopressinle belirgin konsantrasyon artışı santral mekanizmayı destekler.",
+      "examPearl": "Poliüride önce serum sodyumuna bak: hipernatremi varsa primer polidipsi değil, su kaybı; desmopressinle idrar yoğunlaşıyorsa santral DI düşün.",
+      "whyCorrect": "Doğru mekanizma arka hipofiz kaynaklı vazopressin eksikliğidir; çünkü idrar desmopressin verildiğinde yoğunlaşabilmektedir.",
+      "optionComparison": "Nefrojenik DI desmopressine zayıf yanıt verir; osmotik diürezde idrar solütlüdür ve glukozüri/hiperglisemi olabilir; primer polidipside sodyum genelde düşük-normaldir; SIADH ise hiponatremi ve uygunsuz konsantre idrarla seyreder.",
+      "evidenceChain": [
+        "Transsfenoidal cerrahi sonrası başlangıç → santral su dengesi bozukluğu riski.",
+        "7.2 L/gün idrar → gerçek poliüri.",
+        "Hipernatremi + çok düşük idrar osmolalitesi → serbest su kaybına rağmen konsantre edememe.",
+        "Desmopressin yanıtı → toplayıcı kanal yanıtı korunmuş, vazopressin eksikliği ön planda."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v301",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V300 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v301-new-698-sabah-omuz-kalca-tutuklugu",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Sabah omuz-kalça tutukluğu",
+      "difficulty": "Orta-Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Yaşlı hastada omuz ve kalça kuşağı ağrısı/tutukluğu, yüksek akut faz yanıtı ve normal CK birlikteliğini yorumlayarak PMR’yi inflamatuvar miyopati ve RA’dan ayırma.",
+      "learningTarget": "Polimiyaljiya romatikada yakınmanın gerçek kas güçsüzlüğünden çok ağrı-tutukluk olduğunu; CK normalliği ve yüksek ESR/CRP paterninin miyozit ve fibromiyaljiden ayrımda önemini öğrenme.",
+      "demographics": "72 yaşında kadın hasta",
+      "setting": "Romatoloji polikliniği",
+      "chiefComplaint": "Hasta, son altı haftadır sabahları omuzlarını ve kalçalarını hareket ettirmekte zorlanma nedeniyle başvuruyor.",
+      "stem": "Hasta yaklaşık altı haftadır sabah uyandığında iki omzunun ve kalçalarının sanki kilitlenmiş gibi olduğunu, yataktan kalkıp giyinmesinin bir saatten uzun sürdüğünü anlatır. Gün içinde hareket ettikçe biraz açıldığını, ancak akşam yeniden derin bir yorgunluk ve kuşak tarzı ağrı hissettiğini söyler. Merdiven çıkarken bacaklarının güçsüzleşmesinden çok kalça çevresindeki ağrı ve tutukluğun kendisini yavaşlattığını belirtir. Ellerinde belirgin şişlik veya sabah parmaklarını açamama yakınması yoktur. Yeni baş ağrısı, çiğneme sırasında çene ağrısı, görme bulanıklığı veya saçlı deride hassasiyet tariflemez. Ateş yüksekliği fark etmemiştir; son aylarda belirgin kilo kaybı veya gece terlemesi de olmadığını söyler.",
+      "patientIntro": {
+        "profile": "72 yaşında kadın hasta, romatoloji polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Hasta, son altı haftadır sabahları omuzlarını ve kalçalarını hareket ettirmekte zorlanma nedeniyle başvuruyor.",
+        "historySummary": "Hasta yaklaşık altı haftadır sabah uyandığında iki omzunun ve kalçalarının sanki kilitlenmiş gibi olduğunu, yataktan kalkıp giyinmesinin bir saatten uzun sürdüğünü anlatır. Gün içinde hareket ettikçe biraz açıldığını, ancak akşam yeniden derin bir yorgunluk ve kuşak tarzı ağrı hissettiğini söyler. Merdiven çıkarken bacaklarının güçsüzleşmesinden çok kalça çevresindeki ağrı ve tutukluğun kendisini yavaşlattığını belirtir. Ellerinde belirgin şişlik veya sabah parmaklarını açamama yakınması yoktur. Yeni baş ağrısı, çiğneme sırasında çene ağrısı, görme bulanıklığı veya saçlı deride hassasiyet tariflemez. Ateş yüksekliği fark etmemiştir; son aylarda belirgin kilo kaybı veya gece terlemesi de olmadığını söyler."
+      },
+      "vitals": {
+        "TA": "132/76 mmHg",
+        "Nabız": "84/dk",
+        "Solunum": "16/dk",
+        "SpO2": "%98, oda havasında",
+        "Ateş": "37.2 °C",
+        "Şok indeksi": "0.64 - perfüzyon stabil"
+      },
+      "exam": [
+        "Hasta omuz abdüksiyonunu ağrı nedeniyle yavaş yapar; objektif proksimal kas kuvveti 5/5’tir.",
+        "Omuz ve kalça kuşağı hareketlerinde ağrı ve tutukluk vardır; belirgin kas atrofisi saptanmaz.",
+        "MCP, PIP ve el bileği eklemlerinde belirgin şişlik veya ısı artışı yoktur.",
+        "Temporal arterlerde belirgin hassasiyet veya nodüler kalınlaşma izlenmez; nabızlar simetriktir."
+      ],
+      "investigations": [
+        {
+          "id": "v301-new-698-sabah-omuz-kalca-tutuklugu-akut-faz-ve-kas-enzimleri",
+          "label": "Akut faz yanıtı ve kas enzimleri",
+          "title": "Akut faz yanıtı ve kas enzimleri",
+          "orderLabel": "Akut faz yanıtı ve kas enzimleri",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Akut faz yanıtı ve kas enzimleri",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Akut faz yanıtı belirgin yüksekken kas yıkım enzimleri normaldir.",
+          "clinicalMeaning": "Akut faz yanıtı belirgin yüksekken kas yıkım enzimleri normaldir.",
+          "result": {
+            "title": "Akut faz yanıtı ve kas enzimleri",
+            "summary": "Akut faz yanıtı belirgin yüksekken kas yıkım enzimleri normaldir.",
+            "interpretation": "Akut faz yanıtı belirgin yüksekken kas yıkım enzimleri normaldir.",
+            "values": [
+              [
+                "ESR",
+                "78 mm/saat",
+                "<30 mm/saat",
+                "Yüksek"
+              ],
+              [
+                "CRP",
+                "64 mg/L",
+                "<5 mg/L",
+                "Yüksek"
+              ],
+              [
+                "CK",
+                "82 U/L",
+                "<170 U/L",
+                "Normal"
+              ],
+              [
+                "AST/ALT",
+                "24/19 U/L",
+                "<35/<45 U/L",
+                "Normal"
+              ],
+              [
+                "LDH",
+                "210 U/L",
+                "<250 U/L",
+                "Normal"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v301-new-698-sabah-omuz-kalca-tutuklugu-romatoid-ve-otoimmun-tarama",
+          "label": "Romatoid ve otoimmün tarama",
+          "title": "Romatoid ve otoimmün tarama",
+          "orderLabel": "Romatoid ve otoimmün tarama",
+          "type": "lab",
+          "priority": "supportive",
+          "subtype": "Romatoid ve otoimmün tarama",
+          "category": "rheumatology",
+          "testTypeCategory": "rheumatology",
+          "summary": "Seropozitif küçük eklem artritini destekleyen belirgin otoantikor paterni yoktur.",
+          "clinicalMeaning": "Seropozitif küçük eklem artritini destekleyen belirgin otoantikor paterni yoktur.",
+          "result": {
+            "title": "Romatoid ve otoimmün tarama",
+            "summary": "Seropozitif küçük eklem artritini destekleyen belirgin otoantikor paterni yoktur.",
+            "interpretation": "Seropozitif küçük eklem artritini destekleyen belirgin otoantikor paterni yoktur.",
+            "values": [
+              [
+                "RF",
+                "Negatif",
+                "Negatif",
+                "Seropozitif RA lehine değil"
+              ],
+              [
+                "Anti-CCP",
+                "Negatif",
+                "Negatif",
+                "Seropozitif RA lehine değil"
+              ],
+              [
+                "ANA",
+                "1/80 zayıf pozitif",
+                "Negatif/düşük titre",
+                "Nonspesifik"
+              ],
+              [
+                "Tam kan sayımı",
+                "Hb 11.4 g/dL, lökosit 7.8 x10³/mm³, trombosit 430.000/mm³",
+                "Yaşa göre değerlendirilir",
+                "Kronik inflamasyonla uyumlu olabilir"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v301-new-698-sabah-omuz-kalca-tutuklugu-endokrin-ve-enfeksiyon-dislamasi",
+          "label": "Endokrin ve enfeksiyon dışlama verileri",
+          "title": "Endokrin ve enfeksiyon dışlama verileri",
+          "orderLabel": "Endokrin ve enfeksiyon dışlama verileri",
+          "type": "lab",
+          "priority": "supportive",
+          "subtype": "Endokrin ve enfeksiyon dışlama verileri",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Tiroid bozukluğu, kalsiyum bozukluğu veya belirgin bakteriyel enfeksiyon paterni yoktur.",
+          "clinicalMeaning": "Tiroid bozukluğu, kalsiyum bozukluğu veya belirgin bakteriyel enfeksiyon paterni yoktur.",
+          "result": {
+            "title": "Endokrin ve enfeksiyon dışlama verileri",
+            "summary": "Tiroid bozukluğu, kalsiyum bozukluğu veya belirgin bakteriyel enfeksiyon paterni yoktur.",
+            "interpretation": "Tiroid bozukluğu, kalsiyum bozukluğu veya belirgin bakteriyel enfeksiyon paterni yoktur.",
+            "values": [
+              [
+                "TSH",
+                "2.1 mIU/L",
+                "0.4-4.0 mIU/L",
+                "Normal"
+              ],
+              [
+                "Serbest T4",
+                "1.1 ng/dL",
+                "0.8-1.8 ng/dL",
+                "Normal"
+              ],
+              [
+                "Kalsiyum",
+                "9.1 mg/dL",
+                "8.5-10.5 mg/dL",
+                "Normal"
+              ],
+              [
+                "Prokalsitonin",
+                "0.04 ng/mL",
+                "<0.05 ng/mL",
+                "Yüksek değil"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v301-new-698-sabah-omuz-kalca-tutuklugu-gca-semptom-taramasi",
+          "label": "Eşlik eden kranial semptom taraması",
+          "title": "Eşlik eden kranial semptom taraması",
+          "orderLabel": "Eşlik eden kranial semptom taraması",
+          "type": "clinical",
+          "priority": "essential",
+          "subtype": "Eşlik eden kranial semptom taraması",
+          "category": "clinicalAssessment",
+          "testTypeCategory": "clinicalAssessment",
+          "summary": "Kuşak tutulumuna eşlik eden kranial iskemik belirti tariflenmemektedir.",
+          "clinicalMeaning": "Kuşak tutulumuna eşlik eden kranial iskemik belirti tariflenmemektedir.",
+          "result": {
+            "title": "Eşlik eden kranial semptom taraması",
+            "summary": "Kuşak tutulumuna eşlik eden kranial iskemik belirti tariflenmemektedir.",
+            "interpretation": "Kuşak tutulumuna eşlik eden kranial iskemik belirti tariflenmemektedir.",
+            "values": [
+              [
+                "Yeni temporal baş ağrısı",
+                "Yok",
+                "Yok",
+                "Acil kranial tutulum belirtisi yok"
+              ],
+              [
+                "Çene kladikasyonu",
+                "Yok",
+                "Yok",
+                "GCA lehine kritik semptom yok"
+              ],
+              [
+                "Görme yakınması",
+                "Yok",
+                "Yok",
+                "Acil görsel risk belirtisi yok"
+              ],
+              [
+                "Saçlı deri hassasiyeti",
+                "Yok",
+                "Yok",
+                "Kranial arter tutulum bulgusu yok"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada en olası tanı aşağıdakilerden hangisidir?",
+      "questionType": "Tanı/ayırıcı tanı",
+      "answerTarget": "Omuz-kalça kuşağı tutukluğu ve yüksek akut faz yanıtında PMR tanısı",
+      "diagnosis": {
+        "correct": "Polimiyaljiya romatika",
+        "options": [
+          "Polimiyaljiya romatika",
+          "Polimiyozit",
+          "Seropozitif romatoid artrit",
+          "Fibromiyalji sendromu",
+          "Hipotiroid miyopati"
+        ],
+        "question": "Bu hastada en olası tanı aşağıdakilerden hangisidir?",
+        "explanation": "Bu hasta elli yaş üzerindedir ve simetrik omuz-kalça kuşağı ağrısı ile uzun sabah tutukluğu tariflemektedir. ESR/CRP belirgin yüksektir, buna karşın CK normal ve objektif kas gücü korunmuştur. Küçük eklem sinoviti ve seropozitif RA bulguları yoktur; hipotiroidi veya enfeksiyon paterni de desteklenmemektedir. Bu nedenle tablo polimiyaljiya romatika ile en iyi açıklanır. Kranial semptom yokluğu GCA acilini zayıflatır ancak PMR hastasında bu semptomlar her zaman sorgulanmalıdır.",
+        "pearls": [
+          "Yaş 72 ve yeni omuz-kalça kuşağı tutukluğu → PMR için uygun demografik-klinik bağlam.",
+          "Sabah tutukluğu >1 saat ve hareketle açılma → inflamatuvar ağrı paterni.",
+          "ESR/CRP yüksek ama CK normal → miyozitten çok PMR lehine.",
+          "Küçük eklem sinoviti/RF/anti-CCP yok → seropozitif RA zayıf."
+        ],
+        "optionFeedback": {
+          "Polimiyaljiya romatika": "Bu seçenek en uygundur. Elli yaş üzerindeki hastada omuz ve kalça kuşağında belirgin sabah tutukluğu, yüksek ESR/CRP, sistemik halsizlik ve CK normalliği polimiyaljiya romatika paternini destekler. PMR’de temel yakınma gerçek kas güçsüzlüğünden çok ağrı ve tutukluktur; hasta kollarını kaldırmakta zorlanabilir ama objektif proksimal kas kuvveti genellikle korunur. Temporal baş ağrısı, çene kladikasyonu veya görme semptomu olmaması eşlik eden dev hücreli arteriti dışlamaz ama acil yüksek doz steroid gerektiren GCA bulgusu olmadığını gösterir.",
+          "Polimiyozit": "Polimiyozitte gerçek proksimal kas güçsüzlüğü baskındır; hasta ağrıdan değil güç kaybından dolayı merdiven çıkmakta veya kollarını kaldırmakta zorlanır. CK genellikle belirgin yükselir ve miyozit otoantikorları/EMG-biyopsi değerlendirmesi gerekebilir. Bu vakada CK normaldir, güç muayenesi korunmuştur ve sabah tutukluğu ile inflamatuvar belirteç yüksekliği ön plandadır; bu nedenle polimiyozit daha zayıftır.",
+          "Seropozitif romatoid artrit": "Seropozitif romatoid artritte küçük eklemlerde simetrik sinovit, el bileği/MCP/PIP tutulumu, şişlik ve RF/anti-CCP pozitifliği beklenir. Bu hastada belirgin küçük eklem şişliği yoktur, RF ve anti-CCP negatiftir ve yakınmalar omuz-kalça kuşağında tutukluk şeklindedir. Yaşlı başlangıçlı RA PMR’yi taklit edebilir; ancak bu vakada sinovit bulgusu verilmemiştir.",
+          "Fibromiyalji sendromu": "Fibromiyalji yaygın ağrı ve hassas noktalarla seyredebilir; ancak objektif inflamasyon belirteçlerinin belirgin yüksek olması beklenmez. Bu hastada ESR ve CRP yüksektir, sabah tutukluğu belirgindir ve yaş/kuşak tutulum paterni inflamatuvar bir hastalığı destekler. Fibromiyaljide CK normal olabilir, fakat yüksek akut faz yanıtı PMR lehine kritik ayrımdır.",
+          "Hipotiroid miyopati": "Hipotiroid miyopati yorgunluk, kas ağrısı, kramp ve bazen CK yüksekliğiyle görülebilir; soğuk intoleransı, kilo artışı, bradikardi ve belirgin TSH yüksekliği eşlik edebilir. Bu hastanın TSH değeri normaldir ve akut faz belirteçleri yüksektir. Hipotiroidi bazı kas-iskelet yakınmaları yapabilir; ancak bu klinik-laboratuvar paterni en iyi inflamatuvar kuşak tutulumuyla açıklanır."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "PMR, 50 yaş üzerindeki hastada omuz ve kalça kuşağı ağrısı/tutukluğu ile yüksek ESR/CRP ve normal CK paterniyle düşünülür. Ayırıcı tanıda miyozit, RA, fibromiyalji, endokrin miyopati ve malignite/enfeksiyon dışlanmalıdır.",
+      "examPearl": "PMR’de hasta ‘güçsüzüm’ diyebilir ama muayenede güç çoğu zaman korunur; CK normal, ESR/CRP yüksektir. GCA semptomlarını mutlaka sor.",
+      "whyCorrect": "Doğru tanı PMR’dir; çünkü inflamatuvar kuşak tutukluğu vardır, gerçek kas yıkımı yoktur ve küçük eklem artriti baskın değildir.",
+      "optionComparison": "Polimiyozit CK yüksek gerçek güçsüzlükle; RA küçük eklem sinoviti ve anti-CCP/RF pozitifliğiyle; fibromiyalji normal akut fazla; hipotiroid miyopati tiroid test bozukluğu ve metabolik bulgularla ayrılır.",
+      "evidenceChain": [
+        "Omuz-kalça kuşağı tutukluğu + yaşlı hasta → PMR demografisi.",
+        "ESR 78 ve CRP 64 → güçlü inflamatuvar yanıt.",
+        "CK 82 ve kas kuvveti 5/5 → inflamatuvar miyopati zayıf.",
+        "RF/anti-CCP negatif ve küçük eklem sinoviti yok → RA daha az olası."
+      ],
+      "whyWrong": {},
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v301",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V300 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v302-new-699-kalin-duvarli-kalp-ve-dusuk-voltaj",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Kalın duvarlı kalp ve düşük voltaj",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "HFpEF benzeri yakınmalarla gelen yaşlı hastada ekokardiyografik duvar kalınlığı, EKG voltajı ve strain paternini birlikte yorumlayarak noninvaziv tanısal doğrulama basamağını seçme.",
+      "learningTarget": "Duvar kalınlığı artışını yalnızca hipertansiyonla açıklamadan; düşük voltaj, karpal tünel ve apikal sparing gibi ipuçları olduğunda monoklonal protein dışlama + kemik sintigrafisi algoritmasını öğrenme.",
+      "demographics": "76 yaşında erkek hasta",
+      "setting": "Kardiyoloji polikliniği",
+      "chiefComplaint": "Hasta, son aylarda artan efor nefes darlığı ve ayak bileği şişliği nedeniyle başvuruyor.",
+      "stem": "Hasta yaklaşık altı aydır yokuş çıkarken daha erken yorulduğunu ve son iki aydır ayakkabılarının akşama doğru sıktığını anlatır. Göğüs ağrısı tariflemez; ancak merdiven çıktığında göğsünde basınçtan çok nefes yetmeme hissi olduğunu söyler. On yıl önce her iki elde karpal tünel ameliyatı geçirmiştir ve son dönemde ayağa kalkınca kısa süreli sersemlik yaşadığını belirtir. Hipertansiyonu hafif seyretmiş, ev ölçümleri genellikle 130-140 mmHg civarında kalmıştır; uzun yıllar kontrolsüz yüksek tansiyon öyküsü vermez. Ailesinde erken koroner hastalık öyküsü olmadığını, ateş veya kilo kaybı fark etmediğini söyler. Nefes darlığının günlük yürüyüşünü belirgin kısıtlaması üzerine randevu almıştır.",
+      "patientIntro": {
+        "profile": "76 yaşında erkek hasta, Kardiyoloji polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Hasta, son aylarda artan efor nefes darlığı ve ayak bileği şişliği nedeniyle başvuruyor.",
+        "historySummary": "Hasta yaklaşık altı aydır yokuş çıkarken daha erken yorulduğunu ve son iki aydır ayakkabılarının akşama doğru sıktığını anlatır. Göğüs ağrısı tariflemez; ancak merdiven çıktığında göğsünde basınçtan çok nefes yetmeme hissi olduğunu söyler. On yıl önce her iki elde karpal tünel ameliyatı geçirmiştir ve son dönemde ayağa kalkınca kısa süreli sersemlik yaşadığını belirtir. Hipertansiyonu hafif seyretmiş, ev ölçümleri genellikle 130-140 mmHg civarında kalmıştır; uzun yıllar kontrolsüz yüksek tansiyon öyküsü vermez. Ailesinde erken koroner hastalık öyküsü olmadığını, ateş veya kilo kaybı fark etmediğini söyler. Nefes darlığının günlük yürüyüşünü belirgin kısıtlaması üzerine randevu almıştır."
+      },
+      "vitals": {
+        "TA": "132/76 mmHg",
+        "Nabız": "88/dk",
+        "Solunum": "20/dk",
+        "SpO2": "%96, oda havasında",
+        "Ateş": "36.6 °C",
+        "Şok indeksi": "0.67 - perfüzyon korunmuş"
+      },
+      "exam": [
+        "Hasta uyanık ve koopere; konuşurken cümlelerini tamamlayabiliyor.",
+        "Juguler venöz dolgunluk hafif artmış, bilateral pretibial +1 gode bırakan ödem izleniyor.",
+        "Akciğer bazallerinde ince inspiratuvar raller duyuluyor; belirgin wheezing yok.",
+        "Kardiyak oskültasyonda belirgin kapak üfürümü yok, kalp sesleri hafif derinden duyuluyor."
+      ],
+      "investigations": [
+        {
+          "id": "v302-new-699-kalin-duvarli-kalp-ve-dusuk-voltaj-ekg",
+          "label": "12 derivasyonlu EKG",
+          "title": "12 derivasyonlu EKG",
+          "orderLabel": "12 derivasyonlu EKG",
+          "type": "cardiology",
+          "priority": "essential",
+          "subtype": "12 derivasyonlu EKG",
+          "category": "cardiology",
+          "testTypeCategory": "cardiology",
+          "summary": "Duvar kalınlığı artışına rağmen voltaj düşüklüğü vardır.",
+          "clinicalMeaning": "Duvar kalınlığı artışına rağmen voltaj düşüklüğü vardır.",
+          "result": {
+            "title": "12 derivasyonlu EKG",
+            "summary": "Duvar kalınlığı artışına rağmen voltaj düşüklüğü vardır.",
+            "interpretation": "Duvar kalınlığı artışına rağmen voltaj düşüklüğü vardır.",
+            "values": [
+              [
+                "Ritim",
+                "Sinüs ritmi",
+                "Sinüs ritmi",
+                "Düzenli"
+              ],
+              [
+                "QRS voltajı",
+                "Ekstremite derivasyonlarında düşük voltaj",
+                "Normalde duvar kalınlığıyla uyumlu artabilir",
+                "Uyumsuz düşük voltaj"
+              ],
+              [
+                "Patolojik Q dalgası",
+                "Yok",
+                "Yok",
+                "Koroner skar lehine belirgin bulgu yok"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v302-new-699-kalin-duvarli-kalp-ve-dusuk-voltaj-eko",
+          "label": "Transtorasik ekokardiyografi",
+          "title": "Transtorasik ekokardiyografi",
+          "orderLabel": "Transtorasik ekokardiyografi",
+          "type": "cardiology",
+          "priority": "essential",
+          "subtype": "Transtorasik ekokardiyografi",
+          "category": "cardiology",
+          "testTypeCategory": "cardiology",
+          "summary": "Konsantrik duvar kalınlığı ve korunmuş EF ile diyastolik etkilenim vardır.",
+          "clinicalMeaning": "Konsantrik duvar kalınlığı ve korunmuş EF ile diyastolik etkilenim vardır.",
+          "result": {
+            "title": "Transtorasik ekokardiyografi",
+            "summary": "Konsantrik duvar kalınlığı ve korunmuş EF ile diyastolik etkilenim vardır.",
+            "interpretation": "Konsantrik duvar kalınlığı ve korunmuş EF ile diyastolik etkilenim vardır.",
+            "values": [
+              [
+                "Sol ventrikül EF",
+                "%55",
+                "%50-70",
+                "Korunmuş"
+              ],
+              [
+                "İnterventriküler septum",
+                "16 mm",
+                "6-10 mm",
+                "Kalın"
+              ],
+              [
+                "E/e' oranı",
+                "18",
+                "<14",
+                "Dolum basıncı artmış"
+              ],
+              [
+                "Global longitudinal strain",
+                "-11%, apikal sparing paterni",
+                "Yaklaşık -18% veya daha negatif",
+                "Bazal segmentler daha belirgin etkilenmiş"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v302-new-699-kalin-duvarli-kalp-ve-dusuk-voltaj-laboratuvar",
+          "label": "Kardiyak ve monoklonal protein taraması",
+          "title": "Kardiyak ve monoklonal protein taraması",
+          "orderLabel": "Kardiyak ve monoklonal protein taraması",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Kardiyak ve monoklonal protein taraması",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Kalp yetersizliği belirteci yüksek, AL tipi lehine monoklonal protein saptanmamıştır.",
+          "clinicalMeaning": "Kalp yetersizliği belirteci yüksek, AL tipi lehine monoklonal protein saptanmamıştır.",
+          "result": {
+            "title": "Kardiyak ve monoklonal protein taraması",
+            "summary": "Kalp yetersizliği belirteci yüksek, AL tipi lehine monoklonal protein saptanmamıştır.",
+            "interpretation": "Kalp yetersizliği belirteci yüksek, AL tipi lehine monoklonal protein saptanmamıştır.",
+            "values": [
+              [
+                "NT-proBNP",
+                "3850 pg/mL",
+                "<125 pg/mL",
+                "Yüksek"
+              ],
+              [
+                "Troponin T",
+                "32 ng/L",
+                "<14 ng/L",
+                "Hafif yüksek"
+              ],
+              [
+                "Serum serbest hafif zincir oranı",
+                "1.4",
+                "0.26-1.65",
+                "Normal aralıkta"
+              ],
+              [
+                "Serum/idrarda immünfiksasyon",
+                "Monoklonal bant yok",
+                "Negatif",
+                "AL tipi lehine bulgu yok"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada invaziv biyopsi öncesi tanıyı en güvenli biçimde destekleyecek yaklaşım hangisidir?",
+      "questionType": "Tanısal yaklaşım",
+      "answerTarget": "Noninvaziv kardiyak infiltratif hastalık doğrulaması",
+      "diagnosis": {
+        "correct": "Serum/idrarda monoklonal protein dışlandıktan sonra teknesyum işaretli kemik sintigrafisinde kardiyak tutulumun gösterilmesi",
+        "options": [
+          "Koroner BT anjiyografi ile epikardiyal darlık araştırılması",
+          "Serum/idrarda monoklonal protein dışlandıktan sonra teknesyum işaretli kemik sintigrafisinde kardiyak tutulumun gösterilmesi",
+          "Egzersiz efor testiyle iskemi provokasyonu yapılması",
+          "Sadece natriüretik peptid yüksekliğine dayanarak kalp yetersizliği tedavisi düzenlenmesi",
+          "Perikardiyosentez yapılarak efüzyon sitolojisinin incelenmesi"
+        ],
+        "question": "Bu hastada invaziv biyopsi öncesi tanıyı en güvenli biçimde destekleyecek yaklaşım hangisidir?",
+        "explanation": "Bu olguda kalp yetersizliği bulguları korunmuş EF ile birliktedir; ancak hipertansiyon öyküsü duvar kalınlığını açıklayacak kadar güçlü değildir. EKG’de düşük voltaj, ekoda konsantrik kalınlık ve apikal sparing, eski bilateral karpal tünel öyküsüyle birleşince transtiretin ilişkili kardiyak birikim akla gelir. AL tipi dışlanmadan kemik sintigrafisini doğrudan ATTR tanısı kabul etmek hatalıdır; monoklonal protein taraması negatif olduğunda belirgin kardiyak tutulum noninvaziv tanıyı destekler.",
+        "pearls": [
+          "Kalın duvar + düşük voltaj uyumsuzluğu infiltratif kardiyomiyopati için klasik uyarıdır.",
+          "Apikal sparing strain paterni ve HFpEF bulguları sıradan hipertansif kalp hastalığından ayrımı güçlendirir.",
+          "Monoklonal protein taraması negatifse kemik sintigrafisi ATTR tipi için noninvaziv tanısal değer kazanır.",
+          "Karpal tünel öyküsü sistemik transtiretin birikimi için klinik ipucu olabilir."
+        ],
+        "optionFeedback": {
+          "Koroner BT anjiyografi ile epikardiyal darlık araştırılması": "Koroner BT anjiyografi epikardiyal koroner darlığı değerlendirebilir ve bazı göğüs ağrısı senaryolarında yararlıdır; ancak bu hastadaki ana ipucu koroner iskemi değil, duvar kalınlığı artışı ile EKG voltajının uyumsuz düşük olmasıdır. Kalp yetersizliği semptomları, karpal tünel öyküsü, ortostatik yakınma, apikal sparing strain paterni ve düşük voltaj birlikte infiltratif kardiyomiyopatiyi düşündürür. Bu nedenle koroner BT, bu vakadaki temel tanısal hedefi karşılamaz; ancak eşlik eden koroner hastalık şüphesi varsa tamamlayıcı olarak kullanılabilir.",
+          "Serum/idrarda monoklonal protein dışlandıktan sonra teknesyum işaretli kemik sintigrafisinde kardiyak tutulumun gösterilmesi": "Bu seçenek en uygundur. Yaşlı erkek hastada açıklanamayan kalın ventrikül duvarı, düşük voltajlı EKG, HFpEF bulguları, karpal tünel öyküsü ve strain’de apikal sparing paterni transtiretin ilişkili kardiyak birikimi düşündürür. Monoklonal protein taraması negatifse, teknesyum işaretli kemik sintigrafisinde belirgin kardiyak tutulum noninvaziv tanıyı güçlü biçimde destekler ve AL tipinin atlanmasını önler. Kritik nokta sintigrafiyi tek başına okumamak; serum serbest hafif zincir, serum/idrarda immünfiksasyon ile plazma hücre hastalığını dışlamaktır.",
+          "Egzersiz efor testiyle iskemi provokasyonu yapılması": "Egzersiz efor testi stabil koroner iskemi değerlendirmesinde kullanılabilir; fakat bu hastanın efor kapasitesi kalp yetersizliği nedeniyle sınırlı olabilir ve test infiltratif kardiyomiyopatiyi doğrulamaz. Üstelik EKG düşük voltajlıdır ve yapısal kalp hastalığı bulguları belirgindir. Bu nedenle efor testi tanısal öncelik değildir; iskemi semptomu baskın olsaydı veya invaziv/noninvaziv koroner değerlendirme ayrı bir klinik gerekçeyle istenebilirdi.",
+          "Sadece natriüretik peptid yüksekliğine dayanarak kalp yetersizliği tedavisi düzenlenmesi": "Natriüretik peptid yüksekliği kalp duvar gerilimini ve prognozu gösterebilir; ancak tek başına etiyolojiyi belirlemez. Bu hastada sıradan hipertansif kalp hastalığı gibi davranmak tanıyı geciktirir; çünkü düşük voltaj-duvar kalınlığı uyumsuzluğu ve apikal sparing paterni altta yatan infiltratif süreci araştırmayı gerektirir. Standart diüretik semptom kontrolü sağlayabilir, fakat hastalık tipini ayırt etmeden spesifik tedavi ve aile/genetik değerlendirme planlanamaz.",
+          "Perikardiyosentez yapılarak efüzyon sitolojisinin incelenmesi": "Perikardiyosentez yalnızca tamponad, büyük semptomatik efüzyon veya tanısal amaçlı sıvı gerektiren durumlarda önceliklidir. Bu vakada efüzyon minimaldir, hipotansiyon veya pulsus paradoksus yoktur ve asıl bulgu miyokardiyal duvar kalınlığı ile elektriksel voltaj uyumsuzluğudur. Bu nedenle sıvı sitolojisi doğru tanısal yolu temsil etmez. Perikardiyal tutulum olsa bile bu tabloyu açıklayan temel mekanizma miyokardiyal infiltrasyondur."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Kalın ventrikül duvarı her zaman hipertansiyon demek değildir; EKG düşük voltajı ve apikal sparing eşlik ediyorsa infiltratif kardiyomiyopati araştırılmalıdır.",
+      "examPearl": "Kardiyak birikim şüphesinde en kritik sınav noktası, sintigrafi pozitifliğini AL dışlanmadan ATTR diye etiketlememektir.",
+      "whyCorrect": "Vakadaki düşük voltaj, konsantrik kalınlık, apikal sparing, HFpEF bulguları ve karpal tünel öyküsü aynı tanısal eksene bağlanır; bu nedenle monoklonal protein dışlama sonrası kemik sintigrafisi doğru basamaktır.",
+      "optionComparison": "Koroner testler, efor testi veya yalnız semptomatik kalp yetersizliği tedavisi etiyolojiyi açıklamaz; perikardiyosentez ise hemodinamik anlamlı efüzyon olmadığı için gereksizdir.",
+      "evidenceChain": [
+        "Düşük voltajlı EKG + 16 mm septum → elektriksel-mekanik uyumsuzluk, infiltratif süreç lehine.",
+        "EF %55 ve E/e' 18 → korunmuş EF’li fakat dolum basıncı yüksek kalp yetersizliği paterni.",
+        "Apikal sparing strain → infiltratif kardiyomiyopati olasılığını artırır.",
+        "Serbest hafif zincir oranı ve immünfiksasyon negatif → AL dışlanırsa kemik sintigrafisinin özgüllüğü artar."
+      ],
+      "whyWrong": "Yanlış seçenekler koroner iskemi, genel kalp yetersizliği veya perikardiyal sıvı eksenindedir; vakadaki ana patern miyokardiyal infiltratif kalınlaşmadır.",
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v302",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V301 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v302-new-700-kus-temasi-sonrasi-oksuruk-ve-efor-dispnesi",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Kuş teması sonrası öksürük ve efor dispnesi",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Organik antijen maruziyeti sonrası gelişen interstisyel akciğer hastalığı paterninde HRBT, BAL ve maruziyet öyküsünü birleştirerek doğru tanıyı seçme.",
+      "learningTarget": "Kuru öksürük-dispne ile gelen hastada HRBT’de mozaik attenuasyon/air trapping ve BAL lenfositozunu, IPF veya sarkoidozdan ayıran maruziyet temelli mekanizmayla ilişkilendirme.",
+      "demographics": "42 yaşında kadın hasta",
+      "setting": "Göğüs hastalıkları polikliniği",
+      "chiefComplaint": "Hasta, haftalardır süren kuru öksürük ve merdiven çıkarken nefes darlığı nedeniyle başvuruyor.",
+      "stem": "Hasta yaklaşık iki aydır kuru öksürüğünün giderek arttığını ve son üç haftadır ikinci kata çıkarken durup nefeslenme ihtiyacı duyduğunu anlatır. Şikâyetlerinin özellikle hafta sonları evde daha fazla vakit geçirdiğinde arttığını, dışarıda birkaç gün kaldığında kısmen hafiflediğini fark etmiştir. Evinde uzun süredir iki muhabbet kuşu beslediğini, kafes temizliğini çoğunlukla kendisinin yaptığını söyler. Ateş yüksekliği, pürülan balgam veya kanlı balgam tariflemez; sigara içmemiştir. Daha önce astım tanısı almamış, gece hışıltısı veya aspirinle kötüleşen nefes darlığı yaşamamıştır. Yakınmalarının işini ve günlük yürüyüşünü kısıtlaması üzerine değerlendirme istemiştir.",
+      "patientIntro": {
+        "profile": "42 yaşında kadın hasta, Göğüs hastalıkları polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Hasta, haftalardır süren kuru öksürük ve merdiven çıkarken nefes darlığı nedeniyle başvuruyor.",
+        "historySummary": "Hasta yaklaşık iki aydır kuru öksürüğünün giderek arttığını ve son üç haftadır ikinci kata çıkarken durup nefeslenme ihtiyacı duyduğunu anlatır. Şikâyetlerinin özellikle hafta sonları evde daha fazla vakit geçirdiğinde arttığını, dışarıda birkaç gün kaldığında kısmen hafiflediğini fark etmiştir. Evinde uzun süredir iki muhabbet kuşu beslediğini, kafes temizliğini çoğunlukla kendisinin yaptığını söyler. Ateş yüksekliği, pürülan balgam veya kanlı balgam tariflemez; sigara içmemiştir. Daha önce astım tanısı almamış, gece hışıltısı veya aspirinle kötüleşen nefes darlığı yaşamamıştır. Yakınmalarının işini ve günlük yürüyüşünü kısıtlaması üzerine değerlendirme istemiştir."
+      },
+      "vitals": {
+        "TA": "118/70 mmHg",
+        "Nabız": "94/dk",
+        "Solunum": "22/dk",
+        "SpO2": "%94, oda havasında; 6 dakika yürüyüşte %89",
+        "Ateş": "36.9 °C",
+        "Şok indeksi": "0.80 - perfüzyon korunmuş, egzersizde desatürasyon var"
+      },
+      "exam": [
+        "Hasta dinlenirken rahat konuşuyor; eforla hafif dispne belirginleşiyor.",
+        "Akciğer bazal ve orta zonlarında ince inspiratuvar raller duyuluyor.",
+        "Wheezing belirgin değil; ekspiryum süresi uzamamış.",
+        "Parmaklarda çomaklaşma veya periferik ödem saptanmıyor."
+      ],
+      "investigations": [
+        {
+          "id": "v302-new-700-kus-temasi-sonrasi-oksuruk-ve-efor-dispnesi-solunum-fonksiyon",
+          "label": "Solunum fonksiyon testi ve difüzyon",
+          "title": "Solunum fonksiyon testi ve difüzyon",
+          "orderLabel": "Solunum fonksiyon testi ve difüzyon",
+          "type": "pulmonology",
+          "priority": "essential",
+          "subtype": "Solunum fonksiyon testi ve difüzyon",
+          "category": "pulmonology",
+          "testTypeCategory": "pulmonology",
+          "summary": "Restriktif eğilim ve difüzyon azalması vardır.",
+          "clinicalMeaning": "Restriktif eğilim ve difüzyon azalması vardır.",
+          "result": {
+            "title": "Solunum fonksiyon testi ve difüzyon",
+            "summary": "Restriktif eğilim ve difüzyon azalması vardır.",
+            "interpretation": "Restriktif eğilim ve difüzyon azalması vardır.",
+            "values": [
+              [
+                "FVC",
+                "%68 beklenen",
+                "%80-120",
+                "Düşük"
+              ],
+              [
+                "FEV1/FVC",
+                "0.84",
+                ">0.70",
+                "Obstrüksiyon yok"
+              ],
+              [
+                "DLCO",
+                "%54 beklenen",
+                "%80-120",
+                "Azalmış"
+              ],
+              [
+                "6 dakika yürüyüş SpO2 nadiri",
+                "%89",
+                ">%92",
+                "Eforla desatürasyon"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v302-new-700-kus-temasi-sonrasi-oksuruk-ve-efor-dispnesi-hrbt",
+          "label": "Yüksek çözünürlüklü toraks BT",
+          "title": "Yüksek çözünürlüklü toraks BT",
+          "orderLabel": "Yüksek çözünürlüklü toraks BT",
+          "type": "imaging",
+          "priority": "essential",
+          "subtype": "Yüksek çözünürlüklü toraks BT",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Küçük hava yolu tutulumu ve yamasal parankimal etkilenim birlikte görülür.",
+          "clinicalMeaning": "Küçük hava yolu tutulumu ve yamasal parankimal etkilenim birlikte görülür.",
+          "result": {
+            "title": "Yüksek çözünürlüklü toraks BT",
+            "summary": "Küçük hava yolu tutulumu ve yamasal parankimal etkilenim birlikte görülür.",
+            "interpretation": "Küçük hava yolu tutulumu ve yamasal parankimal etkilenim birlikte görülür.",
+            "values": [
+              [
+                "Sentrilobüler nodüller",
+                "Üst-orta zonlarda yaygın",
+                "Yok",
+                "Mevcut"
+              ],
+              [
+                "Mozaik attenuasyon",
+                "Belirgin",
+                "Yok",
+                "Hava hapsi ile uyumlu"
+              ],
+              [
+                "Ekspiryum kesitlerinde air trapping",
+                "Var",
+                "Yok",
+                "Küçük hava yolu tutulumu"
+              ],
+              [
+                "Bal peteği görünümü",
+                "Yok",
+                "Yok",
+                "Fibrotik UIP lehine değil"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v302-new-700-kus-temasi-sonrasi-oksuruk-ve-efor-dispnesi-bal-ve-kan",
+          "label": "BAL ve temel kan testleri",
+          "title": "BAL ve temel kan testleri",
+          "orderLabel": "BAL ve temel kan testleri",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "BAL ve temel kan testleri",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "BAL lenfositozu antijen ilişkili immün yanıtı destekler.",
+          "clinicalMeaning": "BAL lenfositozu antijen ilişkili immün yanıtı destekler.",
+          "result": {
+            "title": "BAL ve temel kan testleri",
+            "summary": "BAL lenfositozu antijen ilişkili immün yanıtı destekler.",
+            "interpretation": "BAL lenfositozu antijen ilişkili immün yanıtı destekler.",
+            "values": [
+              [
+                "BAL lenfosit oranı",
+                "%42",
+                "<%15",
+                "Yüksek"
+              ],
+              [
+                "Kan eozinofil yüzdesi",
+                "%2",
+                "%0-5",
+                "Normal"
+              ],
+              [
+                "CRP",
+                "8 mg/L",
+                "<5 mg/L",
+                "Hafif yüksek"
+              ],
+              [
+                "Total IgE",
+                "90 IU/mL",
+                "<100 IU/mL",
+                "ABPA lehine değil"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada en olası tanı aşağıdakilerden hangisidir?",
+      "questionType": "Tanı",
+      "answerTarget": "Maruziyet ilişkili interstisyel akciğer hastalığı",
+      "diagnosis": {
+        "correct": "Nonfibrotik hipersensitivite pnömonisi",
+        "options": [
+          "Nonfibrotik hipersensitivite pnömonisi",
+          "İdiyopatik pulmoner fibrozis",
+          "Sarkoidoz",
+          "Alerjik bronkopulmoner aspergilloz",
+          "Kronik eozinofilik pnömoni"
+        ],
+        "question": "Bu hastada en olası tanı aşağıdakilerden hangisidir?",
+        "explanation": "Bu hastada semptomların kuş antijeni maruziyetiyle dalgalanması, restriktif SFT-DLCO düşüklüğü, HRBT’de sentrilobüler nodüller/mozaik attenuasyon/air trapping ve BAL lenfositozu birlikte değerlendirilmelidir. Bu kombinasyon nonfibrotik hipersensitivite pnömonisini en iyi açıklar. İdiyopatik pulmoner fibrozis için tipik UIP paterni yoktur; sarkoidoz, ABPA ve eozinofilik pnömoni için beklenen temel destekleyici bulgular verilmemiştir.",
+        "pearls": [
+          "Kuş kafesi temizliği → tekrarlayan organik antijen inhalasyonu.",
+          "HRBT’de mozaik attenuasyon + air trapping → küçük hava yolu tutulumu.",
+          "BAL lenfositozu → antijen ilişkili lenfositik alveolit lehine.",
+          "Bal peteği yokluğu → fibrotik UIP/IPF olasılığını zayıflatır."
+        ],
+        "optionFeedback": {
+          "Nonfibrotik hipersensitivite pnömonisi": "Bu seçenek en uygundur. Kuş teması sonrası tekrarlayan kuru öksürük, efor dispnesi, inspiratuvar raller, HRBT’de sentrilobüler buzlu cam nodülleri-mozaik attenuasyon-air trapping ve BAL lenfositozu organik antijen inhalasyonuna bağlı immün aracılı alveolit paternini destekler. Nonfibrotik formda bal peteği fibrozis ve belirgin traksiyon bronşektazisi beklenmez; maruziyetten uzaklaşma temel basamaktır ve belirgin semptom/hipoksemi varsa kısa süreli sistemik steroid düşünülebilir.",
+          "İdiyopatik pulmoner fibrozis": "İdiyopatik pulmoner fibrozis genellikle ileri yaşta, bazal-subplevral retikülasyon, traksiyon bronşektazisi ve bal peteği ile karakterize UIP paterninde düşünülür. Bu vakada belirgin kuş antijeni maruziyeti, BAL lenfositozu ve mozaik hava hapsi vardır; bunlar IPF yerine hipersensitivite pnömonisini destekler. IPF’de BAL lenfositozu tipik belirleyici bulgu değildir ve semptomların maruziyetle ilişkili dalgalanması beklenmez.",
+          "Sarkoidoz": "Sarkoidoz kuru öksürük, dispne ve sistemik bulgular yapabilir; ancak tipik olarak bilateral hiler lenfadenopati, perilenfatik nodüller, eritema nodosum veya hiperkalsemi gibi bulgularla desteklenir. Bu olguda hiler lenfadenopati verilmemiş, kuş maruziyeti ve BAL lenfositozu ile HRBT’de hava hapsi ön plana çıkmıştır. Sarkoidoz ayırıcı tanıda yer alabilir ama vaka verilerinin merkezi açıklaması değildir.",
+          "Alerjik bronkopulmoner aspergilloz": "Alerjik bronkopulmoner aspergilloz genellikle astım veya kistik fibroz zemininde, çok yüksek IgE, Aspergillus duyarlılığı, santral bronşektazi ve mukus tıkaçlarıyla düşünülür. Bu hastada astım öyküsü, belirgin eozinofili veya santral bronşektazi yoktur. Kuş teması sonrası ILD paterni ve BAL lenfositozu ABPA’dan farklıdır.",
+          "Kronik eozinofilik pnömoni": "Kronik eozinofilik pnömonide periferik eozinofili, astım/alerji birlikteliği ve görüntülemede periferal konsolidasyonlar beklenir. Bu vakada periferik eozinofil normaldir, HRBT’de mozaik attenuasyon ve sentrilobüler nodüller baskındır, BAL’da lenfositoz vardır. Dolayısıyla eozinofilik pnömoni yerine antijen ilişkili lenfositik alveolit daha uygun açıklamadır."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Hipersensitivite pnömonisi tanısı yalnızca maruziyet öyküsünden ibaret değildir; HRBT paterni, BAL lenfositozu ve klinik zaman ilişkisi birlikte değerlendirilir.",
+      "examPearl": "TUS ayrımı: IPF yaşlı-bazal-subplevral bal peteği; HP maruziyet + mozaik attenuasyon/air trapping + BAL lenfositozu.",
+      "whyCorrect": "Vakadaki kuş teması, eforla desatürasyon, restriktif SFT, HRBT’de mozaik hava hapsi ve BAL lenfositozu aynı immün alveolit mekanizmasına bağlanır.",
+      "optionComparison": "IPF, sarkoidoz, ABPA ve eozinofilik pnömoni benzer öksürük/dispne yapabilir; ancak bu vakadaki maruziyet-HRBT-BAL üçlüsünü en iyi açıklamazlar.",
+      "evidenceChain": [
+        "Hafta sonu evde artış ve kuş kafesi temizliği → antijen maruziyeti ile zaman ilişkisi.",
+        "FVC %68 ve DLCO %54 → interstisyel/parankimal etkilenim.",
+        "HRBT’de air trapping ve sentrilobüler nodül → HP paternine destek.",
+        "BAL lenfosit %42 → IPF/ABPA’dan farklı lenfositik yanıt."
+      ],
+      "whyWrong": "Yanlış seçenekler ILD veya alerjik akciğer hastalıklarını temsil eder; ancak vakada astım-eozinofili, hiler lenfadenopati veya UIP paterninden çok maruziyet ilişkili lenfositik alveolit vardır.",
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v302",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V301 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v302-new-701-kolit-oykusuyle-kasinti-ve-kolestaz",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Kolit öyküsüyle kaşıntı ve kolestaz",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "İnflamatuvar bağırsak hastalığı olan hastada kronik kolestatik enzim yüksekliğini yorumlayarak primer safra yolu hastalığında beklenen MRCP paternini seçme.",
+      "learningTarget": "ALP/GGT baskın kolestazda AMA negatifliği ve ülseratif kolit öyküsünün PBC’den farklı bir kolanjiyopatiyi düşündürdüğünü; MRCP’de multifokal darlık-genişleme paterninin ayırıcı değerini öğrenme.",
+      "demographics": "34 yaşında erkek hasta",
+      "setting": "Gastroenteroloji polikliniği",
+      "chiefComplaint": "Hasta, birkaç aydır artan kaşıntı ve halsizlik nedeniyle başvuruyor.",
+      "stem": "Hasta yaklaşık dört aydır özellikle geceleri artan yaygın kaşıntıdan yakındığını ve son haftalarda iş çıkışı belirgin halsizlik hissettiğini anlatır. Sekiz yıldır ülseratif kolit tanısı vardır; son dönemde dışkılama sayısı stabil seyretmiş, belirgin kanlı ishal atağı yaşamamıştır. Sağ üst kadranda şiddetli kolik ağrı tariflemez; ateş, titreme veya sarılık atağı geçirmediğini söyler. Alkol kullanımı sınırlıdır ve yeni bitkisel ürün ya da antibiyotik kullanmamıştır. Ailesinde erken yaş karaciğer hastalığı bilinmemektedir. Kaşıntının uykusunu bozması ve rutin kontrollerde karaciğer testlerinin yüksek bulunması üzerine değerlendirilmiştir.",
+      "patientIntro": {
+        "profile": "34 yaşında erkek hasta, Gastroenteroloji polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Hasta, birkaç aydır artan kaşıntı ve halsizlik nedeniyle başvuruyor.",
+        "historySummary": "Hasta yaklaşık dört aydır özellikle geceleri artan yaygın kaşıntıdan yakındığını ve son haftalarda iş çıkışı belirgin halsizlik hissettiğini anlatır. Sekiz yıldır ülseratif kolit tanısı vardır; son dönemde dışkılama sayısı stabil seyretmiş, belirgin kanlı ishal atağı yaşamamıştır. Sağ üst kadranda şiddetli kolik ağrı tariflemez; ateş, titreme veya sarılık atağı geçirmediğini söyler. Alkol kullanımı sınırlıdır ve yeni bitkisel ürün ya da antibiyotik kullanmamıştır. Ailesinde erken yaş karaciğer hastalığı bilinmemektedir. Kaşıntının uykusunu bozması ve rutin kontrollerde karaciğer testlerinin yüksek bulunması üzerine değerlendirilmiştir."
+      },
+      "vitals": {
+        "TA": "116/74 mmHg",
+        "Nabız": "82/dk",
+        "Solunum": "16/dk",
+        "SpO2": "%98, oda havasında",
+        "Ateş": "36.8 °C",
+        "Şok indeksi": "0.71 - perfüzyon iyi"
+      },
+      "exam": [
+        "Genel durumu iyi, belirgin toksik görünüm yok.",
+        "Skleralarda hafif subikterik görünüm seçiliyor; ciltte kaşıma izleri vardır.",
+        "Karın yumuşak, sağ üst kadranda hafif hassasiyet var; defans veya rebound yok.",
+        "Hepatosplenomegali belirgin değil, periferik ödem saptanmıyor."
+      ],
+      "investigations": [
+        {
+          "id": "v302-new-701-kolit-oykusuyle-kasinti-ve-kolestaz-karaciger-testleri",
+          "label": "Karaciğer biyokimyası",
+          "title": "Karaciğer biyokimyası",
+          "orderLabel": "Karaciğer biyokimyası",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Karaciğer biyokimyası",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Kolestatik enzim yüksekliği transaminazlara göre belirgindir.",
+          "clinicalMeaning": "Kolestatik enzim yüksekliği transaminazlara göre belirgindir.",
+          "result": {
+            "title": "Karaciğer biyokimyası",
+            "summary": "Kolestatik enzim yüksekliği transaminazlara göre belirgindir.",
+            "interpretation": "Kolestatik enzim yüksekliği transaminazlara göre belirgindir.",
+            "values": [
+              [
+                "ALP",
+                "486 U/L",
+                "40-130 U/L",
+                "Belirgin yüksek"
+              ],
+              [
+                "GGT",
+                "612 U/L",
+                "<55 U/L",
+                "Belirgin yüksek"
+              ],
+              [
+                "ALT",
+                "82 U/L",
+                "<45 U/L",
+                "Hafif-orta yüksek"
+              ],
+              [
+                "AST",
+                "76 U/L",
+                "<40 U/L",
+                "Hafif-orta yüksek"
+              ],
+              [
+                "Total bilirubin",
+                "1.9 mg/dL",
+                "0.2-1.2 mg/dL",
+                "Hafif yüksek"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v302-new-701-kolit-oykusuyle-kasinti-ve-kolestaz-otoimmun-ve-viral",
+          "label": "Seroloji ve otoimmün belirteçler",
+          "title": "Seroloji ve otoimmün belirteçler",
+          "orderLabel": "Seroloji ve otoimmün belirteçler",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Seroloji ve otoimmün belirteçler",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "AMA negatifliği ve viral belirteçlerin negatifliği ayırıcı tanıyı daraltır.",
+          "clinicalMeaning": "AMA negatifliği ve viral belirteçlerin negatifliği ayırıcı tanıyı daraltır.",
+          "result": {
+            "title": "Seroloji ve otoimmün belirteçler",
+            "summary": "AMA negatifliği ve viral belirteçlerin negatifliği ayırıcı tanıyı daraltır.",
+            "interpretation": "AMA negatifliği ve viral belirteçlerin negatifliği ayırıcı tanıyı daraltır.",
+            "values": [
+              [
+                "AMA",
+                "Negatif",
+                "Negatif",
+                "PBC lehine değil"
+              ],
+              [
+                "p-ANCA",
+                "Pozitif",
+                "Negatif",
+                "IBD ilişkili kolanjiyopatiyle görülebilir"
+              ],
+              [
+                "HBsAg / anti-HCV",
+                "Negatif / negatif",
+                "Negatif",
+                "Viral hepatit lehine değil"
+              ],
+              [
+                "IgG4",
+                "62 mg/dL",
+                "4-135 mg/dL",
+                "IgG4 ilişkili hastalık lehine değil"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v302-new-701-kolit-oykusuyle-kasinti-ve-kolestaz-ultrason",
+          "label": "Abdominal ultrasonografi",
+          "title": "Abdominal ultrasonografi",
+          "orderLabel": "Abdominal ultrasonografi",
+          "type": "imaging",
+          "priority": "essential",
+          "subtype": "Abdominal ultrasonografi",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Ekstrahepatik belirgin taş obstrüksiyonu gösterilmez.",
+          "clinicalMeaning": "Ekstrahepatik belirgin taş obstrüksiyonu gösterilmez.",
+          "result": {
+            "title": "Abdominal ultrasonografi",
+            "summary": "Ekstrahepatik belirgin taş obstrüksiyonu gösterilmez.",
+            "interpretation": "Ekstrahepatik belirgin taş obstrüksiyonu gösterilmez.",
+            "values": [
+              [
+                "Safra kesesi taşı",
+                "Saptanmadı",
+                "Yok",
+                "Taş lehine değil"
+              ],
+              [
+                "Koledok çapı",
+                "6 mm",
+                "<7 mm",
+                "Belirgin dilatasyon yok"
+              ],
+              [
+                "Karaciğer parankimi",
+                "Hafif heterojen",
+                "Homojen",
+                "Nonspesifik"
+              ],
+              [
+                "Asit",
+                "Yok",
+                "Yok",
+                "Dekompanse siroz bulgusu yok"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada beklenen kolanjiyografik patern aşağıdakilerden hangisidir?",
+      "questionType": "Görüntüleme yorumu",
+      "answerTarget": "Kolestatik hastalıkta MRCP paterni",
+      "diagnosis": {
+        "correct": "MRCP’de intrahepatik ve ekstrahepatik safra yollarında çok odaklı kısa darlıklar ve aralarda segmental genişlemeler",
+        "options": [
+          "Ana safra kanalında tek, düzgün sınırlı taşla uyumlu dolum defekti",
+          "Karaciğer parankiminde yaygın yağlanma ve damar yapılarının silinmesi",
+          "MRCP’de intrahepatik ve ekstrahepatik safra yollarında çok odaklı kısa darlıklar ve aralarda segmental genişlemeler",
+          "Safra kesesi duvarında taşsız yaygın ödem ve perikolesistik sıvı",
+          "Portal ven trombozu ve hepatik arter akımında belirgin azalma"
+        ],
+        "question": "Bu hastada beklenen kolanjiyografik patern aşağıdakilerden hangisidir?",
+        "explanation": "Bu hasta ülseratif kolit zemininde kronik kaşıntı ve ALP/GGT baskın kolestazla gelmiştir. AMA negatifliği PBC olasılığını azaltır; ultrason belirgin taş obstrüksiyonu göstermemektedir. Bu klinik bağlamda MRCP’de intra ve/veya ekstrahepatik safra yollarında multifokal darlıklar ve aralarda genişlemeler beklenir. Tek taş, akut kolesistit veya vasküler patoloji bu kronik kolestatik paterni açıklamaz.",
+        "pearls": [
+          "Ülseratif kolit öyküsü → primer sklerozan kolanjit için güçlü klinik bağlam.",
+          "ALP/GGT baskın yüksekliği → kolestatik patern.",
+          "AMA negatifliği → primer biliyer kolanjit olasılığını azaltır.",
+          "Ultrasonda taş/dilatasyon yokluğu → tek mekanik obstrüksiyon yerine MRCP ile safra yolu haritalaması gerekir."
+        ],
+        "optionFeedback": {
+          "Ana safra kanalında tek, düzgün sınırlı taşla uyumlu dolum defekti": "Tek ve düzgün sınırlı dolum defekti koledok taşı ile uyumlu olabilir; bu durumda kolestaz akut, dalgalı ve çoğu kez biliyer kolik/kolanjit ataklarıyla ilişkilidir. Bu hastada uzun süredir ülseratif kolit öyküsü, kronik kaşıntı, kolestatik enzim yüksekliği ve AMA negatifliği vardır. Tek taş bulgusu bu kronik kolanjiyopati paternini açıklamaz; taş varsa endoskopik yaklaşım gerekebilir ama beklenen temel görüntüleme bulgusu bu değildir.",
+          "Karaciğer parankiminde yaygın yağlanma ve damar yapılarının silinmesi": "Yağlı karaciğer ultrasonografide ekojenite artışı ve damarların silikleşmesiyle görülebilir; transaminazlar hafif yükselebilir. Ancak belirgin ALP/GGT baskın kolestaz, kaşıntı ve inflamatuvar bağırsak hastalığı birlikteliğini açıklamakta yetersizdir. Yağlanma eşlik edebilir ama bu vakada hedeflenen safra yolu patolojisidir.",
+          "MRCP’de intrahepatik ve ekstrahepatik safra yollarında çok odaklı kısa darlıklar ve aralarda segmental genişlemeler": "Bu seçenek en uygundur. Ülseratif kolitli genç-orta yaş erkek hastada kronik kolestatik enzim yüksekliği, kaşıntı ve AMA negatifliği primer sklerozan kolanjit paternini düşündürür. MRCP’de safra yollarında çok odaklı kısa darlıklar ve aralardaki genişlemeler boncuk dizisi benzeri görünüm oluşturur. Bu bulgu PBC’den, tek taş obstrüksiyonundan ve akut kolesistitten ayrımda çok değerlidir; ayrıca kolanjiyokarsinom ve dominant darlık açısından izlem gerektirir.",
+          "Safra kesesi duvarında taşsız yaygın ödem ve perikolesistik sıvı": "Safra kesesi duvar ödemi ve perikolesistik sıvı akut kolesistit lehine olabilir. Akut sağ üst kadran ağrısı, ateş ve Murphy pozitifliği beklenir. Bu hastada ağrıdan çok kronik kaşıntı ve kolestaz vardır; muayenede akut periton irritasyonu veya belirgin ateş verilmemiştir. Bu seçenek akut safra kesesi inflamasyonunu temsil eder, kronik safra yolu darlıklarını değil.",
+          "Portal ven trombozu ve hepatik arter akımında belirgin azalma": "Portal ven trombozu veya hepatik arter akım azalması vasküler karaciğer patolojilerini düşündürebilir; asit, karın ağrısı, barsak iskemisi veya transplant komplikasyonu gibi bağlamlarda önem kazanır. Bu vakada ana sorun kolestatik laboratuvar paterni ve IBD birlikteliğidir. Vasküler akım bozukluğu çok odaklı safra yolu darlık-genişleme paterninin beklenen karşılığı değildir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Kolestatik patern görüldüğünde ilk ayrım hepatoselüler hasar değil safra yolu hastalığıdır; IBD öyküsü varsa MRCP ile multifokal darlık-genişleme aranır.",
+      "examPearl": "TUS ipucu: Ülseratif kolit + erkek hasta + ALP/GGT yüksekliği + AMA negatifliği → MRCP’de boncuk dizisi paterni.",
+      "whyCorrect": "Vakadaki IBD öyküsü, kaşıntı, kolestatik enzim paterninin baskınlığı ve taş dışlanması beklenen MRCP bulgusunu üçüncü seçeneğe taşır.",
+      "optionComparison": "Tek koledok taşı, yağlanma, akut kolesistit veya vasküler akım bozukluğu bu kronik kolestatik-IBD paterninin ana karşılığı değildir.",
+      "evidenceChain": [
+        "ALP 486 ve GGT 612 → kolestaz baskın laboratuvar paterni.",
+        "Ülseratif kolit stabil olsa bile safra yolu hastalığı eşlik edebilir.",
+        "AMA negatif → PBC daha zayıf, MRCP gerektiren kolanjiyopati daha olası.",
+        "Ultrasonda taş yok → tek mekanik obstrüksiyonu dışlamaya yardımcı."
+      ],
+      "whyWrong": "Yanlış seçenekler akut taş, safra kesesi inflamasyonu, yağlanma veya vasküler bozuklukları temsil eder; vakada kronik safra yolu darlık hastalığına ait klinik-laboratuvar bağlam vardır.",
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v302",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V301 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v302-new-702-diyabette-albuminuri-ve-korunmus-egfr",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Diyabette albuminüri ve korunmuş eGFR",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Tip 2 diyabetli hastada albuminüri, eGFR, kan basıncı ve idrar sedimentini birlikte yorumlayarak böbrek-kardiyovasküler koruyucu tedaviyi seçme.",
+      "learningTarget": "Albuminürik CKD’de glisemik kontrolün tek başına yeterli olmadığını; RAS blokajı optimizasyonu ve SGLT2 inhibitörlerinin organ koruyucu rolünü mekanizma düzeyinde öğrenme.",
+      "demographics": "58 yaşında erkek hasta",
+      "setting": "Nefroloji-diyabet ortak polikliniği",
+      "chiefComplaint": "Hasta, rutin kontrolde idrarda albumin yüksekliği saptanması üzerine yönlendiriliyor.",
+      "stem": "Hasta on iki yıldır tip 2 diyabeti olduğunu ve son birkaç yıldır tansiyon ilaçlarını düzensiz kullandığını anlatır. Son aylarda belirgin yan ağrısı, idrarda kan görme veya idrar yaparken yanma yaşamamıştır. Sabahları ayak bileklerinde hafif şişlik fark ettiğini, ancak nefes darlığı veya göğüs ağrısı olmadığını söyler. Diyabetik göz muayenesinde daha önce retinopati başladığı söylenmiştir. NSAİİ kullanımını nadir tarif eder; bitkisel ürün veya yeni antibiyotik kullanmamıştır. Aile hekimi kontrolünde idrarda protein yüksek bulununca ileri değerlendirme için başvurmuştur.",
+      "patientIntro": {
+        "profile": "58 yaşında erkek hasta, Nefroloji-diyabet ortak polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Hasta, rutin kontrolde idrarda albumin yüksekliği saptanması üzerine yönlendiriliyor.",
+        "historySummary": "Hasta on iki yıldır tip 2 diyabeti olduğunu ve son birkaç yıldır tansiyon ilaçlarını düzensiz kullandığını anlatır. Son aylarda belirgin yan ağrısı, idrarda kan görme veya idrar yaparken yanma yaşamamıştır. Sabahları ayak bileklerinde hafif şişlik fark ettiğini, ancak nefes darlığı veya göğüs ağrısı olmadığını söyler. Diyabetik göz muayenesinde daha önce retinopati başladığı söylenmiştir. NSAİİ kullanımını nadir tarif eder; bitkisel ürün veya yeni antibiyotik kullanmamıştır. Aile hekimi kontrolünde idrarda protein yüksek bulununca ileri değerlendirme için başvurmuştur."
+      },
+      "vitals": {
+        "TA": "146/86 mmHg",
+        "Nabız": "78/dk",
+        "Solunum": "16/dk",
+        "SpO2": "%97, oda havasında",
+        "Ateş": "36.5 °C",
+        "Şok indeksi": "0.53 - perfüzyon iyi"
+      },
+      "exam": [
+        "Genel durumu iyi, bilinç açık ve koopere.",
+        "Bilateral ayak bileğinde hafif gode bırakan ödem vardır.",
+        "Akciğer oskültasyonu doğal, bazal ral yok.",
+        "Fundus öyküsünde diyabetik retinopati belirtilmiş; aktif sistemik döküntü veya artrit yok."
+      ],
+      "investigations": [
+        {
+          "id": "v302-new-702-diyabette-albuminuri-ve-korunmus-egfr-bobrek-fonksiyon",
+          "label": "Böbrek fonksiyonu ve albuminüri",
+          "title": "Böbrek fonksiyonu ve albuminüri",
+          "orderLabel": "Böbrek fonksiyonu ve albuminüri",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Böbrek fonksiyonu ve albuminüri",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "eGFR korunmuş-orta azalmış düzeydeyken belirgin albuminüri vardır.",
+          "clinicalMeaning": "eGFR korunmuş-orta azalmış düzeydeyken belirgin albuminüri vardır.",
+          "result": {
+            "title": "Böbrek fonksiyonu ve albuminüri",
+            "summary": "eGFR korunmuş-orta azalmış düzeydeyken belirgin albuminüri vardır.",
+            "interpretation": "eGFR korunmuş-orta azalmış düzeydeyken belirgin albuminüri vardır.",
+            "values": [
+              [
+                "Serum kreatinin",
+                "1.35 mg/dL",
+                "0.7-1.2 mg/dL",
+                "Hafif yüksek"
+              ],
+              [
+                "eGFR",
+                "58 mL/dk/1.73 m²",
+                ">90 mL/dk/1.73 m²",
+                "G3a aralığı"
+              ],
+              [
+                "İdrar albumin/kreatinin oranı",
+                "420 mg/g",
+                "<30 mg/g",
+                "A3 albuminüri"
+              ],
+              [
+                "3 ay önce ACR",
+                "390 mg/g",
+                "<30 mg/g",
+                "Kalıcı albuminüri"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v302-new-702-diyabette-albuminuri-ve-korunmus-egfr-idrar-sediment",
+          "label": "Tam idrar tetkiki ve sediment",
+          "title": "Tam idrar tetkiki ve sediment",
+          "orderLabel": "Tam idrar tetkiki ve sediment",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Tam idrar tetkiki ve sediment",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Aktif nefritik sediment yoktur.",
+          "clinicalMeaning": "Aktif nefritik sediment yoktur.",
+          "result": {
+            "title": "Tam idrar tetkiki ve sediment",
+            "summary": "Aktif nefritik sediment yoktur.",
+            "interpretation": "Aktif nefritik sediment yoktur.",
+            "values": [
+              [
+                "Protein",
+                "2+",
+                "Negatif",
+                "Albuminüri ile uyumlu"
+              ],
+              [
+                "Eritrosit",
+                "0-1/hpf",
+                "0-2/hpf",
+                "Belirgin hematüri yok"
+              ],
+              [
+                "Eritrosit silendiri",
+                "Yok",
+                "Yok",
+                "Nefritik aktivite lehine değil"
+              ],
+              [
+                "Lökosit nitrit",
+                "Negatif / negatif",
+                "Negatif",
+                "Enfeksiyon lehine değil"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v302-new-702-diyabette-albuminuri-ve-korunmus-egfr-metabolik-risk",
+          "label": "Metabolik ve güvenlik parametreleri",
+          "title": "Metabolik ve güvenlik parametreleri",
+          "orderLabel": "Metabolik ve güvenlik parametreleri",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Metabolik ve güvenlik parametreleri",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Tedavi seçimini ve izlem güvenliğini etkileyen değerler verilmiştir.",
+          "clinicalMeaning": "Tedavi seçimini ve izlem güvenliğini etkileyen değerler verilmiştir.",
+          "result": {
+            "title": "Metabolik ve güvenlik parametreleri",
+            "summary": "Tedavi seçimini ve izlem güvenliğini etkileyen değerler verilmiştir.",
+            "interpretation": "Tedavi seçimini ve izlem güvenliğini etkileyen değerler verilmiştir.",
+            "values": [
+              [
+                "HbA1c",
+                "7.4%",
+                "Genellikle bireyselleştirilir",
+                "Orta derecede yüksek"
+              ],
+              [
+                "Potasyum",
+                "4.5 mmol/L",
+                "3.5-5.1 mmol/L",
+                "Başlangıç için uygun"
+              ],
+              [
+                "LDL-kolesterol",
+                "132 mg/dL",
+                "Risk durumuna göre daha düşük hedeflenir",
+                "Yüksek"
+              ],
+              [
+                "Serum bikarbonat",
+                "23 mmol/L",
+                "22-28 mmol/L",
+                "Normal"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada böbrek ve kardiyovasküler riski azaltmak için en uygun tedavi basamağı hangisidir?",
+      "questionType": "Tedavi/izlem",
+      "answerTarget": "Albuminürik diyabetik CKD’de organ koruma",
+      "diagnosis": {
+        "correct": "Tolere edilen en yüksek uygun doz RAS blokajı ve SGLT2 inhibitörüyle böbrek-kardiyovasküler koruma başlamak",
+        "options": [
+          "Yalnız HbA1c hedefini sıkılaştırıp böbrek koruyucu ilaç eklememek",
+          "Metformin kesilip yalnız kısa etkili insülin şemasıyla izlemek",
+          "Protein alımını tamamen kesmeye yakın kısıtlayıp antihipertansif tedaviyi değiştirmemek",
+          "Tolere edilen en yüksek uygun doz RAS blokajı ve SGLT2 inhibitörüyle böbrek-kardiyovasküler koruma başlamak",
+          "Albuminüri olduğu için hemen immünsüpresif tedavi ve böbrek biyopsisi planlamak"
+        ],
+        "question": "Bu hastada böbrek ve kardiyovasküler riski azaltmak için en uygun tedavi basamağı hangisidir?",
+        "explanation": "Bu hasta kalıcı A3 albuminüri, tip 2 diyabet, hipertansiyon ve retinopati öyküsüyle diyabetik böbrek hastalığı için tipik bağlama sahiptir. Aktif sediment veya hızlı kreatinin artışı verilmediğinden immün glomerülonefrit ön planda değildir. Böbrek-kardiyovasküler risk azaltımı için RAS blokajının tolere edilen uygun doza çıkarılması ve eGFR uygunken SGLT2 inhibitörü başlanması doğru yaklaşımdır; kreatinin ve potasyum tedavi sonrası izlenmelidir.",
+        "pearls": [
+          "ACR 420 mg/g ve 3 ay önce 390 mg/g → kalıcı belirgin albuminüri.",
+          "eGFR 58 → SGLT2 inhibitörü için uygun aralıkta CKD.",
+          "Aktif sediment yok → immün nefritten çok diyabetik böbrek hastalığı lehine.",
+          "TA 146/86 → RAS blokajı optimizasyonu ve kan basıncı kontrolü gerekir."
+        ],
+        "optionFeedback": {
+          "Yalnız HbA1c hedefini sıkılaştırıp böbrek koruyucu ilaç eklememek": "Glisemik kontrol önemlidir; ancak albuminürik kronik böbrek hastalığında risk yalnız HbA1c ile yönetilmez. Bu hastada ACR 420 mg/g ve eGFR 58 mL/dk/1.73 m² olduğundan böbrek ve kardiyovasküler risk belirgindir. HbA1c’yi sıkılaştırmak albuminüriyi ve intraglomerüler basınç mekanizmasını tek başına hedeflemez. Bu nedenle böbrek koruyucu RAS blokajı ve SGLT2 inhibitörü gibi hastalık seyrini değiştiren tedaviler düşünülmelidir.",
+          "Metformin kesilip yalnız kısa etkili insülin şemasıyla izlemek": "Metformin eGFR 58 düzeyinde genellikle otomatik kesilmesi gereken bir ilaç değildir; bireysel kontrendikasyon yoksa devam edebilir. Yalnız kısa etkili insülinle izlemek albuminüriyi azaltmaz ve kardiyorenal koruma sağlamaz. İnsülin glisemiyi düzenleyebilir ama bu vakadaki sınav hedefi albuminürik böbrek hastalığında organ koruyucu tedaviyi seçmektir.",
+          "Protein alımını tamamen kesmeye yakın kısıtlayıp antihipertansif tedaviyi değiştirmemek": "Aşırı protein kısıtlaması pratik değildir ve malnütrisyon riski yaratabilir. Diyet düzenlemesi CKD yönetiminin bir parçası olabilir; ancak ACR yüksekliği ve hipertansiyon varlığında ilaç temelli böbrek koruma ertelenmemelidir. Kan basıncı 146/86 mmHg olduğundan RAS blokajının optimize edilmesi gerekir; sadece diyetle izlem yetersizdir.",
+          "Tolere edilen en yüksek uygun doz RAS blokajı ve SGLT2 inhibitörüyle böbrek-kardiyovasküler koruma başlamak": "Bu seçenek en uygundur. Tip 2 diyabetli hastada üç aydan uzun süren belirgin albuminüri ve eGFR 58, albuminürik kronik böbrek hastalığı paternidir. RAS blokajı intraglomerüler basıncı ve albuminüriyi azaltır; SGLT2 inhibitörleri de glukoz düşüşünden bağımsız hemodinamik/tübüler mekanizmalarla böbrek ve kardiyovasküler sonlanımları iyileştirir. Potasyum ve kreatinin yakın izlenerek ARB/ACEi uygun doza titre edilir; başlangıç sonrası küçük eGFR düşüşü beklenebilir, büyük düşüşte değerlendirme gerekir.",
+          "Albuminüri olduğu için hemen immünsüpresif tedavi ve böbrek biyopsisi planlamak": "Albuminüri her zaman immün glomerülonefrit anlamına gelmez. Bu hastada uzun süreli diyabet, retinopati, aktif idrar sedimenti yokluğu ve stabil eGFR diyabetik böbrek hastalığını destekler. Hematüri, eritrosit silendiri, hızlı kreatinin artışı, sistemik otoimmün bulgu veya atipik özellikler olsaydı biyopsi gündeme gelebilirdi. Bu verilerle hemen immünsüpresyon hem gereksiz hem zararlıdır."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Diyabetik CKD yönetiminde yalnız glukoz değil, albuminüri ve intraglomerüler basınç da hedeflenir; bu nedenle RAS blokajı ve SGLT2 inhibitörü temel organ koruyucu eksendir.",
+      "examPearl": "Sınav ayrımı: Albuminüri + diyabet + retinopati + bland sediment → böbrek koruyucu tedavi; aktif sediment/hızlı kreatinin artışı varsa biyopsi düşün.",
+      "whyCorrect": "Vakadaki kalıcı A3 albuminüri, eGFR 58, hipertansiyon ve bland sediment RAS blokajı + SGLT2 inhibitörü seçimini destekler.",
+      "optionComparison": "Sadece HbA1c düzeltmek, insüline geçmek veya aşırı diyet kısıtlamak organ koruyucu stratejinin yerini tutmaz; immünsüpresyon için atipik nefrit bulgusu yoktur.",
+      "evidenceChain": [
+        "ACR >300 mg/g → yüksek progresyon ve kardiyovasküler risk.",
+        "eGFR 58 → tedavi başlanabilecek düzeyde böbrek fonksiyonu.",
+        "Potasyum 4.5 → RAS blokajı titrasyonu yapılabilir ama izlem gerekir.",
+        "Sedimentte eritrosit silendiri yok → biyopsi/immünsüpresyon önceliği zayıf."
+      ],
+      "whyWrong": "Yanlış seçenekler glisemik kontrolü, diyet kısıtlamasını veya immünsüpresyonu abartır; vakadaki asıl karar albuminürik CKD’de hastalık seyrini değiştiren kardiyorenal tedavidir.",
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v302",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V301 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v302-new-703-tesadufen-lenfositoz-ve-boyunda-bezeler",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Tesadüfen lenfositoz ve boyunda bezeler",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Yaşlı hastada kalıcı mutlak lenfositoz, periferik yayma ve hafif lenfadenopatiyi değerlendirerek kronik lenfoproliferatif hastalıkta tanısal doğrulama basamağını seçme.",
+      "learningTarget": "Küçük olgun lenfosit + smudge hücre + CD5/CD23 pozitif klonal B hücre paternini akut lösemi, KML, Hodgkin lenfoma ve otoimmün hemolizden ayırma.",
+      "demographics": "68 yaşında erkek hasta",
+      "setting": "İç hastalıkları polikliniği",
+      "chiefComplaint": "Hasta, rutin kan sayımında lökosit yüksekliği ve boyunda küçük bezeler fark edilmesi nedeniyle başvuruyor.",
+      "stem": "Hasta son iki ayda aile hekimi kontrollerinde lökosit sayısının yüksek çıktığını, kendisinin belirgin bir yakınması olmadığını anlatır. Son haftalarda tıraş olurken boynunun iki yanında küçük, ağrısız şişlikler fark etmiştir. Ateş, gece terlemesi veya istemsiz kilo kaybı tariflemez; sık enfeksiyon geçirdiğini söylemez. Kemik ağrısı, diş eti kanaması veya kolay morarma yaşamamıştır. Daha önce kan hastalığı tanısı almamış, yeni ilaç veya steroid kullanmamıştır. Son kan sayımında lenfosit yüksekliğinin sürmesi üzerine değerlendirme için yönlendirilmiştir.",
+      "patientIntro": {
+        "profile": "68 yaşında erkek hasta, İç hastalıkları polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Hasta, rutin kan sayımında lökosit yüksekliği ve boyunda küçük bezeler fark edilmesi nedeniyle başvuruyor.",
+        "historySummary": "Hasta son iki ayda aile hekimi kontrollerinde lökosit sayısının yüksek çıktığını, kendisinin belirgin bir yakınması olmadığını anlatır. Son haftalarda tıraş olurken boynunun iki yanında küçük, ağrısız şişlikler fark etmiştir. Ateş, gece terlemesi veya istemsiz kilo kaybı tariflemez; sık enfeksiyon geçirdiğini söylemez. Kemik ağrısı, diş eti kanaması veya kolay morarma yaşamamıştır. Daha önce kan hastalığı tanısı almamış, yeni ilaç veya steroid kullanmamıştır. Son kan sayımında lenfosit yüksekliğinin sürmesi üzerine değerlendirme için yönlendirilmiştir."
+      },
+      "vitals": {
+        "TA": "124/78 mmHg",
+        "Nabız": "76/dk",
+        "Solunum": "15/dk",
+        "SpO2": "%98, oda havasında",
+        "Ateş": "36.7 °C",
+        "Şok indeksi": "0.61 - perfüzyon iyi"
+      },
+      "exam": [
+        "Genel durumu iyi, zayıf veya toksik görünümde değil.",
+        "Bilateral servikal bölgede 1-1.5 cm, mobil, ağrısız lenf nodları palpe ediliyor.",
+        "Hepatosplenomegali belirgin değil; ciltte peteşi veya ekimoz yok.",
+        "Orofarenks doğal, aktif enfeksiyon odağı saptanmıyor."
+      ],
+      "investigations": [
+        {
+          "id": "v302-new-703-tesadufen-lenfositoz-ve-boyunda-bezeler-tam-kan",
+          "label": "Tam kan sayımı ve diferansiyel",
+          "title": "Tam kan sayımı ve diferansiyel",
+          "orderLabel": "Tam kan sayımı ve diferansiyel",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Tam kan sayımı ve diferansiyel",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Kalıcı mutlak lenfositoz vardır, ağır sitopeni yoktur.",
+          "clinicalMeaning": "Kalıcı mutlak lenfositoz vardır, ağır sitopeni yoktur.",
+          "result": {
+            "title": "Tam kan sayımı ve diferansiyel",
+            "summary": "Kalıcı mutlak lenfositoz vardır, ağır sitopeni yoktur.",
+            "interpretation": "Kalıcı mutlak lenfositoz vardır, ağır sitopeni yoktur.",
+            "values": [
+              [
+                "Lökosit",
+                "24.600/µL",
+                "4.000-10.000/µL",
+                "Yüksek"
+              ],
+              [
+                "Mutlak lenfosit sayısı",
+                "18.900/µL",
+                "1.000-4.000/µL",
+                "Belirgin yüksek"
+              ],
+              [
+                "Hemoglobin",
+                "13.2 g/dL",
+                "13.5-17.5 g/dL",
+                "Sınıra yakın"
+              ],
+              [
+                "Trombosit",
+                "182.000/µL",
+                "150.000-400.000/µL",
+                "Normal"
+              ],
+              [
+                "3 ay önce mutlak lenfosit",
+                "16.700/µL",
+                "1.000-4.000/µL",
+                "Kalıcı yüksek"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v302-new-703-tesadufen-lenfositoz-ve-boyunda-bezeler-yayma",
+          "label": "Periferik yayma",
+          "title": "Periferik yayma",
+          "orderLabel": "Periferik yayma",
+          "type": "hematology",
+          "priority": "essential",
+          "subtype": "Periferik yayma",
+          "category": "hematology",
+          "testTypeCategory": "hematology",
+          "summary": "Olgun küçük lenfosit baskınlığı görülür.",
+          "clinicalMeaning": "Olgun küçük lenfosit baskınlığı görülür.",
+          "result": {
+            "title": "Periferik yayma",
+            "summary": "Olgun küçük lenfosit baskınlığı görülür.",
+            "interpretation": "Olgun küçük lenfosit baskınlığı görülür.",
+            "values": [
+              [
+                "Lenfosit morfolojisi",
+                "Küçük, olgun görünümlü lenfositler",
+                "Normal karışık lökosit dağılımı",
+                "Kronik lenfoproliferatif patern"
+              ],
+              [
+                "Smudge hücreleri",
+                "Sık",
+                "Yok veya seyrek",
+                "Destekleyici"
+              ],
+              [
+                "Blast",
+                "Belirgin artış yok",
+                "Yok",
+                "Akut lösemi lehine değil"
+              ],
+              [
+                "Miyeloid sol kayma/bazofili",
+                "Yok",
+                "Yok",
+                "KML lehine değil"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v302-new-703-tesadufen-lenfositoz-ve-boyunda-bezeler-biyokimya",
+          "label": "Hemoliz ve organ fonksiyonu taraması",
+          "title": "Hemoliz ve organ fonksiyonu taraması",
+          "orderLabel": "Hemoliz ve organ fonksiyonu taraması",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Hemoliz ve organ fonksiyonu taraması",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Aktif hemoliz veya organ yetmezliği bulgusu yoktur.",
+          "clinicalMeaning": "Aktif hemoliz veya organ yetmezliği bulgusu yoktur.",
+          "result": {
+            "title": "Hemoliz ve organ fonksiyonu taraması",
+            "summary": "Aktif hemoliz veya organ yetmezliği bulgusu yoktur.",
+            "interpretation": "Aktif hemoliz veya organ yetmezliği bulgusu yoktur.",
+            "values": [
+              [
+                "LDH",
+                "210 U/L",
+                "120-240 U/L",
+                "Normal"
+              ],
+              [
+                "Total bilirubin",
+                "0.8 mg/dL",
+                "0.2-1.2 mg/dL",
+                "Normal"
+              ],
+              [
+                "Haptoglobin",
+                "92 mg/dL",
+                "30-200 mg/dL",
+                "Normal"
+              ],
+              [
+                "Kreatinin",
+                "0.95 mg/dL",
+                "0.7-1.2 mg/dL",
+                "Normal"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu laboratuvar ve periferik yayma paternini doğrulamak için en uygun tanısal basamak hangisidir?",
+      "questionType": "Tanısal doğrulama",
+      "answerTarget": "Kronik lenfositozda immünfenotipik doğrulama",
+      "diagnosis": {
+        "correct": "Periferik kanda akım sitometrisiyle CD5 ve CD23 birlikte pozitif klonal B lenfosit popülasyonunun gösterilmesi",
+        "options": [
+          "Kemik iliği aspirasyonunda blast oranının %20 üzerinde olduğunun gösterilmesi",
+          "Direkt antiglobulin testinin pozitif bulunması ve hemoliz belirteçlerinin yükselmesi",
+          "BCR-ABL1 füzyonunun PCR ile gösterilmesi",
+          "Lenf nodu eksizyonel biyopsisinde Reed-Sternberg hücrelerinin saptanması",
+          "Periferik kanda akım sitometrisiyle CD5 ve CD23 birlikte pozitif klonal B lenfosit popülasyonunun gösterilmesi"
+        ],
+        "question": "Bu laboratuvar ve periferik yayma paternini doğrulamak için en uygun tanısal basamak hangisidir?",
+        "explanation": "Bu hastada üç aydan uzun süren belirgin mutlak lenfositoz, küçük olgun lenfosit morfolojisi, smudge hücreleri ve hafif ağrısız lenfadenopati vardır. Ağır sitopeni, blast artışı, bazofili veya hemoliz bulgusu yoktur. Bu patern kronik lenfositik lösemiyle uyumludur ve tanısal doğrulama periferik kanda akım sitometrisiyle klonal B hücre popülasyonunun tipik CD5/CD23 pozitif immünfenotipinin gösterilmesidir. Tanı konması her zaman hemen tedavi başlanacağı anlamına gelmez; asemptomatik erken evrede izlem uygun olabilir.",
+        "pearls": [
+          "Mutlak lenfosit 18.900/µL ve 3 ay önce de yüksek → kalıcı lenfositoz.",
+          "Küçük olgun lenfosit + smudge hücre → kronik lenfoproliferatif süreç lehine.",
+          "Blast ve ağır sitopeni yok → akut lösemi olasılığı zayıf.",
+          "Hemoliz belirteçleri normal → DAT/hemoliz komplikasyonu temel problem değil."
+        ],
+        "optionFeedback": {
+          "Kemik iliği aspirasyonunda blast oranının %20 üzerinde olduğunun gösterilmesi": "Blast oranının %20 üzerinde olması akut lösemi tanısında önemlidir. Bu hastada akut lösemiye ait ağır sitopeni, blastik klinik tablo, hızlı kötüleşme veya periferik yaymada blast baskınlığı verilmemiştir. Küçük olgun lenfositler ve smudge hücreleri kronik lenfoproliferatif süreci destekler. Bu nedenle akut lösemi eksenindeki kemik iliği blast eşiği doğru doğrulama basamağı değildir.",
+          "Direkt antiglobulin testinin pozitif bulunması ve hemoliz belirteçlerinin yükselmesi": "Direkt antiglobulin testi otoimmün hemolitik anemiyi değerlendirmek için kullanılır ve bazı kronik lenfoproliferatif hastalıklara ikincil hemoliz geliştiğinde gerekli olabilir. Ancak bu hastada hemoglobin normal-sınıra yakın, bilirubin/LDH/haptoglobin hemoliz lehine verilmemiştir ve temel sorun kalıcı mutlak lenfositozdur. DAT pozitifliği tanıyı doğrulayan ana basamak değildir; komplikasyon gelişirse ayrı değerlendirilir.",
+          "BCR-ABL1 füzyonunun PCR ile gösterilmesi": "BCR-ABL1 füzyonu kronik miyeloid lösemi veya bazı akut lenfoblastik lösemi alt tiplerinde kritik moleküler bulgudur. KML’de granülositik seri artışı, bazofili ve miyeloid sol kayma beklenir. Bu vakada baskın bulgu olgun küçük lenfosit artışı ve smudge hücreleridir; BCR-ABL1 bu klinik-laboratuvar paternini açıklamaz.",
+          "Lenf nodu eksizyonel biyopsisinde Reed-Sternberg hücrelerinin saptanması": "Reed-Sternberg hücreleri Hodgkin lenfoma tanısında önemlidir. Hodgkin lenfomada genellikle belirgin nodal kitle, B semptomları ve histolojik tanı ihtiyacı öne çıkar. Bu hastada periferik kanda kalıcı mutlak lenfositoz ve tipik küçük olgun lenfosit morfolojisi vardır; tanısal ilk doğrulama periferik kan akım sitometrisidir. Lenf nodu biyopsisi dönüşüm, atipik büyüme veya tanısal belirsizlik durumunda gündeme gelebilir.",
+          "Periferik kanda akım sitometrisiyle CD5 ve CD23 birlikte pozitif klonal B lenfosit popülasyonunun gösterilmesi": "Bu seçenek en uygundur. Yaşlı hastada aylar içinde kalıcı mutlak lenfositoz, küçük olgun lenfositler, smudge hücreleri ve hafif lenfadenopati kronik lenfositik lösemi paternini düşündürür. Tanı için periferik kandaki B lenfosit klonalitesi ve tipik immünfenotip akım sitometrisiyle gösterilir; CD5 ve CD23 birlikte pozitif B hücre popülasyonu klasik ayırt ettirici bulgudur. Tedavi kararı ise tanıdan ayrı olarak semptom, progresif sitopeni, hızlı lenfosit artışı, büyük/simptomatik lenfadenopati veya organomegali gibi endikasyonlara göre verilir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Kalıcı mutlak lenfositozda ilk hedef yalnız lökosit sayısını düşürmek değil, hücre popülasyonunun klonal B hücre olup olmadığını ve immünfenotipini göstermektir.",
+      "examPearl": "TUS ipucu: KLL = yaşlı hasta + mutlak lenfositoz + smudge hücre + CD5/CD23 pozitif B hücre; tedavi endikasyonu semptom/progresyon/sitopeni ile ayrı değerlendirilir.",
+      "whyCorrect": "Vakadaki kalıcı lenfositoz, olgun küçük lenfositler ve smudge hücreleri akım sitometrisiyle CD5/CD23 pozitif klonal B hücre doğrulamasını gerektirir.",
+      "optionComparison": "Akut lösemi blast eşiği, DAT, BCR-ABL1 ve Reed-Sternberg seçenekleri farklı hematolojik sorunların doğrulama yollarıdır; bu vakadaki ana patern kalıcı olgun B lenfositozudur.",
+      "evidenceChain": [
+        "Lenfosit yüksekliği >3 ay sürüyor → reaktif geçici lenfositozdan uzaklaşılır.",
+        "Smudge hücreleri → KLL için destekleyici yayma ipucu.",
+        "Trombosit normal ve blast yok → akut lösemi/TTP-DIC benzeri acil patern yok.",
+        "LDH-bilirubin-haptoglobin normal → otoimmün hemoliz ön planda değil."
+      ],
+      "whyWrong": "Yanlış seçenekler akut lösemi, otoimmün hemoliz, KML veya Hodgkin lenfomaya aittir; vakada periferik kandaki klonal olgun B lenfositlerin immünfenotipi doğrulanmalıdır.",
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v302",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V301 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v303-new-704-ates-ve-yeni-ufurum",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Ateş ve yeni üfürüm",
+      "difficulty": "Orta-Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Uzayan ateş, yeni kapak üfürümü ve embolik cilt bulgularında mikrobiyolojik kanıt ile ekokardiyografik değerlendirme sıralamasını seçme.",
+      "learningTarget": "Şüpheli kapak enfeksiyonunda antibiyotik öncesi kan kültürü alma ve TTE/TEE yaklaşımını ayırt etme.",
+      "demographics": "61 yaşında erkek hasta",
+      "setting": "Dahiliye acil konsültasyonu",
+      "chiefComplaint": "Hasta, iki haftadır düşmeyen ateş ve son günlerde artan halsizlik nedeniyle başvuruyor.",
+      "stem": "Hasta yaklaşık iki hafta önce başlayan üşüme-titreme ataklarının giderek sıklaştığını, evde ateşinin özellikle akşamları 38.5 °C üzerine çıktığını anlatır. Son birkaç gündür merdiven çıkarken daha çabuk yorulmuş ve gömlek değiştirtecek kadar gece terlemesi olmuştur. Altı hafta önce diş çekimi yaptırdığını, işlemden sonra kısa süreli ağız ağrısı dışında belirgin yakınması olmadığını söyler. Göğüs ağrısı veya bacak şişliği tariflemez; ancak son iki gündür avuç içinde ağrısız küçük kırmızı lekeler fark etmiştir. Bilinen kapak hastalığı olduğunu yıllar önce duymuş, düzenli kardiyoloji takibine gitmemiştir. Ateşin uzaması ve iştahsızlığının belirginleşmesi üzerine acile gelmiştir.",
+      "patientIntro": {
+        "profile": "61 yaşında erkek hasta, Dahiliye acil konsültasyonu ortamında değerlendiriliyor.",
+        "presentation": "Hasta, iki haftadır düşmeyen ateş ve son günlerde artan halsizlik nedeniyle başvuruyor.",
+        "historySummary": "Hasta yaklaşık iki hafta önce başlayan üşüme-titreme ataklarının giderek sıklaştığını, evde ateşinin özellikle akşamları 38.5 °C üzerine çıktığını anlatır. Son birkaç gündür merdiven çıkarken daha çabuk yorulmuş ve gömlek değiştirtecek kadar gece terlemesi olmuştur. Altı hafta önce diş çekimi yaptırdığını, işlemden sonra kısa süreli ağız ağrısı dışında belirgin yakınması olmadığını söyler. Göğüs ağrısı veya bacak şişliği tariflemez; ancak son iki gündür avuç içinde ağrısız küçük kırmızı lekeler fark etmiştir. Bilinen kapak hastalığı olduğunu yıllar önce duymuş, düzenli kardiyoloji takibine gitmemiştir. Ateşin uzaması ve iştahsızlığının belirginleşmesi üzerine acile gelmiştir."
+      },
+      "vitals": {
+        "TA": "118/64 mmHg",
+        "Nabız": "104/dk",
+        "Solunum": "20/dk",
+        "SpO2": "%97, oda havasında",
+        "Ateş": "38.4 °C",
+        "Şok indeksi": "0.88 - perfüzyon korunmuş ancak taşikardi var"
+      },
+      "exam": [
+        "Hasta yorgun görünüyor, bilinci açık ve koopere.",
+        "Kardiyak oskültasyonda apeks odakta daha önce tariflenmeyen 3/6 pansistolik üfürüm duyuluyor.",
+        "Avuç içinde birkaç adet ağrısız eritemli makül ve tırnak altında ince çizgisel hemoraji izleniyor.",
+        "Akciğerlerde belirgin ral veya wheezing yok; periferik ödem saptanmıyor."
+      ],
+      "investigations": [
+        {
+          "id": "v303-new-704-ates-ve-yeni-ufurum-tam-kan-ve-inflamasyon",
+          "label": "Tam kan sayımı ve inflamasyon belirteçleri",
+          "title": "Tam kan sayımı ve inflamasyon belirteçleri",
+          "orderLabel": "Tam kan sayımı ve inflamasyon belirteçleri",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Tam kan sayımı ve inflamasyon belirteçleri",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Nötrofil baskın lökositoz ve belirgin inflamatuvar yanıt vardır.",
+          "clinicalMeaning": "Nötrofil baskın lökositoz ve belirgin inflamatuvar yanıt vardır.",
+          "result": {
+            "title": "Tam kan sayımı ve inflamasyon belirteçleri",
+            "summary": "Nötrofil baskın lökositoz ve belirgin inflamatuvar yanıt vardır.",
+            "interpretation": "Nötrofil baskın lökositoz ve belirgin inflamatuvar yanıt vardır.",
+            "values": [
+              [
+                "Lökosit",
+                "15.800/µL",
+                "4.000-10.000/µL",
+                "Yüksek"
+              ],
+              [
+                "Nötrofil",
+                "%86",
+                "%40-70",
+                "Nötrofil baskın"
+              ],
+              [
+                "Hemoglobin",
+                "11.4 g/dL",
+                "13.5-17.5 g/dL",
+                "Hafif düşük"
+              ],
+              [
+                "Trombosit",
+                "238.000/µL",
+                "150.000-400.000/µL",
+                "Normal"
+              ],
+              [
+                "CRP",
+                "146 mg/L",
+                "<5 mg/L",
+                "Çok yüksek"
+              ],
+              [
+                "Prokalsitonin",
+                "1.8 ng/mL",
+                "<0.1 ng/mL",
+                "Yüksek"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v303-new-704-ates-ve-yeni-ufurum-bobrek-idrar",
+          "label": "Böbrek fonksiyonu ve idrar incelemesi",
+          "title": "Böbrek fonksiyonu ve idrar incelemesi",
+          "orderLabel": "Böbrek fonksiyonu ve idrar incelemesi",
+          "type": "lab",
+          "priority": "important",
+          "subtype": "Böbrek fonksiyonu ve idrar incelemesi",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hafif böbrek etkilenimi ve mikroskopik hematüri eşlik etmektedir.",
+          "clinicalMeaning": "Hafif böbrek etkilenimi ve mikroskopik hematüri eşlik etmektedir.",
+          "result": {
+            "title": "Böbrek fonksiyonu ve idrar incelemesi",
+            "summary": "Hafif böbrek etkilenimi ve mikroskopik hematüri eşlik etmektedir.",
+            "interpretation": "Hafif böbrek etkilenimi ve mikroskopik hematüri eşlik etmektedir.",
+            "values": [
+              [
+                "Kreatinin",
+                "1.34 mg/dL",
+                "0.7-1.2 mg/dL",
+                "Hafif yüksek"
+              ],
+              [
+                "Üre",
+                "48 mg/dL",
+                "10-50 mg/dL",
+                "Üst sınıra yakın"
+              ],
+              [
+                "İdrar eritrosit",
+                "12-15/hpf",
+                "0-3/hpf",
+                "Mikroskopik hematüri"
+              ],
+              [
+                "Protein",
+                "+",
+                "Negatif",
+                "Hafif proteinüri"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v303-new-704-ates-ve-yeni-ufurum-eko-on-degerlendirme",
+          "label": "Transtorasik ekokardiyografi ön değerlendirmesi",
+          "title": "Transtorasik ekokardiyografi ön değerlendirmesi",
+          "orderLabel": "Transtorasik ekokardiyografi ön değerlendirmesi",
+          "type": "cardiology",
+          "priority": "essential",
+          "subtype": "Transtorasik ekokardiyografi ön değerlendirmesi",
+          "category": "cardiology",
+          "testTypeCategory": "cardiology",
+          "summary": "Mitral kapakta hareketli yapı ve yeni yetersizlik şüphesi vardır.",
+          "clinicalMeaning": "Mitral kapakta hareketli yapı ve yeni yetersizlik şüphesi vardır.",
+          "result": {
+            "title": "Transtorasik ekokardiyografi ön değerlendirmesi",
+            "summary": "Mitral kapakta hareketli yapı ve yeni yetersizlik şüphesi vardır.",
+            "interpretation": "Mitral kapakta hareketli yapı ve yeni yetersizlik şüphesi vardır.",
+            "values": [
+              [
+                "Mitral kapak",
+                "Posterior liflette 9 mm hareketli ekojen yapı",
+                "Yok",
+                "Patolojik"
+              ],
+              [
+                "Mitral yetersizlik",
+                "Orta derece",
+                "Yok-hafif",
+                "Artmış"
+              ],
+              [
+                "Sol ventrikül EF",
+                "%58",
+                ">%50",
+                "Korunmuş"
+              ],
+              [
+                "Periannüler apse",
+                "TTE’de net izlenmedi",
+                "Yok",
+                "TEE ile gerekirse netleştirilmeli"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada tanısal süreci güvenli biçimde başlatmak için en uygun basamak hangisidir?",
+      "questionType": "tanısal yaklaşım",
+      "answerTarget": "Şüpheli kapak enfeksiyonunda kan kültürü ve ekokardiyografi sıralaması",
+      "diagnosis": {
+        "correct": "Ayrı ven girişlerinden üç set kan kültürü alınıp transtorasik/özofageal ekokardiyografi ile değerlendirilmesi",
+        "options": [
+          "Tek kan kültürü alınıp oral amoksisilin-klavulanat başlanması",
+          "Romatizmal ateş açısından ASO titresi ve boğaz kültürüyle izlem yapılması",
+          "Ayrı ven girişlerinden üç set kan kültürü alınıp transtorasik/özofageal ekokardiyografi ile değerlendirilmesi",
+          "D-dimer sonucu beklenerek pulmoner BT anjiyografi planlanması",
+          "Antibiyotik başlamadan yalnızca CRP düşüşünün 48 saat izlenmesi"
+        ],
+        "question": "Bu hastada tanısal süreci güvenli biçimde başlatmak için en uygun basamak hangisidir?",
+        "explanation": "Olguda uzamış ateş, yeni üfürüm, periferik embolik/immün cilt bulguları, inflamasyon yüksekliği ve ekokardiyografide hareketli kapak yapısı birlikte değerlendirilmelidir. Antibiyotik öncesi farklı venlerden alınan yeterli kan kültürü etkeni saptamayı sağlar; ekokardiyografi kapak tutulumunu ve komplikasyonları gösterir. Tek kültür, geç antibiyotik veya yalnız inflamasyon izlemi tanısal güvenliği düşürür.",
+        "pearls": [
+          "Yeni üfürüm + uzayan ateş birlikte kapak düzeyinde enfeksiyon olasılığını güçlendirir.",
+          "Kan kültürleri antibiyotik öncesi alınırsa etken ve hedef tedavi şansı artar.",
+          "TTE başlangıçta yapılabilir; şüphe sürerse TEE duyarlılığı artırır.",
+          "CRP yüksekliği tek başına tanı koydurmaz; mikrobiyolojik ve anatomik kanıt gerekir."
+        ],
+        "optionFeedback": {
+          "Tek kan kültürü alınıp oral amoksisilin-klavulanat başlanması": "Tek kan kültürü, geçici kontaminasyon ile gerçek bakteriyemiyi ayırmada zayıftır ve oral antibiyotik verilmesi kan kültürü verimini bozarak tanıyı geciktirebilir. Bu yaklaşım basit toplum kökenli üst solunum yolu veya yumuşak doku enfeksiyonlarında düşünülebilir; ancak bu hastada iki haftadır süren ateş, yeni üfürüm, embolik cilt bulguları ve yüksek inflamasyon yanıtı daha sistematik bir değerlendirme gerektirir. En kritik nokta antibiyotik öncesi yeterli sayıda kan kültürü almak ve kapak tutulumunu görüntülemektir.",
+          "Romatizmal ateş açısından ASO titresi ve boğaz kültürüyle izlem yapılması": "ASO titresi ve boğaz kültürü akut romatizmal ateş veya yakın streptokok enfeksiyonu şüphesinde anlamlı olabilir. Ancak 61 yaşındaki hastada yeni kapak üfürümüyle birlikte tekrarlayan ateş, splinter tarzı çizgilenmeler ve embolik cilt bulguları ön plandadır; kore, gezici artrit veya tipik romatizmal kardit öyküsü verilmemiştir. Bu nedenle ASO odaklı izlem bu vakadaki acil tanısal ihtiyacı karşılamaz.",
+          "Ayrı ven girişlerinden üç set kan kültürü alınıp transtorasik/özofageal ekokardiyografi ile değerlendirilmesi": "Bu seçenek en uygundur. Uzayan ateş, yeni mitral regürjitasyon üfürümü, splinter hemoraji/Janeway benzeri lezyonlar ve yüksek CRP-prokalsitonin değeri kalıcı bakteriyemi ve kapak tutulumu olasılığını gündeme getirir. Antibiyotik başlanmadan önce farklı ven girişlerinden yeterli sayıda kan kültürü alınması etkeni saptamak ve tedaviyi daraltmak için kritiktir; ekokardiyografi ise vejetasyon, kapak yetersizliği ve periannüler komplikasyonları araştırır. TTE ilk basamak olabilir, fakat şüphe sürerse veya görüntü yetersizse TEE tanısal duyarlılığı artırır.",
+          "D-dimer sonucu beklenerek pulmoner BT anjiyografi planlanması": "D-dimer ve pulmoner BT anjiyografi akut pulmoner emboli şüphesinde kullanılır. Bu hastada nefes darlığı veya plöritik göğüs ağrısı baskın değildir; esas tablo uzamış ateş, yeni üfürüm ve periferik embolik/immün cilt bulgularıyla ilerlemektedir. D-dimer inflamasyon ve enfeksiyon durumlarında da yükselebileceği için bu bağlamda tanıyı gereksiz yere yanlış yöne çekebilir.",
+          "Antibiyotik başlamadan yalnızca CRP düşüşünün 48 saat izlenmesi": "CRP takibi inflamasyonun seyrini gösterebilir ancak tanı koydurmaz ve etken saptama şansını artırmaz. Yeni üfürüm ve embolik bulgular eşlik ederken yalnız izlem yapmak, kapak yıkımı, sistemik emboli ve sepsis riskini artırabilir. Klinik karar, inflamatuvar belirteci beklemek değil kan kültürü ve ekokardiyografiyle anatomik-mikrobiyolojik kanıtı hızla toplamaktır."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Şüpheli kapak enfeksiyonunda tanı yalnız ateş ve CRP ile konmaz; mikrobiyolojik kanıt ve ekokardiyografik kapak değerlendirmesi birlikte gereklidir.",
+      "examPearl": "TUS ipucu: Uzamış ateş + yeni üfürüm + embolik deri bulgusu = antibiyotik öncesi çoklu kan kültürü ve ekokardiyografi düşün.",
+      "whyCorrect": "Üç set kan kültürü ve ekokardiyografi, bu hastadaki uzamış ateş-yeni üfürüm-periferik bulgu zincirini doğrudan değerlendirir.",
+      "optionComparison": "Diğer seçenekler tekil enfeksiyon izlemi, romatizmal ateş, pulmoner emboli veya pasif CRP takibiyle sınırlıdır; kapak enfeksiyonu şüphesinde mikrobiyoloji ve görüntüleme birlikte gerekir.",
+      "evidenceChain": [
+        "İki haftalık ateş ve gece terlemesi → geçici viral hastalıktan çok kalıcı enfeksiyon odağı olasılığı.",
+        "Yeni pansistolik üfürüm → kapak yapısında yeni etkilenim olasılığı.",
+        "Avuç içi maküller ve splinter hemoraji → embolik/immün periferik bulgu desteği.",
+        "TTE’de 9 mm hareketli yapı → ekokardiyografik doğrulama ve gerekirse TEE ihtiyacı."
+      ],
+      "whyWrong": "Yanlış seçenekler aynı klinik bağlamda düşünülebilecek alternatif tanı veya yönetim yollarını temsil eder; ancak olgudaki öykü, vital bulgu ve objektif veri zinciri seçilen doğru hedefle daha güçlü ve güvenli biçimde örtüşür.",
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v303",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V302 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v303-new-705-cok-yuksek-seker-ve-dalginlik",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Çok yüksek şeker ve dalgınlık",
+      "difficulty": "Orta-Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Ağır hiperglisemi, hiperosmolalite ve hipokalemi birlikteliğinde tedavi sıralamasını potasyum güvenliği üzerinden kurma.",
+      "learningTarget": "Hiperglisemik krizlerde sıvı, potasyum ve insülin sıralamasını; keton negatifliğinin aciliyeti azaltmadığını öğrenme.",
+      "demographics": "72 yaşında kadın hasta",
+      "setting": "Acil servis",
+      "chiefComplaint": "Hasta, iki gündür artan susuzluk, sık idrara çıkma ve bugün belirginleşen dalgınlık nedeniyle getiriliyor.",
+      "stem": "Hasta yakınları son bir haftadır hastanın daha çok su içtiğini, gece birkaç kez tuvalete kalktığını ve son iki gündür belirgin halsizleştiğini anlatır. Sabah kahvaltı etmeyip sürekli uyuklamış, öğleden sonra sorulara geç yanıt vermeye başlayınca ailesi ambulans çağırmıştır. On beş yıllık tip 2 diyabeti vardır; son haftalarda ilaçlarını düzensiz kullandığı ve idrar yaparken yanma tariflediği öğrenilir. Karın ağrısı veya tekrarlayan kusma olmamış, derin ve hızlı soluk alma yakınları tarafından fark edilmemiştir. Yeni başlanan steroid veya alkol kullanımı tariflenmez. Dalgınlığın artması ve ağız kuruluğunun belirginleşmesi başvuru nedeni olmuştur.",
+      "patientIntro": {
+        "profile": "72 yaşında kadın hasta, Acil servis ortamında değerlendiriliyor.",
+        "presentation": "Hasta, iki gündür artan susuzluk, sık idrara çıkma ve bugün belirginleşen dalgınlık nedeniyle getiriliyor.",
+        "historySummary": "Hasta yakınları son bir haftadır hastanın daha çok su içtiğini, gece birkaç kez tuvalete kalktığını ve son iki gündür belirgin halsizleştiğini anlatır. Sabah kahvaltı etmeyip sürekli uyuklamış, öğleden sonra sorulara geç yanıt vermeye başlayınca ailesi ambulans çağırmıştır. On beş yıllık tip 2 diyabeti vardır; son haftalarda ilaçlarını düzensiz kullandığı ve idrar yaparken yanma tariflediği öğrenilir. Karın ağrısı veya tekrarlayan kusma olmamış, derin ve hızlı soluk alma yakınları tarafından fark edilmemiştir. Yeni başlanan steroid veya alkol kullanımı tariflenmez. Dalgınlığın artması ve ağız kuruluğunun belirginleşmesi başvuru nedeni olmuştur."
+      },
+      "vitals": {
+        "TA": "96/58 mmHg",
+        "Nabız": "118/dk",
+        "Solunum": "22/dk",
+        "SpO2": "%96, oda havasında",
+        "Ateş": "37.8 °C",
+        "Şok indeksi": "1.23 - hipovolemi ve kötü perfüzyon açısından yüksek"
+      },
+      "exam": [
+        "Hasta somnolan ancak ağrılı uyaranla göz açıyor; mukozalar belirgin kuru.",
+        "Cilt turgoru azalmış, kapiller dolum yaklaşık 4 saniye.",
+        "Karında defans veya rebound yok; belirgin Kussmaul solunumu izlenmiyor.",
+        "Suprapubik hassasiyet hafif; kostovertebral açı hassasiyeti yok."
+      ],
+      "investigations": [
+        {
+          "id": "v303-new-705-cok-yuksek-seker-ve-dalginlik-glukoz-elektrolit",
+          "label": "Glukoz, elektrolit ve böbrek fonksiyonu",
+          "title": "Glukoz, elektrolit ve böbrek fonksiyonu",
+          "orderLabel": "Glukoz, elektrolit ve böbrek fonksiyonu",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Glukoz, elektrolit ve böbrek fonksiyonu",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Ağır hiperglisemi, hipokalemi ve prerenal azotemi paterni vardır.",
+          "clinicalMeaning": "Ağır hiperglisemi, hipokalemi ve prerenal azotemi paterni vardır.",
+          "result": {
+            "title": "Glukoz, elektrolit ve böbrek fonksiyonu",
+            "summary": "Ağır hiperglisemi, hipokalemi ve prerenal azotemi paterni vardır.",
+            "interpretation": "Ağır hiperglisemi, hipokalemi ve prerenal azotemi paterni vardır.",
+            "values": [
+              [
+                "Plazma glukozu",
+                "892 mg/dL",
+                "70-140 mg/dL",
+                "Çok yüksek"
+              ],
+              [
+                "Sodyum",
+                "151 mmol/L",
+                "135-145 mmol/L",
+                "Yüksek"
+              ],
+              [
+                "Potasyum",
+                "3.2 mmol/L",
+                "3.5-5.1 mmol/L",
+                "Düşük"
+              ],
+              [
+                "Klor",
+                "108 mmol/L",
+                "98-107 mmol/L",
+                "Hafif yüksek"
+              ],
+              [
+                "Bikarbonat",
+                "20 mmol/L",
+                "22-26 mmol/L",
+                "Hafif düşük"
+              ],
+              [
+                "Üre/Kreatinin",
+                "92/1.9 mg/dL",
+                "10-50/0.6-1.1 mg/dL",
+                "Prerenal yüklenme lehine"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v303-new-705-cok-yuksek-seker-ve-dalginlik-kan-gazi-osmolalite",
+          "label": "Venöz kan gazı ve osmolalite",
+          "title": "Venöz kan gazı ve osmolalite",
+          "orderLabel": "Venöz kan gazı ve osmolalite",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Venöz kan gazı ve osmolalite",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Ciddi hiperosmolalite vardır; ağır ketoasidoz paterni yoktur.",
+          "clinicalMeaning": "Ciddi hiperosmolalite vardır; ağır ketoasidoz paterni yoktur.",
+          "result": {
+            "title": "Venöz kan gazı ve osmolalite",
+            "summary": "Ciddi hiperosmolalite vardır; ağır ketoasidoz paterni yoktur.",
+            "interpretation": "Ciddi hiperosmolalite vardır; ağır ketoasidoz paterni yoktur.",
+            "values": [
+              [
+                "pH",
+                "7.34",
+                "7.35-7.45",
+                "Sınıra yakın"
+              ],
+              [
+                "pCO2",
+                "38 mmHg",
+                "35-45 mmHg",
+                "Normal"
+              ],
+              [
+                "Efektif serum osmolalitesi",
+                "356 mOsm/kg",
+                "275-295 mOsm/kg",
+                "Çok yüksek"
+              ],
+              [
+                "Anyon açığı",
+                "23 mmol/L",
+                "8-12 mmol/L",
+                "Hafif-orta artış"
+              ],
+              [
+                "Serum beta-hidroksibütirat",
+                "0.8 mmol/L",
+                "<0.6 mmol/L",
+                "Hafif artış"
+              ],
+              [
+                "İdrar ketonu",
+                "Negatif/iz",
+                "Negatif",
+                "Belirgin ketoz yok"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v303-new-705-cok-yuksek-seker-ve-dalginlik-idrar-enfeksiyon",
+          "label": "İdrar incelemesi",
+          "title": "İdrar incelemesi",
+          "orderLabel": "İdrar incelemesi",
+          "type": "lab",
+          "priority": "important",
+          "subtype": "İdrar incelemesi",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Altta yatan üriner enfeksiyon tetikleyici olabilir.",
+          "clinicalMeaning": "Altta yatan üriner enfeksiyon tetikleyici olabilir.",
+          "result": {
+            "title": "İdrar incelemesi",
+            "summary": "Altta yatan üriner enfeksiyon tetikleyici olabilir.",
+            "interpretation": "Altta yatan üriner enfeksiyon tetikleyici olabilir.",
+            "values": [
+              [
+                "Lökosit esteraz",
+                "Pozitif",
+                "Negatif",
+                "Patolojik"
+              ],
+              [
+                "Nitrit",
+                "Pozitif",
+                "Negatif",
+                "Patolojik"
+              ],
+              [
+                "Lökosit",
+                "35-40/hpf",
+                "0-5/hpf",
+                "Yüksek"
+              ],
+              [
+                "Glukoz",
+                "++++",
+                "Negatif",
+                "Belirgin glukozüri"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada acil yönetimde öncelikli tedavi yaklaşımı hangisidir?",
+      "questionType": "acil yönetim",
+      "answerTarget": "Hiperglisemik krizde sıvı-potasyum-insülin sıralaması",
+      "diagnosis": {
+        "correct": "İzotonik sıvı resüsitasyonu ve potasyum replasmanı başlatıp insülini potasyum güvenli düzeye çıkınca vermek",
+        "options": [
+          "İzotonik sıvı resüsitasyonu ve potasyum replasmanı başlatıp insülini potasyum güvenli düzeye çıkınca vermek",
+          "Potasyum düzeyinden bağımsız hızlı IV insülin bolusu uygulamak",
+          "Serum bikarbonatı pH 7.30 üzerinde olduğu için rutin bikarbonat infüzyonu başlamak",
+          "Sodyum yüksek göründüğü için ilk basamakta hipotonik sıvı yüklemesi yapmak",
+          "Keton negatif olduğu için hasta ağızdan sıvı alabilecek hale gelene kadar tedaviyi ertelemek"
+        ],
+        "question": "Bu hastada acil yönetimde öncelikli tedavi yaklaşımı hangisidir?",
+        "explanation": "Hastanın bilinç değişikliği, çok yüksek glukozu, belirgin osmolalite artışı ve dehidratasyon bulguları hiperglisemik krizin ağır formunu düşündürür. Keton ve asidoz belirgin değildir; fakat potasyum düşüktür. Bu nedenle ilk basamak izotonik sıvı ile dolaşım hacmini düzeltmek ve potasyumu replase etmektir; insülin potasyum güvenli aralığa ulaştıktan sonra başlanmalıdır.",
+        "pearls": [
+          "Glukoz çok yüksek olsa bile potasyum düşükse insülin geciktirilir.",
+          "Osmolalite yüksekliği bilinç değişikliğinin ana sürücülerinden biridir.",
+          "İlk saatlerde sıvı tedavisi glukozu insülinden bağımsız olarak da düşürebilir.",
+          "Tetikleyici enfeksiyon tedavisi kriz yönetiminin parçasıdır."
+        ],
+        "optionFeedback": {
+          "İzotonik sıvı resüsitasyonu ve potasyum replasmanı başlatıp insülini potasyum güvenli düzeye çıkınca vermek": "Bu seçenek en uygundur. Hastada çok yüksek glukoz, yüksek efektif osmolalite, belirgin dehidratasyon ve keton/asidozun belirgin olmaması ağır hiperglisemik dehidratasyon tablosunu destekler. Tedavide ilk hedef intravasküler hacmi düzeltmek, perfüzyonu artırmak ve potasyumu güvenli aralıkta tutmaktır. Serum potasyumu 3.2 mmol/L olduğu için insülin hemen verilirse potasyum hücre içine kayar ve hayatı tehdit eden hipokalemi/aritmi gelişebilir; bu nedenle sıvı ve potasyum replasmanı önceliklidir, insülin potasyum yükseldikten sonra başlanır.",
+          "Potasyum düzeyinden bağımsız hızlı IV insülin bolusu uygulamak": "Hızlı IV insülin bolusu bu hastada tehlikelidir. Potasyum 3.3 mmol/L altında iken insülin verilmesi serum potasyumunu daha da düşürerek ventriküler aritmi ve solunum kas güçsüzlüğü riskini artırır. Ayrıca bu tabloda osmolalite yüksek olduğu için glukozun çok hızlı düşürülmesi de serebral sıvı geçişlerini olumsuz etkileyebilir. İnsülin tedavisi gerekir, fakat sıvı ve potasyum güvenliği sağlandıktan sonra kontrollü verilmelidir.",
+          "Serum bikarbonatı pH 7.30 üzerinde olduğu için rutin bikarbonat infüzyonu başlamak": "Bikarbonat infüzyonu rutin tedavi değildir ve burada pH 7.34, bikarbonat 20 mmol/L düzeyindedir. Ciddi asidemi bulunmadığında bikarbonat verilmesi sodyum yükü, hipokalemi ve paradoksal hücresel etkiler oluşturabilir. Bu hastadaki ana problem asidoz değil ağır hiperosmolar dehidratasyon ve elektrolit dengesizliğidir. Bu yüzden bikarbonat, tedavinin merkezinde yer almaz.",
+          "Sodyum yüksek göründüğü için ilk basamakta hipotonik sıvı yüklemesi yapmak": "Sodyum değeri ilk bakışta normal-yüksek görünse de ağır hiperglisemide düzeltilmiş sodyum ve su açığı birlikte yorumlanmalıdır. İlk basamakta hipotonik sıvı yüklemek dolaşım hacmini hızlı düzeltmeyebilir ve ani osmolalite değişimine yol açabilir. Hemodinamik ve perfüzyon bulguları olan hastada başlangıç sıvısı genellikle izotonik kristalloiddir; sıvının türü takipte sodyum/osmolalite seyrine göre ayarlanır.",
+          "Keton negatif olduğu için hasta ağızdan sıvı alabilecek hale gelene kadar tedaviyi ertelemek": "Keton negatifliği tedavi gereksinimini ortadan kaldırmaz. Bu tabloda bilinç bulanıklığı, ciddi hiperglisemi, yüksek osmolalite, yüksek üre/kreatinin ve kuru mukozalar yaşamı tehdit eden su-elektrolit kaybını gösterir. Ağızdan sıvı beklemek gecikmeye neden olur; intravenöz sıvı-elektrolit yönetimi ve tetikleyici enfeksiyonun tedavisi gerekir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Hiperglisemik krizlerde tedavi yalnız glukozu düşürmek değildir; sıvı açığı, potasyum güvenliği ve tetikleyici neden eş zamanlı yönetilir.",
+      "examPearl": "TUS ipucu: Glukoz çok yüksek + osmolalite yüksek + keton belirgin değil + K <3.3 ise önce sıvı ve potasyum, sonra insülin.",
+      "whyCorrect": "Potasyum 3.2 mmol/L olduğu için insülin öncesi sıvı ve potasyum replasmanı en güvenli yaklaşımdır.",
+      "optionComparison": "Diğer seçenekler insülini acele başlatır, gereksiz bikarbonat verir, yanlış sıvı önceliği kurar veya keton negatifliğini yanlış güven verici yorumlar.",
+      "evidenceChain": [
+        "Glukoz 892 mg/dL + efektif osmolalite 356 mOsm/kg → ağır hiperosmolar yük ve bilinç etkilenimi.",
+        "TA 96/58 ve kapiller dolum 4 sn → belirgin hipovolemi/perfüzyon bozulması.",
+        "Potasyum 3.2 mmol/L → insülin öncesi replasman gereksinimi.",
+        "İdrarda nitrit/lökosit → enfeksiyon tetikleyicisi olasılığı."
+      ],
+      "whyWrong": "Yanlış seçenekler aynı klinik bağlamda düşünülebilecek alternatif tanı veya yönetim yollarını temsil eder; ancak olgudaki öykü, vital bulgu ve objektif veri zinciri seçilen doğru hedefle daha güçlü ve güvenli biçimde örtüşür.",
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v303",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V302 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v303-new-706-petesi-ve-dalgalanan-bilinc",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Peteşi ve dalgalanan bilinç",
+      "difficulty": "Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Trombositopeni, şistositli hemoliz ve nörolojik dalgalanma birlikteliğinde tedaviyi laboratuvar sonucunu beklemeden başlatma kararını verme.",
+      "learningTarget": "Trombotik mikroanjiyopati paterninde ADAMTS13 sonucu beklenmeden plazma değişimi başlama mantığını öğrenme.",
+      "demographics": "42 yaşında kadın hasta",
+      "setting": "Hematoloji acil değerlendirmesi",
+      "chiefComplaint": "Hasta, bacaklarda mor noktalar, halsizlik ve gün içinde gelip giden kafa karışıklığı nedeniyle getiriliyor.",
+      "stem": "Hasta üç gündür bacaklarında küçük mor-kırmızı noktalar fark ettiğini ve diş fırçalarken diş etlerinin daha kolay kanadığını anlatır. Aynı günlerde belirgin halsizlik başlamış, bugün iş yerinde kısa süreli kelime bulma güçlüğü ve dalgınlık yaşayınca arkadaşları tarafından acile getirilmiştir. Ateşi olduğunu düşünmemiş, öksürük, ishal veya idrar yanması tariflememiştir. Yeni antikoagülan kullanımı yoktur; son haftalarda gebelik, büyük cerrahi veya bilinen kanser tedavisi öyküsü vermez. Daha önce benzer bir kanama atağı yaşamamıştır. Kafa karışıklığının tekrarlaması ve morlukların artması başvuruya yol açmıştır.",
+      "patientIntro": {
+        "profile": "42 yaşında kadın hasta, Hematoloji acil değerlendirmesi ortamında değerlendiriliyor.",
+        "presentation": "Hasta, bacaklarda mor noktalar, halsizlik ve gün içinde gelip giden kafa karışıklığı nedeniyle getiriliyor.",
+        "historySummary": "Hasta üç gündür bacaklarında küçük mor-kırmızı noktalar fark ettiğini ve diş fırçalarken diş etlerinin daha kolay kanadığını anlatır. Aynı günlerde belirgin halsizlik başlamış, bugün iş yerinde kısa süreli kelime bulma güçlüğü ve dalgınlık yaşayınca arkadaşları tarafından acile getirilmiştir. Ateşi olduğunu düşünmemiş, öksürük, ishal veya idrar yanması tariflememiştir. Yeni antikoagülan kullanımı yoktur; son haftalarda gebelik, büyük cerrahi veya bilinen kanser tedavisi öyküsü vermez. Daha önce benzer bir kanama atağı yaşamamıştır. Kafa karışıklığının tekrarlaması ve morlukların artması başvuruya yol açmıştır."
+      },
+      "vitals": {
+        "TA": "138/82 mmHg",
+        "Nabız": "112/dk",
+        "Solunum": "19/dk",
+        "SpO2": "%98, oda havasında",
+        "Ateş": "37.4 °C",
+        "Şok indeksi": "0.81 - taşikardi var, makroşok bulgusu yok"
+      },
+      "exam": [
+        "Hasta zaman zaman sorulara geç yanıt veriyor; fokal motor defisit saptanmıyor.",
+        "Alt ekstremitelerde yaygın peteşiler ve birkaç ekimoz izleniyor.",
+        "Skleralarda hafif ikter var; hepatosplenomegali belirgin değil.",
+        "Akciğer ve kardiyak muayenede belirgin odak bulgusu yok."
+      ],
+      "investigations": [
+        {
+          "id": "v303-new-706-petesi-ve-dalgalanan-bilinc-tam-kan-yayma",
+          "label": "Tam kan sayımı ve periferik yayma",
+          "title": "Tam kan sayımı ve periferik yayma",
+          "orderLabel": "Tam kan sayımı ve periferik yayma",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Tam kan sayımı ve periferik yayma",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Ağır trombositopeni ve şistositli hemoliz paterni vardır.",
+          "clinicalMeaning": "Ağır trombositopeni ve şistositli hemoliz paterni vardır.",
+          "result": {
+            "title": "Tam kan sayımı ve periferik yayma",
+            "summary": "Ağır trombositopeni ve şistositli hemoliz paterni vardır.",
+            "interpretation": "Ağır trombositopeni ve şistositli hemoliz paterni vardır.",
+            "values": [
+              [
+                "Hemoglobin",
+                "8.7 g/dL",
+                "12.0-16.0 g/dL",
+                "Düşük"
+              ],
+              [
+                "Trombosit",
+                "18.000/µL",
+                "150.000-400.000/µL",
+                "Çok düşük"
+              ],
+              [
+                "Lökosit",
+                "9.600/µL",
+                "4.000-10.000/µL",
+                "Normal-sınıra yakın"
+              ],
+              [
+                "Periferik yayma",
+                "Çok sayıda şistosit",
+                "Yok",
+                "Mikroanjiyopatik hemoliz"
+              ],
+              [
+                "Retikülosit",
+                "%7.2",
+                "%0.5-2.5",
+                "Yüksek"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v303-new-706-petesi-ve-dalgalanan-bilinc-hemoliz-koagulasyon",
+          "label": "Hemoliz ve koagülasyon paneli",
+          "title": "Hemoliz ve koagülasyon paneli",
+          "orderLabel": "Hemoliz ve koagülasyon paneli",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Hemoliz ve koagülasyon paneli",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hemoliz belirgin, klasik yaygın koagülasyon tüketimi paterni yoktur.",
+          "clinicalMeaning": "Hemoliz belirgin, klasik yaygın koagülasyon tüketimi paterni yoktur.",
+          "result": {
+            "title": "Hemoliz ve koagülasyon paneli",
+            "summary": "Hemoliz belirgin, klasik yaygın koagülasyon tüketimi paterni yoktur.",
+            "interpretation": "Hemoliz belirgin, klasik yaygın koagülasyon tüketimi paterni yoktur.",
+            "values": [
+              [
+                "LDH",
+                "1880 U/L",
+                "<250 U/L",
+                "Çok yüksek"
+              ],
+              [
+                "Haptoglobin",
+                "<10 mg/dL",
+                "30-200 mg/dL",
+                "Baskılı"
+              ],
+              [
+                "Direkt antiglobulin testi",
+                "Negatif",
+                "Negatif",
+                "İmmün hemoliz lehine değil"
+              ],
+              [
+                "PT/INR",
+                "12.5 sn / 1.0",
+                "11-14 sn / 0.8-1.2",
+                "Normal"
+              ],
+              [
+                "aPTT",
+                "29 sn",
+                "25-35 sn",
+                "Normal"
+              ],
+              [
+                "Fibrinojen",
+                "310 mg/dL",
+                "200-400 mg/dL",
+                "Normal"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v303-new-706-petesi-ve-dalgalanan-bilinc-bobrek-norolojik",
+          "label": "Böbrek ve nörolojik ön değerlendirme",
+          "title": "Böbrek ve nörolojik ön değerlendirme",
+          "orderLabel": "Böbrek ve nörolojik ön değerlendirme",
+          "type": "lab",
+          "priority": "important",
+          "subtype": "Böbrek ve nörolojik ön değerlendirme",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hafif böbrek etkilenimi ve geçici nörolojik yakınma eşlik etmektedir.",
+          "clinicalMeaning": "Hafif böbrek etkilenimi ve geçici nörolojik yakınma eşlik etmektedir.",
+          "result": {
+            "title": "Böbrek ve nörolojik ön değerlendirme",
+            "summary": "Hafif böbrek etkilenimi ve geçici nörolojik yakınma eşlik etmektedir.",
+            "interpretation": "Hafif böbrek etkilenimi ve geçici nörolojik yakınma eşlik etmektedir.",
+            "values": [
+              [
+                "Kreatinin",
+                "1.6 mg/dL",
+                "0.6-1.1 mg/dL",
+                "Yüksek"
+              ],
+              [
+                "İdrar eritrosit",
+                "8-10/hpf",
+                "0-3/hpf",
+                "Mikroskopik hematüri"
+              ],
+              [
+                "Beyin BT",
+                "Akut kanama yok",
+                "Yok",
+                "Makrokanama saptanmadı"
+              ],
+              [
+                "Glukoz",
+                "102 mg/dL",
+                "70-140 mg/dL",
+                "Hipoglisemi yok"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada acil tedavide en doğru yaklaşım hangisidir?",
+      "questionType": "acil tedavi",
+      "answerTarget": "Şistositli trombositopenide plazma değişimi kararı",
+      "diagnosis": {
+        "correct": "Acil terapötik plazma değişimi ve kortikosteroid tedavisi başlamak",
+        "options": [
+          "Trombosit süspansiyonu verip periferik yaymayı bir hafta sonra tekrarlamak",
+          "Yüksek doz heparin infüzyonu ve varfarin köprülemesi başlamak",
+          "ADAMTS13 sonucu çıkana kadar yalnız destek tedavisiyle izlemek",
+          "Geniş spektrum antibiyotik sonrası trombosit normale dönene kadar plazmaferezi ertelemek",
+          "Acil terapötik plazma değişimi ve kortikosteroid tedavisi başlamak"
+        ],
+        "question": "Bu hastada acil tedavide en doğru yaklaşım hangisidir?",
+        "explanation": "Bu olguda ağır trombositopeni, şistositli Coombs negatif hemoliz, LDH yüksekliği, nörolojik dalgalanma ve böbrek etkilenimi bir aradadır. PT/aPTT ve fibrinojenin normal olması DIC’den uzaklaştırır. Klinik olasılık yüksek olduğunda ADAMTS13 sonucu beklenmeden plazma değişimi ve kortikosteroid başlanmalıdır; gecikme mortaliteyi artırır.",
+        "pearls": [
+          "Şistosit + trombositopeni + organ etkilenimi trombotik mikroanjiyopatiyi düşündürür.",
+          "PT/aPTT normal ise DIC geri planda kalır.",
+          "ADAMTS13 tanısal destek sağlar ama tedavi geciktirilmez.",
+          "Ciddi kanama yoksa trombosit transfüzyonu rutin değildir."
+        ],
+        "optionFeedback": {
+          "Trombosit süspansiyonu verip periferik yaymayı bir hafta sonra tekrarlamak": "Trombosit transfüzyonu bu klinik patern için rutin ilk yaklaşım değildir ve ciddi kanama yoksa mikrotrombozu artırma riski nedeniyle zararlı olabilir. Trombosit düşüklüğü burada kemik iliği üretim azlığından çok tüketim ve mikrovasküler trombüs oluşumu ile ilişkilidir. Periferik yaymayı bir hafta sonra tekrarlamak ise nörolojik dalgalanma ve böbrek etkilenimi olan hastada ölümcül gecikmeye yol açabilir.",
+          "Yüksek doz heparin infüzyonu ve varfarin köprülemesi başlamak": "Heparin ve varfarin trombotik venöz hastalık, pulmoner emboli veya atriyal fibrilasyon gibi durumlarda gündeme gelir. Bu hastada temel sorun yaygın antikoagülasyonla çözülecek büyük damar trombozu değil; şistositli mikroanjiyopatik hemoliz, ağır trombositopeni ve organ etkilenimidir. Antikoagülasyon, altta yatan süreci düzeltmez ve trombosit çok düşük olduğu için kanama riskini artırabilir.",
+          "ADAMTS13 sonucu çıkana kadar yalnız destek tedavisiyle izlemek": "ADAMTS13 aktivitesi tanıyı destekler ve alt tipi netleştirmede değerlidir; ancak sonuç beklenirken tedaviyi ertelemek güvenli bir tercih değildir. Bu tablo saatler-günler içinde ilerleyebilir ve erken plazma değişimi mortaliteyi belirgin azaltır. Klinik olasılık yüksek olduğunda örnek alındıktan sonra tedavi hemen başlanır; laboratuvar sonucu tedaviyi başlatmanın ön koşulu değildir.",
+          "Geniş spektrum antibiyotik sonrası trombosit normale dönene kadar plazmaferezi ertelemek": "Enfeksiyon bazı hastalarda eşlik edebilir veya tetikleyici olabilir; ancak bu vakada PT/aPTT normal, fibrinojen normal, belirgin sepsis odağı verilmemiş ve yaymada şistositler vardır. Plazmaferezi trombosit yükselene kadar ertelemek mantıksal olarak ters bir yaklaşımdır; trombosit düşüklüğünü düzeltecek temel tedavi zaten plazma değişimidir. Antibiyotik gerekiyorsa eklenebilir, fakat mikroanjiyopatik süreci tedavi etmenin yerini almaz.",
+          "Acil terapötik plazma değişimi ve kortikosteroid tedavisi başlamak": "Bu seçenek en uygundur. Ateş olmadan da ortaya çıkabilen peteşi, dalgalanan bilinç, böbrek fonksiyon bozulması, şistositli hemoliz, LDH yüksekliği, haptoglobin düşüklüğü, direkt Coombs negatifliği ve normal PT/aPTT paterninde trombotik mikroanjiyopati düşünülmelidir. Klinik olasılık yüksek olduğunda ADAMTS13 örneği alınır, fakat sonuç beklenmeden terapötik plazma değişimi ve immün baskılayıcı kortikosteroid başlanır. Amaç otoantikor aracılı ciddi ADAMTS13 eksikliğinin yol açtığı ultra büyük vWF multimerleri ve trombosit mikrotrombüslerini hızla kontrol altına almaktır."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Şistositli hemoliz ve ağır trombositopeni birlikte görüldüğünde doğru refleks, büyük damar trombozu veya basit kanama gibi değil mikroanjiyopatik süreç gibi düşünmektir.",
+      "examPearl": "TUS ipucu: MAHA + trombositopeni + nörolojik bulgu + normal PT/aPTT → ADAMTS13 beklenmeden plazmaferez.",
+      "whyCorrect": "Normal koagülasyon testleriyle birlikte şistositli hemoliz ve nörolojik dalgalanma acil plazma değişimi gerektirir.",
+      "optionComparison": "Diğer seçenekler trombosit transfüzyonu, antikoagülasyon, bekleme veya enfeksiyon önceliği gibi bu paternin temel mekanizmasını düzeltmeyen yaklaşımlardır.",
+      "evidenceChain": [
+        "Trombosit 18.000/µL + peteşi → ağır tüketim/trombositopeni tablosu.",
+        "Şistosit, LDH 1880 ve haptoglobin <10 → mikroanjiyopatik hemoliz.",
+        "PT/aPTT/fibrinojen normal → DIC olasılığı geri planda.",
+        "Dalgınlık ve kreatinin 1.6 → organ etkilenimi, tedavide gecikme riski."
+      ],
+      "whyWrong": "Yanlış seçenekler aynı klinik bağlamda düşünülebilecek alternatif tanı veya yönetim yollarını temsil eder; ancak olgudaki öykü, vital bulgu ve objektif veri zinciri seçilen doğru hedefle daha güçlü ve güvenli biçimde örtüşür.",
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v303",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V302 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    },
+  {
+      "id": "v303-new-707-genc-kadinda-transaminaz-yuksekligi",
+      "branchId": "internal-medicine",
+      "caseType": "standard",
+      "relatedBranch": "İç Hastalıkları",
+      "title": "Genç kadında transaminaz yüksekliği",
+      "difficulty": "Orta-Zor",
+      "difficultyTag": "TUS düzeyi",
+      "clinicalFocus": "Hepatoselüler enzim yüksekliği, IgG artışı, otoantikor paterni ve biyopsi bulgularını birlikte yorumlayarak otoimmün hepatoselüler hastalığı ayırt etme.",
+      "learningTarget": "Kolestatik otoimmün karaciğer hastalıkları, viral hepatit, Wilson hastalığı ve alkol ilişkili hepatit ayrımında patern yaklaşımını öğrenme.",
+      "demographics": "29 yaşında kadın hasta",
+      "setting": "Gastroenteroloji polikliniği",
+      "chiefComplaint": "Hasta, iki aydır süren halsizlik, iştahsızlık ve aralıklı eklem ağrıları nedeniyle başvuruyor.",
+      "stem": "Hasta yaklaşık iki aydır işten döndüğünde normalden daha yorgun hissettiğini, sabahları el bileklerinde kısa süren ağrı ve tutukluk olduğunu anlatır. Son haftalarda iştahı azalmış, idrar renginin bazı günler koyulaştığını fark etmiş ancak belirgin ateş veya sağ üst karında şiddetli ağrı yaşamamıştır. Alkol kullanmadığını, bitkisel ürün veya yeni reçeteli ilaç başlamadığını söyler. Ailesinde bilinen karaciğer hastalığı yoktur; yakın zamanda seyahat, çiğ deniz ürünü tüketimi veya sarılıklı kişiyle temas tariflemez. Kaşıntı hafif düzeydedir ve kilo kaybı belirgin değildir. Rutin işyeri kontrolünde karaciğer testleri yüksek bulununca gastroenterolojiye yönlendirilmiştir.",
+      "patientIntro": {
+        "profile": "29 yaşında kadın hasta, Gastroenteroloji polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Hasta, iki aydır süren halsizlik, iştahsızlık ve aralıklı eklem ağrıları nedeniyle başvuruyor.",
+        "historySummary": "Hasta yaklaşık iki aydır işten döndüğünde normalden daha yorgun hissettiğini, sabahları el bileklerinde kısa süren ağrı ve tutukluk olduğunu anlatır. Son haftalarda iştahı azalmış, idrar renginin bazı günler koyulaştığını fark etmiş ancak belirgin ateş veya sağ üst karında şiddetli ağrı yaşamamıştır. Alkol kullanmadığını, bitkisel ürün veya yeni reçeteli ilaç başlamadığını söyler. Ailesinde bilinen karaciğer hastalığı yoktur; yakın zamanda seyahat, çiğ deniz ürünü tüketimi veya sarılıklı kişiyle temas tariflemez. Kaşıntı hafif düzeydedir ve kilo kaybı belirgin değildir. Rutin işyeri kontrolünde karaciğer testleri yüksek bulununca gastroenterolojiye yönlendirilmiştir."
+      },
+      "vitals": {
+        "TA": "110/70 mmHg",
+        "Nabız": "86/dk",
+        "Solunum": "16/dk",
+        "SpO2": "%99, oda havasında",
+        "Ateş": "36.8 °C",
+        "Şok indeksi": "0.78 - perfüzyon stabil"
+      },
+      "exam": [
+        "Genel durum iyi; skleralarda hafif subikter izleniyor.",
+        "Karaciğer kenarı sağ kostal ark altında 2 cm ele geliyor, hassasiyet hafif.",
+        "Asit, periferik ödem veya ensefalopati bulgusu yok.",
+        "Avuç içi eritemi belirgin değil; Kayser-Fleischer halkası klinik muayenede saptanmıyor."
+      ],
+      "investigations": [
+        {
+          "id": "v303-new-707-genc-kadinda-transaminaz-yuksekligi-karaciger-testleri",
+          "label": "Karaciğer biyokimyası",
+          "title": "Karaciğer biyokimyası",
+          "orderLabel": "Karaciğer biyokimyası",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Karaciğer biyokimyası",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hepatoselüler baskın enzim yüksekliği vardır.",
+          "clinicalMeaning": "Hepatoselüler baskın enzim yüksekliği vardır.",
+          "result": {
+            "title": "Karaciğer biyokimyası",
+            "summary": "Hepatoselüler baskın enzim yüksekliği vardır.",
+            "interpretation": "Hepatoselüler baskın enzim yüksekliği vardır.",
+            "values": [
+              [
+                "AST",
+                "412 U/L",
+                "<35 U/L",
+                "Yüksek"
+              ],
+              [
+                "ALT",
+                "536 U/L",
+                "<45 U/L",
+                "Yüksek"
+              ],
+              [
+                "ALP",
+                "148 U/L",
+                "40-130 U/L",
+                "Hafif yüksek"
+              ],
+              [
+                "GGT",
+                "96 U/L",
+                "<40 U/L",
+                "Yüksek"
+              ],
+              [
+                "Total/direkt bilirubin",
+                "2.1/0.9 mg/dL",
+                "<1.2/<0.3 mg/dL",
+                "Hafif yüksek"
+              ],
+              [
+                "INR",
+                "1.2",
+                "0.8-1.2",
+                "Üst sınır"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v303-new-707-genc-kadinda-transaminaz-yuksekligi-immunsoroloji",
+          "label": "İmmünolojik ve viral seroloji",
+          "title": "İmmünolojik ve viral seroloji",
+          "orderLabel": "İmmünolojik ve viral seroloji",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "İmmünolojik ve viral seroloji",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "IgG ve otoantikor pozitifliği, viral belirteçlerin negatifliğiyle birliktedir.",
+          "clinicalMeaning": "IgG ve otoantikor pozitifliği, viral belirteçlerin negatifliğiyle birliktedir.",
+          "result": {
+            "title": "İmmünolojik ve viral seroloji",
+            "summary": "IgG ve otoantikor pozitifliği, viral belirteçlerin negatifliğiyle birliktedir.",
+            "interpretation": "IgG ve otoantikor pozitifliği, viral belirteçlerin negatifliğiyle birliktedir.",
+            "values": [
+              [
+                "IgG",
+                "2680 mg/dL",
+                "700-1600 mg/dL",
+                "Yüksek"
+              ],
+              [
+                "ANA",
+                "1:320 pozitif",
+                "Negatif",
+                "Pozitif"
+              ],
+              [
+                "Düz kas antikoru",
+                "1:160 pozitif",
+                "Negatif",
+                "Pozitif"
+              ],
+              [
+                "AMA",
+                "Negatif",
+                "Negatif",
+                "Negatif"
+              ],
+              [
+                "HBsAg / anti-HCV / anti-HAV IgM",
+                "Negatif",
+                "Negatif",
+                "Viral belirteç yok"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v303-new-707-genc-kadinda-transaminaz-yuksekligi-metabolik-histoloji",
+          "label": "Metabolik tarama ve karaciğer biyopsisi",
+          "title": "Metabolik tarama ve karaciğer biyopsisi",
+          "orderLabel": "Metabolik tarama ve karaciğer biyopsisi",
+          "type": "pathology",
+          "priority": "important",
+          "subtype": "Metabolik tarama ve karaciğer biyopsisi",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "summary": "Metabolik bakır hastalığı lehine güçlü veri yok; biyopsi hepatoselüler immün hasarı destekler.",
+          "clinicalMeaning": "Metabolik bakır hastalığı lehine güçlü veri yok; biyopsi hepatoselüler immün hasarı destekler.",
+          "result": {
+            "title": "Metabolik tarama ve karaciğer biyopsisi",
+            "summary": "Metabolik bakır hastalığı lehine güçlü veri yok; biyopsi hepatoselüler immün hasarı destekler.",
+            "interpretation": "Metabolik bakır hastalığı lehine güçlü veri yok; biyopsi hepatoselüler immün hasarı destekler.",
+            "values": [
+              [
+                "Seruloplazmin",
+                "28 mg/dL",
+                "20-35 mg/dL",
+                "Normal"
+              ],
+              [
+                "24 saatlik idrar bakırı",
+                "38 µg/gün",
+                "<40 µg/gün",
+                "Normal-sınıra yakın"
+              ],
+              [
+                "Biyopsi",
+                "Interface hepatit, plazma hücresinden zengin portal infiltrasyon",
+                "Yok",
+                "Aktif hepatit paterni"
+              ],
+              [
+                "Fibrozis",
+                "Evre 1-2",
+                "Yok",
+                "Erken fibrozis"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada en olası tanı aşağıdakilerden hangisidir?",
+      "questionType": "tanı",
+      "answerTarget": "Hepatoselüler enzim yüksekliğinde otoimmün hepatit ayrımı",
+      "diagnosis": {
+        "correct": "Tip 1 otoimmün hepatit",
+        "options": [
+          "Primer biliyer kolanjit",
+          "Tip 1 otoimmün hepatit",
+          "Wilson hastalığı",
+          "Akut viral hepatit A enfeksiyonu",
+          "Alkole bağlı hepatit"
+        ],
+        "question": "Bu hastada en olası tanı aşağıdakilerden hangisidir?",
+        "explanation": "Hastada hepatoselüler baskın enzim yüksekliği, belirgin IgG artışı, ANA/SMA pozitifliği, viral hepatit belirteçlerinin negatifliği ve interface hepatit-plazma hücresi paterni bir aradadır. Bu kombinasyon tip 1 otoimmün hepatit lehinedir. PBC daha kolestatik ve AMA pozitif olur; Wilson/metabolik hastalık ve akut viral hepatit verileri bu olguda desteklenmemektedir.",
+        "pearls": [
+          "ALT/AST baskın yüksekliği hepatoselüler hasar paternidir.",
+          "Yüksek IgG + ANA/SMA pozitifliği tip 1 otoimmün hepatit için güçlü ipucudur.",
+          "Viral belirteç negatifliği ve ilaç/alkol öyküsü olmaması diğer nedenleri zayıflatır.",
+          "Interface hepatit ve plazma hücreleri histolojik destek sağlar."
+        ],
+        "optionFeedback": {
+          "Primer biliyer kolanjit": "Primer biliyer kolanjit daha çok kolestatik enzim yüksekliği, belirgin ALP/GGT artışı, antimitochondrial antikor pozitifliği ve kaşıntı-yorgunluk birlikteliğiyle öne çıkar. Bu hastada ALP hafif artmış olsa da baskın patern AST/ALT yüksekliğidir; IgG yüksek, ANA ve düz kas antikoru pozitiftir. Bu nedenle safra kanalcığı odaklı kolestatik hastalıktan çok hepatoselüler otoimmün inflamasyon paterni ön plandadır.",
+          "Tip 1 otoimmün hepatit": "Bu seçenek en olasıdır. Genç kadında halsizlik, hepatoselüler enzim yüksekliği, belirgin IgG artışı, ANA ve düz kas antikoru pozitifliği, viral hepatit belirteçlerinin negatifliği ve biyopside interface hepatit/plazma hücrelerinden zengin infiltrasyon tip 1 otoimmün hepatit paternini destekler. Tanı tek bir antikorla konmaz; klinik, biyokimya, otoantikor, IgG yüksekliği, viral/dışı nedenlerin dışlanması ve histoloji birlikte değerlendirilir. Tedavide aktif hastalıkta kortikosteroid ve azatioprin temelli immünsupresyon gündeme gelir.",
+          "Wilson hastalığı": "Wilson hastalığı genç hastada transaminaz yüksekliğiyle gelebilir; özellikle nöropsikiyatrik bulgular, hemolitik anemi, düşük seruloplazmin, artmış idrar bakırı veya Kayser-Fleischer halkası varsa düşünülür. Bu vakada seruloplazmin normal, hemoliz ve nörolojik bulgu yoktur; buna karşılık IgG ve ANA/SMA paterni güçlüdür. Bu nedenle Wilson hastalığı ayırıcı tanıda akla gelse de verilen veri zincirinin ana açıklaması değildir.",
+          "Akut viral hepatit A enfeksiyonu": "Akut hepatit A ateş, bulantı, belirgin akut sarılık ve anti-HAV IgM pozitifliğiyle beklenir. Bu olguda iki aydır süren halsizlik ve eklem ağrısı vardır, viral belirteçler negatif verilmiştir ve IgG-otoantikor-histoloji paterni kronik otoimmün hepatoselüler inflamasyonu destekler. Akut viral hepatit bazı değerleri yükseltebilse de bu vakadaki immünolojik bulguları açıklamaz.",
+          "Alkole bağlı hepatit": "Alkole bağlı hepatitte genellikle anlamlı alkol öyküsü, AST/ALT oranının çoğu zaman 2’nin üzerinde olması ve AST değerlerinin genellikle çok aşırı yükselmemesi beklenir. Bu hasta alkol kullanmadığını belirtmektedir; ALT AST’den daha yüksektir ve IgG/otoantikor/histoloji paterninin açıklanması gerekir. Bu nedenle alkol ilişkili hepatit doğru tanı değildir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Otoimmün hepatit tanısı tek antikora indirgenmez; hepatoselüler biyokimya, IgG yüksekliği, otoantikorlar, dışlama ve histoloji birlikte yorumlanır.",
+      "examPearl": "TUS ipucu: Genç kadın + AST/ALT yüksek + IgG yüksek + ANA/SMA pozitif + interface hepatit = tip 1 otoimmün hepatit.",
+      "whyCorrect": "Hepatoselüler patern, IgG yüksekliği ve interface hepatit birlikte tip 1 otoimmün hepatiti en olası tanı yapar.",
+      "optionComparison": "Diğer tanılar kolestatik AMA paterni, bakır metabolizması, akut viral seroloji veya alkol öyküsü gerektirir; vakadaki ana zincir bunlarla uyuşmaz.",
+      "evidenceChain": [
+        "ALT 536 ve AST 412 U/L → hepatoselüler hasar baskın.",
+        "IgG 2680 mg/dL + ANA/SMA pozitif → otoimmün hepatoselüler inflamasyon desteği.",
+        "HBsAg/anti-HCV/anti-HAV IgM negatif → sık viral nedenler geride.",
+        "Biyopside interface hepatit ve plazma hücreleri → tanısal paterni güçlendirir."
+      ],
+      "whyWrong": "Yanlış seçenekler aynı klinik bağlamda düşünülebilecek alternatif tanı veya yönetim yollarını temsil eder; ancak olgudaki öykü, vital bulgu ve objektif veri zinciri seçilen doğru hedefle daha güçlü ve güvenli biçimde örtüşür.",
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "version": "v303",
+        "source": "manual-render-safe-internal-medicine-expansion",
+        "antiRepeatChecked": true,
+        "schemaReference": "V302 render-safe internal-medicine cases with diagnosis.optionFeedback object mapping"
+      },
+      "findings": [],
+      "images": []
+    }
+];

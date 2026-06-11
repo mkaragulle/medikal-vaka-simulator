@@ -22,6 +22,15 @@ import { rawCasesPart18 } from './caseBank/cases-part-18.js';
 import { rawCasesPart19 } from './caseBank/cases-part-19.js';
 import { rawCasesPart20 } from './caseBank/cases-part-20.js';
 import { rawCasesPart21 } from './caseBank/cases-part-21.js';
+import { rawCasesPart22 } from './caseBank/cases-part-22.js';
+import { rawCasesPart23 } from './caseBank/cases-part-23.js';
+import { rawCasesPart24 } from './caseBank/cases-part-24.js';
+import { rawCasesPart25 } from './caseBank/cases-part-25.js';
+import { rawCasesPart26 } from './caseBank/cases-part-26.js';
+import { rawCasesPart27 } from './caseBank/cases-part-27.js';
+import { rawCasesPart28 } from './caseBank/cases-part-28.js';
+import { rawCasesPart29 } from './caseBank/cases-part-29.js';
+import { rawCasesPart30 } from './caseBank/cases-part-30.js';
 
 export const rawCases = [
   ...rawCasesPart01,
@@ -44,9 +53,17 @@ export const rawCases = [
   ...rawCasesPart18,
   ...rawCasesPart19,
   ...rawCasesPart20,
-  ...rawCasesPart21
+  ...rawCasesPart21,
+  ...rawCasesPart22,
+  ...rawCasesPart23,
+  ...rawCasesPart24,
+  ...rawCasesPart25,
+  ...rawCasesPart26,
+  ...rawCasesPart27,
+  ...rawCasesPart28,
+  ...rawCasesPart29,
+  ...rawCasesPart30,
 ];
-
 export const cases = attachClinicalVisualsToCases(rawCases.map(sanitizeClinicalCaseExam), clinicalVisualManifest);
 
 const caseById = new Map(cases.map((clinicalCase) => [clinicalCase.id, clinicalCase]));

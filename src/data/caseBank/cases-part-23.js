@@ -1,0 +1,13437 @@
+export const rawCasesPart23 = [
+  {
+      "id": "v255-new-473-agrisiz-genital-ulser-ve-serolojik-algoritma",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Ağrısız genital ülser ve serolojik algoritma",
+      "difficulty": "Orta",
+      "difficultyTag": "Orta",
+      "clinicalFocus": "Ağrısız genital ülserli hastada nontreponemal ve treponemal testlerin birlikte yorumlanmasını klinik karar ile ilişkilendirme.",
+      "learningTarget": "Sifiliz tarama-doğrulama algoritmasında RPR/VDRL titrelerinin ve treponemal testlerin farklı kullanım amaçlarını ayırt edebilme.",
+      "demographics": "27 yaşında erkek hasta",
+      "setting": "Dermatoloji / enfeksiyon hastalıkları polikliniği",
+      "chiefComplaint": "Hasta bir haftadır fark ettiği ağrısız genital yara nedeniyle başvuruyor.",
+      "stem": "Hasta yaklaşık bir hafta önce peniste küçük bir kabarıklık fark ettiğini, birkaç gün içinde bunun ağrısız yüzeyel yaraya dönüştüğünü anlatır. Son iki ay içinde yeni cinsel partnerleri olmuş ve prezervatif kullanımının düzensiz olduğunu belirtir. İdrar yaparken yanma, yoğun akıntı, ateş veya skrotal ağrı tarif etmez. Lezyonu sıkmadığını, üzerine krem sürmediğini ve daha önce benzer bir yara nedeniyle tedavi almadığını söyler.",
+      "patientIntro": {
+        "profile": "27 yaşında erkek hasta ağrısız genital ülser nedeniyle değerlendiriliyor.",
+        "presentation": "Yeni cinsel temas öyküsü var; üretral akıntı ya da ağrılı veziküler lezyon tarif edilmiyor.",
+        "historySummary": "Öykü ve muayene genital ülser etiyolojisi için serolojik testlerin birlikte yorumlanmasını gerektiriyor."
+      },
+      "vitals": {
+        "TA": "122/76 mmHg",
+        "Nabız": "84/dk",
+        "Solunum": "15/dk",
+        "SpO2": "99%, oda havasında",
+        "Ateş": "36.9 °C",
+        "Şok indeksi": "0.69 - stabil"
+      },
+      "exam": [
+        "Genel durumu iyi ve ateşi yoktur.",
+        "Glans yakınında tabanı temiz, kenarları belirgin, ağrısız tek ülser izlenir.",
+        "Bilateral küçük, elastik, ağrısız inguinal lenf nodları palpe edilir.",
+        "Üretral akıntı, vezikül veya skrotal hassasiyet saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v255-new-473-agrisiz-genital-ulser-ve-serolojik-algoritma-temel-sti",
+          "label": "Temel laboratuvar ve eşlik eden STI taraması",
+          "title": "Temel laboratuvar ve eşlik eden STI taraması",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Hemogram ve STI ön tarama",
+          "summary": "Sistemik inflamasyon belirgin değildir; eşlik eden bazı yaygın STI testleri negatif bulunmuştur.",
+          "clinicalMeaning": "Sistemik inflamasyon belirgin değildir; eşlik eden bazı yaygın STI testleri negatif bulunmuştur.",
+          "result": {
+            "title": "Temel laboratuvar ve eşlik eden STI taraması",
+            "summary": "Sistemik inflamasyon belirgin değildir; eşlik eden bazı yaygın STI testleri negatif bulunmuştur.",
+            "interpretation": "Sistemik inflamasyon belirgin değildir; eşlik eden bazı yaygın STI testleri negatif bulunmuştur.",
+            "values": [
+              [
+                "Lökosit",
+                "7.800/µL",
+                "4.000–10.000/µL",
+                "Normal"
+              ],
+              [
+                "CRP",
+                "4 mg/L",
+                "<5 mg/L",
+                "Normal"
+              ],
+              [
+                "HIV Ag/Ab",
+                "Negatif",
+                "Negatif",
+                "Başlangıç taraması"
+              ],
+              [
+                "Üretral/ilk akım idrar NAAT",
+                "N. gonorrhoeae ve C. trachomatis negatif",
+                "Negatif",
+                "Akıntısız üretrit desteklenmedi"
+              ]
+            ],
+            "rows": [
+              [
+                "Lökosit",
+                "7.800/µL",
+                "4.000–10.000/µL",
+                "Normal"
+              ],
+              [
+                "CRP",
+                "4 mg/L",
+                "<5 mg/L",
+                "Normal"
+              ],
+              [
+                "HIV Ag/Ab",
+                "Negatif",
+                "Negatif",
+                "Başlangıç taraması"
+              ],
+              [
+                "Üretral/ilk akım idrar NAAT",
+                "N. gonorrhoeae ve C. trachomatis negatif",
+                "Negatif",
+                "Akıntısız üretrit desteklenmedi"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Lökosit",
+              "7.800/µL",
+              "4.000–10.000/µL",
+              "Normal"
+            ],
+            [
+              "CRP",
+              "4 mg/L",
+              "<5 mg/L",
+              "Normal"
+            ],
+            [
+              "HIV Ag/Ab",
+              "Negatif",
+              "Negatif",
+              "Başlangıç taraması"
+            ],
+            [
+              "Üretral/ilk akım idrar NAAT",
+              "N. gonorrhoeae ve C. trachomatis negatif",
+              "Negatif",
+              "Akıntısız üretrit desteklenmedi"
+            ]
+          ],
+          "flowOrder": 10,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 10
+        },
+        {
+          "id": "v255-new-473-agrisiz-genital-ulser-ve-serolojik-algoritma-sifiliz-seroloji",
+          "label": "Sifiliz serolojik algoritması",
+          "title": "Sifiliz serolojik algoritması",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Nontreponemal ve treponemal testler",
+          "summary": "Kantitatif nontreponemal test ve iki farklı treponemal testin birlikte pozitifliği aktif treponemal enfeksiyonu destekler.",
+          "clinicalMeaning": "Kantitatif nontreponemal test ve iki farklı treponemal testin birlikte pozitifliği aktif treponemal enfeksiyonu destekler.",
+          "result": {
+            "title": "Sifiliz serolojik algoritması",
+            "summary": "Kantitatif nontreponemal test ve iki farklı treponemal testin birlikte pozitifliği aktif treponemal enfeksiyonu destekler.",
+            "interpretation": "Kantitatif nontreponemal test ve iki farklı treponemal testin birlikte pozitifliği aktif treponemal enfeksiyonu destekler.",
+            "values": [
+              [
+                "RPR",
+                "Reaktif, 1:64 titre",
+                "Nonreaktif",
+                "Kantitatif nontreponemal test"
+              ],
+              [
+                "Treponemal EIA",
+                "Reaktif",
+                "Nonreaktif",
+                "Tarama/doğrulama basamağı"
+              ],
+              [
+                "TP-PA",
+                "Reaktif",
+                "Nonreaktif",
+                "İkinci treponemal doğrulama"
+              ],
+              [
+                "Lezyon HSV PCR",
+                "Negatif",
+                "Negatif",
+                "Ağrılı veziküler etken desteklenmedi"
+              ],
+              [
+                "Karanlık alan mikroskopisi",
+                "Merkezde uygulanamadı",
+                "",
+                "Tanı serolojiyle desteklendi"
+              ]
+            ],
+            "rows": [
+              [
+                "RPR",
+                "Reaktif, 1:64 titre",
+                "Nonreaktif",
+                "Kantitatif nontreponemal test"
+              ],
+              [
+                "Treponemal EIA",
+                "Reaktif",
+                "Nonreaktif",
+                "Tarama/doğrulama basamağı"
+              ],
+              [
+                "TP-PA",
+                "Reaktif",
+                "Nonreaktif",
+                "İkinci treponemal doğrulama"
+              ],
+              [
+                "Lezyon HSV PCR",
+                "Negatif",
+                "Negatif",
+                "Ağrılı veziküler etken desteklenmedi"
+              ],
+              [
+                "Karanlık alan mikroskopisi",
+                "Merkezde uygulanamadı",
+                "",
+                "Tanı serolojiyle desteklendi"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "RPR",
+              "Reaktif, 1:64 titre",
+              "Nonreaktif",
+              "Kantitatif nontreponemal test"
+            ],
+            [
+              "Treponemal EIA",
+              "Reaktif",
+              "Nonreaktif",
+              "Tarama/doğrulama basamağı"
+            ],
+            [
+              "TP-PA",
+              "Reaktif",
+              "Nonreaktif",
+              "İkinci treponemal doğrulama"
+            ],
+            [
+              "Lezyon HSV PCR",
+              "Negatif",
+              "Negatif",
+              "Ağrılı veziküler etken desteklenmedi"
+            ],
+            [
+              "Karanlık alan mikroskopisi",
+              "Merkezde uygulanamadı",
+              "",
+              "Tanı serolojiyle desteklendi"
+            ]
+          ],
+          "flowOrder": 20,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 20
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "shuffleOptions": false,
+      "question": "Bu klinik tablo ve serolojik algoritma için en doğru yorum aşağıdakilerden hangisidir?",
+      "questionType": "singleBestAnswer",
+      "answerTarget": "Sifiliz seroloji yorumu",
+      "diagnosis": {
+        "correct": "Aktif erken sifiliz lehine; kantitatif nontreponemal titre tedavi yanıtını izlemek için kullanılmalıdır",
+        "options": [
+          "Aktif erken sifiliz lehine; kantitatif nontreponemal titre tedavi yanıtını izlemek için kullanılmalıdır",
+          "Eski tedavi edilmiş sifiliz lehine; tedavi yanıtı treponemal testin negatife dönmesiyle izlenmelidir",
+          "Yalancı pozitif nontreponemal test lehine; treponemal doğrulama gereksizdir",
+          "Primer genital herpes lehine; serolojik algoritma yerine lezyon kültürü tek başına yeterlidir",
+          "Lenfogranüloma venereum lehine; tanı yalnızca idrar NAAT pozitifliğiyle konur"
+        ],
+        "question": "Bu klinik tablo ve serolojik algoritma için en doğru yorum aşağıdakilerden hangisidir?",
+        "explanation": "Ağrısız indüre genital ülser, ağrısız lenfadenopati ve yeni cinsel temas öyküsü erken sifilizle uyumludur. Yüksek titreli reaktif RPR’nin treponemal EIA ve TP-PA ile doğrulanması aktif enfeksiyonu destekler; kantitatif nontreponemal titre tedavi yanıtını izlemek için kullanılır.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Ağrısız şankr + RPR pozitif yüksek titre + treponemal test pozitifliği → aktif erken sifiliz; takipte RPR/VDRL titresi izlenir."
+          }
+        ],
+        "optionFeedback": {
+          "Aktif erken sifiliz lehine; kantitatif nontreponemal titre tedavi yanıtını izlemek için kullanılmalıdır": {
+            "explanation": "Reaktif RPR titresinin yüksek olması ve farklı bir treponemal testin de pozitif gelmesi, uygun klinik lezyonla birlikte aktif erken sifiliz lehinedir. Nontreponemal testler kantitatif titre verdiği için tedavi sonrası yanıtı izlemekte kullanılır; treponemal testler uzun süre pozitif kalabileceğinden takip için tek başına bu vaka için doğru klinik hedef değildir."
+          },
+          "Eski tedavi edilmiş sifiliz lehine; tedavi yanıtı treponemal testin negatife dönmesiyle izlenmelidir": {
+            "explanation": "Eski tedavi edilmiş sifilizde treponemal test pozitif kalabilir; ancak genellikle klinik uyum, tedavi öyküsü ve düşük/negatif nontreponemal titre beklenir. Bu hastada ağrısız ülser, yeni temas öyküsü ve 1:64 RPR titresi aktif enfeksiyon lehinedir; tedavi yanıtı treponemal testin negatife dönmesiyle değil RPR/VDRL titresindeki düşüşle izlenir."
+          },
+          "Yalancı pozitif nontreponemal test lehine; treponemal doğrulama gereksizdir": {
+            "explanation": "Yalancı pozitif nontreponemal test gebelik, otoimmün hastalık veya bazı viral enfeksiyonlarda görülebilir. Ancak burada treponemal EIA ve TP-PA da pozitif olduğu için sonuç yalancı pozitif olarak geçiştirilemez; klinik ülserle birlikte gerçek treponemal enfeksiyon desteklenir."
+          },
+          "Primer genital herpes lehine; serolojik algoritma yerine lezyon kültürü tek başına yeterlidir": {
+            "explanation": "Primer genital herpes genellikle ağrılı vezikül veya ülserlerle seyreder ve lezyondan HSV PCR tanıda değerlidir. Bu olguda lezyon ağrısız, indüre tabanlıdır ve RPR/treponemal testler birlikte pozitiftir; bu nedenle serolojik algoritmayı herpes lehine görmezden gelmek doğru değildir."
+          },
+          "Lenfogranüloma venereum lehine; tanı yalnızca idrar NAAT pozitifliğiyle konur": {
+            "explanation": "Lenfogranüloma venereum Chlamydia trachomatis L1-L3 serovarlarıyla ilişkilidir ve daha çok geçici ülser sonrası ağrılı inguinal lenfadenit veya proktokolit tablosu oluşturur. Bu vakada belirgin ağrılı bubon yoktur; ayrıca idrar NAAT negatifken treponemal-nontreponemal testlerin pozitifliği sifiliz algoritmasını destekler."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Reaktif RPR titresinin yüksek olması ve farklı bir treponemal testin de pozitif gelmesi, uygun klinik lezyonla birlikte aktif erken sifiliz lehinedir. Nontreponemal testler kantitatif titre verdiği için tedavi sonrası yanıtı izlemekte kullanılır; treponemal testler uzun süre pozitif kalabileceğinden takip için tek başına bu vaka için doğru klinik hedef değildir.",
+          "optionFeedback": {
+            "Aktif erken sifiliz lehine; kantitatif nontreponemal titre tedavi yanıtını izlemek için kullanılmalıdır": {
+              "explanation": "Reaktif RPR titresinin yüksek olması ve farklı bir treponemal testin de pozitif gelmesi, uygun klinik lezyonla birlikte aktif erken sifiliz lehinedir. Nontreponemal testler kantitatif titre verdiği için tedavi sonrası yanıtı izlemekte kullanılır; treponemal testler uzun süre pozitif kalabileceğinden takip için tek başına bu vaka için doğru klinik hedef değildir."
+            },
+            "Eski tedavi edilmiş sifiliz lehine; tedavi yanıtı treponemal testin negatife dönmesiyle izlenmelidir": {
+              "explanation": "Eski tedavi edilmiş sifilizde treponemal test pozitif kalabilir; ancak genellikle klinik uyum, tedavi öyküsü ve düşük/negatif nontreponemal titre beklenir. Bu hastada ağrısız ülser, yeni temas öyküsü ve 1:64 RPR titresi aktif enfeksiyon lehinedir; tedavi yanıtı treponemal testin negatife dönmesiyle değil RPR/VDRL titresindeki düşüşle izlenir."
+            },
+            "Yalancı pozitif nontreponemal test lehine; treponemal doğrulama gereksizdir": {
+              "explanation": "Yalancı pozitif nontreponemal test gebelik, otoimmün hastalık veya bazı viral enfeksiyonlarda görülebilir. Ancak burada treponemal EIA ve TP-PA da pozitif olduğu için sonuç yalancı pozitif olarak geçiştirilemez; klinik ülserle birlikte gerçek treponemal enfeksiyon desteklenir."
+            },
+            "Primer genital herpes lehine; serolojik algoritma yerine lezyon kültürü tek başına yeterlidir": {
+              "explanation": "Primer genital herpes genellikle ağrılı vezikül veya ülserlerle seyreder ve lezyondan HSV PCR tanıda değerlidir. Bu olguda lezyon ağrısız, indüre tabanlıdır ve RPR/treponemal testler birlikte pozitiftir; bu nedenle serolojik algoritmayı herpes lehine görmezden gelmek doğru değildir."
+            },
+            "Lenfogranüloma venereum lehine; tanı yalnızca idrar NAAT pozitifliğiyle konur": {
+              "explanation": "Lenfogranüloma venereum Chlamydia trachomatis L1-L3 serovarlarıyla ilişkilidir ve daha çok geçici ülser sonrası ağrılı inguinal lenfadenit veya proktokolit tablosu oluşturur. Bu vakada belirgin ağrılı bubon yoktur; ayrıca idrar NAAT negatifken treponemal-nontreponemal testlerin pozitifliği sifiliz algoritmasını destekler."
+            }
+          },
+          "whyWrong": {
+            "Eski tedavi edilmiş sifiliz lehine; tedavi yanıtı treponemal testin negatife dönmesiyle izlenmelidir": "Eski tedavi edilmiş sifilizde treponemal test pozitif kalabilir; ancak genellikle klinik uyum, tedavi öyküsü ve düşük/negatif nontreponemal titre beklenir. Bu hastada ağrısız ülser, yeni temas öyküsü ve 1:64 RPR titresi aktif enfeksiyon lehinedir; tedavi yanıtı treponemal testin negatife dönmesiyle değil RPR/VDRL titresindeki düşüşle izlenir.",
+            "Yalancı pozitif nontreponemal test lehine; treponemal doğrulama gereksizdir": "Yalancı pozitif nontreponemal test gebelik, otoimmün hastalık veya bazı viral enfeksiyonlarda görülebilir. Ancak burada treponemal EIA ve TP-PA da pozitif olduğu için sonuç yalancı pozitif olarak geçiştirilemez; klinik ülserle birlikte gerçek treponemal enfeksiyon desteklenir.",
+            "Primer genital herpes lehine; serolojik algoritma yerine lezyon kültürü tek başına yeterlidir": "Primer genital herpes genellikle ağrılı vezikül veya ülserlerle seyreder ve lezyondan HSV PCR tanıda değerlidir. Bu olguda lezyon ağrısız, indüre tabanlıdır ve RPR/treponemal testler birlikte pozitiftir; bu nedenle serolojik algoritmayı herpes lehine görmezden gelmek doğru değildir.",
+            "Lenfogranüloma venereum lehine; tanı yalnızca idrar NAAT pozitifliğiyle konur": "Lenfogranüloma venereum Chlamydia trachomatis L1-L3 serovarlarıyla ilişkilidir ve daha çok geçici ülser sonrası ağrılı inguinal lenfadenit veya proktokolit tablosu oluşturur. Bu vakada belirgin ağrılı bubon yoktur; ayrıca idrar NAAT negatifken treponemal-nontreponemal testlerin pozitifliği sifiliz algoritmasını destekler."
+          }
+        }
+      },
+      "coreKnowledge": "Sifiliz tanısında nontreponemal testler aktivite ve tedavi yanıtı takibinde, treponemal testler ise özgül doğrulamada önemlidir.",
+      "examPearl": "Ağrısız şankr + RPR pozitif yüksek titre + treponemal test pozitifliği → aktif erken sifiliz; takipte RPR/VDRL titresi izlenir.",
+      "whyCorrect": "Reaktif RPR titresinin yüksek olması ve farklı bir treponemal testin de pozitif gelmesi, uygun klinik lezyonla birlikte aktif erken sifiliz lehinedir. Nontreponemal testler kantitatif titre verdiği için tedavi sonrası yanıtı izlemekte kullanılır; treponemal testler uzun süre pozitif kalabileceğinden takip için tek başına bu vaka için doğru klinik hedef değildir.",
+      "optionComparison": {
+        "Aktif erken sifiliz lehine; kantitatif nontreponemal titre tedavi yanıtını izlemek için kullanılmalıdır": "Reaktif RPR titresinin yüksek olması ve farklı bir treponemal testin de pozitif gelmesi, uygun klinik lezyonla birlikte aktif erken sifiliz lehinedir. Nontreponemal testler kantitatif titre verdiği için tedavi sonrası yanıtı izlemekte kullanılır; treponemal testler uzun süre pozitif kalabileceğinden takip için tek başına bu vaka için doğru klinik hedef değildir.",
+        "Eski tedavi edilmiş sifiliz lehine; tedavi yanıtı treponemal testin negatife dönmesiyle izlenmelidir": "Eski tedavi edilmiş sifilizde treponemal test pozitif kalabilir; ancak genellikle klinik uyum, tedavi öyküsü ve düşük/negatif nontreponemal titre beklenir. Bu hastada ağrısız ülser, yeni temas öyküsü ve 1:64 RPR titresi aktif enfeksiyon lehinedir; tedavi yanıtı treponemal testin negatife dönmesiyle değil RPR/VDRL titresindeki düşüşle izlenir.",
+        "Yalancı pozitif nontreponemal test lehine; treponemal doğrulama gereksizdir": "Yalancı pozitif nontreponemal test gebelik, otoimmün hastalık veya bazı viral enfeksiyonlarda görülebilir. Ancak burada treponemal EIA ve TP-PA da pozitif olduğu için sonuç yalancı pozitif olarak geçiştirilemez; klinik ülserle birlikte gerçek treponemal enfeksiyon desteklenir.",
+        "Primer genital herpes lehine; serolojik algoritma yerine lezyon kültürü tek başına yeterlidir": "Primer genital herpes genellikle ağrılı vezikül veya ülserlerle seyreder ve lezyondan HSV PCR tanıda değerlidir. Bu olguda lezyon ağrısız, indüre tabanlıdır ve RPR/treponemal testler birlikte pozitiftir; bu nedenle serolojik algoritmayı herpes lehine görmezden gelmek doğru değildir.",
+        "Lenfogranüloma venereum lehine; tanı yalnızca idrar NAAT pozitifliğiyle konur": "Lenfogranüloma venereum Chlamydia trachomatis L1-L3 serovarlarıyla ilişkilidir ve daha çok geçici ülser sonrası ağrılı inguinal lenfadenit veya proktokolit tablosu oluşturur. Bu vakada belirgin ağrılı bubon yoktur; ayrıca idrar NAAT negatifken treponemal-nontreponemal testlerin pozitifliği sifiliz algoritmasını destekler."
+      },
+      "evidenceChain": [
+        {
+          "text": "Ağrısız tek genital ülser → primer sifilizle uyumlu klinik giriş bulgusudur.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "RPR 1:64 reaktif → aktif hastalık ve tedavi takibi için kullanılabilir kantitatif nontreponemal yanıttır.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Treponemal EIA ve TP-PA reaktifliği → nontreponemal testin gerçek treponemal enfeksiyonla ilişkisini destekler.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "HSV PCR ve gonokok/klamidya NAAT negatifliği → ağrılı veziküler ülser veya üretrit etkenlerini geri plana iter.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Eski tedavi edilmiş sifiliz lehine; tedavi yanıtı treponemal testin negatife dönmesiyle izlenmelidir": "Eski tedavi edilmiş sifilizde treponemal test pozitif kalabilir; ancak genellikle klinik uyum, tedavi öyküsü ve düşük/negatif nontreponemal titre beklenir. Bu hastada ağrısız ülser, yeni temas öyküsü ve 1:64 RPR titresi aktif enfeksiyon lehinedir; tedavi yanıtı treponemal testin negatife dönmesiyle değil RPR/VDRL titresindeki düşüşle izlenir.",
+        "Yalancı pozitif nontreponemal test lehine; treponemal doğrulama gereksizdir": "Yalancı pozitif nontreponemal test gebelik, otoimmün hastalık veya bazı viral enfeksiyonlarda görülebilir. Ancak burada treponemal EIA ve TP-PA da pozitif olduğu için sonuç yalancı pozitif olarak geçiştirilemez; klinik ülserle birlikte gerçek treponemal enfeksiyon desteklenir.",
+        "Primer genital herpes lehine; serolojik algoritma yerine lezyon kültürü tek başına yeterlidir": "Primer genital herpes genellikle ağrılı vezikül veya ülserlerle seyreder ve lezyondan HSV PCR tanıda değerlidir. Bu olguda lezyon ağrısız, indüre tabanlıdır ve RPR/treponemal testler birlikte pozitiftir; bu nedenle serolojik algoritmayı herpes lehine görmezden gelmek doğru değildir.",
+        "Lenfogranüloma venereum lehine; tanı yalnızca idrar NAAT pozitifliğiyle konur": "Lenfogranüloma venereum Chlamydia trachomatis L1-L3 serovarlarıyla ilişkilidir ve daha çok geçici ülser sonrası ağrılı inguinal lenfadenit veya proktokolit tablosu oluşturur. Bu vakada belirgin ağrılı bubon yoktur; ayrıca idrar NAAT negatifken treponemal-nontreponemal testlerin pozitifliği sifiliz algoritmasını destekler."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v255-medical-microbiology-sixth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Ağrısız tek genital ülser → primer sifilizle uyumlu klinik giriş bulgusudur.",
+        "RPR 1:64 reaktif → aktif hastalık ve tedavi takibi için kullanılabilir kantitatif nontreponemal yanıttır.",
+        "Treponemal EIA ve TP-PA reaktifliği → nontreponemal testin gerçek treponemal enfeksiyonla ilişkisini destekler.",
+        "HSV PCR ve gonokok/klamidya NAAT negatifliği → ağrılı veziküler ülser veya üretrit etkenlerini geri plana iter."
+      ],
+      "images": []
+    },
+  {
+      "id": "v255-new-474-ev-konservesi-sonrasi-inen-flask-paralizi",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Ev konservesi sonrası inen flask paralizi",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Gıda kaynaklı nöroparalitik tabloda klinik akış ve toksin testini presinaptik nörotoksin mekanizmasıyla ilişkilendirme.",
+      "learningTarget": "Botulinum toksininin kolinerjik sinir ucundaki SNARE aracılı asetilkolin salınımını engelleyerek flask paralizi oluşturduğunu ayırt edebilme.",
+      "demographics": "51 yaşında kadın hasta",
+      "setting": "Acil servis / yoğun bakım değerlendirmesi",
+      "chiefComplaint": "Hasta çift görme, ağız kuruluğu ve kollarda güçsüzlük nedeniyle acile getiriliyor.",
+      "stem": "Hasta bir gün önce ev yapımı sebze konservesi yedikten birkaç saat sonra bulantı ve karın rahatsızlığı yaşadığını anlatır. Ertesi sabah bulanık görme, çift görme ve ağız kuruluğu başlamış, öğlene doğru merdiven çıkarken kollarında ve omuzlarında güçsüzlük hissetmiştir. Bilinci açık kalmış, ateş veya ishal tarif etmemiştir. Aynı konserveden yiyen eşinde de hafif bulanık görme ve ağız kuruluğu başladığını söyler.",
+      "patientIntro": {
+        "profile": "51 yaşında kadın hasta ev yapımı konserve tüketimi sonrası nörolojik yakınmalarla değerlendiriliyor.",
+        "presentation": "Bulantıyı izleyen kraniyal sinir bulguları, otonom belirtiler ve simetrik güçsüzlük var; bilinç korunmuş.",
+        "historySummary": "Öykü gıda kaynaklı preforme nörotoksin maruziyetini ve inen flask paralizi paternini öne çıkarıyor."
+      },
+      "vitals": {
+        "TA": "128/74 mmHg",
+        "Nabız": "96/dk",
+        "Solunum": "24/dk",
+        "SpO2": "93%, oda havasında",
+        "Ateş": "36.6 °C",
+        "Şok indeksi": "0.75 - stabil"
+      },
+      "exam": [
+        "Hasta uyanık, koopere ve oryantedir.",
+        "Bilateral pitoz ve dışa bakışta diplopi izlenir; pupiller hafif geniştir.",
+        "Üst ekstremite proksimal kas gücü 3/5, alt ekstremite kas gücü 4/5 düzeyindedir.",
+        "Duyu muayenesi korunmuştur; derin tendon refleksleri azalmıştır."
+      ],
+      "investigations": [
+        {
+          "id": "v255-new-474-ev-konservesi-sonrasi-inen-flask-paralizi-noro-degerlendirme",
+          "label": "Nörolojik ve solunumsal değerlendirme",
+          "title": "Nörolojik ve solunumsal değerlendirme",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Kan gazı ve nörolojik objektif bulgular",
+          "summary": "Ateşsiz, bilinç açık, duyusal korunmuş inen motor güçsüzlük nörotoksin aracılı flask paraliziyle uyumludur.",
+          "clinicalMeaning": "Ateşsiz, bilinç açık, duyusal korunmuş inen motor güçsüzlük nörotoksin aracılı flask paraliziyle uyumludur.",
+          "result": {
+            "title": "Nörolojik ve solunumsal değerlendirme",
+            "summary": "Ateşsiz, bilinç açık, duyusal korunmuş inen motor güçsüzlük nörotoksin aracılı flask paraliziyle uyumludur.",
+            "interpretation": "Ateşsiz, bilinç açık, duyusal korunmuş inen motor güçsüzlük nörotoksin aracılı flask paraliziyle uyumludur.",
+            "values": [
+              [
+                "Bilinç durumu",
+                "Açık, oryante",
+                "",
+                "Ensefalit bulgusu yok"
+              ],
+              [
+                "Duyu muayenesi",
+                "Normal",
+                "",
+                "Motor ağırlıklı tutulum"
+              ],
+              [
+                "Negatif inspiratuvar basınç",
+                "Azalmış",
+                "Normal",
+                "Solunum kası riski"
+              ],
+              [
+                "Arter kan gazı",
+                "pCO₂ 48 mmHg",
+                "35–45 mmHg",
+                "Hipoventilasyon başlangıcı"
+              ],
+              [
+                "Ateş",
+                "36.6 °C",
+                "36–37.5 °C",
+                "Ateş yok"
+              ]
+            ],
+            "rows": [
+              [
+                "Bilinç durumu",
+                "Açık, oryante",
+                "",
+                "Ensefalit bulgusu yok"
+              ],
+              [
+                "Duyu muayenesi",
+                "Normal",
+                "",
+                "Motor ağırlıklı tutulum"
+              ],
+              [
+                "Negatif inspiratuvar basınç",
+                "Azalmış",
+                "Normal",
+                "Solunum kası riski"
+              ],
+              [
+                "Arter kan gazı",
+                "pCO₂ 48 mmHg",
+                "35–45 mmHg",
+                "Hipoventilasyon başlangıcı"
+              ],
+              [
+                "Ateş",
+                "36.6 °C",
+                "36–37.5 °C",
+                "Ateş yok"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Bilinç durumu",
+              "Açık, oryante",
+              "",
+              "Ensefalit bulgusu yok"
+            ],
+            [
+              "Duyu muayenesi",
+              "Normal",
+              "",
+              "Motor ağırlıklı tutulum"
+            ],
+            [
+              "Negatif inspiratuvar basınç",
+              "Azalmış",
+              "Normal",
+              "Solunum kası riski"
+            ],
+            [
+              "Arter kan gazı",
+              "pCO₂ 48 mmHg",
+              "35–45 mmHg",
+              "Hipoventilasyon başlangıcı"
+            ],
+            [
+              "Ateş",
+              "36.6 °C",
+              "36–37.5 °C",
+              "Ateş yok"
+            ]
+          ],
+          "flowOrder": 10,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 10
+        },
+        {
+          "id": "v255-new-474-ev-konservesi-sonrasi-inen-flask-paralizi-toksin-gida",
+          "label": "Toksin ve gıda örneği incelemesi",
+          "title": "Toksin ve gıda örneği incelemesi",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Serum, dışkı ve gıda toksin incelemesi",
+          "summary": "Serum/dışkı ve aynı gıda örneğinde nörotoksin aktivitesinin gösterilmesi preforme toksin maruziyetini destekler.",
+          "clinicalMeaning": "Serum/dışkı ve aynı gıda örneğinde nörotoksin aktivitesinin gösterilmesi preforme toksin maruziyetini destekler.",
+          "result": {
+            "title": "Toksin ve gıda örneği incelemesi",
+            "summary": "Serum/dışkı ve aynı gıda örneğinde nörotoksin aktivitesinin gösterilmesi preforme toksin maruziyetini destekler.",
+            "interpretation": "Serum/dışkı ve aynı gıda örneğinde nörotoksin aktivitesinin gösterilmesi preforme toksin maruziyetini destekler.",
+            "values": [
+              [
+                "Serum toksin testi",
+                "Nötralizasyonla engellenen nörotoksin aktivitesi saptandı",
+                "Negatif",
+                "Dolaşımdaki toksin"
+              ],
+              [
+                "Dışkı örneği",
+                "Anaerob sporlu basil için uyumlu bulgular; toksin pozitif",
+                "Negatif",
+                "Gastrointestinal kaynak"
+              ],
+              [
+                "Gıda örneği",
+                "Aynı kavanozdan alınan örnekte nörotoksin aktivitesi pozitif",
+                "Negatif",
+                "Ortak maruziyet"
+              ],
+              [
+                "BOS incelemesi",
+                "Hücre ve protein normal",
+                "Normal",
+                "Enfeksiyöz meningoensefalit desteklenmedi"
+              ],
+              [
+                "Kan kültürü",
+                "Üreme yok",
+                "Negatif",
+                "Bakteriyemi yok"
+              ]
+            ],
+            "rows": [
+              [
+                "Serum toksin testi",
+                "Nötralizasyonla engellenen nörotoksin aktivitesi saptandı",
+                "Negatif",
+                "Dolaşımdaki toksin"
+              ],
+              [
+                "Dışkı örneği",
+                "Anaerob sporlu basil için uyumlu bulgular; toksin pozitif",
+                "Negatif",
+                "Gastrointestinal kaynak"
+              ],
+              [
+                "Gıda örneği",
+                "Aynı kavanozdan alınan örnekte nörotoksin aktivitesi pozitif",
+                "Negatif",
+                "Ortak maruziyet"
+              ],
+              [
+                "BOS incelemesi",
+                "Hücre ve protein normal",
+                "Normal",
+                "Enfeksiyöz meningoensefalit desteklenmedi"
+              ],
+              [
+                "Kan kültürü",
+                "Üreme yok",
+                "Negatif",
+                "Bakteriyemi yok"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Serum toksin testi",
+              "Nötralizasyonla engellenen nörotoksin aktivitesi saptandı",
+              "Negatif",
+              "Dolaşımdaki toksin"
+            ],
+            [
+              "Dışkı örneği",
+              "Anaerob sporlu basil için uyumlu bulgular; toksin pozitif",
+              "Negatif",
+              "Gastrointestinal kaynak"
+            ],
+            [
+              "Gıda örneği",
+              "Aynı kavanozdan alınan örnekte nörotoksin aktivitesi pozitif",
+              "Negatif",
+              "Ortak maruziyet"
+            ],
+            [
+              "BOS incelemesi",
+              "Hücre ve protein normal",
+              "Normal",
+              "Enfeksiyöz meningoensefalit desteklenmedi"
+            ],
+            [
+              "Kan kültürü",
+              "Üreme yok",
+              "Negatif",
+              "Bakteriyemi yok"
+            ]
+          ],
+          "flowOrder": 20,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 20
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "shuffleOptions": false,
+      "question": "Bu hastadaki nörolojik tabloyu en iyi açıklayan toksin mekanizması aşağıdakilerden hangisidir?",
+      "questionType": "singleBestAnswer",
+      "answerTarget": "Toksin mekanizması",
+      "diagnosis": {
+        "correct": "Presinaptik SNARE proteinlerinin parçalanmasıyla asetilkolin salınımının engellenmesi",
+        "options": [
+          "A-B toksiniyle adenilat siklaz aktivasyonuna bağlı sulu sekresyon artışı",
+          "60S ribozomal alt birimin inaktivasyonuyla protein sentezinin durması",
+          "MHC sınıf II ve T-hücre reseptörünün antijen işlenmeden çapraz bağlanması",
+          "İnhibitör internöronlardan GABA ve glisin salınımının engellenmesi",
+          "Presinaptik SNARE proteinlerinin parçalanmasıyla asetilkolin salınımının engellenmesi"
+        ],
+        "question": "Bu hastadaki nörolojik tabloyu en iyi açıklayan toksin mekanizması aşağıdakilerden hangisidir?",
+        "explanation": "Ev konservesi tüketimi sonrası ateşsiz, bilinç korunmuş, kraniyal sinirlerden başlayan inen simetrik flask paralizi ve serum/gıda örneğinde nörotoksin aktivitesi botulizmle uyumludur. Temel mekanizma presinaptik SNARE proteinlerinin hedeflenmesi ve nöromüsküler kavşakta asetilkolin salınımının engellenmesidir.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Konserve gıda + diplopi/pitoz + ağız kuruluğu + inen flask paralizi → presinaptik SNARE blokajı ile asetilkolin salınımı azalır."
+          }
+        ],
+        "optionFeedback": {
+          "A-B toksiniyle adenilat siklaz aktivasyonuna bağlı sulu sekresyon artışı": {
+            "explanation": "A-B toksiniyle adenilat siklaz aktivasyonu kolera toksini veya ısıya duyarlı enterotoksin gibi sekretuvar ishal etkenlerinde önemlidir. Bu mekanizma bol sulu ishal ve dehidratasyonla ilişkilidir; pupiller tutulumu olan inen simetrik flask paraliziyi açıklamaz."
+          },
+          "60S ribozomal alt birimin inaktivasyonuyla protein sentezinin durması": {
+            "explanation": "60S ribozomal alt birimin inaktivasyonu Shiga toksini veya Shiga benzeri toksinlerle ilişkilidir ve hemorajik kolit ile hemolitik üremik sendrom zemininde düşünülür. Bu vakada böbrek yetmezliği, trombositopeni veya kanlı ishal değil kraniyal sinirlerden başlayan nöroparalitik tablo vardır."
+          },
+          "MHC sınıf II ve T-hücre reseptörünün antijen işlenmeden çapraz bağlanması": {
+            "explanation": "MHC sınıf II ve T-hücre reseptörünün antijen işlenmeden çapraz bağlanması süperantijen mekanizmasıdır. Toksik şokta ateş, hipotansiyon ve yaygın döküntü yapabilir; ancak bilinç açıkken inen flask paralizi ve gıda kaynaklı nörotoksin bulgularını açıklamaz."
+          },
+          "İnhibitör internöronlardan GABA ve glisin salınımının engellenmesi": {
+            "explanation": "İnhibitör internöronlardan GABA ve glisin salınımının engellenmesi tetanoz toksininin mekanizmasıdır. Bu durumda spastik paralizi, trismus ve kas spazmları beklenir; olgudaki gevşek paralizi, diplopi ve ağız kuruluğu presinaptik asetilkolin salınım blokajını düşündürür."
+          },
+          "Presinaptik SNARE proteinlerinin parçalanmasıyla asetilkolin salınımının engellenmesi": {
+            "explanation": "Botulinum nörotoksini presinaptik kolinerjik uçlarda SNARE proteinlerini parçalayarak asetilkolin veziküllerinin salınmasını engeller. Ev konservesi sonrası bulantı ile başlayan, bilinç açıkken diplopi, pitoz, ağız kuruluğu ve inen simetrik flask paralizi gelişmesi bu mekanizmayla en iyi açıklanır."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Botulinum nörotoksini presinaptik kolinerjik uçlarda SNARE proteinlerini parçalayarak asetilkolin veziküllerinin salınmasını engeller. Ev konservesi sonrası bulantı ile başlayan, bilinç açıkken diplopi, pitoz, ağız kuruluğu ve inen simetrik flask paralizi gelişmesi bu mekanizmayla en iyi açıklanır.",
+          "optionFeedback": {
+            "A-B toksiniyle adenilat siklaz aktivasyonuna bağlı sulu sekresyon artışı": {
+              "explanation": "A-B toksiniyle adenilat siklaz aktivasyonu kolera toksini veya ısıya duyarlı enterotoksin gibi sekretuvar ishal etkenlerinde önemlidir. Bu mekanizma bol sulu ishal ve dehidratasyonla ilişkilidir; pupiller tutulumu olan inen simetrik flask paraliziyi açıklamaz."
+            },
+            "60S ribozomal alt birimin inaktivasyonuyla protein sentezinin durması": {
+              "explanation": "60S ribozomal alt birimin inaktivasyonu Shiga toksini veya Shiga benzeri toksinlerle ilişkilidir ve hemorajik kolit ile hemolitik üremik sendrom zemininde düşünülür. Bu vakada böbrek yetmezliği, trombositopeni veya kanlı ishal değil kraniyal sinirlerden başlayan nöroparalitik tablo vardır."
+            },
+            "MHC sınıf II ve T-hücre reseptörünün antijen işlenmeden çapraz bağlanması": {
+              "explanation": "MHC sınıf II ve T-hücre reseptörünün antijen işlenmeden çapraz bağlanması süperantijen mekanizmasıdır. Toksik şokta ateş, hipotansiyon ve yaygın döküntü yapabilir; ancak bilinç açıkken inen flask paralizi ve gıda kaynaklı nörotoksin bulgularını açıklamaz."
+            },
+            "İnhibitör internöronlardan GABA ve glisin salınımının engellenmesi": {
+              "explanation": "İnhibitör internöronlardan GABA ve glisin salınımının engellenmesi tetanoz toksininin mekanizmasıdır. Bu durumda spastik paralizi, trismus ve kas spazmları beklenir; olgudaki gevşek paralizi, diplopi ve ağız kuruluğu presinaptik asetilkolin salınım blokajını düşündürür."
+            },
+            "Presinaptik SNARE proteinlerinin parçalanmasıyla asetilkolin salınımının engellenmesi": {
+              "explanation": "Botulinum nörotoksini presinaptik kolinerjik uçlarda SNARE proteinlerini parçalayarak asetilkolin veziküllerinin salınmasını engeller. Ev konservesi sonrası bulantı ile başlayan, bilinç açıkken diplopi, pitoz, ağız kuruluğu ve inen simetrik flask paralizi gelişmesi bu mekanizmayla en iyi açıklanır."
+            }
+          },
+          "whyWrong": {
+            "A-B toksiniyle adenilat siklaz aktivasyonuna bağlı sulu sekresyon artışı": "A-B toksiniyle adenilat siklaz aktivasyonu kolera toksini veya ısıya duyarlı enterotoksin gibi sekretuvar ishal etkenlerinde önemlidir. Bu mekanizma bol sulu ishal ve dehidratasyonla ilişkilidir; pupiller tutulumu olan inen simetrik flask paraliziyi açıklamaz.",
+            "60S ribozomal alt birimin inaktivasyonuyla protein sentezinin durması": "60S ribozomal alt birimin inaktivasyonu Shiga toksini veya Shiga benzeri toksinlerle ilişkilidir ve hemorajik kolit ile hemolitik üremik sendrom zemininde düşünülür. Bu vakada böbrek yetmezliği, trombositopeni veya kanlı ishal değil kraniyal sinirlerden başlayan nöroparalitik tablo vardır.",
+            "MHC sınıf II ve T-hücre reseptörünün antijen işlenmeden çapraz bağlanması": "MHC sınıf II ve T-hücre reseptörünün antijen işlenmeden çapraz bağlanması süperantijen mekanizmasıdır. Toksik şokta ateş, hipotansiyon ve yaygın döküntü yapabilir; ancak bilinç açıkken inen flask paralizi ve gıda kaynaklı nörotoksin bulgularını açıklamaz.",
+            "İnhibitör internöronlardan GABA ve glisin salınımının engellenmesi": "İnhibitör internöronlardan GABA ve glisin salınımının engellenmesi tetanoz toksininin mekanizmasıdır. Bu durumda spastik paralizi, trismus ve kas spazmları beklenir; olgudaki gevşek paralizi, diplopi ve ağız kuruluğu presinaptik asetilkolin salınım blokajını düşündürür."
+          }
+        }
+      },
+      "coreKnowledge": "Botulizmde toksin presinaptik asetilkolin salınımını engeller; tetanozdan farklı olarak spastik değil gevşek paralizi beklenir.",
+      "examPearl": "Konserve gıda + diplopi/pitoz + ağız kuruluğu + inen flask paralizi → presinaptik SNARE blokajı ile asetilkolin salınımı azalır.",
+      "whyCorrect": "Botulinum nörotoksini presinaptik kolinerjik uçlarda SNARE proteinlerini parçalayarak asetilkolin veziküllerinin salınmasını engeller. Ev konservesi sonrası bulantı ile başlayan, bilinç açıkken diplopi, pitoz, ağız kuruluğu ve inen simetrik flask paralizi gelişmesi bu mekanizmayla en iyi açıklanır.",
+      "optionComparison": {
+        "A-B toksiniyle adenilat siklaz aktivasyonuna bağlı sulu sekresyon artışı": "A-B toksiniyle adenilat siklaz aktivasyonu kolera toksini veya ısıya duyarlı enterotoksin gibi sekretuvar ishal etkenlerinde önemlidir. Bu mekanizma bol sulu ishal ve dehidratasyonla ilişkilidir; pupiller tutulumu olan inen simetrik flask paraliziyi açıklamaz.",
+        "60S ribozomal alt birimin inaktivasyonuyla protein sentezinin durması": "60S ribozomal alt birimin inaktivasyonu Shiga toksini veya Shiga benzeri toksinlerle ilişkilidir ve hemorajik kolit ile hemolitik üremik sendrom zemininde düşünülür. Bu vakada böbrek yetmezliği, trombositopeni veya kanlı ishal değil kraniyal sinirlerden başlayan nöroparalitik tablo vardır.",
+        "MHC sınıf II ve T-hücre reseptörünün antijen işlenmeden çapraz bağlanması": "MHC sınıf II ve T-hücre reseptörünün antijen işlenmeden çapraz bağlanması süperantijen mekanizmasıdır. Toksik şokta ateş, hipotansiyon ve yaygın döküntü yapabilir; ancak bilinç açıkken inen flask paralizi ve gıda kaynaklı nörotoksin bulgularını açıklamaz.",
+        "İnhibitör internöronlardan GABA ve glisin salınımının engellenmesi": "İnhibitör internöronlardan GABA ve glisin salınımının engellenmesi tetanoz toksininin mekanizmasıdır. Bu durumda spastik paralizi, trismus ve kas spazmları beklenir; olgudaki gevşek paralizi, diplopi ve ağız kuruluğu presinaptik asetilkolin salınım blokajını düşündürür.",
+        "Presinaptik SNARE proteinlerinin parçalanmasıyla asetilkolin salınımının engellenmesi": "Botulinum nörotoksini presinaptik kolinerjik uçlarda SNARE proteinlerini parçalayarak asetilkolin veziküllerinin salınmasını engeller. Ev konservesi sonrası bulantı ile başlayan, bilinç açıkken diplopi, pitoz, ağız kuruluğu ve inen simetrik flask paralizi gelişmesi bu mekanizmayla en iyi açıklanır."
+      },
+      "evidenceChain": [
+        {
+          "text": "Ev yapımı konserve tüketimi → anaerob ortamda preforme nörotoksin maruziyeti için risk oluşturur.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Diplopi, pitoz ve ağız kuruluğu → kraniyal ve otonom kolinerjik uçların tutulduğunu gösterir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Bilinç ve duyu muayenesinin korunması → ensefalit veya primer duyusal nöropatiden uzaklaştırır.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Serum/gıda örneğinde nörotoksin aktivitesi → toksin aracılı nöromüsküler kavşak blokajını destekler.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "A-B toksiniyle adenilat siklaz aktivasyonuna bağlı sulu sekresyon artışı": "A-B toksiniyle adenilat siklaz aktivasyonu kolera toksini veya ısıya duyarlı enterotoksin gibi sekretuvar ishal etkenlerinde önemlidir. Bu mekanizma bol sulu ishal ve dehidratasyonla ilişkilidir; pupiller tutulumu olan inen simetrik flask paraliziyi açıklamaz.",
+        "60S ribozomal alt birimin inaktivasyonuyla protein sentezinin durması": "60S ribozomal alt birimin inaktivasyonu Shiga toksini veya Shiga benzeri toksinlerle ilişkilidir ve hemorajik kolit ile hemolitik üremik sendrom zemininde düşünülür. Bu vakada böbrek yetmezliği, trombositopeni veya kanlı ishal değil kraniyal sinirlerden başlayan nöroparalitik tablo vardır.",
+        "MHC sınıf II ve T-hücre reseptörünün antijen işlenmeden çapraz bağlanması": "MHC sınıf II ve T-hücre reseptörünün antijen işlenmeden çapraz bağlanması süperantijen mekanizmasıdır. Toksik şokta ateş, hipotansiyon ve yaygın döküntü yapabilir; ancak bilinç açıkken inen flask paralizi ve gıda kaynaklı nörotoksin bulgularını açıklamaz.",
+        "İnhibitör internöronlardan GABA ve glisin salınımının engellenmesi": "İnhibitör internöronlardan GABA ve glisin salınımının engellenmesi tetanoz toksininin mekanizmasıdır. Bu durumda spastik paralizi, trismus ve kas spazmları beklenir; olgudaki gevşek paralizi, diplopi ve ağız kuruluğu presinaptik asetilkolin salınım blokajını düşündürür."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v255-medical-microbiology-sixth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Ev yapımı konserve tüketimi → anaerob ortamda preforme nörotoksin maruziyeti için risk oluşturur.",
+        "Diplopi, pitoz ve ağız kuruluğu → kraniyal ve otonom kolinerjik uçların tutulduğunu gösterir.",
+        "Bilinç ve duyu muayenesinin korunması → ensefalit veya primer duyusal nöropatiden uzaklaştırır.",
+        "Serum/gıda örneğinde nörotoksin aktivitesi → toksin aracılı nöromüsküler kavşak blokajını destekler."
+      ],
+      "images": []
+    },
+  {
+      "id": "v255-new-475-tirnakta-kronik-dermatofit-enfeksiyonu",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Tırnakta kronik dermatofit enfeksiyonu",
+      "difficulty": "Orta",
+      "difficultyTag": "Orta",
+      "clinicalFocus": "Kronik tinea pedis/onikomikoz tablosunda KOH ve kültür morfolojisini dermatofit etken seçimine bağlama.",
+      "learningTarget": "Dermatofit tanısında septalı hif, Sabouraud kültürü, koloni reverse pigmenti ve konidi morfolojisini birlikte yorumlayabilme.",
+      "demographics": "34 yaşında erkek hasta",
+      "setting": "Dermatoloji polikliniği",
+      "chiefComplaint": "Hasta aylardır süren ayak tabanı kaşıntısı ve başparmak tırnağında kalınlaşma nedeniyle başvuruyor.",
+      "stem": "Hasta yaklaşık altı aydır ayak parmak aralarında soyulma ve kaşıntı olduğunu, son iki ayda sağ ayak başparmak tırnağının sararıp kalınlaştığını anlatır. Spor salonunda ortak duş kullandığını ve iş yerinde gün boyunca kapalı ayakkabı giydiğini söyler. Lezyonlara zaman zaman nemlendirici sürmüş ancak sistemik antibiyotik veya antifungal kullanmamıştır. Evcil hayvan teması olmadığını, saçlı deride dökülme veya döküntü fark etmediğini belirtir.",
+      "patientIntro": {
+        "profile": "34 yaşında erkek hasta kronik ayak tabanı lezyonu ve onikomikoz bulgularıyla değerlendiriliyor.",
+        "presentation": "Kapalı ayakkabı ve ortak duş kullanımı öyküsü var; tırnak ve interdigital alanlar birlikte etkilenmiş.",
+        "historySummary": "Öykü yüzeyel dermatofit enfeksiyonunu düşündüren kronik keratinize doku tutulumuna odaklanıyor."
+      },
+      "vitals": {
+        "TA": "116/72 mmHg",
+        "Nabız": "78/dk",
+        "Solunum": "14/dk",
+        "SpO2": "99%, oda havasında",
+        "Ateş": "36.5 °C",
+        "Şok indeksi": "0.67 - stabil"
+      },
+      "exam": [
+        "Genel durumu iyidir ve sistemik enfeksiyon bulgusu yoktur.",
+        "Ayak parmak aralarında maserasyon, ince skuam ve fissürler izlenir.",
+        "Sağ başparmak tırnağı sarı, kalın ve distalde kırılgan görünümdedir.",
+        "Saçlı deri, kasık ve gövdede belirgin halka şeklinde lezyon saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v255-new-475-tirnakta-kronik-dermatofit-enfeksiyonu-klinik-deri-tirnak",
+          "label": "Deri-tırnak muayene ve örnekleme",
+          "title": "Deri-tırnak muayene ve örnekleme",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Klinik lokalizasyon ve örnek tipi",
+          "summary": "Keratinize doku tutulumu ve uygun tırnak/deri kazıntısı örneği yüzeyel dermatofit tanısı için temel oluşturur.",
+          "clinicalMeaning": "Keratinize doku tutulumu ve uygun tırnak/deri kazıntısı örneği yüzeyel dermatofit tanısı için temel oluşturur.",
+          "result": {
+            "title": "Deri-tırnak muayene ve örnekleme",
+            "summary": "Keratinize doku tutulumu ve uygun tırnak/deri kazıntısı örneği yüzeyel dermatofit tanısı için temel oluşturur.",
+            "interpretation": "Keratinize doku tutulumu ve uygun tırnak/deri kazıntısı örneği yüzeyel dermatofit tanısı için temel oluşturur.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Tırnak altı keratin artığı ve interdigital deri kazıntısı",
+                "",
+                "Keratinize doku örneği"
+              ],
+              [
+                "Lezyon dağılımı",
+                "İnterdigital alan + distal subungual tırnak tutulumu",
+                "",
+                "Tinea pedis/onikomikoz paterni"
+              ],
+              [
+                "Wood lambası",
+                "Belirgin floresans yok",
+                "",
+                "Microsporum saç tutulumunu desteklemez"
+              ],
+              [
+                "Bakteriyel kültür",
+                "Piyojenik üreme yok",
+                "Negatif",
+                "Sekonder bakteriyel enfeksiyon dışlandı"
+              ]
+            ],
+            "rows": [
+              [
+                "Örnek tipi",
+                "Tırnak altı keratin artığı ve interdigital deri kazıntısı",
+                "",
+                "Keratinize doku örneği"
+              ],
+              [
+                "Lezyon dağılımı",
+                "İnterdigital alan + distal subungual tırnak tutulumu",
+                "",
+                "Tinea pedis/onikomikoz paterni"
+              ],
+              [
+                "Wood lambası",
+                "Belirgin floresans yok",
+                "",
+                "Microsporum saç tutulumunu desteklemez"
+              ],
+              [
+                "Bakteriyel kültür",
+                "Piyojenik üreme yok",
+                "Negatif",
+                "Sekonder bakteriyel enfeksiyon dışlandı"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Örnek tipi",
+              "Tırnak altı keratin artığı ve interdigital deri kazıntısı",
+              "",
+              "Keratinize doku örneği"
+            ],
+            [
+              "Lezyon dağılımı",
+              "İnterdigital alan + distal subungual tırnak tutulumu",
+              "",
+              "Tinea pedis/onikomikoz paterni"
+            ],
+            [
+              "Wood lambası",
+              "Belirgin floresans yok",
+              "",
+              "Microsporum saç tutulumunu desteklemez"
+            ],
+            [
+              "Bakteriyel kültür",
+              "Piyojenik üreme yok",
+              "Negatif",
+              "Sekonder bakteriyel enfeksiyon dışlandı"
+            ]
+          ],
+          "flowOrder": 10,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 10
+        },
+        {
+          "id": "v255-new-475-tirnakta-kronik-dermatofit-enfeksiyonu-mikoloji-koh-kultur",
+          "label": "Mikolojik direkt inceleme ve kültür",
+          "title": "Mikolojik direkt inceleme ve kültür",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "KOH, Sabouraud kültürü ve konidi morfolojisi",
+          "summary": "Septalı hif, kırmızı reverse pigment ve ince damla biçimli mikrokonidiler antropofilik dermatofit paternini destekler.",
+          "clinicalMeaning": "Septalı hif, kırmızı reverse pigment ve ince damla biçimli mikrokonidiler antropofilik dermatofit paternini destekler.",
+          "result": {
+            "title": "Mikolojik direkt inceleme ve kültür",
+            "summary": "Septalı hif, kırmızı reverse pigment ve ince damla biçimli mikrokonidiler antropofilik dermatofit paternini destekler.",
+            "interpretation": "Septalı hif, kırmızı reverse pigment ve ince damla biçimli mikrokonidiler antropofilik dermatofit paternini destekler.",
+            "values": [
+              [
+                "KOH direkt inceleme",
+                "Uzun, dallanan septalı hifler",
+                "Negatif",
+                "Dermatofit yapısı"
+              ],
+              [
+                "Sabouraud kültürü",
+                "Beyaz-pamuksu koloni; koloninin ters yüzünde kırmızı pigment",
+                "",
+                "Koloni morfolojisi"
+              ],
+              [
+                "Laktofenol pamuk mavisi",
+                "Septalı hifler boyunca az sayıda ince, damla biçimli mikrokonidi",
+                "",
+                "Konidi paterni"
+              ],
+              [
+                "Makrokonidi",
+                "Nadir ve ince yapılar",
+                "",
+                "Belirgin makrokonidi baskınlığı yok"
+              ],
+              [
+                "Maya hücreleri/pseudohif",
+                "Saptanmadı",
+                "",
+                "Candida/Malassezia paterni değil"
+              ]
+            ],
+            "rows": [
+              [
+                "KOH direkt inceleme",
+                "Uzun, dallanan septalı hifler",
+                "Negatif",
+                "Dermatofit yapısı"
+              ],
+              [
+                "Sabouraud kültürü",
+                "Beyaz-pamuksu koloni; koloninin ters yüzünde kırmızı pigment",
+                "",
+                "Koloni morfolojisi"
+              ],
+              [
+                "Laktofenol pamuk mavisi",
+                "Septalı hifler boyunca az sayıda ince, damla biçimli mikrokonidi",
+                "",
+                "Konidi paterni"
+              ],
+              [
+                "Makrokonidi",
+                "Nadir ve ince yapılar",
+                "",
+                "Belirgin makrokonidi baskınlığı yok"
+              ],
+              [
+                "Maya hücreleri/pseudohif",
+                "Saptanmadı",
+                "",
+                "Candida/Malassezia paterni değil"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "KOH direkt inceleme",
+              "Uzun, dallanan septalı hifler",
+              "Negatif",
+              "Dermatofit yapısı"
+            ],
+            [
+              "Sabouraud kültürü",
+              "Beyaz-pamuksu koloni; koloninin ters yüzünde kırmızı pigment",
+              "",
+              "Koloni morfolojisi"
+            ],
+            [
+              "Laktofenol pamuk mavisi",
+              "Septalı hifler boyunca az sayıda ince, damla biçimli mikrokonidi",
+              "",
+              "Konidi paterni"
+            ],
+            [
+              "Makrokonidi",
+              "Nadir ve ince yapılar",
+              "",
+              "Belirgin makrokonidi baskınlığı yok"
+            ],
+            [
+              "Maya hücreleri/pseudohif",
+              "Saptanmadı",
+              "",
+              "Candida/Malassezia paterni değil"
+            ]
+          ],
+          "flowOrder": 20,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 20
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "shuffleOptions": false,
+      "question": "Bu mikolojik laboratuvar bulgusu hangi etkenle en uyumludur?",
+      "questionType": "singleBestAnswer",
+      "answerTarget": "Dermatofit etken tanıma",
+      "diagnosis": {
+        "correct": "Trichophyton rubrum",
+        "options": [
+          "Microsporum canis",
+          "Trichophyton mentagrophytes",
+          "Trichophyton rubrum",
+          "Epidermophyton floccosum",
+          "Malassezia furfur"
+        ],
+        "question": "Bu mikolojik laboratuvar bulgusu hangi etkenle en uyumludur?",
+        "explanation": "Kronik interdigital tinea pedis ve distal subungual onikomikoz, KOH’da septalı dallanan hifler ve kültürde kırmızı reverse pigmentli beyaz koloni ile birlikte değerlendirildiğinde Trichophyton rubrum ön plana çıkar. Mikrokonidi morfolojisi de diğer dermatofitlerden ayrımı destekler.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Kronik tinea pedis/onikomikoz + KOH’da septalı hif + kırmızı reverse pigment + ince mikrokonidi → Trichophyton rubrum."
+          }
+        ],
+        "optionFeedback": {
+          "Microsporum canis": {
+            "explanation": "Microsporum canis özellikle kedi-köpek teması sonrası saçlı deri enfeksiyonu ve ektotriks saç tutulumu ile akla gelir; bazı olgularda Wood lambasında floresans görülebilir. Bu hastada saçlı deri tutulumu ya da belirgin hayvan teması yoktur; tırnak-ayak tabanı tutulumu ve kültürde kırmızı reverse pigment ile ince mikrokonidiler Trichophyton rubrum lehinedir."
+          },
+          "Trichophyton mentagrophytes": {
+            "explanation": "Trichophyton mentagrophytes tinea pedis ve onikomikoz yapabilir, bu nedenle klinik olarak önemli bir çeldiricidir. Ancak kültürde tipik olarak daha granüler koloni, spiral hifler ve üzüm salkımı tarzında çok sayıda mikrokonidi beklenebilir; vakadaki beyaz pamuksu koloni, kırmızı reverse pigment ve az sayıda ince damla biçimli mikrokonidi T. rubrum ile daha uyumludur."
+          },
+          "Trichophyton rubrum": {
+            "explanation": "Trichophyton rubrum kronik tinea pedis ve onikomikozun en sık dermatofit etkenlerinden biridir. KOH’da septalı dallanan hiflerin görülmesi, Sabouraud kültüründe beyaz-pamuksu koloni, kırmızı reverse pigment ve ince damla biçimli mikrokonidiler bu etkenle en uyumlu mikolojik paterni oluşturur."
+          },
+          "Epidermophyton floccosum": {
+            "explanation": "Epidermophyton floccosum tinea cruris, tinea pedis ve onikomikoz yapabilir ancak mikroskopide mikrokonidi oluşturmaz; geniş, düzgün duvarlı makrokonidiler daha tipiktir. Bu vakada damla biçimli mikrokonidilerin görülmesi ve kırmızı reverse pigment T. rubrum lehine daha ayırt edicidir."
+          },
+          "Malassezia furfur": {
+            "explanation": "Malassezia furfur lipofilik maya olup pityriasis versicolor tablosunda kısa hif ve maya hücrelerinin birlikte görüldüğü 'spagetti-köfte' paternini oluşturur. Tırnak kalınlaşması ve KOH’da uzun septalı dermatofit hifleri ile Sabouraud’da dermatofit kolonisi bu seçenekle uyumlu değildir."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Trichophyton rubrum kronik tinea pedis ve onikomikozun en sık dermatofit etkenlerinden biridir. KOH’da septalı dallanan hiflerin görülmesi, Sabouraud kültüründe beyaz-pamuksu koloni, kırmızı reverse pigment ve ince damla biçimli mikrokonidiler bu etkenle en uyumlu mikolojik paterni oluşturur.",
+          "optionFeedback": {
+            "Microsporum canis": {
+              "explanation": "Microsporum canis özellikle kedi-köpek teması sonrası saçlı deri enfeksiyonu ve ektotriks saç tutulumu ile akla gelir; bazı olgularda Wood lambasında floresans görülebilir. Bu hastada saçlı deri tutulumu ya da belirgin hayvan teması yoktur; tırnak-ayak tabanı tutulumu ve kültürde kırmızı reverse pigment ile ince mikrokonidiler Trichophyton rubrum lehinedir."
+            },
+            "Trichophyton mentagrophytes": {
+              "explanation": "Trichophyton mentagrophytes tinea pedis ve onikomikoz yapabilir, bu nedenle klinik olarak önemli bir çeldiricidir. Ancak kültürde tipik olarak daha granüler koloni, spiral hifler ve üzüm salkımı tarzında çok sayıda mikrokonidi beklenebilir; vakadaki beyaz pamuksu koloni, kırmızı reverse pigment ve az sayıda ince damla biçimli mikrokonidi T. rubrum ile daha uyumludur."
+            },
+            "Trichophyton rubrum": {
+              "explanation": "Trichophyton rubrum kronik tinea pedis ve onikomikozun en sık dermatofit etkenlerinden biridir. KOH’da septalı dallanan hiflerin görülmesi, Sabouraud kültüründe beyaz-pamuksu koloni, kırmızı reverse pigment ve ince damla biçimli mikrokonidiler bu etkenle en uyumlu mikolojik paterni oluşturur."
+            },
+            "Epidermophyton floccosum": {
+              "explanation": "Epidermophyton floccosum tinea cruris, tinea pedis ve onikomikoz yapabilir ancak mikroskopide mikrokonidi oluşturmaz; geniş, düzgün duvarlı makrokonidiler daha tipiktir. Bu vakada damla biçimli mikrokonidilerin görülmesi ve kırmızı reverse pigment T. rubrum lehine daha ayırt edicidir."
+            },
+            "Malassezia furfur": {
+              "explanation": "Malassezia furfur lipofilik maya olup pityriasis versicolor tablosunda kısa hif ve maya hücrelerinin birlikte görüldüğü 'spagetti-köfte' paternini oluşturur. Tırnak kalınlaşması ve KOH’da uzun septalı dermatofit hifleri ile Sabouraud’da dermatofit kolonisi bu seçenekle uyumlu değildir."
+            }
+          },
+          "whyWrong": {
+            "Microsporum canis": "Microsporum canis özellikle kedi-köpek teması sonrası saçlı deri enfeksiyonu ve ektotriks saç tutulumu ile akla gelir; bazı olgularda Wood lambasında floresans görülebilir. Bu hastada saçlı deri tutulumu ya da belirgin hayvan teması yoktur; tırnak-ayak tabanı tutulumu ve kültürde kırmızı reverse pigment ile ince mikrokonidiler Trichophyton rubrum lehinedir.",
+            "Trichophyton mentagrophytes": "Trichophyton mentagrophytes tinea pedis ve onikomikoz yapabilir, bu nedenle klinik olarak önemli bir çeldiricidir. Ancak kültürde tipik olarak daha granüler koloni, spiral hifler ve üzüm salkımı tarzında çok sayıda mikrokonidi beklenebilir; vakadaki beyaz pamuksu koloni, kırmızı reverse pigment ve az sayıda ince damla biçimli mikrokonidi T. rubrum ile daha uyumludur.",
+            "Epidermophyton floccosum": "Epidermophyton floccosum tinea cruris, tinea pedis ve onikomikoz yapabilir ancak mikroskopide mikrokonidi oluşturmaz; geniş, düzgün duvarlı makrokonidiler daha tipiktir. Bu vakada damla biçimli mikrokonidilerin görülmesi ve kırmızı reverse pigment T. rubrum lehine daha ayırt edicidir.",
+            "Malassezia furfur": "Malassezia furfur lipofilik maya olup pityriasis versicolor tablosunda kısa hif ve maya hücrelerinin birlikte görüldüğü 'spagetti-köfte' paternini oluşturur. Tırnak kalınlaşması ve KOH’da uzun septalı dermatofit hifleri ile Sabouraud’da dermatofit kolonisi bu seçenekle uyumlu değildir."
+          }
+        }
+      },
+      "coreKnowledge": "Dermatofitlerde KOH hızlı tarama sağlar; tür ayrımı için koloni ve mikrokonidi/makrokonidi morfolojisi birlikte değerlendirilir.",
+      "examPearl": "Kronik tinea pedis/onikomikoz + KOH’da septalı hif + kırmızı reverse pigment + ince mikrokonidi → Trichophyton rubrum.",
+      "whyCorrect": "Trichophyton rubrum kronik tinea pedis ve onikomikozun en sık dermatofit etkenlerinden biridir. KOH’da septalı dallanan hiflerin görülmesi, Sabouraud kültüründe beyaz-pamuksu koloni, kırmızı reverse pigment ve ince damla biçimli mikrokonidiler bu etkenle en uyumlu mikolojik paterni oluşturur.",
+      "optionComparison": {
+        "Microsporum canis": "Microsporum canis özellikle kedi-köpek teması sonrası saçlı deri enfeksiyonu ve ektotriks saç tutulumu ile akla gelir; bazı olgularda Wood lambasında floresans görülebilir. Bu hastada saçlı deri tutulumu ya da belirgin hayvan teması yoktur; tırnak-ayak tabanı tutulumu ve kültürde kırmızı reverse pigment ile ince mikrokonidiler Trichophyton rubrum lehinedir.",
+        "Trichophyton mentagrophytes": "Trichophyton mentagrophytes tinea pedis ve onikomikoz yapabilir, bu nedenle klinik olarak önemli bir çeldiricidir. Ancak kültürde tipik olarak daha granüler koloni, spiral hifler ve üzüm salkımı tarzında çok sayıda mikrokonidi beklenebilir; vakadaki beyaz pamuksu koloni, kırmızı reverse pigment ve az sayıda ince damla biçimli mikrokonidi T. rubrum ile daha uyumludur.",
+        "Trichophyton rubrum": "Trichophyton rubrum kronik tinea pedis ve onikomikozun en sık dermatofit etkenlerinden biridir. KOH’da septalı dallanan hiflerin görülmesi, Sabouraud kültüründe beyaz-pamuksu koloni, kırmızı reverse pigment ve ince damla biçimli mikrokonidiler bu etkenle en uyumlu mikolojik paterni oluşturur.",
+        "Epidermophyton floccosum": "Epidermophyton floccosum tinea cruris, tinea pedis ve onikomikoz yapabilir ancak mikroskopide mikrokonidi oluşturmaz; geniş, düzgün duvarlı makrokonidiler daha tipiktir. Bu vakada damla biçimli mikrokonidilerin görülmesi ve kırmızı reverse pigment T. rubrum lehine daha ayırt edicidir.",
+        "Malassezia furfur": "Malassezia furfur lipofilik maya olup pityriasis versicolor tablosunda kısa hif ve maya hücrelerinin birlikte görüldüğü 'spagetti-köfte' paternini oluşturur. Tırnak kalınlaşması ve KOH’da uzun septalı dermatofit hifleri ile Sabouraud’da dermatofit kolonisi bu seçenekle uyumlu değildir."
+      },
+      "evidenceChain": [
+        {
+          "text": "Tırnak ve interdigital keratinize doku tutulumu → dermatofit enfeksiyonuna uygun örnek alanını gösterir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "KOH’da uzun septalı hifler → maya yerine dermatofit yapısını destekler.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Sabouraud kültüründe kırmızı reverse pigment → T. rubrum için ayırt ettirici koloni ipucudur.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Az sayıda ince damla biçimli mikrokonidi → T. rubrum morfolojisiyle uyumludur.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Microsporum canis": "Microsporum canis özellikle kedi-köpek teması sonrası saçlı deri enfeksiyonu ve ektotriks saç tutulumu ile akla gelir; bazı olgularda Wood lambasında floresans görülebilir. Bu hastada saçlı deri tutulumu ya da belirgin hayvan teması yoktur; tırnak-ayak tabanı tutulumu ve kültürde kırmızı reverse pigment ile ince mikrokonidiler Trichophyton rubrum lehinedir.",
+        "Trichophyton mentagrophytes": "Trichophyton mentagrophytes tinea pedis ve onikomikoz yapabilir, bu nedenle klinik olarak önemli bir çeldiricidir. Ancak kültürde tipik olarak daha granüler koloni, spiral hifler ve üzüm salkımı tarzında çok sayıda mikrokonidi beklenebilir; vakadaki beyaz pamuksu koloni, kırmızı reverse pigment ve az sayıda ince damla biçimli mikrokonidi T. rubrum ile daha uyumludur.",
+        "Epidermophyton floccosum": "Epidermophyton floccosum tinea cruris, tinea pedis ve onikomikoz yapabilir ancak mikroskopide mikrokonidi oluşturmaz; geniş, düzgün duvarlı makrokonidiler daha tipiktir. Bu vakada damla biçimli mikrokonidilerin görülmesi ve kırmızı reverse pigment T. rubrum lehine daha ayırt edicidir.",
+        "Malassezia furfur": "Malassezia furfur lipofilik maya olup pityriasis versicolor tablosunda kısa hif ve maya hücrelerinin birlikte görüldüğü 'spagetti-köfte' paternini oluşturur. Tırnak kalınlaşması ve KOH’da uzun septalı dermatofit hifleri ile Sabouraud’da dermatofit kolonisi bu seçenekle uyumlu değildir."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v255-medical-microbiology-sixth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Tırnak ve interdigital keratinize doku tutulumu → dermatofit enfeksiyonuna uygun örnek alanını gösterir.",
+        "KOH’da uzun septalı hifler → maya yerine dermatofit yapısını destekler.",
+        "Sabouraud kültüründe kırmızı reverse pigment → T. rubrum için ayırt ettirici koloni ipucudur.",
+        "Az sayıda ince damla biçimli mikrokonidi → T. rubrum morfolojisiyle uyumludur."
+      ],
+      "images": []
+    },
+  {
+      "id": "v255-new-476-uzamis-ates-ve-masif-splenomegali",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Uzamış ateş ve masif splenomegali",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Uzamış ateş, pansitopeni ve kemik iliği mikroskopisini visseral paraziter enfeksiyon etkeniyle ilişkilendirme.",
+      "learningTarget": "Visseral leishmaniasis tanısında splenomegali-pansitopeni kliniğini, rK39 serolojisini ve makrofaj içi kinetoplastlı amastigotları yorumlayabilme.",
+      "demographics": "9 yaşında erkek çocuk",
+      "setting": "Çocuk enfeksiyon hastalıkları servisi",
+      "chiefComplaint": "Hasta üç haftadır süren ateş, kilo kaybı ve karında şişlik nedeniyle yatırılıyor.",
+      "stem": "Ailesi çocuğun üç haftadır özellikle akşamları yükselen ateşlerinin olduğunu, iştahının azaldığını ve son bir ayda belirgin kilo kaybettiğini anlatır. Yaz aylarını kırsal bölgede geçirmiş, evin çevresinde çok sayıda köpek bulunduğu ve geceleri sivrisinek benzeri ısırıkların sık olduğu öğrenilmiştir. Öksürük, ishal veya idrar yakınması belirgin değildir. Daha önce kısa süreli oral antibiyotik kullanmış ancak ateşleri düzelmemiştir.",
+      "patientIntro": {
+        "profile": "9 yaşında çocuk hasta uzamış ateş, kilo kaybı ve karında şişlik nedeniyle değerlendiriliyor.",
+        "presentation": "Kırsal yaz dönemi maruziyeti, pansitopeni ve belirgin dalak büyüklüğü klinik olarak öne çıkıyor.",
+        "historySummary": "Öykü ve muayene uzun süren sistemik paraziter enfeksiyon açısından kemik iliği ve serolojik doğrulama gerektiriyor."
+      },
+      "vitals": {
+        "TA": "96/58 mmHg",
+        "Nabız": "112/dk",
+        "Solunum": "22/dk",
+        "SpO2": "98%, oda havasında",
+        "Ateş": "38.8 °C",
+        "Şok indeksi": "1.17 - dikkatli izlem"
+      },
+      "exam": [
+        "Hasta soluk ve zayıf görünümdedir.",
+        "Dalak sol kostal kenarın 7 cm altında ele gelir; karaciğer 3 cm palpabldır.",
+        "Yaygın peteşi yoktur ancak mukozalar soluktur.",
+        "Akciğer oskültasyonu doğaldır; belirgin lenfadenopati saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v255-new-476-uzamis-ates-ve-masif-splenomegali-pansitopeni",
+          "label": "Hemogram ve biyokimya",
+          "title": "Hemogram ve biyokimya",
+          "type": "lab",
+          "priority": "essential",
+          "subtype": "Pansitopeni ve inflamasyon verileri",
+          "summary": "Anemi, lökopeni, trombositopeni ve hipergammaglobulinemi retiküloendotelyal sistem tutulumu olan kronik enfeksiyonu destekler.",
+          "clinicalMeaning": "Anemi, lökopeni, trombositopeni ve hipergammaglobulinemi retiküloendotelyal sistem tutulumu olan kronik enfeksiyonu destekler.",
+          "result": {
+            "title": "Hemogram ve biyokimya",
+            "summary": "Anemi, lökopeni, trombositopeni ve hipergammaglobulinemi retiküloendotelyal sistem tutulumu olan kronik enfeksiyonu destekler.",
+            "interpretation": "Anemi, lökopeni, trombositopeni ve hipergammaglobulinemi retiküloendotelyal sistem tutulumu olan kronik enfeksiyonu destekler.",
+            "values": [
+              [
+                "Hemoglobin",
+                "8.2 g/dL",
+                "11.5–15.5 g/dL",
+                "Düşük"
+              ],
+              [
+                "Lökosit",
+                "2.100/µL",
+                "4.500–13.500/µL",
+                "Düşük"
+              ],
+              [
+                "Trombosit",
+                "74.000/µL",
+                "150.000–400.000/µL",
+                "Düşük"
+              ],
+              [
+                "CRP",
+                "58 mg/L",
+                "<5 mg/L",
+                "Yüksek"
+              ],
+              [
+                "Total protein/albümin",
+                "8.9/2.9 g/dL",
+                "6–8/3.5–5 g/dL",
+                "Globulin artışı"
+              ]
+            ],
+            "rows": [
+              [
+                "Hemoglobin",
+                "8.2 g/dL",
+                "11.5–15.5 g/dL",
+                "Düşük"
+              ],
+              [
+                "Lökosit",
+                "2.100/µL",
+                "4.500–13.500/µL",
+                "Düşük"
+              ],
+              [
+                "Trombosit",
+                "74.000/µL",
+                "150.000–400.000/µL",
+                "Düşük"
+              ],
+              [
+                "CRP",
+                "58 mg/L",
+                "<5 mg/L",
+                "Yüksek"
+              ],
+              [
+                "Total protein/albümin",
+                "8.9/2.9 g/dL",
+                "6–8/3.5–5 g/dL",
+                "Globulin artışı"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Hemoglobin",
+              "8.2 g/dL",
+              "11.5–15.5 g/dL",
+              "Düşük"
+            ],
+            [
+              "Lökosit",
+              "2.100/µL",
+              "4.500–13.500/µL",
+              "Düşük"
+            ],
+            [
+              "Trombosit",
+              "74.000/µL",
+              "150.000–400.000/µL",
+              "Düşük"
+            ],
+            [
+              "CRP",
+              "58 mg/L",
+              "<5 mg/L",
+              "Yüksek"
+            ],
+            [
+              "Total protein/albümin",
+              "8.9/2.9 g/dL",
+              "6–8/3.5–5 g/dL",
+              "Globulin artışı"
+            ]
+          ],
+          "flowOrder": 10,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 10
+        },
+        {
+          "id": "v255-new-476-uzamis-ates-ve-masif-splenomegali-parazitoloji-kemik-iligi",
+          "label": "Parazitoloji ve kemik iliği incelemesi",
+          "title": "Parazitoloji ve kemik iliği incelemesi",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Seroloji, yayma ve kemik iliği mikroskopisi",
+          "summary": "Makrofaj içi çekirdek ve kinetoplast içeren amastigotların görülmesi visseral paraziter enfeksiyonu destekler.",
+          "clinicalMeaning": "Makrofaj içi çekirdek ve kinetoplast içeren amastigotların görülmesi visseral paraziter enfeksiyonu destekler.",
+          "result": {
+            "title": "Parazitoloji ve kemik iliği incelemesi",
+            "summary": "Makrofaj içi çekirdek ve kinetoplast içeren amastigotların görülmesi visseral paraziter enfeksiyonu destekler.",
+            "interpretation": "Makrofaj içi çekirdek ve kinetoplast içeren amastigotların görülmesi visseral paraziter enfeksiyonu destekler.",
+            "values": [
+              [
+                "Kalın damla/periferik yayma",
+                "Eritrosit içi halka formu saptanmadı",
+                "Negatif",
+                "Sıtma desteklenmedi"
+              ],
+              [
+                "rK39 hızlı seroloji",
+                "Pozitif",
+                "Negatif",
+                "Visseral tutulum için destekleyici"
+              ],
+              [
+                "Kemik iliği aspiratı Giemsa",
+                "Makrofajlar içinde 2–4 µm oval yapılar; çekirdek ve çubuk biçimli kinetoplast seçiliyor",
+                "",
+                "Amastigot morfolojisi"
+              ],
+              [
+                "Kan kültürü",
+                "Üreme yok",
+                "Negatif",
+                "Bakteriyemi desteklenmedi"
+              ],
+              [
+                "HIV Ag/Ab",
+                "Negatif",
+                "Negatif",
+                "Ağır immünsüpresyon saptanmadı"
+              ]
+            ],
+            "rows": [
+              [
+                "Kalın damla/periferik yayma",
+                "Eritrosit içi halka formu saptanmadı",
+                "Negatif",
+                "Sıtma desteklenmedi"
+              ],
+              [
+                "rK39 hızlı seroloji",
+                "Pozitif",
+                "Negatif",
+                "Visseral tutulum için destekleyici"
+              ],
+              [
+                "Kemik iliği aspiratı Giemsa",
+                "Makrofajlar içinde 2–4 µm oval yapılar; çekirdek ve çubuk biçimli kinetoplast seçiliyor",
+                "",
+                "Amastigot morfolojisi"
+              ],
+              [
+                "Kan kültürü",
+                "Üreme yok",
+                "Negatif",
+                "Bakteriyemi desteklenmedi"
+              ],
+              [
+                "HIV Ag/Ab",
+                "Negatif",
+                "Negatif",
+                "Ağır immünsüpresyon saptanmadı"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Kalın damla/periferik yayma",
+              "Eritrosit içi halka formu saptanmadı",
+              "Negatif",
+              "Sıtma desteklenmedi"
+            ],
+            [
+              "rK39 hızlı seroloji",
+              "Pozitif",
+              "Negatif",
+              "Visseral tutulum için destekleyici"
+            ],
+            [
+              "Kemik iliği aspiratı Giemsa",
+              "Makrofajlar içinde 2–4 µm oval yapılar; çekirdek ve çubuk biçimli kinetoplast seçiliyor",
+              "",
+              "Amastigot morfolojisi"
+            ],
+            [
+              "Kan kültürü",
+              "Üreme yok",
+              "Negatif",
+              "Bakteriyemi desteklenmedi"
+            ],
+            [
+              "HIV Ag/Ab",
+              "Negatif",
+              "Negatif",
+              "Ağır immünsüpresyon saptanmadı"
+            ]
+          ],
+          "flowOrder": 20,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 20
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "shuffleOptions": false,
+      "question": "Bu klinik ve parazitolojik laboratuvar bulgularıyla en uyumlu etken aşağıdakilerden hangisidir?",
+      "questionType": "singleBestAnswer",
+      "answerTarget": "Visseral parazit etken tanıma",
+      "diagnosis": {
+        "correct": "Leishmania donovani kompleksi",
+        "options": [
+          "Toxoplasma gondii",
+          "Leishmania donovani kompleksi",
+          "Trypanosoma cruzi",
+          "Plasmodium falciparum",
+          "Histoplasma capsulatum"
+        ],
+        "question": "Bu klinik ve parazitolojik laboratuvar bulgularıyla en uyumlu etken aşağıdakilerden hangisidir?",
+        "explanation": "Uzamış ateş, kilo kaybı, masif splenomegali, pansitopeni ve hipergammaglobulinemi visseral leishmaniasis ile uyumludur. Kemik iliğinde makrofaj içinde çekirdek ve kinetoplast içeren amastigotların görülmesi ve rK39 pozitifliği Leishmania donovani kompleksini en olası etken yapar.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Uzamış ateş + masif splenomegali + pansitopeni + makrofaj içi kinetoplastlı amastigot → visseral leishmaniasis."
+          }
+        ],
+        "optionFeedback": {
+          "Toxoplasma gondii": {
+            "explanation": "Toxoplasma gondii immünkompetanlarda çoğu zaman lenfadenopati, immünsüpreselerde ensefalit ve gebelikte konjenital enfeksiyonla önem kazanır. Doku kistleri ve seroloji klinik bağlama göre değerlendirilir; ancak bu vakadaki uzun ateş, masif splenomegali, pansitopeni ve kemik iliğinde makrofaj içi kinetoplastlı amastigotlar visseral leishmaniasis için daha tipiktir."
+          },
+          "Leishmania donovani kompleksi": {
+            "explanation": "Leishmania donovani kompleksi visseral leishmaniasis tablosunda uzun süren ateş, kilo kaybı, masif splenomegali ve pansitopeni yapabilir. Kemik iliği aspiratında makrofaj içinde çekirdek ve kinetoplast içeren küçük amastigotların görülmesi ve rK39 pozitifliği bu etkeni güçlü biçimde destekler."
+          },
+          "Trypanosoma cruzi": {
+            "explanation": "Trypanosoma cruzi Chagas hastalığının etkenidir; akut dönemde chagoma/Romana bulgusu, kronik dönemde kardiyomiyopati ve megakolon-megaözofagus ile ilişkilidir. Amastigot formları dokuda görülebilse de bu hastanın Akdeniz-kırsal köpek teması, masif splenomegali ve kemik iliği makrofaj içi amastigot paterni Leishmania lehinedir."
+          },
+          "Plasmodium falciparum": {
+            "explanation": "Plasmodium falciparum sıtmanın ağır formlarını yapabilir; periferik yaymada eritrosit içi halka formları ve yüksek parazitemi beklenir. Bu vakada kalın damla/periferik yaymada eritrosit içi parazit görülmemesi ve kemik iliğinde makrofaj içi amastigotların saptanması sıtmadan uzaklaştırır."
+          },
+          "Histoplasma capsulatum": {
+            "explanation": "Histoplasma capsulatum immünsüpresif hastalarda dissemine enfeksiyon, ateş ve hepatosplenomegali yapabilir; makrofaj içinde küçük maya formları görülebilir. Ancak kinetoplastlı amastigot, rK39 pozitifliği ve kum sineği/köpek maruziyeti visseral leishmaniasis yönünde daha ayırt edicidir."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Leishmania donovani kompleksi visseral leishmaniasis tablosunda uzun süren ateş, kilo kaybı, masif splenomegali ve pansitopeni yapabilir. Kemik iliği aspiratında makrofaj içinde çekirdek ve kinetoplast içeren küçük amastigotların görülmesi ve rK39 pozitifliği bu etkeni güçlü biçimde destekler.",
+          "optionFeedback": {
+            "Toxoplasma gondii": {
+              "explanation": "Toxoplasma gondii immünkompetanlarda çoğu zaman lenfadenopati, immünsüpreselerde ensefalit ve gebelikte konjenital enfeksiyonla önem kazanır. Doku kistleri ve seroloji klinik bağlama göre değerlendirilir; ancak bu vakadaki uzun ateş, masif splenomegali, pansitopeni ve kemik iliğinde makrofaj içi kinetoplastlı amastigotlar visseral leishmaniasis için daha tipiktir."
+            },
+            "Leishmania donovani kompleksi": {
+              "explanation": "Leishmania donovani kompleksi visseral leishmaniasis tablosunda uzun süren ateş, kilo kaybı, masif splenomegali ve pansitopeni yapabilir. Kemik iliği aspiratında makrofaj içinde çekirdek ve kinetoplast içeren küçük amastigotların görülmesi ve rK39 pozitifliği bu etkeni güçlü biçimde destekler."
+            },
+            "Trypanosoma cruzi": {
+              "explanation": "Trypanosoma cruzi Chagas hastalığının etkenidir; akut dönemde chagoma/Romana bulgusu, kronik dönemde kardiyomiyopati ve megakolon-megaözofagus ile ilişkilidir. Amastigot formları dokuda görülebilse de bu hastanın Akdeniz-kırsal köpek teması, masif splenomegali ve kemik iliği makrofaj içi amastigot paterni Leishmania lehinedir."
+            },
+            "Plasmodium falciparum": {
+              "explanation": "Plasmodium falciparum sıtmanın ağır formlarını yapabilir; periferik yaymada eritrosit içi halka formları ve yüksek parazitemi beklenir. Bu vakada kalın damla/periferik yaymada eritrosit içi parazit görülmemesi ve kemik iliğinde makrofaj içi amastigotların saptanması sıtmadan uzaklaştırır."
+            },
+            "Histoplasma capsulatum": {
+              "explanation": "Histoplasma capsulatum immünsüpresif hastalarda dissemine enfeksiyon, ateş ve hepatosplenomegali yapabilir; makrofaj içinde küçük maya formları görülebilir. Ancak kinetoplastlı amastigot, rK39 pozitifliği ve kum sineği/köpek maruziyeti visseral leishmaniasis yönünde daha ayırt edicidir."
+            }
+          },
+          "whyWrong": {
+            "Toxoplasma gondii": "Toxoplasma gondii immünkompetanlarda çoğu zaman lenfadenopati, immünsüpreselerde ensefalit ve gebelikte konjenital enfeksiyonla önem kazanır. Doku kistleri ve seroloji klinik bağlama göre değerlendirilir; ancak bu vakadaki uzun ateş, masif splenomegali, pansitopeni ve kemik iliğinde makrofaj içi kinetoplastlı amastigotlar visseral leishmaniasis için daha tipiktir.",
+            "Trypanosoma cruzi": "Trypanosoma cruzi Chagas hastalığının etkenidir; akut dönemde chagoma/Romana bulgusu, kronik dönemde kardiyomiyopati ve megakolon-megaözofagus ile ilişkilidir. Amastigot formları dokuda görülebilse de bu hastanın Akdeniz-kırsal köpek teması, masif splenomegali ve kemik iliği makrofaj içi amastigot paterni Leishmania lehinedir.",
+            "Plasmodium falciparum": "Plasmodium falciparum sıtmanın ağır formlarını yapabilir; periferik yaymada eritrosit içi halka formları ve yüksek parazitemi beklenir. Bu vakada kalın damla/periferik yaymada eritrosit içi parazit görülmemesi ve kemik iliğinde makrofaj içi amastigotların saptanması sıtmadan uzaklaştırır.",
+            "Histoplasma capsulatum": "Histoplasma capsulatum immünsüpresif hastalarda dissemine enfeksiyon, ateş ve hepatosplenomegali yapabilir; makrofaj içinde küçük maya formları görülebilir. Ancak kinetoplastlı amastigot, rK39 pozitifliği ve kum sineği/köpek maruziyeti visseral leishmaniasis yönünde daha ayırt edicidir."
+          }
+        }
+      },
+      "coreKnowledge": "Visseral leishmaniasis tanısında kemik iliği/doku örneğinde makrofaj içi amastigot görülmesi doğrudan kanıttır; rK39 destekleyici hızlı serolojik testtir.",
+      "examPearl": "Uzamış ateş + masif splenomegali + pansitopeni + makrofaj içi kinetoplastlı amastigot → visseral leishmaniasis.",
+      "whyCorrect": "Leishmania donovani kompleksi visseral leishmaniasis tablosunda uzun süren ateş, kilo kaybı, masif splenomegali ve pansitopeni yapabilir. Kemik iliği aspiratında makrofaj içinde çekirdek ve kinetoplast içeren küçük amastigotların görülmesi ve rK39 pozitifliği bu etkeni güçlü biçimde destekler.",
+      "optionComparison": {
+        "Toxoplasma gondii": "Toxoplasma gondii immünkompetanlarda çoğu zaman lenfadenopati, immünsüpreselerde ensefalit ve gebelikte konjenital enfeksiyonla önem kazanır. Doku kistleri ve seroloji klinik bağlama göre değerlendirilir; ancak bu vakadaki uzun ateş, masif splenomegali, pansitopeni ve kemik iliğinde makrofaj içi kinetoplastlı amastigotlar visseral leishmaniasis için daha tipiktir.",
+        "Leishmania donovani kompleksi": "Leishmania donovani kompleksi visseral leishmaniasis tablosunda uzun süren ateş, kilo kaybı, masif splenomegali ve pansitopeni yapabilir. Kemik iliği aspiratında makrofaj içinde çekirdek ve kinetoplast içeren küçük amastigotların görülmesi ve rK39 pozitifliği bu etkeni güçlü biçimde destekler.",
+        "Trypanosoma cruzi": "Trypanosoma cruzi Chagas hastalığının etkenidir; akut dönemde chagoma/Romana bulgusu, kronik dönemde kardiyomiyopati ve megakolon-megaözofagus ile ilişkilidir. Amastigot formları dokuda görülebilse de bu hastanın Akdeniz-kırsal köpek teması, masif splenomegali ve kemik iliği makrofaj içi amastigot paterni Leishmania lehinedir.",
+        "Plasmodium falciparum": "Plasmodium falciparum sıtmanın ağır formlarını yapabilir; periferik yaymada eritrosit içi halka formları ve yüksek parazitemi beklenir. Bu vakada kalın damla/periferik yaymada eritrosit içi parazit görülmemesi ve kemik iliğinde makrofaj içi amastigotların saptanması sıtmadan uzaklaştırır.",
+        "Histoplasma capsulatum": "Histoplasma capsulatum immünsüpresif hastalarda dissemine enfeksiyon, ateş ve hepatosplenomegali yapabilir; makrofaj içinde küçük maya formları görülebilir. Ancak kinetoplastlı amastigot, rK39 pozitifliği ve kum sineği/köpek maruziyeti visseral leishmaniasis yönünde daha ayırt edicidir."
+      },
+      "evidenceChain": [
+        {
+          "text": "Üç haftalık ateş ve kilo kaybı → akut piyojenik enfeksiyondan çok kronik sistemik enfeksiyonu destekler.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Masif splenomegali ve pansitopeni → retiküloendotelyal sistem tutulumunu gösterir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "rK39 pozitifliği → visseral leishmaniasis için destekleyici serolojik bulgudur.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Kemik iliğinde makrofaj içi kinetoplastlı amastigotlar → Leishmania amastigot morfolojisiyle uyumludur.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Toxoplasma gondii": "Toxoplasma gondii immünkompetanlarda çoğu zaman lenfadenopati, immünsüpreselerde ensefalit ve gebelikte konjenital enfeksiyonla önem kazanır. Doku kistleri ve seroloji klinik bağlama göre değerlendirilir; ancak bu vakadaki uzun ateş, masif splenomegali, pansitopeni ve kemik iliğinde makrofaj içi kinetoplastlı amastigotlar visseral leishmaniasis için daha tipiktir.",
+        "Trypanosoma cruzi": "Trypanosoma cruzi Chagas hastalığının etkenidir; akut dönemde chagoma/Romana bulgusu, kronik dönemde kardiyomiyopati ve megakolon-megaözofagus ile ilişkilidir. Amastigot formları dokuda görülebilse de bu hastanın Akdeniz-kırsal köpek teması, masif splenomegali ve kemik iliği makrofaj içi amastigot paterni Leishmania lehinedir.",
+        "Plasmodium falciparum": "Plasmodium falciparum sıtmanın ağır formlarını yapabilir; periferik yaymada eritrosit içi halka formları ve yüksek parazitemi beklenir. Bu vakada kalın damla/periferik yaymada eritrosit içi parazit görülmemesi ve kemik iliğinde makrofaj içi amastigotların saptanması sıtmadan uzaklaştırır.",
+        "Histoplasma capsulatum": "Histoplasma capsulatum immünsüpresif hastalarda dissemine enfeksiyon, ateş ve hepatosplenomegali yapabilir; makrofaj içinde küçük maya formları görülebilir. Ancak kinetoplastlı amastigot, rK39 pozitifliği ve kum sineği/köpek maruziyeti visseral leishmaniasis yönünde daha ayırt edicidir."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v255-medical-microbiology-sixth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Üç haftalık ateş ve kilo kaybı → akut piyojenik enfeksiyondan çok kronik sistemik enfeksiyonu destekler.",
+        "Masif splenomegali ve pansitopeni → retiküloendotelyal sistem tutulumunu gösterir.",
+        "rK39 pozitifliği → visseral leishmaniasis için destekleyici serolojik bulgudur.",
+        "Kemik iliğinde makrofaj içi kinetoplastlı amastigotlar → Leishmania amastigot morfolojisiyle uyumludur."
+      ],
+      "images": []
+    },
+  {
+      "id": "v256-new-477-erken-baslangicli-yenidogan-sepsisi",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Erken başlangıçlı yenidoğan sepsisi",
+      "difficulty": "Orta-Zor",
+      "difficultyTag": "Orta-Zor",
+      "clinicalFocus": "Doğumdan kısa süre sonra sepsis bulguları gelişen yenidoğanda maternal kolonizasyon ve laboratuvar bulgularını birlikte yorumlayarak etkeni seçme.",
+      "learningTarget": "Erken neonatal sepsiste grup B streptokok, E. coli K1 ve Listeria ayrımını Gram boyama, kültür ve biyokimyasal testlerle yapabilme.",
+      "demographics": "18 saatlik erkek yenidoğan",
+      "setting": "Yenidoğan yoğun bakım",
+      "chiefComplaint": "Doğumdan sonraki ilk gün içinde başlayan solunum sıkıntısı, beslenememe ve ateş nedeniyle yenidoğan yoğun bakımda değerlendiriliyor.",
+      "stem": "Bebek 39 haftalık normal vajinal doğumla dünyaya gelmiş, doğumdan birkaç saat sonra emmeyi bırakmış ve hızlı solumaya başlamıştır. Annesi gebeliğin son haftasında vajinal-akıntı benzeri yakınmalar yaşadığını, ancak kültür sonucunu öğrenmeden doğumun başladığını belirtir. Doğum eylemi yaklaşık 18 saat sürmüş ve membranların açılmasından sonra uzun süre beklenmiştir. Bebekte doğum travması, konjenital anomali veya belirgin aspirasyon öyküsü anlatılmamaktadır.",
+      "patientIntro": {
+        "profile": "18 saatlik erkek yenidoğan, doğum sonrası ilk gün içinde sepsis ve solunum sıkıntısı bulguları ile yenidoğan yoğun bakımda izleniyor.",
+        "presentation": "Beslenememe, taşipne, huzursuzluk ve ateş vardır; öyküde uzun membran rüptürü ve maternal genital kolonizasyon olasılığı bulunur.",
+        "historySummary": "Bebek 39 haftalık normal vajinal doğumla dünyaya gelmiş, doğumdan birkaç saat sonra emmeyi bırakmış ve hızlı solumaya başlamıştır. Annesi gebeliğin son haftasında vajinal-akıntı benzeri yakınmalar yaşadığını, ancak kültür sonucunu öğrenmeden doğumun başladığını belirtir. Doğum eylemi yaklaşık 18 saat sürmüş ve membranların açılmasından sonra uzun süre beklenmiştir. Bebekte doğum travması, konjenital anomali veya belirgin aspirasyon öyküsü anlatılmamaktadır."
+      },
+      "vitals": {
+        "TA": "58/34 mmHg",
+        "Nabız": "176/dk",
+        "Solunum": "64/dk",
+        "SpO2": "%88, oda havasında",
+        "Ateş": "38.3 °C",
+        "Şok indeksi": "3.03 - yenidoğanda perfüzyon riski yüksek"
+      },
+      "exam": [
+        "Genel durumu orta-kötü, irritabl ve beslenmeye isteksizdir.",
+        "Subkostal çekilmeler ve inleme eşlik eden taşipne izlenir.",
+        "Periferik dolaşım zayıf, kapiller dolum yaklaşık 4 saniyedir.",
+        "Ön fontanel bombeli değildir; ense sertliği net değerlendirilememektedir."
+      ],
+      "investigations": [
+        {
+          "id": "v256-new-477-erken-baslangicli-yenidogan-sepsisi-kan-bos-kultur",
+          "label": "Kan ve BOS kültür-mikroskopi bulguları",
+          "title": "Kan ve BOS kültür-mikroskopi bulguları",
+          "orderLabel": "Kan ve BOS kültür-mikroskopi bulguları",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Kan ve BOS örneklerinde ilk mikrobiyolojik değerlendirme",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Kan ve BOS örneklerinde zincir oluşturan gram pozitif koklar ve beta-hemolitik koloni morfolojisi aynı mikroorganizma lehine veri sağlar.",
+          "clinicalMeaning": "Kan ve BOS örneklerinde zincir oluşturan gram pozitif koklar ve beta-hemolitik koloni morfolojisi aynı mikroorganizma lehine veri sağlar.",
+          "result": {
+            "title": "Kan ve BOS kültür-mikroskopi bulguları",
+            "summary": "Kan ve BOS örneklerinde zincir oluşturan gram pozitif koklar ve beta-hemolitik koloni morfolojisi aynı mikroorganizma lehine veri sağlar.",
+            "interpretation": "Kan ve BOS örneklerinde zincir oluşturan gram pozitif koklar ve beta-hemolitik koloni morfolojisi aynı mikroorganizma lehine veri sağlar.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Periferik kan kültürü ve lomber ponksiyonla alınan BOS",
+                "Steril örnek",
+                "İnvaziv enfeksiyon örneği"
+              ],
+              [
+                "Kan kültürü Gram boyama",
+                "Zincirler halinde gram pozitif koklar",
+                "",
+                "Streptokok morfolojisi"
+              ],
+              [
+                "BOS Gram boyama",
+                "Az sayıda gram pozitif kok ve çok sayıda nötrofil",
+                "",
+                "Bakteriyel menenjit/sepsis eşliği"
+              ],
+              [
+                "Kanlı agarda üreme",
+                "Dar beta-hemolitik, gri-beyaz koloniler",
+                "Üreme yok",
+                "Beta-hemolitik streptokok paterni"
+              ],
+              [
+                "Katalaz testi",
+                "Negatif",
+                "Negatif/pozitif ayrımı",
+                "Stafilokoklardan ayrılır"
+              ]
+            ],
+            "rows": [
+              [
+                "Örnek tipi",
+                "Periferik kan kültürü ve lomber ponksiyonla alınan BOS",
+                "Steril örnek",
+                "İnvaziv enfeksiyon örneği"
+              ],
+              [
+                "Kan kültürü Gram boyama",
+                "Zincirler halinde gram pozitif koklar",
+                "",
+                "Streptokok morfolojisi"
+              ],
+              [
+                "BOS Gram boyama",
+                "Az sayıda gram pozitif kok ve çok sayıda nötrofil",
+                "",
+                "Bakteriyel menenjit/sepsis eşliği"
+              ],
+              [
+                "Kanlı agarda üreme",
+                "Dar beta-hemolitik, gri-beyaz koloniler",
+                "Üreme yok",
+                "Beta-hemolitik streptokok paterni"
+              ],
+              [
+                "Katalaz testi",
+                "Negatif",
+                "Negatif/pozitif ayrımı",
+                "Stafilokoklardan ayrılır"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Örnek tipi",
+              "Periferik kan kültürü ve lomber ponksiyonla alınan BOS",
+              "Steril örnek",
+              "İnvaziv enfeksiyon örneği"
+            ],
+            [
+              "Kan kültürü Gram boyama",
+              "Zincirler halinde gram pozitif koklar",
+              "",
+              "Streptokok morfolojisi"
+            ],
+            [
+              "BOS Gram boyama",
+              "Az sayıda gram pozitif kok ve çok sayıda nötrofil",
+              "",
+              "Bakteriyel menenjit/sepsis eşliği"
+            ],
+            [
+              "Kanlı agarda üreme",
+              "Dar beta-hemolitik, gri-beyaz koloniler",
+              "Üreme yok",
+              "Beta-hemolitik streptokok paterni"
+            ],
+            [
+              "Katalaz testi",
+              "Negatif",
+              "Negatif/pozitif ayrımı",
+              "Stafilokoklardan ayrılır"
+            ]
+          ],
+          "flowOrder": 10,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 10
+        },
+        {
+          "id": "v256-new-477-erken-baslangicli-yenidogan-sepsisi-biyokimyasal-testler",
+          "label": "Biyokimyasal ve grup antijen testleri",
+          "title": "Biyokimyasal ve grup antijen testleri",
+          "orderLabel": "Biyokimyasal ve grup antijen testleri",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Streptokok identifikasyon testleri",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "CAMP pozitifliği, hippurat hidrolizi ve grup B antijen sonucu beta-hemolitik streptokoklar içinde ayrımı belirginleştirir.",
+          "clinicalMeaning": "CAMP pozitifliği, hippurat hidrolizi ve grup B antijen sonucu beta-hemolitik streptokoklar içinde ayrımı belirginleştirir.",
+          "result": {
+            "title": "Biyokimyasal ve grup antijen testleri",
+            "summary": "CAMP pozitifliği, hippurat hidrolizi ve grup B antijen sonucu beta-hemolitik streptokoklar içinde ayrımı belirginleştirir.",
+            "interpretation": "CAMP pozitifliği, hippurat hidrolizi ve grup B antijen sonucu beta-hemolitik streptokoklar içinde ayrımı belirginleştirir.",
+            "values": [
+              [
+                "CAMP testi",
+                "Ok başı şeklinde artmış hemoliz",
+                "Negatif",
+                "CAMP pozitif beta-hemolitik streptokok"
+              ],
+              [
+                "Hippurat hidrolizi",
+                "Pozitif",
+                "Negatif",
+                "Grup B streptokok lehine"
+              ],
+              [
+                "Lateks grup antijeni",
+                "Grup B karbonhidrat antijeni pozitif",
+                "Negatif",
+                "Serogrup ayrımı"
+              ],
+              [
+                "Bacitracin duyarlılığı",
+                "Dirençli",
+                "Değişken",
+                "Grup A streptokoktan ayrılır"
+              ],
+              [
+                "Safra çözünürlüğü",
+                "Negatif",
+                "Negatif",
+                "Pneumokok dışlanır"
+              ]
+            ],
+            "rows": [
+              [
+                "CAMP testi",
+                "Ok başı şeklinde artmış hemoliz",
+                "Negatif",
+                "CAMP pozitif beta-hemolitik streptokok"
+              ],
+              [
+                "Hippurat hidrolizi",
+                "Pozitif",
+                "Negatif",
+                "Grup B streptokok lehine"
+              ],
+              [
+                "Lateks grup antijeni",
+                "Grup B karbonhidrat antijeni pozitif",
+                "Negatif",
+                "Serogrup ayrımı"
+              ],
+              [
+                "Bacitracin duyarlılığı",
+                "Dirençli",
+                "Değişken",
+                "Grup A streptokoktan ayrılır"
+              ],
+              [
+                "Safra çözünürlüğü",
+                "Negatif",
+                "Negatif",
+                "Pneumokok dışlanır"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "CAMP testi",
+              "Ok başı şeklinde artmış hemoliz",
+              "Negatif",
+              "CAMP pozitif beta-hemolitik streptokok"
+            ],
+            [
+              "Hippurat hidrolizi",
+              "Pozitif",
+              "Negatif",
+              "Grup B streptokok lehine"
+            ],
+            [
+              "Lateks grup antijeni",
+              "Grup B karbonhidrat antijeni pozitif",
+              "Negatif",
+              "Serogrup ayrımı"
+            ],
+            [
+              "Bacitracin duyarlılığı",
+              "Dirençli",
+              "Değişken",
+              "Grup A streptokoktan ayrılır"
+            ],
+            [
+              "Safra çözünürlüğü",
+              "Negatif",
+              "Negatif",
+              "Pneumokok dışlanır"
+            ]
+          ],
+          "flowOrder": 10,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 10
+        },
+        {
+          "id": "v256-new-477-erken-baslangicli-yenidogan-sepsisi-temel-lab",
+          "label": "Sepsis için temel laboratuvar verileri",
+          "title": "Sepsis için temel laboratuvar verileri",
+          "orderLabel": "Sepsis için temel laboratuvar verileri",
+          "type": "laboratory",
+          "priority": "essential",
+          "subtype": "Yenidoğan sepsis destek bulguları",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Lökosit düzensizliği, CRP artışı ve BOS nötrofil hakimiyeti invaziv bakteriyel enfeksiyon yükünü destekler.",
+          "clinicalMeaning": "Lökosit düzensizliği, CRP artışı ve BOS nötrofil hakimiyeti invaziv bakteriyel enfeksiyon yükünü destekler.",
+          "result": {
+            "title": "Sepsis için temel laboratuvar verileri",
+            "summary": "Lökosit düzensizliği, CRP artışı ve BOS nötrofil hakimiyeti invaziv bakteriyel enfeksiyon yükünü destekler.",
+            "interpretation": "Lökosit düzensizliği, CRP artışı ve BOS nötrofil hakimiyeti invaziv bakteriyel enfeksiyon yükünü destekler.",
+            "values": [
+              [
+                "Lökosit",
+                "3.200/mm³",
+                "9.000–30.000/mm³",
+                "Yenidoğanda lökopeni"
+              ],
+              [
+                "CRP",
+                "64 mg/L",
+                "<5 mg/L",
+                "Enflamatuvar yanıt"
+              ],
+              [
+                "BOS hücre",
+                "420/mm³, nötrofil baskın",
+                "0–20/mm³",
+                "Bakteriyel inflamasyon"
+              ],
+              [
+                "BOS glukoz",
+                "28 mg/dL",
+                "Kan glukozunun >%60’ı",
+                "Düşük BOS glukozu"
+              ],
+              [
+                "BOS protein",
+                "185 mg/dL",
+                "<100 mg/dL",
+                "Protein artışı"
+              ]
+            ],
+            "rows": [
+              [
+                "Lökosit",
+                "3.200/mm³",
+                "9.000–30.000/mm³",
+                "Yenidoğanda lökopeni"
+              ],
+              [
+                "CRP",
+                "64 mg/L",
+                "<5 mg/L",
+                "Enflamatuvar yanıt"
+              ],
+              [
+                "BOS hücre",
+                "420/mm³, nötrofil baskın",
+                "0–20/mm³",
+                "Bakteriyel inflamasyon"
+              ],
+              [
+                "BOS glukoz",
+                "28 mg/dL",
+                "Kan glukozunun >%60’ı",
+                "Düşük BOS glukozu"
+              ],
+              [
+                "BOS protein",
+                "185 mg/dL",
+                "<100 mg/dL",
+                "Protein artışı"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Lökosit",
+              "3.200/mm³",
+              "9.000–30.000/mm³",
+              "Yenidoğanda lökopeni"
+            ],
+            [
+              "CRP",
+              "64 mg/L",
+              "<5 mg/L",
+              "Enflamatuvar yanıt"
+            ],
+            [
+              "BOS hücre",
+              "420/mm³, nötrofil baskın",
+              "0–20/mm³",
+              "Bakteriyel inflamasyon"
+            ],
+            [
+              "BOS glukoz",
+              "28 mg/dL",
+              "Kan glukozunun >%60’ı",
+              "Düşük BOS glukozu"
+            ],
+            [
+              "BOS protein",
+              "185 mg/dL",
+              "<100 mg/dL",
+              "Protein artışı"
+            ]
+          ],
+          "flowOrder": 10,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 10
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "shuffleOptions": false,
+      "question": "Bu yenidoğanda klinik ve mikrobiyolojik bulgularla en uyumlu etken aşağıdakilerden hangisidir?",
+      "questionType": "single-best-answer",
+      "answerTarget": "bacterial-agent",
+      "diagnosis": {
+        "correct": "Streptococcus agalactiae",
+        "options": [
+          "Streptococcus pneumoniae",
+          "Escherichia coli K1",
+          "Streptococcus agalactiae",
+          "Listeria monocytogenes",
+          "Neisseria meningitidis"
+        ],
+        "question": "Bu yenidoğanda klinik ve mikrobiyolojik bulgularla en uyumlu etken aşağıdakilerden hangisidir?",
+        "explanation": "Erken başlangıçlı neonatal sepsis ve menenjitte uzun membran rüptürü/maternal kolonizasyon öyküsü grup B streptokok açısından önemlidir. Zincir yapan gram pozitif kok, dar beta-hemoliz, katalaz negatiflik, CAMP pozitifliği, hippurat hidrolizi ve grup B antijen pozitifliği Streptococcus agalactiae lehinedir.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Yenidoğan erken sepsis + zincir yapan gram pozitif kok + beta-hemoliz + CAMP/hippurat pozitifliği → grup B streptokok."
+          }
+        ],
+        "optionFeedback": {
+          "Streptococcus pneumoniae": {
+            "explanation": "Streptococcus pneumoniae kapsüllü, alfa-hemolitik, optokin duyarlı gram pozitif diplokok olarak pnömoni, otit ve erişkin menenjitlerinde öne çıkar. Bu vakada doğumdan sonraki ilk saatlerde başlayan sepsis, maternal kolonizasyon öyküsü, beta-hemolitik zincir yapan koklar, CAMP pozitifliği ve hippurat hidrolizi pneumokoktan farklı bir streptokok grubunu destekler."
+          },
+          "Escherichia coli K1": {
+            "explanation": "Escherichia coli K1 erken neonatal sepsis ve menenjitte gerçek bir ayırıcı tanıdır; özellikle gram negatif basil görülmesi ve laktoz fermente eden koloni beklenir. Burada kan ve BOS Gram boyamasında zincir oluşturan gram pozitif kokların görülmesi, beta-hemoliz ve CAMP pozitifliği E. coli K1 yerine grup B streptokoku yönünde güçlüdür."
+          },
+          "Streptococcus agalactiae": {
+            "explanation": "Streptococcus agalactiae yenidoğanda erken başlangıçlı sepsis, pnömoni ve menenjit yapabilen beta-hemolitik grup B streptokoktur. Maternal vajinal kolonizasyon, doğumdan kısa süre sonra solunum sıkıntısı-sepsis, gram pozitif zincir yapan koklar, CAMP pozitifliği ve hippurat hidrolizi bu etkenle aynı kanıt zincirinde birleşir."
+          },
+          "Listeria monocytogenes": {
+            "explanation": "Listeria monocytogenes yenidoğan ve yaşlılarda menenjit-sepsis yapabilir; küçük gram pozitif basil/kokobasil morfolojisi ve tumbling motility ile ayrılır. Bu vakada izole edilen mikroorganizmanın zincir yapan gram pozitif kok olması ve CAMP pozitif beta-hemolitik streptokok paterni Listeria için beklenen morfolojiden farklıdır."
+          },
+          "Neisseria meningitidis": {
+            "explanation": "Neisseria meningitidis daha çok adölesan ve genç erişkinlerde menenjit/sepsis, peteşi ve gram negatif diplokok morfolojisiyle tanınır. Yenidoğan erken sepsis bağlamında hücre içi gram negatif diplokok yerine zincir oluşturan gram pozitif kokların saptanması bu seçeneği geri plana iter."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Streptococcus agalactiae yenidoğanda erken başlangıçlı sepsis, pnömoni ve menenjit yapabilen beta-hemolitik grup B streptokoktur. Maternal vajinal kolonizasyon, doğumdan kısa süre sonra solunum sıkıntısı-sepsis, gram pozitif zincir yapan koklar, CAMP pozitifliği ve hippurat hidrolizi bu etkenle aynı kanıt zincirinde birleşir.",
+          "optionFeedback": {
+            "Streptococcus pneumoniae": {
+              "explanation": "Streptococcus pneumoniae kapsüllü, alfa-hemolitik, optokin duyarlı gram pozitif diplokok olarak pnömoni, otit ve erişkin menenjitlerinde öne çıkar. Bu vakada doğumdan sonraki ilk saatlerde başlayan sepsis, maternal kolonizasyon öyküsü, beta-hemolitik zincir yapan koklar, CAMP pozitifliği ve hippurat hidrolizi pneumokoktan farklı bir streptokok grubunu destekler."
+            },
+            "Escherichia coli K1": {
+              "explanation": "Escherichia coli K1 erken neonatal sepsis ve menenjitte gerçek bir ayırıcı tanıdır; özellikle gram negatif basil görülmesi ve laktoz fermente eden koloni beklenir. Burada kan ve BOS Gram boyamasında zincir oluşturan gram pozitif kokların görülmesi, beta-hemoliz ve CAMP pozitifliği E. coli K1 yerine grup B streptokoku yönünde güçlüdür."
+            },
+            "Streptococcus agalactiae": {
+              "explanation": "Streptococcus agalactiae yenidoğanda erken başlangıçlı sepsis, pnömoni ve menenjit yapabilen beta-hemolitik grup B streptokoktur. Maternal vajinal kolonizasyon, doğumdan kısa süre sonra solunum sıkıntısı-sepsis, gram pozitif zincir yapan koklar, CAMP pozitifliği ve hippurat hidrolizi bu etkenle aynı kanıt zincirinde birleşir."
+            },
+            "Listeria monocytogenes": {
+              "explanation": "Listeria monocytogenes yenidoğan ve yaşlılarda menenjit-sepsis yapabilir; küçük gram pozitif basil/kokobasil morfolojisi ve tumbling motility ile ayrılır. Bu vakada izole edilen mikroorganizmanın zincir yapan gram pozitif kok olması ve CAMP pozitif beta-hemolitik streptokok paterni Listeria için beklenen morfolojiden farklıdır."
+            },
+            "Neisseria meningitidis": {
+              "explanation": "Neisseria meningitidis daha çok adölesan ve genç erişkinlerde menenjit/sepsis, peteşi ve gram negatif diplokok morfolojisiyle tanınır. Yenidoğan erken sepsis bağlamında hücre içi gram negatif diplokok yerine zincir oluşturan gram pozitif kokların saptanması bu seçeneği geri plana iter."
+            }
+          },
+          "whyWrong": {
+            "Streptococcus pneumoniae": "Streptococcus pneumoniae kapsüllü, alfa-hemolitik, optokin duyarlı gram pozitif diplokok olarak pnömoni, otit ve erişkin menenjitlerinde öne çıkar. Bu vakada doğumdan sonraki ilk saatlerde başlayan sepsis, maternal kolonizasyon öyküsü, beta-hemolitik zincir yapan koklar, CAMP pozitifliği ve hippurat hidrolizi pneumokoktan farklı bir streptokok grubunu destekler.",
+            "Escherichia coli K1": "Escherichia coli K1 erken neonatal sepsis ve menenjitte gerçek bir ayırıcı tanıdır; özellikle gram negatif basil görülmesi ve laktoz fermente eden koloni beklenir. Burada kan ve BOS Gram boyamasında zincir oluşturan gram pozitif kokların görülmesi, beta-hemoliz ve CAMP pozitifliği E. coli K1 yerine grup B streptokoku yönünde güçlüdür.",
+            "Listeria monocytogenes": "Listeria monocytogenes yenidoğan ve yaşlılarda menenjit-sepsis yapabilir; küçük gram pozitif basil/kokobasil morfolojisi ve tumbling motility ile ayrılır. Bu vakada izole edilen mikroorganizmanın zincir yapan gram pozitif kok olması ve CAMP pozitif beta-hemolitik streptokok paterni Listeria için beklenen morfolojiden farklıdır.",
+            "Neisseria meningitidis": "Neisseria meningitidis daha çok adölesan ve genç erişkinlerde menenjit/sepsis, peteşi ve gram negatif diplokok morfolojisiyle tanınır. Yenidoğan erken sepsis bağlamında hücre içi gram negatif diplokok yerine zincir oluşturan gram pozitif kokların saptanması bu seçeneği geri plana iter."
+          }
+        }
+      },
+      "coreKnowledge": "Streptococcus agalactiae, yenidoğanda erken başlangıçlı sepsis ve menenjitin klasik etkenlerinden biridir; maternal genital kolonizasyon ve intrapartum bulaş temel risk bağlamıdır.",
+      "examPearl": "Yenidoğan erken sepsis + zincir yapan gram pozitif kok + beta-hemoliz + CAMP/hippurat pozitifliği → grup B streptokok.",
+      "whyCorrect": "Streptococcus agalactiae yenidoğanda erken başlangıçlı sepsis, pnömoni ve menenjit yapabilen beta-hemolitik grup B streptokoktur. Maternal vajinal kolonizasyon, doğumdan kısa süre sonra solunum sıkıntısı-sepsis, gram pozitif zincir yapan koklar, CAMP pozitifliği ve hippurat hidrolizi bu etkenle aynı kanıt zincirinde birleşir.",
+      "optionComparison": {
+        "Streptococcus pneumoniae": "Streptococcus pneumoniae kapsüllü, alfa-hemolitik, optokin duyarlı gram pozitif diplokok olarak pnömoni, otit ve erişkin menenjitlerinde öne çıkar. Bu vakada doğumdan sonraki ilk saatlerde başlayan sepsis, maternal kolonizasyon öyküsü, beta-hemolitik zincir yapan koklar, CAMP pozitifliği ve hippurat hidrolizi pneumokoktan farklı bir streptokok grubunu destekler.",
+        "Escherichia coli K1": "Escherichia coli K1 erken neonatal sepsis ve menenjitte gerçek bir ayırıcı tanıdır; özellikle gram negatif basil görülmesi ve laktoz fermente eden koloni beklenir. Burada kan ve BOS Gram boyamasında zincir oluşturan gram pozitif kokların görülmesi, beta-hemoliz ve CAMP pozitifliği E. coli K1 yerine grup B streptokoku yönünde güçlüdür.",
+        "Streptococcus agalactiae": "Streptococcus agalactiae yenidoğanda erken başlangıçlı sepsis, pnömoni ve menenjit yapabilen beta-hemolitik grup B streptokoktur. Maternal vajinal kolonizasyon, doğumdan kısa süre sonra solunum sıkıntısı-sepsis, gram pozitif zincir yapan koklar, CAMP pozitifliği ve hippurat hidrolizi bu etkenle aynı kanıt zincirinde birleşir.",
+        "Listeria monocytogenes": "Listeria monocytogenes yenidoğan ve yaşlılarda menenjit-sepsis yapabilir; küçük gram pozitif basil/kokobasil morfolojisi ve tumbling motility ile ayrılır. Bu vakada izole edilen mikroorganizmanın zincir yapan gram pozitif kok olması ve CAMP pozitif beta-hemolitik streptokok paterni Listeria için beklenen morfolojiden farklıdır.",
+        "Neisseria meningitidis": "Neisseria meningitidis daha çok adölesan ve genç erişkinlerde menenjit/sepsis, peteşi ve gram negatif diplokok morfolojisiyle tanınır. Yenidoğan erken sepsis bağlamında hücre içi gram negatif diplokok yerine zincir oluşturan gram pozitif kokların saptanması bu seçeneği geri plana iter."
+      },
+      "evidenceChain": [
+        {
+          "text": "Doğumdan sonraki ilk 24 saatte solunum sıkıntısı ve sepsis → erken başlangıçlı neonatal enfeksiyon bağlamı oluşturur.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Uzun membran rüptürü ve maternal genital yakınma → intrapartum geçiş olasılığını artırır.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Kan ve BOS’ta zincir yapan gram pozitif kok → streptokok morfolojisini destekler.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "CAMP pozitifliği, hippurat hidrolizi ve grup B antijeni → Streptococcus agalactiae ayrımını sağlar.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Streptococcus pneumoniae": "Streptococcus pneumoniae kapsüllü, alfa-hemolitik, optokin duyarlı gram pozitif diplokok olarak pnömoni, otit ve erişkin menenjitlerinde öne çıkar. Bu vakada doğumdan sonraki ilk saatlerde başlayan sepsis, maternal kolonizasyon öyküsü, beta-hemolitik zincir yapan koklar, CAMP pozitifliği ve hippurat hidrolizi pneumokoktan farklı bir streptokok grubunu destekler.",
+        "Escherichia coli K1": "Escherichia coli K1 erken neonatal sepsis ve menenjitte gerçek bir ayırıcı tanıdır; özellikle gram negatif basil görülmesi ve laktoz fermente eden koloni beklenir. Burada kan ve BOS Gram boyamasında zincir oluşturan gram pozitif kokların görülmesi, beta-hemoliz ve CAMP pozitifliği E. coli K1 yerine grup B streptokoku yönünde güçlüdür.",
+        "Listeria monocytogenes": "Listeria monocytogenes yenidoğan ve yaşlılarda menenjit-sepsis yapabilir; küçük gram pozitif basil/kokobasil morfolojisi ve tumbling motility ile ayrılır. Bu vakada izole edilen mikroorganizmanın zincir yapan gram pozitif kok olması ve CAMP pozitif beta-hemolitik streptokok paterni Listeria için beklenen morfolojiden farklıdır.",
+        "Neisseria meningitidis": "Neisseria meningitidis daha çok adölesan ve genç erişkinlerde menenjit/sepsis, peteşi ve gram negatif diplokok morfolojisiyle tanınır. Yenidoğan erken sepsis bağlamında hücre içi gram negatif diplokok yerine zincir oluşturan gram pozitif kokların saptanması bu seçeneği geri plana iter."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v256-medical-microbiology-seventh-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Erken neonatal sepsis bağlamı",
+        "Zincir yapan gram pozitif kok morfolojisi",
+        "Beta-hemoliz ve katalaz negatiflik",
+        "CAMP pozitifliği ve hippurat hidrolizi"
+      ],
+      "images": []
+    },
+  {
+      "id": "v256-new-478-kene-temasi-sonrasi-ates-ve-periferik-dokuntu",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Kene teması sonrası ateş ve periferik döküntü",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Kene sonrası ateş, trombositopeni ve periferik peteşiyal döküntüde rickettsial etken ayrımını yapma.",
+      "learningTarget": "Spotted fever grubu rickettsial enfeksiyonlarda erken serolojinin sınırlı olabileceğini ve klinik-laboratuvar kanıt zincirinin önemini kavrama.",
+      "demographics": "32 yaşında erkek hasta",
+      "setting": "Acil servis / Enfeksiyon hastalıkları değerlendirmesi",
+      "chiefComplaint": "Kırsal yürüyüş sonrası başlayan ateş, şiddetli baş ağrısı ve el-ayak çevresinde döküntü nedeniyle başvuruyor.",
+      "stem": "Hasta dört gün önce ormanlık alanda yürüyüş yaptığını ve ertesi gün bacağından küçük bir kene çıkardığını anlatır. Son iki gündür yüksek ateş, yaygın kas ağrısı, şiddetli baş ağrısı ve belirgin halsizlik gelişmiştir. Bu sabah önce el bilekleri ve ayak bilekleri çevresinde küçük kırmızı-mor noktalar fark etmiş, saatler içinde lezyonların avuç içi ve ayak tabanına doğru yayıldığını söylemiştir. Yakın zamanda kontamine su teması, yeni cinsel temas veya hasta hayvan doğum ürünüyle temas öyküsü yoktur.",
+      "patientIntro": {
+        "profile": "32 yaşında erkek hasta, kene tutunmasından birkaç gün sonra ateş ve periferik döküntü ile acil servise başvuruyor.",
+        "presentation": "Yüksek ateş, baş ağrısı, miyalji ve el-ayak çevresinden başlayan peteşiyal döküntü vardır.",
+        "historySummary": "Hasta dört gün önce ormanlık alanda yürüyüş yaptığını ve ertesi gün bacağından küçük bir kene çıkardığını anlatır. Son iki gündür yüksek ateş, yaygın kas ağrısı, şiddetli baş ağrısı ve belirgin halsizlik gelişmiştir. Bu sabah önce el bilekleri ve ayak bilekleri çevresinde küçük kırmızı-mor noktalar fark etmiş, saatler içinde lezyonların avuç içi ve ayak tabanına doğru yayıldığını söylemiştir. Yakın zamanda kontamine su teması, yeni cinsel temas veya hasta hayvan doğum ürünüyle temas öyküsü yoktur."
+      },
+      "vitals": {
+        "TA": "96/58 mmHg",
+        "Nabız": "118/dk",
+        "Solunum": "22/dk",
+        "SpO2": "%96, oda havasında",
+        "Ateş": "39.4 °C",
+        "Şok indeksi": "1.23 - dolaşım riski artmış"
+      },
+      "exam": [
+        "Hasta toksik görünümlü, fotofobik ve belirgin baş ağrılıdır.",
+        "El bilekleri, ayak bilekleri, avuç içi ve ayak tabanında basmakla solmayan peteşiyal lezyonlar vardır.",
+        "Ense sertliği belirgin değildir; fokal nörolojik defisit saptanmaz.",
+        "Karaciğer palpasyonda hafif hassastır, belirgin ikter yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v256-new-478-kene-temasi-sonrasi-ates-ve-periferik-dokuntu-hemogram-biyokimya",
+          "label": "Hemogram ve biyokimyasal destek bulguları",
+          "title": "Hemogram ve biyokimyasal destek bulguları",
+          "orderLabel": "Hemogram ve biyokimyasal destek bulguları",
+          "type": "laboratory",
+          "priority": "essential",
+          "subtype": "Kene kaynaklı sistemik enfeksiyon destek verileri",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Trombositopeni ve transaminaz yüksekliği kene kaynaklı endotel/mononükleer hücre tutulumlu enfeksiyonlarda görülebilecek sistemik bulgulardır.",
+          "clinicalMeaning": "Trombositopeni ve transaminaz yüksekliği kene kaynaklı endotel/mononükleer hücre tutulumlu enfeksiyonlarda görülebilecek sistemik bulgulardır.",
+          "result": {
+            "title": "Hemogram ve biyokimyasal destek bulguları",
+            "summary": "Trombositopeni ve transaminaz yüksekliği kene kaynaklı endotel/mononükleer hücre tutulumlu enfeksiyonlarda görülebilecek sistemik bulgulardır.",
+            "interpretation": "Trombositopeni ve transaminaz yüksekliği kene kaynaklı endotel/mononükleer hücre tutulumlu enfeksiyonlarda görülebilecek sistemik bulgulardır.",
+            "values": [
+              [
+                "Trombosit",
+                "72.000/mm³",
+                "150.000–400.000/mm³",
+                "Trombositopeni"
+              ],
+              [
+                "Lökosit",
+                "4.100/mm³",
+                "4.000–10.000/mm³",
+                "Sınırda düşük"
+              ],
+              [
+                "AST",
+                "118 U/L",
+                "<40 U/L",
+                "Transaminaz artışı"
+              ],
+              [
+                "ALT",
+                "96 U/L",
+                "<40 U/L",
+                "Transaminaz artışı"
+              ],
+              [
+                "Sodyum",
+                "131 mmol/L",
+                "135–145 mmol/L",
+                "Hafif hiponatremi"
+              ]
+            ],
+            "rows": [
+              [
+                "Trombosit",
+                "72.000/mm³",
+                "150.000–400.000/mm³",
+                "Trombositopeni"
+              ],
+              [
+                "Lökosit",
+                "4.100/mm³",
+                "4.000–10.000/mm³",
+                "Sınırda düşük"
+              ],
+              [
+                "AST",
+                "118 U/L",
+                "<40 U/L",
+                "Transaminaz artışı"
+              ],
+              [
+                "ALT",
+                "96 U/L",
+                "<40 U/L",
+                "Transaminaz artışı"
+              ],
+              [
+                "Sodyum",
+                "131 mmol/L",
+                "135–145 mmol/L",
+                "Hafif hiponatremi"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Trombosit",
+              "72.000/mm³",
+              "150.000–400.000/mm³",
+              "Trombositopeni"
+            ],
+            [
+              "Lökosit",
+              "4.100/mm³",
+              "4.000–10.000/mm³",
+              "Sınırda düşük"
+            ],
+            [
+              "AST",
+              "118 U/L",
+              "<40 U/L",
+              "Transaminaz artışı"
+            ],
+            [
+              "ALT",
+              "96 U/L",
+              "<40 U/L",
+              "Transaminaz artışı"
+            ],
+            [
+              "Sodyum",
+              "131 mmol/L",
+              "135–145 mmol/L",
+              "Hafif hiponatremi"
+            ]
+          ],
+          "flowOrder": 10,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 10
+        },
+        {
+          "id": "v256-new-478-kene-temasi-sonrasi-ates-ve-periferik-dokuntu-deri-biyopsisi",
+          "label": "Deri lezyonu biyopsisi ve moleküler inceleme",
+          "title": "Deri lezyonu biyopsisi ve moleküler inceleme",
+          "orderLabel": "Deri lezyonu biyopsisi ve moleküler inceleme",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Peteşiyal lezyondan örnek incelemesi",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Lezyondan alınan örnekte endotel hücre ilişkili spotted fever grubu antijen/PCR pozitifliği erken serolojiden önce destek sağlayabilir.",
+          "clinicalMeaning": "Lezyondan alınan örnekte endotel hücre ilişkili spotted fever grubu antijen/PCR pozitifliği erken serolojiden önce destek sağlayabilir.",
+          "result": {
+            "title": "Deri lezyonu biyopsisi ve moleküler inceleme",
+            "summary": "Lezyondan alınan örnekte endotel hücre ilişkili spotted fever grubu antijen/PCR pozitifliği erken serolojiden önce destek sağlayabilir.",
+            "interpretation": "Lezyondan alınan örnekte endotel hücre ilişkili spotted fever grubu antijen/PCR pozitifliği erken serolojiden önce destek sağlayabilir.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Peteşiyal lezyon kenarından punch biyopsi",
+                "Doku örneği",
+                "Doğrudan doku incelemesi"
+              ],
+              [
+                "İmmünhistokimya",
+                "Vasküler endotel hücreleri çevresinde spotted fever grubu antijen boyanması",
+                "Negatif",
+                "Endotel hedefli tutulum"
+              ],
+              [
+                "PCR",
+                "Spotted fever grubu rickettsial DNA pozitif",
+                "Negatif",
+                "Moleküler destek"
+              ],
+              [
+                "Kan kültürü",
+                "Rutin kültürde üreme yok",
+                "Negatif",
+                "Zorunlu hücre içi etkenle uyumlu"
+              ],
+              [
+                "Gram boyama",
+                "Bakteri görülmedi",
+                "",
+                "Rutin Gram ile izlenmez"
+              ]
+            ],
+            "rows": [
+              [
+                "Örnek tipi",
+                "Peteşiyal lezyon kenarından punch biyopsi",
+                "Doku örneği",
+                "Doğrudan doku incelemesi"
+              ],
+              [
+                "İmmünhistokimya",
+                "Vasküler endotel hücreleri çevresinde spotted fever grubu antijen boyanması",
+                "Negatif",
+                "Endotel hedefli tutulum"
+              ],
+              [
+                "PCR",
+                "Spotted fever grubu rickettsial DNA pozitif",
+                "Negatif",
+                "Moleküler destek"
+              ],
+              [
+                "Kan kültürü",
+                "Rutin kültürde üreme yok",
+                "Negatif",
+                "Zorunlu hücre içi etkenle uyumlu"
+              ],
+              [
+                "Gram boyama",
+                "Bakteri görülmedi",
+                "",
+                "Rutin Gram ile izlenmez"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Örnek tipi",
+              "Peteşiyal lezyon kenarından punch biyopsi",
+              "Doku örneği",
+              "Doğrudan doku incelemesi"
+            ],
+            [
+              "İmmünhistokimya",
+              "Vasküler endotel hücreleri çevresinde spotted fever grubu antijen boyanması",
+              "Negatif",
+              "Endotel hedefli tutulum"
+            ],
+            [
+              "PCR",
+              "Spotted fever grubu rickettsial DNA pozitif",
+              "Negatif",
+              "Moleküler destek"
+            ],
+            [
+              "Kan kültürü",
+              "Rutin kültürde üreme yok",
+              "Negatif",
+              "Zorunlu hücre içi etkenle uyumlu"
+            ],
+            [
+              "Gram boyama",
+              "Bakteri görülmedi",
+              "",
+              "Rutin Gram ile izlenmez"
+            ]
+          ],
+          "flowOrder": 10,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 10
+        },
+        {
+          "id": "v256-new-478-kene-temasi-sonrasi-ates-ve-periferik-dokuntu-seroloji",
+          "label": "Akut dönem seroloji sonucu",
+          "title": "Akut dönem seroloji sonucu",
+          "orderLabel": "Akut dönem seroloji sonucu",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Serolojik zamanlama",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Akut erken örnekte antikor saptanmaması bu klinik bağlamda etkeni dışlamaz; serokonversiyon için eş serum gerekir.",
+          "clinicalMeaning": "Akut erken örnekte antikor saptanmaması bu klinik bağlamda etkeni dışlamaz; serokonversiyon için eş serum gerekir.",
+          "result": {
+            "title": "Akut dönem seroloji sonucu",
+            "summary": "Akut erken örnekte antikor saptanmaması bu klinik bağlamda etkeni dışlamaz; serokonversiyon için eş serum gerekir.",
+            "interpretation": "Akut erken örnekte antikor saptanmaması bu klinik bağlamda etkeni dışlamaz; serokonversiyon için eş serum gerekir.",
+            "values": [
+              [
+                "IFA IgG akut serum",
+                "Negatif / düşük titre",
+                "Negatif",
+                "Erken dönemde duyarlılık sınırlı"
+              ],
+              [
+                "Konvalesan serum planı",
+                "2–4 hafta sonra titre artışı değerlendirilir",
+                "Dört kat artış",
+                "Serokonversiyon aranır"
+              ],
+              [
+                "Leptospira MAT",
+                "Negatif",
+                "Negatif",
+                "Alternatif zoonoz desteklenmedi"
+              ],
+              [
+                "Borrelia iki aşamalı seroloji",
+                "Negatif",
+                "Negatif",
+                "Lyme paterni yok"
+              ],
+              [
+                "Q ateşi faz II IgG/IgM",
+                "Negatif",
+                "Negatif",
+                "Aerosol zoonoz lehine değil"
+              ]
+            ],
+            "rows": [
+              [
+                "IFA IgG akut serum",
+                "Negatif / düşük titre",
+                "Negatif",
+                "Erken dönemde duyarlılık sınırlı"
+              ],
+              [
+                "Konvalesan serum planı",
+                "2–4 hafta sonra titre artışı değerlendirilir",
+                "Dört kat artış",
+                "Serokonversiyon aranır"
+              ],
+              [
+                "Leptospira MAT",
+                "Negatif",
+                "Negatif",
+                "Alternatif zoonoz desteklenmedi"
+              ],
+              [
+                "Borrelia iki aşamalı seroloji",
+                "Negatif",
+                "Negatif",
+                "Lyme paterni yok"
+              ],
+              [
+                "Q ateşi faz II IgG/IgM",
+                "Negatif",
+                "Negatif",
+                "Aerosol zoonoz lehine değil"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "IFA IgG akut serum",
+              "Negatif / düşük titre",
+              "Negatif",
+              "Erken dönemde duyarlılık sınırlı"
+            ],
+            [
+              "Konvalesan serum planı",
+              "2–4 hafta sonra titre artışı değerlendirilir",
+              "Dört kat artış",
+              "Serokonversiyon aranır"
+            ],
+            [
+              "Leptospira MAT",
+              "Negatif",
+              "Negatif",
+              "Alternatif zoonoz desteklenmedi"
+            ],
+            [
+              "Borrelia iki aşamalı seroloji",
+              "Negatif",
+              "Negatif",
+              "Lyme paterni yok"
+            ],
+            [
+              "Q ateşi faz II IgG/IgM",
+              "Negatif",
+              "Negatif",
+              "Aerosol zoonoz lehine değil"
+            ]
+          ],
+          "flowOrder": 10,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 10
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "shuffleOptions": false,
+      "question": "Kene teması sonrası gelişen bu tabloyu en iyi açıklayan etken aşağıdakilerden hangisidir?",
+      "questionType": "single-best-answer",
+      "answerTarget": "bacterial-agent",
+      "diagnosis": {
+        "correct": "Rickettsia rickettsii",
+        "options": [
+          "Borrelia burgdorferi",
+          "Ehrlichia chaffeensis",
+          "Leptospira interrogans",
+          "Rickettsia rickettsii",
+          "Coxiella burnetii"
+        ],
+        "question": "Kene teması sonrası gelişen bu tabloyu en iyi açıklayan etken aşağıdakilerden hangisidir?",
+        "explanation": "Kene teması sonrası yüksek ateş, şiddetli baş ağrısı, trombositopeni, transaminaz yüksekliği ve el-ayak bileği çevresinden avuç içi-ayak tabanına yayılan peteşiyal döküntü spotted fever grubu rickettsial enfeksiyon için güçlü bir klinik örüntüdür. Deri biyopsisinde endotel hücreleriyle ilişkili antijen/PCR pozitifliği ve erken serolojinin negatif kalabilmesi Rickettsia rickettsii lehine yorumlanır.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Kene teması + periferden başlayan peteşi + trombositopeni + endotel odaklı PCR/immünboyama → Rickettsia rickettsii."
+          }
+        ],
+        "optionFeedback": {
+          "Borrelia burgdorferi": {
+            "explanation": "Borrelia burgdorferi Ixodes kenesiyle bulaşan Lyme hastalığının etkenidir; eritema migrans, fasiyal paralizi, artrit ve kardit ile öne çıkar. Bu vakada avuç içi-ayak tabanını tutan peteşiyal döküntü, trombositopeni ve vasküler endotel tutulumu paterni Lyme hastalığından çok spotted fever grubu rickettsial enfeksiyonla örtüşür."
+          },
+          "Ehrlichia chaffeensis": {
+            "explanation": "Ehrlichia chaffeensis monositleri tutan kene kaynaklı bir etkendir; lökopeni, trombositopeni ve transaminaz yüksekliği yapabilir. Döküntü daha değişken seyreder; deri biyopsisinde endotel hücrelerinde spotted fever grubu antijeninin gösterilmesi ve periferden başlayan peteşiyal yayılım bu vakada R. rickettsii lehinedir."
+          },
+          "Leptospira interrogans": {
+            "explanation": "Leptospira interrogans kontamine su veya hayvan idrarı teması sonrası ateş, konjonktival suffüzyon, sarılık ve böbrek tutulumu ile önemlidir. Hastada kene tutunması, periferik peteşiyal döküntü ve endotel hedefli immünboyama bulguları leptospirozdan farklı bir vektör ve doku hedefini gösterir."
+          },
+          "Rickettsia rickettsii": {
+            "explanation": "Rickettsia rickettsii kene teması sonrası ateş, baş ağrısı, trombositopeni ve el bileği/ayak bileğinden başlayıp avuç içi-ayak tabanına yayılabilen peteşiyal döküntüyle seyreden spotted fever etkenidir. Seroloji erken dönemde negatif kalabileceğinden deri biyopsisi PCR/immünboyama gibi doğrudan yöntemler klinik bağlamda destekleyici olabilir."
+          },
+          "Coxiella burnetii": {
+            "explanation": "Coxiella burnetii çoğunlukla hayvan doğum ürünlerinden aerosol yoluyla alınır ve atipik pnömoni veya hepatit tablosu oluşturur. Kene teması öyküsü ve periferik peteşiyal döküntüyle seyreden vaskülitik tablo Q ateşi yerine spotted fever grubu rickettsial enfeksiyon lehinedir."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Rickettsia rickettsii kene teması sonrası ateş, baş ağrısı, trombositopeni ve el bileği/ayak bileğinden başlayıp avuç içi-ayak tabanına yayılabilen peteşiyal döküntüyle seyreden spotted fever etkenidir. Seroloji erken dönemde negatif kalabileceğinden deri biyopsisi PCR/immünboyama gibi doğrudan yöntemler klinik bağlamda destekleyici olabilir.",
+          "optionFeedback": {
+            "Borrelia burgdorferi": {
+              "explanation": "Borrelia burgdorferi Ixodes kenesiyle bulaşan Lyme hastalığının etkenidir; eritema migrans, fasiyal paralizi, artrit ve kardit ile öne çıkar. Bu vakada avuç içi-ayak tabanını tutan peteşiyal döküntü, trombositopeni ve vasküler endotel tutulumu paterni Lyme hastalığından çok spotted fever grubu rickettsial enfeksiyonla örtüşür."
+            },
+            "Ehrlichia chaffeensis": {
+              "explanation": "Ehrlichia chaffeensis monositleri tutan kene kaynaklı bir etkendir; lökopeni, trombositopeni ve transaminaz yüksekliği yapabilir. Döküntü daha değişken seyreder; deri biyopsisinde endotel hücrelerinde spotted fever grubu antijeninin gösterilmesi ve periferden başlayan peteşiyal yayılım bu vakada R. rickettsii lehinedir."
+            },
+            "Leptospira interrogans": {
+              "explanation": "Leptospira interrogans kontamine su veya hayvan idrarı teması sonrası ateş, konjonktival suffüzyon, sarılık ve böbrek tutulumu ile önemlidir. Hastada kene tutunması, periferik peteşiyal döküntü ve endotel hedefli immünboyama bulguları leptospirozdan farklı bir vektör ve doku hedefini gösterir."
+            },
+            "Rickettsia rickettsii": {
+              "explanation": "Rickettsia rickettsii kene teması sonrası ateş, baş ağrısı, trombositopeni ve el bileği/ayak bileğinden başlayıp avuç içi-ayak tabanına yayılabilen peteşiyal döküntüyle seyreden spotted fever etkenidir. Seroloji erken dönemde negatif kalabileceğinden deri biyopsisi PCR/immünboyama gibi doğrudan yöntemler klinik bağlamda destekleyici olabilir."
+            },
+            "Coxiella burnetii": {
+              "explanation": "Coxiella burnetii çoğunlukla hayvan doğum ürünlerinden aerosol yoluyla alınır ve atipik pnömoni veya hepatit tablosu oluşturur. Kene teması öyküsü ve periferik peteşiyal döküntüyle seyreden vaskülitik tablo Q ateşi yerine spotted fever grubu rickettsial enfeksiyon lehinedir."
+            }
+          },
+          "whyWrong": {
+            "Borrelia burgdorferi": "Borrelia burgdorferi Ixodes kenesiyle bulaşan Lyme hastalığının etkenidir; eritema migrans, fasiyal paralizi, artrit ve kardit ile öne çıkar. Bu vakada avuç içi-ayak tabanını tutan peteşiyal döküntü, trombositopeni ve vasküler endotel tutulumu paterni Lyme hastalığından çok spotted fever grubu rickettsial enfeksiyonla örtüşür.",
+            "Ehrlichia chaffeensis": "Ehrlichia chaffeensis monositleri tutan kene kaynaklı bir etkendir; lökopeni, trombositopeni ve transaminaz yüksekliği yapabilir. Döküntü daha değişken seyreder; deri biyopsisinde endotel hücrelerinde spotted fever grubu antijeninin gösterilmesi ve periferden başlayan peteşiyal yayılım bu vakada R. rickettsii lehinedir.",
+            "Leptospira interrogans": "Leptospira interrogans kontamine su veya hayvan idrarı teması sonrası ateş, konjonktival suffüzyon, sarılık ve böbrek tutulumu ile önemlidir. Hastada kene tutunması, periferik peteşiyal döküntü ve endotel hedefli immünboyama bulguları leptospirozdan farklı bir vektör ve doku hedefini gösterir.",
+            "Coxiella burnetii": "Coxiella burnetii çoğunlukla hayvan doğum ürünlerinden aerosol yoluyla alınır ve atipik pnömoni veya hepatit tablosu oluşturur. Kene teması öyküsü ve periferik peteşiyal döküntüyle seyreden vaskülitik tablo Q ateşi yerine spotted fever grubu rickettsial enfeksiyon lehinedir."
+          }
+        }
+      },
+      "coreKnowledge": "Rickettsia rickettsii zorunlu hücre içi bir bakteridir; vasküler endotel tutulumu peteşiyal döküntü, trombositopeni ve sistemik vaskülit bulgularını açıklar.",
+      "examPearl": "Kene teması + periferden başlayan peteşi + trombositopeni + endotel odaklı PCR/immünboyama → Rickettsia rickettsii.",
+      "whyCorrect": "Rickettsia rickettsii kene teması sonrası ateş, baş ağrısı, trombositopeni ve el bileği/ayak bileğinden başlayıp avuç içi-ayak tabanına yayılabilen peteşiyal döküntüyle seyreden spotted fever etkenidir. Seroloji erken dönemde negatif kalabileceğinden deri biyopsisi PCR/immünboyama gibi doğrudan yöntemler klinik bağlamda destekleyici olabilir.",
+      "optionComparison": {
+        "Borrelia burgdorferi": "Borrelia burgdorferi Ixodes kenesiyle bulaşan Lyme hastalığının etkenidir; eritema migrans, fasiyal paralizi, artrit ve kardit ile öne çıkar. Bu vakada avuç içi-ayak tabanını tutan peteşiyal döküntü, trombositopeni ve vasküler endotel tutulumu paterni Lyme hastalığından çok spotted fever grubu rickettsial enfeksiyonla örtüşür.",
+        "Ehrlichia chaffeensis": "Ehrlichia chaffeensis monositleri tutan kene kaynaklı bir etkendir; lökopeni, trombositopeni ve transaminaz yüksekliği yapabilir. Döküntü daha değişken seyreder; deri biyopsisinde endotel hücrelerinde spotted fever grubu antijeninin gösterilmesi ve periferden başlayan peteşiyal yayılım bu vakada R. rickettsii lehinedir.",
+        "Leptospira interrogans": "Leptospira interrogans kontamine su veya hayvan idrarı teması sonrası ateş, konjonktival suffüzyon, sarılık ve böbrek tutulumu ile önemlidir. Hastada kene tutunması, periferik peteşiyal döküntü ve endotel hedefli immünboyama bulguları leptospirozdan farklı bir vektör ve doku hedefini gösterir.",
+        "Rickettsia rickettsii": "Rickettsia rickettsii kene teması sonrası ateş, baş ağrısı, trombositopeni ve el bileği/ayak bileğinden başlayıp avuç içi-ayak tabanına yayılabilen peteşiyal döküntüyle seyreden spotted fever etkenidir. Seroloji erken dönemde negatif kalabileceğinden deri biyopsisi PCR/immünboyama gibi doğrudan yöntemler klinik bağlamda destekleyici olabilir.",
+        "Coxiella burnetii": "Coxiella burnetii çoğunlukla hayvan doğum ürünlerinden aerosol yoluyla alınır ve atipik pnömoni veya hepatit tablosu oluşturur. Kene teması öyküsü ve periferik peteşiyal döküntüyle seyreden vaskülitik tablo Q ateşi yerine spotted fever grubu rickettsial enfeksiyon lehinedir."
+      },
+      "evidenceChain": [
+        {
+          "text": "Kene tutunmasını izleyen ateş ve baş ağrısı → vektör kaynaklı enfeksiyon bağlamı kurar.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "El-ayak bileği çevresinden avuç içi-ayak tabanına yayılan peteşi → spotted fever klinik örüntüsünü destekler.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Trombositopeni ve transaminaz yüksekliği → sistemik endotel/inflamatuvar tutulumla uyumludur.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Deri biyopsisinde spotted fever grubu antijen/PCR pozitifliği → erken dönemde doğrudan mikrobiyolojik kanıt sağlar.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Borrelia burgdorferi": "Borrelia burgdorferi Ixodes kenesiyle bulaşan Lyme hastalığının etkenidir; eritema migrans, fasiyal paralizi, artrit ve kardit ile öne çıkar. Bu vakada avuç içi-ayak tabanını tutan peteşiyal döküntü, trombositopeni ve vasküler endotel tutulumu paterni Lyme hastalığından çok spotted fever grubu rickettsial enfeksiyonla örtüşür.",
+        "Ehrlichia chaffeensis": "Ehrlichia chaffeensis monositleri tutan kene kaynaklı bir etkendir; lökopeni, trombositopeni ve transaminaz yüksekliği yapabilir. Döküntü daha değişken seyreder; deri biyopsisinde endotel hücrelerinde spotted fever grubu antijeninin gösterilmesi ve periferden başlayan peteşiyal yayılım bu vakada R. rickettsii lehinedir.",
+        "Leptospira interrogans": "Leptospira interrogans kontamine su veya hayvan idrarı teması sonrası ateş, konjonktival suffüzyon, sarılık ve böbrek tutulumu ile önemlidir. Hastada kene tutunması, periferik peteşiyal döküntü ve endotel hedefli immünboyama bulguları leptospirozdan farklı bir vektör ve doku hedefini gösterir.",
+        "Coxiella burnetii": "Coxiella burnetii çoğunlukla hayvan doğum ürünlerinden aerosol yoluyla alınır ve atipik pnömoni veya hepatit tablosu oluşturur. Kene teması öyküsü ve periferik peteşiyal döküntüyle seyreden vaskülitik tablo Q ateşi yerine spotted fever grubu rickettsial enfeksiyon lehinedir."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v256-medical-microbiology-seventh-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Kene maruziyeti",
+        "Periferik peteşiyal döküntü",
+        "Trombositopeni ve transaminaz yüksekliği",
+        "Deri biyopsisinde spotted fever grubu PCR/antijen pozitifliği"
+      ],
+      "images": []
+    },
+  {
+      "id": "v256-new-479-col-yolculugu-sonrasi-noduler-pnomoni",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Çöl yolculuğu sonrası nodüler pnömoni",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Seyahat-maruz kalım öyküsü ve doku morfolojisini kullanarak dimorfik mantarlar arasında ayrım yapma.",
+      "learningTarget": "Coccidioidomikozda çöl aerosolu maruziyeti, seroloji ve sferül-endospor morfolojisini diğer dimorfik mantar bulgularından ayırabilme.",
+      "demographics": "41 yaşında kadın hasta",
+      "setting": "Göğüs hastalıkları / Enfeksiyon hastalıkları polikliniği",
+      "chiefComplaint": "Üç haftadır süren kuru öksürük, ateş ve göğüs ağrısı nedeniyle değerlendiriliyor.",
+      "stem": "Hasta üç hafta önce ABD güneybatısında tozlu bir arazi gezisine katıldığını, dönüşten birkaç gün sonra ateş, kuru öksürük ve sağ yan ağrısı yaşadığını anlatır. İlk günlerde yakınmalarını üst solunum yolu enfeksiyonu sanmış, ancak halsizlik ve gece terlemeleri uzayınca başvurmuştur. Diz ve ayak bileklerinde ağrı ile bacak ön yüzünde hassas kızarık nodüller fark etmiştir. Kuş-yarasa dışkısı olan mağara teması, gül dikeni yaralanması veya Güney Amerika seyahati yoktur.",
+      "patientIntro": {
+        "profile": "41 yaşında kadın hasta, çöl bölgesi yolculuğu sonrası uzayan solunum yakınmaları ile poliklinikte değerlendiriliyor.",
+        "presentation": "Ateş, kuru öksürük, plöritik ağrı, artralji ve bacak ön yüzünde hassas nodüller vardır.",
+        "historySummary": "Hasta üç hafta önce ABD güneybatısında tozlu bir arazi gezisine katıldığını, dönüşten birkaç gün sonra ateş, kuru öksürük ve sağ yan ağrısı yaşadığını anlatır. İlk günlerde yakınmalarını üst solunum yolu enfeksiyonu sanmış, ancak halsizlik ve gece terlemeleri uzayınca başvurmuştur. Diz ve ayak bileklerinde ağrı ile bacak ön yüzünde hassas kızarık nodüller fark etmiştir. Kuş-yarasa dışkısı olan mağara teması, gül dikeni yaralanması veya Güney Amerika seyahati yoktur."
+      },
+      "vitals": {
+        "TA": "112/70 mmHg",
+        "Nabız": "102/dk",
+        "Solunum": "20/dk",
+        "SpO2": "%94, oda havasında",
+        "Ateş": "38.2 °C",
+        "Şok indeksi": "0.91 - hafif artmış"
+      },
+      "exam": [
+        "Sağ alt hemitoraksta inspiryum sonunda ince ral duyulur.",
+        "Bacak ön yüzlerinde birkaç adet hassas eritemli nodül izlenir.",
+        "Oral mukozada ülser veya yaygın lenfadenopati yoktur.",
+        "Solunum eforu hafif artmış, siyanoz saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v256-new-479-col-yolculugu-sonrasi-noduler-pnomoni-goruntuleme-lab",
+          "label": "Görüntüleme ve temel laboratuvar verileri",
+          "title": "Görüntüleme ve temel laboratuvar verileri",
+          "orderLabel": "Görüntüleme ve temel laboratuvar verileri",
+          "type": "laboratory",
+          "priority": "essential",
+          "subtype": "Pulmoner nodül ve sistemik yanıt",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Akciğer nodülü, eozinofili ve inflamatuvar belirteç yüksekliği seyahat-maruz kalım bağlamında fungal pnömoni ayrımını destekler.",
+          "clinicalMeaning": "Akciğer nodülü, eozinofili ve inflamatuvar belirteç yüksekliği seyahat-maruz kalım bağlamında fungal pnömoni ayrımını destekler.",
+          "result": {
+            "title": "Görüntüleme ve temel laboratuvar verileri",
+            "summary": "Akciğer nodülü, eozinofili ve inflamatuvar belirteç yüksekliği seyahat-maruz kalım bağlamında fungal pnömoni ayrımını destekler.",
+            "interpretation": "Akciğer nodülü, eozinofili ve inflamatuvar belirteç yüksekliği seyahat-maruz kalım bağlamında fungal pnömoni ayrımını destekler.",
+            "values": [
+              [
+                "Akciğer BT",
+                "Sağ alt lobda 2.1 cm nodüler konsolidasyon ve çevresel buzlu cam alanı",
+                "Normal",
+                "Nodüler pnömoni"
+              ],
+              [
+                "Tam kan sayımı",
+                "Eozinofil 980/mm³",
+                "<500/mm³",
+                "Eozinofili"
+              ],
+              [
+                "CRP",
+                "42 mg/L",
+                "<5 mg/L",
+                "İnflamasyon"
+              ],
+              [
+                "Balgam Gram boyama",
+                "Bakteri baskınlığı yok",
+                "",
+                "Tipik bakteriyel pnömoni lehine değil"
+              ],
+              [
+                "Tüberküloz NAAT",
+                "Negatif",
+                "Negatif",
+                "TB desteklenmedi"
+              ]
+            ],
+            "rows": [
+              [
+                "Akciğer BT",
+                "Sağ alt lobda 2.1 cm nodüler konsolidasyon ve çevresel buzlu cam alanı",
+                "Normal",
+                "Nodüler pnömoni"
+              ],
+              [
+                "Tam kan sayımı",
+                "Eozinofil 980/mm³",
+                "<500/mm³",
+                "Eozinofili"
+              ],
+              [
+                "CRP",
+                "42 mg/L",
+                "<5 mg/L",
+                "İnflamasyon"
+              ],
+              [
+                "Balgam Gram boyama",
+                "Bakteri baskınlığı yok",
+                "",
+                "Tipik bakteriyel pnömoni lehine değil"
+              ],
+              [
+                "Tüberküloz NAAT",
+                "Negatif",
+                "Negatif",
+                "TB desteklenmedi"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Akciğer BT",
+              "Sağ alt lobda 2.1 cm nodüler konsolidasyon ve çevresel buzlu cam alanı",
+              "Normal",
+              "Nodüler pnömoni"
+            ],
+            [
+              "Tam kan sayımı",
+              "Eozinofil 980/mm³",
+              "<500/mm³",
+              "Eozinofili"
+            ],
+            [
+              "CRP",
+              "42 mg/L",
+              "<5 mg/L",
+              "İnflamasyon"
+            ],
+            [
+              "Balgam Gram boyama",
+              "Bakteri baskınlığı yok",
+              "",
+              "Tipik bakteriyel pnömoni lehine değil"
+            ],
+            [
+              "Tüberküloz NAAT",
+              "Negatif",
+              "Negatif",
+              "TB desteklenmedi"
+            ]
+          ],
+          "flowOrder": 10,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 10
+        },
+        {
+          "id": "v256-new-479-col-yolculugu-sonrasi-noduler-pnomoni-doku-mikroskopi",
+          "label": "Bronkoskopik biyopsi mikroskopisi",
+          "title": "Bronkoskopik biyopsi mikroskopisi",
+          "orderLabel": "Bronkoskopik biyopsi mikroskopisi",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Doku ve özel boya incelemesi",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Doku kesitinde sferül içinde endospor yapısı dimorfik mantarlar içinde ayırt ettirici bir morfoloji sağlar.",
+          "clinicalMeaning": "Doku kesitinde sferül içinde endospor yapısı dimorfik mantarlar içinde ayırt ettirici bir morfoloji sağlar.",
+          "result": {
+            "title": "Bronkoskopik biyopsi mikroskopisi",
+            "summary": "Doku kesitinde sferül içinde endospor yapısı dimorfik mantarlar içinde ayırt ettirici bir morfoloji sağlar.",
+            "interpretation": "Doku kesitinde sferül içinde endospor yapısı dimorfik mantarlar içinde ayırt ettirici bir morfoloji sağlar.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Bronkoskopik transbronşiyal biyopsi",
+                "Doku örneği",
+                "Lezyon hedefli örnek"
+              ],
+              [
+                "GMS boyası",
+                "Kalın duvarlı büyük yuvarlak yapılar içinde çok sayıda küçük endospor",
+                "Negatif",
+                "Sferül-endospor morfolojisi"
+              ],
+              [
+                "Kültür güvenlik notu",
+                "Laboratuvar biyogüvenlik uyarısı ile inkübasyon",
+                "Standart uyarı",
+                "Artrokonidya aerosolu riski"
+              ],
+              [
+                "Maya tomurcuklanması",
+                "Geniş tabanlı tomurcuklanma görülmedi",
+                "",
+                "Blastomyces dışlanır"
+              ],
+              [
+                "Makrofaj içi küçük maya",
+                "Belirgin değil",
+                "",
+                "Histoplasma lehine değil"
+              ]
+            ],
+            "rows": [
+              [
+                "Örnek tipi",
+                "Bronkoskopik transbronşiyal biyopsi",
+                "Doku örneği",
+                "Lezyon hedefli örnek"
+              ],
+              [
+                "GMS boyası",
+                "Kalın duvarlı büyük yuvarlak yapılar içinde çok sayıda küçük endospor",
+                "Negatif",
+                "Sferül-endospor morfolojisi"
+              ],
+              [
+                "Kültür güvenlik notu",
+                "Laboratuvar biyogüvenlik uyarısı ile inkübasyon",
+                "Standart uyarı",
+                "Artrokonidya aerosolu riski"
+              ],
+              [
+                "Maya tomurcuklanması",
+                "Geniş tabanlı tomurcuklanma görülmedi",
+                "",
+                "Blastomyces dışlanır"
+              ],
+              [
+                "Makrofaj içi küçük maya",
+                "Belirgin değil",
+                "",
+                "Histoplasma lehine değil"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Örnek tipi",
+              "Bronkoskopik transbronşiyal biyopsi",
+              "Doku örneği",
+              "Lezyon hedefli örnek"
+            ],
+            [
+              "GMS boyası",
+              "Kalın duvarlı büyük yuvarlak yapılar içinde çok sayıda küçük endospor",
+              "Negatif",
+              "Sferül-endospor morfolojisi"
+            ],
+            [
+              "Kültür güvenlik notu",
+              "Laboratuvar biyogüvenlik uyarısı ile inkübasyon",
+              "Standart uyarı",
+              "Artrokonidya aerosolu riski"
+            ],
+            [
+              "Maya tomurcuklanması",
+              "Geniş tabanlı tomurcuklanma görülmedi",
+              "",
+              "Blastomyces dışlanır"
+            ],
+            [
+              "Makrofaj içi küçük maya",
+              "Belirgin değil",
+              "",
+              "Histoplasma lehine değil"
+            ]
+          ],
+          "flowOrder": 10,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 10
+        },
+        {
+          "id": "v256-new-479-col-yolculugu-sonrasi-noduler-pnomoni-seroloji",
+          "label": "Fungal seroloji sonuçları",
+          "title": "Fungal seroloji sonuçları",
+          "orderLabel": "Fungal seroloji sonuçları",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Coccidioidal antikor değerlendirmesi",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "IgM/IgG pozitifliği ve kompleman fiksasyon titresi, klinik bağlam ve morfolojiyle birlikte yorumlanır.",
+          "clinicalMeaning": "IgM/IgG pozitifliği ve kompleman fiksasyon titresi, klinik bağlam ve morfolojiyle birlikte yorumlanır.",
+          "result": {
+            "title": "Fungal seroloji sonuçları",
+            "summary": "IgM/IgG pozitifliği ve kompleman fiksasyon titresi, klinik bağlam ve morfolojiyle birlikte yorumlanır.",
+            "interpretation": "IgM/IgG pozitifliği ve kompleman fiksasyon titresi, klinik bağlam ve morfolojiyle birlikte yorumlanır.",
+            "values": [
+              [
+                "EIA IgM",
+                "Pozitif",
+                "Negatif",
+                "Erken yanıt"
+              ],
+              [
+                "EIA IgG",
+                "Pozitif",
+                "Negatif",
+                "İmmün yanıt"
+              ],
+              [
+                "Kompleman fiksasyon titresi",
+                "1:16",
+                "Negatif/düşük",
+                "Hastalık yükü takibi"
+              ],
+              [
+                "Histoplasma idrar antijeni",
+                "Negatif",
+                "Negatif",
+                "Alternatif mikoz desteklenmedi"
+              ],
+              [
+                "Aspergillus galaktomannan",
+                "Negatif",
+                "Negatif",
+                "İnvaziv aspergilloz lehine değil"
+              ]
+            ],
+            "rows": [
+              [
+                "EIA IgM",
+                "Pozitif",
+                "Negatif",
+                "Erken yanıt"
+              ],
+              [
+                "EIA IgG",
+                "Pozitif",
+                "Negatif",
+                "İmmün yanıt"
+              ],
+              [
+                "Kompleman fiksasyon titresi",
+                "1:16",
+                "Negatif/düşük",
+                "Hastalık yükü takibi"
+              ],
+              [
+                "Histoplasma idrar antijeni",
+                "Negatif",
+                "Negatif",
+                "Alternatif mikoz desteklenmedi"
+              ],
+              [
+                "Aspergillus galaktomannan",
+                "Negatif",
+                "Negatif",
+                "İnvaziv aspergilloz lehine değil"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "EIA IgM",
+              "Pozitif",
+              "Negatif",
+              "Erken yanıt"
+            ],
+            [
+              "EIA IgG",
+              "Pozitif",
+              "Negatif",
+              "İmmün yanıt"
+            ],
+            [
+              "Kompleman fiksasyon titresi",
+              "1:16",
+              "Negatif/düşük",
+              "Hastalık yükü takibi"
+            ],
+            [
+              "Histoplasma idrar antijeni",
+              "Negatif",
+              "Negatif",
+              "Alternatif mikoz desteklenmedi"
+            ],
+            [
+              "Aspergillus galaktomannan",
+              "Negatif",
+              "Negatif",
+              "İnvaziv aspergilloz lehine değil"
+            ]
+          ],
+          "flowOrder": 10,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 10
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "shuffleOptions": false,
+      "question": "Bu mikolojik laboratuvar bulgusu hangi etkenle en uyumludur?",
+      "questionType": "single-best-answer",
+      "answerTarget": "fungal-agent",
+      "diagnosis": {
+        "correct": "Coccidioides immitis/posadasii",
+        "options": [
+          "Histoplasma capsulatum",
+          "Blastomyces dermatitidis",
+          "Sporothrix schenckii",
+          "Paracoccidioides brasiliensis",
+          "Coccidioides immitis/posadasii"
+        ],
+        "question": "Bu mikolojik laboratuvar bulgusu hangi etkenle en uyumludur?",
+        "explanation": "Çöl toprağı aerosolu sonrası gelişen nodüler pnömoni, eozinofili, eritema nodozum benzeri lezyonlar ve doku örneğinde kalın duvarlı sferül içinde endospor görülmesi coccidioidomikoz için güçlü kanıt zinciri oluşturur. Serolojik IgM/IgG pozitifliği ve kompleman fiksasyon titresi tanıyı destekleyen laboratuvar verileridir.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Çöl maruziyeti + eozinofili + sferül içinde endospor + coccidioidal seroloji pozitifliği → Coccidioides."
+          }
+        ],
+        "optionFeedback": {
+          "Histoplasma capsulatum": {
+            "explanation": "Histoplasma capsulatum kuş veya yarasa dışkısıyla kontamine mağara/toprak aerosolleri sonrası enfeksiyon yapar ve makrofaj içinde küçük maya formlarıyla tanınır. Bu vakada çöl tozu maruziyeti, eozinofili ve dokuda büyük kalın duvarlı endosporlu sferüller Histoplasma morfolojisinden farklıdır."
+          },
+          "Blastomyces dermatitidis": {
+            "explanation": "Blastomyces dermatitidis akciğer ve deri tutulumu yapabilen dimorfik mantardır; geniş tabanlı tomurcuklanan kalın duvarlı maya formu beklenir. Doku örneğinde sferül içinde çok sayıda endospor görülmesi blastomikozdan ziyade coccidioidal morfolojiyi destekler."
+          },
+          "Sporothrix schenckii": {
+            "explanation": "Sporothrix schenckii gül dikeni veya bitki teması sonrası lenfatik hat boyunca nodüler deri lezyonlarıyla tipiktir. Pulmoner nodül yapabilse de bu vakadaki çöl aerosolu öyküsü, eozinofili ve sferül-endospor yapısı Sporothrix için beklenen puro şekilli maya tarifinden ayrılır."
+          },
+          "Paracoccidioides brasiliensis": {
+            "explanation": "Paracoccidioides brasiliensis Güney Amerika ile ilişkili dimorfik mantardır ve çoklu tomurcuklanan “gemi dümeni” benzeri maya görünümüyle bilinir. Bu hastada ABD güneybatı çöl maruziyeti ve dokuda endospor dolu sferüller parakoksidioidomikoz yerine coccidioidomikoz lehinedir."
+          },
+          "Coccidioides immitis/posadasii": {
+            "explanation": "Coccidioides immitis/posadasii çöl toprağı aerosollerinin inhalasyonu sonrası akciğer nodülü, ateş, artralji ve bazen eozinofili ile seyredebilir. Doku örneğinde kalın duvarlı büyük sferüller içinde endosporların görülmesi ve serolojik IgM/IgG pozitifliği bu etken için ayırt edici mikolojik bulgulardır."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Coccidioides immitis/posadasii çöl toprağı aerosollerinin inhalasyonu sonrası akciğer nodülü, ateş, artralji ve bazen eozinofili ile seyredebilir. Doku örneğinde kalın duvarlı büyük sferüller içinde endosporların görülmesi ve serolojik IgM/IgG pozitifliği bu etken için ayırt edici mikolojik bulgulardır.",
+          "optionFeedback": {
+            "Histoplasma capsulatum": {
+              "explanation": "Histoplasma capsulatum kuş veya yarasa dışkısıyla kontamine mağara/toprak aerosolleri sonrası enfeksiyon yapar ve makrofaj içinde küçük maya formlarıyla tanınır. Bu vakada çöl tozu maruziyeti, eozinofili ve dokuda büyük kalın duvarlı endosporlu sferüller Histoplasma morfolojisinden farklıdır."
+            },
+            "Blastomyces dermatitidis": {
+              "explanation": "Blastomyces dermatitidis akciğer ve deri tutulumu yapabilen dimorfik mantardır; geniş tabanlı tomurcuklanan kalın duvarlı maya formu beklenir. Doku örneğinde sferül içinde çok sayıda endospor görülmesi blastomikozdan ziyade coccidioidal morfolojiyi destekler."
+            },
+            "Sporothrix schenckii": {
+              "explanation": "Sporothrix schenckii gül dikeni veya bitki teması sonrası lenfatik hat boyunca nodüler deri lezyonlarıyla tipiktir. Pulmoner nodül yapabilse de bu vakadaki çöl aerosolu öyküsü, eozinofili ve sferül-endospor yapısı Sporothrix için beklenen puro şekilli maya tarifinden ayrılır."
+            },
+            "Paracoccidioides brasiliensis": {
+              "explanation": "Paracoccidioides brasiliensis Güney Amerika ile ilişkili dimorfik mantardır ve çoklu tomurcuklanan “gemi dümeni” benzeri maya görünümüyle bilinir. Bu hastada ABD güneybatı çöl maruziyeti ve dokuda endospor dolu sferüller parakoksidioidomikoz yerine coccidioidomikoz lehinedir."
+            },
+            "Coccidioides immitis/posadasii": {
+              "explanation": "Coccidioides immitis/posadasii çöl toprağı aerosollerinin inhalasyonu sonrası akciğer nodülü, ateş, artralji ve bazen eozinofili ile seyredebilir. Doku örneğinde kalın duvarlı büyük sferüller içinde endosporların görülmesi ve serolojik IgM/IgG pozitifliği bu etken için ayırt edici mikolojik bulgulardır."
+            }
+          },
+          "whyWrong": {
+            "Histoplasma capsulatum": "Histoplasma capsulatum kuş veya yarasa dışkısıyla kontamine mağara/toprak aerosolleri sonrası enfeksiyon yapar ve makrofaj içinde küçük maya formlarıyla tanınır. Bu vakada çöl tozu maruziyeti, eozinofili ve dokuda büyük kalın duvarlı endosporlu sferüller Histoplasma morfolojisinden farklıdır.",
+            "Blastomyces dermatitidis": "Blastomyces dermatitidis akciğer ve deri tutulumu yapabilen dimorfik mantardır; geniş tabanlı tomurcuklanan kalın duvarlı maya formu beklenir. Doku örneğinde sferül içinde çok sayıda endospor görülmesi blastomikozdan ziyade coccidioidal morfolojiyi destekler.",
+            "Sporothrix schenckii": "Sporothrix schenckii gül dikeni veya bitki teması sonrası lenfatik hat boyunca nodüler deri lezyonlarıyla tipiktir. Pulmoner nodül yapabilse de bu vakadaki çöl aerosolu öyküsü, eozinofili ve sferül-endospor yapısı Sporothrix için beklenen puro şekilli maya tarifinden ayrılır.",
+            "Paracoccidioides brasiliensis": "Paracoccidioides brasiliensis Güney Amerika ile ilişkili dimorfik mantardır ve çoklu tomurcuklanan “gemi dümeni” benzeri maya görünümüyle bilinir. Bu hastada ABD güneybatı çöl maruziyeti ve dokuda endospor dolu sferüller parakoksidioidomikoz yerine coccidioidomikoz lehinedir."
+          }
+        }
+      },
+      "coreKnowledge": "Coccidioides immitis/posadasii dokuda maya gibi tomurcuklanmaz; sferül içinde endospor yapısı gösterir. Enfeksiyon çoğunlukla kurak çöl toprağındaki artrokonidyaların inhalasyonuyla başlar.",
+      "examPearl": "Çöl maruziyeti + eozinofili + sferül içinde endospor + coccidioidal seroloji pozitifliği → Coccidioides.",
+      "whyCorrect": "Coccidioides immitis/posadasii çöl toprağı aerosollerinin inhalasyonu sonrası akciğer nodülü, ateş, artralji ve bazen eozinofili ile seyredebilir. Doku örneğinde kalın duvarlı büyük sferüller içinde endosporların görülmesi ve serolojik IgM/IgG pozitifliği bu etken için ayırt edici mikolojik bulgulardır.",
+      "optionComparison": {
+        "Histoplasma capsulatum": "Histoplasma capsulatum kuş veya yarasa dışkısıyla kontamine mağara/toprak aerosolleri sonrası enfeksiyon yapar ve makrofaj içinde küçük maya formlarıyla tanınır. Bu vakada çöl tozu maruziyeti, eozinofili ve dokuda büyük kalın duvarlı endosporlu sferüller Histoplasma morfolojisinden farklıdır.",
+        "Blastomyces dermatitidis": "Blastomyces dermatitidis akciğer ve deri tutulumu yapabilen dimorfik mantardır; geniş tabanlı tomurcuklanan kalın duvarlı maya formu beklenir. Doku örneğinde sferül içinde çok sayıda endospor görülmesi blastomikozdan ziyade coccidioidal morfolojiyi destekler.",
+        "Sporothrix schenckii": "Sporothrix schenckii gül dikeni veya bitki teması sonrası lenfatik hat boyunca nodüler deri lezyonlarıyla tipiktir. Pulmoner nodül yapabilse de bu vakadaki çöl aerosolu öyküsü, eozinofili ve sferül-endospor yapısı Sporothrix için beklenen puro şekilli maya tarifinden ayrılır.",
+        "Paracoccidioides brasiliensis": "Paracoccidioides brasiliensis Güney Amerika ile ilişkili dimorfik mantardır ve çoklu tomurcuklanan “gemi dümeni” benzeri maya görünümüyle bilinir. Bu hastada ABD güneybatı çöl maruziyeti ve dokuda endospor dolu sferüller parakoksidioidomikoz yerine coccidioidomikoz lehinedir.",
+        "Coccidioides immitis/posadasii": "Coccidioides immitis/posadasii çöl toprağı aerosollerinin inhalasyonu sonrası akciğer nodülü, ateş, artralji ve bazen eozinofili ile seyredebilir. Doku örneğinde kalın duvarlı büyük sferüller içinde endosporların görülmesi ve serolojik IgM/IgG pozitifliği bu etken için ayırt edici mikolojik bulgulardır."
+      },
+      "evidenceChain": [
+        {
+          "text": "ABD güneybatı çöl tozu maruziyeti → Coccidioides için epidemiyolojik ipucudur.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Akciğer nodülü ve eozinofili → coccidioidal pnömoniyle birlikte görülebilir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Doku kesitinde sferül içinde endospor → Coccidioides morfolojisinin merkezidir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "EIA IgM/IgG ve kompleman fiksasyon pozitifliği → morfolojiyi serolojik olarak destekler.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Histoplasma capsulatum": "Histoplasma capsulatum kuş veya yarasa dışkısıyla kontamine mağara/toprak aerosolleri sonrası enfeksiyon yapar ve makrofaj içinde küçük maya formlarıyla tanınır. Bu vakada çöl tozu maruziyeti, eozinofili ve dokuda büyük kalın duvarlı endosporlu sferüller Histoplasma morfolojisinden farklıdır.",
+        "Blastomyces dermatitidis": "Blastomyces dermatitidis akciğer ve deri tutulumu yapabilen dimorfik mantardır; geniş tabanlı tomurcuklanan kalın duvarlı maya formu beklenir. Doku örneğinde sferül içinde çok sayıda endospor görülmesi blastomikozdan ziyade coccidioidal morfolojiyi destekler.",
+        "Sporothrix schenckii": "Sporothrix schenckii gül dikeni veya bitki teması sonrası lenfatik hat boyunca nodüler deri lezyonlarıyla tipiktir. Pulmoner nodül yapabilse de bu vakadaki çöl aerosolu öyküsü, eozinofili ve sferül-endospor yapısı Sporothrix için beklenen puro şekilli maya tarifinden ayrılır.",
+        "Paracoccidioides brasiliensis": "Paracoccidioides brasiliensis Güney Amerika ile ilişkili dimorfik mantardır ve çoklu tomurcuklanan “gemi dümeni” benzeri maya görünümüyle bilinir. Bu hastada ABD güneybatı çöl maruziyeti ve dokuda endospor dolu sferüller parakoksidioidomikoz yerine coccidioidomikoz lehinedir."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v256-medical-microbiology-seventh-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Çöl aerosolu maruziyeti",
+        "Nodüler pulmoner tutulum",
+        "Eozinofili",
+        "Sferül içinde endospor morfolojisi"
+      ],
+      "images": []
+    },
+  {
+      "id": "v256-new-480-yeni-nobet-ve-kalsifiye-beyin-lezyonlari",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Yeni nöbet ve kalsifiye beyin lezyonları",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Yeni başlangıçlı nöbet ve çoklu beyin lezyonlarında helmint bulaş yolunu doğru patogenezle eşleştirme.",
+      "learningTarget": "Taenia solium intestinal tenyazis ile nörosistiserkoz arasındaki bulaş-patogenez farkını ayırt edebilme.",
+      "demographics": "29 yaşında erkek hasta",
+      "setting": "Nöroloji acil / Enfeksiyon hastalıkları konsültasyonu",
+      "chiefComplaint": "İlk kez jeneralize nöbet geçirmesi sonrası acilde değerlendiriliyor.",
+      "stem": "Hasta sabah saatlerinde kısa süreli bilinç kaybı ve tüm vücutta kasılma sonrası acile getirilmiştir. Son aylarda aralıklı baş ağrısı yaşadığını, ancak daha önce nöbet geçirmediğini söyler. Çocukluğunda hijyen koşullarının kısıtlı olduğu kırsal bir bölgede yaşadığını ve ailesinde zaman zaman bağırsak paraziti nedeniyle tedavi alan kişiler olduğunu anlatır. Son haftalarda çiğ balık tüketimi, tatlı suda yüzme veya köpeklerle yoğun temas öyküsü yoktur.",
+      "patientIntro": {
+        "profile": "29 yaşında erkek hasta, ilk nöbet sonrası çoklu intrakraniyal lezyonların değerlendirilmesi için acilde izleniyor.",
+        "presentation": "Yeni başlangıçlı nöbet, aralıklı baş ağrısı ve geçmişte fekal-oral maruziyet olasılığını artıran yaşam koşulları vardır.",
+        "historySummary": "Hasta sabah saatlerinde kısa süreli bilinç kaybı ve tüm vücutta kasılma sonrası acile getirilmiştir. Son aylarda aralıklı baş ağrısı yaşadığını, ancak daha önce nöbet geçirmediğini söyler. Çocukluğunda hijyen koşullarının kısıtlı olduğu kırsal bir bölgede yaşadığını ve ailesinde zaman zaman bağırsak paraziti nedeniyle tedavi alan kişiler olduğunu anlatır. Son haftalarda çiğ balık tüketimi, tatlı suda yüzme veya köpeklerle yoğun temas öyküsü yoktur."
+      },
+      "vitals": {
+        "TA": "124/76 mmHg",
+        "Nabız": "96/dk",
+        "Solunum": "18/dk",
+        "SpO2": "%98, oda havasında",
+        "Ateş": "36.9 °C",
+        "Şok indeksi": "0.77 - stabil"
+      },
+      "exam": [
+        "Postiktal uyku hali kısa sürede düzelmiştir; hasta oryante ve kooperedir.",
+        "Fokal motor defisit, ense sertliği veya papil ödem saptanmaz.",
+        "Ciltte döküntü veya yaygın lenfadenopati yoktur.",
+        "Karın muayenesi doğaldır; hepatomegali belirgin değildir."
+      ],
+      "investigations": [
+        {
+          "id": "v256-new-480-yeni-nobet-ve-kalsifiye-beyin-lezyonlari-beyin-goruntuleme",
+          "label": "Beyin BT/MR bulguları",
+          "title": "Beyin BT/MR bulguları",
+          "orderLabel": "Beyin BT/MR bulguları",
+          "type": "laboratory",
+          "priority": "essential",
+          "subtype": "Nöbet odağı olabilecek çoklu lezyonlar",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Aktif ve kalsifiye evreleri birlikte gösteren parankimal lezyonlar larval doku enfeksiyonu için önemli radyolojik veri sağlar.",
+          "clinicalMeaning": "Aktif ve kalsifiye evreleri birlikte gösteren parankimal lezyonlar larval doku enfeksiyonu için önemli radyolojik veri sağlar.",
+          "result": {
+            "title": "Beyin BT/MR bulguları",
+            "summary": "Aktif ve kalsifiye evreleri birlikte gösteren parankimal lezyonlar larval doku enfeksiyonu için önemli radyolojik veri sağlar.",
+            "interpretation": "Aktif ve kalsifiye evreleri birlikte gösteren parankimal lezyonlar larval doku enfeksiyonu için önemli radyolojik veri sağlar.",
+            "values": [
+              [
+                "Kontrastsız BT",
+                "Bazı kalsifiye parankimal odaklar",
+                "Normal",
+                "Eski lezyon sekeli"
+              ],
+              [
+                "Kontrastlı MR",
+                "Bir lezyonda eksantrik nokta içeren kistik yapı",
+                "Yok",
+                "Skoleks görünümü"
+              ],
+              [
+                "Perilezyonel ödem",
+                "Sağ parietal aktif lezyon çevresinde mevcut",
+                "Yok",
+                "Nöbet odağı"
+              ],
+              [
+                "Hidrosefali",
+                "Yok",
+                "Yok",
+                "Ventriküler tıkanma yok"
+              ],
+              [
+                "Karaciğer USG",
+                "Kistik lezyon saptanmadı",
+                "Normal",
+                "Hidatik kist desteklenmedi"
+              ]
+            ],
+            "rows": [
+              [
+                "Kontrastsız BT",
+                "Bazı kalsifiye parankimal odaklar",
+                "Normal",
+                "Eski lezyon sekeli"
+              ],
+              [
+                "Kontrastlı MR",
+                "Bir lezyonda eksantrik nokta içeren kistik yapı",
+                "Yok",
+                "Skoleks görünümü"
+              ],
+              [
+                "Perilezyonel ödem",
+                "Sağ parietal aktif lezyon çevresinde mevcut",
+                "Yok",
+                "Nöbet odağı"
+              ],
+              [
+                "Hidrosefali",
+                "Yok",
+                "Yok",
+                "Ventriküler tıkanma yok"
+              ],
+              [
+                "Karaciğer USG",
+                "Kistik lezyon saptanmadı",
+                "Normal",
+                "Hidatik kist desteklenmedi"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Kontrastsız BT",
+              "Bazı kalsifiye parankimal odaklar",
+              "Normal",
+              "Eski lezyon sekeli"
+            ],
+            [
+              "Kontrastlı MR",
+              "Bir lezyonda eksantrik nokta içeren kistik yapı",
+              "Yok",
+              "Skoleks görünümü"
+            ],
+            [
+              "Perilezyonel ödem",
+              "Sağ parietal aktif lezyon çevresinde mevcut",
+              "Yok",
+              "Nöbet odağı"
+            ],
+            [
+              "Hidrosefali",
+              "Yok",
+              "Yok",
+              "Ventriküler tıkanma yok"
+            ],
+            [
+              "Karaciğer USG",
+              "Kistik lezyon saptanmadı",
+              "Normal",
+              "Hidatik kist desteklenmedi"
+            ]
+          ],
+          "flowOrder": 10,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 10
+        },
+        {
+          "id": "v256-new-480-yeni-nobet-ve-kalsifiye-beyin-lezyonlari-seroloji-gaita",
+          "label": "Parazitoloji ve seroloji verileri",
+          "title": "Parazitoloji ve seroloji verileri",
+          "orderLabel": "Parazitoloji ve seroloji verileri",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Helmint tanısını destekleyen testler",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Seroloji ve dışkı incelemesi patogenezi klinik-radyolojik bulgularla birlikte yorumlamaya yardımcı olur.",
+          "clinicalMeaning": "Seroloji ve dışkı incelemesi patogenezi klinik-radyolojik bulgularla birlikte yorumlamaya yardımcı olur.",
+          "result": {
+            "title": "Parazitoloji ve seroloji verileri",
+            "summary": "Seroloji ve dışkı incelemesi patogenezi klinik-radyolojik bulgularla birlikte yorumlamaya yardımcı olur.",
+            "interpretation": "Seroloji ve dışkı incelemesi patogenezi klinik-radyolojik bulgularla birlikte yorumlamaya yardımcı olur.",
+            "values": [
+              [
+                "Serum immunoblot",
+                "T. solium larval antijenlerine karşı pozitif",
+                "Negatif",
+                "Sistiserkoz desteği"
+              ],
+              [
+                "Dışkı mikroskopisi",
+                "Taenia yumurtası nadir görüldü",
+                "Negatif",
+                "Bağırsak kaynaklı saçılım olasılığı"
+              ],
+              [
+                "Echinococcus serolojisi",
+                "Negatif",
+                "Negatif",
+                "Hidatik hastalık desteklenmedi"
+              ],
+              [
+                "Schistosoma idrar mikroskopisi",
+                "Yumurta görülmedi",
+                "Negatif",
+                "Üriner şistozomiyazis yok"
+              ],
+              [
+                "Eozinofil",
+                "320/mm³",
+                "<500/mm³",
+                "Belirgin eozinofili yok"
+              ]
+            ],
+            "rows": [
+              [
+                "Serum immunoblot",
+                "T. solium larval antijenlerine karşı pozitif",
+                "Negatif",
+                "Sistiserkoz desteği"
+              ],
+              [
+                "Dışkı mikroskopisi",
+                "Taenia yumurtası nadir görüldü",
+                "Negatif",
+                "Bağırsak kaynaklı saçılım olasılığı"
+              ],
+              [
+                "Echinococcus serolojisi",
+                "Negatif",
+                "Negatif",
+                "Hidatik hastalık desteklenmedi"
+              ],
+              [
+                "Schistosoma idrar mikroskopisi",
+                "Yumurta görülmedi",
+                "Negatif",
+                "Üriner şistozomiyazis yok"
+              ],
+              [
+                "Eozinofil",
+                "320/mm³",
+                "<500/mm³",
+                "Belirgin eozinofili yok"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Serum immunoblot",
+              "T. solium larval antijenlerine karşı pozitif",
+              "Negatif",
+              "Sistiserkoz desteği"
+            ],
+            [
+              "Dışkı mikroskopisi",
+              "Taenia yumurtası nadir görüldü",
+              "Negatif",
+              "Bağırsak kaynaklı saçılım olasılığı"
+            ],
+            [
+              "Echinococcus serolojisi",
+              "Negatif",
+              "Negatif",
+              "Hidatik hastalık desteklenmedi"
+            ],
+            [
+              "Schistosoma idrar mikroskopisi",
+              "Yumurta görülmedi",
+              "Negatif",
+              "Üriner şistozomiyazis yok"
+            ],
+            [
+              "Eozinofil",
+              "320/mm³",
+              "<500/mm³",
+              "Belirgin eozinofili yok"
+            ]
+          ],
+          "flowOrder": 10,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 10
+        },
+        {
+          "id": "v256-new-480-yeni-nobet-ve-kalsifiye-beyin-lezyonlari-bos",
+          "label": "BOS değerlendirmesi",
+          "title": "BOS değerlendirmesi",
+          "orderLabel": "BOS değerlendirmesi",
+          "type": "laboratory",
+          "priority": "essential",
+          "subtype": "Santral sinir sistemi inflamasyon ayrımı",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "BOS bulguları akut bakteriyel menenjit veya yaygın ensefalitten çok parankimal kistik lezyon odağıyla uyumludur.",
+          "clinicalMeaning": "BOS bulguları akut bakteriyel menenjit veya yaygın ensefalitten çok parankimal kistik lezyon odağıyla uyumludur.",
+          "result": {
+            "title": "BOS değerlendirmesi",
+            "summary": "BOS bulguları akut bakteriyel menenjit veya yaygın ensefalitten çok parankimal kistik lezyon odağıyla uyumludur.",
+            "interpretation": "BOS bulguları akut bakteriyel menenjit veya yaygın ensefalitten çok parankimal kistik lezyon odağıyla uyumludur.",
+            "values": [
+              [
+                "BOS hücre",
+                "8/mm³, lenfosit ağırlıklı",
+                "0–5/mm³",
+                "Hafif artış"
+              ],
+              [
+                "BOS protein",
+                "58 mg/dL",
+                "15–45 mg/dL",
+                "Hafif artış"
+              ],
+              [
+                "BOS glukoz",
+                "66 mg/dL",
+                "Kan glukozunun >%60’ı",
+                "Bakteriyel patern yok"
+              ],
+              [
+                "BOS Gram boyama",
+                "Mikroorganizma görülmedi",
+                "",
+                "Bakteriyel menenjit desteklenmedi"
+              ],
+              [
+                "BOS viral PCR paneli",
+                "Negatif",
+                "Negatif",
+                "HSV/enterovirüs desteği yok"
+              ]
+            ],
+            "rows": [
+              [
+                "BOS hücre",
+                "8/mm³, lenfosit ağırlıklı",
+                "0–5/mm³",
+                "Hafif artış"
+              ],
+              [
+                "BOS protein",
+                "58 mg/dL",
+                "15–45 mg/dL",
+                "Hafif artış"
+              ],
+              [
+                "BOS glukoz",
+                "66 mg/dL",
+                "Kan glukozunun >%60’ı",
+                "Bakteriyel patern yok"
+              ],
+              [
+                "BOS Gram boyama",
+                "Mikroorganizma görülmedi",
+                "",
+                "Bakteriyel menenjit desteklenmedi"
+              ],
+              [
+                "BOS viral PCR paneli",
+                "Negatif",
+                "Negatif",
+                "HSV/enterovirüs desteği yok"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "BOS hücre",
+              "8/mm³, lenfosit ağırlıklı",
+              "0–5/mm³",
+              "Hafif artış"
+            ],
+            [
+              "BOS protein",
+              "58 mg/dL",
+              "15–45 mg/dL",
+              "Hafif artış"
+            ],
+            [
+              "BOS glukoz",
+              "66 mg/dL",
+              "Kan glukozunun >%60’ı",
+              "Bakteriyel patern yok"
+            ],
+            [
+              "BOS Gram boyama",
+              "Mikroorganizma görülmedi",
+              "",
+              "Bakteriyel menenjit desteklenmedi"
+            ],
+            [
+              "BOS viral PCR paneli",
+              "Negatif",
+              "Negatif",
+              "HSV/enterovirüs desteği yok"
+            ]
+          ],
+          "flowOrder": 10,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 10
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "shuffleOptions": false,
+      "question": "Bu hastadaki santral sinir sistemi lezyonlarını en iyi açıklayan bulaş-patogenez ilişkisi hangisidir?",
+      "questionType": "single-best-answer",
+      "answerTarget": "transmission-pathogenesis",
+      "diagnosis": {
+        "correct": "Fekal-oral yolla alınan T. solium yumurtalarının dokuda larvaya dönüşmesi",
+        "options": [
+          "Az pişmiş domuz etindeki sistiserkus larvalarının erişkin tenyaya dönüşmesi",
+          "Köpek dışkısıyla saçılan yumurtaların karaciğerde hidatik kist oluşturması",
+          "Fekal-oral yolla alınan T. solium yumurtalarının dokuda larvaya dönüşmesi",
+          "Tatlı suda serkaryaların deriden girerek venöz pleksusa yerleşmesi",
+          "Çiğ tatlı su balığındaki larvaların safra yollarına göç etmesi"
+        ],
+        "question": "Bu hastadaki santral sinir sistemi lezyonlarını en iyi açıklayan bulaş-patogenez ilişkisi hangisidir?",
+        "explanation": "Nörosistiserkoz, erişkin tenya taşıyan insan kaynaklı T. solium yumurtalarının fekal-oral alınması sonrası gelişir; larvalar bağırsaktan dokulara göç ederek beyinde kistik lezyonlar oluşturabilir. Az pişmiş domuz etiyle larva alınması bağırsakta erişkin tenya yapar, ancak nörosistiserkozun doğrudan patogenezi yumurta alımıdır.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Nöbet + beyinde kist/kalsifikasyon + skoleks → T. solium yumurtalarının fekal-oral alımıyla gelişen nörosistiserkoz."
+          }
+        ],
+        "optionFeedback": {
+          "Az pişmiş domuz etindeki sistiserkus larvalarının erişkin tenyaya dönüşmesi": {
+            "explanation": "Az pişmiş domuz etindeki sistiserkusların alınması intestinal erişkin Taenia solium enfeksiyonuna yol açar. Bu yol genellikle bağırsakta erişkin tenya gelişimiyle sonuçlanır; beyinde kistik/kalsifiye lezyon oluşturan nörosistiserkoz için esas olay yumurtaların fekal-oral alınmasıdır."
+          },
+          "Köpek dışkısıyla saçılan yumurtaların karaciğerde hidatik kist oluşturması": {
+            "explanation": "Köpek dışkısıyla saçılan Echinococcus yumurtalarının alınması karaciğer veya akciğerde hidatik kist oluşturabilir. Bu mekanizma karaciğerde kistik lezyon ve kız veziküllerle ilişkilidir; çoklu parankimal beyin kistleri ve skoleks odağı T. solium larvası için daha anlamlıdır."
+          },
+          "Fekal-oral yolla alınan T. solium yumurtalarının dokuda larvaya dönüşmesi": {
+            "explanation": "Nörosistiserkoz, T. solium yumurtalarının fekal-oral alınmasından sonra onkosferlerin bağırsak duvarını geçip dokularda larval kistlere dönüşmesiyle gelişir. Beyin parankimindeki kistik lezyonlar, eksantrik skoleks görünümü, ödemli aktif lezyon ve bazı kalsifiye odaklar bu patogenezle doğrudan bağlantılıdır."
+          },
+          "Tatlı suda serkaryaların deriden girerek venöz pleksusa yerleşmesi": {
+            "explanation": "Tatlı suda serkaryaların deriden girmesi Schistosoma türleri için tipik bulaş yoludur; mesane venöz pleksusu ve terminal dikenli yumurta özellikle üriner şistozomiyaziste önemlidir. Bu hastada nöbet, parankimal beyin kistleri ve skoleks içeren lezyonlar schistosomal venöz pleksus tutulumundan farklıdır."
+          },
+          "Çiğ tatlı su balığındaki larvaların safra yollarına göç etmesi": {
+            "explanation": "Çiğ tatlı su balığıyla alınan bazı trematod larvaları safra yollarında kronik enfeksiyon ve kolanjit-kolanjiyokarsinom riskiyle ilişkilidir. Beyin parankimindeki kistik lezyonlar ve dışkıda Taenia yumurtası öyküsü bu hepatobiliyer trematod mekanizmasını desteklemez."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Nörosistiserkoz, T. solium yumurtalarının fekal-oral alınmasından sonra onkosferlerin bağırsak duvarını geçip dokularda larval kistlere dönüşmesiyle gelişir. Beyin parankimindeki kistik lezyonlar, eksantrik skoleks görünümü, ödemli aktif lezyon ve bazı kalsifiye odaklar bu patogenezle doğrudan bağlantılıdır.",
+          "optionFeedback": {
+            "Az pişmiş domuz etindeki sistiserkus larvalarının erişkin tenyaya dönüşmesi": {
+              "explanation": "Az pişmiş domuz etindeki sistiserkusların alınması intestinal erişkin Taenia solium enfeksiyonuna yol açar. Bu yol genellikle bağırsakta erişkin tenya gelişimiyle sonuçlanır; beyinde kistik/kalsifiye lezyon oluşturan nörosistiserkoz için esas olay yumurtaların fekal-oral alınmasıdır."
+            },
+            "Köpek dışkısıyla saçılan yumurtaların karaciğerde hidatik kist oluşturması": {
+              "explanation": "Köpek dışkısıyla saçılan Echinococcus yumurtalarının alınması karaciğer veya akciğerde hidatik kist oluşturabilir. Bu mekanizma karaciğerde kistik lezyon ve kız veziküllerle ilişkilidir; çoklu parankimal beyin kistleri ve skoleks odağı T. solium larvası için daha anlamlıdır."
+            },
+            "Fekal-oral yolla alınan T. solium yumurtalarının dokuda larvaya dönüşmesi": {
+              "explanation": "Nörosistiserkoz, T. solium yumurtalarının fekal-oral alınmasından sonra onkosferlerin bağırsak duvarını geçip dokularda larval kistlere dönüşmesiyle gelişir. Beyin parankimindeki kistik lezyonlar, eksantrik skoleks görünümü, ödemli aktif lezyon ve bazı kalsifiye odaklar bu patogenezle doğrudan bağlantılıdır."
+            },
+            "Tatlı suda serkaryaların deriden girerek venöz pleksusa yerleşmesi": {
+              "explanation": "Tatlı suda serkaryaların deriden girmesi Schistosoma türleri için tipik bulaş yoludur; mesane venöz pleksusu ve terminal dikenli yumurta özellikle üriner şistozomiyaziste önemlidir. Bu hastada nöbet, parankimal beyin kistleri ve skoleks içeren lezyonlar schistosomal venöz pleksus tutulumundan farklıdır."
+            },
+            "Çiğ tatlı su balığındaki larvaların safra yollarına göç etmesi": {
+              "explanation": "Çiğ tatlı su balığıyla alınan bazı trematod larvaları safra yollarında kronik enfeksiyon ve kolanjit-kolanjiyokarsinom riskiyle ilişkilidir. Beyin parankimindeki kistik lezyonlar ve dışkıda Taenia yumurtası öyküsü bu hepatobiliyer trematod mekanizmasını desteklemez."
+            }
+          },
+          "whyWrong": {
+            "Az pişmiş domuz etindeki sistiserkus larvalarının erişkin tenyaya dönüşmesi": "Az pişmiş domuz etindeki sistiserkusların alınması intestinal erişkin Taenia solium enfeksiyonuna yol açar. Bu yol genellikle bağırsakta erişkin tenya gelişimiyle sonuçlanır; beyinde kistik/kalsifiye lezyon oluşturan nörosistiserkoz için esas olay yumurtaların fekal-oral alınmasıdır.",
+            "Köpek dışkısıyla saçılan yumurtaların karaciğerde hidatik kist oluşturması": "Köpek dışkısıyla saçılan Echinococcus yumurtalarının alınması karaciğer veya akciğerde hidatik kist oluşturabilir. Bu mekanizma karaciğerde kistik lezyon ve kız veziküllerle ilişkilidir; çoklu parankimal beyin kistleri ve skoleks odağı T. solium larvası için daha anlamlıdır.",
+            "Tatlı suda serkaryaların deriden girerek venöz pleksusa yerleşmesi": "Tatlı suda serkaryaların deriden girmesi Schistosoma türleri için tipik bulaş yoludur; mesane venöz pleksusu ve terminal dikenli yumurta özellikle üriner şistozomiyaziste önemlidir. Bu hastada nöbet, parankimal beyin kistleri ve skoleks içeren lezyonlar schistosomal venöz pleksus tutulumundan farklıdır.",
+            "Çiğ tatlı su balığındaki larvaların safra yollarına göç etmesi": "Çiğ tatlı su balığıyla alınan bazı trematod larvaları safra yollarında kronik enfeksiyon ve kolanjit-kolanjiyokarsinom riskiyle ilişkilidir. Beyin parankimindeki kistik lezyonlar ve dışkıda Taenia yumurtası öyküsü bu hepatobiliyer trematod mekanizmasını desteklemez."
+          }
+        }
+      },
+      "coreKnowledge": "Taenia solium için iki klinik yol ayrılmalıdır: sistiserkus larvası içeren az pişmiş domuz eti intestinal tenyazis, yumurta alımı ise sistiserkoz/nörosistiserkoz oluşturur.",
+      "examPearl": "Nöbet + beyinde kist/kalsifikasyon + skoleks → T. solium yumurtalarının fekal-oral alımıyla gelişen nörosistiserkoz.",
+      "whyCorrect": "Nörosistiserkoz, T. solium yumurtalarının fekal-oral alınmasından sonra onkosferlerin bağırsak duvarını geçip dokularda larval kistlere dönüşmesiyle gelişir. Beyin parankimindeki kistik lezyonlar, eksantrik skoleks görünümü, ödemli aktif lezyon ve bazı kalsifiye odaklar bu patogenezle doğrudan bağlantılıdır.",
+      "optionComparison": {
+        "Az pişmiş domuz etindeki sistiserkus larvalarının erişkin tenyaya dönüşmesi": "Az pişmiş domuz etindeki sistiserkusların alınması intestinal erişkin Taenia solium enfeksiyonuna yol açar. Bu yol genellikle bağırsakta erişkin tenya gelişimiyle sonuçlanır; beyinde kistik/kalsifiye lezyon oluşturan nörosistiserkoz için esas olay yumurtaların fekal-oral alınmasıdır.",
+        "Köpek dışkısıyla saçılan yumurtaların karaciğerde hidatik kist oluşturması": "Köpek dışkısıyla saçılan Echinococcus yumurtalarının alınması karaciğer veya akciğerde hidatik kist oluşturabilir. Bu mekanizma karaciğerde kistik lezyon ve kız veziküllerle ilişkilidir; çoklu parankimal beyin kistleri ve skoleks odağı T. solium larvası için daha anlamlıdır.",
+        "Fekal-oral yolla alınan T. solium yumurtalarının dokuda larvaya dönüşmesi": "Nörosistiserkoz, T. solium yumurtalarının fekal-oral alınmasından sonra onkosferlerin bağırsak duvarını geçip dokularda larval kistlere dönüşmesiyle gelişir. Beyin parankimindeki kistik lezyonlar, eksantrik skoleks görünümü, ödemli aktif lezyon ve bazı kalsifiye odaklar bu patogenezle doğrudan bağlantılıdır.",
+        "Tatlı suda serkaryaların deriden girerek venöz pleksusa yerleşmesi": "Tatlı suda serkaryaların deriden girmesi Schistosoma türleri için tipik bulaş yoludur; mesane venöz pleksusu ve terminal dikenli yumurta özellikle üriner şistozomiyaziste önemlidir. Bu hastada nöbet, parankimal beyin kistleri ve skoleks içeren lezyonlar schistosomal venöz pleksus tutulumundan farklıdır.",
+        "Çiğ tatlı su balığındaki larvaların safra yollarına göç etmesi": "Çiğ tatlı su balığıyla alınan bazı trematod larvaları safra yollarında kronik enfeksiyon ve kolanjit-kolanjiyokarsinom riskiyle ilişkilidir. Beyin parankimindeki kistik lezyonlar ve dışkıda Taenia yumurtası öyküsü bu hepatobiliyer trematod mekanizmasını desteklemez."
+      },
+      "evidenceChain": [
+        {
+          "text": "Yeni başlangıçlı nöbet → parankimal beyin lezyonlarının klinik sonucudur.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "MR’da eksantrik noktalı kistik lezyon → skoleks içeren larval kisti destekler.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Kalsifiye odaklar ve aktif ödemli lezyon birlikteliği → farklı evrelerde nörosistiserkozla uyumludur.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Serum immunoblot pozitifliği → T. solium larval enfeksiyonunu destekler.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Az pişmiş domuz etindeki sistiserkus larvalarının erişkin tenyaya dönüşmesi": "Az pişmiş domuz etindeki sistiserkusların alınması intestinal erişkin Taenia solium enfeksiyonuna yol açar. Bu yol genellikle bağırsakta erişkin tenya gelişimiyle sonuçlanır; beyinde kistik/kalsifiye lezyon oluşturan nörosistiserkoz için esas olay yumurtaların fekal-oral alınmasıdır.",
+        "Köpek dışkısıyla saçılan yumurtaların karaciğerde hidatik kist oluşturması": "Köpek dışkısıyla saçılan Echinococcus yumurtalarının alınması karaciğer veya akciğerde hidatik kist oluşturabilir. Bu mekanizma karaciğerde kistik lezyon ve kız veziküllerle ilişkilidir; çoklu parankimal beyin kistleri ve skoleks odağı T. solium larvası için daha anlamlıdır.",
+        "Tatlı suda serkaryaların deriden girerek venöz pleksusa yerleşmesi": "Tatlı suda serkaryaların deriden girmesi Schistosoma türleri için tipik bulaş yoludur; mesane venöz pleksusu ve terminal dikenli yumurta özellikle üriner şistozomiyaziste önemlidir. Bu hastada nöbet, parankimal beyin kistleri ve skoleks içeren lezyonlar schistosomal venöz pleksus tutulumundan farklıdır.",
+        "Çiğ tatlı su balığındaki larvaların safra yollarına göç etmesi": "Çiğ tatlı su balığıyla alınan bazı trematod larvaları safra yollarında kronik enfeksiyon ve kolanjit-kolanjiyokarsinom riskiyle ilişkilidir. Beyin parankimindeki kistik lezyonlar ve dışkıda Taenia yumurtası öyküsü bu hepatobiliyer trematod mekanizmasını desteklemez."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v256-medical-microbiology-seventh-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Yeni başlangıçlı nöbet",
+        "Eksantrik skoleks içeren kistik beyin lezyonu",
+        "Kalsifiye ve aktif lezyon birlikteliği",
+        "T. solium larval seroloji pozitifliği"
+      ],
+      "images": []
+    },
+  {
+      "id": "v256-new-481-bebekte-hisiltili-bronsiolit-salgini",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Bebekte hışıltılı bronşiolit salgını",
+      "difficulty": "Orta",
+      "difficultyTag": "Orta",
+      "clinicalFocus": "Bebekte bronşiolit ve servis içi kümelenme tablosunda solunum virüsü testlerini yorumlama.",
+      "learningTarget": "Nazofaringeal örnekte antijen/RT-PCR sonuçlarını klinik bronşiolit bulgularıyla eşleştirerek RSV ayrımını yapabilme.",
+      "demographics": "3 aylık erkek bebek",
+      "setting": "Çocuk acil / Pediatri servisi",
+      "chiefComplaint": "İki gündür artan burun akıntısı, öksürük, hışıltı ve beslenme azalması nedeniyle getiriliyor.",
+      "stem": "Bebek iki gün önce burun akıntısı ve hafif öksürükle hastalanmış, son 12 saatte emmesi azalmış ve nefes alırken göğsünde çekilmeler başlamıştır. Ailesi evde ateşin çok yükselmediğini, ancak bebeğin aralarda kısa süreli soluk duraklaması gibi göründüğünü anlatır. Aynı hafta kreş çağındaki kardeşinde soğuk algınlığı olmuş ve pediatri servisinde benzer hışıltılı bebek başvuruları artmıştır. Prematürite öyküsü yoktur; bilinen kalp hastalığı bulunmamaktadır.",
+      "patientIntro": {
+        "profile": "3 aylık erkek bebek, hışıltılı solunum ve beslenme azalması nedeniyle çocuk acilde değerlendiriliyor.",
+        "presentation": "Burun akıntısı, öksürük, hışıltı, subkostal çekilme ve nazofaringeal örnekte viral test pozitifliği vardır.",
+        "historySummary": "Bebek iki gün önce burun akıntısı ve hafif öksürükle hastalanmış, son 12 saatte emmesi azalmış ve nefes alırken göğsünde çekilmeler başlamıştır. Ailesi evde ateşin çok yükselmediğini, ancak bebeğin aralarda kısa süreli soluk duraklaması gibi göründüğünü anlatır. Aynı hafta kreş çağındaki kardeşinde soğuk algınlığı olmuş ve pediatri servisinde benzer hışıltılı bebek başvuruları artmıştır. Prematürite öyküsü yoktur; bilinen kalp hastalığı bulunmamaktadır."
+      },
+      "vitals": {
+        "TA": "82/48 mmHg",
+        "Nabız": "164/dk",
+        "Solunum": "58/dk",
+        "SpO2": "%90, oda havasında",
+        "Ateş": "37.8 °C",
+        "Şok indeksi": "2.00 - yaşa göre takip gerektirir"
+      },
+      "exam": [
+        "Bebek huzursuz, burun kanadı solunumu ve subkostal çekilmeleri vardır.",
+        "Akciğerlerde bilateral yaygın ekspiryum hışıltısı ve ince raller duyulur.",
+        "Orofarenkste eksüda yoktur; belirgin inspiratuvar stridor saptanmaz.",
+        "Dehidratasyon hafiftir; kapiller dolum yaklaşık 2 saniyedir."
+      ],
+      "investigations": [
+        {
+          "id": "v256-new-481-bebekte-hisiltili-bronsiolit-salgini-nazofaringeal-test",
+          "label": "Nazofaringeal örnek viral testleri",
+          "title": "Nazofaringeal örnek viral testleri",
+          "orderLabel": "Nazofaringeal örnek viral testleri",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Solunum virüsü antijen ve NAAT sonuçları",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Nazofaringeal örnekte hızlı antijen ve rRT-PCR pozitifliği aynı solunum virüsünü destekler.",
+          "clinicalMeaning": "Nazofaringeal örnekte hızlı antijen ve rRT-PCR pozitifliği aynı solunum virüsünü destekler.",
+          "result": {
+            "title": "Nazofaringeal örnek viral testleri",
+            "summary": "Nazofaringeal örnekte hızlı antijen ve rRT-PCR pozitifliği aynı solunum virüsünü destekler.",
+            "interpretation": "Nazofaringeal örnekte hızlı antijen ve rRT-PCR pozitifliği aynı solunum virüsünü destekler.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Nazofaringeal aspirat",
+                "Uygun örnek",
+                "Üst solunum yolu viral örneği"
+              ],
+              [
+                "Hızlı antijen testi",
+                "RSV antijeni pozitif",
+                "Negatif",
+                "Hızlı viral destek"
+              ],
+              [
+                "rRT-PCR",
+                "RSV A RNA pozitif, Ct 21",
+                "Negatif",
+                "Yüksek viral yük"
+              ],
+              [
+                "Influenza A/B PCR",
+                "Negatif",
+                "Negatif",
+                "Alternatif influenza yok"
+              ],
+              [
+                "SARS-CoV-2 PCR",
+                "Negatif",
+                "Negatif",
+                "COVID-19 desteği yok"
+              ]
+            ],
+            "rows": [
+              [
+                "Örnek tipi",
+                "Nazofaringeal aspirat",
+                "Uygun örnek",
+                "Üst solunum yolu viral örneği"
+              ],
+              [
+                "Hızlı antijen testi",
+                "RSV antijeni pozitif",
+                "Negatif",
+                "Hızlı viral destek"
+              ],
+              [
+                "rRT-PCR",
+                "RSV A RNA pozitif, Ct 21",
+                "Negatif",
+                "Yüksek viral yük"
+              ],
+              [
+                "Influenza A/B PCR",
+                "Negatif",
+                "Negatif",
+                "Alternatif influenza yok"
+              ],
+              [
+                "SARS-CoV-2 PCR",
+                "Negatif",
+                "Negatif",
+                "COVID-19 desteği yok"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Örnek tipi",
+              "Nazofaringeal aspirat",
+              "Uygun örnek",
+              "Üst solunum yolu viral örneği"
+            ],
+            [
+              "Hızlı antijen testi",
+              "RSV antijeni pozitif",
+              "Negatif",
+              "Hızlı viral destek"
+            ],
+            [
+              "rRT-PCR",
+              "RSV A RNA pozitif, Ct 21",
+              "Negatif",
+              "Yüksek viral yük"
+            ],
+            [
+              "Influenza A/B PCR",
+              "Negatif",
+              "Negatif",
+              "Alternatif influenza yok"
+            ],
+            [
+              "SARS-CoV-2 PCR",
+              "Negatif",
+              "Negatif",
+              "COVID-19 desteği yok"
+            ]
+          ],
+          "flowOrder": 10,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 10
+        },
+        {
+          "id": "v256-new-481-bebekte-hisiltili-bronsiolit-salgini-radyoloji-kan",
+          "label": "Radyoloji ve kan tetkikleri",
+          "title": "Radyoloji ve kan tetkikleri",
+          "orderLabel": "Radyoloji ve kan tetkikleri",
+          "type": "laboratory",
+          "priority": "essential",
+          "subtype": "Bronşiolit destek verileri",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hiperinflasyon ve düşük CRP bakteriyel konsolidasyondan çok viral bronşiolit örüntüsünü destekler.",
+          "clinicalMeaning": "Hiperinflasyon ve düşük CRP bakteriyel konsolidasyondan çok viral bronşiolit örüntüsünü destekler.",
+          "result": {
+            "title": "Radyoloji ve kan tetkikleri",
+            "summary": "Hiperinflasyon ve düşük CRP bakteriyel konsolidasyondan çok viral bronşiolit örüntüsünü destekler.",
+            "interpretation": "Hiperinflasyon ve düşük CRP bakteriyel konsolidasyondan çok viral bronşiolit örüntüsünü destekler.",
+            "values": [
+              [
+                "Akciğer grafisi",
+                "Bilateral hiperinflasyon ve peribronşiyal kalınlaşma",
+                "Normal",
+                "Bronşiolit örüntüsü"
+              ],
+              [
+                "Lober konsolidasyon",
+                "Saptanmadı",
+                "Yok",
+                "Bakteriyel pnömoni desteği yok"
+              ],
+              [
+                "CRP",
+                "4 mg/L",
+                "<5 mg/L",
+                "Düşük inflamasyon"
+              ],
+              [
+                "Lökosit",
+                "8.900/mm³",
+                "5.000–15.000/mm³",
+                "Yaşa göre olağan aralık"
+              ],
+              [
+                "Kan kültürü",
+                "Üreme yok",
+                "Negatif",
+                "Bakteriyemi yok"
+              ]
+            ],
+            "rows": [
+              [
+                "Akciğer grafisi",
+                "Bilateral hiperinflasyon ve peribronşiyal kalınlaşma",
+                "Normal",
+                "Bronşiolit örüntüsü"
+              ],
+              [
+                "Lober konsolidasyon",
+                "Saptanmadı",
+                "Yok",
+                "Bakteriyel pnömoni desteği yok"
+              ],
+              [
+                "CRP",
+                "4 mg/L",
+                "<5 mg/L",
+                "Düşük inflamasyon"
+              ],
+              [
+                "Lökosit",
+                "8.900/mm³",
+                "5.000–15.000/mm³",
+                "Yaşa göre olağan aralık"
+              ],
+              [
+                "Kan kültürü",
+                "Üreme yok",
+                "Negatif",
+                "Bakteriyemi yok"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Akciğer grafisi",
+              "Bilateral hiperinflasyon ve peribronşiyal kalınlaşma",
+              "Normal",
+              "Bronşiolit örüntüsü"
+            ],
+            [
+              "Lober konsolidasyon",
+              "Saptanmadı",
+              "Yok",
+              "Bakteriyel pnömoni desteği yok"
+            ],
+            [
+              "CRP",
+              "4 mg/L",
+              "<5 mg/L",
+              "Düşük inflamasyon"
+            ],
+            [
+              "Lökosit",
+              "8.900/mm³",
+              "5.000–15.000/mm³",
+              "Yaşa göre olağan aralık"
+            ],
+            [
+              "Kan kültürü",
+              "Üreme yok",
+              "Negatif",
+              "Bakteriyemi yok"
+            ]
+          ],
+          "flowOrder": 10,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 10
+        },
+        {
+          "id": "v256-new-481-bebekte-hisiltili-bronsiolit-salgini-salgın-verisi",
+          "label": "Servis içi solunum yolu kümelenme verisi",
+          "title": "Servis içi solunum yolu kümelenme verisi",
+          "orderLabel": "Servis içi solunum yolu kümelenme verisi",
+          "type": "clinical",
+          "priority": "essential",
+          "subtype": "Epidemiyolojik bağlam",
+          "category": "clinicalAssessment",
+          "testTypeCategory": "clinicalAssessment",
+          "summary": "Benzer yaş grubunda kısa sürede artan bronşiolit başvuruları solunum yolu damlacık/temas yayılımını destekler.",
+          "clinicalMeaning": "Benzer yaş grubunda kısa sürede artan bronşiolit başvuruları solunum yolu damlacık/temas yayılımını destekler.",
+          "result": {
+            "title": "Servis içi solunum yolu kümelenme verisi",
+            "summary": "Benzer yaş grubunda kısa sürede artan bronşiolit başvuruları solunum yolu damlacık/temas yayılımını destekler.",
+            "interpretation": "Benzer yaş grubunda kısa sürede artan bronşiolit başvuruları solunum yolu damlacık/temas yayılımını destekler.",
+            "values": [
+              [
+                "Aynı hafta başvuruları",
+                "Benzer yaşta 6 bebekte hışıltılı bronşiolit",
+                "Sporadik",
+                "Kümelenme"
+              ],
+              [
+                "Ortak alan teması",
+                "Kardeşinde üst solunum yolu bulguları var",
+                "",
+                "Ev içi temas"
+              ],
+              [
+                "El hijyeni gözlemi",
+                "Refakatçi geçişleri sık",
+                "",
+                "Temas yayılımı riski"
+              ],
+              [
+                "İnkübasyon aralığı",
+                "Yaklaşık 2–5 gün",
+                "Değişken",
+                "Solunum virüsü aralığı"
+              ],
+              [
+                "Bakteriyel kültür kümesi",
+                "Saptanmadı",
+                "Yok",
+                "Bakteriyel salgın desteği yok"
+              ]
+            ],
+            "rows": [
+              [
+                "Aynı hafta başvuruları",
+                "Benzer yaşta 6 bebekte hışıltılı bronşiolit",
+                "Sporadik",
+                "Kümelenme"
+              ],
+              [
+                "Ortak alan teması",
+                "Kardeşinde üst solunum yolu bulguları var",
+                "",
+                "Ev içi temas"
+              ],
+              [
+                "El hijyeni gözlemi",
+                "Refakatçi geçişleri sık",
+                "",
+                "Temas yayılımı riski"
+              ],
+              [
+                "İnkübasyon aralığı",
+                "Yaklaşık 2–5 gün",
+                "Değişken",
+                "Solunum virüsü aralığı"
+              ],
+              [
+                "Bakteriyel kültür kümesi",
+                "Saptanmadı",
+                "Yok",
+                "Bakteriyel salgın desteği yok"
+              ]
+            ]
+          },
+          "rows": [
+            [
+              "Aynı hafta başvuruları",
+              "Benzer yaşta 6 bebekte hışıltılı bronşiolit",
+              "Sporadik",
+              "Kümelenme"
+            ],
+            [
+              "Ortak alan teması",
+              "Kardeşinde üst solunum yolu bulguları var",
+              "",
+              "Ev içi temas"
+            ],
+            [
+              "El hijyeni gözlemi",
+              "Refakatçi geçişleri sık",
+              "",
+              "Temas yayılımı riski"
+            ],
+            [
+              "İnkübasyon aralığı",
+              "Yaklaşık 2–5 gün",
+              "Değişken",
+              "Solunum virüsü aralığı"
+            ],
+            [
+              "Bakteriyel kültür kümesi",
+              "Saptanmadı",
+              "Yok",
+              "Bakteriyel salgın desteği yok"
+            ]
+          ],
+          "flowOrder": 10,
+          "treatmentImpact": "Tanı/etken/direnç ayrımını etkiler",
+          "orderRank": 10
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "shuffleOptions": false,
+      "question": "Bu klinik ve laboratuvar verileriyle en olası viral etken aşağıdakilerden hangisidir?",
+      "questionType": "single-best-answer",
+      "answerTarget": "viral-agent",
+      "diagnosis": {
+        "correct": "Respiratory syncytial virus",
+        "options": [
+          "Human metapneumovirus",
+          "Respiratory syncytial virus",
+          "Parainfluenza virus tip 1",
+          "Influenza A virus",
+          "Adenovirus"
+        ],
+        "question": "Bu klinik ve laboratuvar verileriyle en olası viral etken aşağıdakilerden hangisidir?",
+        "explanation": "Bebekte kış döneminde hışıltılı bronşiolit, hipoksemi, nazofaringeal aspiratta hızlı antijen pozitifliği ve rRT-PCR ile RSV A RNA saptanması Respiratory syncytial virus için güçlü kanıt sağlar. İnfluenza, parainfluenza, metapneumovirus ve adenovirus klinik olarak karışabilir; ancak multipleks test sonucu ve bronşiolit paterni RSV lehinedir.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Bebek bronşioliti + nazofaringeal RSV antijeni + rRT-PCR pozitifliği → Respiratory syncytial virus."
+          }
+        ],
+        "optionFeedback": {
+          "Human metapneumovirus": {
+            "explanation": "Human metapneumovirus bebek ve yaşlılarda bronşiolit veya pnömoni yapabilir ve klinik olarak RSV ile karışabilir. Bu vakada nazofaringeal örnekte RSV A RNA’sı ve hızlı antijen pozitifliği, kış ayı servis kümelenmesi ve füzyon proteini hedefli test sonucu RSV lehine daha belirgindir."
+          },
+          "Respiratory syncytial virus": {
+            "explanation": "Respiratory syncytial virus bebeklerde bronşiolitin başlıca viral etkenlerinden biridir; nazofaringeal aspirat veya sürüntüde antijen testi ve rRT-PCR ile saptanabilir. Kış döneminde servis içinde kümelenme, apne/bronşiolit, hipoksemi ve RSV A RNA pozitifliği bu etkeni en iyi açıklar."
+          },
+          "Parainfluenza virus tip 1": {
+            "explanation": "Parainfluenza virus tip 1 daha çok krup, inspiratuvar stridor ve laringotrakeit tablosuyla öne çıkar. Bu hastada alt hava yolu hışıltısı, yaygın bronşiolit bulguları ve RSV A RNA/antijen pozitifliği parainfluenza krup paterninden ayrılır."
+          },
+          "Influenza A virus": {
+            "explanation": "Influenza A virus ateş, miyalji ve üst-alt solunum yolu hastalığı yapabilir; özellikle salgın dönemlerinde ayırıcı tanıda yer alır. Multipleks panelde influenza A RNA’sının negatif olması ve RSV A pozitifliği, ayrıca bebek bronşiolit kliniği bu seçeneği geri plana iter."
+          },
+          "Adenovirus": {
+            "explanation": "Adenovirus zarfsız DNA virüsüdür; farenjit, konjonktivit, pnömoni veya gastroenterit yapabilir ve bazı olgularda ağır seyredebilir. Burada konjonktivit/faringokonjonktival ateş bulgusu yoktur; nazofaringeal örnekte RSV antijeni ve RNA’sının saptanması adenovirüsten daha doğrudan kanıt sağlar."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Respiratory syncytial virus bebeklerde bronşiolitin başlıca viral etkenlerinden biridir; nazofaringeal aspirat veya sürüntüde antijen testi ve rRT-PCR ile saptanabilir. Kış döneminde servis içinde kümelenme, apne/bronşiolit, hipoksemi ve RSV A RNA pozitifliği bu etkeni en iyi açıklar.",
+          "optionFeedback": {
+            "Human metapneumovirus": {
+              "explanation": "Human metapneumovirus bebek ve yaşlılarda bronşiolit veya pnömoni yapabilir ve klinik olarak RSV ile karışabilir. Bu vakada nazofaringeal örnekte RSV A RNA’sı ve hızlı antijen pozitifliği, kış ayı servis kümelenmesi ve füzyon proteini hedefli test sonucu RSV lehine daha belirgindir."
+            },
+            "Respiratory syncytial virus": {
+              "explanation": "Respiratory syncytial virus bebeklerde bronşiolitin başlıca viral etkenlerinden biridir; nazofaringeal aspirat veya sürüntüde antijen testi ve rRT-PCR ile saptanabilir. Kış döneminde servis içinde kümelenme, apne/bronşiolit, hipoksemi ve RSV A RNA pozitifliği bu etkeni en iyi açıklar."
+            },
+            "Parainfluenza virus tip 1": {
+              "explanation": "Parainfluenza virus tip 1 daha çok krup, inspiratuvar stridor ve laringotrakeit tablosuyla öne çıkar. Bu hastada alt hava yolu hışıltısı, yaygın bronşiolit bulguları ve RSV A RNA/antijen pozitifliği parainfluenza krup paterninden ayrılır."
+            },
+            "Influenza A virus": {
+              "explanation": "Influenza A virus ateş, miyalji ve üst-alt solunum yolu hastalığı yapabilir; özellikle salgın dönemlerinde ayırıcı tanıda yer alır. Multipleks panelde influenza A RNA’sının negatif olması ve RSV A pozitifliği, ayrıca bebek bronşiolit kliniği bu seçeneği geri plana iter."
+            },
+            "Adenovirus": {
+              "explanation": "Adenovirus zarfsız DNA virüsüdür; farenjit, konjonktivit, pnömoni veya gastroenterit yapabilir ve bazı olgularda ağır seyredebilir. Burada konjonktivit/faringokonjonktival ateş bulgusu yoktur; nazofaringeal örnekte RSV antijeni ve RNA’sının saptanması adenovirüsten daha doğrudan kanıt sağlar."
+            }
+          },
+          "whyWrong": {
+            "Human metapneumovirus": "Human metapneumovirus bebek ve yaşlılarda bronşiolit veya pnömoni yapabilir ve klinik olarak RSV ile karışabilir. Bu vakada nazofaringeal örnekte RSV A RNA’sı ve hızlı antijen pozitifliği, kış ayı servis kümelenmesi ve füzyon proteini hedefli test sonucu RSV lehine daha belirgindir.",
+            "Parainfluenza virus tip 1": "Parainfluenza virus tip 1 daha çok krup, inspiratuvar stridor ve laringotrakeit tablosuyla öne çıkar. Bu hastada alt hava yolu hışıltısı, yaygın bronşiolit bulguları ve RSV A RNA/antijen pozitifliği parainfluenza krup paterninden ayrılır.",
+            "Influenza A virus": "Influenza A virus ateş, miyalji ve üst-alt solunum yolu hastalığı yapabilir; özellikle salgın dönemlerinde ayırıcı tanıda yer alır. Multipleks panelde influenza A RNA’sının negatif olması ve RSV A pozitifliği, ayrıca bebek bronşiolit kliniği bu seçeneği geri plana iter.",
+            "Adenovirus": "Adenovirus zarfsız DNA virüsüdür; farenjit, konjonktivit, pnömoni veya gastroenterit yapabilir ve bazı olgularda ağır seyredebilir. Burada konjonktivit/faringokonjonktival ateş bulgusu yoktur; nazofaringeal örnekte RSV antijeni ve RNA’sının saptanması adenovirüsten daha doğrudan kanıt sağlar."
+          }
+        }
+      },
+      "coreKnowledge": "RSV, bebeklerde bronşiolitin en önemli viral etkenlerinden biridir; tanıda nazofaringeal örnekten antijen testi veya rRT-PCR kullanılabilir. Füzyon proteini kaynaklı sinsitya oluşumu alt hava yolu epitel tutulumunda önemlidir.",
+      "examPearl": "Bebek bronşioliti + nazofaringeal RSV antijeni + rRT-PCR pozitifliği → Respiratory syncytial virus.",
+      "whyCorrect": "Respiratory syncytial virus bebeklerde bronşiolitin başlıca viral etkenlerinden biridir; nazofaringeal aspirat veya sürüntüde antijen testi ve rRT-PCR ile saptanabilir. Kış döneminde servis içinde kümelenme, apne/bronşiolit, hipoksemi ve RSV A RNA pozitifliği bu etkeni en iyi açıklar.",
+      "optionComparison": {
+        "Human metapneumovirus": "Human metapneumovirus bebek ve yaşlılarda bronşiolit veya pnömoni yapabilir ve klinik olarak RSV ile karışabilir. Bu vakada nazofaringeal örnekte RSV A RNA’sı ve hızlı antijen pozitifliği, kış ayı servis kümelenmesi ve füzyon proteini hedefli test sonucu RSV lehine daha belirgindir.",
+        "Respiratory syncytial virus": "Respiratory syncytial virus bebeklerde bronşiolitin başlıca viral etkenlerinden biridir; nazofaringeal aspirat veya sürüntüde antijen testi ve rRT-PCR ile saptanabilir. Kış döneminde servis içinde kümelenme, apne/bronşiolit, hipoksemi ve RSV A RNA pozitifliği bu etkeni en iyi açıklar.",
+        "Parainfluenza virus tip 1": "Parainfluenza virus tip 1 daha çok krup, inspiratuvar stridor ve laringotrakeit tablosuyla öne çıkar. Bu hastada alt hava yolu hışıltısı, yaygın bronşiolit bulguları ve RSV A RNA/antijen pozitifliği parainfluenza krup paterninden ayrılır.",
+        "Influenza A virus": "Influenza A virus ateş, miyalji ve üst-alt solunum yolu hastalığı yapabilir; özellikle salgın dönemlerinde ayırıcı tanıda yer alır. Multipleks panelde influenza A RNA’sının negatif olması ve RSV A pozitifliği, ayrıca bebek bronşiolit kliniği bu seçeneği geri plana iter.",
+        "Adenovirus": "Adenovirus zarfsız DNA virüsüdür; farenjit, konjonktivit, pnömoni veya gastroenterit yapabilir ve bazı olgularda ağır seyredebilir. Burada konjonktivit/faringokonjonktival ateş bulgusu yoktur; nazofaringeal örnekte RSV antijeni ve RNA’sının saptanması adenovirüsten daha doğrudan kanıt sağlar."
+      },
+      "evidenceChain": [
+        {
+          "text": "3 aylık bebekte hışıltılı solunum ve çekilme → bronşiolit klinik bağlamıdır.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Nazofaringeal RSV antijeni pozitifliği → hızlı viral destek sağlar.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "rRT-PCR ile RSV A RNA pozitifliği → etkeni moleküler olarak doğrular.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "İnfluenza/SARS-CoV-2 PCR negatifliği ve lober konsolidasyon yokluğu → diğer sık nedenleri geri plana iter.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Human metapneumovirus": "Human metapneumovirus bebek ve yaşlılarda bronşiolit veya pnömoni yapabilir ve klinik olarak RSV ile karışabilir. Bu vakada nazofaringeal örnekte RSV A RNA’sı ve hızlı antijen pozitifliği, kış ayı servis kümelenmesi ve füzyon proteini hedefli test sonucu RSV lehine daha belirgindir.",
+        "Parainfluenza virus tip 1": "Parainfluenza virus tip 1 daha çok krup, inspiratuvar stridor ve laringotrakeit tablosuyla öne çıkar. Bu hastada alt hava yolu hışıltısı, yaygın bronşiolit bulguları ve RSV A RNA/antijen pozitifliği parainfluenza krup paterninden ayrılır.",
+        "Influenza A virus": "Influenza A virus ateş, miyalji ve üst-alt solunum yolu hastalığı yapabilir; özellikle salgın dönemlerinde ayırıcı tanıda yer alır. Multipleks panelde influenza A RNA’sının negatif olması ve RSV A pozitifliği, ayrıca bebek bronşiolit kliniği bu seçeneği geri plana iter.",
+        "Adenovirus": "Adenovirus zarfsız DNA virüsüdür; farenjit, konjonktivit, pnömoni veya gastroenterit yapabilir ve bazı olgularda ağır seyredebilir. Burada konjonktivit/faringokonjonktival ateş bulgusu yoktur; nazofaringeal örnekte RSV antijeni ve RNA’sının saptanması adenovirüsten daha doğrudan kanıt sağlar."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v256-medical-microbiology-seventh-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Bebek bronşioliti",
+        "Nazofaringeal RSV antijen pozitifliği",
+        "RSV A rRT-PCR pozitifliği",
+        "Hiperinflasyon ve peribronşiyal kalınlaşma"
+      ],
+      "images": []
+    },
+  {
+      "id": "v257-new-482-asisiz-ergende-gri-farengeal-membran",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Aşısız ergende gri farengeal membran",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Aşısız ergende psödomembranöz farenjit ve sistemik toksin riski üzerinden toksin mekanizmasını yorumlama.",
+      "learningTarget": "Boğaz sürüntüsü kültürü, toksin geni ve toksin üretim verisini klinik tabloyla birleştirerek temel patogenez mekanizmasını seçebilme.",
+      "demographics": "15 yaşında erkek hasta",
+      "setting": "Acil servis / Enfeksiyon hastalıkları değerlendirmesi",
+      "chiefComplaint": "Üç gündür boğaz ağrısı, yutma güçlüğü, ateş ve boyunda şişlik nedeniyle başvuruyor.",
+      "stem": "Hasta üç gün önce halsizlik ve boğaz ağrısıyla hastalanmış, son 24 saatte yutkunurken belirgin ağrı ve sesinde boğuklaşma gelişmiştir. Ailesi çocukluk aşılarının eksik kaldığını, son yıllarda rapel aşı yapılmadığını söyler. Evde benzer yakınması olan kişi yoktur; hasta yakın zamanda kalabalık bir yurtta kalmaya başlamıştır. Membran görünümü nedeniyle aile evde gargara yapmış ancak kanama olabileceği korkusuyla dokunmamıştır.",
+      "patientIntro": {
+        "profile": "15 yaşında erkek hasta, acil servis / enfeksiyon hastalıkları değerlendirmesi ortamında değerlendiriliyor.",
+        "presentation": "Üç gündür boğaz ağrısı, yutma güçlüğü, ateş ve boyunda şişlik nedeniyle başvuruyor.",
+        "historySummary": "Hasta üç gün önce halsizlik ve boğaz ağrısıyla hastalanmış, son 24 saatte yutkunurken belirgin ağrı ve sesinde boğuklaşma gelişmiştir. Ailesi çocukluk aşılarının eksik kaldığını, son yıllarda rapel aşı yapılmadığını söyler. Evde benzer yakınması olan kişi yoktur; hasta yakın zamanda kalabalık bir yurtta kalmaya başlamıştır. Membran görünümü nedeniyle aile evde gargara yapmış ancak kanama olabileceği korkusuyla dokunmamıştır."
+      },
+      "vitals": {
+        "TA": "104/66 mmHg",
+        "Nabız": "118/dk",
+        "Solunum": "24/dk",
+        "SpO2": "%96, oda havasında",
+        "Ateş": "38.6 °C",
+        "Şok indeksi": "1.13 - enfeksiyon ve toksik etki açısından izlem"
+      },
+      "exam": [
+        "Genel durumu orta, konuşması boğuk ve belirgin halsizdir.",
+        "Tonsil ve farinks üzerinde kaldırılmaya çalışıldığında kanamaya eğilimli, yapışık gri-beyaz membran görülür.",
+        "Boyunda hassas anterior servikal lenfadenopati ve yumuşak doku ödemi vardır.",
+        "Akciğer oskültasyonu doğaldır; bilinç açık, meningeal irritasyon bulgusu yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v257-new-482-asisiz-ergende-gri-farengeal-membran-bogaz-suruntusu",
+          "label": "Boğaz sürüntüsü mikrobiyoloji paneli",
+          "title": "Boğaz sürüntüsü mikrobiyoloji paneli",
+          "orderLabel": "Boğaz sürüntüsü mikrobiyoloji paneli",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Boyama, kültür ve toksijenite değerlendirmesi",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Üst solunum yolu örneğinde toksijenik coryneform basil ile uyumlu laboratuvar zinciri vardır.",
+          "clinicalMeaning": "Üst solunum yolu örneğinde toksijenik coryneform basil ile uyumlu laboratuvar zinciri vardır.",
+          "result": {
+            "title": "Boğaz sürüntüsü mikrobiyoloji paneli",
+            "summary": "Üst solunum yolu örneğinde toksijenik coryneform basil ile uyumlu laboratuvar zinciri vardır.",
+            "interpretation": "Üst solunum yolu örneğinde toksijenik coryneform basil ile uyumlu laboratuvar zinciri vardır.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Membran kenarından alınmış boğaz sürüntüsü",
+                "Uygun örnek",
+                "Lezyon kenarı örneği"
+              ],
+              [
+                "Gram boyama",
+                "Pleomorfik gram pozitif çomaklar, V/L dizilimi",
+                "Normal flora baskın",
+                "Coryneform morfoloji"
+              ],
+              [
+                "Selektif kültür",
+                "Sistin-tellürit agarda gri-siyah koloniler",
+                "Üreme yok",
+                "Tellürit indirgeme paterni"
+              ],
+              [
+                "MALDI-TOF",
+                "Corynebacterium diphtheriae kompleksi ile uyumlu",
+                "Saptanmaz",
+                "Tür düzeyi destek"
+              ],
+              [
+                "tox gen PCR",
+                "Pozitif",
+                "Negatif",
+                "Toksijenite potansiyeli"
+              ],
+              [
+                "Toksin üretim testi",
+                "İmmünodifüzyonla toksin üretimi pozitif",
+                "Negatif",
+                "Klinik toksin riski"
+              ]
+            ],
+            "rows": [
+              [
+                "Örnek tipi",
+                "Membran kenarından alınmış boğaz sürüntüsü",
+                "Uygun örnek",
+                "Lezyon kenarı örneği"
+              ],
+              [
+                "Gram boyama",
+                "Pleomorfik gram pozitif çomaklar, V/L dizilimi",
+                "Normal flora baskın",
+                "Coryneform morfoloji"
+              ],
+              [
+                "Selektif kültür",
+                "Sistin-tellürit agarda gri-siyah koloniler",
+                "Üreme yok",
+                "Tellürit indirgeme paterni"
+              ],
+              [
+                "MALDI-TOF",
+                "Corynebacterium diphtheriae kompleksi ile uyumlu",
+                "Saptanmaz",
+                "Tür düzeyi destek"
+              ],
+              [
+                "tox gen PCR",
+                "Pozitif",
+                "Negatif",
+                "Toksijenite potansiyeli"
+              ],
+              [
+                "Toksin üretim testi",
+                "İmmünodifüzyonla toksin üretimi pozitif",
+                "Negatif",
+                "Klinik toksin riski"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v257-new-482-asisiz-ergende-gri-farengeal-membran-temel-lab",
+          "label": "Temel laboratuvar ve kardiyak izlem",
+          "title": "Temel laboratuvar ve kardiyak izlem",
+          "orderLabel": "Temel laboratuvar ve kardiyak izlem",
+          "type": "microbiology",
+          "priority": "supporting",
+          "subtype": "Enfeksiyon ve toksin komplikasyonu taraması",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Sistemik toksin etkisi açısından yakın takip gerektiren laboratuvar ve EKG bulguları vardır.",
+          "clinicalMeaning": "Sistemik toksin etkisi açısından yakın takip gerektiren laboratuvar ve EKG bulguları vardır.",
+          "result": {
+            "title": "Temel laboratuvar ve kardiyak izlem",
+            "summary": "Sistemik toksin etkisi açısından yakın takip gerektiren laboratuvar ve EKG bulguları vardır.",
+            "interpretation": "Sistemik toksin etkisi açısından yakın takip gerektiren laboratuvar ve EKG bulguları vardır.",
+            "values": [
+              [
+                "Lökosit",
+                "15.800/mm³",
+                "4.000-10.000/mm³",
+                "Nötrofil baskın inflamasyon"
+              ],
+              [
+                "CRP",
+                "84 mg/L",
+                "<5 mg/L",
+                "Akut inflamasyon"
+              ],
+              [
+                "Troponin I",
+                "Sınırda yüksek",
+                "Negatif",
+                "Miyokard etkilenimi açısından uyarı"
+              ],
+              [
+                "EKG",
+                "Sinüs taşikardisi, nonspesifik ST-T değişikliği",
+                "Normal",
+                "Toksin ilişkili izlem gerektirir"
+              ]
+            ],
+            "rows": [
+              [
+                "Lökosit",
+                "15.800/mm³",
+                "4.000-10.000/mm³",
+                "Nötrofil baskın inflamasyon"
+              ],
+              [
+                "CRP",
+                "84 mg/L",
+                "<5 mg/L",
+                "Akut inflamasyon"
+              ],
+              [
+                "Troponin I",
+                "Sınırda yüksek",
+                "Negatif",
+                "Miyokard etkilenimi açısından uyarı"
+              ],
+              [
+                "EKG",
+                "Sinüs taşikardisi, nonspesifik ST-T değişikliği",
+                "Normal",
+                "Toksin ilişkili izlem gerektirir"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu klinik ve mikrobiyolojik tabloyu en iyi açıklayan temel toksin mekanizması aşağıdakilerden hangisidir?",
+      "questionType": "single-best-answer",
+      "answerTarget": "Toksin mekanizması",
+      "diagnosis": {
+        "correct": "EF-2'nin ADP-ribozilasyonu ile hücresel protein sentezinin durdurulması",
+        "options": [
+          "cAMP artışı ile bağırsak kriptlerinden klorid sekresyonunun artırılması",
+          "Presinaptik SNARE proteinlerinin parçalanmasıyla asetilkolin salınımının engellenmesi",
+          "60S ribozomal alt birimde peptidil transferaz aktivitesinin inhibisyonu",
+          "EF-2'nin ADP-ribozilasyonu ile hücresel protein sentezinin durdurulması",
+          "MHC II-TCR çapraz bağlanmasıyla poliklonal T hücre aktivasyonu"
+        ],
+        "question": "Bu klinik ve mikrobiyolojik tabloyu en iyi açıklayan temel toksin mekanizması aşağıdakilerden hangisidir?",
+        "explanation": "Yapışık farengeal psödomembran, aşı eksikliği, coryneform basil morfolojisi ve toksin üretiminin gösterilmesi; lokal nekroz ve sistemik kardiyak/nörolojik komplikasyon riski yaratan protein sentezi inhibisyonu mekanizmasını düşündürür.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Aşısız hasta + kanayan yapışık farengeal membran + tox gen/toksin üretimi → EF-2 ADP-ribozilasyonu."
+          }
+        ],
+        "optionFeedback": {
+          "cAMP artışı ile bağırsak kriptlerinden klorid sekresyonunun artırılması": {
+            "explanation": "cAMP artışıyla klorid sekresyonu kolera toksini ve bazı enterotoksijenik E. coli toksinleri için tipiktir; esas klinik sonuç sekretuvar sulu ishaldir. Bu hastada üst solunum yolu psödomembranı, toksijenik coryneform basil izolasyonu ve miyokardit uyarısı enterotoksin aracılı bağırsak sekresyonundan farklı bir mekanizmayı destekler."
+          },
+          "Presinaptik SNARE proteinlerinin parçalanmasıyla asetilkolin salınımının engellenmesi": {
+            "explanation": "SNARE proteinlerinin parçalanması botulinum toksininde flask paraliziyle, tetanospazminde ise inhibitör nörotransmitter salınımının azalmasıyla ilişkilidir. Bu vakada diplopi, inen paralizi veya spastik kas spazmı değil; boğazda yapışık membran ve sistemik toksin etkisine bağlı kardiyak tutulum riski vardır."
+          },
+          "60S ribozomal alt birimde peptidil transferaz aktivitesinin inhibisyonu": {
+            "explanation": "60S ribozomal alt birimin inhibisyonu bazı antibiyotiklerin veya toksinlerin protein sentezini baskılamasını açıklayabilir, ancak bu klasik farengeal membran tablosunun temel bakteriyel toksin mekanizması değildir. Laboratuvarda toksijenik coryneform basil ve toksin üretimi gösterilmesi, hedefin ribozomal alt birimden çok elongasyon faktörü üzerinden olduğunu düşündürür."
+          },
+          "EF-2'nin ADP-ribozilasyonu ile hücresel protein sentezinin durdurulması": {
+            "explanation": "Bu seçenek vakayı en iyi açıklar; toksin A-B yapısındadır ve hücre içine giren A parçası elongation factor-2'yi ADP-ribozile ederek protein sentezini durdurur. Lokal psödomembran oluşumu ve dolaşıma geçen toksine bağlı miyokardit/nöropati riski bu mekanizmayla ilişkilidir."
+          },
+          "MHC II-TCR çapraz bağlanmasıyla poliklonal T hücre aktivasyonu": {
+            "explanation": "MHC II ile T hücre reseptörünü antijen-spesifik olmayan biçimde çapraz bağlayan mekanizma süperantijen etkisidir; toksik şok sendromu ve bazı streptokokal toksinlerde beklenir. Bu hastadaki yapışık gri membran, coryneform basil morfolojisi ve toksin üretimi süperantijen tablosundan ayrılır."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek vakayı en iyi açıklar; toksin A-B yapısındadır ve hücre içine giren A parçası elongation factor-2'yi ADP-ribozile ederek protein sentezini durdurur. Lokal psödomembran oluşumu ve dolaşıma geçen toksine bağlı miyokardit/nöropati riski bu mekanizmayla ilişkilidir.",
+          "optionFeedback": {
+            "cAMP artışı ile bağırsak kriptlerinden klorid sekresyonunun artırılması": {
+              "explanation": "cAMP artışıyla klorid sekresyonu kolera toksini ve bazı enterotoksijenik E. coli toksinleri için tipiktir; esas klinik sonuç sekretuvar sulu ishaldir. Bu hastada üst solunum yolu psödomembranı, toksijenik coryneform basil izolasyonu ve miyokardit uyarısı enterotoksin aracılı bağırsak sekresyonundan farklı bir mekanizmayı destekler."
+            },
+            "Presinaptik SNARE proteinlerinin parçalanmasıyla asetilkolin salınımının engellenmesi": {
+              "explanation": "SNARE proteinlerinin parçalanması botulinum toksininde flask paraliziyle, tetanospazminde ise inhibitör nörotransmitter salınımının azalmasıyla ilişkilidir. Bu vakada diplopi, inen paralizi veya spastik kas spazmı değil; boğazda yapışık membran ve sistemik toksin etkisine bağlı kardiyak tutulum riski vardır."
+            },
+            "60S ribozomal alt birimde peptidil transferaz aktivitesinin inhibisyonu": {
+              "explanation": "60S ribozomal alt birimin inhibisyonu bazı antibiyotiklerin veya toksinlerin protein sentezini baskılamasını açıklayabilir, ancak bu klasik farengeal membran tablosunun temel bakteriyel toksin mekanizması değildir. Laboratuvarda toksijenik coryneform basil ve toksin üretimi gösterilmesi, hedefin ribozomal alt birimden çok elongasyon faktörü üzerinden olduğunu düşündürür."
+            },
+            "EF-2'nin ADP-ribozilasyonu ile hücresel protein sentezinin durdurulması": {
+              "explanation": "Bu seçenek vakayı en iyi açıklar; toksin A-B yapısındadır ve hücre içine giren A parçası elongation factor-2'yi ADP-ribozile ederek protein sentezini durdurur. Lokal psödomembran oluşumu ve dolaşıma geçen toksine bağlı miyokardit/nöropati riski bu mekanizmayla ilişkilidir."
+            },
+            "MHC II-TCR çapraz bağlanmasıyla poliklonal T hücre aktivasyonu": {
+              "explanation": "MHC II ile T hücre reseptörünü antijen-spesifik olmayan biçimde çapraz bağlayan mekanizma süperantijen etkisidir; toksik şok sendromu ve bazı streptokokal toksinlerde beklenir. Bu hastadaki yapışık gri membran, coryneform basil morfolojisi ve toksin üretimi süperantijen tablosundan ayrılır."
+            }
+          },
+          "whyWrong": {
+            "cAMP artışı ile bağırsak kriptlerinden klorid sekresyonunun artırılması": "cAMP artışıyla klorid sekresyonu kolera toksini ve bazı enterotoksijenik E. coli toksinleri için tipiktir; esas klinik sonuç sekretuvar sulu ishaldir. Bu hastada üst solunum yolu psödomembranı, toksijenik coryneform basil izolasyonu ve miyokardit uyarısı enterotoksin aracılı bağırsak sekresyonundan farklı bir mekanizmayı destekler.",
+            "Presinaptik SNARE proteinlerinin parçalanmasıyla asetilkolin salınımının engellenmesi": "SNARE proteinlerinin parçalanması botulinum toksininde flask paraliziyle, tetanospazminde ise inhibitör nörotransmitter salınımının azalmasıyla ilişkilidir. Bu vakada diplopi, inen paralizi veya spastik kas spazmı değil; boğazda yapışık membran ve sistemik toksin etkisine bağlı kardiyak tutulum riski vardır.",
+            "60S ribozomal alt birimde peptidil transferaz aktivitesinin inhibisyonu": "60S ribozomal alt birimin inhibisyonu bazı antibiyotiklerin veya toksinlerin protein sentezini baskılamasını açıklayabilir, ancak bu klasik farengeal membran tablosunun temel bakteriyel toksin mekanizması değildir. Laboratuvarda toksijenik coryneform basil ve toksin üretimi gösterilmesi, hedefin ribozomal alt birimden çok elongasyon faktörü üzerinden olduğunu düşündürür.",
+            "MHC II-TCR çapraz bağlanmasıyla poliklonal T hücre aktivasyonu": "MHC II ile T hücre reseptörünü antijen-spesifik olmayan biçimde çapraz bağlayan mekanizma süperantijen etkisidir; toksik şok sendromu ve bazı streptokokal toksinlerde beklenir. Bu hastadaki yapışık gri membran, coryneform basil morfolojisi ve toksin üretimi süperantijen tablosundan ayrılır."
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Toksijenik Corynebacterium diphtheriae, EF-2 ADP-ribozilasyonu ile protein sentezini durduran A-B toksini üretir. Psödomembran lokal nekrozla, miyokardit ve nöropati ise sistemik toksin yayılımıyla ilişkilidir.",
+      "examPearl": "Aşısız hasta + kanayan yapışık farengeal membran + tox gen/toksin üretimi → EF-2 ADP-ribozilasyonu.",
+      "whyCorrect": "Bu seçenek vakayı en iyi açıklar; toksin A-B yapısındadır ve hücre içine giren A parçası elongation factor-2'yi ADP-ribozile ederek protein sentezini durdurur. Lokal psödomembran oluşumu ve dolaşıma geçen toksine bağlı miyokardit/nöropati riski bu mekanizmayla ilişkilidir.",
+      "optionComparison": {
+        "cAMP artışı ile bağırsak kriptlerinden klorid sekresyonunun artırılması": "cAMP artışıyla klorid sekresyonu kolera toksini ve bazı enterotoksijenik E. coli toksinleri için tipiktir; esas klinik sonuç sekretuvar sulu ishaldir. Bu hastada üst solunum yolu psödomembranı, toksijenik coryneform basil izolasyonu ve miyokardit uyarısı enterotoksin aracılı bağırsak sekresyonundan farklı bir mekanizmayı destekler.",
+        "Presinaptik SNARE proteinlerinin parçalanmasıyla asetilkolin salınımının engellenmesi": "SNARE proteinlerinin parçalanması botulinum toksininde flask paraliziyle, tetanospazminde ise inhibitör nörotransmitter salınımının azalmasıyla ilişkilidir. Bu vakada diplopi, inen paralizi veya spastik kas spazmı değil; boğazda yapışık membran ve sistemik toksin etkisine bağlı kardiyak tutulum riski vardır.",
+        "60S ribozomal alt birimde peptidil transferaz aktivitesinin inhibisyonu": "60S ribozomal alt birimin inhibisyonu bazı antibiyotiklerin veya toksinlerin protein sentezini baskılamasını açıklayabilir, ancak bu klasik farengeal membran tablosunun temel bakteriyel toksin mekanizması değildir. Laboratuvarda toksijenik coryneform basil ve toksin üretimi gösterilmesi, hedefin ribozomal alt birimden çok elongasyon faktörü üzerinden olduğunu düşündürür.",
+        "EF-2'nin ADP-ribozilasyonu ile hücresel protein sentezinin durdurulması": "Bu seçenek vakayı en iyi açıklar; toksin A-B yapısındadır ve hücre içine giren A parçası elongation factor-2'yi ADP-ribozile ederek protein sentezini durdurur. Lokal psödomembran oluşumu ve dolaşıma geçen toksine bağlı miyokardit/nöropati riski bu mekanizmayla ilişkilidir.",
+        "MHC II-TCR çapraz bağlanmasıyla poliklonal T hücre aktivasyonu": "MHC II ile T hücre reseptörünü antijen-spesifik olmayan biçimde çapraz bağlayan mekanizma süperantijen etkisidir; toksik şok sendromu ve bazı streptokokal toksinlerde beklenir. Bu hastadaki yapışık gri membran, coryneform basil morfolojisi ve toksin üretimi süperantijen tablosundan ayrılır."
+      },
+      "evidenceChain": [
+        {
+          "text": "Yapışık gri farengeal membran → lokal epitel nekrozu ve fibrinöz eksüda ile uyumlu toksin etkisi",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Pleomorfik gram pozitif çomak ve tellürit agarda siyah koloni → coryneform etken desteği",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "tox gen PCR ve toksin üretim pozitifliği → toksijenik suş varlığını doğrular",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Troponin/EKG uyarısı → dolaşıma geçen toksinin sistemik etkisini destekler",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "cAMP artışı ile bağırsak kriptlerinden klorid sekresyonunun artırılması": "cAMP artışıyla klorid sekresyonu kolera toksini ve bazı enterotoksijenik E. coli toksinleri için tipiktir; esas klinik sonuç sekretuvar sulu ishaldir. Bu hastada üst solunum yolu psödomembranı, toksijenik coryneform basil izolasyonu ve miyokardit uyarısı enterotoksin aracılı bağırsak sekresyonundan farklı bir mekanizmayı destekler.",
+        "Presinaptik SNARE proteinlerinin parçalanmasıyla asetilkolin salınımının engellenmesi": "SNARE proteinlerinin parçalanması botulinum toksininde flask paraliziyle, tetanospazminde ise inhibitör nörotransmitter salınımının azalmasıyla ilişkilidir. Bu vakada diplopi, inen paralizi veya spastik kas spazmı değil; boğazda yapışık membran ve sistemik toksin etkisine bağlı kardiyak tutulum riski vardır.",
+        "60S ribozomal alt birimde peptidil transferaz aktivitesinin inhibisyonu": "60S ribozomal alt birimin inhibisyonu bazı antibiyotiklerin veya toksinlerin protein sentezini baskılamasını açıklayabilir, ancak bu klasik farengeal membran tablosunun temel bakteriyel toksin mekanizması değildir. Laboratuvarda toksijenik coryneform basil ve toksin üretimi gösterilmesi, hedefin ribozomal alt birimden çok elongasyon faktörü üzerinden olduğunu düşündürür.",
+        "MHC II-TCR çapraz bağlanmasıyla poliklonal T hücre aktivasyonu": "MHC II ile T hücre reseptörünü antijen-spesifik olmayan biçimde çapraz bağlayan mekanizma süperantijen etkisidir; toksik şok sendromu ve bazı streptokokal toksinlerde beklenir. Bu hastadaki yapışık gri membran, coryneform basil morfolojisi ve toksin üretimi süperantijen tablosundan ayrılır."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v257-medical-microbiology-eighth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Aşı eksikliği",
+        "Yapışık farengeal membran",
+        "Coryneform gram pozitif çomak",
+        "Toksin üretimi pozitif"
+      ],
+      "images": []
+    },
+  {
+      "id": "v257-new-483-kanli-ishal-sonrasi-akut-bobrek-hasari",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Kanlı ishal sonrası akut böbrek hasarı",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Kanlı ishal sonrası gelişen HUS tablosunda dışkı kültürü ve toksin testinden enterik etkeni seçme.",
+      "learningTarget": "Sorbitol-MacConkey paterni, Shiga toksin testi ve mikroanjiyopatik hemoliz verilerini klinik enterik enfeksiyonla eşleştirebilme.",
+      "demographics": "7 yaşında kız çocuk",
+      "setting": "Çocuk acil / Nefroloji konsültasyonu",
+      "chiefComplaint": "Dört gün önce başlayan kanlı ishalin ardından idrar azalması ve halsizlik nedeniyle getiriliyor.",
+      "stem": "Çocuk ailesiyle birlikte piknikte az pişmiş hamburger yemiş, iki gün sonra karın krampları ve sulu dışkılama başlamıştır. Sonraki gün dışkısı kanlı hale gelmiş, ancak belirgin kusma veya yakın zamanda antibiyotik kullanımı olmamıştır. Başvuru sabahı idrar miktarı azalmış, çocuk soluk ve halsiz görünmeye başlamıştır. Ailede benzer hafif ishal yaşayan bir kuzen olduğu öğrenilir.",
+      "patientIntro": {
+        "profile": "7 yaşında kız çocuk, çocuk acil / nefroloji konsültasyonu ortamında değerlendiriliyor.",
+        "presentation": "Dört gün önce başlayan kanlı ishalin ardından idrar azalması ve halsizlik nedeniyle getiriliyor.",
+        "historySummary": "Çocuk ailesiyle birlikte piknikte az pişmiş hamburger yemiş, iki gün sonra karın krampları ve sulu dışkılama başlamıştır. Sonraki gün dışkısı kanlı hale gelmiş, ancak belirgin kusma veya yakın zamanda antibiyotik kullanımı olmamıştır. Başvuru sabahı idrar miktarı azalmış, çocuk soluk ve halsiz görünmeye başlamıştır. Ailede benzer hafif ishal yaşayan bir kuzen olduğu öğrenilir."
+      },
+      "vitals": {
+        "TA": "118/76 mmHg",
+        "Nabız": "126/dk",
+        "Solunum": "24/dk",
+        "SpO2": "%98, oda havasında",
+        "Ateş": "37.9 °C",
+        "Şok indeksi": "1.07 - dehidratasyon/hemoliz açısından izlem"
+      },
+      "exam": [
+        "Çocuk soluk ve yorgun görünümdedir; hafif periorbital ödem vardır.",
+        "Karında yaygın hassasiyet vardır ancak rebound veya defans belirgin değildir.",
+        "Deri turgoru hafif azalmıştır; mukozalar kuruya yakındır.",
+        "Peteşi yoktur; nörolojik muayenede fokal bulgu saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v257-new-483-kanli-ishal-sonrasi-akut-bobrek-hasari-diskimk",
+          "label": "Dışkı mikrobiyoloji incelemesi",
+          "title": "Dışkı mikrobiyoloji incelemesi",
+          "orderLabel": "Dışkı mikrobiyoloji incelemesi",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Kültür ve toksin testi",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Dışkı örneği, Shiga toksin ilişkili enterik enfeksiyon ve HUS gelişimini destekleyen bulgular içerir.",
+          "clinicalMeaning": "Dışkı örneği, Shiga toksin ilişkili enterik enfeksiyon ve HUS gelişimini destekleyen bulgular içerir.",
+          "result": {
+            "title": "Dışkı mikrobiyoloji incelemesi",
+            "summary": "Dışkı örneği, Shiga toksin ilişkili enterik enfeksiyon ve HUS gelişimini destekleyen bulgular içerir.",
+            "interpretation": "Dışkı örneği, Shiga toksin ilişkili enterik enfeksiyon ve HUS gelişimini destekleyen bulgular içerir.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Taze kanlı dışkı örneği",
+                "Uygun örnek",
+                "Enterik patojen incelemesi"
+              ],
+              [
+                "Direkt mikroskopi",
+                "Eritrosit bol, lökosit orta düzeyde",
+                "Yok",
+                "İnflamatuvar kanlı ishal"
+              ],
+              [
+                "Sorbitol-MacConkey kültürü",
+                "Sorbitol fermente etmeyen renksiz koloniler",
+                "Normal flora",
+                "Ayırt edici koloni paterni"
+              ],
+              [
+                "Lateks aglütinasyon",
+                "O157 antijeni pozitif",
+                "Negatif",
+                "Serogrup desteği"
+              ],
+              [
+                "Shiga toksin EIA/NAAT",
+                "Stx2 pozitif",
+                "Negatif",
+                "HUS riski yüksek toksin"
+              ],
+              [
+                "Kan kültürü",
+                "Üreme yok",
+                "Üreme yok",
+                "Bakteriyemi yok"
+              ]
+            ],
+            "rows": [
+              [
+                "Örnek tipi",
+                "Taze kanlı dışkı örneği",
+                "Uygun örnek",
+                "Enterik patojen incelemesi"
+              ],
+              [
+                "Direkt mikroskopi",
+                "Eritrosit bol, lökosit orta düzeyde",
+                "Yok",
+                "İnflamatuvar kanlı ishal"
+              ],
+              [
+                "Sorbitol-MacConkey kültürü",
+                "Sorbitol fermente etmeyen renksiz koloniler",
+                "Normal flora",
+                "Ayırt edici koloni paterni"
+              ],
+              [
+                "Lateks aglütinasyon",
+                "O157 antijeni pozitif",
+                "Negatif",
+                "Serogrup desteği"
+              ],
+              [
+                "Shiga toksin EIA/NAAT",
+                "Stx2 pozitif",
+                "Negatif",
+                "HUS riski yüksek toksin"
+              ],
+              [
+                "Kan kültürü",
+                "Üreme yok",
+                "Üreme yok",
+                "Bakteriyemi yok"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v257-new-483-kanli-ishal-sonrasi-akut-bobrek-hasari-hemoliz",
+          "label": "Hemoliz ve böbrek fonksiyonu",
+          "title": "Hemoliz ve böbrek fonksiyonu",
+          "orderLabel": "Hemoliz ve böbrek fonksiyonu",
+          "type": "microbiology",
+          "priority": "supporting",
+          "subtype": "HUS destek laboratuvarı",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Mikroanjiyopatik hemoliz, trombositopeni ve akut böbrek hasarı birlikte izlenir.",
+          "clinicalMeaning": "Mikroanjiyopatik hemoliz, trombositopeni ve akut böbrek hasarı birlikte izlenir.",
+          "result": {
+            "title": "Hemoliz ve böbrek fonksiyonu",
+            "summary": "Mikroanjiyopatik hemoliz, trombositopeni ve akut böbrek hasarı birlikte izlenir.",
+            "interpretation": "Mikroanjiyopatik hemoliz, trombositopeni ve akut böbrek hasarı birlikte izlenir.",
+            "values": [
+              [
+                "Hemoglobin",
+                "8.9 g/dL",
+                "11.5-15.5 g/dL",
+                "Anemi"
+              ],
+              [
+                "Trombosit",
+                "58.000/mm³",
+                "150.000-400.000/mm³",
+                "Trombositopeni"
+              ],
+              [
+                "Periferik yayma",
+                "Şistositler görüldü",
+                "Yok",
+                "Mikroanjiyopatik hemoliz"
+              ],
+              [
+                "Kreatinin",
+                "1.8 mg/dL",
+                "<0.7 mg/dL",
+                "Akut böbrek hasarı"
+              ],
+              [
+                "LDH",
+                "980 U/L",
+                "<250 U/L",
+                "Hemoliz göstergesi"
+              ]
+            ],
+            "rows": [
+              [
+                "Hemoglobin",
+                "8.9 g/dL",
+                "11.5-15.5 g/dL",
+                "Anemi"
+              ],
+              [
+                "Trombosit",
+                "58.000/mm³",
+                "150.000-400.000/mm³",
+                "Trombositopeni"
+              ],
+              [
+                "Periferik yayma",
+                "Şistositler görüldü",
+                "Yok",
+                "Mikroanjiyopatik hemoliz"
+              ],
+              [
+                "Kreatinin",
+                "1.8 mg/dL",
+                "<0.7 mg/dL",
+                "Akut böbrek hasarı"
+              ],
+              [
+                "LDH",
+                "980 U/L",
+                "<250 U/L",
+                "Hemoliz göstergesi"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu klinik ve mikrobiyolojik laboratuvar bulguları hangi enterik etkenle en uyumludur?",
+      "questionType": "single-best-answer",
+      "answerTarget": "Enterik bakteriyel etken",
+      "diagnosis": {
+        "correct": "Escherichia coli O157:H7",
+        "options": [
+          "Shigella dysenteriae",
+          "Campylobacter jejuni",
+          "Salmonella enterica serovar Typhimurium",
+          "Yersinia enterocolitica",
+          "Escherichia coli O157:H7"
+        ],
+        "question": "Bu klinik ve mikrobiyolojik laboratuvar bulguları hangi enterik etkenle en uyumludur?",
+        "explanation": "Az pişmiş kıyma maruziyeti sonrası kanlı ishal ve ardından HUS gelişimi, dışkıda sorbitol negatif O157 kolonileri ve Shiga toksin pozitifliği ile birleştiğinde enterohemorajik E. coli O157:H7'yi destekler.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Kanlı ishal + az pişmiş kıyma + sorbitol negatif O157 + Shiga toksin + HUS → E. coli O157:H7."
+          }
+        ],
+        "optionFeedback": {
+          "Shigella dysenteriae": {
+            "explanation": "Shigella dysenteriae kanlı ishal ve Shiga toksiniyle ağır kolit yapabilir; düşük inokulumla kişiden kişiye bulaşması tipiktir. Bu olguda az pişmiş hamburger öyküsü, sorbitol-MacConkey agarda sorbitol fermente etmeyen koloni ve O157 lateks aglütinasyon pozitifliği E. coli O157:H7 lehinedir."
+          },
+          "Campylobacter jejuni": {
+            "explanation": "Campylobacter jejuni kümes hayvanı veya pastörize edilmemiş süt sonrası ateşli kanlı ishal yapabilir; kavisli gram negatif basil ve mikroaerofilik kültür beklenir. Bu hastada HUS bulguları, Shiga toksin testi ve sorbitol negatif koloni paterni Campylobacter yerine enterohemorajik E. coli paternini destekler."
+          },
+          "Salmonella enterica serovar Typhimurium": {
+            "explanation": "Nontifoidal Salmonella enterit, invaziv ishal ve bazı risk gruplarında bakteriyemi yapabilir; H2S üretimi ve hareketlilik gibi kültür özellikleriyle değerlendirilir. Burada HUS'a giden mikroanjiyopatik hemoliz ve Shiga toksin pozitifliği Salmonella için beklenen ana ayırtıcı özellik değildir."
+          },
+          "Yersinia enterocolitica": {
+            "explanation": "Yersinia enterocolitica terminal ileit, mezenter lenfadenit ve psödoapandisit tablosu oluşturabilir; domuz ürünleriyle ilişkili olabilir. Bu vakada belirgin sağ alt kadran psödoapandisit paterni değil, kanlı ishal sonrası trombositopeni, hemoliz ve böbrek hasarı vardır."
+          },
+          "Escherichia coli O157:H7": {
+            "explanation": "Escherichia coli O157:H7 az pişmiş kıyma sonrası kanlı ishal ve Shiga benzeri toksin aracılı hemolitik üremik sendrom yapabilir. Sorbitol-MacConkey agarda sorbitol negatif koloni, Shiga toksin testi pozitifliği, trombositopeni, şistosit ve kreatinin artışı bu seçeneği en güçlü hale getirir."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Escherichia coli O157:H7 az pişmiş kıyma sonrası kanlı ishal ve Shiga benzeri toksin aracılı hemolitik üremik sendrom yapabilir. Sorbitol-MacConkey agarda sorbitol negatif koloni, Shiga toksin testi pozitifliği, trombositopeni, şistosit ve kreatinin artışı bu seçeneği en güçlü hale getirir.",
+          "optionFeedback": {
+            "Shigella dysenteriae": {
+              "explanation": "Shigella dysenteriae kanlı ishal ve Shiga toksiniyle ağır kolit yapabilir; düşük inokulumla kişiden kişiye bulaşması tipiktir. Bu olguda az pişmiş hamburger öyküsü, sorbitol-MacConkey agarda sorbitol fermente etmeyen koloni ve O157 lateks aglütinasyon pozitifliği E. coli O157:H7 lehinedir."
+            },
+            "Campylobacter jejuni": {
+              "explanation": "Campylobacter jejuni kümes hayvanı veya pastörize edilmemiş süt sonrası ateşli kanlı ishal yapabilir; kavisli gram negatif basil ve mikroaerofilik kültür beklenir. Bu hastada HUS bulguları, Shiga toksin testi ve sorbitol negatif koloni paterni Campylobacter yerine enterohemorajik E. coli paternini destekler."
+            },
+            "Salmonella enterica serovar Typhimurium": {
+              "explanation": "Nontifoidal Salmonella enterit, invaziv ishal ve bazı risk gruplarında bakteriyemi yapabilir; H2S üretimi ve hareketlilik gibi kültür özellikleriyle değerlendirilir. Burada HUS'a giden mikroanjiyopatik hemoliz ve Shiga toksin pozitifliği Salmonella için beklenen ana ayırtıcı özellik değildir."
+            },
+            "Yersinia enterocolitica": {
+              "explanation": "Yersinia enterocolitica terminal ileit, mezenter lenfadenit ve psödoapandisit tablosu oluşturabilir; domuz ürünleriyle ilişkili olabilir. Bu vakada belirgin sağ alt kadran psödoapandisit paterni değil, kanlı ishal sonrası trombositopeni, hemoliz ve böbrek hasarı vardır."
+            },
+            "Escherichia coli O157:H7": {
+              "explanation": "Escherichia coli O157:H7 az pişmiş kıyma sonrası kanlı ishal ve Shiga benzeri toksin aracılı hemolitik üremik sendrom yapabilir. Sorbitol-MacConkey agarda sorbitol negatif koloni, Shiga toksin testi pozitifliği, trombositopeni, şistosit ve kreatinin artışı bu seçeneği en güçlü hale getirir."
+            }
+          },
+          "whyWrong": {
+            "Shigella dysenteriae": "Shigella dysenteriae kanlı ishal ve Shiga toksiniyle ağır kolit yapabilir; düşük inokulumla kişiden kişiye bulaşması tipiktir. Bu olguda az pişmiş hamburger öyküsü, sorbitol-MacConkey agarda sorbitol fermente etmeyen koloni ve O157 lateks aglütinasyon pozitifliği E. coli O157:H7 lehinedir.",
+            "Campylobacter jejuni": "Campylobacter jejuni kümes hayvanı veya pastörize edilmemiş süt sonrası ateşli kanlı ishal yapabilir; kavisli gram negatif basil ve mikroaerofilik kültür beklenir. Bu hastada HUS bulguları, Shiga toksin testi ve sorbitol negatif koloni paterni Campylobacter yerine enterohemorajik E. coli paternini destekler.",
+            "Salmonella enterica serovar Typhimurium": "Nontifoidal Salmonella enterit, invaziv ishal ve bazı risk gruplarında bakteriyemi yapabilir; H2S üretimi ve hareketlilik gibi kültür özellikleriyle değerlendirilir. Burada HUS'a giden mikroanjiyopatik hemoliz ve Shiga toksin pozitifliği Salmonella için beklenen ana ayırtıcı özellik değildir.",
+            "Yersinia enterocolitica": "Yersinia enterocolitica terminal ileit, mezenter lenfadenit ve psödoapandisit tablosu oluşturabilir; domuz ürünleriyle ilişkili olabilir. Bu vakada belirgin sağ alt kadran psödoapandisit paterni değil, kanlı ishal sonrası trombositopeni, hemoliz ve böbrek hasarı vardır."
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "EHEC/STEC enfeksiyonunda Shiga benzeri toksin endotel hasarı, trombosit tüketimi ve mikroanjiyopatik hemoliz üzerinden HUS tablosuna yol açabilir. E. coli O157:H7 klasik olarak sorbitol-MacConkey agarda sorbitol negatif kolonilerle ayırt edilir.",
+      "examPearl": "Kanlı ishal + az pişmiş kıyma + sorbitol negatif O157 + Shiga toksin + HUS → E. coli O157:H7.",
+      "whyCorrect": "Escherichia coli O157:H7 az pişmiş kıyma sonrası kanlı ishal ve Shiga benzeri toksin aracılı hemolitik üremik sendrom yapabilir. Sorbitol-MacConkey agarda sorbitol negatif koloni, Shiga toksin testi pozitifliği, trombositopeni, şistosit ve kreatinin artışı bu seçeneği en güçlü hale getirir.",
+      "optionComparison": {
+        "Shigella dysenteriae": "Shigella dysenteriae kanlı ishal ve Shiga toksiniyle ağır kolit yapabilir; düşük inokulumla kişiden kişiye bulaşması tipiktir. Bu olguda az pişmiş hamburger öyküsü, sorbitol-MacConkey agarda sorbitol fermente etmeyen koloni ve O157 lateks aglütinasyon pozitifliği E. coli O157:H7 lehinedir.",
+        "Campylobacter jejuni": "Campylobacter jejuni kümes hayvanı veya pastörize edilmemiş süt sonrası ateşli kanlı ishal yapabilir; kavisli gram negatif basil ve mikroaerofilik kültür beklenir. Bu hastada HUS bulguları, Shiga toksin testi ve sorbitol negatif koloni paterni Campylobacter yerine enterohemorajik E. coli paternini destekler.",
+        "Salmonella enterica serovar Typhimurium": "Nontifoidal Salmonella enterit, invaziv ishal ve bazı risk gruplarında bakteriyemi yapabilir; H2S üretimi ve hareketlilik gibi kültür özellikleriyle değerlendirilir. Burada HUS'a giden mikroanjiyopatik hemoliz ve Shiga toksin pozitifliği Salmonella için beklenen ana ayırtıcı özellik değildir.",
+        "Yersinia enterocolitica": "Yersinia enterocolitica terminal ileit, mezenter lenfadenit ve psödoapandisit tablosu oluşturabilir; domuz ürünleriyle ilişkili olabilir. Bu vakada belirgin sağ alt kadran psödoapandisit paterni değil, kanlı ishal sonrası trombositopeni, hemoliz ve böbrek hasarı vardır.",
+        "Escherichia coli O157:H7": "Escherichia coli O157:H7 az pişmiş kıyma sonrası kanlı ishal ve Shiga benzeri toksin aracılı hemolitik üremik sendrom yapabilir. Sorbitol-MacConkey agarda sorbitol negatif koloni, Shiga toksin testi pozitifliği, trombositopeni, şistosit ve kreatinin artışı bu seçeneği en güçlü hale getirir."
+      },
+      "evidenceChain": [
+        {
+          "text": "Az pişmiş hamburger sonrası kanlı ishal → enterohemorajik gıda kaynaklı enfeksiyon bağlamı",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Sorbitol fermente etmeyen O157 pozitif koloni → ayırt edici kültür paterni",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Stx2 pozitifliği → endotel hasarı ve HUS riski",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Şistosit, trombositopeni ve kreatinin artışı → HUS gelişimini destekler",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Shigella dysenteriae": "Shigella dysenteriae kanlı ishal ve Shiga toksiniyle ağır kolit yapabilir; düşük inokulumla kişiden kişiye bulaşması tipiktir. Bu olguda az pişmiş hamburger öyküsü, sorbitol-MacConkey agarda sorbitol fermente etmeyen koloni ve O157 lateks aglütinasyon pozitifliği E. coli O157:H7 lehinedir.",
+        "Campylobacter jejuni": "Campylobacter jejuni kümes hayvanı veya pastörize edilmemiş süt sonrası ateşli kanlı ishal yapabilir; kavisli gram negatif basil ve mikroaerofilik kültür beklenir. Bu hastada HUS bulguları, Shiga toksin testi ve sorbitol negatif koloni paterni Campylobacter yerine enterohemorajik E. coli paternini destekler.",
+        "Salmonella enterica serovar Typhimurium": "Nontifoidal Salmonella enterit, invaziv ishal ve bazı risk gruplarında bakteriyemi yapabilir; H2S üretimi ve hareketlilik gibi kültür özellikleriyle değerlendirilir. Burada HUS'a giden mikroanjiyopatik hemoliz ve Shiga toksin pozitifliği Salmonella için beklenen ana ayırtıcı özellik değildir.",
+        "Yersinia enterocolitica": "Yersinia enterocolitica terminal ileit, mezenter lenfadenit ve psödoapandisit tablosu oluşturabilir; domuz ürünleriyle ilişkili olabilir. Bu vakada belirgin sağ alt kadran psödoapandisit paterni değil, kanlı ishal sonrası trombositopeni, hemoliz ve böbrek hasarı vardır."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v257-medical-microbiology-eighth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Az pişmiş kıyma maruziyeti",
+        "Kanlı ishal",
+        "Shiga toksin pozitifliği",
+        "HUS laboratuvar triadı"
+      ],
+      "images": []
+    },
+  {
+      "id": "v257-new-484-akut-retroviral-tablo-ve-uyumsuz-seroloji",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Akut retroviral tablo ve uyumsuz seroloji",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Akut HIV şüphesinde dördüncü kuşak tarama, antikor ayırıcı test ve nükleik asit sonucunu birlikte yorumlama.",
+      "learningTarget": "Antikor gelişimi tamamlanmadan p24 antijeni/RNA pozitifliğiyle yakalanan akut enfeksiyon paternini tanıyabilme.",
+      "demographics": "24 yaşında erkek hasta",
+      "setting": "Enfeksiyon hastalıkları polikliniği",
+      "chiefComplaint": "Bir haftadır ateş, boğaz ağrısı, döküntü ve yaygın lenf bezi şişliği nedeniyle başvuruyor.",
+      "stem": "Hasta yaklaşık üç hafta önce kondomsuz cinsel temas yaşadığını, bundan 10 gün sonra ateş ve boğaz ağrısının başladığını anlatır. Son birkaç gündür gövdesinde silik makülopapüler döküntü ve belirgin halsizlik gelişmiştir. Daha önce benzer bir hastalık geçirmemiştir; antibiyotik kullanımı veya yeni ilaç öyküsü yoktur. Partnerinin enfeksiyon durumu hakkında bilgisi olmadığını söyler.",
+      "patientIntro": {
+        "profile": "24 yaşında erkek hasta, enfeksiyon hastalıkları polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Bir haftadır ateş, boğaz ağrısı, döküntü ve yaygın lenf bezi şişliği nedeniyle başvuruyor.",
+        "historySummary": "Hasta yaklaşık üç hafta önce kondomsuz cinsel temas yaşadığını, bundan 10 gün sonra ateş ve boğaz ağrısının başladığını anlatır. Son birkaç gündür gövdesinde silik makülopapüler döküntü ve belirgin halsizlik gelişmiştir. Daha önce benzer bir hastalık geçirmemiştir; antibiyotik kullanımı veya yeni ilaç öyküsü yoktur. Partnerinin enfeksiyon durumu hakkında bilgisi olmadığını söyler."
+      },
+      "vitals": {
+        "TA": "112/70 mmHg",
+        "Nabız": "104/dk",
+        "Solunum": "18/dk",
+        "SpO2": "%98, oda havasında",
+        "Ateş": "38.4 °C",
+        "Şok indeksi": "0.93 - stabil"
+      },
+      "exam": [
+        "Genel durumu iyi-orta, orofarenkste hiperemi vardır ancak eksüda belirgin değildir.",
+        "Posterior servikal ve aksiller bölgede hassas olmayan lenfadenopatiler palpe edilir.",
+        "Gövde ve üst ekstremitelerde silik makülopapüler döküntü izlenir.",
+        "Hepatosplenomegali belirgin değildir; meningeal irritasyon bulgusu yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v257-new-484-akut-retroviral-tablo-ve-uyumsuz-seroloji-hiv-algoritma",
+          "label": "HIV tanı algoritması",
+          "title": "HIV tanı algoritması",
+          "orderLabel": "HIV tanı algoritması",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Dördüncü kuşak tarama, ayırıcı test ve RNA",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Tarama testi reaktif, antikor ayrımı henüz negatif/indetermine, nükleik asit testi ise yüksek viremi gösterir.",
+          "clinicalMeaning": "Tarama testi reaktif, antikor ayrımı henüz negatif/indetermine, nükleik asit testi ise yüksek viremi gösterir.",
+          "result": {
+            "title": "HIV tanı algoritması",
+            "summary": "Tarama testi reaktif, antikor ayrımı henüz negatif/indetermine, nükleik asit testi ise yüksek viremi gösterir.",
+            "interpretation": "Tarama testi reaktif, antikor ayrımı henüz negatif/indetermine, nükleik asit testi ise yüksek viremi gösterir.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Serum ve plazma",
+                "Uygun örnek",
+                "Algoritmik test"
+              ],
+              [
+                "4. kuşak HIV-1/2 Ag-Ab testi",
+                "Reaktif",
+                "Non-reaktif",
+                "p24/antikor taraması"
+              ],
+              [
+                "HIV-1/HIV-2 antikor ayırıcı test",
+                "Negatif/indetermine",
+                "Negatif",
+                "Antikor yanıtı belirgin değil"
+              ],
+              [
+                "Plazma HIV-1 RNA",
+                "740.000 kopya/mL",
+                "Saptanmaz",
+                "Yüksek viremi"
+              ],
+              [
+                "p24 antijen doğrulama",
+                "Pozitif",
+                "Negatif",
+                "Erken enfeksiyon desteği"
+              ],
+              [
+                "EBV VCA IgM / heterofil antikor",
+                "Negatif",
+                "Negatif",
+                "Mononükleoz desteği yok"
+              ]
+            ],
+            "rows": [
+              [
+                "Örnek tipi",
+                "Serum ve plazma",
+                "Uygun örnek",
+                "Algoritmik test"
+              ],
+              [
+                "4. kuşak HIV-1/2 Ag-Ab testi",
+                "Reaktif",
+                "Non-reaktif",
+                "p24/antikor taraması"
+              ],
+              [
+                "HIV-1/HIV-2 antikor ayırıcı test",
+                "Negatif/indetermine",
+                "Negatif",
+                "Antikor yanıtı belirgin değil"
+              ],
+              [
+                "Plazma HIV-1 RNA",
+                "740.000 kopya/mL",
+                "Saptanmaz",
+                "Yüksek viremi"
+              ],
+              [
+                "p24 antijen doğrulama",
+                "Pozitif",
+                "Negatif",
+                "Erken enfeksiyon desteği"
+              ],
+              [
+                "EBV VCA IgM / heterofil antikor",
+                "Negatif",
+                "Negatif",
+                "Mononükleoz desteği yok"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v257-new-484-akut-retroviral-tablo-ve-uyumsuz-seroloji-temel-lab",
+          "label": "Temel laboratuvar",
+          "title": "Temel laboratuvar",
+          "orderLabel": "Temel laboratuvar",
+          "type": "microbiology",
+          "priority": "supporting",
+          "subtype": "Akut viral sendrom destekleri",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Akut viral sendromla uyumlu hafif sitopeni ve transaminaz yüksekliği vardır.",
+          "clinicalMeaning": "Akut viral sendromla uyumlu hafif sitopeni ve transaminaz yüksekliği vardır.",
+          "result": {
+            "title": "Temel laboratuvar",
+            "summary": "Akut viral sendromla uyumlu hafif sitopeni ve transaminaz yüksekliği vardır.",
+            "interpretation": "Akut viral sendromla uyumlu hafif sitopeni ve transaminaz yüksekliği vardır.",
+            "values": [
+              [
+                "Lökosit",
+                "3.400/mm³",
+                "4.000-10.000/mm³",
+                "Hafif lökopeni"
+              ],
+              [
+                "Lenfosit",
+                "%52",
+                "%20-40",
+                "Relatif lenfositoz"
+              ],
+              [
+                "AST/ALT",
+                "68/74 U/L",
+                "<40 U/L",
+                "Hafif transaminit"
+              ],
+              [
+                "CRP",
+                "18 mg/L",
+                "<5 mg/L",
+                "Orta düzey inflamasyon"
+              ]
+            ],
+            "rows": [
+              [
+                "Lökosit",
+                "3.400/mm³",
+                "4.000-10.000/mm³",
+                "Hafif lökopeni"
+              ],
+              [
+                "Lenfosit",
+                "%52",
+                "%20-40",
+                "Relatif lenfositoz"
+              ],
+              [
+                "AST/ALT",
+                "68/74 U/L",
+                "<40 U/L",
+                "Hafif transaminit"
+              ],
+              [
+                "CRP",
+                "18 mg/L",
+                "<5 mg/L",
+                "Orta düzey inflamasyon"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu test paterninin en doğru mikrobiyolojik yorumu aşağıdakilerden hangisidir?",
+      "questionType": "single-best-answer",
+      "answerTarget": "Tanı algoritması yorumu",
+      "diagnosis": {
+        "correct": "Akut HIV-1 enfeksiyonu; p24 antijeni/RNA pozitifliği antikor yanıtından önce yakalanmıştır",
+        "options": [
+          "Akut HIV-1 enfeksiyonu; p24 antijeni/RNA pozitifliği antikor yanıtından önce yakalanmıştır",
+          "Geçirilmiş HIV enfeksiyonu; antikorların kaybolduğu seroreversiyon dönemidir",
+          "Yanlış pozitif tarama sonucu; nükleik asit testi klinik olarak dikkate alınmamalıdır",
+          "HIV-2 enfeksiyonu; HIV-1 RNA pozitifliği çapraz reaksiyon olarak yorumlanır",
+          "Primer EBV enfeksiyonu; HIV testleri yalancı reaktiviteyle açıklanır"
+        ],
+        "question": "Bu test paterninin en doğru mikrobiyolojik yorumu aşağıdakilerden hangisidir?",
+        "explanation": "Yeni riskli temas sonrası ateş, döküntü ve lenfadenopati tablosunda dördüncü kuşak testin reaktif olması, antikor ayırımının henüz negatif/indetermine kalması ve HIV-1 RNA'nın yüksek pozitifliği akut HIV-1 enfeksiyonunu gösterir.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Reaktif 4. kuşak test + negatif/indetermine antikor ayrımı + yüksek HIV-1 RNA → akut HIV-1 enfeksiyonu."
+          }
+        ],
+        "optionFeedback": {
+          "Akut HIV-1 enfeksiyonu; p24 antijeni/RNA pozitifliği antikor yanıtından önce yakalanmıştır": {
+            "explanation": "Bu yorum en uygundur; dördüncü kuşak Ag/Ab testinin reaktif olması, ayırıcı antikor testinin negatif/indetermine kalması ve plazma HIV-1 RNA düzeyinin yüksek olması akut HIV-1 enfeksiyonu paternidir. Bu dönemde p24 antijeni ve viral RNA antikor gelişiminden önce saptanabilir."
+          },
+          "Geçirilmiş HIV enfeksiyonu; antikorların kaybolduğu seroreversiyon dönemidir": {
+            "explanation": "Geçirilmiş HIV enfeksiyonunda antikor yanıtının tamamen kaybolması rutin beklenen bir yorum değildir; doğrulama algoritması böyle bir sonucu öncelikle akut enfeksiyon yönünde ele alır. Hastanın yeni riskli temas sonrası ateş-döküntü-lenfadenopati tablosu ve yüksek HIV-1 RNA düzeyi seroreversiyondan çok erken viremiye uyar."
+          },
+          "Yanlış pozitif tarama sonucu; nükleik asit testi klinik olarak dikkate alınmamalıdır": {
+            "explanation": "Yanlış pozitif tarama olasılığı ayırıcı testlerle değerlendirilir, ancak yüksek düzeyde HIV-1 RNA saptanması tarama reaktivitesini klinik olarak anlamlı hale getirir. Bu nedenle nükleik asit testi yok sayılmaz; tam tersine akut enfeksiyonu doğrulayan ana basamaktır."
+          },
+          "HIV-2 enfeksiyonu; HIV-1 RNA pozitifliği çapraz reaksiyon olarak yorumlanır": {
+            "explanation": "HIV-2 enfeksiyonunda HIV-2 antikor ayrımı beklenir ve HIV-1 RNA'nın yüksek pozitif olması HIV-1 lehine güçlü moleküler kanıttır. Bu olguda ayırıcı antikor testi henüz negatif/indetermine olsa bile viral RNA paterni HIV-2'den çok akut HIV-1 enfeksiyonunu destekler."
+          },
+          "Primer EBV enfeksiyonu; HIV testleri yalancı reaktiviteyle açıklanır": {
+            "explanation": "Primer EBV ateş, lenfadenopati ve döküntü ile karışabilir; ancak EBV tek başına yüksek HIV-1 RNA pozitifliğini açıklamaz. Monospot/EBV serolojisi negatifken dördüncü kuşak test reaktivitesi ve yüksek viral RNA birlikte akut retroviral enfeksiyonu düşündürür."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu yorum en uygundur; dördüncü kuşak Ag/Ab testinin reaktif olması, ayırıcı antikor testinin negatif/indetermine kalması ve plazma HIV-1 RNA düzeyinin yüksek olması akut HIV-1 enfeksiyonu paternidir. Bu dönemde p24 antijeni ve viral RNA antikor gelişiminden önce saptanabilir.",
+          "optionFeedback": {
+            "Akut HIV-1 enfeksiyonu; p24 antijeni/RNA pozitifliği antikor yanıtından önce yakalanmıştır": {
+              "explanation": "Bu yorum en uygundur; dördüncü kuşak Ag/Ab testinin reaktif olması, ayırıcı antikor testinin negatif/indetermine kalması ve plazma HIV-1 RNA düzeyinin yüksek olması akut HIV-1 enfeksiyonu paternidir. Bu dönemde p24 antijeni ve viral RNA antikor gelişiminden önce saptanabilir."
+            },
+            "Geçirilmiş HIV enfeksiyonu; antikorların kaybolduğu seroreversiyon dönemidir": {
+              "explanation": "Geçirilmiş HIV enfeksiyonunda antikor yanıtının tamamen kaybolması rutin beklenen bir yorum değildir; doğrulama algoritması böyle bir sonucu öncelikle akut enfeksiyon yönünde ele alır. Hastanın yeni riskli temas sonrası ateş-döküntü-lenfadenopati tablosu ve yüksek HIV-1 RNA düzeyi seroreversiyondan çok erken viremiye uyar."
+            },
+            "Yanlış pozitif tarama sonucu; nükleik asit testi klinik olarak dikkate alınmamalıdır": {
+              "explanation": "Yanlış pozitif tarama olasılığı ayırıcı testlerle değerlendirilir, ancak yüksek düzeyde HIV-1 RNA saptanması tarama reaktivitesini klinik olarak anlamlı hale getirir. Bu nedenle nükleik asit testi yok sayılmaz; tam tersine akut enfeksiyonu doğrulayan ana basamaktır."
+            },
+            "HIV-2 enfeksiyonu; HIV-1 RNA pozitifliği çapraz reaksiyon olarak yorumlanır": {
+              "explanation": "HIV-2 enfeksiyonunda HIV-2 antikor ayrımı beklenir ve HIV-1 RNA'nın yüksek pozitif olması HIV-1 lehine güçlü moleküler kanıttır. Bu olguda ayırıcı antikor testi henüz negatif/indetermine olsa bile viral RNA paterni HIV-2'den çok akut HIV-1 enfeksiyonunu destekler."
+            },
+            "Primer EBV enfeksiyonu; HIV testleri yalancı reaktiviteyle açıklanır": {
+              "explanation": "Primer EBV ateş, lenfadenopati ve döküntü ile karışabilir; ancak EBV tek başına yüksek HIV-1 RNA pozitifliğini açıklamaz. Monospot/EBV serolojisi negatifken dördüncü kuşak test reaktivitesi ve yüksek viral RNA birlikte akut retroviral enfeksiyonu düşündürür."
+            }
+          },
+          "whyWrong": {
+            "Geçirilmiş HIV enfeksiyonu; antikorların kaybolduğu seroreversiyon dönemidir": "Geçirilmiş HIV enfeksiyonunda antikor yanıtının tamamen kaybolması rutin beklenen bir yorum değildir; doğrulama algoritması böyle bir sonucu öncelikle akut enfeksiyon yönünde ele alır. Hastanın yeni riskli temas sonrası ateş-döküntü-lenfadenopati tablosu ve yüksek HIV-1 RNA düzeyi seroreversiyondan çok erken viremiye uyar.",
+            "Yanlış pozitif tarama sonucu; nükleik asit testi klinik olarak dikkate alınmamalıdır": "Yanlış pozitif tarama olasılığı ayırıcı testlerle değerlendirilir, ancak yüksek düzeyde HIV-1 RNA saptanması tarama reaktivitesini klinik olarak anlamlı hale getirir. Bu nedenle nükleik asit testi yok sayılmaz; tam tersine akut enfeksiyonu doğrulayan ana basamaktır.",
+            "HIV-2 enfeksiyonu; HIV-1 RNA pozitifliği çapraz reaksiyon olarak yorumlanır": "HIV-2 enfeksiyonunda HIV-2 antikor ayrımı beklenir ve HIV-1 RNA'nın yüksek pozitif olması HIV-1 lehine güçlü moleküler kanıttır. Bu olguda ayırıcı antikor testi henüz negatif/indetermine olsa bile viral RNA paterni HIV-2'den çok akut HIV-1 enfeksiyonunu destekler.",
+            "Primer EBV enfeksiyonu; HIV testleri yalancı reaktiviteyle açıklanır": "Primer EBV ateş, lenfadenopati ve döküntü ile karışabilir; ancak EBV tek başına yüksek HIV-1 RNA pozitifliğini açıklamaz. Monospot/EBV serolojisi negatifken dördüncü kuşak test reaktivitesi ve yüksek viral RNA birlikte akut retroviral enfeksiyonu düşündürür."
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Akut HIV enfeksiyonunda HIV RNA önce, p24 antijeni kısa süre sonra, antikorlar ise daha geç saptanır. Bu yüzden reaktif 4. kuşak test + negatif/indetermine antikor ayrımı + pozitif HIV-1 RNA kombinasyonu akut HIV-1 enfeksiyonu olarak yorumlanır.",
+      "examPearl": "Reaktif 4. kuşak test + negatif/indetermine antikor ayrımı + yüksek HIV-1 RNA → akut HIV-1 enfeksiyonu.",
+      "whyCorrect": "Bu yorum en uygundur; dördüncü kuşak Ag/Ab testinin reaktif olması, ayırıcı antikor testinin negatif/indetermine kalması ve plazma HIV-1 RNA düzeyinin yüksek olması akut HIV-1 enfeksiyonu paternidir. Bu dönemde p24 antijeni ve viral RNA antikor gelişiminden önce saptanabilir.",
+      "optionComparison": {
+        "Akut HIV-1 enfeksiyonu; p24 antijeni/RNA pozitifliği antikor yanıtından önce yakalanmıştır": "Bu yorum en uygundur; dördüncü kuşak Ag/Ab testinin reaktif olması, ayırıcı antikor testinin negatif/indetermine kalması ve plazma HIV-1 RNA düzeyinin yüksek olması akut HIV-1 enfeksiyonu paternidir. Bu dönemde p24 antijeni ve viral RNA antikor gelişiminden önce saptanabilir.",
+        "Geçirilmiş HIV enfeksiyonu; antikorların kaybolduğu seroreversiyon dönemidir": "Geçirilmiş HIV enfeksiyonunda antikor yanıtının tamamen kaybolması rutin beklenen bir yorum değildir; doğrulama algoritması böyle bir sonucu öncelikle akut enfeksiyon yönünde ele alır. Hastanın yeni riskli temas sonrası ateş-döküntü-lenfadenopati tablosu ve yüksek HIV-1 RNA düzeyi seroreversiyondan çok erken viremiye uyar.",
+        "Yanlış pozitif tarama sonucu; nükleik asit testi klinik olarak dikkate alınmamalıdır": "Yanlış pozitif tarama olasılığı ayırıcı testlerle değerlendirilir, ancak yüksek düzeyde HIV-1 RNA saptanması tarama reaktivitesini klinik olarak anlamlı hale getirir. Bu nedenle nükleik asit testi yok sayılmaz; tam tersine akut enfeksiyonu doğrulayan ana basamaktır.",
+        "HIV-2 enfeksiyonu; HIV-1 RNA pozitifliği çapraz reaksiyon olarak yorumlanır": "HIV-2 enfeksiyonunda HIV-2 antikor ayrımı beklenir ve HIV-1 RNA'nın yüksek pozitif olması HIV-1 lehine güçlü moleküler kanıttır. Bu olguda ayırıcı antikor testi henüz negatif/indetermine olsa bile viral RNA paterni HIV-2'den çok akut HIV-1 enfeksiyonunu destekler.",
+        "Primer EBV enfeksiyonu; HIV testleri yalancı reaktiviteyle açıklanır": "Primer EBV ateş, lenfadenopati ve döküntü ile karışabilir; ancak EBV tek başına yüksek HIV-1 RNA pozitifliğini açıklamaz. Monospot/EBV serolojisi negatifken dördüncü kuşak test reaktivitesi ve yüksek viral RNA birlikte akut retroviral enfeksiyonu düşündürür."
+      },
+      "evidenceChain": [
+        {
+          "text": "Yeni riskli temas sonrası kısa inkübasyonlu ateş-döküntü → akut retroviral sendrom bağlamı",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "4. kuşak Ag/Ab reaktifliği → p24 antijeni veya antikor varlığına işaret eder",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Ayırıcı antikor testinin negatif/indetermine olması → antikor yanıtının henüz olgunlaşmadığını düşündürür",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "HIV-1 RNA yüksekliği → akut viremi için güçlü moleküler kanıttır",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Geçirilmiş HIV enfeksiyonu; antikorların kaybolduğu seroreversiyon dönemidir": "Geçirilmiş HIV enfeksiyonunda antikor yanıtının tamamen kaybolması rutin beklenen bir yorum değildir; doğrulama algoritması böyle bir sonucu öncelikle akut enfeksiyon yönünde ele alır. Hastanın yeni riskli temas sonrası ateş-döküntü-lenfadenopati tablosu ve yüksek HIV-1 RNA düzeyi seroreversiyondan çok erken viremiye uyar.",
+        "Yanlış pozitif tarama sonucu; nükleik asit testi klinik olarak dikkate alınmamalıdır": "Yanlış pozitif tarama olasılığı ayırıcı testlerle değerlendirilir, ancak yüksek düzeyde HIV-1 RNA saptanması tarama reaktivitesini klinik olarak anlamlı hale getirir. Bu nedenle nükleik asit testi yok sayılmaz; tam tersine akut enfeksiyonu doğrulayan ana basamaktır.",
+        "HIV-2 enfeksiyonu; HIV-1 RNA pozitifliği çapraz reaksiyon olarak yorumlanır": "HIV-2 enfeksiyonunda HIV-2 antikor ayrımı beklenir ve HIV-1 RNA'nın yüksek pozitif olması HIV-1 lehine güçlü moleküler kanıttır. Bu olguda ayırıcı antikor testi henüz negatif/indetermine olsa bile viral RNA paterni HIV-2'den çok akut HIV-1 enfeksiyonunu destekler.",
+        "Primer EBV enfeksiyonu; HIV testleri yalancı reaktiviteyle açıklanır": "Primer EBV ateş, lenfadenopati ve döküntü ile karışabilir; ancak EBV tek başına yüksek HIV-1 RNA pozitifliğini açıklamaz. Monospot/EBV serolojisi negatifken dördüncü kuşak test reaktivitesi ve yüksek viral RNA birlikte akut retroviral enfeksiyonu düşündürür."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v257-medical-microbiology-eighth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Yeni riskli temas",
+        "Ateş-döküntü-lenfadenopati",
+        "4. kuşak test reaktif",
+        "HIV-1 RNA yüksek"
+      ],
+      "images": []
+    },
+  {
+      "id": "v257-new-485-bahce-isi-sonrasi-lenfatik-noduller",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Bahçe işi sonrası lenfatik nodüller",
+      "difficulty": "Orta",
+      "difficultyTag": "Orta",
+      "clinicalFocus": "Bitki travması sonrası lenfatik hat boyunca ilerleyen kutanöz nodüllerde dimorfik mantar etkenini seçme.",
+      "learningTarget": "Lezyon kültürü, histopatoloji ve maruziyet öyküsünü kullanarak lenfokütanöz sporotrikoz paternini tanıyabilme.",
+      "demographics": "41 yaşında kadın hasta",
+      "setting": "Dermatoloji polikliniği / Klinik mikrobiyoloji süreci",
+      "chiefComplaint": "Üç haftadır sağ el sırtından ön kola doğru ilerleyen ağrısız nodüler lezyonlar nedeniyle başvuruyor.",
+      "stem": "Hasta bahçede gül budarken eline diken battığını, birkaç gün sonra aynı bölgede küçük bir papül çıktığını anlatır. Lezyon zamanla ülserleşmiş ve sonraki haftalarda ön kol boyunca yeni sert nodüller oluşmuştur. Ateş, öksürük veya sistemik halsizlik belirgin değildir; diyabeti veya immünsüpresif ilaç kullanımı yoktur. Evde kedi beslemektedir ancak belirgin kedi tırmığı öyküsü tariflemez.",
+      "patientIntro": {
+        "profile": "41 yaşında kadın hasta, dermatoloji polikliniği / klinik mikrobiyoloji süreci ortamında değerlendiriliyor.",
+        "presentation": "Üç haftadır sağ el sırtından ön kola doğru ilerleyen ağrısız nodüler lezyonlar nedeniyle başvuruyor.",
+        "historySummary": "Hasta bahçede gül budarken eline diken battığını, birkaç gün sonra aynı bölgede küçük bir papül çıktığını anlatır. Lezyon zamanla ülserleşmiş ve sonraki haftalarda ön kol boyunca yeni sert nodüller oluşmuştur. Ateş, öksürük veya sistemik halsizlik belirgin değildir; diyabeti veya immünsüpresif ilaç kullanımı yoktur. Evde kedi beslemektedir ancak belirgin kedi tırmığı öyküsü tariflemez."
+      },
+      "vitals": {
+        "TA": "118/74 mmHg",
+        "Nabız": "82/dk",
+        "Solunum": "16/dk",
+        "SpO2": "%99, oda havasında",
+        "Ateş": "37.1 °C",
+        "Şok indeksi": "0.69 - stabil"
+      },
+      "exam": [
+        "Sağ el sırtında kabuklu ülserleşmiş primer lezyon izlenir.",
+        "Ön kol boyunca lenfatik dağılıma uyan, hafif hassas subkutan nodüller palpe edilir.",
+        "Bölgesel lenf nodları hafif büyümüştür; yaygın döküntü yoktur.",
+        "Akciğer oskültasyonu normaldir; mukozal lezyon saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v257-new-485-bahce-isi-sonrasi-lenfatik-noduller-lezyon",
+          "label": "Deri lezyonu mikoloji incelemesi",
+          "title": "Deri lezyonu mikoloji incelemesi",
+          "orderLabel": "Deri lezyonu mikoloji incelemesi",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Histopatoloji ve mantar kültürü",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Deri biyopsisi ve kültür, travmatik inokülasyon sonrası dimorfik mantar paternini destekler.",
+          "clinicalMeaning": "Deri biyopsisi ve kültür, travmatik inokülasyon sonrası dimorfik mantar paternini destekler.",
+          "result": {
+            "title": "Deri lezyonu mikoloji incelemesi",
+            "summary": "Deri biyopsisi ve kültür, travmatik inokülasyon sonrası dimorfik mantar paternini destekler.",
+            "interpretation": "Deri biyopsisi ve kültür, travmatik inokülasyon sonrası dimorfik mantar paternini destekler.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Ülser kenarından punch biyopsi ve aspirat",
+                "Uygun örnek",
+                "Kutanöz mantar incelemesi"
+              ],
+              [
+                "Direkt KOH",
+                "Az sayıda maya benzeri yapı, yoğun inflamasyon",
+                "Mantar görülmez",
+                "Duyarlılığı sınırlı"
+              ],
+              [
+                "PAS/GMS boyama",
+                "Nadir puro şeklinde tomurcuklanan maya yapıları",
+                "Yok",
+                "Doku formu desteği"
+              ],
+              [
+                "25 °C kültür",
+                "İnce septalı hifler ve rozet tarzı konidya dizilimi",
+                "Üreme yok",
+                "Küf fazı"
+              ],
+              [
+                "37 °C dönüşüm",
+                "Maya fazına dönüşüm gösterildi",
+                "Dönüşüm yok",
+                "Dimorfizm desteği"
+              ],
+              [
+                "Bakteriyel kültür",
+                "Patojen bakteri üremedi",
+                "Üreme yok",
+                "Bakteriyel lenfanjit desteği yok"
+              ]
+            ],
+            "rows": [
+              [
+                "Örnek tipi",
+                "Ülser kenarından punch biyopsi ve aspirat",
+                "Uygun örnek",
+                "Kutanöz mantar incelemesi"
+              ],
+              [
+                "Direkt KOH",
+                "Az sayıda maya benzeri yapı, yoğun inflamasyon",
+                "Mantar görülmez",
+                "Duyarlılığı sınırlı"
+              ],
+              [
+                "PAS/GMS boyama",
+                "Nadir puro şeklinde tomurcuklanan maya yapıları",
+                "Yok",
+                "Doku formu desteği"
+              ],
+              [
+                "25 °C kültür",
+                "İnce septalı hifler ve rozet tarzı konidya dizilimi",
+                "Üreme yok",
+                "Küf fazı"
+              ],
+              [
+                "37 °C dönüşüm",
+                "Maya fazına dönüşüm gösterildi",
+                "Dönüşüm yok",
+                "Dimorfizm desteği"
+              ],
+              [
+                "Bakteriyel kültür",
+                "Patojen bakteri üremedi",
+                "Üreme yok",
+                "Bakteriyel lenfanjit desteği yok"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v257-new-485-bahce-isi-sonrasi-lenfatik-noduller-temel",
+          "label": "Temel laboratuvar",
+          "title": "Temel laboratuvar",
+          "orderLabel": "Temel laboratuvar",
+          "type": "microbiology",
+          "priority": "supporting",
+          "subtype": "Sistemik tutulum taraması",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Sistemik yayılım düşündüren belirgin laboratuvar anormalliği yoktur.",
+          "clinicalMeaning": "Sistemik yayılım düşündüren belirgin laboratuvar anormalliği yoktur.",
+          "result": {
+            "title": "Temel laboratuvar",
+            "summary": "Sistemik yayılım düşündüren belirgin laboratuvar anormalliği yoktur.",
+            "interpretation": "Sistemik yayılım düşündüren belirgin laboratuvar anormalliği yoktur.",
+            "values": [
+              [
+                "Lökosit",
+                "7.600/mm³",
+                "4.000-10.000/mm³",
+                "Normal"
+              ],
+              [
+                "CRP",
+                "8 mg/L",
+                "<5 mg/L",
+                "Hafif inflamasyon"
+              ],
+              [
+                "Akciğer grafisi",
+                "Aktif infiltrasyon yok",
+                "Normal",
+                "Pulmoner tutulum desteği yok"
+              ],
+              [
+                "HIV Ag/Ab",
+                "Negatif",
+                "Negatif",
+                "İmmünsüpresyon desteği yok"
+              ]
+            ],
+            "rows": [
+              [
+                "Lökosit",
+                "7.600/mm³",
+                "4.000-10.000/mm³",
+                "Normal"
+              ],
+              [
+                "CRP",
+                "8 mg/L",
+                "<5 mg/L",
+                "Hafif inflamasyon"
+              ],
+              [
+                "Akciğer grafisi",
+                "Aktif infiltrasyon yok",
+                "Normal",
+                "Pulmoner tutulum desteği yok"
+              ],
+              [
+                "HIV Ag/Ab",
+                "Negatif",
+                "Negatif",
+                "İmmünsüpresyon desteği yok"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu mikrobiyolojik laboratuvar ve klinik dağılım hangi dimorfik mantarla en uyumludur?",
+      "questionType": "single-best-answer",
+      "answerTarget": "Dimorfik mantar etkeni",
+      "diagnosis": {
+        "correct": "Sporothrix schenckii kompleksi",
+        "options": [
+          "Histoplasma capsulatum",
+          "Sporothrix schenckii kompleksi",
+          "Blastomyces dermatitidis",
+          "Coccidioides immitis/posadasii",
+          "Paracoccidioides brasiliensis"
+        ],
+        "question": "Bu mikrobiyolojik laboratuvar ve klinik dağılım hangi dimorfik mantarla en uyumludur?",
+        "explanation": "Gül dikeniyle travmatik inokülasyon, elde primer lezyon ve lenfatik hat boyunca nodüller; kültürde rozet konidyalar ve 37 °C'de maya fazı ile birlikte Sporothrix schenckii kompleksi için tipiktir.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Gül dikeni + elde ülser + lenfatik nodüller + rozet konidya → Sporothrix schenckii kompleksi."
+          }
+        ],
+        "optionFeedback": {
+          "Histoplasma capsulatum": {
+            "explanation": "Histoplasma capsulatum özellikle kuş/yarasa dışkısıyla kontamine toprak veya mağara maruziyeti sonrası pulmoner enfeksiyon yapar; makrofaj içinde küçük mayalar tipiktir. Bu hastada primer problem akciğer değil, diken batması sonrası lenfatik hat boyunca ilerleyen nodüler kutanöz lezyonlardır."
+          },
+          "Sporothrix schenckii kompleksi": {
+            "explanation": "Bu seçenek en uygundur; Sporothrix türleri bitki materyali, gül dikeni veya toprakla inokülasyon sonrası lenfokütanöz nodüller oluşturabilir. Dokuda puro şeklinde mayalar nadir görülebilir, kültürde oda ısısında küf ve 37 °C'de maya dönüşümü dimorfik mantar desteği sağlar."
+          },
+          "Blastomyces dermatitidis": {
+            "explanation": "Blastomyces dermatitidis pulmoner enfeksiyon ve deri yayılımı yapabilir; geniş tabanlı tomurcuklanan kalın duvarlı maya beklenir. Bu olguda travmatik bitki inokülasyonu sonrası lenfatik zincir boyunca nodüller ve rozet konidya paterni Blastomyces'ten çok Sporothrix'i destekler."
+          },
+          "Coccidioides immitis/posadasii": {
+            "explanation": "Coccidioides türleri çöl toprağı maruziyeti sonrası pnömoni ve doku içinde endosporlu sferüllerle karakterizedir. Bu hastada seyahatle ilişkili pnömoni veya sferül morfolojisi yoktur; lezyonlar bahçe yaralanması hattından lenfatik olarak ilerlemiştir."
+          },
+          "Paracoccidioides brasiliensis": {
+            "explanation": "Paracoccidioides brasiliensis daha çok Latin Amerika ilişkili kronik pulmoner-mukokutanöz hastalık yapar ve çoklu tomurcuklanan 'gemi dümeni' morfolojisiyle bilinir. Hastanın lokal travma sonrası elden kola uzanan nodülleri ve kültür dimorfizmi bu seçenekten farklıdır."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; Sporothrix türleri bitki materyali, gül dikeni veya toprakla inokülasyon sonrası lenfokütanöz nodüller oluşturabilir. Dokuda puro şeklinde mayalar nadir görülebilir, kültürde oda ısısında küf ve 37 °C'de maya dönüşümü dimorfik mantar desteği sağlar.",
+          "optionFeedback": {
+            "Histoplasma capsulatum": {
+              "explanation": "Histoplasma capsulatum özellikle kuş/yarasa dışkısıyla kontamine toprak veya mağara maruziyeti sonrası pulmoner enfeksiyon yapar; makrofaj içinde küçük mayalar tipiktir. Bu hastada primer problem akciğer değil, diken batması sonrası lenfatik hat boyunca ilerleyen nodüler kutanöz lezyonlardır."
+            },
+            "Sporothrix schenckii kompleksi": {
+              "explanation": "Bu seçenek en uygundur; Sporothrix türleri bitki materyali, gül dikeni veya toprakla inokülasyon sonrası lenfokütanöz nodüller oluşturabilir. Dokuda puro şeklinde mayalar nadir görülebilir, kültürde oda ısısında küf ve 37 °C'de maya dönüşümü dimorfik mantar desteği sağlar."
+            },
+            "Blastomyces dermatitidis": {
+              "explanation": "Blastomyces dermatitidis pulmoner enfeksiyon ve deri yayılımı yapabilir; geniş tabanlı tomurcuklanan kalın duvarlı maya beklenir. Bu olguda travmatik bitki inokülasyonu sonrası lenfatik zincir boyunca nodüller ve rozet konidya paterni Blastomyces'ten çok Sporothrix'i destekler."
+            },
+            "Coccidioides immitis/posadasii": {
+              "explanation": "Coccidioides türleri çöl toprağı maruziyeti sonrası pnömoni ve doku içinde endosporlu sferüllerle karakterizedir. Bu hastada seyahatle ilişkili pnömoni veya sferül morfolojisi yoktur; lezyonlar bahçe yaralanması hattından lenfatik olarak ilerlemiştir."
+            },
+            "Paracoccidioides brasiliensis": {
+              "explanation": "Paracoccidioides brasiliensis daha çok Latin Amerika ilişkili kronik pulmoner-mukokutanöz hastalık yapar ve çoklu tomurcuklanan 'gemi dümeni' morfolojisiyle bilinir. Hastanın lokal travma sonrası elden kola uzanan nodülleri ve kültür dimorfizmi bu seçenekten farklıdır."
+            }
+          },
+          "whyWrong": {
+            "Histoplasma capsulatum": "Histoplasma capsulatum özellikle kuş/yarasa dışkısıyla kontamine toprak veya mağara maruziyeti sonrası pulmoner enfeksiyon yapar; makrofaj içinde küçük mayalar tipiktir. Bu hastada primer problem akciğer değil, diken batması sonrası lenfatik hat boyunca ilerleyen nodüler kutanöz lezyonlardır.",
+            "Blastomyces dermatitidis": "Blastomyces dermatitidis pulmoner enfeksiyon ve deri yayılımı yapabilir; geniş tabanlı tomurcuklanan kalın duvarlı maya beklenir. Bu olguda travmatik bitki inokülasyonu sonrası lenfatik zincir boyunca nodüller ve rozet konidya paterni Blastomyces'ten çok Sporothrix'i destekler.",
+            "Coccidioides immitis/posadasii": "Coccidioides türleri çöl toprağı maruziyeti sonrası pnömoni ve doku içinde endosporlu sferüllerle karakterizedir. Bu hastada seyahatle ilişkili pnömoni veya sferül morfolojisi yoktur; lezyonlar bahçe yaralanması hattından lenfatik olarak ilerlemiştir.",
+            "Paracoccidioides brasiliensis": "Paracoccidioides brasiliensis daha çok Latin Amerika ilişkili kronik pulmoner-mukokutanöz hastalık yapar ve çoklu tomurcuklanan 'gemi dümeni' morfolojisiyle bilinir. Hastanın lokal travma sonrası elden kola uzanan nodülleri ve kültür dimorfizmi bu seçenekten farklıdır."
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Sporotrikoz çoğunlukla bitki/toprakla travmatik inokülasyon sonrası gelişen lenfokütanöz nodüler enfeksiyondur. Tanıda kültür en değerlidir; etken oda ısısında küf, vücut ısısında maya formu gösterebilir.",
+      "examPearl": "Gül dikeni + elde ülser + lenfatik nodüller + rozet konidya → Sporothrix schenckii kompleksi.",
+      "whyCorrect": "Bu seçenek en uygundur; Sporothrix türleri bitki materyali, gül dikeni veya toprakla inokülasyon sonrası lenfokütanöz nodüller oluşturabilir. Dokuda puro şeklinde mayalar nadir görülebilir, kültürde oda ısısında küf ve 37 °C'de maya dönüşümü dimorfik mantar desteği sağlar.",
+      "optionComparison": {
+        "Histoplasma capsulatum": "Histoplasma capsulatum özellikle kuş/yarasa dışkısıyla kontamine toprak veya mağara maruziyeti sonrası pulmoner enfeksiyon yapar; makrofaj içinde küçük mayalar tipiktir. Bu hastada primer problem akciğer değil, diken batması sonrası lenfatik hat boyunca ilerleyen nodüler kutanöz lezyonlardır.",
+        "Sporothrix schenckii kompleksi": "Bu seçenek en uygundur; Sporothrix türleri bitki materyali, gül dikeni veya toprakla inokülasyon sonrası lenfokütanöz nodüller oluşturabilir. Dokuda puro şeklinde mayalar nadir görülebilir, kültürde oda ısısında küf ve 37 °C'de maya dönüşümü dimorfik mantar desteği sağlar.",
+        "Blastomyces dermatitidis": "Blastomyces dermatitidis pulmoner enfeksiyon ve deri yayılımı yapabilir; geniş tabanlı tomurcuklanan kalın duvarlı maya beklenir. Bu olguda travmatik bitki inokülasyonu sonrası lenfatik zincir boyunca nodüller ve rozet konidya paterni Blastomyces'ten çok Sporothrix'i destekler.",
+        "Coccidioides immitis/posadasii": "Coccidioides türleri çöl toprağı maruziyeti sonrası pnömoni ve doku içinde endosporlu sferüllerle karakterizedir. Bu hastada seyahatle ilişkili pnömoni veya sferül morfolojisi yoktur; lezyonlar bahçe yaralanması hattından lenfatik olarak ilerlemiştir.",
+        "Paracoccidioides brasiliensis": "Paracoccidioides brasiliensis daha çok Latin Amerika ilişkili kronik pulmoner-mukokutanöz hastalık yapar ve çoklu tomurcuklanan 'gemi dümeni' morfolojisiyle bilinir. Hastanın lokal travma sonrası elden kola uzanan nodülleri ve kültür dimorfizmi bu seçenekten farklıdır."
+      },
+      "evidenceChain": [
+        {
+          "text": "Gül dikeni sonrası primer papül → travmatik bitki inokülasyonu",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Lenfatik hat boyunca nodüller → lenfokütanöz yayılım paterni",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "25 °C'de rozet konidya ve 37 °C'de maya dönüşümü → dimorfik Sporothrix desteği",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Pulmoner sistemik bulgu yokluğu → diğer dimorfik mantar paternlerini geri plana iter",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Histoplasma capsulatum": "Histoplasma capsulatum özellikle kuş/yarasa dışkısıyla kontamine toprak veya mağara maruziyeti sonrası pulmoner enfeksiyon yapar; makrofaj içinde küçük mayalar tipiktir. Bu hastada primer problem akciğer değil, diken batması sonrası lenfatik hat boyunca ilerleyen nodüler kutanöz lezyonlardır.",
+        "Blastomyces dermatitidis": "Blastomyces dermatitidis pulmoner enfeksiyon ve deri yayılımı yapabilir; geniş tabanlı tomurcuklanan kalın duvarlı maya beklenir. Bu olguda travmatik bitki inokülasyonu sonrası lenfatik zincir boyunca nodüller ve rozet konidya paterni Blastomyces'ten çok Sporothrix'i destekler.",
+        "Coccidioides immitis/posadasii": "Coccidioides türleri çöl toprağı maruziyeti sonrası pnömoni ve doku içinde endosporlu sferüllerle karakterizedir. Bu hastada seyahatle ilişkili pnömoni veya sferül morfolojisi yoktur; lezyonlar bahçe yaralanması hattından lenfatik olarak ilerlemiştir.",
+        "Paracoccidioides brasiliensis": "Paracoccidioides brasiliensis daha çok Latin Amerika ilişkili kronik pulmoner-mukokutanöz hastalık yapar ve çoklu tomurcuklanan 'gemi dümeni' morfolojisiyle bilinir. Hastanın lokal travma sonrası elden kola uzanan nodülleri ve kültür dimorfizmi bu seçenekten farklıdır."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v257-medical-microbiology-eighth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Gül dikeni travması",
+        "Lenfokütanöz nodüller",
+        "Rozet tarzı konidya",
+        "Dimorfik mantar dönüşümü"
+      ],
+      "images": []
+    },
+  {
+      "id": "v257-new-486-av-eti-sonrasi-miyalji-ve-eozinofili",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Av eti sonrası miyalji ve eozinofili",
+      "difficulty": "Orta",
+      "difficultyTag": "Orta",
+      "clinicalFocus": "Az pişmiş av eti sonrası ateş, periorbital ödem, miyalji ve kas biyopsisi bulgularından doku nematodunu seçme.",
+      "learningTarget": "Eozinofili, CK yüksekliği ve çizgili kasta enkiste larva bulgusunu helmint yaşam döngüsüyle ilişkilendirebilme.",
+      "demographics": "36 yaşında erkek hasta",
+      "setting": "Enfeksiyon hastalıkları polikliniği",
+      "chiefComplaint": "Bir haftadır ateş, göz çevresinde şişlik ve yaygın kas ağrısı nedeniyle başvuruyor.",
+      "stem": "Hasta yaklaşık iki hafta önce arkadaşlarıyla av eti yediğini, etin bir kısmının tam pişmediğini düşündüğünü anlatır. İlk günlerde hafif karın ağrısı ve ishal olmuş, ardından ateş, göz çevresinde şişlik ve özellikle baldır-uyluk kaslarında belirgin ağrı gelişmiştir. Ağrılar merdiven çıkarken artmakta, idrar renginde koyulaşma tariflememektedir. Yakın çevresindeki iki kişide de benzer kas ağrısı başladığını söyler.",
+      "patientIntro": {
+        "profile": "36 yaşında erkek hasta, enfeksiyon hastalıkları polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Bir haftadır ateş, göz çevresinde şişlik ve yaygın kas ağrısı nedeniyle başvuruyor.",
+        "historySummary": "Hasta yaklaşık iki hafta önce arkadaşlarıyla av eti yediğini, etin bir kısmının tam pişmediğini düşündüğünü anlatır. İlk günlerde hafif karın ağrısı ve ishal olmuş, ardından ateş, göz çevresinde şişlik ve özellikle baldır-uyluk kaslarında belirgin ağrı gelişmiştir. Ağrılar merdiven çıkarken artmakta, idrar renginde koyulaşma tariflememektedir. Yakın çevresindeki iki kişide de benzer kas ağrısı başladığını söyler."
+      },
+      "vitals": {
+        "TA": "116/72 mmHg",
+        "Nabız": "96/dk",
+        "Solunum": "18/dk",
+        "SpO2": "%98, oda havasında",
+        "Ateş": "38.2 °C",
+        "Şok indeksi": "0.83 - stabil"
+      },
+      "exam": [
+        "Bilateral periorbital ödem ve konjonktival hafif hiperemi vardır.",
+        "Uyluk ve baldır kaslarında palpasyonla hassasiyet belirgindir.",
+        "Karında hafif yaygın hassasiyet dışında defans yoktur.",
+        "Döküntü, ense sertliği veya fokal nörolojik bulgu saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v257-new-486-av-eti-sonrasi-miyalji-ve-eozinofili-parazitoloji",
+          "label": "Parazitoloji ve doku incelemesi",
+          "title": "Parazitoloji ve doku incelemesi",
+          "orderLabel": "Parazitoloji ve doku incelemesi",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Seroloji ve kas biyopsisi",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Klinik tablo, invaziv doku nematodu ve çizgili kas tutulumu ile uyumlu laboratuvar bulguları gösterir.",
+          "clinicalMeaning": "Klinik tablo, invaziv doku nematodu ve çizgili kas tutulumu ile uyumlu laboratuvar bulguları gösterir.",
+          "result": {
+            "title": "Parazitoloji ve doku incelemesi",
+            "summary": "Klinik tablo, invaziv doku nematodu ve çizgili kas tutulumu ile uyumlu laboratuvar bulguları gösterir.",
+            "interpretation": "Klinik tablo, invaziv doku nematodu ve çizgili kas tutulumu ile uyumlu laboratuvar bulguları gösterir.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Serum ve gastroknemius kas biyopsisi",
+                "Uygun örnek",
+                "Doku nematodu incelemesi"
+              ],
+              [
+                "Tam kan sayımı",
+                "Eozinofil %28, mutlak 3.100/mm³",
+                "<500/mm³",
+                "Belirgin eozinofili"
+              ],
+              [
+                "CK",
+                "1.460 U/L",
+                "<190 U/L",
+                "Miyozit/kas hasarı"
+              ],
+              [
+                "Seroloji",
+                "İnvaziv kas nematodu antikoru pozitif",
+                "Negatif",
+                "Maruziyetle uyumlu"
+              ],
+              [
+                "Kas biyopsisi H&E",
+                "Çizgili kas lifleri içinde kıvrılmış enkiste larvalar",
+                "Yok",
+                "Doku evresi"
+              ],
+              [
+                "Dışkı mikroskopisi",
+                "Yumurta/proglottid saptanmadı",
+                "Yok",
+                "Bağırsak şerit desteği yok"
+              ]
+            ],
+            "rows": [
+              [
+                "Örnek tipi",
+                "Serum ve gastroknemius kas biyopsisi",
+                "Uygun örnek",
+                "Doku nematodu incelemesi"
+              ],
+              [
+                "Tam kan sayımı",
+                "Eozinofil %28, mutlak 3.100/mm³",
+                "<500/mm³",
+                "Belirgin eozinofili"
+              ],
+              [
+                "CK",
+                "1.460 U/L",
+                "<190 U/L",
+                "Miyozit/kas hasarı"
+              ],
+              [
+                "Seroloji",
+                "İnvaziv kas nematodu antikoru pozitif",
+                "Negatif",
+                "Maruziyetle uyumlu"
+              ],
+              [
+                "Kas biyopsisi H&E",
+                "Çizgili kas lifleri içinde kıvrılmış enkiste larvalar",
+                "Yok",
+                "Doku evresi"
+              ],
+              [
+                "Dışkı mikroskopisi",
+                "Yumurta/proglottid saptanmadı",
+                "Yok",
+                "Bağırsak şerit desteği yok"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v257-new-486-av-eti-sonrasi-miyalji-ve-eozinofili-temel",
+          "label": "Temel biyokimya",
+          "title": "Temel biyokimya",
+          "orderLabel": "Temel biyokimya",
+          "type": "microbiology",
+          "priority": "supporting",
+          "subtype": "Organ tutulum taraması",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Kas hasarı ve inflamasyon ön plandadır; ağır böbrek hasarı yoktur.",
+          "clinicalMeaning": "Kas hasarı ve inflamasyon ön plandadır; ağır böbrek hasarı yoktur.",
+          "result": {
+            "title": "Temel biyokimya",
+            "summary": "Kas hasarı ve inflamasyon ön plandadır; ağır böbrek hasarı yoktur.",
+            "interpretation": "Kas hasarı ve inflamasyon ön plandadır; ağır böbrek hasarı yoktur.",
+            "values": [
+              [
+                "Kreatinin",
+                "0.9 mg/dL",
+                "0.6-1.2 mg/dL",
+                "Böbrek fonksiyonu korunmuş"
+              ],
+              [
+                "AST/ALT",
+                "72/64 U/L",
+                "<40 U/L",
+                "Kas/karaciğer katkılı yükselme"
+              ],
+              [
+                "CRP",
+                "42 mg/L",
+                "<5 mg/L",
+                "İnflamasyon"
+              ],
+              [
+                "İdrar analizi",
+                "Miyoglobin negatif",
+                "Negatif",
+                "Rabdomiyoliz ağır değil"
+              ]
+            ],
+            "rows": [
+              [
+                "Kreatinin",
+                "0.9 mg/dL",
+                "0.6-1.2 mg/dL",
+                "Böbrek fonksiyonu korunmuş"
+              ],
+              [
+                "AST/ALT",
+                "72/64 U/L",
+                "<40 U/L",
+                "Kas/karaciğer katkılı yükselme"
+              ],
+              [
+                "CRP",
+                "42 mg/L",
+                "<5 mg/L",
+                "İnflamasyon"
+              ],
+              [
+                "İdrar analizi",
+                "Miyoglobin negatif",
+                "Negatif",
+                "Rabdomiyoliz ağır değil"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada en olası paraziter etken aşağıdakilerden hangisidir?",
+      "questionType": "single-best-answer",
+      "answerTarget": "Paraziter etken",
+      "diagnosis": {
+        "correct": "Trichinella spiralis",
+        "options": [
+          "Toxocara canis",
+          "Ancylostoma duodenale",
+          "Trichinella spiralis",
+          "Taenia saginata",
+          "Diphyllobothrium latum"
+        ],
+        "question": "Bu hastada en olası paraziter etken aşağıdakilerden hangisidir?",
+        "explanation": "Az pişmiş av eti sonrası önce gastrointestinal yakınmalar, ardından ateş, periorbital ödem, yoğun miyalji, eozinofili ve kas biyopsisinde çizgili kas içinde enkiste larvalar gelişmesi Trichinella spiralis enfeksiyonunu destekler.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Az pişmiş av/domuz eti + periorbital ödem + miyalji + eozinofili + kasta enkiste larva → Trichinella spiralis."
+          }
+        ],
+        "optionFeedback": {
+          "Toxocara canis": {
+            "explanation": "Toxocara canis köpek dışkısıyla kontamine topraktaki yumurtaların alınmasıyla visseral veya oküler larva migrans yapar; çocuklarda hepatomegali, eozinofili ve göz tutulumu öne çıkabilir. Bu hastada asıl ipucu az pişmiş av eti sonrası ateş, periorbital ödem, şiddetli miyalji, CK yüksekliği ve kas biyopsisinde enkiste larvalardır."
+          },
+          "Ancylostoma duodenale": {
+            "explanation": "Ancylostoma duodenale cilt penetrasyonu sonrası akciğer göçü ve bağırsakta kan kaybına bağlı demir eksikliği anemisi yapabilir. Burada deriden giriş öyküsü, kronik anemi veya dışkıda kanca kurt yumurtası değil; kas invazyonu ve belirgin miyozit bulguları vardır."
+          },
+          "Trichinella spiralis": {
+            "explanation": "Bu seçenek en uygundur; Trichinella spiralis az pişmiş domuz veya av etiyle alınan larvaların bağırsakta erişkinleşmesi ve yeni larvaların çizgili kasa yerleşmesiyle hastalık yapar. Ateş, periorbital ödem, belirgin miyalji, eozinofili, CK yüksekliği ve kas biyopsisinde enkiste larvalar bu etkeni destekler."
+          },
+          "Taenia saginata": {
+            "explanation": "Taenia saginata az pişmiş sığır etiyle bulaşan erişkin tenyadır; genellikle bağırsakta proglottid çıkarma veya hafif gastrointestinal yakınmalar yapar. İnsan dokusunda larvaların enkiste olduğu nöromüsküler tablo beklenmez; kas biyopsisi ve eozinofili paterni Trichinella lehinedir."
+          },
+          "Diphyllobothrium latum": {
+            "explanation": "Diphyllobothrium latum tatlı su balığıyla bulaşır ve erişkin şerit bağırsakta B12 eksikliğiyle ilişkili olabilir. Bu vakadaki av eti maruziyeti, periorbital ödem ve çizgili kas larvaları balık kaynaklı şerit enfeksiyonundan farklıdır."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; Trichinella spiralis az pişmiş domuz veya av etiyle alınan larvaların bağırsakta erişkinleşmesi ve yeni larvaların çizgili kasa yerleşmesiyle hastalık yapar. Ateş, periorbital ödem, belirgin miyalji, eozinofili, CK yüksekliği ve kas biyopsisinde enkiste larvalar bu etkeni destekler.",
+          "optionFeedback": {
+            "Toxocara canis": {
+              "explanation": "Toxocara canis köpek dışkısıyla kontamine topraktaki yumurtaların alınmasıyla visseral veya oküler larva migrans yapar; çocuklarda hepatomegali, eozinofili ve göz tutulumu öne çıkabilir. Bu hastada asıl ipucu az pişmiş av eti sonrası ateş, periorbital ödem, şiddetli miyalji, CK yüksekliği ve kas biyopsisinde enkiste larvalardır."
+            },
+            "Ancylostoma duodenale": {
+              "explanation": "Ancylostoma duodenale cilt penetrasyonu sonrası akciğer göçü ve bağırsakta kan kaybına bağlı demir eksikliği anemisi yapabilir. Burada deriden giriş öyküsü, kronik anemi veya dışkıda kanca kurt yumurtası değil; kas invazyonu ve belirgin miyozit bulguları vardır."
+            },
+            "Trichinella spiralis": {
+              "explanation": "Bu seçenek en uygundur; Trichinella spiralis az pişmiş domuz veya av etiyle alınan larvaların bağırsakta erişkinleşmesi ve yeni larvaların çizgili kasa yerleşmesiyle hastalık yapar. Ateş, periorbital ödem, belirgin miyalji, eozinofili, CK yüksekliği ve kas biyopsisinde enkiste larvalar bu etkeni destekler."
+            },
+            "Taenia saginata": {
+              "explanation": "Taenia saginata az pişmiş sığır etiyle bulaşan erişkin tenyadır; genellikle bağırsakta proglottid çıkarma veya hafif gastrointestinal yakınmalar yapar. İnsan dokusunda larvaların enkiste olduğu nöromüsküler tablo beklenmez; kas biyopsisi ve eozinofili paterni Trichinella lehinedir."
+            },
+            "Diphyllobothrium latum": {
+              "explanation": "Diphyllobothrium latum tatlı su balığıyla bulaşır ve erişkin şerit bağırsakta B12 eksikliğiyle ilişkili olabilir. Bu vakadaki av eti maruziyeti, periorbital ödem ve çizgili kas larvaları balık kaynaklı şerit enfeksiyonundan farklıdır."
+            }
+          },
+          "whyWrong": {
+            "Toxocara canis": "Toxocara canis köpek dışkısıyla kontamine topraktaki yumurtaların alınmasıyla visseral veya oküler larva migrans yapar; çocuklarda hepatomegali, eozinofili ve göz tutulumu öne çıkabilir. Bu hastada asıl ipucu az pişmiş av eti sonrası ateş, periorbital ödem, şiddetli miyalji, CK yüksekliği ve kas biyopsisinde enkiste larvalardır.",
+            "Ancylostoma duodenale": "Ancylostoma duodenale cilt penetrasyonu sonrası akciğer göçü ve bağırsakta kan kaybına bağlı demir eksikliği anemisi yapabilir. Burada deriden giriş öyküsü, kronik anemi veya dışkıda kanca kurt yumurtası değil; kas invazyonu ve belirgin miyozit bulguları vardır.",
+            "Taenia saginata": "Taenia saginata az pişmiş sığır etiyle bulaşan erişkin tenyadır; genellikle bağırsakta proglottid çıkarma veya hafif gastrointestinal yakınmalar yapar. İnsan dokusunda larvaların enkiste olduğu nöromüsküler tablo beklenmez; kas biyopsisi ve eozinofili paterni Trichinella lehinedir.",
+            "Diphyllobothrium latum": "Diphyllobothrium latum tatlı su balığıyla bulaşır ve erişkin şerit bağırsakta B12 eksikliğiyle ilişkili olabilir. Bu vakadaki av eti maruziyeti, periorbital ödem ve çizgili kas larvaları balık kaynaklı şerit enfeksiyonundan farklıdır."
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Trichinella spiralis, az pişmiş etle alınan larvaların çizgili kasa yerleşmesiyle miyozit, periorbital ödem ve eozinofili oluşturur. Tanı maruziyet öyküsü, seroloji ve gerektiğinde kas biyopsisindeki enkiste larvalarla desteklenir.",
+      "examPearl": "Az pişmiş av/domuz eti + periorbital ödem + miyalji + eozinofili + kasta enkiste larva → Trichinella spiralis.",
+      "whyCorrect": "Bu seçenek en uygundur; Trichinella spiralis az pişmiş domuz veya av etiyle alınan larvaların bağırsakta erişkinleşmesi ve yeni larvaların çizgili kasa yerleşmesiyle hastalık yapar. Ateş, periorbital ödem, belirgin miyalji, eozinofili, CK yüksekliği ve kas biyopsisinde enkiste larvalar bu etkeni destekler.",
+      "optionComparison": {
+        "Toxocara canis": "Toxocara canis köpek dışkısıyla kontamine topraktaki yumurtaların alınmasıyla visseral veya oküler larva migrans yapar; çocuklarda hepatomegali, eozinofili ve göz tutulumu öne çıkabilir. Bu hastada asıl ipucu az pişmiş av eti sonrası ateş, periorbital ödem, şiddetli miyalji, CK yüksekliği ve kas biyopsisinde enkiste larvalardır.",
+        "Ancylostoma duodenale": "Ancylostoma duodenale cilt penetrasyonu sonrası akciğer göçü ve bağırsakta kan kaybına bağlı demir eksikliği anemisi yapabilir. Burada deriden giriş öyküsü, kronik anemi veya dışkıda kanca kurt yumurtası değil; kas invazyonu ve belirgin miyozit bulguları vardır.",
+        "Trichinella spiralis": "Bu seçenek en uygundur; Trichinella spiralis az pişmiş domuz veya av etiyle alınan larvaların bağırsakta erişkinleşmesi ve yeni larvaların çizgili kasa yerleşmesiyle hastalık yapar. Ateş, periorbital ödem, belirgin miyalji, eozinofili, CK yüksekliği ve kas biyopsisinde enkiste larvalar bu etkeni destekler.",
+        "Taenia saginata": "Taenia saginata az pişmiş sığır etiyle bulaşan erişkin tenyadır; genellikle bağırsakta proglottid çıkarma veya hafif gastrointestinal yakınmalar yapar. İnsan dokusunda larvaların enkiste olduğu nöromüsküler tablo beklenmez; kas biyopsisi ve eozinofili paterni Trichinella lehinedir.",
+        "Diphyllobothrium latum": "Diphyllobothrium latum tatlı su balığıyla bulaşır ve erişkin şerit bağırsakta B12 eksikliğiyle ilişkili olabilir. Bu vakadaki av eti maruziyeti, periorbital ödem ve çizgili kas larvaları balık kaynaklı şerit enfeksiyonundan farklıdır."
+      },
+      "evidenceChain": [
+        {
+          "text": "Az pişmiş av eti tüketimi → larva içeren etle bulaşan nematod bağlamı",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Periorbital ödem ve şiddetli miyalji → kas invazyonu paternini destekler",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Eozinofili ve CK yüksekliği → doku helminti ve miyozit göstergesi",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Kas biyopsisinde enkiste larvalar → Trichinella için ayırt edici doku bulgusu",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Toxocara canis": "Toxocara canis köpek dışkısıyla kontamine topraktaki yumurtaların alınmasıyla visseral veya oküler larva migrans yapar; çocuklarda hepatomegali, eozinofili ve göz tutulumu öne çıkabilir. Bu hastada asıl ipucu az pişmiş av eti sonrası ateş, periorbital ödem, şiddetli miyalji, CK yüksekliği ve kas biyopsisinde enkiste larvalardır.",
+        "Ancylostoma duodenale": "Ancylostoma duodenale cilt penetrasyonu sonrası akciğer göçü ve bağırsakta kan kaybına bağlı demir eksikliği anemisi yapabilir. Burada deriden giriş öyküsü, kronik anemi veya dışkıda kanca kurt yumurtası değil; kas invazyonu ve belirgin miyozit bulguları vardır.",
+        "Taenia saginata": "Taenia saginata az pişmiş sığır etiyle bulaşan erişkin tenyadır; genellikle bağırsakta proglottid çıkarma veya hafif gastrointestinal yakınmalar yapar. İnsan dokusunda larvaların enkiste olduğu nöromüsküler tablo beklenmez; kas biyopsisi ve eozinofili paterni Trichinella lehinedir.",
+        "Diphyllobothrium latum": "Diphyllobothrium latum tatlı su balığıyla bulaşır ve erişkin şerit bağırsakta B12 eksikliğiyle ilişkili olabilir. Bu vakadaki av eti maruziyeti, periorbital ödem ve çizgili kas larvaları balık kaynaklı şerit enfeksiyonundan farklıdır."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v257-medical-microbiology-eighth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Az pişmiş av eti",
+        "Periorbital ödem",
+        "Eozinofili ve CK yüksekliği",
+        "Kas biyopsisinde enkiste larva"
+      ],
+      "images": []
+    },
+  {
+      "id": "v258-new-487-asisiz-cocukta-akut-ust-hava-yolu-obstruksiyonu",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Aşısı eksik çocukta akut üst hava yolu obstrüksiyonu",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Aşısı eksik çocukta ani gelişen toksik görünüm, salya akması ve üst hava yolu obstrüksiyonu bulgularını kültür gereksinimiyle birleştirerek bakteriyel etkeni seçme.",
+      "learningTarget": "Küçük gram negatif kokobasil morfolojisini, çikolata agarda X-V faktör bağımlı üremeyi ve kapsüllü invaziv hastalık bağlamını etken tanısıyla ilişkilendirebilme.",
+      "demographics": "4 yaşında erkek çocuk",
+      "setting": "Çocuk acil servisi",
+      "chiefComplaint": "Ateş, boğaz ağrısı, salya akması ve nefes almakta zorlanma nedeniyle getiriliyor.",
+      "stem": "Çocuk son 12 saat içinde hızla kötüleşen ateş ve boğaz ağrısı yaşamış, akşam saatlerinde yutkunamadığı için ağzından salya akmaya başlamıştır. Ailesi, önceki aşılarının bir kısmının şehir değişikliği sırasında tamamlanmadığını ve son günlerde evde benzer yakınması olan kimse olmadığını söyler. Öksürüğü belirgin değildir; su içmeye çalıştığında huzursuzlanmakta ve öne eğilerek oturmak istemektedir. Evde antibiyotik başlanmamış, başvuru öncesinde kısa süreli ateş düşürücü verilmiştir.",
+      "patientIntro": {
+        "profile": "4 yaşında erkek çocuk, çocuk acil servisi ortamında değerlendiriliyor.",
+        "presentation": "Ateş, boğaz ağrısı, salya akması ve nefes almakta zorlanma nedeniyle getiriliyor.",
+        "historySummary": "Çocuk son 12 saat içinde hızla kötüleşen ateş ve boğaz ağrısı yaşamış, akşam saatlerinde yutkunamadığı için ağzından salya akmaya başlamıştır. Ailesi, önceki aşılarının bir kısmının şehir değişikliği sırasında tamamlanmadığını ve son günlerde evde benzer yakınması olan kimse olmadığını söyler. Öksürüğü belirgin değildir; su içmeye çalıştığında huzursuzlanmakta ve öne eğilerek oturmak istemektedir. Evde antibiyotik başlanmamış, başvuru öncesinde kısa süreli ateş düşürücü verilmiştir."
+      },
+      "vitals": {
+        "TA": "92/58 mmHg",
+        "Nabız": "142/dk",
+        "Solunum": "32/dk",
+        "SpO2": "94%, oda havasında",
+        "Ateş": "39.1 °C",
+        "Şok indeksi": "1.54 - dikkat"
+      },
+      "exam": [
+        "Hasta toksik görünümlü, öne eğilerek oturuyor ve belirgin salya akması vardır.",
+        "İnspiratuvar stridor duyulur; ağız içi manipülasyon yapılmadan üst hava yolu obstrüksiyonu açısından izlenir.",
+        "Boyunda hafif hassas servikal lenfadenopati vardır.",
+        "Akciğer oskültasyonunda yaygın ral yoktur; döküntü veya ense sertliği saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v258-new-487-asisiz-cocukta-akut-ust-hava-yolu-obstruksiyonu-kan-kulturu-ve-solunum-yolu-mikrobiyolojisi",
+          "label": "Kan kültürü ve solunum yolu mikrobiyolojisi",
+          "title": "Kan kültürü ve solunum yolu mikrobiyolojisi",
+          "orderLabel": "Kan kültürü ve solunum yolu mikrobiyolojisi",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Gram boyama, kültür ve antijen",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Kültür ve boyama bulguları faktör bağımlı küçük gram negatif kokobasil ile uyumludur.",
+          "clinicalMeaning": "Kültür ve boyama bulguları faktör bağımlı küçük gram negatif kokobasil ile uyumludur.",
+          "result": {
+            "title": "Kan kültürü ve solunum yolu mikrobiyolojisi",
+            "summary": "Kültür ve boyama bulguları faktör bağımlı küçük gram negatif kokobasil ile uyumludur.",
+            "interpretation": "Kültür ve boyama bulguları faktör bağımlı küçük gram negatif kokobasil ile uyumludur.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Kan kültürü ve güvenli koşulda alınmış üst hava yolu sürüntüsü",
+                "Steril/uygun örnek",
+                "İnvaziv bakteriyel süreç"
+              ],
+              [
+                "Gram boyama",
+                "Küçük pleomorfik gram negatif kokobasiller",
+                "Bakteri görülmemesi",
+                "Morfoloji uyumlu"
+              ],
+              [
+                "Kültür",
+                "Çikolata agarda üreme; koyun kanlı agarda belirgin üreme yok",
+                "Beklenen floraya göre değişken",
+                "Faktör gereksinimi"
+              ],
+              [
+                "Uydu fenomeni",
+                "S. aureus çizgisi çevresinde desteklenen koloni artışı",
+                "Yok",
+                "V faktörü desteği"
+              ],
+              [
+                "Kapsül antijeni/serotipleme",
+                "Poliribozilribitol fosfat kapsül antijeni pozitif",
+                "Negatif",
+                "İnvaziv kapsüllü suş"
+              ],
+              [
+                "Beta-laktamaz testi",
+                "Pozitif",
+                "Negatif",
+                "Ampisilin direnci olası"
+              ]
+            ],
+            "rows": [
+              [
+                "Örnek tipi",
+                "Kan kültürü ve güvenli koşulda alınmış üst hava yolu sürüntüsü",
+                "Steril/uygun örnek",
+                "İnvaziv bakteriyel süreç"
+              ],
+              [
+                "Gram boyama",
+                "Küçük pleomorfik gram negatif kokobasiller",
+                "Bakteri görülmemesi",
+                "Morfoloji uyumlu"
+              ],
+              [
+                "Kültür",
+                "Çikolata agarda üreme; koyun kanlı agarda belirgin üreme yok",
+                "Beklenen floraya göre değişken",
+                "Faktör gereksinimi"
+              ],
+              [
+                "Uydu fenomeni",
+                "S. aureus çizgisi çevresinde desteklenen koloni artışı",
+                "Yok",
+                "V faktörü desteği"
+              ],
+              [
+                "Kapsül antijeni/serotipleme",
+                "Poliribozilribitol fosfat kapsül antijeni pozitif",
+                "Negatif",
+                "İnvaziv kapsüllü suş"
+              ],
+              [
+                "Beta-laktamaz testi",
+                "Pozitif",
+                "Negatif",
+                "Ampisilin direnci olası"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu mikrobiyolojik laboratuvar bulgusu hangi bakteriyel etkenle en uyumludur?",
+      "questionType": "single-best-answer",
+      "answerTarget": "Bakteriyel etken",
+      "diagnosis": {
+        "correct": "Haemophilus influenzae tip b",
+        "options": [
+          "Haemophilus influenzae tip b",
+          "Streptococcus pyogenes",
+          "Moraxella catarrhalis",
+          "Corynebacterium diphtheriae",
+          "Bordetella pertussis"
+        ],
+        "question": "Bu mikrobiyolojik laboratuvar bulgusu hangi bakteriyel etkenle en uyumludur?",
+        "explanation": "Ani toksik üst hava yolu obstrüksiyonu, aşı eksikliği, küçük pleomorfik gram negatif kokobasil morfolojisi, çikolata agarda üreme ve X-V faktör gereksinimini düşündüren uydu fenomeni Haemophilus influenzae tip b ile en uyumludur.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Aşısı eksik çocuk + epiglot benzeri obstrüksiyon + küçük gram negatif kokobasil + çikolata agar/X-V faktör gereksinimi → Haemophilus influenzae tip b."
+          }
+        ],
+        "optionFeedback": {
+          "Haemophilus influenzae tip b": {
+            "explanation": "Bu seçenek en uygundur; Haemophilus influenzae tip b küçük pleomorfik gram negatif kokobasil olup çikolata agarda X ve V faktörleriyle ürer. Aşısı eksik çocukta toksik üst hava yolu obstrüksiyonu, PRP kapsül antijeni ve uydu fenomeni bu seçeneği diğer solunum yolu bakterilerinden ayırır."
+          },
+          "Streptococcus pyogenes": {
+            "explanation": "Streptococcus pyogenes gram pozitif zincir yapan koktur ve kanlı agarda beta hemolizle farenjit, kızıl veya nekrotizan yumuşak doku enfeksiyonu yapabilir. Bu vakadaki gram negatif kokobasil morfolojisi, çikolata agar bağımlılığı ve kapsül antijen paterni streptokokla uyumlu değildir."
+          },
+          "Moraxella catarrhalis": {
+            "explanation": "Moraxella catarrhalis gram negatif diplokoktur ve özellikle otit, sinüzit veya KOAH alevlenmesiyle ilişkilidir. Çikolata agar faktör bağımlılığı ve PRP kapsül antijeni beklenmez; ayrıca bu kadar hızlı toksik epiglot obstrüksiyonu için daha zayıf bir açıklamadır."
+          },
+          "Corynebacterium diphtheriae": {
+            "explanation": "Corynebacterium diphtheriae psödomembranlı farenjit ve toksin aracılı miyokardit/nöropati yapabilir; gram pozitif çomak görünümü ve özel tellürit ortamlarında üreme beklenir. Burada küçük gram negatif kokobasil, X-V faktör gereksinimi ve çikolata agar paterni difteri etkeninden farklıdır."
+          },
+          "Bordetella pertussis": {
+            "explanation": "Bordetella pertussis paroksismal öksürük, inspiratuvar whoop ve lenfositozla seyreden boğmaca tablosu oluşturur. Bu hastada baskın bulgu haftalar süren öksürük değil akut üst hava yolu obstrüksiyonu ve faktör bağımlı kokobasil kültür paternidir."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; Haemophilus influenzae tip b küçük pleomorfik gram negatif kokobasil olup çikolata agarda X ve V faktörleriyle ürer. Aşısı eksik çocukta toksik üst hava yolu obstrüksiyonu, PRP kapsül antijeni ve uydu fenomeni bu seçeneği diğer solunum yolu bakterilerinden ayırır.",
+          "optionFeedback": {
+            "Haemophilus influenzae tip b": {
+              "explanation": "Bu seçenek en uygundur; Haemophilus influenzae tip b küçük pleomorfik gram negatif kokobasil olup çikolata agarda X ve V faktörleriyle ürer. Aşısı eksik çocukta toksik üst hava yolu obstrüksiyonu, PRP kapsül antijeni ve uydu fenomeni bu seçeneği diğer solunum yolu bakterilerinden ayırır."
+            },
+            "Streptococcus pyogenes": {
+              "explanation": "Streptococcus pyogenes gram pozitif zincir yapan koktur ve kanlı agarda beta hemolizle farenjit, kızıl veya nekrotizan yumuşak doku enfeksiyonu yapabilir. Bu vakadaki gram negatif kokobasil morfolojisi, çikolata agar bağımlılığı ve kapsül antijen paterni streptokokla uyumlu değildir."
+            },
+            "Moraxella catarrhalis": {
+              "explanation": "Moraxella catarrhalis gram negatif diplokoktur ve özellikle otit, sinüzit veya KOAH alevlenmesiyle ilişkilidir. Çikolata agar faktör bağımlılığı ve PRP kapsül antijeni beklenmez; ayrıca bu kadar hızlı toksik epiglot obstrüksiyonu için daha zayıf bir açıklamadır."
+            },
+            "Corynebacterium diphtheriae": {
+              "explanation": "Corynebacterium diphtheriae psödomembranlı farenjit ve toksin aracılı miyokardit/nöropati yapabilir; gram pozitif çomak görünümü ve özel tellürit ortamlarında üreme beklenir. Burada küçük gram negatif kokobasil, X-V faktör gereksinimi ve çikolata agar paterni difteri etkeninden farklıdır."
+            },
+            "Bordetella pertussis": {
+              "explanation": "Bordetella pertussis paroksismal öksürük, inspiratuvar whoop ve lenfositozla seyreden boğmaca tablosu oluşturur. Bu hastada baskın bulgu haftalar süren öksürük değil akut üst hava yolu obstrüksiyonu ve faktör bağımlı kokobasil kültür paternidir."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Haemophilus influenzae tip b kapsüllü, küçük gram negatif kokobasildir; invaziv hastalıkta kan/BOS gibi steril örneklerden izole edilebilir ve çikolata agarda X-V faktör desteğiyle ürer. PRP kapsül aşısı invaziv Hib hastalığını belirgin azaltır.",
+      "examPearl": "Aşısı eksik çocuk + epiglot benzeri obstrüksiyon + küçük gram negatif kokobasil + çikolata agar/X-V faktör gereksinimi → Haemophilus influenzae tip b.",
+      "whyCorrect": "Bu seçenek en uygundur; Haemophilus influenzae tip b küçük pleomorfik gram negatif kokobasil olup çikolata agarda X ve V faktörleriyle ürer. Aşısı eksik çocukta toksik üst hava yolu obstrüksiyonu, PRP kapsül antijeni ve uydu fenomeni bu seçeneği diğer solunum yolu bakterilerinden ayırır.",
+      "optionComparison": {
+        "Haemophilus influenzae tip b": "Bu seçenek en uygundur; Haemophilus influenzae tip b küçük pleomorfik gram negatif kokobasil olup çikolata agarda X ve V faktörleriyle ürer. Aşısı eksik çocukta toksik üst hava yolu obstrüksiyonu, PRP kapsül antijeni ve uydu fenomeni bu seçeneği diğer solunum yolu bakterilerinden ayırır.",
+        "Streptococcus pyogenes": "Streptococcus pyogenes gram pozitif zincir yapan koktur ve kanlı agarda beta hemolizle farenjit, kızıl veya nekrotizan yumuşak doku enfeksiyonu yapabilir. Bu vakadaki gram negatif kokobasil morfolojisi, çikolata agar bağımlılığı ve kapsül antijen paterni streptokokla uyumlu değildir.",
+        "Moraxella catarrhalis": "Moraxella catarrhalis gram negatif diplokoktur ve özellikle otit, sinüzit veya KOAH alevlenmesiyle ilişkilidir. Çikolata agar faktör bağımlılığı ve PRP kapsül antijeni beklenmez; ayrıca bu kadar hızlı toksik epiglot obstrüksiyonu için daha zayıf bir açıklamadır.",
+        "Corynebacterium diphtheriae": "Corynebacterium diphtheriae psödomembranlı farenjit ve toksin aracılı miyokardit/nöropati yapabilir; gram pozitif çomak görünümü ve özel tellürit ortamlarında üreme beklenir. Burada küçük gram negatif kokobasil, X-V faktör gereksinimi ve çikolata agar paterni difteri etkeninden farklıdır.",
+        "Bordetella pertussis": "Bordetella pertussis paroksismal öksürük, inspiratuvar whoop ve lenfositozla seyreden boğmaca tablosu oluşturur. Bu hastada baskın bulgu haftalar süren öksürük değil akut üst hava yolu obstrüksiyonu ve faktör bağımlı kokobasil kültür paternidir."
+      },
+      "evidenceChain": [
+        {
+          "text": "Aşı eksikliği ve ani toksik üst hava yolu obstrüksiyonu → kapsüllü invaziv üst solunum yolu patojeni bağlamı",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Küçük pleomorfik gram negatif kokobasil → Haemophilus morfolojisini destekler",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Çikolata agarda üreme, kanlı agarda belirgin üreme olmaması → X-V faktör gereksinimi",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "PRP kapsül antijeni pozitifliği → Hib tipi kapsüllü invaziv suşu destekler",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Streptococcus pyogenes": "Streptococcus pyogenes gram pozitif zincir yapan koktur ve kanlı agarda beta hemolizle farenjit, kızıl veya nekrotizan yumuşak doku enfeksiyonu yapabilir. Bu vakadaki gram negatif kokobasil morfolojisi, çikolata agar bağımlılığı ve kapsül antijen paterni streptokokla uyumlu değildir.",
+        "Moraxella catarrhalis": "Moraxella catarrhalis gram negatif diplokoktur ve özellikle otit, sinüzit veya KOAH alevlenmesiyle ilişkilidir. Çikolata agar faktör bağımlılığı ve PRP kapsül antijeni beklenmez; ayrıca bu kadar hızlı toksik epiglot obstrüksiyonu için daha zayıf bir açıklamadır.",
+        "Corynebacterium diphtheriae": "Corynebacterium diphtheriae psödomembranlı farenjit ve toksin aracılı miyokardit/nöropati yapabilir; gram pozitif çomak görünümü ve özel tellürit ortamlarında üreme beklenir. Burada küçük gram negatif kokobasil, X-V faktör gereksinimi ve çikolata agar paterni difteri etkeninden farklıdır.",
+        "Bordetella pertussis": "Bordetella pertussis paroksismal öksürük, inspiratuvar whoop ve lenfositozla seyreden boğmaca tablosu oluşturur. Bu hastada baskın bulgu haftalar süren öksürük değil akut üst hava yolu obstrüksiyonu ve faktör bağımlı kokobasil kültür paternidir."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v258-medical-microbiology-ninth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Aşı eksikliği",
+        "Akut üst hava yolu obstrüksiyonu",
+        "Küçük gram negatif kokobasil",
+        "Çikolata agar ve uydu fenomeni"
+      ],
+      "images": []
+    },
+  {
+      "id": "v258-new-488-deri-apsesindeki-uyumsuz-disk-difuzyon-sonucu",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Deri apsesindeki uyumsuz disk difüzyon sonucu",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Deri apsesinden izole edilen gram pozitif kokta eritromisin-direnci, klindamisin duyarlılığı ve D-zon fenotipini birlikte yorumlayarak direnç mekanizmasını seçme.",
+      "learningTarget": "D-test pozitifliğinin indüklenebilir MLSB fenotipini gösterdiğini ve bunun ribozomal hedef metilasyonu ile klindamisin tedavi başarısızlığına yol açabileceğini açıklayabilme.",
+      "demographics": "29 yaşında kadın hasta",
+      "setting": "Genel cerrahi polikliniği",
+      "chiefComplaint": "Uylukta ağrılı, kızarık ve akıntılı şişlik nedeniyle başvuruyor.",
+      "stem": "Hasta dört gün önce uyluğunda küçük bir sivilce gibi başlayan lezyonun giderek büyüdüğünü ve son iki gündür ağrılı hale geldiğini anlatır. Daha önce benzer bir lezyonu kendi kendine sıkmış, bu kez akıntı artınca başvurmuştur. Son haftalarda hastane yatışı yoktur; evde aynı bölgede tıraş sonrası tahriş olduğunu belirtir. Ateşi hafif yükselmiş, sistemik halsizliği dışında ek yakınması yoktur.",
+      "patientIntro": {
+        "profile": "29 yaşında kadın hasta, genel cerrahi polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Uylukta ağrılı, kızarık ve akıntılı şişlik nedeniyle başvuruyor.",
+        "historySummary": "Hasta dört gün önce uyluğunda küçük bir sivilce gibi başlayan lezyonun giderek büyüdüğünü ve son iki gündür ağrılı hale geldiğini anlatır. Daha önce benzer bir lezyonu kendi kendine sıkmış, bu kez akıntı artınca başvurmuştur. Son haftalarda hastane yatışı yoktur; evde aynı bölgede tıraş sonrası tahriş olduğunu belirtir. Ateşi hafif yükselmiş, sistemik halsizliği dışında ek yakınması yoktur."
+      },
+      "vitals": {
+        "TA": "118/76 mmHg",
+        "Nabız": "98/dk",
+        "Solunum": "18/dk",
+        "SpO2": "99%, oda havasında",
+        "Ateş": "38.0 °C",
+        "Şok indeksi": "0.83 - stabil"
+      },
+      "exam": [
+        "Sağ uyluk ön yüzde 4 cm çaplı fluktuasyon veren eritemli apse vardır.",
+        "Lezyon çevresinde lokal ısı artışı ve hassasiyet belirgindir.",
+        "Bölgesel lenfanjit çizgisi veya yaygın nekroz yoktur.",
+        "Kardiyopulmoner muayene olağandır; bilinç açık ve genel durum iyidir."
+      ],
+      "investigations": [
+        {
+          "id": "v258-new-488-deri-apsesindeki-uyumsuz-disk-difuzyon-sonucu-yara-kulturu-ve-antibiyogram",
+          "label": "Yara kültürü ve antibiyogram",
+          "title": "Yara kültürü ve antibiyogram",
+          "orderLabel": "Yara kültürü ve antibiyogram",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Gram boyama, kültür ve D-test",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Disk difüzyon paterni makrolid varlığında indüklenen linkozamid direnç fenotipini gösterir.",
+          "clinicalMeaning": "Disk difüzyon paterni makrolid varlığında indüklenen linkozamid direnç fenotipini gösterir.",
+          "result": {
+            "title": "Yara kültürü ve antibiyogram",
+            "summary": "Disk difüzyon paterni makrolid varlığında indüklenen linkozamid direnç fenotipini gösterir.",
+            "interpretation": "Disk difüzyon paterni makrolid varlığında indüklenen linkozamid direnç fenotipini gösterir.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Apseden drenaj materyali",
+                "Uygun örnek",
+                "Pürülan odak"
+              ],
+              [
+                "Gram boyama",
+                "Lökositler içinde kümeler yapan gram pozitif koklar",
+                "Bakteri yok",
+                "Stafilokok morfolojisi"
+              ],
+              [
+                "Kültür",
+                "Katalaz pozitif, koagülaz pozitif koloni üremesi",
+                "Normal deri florası baskın değil",
+                "Patojen stafilokok"
+              ],
+              [
+                "Sefoksitin disk testi",
+                "Duyarlı zon çapı",
+                "Duyarlı",
+                "Metisilin direnci desteklenmiyor"
+              ],
+              [
+                "Eritromisin",
+                "Dirençli",
+                "Duyarlı",
+                "Makrolid direnci"
+              ],
+              [
+                "Klindamisin",
+                "Tek başına duyarlı; eritromisin diskine bakan tarafta D şeklinde zon küntleşmesi",
+                "Dairesel duyarlı zon",
+                "İndüklenebilir linkozamid direnci"
+              ]
+            ],
+            "rows": [
+              [
+                "Örnek tipi",
+                "Apseden drenaj materyali",
+                "Uygun örnek",
+                "Pürülan odak"
+              ],
+              [
+                "Gram boyama",
+                "Lökositler içinde kümeler yapan gram pozitif koklar",
+                "Bakteri yok",
+                "Stafilokok morfolojisi"
+              ],
+              [
+                "Kültür",
+                "Katalaz pozitif, koagülaz pozitif koloni üremesi",
+                "Normal deri florası baskın değil",
+                "Patojen stafilokok"
+              ],
+              [
+                "Sefoksitin disk testi",
+                "Duyarlı zon çapı",
+                "Duyarlı",
+                "Metisilin direnci desteklenmiyor"
+              ],
+              [
+                "Eritromisin",
+                "Dirençli",
+                "Duyarlı",
+                "Makrolid direnci"
+              ],
+              [
+                "Klindamisin",
+                "Tek başına duyarlı; eritromisin diskine bakan tarafta D şeklinde zon küntleşmesi",
+                "Dairesel duyarlı zon",
+                "İndüklenebilir linkozamid direnci"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu direnç paternini en iyi açıklayan moleküler mekanizma aşağıdakilerden hangisidir?",
+      "questionType": "single-best-answer",
+      "answerTarget": "Direnç mekanizması",
+      "diagnosis": {
+        "correct": "erm aracılı 23S rRNA metilasyonu",
+        "options": [
+          "mecA aracılı PBP2a üretimi",
+          "Beta-laktamaz ile penisilin halkasının hidrolizi",
+          "erm aracılı 23S rRNA metilasyonu",
+          "vanA aracılı D-Ala-D-Lac uç değişimi",
+          "DNA giraz hedef değişimi"
+        ],
+        "question": "Bu direnç paternini en iyi açıklayan moleküler mekanizma aşağıdakilerden hangisidir?",
+        "explanation": "Eritromisin dirençli, klindamisin görünürde duyarlı izolatın D-testinde klindamisin zonunun eritromisin tarafında küntleşmesi, erm genleriyle 23S rRNA metilasyonuna bağlı indüklenebilir MLSB direncini gösterir.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Eritromisin dirençli + klindamisin duyarlı görünen stafilokok + D-zon pozitifliği → erm aracılı 23S rRNA metilasyonu."
+          }
+        ],
+        "optionFeedback": {
+          "mecA aracılı PBP2a üretimi": {
+            "explanation": "mecA aracılı PBP2a üretimi metisilin/oksasilin direncinin temel mekanizmasıdır ve sefoksitin direnciyle taranır. Bu vakada sefoksitin duyarlı olduğu için asıl problem beta-laktam hedef değişimi değil, eritromisinle indüklenen klindamisin direncidir."
+          },
+          "Beta-laktamaz ile penisilin halkasının hidrolizi": {
+            "explanation": "Beta-laktamaz penisilin halkasını hidrolize ederek özellikle penisilin grubu beta-laktamlara direnç oluşturur. D-testte görülen D şeklinde klindamisin zon küntleşmesi beta-laktamaz aktivitesiyle değil ribozomal hedef metilasyonu ile açıklanır."
+          },
+          "erm aracılı 23S rRNA metilasyonu": {
+            "explanation": "Bu seçenek en uygundur; erm genleri 23S rRNA metilasyonu ile makrolid-linkozamid-streptogramin B bağlanmasını azaltır. Eritromisin dirençli, klindamisin duyarlı görünen stafilokokta D-zon pozitifliği indüklenebilir erm ekspresyonunu gösterir."
+          },
+          "vanA aracılı D-Ala-D-Lac uç değişimi": {
+            "explanation": "vanA aracılı D-Ala-D-Lac uç değişimi enterokoklarda vankomisin/teikoplanin bağlanmasını azaltan glikopeptid direncidir. Bu vakadaki organizma stafilokoktur ve laboratuvar paterni glikopeptid değil makrolid-linkozamid testleri üzerinden tanımlanmaktadır."
+          },
+          "DNA giraz hedef değişimi": {
+            "explanation": "DNA giraz hedef değişimi florokinolon direncinin önemli mekanizmalarındandır ve kinolon MIC artışıyla ilişkilidir. Klindamisin zonunun eritromisin diski tarafında küntleşmesi DNA giraz değişimini değil ribozomal metilasyonla indüklenebilir MLSB direncini destekler."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; erm genleri 23S rRNA metilasyonu ile makrolid-linkozamid-streptogramin B bağlanmasını azaltır. Eritromisin dirençli, klindamisin duyarlı görünen stafilokokta D-zon pozitifliği indüklenebilir erm ekspresyonunu gösterir.",
+          "optionFeedback": {
+            "mecA aracılı PBP2a üretimi": {
+              "explanation": "mecA aracılı PBP2a üretimi metisilin/oksasilin direncinin temel mekanizmasıdır ve sefoksitin direnciyle taranır. Bu vakada sefoksitin duyarlı olduğu için asıl problem beta-laktam hedef değişimi değil, eritromisinle indüklenen klindamisin direncidir."
+            },
+            "Beta-laktamaz ile penisilin halkasının hidrolizi": {
+              "explanation": "Beta-laktamaz penisilin halkasını hidrolize ederek özellikle penisilin grubu beta-laktamlara direnç oluşturur. D-testte görülen D şeklinde klindamisin zon küntleşmesi beta-laktamaz aktivitesiyle değil ribozomal hedef metilasyonu ile açıklanır."
+            },
+            "erm aracılı 23S rRNA metilasyonu": {
+              "explanation": "Bu seçenek en uygundur; erm genleri 23S rRNA metilasyonu ile makrolid-linkozamid-streptogramin B bağlanmasını azaltır. Eritromisin dirençli, klindamisin duyarlı görünen stafilokokta D-zon pozitifliği indüklenebilir erm ekspresyonunu gösterir."
+            },
+            "vanA aracılı D-Ala-D-Lac uç değişimi": {
+              "explanation": "vanA aracılı D-Ala-D-Lac uç değişimi enterokoklarda vankomisin/teikoplanin bağlanmasını azaltan glikopeptid direncidir. Bu vakadaki organizma stafilokoktur ve laboratuvar paterni glikopeptid değil makrolid-linkozamid testleri üzerinden tanımlanmaktadır."
+            },
+            "DNA giraz hedef değişimi": {
+              "explanation": "DNA giraz hedef değişimi florokinolon direncinin önemli mekanizmalarındandır ve kinolon MIC artışıyla ilişkilidir. Klindamisin zonunun eritromisin diski tarafında küntleşmesi DNA giraz değişimini değil ribozomal metilasyonla indüklenebilir MLSB direncini destekler."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "erm genleri 50S ribozomal alt birimde 23S rRNA metilasyonu yaparak makrolid-linkozamid-streptogramin B grubunda hedef değişimine yol açar. Fenotip indüklenebilir olduğunda klindamisin tek başına duyarlı görünebilir, ancak D-test pozitifliği klinik başarısızlık riskini gösterir.",
+      "examPearl": "Eritromisin dirençli + klindamisin duyarlı görünen stafilokok + D-zon pozitifliği → erm aracılı 23S rRNA metilasyonu.",
+      "whyCorrect": "Bu seçenek en uygundur; erm genleri 23S rRNA metilasyonu ile makrolid-linkozamid-streptogramin B bağlanmasını azaltır. Eritromisin dirençli, klindamisin duyarlı görünen stafilokokta D-zon pozitifliği indüklenebilir erm ekspresyonunu gösterir.",
+      "optionComparison": {
+        "mecA aracılı PBP2a üretimi": "mecA aracılı PBP2a üretimi metisilin/oksasilin direncinin temel mekanizmasıdır ve sefoksitin direnciyle taranır. Bu vakada sefoksitin duyarlı olduğu için asıl problem beta-laktam hedef değişimi değil, eritromisinle indüklenen klindamisin direncidir.",
+        "Beta-laktamaz ile penisilin halkasının hidrolizi": "Beta-laktamaz penisilin halkasını hidrolize ederek özellikle penisilin grubu beta-laktamlara direnç oluşturur. D-testte görülen D şeklinde klindamisin zon küntleşmesi beta-laktamaz aktivitesiyle değil ribozomal hedef metilasyonu ile açıklanır.",
+        "erm aracılı 23S rRNA metilasyonu": "Bu seçenek en uygundur; erm genleri 23S rRNA metilasyonu ile makrolid-linkozamid-streptogramin B bağlanmasını azaltır. Eritromisin dirençli, klindamisin duyarlı görünen stafilokokta D-zon pozitifliği indüklenebilir erm ekspresyonunu gösterir.",
+        "vanA aracılı D-Ala-D-Lac uç değişimi": "vanA aracılı D-Ala-D-Lac uç değişimi enterokoklarda vankomisin/teikoplanin bağlanmasını azaltan glikopeptid direncidir. Bu vakadaki organizma stafilokoktur ve laboratuvar paterni glikopeptid değil makrolid-linkozamid testleri üzerinden tanımlanmaktadır.",
+        "DNA giraz hedef değişimi": "DNA giraz hedef değişimi florokinolon direncinin önemli mekanizmalarındandır ve kinolon MIC artışıyla ilişkilidir. Klindamisin zonunun eritromisin diski tarafında küntleşmesi DNA giraz değişimini değil ribozomal metilasyonla indüklenebilir MLSB direncini destekler."
+      },
+      "evidenceChain": [
+        {
+          "text": "Koagülaz pozitif stafilokok → deri apsesinden patojen stafilokok izolasyonu",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Eritromisin direnci → makrolid etkisiyle direnç indüksiyonu olasılığı",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Klindamisin tek başına duyarlı görünmesi → standart raporda gizli direnç riski",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "D şeklinde zon küntleşmesi → indüklenebilir MLSB fenotipi ve erm metilazı",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "mecA aracılı PBP2a üretimi": "mecA aracılı PBP2a üretimi metisilin/oksasilin direncinin temel mekanizmasıdır ve sefoksitin direnciyle taranır. Bu vakada sefoksitin duyarlı olduğu için asıl problem beta-laktam hedef değişimi değil, eritromisinle indüklenen klindamisin direncidir.",
+        "Beta-laktamaz ile penisilin halkasının hidrolizi": "Beta-laktamaz penisilin halkasını hidrolize ederek özellikle penisilin grubu beta-laktamlara direnç oluşturur. D-testte görülen D şeklinde klindamisin zon küntleşmesi beta-laktamaz aktivitesiyle değil ribozomal hedef metilasyonu ile açıklanır.",
+        "vanA aracılı D-Ala-D-Lac uç değişimi": "vanA aracılı D-Ala-D-Lac uç değişimi enterokoklarda vankomisin/teikoplanin bağlanmasını azaltan glikopeptid direncidir. Bu vakadaki organizma stafilokoktur ve laboratuvar paterni glikopeptid değil makrolid-linkozamid testleri üzerinden tanımlanmaktadır.",
+        "DNA giraz hedef değişimi": "DNA giraz hedef değişimi florokinolon direncinin önemli mekanizmalarındandır ve kinolon MIC artışıyla ilişkilidir. Klindamisin zonunun eritromisin diski tarafında küntleşmesi DNA giraz değişimini değil ribozomal metilasyonla indüklenebilir MLSB direncini destekler."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v258-medical-microbiology-ninth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Koagülaz pozitif stafilokok",
+        "Eritromisin dirençli izolat",
+        "Klindamisin zonunda D şeklinde küntleşme",
+        "Sefoksitin duyarlı sonucu"
+      ],
+      "images": []
+    },
+  {
+      "id": "v258-new-489-dermatom-boyunca-vezikuler-agri",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Dermatom boyunca veziküler ağrı",
+      "difficulty": "Orta",
+      "difficultyTag": "Orta",
+      "clinicalFocus": "Yaşlı hastada tek taraflı dermatomal veziküler döküntü ve nöropatik ağrı tablosunda en uygun mikrobiyolojik doğrulama testini seçme.",
+      "learningTarget": "VZV reaktivasyonunda en duyarlı doğrulamanın vezikül tabanı, vezikül sıvısı veya kabuktan PCR ile viral DNA gösterimi olduğunu ayırt edebilme.",
+      "demographics": "67 yaşında erkek hasta",
+      "setting": "Dermatoloji polikliniği",
+      "chiefComplaint": "Sağ göğüs duvarında yanıcı ağrı ve su dolu döküntüler nedeniyle başvuruyor.",
+      "stem": "Hasta üç gün önce sağ göğüs duvarında yanma ve batma tarzında ağrı başladığını, ertesi gün aynı hat üzerinde küçük su dolu kabarcıkların çıktığını anlatır. Döküntü vücudun diğer tarafına geçmemiştir ve kaşıntıdan çok ağrı ön plandadır. Çocuklukta suçiçeği geçirdiğini hatırlamakta, son aylarda torununda benzer döküntü olmadığını belirtmektedir. Diyabet dışında bilinen ağır immünsupresyonu yoktur.",
+      "patientIntro": {
+        "profile": "67 yaşında erkek hasta, dermatoloji polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Sağ göğüs duvarında yanıcı ağrı ve su dolu döküntüler nedeniyle başvuruyor.",
+        "historySummary": "Hasta üç gün önce sağ göğüs duvarında yanma ve batma tarzında ağrı başladığını, ertesi gün aynı hat üzerinde küçük su dolu kabarcıkların çıktığını anlatır. Döküntü vücudun diğer tarafına geçmemiştir ve kaşıntıdan çok ağrı ön plandadır. Çocuklukta suçiçeği geçirdiğini hatırlamakta, son aylarda torununda benzer döküntü olmadığını belirtmektedir. Diyabet dışında bilinen ağır immünsupresyonu yoktur."
+      },
+      "vitals": {
+        "TA": "132/78 mmHg",
+        "Nabız": "86/dk",
+        "Solunum": "16/dk",
+        "SpO2": "98%, oda havasında",
+        "Ateş": "37.6 °C",
+        "Şok indeksi": "0.65 - stabil"
+      },
+      "exam": [
+        "Sağ T6 dermatomu boyunca eritemli zemin üzerinde gruplaşmış veziküller vardır.",
+        "Lezyonlar orta hattı geçmez ve palpasyonla belirgin allodini tariflenir.",
+        "Ağız mukozasında lezyon yoktur; yaygın makülopapüler döküntü saptanmaz.",
+        "Nörolojik muayenede motor defisit yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v258-new-489-dermatom-boyunca-vezikuler-agri-deri-lezyonu-virolojik-incelemesi",
+          "label": "Deri lezyonu virolojik incelemesi",
+          "title": "Deri lezyonu virolojik incelemesi",
+          "orderLabel": "Deri lezyonu virolojik incelemesi",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Viral PCR ve lezyon örneği",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Lezyon örneğinde moleküler test, dermatomal veziküler tablonun viral doğrulaması için en yararlı veriyi sağlar.",
+          "clinicalMeaning": "Lezyon örneğinde moleküler test, dermatomal veziküler tablonun viral doğrulaması için en yararlı veriyi sağlar.",
+          "result": {
+            "title": "Deri lezyonu virolojik incelemesi",
+            "summary": "Lezyon örneğinde moleküler test, dermatomal veziküler tablonun viral doğrulaması için en yararlı veriyi sağlar.",
+            "interpretation": "Lezyon örneğinde moleküler test, dermatomal veziküler tablonun viral doğrulaması için en yararlı veriyi sağlar.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Vezikül tabanından sürüntü ve vezikül sıvısı",
+                "Uygun örnek",
+                "Lezyon bazlı viral test"
+              ],
+              [
+                "Direkt mikroskopi",
+                "Nonspesifik sitopatik değişiklik; etken ayrımı sağlamaz",
+                "Spesifik değil",
+                "Tarama değeri sınırlı"
+              ],
+              [
+                "PCR paneli",
+                "Alfa-herpesvirus DNA sinyali pozitif; HSV-1/2 DNA negatif",
+                "Negatif",
+                "VZV lehine moleküler sonuç"
+              ],
+              [
+                "Seroloji",
+                "VZV IgG pozitif, IgM negatif/sınırda",
+                "Geçirilmiş enfeksiyonla uyumlu olabilir",
+                "Tek başına akut reaktivasyon kanıtı zayıf"
+              ],
+              [
+                "Bakteriyel kültür",
+                "Patojen bakteri üremedi",
+                "Üreme yok",
+                "Sekonder impetiginizasyon yok"
+              ],
+              [
+                "Kan sayımı",
+                "Lökosit 7.800/mm³",
+                "4.000-10.000/mm³",
+                "Sistemik bakteriyel enfeksiyon desteği yok"
+              ]
+            ],
+            "rows": [
+              [
+                "Örnek tipi",
+                "Vezikül tabanından sürüntü ve vezikül sıvısı",
+                "Uygun örnek",
+                "Lezyon bazlı viral test"
+              ],
+              [
+                "Direkt mikroskopi",
+                "Nonspesifik sitopatik değişiklik; etken ayrımı sağlamaz",
+                "Spesifik değil",
+                "Tarama değeri sınırlı"
+              ],
+              [
+                "PCR paneli",
+                "Alfa-herpesvirus DNA sinyali pozitif; HSV-1/2 DNA negatif",
+                "Negatif",
+                "VZV lehine moleküler sonuç"
+              ],
+              [
+                "Seroloji",
+                "VZV IgG pozitif, IgM negatif/sınırda",
+                "Geçirilmiş enfeksiyonla uyumlu olabilir",
+                "Tek başına akut reaktivasyon kanıtı zayıf"
+              ],
+              [
+                "Bakteriyel kültür",
+                "Patojen bakteri üremedi",
+                "Üreme yok",
+                "Sekonder impetiginizasyon yok"
+              ],
+              [
+                "Kan sayımı",
+                "Lökosit 7.800/mm³",
+                "4.000-10.000/mm³",
+                "Sistemik bakteriyel enfeksiyon desteği yok"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu tabloda beklenen en uygun mikrobiyolojik doğrulama testi hangisidir?",
+      "questionType": "single-best-answer",
+      "answerTarget": "Tanı testi",
+      "diagnosis": {
+        "correct": "Vezikül tabanından alınan örnekte VZV DNA PCR",
+        "options": [
+          "Tzanck yaymasında multinükleer dev hücre aranması",
+          "Serumda heterofil antikor testi",
+          "Kanda CMV pp65 antijenemi testi",
+          "Serum VZV IgG tek zamanlı ölçümü",
+          "Vezikül tabanından alınan örnekte VZV DNA PCR"
+        ],
+        "question": "Bu tabloda beklenen en uygun mikrobiyolojik doğrulama testi hangisidir?",
+        "explanation": "Tek taraflı dermatomal veziküler döküntü ve nöropatik ağrı herpes zoster tablosudur; mikrobiyolojik doğrulamada en yararlı test vezikül tabanı/sıvısı veya kabuktan VZV DNA PCR incelemesidir.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Dermatomal ağrılı vezikül + orta hattı geçmeme → herpes zoster; doğrulamada lezyon örneğinden VZV DNA PCR en uygundur."
+          }
+        ],
+        "optionFeedback": {
+          "Tzanck yaymasında multinükleer dev hücre aranması": {
+            "explanation": "Tzanck yayması multinükleer dev hücreleri gösterebilir ancak HSV ile VZV ayrımı yapamaz ve duyarlılığı PCR’dan düşüktür. Bu nedenle tipik dermatomal veziküler tabloda doğrulama istenirse Tzanck testi modern mikrobiyolojik doğrulama için en iyi seçenek değildir."
+          },
+          "Serumda heterofil antikor testi": {
+            "explanation": "Heterofil antikor testi EBV ilişkili enfeksiyöz mononükleoz değerlendirmesinde kullanılır. Dermatomal veziküler ağrı ve lezyon bazlı viral DNA arayışıyla uyumlu değildir; bu hastada lenfadenopati-farenjit ekseni yoktur."
+          },
+          "Kanda CMV pp65 antijenemi testi": {
+            "explanation": "CMV pp65 antijenemi testi özellikle transplant veya ağır immünsüpresyonda CMV reaktivasyonunu izlemek için kullanılabilir. CMV dermatomal veziküler döküntünün tipik etkeni değildir ve bu vakada lezyon bazlı VZV doğrulaması gerekir."
+          },
+          "Serum VZV IgG tek zamanlı ölçümü": {
+            "explanation": "Tek zamanlı serum VZV IgG pozitifliği çocuklukta geçirilmiş suçiçeği veya aşılanmayı gösterebilir. Reaktivasyon tanısında lezyondan PCR kadar değerli değildir; IgM de reaktivasyonda değişken ve yalancı sonuçlara açık olabilir."
+          },
+          "Vezikül tabanından alınan örnekte VZV DNA PCR": {
+            "explanation": "Bu seçenek en uygundur; VZV DNA PCR, vezikül tabanı, vezikül sıvısı veya kabuk örneğinde hızlı ve özgül doğrulama sağlar. Dermatomal ağrılı veziküler döküntüde seroloji veya Tzanck yaymasına göre daha güvenilir mikrobiyolojik testtir."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; VZV DNA PCR, vezikül tabanı, vezikül sıvısı veya kabuk örneğinde hızlı ve özgül doğrulama sağlar. Dermatomal ağrılı veziküler döküntüde seroloji veya Tzanck yaymasına göre daha güvenilir mikrobiyolojik testtir.",
+          "optionFeedback": {
+            "Tzanck yaymasında multinükleer dev hücre aranması": {
+              "explanation": "Tzanck yayması multinükleer dev hücreleri gösterebilir ancak HSV ile VZV ayrımı yapamaz ve duyarlılığı PCR’dan düşüktür. Bu nedenle tipik dermatomal veziküler tabloda doğrulama istenirse Tzanck testi modern mikrobiyolojik doğrulama için en iyi seçenek değildir."
+            },
+            "Serumda heterofil antikor testi": {
+              "explanation": "Heterofil antikor testi EBV ilişkili enfeksiyöz mononükleoz değerlendirmesinde kullanılır. Dermatomal veziküler ağrı ve lezyon bazlı viral DNA arayışıyla uyumlu değildir; bu hastada lenfadenopati-farenjit ekseni yoktur."
+            },
+            "Kanda CMV pp65 antijenemi testi": {
+              "explanation": "CMV pp65 antijenemi testi özellikle transplant veya ağır immünsüpresyonda CMV reaktivasyonunu izlemek için kullanılabilir. CMV dermatomal veziküler döküntünün tipik etkeni değildir ve bu vakada lezyon bazlı VZV doğrulaması gerekir."
+            },
+            "Serum VZV IgG tek zamanlı ölçümü": {
+              "explanation": "Tek zamanlı serum VZV IgG pozitifliği çocuklukta geçirilmiş suçiçeği veya aşılanmayı gösterebilir. Reaktivasyon tanısında lezyondan PCR kadar değerli değildir; IgM de reaktivasyonda değişken ve yalancı sonuçlara açık olabilir."
+            },
+            "Vezikül tabanından alınan örnekte VZV DNA PCR": {
+              "explanation": "Bu seçenek en uygundur; VZV DNA PCR, vezikül tabanı, vezikül sıvısı veya kabuk örneğinde hızlı ve özgül doğrulama sağlar. Dermatomal ağrılı veziküler döküntüde seroloji veya Tzanck yaymasına göre daha güvenilir mikrobiyolojik testtir."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Varicella-zoster virus primer enfeksiyon sonrası duyusal gangliyonlarda latent kalır ve reaktivasyonla dermatomal ağrılı veziküler döküntü oluşturur. Klinik tipik olsa da doğrulama gerektiğinde lezyondan PCR, seroloji veya Tzanck yaymasına göre daha özgül ve duyarlıdır.",
+      "examPearl": "Dermatomal ağrılı vezikül + orta hattı geçmeme → herpes zoster; doğrulamada lezyon örneğinden VZV DNA PCR en uygundur.",
+      "whyCorrect": "Bu seçenek en uygundur; VZV DNA PCR, vezikül tabanı, vezikül sıvısı veya kabuk örneğinde hızlı ve özgül doğrulama sağlar. Dermatomal ağrılı veziküler döküntüde seroloji veya Tzanck yaymasına göre daha güvenilir mikrobiyolojik testtir.",
+      "optionComparison": {
+        "Tzanck yaymasında multinükleer dev hücre aranması": "Tzanck yayması multinükleer dev hücreleri gösterebilir ancak HSV ile VZV ayrımı yapamaz ve duyarlılığı PCR’dan düşüktür. Bu nedenle tipik dermatomal veziküler tabloda doğrulama istenirse Tzanck testi modern mikrobiyolojik doğrulama için en iyi seçenek değildir.",
+        "Serumda heterofil antikor testi": "Heterofil antikor testi EBV ilişkili enfeksiyöz mononükleoz değerlendirmesinde kullanılır. Dermatomal veziküler ağrı ve lezyon bazlı viral DNA arayışıyla uyumlu değildir; bu hastada lenfadenopati-farenjit ekseni yoktur.",
+        "Kanda CMV pp65 antijenemi testi": "CMV pp65 antijenemi testi özellikle transplant veya ağır immünsüpresyonda CMV reaktivasyonunu izlemek için kullanılabilir. CMV dermatomal veziküler döküntünün tipik etkeni değildir ve bu vakada lezyon bazlı VZV doğrulaması gerekir.",
+        "Serum VZV IgG tek zamanlı ölçümü": "Tek zamanlı serum VZV IgG pozitifliği çocuklukta geçirilmiş suçiçeği veya aşılanmayı gösterebilir. Reaktivasyon tanısında lezyondan PCR kadar değerli değildir; IgM de reaktivasyonda değişken ve yalancı sonuçlara açık olabilir.",
+        "Vezikül tabanından alınan örnekte VZV DNA PCR": "Bu seçenek en uygundur; VZV DNA PCR, vezikül tabanı, vezikül sıvısı veya kabuk örneğinde hızlı ve özgül doğrulama sağlar. Dermatomal ağrılı veziküler döküntüde seroloji veya Tzanck yaymasına göre daha güvenilir mikrobiyolojik testtir."
+      },
+      "evidenceChain": [
+        {
+          "text": "Tek taraflı dermatomal veziküller → reaktivasyon paternini destekler",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Nöropatik ağrı ve allodini → duyusal gangliyon ilişkili viral tutulum",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Lezyon örneğinde alfa-herpesvirus DNA pozitifliği → moleküler doğrulama değerli",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Serum IgG pozitifliği → geçirilmiş enfeksiyonu gösterebilir, reaktivasyonu tek başına kanıtlamaz",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Tzanck yaymasında multinükleer dev hücre aranması": "Tzanck yayması multinükleer dev hücreleri gösterebilir ancak HSV ile VZV ayrımı yapamaz ve duyarlılığı PCR’dan düşüktür. Bu nedenle tipik dermatomal veziküler tabloda doğrulama istenirse Tzanck testi modern mikrobiyolojik doğrulama için en iyi seçenek değildir.",
+        "Serumda heterofil antikor testi": "Heterofil antikor testi EBV ilişkili enfeksiyöz mononükleoz değerlendirmesinde kullanılır. Dermatomal veziküler ağrı ve lezyon bazlı viral DNA arayışıyla uyumlu değildir; bu hastada lenfadenopati-farenjit ekseni yoktur.",
+        "Kanda CMV pp65 antijenemi testi": "CMV pp65 antijenemi testi özellikle transplant veya ağır immünsüpresyonda CMV reaktivasyonunu izlemek için kullanılabilir. CMV dermatomal veziküler döküntünün tipik etkeni değildir ve bu vakada lezyon bazlı VZV doğrulaması gerekir.",
+        "Serum VZV IgG tek zamanlı ölçümü": "Tek zamanlı serum VZV IgG pozitifliği çocuklukta geçirilmiş suçiçeği veya aşılanmayı gösterebilir. Reaktivasyon tanısında lezyondan PCR kadar değerli değildir; IgM de reaktivasyonda değişken ve yalancı sonuçlara açık olabilir."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v258-medical-microbiology-ninth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Dermatomal veziküller",
+        "Nöropatik ağrı",
+        "Orta hattı geçmeyen döküntü",
+        "Lezyon örneği PCR gerekliliği"
+      ],
+      "images": []
+    },
+  {
+      "id": "v258-new-490-govdede-ince-kepekli-hipopigmente-makuller",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Gövdede ince kepekli hipopigmente maküller",
+      "difficulty": "Kolay",
+      "difficultyTag": "Kolay",
+      "clinicalFocus": "Genç erişkinde gövdede ince skuamlı hipo/hiperpigmente maküller ve KOH mikroskopisi bulgusundan yüzeyel mantar etkenini seçme.",
+      "learningTarget": "KOH preparatında kısa kıvrık hifler ve yuvarlak maya hücrelerinin birlikte görülmesini lipofilik Malassezia enfeksiyonuyla ilişkilendirebilme.",
+      "demographics": "22 yaşında erkek hasta",
+      "setting": "Dermatoloji polikliniği",
+      "chiefComplaint": "Yaz aylarında belirginleşen gövde lekeleri nedeniyle başvuruyor.",
+      "stem": "Hasta son iki aydır özellikle göğüs ve sırtında açık renkli, hafif kepeklenen lekeler fark ettiğini anlatır. Spor sonrası terlediğinde lekelerin daha belirgin göründüğünü, belirgin ağrı veya akıntı olmadığını söyler. Benzer lezyonlar geçen yaz kısa süreli olmuş ve kendiliğinden azalmıştır. Evde hayvan teması yoktur; ayak parmak aralarında kaşıntı veya tırnak kalınlaşması tariflemez.",
+      "patientIntro": {
+        "profile": "22 yaşında erkek hasta, dermatoloji polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Yaz aylarında belirginleşen gövde lekeleri nedeniyle başvuruyor.",
+        "historySummary": "Hasta son iki aydır özellikle göğüs ve sırtında açık renkli, hafif kepeklenen lekeler fark ettiğini anlatır. Spor sonrası terlediğinde lekelerin daha belirgin göründüğünü, belirgin ağrı veya akıntı olmadığını söyler. Benzer lezyonlar geçen yaz kısa süreli olmuş ve kendiliğinden azalmıştır. Evde hayvan teması yoktur; ayak parmak aralarında kaşıntı veya tırnak kalınlaşması tariflemez."
+      },
+      "vitals": {
+        "TA": "118/70 mmHg",
+        "Nabız": "76/dk",
+        "Solunum": "14/dk",
+        "SpO2": "99%, oda havasında",
+        "Ateş": "36.7 °C",
+        "Şok indeksi": "0.64 - stabil"
+      },
+      "exam": [
+        "Göğüs ve üst sırtta çok sayıda ince skuamlı hipopigmente makül vardır.",
+        "Lezyon kenarları keskin inflamatuvar kabarıklık göstermemektedir.",
+        "Saçlı deri, oral mukoza ve tırnak muayenesi olağandır.",
+        "Lenfadenopati veya sistemik hastalık bulgusu yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v258-new-490-govdede-ince-kepekli-hipopigmente-makuller-deri-kazintisi-mikolojik-incelemesi",
+          "label": "Deri kazıntısı mikolojik incelemesi",
+          "title": "Deri kazıntısı mikolojik incelemesi",
+          "orderLabel": "Deri kazıntısı mikolojik incelemesi",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "KOH mikroskopisi",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "KOH preparatındaki kısa hif-yuvarlak maya birlikteliği yüzeyel lipofilik maya enfeksiyonunu destekler.",
+          "clinicalMeaning": "KOH preparatındaki kısa hif-yuvarlak maya birlikteliği yüzeyel lipofilik maya enfeksiyonunu destekler.",
+          "result": {
+            "title": "Deri kazıntısı mikolojik incelemesi",
+            "summary": "KOH preparatındaki kısa hif-yuvarlak maya birlikteliği yüzeyel lipofilik maya enfeksiyonunu destekler.",
+            "interpretation": "KOH preparatındaki kısa hif-yuvarlak maya birlikteliği yüzeyel lipofilik maya enfeksiyonunu destekler.",
+            "values": [
+              [
+                "Örnek tipi",
+                "İnce skuamlı gövde lezyonundan deri kazıntısı",
+                "Uygun örnek",
+                "Yüzeyel mikoz incelemesi"
+              ],
+              [
+                "KOH preparatı",
+                "Kısa kıvrık hifler ve kümelenmiş yuvarlak maya hücreleri",
+                "Mantar elemanı yok",
+                "Maya-hif birlikteliği"
+              ],
+              [
+                "Wood lambası",
+                "Soluk sarımsı floresans alanları",
+                "Floresans yok",
+                "Destekleyici bulgu"
+              ],
+              [
+                "Kültür",
+                "Rutin dermatofit kültüründe belirgin üreme yok",
+                "Değişken",
+                "Lipofilik maya olasılığı"
+              ],
+              [
+                "Deri pH/klinik",
+                "Yağlı-terleyen bölgelerde lezyon yoğunluğu",
+                "Özgül değil",
+                "Sebase alan eğilimi"
+              ],
+              [
+                "Bakteriyel kültür",
+                "Patojen bakteri üremedi",
+                "Üreme yok",
+                "Bakteriyel folikülit desteği yok"
+              ]
+            ],
+            "rows": [
+              [
+                "Örnek tipi",
+                "İnce skuamlı gövde lezyonundan deri kazıntısı",
+                "Uygun örnek",
+                "Yüzeyel mikoz incelemesi"
+              ],
+              [
+                "KOH preparatı",
+                "Kısa kıvrık hifler ve kümelenmiş yuvarlak maya hücreleri",
+                "Mantar elemanı yok",
+                "Maya-hif birlikteliği"
+              ],
+              [
+                "Wood lambası",
+                "Soluk sarımsı floresans alanları",
+                "Floresans yok",
+                "Destekleyici bulgu"
+              ],
+              [
+                "Kültür",
+                "Rutin dermatofit kültüründe belirgin üreme yok",
+                "Değişken",
+                "Lipofilik maya olasılığı"
+              ],
+              [
+                "Deri pH/klinik",
+                "Yağlı-terleyen bölgelerde lezyon yoğunluğu",
+                "Özgül değil",
+                "Sebase alan eğilimi"
+              ],
+              [
+                "Bakteriyel kültür",
+                "Patojen bakteri üremedi",
+                "Üreme yok",
+                "Bakteriyel folikülit desteği yok"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu mikroskopik ve klinik tabloyla en uyumlu fungal etken aşağıdakilerden hangisidir?",
+      "questionType": "single-best-answer",
+      "answerTarget": "Fungal etken",
+      "diagnosis": {
+        "correct": "Malassezia furfur",
+        "options": [
+          "Candida albicans",
+          "Malassezia furfur",
+          "Trichophyton mentagrophytes",
+          "Microsporum canis",
+          "Sporothrix schenckii kompleksi"
+        ],
+        "question": "Bu mikroskopik ve klinik tabloyla en uyumlu fungal etken aşağıdakilerden hangisidir?",
+        "explanation": "Gövde ve sırtta ince skuamlı hipo/hiperpigmente maküller ile KOH preparatında kısa kıvrık hifler ve yuvarlak maya hücrelerinin birlikte görülmesi Malassezia furfur ilişkili tinea versicolor ile uyumludur.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Gövde-yakın ekstremite ince skuamlı pigment değişikliği + KOH’da kısa hif ve yuvarlak maya hücreleri → Malassezia furfur."
+          }
+        ],
+        "optionFeedback": {
+          "Candida albicans": {
+            "explanation": "Candida albicans oral pamukçuk, vajinit, intertrigo veya invaziv kandidemi gibi tablolarla önemlidir; KOH’da maya ve psödohif görülebilir. Bu vakada gövdede ince skuamlı pigment değişikliği ve kısa kıvrık hif-yuvarlak maya birlikteliği Candida’dan çok Malassezia lehinedir."
+          },
+          "Malassezia furfur": {
+            "explanation": "Bu seçenek en uygundur; Malassezia furfur lipofilik maya olup gövde ve üst ekstremitede ince skuamlı hipo/hiperpigmente maküller yapar. KOH preparatında kısa hifler ve yuvarlak maya hücrelerinin birlikte görülmesi klasik ayırıcı mikolojik bulgudur."
+          },
+          "Trichophyton mentagrophytes": {
+            "explanation": "Trichophyton mentagrophytes dermatofitlerden biridir ve tinea pedis, tinea corporis veya onikomikoz yapabilir; septalı hiflerle keratin dokuyu tutar. Bu hastada belirgin halka şeklinde inflamatuvar kenar, ayak/tırnak tutulumu veya dermatofit kültür paterni yoktur."
+          },
+          "Microsporum canis": {
+            "explanation": "Microsporum canis sıklıkla hayvan kaynaklı tinea capitis veya tinea corporis etkenidir ve ektotriks saç tutulumu ile karışabilir. Bu vakadaki yaygın gövde pigment değişikliği, sebase alan dağılımı ve KOH’daki maya-hif birlikteliği Microsporum için tipik değildir."
+          },
+          "Sporothrix schenckii kompleksi": {
+            "explanation": "Sporothrix schenckii kompleksi travma sonrası lenfatik hat boyunca nodüler kutanöz lezyonlar yapan dimorfik mantardır. Burada bahçe dikeni sonrası lenfanjitik nodüller değil, yüzeyel gövde makülleri ve Malassezia’ya özgü KOH görünümü vardır."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; Malassezia furfur lipofilik maya olup gövde ve üst ekstremitede ince skuamlı hipo/hiperpigmente maküller yapar. KOH preparatında kısa hifler ve yuvarlak maya hücrelerinin birlikte görülmesi klasik ayırıcı mikolojik bulgudur.",
+          "optionFeedback": {
+            "Candida albicans": {
+              "explanation": "Candida albicans oral pamukçuk, vajinit, intertrigo veya invaziv kandidemi gibi tablolarla önemlidir; KOH’da maya ve psödohif görülebilir. Bu vakada gövdede ince skuamlı pigment değişikliği ve kısa kıvrık hif-yuvarlak maya birlikteliği Candida’dan çok Malassezia lehinedir."
+            },
+            "Malassezia furfur": {
+              "explanation": "Bu seçenek en uygundur; Malassezia furfur lipofilik maya olup gövde ve üst ekstremitede ince skuamlı hipo/hiperpigmente maküller yapar. KOH preparatında kısa hifler ve yuvarlak maya hücrelerinin birlikte görülmesi klasik ayırıcı mikolojik bulgudur."
+            },
+            "Trichophyton mentagrophytes": {
+              "explanation": "Trichophyton mentagrophytes dermatofitlerden biridir ve tinea pedis, tinea corporis veya onikomikoz yapabilir; septalı hiflerle keratin dokuyu tutar. Bu hastada belirgin halka şeklinde inflamatuvar kenar, ayak/tırnak tutulumu veya dermatofit kültür paterni yoktur."
+            },
+            "Microsporum canis": {
+              "explanation": "Microsporum canis sıklıkla hayvan kaynaklı tinea capitis veya tinea corporis etkenidir ve ektotriks saç tutulumu ile karışabilir. Bu vakadaki yaygın gövde pigment değişikliği, sebase alan dağılımı ve KOH’daki maya-hif birlikteliği Microsporum için tipik değildir."
+            },
+            "Sporothrix schenckii kompleksi": {
+              "explanation": "Sporothrix schenckii kompleksi travma sonrası lenfatik hat boyunca nodüler kutanöz lezyonlar yapan dimorfik mantardır. Burada bahçe dikeni sonrası lenfanjitik nodüller değil, yüzeyel gövde makülleri ve Malassezia’ya özgü KOH görünümü vardır."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Malassezia lipofilik bir mayadır ve sebase bölgelerde tinea versicolor/pityriasis versicolor tablosu oluşturur. KOH preparatındaki kısa hifler ve yuvarlak maya hücreleri dermatofit invazyonundan farklı bir yüzeyel maya paternidir.",
+      "examPearl": "Gövde-yakın ekstremite ince skuamlı pigment değişikliği + KOH’da kısa hif ve yuvarlak maya hücreleri → Malassezia furfur.",
+      "whyCorrect": "Bu seçenek en uygundur; Malassezia furfur lipofilik maya olup gövde ve üst ekstremitede ince skuamlı hipo/hiperpigmente maküller yapar. KOH preparatında kısa hifler ve yuvarlak maya hücrelerinin birlikte görülmesi klasik ayırıcı mikolojik bulgudur.",
+      "optionComparison": {
+        "Candida albicans": "Candida albicans oral pamukçuk, vajinit, intertrigo veya invaziv kandidemi gibi tablolarla önemlidir; KOH’da maya ve psödohif görülebilir. Bu vakada gövdede ince skuamlı pigment değişikliği ve kısa kıvrık hif-yuvarlak maya birlikteliği Candida’dan çok Malassezia lehinedir.",
+        "Malassezia furfur": "Bu seçenek en uygundur; Malassezia furfur lipofilik maya olup gövde ve üst ekstremitede ince skuamlı hipo/hiperpigmente maküller yapar. KOH preparatında kısa hifler ve yuvarlak maya hücrelerinin birlikte görülmesi klasik ayırıcı mikolojik bulgudur.",
+        "Trichophyton mentagrophytes": "Trichophyton mentagrophytes dermatofitlerden biridir ve tinea pedis, tinea corporis veya onikomikoz yapabilir; septalı hiflerle keratin dokuyu tutar. Bu hastada belirgin halka şeklinde inflamatuvar kenar, ayak/tırnak tutulumu veya dermatofit kültür paterni yoktur.",
+        "Microsporum canis": "Microsporum canis sıklıkla hayvan kaynaklı tinea capitis veya tinea corporis etkenidir ve ektotriks saç tutulumu ile karışabilir. Bu vakadaki yaygın gövde pigment değişikliği, sebase alan dağılımı ve KOH’daki maya-hif birlikteliği Microsporum için tipik değildir.",
+        "Sporothrix schenckii kompleksi": "Sporothrix schenckii kompleksi travma sonrası lenfatik hat boyunca nodüler kutanöz lezyonlar yapan dimorfik mantardır. Burada bahçe dikeni sonrası lenfanjitik nodüller değil, yüzeyel gövde makülleri ve Malassezia’ya özgü KOH görünümü vardır."
+      },
+      "evidenceChain": [
+        {
+          "text": "Gövde ve üst sırtta ince skuamlı pigment değişikliği → tinea versicolor klinik dağılımı",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Terleme ile belirginleşme → lipofilik/sebase bölge eğilimini destekler",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "KOH’da kısa hif ve yuvarlak maya birlikteliği → Malassezia morfolojisi",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Tırnak/ayak tutulumu olmaması → dermatofit onikomikoz veya tinea pedis desteği yok",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Candida albicans": "Candida albicans oral pamukçuk, vajinit, intertrigo veya invaziv kandidemi gibi tablolarla önemlidir; KOH’da maya ve psödohif görülebilir. Bu vakada gövdede ince skuamlı pigment değişikliği ve kısa kıvrık hif-yuvarlak maya birlikteliği Candida’dan çok Malassezia lehinedir.",
+        "Trichophyton mentagrophytes": "Trichophyton mentagrophytes dermatofitlerden biridir ve tinea pedis, tinea corporis veya onikomikoz yapabilir; septalı hiflerle keratin dokuyu tutar. Bu hastada belirgin halka şeklinde inflamatuvar kenar, ayak/tırnak tutulumu veya dermatofit kültür paterni yoktur.",
+        "Microsporum canis": "Microsporum canis sıklıkla hayvan kaynaklı tinea capitis veya tinea corporis etkenidir ve ektotriks saç tutulumu ile karışabilir. Bu vakadaki yaygın gövde pigment değişikliği, sebase alan dağılımı ve KOH’daki maya-hif birlikteliği Microsporum için tipik değildir.",
+        "Sporothrix schenckii kompleksi": "Sporothrix schenckii kompleksi travma sonrası lenfatik hat boyunca nodüler kutanöz lezyonlar yapan dimorfik mantardır. Burada bahçe dikeni sonrası lenfanjitik nodüller değil, yüzeyel gövde makülleri ve Malassezia’ya özgü KOH görünümü vardır."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v258-medical-microbiology-ninth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "İnce skuamlı hipopigmente maküller",
+        "Gövde ve üst sırt dağılımı",
+        "KOH’da kısa hif-yuvarlak maya birlikteliği",
+        "Terleme ile belirginleşme"
+      ],
+      "images": []
+    },
+  {
+      "id": "v258-new-491-guney-amerika-sonrasi-tek-tarafli-goz-kapagi-sisligi",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Güney Amerika sonrası tek taraflı göz kapağı şişliği",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Endemik bölge dönüşü ateş, tek taraflı periorbital ödem ve kanda hareketli protozoon formu görülen hastada bulaş yolunu seçme.",
+      "learningTarget": "Akut Amerikan tripanozomiyazisinde metasiliklik tripomastigotların triatomin böcek dışkısından ısırık yeri veya konjonktivaya bulaşarak enfeksiyon başlattığını açıklayabilme.",
+      "demographics": "31 yaşında kadın hasta",
+      "setting": "Enfeksiyon hastalıkları polikliniği",
+      "chiefComplaint": "Seyahat dönüşü ateş, halsizlik ve tek taraflı göz kapağı şişliği nedeniyle başvuruyor.",
+      "stem": "Hasta üç hafta önce kırsal bir bölgede gönüllü saha çalışmasından döndüğünü, kaldığı evde gece böcek ısırıklarının sık olduğunu anlatır. Dönüşten yaklaşık on gün sonra düşük dereceli ateş, halsizlik ve sol göz kapağında ağrısız şişlik başlamıştır. Göz akıntısı belirgin değildir; antibiyotikli göz damlası kullanmasına rağmen şişlik azalmamıştır. Son günlerde hafif çarpıntı hissettiğini, ishal veya yaygın döküntü olmadığını belirtir.",
+      "patientIntro": {
+        "profile": "31 yaşında kadın hasta, enfeksiyon hastalıkları polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Seyahat dönüşü ateş, halsizlik ve tek taraflı göz kapağı şişliği nedeniyle başvuruyor.",
+        "historySummary": "Hasta üç hafta önce kırsal bir bölgede gönüllü saha çalışmasından döndüğünü, kaldığı evde gece böcek ısırıklarının sık olduğunu anlatır. Dönüşten yaklaşık on gün sonra düşük dereceli ateş, halsizlik ve sol göz kapağında ağrısız şişlik başlamıştır. Göz akıntısı belirgin değildir; antibiyotikli göz damlası kullanmasına rağmen şişlik azalmamıştır. Son günlerde hafif çarpıntı hissettiğini, ishal veya yaygın döküntü olmadığını belirtir."
+      },
+      "vitals": {
+        "TA": "110/68 mmHg",
+        "Nabız": "104/dk",
+        "Solunum": "18/dk",
+        "SpO2": "98%, oda havasında",
+        "Ateş": "38.1 °C",
+        "Şok indeksi": "0.95 - izlem"
+      },
+      "exam": [
+        "Sol periorbital bölgede ağrısız ödem ve hafif konjonktival hiperemi vardır.",
+        "Birkaç küçük kaşıntılı ısırık izi ön kolda izlenir.",
+        "Kardiyak oskültasyonda hafif taşikardi dışında belirgin üfürüm yoktur.",
+        "Karında hepatosplenomegali belirgin değildir; meningeal irritasyon bulgusu saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v258-new-491-guney-amerika-sonrasi-tek-tarafli-goz-kapagi-sisligi-parazitoloji-ve-molekuler-inceleme",
+          "label": "Parazitoloji ve moleküler inceleme",
+          "title": "Parazitoloji ve moleküler inceleme",
+          "orderLabel": "Parazitoloji ve moleküler inceleme",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Kan yayması ve PCR",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Akut parazitemi döneminde kanda hemoflagellat formları ve moleküler pozitiflik bulaş yolunu yorumlamak için güçlü kanıt sağlar.",
+          "clinicalMeaning": "Akut parazitemi döneminde kanda hemoflagellat formları ve moleküler pozitiflik bulaş yolunu yorumlamak için güçlü kanıt sağlar.",
+          "result": {
+            "title": "Parazitoloji ve moleküler inceleme",
+            "summary": "Akut parazitemi döneminde kanda hemoflagellat formları ve moleküler pozitiflik bulaş yolunu yorumlamak için güçlü kanıt sağlar.",
+            "interpretation": "Akut parazitemi döneminde kanda hemoflagellat formları ve moleküler pozitiflik bulaş yolunu yorumlamak için güçlü kanıt sağlar.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Akut dönem periferik kan yayması ve EDTA kan",
+                "Uygun örnek",
+                "Akut parazitemi değerlendirmesi"
+              ],
+              [
+                "Kalın damla/yayma",
+                "C şeklinde kıvrılan, dalgalı membranlı hareketli tripomastigot benzeri formlar",
+                "Parazit yok",
+                "Hemoflagellat formu"
+              ],
+              [
+                "PCR",
+                "Hemoflagellat kinetoplast DNA hedefi pozitif",
+                "Negatif",
+                "Akut enfeksiyonu destekler"
+              ],
+              [
+                "Seroloji",
+                "İlk örnekte IgG düşük pozitif/sınırda; kontrol örneği önerildi",
+                "Negatif",
+                "Erken dönemde değişken olabilir"
+              ],
+              [
+                "EKG",
+                "Sinüs taşikardisi, nonspesifik ST-T değişikliği",
+                "Normal",
+                "Kardiyak izlem gerektirir"
+              ],
+              [
+                "Tam kan sayımı",
+                "Lökosit 5.900/mm³, hafif lenfositoz",
+                "4.000-10.000/mm³",
+                "Viral dışı özgül değil"
+              ]
+            ],
+            "rows": [
+              [
+                "Örnek tipi",
+                "Akut dönem periferik kan yayması ve EDTA kan",
+                "Uygun örnek",
+                "Akut parazitemi değerlendirmesi"
+              ],
+              [
+                "Kalın damla/yayma",
+                "C şeklinde kıvrılan, dalgalı membranlı hareketli tripomastigot benzeri formlar",
+                "Parazit yok",
+                "Hemoflagellat formu"
+              ],
+              [
+                "PCR",
+                "Hemoflagellat kinetoplast DNA hedefi pozitif",
+                "Negatif",
+                "Akut enfeksiyonu destekler"
+              ],
+              [
+                "Seroloji",
+                "İlk örnekte IgG düşük pozitif/sınırda; kontrol örneği önerildi",
+                "Negatif",
+                "Erken dönemde değişken olabilir"
+              ],
+              [
+                "EKG",
+                "Sinüs taşikardisi, nonspesifik ST-T değişikliği",
+                "Normal",
+                "Kardiyak izlem gerektirir"
+              ],
+              [
+                "Tam kan sayımı",
+                "Lökosit 5.900/mm³, hafif lenfositoz",
+                "4.000-10.000/mm³",
+                "Viral dışı özgül değil"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada en olası bulaş yolu aşağıdakilerden hangisidir?",
+      "questionType": "single-best-answer",
+      "answerTarget": "Bulaş yolu",
+      "diagnosis": {
+        "correct": "Triatomin böcek dışkısının ısırık veya konjonktivaya bulaştırılması",
+        "options": [
+          "Kum sineğinin promastigotları doğrudan deriye inoküle etmesi",
+          "Anopheles sivrisineğinin sporozoitleri kana vermesi",
+          "Kedi dışkısıyla kontamine oositlerin ağızdan alınması",
+          "Triatomin böcek dışkısının ısırık veya konjonktivaya bulaştırılması",
+          "Tatlı suda serkaryaların sağlam deriden geçmesi"
+        ],
+        "question": "Bu hastada en olası bulaş yolu aşağıdakilerden hangisidir?",
+        "explanation": "Endemik kırsal maruziyet, gece böcek ısırıkları, ağrısız tek taraflı periorbital ödem, kanda tripomastigot benzeri formlar ve PCR pozitifliği akut Amerikan tripanozomiyazisini destekler; bulaş triatomin böcek dışkısının ısırık yeri veya konjonktivaya bulaşmasıyla olur.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Endemik kırsal gece böcek maruziyeti + tek taraflı periorbital ödem + kanda tripomastigot → triatomin dışkısının konjonktiva/ısırık yerine bulaşması."
+          }
+        ],
+        "optionFeedback": {
+          "Kum sineğinin promastigotları doğrudan deriye inoküle etmesi": {
+            "explanation": "Kum sineğinin promastigotları doğrudan deriye inoküle etmesi Leishmania türleri için temel bulaş yoludur. Bu yol kutanöz ülser veya visseral leishmaniasis bağlamında düşünülür; bu vakada kanda tripomastigot benzeri formlar ve periorbital inokülasyon bulgusu farklıdır."
+          },
+          "Anopheles sivrisineğinin sporozoitleri kana vermesi": {
+            "explanation": "Anopheles sivrisineğinin sporozoitleri kana vermesi sıtmanın bulaş yoludur ve döngü karaciğer evresiyle başlar. Seyahat sonrası periyodik ateş ve eritrosit içi parazit formları beklenirdi; bu vakadaki hemoflagellat ve tek taraflı göz kapağı bulgusu malaria ile uyumlu değildir."
+          },
+          "Kedi dışkısıyla kontamine oositlerin ağızdan alınması": {
+            "explanation": "Kedi dışkısıyla kontamine oositlerin ağızdan alınması Toxoplasma gondii bulaş yollarından biridir. Toksoplazmozda gebelik, immünsupresyon veya oküler retinit gibi bağlamlar öne çıkar; burada vektör dışkısı ve kan tripomastigotları daha açıklayıcıdır."
+          },
+          "Triatomin böcek dışkısının ısırık veya konjonktivaya bulaştırılması": {
+            "explanation": "Bu seçenek en uygundur; triatomin böceği kan emerken dışkı bırakır ve parazit ısırık yeri ya da konjonktiva gibi mukozalara bulaştırılır. Kırsal gece maruziyeti, ağrısız tek taraflı periorbital ödem ve kanda tripomastigot benzeri formlar bu bulaş yolunu destekler."
+          },
+          "Tatlı suda serkaryaların sağlam deriden geçmesi": {
+            "explanation": "Tatlı suda serkaryaların sağlam deriden geçmesi şistozomiyazisin bulaş yoludur. Bu mekanizma hematüri, portal hipertansiyon veya serkarya dermatiti bağlamında düşünülür; kanda hemoflagellat formu ve periorbital ödem açıklamaz."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; triatomin böceği kan emerken dışkı bırakır ve parazit ısırık yeri ya da konjonktiva gibi mukozalara bulaştırılır. Kırsal gece maruziyeti, ağrısız tek taraflı periorbital ödem ve kanda tripomastigot benzeri formlar bu bulaş yolunu destekler.",
+          "optionFeedback": {
+            "Kum sineğinin promastigotları doğrudan deriye inoküle etmesi": {
+              "explanation": "Kum sineğinin promastigotları doğrudan deriye inoküle etmesi Leishmania türleri için temel bulaş yoludur. Bu yol kutanöz ülser veya visseral leishmaniasis bağlamında düşünülür; bu vakada kanda tripomastigot benzeri formlar ve periorbital inokülasyon bulgusu farklıdır."
+            },
+            "Anopheles sivrisineğinin sporozoitleri kana vermesi": {
+              "explanation": "Anopheles sivrisineğinin sporozoitleri kana vermesi sıtmanın bulaş yoludur ve döngü karaciğer evresiyle başlar. Seyahat sonrası periyodik ateş ve eritrosit içi parazit formları beklenirdi; bu vakadaki hemoflagellat ve tek taraflı göz kapağı bulgusu malaria ile uyumlu değildir."
+            },
+            "Kedi dışkısıyla kontamine oositlerin ağızdan alınması": {
+              "explanation": "Kedi dışkısıyla kontamine oositlerin ağızdan alınması Toxoplasma gondii bulaş yollarından biridir. Toksoplazmozda gebelik, immünsupresyon veya oküler retinit gibi bağlamlar öne çıkar; burada vektör dışkısı ve kan tripomastigotları daha açıklayıcıdır."
+            },
+            "Triatomin böcek dışkısının ısırık veya konjonktivaya bulaştırılması": {
+              "explanation": "Bu seçenek en uygundur; triatomin böceği kan emerken dışkı bırakır ve parazit ısırık yeri ya da konjonktiva gibi mukozalara bulaştırılır. Kırsal gece maruziyeti, ağrısız tek taraflı periorbital ödem ve kanda tripomastigot benzeri formlar bu bulaş yolunu destekler."
+            },
+            "Tatlı suda serkaryaların sağlam deriden geçmesi": {
+              "explanation": "Tatlı suda serkaryaların sağlam deriden geçmesi şistozomiyazisin bulaş yoludur. Bu mekanizma hematüri, portal hipertansiyon veya serkarya dermatiti bağlamında düşünülür; kanda hemoflagellat formu ve periorbital ödem açıklamaz."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Trypanosoma cruzi enfeksiyonunda vektör paraziti tükürükle doğrudan enjekte etmez; enfektif formlar triatomin böceğin dışkısıyla deriye veya mukozaya bırakılır. Romaña benzeri periorbital bulgu, kontamine dışkının konjonktivaya taşınmasıyla ilişkili olabilir.",
+      "examPearl": "Endemik kırsal gece böcek maruziyeti + tek taraflı periorbital ödem + kanda tripomastigot → triatomin dışkısının konjonktiva/ısırık yerine bulaşması.",
+      "whyCorrect": "Bu seçenek en uygundur; triatomin böceği kan emerken dışkı bırakır ve parazit ısırık yeri ya da konjonktiva gibi mukozalara bulaştırılır. Kırsal gece maruziyeti, ağrısız tek taraflı periorbital ödem ve kanda tripomastigot benzeri formlar bu bulaş yolunu destekler.",
+      "optionComparison": {
+        "Kum sineğinin promastigotları doğrudan deriye inoküle etmesi": "Kum sineğinin promastigotları doğrudan deriye inoküle etmesi Leishmania türleri için temel bulaş yoludur. Bu yol kutanöz ülser veya visseral leishmaniasis bağlamında düşünülür; bu vakada kanda tripomastigot benzeri formlar ve periorbital inokülasyon bulgusu farklıdır.",
+        "Anopheles sivrisineğinin sporozoitleri kana vermesi": "Anopheles sivrisineğinin sporozoitleri kana vermesi sıtmanın bulaş yoludur ve döngü karaciğer evresiyle başlar. Seyahat sonrası periyodik ateş ve eritrosit içi parazit formları beklenirdi; bu vakadaki hemoflagellat ve tek taraflı göz kapağı bulgusu malaria ile uyumlu değildir.",
+        "Kedi dışkısıyla kontamine oositlerin ağızdan alınması": "Kedi dışkısıyla kontamine oositlerin ağızdan alınması Toxoplasma gondii bulaş yollarından biridir. Toksoplazmozda gebelik, immünsupresyon veya oküler retinit gibi bağlamlar öne çıkar; burada vektör dışkısı ve kan tripomastigotları daha açıklayıcıdır.",
+        "Triatomin böcek dışkısının ısırık veya konjonktivaya bulaştırılması": "Bu seçenek en uygundur; triatomin böceği kan emerken dışkı bırakır ve parazit ısırık yeri ya da konjonktiva gibi mukozalara bulaştırılır. Kırsal gece maruziyeti, ağrısız tek taraflı periorbital ödem ve kanda tripomastigot benzeri formlar bu bulaş yolunu destekler.",
+        "Tatlı suda serkaryaların sağlam deriden geçmesi": "Tatlı suda serkaryaların sağlam deriden geçmesi şistozomiyazisin bulaş yoludur. Bu mekanizma hematüri, portal hipertansiyon veya serkarya dermatiti bağlamında düşünülür; kanda hemoflagellat formu ve periorbital ödem açıklamaz."
+      },
+      "evidenceChain": [
+        {
+          "text": "Kırsal Güney Amerika maruziyeti → Amerikan tripanozomiyazisi için epidemiyolojik bağlam",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Gece böcek ısırıkları → triatomin vektör olasılığını artırır",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Tek taraflı ağrısız periorbital ödem → konjonktival inokülasyon paternini destekler",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Kanda tripomastigot benzeri formlar ve PCR pozitifliği → akut hemoflagellat enfeksiyonu",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Kum sineğinin promastigotları doğrudan deriye inoküle etmesi": "Kum sineğinin promastigotları doğrudan deriye inoküle etmesi Leishmania türleri için temel bulaş yoludur. Bu yol kutanöz ülser veya visseral leishmaniasis bağlamında düşünülür; bu vakada kanda tripomastigot benzeri formlar ve periorbital inokülasyon bulgusu farklıdır.",
+        "Anopheles sivrisineğinin sporozoitleri kana vermesi": "Anopheles sivrisineğinin sporozoitleri kana vermesi sıtmanın bulaş yoludur ve döngü karaciğer evresiyle başlar. Seyahat sonrası periyodik ateş ve eritrosit içi parazit formları beklenirdi; bu vakadaki hemoflagellat ve tek taraflı göz kapağı bulgusu malaria ile uyumlu değildir.",
+        "Kedi dışkısıyla kontamine oositlerin ağızdan alınması": "Kedi dışkısıyla kontamine oositlerin ağızdan alınması Toxoplasma gondii bulaş yollarından biridir. Toksoplazmozda gebelik, immünsupresyon veya oküler retinit gibi bağlamlar öne çıkar; burada vektör dışkısı ve kan tripomastigotları daha açıklayıcıdır.",
+        "Tatlı suda serkaryaların sağlam deriden geçmesi": "Tatlı suda serkaryaların sağlam deriden geçmesi şistozomiyazisin bulaş yoludur. Bu mekanizma hematüri, portal hipertansiyon veya serkarya dermatiti bağlamında düşünülür; kanda hemoflagellat formu ve periorbital ödem açıklamaz."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v258-medical-microbiology-ninth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Endemik kırsal seyahat",
+        "Gece böcek ısırıkları",
+        "Tek taraflı periorbital ödem",
+        "Kanda tripomastigot benzeri formlar"
+      ],
+      "images": []
+    },
+  {
+      "id": "v259-new-492-hayvan-derisi-temasi-sonrasi-siyah-eskar",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Hayvan derisi teması sonrası siyah eskar",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Hayvan ürünü teması sonrası gelişen ağrısız siyah eskar ve büyük gram pozitif çomak paterninden temel antifagositer virülans yapısını seçme.",
+      "learningTarget": "Kutanöz zoonotik sporlu basil enfeksiyonunda poli-D-glutamat kapsülün fagositozdan kaçışı sağladığını ve klasik protein/polisakkarit kapsüllerden ayrıldığını açıklayabilme.",
+      "demographics": "46 yaşında erkek hasta",
+      "setting": "Enfeksiyon hastalıkları polikliniği",
+      "chiefComplaint": "Sağ ön kolda ağrısız siyah kabuklu yara ve çevresinde belirgin şişlik nedeniyle başvuruyor.",
+      "stem": "Hasta küçükbaş hayvan derisi işleyen bir atölyede çalıştığını, yaklaşık beş gün önce sağ ön kolundaki küçük sıyrığın üzerine işlenmemiş deri parçalarının temas ettiğini anlatır. Ertesi gün kaşıntılı küçük bir kabarıklık oluşmuş, iki gün içinde ortası siyahlaşan ağrısız bir yara haline gelmiştir. Çevresindeki şişliğin hızla arttığını, ancak lezyonun beklediği kadar ağrılı olmadığını belirtir. Evde antibiyotikli pomad sürmüş, ateşi yükselince polikliniğe başvurmuştur; yakınlarında benzer şikâyet olmadığını söyler.",
+      "patientIntro": {
+        "profile": "46 yaşında erkek hasta, Enfeksiyon hastalıkları polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Sağ ön kolda ağrısız siyah kabuklu yara ve çevresinde belirgin şişlik nedeniyle başvuruyor.",
+        "historySummary": "Hasta küçükbaş hayvan derisi işleyen bir atölyede çalıştığını, yaklaşık beş gün önce sağ ön kolundaki küçük sıyrığın üzerine işlenmemiş deri parçalarının temas ettiğini anlatır. Ertesi gün kaşıntılı küçük bir kabarıklık oluşmuş, iki gün içinde ortası siyahlaşan ağrısız bir yara haline gelmiştir. Çevresindeki şişliğin hızla arttığını, ancak lezyonun beklediği kadar ağrılı olmadığını belirtir. Evde antibiyotikli pomad sürmüş, ateşi yükselince polikliniğe başvurmuştur; yakınlarında benzer şikâyet olmadığını söyler."
+      },
+      "vitals": {
+        "TA": "116/72 mmHg",
+        "Nabız": "98/dk",
+        "Solunum": "18/dk",
+        "SpO2": "98%, oda havasında",
+        "Ateş": "38.0 °C",
+        "Şok indeksi": "0.84 - izlem"
+      },
+      "exam": [
+        "Sağ ön kol dorsal yüzde ortası siyah nekrotik kabuklu, çevresi belirgin ödemli yaklaşık 2.5 cm lezyon izlenir.",
+        "Lezyon palpasyonda beklenenden az ağrılıdır; çevresinde veziküler küçük alanlar vardır.",
+        "Sağ aksillada hassas olmayan küçük lenf nodları palpe edilir.",
+        "Akciğer ve kardiyak oskültasyonda belirgin patolojik bulgu yoktur; ense sertliği saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v259-new-492-hayvan-derisi-temasi-sonrasi-siyah-eskar-lezyon-suruntu-ve-kultur",
+          "label": "Lezyon sürüntüsü, boyama ve kültür",
+          "title": "Lezyon sürüntüsü, boyama ve kültür",
+          "orderLabel": "Lezyon sürüntüsü, boyama ve kültür",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Gram boyama, kapsül boyası ve kültür",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Lezyon materyalinde büyük çomak morfolojisi, kapsül görünümü ve nonhemolitik koloni paterni virülans yapısını yorumlamak için yeterli mikrobiyolojik veri sağlar.",
+          "clinicalMeaning": "Lezyon materyalinde büyük çomak morfolojisi, kapsül görünümü ve nonhemolitik koloni paterni virülans yapısını yorumlamak için yeterli mikrobiyolojik veri sağlar.",
+          "result": {
+            "title": "Lezyon sürüntüsü, boyama ve kültür",
+            "summary": "Lezyon materyalinde büyük çomak morfolojisi, kapsül görünümü ve nonhemolitik koloni paterni virülans yapısını yorumlamak için yeterli mikrobiyolojik veri sağlar.",
+            "interpretation": "Lezyon materyalinde büyük çomak morfolojisi, kapsül görünümü ve nonhemolitik koloni paterni virülans yapısını yorumlamak için yeterli mikrobiyolojik veri sağlar.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Eskar kenarından steril serumla nemlendirilmiş sürüntü ve vezikül sıvısı",
+                "Uygun örnek",
+                "Kutanöz lezyon değerlendirmesi"
+              ],
+              [
+                "Gram boyama",
+                "Kısa zincirler yapan büyük, kare uçlu Gram pozitif çomaklar",
+                "Bakteri yok",
+                "Sporlu basil morfolojisi"
+              ],
+              [
+                "Kapsül boyası",
+                "Bazı çomakların çevresinde soluk kapsüler halo izlendi",
+                "Halo yok",
+                "Antifagositer yüzey yapısı"
+              ],
+              [
+                "Kanlı agar",
+                "24 saatte gri-beyaz, pürüzlü, nonhemolitik koloniler",
+                "Üreme yok",
+                "Hemoliz yokluğu ayırıcıdır"
+              ],
+              [
+                "Motilite",
+                "Hareket gözlenmedi",
+                "Hareketli",
+                "Bacillus cereus grubundan ayrımda destekleyici"
+              ],
+              [
+                "Referans doğrulama",
+                "Toksin ve kapsül gen bölgelerini hedefleyen doğrulama testi pozitif bildirildi",
+                "Negatif",
+                "Yüksek riskli zoonotik sporlu basil"
+              ]
+            ],
+            "rows": [
+              [
+                "Örnek tipi",
+                "Eskar kenarından steril serumla nemlendirilmiş sürüntü ve vezikül sıvısı",
+                "Uygun örnek",
+                "Kutanöz lezyon değerlendirmesi"
+              ],
+              [
+                "Gram boyama",
+                "Kısa zincirler yapan büyük, kare uçlu Gram pozitif çomaklar",
+                "Bakteri yok",
+                "Sporlu basil morfolojisi"
+              ],
+              [
+                "Kapsül boyası",
+                "Bazı çomakların çevresinde soluk kapsüler halo izlendi",
+                "Halo yok",
+                "Antifagositer yüzey yapısı"
+              ],
+              [
+                "Kanlı agar",
+                "24 saatte gri-beyaz, pürüzlü, nonhemolitik koloniler",
+                "Üreme yok",
+                "Hemoliz yokluğu ayırıcıdır"
+              ],
+              [
+                "Motilite",
+                "Hareket gözlenmedi",
+                "Hareketli",
+                "Bacillus cereus grubundan ayrımda destekleyici"
+              ],
+              [
+                "Referans doğrulama",
+                "Toksin ve kapsül gen bölgelerini hedefleyen doğrulama testi pozitif bildirildi",
+                "Negatif",
+                "Yüksek riskli zoonotik sporlu basil"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu enfeksiyonda lezyonun dokuya yerleşmesini ve erken konak savunmasından kaçmasını en iyi açıklayan virülans yapısı hangisidir?",
+      "questionType": "single-best-answer",
+      "answerTarget": "Virülans faktörü",
+      "diagnosis": {
+        "correct": "Poli-D-glutamat kapsülle fagositozdan kaçış",
+        "options": [
+          "M proteiniyle kompleman bağlanmasının engellenmesi",
+          "Tip III sekresyon sistemiyle efektör protein aktarımı",
+          "Protein A ile IgG Fc bölgesine bağlanma",
+          "Poli-D-glutamat kapsülle fagositozdan kaçış",
+          "Pertaktin aracılı respiratuvar epitele adezyon"
+        ],
+        "question": "Bu enfeksiyonda lezyonun dokuya yerleşmesini ve erken konak savunmasından kaçmasını en iyi açıklayan virülans yapısı hangisidir?",
+        "explanation": "Hayvan derisi teması sonrası ağrısız siyah eskar, belirgin çevresel ödem ve lezyondan elde edilen büyük kare uçlu Gram pozitif çomaklar toksijenik sporlu basil enfeksiyonu için tipiktir. Bu klinik-laboratuvar zincirinde erken invazyonu kolaylaştıran temel yapı, fagositozu engelleyen poli-D-glutamat kapsüldür.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Ağrısız siyah eskar + hayvan derisi/yün teması + büyük kare uçlu Gram pozitif çomak → poli-D-glutamat kapsülün antifagositer etkisini düşün."
+          }
+        ],
+        "optionFeedback": {
+          "M proteiniyle kompleman bağlanmasının engellenmesi": {
+            "explanation": "M proteini Streptococcus pyogenes için temel antifagositer yüzey faktörüdür ve farenjit, impetigo veya nekrotizan yumuşak doku enfeksiyonlarında önem kazanır. Bu vakada ağrısız siyah eskar, hayvan derisi teması, kare uçlu büyük Gram pozitif çomaklar ve nonhemolitik koloni paterni streptokokal zincir yapan kok morfolojisinden ayrılır."
+          },
+          "Tip III sekresyon sistemiyle efektör protein aktarımı": {
+            "explanation": "Tip III sekresyon sistemi bazı gram negatif patojenlerde konak hücre içine efektör protein aktarımı sağlar. Bu mekanizma Yersinia, Salmonella veya Shigella gibi etkenlerde beklenir; vakadaki sporlu büyük Gram pozitif çomak, nonhemolitik koloni ve kapsül boyanması bu mekanizmadan farklıdır."
+          },
+          "Protein A ile IgG Fc bölgesine bağlanma": {
+            "explanation": "Protein A, Staphylococcus aureus'un IgG Fc bölgesine bağlanarak opsonizasyonu azaltan virülans faktörüdür. Stafilokokal deri apselerinde üzüm salkımı koklar, katalaz/koagülaz pozitiflik ve pürülan koleksiyon beklenirdi; burada ağrısız eskar ve kare uçlu çomak paterni baskındır."
+          },
+          "Poli-D-glutamat kapsülle fagositozdan kaçış": {
+            "explanation": "Bu seçenek en güçlü açıklamadır; poli-D-glutamat kapsül nötrofil ve makrofaj fagositozundan kaçışı kolaylaştıran antifagositer yapıdır. Hayvan derisi-yün teması sonrası ağrısız siyah eskar, ödemli çevre doku, büyük kare uçlu Gram pozitif çomak ve kapsül boyanması bu virülans yapısını destekler."
+          },
+          "Pertaktin aracılı respiratuvar epitele adezyon": {
+            "explanation": "Pertaktin, Bordetella pertussis'in solunum epiteline tutunmasında rol alan adezinlerden biridir. Paroksismal öksürük ve nazofarengeal PCR bağlamında anlam kazanır; deri eskarı, sporlu çomak ve nonhemolitik kültür paterniyle ilişkili değildir."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en güçlü açıklamadır; poli-D-glutamat kapsül nötrofil ve makrofaj fagositozundan kaçışı kolaylaştıran antifagositer yapıdır. Hayvan derisi-yün teması sonrası ağrısız siyah eskar, ödemli çevre doku, büyük kare uçlu Gram pozitif çomak ve kapsül boyanması bu virülans yapısını destekler.",
+          "optionFeedback": {
+            "M proteiniyle kompleman bağlanmasının engellenmesi": {
+              "explanation": "M proteini Streptococcus pyogenes için temel antifagositer yüzey faktörüdür ve farenjit, impetigo veya nekrotizan yumuşak doku enfeksiyonlarında önem kazanır. Bu vakada ağrısız siyah eskar, hayvan derisi teması, kare uçlu büyük Gram pozitif çomaklar ve nonhemolitik koloni paterni streptokokal zincir yapan kok morfolojisinden ayrılır."
+            },
+            "Tip III sekresyon sistemiyle efektör protein aktarımı": {
+              "explanation": "Tip III sekresyon sistemi bazı gram negatif patojenlerde konak hücre içine efektör protein aktarımı sağlar. Bu mekanizma Yersinia, Salmonella veya Shigella gibi etkenlerde beklenir; vakadaki sporlu büyük Gram pozitif çomak, nonhemolitik koloni ve kapsül boyanması bu mekanizmadan farklıdır."
+            },
+            "Protein A ile IgG Fc bölgesine bağlanma": {
+              "explanation": "Protein A, Staphylococcus aureus'un IgG Fc bölgesine bağlanarak opsonizasyonu azaltan virülans faktörüdür. Stafilokokal deri apselerinde üzüm salkımı koklar, katalaz/koagülaz pozitiflik ve pürülan koleksiyon beklenirdi; burada ağrısız eskar ve kare uçlu çomak paterni baskındır."
+            },
+            "Poli-D-glutamat kapsülle fagositozdan kaçış": {
+              "explanation": "Bu seçenek en güçlü açıklamadır; poli-D-glutamat kapsül nötrofil ve makrofaj fagositozundan kaçışı kolaylaştıran antifagositer yapıdır. Hayvan derisi-yün teması sonrası ağrısız siyah eskar, ödemli çevre doku, büyük kare uçlu Gram pozitif çomak ve kapsül boyanması bu virülans yapısını destekler."
+            },
+            "Pertaktin aracılı respiratuvar epitele adezyon": {
+              "explanation": "Pertaktin, Bordetella pertussis'in solunum epiteline tutunmasında rol alan adezinlerden biridir. Paroksismal öksürük ve nazofarengeal PCR bağlamında anlam kazanır; deri eskarı, sporlu çomak ve nonhemolitik kültür paterniyle ilişkili değildir."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Kutanöz zoonotik sporlu basil enfeksiyonunda kapsül klasik polisakkarit değil poli-D-glutamat yapıdadır. Bu kapsül fagositik hücrelerden kaçışı kolaylaştırır; toksinler ise ödem ve sistemik etkiyi güçlendirir.",
+      "examPearl": "Ağrısız siyah eskar + hayvan derisi/yün teması + büyük kare uçlu Gram pozitif çomak → poli-D-glutamat kapsülün antifagositer etkisini düşün.",
+      "whyCorrect": "Bu seçenek en güçlü açıklamadır; poli-D-glutamat kapsül nötrofil ve makrofaj fagositozundan kaçışı kolaylaştıran antifagositer yapıdır. Hayvan derisi-yün teması sonrası ağrısız siyah eskar, ödemli çevre doku, büyük kare uçlu Gram pozitif çomak ve kapsül boyanması bu virülans yapısını destekler.",
+      "optionComparison": {
+        "M proteiniyle kompleman bağlanmasının engellenmesi": "M proteini Streptococcus pyogenes için temel antifagositer yüzey faktörüdür ve farenjit, impetigo veya nekrotizan yumuşak doku enfeksiyonlarında önem kazanır. Bu vakada ağrısız siyah eskar, hayvan derisi teması, kare uçlu büyük Gram pozitif çomaklar ve nonhemolitik koloni paterni streptokokal zincir yapan kok morfolojisinden ayrılır.",
+        "Tip III sekresyon sistemiyle efektör protein aktarımı": "Tip III sekresyon sistemi bazı gram negatif patojenlerde konak hücre içine efektör protein aktarımı sağlar. Bu mekanizma Yersinia, Salmonella veya Shigella gibi etkenlerde beklenir; vakadaki sporlu büyük Gram pozitif çomak, nonhemolitik koloni ve kapsül boyanması bu mekanizmadan farklıdır.",
+        "Protein A ile IgG Fc bölgesine bağlanma": "Protein A, Staphylococcus aureus'un IgG Fc bölgesine bağlanarak opsonizasyonu azaltan virülans faktörüdür. Stafilokokal deri apselerinde üzüm salkımı koklar, katalaz/koagülaz pozitiflik ve pürülan koleksiyon beklenirdi; burada ağrısız eskar ve kare uçlu çomak paterni baskındır.",
+        "Poli-D-glutamat kapsülle fagositozdan kaçış": "Bu seçenek en güçlü açıklamadır; poli-D-glutamat kapsül nötrofil ve makrofaj fagositozundan kaçışı kolaylaştıran antifagositer yapıdır. Hayvan derisi-yün teması sonrası ağrısız siyah eskar, ödemli çevre doku, büyük kare uçlu Gram pozitif çomak ve kapsül boyanması bu virülans yapısını destekler.",
+        "Pertaktin aracılı respiratuvar epitele adezyon": "Pertaktin, Bordetella pertussis'in solunum epiteline tutunmasında rol alan adezinlerden biridir. Paroksismal öksürük ve nazofarengeal PCR bağlamında anlam kazanır; deri eskarı, sporlu çomak ve nonhemolitik kültür paterniyle ilişkili değildir."
+      },
+      "evidenceChain": [
+        {
+          "text": "İşlenmemiş hayvan derisi teması → sporlu zoonotik basil için maruziyet zemini",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Ağrısız siyah eskar ve belirgin ödem → toksinli kutanöz enfeksiyon paterni",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Büyük kare uçlu Gram pozitif çomaklar → kok veya gram negatif etkenlerden ayrım",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Kapsüler halo ve nonhemolitik kültür → antifagositer kapsül yapısının önemini destekler",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "M proteiniyle kompleman bağlanmasının engellenmesi": "M proteini Streptococcus pyogenes için temel antifagositer yüzey faktörüdür ve farenjit, impetigo veya nekrotizan yumuşak doku enfeksiyonlarında önem kazanır. Bu vakada ağrısız siyah eskar, hayvan derisi teması, kare uçlu büyük Gram pozitif çomaklar ve nonhemolitik koloni paterni streptokokal zincir yapan kok morfolojisinden ayrılır.",
+        "Tip III sekresyon sistemiyle efektör protein aktarımı": "Tip III sekresyon sistemi bazı gram negatif patojenlerde konak hücre içine efektör protein aktarımı sağlar. Bu mekanizma Yersinia, Salmonella veya Shigella gibi etkenlerde beklenir; vakadaki sporlu büyük Gram pozitif çomak, nonhemolitik koloni ve kapsül boyanması bu mekanizmadan farklıdır.",
+        "Protein A ile IgG Fc bölgesine bağlanma": "Protein A, Staphylococcus aureus'un IgG Fc bölgesine bağlanarak opsonizasyonu azaltan virülans faktörüdür. Stafilokokal deri apselerinde üzüm salkımı koklar, katalaz/koagülaz pozitiflik ve pürülan koleksiyon beklenirdi; burada ağrısız eskar ve kare uçlu çomak paterni baskındır.",
+        "Pertaktin aracılı respiratuvar epitele adezyon": "Pertaktin, Bordetella pertussis'in solunum epiteline tutunmasında rol alan adezinlerden biridir. Paroksismal öksürük ve nazofarengeal PCR bağlamında anlam kazanır; deri eskarı, sporlu çomak ve nonhemolitik kültür paterniyle ilişkili değildir."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v259-medical-microbiology-tenth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Hayvan derisi teması",
+        "Ağrısız siyah eskar",
+        "Kare uçlu Gram pozitif çomak",
+        "Kapsüler halo"
+      ],
+      "images": []
+    },
+  {
+      "id": "v259-new-493-agrisiz-ulser-sonrasi-agrili-kasik-sisligi",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Ağrısız ülser sonrası ağrılı kasık şişliği",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Geçici genital ülserden haftalar sonra gelişen ağrılı inguinal bubo ve NAAT verisini invaziv klamidyal serovar patogeneziyle ilişkilendirme.",
+      "learningTarget": "LGV tablosunda C. trachomatis L1-L3 serovarlarının yüzeyel üretrit/servisit etkenlerinden farklı olarak lenfatik yayılım ve bubo oluşturduğunu açıklayabilme.",
+      "demographics": "28 yaşında erkek hasta",
+      "setting": "Cinsel sağlık polikliniği",
+      "chiefComplaint": "Sol kasıkta ağrılı şişlik ve yakın zamanda kaybolmuş genital yara öyküsüyle başvuruyor.",
+      "stem": "Hasta yaklaşık üç hafta önce korunmasız cinsel temastan sonra peniste küçük ve ağrısız bir yara fark ettiğini, yaranın birkaç gün içinde kendiliğinden kaybolduğunu anlatır. Son bir haftada sol kasıkta giderek büyüyen ağrılı şişlik ve yürürken rahatsızlık başlamıştır. İdrar yaparken yanma çok belirgin değildir; pürülan akıntı tariflemez. Ateşi son iki gündür yükselmiş, evde aldığı ağrı kesiciyle kasık ağrısı azalmamıştır. Daha önce benzer bir şişlik yaşamadığını ve travma olmadığını belirtir.",
+      "patientIntro": {
+        "profile": "28 yaşında erkek hasta, Cinsel sağlık polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Sol kasıkta ağrılı şişlik ve yakın zamanda kaybolmuş genital yara öyküsüyle başvuruyor.",
+        "historySummary": "Hasta yaklaşık üç hafta önce korunmasız cinsel temastan sonra peniste küçük ve ağrısız bir yara fark ettiğini, yaranın birkaç gün içinde kendiliğinden kaybolduğunu anlatır. Son bir haftada sol kasıkta giderek büyüyen ağrılı şişlik ve yürürken rahatsızlık başlamıştır. İdrar yaparken yanma çok belirgin değildir; pürülan akıntı tariflemez. Ateşi son iki gündür yükselmiş, evde aldığı ağrı kesiciyle kasık ağrısı azalmamıştır. Daha önce benzer bir şişlik yaşamadığını ve travma olmadığını belirtir."
+      },
+      "vitals": {
+        "TA": "118/74 mmHg",
+        "Nabız": "96/dk",
+        "Solunum": "16/dk",
+        "SpO2": "99%, oda havasında",
+        "Ateş": "38.2 °C",
+        "Şok indeksi": "0.81 - izlem"
+      },
+      "exam": [
+        "Sol inguinal bölgede hassas, fluktuasyon göstermeye başlayan 3 cm lenf nodu paketi palpe edilir.",
+        "Genital muayenede aktif ülser yoktur; koronada soluk iyileşme alanı seçilir.",
+        "Üretral akıntı belirgin değildir; skrotal hassasiyet saptanmaz.",
+        "Deri döküntüsü, avuç içi/ayak tabanı lezyonu veya ense sertliği yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v259-new-493-agrisiz-ulser-sonrasi-agrili-kasik-sisligi-sti-paneli-ve-bubo-aspirati",
+          "label": "Genital örnek ve bubo aspiratı mikrobiyolojisi",
+          "title": "Genital örnek ve bubo aspiratı mikrobiyolojisi",
+          "orderLabel": "Genital örnek ve bubo aspiratı mikrobiyolojisi",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "NAAT, seroloji ve kültür dışlama paneli",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Genital ülserin kaybolması sonrası bubo aspiratı ve eşlik eden STI testleri lenfatik invazyon yapan etken grubunu destekler.",
+          "clinicalMeaning": "Genital ülserin kaybolması sonrası bubo aspiratı ve eşlik eden STI testleri lenfatik invazyon yapan etken grubunu destekler.",
+          "result": {
+            "title": "Genital örnek ve bubo aspiratı mikrobiyolojisi",
+            "summary": "Genital ülserin kaybolması sonrası bubo aspiratı ve eşlik eden STI testleri lenfatik invazyon yapan etken grubunu destekler.",
+            "interpretation": "Genital ülserin kaybolması sonrası bubo aspiratı ve eşlik eden STI testleri lenfatik invazyon yapan etken grubunu destekler.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Bubo aspiratı, ilk idrar örneği ve eski ülser alanından sürüntü",
+                "Uygun örnek",
+                "Lokal STI değerlendirmesi"
+              ],
+              [
+                "Bubo aspiratı NAAT",
+                "Klamidyal nükleik asit hedefi pozitif",
+                "Negatif",
+                "İnvaziv klamidyal süreç lehine"
+              ],
+              [
+                "İlk idrar NAAT",
+                "Gonokok hedefi negatif; klamidyal hedef zayıf pozitif",
+                "Negatif",
+                "Eşlik eden mukozal yük düşük olabilir"
+              ],
+              [
+                "HSV PCR",
+                "Eski ülser alanı sürüntüsünde HSV-1/HSV-2 DNA negatif",
+                "Negatif",
+                "Herpetik ülser lehine değil"
+              ],
+              [
+                "Sifiliz serolojisi",
+                "RPR negatif, treponemal test negatif",
+                "Negatif",
+                "Primer sifiliz desteklenmedi"
+              ],
+              [
+                "Gram boyama",
+                "Bubo aspiratında bol lökosit; hücre içi Gram negatif diplokok görülmedi",
+                "Bakteri yok",
+                "Gonokokal pürülan tablo dışlanır"
+              ]
+            ],
+            "rows": [
+              [
+                "Örnek tipi",
+                "Bubo aspiratı, ilk idrar örneği ve eski ülser alanından sürüntü",
+                "Uygun örnek",
+                "Lokal STI değerlendirmesi"
+              ],
+              [
+                "Bubo aspiratı NAAT",
+                "Klamidyal nükleik asit hedefi pozitif",
+                "Negatif",
+                "İnvaziv klamidyal süreç lehine"
+              ],
+              [
+                "İlk idrar NAAT",
+                "Gonokok hedefi negatif; klamidyal hedef zayıf pozitif",
+                "Negatif",
+                "Eşlik eden mukozal yük düşük olabilir"
+              ],
+              [
+                "HSV PCR",
+                "Eski ülser alanı sürüntüsünde HSV-1/HSV-2 DNA negatif",
+                "Negatif",
+                "Herpetik ülser lehine değil"
+              ],
+              [
+                "Sifiliz serolojisi",
+                "RPR negatif, treponemal test negatif",
+                "Negatif",
+                "Primer sifiliz desteklenmedi"
+              ],
+              [
+                "Gram boyama",
+                "Bubo aspiratında bol lökosit; hücre içi Gram negatif diplokok görülmedi",
+                "Bakteri yok",
+                "Gonokokal pürülan tablo dışlanır"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu klinik ve laboratuvar paternini yüzeyel genital enfeksiyonlardan ayıran mikrobiyolojik özellik hangisidir?",
+      "questionType": "single-best-answer",
+      "answerTarget": "Mikrobiyolojik patogenez",
+      "diagnosis": {
+        "correct": "L1-L3 serovarlarının lenfatik dokuda invaziv yayılım göstermesi",
+        "options": [
+          "Elementer cisimciklerin konak dışında çoğalması",
+          "L1-L3 serovarlarının lenfatik dokuda invaziv yayılım göstermesi",
+          "Üreaz üretimiyle genital mukozada alkali mikroçevre oluşturması",
+          "IgA proteaz ile nazofarengeal mukozaya kolonize olması",
+          "Endotoksin benzeri lipooligosakkarit ile ani meningokoksemi oluşturması"
+        ],
+        "question": "Bu klinik ve laboratuvar paternini yüzeyel genital enfeksiyonlardan ayıran mikrobiyolojik özellik hangisidir?",
+        "explanation": "Geçici ağrısız genital ülser sonrası ağrılı unilateral inguinal lenfadenit gelişmesi ve bubo aspiratında klamidyal nükleik asit saptanması invaziv klamidyal serovarları düşündürür. Buradaki ayırıcı mekanizma, yüzeyel mukozal enfeksiyondan çok lenfatik dokuya yayılım eğilimidir.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Kaybolan ağrısız genital ülser + ağrılı unilateral bubo + bubo aspiratında klamidyal NAAT → L1-L3 serovarlarının lenfatik invazyonu."
+          }
+        ],
+        "optionFeedback": {
+          "Elementer cisimciklerin konak dışında çoğalması": {
+            "explanation": "Chlamydia türlerinde elementer cisimcik enfektif formdur, ancak konak dışında çoğalma gerçekleşmez; çoğalma retiküler cisimcik formuyla hücre içinde olur. Bu nedenle bu ifade zorunlu hücre içi yaşam döngüsünü ters anlatır ve vakadaki ağrılı inguinal lenfadenit paternini açıklamaz."
+          },
+          "L1-L3 serovarlarının lenfatik dokuda invaziv yayılım göstermesi": {
+            "explanation": "Bu seçenek en iyi açıklamadır; belirli C. trachomatis serovarları yüzeyel mukozal enfeksiyonla sınırlı kalmayıp lenfatik dokuya invaziv yayılım gösterebilir. Geçici ağrısız ülseri izleyen ağrılı unilateral kasık şişliği, bubo aspiratında klamidyal NAAT pozitifliği ve gonokok/sifiliz dışlanması bu mekanizmayı destekler."
+          },
+          "Üreaz üretimiyle genital mukozada alkali mikroçevre oluşturması": {
+            "explanation": "Üreaz üretimi Helicobacter pylori ve Proteus gibi etkenlerin biyolojisinde ayırt edici olabilir. Genital ülser sonrası ağrılı bubo ve bubo aspiratında klamidyal nükleik asit saptanması üreaz aracılı bir patogenezle açıklanmaz."
+          },
+          "IgA proteaz ile nazofarengeal mukozaya kolonize olması": {
+            "explanation": "IgA proteaz nazofarengeal kolonizasyonda bazı solunum patojenleri için önemlidir. Bu vaka üst solunum yolu kolonizasyonu değil, cinsel temas sonrası genital lezyon ve lenfatik tutulum üzerinden ilerleyen bir STI tablosudur."
+          },
+          "Endotoksin benzeri lipooligosakkarit ile ani meningokoksemi oluşturması": {
+            "explanation": "Lipooligosakkarit aracılı meningokoksemi ateş, purpura, şok ve menenjit paterninde anlam kazanır. Bu hastada sistemik meningokoksemi bulgusu yoktur; mikrobiyolojik veri lokal genital/inguinal lenfatik süreci destekler."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en iyi açıklamadır; belirli C. trachomatis serovarları yüzeyel mukozal enfeksiyonla sınırlı kalmayıp lenfatik dokuya invaziv yayılım gösterebilir. Geçici ağrısız ülseri izleyen ağrılı unilateral kasık şişliği, bubo aspiratında klamidyal NAAT pozitifliği ve gonokok/sifiliz dışlanması bu mekanizmayı destekler.",
+          "optionFeedback": {
+            "Elementer cisimciklerin konak dışında çoğalması": {
+              "explanation": "Chlamydia türlerinde elementer cisimcik enfektif formdur, ancak konak dışında çoğalma gerçekleşmez; çoğalma retiküler cisimcik formuyla hücre içinde olur. Bu nedenle bu ifade zorunlu hücre içi yaşam döngüsünü ters anlatır ve vakadaki ağrılı inguinal lenfadenit paternini açıklamaz."
+            },
+            "L1-L3 serovarlarının lenfatik dokuda invaziv yayılım göstermesi": {
+              "explanation": "Bu seçenek en iyi açıklamadır; belirli C. trachomatis serovarları yüzeyel mukozal enfeksiyonla sınırlı kalmayıp lenfatik dokuya invaziv yayılım gösterebilir. Geçici ağrısız ülseri izleyen ağrılı unilateral kasık şişliği, bubo aspiratında klamidyal NAAT pozitifliği ve gonokok/sifiliz dışlanması bu mekanizmayı destekler."
+            },
+            "Üreaz üretimiyle genital mukozada alkali mikroçevre oluşturması": {
+              "explanation": "Üreaz üretimi Helicobacter pylori ve Proteus gibi etkenlerin biyolojisinde ayırt edici olabilir. Genital ülser sonrası ağrılı bubo ve bubo aspiratında klamidyal nükleik asit saptanması üreaz aracılı bir patogenezle açıklanmaz."
+            },
+            "IgA proteaz ile nazofarengeal mukozaya kolonize olması": {
+              "explanation": "IgA proteaz nazofarengeal kolonizasyonda bazı solunum patojenleri için önemlidir. Bu vaka üst solunum yolu kolonizasyonu değil, cinsel temas sonrası genital lezyon ve lenfatik tutulum üzerinden ilerleyen bir STI tablosudur."
+            },
+            "Endotoksin benzeri lipooligosakkarit ile ani meningokoksemi oluşturması": {
+              "explanation": "Lipooligosakkarit aracılı meningokoksemi ateş, purpura, şok ve menenjit paterninde anlam kazanır. Bu hastada sistemik meningokoksemi bulgusu yoktur; mikrobiyolojik veri lokal genital/inguinal lenfatik süreci destekler."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "LGV'de klinik olarak ilk küçük ülser hızla kaybolabilir; esas dikkat çeken bulgu ağrılı inguinal/femoral lenfadenit veya proktokolit olabilir. NAAT C. trachomatis varlığını gösterir; serovar düzeyinde ayrım moleküler genotipleme ile yapılır.",
+      "examPearl": "Kaybolan ağrısız genital ülser + ağrılı unilateral bubo + bubo aspiratında klamidyal NAAT → L1-L3 serovarlarının lenfatik invazyonu.",
+      "whyCorrect": "Bu seçenek en iyi açıklamadır; belirli C. trachomatis serovarları yüzeyel mukozal enfeksiyonla sınırlı kalmayıp lenfatik dokuya invaziv yayılım gösterebilir. Geçici ağrısız ülseri izleyen ağrılı unilateral kasık şişliği, bubo aspiratında klamidyal NAAT pozitifliği ve gonokok/sifiliz dışlanması bu mekanizmayı destekler.",
+      "optionComparison": {
+        "Elementer cisimciklerin konak dışında çoğalması": "Chlamydia türlerinde elementer cisimcik enfektif formdur, ancak konak dışında çoğalma gerçekleşmez; çoğalma retiküler cisimcik formuyla hücre içinde olur. Bu nedenle bu ifade zorunlu hücre içi yaşam döngüsünü ters anlatır ve vakadaki ağrılı inguinal lenfadenit paternini açıklamaz.",
+        "L1-L3 serovarlarının lenfatik dokuda invaziv yayılım göstermesi": "Bu seçenek en iyi açıklamadır; belirli C. trachomatis serovarları yüzeyel mukozal enfeksiyonla sınırlı kalmayıp lenfatik dokuya invaziv yayılım gösterebilir. Geçici ağrısız ülseri izleyen ağrılı unilateral kasık şişliği, bubo aspiratında klamidyal NAAT pozitifliği ve gonokok/sifiliz dışlanması bu mekanizmayı destekler.",
+        "Üreaz üretimiyle genital mukozada alkali mikroçevre oluşturması": "Üreaz üretimi Helicobacter pylori ve Proteus gibi etkenlerin biyolojisinde ayırt edici olabilir. Genital ülser sonrası ağrılı bubo ve bubo aspiratında klamidyal nükleik asit saptanması üreaz aracılı bir patogenezle açıklanmaz.",
+        "IgA proteaz ile nazofarengeal mukozaya kolonize olması": "IgA proteaz nazofarengeal kolonizasyonda bazı solunum patojenleri için önemlidir. Bu vaka üst solunum yolu kolonizasyonu değil, cinsel temas sonrası genital lezyon ve lenfatik tutulum üzerinden ilerleyen bir STI tablosudur.",
+        "Endotoksin benzeri lipooligosakkarit ile ani meningokoksemi oluşturması": "Lipooligosakkarit aracılı meningokoksemi ateş, purpura, şok ve menenjit paterninde anlam kazanır. Bu hastada sistemik meningokoksemi bulgusu yoktur; mikrobiyolojik veri lokal genital/inguinal lenfatik süreci destekler."
+      },
+      "evidenceChain": [
+        {
+          "text": "Korunmasız cinsel temas sonrası geçici ağrısız ülser → erken genital inokülasyon paternini verir",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Haftalar içinde ağrılı unilateral inguinal bubo → lenfatik tutulum ön plandadır",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Bubo aspiratında klamidyal NAAT pozitifliği → lokal lenf nodu materyalinde etken kanıtı",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "HSV, sifiliz ve gonokok testlerinin negatifliği → ülser/bubo ayırıcı tanısını daraltır",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Elementer cisimciklerin konak dışında çoğalması": "Chlamydia türlerinde elementer cisimcik enfektif formdur, ancak konak dışında çoğalma gerçekleşmez; çoğalma retiküler cisimcik formuyla hücre içinde olur. Bu nedenle bu ifade zorunlu hücre içi yaşam döngüsünü ters anlatır ve vakadaki ağrılı inguinal lenfadenit paternini açıklamaz.",
+        "Üreaz üretimiyle genital mukozada alkali mikroçevre oluşturması": "Üreaz üretimi Helicobacter pylori ve Proteus gibi etkenlerin biyolojisinde ayırt edici olabilir. Genital ülser sonrası ağrılı bubo ve bubo aspiratında klamidyal nükleik asit saptanması üreaz aracılı bir patogenezle açıklanmaz.",
+        "IgA proteaz ile nazofarengeal mukozaya kolonize olması": "IgA proteaz nazofarengeal kolonizasyonda bazı solunum patojenleri için önemlidir. Bu vaka üst solunum yolu kolonizasyonu değil, cinsel temas sonrası genital lezyon ve lenfatik tutulum üzerinden ilerleyen bir STI tablosudur.",
+        "Endotoksin benzeri lipooligosakkarit ile ani meningokoksemi oluşturması": "Lipooligosakkarit aracılı meningokoksemi ateş, purpura, şok ve menenjit paterninde anlam kazanır. Bu hastada sistemik meningokoksemi bulgusu yoktur; mikrobiyolojik veri lokal genital/inguinal lenfatik süreci destekler."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v259-medical-microbiology-tenth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Geçici genital ülser",
+        "Ağrılı unilateral bubo",
+        "Bubo aspiratında klamidyal NAAT",
+        "Sifiliz-HSV dışlanması"
+      ],
+      "images": []
+    },
+  {
+      "id": "v259-new-494-monoklonal-tedavi-altinda-progresif-norolojik-defisit",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Monoklonal tedavi altında progresif nörolojik defisit",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "İmmünmodülatör tedavi alan hastada progresif fokal defisit ve multifokal beyaz cevher lezyonları üzerinden doğru viral doğrulama testini seçme.",
+      "learningTarget": "PML şüphesinde rutin BOS bulgularının belirgin olmayabileceğini ve mikrobiyolojik doğrulamada BOS JC polyomavirus DNA PCR testinin kullanıldığını açıklayabilme.",
+      "demographics": "39 yaşında kadın hasta",
+      "setting": "Nöroloji servisi",
+      "chiefComplaint": "Son altı haftada artan konuşma güçlüğü ve sağ elde beceriksizlik nedeniyle yatırılıyor.",
+      "stem": "Hasta multipl skleroz nedeniyle iki yıldır monoklonal antikor tedavisi aldığını, son altı haftada iş yerinde kelime bulmakta zorlanmaya başladığını anlatır. Başlangıçta yorgunluğa bağladığı yakınmalarına sağ elde ince hareketlerde beceriksizlik ve hafif dengesizlik eklenmiştir. Ateş, baş ağrısı, ense sertliği veya ani nöbet tariflemez. Kortikosteroid verilmesine rağmen yakınmaları belirgin düzelmemiştir; ailesi konuşmasının giderek yavaşladığını fark etmiştir.",
+      "patientIntro": {
+        "profile": "39 yaşında kadın hasta, Nöroloji servisi ortamında değerlendiriliyor.",
+        "presentation": "Son altı haftada artan konuşma güçlüğü ve sağ elde beceriksizlik nedeniyle yatırılıyor.",
+        "historySummary": "Hasta multipl skleroz nedeniyle iki yıldır monoklonal antikor tedavisi aldığını, son altı haftada iş yerinde kelime bulmakta zorlanmaya başladığını anlatır. Başlangıçta yorgunluğa bağladığı yakınmalarına sağ elde ince hareketlerde beceriksizlik ve hafif dengesizlik eklenmiştir. Ateş, baş ağrısı, ense sertliği veya ani nöbet tariflemez. Kortikosteroid verilmesine rağmen yakınmaları belirgin düzelmemiştir; ailesi konuşmasının giderek yavaşladığını fark etmiştir."
+      },
+      "vitals": {
+        "TA": "122/76 mmHg",
+        "Nabız": "84/dk",
+        "Solunum": "16/dk",
+        "SpO2": "99%, oda havasında",
+        "Ateş": "36.8 °C",
+        "Şok indeksi": "0.69 - stabil"
+      },
+      "exam": [
+        "Hasta uyanık ve koopere, ancak isimlendirme ve akıcı konuşmada belirgin yavaşlama vardır.",
+        "Sağ elde ince motor hareketler yavaş, hafif pronator drift pozitiftir.",
+        "Ense sertliği, fotofobi veya meningeal irritasyon bulgusu yoktur.",
+        "Deri döküntüsü, oral plak veya belirgin lenfadenopati saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v259-new-494-monoklonal-tedavi-altinda-progresif-norolojik-defisit-bos-ve-goruntuleme",
+          "label": "BOS analizi ve nörogörüntüleme verileri",
+          "title": "BOS analizi ve nörogörüntüleme verileri",
+          "orderLabel": "BOS analizi ve nörogörüntüleme verileri",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "BOS temel paneli, viral dışlama testleri ve MR",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Rutin BOS bulguları ağır inflamatuvar menenjiti desteklemezken MR paterni yavaş ilerleyen viral beyaz cevher enfeksiyonunu düşündürür ve hedef PCR seçimini belirler.",
+          "clinicalMeaning": "Rutin BOS bulguları ağır inflamatuvar menenjiti desteklemezken MR paterni yavaş ilerleyen viral beyaz cevher enfeksiyonunu düşündürür ve hedef PCR seçimini belirler.",
+          "result": {
+            "title": "BOS analizi ve nörogörüntüleme verileri",
+            "summary": "Rutin BOS bulguları ağır inflamatuvar menenjiti desteklemezken MR paterni yavaş ilerleyen viral beyaz cevher enfeksiyonunu düşündürür ve hedef PCR seçimini belirler.",
+            "interpretation": "Rutin BOS bulguları ağır inflamatuvar menenjiti desteklemezken MR paterni yavaş ilerleyen viral beyaz cevher enfeksiyonunu düşündürür ve hedef PCR seçimini belirler.",
+            "values": [
+              [
+                "BOS hücre sayısı",
+                "6 lenfosit/mm³",
+                "0-5/mm³",
+                "Minimal inflamasyon"
+              ],
+              [
+                "BOS protein/glukoz",
+                "Protein 54 mg/dL, glukoz 66 mg/dL",
+                "Protein 15-45 mg/dL; glukoz serumla uyumlu",
+                "Bakteriyel menenjit paterni yok"
+              ],
+              [
+                "BOS Gram boyama/kültür",
+                "Mikroorganizma görülmedi; 48 saatte üreme yok",
+                "Üreme yok",
+                "Bakteriyel süreç desteklenmez"
+              ],
+              [
+                "BOS HSV-1/2 PCR",
+                "Negatif",
+                "Negatif",
+                "Temporal nekrotizan ensefalit lehine değil"
+              ],
+              [
+                "Beyin MR",
+                "Sol parietal ve sağ frontal subkortikal beyaz cevherde kitle etkisi belirgin olmayan multifokal T2/FLAIR hiperintens lezyonlar",
+                "Lezyon yok",
+                "Demiyelinizan enfeksiyon paterni"
+              ],
+              [
+                "Kontrast tutulum",
+                "Belirgin halka kontrastlanma veya apse kapsülü yok",
+                "Yok",
+                "Toksoplazma/apse paterninden ayrılır"
+              ]
+            ],
+            "rows": [
+              [
+                "BOS hücre sayısı",
+                "6 lenfosit/mm³",
+                "0-5/mm³",
+                "Minimal inflamasyon"
+              ],
+              [
+                "BOS protein/glukoz",
+                "Protein 54 mg/dL, glukoz 66 mg/dL",
+                "Protein 15-45 mg/dL; glukoz serumla uyumlu",
+                "Bakteriyel menenjit paterni yok"
+              ],
+              [
+                "BOS Gram boyama/kültür",
+                "Mikroorganizma görülmedi; 48 saatte üreme yok",
+                "Üreme yok",
+                "Bakteriyel süreç desteklenmez"
+              ],
+              [
+                "BOS HSV-1/2 PCR",
+                "Negatif",
+                "Negatif",
+                "Temporal nekrotizan ensefalit lehine değil"
+              ],
+              [
+                "Beyin MR",
+                "Sol parietal ve sağ frontal subkortikal beyaz cevherde kitle etkisi belirgin olmayan multifokal T2/FLAIR hiperintens lezyonlar",
+                "Lezyon yok",
+                "Demiyelinizan enfeksiyon paterni"
+              ],
+              [
+                "Kontrast tutulum",
+                "Belirgin halka kontrastlanma veya apse kapsülü yok",
+                "Yok",
+                "Toksoplazma/apse paterninden ayrılır"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu tabloda beklenen en uygun mikrobiyolojik doğrulama testi hangisidir?",
+      "questionType": "single-best-answer",
+      "answerTarget": "Mikrobiyolojik doğrulama testi",
+      "diagnosis": {
+        "correct": "BOS'ta JC polyomavirus DNA PCR çalışılması",
+        "options": [
+          "BOS'ta JC polyomavirus DNA PCR çalışılması",
+          "BOS'ta enterovirüs RNA PCR çalışılması",
+          "Serumda EBV VCA IgM araştırılması",
+          "Balgamda aside dirençli basil mikroskopisi yapılması",
+          "BOS'ta kriptokok kapsül antijeni aranması"
+        ],
+        "question": "Bu tabloda beklenen en uygun mikrobiyolojik doğrulama testi hangisidir?",
+        "explanation": "Uzun sürede ilerleyen fokal nörolojik defisit, immünmodülatör tedavi ve kitle etkisi belirgin olmayan multifokal beyaz cevher lezyonları PML paternini destekler. Bu durumda hedeflenmesi gereken mikrobiyolojik doğrulama testi BOS'ta JC polyomavirus DNA PCR analizidir.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Monoklonal immünmodülasyon + progresif fokal defisit + nonenhancing multifokal beyaz cevher lezyonları → BOS JC polyomavirus DNA PCR."
+          }
+        ],
+        "optionFeedback": {
+          "BOS'ta JC polyomavirus DNA PCR çalışılması": {
+            "explanation": "Bu seçenek en uygundur; progresif multifokal beyaz cevher lezyonları ve hücresel immün denetimin baskılanması bağlamında BOS'ta JC polyomavirus DNA PCR doğrulayıcı mikrobiyolojik testtir. Vakanın afebril seyri, nonenhancing demiyelinizan lezyonları ve rutin BOS bulgularının hafif olması akut bakteriyel/HSV ensefalitinden ayrılır."
+          },
+          "BOS'ta enterovirüs RNA PCR çalışılması": {
+            "explanation": "Enterovirüs RNA PCR aseptik menenjit, yenidoğan sepsisi benzeri tablo veya akut meningoensefalit bağlamında değerlidir. Bu hastada aylar içinde ilerleyen fokal defisitler ve multifokal beyaz cevher lezyonları enteroviral akut menenjit paterninden farklıdır."
+          },
+          "Serumda EBV VCA IgM araştırılması": {
+            "explanation": "Serum EBV VCA IgM akut enfeksiyöz mononükleoz veya bazı EBV ilişkili akut tablolar için kullanılır. Afazinin ilerlemesi, beyaz cevherde multifokal nonenhancing lezyonlar ve monoklonal tedavi öyküsü serum EBV IgM ile açıklanmaz."
+          },
+          "Balgamda aside dirençli basil mikroskopisi yapılması": {
+            "explanation": "Balgamda aside dirençli basil mikroskopisi pulmoner tüberküloz şüphesinde ilk incelemelerden biridir. Bu vakada belirgin solunum yakınması veya kavitasyon yoktur; sorun santral sinir sistemi beyaz cevher enfeksiyonudur."
+          },
+          "BOS'ta kriptokok kapsül antijeni aranması": {
+            "explanation": "BOS kriptokok kapsül antijeni subakut menenjit, yüksek açılış basıncı ve kapsüllü maya şüphesinde çok değerlidir. Bu hastada meningeal sendrom yerine progresif fokal nörolojik defisit ve demiyelinizan lezyon paterni baskındır."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; progresif multifokal beyaz cevher lezyonları ve hücresel immün denetimin baskılanması bağlamında BOS'ta JC polyomavirus DNA PCR doğrulayıcı mikrobiyolojik testtir. Vakanın afebril seyri, nonenhancing demiyelinizan lezyonları ve rutin BOS bulgularının hafif olması akut bakteriyel/HSV ensefalitinden ayrılır.",
+          "optionFeedback": {
+            "BOS'ta JC polyomavirus DNA PCR çalışılması": {
+              "explanation": "Bu seçenek en uygundur; progresif multifokal beyaz cevher lezyonları ve hücresel immün denetimin baskılanması bağlamında BOS'ta JC polyomavirus DNA PCR doğrulayıcı mikrobiyolojik testtir. Vakanın afebril seyri, nonenhancing demiyelinizan lezyonları ve rutin BOS bulgularının hafif olması akut bakteriyel/HSV ensefalitinden ayrılır."
+            },
+            "BOS'ta enterovirüs RNA PCR çalışılması": {
+              "explanation": "Enterovirüs RNA PCR aseptik menenjit, yenidoğan sepsisi benzeri tablo veya akut meningoensefalit bağlamında değerlidir. Bu hastada aylar içinde ilerleyen fokal defisitler ve multifokal beyaz cevher lezyonları enteroviral akut menenjit paterninden farklıdır."
+            },
+            "Serumda EBV VCA IgM araştırılması": {
+              "explanation": "Serum EBV VCA IgM akut enfeksiyöz mononükleoz veya bazı EBV ilişkili akut tablolar için kullanılır. Afazinin ilerlemesi, beyaz cevherde multifokal nonenhancing lezyonlar ve monoklonal tedavi öyküsü serum EBV IgM ile açıklanmaz."
+            },
+            "Balgamda aside dirençli basil mikroskopisi yapılması": {
+              "explanation": "Balgamda aside dirençli basil mikroskopisi pulmoner tüberküloz şüphesinde ilk incelemelerden biridir. Bu vakada belirgin solunum yakınması veya kavitasyon yoktur; sorun santral sinir sistemi beyaz cevher enfeksiyonudur."
+            },
+            "BOS'ta kriptokok kapsül antijeni aranması": {
+              "explanation": "BOS kriptokok kapsül antijeni subakut menenjit, yüksek açılış basıncı ve kapsüllü maya şüphesinde çok değerlidir. Bu hastada meningeal sendrom yerine progresif fokal nörolojik defisit ve demiyelinizan lezyon paterni baskındır."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "PML, oligodendrositleri etkileyen JC polyomavirus reaktivasyonuyla ilişkilidir. BOS inflamasyonu hafif olabilir; doğru tanısal yaklaşım klinik-MR paternini hedef PCR ile birleştirmektir.",
+      "examPearl": "Monoklonal immünmodülasyon + progresif fokal defisit + nonenhancing multifokal beyaz cevher lezyonları → BOS JC polyomavirus DNA PCR.",
+      "whyCorrect": "Bu seçenek en uygundur; progresif multifokal beyaz cevher lezyonları ve hücresel immün denetimin baskılanması bağlamında BOS'ta JC polyomavirus DNA PCR doğrulayıcı mikrobiyolojik testtir. Vakanın afebril seyri, nonenhancing demiyelinizan lezyonları ve rutin BOS bulgularının hafif olması akut bakteriyel/HSV ensefalitinden ayrılır.",
+      "optionComparison": {
+        "BOS'ta JC polyomavirus DNA PCR çalışılması": "Bu seçenek en uygundur; progresif multifokal beyaz cevher lezyonları ve hücresel immün denetimin baskılanması bağlamında BOS'ta JC polyomavirus DNA PCR doğrulayıcı mikrobiyolojik testtir. Vakanın afebril seyri, nonenhancing demiyelinizan lezyonları ve rutin BOS bulgularının hafif olması akut bakteriyel/HSV ensefalitinden ayrılır.",
+        "BOS'ta enterovirüs RNA PCR çalışılması": "Enterovirüs RNA PCR aseptik menenjit, yenidoğan sepsisi benzeri tablo veya akut meningoensefalit bağlamında değerlidir. Bu hastada aylar içinde ilerleyen fokal defisitler ve multifokal beyaz cevher lezyonları enteroviral akut menenjit paterninden farklıdır.",
+        "Serumda EBV VCA IgM araştırılması": "Serum EBV VCA IgM akut enfeksiyöz mononükleoz veya bazı EBV ilişkili akut tablolar için kullanılır. Afazinin ilerlemesi, beyaz cevherde multifokal nonenhancing lezyonlar ve monoklonal tedavi öyküsü serum EBV IgM ile açıklanmaz.",
+        "Balgamda aside dirençli basil mikroskopisi yapılması": "Balgamda aside dirençli basil mikroskopisi pulmoner tüberküloz şüphesinde ilk incelemelerden biridir. Bu vakada belirgin solunum yakınması veya kavitasyon yoktur; sorun santral sinir sistemi beyaz cevher enfeksiyonudur.",
+        "BOS'ta kriptokok kapsül antijeni aranması": "BOS kriptokok kapsül antijeni subakut menenjit, yüksek açılış basıncı ve kapsüllü maya şüphesinde çok değerlidir. Bu hastada meningeal sendrom yerine progresif fokal nörolojik defisit ve demiyelinizan lezyon paterni baskındır."
+      },
+      "evidenceChain": [
+        {
+          "text": "Monoklonal immünmodülatör tedavi → hücresel immün gözetimde azalma riski",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Haftalar içinde ilerleyen afazi ve hemiparezi → akut menenjitten çok yavaş ilerleyen beyaz cevher süreci",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "BOS'ta minimal lenfositoz ve normal glukoz → bakteriyel menenjit paterni yok",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "MR'da kitle etkisi az multifokal beyaz cevher lezyonları → PML doğrulama testini yönlendirir",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "BOS'ta enterovirüs RNA PCR çalışılması": "Enterovirüs RNA PCR aseptik menenjit, yenidoğan sepsisi benzeri tablo veya akut meningoensefalit bağlamında değerlidir. Bu hastada aylar içinde ilerleyen fokal defisitler ve multifokal beyaz cevher lezyonları enteroviral akut menenjit paterninden farklıdır.",
+        "Serumda EBV VCA IgM araştırılması": "Serum EBV VCA IgM akut enfeksiyöz mononükleoz veya bazı EBV ilişkili akut tablolar için kullanılır. Afazinin ilerlemesi, beyaz cevherde multifokal nonenhancing lezyonlar ve monoklonal tedavi öyküsü serum EBV IgM ile açıklanmaz.",
+        "Balgamda aside dirençli basil mikroskopisi yapılması": "Balgamda aside dirençli basil mikroskopisi pulmoner tüberküloz şüphesinde ilk incelemelerden biridir. Bu vakada belirgin solunum yakınması veya kavitasyon yoktur; sorun santral sinir sistemi beyaz cevher enfeksiyonudur.",
+        "BOS'ta kriptokok kapsül antijeni aranması": "BOS kriptokok kapsül antijeni subakut menenjit, yüksek açılış basıncı ve kapsüllü maya şüphesinde çok değerlidir. Bu hastada meningeal sendrom yerine progresif fokal nörolojik defisit ve demiyelinizan lezyon paterni baskındır."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v259-medical-microbiology-tenth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Monoklonal tedavi",
+        "Progresif fokal defisit",
+        "Minimal BOS inflamasyonu",
+        "Multifokal beyaz cevher lezyonları"
+      ],
+      "images": []
+    },
+  {
+      "id": "v259-new-495-orman-kampi-sonrasi-pnomoni-ve-verrukoz-cilt-lezyonu",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Orman kampı sonrası pnömoni ve verrüköz cilt lezyonu",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Ormanlık nehir çevresi maruziyeti sonrası pnömoni ve cilt lezyonunda doku morfolojisini dimorfik mantar etkeniyle eşleştirme.",
+      "learningTarget": "Blastomycosis tanısında pulmoner bulgulara verrüköz/ülseratif cilt lezyonlarının eşlik edebileceğini ve dokuda geniş tabanlı tomurcuklanan kalın duvarlı mayanın ayırt ettirici olduğunu açıklayabilme.",
+      "demographics": "52 yaşında erkek hasta",
+      "setting": "Göğüs hastalıkları polikliniği",
+      "chiefComplaint": "Üç haftadır süren öksürük, gece terlemesi ve el sırtında büyüyen kabarık lezyon nedeniyle başvuruyor.",
+      "stem": "Hasta bir ay önce ormanlık ve nehir kenarı bir bölgede kamp yaptığını, dönüşten sonra kuru öksürük ve halsizlik başladığını anlatır. Son iki haftada balgamı artmış, aralıklı ateş ve gece terlemesi eklenmiştir. Aynı dönemde sağ el sırtında önce küçük kabarıklık şeklinde başlayan lezyonun kabuklu ve verrüköz görünüm aldığını fark etmiştir. Tüberküloz temas öyküsü bilmediğini, yakın zamanda antibiyotik kullanmasına rağmen belirgin düzelme olmadığını belirtir.",
+      "patientIntro": {
+        "profile": "52 yaşında erkek hasta, Göğüs hastalıkları polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Üç haftadır süren öksürük, gece terlemesi ve el sırtında büyüyen kabarık lezyon nedeniyle başvuruyor.",
+        "historySummary": "Hasta bir ay önce ormanlık ve nehir kenarı bir bölgede kamp yaptığını, dönüşten sonra kuru öksürük ve halsizlik başladığını anlatır. Son iki haftada balgamı artmış, aralıklı ateş ve gece terlemesi eklenmiştir. Aynı dönemde sağ el sırtında önce küçük kabarıklık şeklinde başlayan lezyonun kabuklu ve verrüköz görünüm aldığını fark etmiştir. Tüberküloz temas öyküsü bilmediğini, yakın zamanda antibiyotik kullanmasına rağmen belirgin düzelme olmadığını belirtir."
+      },
+      "vitals": {
+        "TA": "124/78 mmHg",
+        "Nabız": "92/dk",
+        "Solunum": "20/dk",
+        "SpO2": "95%, oda havasında",
+        "Ateş": "37.9 °C",
+        "Şok indeksi": "0.74 - stabil"
+      },
+      "exam": [
+        "Sağ üst akciğer alanında hafif ralleri vardır; belirgin wheezing duyulmaz.",
+        "Sağ el sırtında kabarık kenarlı, verrüköz yüzeyli ve yer yer kabuklanan 2 cm lezyon izlenir.",
+        "Ağız içinde plak yoktur; yaygın lenfadenopati saptanmaz.",
+        "Genel durumu orta, takipne hafif düzeydedir; ense sertliği yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v259-new-495-orman-kampi-sonrasi-pnomoni-ve-verrukoz-cilt-lezyonu-solunum-ve-deri-mikolojisi",
+          "label": "BAL ve deri biyopsisi mikolojik incelemesi",
+          "title": "BAL ve deri biyopsisi mikolojik incelemesi",
+          "orderLabel": "BAL ve deri biyopsisi mikolojik incelemesi",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Mikroskopi, histopatoloji, kültür ve antijen",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Solunum örneği ile deri biyopsisinde aynı morfolojik fungal paternin saptanması pulmoner-kutanöz dimorfik mantar enfeksiyonunu destekler.",
+          "clinicalMeaning": "Solunum örneği ile deri biyopsisinde aynı morfolojik fungal paternin saptanması pulmoner-kutanöz dimorfik mantar enfeksiyonunu destekler.",
+          "result": {
+            "title": "BAL ve deri biyopsisi mikolojik incelemesi",
+            "summary": "Solunum örneği ile deri biyopsisinde aynı morfolojik fungal paternin saptanması pulmoner-kutanöz dimorfik mantar enfeksiyonunu destekler.",
+            "interpretation": "Solunum örneği ile deri biyopsisinde aynı morfolojik fungal paternin saptanması pulmoner-kutanöz dimorfik mantar enfeksiyonunu destekler.",
+            "values": [
+              [
+                "Toraks BT",
+                "Sağ üst lobda düzensiz nodüler konsolidasyon ve çevresinde küçük satellit nodüller",
+                "Normal",
+                "Fungal pnömoni olasılığı"
+              ],
+              [
+                "BAL Gram/AFB",
+                "Bakteri baskınlığı yok; aside dirençli basil görülmedi",
+                "Negatif",
+                "TB ve tipik bakteri desteklenmez"
+              ],
+              [
+                "Deri biyopsisi PAS/GMS",
+                "Kalın duvarlı, geniş tabanlı tomurcuklanan maya formları",
+                "Mantar görülmez",
+                "Ayırt ettirici doku morfolojisi"
+              ],
+              [
+                "BAL direkt mikroskopi",
+                "Benzer kalın duvarlı tomurcuklanan maya elemanları izlendi",
+                "Mantar görülmez",
+                "Pulmoner tutulumla uyumlu"
+              ],
+              [
+                "Fungal kültür",
+                "Yavaş üreyen dimorfik mantar kolonisi; güvenlik nedeniyle referans laboratuvara gönderildi",
+                "Üreme yok",
+                "Kültür doğrulaması"
+              ],
+              [
+                "Serum/idrarda fungal antijen",
+                "Pozitif, diğer dimorfik mantarlarla çapraz reaksiyon olasılığı not edildi",
+                "Negatif",
+                "Destekleyici ama tek başına özgül değil"
+              ]
+            ],
+            "rows": [
+              [
+                "Toraks BT",
+                "Sağ üst lobda düzensiz nodüler konsolidasyon ve çevresinde küçük satellit nodüller",
+                "Normal",
+                "Fungal pnömoni olasılığı"
+              ],
+              [
+                "BAL Gram/AFB",
+                "Bakteri baskınlığı yok; aside dirençli basil görülmedi",
+                "Negatif",
+                "TB ve tipik bakteri desteklenmez"
+              ],
+              [
+                "Deri biyopsisi PAS/GMS",
+                "Kalın duvarlı, geniş tabanlı tomurcuklanan maya formları",
+                "Mantar görülmez",
+                "Ayırt ettirici doku morfolojisi"
+              ],
+              [
+                "BAL direkt mikroskopi",
+                "Benzer kalın duvarlı tomurcuklanan maya elemanları izlendi",
+                "Mantar görülmez",
+                "Pulmoner tutulumla uyumlu"
+              ],
+              [
+                "Fungal kültür",
+                "Yavaş üreyen dimorfik mantar kolonisi; güvenlik nedeniyle referans laboratuvara gönderildi",
+                "Üreme yok",
+                "Kültür doğrulaması"
+              ],
+              [
+                "Serum/idrarda fungal antijen",
+                "Pozitif, diğer dimorfik mantarlarla çapraz reaksiyon olasılığı not edildi",
+                "Negatif",
+                "Destekleyici ama tek başına özgül değil"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu mikrobiyolojik laboratuvar bulgusu hangi etkenle en uyumludur?",
+      "questionType": "single-best-answer",
+      "answerTarget": "Etken",
+      "diagnosis": {
+        "correct": "Blastomyces dermatitidis",
+        "options": [
+          "Histoplasma capsulatum",
+          "Coccidioides immitis/posadasii",
+          "Sporothrix schenckii kompleksi",
+          "Talaromyces marneffei",
+          "Blastomyces dermatitidis"
+        ],
+        "question": "Bu mikrobiyolojik laboratuvar bulgusu hangi etkenle en uyumludur?",
+        "explanation": "Ormanlık-nehrin çevresinde toprak maruziyeti sonrası pnömoni ve verrüköz cilt lezyonu gelişmesi, doku ve BAL'da kalın duvarlı geniş tabanlı tomurcuklanan maya görülmesiyle birleşince Blastomyces dermatitidis en uygun etkendir.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Pnömoni + verrüköz cilt lezyonu + broad-based budding kalın duvarlı maya → Blastomyces dermatitidis."
+          }
+        ],
+        "optionFeedback": {
+          "Histoplasma capsulatum": {
+            "explanation": "Histoplasma capsulatum özellikle kuş veya yarasa dışkısıyla kontamine alanlarda maruziyet sonrası makrofaj içinde küçük oval mayalarla tanınır. Bu vakada doku kesitinde kalın duvarlı geniş tabanlı tomurcuklanan maya görülmesi Histoplasma'nın küçük intraselüler maya morfolojisinden ayrılır."
+          },
+          "Coccidioides immitis/posadasii": {
+            "explanation": "Coccidioides türleri çöl toprağı maruziyeti sonrası akciğer enfeksiyonu yapabilir ve dokuda endospor içeren büyük sferüller beklenir. Vakanın orman/nehir çevresi maruziyeti ve geniş tabanlı tomurcuklanan maya morfolojisi sferül paterninden farklıdır."
+          },
+          "Sporothrix schenckii kompleksi": {
+            "explanation": "Sporothrix schenckii bitki travması sonrası lenfatik hat boyunca nodüler cilt lezyonlarıyla klasik olarak ilişkilidir. Doku morfolojisinde puro biçimli mayalar aranır; burada eşlik eden pnömoni ve broad-based budding görünüm başka bir dimorfik mantarı destekler."
+          },
+          "Talaromyces marneffei": {
+            "explanation": "Talaromyces marneffei özellikle Güneydoğu Asya maruziyeti ve ileri hücresel immün yetmezlikte dissemine enfeksiyonla düşünülür. Mikroskopide transvers septumlu mayalar beklenir; bu vakadaki geniş tabanlı tomurcuklanma ve Kuzey Amerika benzeri maruziyet bu seçenekle uyuşmaz."
+          },
+          "Blastomyces dermatitidis": {
+            "explanation": "Bu seçenek en uygundur; pulmoner enfeksiyona eşlik eden verrüköz cilt lezyonu ve dokuda kalın duvarlı geniş tabanlı tomurcuklanan maya görünümü Blastomyces dermatitidis ile uyumludur. BAL/deri biyopsisi kültür ve mikroskopisi aynı dimorfik mantar sürecini destekler."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; pulmoner enfeksiyona eşlik eden verrüköz cilt lezyonu ve dokuda kalın duvarlı geniş tabanlı tomurcuklanan maya görünümü Blastomyces dermatitidis ile uyumludur. BAL/deri biyopsisi kültür ve mikroskopisi aynı dimorfik mantar sürecini destekler.",
+          "optionFeedback": {
+            "Histoplasma capsulatum": {
+              "explanation": "Histoplasma capsulatum özellikle kuş veya yarasa dışkısıyla kontamine alanlarda maruziyet sonrası makrofaj içinde küçük oval mayalarla tanınır. Bu vakada doku kesitinde kalın duvarlı geniş tabanlı tomurcuklanan maya görülmesi Histoplasma'nın küçük intraselüler maya morfolojisinden ayrılır."
+            },
+            "Coccidioides immitis/posadasii": {
+              "explanation": "Coccidioides türleri çöl toprağı maruziyeti sonrası akciğer enfeksiyonu yapabilir ve dokuda endospor içeren büyük sferüller beklenir. Vakanın orman/nehir çevresi maruziyeti ve geniş tabanlı tomurcuklanan maya morfolojisi sferül paterninden farklıdır."
+            },
+            "Sporothrix schenckii kompleksi": {
+              "explanation": "Sporothrix schenckii bitki travması sonrası lenfatik hat boyunca nodüler cilt lezyonlarıyla klasik olarak ilişkilidir. Doku morfolojisinde puro biçimli mayalar aranır; burada eşlik eden pnömoni ve broad-based budding görünüm başka bir dimorfik mantarı destekler."
+            },
+            "Talaromyces marneffei": {
+              "explanation": "Talaromyces marneffei özellikle Güneydoğu Asya maruziyeti ve ileri hücresel immün yetmezlikte dissemine enfeksiyonla düşünülür. Mikroskopide transvers septumlu mayalar beklenir; bu vakadaki geniş tabanlı tomurcuklanma ve Kuzey Amerika benzeri maruziyet bu seçenekle uyuşmaz."
+            },
+            "Blastomyces dermatitidis": {
+              "explanation": "Bu seçenek en uygundur; pulmoner enfeksiyona eşlik eden verrüköz cilt lezyonu ve dokuda kalın duvarlı geniş tabanlı tomurcuklanan maya görünümü Blastomyces dermatitidis ile uyumludur. BAL/deri biyopsisi kültür ve mikroskopisi aynı dimorfik mantar sürecini destekler."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Dimorfik mantar sorularında morfoloji çok ayırt ettiricidir: Histoplasma küçük intraselüler maya, Coccidioides sferül, Sporothrix puro biçimli maya, Blastomyces ise geniş tabanlı tomurcuklanan kalın duvarlı maya ile düşünülür.",
+      "examPearl": "Pnömoni + verrüköz cilt lezyonu + broad-based budding kalın duvarlı maya → Blastomyces dermatitidis.",
+      "whyCorrect": "Bu seçenek en uygundur; pulmoner enfeksiyona eşlik eden verrüköz cilt lezyonu ve dokuda kalın duvarlı geniş tabanlı tomurcuklanan maya görünümü Blastomyces dermatitidis ile uyumludur. BAL/deri biyopsisi kültür ve mikroskopisi aynı dimorfik mantar sürecini destekler.",
+      "optionComparison": {
+        "Histoplasma capsulatum": "Histoplasma capsulatum özellikle kuş veya yarasa dışkısıyla kontamine alanlarda maruziyet sonrası makrofaj içinde küçük oval mayalarla tanınır. Bu vakada doku kesitinde kalın duvarlı geniş tabanlı tomurcuklanan maya görülmesi Histoplasma'nın küçük intraselüler maya morfolojisinden ayrılır.",
+        "Coccidioides immitis/posadasii": "Coccidioides türleri çöl toprağı maruziyeti sonrası akciğer enfeksiyonu yapabilir ve dokuda endospor içeren büyük sferüller beklenir. Vakanın orman/nehir çevresi maruziyeti ve geniş tabanlı tomurcuklanan maya morfolojisi sferül paterninden farklıdır.",
+        "Sporothrix schenckii kompleksi": "Sporothrix schenckii bitki travması sonrası lenfatik hat boyunca nodüler cilt lezyonlarıyla klasik olarak ilişkilidir. Doku morfolojisinde puro biçimli mayalar aranır; burada eşlik eden pnömoni ve broad-based budding görünüm başka bir dimorfik mantarı destekler.",
+        "Talaromyces marneffei": "Talaromyces marneffei özellikle Güneydoğu Asya maruziyeti ve ileri hücresel immün yetmezlikte dissemine enfeksiyonla düşünülür. Mikroskopide transvers septumlu mayalar beklenir; bu vakadaki geniş tabanlı tomurcuklanma ve Kuzey Amerika benzeri maruziyet bu seçenekle uyuşmaz.",
+        "Blastomyces dermatitidis": "Bu seçenek en uygundur; pulmoner enfeksiyona eşlik eden verrüköz cilt lezyonu ve dokuda kalın duvarlı geniş tabanlı tomurcuklanan maya görünümü Blastomyces dermatitidis ile uyumludur. BAL/deri biyopsisi kültür ve mikroskopisi aynı dimorfik mantar sürecini destekler."
+      },
+      "evidenceChain": [
+        {
+          "text": "Ormanlık nehir çevresi kamp öyküsü → çevresel dimorfik mantar maruziyeti",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Pnömoni ile cilt lezyonunun birlikteliği → pulmoner-kutanöz yayılım paterni",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Deri biyopsisinde geniş tabanlı tomurcuklanan maya → Blastomyces için ayırt ettirici morfoloji",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "AFB negatifliği ve tipik bakteri baskınlığı olmaması → tüberküloz ve bakteriyel paternlerden uzaklaştırır",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Histoplasma capsulatum": "Histoplasma capsulatum özellikle kuş veya yarasa dışkısıyla kontamine alanlarda maruziyet sonrası makrofaj içinde küçük oval mayalarla tanınır. Bu vakada doku kesitinde kalın duvarlı geniş tabanlı tomurcuklanan maya görülmesi Histoplasma'nın küçük intraselüler maya morfolojisinden ayrılır.",
+        "Coccidioides immitis/posadasii": "Coccidioides türleri çöl toprağı maruziyeti sonrası akciğer enfeksiyonu yapabilir ve dokuda endospor içeren büyük sferüller beklenir. Vakanın orman/nehir çevresi maruziyeti ve geniş tabanlı tomurcuklanan maya morfolojisi sferül paterninden farklıdır.",
+        "Sporothrix schenckii kompleksi": "Sporothrix schenckii bitki travması sonrası lenfatik hat boyunca nodüler cilt lezyonlarıyla klasik olarak ilişkilidir. Doku morfolojisinde puro biçimli mayalar aranır; burada eşlik eden pnömoni ve broad-based budding görünüm başka bir dimorfik mantarı destekler.",
+        "Talaromyces marneffei": "Talaromyces marneffei özellikle Güneydoğu Asya maruziyeti ve ileri hücresel immün yetmezlikte dissemine enfeksiyonla düşünülür. Mikroskopide transvers septumlu mayalar beklenir; bu vakadaki geniş tabanlı tomurcuklanma ve Kuzey Amerika benzeri maruziyet bu seçenekle uyuşmaz."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v259-medical-microbiology-tenth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Orman kampı",
+        "Pnömoni",
+        "Verrüköz cilt lezyonu",
+        "Geniş tabanlı tomurcuklanan maya"
+      ],
+      "images": []
+    },
+  {
+      "id": "v259-new-496-kum-havuzu-sonrasi-eozinofili-ve-karaciger-lezyonlari",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Kum havuzu sonrası eozinofili ve karaciğer lezyonları",
+      "difficulty": "Orta-Zor",
+      "difficultyTag": "Orta-Zor",
+      "clinicalFocus": "Köpek dışkısıyla kontamine toprak maruziyeti sonrası eozinofili, hepatopulmoner bulgular ve negatif dışkı mikroskopisini parazitin konak biyolojisiyle açıklama.",
+      "learningTarget": "Visseral larva migrans tablosunda insanın uygun son konak olmadığını, larvaların dokuda kaldığını ve bu nedenle dışkıda yumurta beklenmediğini açıklayabilme.",
+      "demographics": "6 yaşında erkek çocuk",
+      "setting": "Çocuk enfeksiyon polikliniği",
+      "chiefComplaint": "Üç haftadır süren karın ağrısı, öksürük ve kan testinde belirgin eozinofili nedeniyle getiriliyor.",
+      "stem": "Çocuğun annesi son bir aydır iştahsızlık, aralıklı karın ağrısı ve geceleri artan öksürük olduğunu anlatır. Aile yeni sahiplendikleri yavru köpeğin bahçede ve çocuğun oynadığı kum alanında sık bulunduğunu, çocuğun oyun sırasında ellerini ağzına götürdüğünü söyler. Ateşi yüksek seyretmemiş, ishal veya kanlı dışkı olmamıştır. Daha önce astım tanısı yoktur; son günlerde hışıltı benzeri solunum sesi fark edilince değerlendirmeye getirilmiştir.",
+      "patientIntro": {
+        "profile": "6 yaşında erkek çocuk, Çocuk enfeksiyon polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Üç haftadır süren karın ağrısı, öksürük ve kan testinde belirgin eozinofili nedeniyle getiriliyor.",
+        "historySummary": "Çocuğun annesi son bir aydır iştahsızlık, aralıklı karın ağrısı ve geceleri artan öksürük olduğunu anlatır. Aile yeni sahiplendikleri yavru köpeğin bahçede ve çocuğun oynadığı kum alanında sık bulunduğunu, çocuğun oyun sırasında ellerini ağzına götürdüğünü söyler. Ateşi yüksek seyretmemiş, ishal veya kanlı dışkı olmamıştır. Daha önce astım tanısı yoktur; son günlerde hışıltı benzeri solunum sesi fark edilince değerlendirmeye getirilmiştir."
+      },
+      "vitals": {
+        "TA": "96/60 mmHg",
+        "Nabız": "102/dk",
+        "Solunum": "22/dk",
+        "SpO2": "97%, oda havasında",
+        "Ateş": "37.4 °C",
+        "Şok indeksi": "1.06 - pediatrik izlem"
+      },
+      "exam": [
+        "Çocuk iyi görünümlü ancak kaşıntılı birkaç ekskoriasyon izi vardır.",
+        "Karın muayenesinde karaciğer kenarı 2 cm ele gelir, belirgin defans yoktur.",
+        "Akciğerlerde hafif ekspiryum sonu hışıltı duyulur; çekilme yoktur.",
+        "Perianal bölgede belirgin kaşıntı izi veya bant testini düşündüren bulgu saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v259-new-496-kum-havuzu-sonrasi-eozinofili-ve-karaciger-lezyonlari-parazitoloji-seroloji-ve-goruntuleme",
+          "label": "Parazitoloji, seroloji ve görüntüleme bulguları",
+          "title": "Parazitoloji, seroloji ve görüntüleme bulguları",
+          "orderLabel": "Parazitoloji, seroloji ve görüntüleme bulguları",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Tam kan, dışkı, seroloji ve USG",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Belirgin eozinofili, negatif dışkı yumurtası ve larval antijen serolojisi parazitin insandaki eksik gelişim döngüsünü yorumlatır.",
+          "clinicalMeaning": "Belirgin eozinofili, negatif dışkı yumurtası ve larval antijen serolojisi parazitin insandaki eksik gelişim döngüsünü yorumlatır.",
+          "result": {
+            "title": "Parazitoloji, seroloji ve görüntüleme bulguları",
+            "summary": "Belirgin eozinofili, negatif dışkı yumurtası ve larval antijen serolojisi parazitin insandaki eksik gelişim döngüsünü yorumlatır.",
+            "interpretation": "Belirgin eozinofili, negatif dışkı yumurtası ve larval antijen serolojisi parazitin insandaki eksik gelişim döngüsünü yorumlatır.",
+            "values": [
+              [
+                "Tam kan sayımı",
+                "Lökosit 14.800/mm³, eozinofil %32",
+                "Eozinofil < %5",
+                "Doku helmint maruziyeti"
+              ],
+              [
+                "Total IgE",
+                "1.160 IU/mL",
+                "Yaşa göre düşük/normal",
+                "Helmintik immün yanıtı destekler"
+              ],
+              [
+                "Dışkı ova-parazit",
+                "Üç ayrı örnekte helmint yumurtası veya protozoon kisti görülmedi",
+                "Negatif",
+                "Bağırsakta erişkin form beklenmez"
+              ],
+              [
+                "Seroloji",
+                "Larval ekskretuar-sekretuar antijenlere karşı ELISA pozitif",
+                "Negatif",
+                "Doku larvası maruziyeti"
+              ],
+              [
+                "Karaciğer USG",
+                "Dağınık, küçük hipoekoik odaklar",
+                "Normal",
+                "Larval migrasyonla uyumlu olabilir"
+              ],
+              [
+                "Akciğer grafisi",
+                "Gezici hafif infiltratif opasiteler",
+                "Normal",
+                "Pulmoner migrasyon bulgusu"
+              ]
+            ],
+            "rows": [
+              [
+                "Tam kan sayımı",
+                "Lökosit 14.800/mm³, eozinofil %32",
+                "Eozinofil < %5",
+                "Doku helmint maruziyeti"
+              ],
+              [
+                "Total IgE",
+                "1.160 IU/mL",
+                "Yaşa göre düşük/normal",
+                "Helmintik immün yanıtı destekler"
+              ],
+              [
+                "Dışkı ova-parazit",
+                "Üç ayrı örnekte helmint yumurtası veya protozoon kisti görülmedi",
+                "Negatif",
+                "Bağırsakta erişkin form beklenmez"
+              ],
+              [
+                "Seroloji",
+                "Larval ekskretuar-sekretuar antijenlere karşı ELISA pozitif",
+                "Negatif",
+                "Doku larvası maruziyeti"
+              ],
+              [
+                "Karaciğer USG",
+                "Dağınık, küçük hipoekoik odaklar",
+                "Normal",
+                "Larval migrasyonla uyumlu olabilir"
+              ],
+              [
+                "Akciğer grafisi",
+                "Gezici hafif infiltratif opasiteler",
+                "Normal",
+                "Pulmoner migrasyon bulgusu"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada dışkı mikroskopisinin negatif kalmasını en iyi açıklayan biyolojik neden hangisidir?",
+      "questionType": "single-best-answer",
+      "answerTarget": "Parazit biyolojisi",
+      "diagnosis": {
+        "correct": "Larvaların dokularda kalıp insanda erişkin forma tamamlanmaması",
+        "options": [
+          "Parazitin erişkin formunun safra yollarında yumurta üretmesi",
+          "Yumurtaların insanda bağırsakta hızla erişkine dönüşmesi",
+          "Larvaların dokularda kalıp insanda erişkin forma tamamlanmaması",
+          "Kistlerin kolonda açılarak trofozoit invazyonu başlatması",
+          "Serkaryaların deriden geçtikten sonra mesane venlerine yerleşmesi"
+        ],
+        "question": "Bu hastada dışkı mikroskopisinin negatif kalmasını en iyi açıklayan biyolojik neden hangisidir?",
+        "explanation": "Köpek yavrusu ve kontamine kum alanı maruziyeti sonrası eozinofili, yüksek IgE, hepatopulmoner bulgular ve larval antijen serolojisi visseral larva migrans paternini destekler. İnsan uygun son konak olmadığı için larvalar dokularda kalır, erişkin forma dönüşüp bağırsakta yumurta üretmez; bu yüzden dışkı mikroskopisi negatif kalabilir.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Köpek yavrusu/kum havuzu + eozinofili + hepatopulmoner bulgular + dışkıda yumurta yok → dokuda kalan larva, erişkin forma tamamlanmama."
+          }
+        ],
+        "optionFeedback": {
+          "Parazitin erişkin formunun safra yollarında yumurta üretmesi": {
+            "explanation": "Erişkin formun safra yollarında yumurta üretmesi Fasciola gibi hepatobiliyer trematodlar için düşünülebilir. Bu vakada çocukta köpek dışkısıyla kontamine toprak maruziyeti, belirgin eozinofili ve larval antijen ELISA pozitifliği hepatobiliyer erişkin solucan paterninden farklıdır."
+          },
+          "Yumurtaların insanda bağırsakta hızla erişkine dönüşmesi": {
+            "explanation": "Yumurtaların insanda bağırsakta erişkin forma dönüşmesi Ascaris gibi insanı doğal son konak olarak kullanan nematodlarda dışkı yumurtası saptanmasını açıklayabilir. Bu olguda dışkıda yumurta görülmemesi beklenen bir bulgudur çünkü insan uygun son konak değildir."
+          },
+          "Larvaların dokularda kalıp insanda erişkin forma tamamlanmaması": {
+            "explanation": "Bu seçenek en iyi açıklamadır; enfektif yumurtalar alındıktan sonra larvalar dokulara göç eder, ancak insanda erişkin forma tamamlanıp bağırsakta yumurta üretmez. Kum havuzu/köpek yavrusu maruziyeti, eozinofili, karaciğer-akciğer tutulum bulguları ve larval antijen ELISA pozitifliği bu biyolojiyi destekler."
+          },
+          "Kistlerin kolonda açılarak trofozoit invazyonu başlatması": {
+            "explanation": "Kistlerin kolonda açılıp trofozoit invazyonu başlatması Entamoeba histolytica için tipik bir patogenez basamağıdır. Dizanteri veya karaciğer apsesi bağlamında anlam kazanır; bu çocukta dışkı kisti değil doku larvasına bağlı eozinofilik sendrom vardır."
+          },
+          "Serkaryaların deriden geçtikten sonra mesane venlerine yerleşmesi": {
+            "explanation": "Serkaryaların deriden geçip mesane venlerine yerleşmesi üriner şistozomiyazis mekanizmasıdır. Tatlı su teması ve terminal hematüri beklenirdi; burada köpek dışkısıyla kontamine toprak maruziyeti ve dışkı yumurtasının negatif olması farklı bir doku larva migrasyonunu gösterir."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en iyi açıklamadır; enfektif yumurtalar alındıktan sonra larvalar dokulara göç eder, ancak insanda erişkin forma tamamlanıp bağırsakta yumurta üretmez. Kum havuzu/köpek yavrusu maruziyeti, eozinofili, karaciğer-akciğer tutulum bulguları ve larval antijen ELISA pozitifliği bu biyolojiyi destekler.",
+          "optionFeedback": {
+            "Parazitin erişkin formunun safra yollarında yumurta üretmesi": {
+              "explanation": "Erişkin formun safra yollarında yumurta üretmesi Fasciola gibi hepatobiliyer trematodlar için düşünülebilir. Bu vakada çocukta köpek dışkısıyla kontamine toprak maruziyeti, belirgin eozinofili ve larval antijen ELISA pozitifliği hepatobiliyer erişkin solucan paterninden farklıdır."
+            },
+            "Yumurtaların insanda bağırsakta hızla erişkine dönüşmesi": {
+              "explanation": "Yumurtaların insanda bağırsakta erişkin forma dönüşmesi Ascaris gibi insanı doğal son konak olarak kullanan nematodlarda dışkı yumurtası saptanmasını açıklayabilir. Bu olguda dışkıda yumurta görülmemesi beklenen bir bulgudur çünkü insan uygun son konak değildir."
+            },
+            "Larvaların dokularda kalıp insanda erişkin forma tamamlanmaması": {
+              "explanation": "Bu seçenek en iyi açıklamadır; enfektif yumurtalar alındıktan sonra larvalar dokulara göç eder, ancak insanda erişkin forma tamamlanıp bağırsakta yumurta üretmez. Kum havuzu/köpek yavrusu maruziyeti, eozinofili, karaciğer-akciğer tutulum bulguları ve larval antijen ELISA pozitifliği bu biyolojiyi destekler."
+            },
+            "Kistlerin kolonda açılarak trofozoit invazyonu başlatması": {
+              "explanation": "Kistlerin kolonda açılıp trofozoit invazyonu başlatması Entamoeba histolytica için tipik bir patogenez basamağıdır. Dizanteri veya karaciğer apsesi bağlamında anlam kazanır; bu çocukta dışkı kisti değil doku larvasına bağlı eozinofilik sendrom vardır."
+            },
+            "Serkaryaların deriden geçtikten sonra mesane venlerine yerleşmesi": {
+              "explanation": "Serkaryaların deriden geçip mesane venlerine yerleşmesi üriner şistozomiyazis mekanizmasıdır. Tatlı su teması ve terminal hematüri beklenirdi; burada köpek dışkısıyla kontamine toprak maruziyeti ve dışkı yumurtasının negatif olması farklı bir doku larva migrasyonunu gösterir."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Toxocariasis sorularında dışkı mikroskopisinin negatif olması tanıyı dışlamaz. İnsanlarda parazit erişkin bağırsak formuna tamamlanmadığından tanı çoğunlukla maruziyet, eozinofili, organ bulguları ve serolojiyle kurulur.",
+      "examPearl": "Köpek yavrusu/kum havuzu + eozinofili + hepatopulmoner bulgular + dışkıda yumurta yok → dokuda kalan larva, erişkin forma tamamlanmama.",
+      "whyCorrect": "Bu seçenek en iyi açıklamadır; enfektif yumurtalar alındıktan sonra larvalar dokulara göç eder, ancak insanda erişkin forma tamamlanıp bağırsakta yumurta üretmez. Kum havuzu/köpek yavrusu maruziyeti, eozinofili, karaciğer-akciğer tutulum bulguları ve larval antijen ELISA pozitifliği bu biyolojiyi destekler.",
+      "optionComparison": {
+        "Parazitin erişkin formunun safra yollarında yumurta üretmesi": "Erişkin formun safra yollarında yumurta üretmesi Fasciola gibi hepatobiliyer trematodlar için düşünülebilir. Bu vakada çocukta köpek dışkısıyla kontamine toprak maruziyeti, belirgin eozinofili ve larval antijen ELISA pozitifliği hepatobiliyer erişkin solucan paterninden farklıdır.",
+        "Yumurtaların insanda bağırsakta hızla erişkine dönüşmesi": "Yumurtaların insanda bağırsakta erişkin forma dönüşmesi Ascaris gibi insanı doğal son konak olarak kullanan nematodlarda dışkı yumurtası saptanmasını açıklayabilir. Bu olguda dışkıda yumurta görülmemesi beklenen bir bulgudur çünkü insan uygun son konak değildir.",
+        "Larvaların dokularda kalıp insanda erişkin forma tamamlanmaması": "Bu seçenek en iyi açıklamadır; enfektif yumurtalar alındıktan sonra larvalar dokulara göç eder, ancak insanda erişkin forma tamamlanıp bağırsakta yumurta üretmez. Kum havuzu/köpek yavrusu maruziyeti, eozinofili, karaciğer-akciğer tutulum bulguları ve larval antijen ELISA pozitifliği bu biyolojiyi destekler.",
+        "Kistlerin kolonda açılarak trofozoit invazyonu başlatması": "Kistlerin kolonda açılıp trofozoit invazyonu başlatması Entamoeba histolytica için tipik bir patogenez basamağıdır. Dizanteri veya karaciğer apsesi bağlamında anlam kazanır; bu çocukta dışkı kisti değil doku larvasına bağlı eozinofilik sendrom vardır.",
+        "Serkaryaların deriden geçtikten sonra mesane venlerine yerleşmesi": "Serkaryaların deriden geçip mesane venlerine yerleşmesi üriner şistozomiyazis mekanizmasıdır. Tatlı su teması ve terminal hematüri beklenirdi; burada köpek dışkısıyla kontamine toprak maruziyeti ve dışkı yumurtasının negatif olması farklı bir doku larva migrasyonunu gösterir."
+      },
+      "evidenceChain": [
+        {
+          "text": "Yavru köpek ve kontamine kum alanı teması → enfektif yumurta alımı için doğal maruziyet",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Belirgin eozinofili ve yüksek IgE → doku helmint yanıtını destekler",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Karaciğer ve akciğer bulguları → larval migrasyon paternini gösterir",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Üç dışkı örneğinde yumurta yokluğu → insanda erişkin bağırsak formunun beklenmediğini düşündürür",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Parazitin erişkin formunun safra yollarında yumurta üretmesi": "Erişkin formun safra yollarında yumurta üretmesi Fasciola gibi hepatobiliyer trematodlar için düşünülebilir. Bu vakada çocukta köpek dışkısıyla kontamine toprak maruziyeti, belirgin eozinofili ve larval antijen ELISA pozitifliği hepatobiliyer erişkin solucan paterninden farklıdır.",
+        "Yumurtaların insanda bağırsakta hızla erişkine dönüşmesi": "Yumurtaların insanda bağırsakta erişkin forma dönüşmesi Ascaris gibi insanı doğal son konak olarak kullanan nematodlarda dışkı yumurtası saptanmasını açıklayabilir. Bu olguda dışkıda yumurta görülmemesi beklenen bir bulgudur çünkü insan uygun son konak değildir.",
+        "Kistlerin kolonda açılarak trofozoit invazyonu başlatması": "Kistlerin kolonda açılıp trofozoit invazyonu başlatması Entamoeba histolytica için tipik bir patogenez basamağıdır. Dizanteri veya karaciğer apsesi bağlamında anlam kazanır; bu çocukta dışkı kisti değil doku larvasına bağlı eozinofilik sendrom vardır.",
+        "Serkaryaların deriden geçtikten sonra mesane venlerine yerleşmesi": "Serkaryaların deriden geçip mesane venlerine yerleşmesi üriner şistozomiyazis mekanizmasıdır. Tatlı su teması ve terminal hematüri beklenirdi; burada köpek dışkısıyla kontamine toprak maruziyeti ve dışkı yumurtasının negatif olması farklı bir doku larva migrasyonunu gösterir."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v259-medical-microbiology-tenth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Köpek yavrusu maruziyeti",
+        "Kum havuzu",
+        "Eozinofili",
+        "Larval antijen ELISA",
+        "Negatif dışkı yumurtası"
+      ],
+      "images": []
+    },
+  {
+      "id": "v260-new-497-av-hayvani-sonrasi-ulser-ve-lenfadenit",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Av hayvanı sonrası ülser ve aksiller lenfadenit",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Av hayvanı/kene maruziyeti sonrası ülseroglandüler tabloyu, küçük gram negatif kokobasil ve özel kültür gereksinimi üzerinden etken düzeyinde ayırt etme.",
+      "learningTarget": "Ülseroglandüler zoonotik enfeksiyonda örnek tipi, kültür güvenliği ve serolojik doğrulama mantığını birlikte yorumlayabilme.",
+      "demographics": "34 yaşında erkek hasta",
+      "setting": "Enfeksiyon hastalıkları polikliniği",
+      "chiefComplaint": "Sağ elde ülser ve koltuk altında ağrılı şişlik nedeniyle başvuruyor.",
+      "stem": "Hasta bir hafta önce kırsalda avladığı tavşanı eldivensiz temizlediğini, aynı gün sağ elinde küçük bir kesik fark ettiğini anlatır. Üç gün sonra kesik yerinde kabuklu, ağrılı bir yara oluşmuş ve sağ koltuk altında giderek büyüyen hassas bir şişlik gelişmiştir. Son iki gündür ateş, titreme ve halsizlik tarifler; evde aldığı parasetamol dışında ilaç kullanmamıştır. Yakın çevresinde benzer yakınması olan yoktur, ancak av dönüşünde birkaç kene çıkardığını söyler.",
+      "patientIntro": {
+        "profile": "34 yaşında erkek hasta, Enfeksiyon hastalıkları polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Sağ elde ülser ve koltuk altında ağrılı şişlik nedeniyle başvuruyor.",
+        "historySummary": "Hasta bir hafta önce kırsalda avladığı tavşanı eldivensiz temizlediğini, aynı gün sağ elinde küçük bir kesik fark ettiğini anlatır. Üç gün sonra kesik yerinde kabuklu, ağrılı bir yara oluşmuş ve sağ koltuk altında giderek büyüyen hassas bir şişlik gelişmiştir. Son iki gündür ateş, titreme ve halsizlik tarifler; evde aldığı parasetamol dışında ilaç kullanmamıştır. Yakın çevresinde benzer yakınması olan yoktur, ancak av dönüşünde birkaç kene çıkardığını söyler."
+      },
+      "vitals": {
+        "TA": "112/70 mmHg",
+        "Nabız": "104/dk",
+        "Solunum": "18/dk",
+        "SpO2": "98%, oda havasında",
+        "Ateş": "38.6 °C",
+        "Şok indeksi": "0.93 - yakın izlem"
+      },
+      "exam": [
+        "Sağ el dorsumunda kabuklu tabanı olan yaklaşık 1 cm ülser ve çevresinde hafif eritem izlenir.",
+        "Sağ aksiller bölgede 3 cm çaplı, hassas, fluktuasyon vermeyen lenf nodu palpe edilir.",
+        "Akciğer oskültasyonu doğal, karında hepatosplenomegali yoktur.",
+        "Bilinç açık, ense sertliği ve yaygın döküntü saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v260-new-497-av-hayvani-sonrasi-ulser-ve-lenfadenit-ulser-aspirat-boyama-kultur",
+          "label": "Ülser kenarı ve lenf nodu aspiratı mikrobiyolojisi",
+          "title": "Ülser kenarı ve lenf nodu aspiratı mikrobiyolojisi",
+          "orderLabel": "Ülser kenarı ve lenf nodu aspiratı mikrobiyolojisi",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Gram boyama, özel kültür ve seroloji",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Ülseroglandüler tabloda klinik örnek ve yavaş üreme paterni etken ayrımı için birlikte değerlendirilir.",
+          "clinicalMeaning": "Ülseroglandüler tabloda klinik örnek ve yavaş üreme paterni etken ayrımı için birlikte değerlendirilir.",
+          "result": {
+            "title": "Ülser kenarı ve lenf nodu aspiratı mikrobiyolojisi",
+            "summary": "Ülseroglandüler tabloda klinik örnek ve yavaş üreme paterni etken ayrımı için birlikte değerlendirilir.",
+            "interpretation": "Ülseroglandüler tabloda klinik örnek ve yavaş üreme paterni etken ayrımı için birlikte değerlendirilir.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Ülser kenarı sürüntüsü ve aksiller lenf nodu ince iğne aspiratı",
+                "Uygun örnek",
+                "Giriş lezyonu ve bölgesel nod"
+              ],
+              [
+                "Gram boyama",
+                "Az sayıda çok küçük gram negatif kokobasil; yoğun nötrofil zemini",
+                "Bakteri yok",
+                "Zor görülen küçük kokobasil"
+              ],
+              [
+                "Kültür güvenliği",
+                "Laboratuvara yüksek bulaştırıcılık ve yavaş üreme olasılığı bildirildi",
+                "Bildirim yok",
+                "Biyogüvenlik açısından kritik"
+              ],
+              [
+                "Çikolata/sisteinli agar",
+                "48-72 saatte çok küçük gri-beyaz koloniler",
+                "Rutin 24 saat üreme",
+                "Zenginleştirilmiş ortam gereksinimi"
+              ],
+              [
+                "Seroloji",
+                "Akut örnekte düşük titre; 2 hafta sonra dört kat titre artışı",
+                "Titre artışı yok",
+                "Geç doğrulama desteği"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada en olası etken aşağıdakilerden hangisidir?",
+      "questionType": "etiologic-agent",
+      "answerTarget": "Etken tanıma",
+      "diagnosis": {
+        "correct": "Francisella tularensis",
+        "options": [
+          "Bartonella henselae",
+          "Yersinia pestis",
+          "Francisella tularensis",
+          "Pasteurella multocida",
+          "Brucella melitensis"
+        ],
+        "question": "Bu hastada en olası etken aşağıdakilerden hangisidir?",
+        "explanation": "Bu seçenek en uygundur; av hayvanı veya kene teması sonrası gelişen ülseroglandüler tablo, çok küçük gram negatif kokobasil ve sisteinle zenginleştirilmiş besiyerinde yavaş üreme ile uyumludur. Laboratuvarın önceden uyarılması gerekir çünkü düşük inokulumla bulaş riski ve zor üreme özelliği klinik mikrobiyoloji açısından kritik ayrımdır.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Av hayvanı/kene teması + ülseroglandüler lenfadenit + küçük gram negatif kokobasil + sisteinli ortamda yavaş üreme → Francisella tularensis."
+          }
+        ],
+        "optionFeedback": {
+          "Bartonella henselae": {
+            "explanation": "Bartonella henselae kedi tırmalaması sonrası papül ve bölgesel lenfadenopatiyle akla gelir; Warthin-Starry boyası veya serolojiyle desteklenebilir. Bu vakada kedi teması yerine av hayvanı/kene maruziyeti, ülser tabanı örneğinde çok küçük gram negatif kokobasil ve sisteinle zenginleştirilmiş ortamda yavaş üreme paterni daha farklı bir zoonotik etkeni destekler."
+          },
+          "Yersinia pestis": {
+            "explanation": "Yersinia pestis pire-kemirgen teması sonrası bubonik vebada ağrılı bubo ve sistemik toksisite oluşturabilir; Wayson/Giemsa ile bipolar boyanma klasik olarak anlatılır. Burada ülseroglandüler giriş lezyonu, tavşan-kene teması ve sistein gereksinimli yavaş üreyen küçük kokobasil paterni vebadan daha uygun bir laboratuvar zinciri verir."
+          },
+          "Francisella tularensis": {
+            "explanation": "Bu seçenek en uygundur; av hayvanı veya kene teması sonrası gelişen ülseroglandüler tablo, çok küçük gram negatif kokobasil ve sisteinle zenginleştirilmiş besiyerinde yavaş üreme ile uyumludur. Laboratuvarın önceden uyarılması gerekir çünkü düşük inokulumla bulaş riski ve zor üreme özelliği klinik mikrobiyoloji açısından kritik ayrımdır."
+          },
+          "Pasteurella multocida": {
+            "explanation": "Pasteurella multocida genellikle kedi/köpek ısırığı sonrası hızla gelişen selülit ve yumuşak doku enfeksiyonu yapar; gram negatif kokobasil olabilir. Ancak bu vakada ısırık öyküsü yoktur, ülseroglandüler lenfadenit baskındır ve sistein bağımlı yavaş kültür paterni Pasteurella için beklenen temel özellik değildir."
+          },
+          "Brucella melitensis": {
+            "explanation": "Brucella melitensis pastörize edilmemiş süt ürünleri veya hayvancılık teması sonrası dalgalı ateş, gece terlemesi ve osteoartiküler tutulumla öne çıkar. Primer cilt ülseri ve belirgin bölgesel lenfadenit yerine sistemik retiküloendotelyal hastalık beklenir; bu nedenle vaka verisi Brucella’dan çok ülseroglandüler zoonozu destekler."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; av hayvanı veya kene teması sonrası gelişen ülseroglandüler tablo, çok küçük gram negatif kokobasil ve sisteinle zenginleştirilmiş besiyerinde yavaş üreme ile uyumludur. Laboratuvarın önceden uyarılması gerekir çünkü düşük inokulumla bulaş riski ve zor üreme özelliği klinik mikrobiyoloji açısından kritik ayrımdır.",
+          "optionFeedback": {
+            "Bartonella henselae": {
+              "explanation": "Bartonella henselae kedi tırmalaması sonrası papül ve bölgesel lenfadenopatiyle akla gelir; Warthin-Starry boyası veya serolojiyle desteklenebilir. Bu vakada kedi teması yerine av hayvanı/kene maruziyeti, ülser tabanı örneğinde çok küçük gram negatif kokobasil ve sisteinle zenginleştirilmiş ortamda yavaş üreme paterni daha farklı bir zoonotik etkeni destekler."
+            },
+            "Yersinia pestis": {
+              "explanation": "Yersinia pestis pire-kemirgen teması sonrası bubonik vebada ağrılı bubo ve sistemik toksisite oluşturabilir; Wayson/Giemsa ile bipolar boyanma klasik olarak anlatılır. Burada ülseroglandüler giriş lezyonu, tavşan-kene teması ve sistein gereksinimli yavaş üreyen küçük kokobasil paterni vebadan daha uygun bir laboratuvar zinciri verir."
+            },
+            "Francisella tularensis": {
+              "explanation": "Bu seçenek en uygundur; av hayvanı veya kene teması sonrası gelişen ülseroglandüler tablo, çok küçük gram negatif kokobasil ve sisteinle zenginleştirilmiş besiyerinde yavaş üreme ile uyumludur. Laboratuvarın önceden uyarılması gerekir çünkü düşük inokulumla bulaş riski ve zor üreme özelliği klinik mikrobiyoloji açısından kritik ayrımdır."
+            },
+            "Pasteurella multocida": {
+              "explanation": "Pasteurella multocida genellikle kedi/köpek ısırığı sonrası hızla gelişen selülit ve yumuşak doku enfeksiyonu yapar; gram negatif kokobasil olabilir. Ancak bu vakada ısırık öyküsü yoktur, ülseroglandüler lenfadenit baskındır ve sistein bağımlı yavaş kültür paterni Pasteurella için beklenen temel özellik değildir."
+            },
+            "Brucella melitensis": {
+              "explanation": "Brucella melitensis pastörize edilmemiş süt ürünleri veya hayvancılık teması sonrası dalgalı ateş, gece terlemesi ve osteoartiküler tutulumla öne çıkar. Primer cilt ülseri ve belirgin bölgesel lenfadenit yerine sistemik retiküloendotelyal hastalık beklenir; bu nedenle vaka verisi Brucella’dan çok ülseroglandüler zoonozu destekler."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Francisella tularensis çok düşük inokulumla bulaşabilen, fastidiyöz küçük gram negatif kokobasildir; ülseroglandüler formda ülser ve bölgesel lenfadenit öne çıkar. Klinik laboratuvar, kültür çalışması öncesinde mutlaka uyarılmalıdır.",
+      "examPearl": "Av hayvanı/kene teması + ülseroglandüler lenfadenit + küçük gram negatif kokobasil + sisteinli ortamda yavaş üreme → Francisella tularensis.",
+      "whyCorrect": "Bu seçenek en uygundur; av hayvanı veya kene teması sonrası gelişen ülseroglandüler tablo, çok küçük gram negatif kokobasil ve sisteinle zenginleştirilmiş besiyerinde yavaş üreme ile uyumludur. Laboratuvarın önceden uyarılması gerekir çünkü düşük inokulumla bulaş riski ve zor üreme özelliği klinik mikrobiyoloji açısından kritik ayrımdır.",
+      "optionComparison": {
+        "Bartonella henselae": "Bartonella henselae kedi tırmalaması sonrası papül ve bölgesel lenfadenopatiyle akla gelir; Warthin-Starry boyası veya serolojiyle desteklenebilir. Bu vakada kedi teması yerine av hayvanı/kene maruziyeti, ülser tabanı örneğinde çok küçük gram negatif kokobasil ve sisteinle zenginleştirilmiş ortamda yavaş üreme paterni daha farklı bir zoonotik etkeni destekler.",
+        "Yersinia pestis": "Yersinia pestis pire-kemirgen teması sonrası bubonik vebada ağrılı bubo ve sistemik toksisite oluşturabilir; Wayson/Giemsa ile bipolar boyanma klasik olarak anlatılır. Burada ülseroglandüler giriş lezyonu, tavşan-kene teması ve sistein gereksinimli yavaş üreyen küçük kokobasil paterni vebadan daha uygun bir laboratuvar zinciri verir.",
+        "Francisella tularensis": "Bu seçenek en uygundur; av hayvanı veya kene teması sonrası gelişen ülseroglandüler tablo, çok küçük gram negatif kokobasil ve sisteinle zenginleştirilmiş besiyerinde yavaş üreme ile uyumludur. Laboratuvarın önceden uyarılması gerekir çünkü düşük inokulumla bulaş riski ve zor üreme özelliği klinik mikrobiyoloji açısından kritik ayrımdır.",
+        "Pasteurella multocida": "Pasteurella multocida genellikle kedi/köpek ısırığı sonrası hızla gelişen selülit ve yumuşak doku enfeksiyonu yapar; gram negatif kokobasil olabilir. Ancak bu vakada ısırık öyküsü yoktur, ülseroglandüler lenfadenit baskındır ve sistein bağımlı yavaş kültür paterni Pasteurella için beklenen temel özellik değildir.",
+        "Brucella melitensis": "Brucella melitensis pastörize edilmemiş süt ürünleri veya hayvancılık teması sonrası dalgalı ateş, gece terlemesi ve osteoartiküler tutulumla öne çıkar. Primer cilt ülseri ve belirgin bölgesel lenfadenit yerine sistemik retiküloendotelyal hastalık beklenir; bu nedenle vaka verisi Brucella’dan çok ülseroglandüler zoonozu destekler."
+      },
+      "evidenceChain": [
+        {
+          "text": "Av hayvanını eldivensiz temizleme ve kene teması → zoonotik giriş kapısı",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Kabuklu ülser ve aksiller hassas lenf nodu → ülseroglandüler sendrom",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Çok küçük gram negatif kokobasil → klasik kok/diplokok etkenlerden ayrım",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Sisteinli zenginleştirilmiş ortamda yavaş üreme → fastidiyöz zoonotik bakteri lehine",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Bartonella henselae": "Bartonella henselae kedi tırmalaması sonrası papül ve bölgesel lenfadenopatiyle akla gelir; Warthin-Starry boyası veya serolojiyle desteklenebilir. Bu vakada kedi teması yerine av hayvanı/kene maruziyeti, ülser tabanı örneğinde çok küçük gram negatif kokobasil ve sisteinle zenginleştirilmiş ortamda yavaş üreme paterni daha farklı bir zoonotik etkeni destekler.",
+        "Yersinia pestis": "Yersinia pestis pire-kemirgen teması sonrası bubonik vebada ağrılı bubo ve sistemik toksisite oluşturabilir; Wayson/Giemsa ile bipolar boyanma klasik olarak anlatılır. Burada ülseroglandüler giriş lezyonu, tavşan-kene teması ve sistein gereksinimli yavaş üreyen küçük kokobasil paterni vebadan daha uygun bir laboratuvar zinciri verir.",
+        "Pasteurella multocida": "Pasteurella multocida genellikle kedi/köpek ısırığı sonrası hızla gelişen selülit ve yumuşak doku enfeksiyonu yapar; gram negatif kokobasil olabilir. Ancak bu vakada ısırık öyküsü yoktur, ülseroglandüler lenfadenit baskındır ve sistein bağımlı yavaş kültür paterni Pasteurella için beklenen temel özellik değildir.",
+        "Brucella melitensis": "Brucella melitensis pastörize edilmemiş süt ürünleri veya hayvancılık teması sonrası dalgalı ateş, gece terlemesi ve osteoartiküler tutulumla öne çıkar. Primer cilt ülseri ve belirgin bölgesel lenfadenit yerine sistemik retiküloendotelyal hastalık beklenir; bu nedenle vaka verisi Brucella’dan çok ülseroglandüler zoonozu destekler."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v260-medical-microbiology-eleventh-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Av hayvanı teması",
+        "Ülseroglandüler tablo",
+        "Küçük gram negatif kokobasil",
+        "Sisteinli kültür",
+        "Seroloji titre artışı"
+      ],
+      "images": []
+    },
+  {
+      "id": "v260-new-498-yogun-bakimda-karbapenem-direncli-pnomoni",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Yoğun bakımda karbapenem dirençli pnömoni",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Yoğun bakım ilişkili gram negatif pnömonide karbapenem direncini fenotipik ve moleküler test zinciriyle mekanizma düzeyinde yorumlama.",
+      "learningTarget": "Enterobacterales izolatında KPC, NDM, OXA-48, porin-AmpC ve ESBL mekanizmalarını test paternleriyle ayırt edebilme.",
+      "demographics": "68 yaşında kadın hasta",
+      "setting": "Yoğun bakım ünitesi",
+      "chiefComplaint": "Ventilatör izlemi sırasında ateş ve pürülan trakeal sekresyon gelişiyor.",
+      "stem": "Hasta üç haftadır yoğun bakımda mekanik ventilasyon desteği almaktadır. Son 48 saatte ateşi yükselmiş, oksijen ihtiyacı artmış ve trakeal aspiratta pürülan sekresyon belirginleşmiştir. Daha önce geniş spektrumlu sefalosporin ve piperasilin-tazobaktam kullanmış, son hafta içinde üriner kateter değişimi de yapılmıştır. Ailesi hastanın son aylarda farklı bir hastanede uzun süre yatış öyküsü olduğunu belirtir.",
+      "patientIntro": {
+        "profile": "68 yaşında kadın hasta, Yoğun bakım ünitesi ortamında değerlendiriliyor.",
+        "presentation": "Ventilatör izlemi sırasında ateş ve pürülan trakeal sekresyon gelişiyor.",
+        "historySummary": "Hasta üç haftadır yoğun bakımda mekanik ventilasyon desteği almaktadır. Son 48 saatte ateşi yükselmiş, oksijen ihtiyacı artmış ve trakeal aspiratta pürülan sekresyon belirginleşmiştir. Daha önce geniş spektrumlu sefalosporin ve piperasilin-tazobaktam kullanmış, son hafta içinde üriner kateter değişimi de yapılmıştır. Ailesi hastanın son aylarda farklı bir hastanede uzun süre yatış öyküsü olduğunu belirtir."
+      },
+      "vitals": {
+        "TA": "96/58 mmHg",
+        "Nabız": "118/dk",
+        "Solunum": "24/dk, ventilatörde",
+        "SpO2": "91%, FiO2 0.45",
+        "Ateş": "38.9 °C",
+        "Şok indeksi": "1.23 - yüksek risk"
+      },
+      "exam": [
+        "Genel durum kritik, sedasyon altında izleniyor.",
+        "Akciğer oskültasyonunda sağ alt zonda kaba raller ve sekresyon artışı vardır.",
+        "Trakeal aspirat koyu sarı-pürülan görünümde alınır.",
+        "Santral kateter giriş yerinde belirgin eritem veya akıntı yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v260-new-498-yogun-bakimda-karbapenem-direncli-pnomoni-trakeal-aspirat-antibiyogram",
+          "label": "Trakeal aspirat kültürü ve direnç testleri",
+          "title": "Trakeal aspirat kültürü ve direnç testleri",
+          "orderLabel": "Trakeal aspirat kültürü ve direnç testleri",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Gram boyama, kültür, antibiyogram ve karbapenemaz testi",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Solunum örneği kültürü ve karbapenemaz ayırıcı testleri direnç mekanizmasının seçilmesini sağlar.",
+          "clinicalMeaning": "Solunum örneği kültürü ve karbapenemaz ayırıcı testleri direnç mekanizmasının seçilmesini sağlar.",
+          "result": {
+            "title": "Trakeal aspirat kültürü ve direnç testleri",
+            "summary": "Solunum örneği kültürü ve karbapenemaz ayırıcı testleri direnç mekanizmasının seçilmesini sağlar.",
+            "interpretation": "Solunum örneği kültürü ve karbapenemaz ayırıcı testleri direnç mekanizmasının seçilmesini sağlar.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Kaliteli trakeal aspirat; çok sayıda PMNL, az epitel",
+                "Yetersiz örnek",
+                "Alt solunum örneği"
+              ],
+              [
+                "Gram boyama",
+                "Gram negatif çomaklar baskın",
+                "Karışık flora",
+                "Enterik gram negatif patern"
+              ],
+              [
+                "Kültür",
+                "Laktoz fermente eden yoğun Enterobacterales üremesi",
+                "Üreme yok",
+                "Hastane ilişkili izolat"
+              ],
+              [
+                "Antibiyogram",
+                "Meropenem ve ertapenem MIC yüksek; seftazidim-avibaktam duyarlı",
+                "Karbapenem duyarlı",
+                "Karbapenemaz şüphesi"
+              ],
+              [
+                "Fenotipik test",
+                "Boronik asit temelli testte inhibisyon; EDTA ile belirgin inhibisyon yok",
+                "EDTA pozitif",
+                "Serin karbapenemaz yönünde"
+              ],
+              [
+                "Moleküler panel",
+                "KPC hedefi pozitif; NDM, VIM, IMP ve OXA-48 hedefleri negatif",
+                "Karbapenemaz hedefi yok",
+                "Mekanizma doğrulaması"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu direnç paternini en iyi açıklayan mekanizma aşağıdakilerden hangisidir?",
+      "questionType": "resistance-mechanism",
+      "answerTarget": "Direnç mekanizması",
+      "diagnosis": {
+        "correct": "KPC tipi sınıf A serin karbapenemaz üretimi",
+        "options": [
+          "KPC tipi sınıf A serin karbapenemaz üretimi",
+          "NDM tipi metallo-beta-laktamaz üretimi",
+          "OXA-48 benzeri sınıf D karbapenemaz üretimi",
+          "Dış membran porin kaybı ve AmpC aşırı üretimi",
+          "CTX-M tipi ESBL ile sefalosporin hidrolizi"
+        ],
+        "question": "Bu direnç paternini en iyi açıklayan mekanizma aşağıdakilerden hangisidir?",
+        "explanation": "Bu seçenek en uygundur; KPC sınıf A serin karbapenemazdır ve karbapenemler dahil birçok beta-laktamı hidrolize eder. EDTA ile inhibisyon olmaması, boronik asit testinde sinyal alınması ve KPC gen hedefinin pozitifliği metallo-beta-laktamazdan ayrımı destekler.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Karbapenem dirençli Enterobacterales + boronik asit inhibisyonu + EDTA negatifliği + KPC hedef pozitifliği → sınıf A serin karbapenemaz."
+          }
+        ],
+        "optionFeedback": {
+          "KPC tipi sınıf A serin karbapenemaz üretimi": {
+            "explanation": "Bu seçenek en uygundur; KPC sınıf A serin karbapenemazdır ve karbapenemler dahil birçok beta-laktamı hidrolize eder. EDTA ile inhibisyon olmaması, boronik asit testinde sinyal alınması ve KPC gen hedefinin pozitifliği metallo-beta-laktamazdan ayrımı destekler."
+          },
+          "NDM tipi metallo-beta-laktamaz üretimi": {
+            "explanation": "NDM tipi metallo-beta-laktamaz çinko bağımlıdır ve EDTA gibi metal şelatörleriyle fenotipik inhibisyon gösterebilir. Bu vakada EDTA sinyali yokken boronik asit temelli test ve KPC gen hedefi pozitiftir; bu durum NDM yerine serin karbapenemazı düşündürür."
+          },
+          "OXA-48 benzeri sınıf D karbapenemaz üretimi": {
+            "explanation": "OXA-48 benzeri sınıf D karbapenemaz bazı Enterobacterales izolatlarında karbapenem MIC artışı yapabilir ve klasik fenotipik testlerde zor yakalanabilir. Ancak bu olguda boronik asit uyumlu fenotip ve KPC gen hedefi pozitifliği OXA-48 mekanizmasını ikinci plana iter."
+          },
+          "Dış membran porin kaybı ve AmpC aşırı üretimi": {
+            "explanation": "Porin kaybı ve AmpC aşırı üretimi karbapenem direncine katkı sağlayabilir, özellikle Enterobacter cloacae kompleksi gibi bakterilerde önemlidir. Fakat burada karbapenemaz immünokromatografisi ve moleküler hedef pozitifliği enzim üretimini doğrudan desteklediği için tek başına porin-AmpC modeli yeterli değildir."
+          },
+          "CTX-M tipi ESBL ile sefalosporin hidrolizi": {
+            "explanation": "CTX-M tipi ESBL üçüncü kuşak sefalosporin direncini açıklar, ancak karbapenem direncini tek başına beklenen ölçüde açıklamaz. Bu vakada meropenem/ertapenem MIC yüksekliği ve karbapenemaz test pozitifliği ESBL’den daha geniş hidroliz yapan bir mekanizmaya işaret eder."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; KPC sınıf A serin karbapenemazdır ve karbapenemler dahil birçok beta-laktamı hidrolize eder. EDTA ile inhibisyon olmaması, boronik asit testinde sinyal alınması ve KPC gen hedefinin pozitifliği metallo-beta-laktamazdan ayrımı destekler.",
+          "optionFeedback": {
+            "KPC tipi sınıf A serin karbapenemaz üretimi": {
+              "explanation": "Bu seçenek en uygundur; KPC sınıf A serin karbapenemazdır ve karbapenemler dahil birçok beta-laktamı hidrolize eder. EDTA ile inhibisyon olmaması, boronik asit testinde sinyal alınması ve KPC gen hedefinin pozitifliği metallo-beta-laktamazdan ayrımı destekler."
+            },
+            "NDM tipi metallo-beta-laktamaz üretimi": {
+              "explanation": "NDM tipi metallo-beta-laktamaz çinko bağımlıdır ve EDTA gibi metal şelatörleriyle fenotipik inhibisyon gösterebilir. Bu vakada EDTA sinyali yokken boronik asit temelli test ve KPC gen hedefi pozitiftir; bu durum NDM yerine serin karbapenemazı düşündürür."
+            },
+            "OXA-48 benzeri sınıf D karbapenemaz üretimi": {
+              "explanation": "OXA-48 benzeri sınıf D karbapenemaz bazı Enterobacterales izolatlarında karbapenem MIC artışı yapabilir ve klasik fenotipik testlerde zor yakalanabilir. Ancak bu olguda boronik asit uyumlu fenotip ve KPC gen hedefi pozitifliği OXA-48 mekanizmasını ikinci plana iter."
+            },
+            "Dış membran porin kaybı ve AmpC aşırı üretimi": {
+              "explanation": "Porin kaybı ve AmpC aşırı üretimi karbapenem direncine katkı sağlayabilir, özellikle Enterobacter cloacae kompleksi gibi bakterilerde önemlidir. Fakat burada karbapenemaz immünokromatografisi ve moleküler hedef pozitifliği enzim üretimini doğrudan desteklediği için tek başına porin-AmpC modeli yeterli değildir."
+            },
+            "CTX-M tipi ESBL ile sefalosporin hidrolizi": {
+              "explanation": "CTX-M tipi ESBL üçüncü kuşak sefalosporin direncini açıklar, ancak karbapenem direncini tek başına beklenen ölçüde açıklamaz. Bu vakada meropenem/ertapenem MIC yüksekliği ve karbapenemaz test pozitifliği ESBL’den daha geniş hidroliz yapan bir mekanizmaya işaret eder."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "KPC, Ambler sınıf A serin karbapenemazdır ve Enterobacterales içinde hastane ilişkili salgınlar açısından önemlidir. Fenotipik inhibitör paterni ve moleküler hedef sonucu birlikte yorumlandığında NDM gibi metallo-beta-laktamazlardan ayrılır.",
+      "examPearl": "Karbapenem dirençli Enterobacterales + boronik asit inhibisyonu + EDTA negatifliği + KPC hedef pozitifliği → sınıf A serin karbapenemaz.",
+      "whyCorrect": "Bu seçenek en uygundur; KPC sınıf A serin karbapenemazdır ve karbapenemler dahil birçok beta-laktamı hidrolize eder. EDTA ile inhibisyon olmaması, boronik asit testinde sinyal alınması ve KPC gen hedefinin pozitifliği metallo-beta-laktamazdan ayrımı destekler.",
+      "optionComparison": {
+        "KPC tipi sınıf A serin karbapenemaz üretimi": "Bu seçenek en uygundur; KPC sınıf A serin karbapenemazdır ve karbapenemler dahil birçok beta-laktamı hidrolize eder. EDTA ile inhibisyon olmaması, boronik asit testinde sinyal alınması ve KPC gen hedefinin pozitifliği metallo-beta-laktamazdan ayrımı destekler.",
+        "NDM tipi metallo-beta-laktamaz üretimi": "NDM tipi metallo-beta-laktamaz çinko bağımlıdır ve EDTA gibi metal şelatörleriyle fenotipik inhibisyon gösterebilir. Bu vakada EDTA sinyali yokken boronik asit temelli test ve KPC gen hedefi pozitiftir; bu durum NDM yerine serin karbapenemazı düşündürür.",
+        "OXA-48 benzeri sınıf D karbapenemaz üretimi": "OXA-48 benzeri sınıf D karbapenemaz bazı Enterobacterales izolatlarında karbapenem MIC artışı yapabilir ve klasik fenotipik testlerde zor yakalanabilir. Ancak bu olguda boronik asit uyumlu fenotip ve KPC gen hedefi pozitifliği OXA-48 mekanizmasını ikinci plana iter.",
+        "Dış membran porin kaybı ve AmpC aşırı üretimi": "Porin kaybı ve AmpC aşırı üretimi karbapenem direncine katkı sağlayabilir, özellikle Enterobacter cloacae kompleksi gibi bakterilerde önemlidir. Fakat burada karbapenemaz immünokromatografisi ve moleküler hedef pozitifliği enzim üretimini doğrudan desteklediği için tek başına porin-AmpC modeli yeterli değildir.",
+        "CTX-M tipi ESBL ile sefalosporin hidrolizi": "CTX-M tipi ESBL üçüncü kuşak sefalosporin direncini açıklar, ancak karbapenem direncini tek başına beklenen ölçüde açıklamaz. Bu vakada meropenem/ertapenem MIC yüksekliği ve karbapenemaz test pozitifliği ESBL’den daha geniş hidroliz yapan bir mekanizmaya işaret eder."
+      },
+      "evidenceChain": [
+        {
+          "text": "Yoğun bakım ve geniş antibiyotik kullanımı → dirençli hastane izolatı için risk",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Laktoz fermente eden gram negatif çomak → Enterobacterales paternini destekler",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Meropenem/ertapenem MIC yüksekliği → karbapenem direnci",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Boronik asit pozitif, EDTA negatif ve KPC hedef pozitif → sınıf A serin karbapenemaz",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "NDM tipi metallo-beta-laktamaz üretimi": "NDM tipi metallo-beta-laktamaz çinko bağımlıdır ve EDTA gibi metal şelatörleriyle fenotipik inhibisyon gösterebilir. Bu vakada EDTA sinyali yokken boronik asit temelli test ve KPC gen hedefi pozitiftir; bu durum NDM yerine serin karbapenemazı düşündürür.",
+        "OXA-48 benzeri sınıf D karbapenemaz üretimi": "OXA-48 benzeri sınıf D karbapenemaz bazı Enterobacterales izolatlarında karbapenem MIC artışı yapabilir ve klasik fenotipik testlerde zor yakalanabilir. Ancak bu olguda boronik asit uyumlu fenotip ve KPC gen hedefi pozitifliği OXA-48 mekanizmasını ikinci plana iter.",
+        "Dış membran porin kaybı ve AmpC aşırı üretimi": "Porin kaybı ve AmpC aşırı üretimi karbapenem direncine katkı sağlayabilir, özellikle Enterobacter cloacae kompleksi gibi bakterilerde önemlidir. Fakat burada karbapenemaz immünokromatografisi ve moleküler hedef pozitifliği enzim üretimini doğrudan desteklediği için tek başına porin-AmpC modeli yeterli değildir.",
+        "CTX-M tipi ESBL ile sefalosporin hidrolizi": "CTX-M tipi ESBL üçüncü kuşak sefalosporin direncini açıklar, ancak karbapenem direncini tek başına beklenen ölçüde açıklamaz. Bu vakada meropenem/ertapenem MIC yüksekliği ve karbapenemaz test pozitifliği ESBL’den daha geniş hidroliz yapan bir mekanizmaya işaret eder."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v260-medical-microbiology-eleventh-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Yoğun bakım pnömonisi",
+        "Karbapenem dirençli Enterobacterales",
+        "Boronik asit inhibisyonu",
+        "KPC pozitifliği",
+        "EDTA negatifliği"
+      ],
+      "images": []
+    },
+  {
+      "id": "v260-new-499-parotis-sisligi-sonrasi-orkit",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Parotis şişliği sonrası orşit",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Akut parotit ve orşit tablosunda doğru örnek tipi ve test zamanlamasını seçerek viral doğrulama yaklaşımını ayırt etme.",
+      "learningTarget": "Kabakulak şüphesinde bukkal sürüntü real-time RT-PCR testinin erken dönemde tercih edildiğini ve serolojinin sınırlılıklarını açıklayabilme.",
+      "demographics": "19 yaşında erkek hasta",
+      "setting": "Acil servis",
+      "chiefComplaint": "Çene altında şişlik, ateş ve testis ağrısı nedeniyle başvuruyor.",
+      "stem": "Hasta üç gündür halsizlik ve düşük dereceli ateş yaşadığını, dün sağ kulak önünde ağrılı şişlik başladığını anlatır. Bu sabah sol testiste ağrı ve şişlik fark etmiş, yutkunurken ve ekşi gıda tüketirken ağrısı artmıştır. Çocukluk aşılarını tam hatırlamadığını, yurtta aynı hafta içinde benzer yüz şişliği olan iki arkadaşının revire gittiğini söyler. Son günlerde antibiyotik kullanmamış, diş enfeksiyonu veya travma tariflemez.",
+      "patientIntro": {
+        "profile": "19 yaşında erkek hasta, Acil servis ortamında değerlendiriliyor.",
+        "presentation": "Çene altında şişlik, ateş ve testis ağrısı nedeniyle başvuruyor.",
+        "historySummary": "Hasta üç gündür halsizlik ve düşük dereceli ateş yaşadığını, dün sağ kulak önünde ağrılı şişlik başladığını anlatır. Bu sabah sol testiste ağrı ve şişlik fark etmiş, yutkunurken ve ekşi gıda tüketirken ağrısı artmıştır. Çocukluk aşılarını tam hatırlamadığını, yurtta aynı hafta içinde benzer yüz şişliği olan iki arkadaşının revire gittiğini söyler. Son günlerde antibiyotik kullanmamış, diş enfeksiyonu veya travma tariflemez."
+      },
+      "vitals": {
+        "TA": "118/74 mmHg",
+        "Nabız": "96/dk",
+        "Solunum": "17/dk",
+        "SpO2": "99%, oda havasında",
+        "Ateş": "38.2 °C",
+        "Şok indeksi": "0.81 - stabil"
+      },
+      "exam": [
+        "Sağ parotis bölgesi şiş ve palpasyonla hassastır; ağız içinde pürülan kanal akıntısı görülmez.",
+        "Sol testiste hassasiyet ve hafif şişlik vardır, skrotal ciltte nekroz yoktur.",
+        "Orofarenkste belirgin eksüdatif tonsillit izlenmez.",
+        "Ense sertliği yoktur, bilinç açık ve koopere izlenir."
+      ],
+      "investigations": [
+        {
+          "id": "v260-new-499-parotis-sisligi-sonrasi-orkit-viral-parotit-lab",
+          "label": "Parotit örneklemesi ve virolojik testler",
+          "title": "Parotit örneklemesi ve virolojik testler",
+          "orderLabel": "Parotit örneklemesi ve virolojik testler",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Bukkal sürüntü RT-PCR ve seroloji",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Erken parotit döneminde doğru örnek tipi ve nükleik asit testi akut viral doğrulama için en yüksek değeri taşır.",
+          "clinicalMeaning": "Erken parotit döneminde doğru örnek tipi ve nükleik asit testi akut viral doğrulama için en yüksek değeri taşır.",
+          "result": {
+            "title": "Parotit örneklemesi ve virolojik testler",
+            "summary": "Erken parotit döneminde doğru örnek tipi ve nükleik asit testi akut viral doğrulama için en yüksek değeri taşır.",
+            "interpretation": "Erken parotit döneminde doğru örnek tipi ve nükleik asit testi akut viral doğrulama için en yüksek değeri taşır.",
+            "values": [
+              [
+                "Örnek zamanı",
+                "Parotis şişliği başlangıcından yaklaşık 24 saat sonra",
+                "Geç dönem",
+                "Erken örnek avantajı"
+              ],
+              [
+                "Örnek tipi",
+                "Parotis kanalı masajı sonrası bukkal sürüntü",
+                "Kan kültürü",
+                "Viral RNA için uygun örnek"
+              ],
+              [
+                "Real-time RT-PCR",
+                "Pozitif viral RNA sinyali",
+                "Negatif",
+                "Akut enfeksiyon doğrulaması"
+              ],
+              [
+                "Seroloji",
+                "IgM sınırda; IgG pozitif",
+                "IgM güçlü pozitif",
+                "Aşı/önceki temasla değişebilir"
+              ],
+              [
+                "Kan biyokimyası",
+                "Serum amilaz hafif yüksek",
+                "Normal",
+                "Parotis tutulumu desteği"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu tabloda beklenen en uygun mikrobiyolojik doğrulama testi hangisidir?",
+      "questionType": "diagnostic-test",
+      "answerTarget": "Tanı testi",
+      "diagnosis": {
+        "correct": "Parotis başlangıcından hemen sonra bukkal sürüntüde real-time RT-PCR",
+        "options": [
+          "Serumda tek başına heterofil antikor testi",
+          "Boğaz kültüründe beta hemolitik koloni aranması",
+          "Tükürükte bakteri antijen hızlı testi",
+          "Serumda yalnızca total IgG düzeyi ölçümü",
+          "Parotis başlangıcından hemen sonra bukkal sürüntüde real-time RT-PCR"
+        ],
+        "question": "Bu tabloda beklenen en uygun mikrobiyolojik doğrulama testi hangisidir?",
+        "explanation": "Bu seçenek en uygundur; parotit başlangıcından hemen sonra alınan bukkal sürüntüde real-time RT-PCR akut enfeksiyonu doğrulamada tercih edilen yöntemdir. Örnek erken ve doğru teknikle alınırsa serolojiye göre daha duyarlı ve özgül bir doğrulama sağlar.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Parotit + orşit + yurt salgını + erken dönem bukkal sürüntü → real-time RT-PCR ile viral doğrulama."
+          }
+        ],
+        "optionFeedback": {
+          "Serumda tek başına heterofil antikor testi": {
+            "explanation": "Heterofil antikor testi EBV ilişkili enfeksiyöz mononükleozda kullanılabilir ve parotitli viral tabloyu doğrulamak için uygun bir temel test değildir. Bu hastada parotis şişliği ve orşit birlikteliği, erken dönemde solunum-tükürük kaynaklı viral RNA gösterimini daha değerli hale getirir."
+          },
+          "Boğaz kültüründe beta hemolitik koloni aranması": {
+            "explanation": "Boğaz kültüründe beta hemolitik koloni aranması streptokokal farenjit için anlamlıdır. Parotis bezi şişliği, amilaz yüksekliği ve orşit bulguları bakteriyel tonsillit kültüründen çok viral parotit doğrulamasına yönlendirir."
+          },
+          "Tükürükte bakteri antijen hızlı testi": {
+            "explanation": "Tükürükte bakteri antijen hızlı testi akut bakteriyel parotit veya streptokok benzeri tablolar için bile standart ayırıcı yaklaşım değildir. Vaka viral parotit ve komplikasyon paterni taşır; tanısal başarı örnek zamanlaması iyi olan nükleik asit testine bağlıdır."
+          },
+          "Serumda yalnızca total IgG düzeyi ölçümü": {
+            "explanation": "Tek başına total IgG düzeyi geçirilmiş enfeksiyon veya aşı yanıtını gösterebilir, fakat akut hastalığı güvenilir biçimde doğrulamaz. Özellikle aşılı veya kısmen bağışık kişilerde IgM yanıtı zayıf olabileceğinden erken dönemde PCR daha uygundur."
+          },
+          "Parotis başlangıcından hemen sonra bukkal sürüntüde real-time RT-PCR": {
+            "explanation": "Bu seçenek en uygundur; parotit başlangıcından hemen sonra alınan bukkal sürüntüde real-time RT-PCR akut enfeksiyonu doğrulamada tercih edilen yöntemdir. Örnek erken ve doğru teknikle alınırsa serolojiye göre daha duyarlı ve özgül bir doğrulama sağlar."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; parotit başlangıcından hemen sonra alınan bukkal sürüntüde real-time RT-PCR akut enfeksiyonu doğrulamada tercih edilen yöntemdir. Örnek erken ve doğru teknikle alınırsa serolojiye göre daha duyarlı ve özgül bir doğrulama sağlar.",
+          "optionFeedback": {
+            "Serumda tek başına heterofil antikor testi": {
+              "explanation": "Heterofil antikor testi EBV ilişkili enfeksiyöz mononükleozda kullanılabilir ve parotitli viral tabloyu doğrulamak için uygun bir temel test değildir. Bu hastada parotis şişliği ve orşit birlikteliği, erken dönemde solunum-tükürük kaynaklı viral RNA gösterimini daha değerli hale getirir."
+            },
+            "Boğaz kültüründe beta hemolitik koloni aranması": {
+              "explanation": "Boğaz kültüründe beta hemolitik koloni aranması streptokokal farenjit için anlamlıdır. Parotis bezi şişliği, amilaz yüksekliği ve orşit bulguları bakteriyel tonsillit kültüründen çok viral parotit doğrulamasına yönlendirir."
+            },
+            "Tükürükte bakteri antijen hızlı testi": {
+              "explanation": "Tükürükte bakteri antijen hızlı testi akut bakteriyel parotit veya streptokok benzeri tablolar için bile standart ayırıcı yaklaşım değildir. Vaka viral parotit ve komplikasyon paterni taşır; tanısal başarı örnek zamanlaması iyi olan nükleik asit testine bağlıdır."
+            },
+            "Serumda yalnızca total IgG düzeyi ölçümü": {
+              "explanation": "Tek başına total IgG düzeyi geçirilmiş enfeksiyon veya aşı yanıtını gösterebilir, fakat akut hastalığı güvenilir biçimde doğrulamaz. Özellikle aşılı veya kısmen bağışık kişilerde IgM yanıtı zayıf olabileceğinden erken dönemde PCR daha uygundur."
+            },
+            "Parotis başlangıcından hemen sonra bukkal sürüntüde real-time RT-PCR": {
+              "explanation": "Bu seçenek en uygundur; parotit başlangıcından hemen sonra alınan bukkal sürüntüde real-time RT-PCR akut enfeksiyonu doğrulamada tercih edilen yöntemdir. Örnek erken ve doğru teknikle alınırsa serolojiye göre daha duyarlı ve özgül bir doğrulama sağlar."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Kabakulak şüphesinde en değerli örnek, parotit başlangıcından hemen sonra alınan bukkal sürüntüdür. Real-time RT-PCR, özellikle erken dönemde ve aşılı kişilerde serolojik belirsizlik varken tanısal üstünlük sağlar.",
+      "examPearl": "Parotit + orşit + yurt salgını + erken dönem bukkal sürüntü → real-time RT-PCR ile viral doğrulama.",
+      "whyCorrect": "Bu seçenek en uygundur; parotit başlangıcından hemen sonra alınan bukkal sürüntüde real-time RT-PCR akut enfeksiyonu doğrulamada tercih edilen yöntemdir. Örnek erken ve doğru teknikle alınırsa serolojiye göre daha duyarlı ve özgül bir doğrulama sağlar.",
+      "optionComparison": {
+        "Serumda tek başına heterofil antikor testi": "Heterofil antikor testi EBV ilişkili enfeksiyöz mononükleozda kullanılabilir ve parotitli viral tabloyu doğrulamak için uygun bir temel test değildir. Bu hastada parotis şişliği ve orşit birlikteliği, erken dönemde solunum-tükürük kaynaklı viral RNA gösterimini daha değerli hale getirir.",
+        "Boğaz kültüründe beta hemolitik koloni aranması": "Boğaz kültüründe beta hemolitik koloni aranması streptokokal farenjit için anlamlıdır. Parotis bezi şişliği, amilaz yüksekliği ve orşit bulguları bakteriyel tonsillit kültüründen çok viral parotit doğrulamasına yönlendirir.",
+        "Tükürükte bakteri antijen hızlı testi": "Tükürükte bakteri antijen hızlı testi akut bakteriyel parotit veya streptokok benzeri tablolar için bile standart ayırıcı yaklaşım değildir. Vaka viral parotit ve komplikasyon paterni taşır; tanısal başarı örnek zamanlaması iyi olan nükleik asit testine bağlıdır.",
+        "Serumda yalnızca total IgG düzeyi ölçümü": "Tek başına total IgG düzeyi geçirilmiş enfeksiyon veya aşı yanıtını gösterebilir, fakat akut hastalığı güvenilir biçimde doğrulamaz. Özellikle aşılı veya kısmen bağışık kişilerde IgM yanıtı zayıf olabileceğinden erken dönemde PCR daha uygundur.",
+        "Parotis başlangıcından hemen sonra bukkal sürüntüde real-time RT-PCR": "Bu seçenek en uygundur; parotit başlangıcından hemen sonra alınan bukkal sürüntüde real-time RT-PCR akut enfeksiyonu doğrulamada tercih edilen yöntemdir. Örnek erken ve doğru teknikle alınırsa serolojiye göre daha duyarlı ve özgül bir doğrulama sağlar."
+      },
+      "evidenceChain": [
+        {
+          "text": "Parotis şişliği ve orşit → kabakulak benzeri klinik sendrom",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Yurt ortamında benzer olgular → damlacık/tükürük ilişkili yayılım",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Parotit başlangıcından 24 saat sonra başvuru → PCR için uygun zamanlama",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Bukkal sürüntü RT-PCR pozitifliği → akut viral doğrulama",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Serumda tek başına heterofil antikor testi": "Heterofil antikor testi EBV ilişkili enfeksiyöz mononükleozda kullanılabilir ve parotitli viral tabloyu doğrulamak için uygun bir temel test değildir. Bu hastada parotis şişliği ve orşit birlikteliği, erken dönemde solunum-tükürük kaynaklı viral RNA gösterimini daha değerli hale getirir.",
+        "Boğaz kültüründe beta hemolitik koloni aranması": "Boğaz kültüründe beta hemolitik koloni aranması streptokokal farenjit için anlamlıdır. Parotis bezi şişliği, amilaz yüksekliği ve orşit bulguları bakteriyel tonsillit kültüründen çok viral parotit doğrulamasına yönlendirir.",
+        "Tükürükte bakteri antijen hızlı testi": "Tükürükte bakteri antijen hızlı testi akut bakteriyel parotit veya streptokok benzeri tablolar için bile standart ayırıcı yaklaşım değildir. Vaka viral parotit ve komplikasyon paterni taşır; tanısal başarı örnek zamanlaması iyi olan nükleik asit testine bağlıdır.",
+        "Serumda yalnızca total IgG düzeyi ölçümü": "Tek başına total IgG düzeyi geçirilmiş enfeksiyon veya aşı yanıtını gösterebilir, fakat akut hastalığı güvenilir biçimde doğrulamaz. Özellikle aşılı veya kısmen bağışık kişilerde IgM yanıtı zayıf olabileceğinden erken dönemde PCR daha uygundur."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v260-medical-microbiology-eleventh-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Parotis şişliği",
+        "Orşit",
+        "Yurt salgını",
+        "Bukkal sürüntü",
+        "RT-PCR"
+      ],
+      "images": []
+    },
+  {
+      "id": "v260-new-500-yogun-bakimda-tekrarlayan-maya-pozitifligi",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Yoğun bakımda tekrarlayan maya pozitifliği",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Yoğun bakım ilişkili maya üremesinde yanlış tür tanımlama riskini, antifungal direnç ve enfeksiyon kontrolü bağlamında doğru laboratuvar doğrulamasıyla ilişkilendirme.",
+      "learningTarget": "Candida auris şüphesinde fenotipik sistemlerin sınırlılıklarını ve MALDI-TOF MS/PCR doğrulamasının klinik önemini açıklayabilme.",
+      "demographics": "72 yaşında erkek hasta",
+      "setting": "Yoğun bakım ünitesi",
+      "chiefComplaint": "Santral kateterli hastada tekrarlayan ateş ve kan kültüründe maya üremesi nedeniyle değerlendiriliyor.",
+      "stem": "Hasta iki haftadır yoğun bakımda, santral venöz kateter ve idrar sondası ile izlenmektedir. Geniş spektrumlu antibiyotik kullanımı sonrası ateş atakları sürmüş, iki ayrı kan kültür şişesinde maya üremesi bildirilmiştir. Serviste aynı hafta içinde farklı yataklarda maya pozitif kültürleri olan iki hasta daha olduğu öğrenilir. Hastanın daha önce başka bir yoğun bakım merkezinden devredildiği ve uzun süre mekanik ventilasyon aldığı kaydedilir.",
+      "patientIntro": {
+        "profile": "72 yaşında erkek hasta, Yoğun bakım ünitesi ortamında değerlendiriliyor.",
+        "presentation": "Santral kateterli hastada tekrarlayan ateş ve kan kültüründe maya üremesi nedeniyle değerlendiriliyor.",
+        "historySummary": "Hasta iki haftadır yoğun bakımda, santral venöz kateter ve idrar sondası ile izlenmektedir. Geniş spektrumlu antibiyotik kullanımı sonrası ateş atakları sürmüş, iki ayrı kan kültür şişesinde maya üremesi bildirilmiştir. Serviste aynı hafta içinde farklı yataklarda maya pozitif kültürleri olan iki hasta daha olduğu öğrenilir. Hastanın daha önce başka bir yoğun bakım merkezinden devredildiği ve uzun süre mekanik ventilasyon aldığı kaydedilir."
+      },
+      "vitals": {
+        "TA": "102/64 mmHg",
+        "Nabız": "110/dk",
+        "Solunum": "22/dk",
+        "SpO2": "94%, nazal oksijenle",
+        "Ateş": "38.4 °C",
+        "Şok indeksi": "1.08 - yakın izlem"
+      },
+      "exam": [
+        "Santral kateter giriş yerinde minimal eritem vardır, belirgin pürülan akıntı izlenmez.",
+        "Akciğer oskültasyonunda bilateral kaba solunum sesleri duyulur.",
+        "Deri kıvrımlarında maserasyon vardır; yaygın vezikül veya siyah nekrotik lezyon yoktur.",
+        "Bilinç dalgalı, ense sertliği yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v260-new-500-yogun-bakimda-tekrarlayan-maya-pozitifligi-kan-kulturu-maya-tanimlama",
+          "label": "Kan kültürü maya tanımlama ve duyarlılık",
+          "title": "Kan kültürü maya tanımlama ve duyarlılık",
+          "orderLabel": "Kan kültürü maya tanımlama ve duyarlılık",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Kan kültürü, fenotipik tanımlama, MALDI-TOF/PCR ve antifungal duyarlılık",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Kan kültüründe maya üremesinde tür düzeyinde doğru tanımlama ve direnç paterni salgın yönetimi için kritiktir.",
+          "clinicalMeaning": "Kan kültüründe maya üremesinde tür düzeyinde doğru tanımlama ve direnç paterni salgın yönetimi için kritiktir.",
+          "result": {
+            "title": "Kan kültürü maya tanımlama ve duyarlılık",
+            "summary": "Kan kültüründe maya üremesinde tür düzeyinde doğru tanımlama ve direnç paterni salgın yönetimi için kritiktir.",
+            "interpretation": "Kan kültüründe maya üremesinde tür düzeyinde doğru tanımlama ve direnç paterni salgın yönetimi için kritiktir.",
+            "values": [
+              [
+                "Örnek tipi",
+                "İki ayrı periferik kan kültürü ve kateterden eş zamanlı kültür",
+                "Tek kontamine örnek",
+                "Kandidemi değerlendirmesi"
+              ],
+              [
+                "Mikroskopi",
+                "Tomurcuklanan maya hücreleri; belirgin kapsül görülmedi",
+                "Bakteri baskın",
+                "Maya fungemisi"
+              ],
+              [
+                "Konvansiyonel tanımlama",
+                "Sistem farklı çalışmalarda farklı non-albicans Candida adı önerdi",
+                "Tutarlı tür adı",
+                "Yanlış tanımlama riski"
+              ],
+              [
+                "Germ tüp",
+                "Negatif",
+                "Pozitif",
+                "Albicans dışı maya lehine"
+              ],
+              [
+                "Duyarlılık",
+                "Flukonazol MIC yüksek; ekinokandin MIC sınırda izlem gerektiriyor",
+                "Tam duyarlı",
+                "Direnç yönetimi önemli"
+              ],
+              [
+                "Doğrulama",
+                "Güncel veri tabanlı MALDI-TOF MS ve tür-spesifik PCR aynı türü doğruladı",
+                "Doğrulama yapılmadı",
+                "Kesin tür tanımlama"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu mikrobiyolojik laboratuvar bulgusunu en güvenilir şekilde doğrulayacak yaklaşım hangisidir?",
+      "questionType": "diagnostic-test",
+      "answerTarget": "Mikolojik tanımlama testi",
+      "diagnosis": {
+        "correct": "Güncel veri tabanlı MALDI-TOF MS veya tür-spesifik PCR ile doğrulama",
+        "options": [
+          "Germ tüp testiyle tanımlama",
+          "Güncel veri tabanlı MALDI-TOF MS veya tür-spesifik PCR ile doğrulama",
+          "Lateks aglütinasyonla kapsül antijeni arama",
+          "KOH preparatında spaghetti-meatball görünümü arama",
+          "Sadece kromojenik agardaki renge göre raporlama"
+        ],
+        "question": "Bu mikrobiyolojik laboratuvar bulgusunu en güvenilir şekilde doğrulayacak yaklaşım hangisidir?",
+        "explanation": "Bu seçenek en uygundur; C. auris fenotipik sistemlerde farklı Candida türleriyle karışabilir ve güvenilir tanımlama için güncel veri tabanlı MALDI-TOF MS veya tür-spesifik PCR gerekir. Yoğun bakımda tekrarlayan maya pozitifliği, çoklu azol yüksek MIC ve çevresel yayılım riski bu doğrulamanın önemini artırır.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Yoğun bakım kandidemisi + konvansiyonel sistemde tutarsız tür adı + azol yüksek MIC + salgın şüphesi → MALDI-TOF MS/PCR doğrulaması."
+          }
+        ],
+        "optionFeedback": {
+          "Germ tüp testiyle tanımlama": {
+            "explanation": "Germ tüp testi Candida albicans/dubliniensis ayrımında klasik hızlı testlerden biridir. Bu vakada germ tüp negatifliği ve konvansiyonel sistemde tutarsız tanımlama, germ tüp testinin salgın yönetimi için yeterli olmadığını gösterir."
+          },
+          "Güncel veri tabanlı MALDI-TOF MS veya tür-spesifik PCR ile doğrulama": {
+            "explanation": "Bu seçenek en uygundur; C. auris fenotipik sistemlerde farklı Candida türleriyle karışabilir ve güvenilir tanımlama için güncel veri tabanlı MALDI-TOF MS veya tür-spesifik PCR gerekir. Yoğun bakımda tekrarlayan maya pozitifliği, çoklu azol yüksek MIC ve çevresel yayılım riski bu doğrulamanın önemini artırır."
+          },
+          "Lateks aglütinasyonla kapsül antijeni arama": {
+            "explanation": "Lateks aglütinasyonla kapsül antijeni arama kriptokok menenjiti veya dissemine kriptokokkoz bağlamında değerlidir. Bu hastada kan kültüründe maya üremesi ve kateter/yoğun bakım ilişkili yayılım söz konusudur; kapsüllü maya antijeni sorunun merkezinde değildir."
+          },
+          "KOH preparatında spaghetti-meatball görünümü arama": {
+            "explanation": "KOH preparatında spaghetti-meatball görünümü Malassezia kaynaklı tinea versicolor için beklenen yüzeyel deri bulgusudur. Kan kültürü pozitifliği ve yoğun bakım salgın şüphesi, yüzeyel lipofilik maya morfolojisinden tamamen farklı bir tanı algoritması gerektirir."
+          },
+          "Sadece kromojenik agardaki renge göre raporlama": {
+            "explanation": "Kromojenik agardaki renk bazı Candida türleri için ipucu verebilir, ancak tek başına güvenilir tür doğrulaması sağlamaz. Bu vakada yanlış tanımlama riski yüksek olduğundan, yalnız renk paternine dayanmak enfeksiyon kontrolünü ve antifungal seçimini hatalı yönlendirebilir."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; C. auris fenotipik sistemlerde farklı Candida türleriyle karışabilir ve güvenilir tanımlama için güncel veri tabanlı MALDI-TOF MS veya tür-spesifik PCR gerekir. Yoğun bakımda tekrarlayan maya pozitifliği, çoklu azol yüksek MIC ve çevresel yayılım riski bu doğrulamanın önemini artırır.",
+          "optionFeedback": {
+            "Germ tüp testiyle tanımlama": {
+              "explanation": "Germ tüp testi Candida albicans/dubliniensis ayrımında klasik hızlı testlerden biridir. Bu vakada germ tüp negatifliği ve konvansiyonel sistemde tutarsız tanımlama, germ tüp testinin salgın yönetimi için yeterli olmadığını gösterir."
+            },
+            "Güncel veri tabanlı MALDI-TOF MS veya tür-spesifik PCR ile doğrulama": {
+              "explanation": "Bu seçenek en uygundur; C. auris fenotipik sistemlerde farklı Candida türleriyle karışabilir ve güvenilir tanımlama için güncel veri tabanlı MALDI-TOF MS veya tür-spesifik PCR gerekir. Yoğun bakımda tekrarlayan maya pozitifliği, çoklu azol yüksek MIC ve çevresel yayılım riski bu doğrulamanın önemini artırır."
+            },
+            "Lateks aglütinasyonla kapsül antijeni arama": {
+              "explanation": "Lateks aglütinasyonla kapsül antijeni arama kriptokok menenjiti veya dissemine kriptokokkoz bağlamında değerlidir. Bu hastada kan kültüründe maya üremesi ve kateter/yoğun bakım ilişkili yayılım söz konusudur; kapsüllü maya antijeni sorunun merkezinde değildir."
+            },
+            "KOH preparatında spaghetti-meatball görünümü arama": {
+              "explanation": "KOH preparatında spaghetti-meatball görünümü Malassezia kaynaklı tinea versicolor için beklenen yüzeyel deri bulgusudur. Kan kültürü pozitifliği ve yoğun bakım salgın şüphesi, yüzeyel lipofilik maya morfolojisinden tamamen farklı bir tanı algoritması gerektirir."
+            },
+            "Sadece kromojenik agardaki renge göre raporlama": {
+              "explanation": "Kromojenik agardaki renk bazı Candida türleri için ipucu verebilir, ancak tek başına güvenilir tür doğrulaması sağlamaz. Bu vakada yanlış tanımlama riski yüksek olduğundan, yalnız renk paternine dayanmak enfeksiyon kontrolünü ve antifungal seçimini hatalı yönlendirebilir."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Candida auris fenotipik tanımlama sistemlerinde başka non-albicans Candida türleriyle karışabilir; bu nedenle güncel veri tabanlı MALDI-TOF MS veya tür-spesifik PCR ile doğrulama gerekir. Doğru tanımlama hem antifungal duyarlılık hem de temas izolasyonu/çevresel temizlik açısından önemlidir.",
+      "examPearl": "Yoğun bakım kandidemisi + konvansiyonel sistemde tutarsız tür adı + azol yüksek MIC + salgın şüphesi → MALDI-TOF MS/PCR doğrulaması.",
+      "whyCorrect": "Bu seçenek en uygundur; C. auris fenotipik sistemlerde farklı Candida türleriyle karışabilir ve güvenilir tanımlama için güncel veri tabanlı MALDI-TOF MS veya tür-spesifik PCR gerekir. Yoğun bakımda tekrarlayan maya pozitifliği, çoklu azol yüksek MIC ve çevresel yayılım riski bu doğrulamanın önemini artırır.",
+      "optionComparison": {
+        "Germ tüp testiyle tanımlama": "Germ tüp testi Candida albicans/dubliniensis ayrımında klasik hızlı testlerden biridir. Bu vakada germ tüp negatifliği ve konvansiyonel sistemde tutarsız tanımlama, germ tüp testinin salgın yönetimi için yeterli olmadığını gösterir.",
+        "Güncel veri tabanlı MALDI-TOF MS veya tür-spesifik PCR ile doğrulama": "Bu seçenek en uygundur; C. auris fenotipik sistemlerde farklı Candida türleriyle karışabilir ve güvenilir tanımlama için güncel veri tabanlı MALDI-TOF MS veya tür-spesifik PCR gerekir. Yoğun bakımda tekrarlayan maya pozitifliği, çoklu azol yüksek MIC ve çevresel yayılım riski bu doğrulamanın önemini artırır.",
+        "Lateks aglütinasyonla kapsül antijeni arama": "Lateks aglütinasyonla kapsül antijeni arama kriptokok menenjiti veya dissemine kriptokokkoz bağlamında değerlidir. Bu hastada kan kültüründe maya üremesi ve kateter/yoğun bakım ilişkili yayılım söz konusudur; kapsüllü maya antijeni sorunun merkezinde değildir.",
+        "KOH preparatında spaghetti-meatball görünümü arama": "KOH preparatında spaghetti-meatball görünümü Malassezia kaynaklı tinea versicolor için beklenen yüzeyel deri bulgusudur. Kan kültürü pozitifliği ve yoğun bakım salgın şüphesi, yüzeyel lipofilik maya morfolojisinden tamamen farklı bir tanı algoritması gerektirir.",
+        "Sadece kromojenik agardaki renge göre raporlama": "Kromojenik agardaki renk bazı Candida türleri için ipucu verebilir, ancak tek başına güvenilir tür doğrulaması sağlamaz. Bu vakada yanlış tanımlama riski yüksek olduğundan, yalnız renk paternine dayanmak enfeksiyon kontrolünü ve antifungal seçimini hatalı yönlendirebilir."
+      },
+      "evidenceChain": [
+        {
+          "text": "Yoğun bakım ve invaziv cihazlar → sağlık bakımı ilişkili maya enfeksiyonu riski",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "İki ayrı kültürde maya üremesi → kontaminasyondan çok kandidemi olasılığı",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Konvansiyonel sistemde tutarsız tür adı → yanlış tanımlama riski",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Flukonazol yüksek MIC ve servis içi kümelenme → tür düzeyinde kesin doğrulama ihtiyacı",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Germ tüp testiyle tanımlama": "Germ tüp testi Candida albicans/dubliniensis ayrımında klasik hızlı testlerden biridir. Bu vakada germ tüp negatifliği ve konvansiyonel sistemde tutarsız tanımlama, germ tüp testinin salgın yönetimi için yeterli olmadığını gösterir.",
+        "Lateks aglütinasyonla kapsül antijeni arama": "Lateks aglütinasyonla kapsül antijeni arama kriptokok menenjiti veya dissemine kriptokokkoz bağlamında değerlidir. Bu hastada kan kültüründe maya üremesi ve kateter/yoğun bakım ilişkili yayılım söz konusudur; kapsüllü maya antijeni sorunun merkezinde değildir.",
+        "KOH preparatında spaghetti-meatball görünümü arama": "KOH preparatında spaghetti-meatball görünümü Malassezia kaynaklı tinea versicolor için beklenen yüzeyel deri bulgusudur. Kan kültürü pozitifliği ve yoğun bakım salgın şüphesi, yüzeyel lipofilik maya morfolojisinden tamamen farklı bir tanı algoritması gerektirir.",
+        "Sadece kromojenik agardaki renge göre raporlama": "Kromojenik agardaki renk bazı Candida türleri için ipucu verebilir, ancak tek başına güvenilir tür doğrulaması sağlamaz. Bu vakada yanlış tanımlama riski yüksek olduğundan, yalnız renk paternine dayanmak enfeksiyon kontrolünü ve antifungal seçimini hatalı yönlendirebilir."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v260-medical-microbiology-eleventh-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Yoğun bakım kandidemisi",
+        "Non-albicans maya",
+        "Yanlış tanımlama riski",
+        "Flukonazol yüksek MIC",
+        "MALDI-TOF/PCR"
+      ],
+      "images": []
+    },
+  {
+      "id": "v260-new-501-ciplak-ayak-temasi-sonrasi-demir-eksikligi",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Çıplak ayak teması sonrası demir eksikliği",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Toprakla temas öyküsü, kronik mikrositik anemi ve dışkı yumurta morfolojisinden helmint etkenini ayırt etme.",
+      "learningTarget": "Hookworm enfeksiyonunda deriden giren larva, ince bağırsakta kan kaybı ve dışkıda tipik yumurta saptanması arasındaki ilişkiyi açıklayabilme.",
+      "demographics": "11 yaşında erkek çocuk",
+      "setting": "Çocuk enfeksiyon polikliniği",
+      "chiefComplaint": "Halsizlik, solukluk ve okul performansında düşme nedeniyle getiriliyor.",
+      "stem": "Çocuk ailesiyle birlikte yaz aylarında kırsalda kalmış, gün içinde çoğunlukla çıplak ayakla tarla kenarında oynadığını anlatmıştır. Son iki aydır çabuk yorulma, iştahsızlık ve baş dönmesi fark edilmiş; annesi yüzünün giderek solduğunu söylemektedir. Karın ağrısı hafif ve aralıklıdır, belirgin kanlı ishal tariflenmez. Ailede benzer yakınması olan yoktur ve çocuk son dönemde düzenli demir tedavisi almamıştır.",
+      "patientIntro": {
+        "profile": "11 yaşında erkek çocuk, Çocuk enfeksiyon polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Halsizlik, solukluk ve okul performansında düşme nedeniyle getiriliyor.",
+        "historySummary": "Çocuk ailesiyle birlikte yaz aylarında kırsalda kalmış, gün içinde çoğunlukla çıplak ayakla tarla kenarında oynadığını anlatmıştır. Son iki aydır çabuk yorulma, iştahsızlık ve baş dönmesi fark edilmiş; annesi yüzünün giderek solduğunu söylemektedir. Karın ağrısı hafif ve aralıklıdır, belirgin kanlı ishal tariflenmez. Ailede benzer yakınması olan yoktur ve çocuk son dönemde düzenli demir tedavisi almamıştır."
+      },
+      "vitals": {
+        "TA": "104/66 mmHg",
+        "Nabız": "102/dk",
+        "Solunum": "18/dk",
+        "SpO2": "99%, oda havasında",
+        "Ateş": "36.8 °C",
+        "Şok indeksi": "0.98 - izlem"
+      },
+      "exam": [
+        "Genel görünüm soluk, bilinç açık ve koopere.",
+        "Konjonktival solukluk belirgin, ikter yok.",
+        "Karın yumuşak, hafif yaygın hassasiyet var; hepatosplenomegali saptanmaz.",
+        "Ayak tabanlarında eski kaşıntılı papüler izler ve ekskoriasyonlar görülür."
+      ],
+      "investigations": [
+        {
+          "id": "v260-new-501-ciplak-ayak-temasi-sonrasi-demir-eksikligi-diski-parazitoloji-kan-sayimi",
+          "label": "Dışkı parazitolojisi ve hematolojik değerlendirme",
+          "title": "Dışkı parazitolojisi ve hematolojik değerlendirme",
+          "orderLabel": "Dışkı parazitolojisi ve hematolojik değerlendirme",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Dışkı mikroskopisi, tam kan sayımı ve demir çalışmaları",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Dışkı yumurta morfolojisi ile demir eksikliği bulguları parazitin yaşam döngüsünü klinikle ilişkilendirir.",
+          "clinicalMeaning": "Dışkı yumurta morfolojisi ile demir eksikliği bulguları parazitin yaşam döngüsünü klinikle ilişkilendirir.",
+          "result": {
+            "title": "Dışkı parazitolojisi ve hematolojik değerlendirme",
+            "summary": "Dışkı yumurta morfolojisi ile demir eksikliği bulguları parazitin yaşam döngüsünü klinikle ilişkilendirir.",
+            "interpretation": "Dışkı yumurta morfolojisi ile demir eksikliği bulguları parazitin yaşam döngüsünü klinikle ilişkilendirir.",
+            "values": [
+              [
+                "Tam kan sayımı",
+                "Hb 8.9 g/dL, MCV 68 fL",
+                "Hb normal",
+                "Mikrositik anemi"
+              ],
+              [
+                "Demir çalışmaları",
+                "Ferritin düşük, transferrin satürasyonu düşük",
+                "Demir normal",
+                "Demir eksikliği"
+              ],
+              [
+                "Eozinofil",
+                "%9 eozinofili",
+                "Normal",
+                "Helmint yanıtı"
+              ],
+              [
+                "Dışkı gizli kan",
+                "Pozitif",
+                "Negatif",
+                "Bağırsak kan kaybı desteği"
+              ],
+              [
+                "Dışkı mikroskopisi",
+                "İnce kabuklu, oval, segmentasyon gösteren yumurtalar",
+                "Yumurta yok",
+                "Hookworm tipi yumurta"
+              ],
+              [
+                "Bant testi",
+                "Negatif",
+                "Pozitif",
+                "Perianal yumurta paterni yok"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu mikrobiyolojik/parazitolojik bulgu hangi etkenle en uyumludur?",
+      "questionType": "etiologic-agent",
+      "answerTarget": "Paraziter etken",
+      "diagnosis": {
+        "correct": "Ancylostoma duodenale / Necator americanus",
+        "options": [
+          "Enterobius vermicularis",
+          "Trichuris trichiura",
+          "Ascaris lumbricoides",
+          "Ancylostoma duodenale / Necator americanus",
+          "Taenia saginata"
+        ],
+        "question": "Bu mikrobiyolojik/parazitolojik bulgu hangi etkenle en uyumludur?",
+        "explanation": "Bu seçenek en uygundur; hookworm larvaları kontamine topraktan deriden girer, erişkinler ince bağırsak mukozasına tutunup kan kaybına yol açar. Çıplak ayakla tarla teması, demir eksikliği, eozinofili ve dışkıda ince kabuklu segmentasyon gösteren oval yumurtalar bu tanıyı destekler.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Çıplak ayakla toprak teması + mikrositik demir eksikliği + eozinofili + dışkıda ince kabuklu oval yumurta → hookworm."
+          }
+        ],
+        "optionFeedback": {
+          "Enterobius vermicularis": {
+            "explanation": "Enterobius vermicularis özellikle gece perianal kaşıntı yapar ve tanıda sabah selofan bant testi kullanılır. Bu vakada perianal kaşıntı değil kronik demir eksikliği, kırsal çıplak ayak teması ve dışkıda ince kabuklu oval yumurtalar ön plandadır."
+          },
+          "Trichuris trichiura": {
+            "explanation": "Trichuris trichiura kamçı kurdu enfeksiyonunda fıçı şekilli, iki uçta tıkaçlı yumurtalar görülür ve ağır enfeksiyonda dizanteri/prolapsus olabilir. Bu olguda yumurta morfolojisi kutup tıkaçlı değildir; demir kaybı ve toprakla çıplak ayak teması hookworm döngüsünü daha iyi açıklar."
+          },
+          "Ascaris lumbricoides": {
+            "explanation": "Ascaris lumbricoides dışkıda kalın kabuklu mamillalı yumurtalar ve bazen intestinal obstrüksiyon ya da pulmoner göç bulgularıyla gündeme gelir. Kronik kan kaybına bağlı belirgin demir eksikliği ve larvanın deriden girişi Ascaris için temel patern değildir."
+          },
+          "Ancylostoma duodenale / Necator americanus": {
+            "explanation": "Bu seçenek en uygundur; hookworm larvaları kontamine topraktan deriden girer, erişkinler ince bağırsak mukozasına tutunup kan kaybına yol açar. Çıplak ayakla tarla teması, demir eksikliği, eozinofili ve dışkıda ince kabuklu segmentasyon gösteren oval yumurtalar bu tanıyı destekler."
+          },
+          "Taenia saginata": {
+            "explanation": "Taenia saginata az pişmiş sığır etiyle bulaşır ve dışkıda proglottid veya taeniid yumurta saptanmasıyla düşünülür. Bu vakada et tüketimi değil toprak teması ve kronik mikrositik anemi ön plandadır; yumurta morfolojisi de taeniid yumurtaya uymaz."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; hookworm larvaları kontamine topraktan deriden girer, erişkinler ince bağırsak mukozasına tutunup kan kaybına yol açar. Çıplak ayakla tarla teması, demir eksikliği, eozinofili ve dışkıda ince kabuklu segmentasyon gösteren oval yumurtalar bu tanıyı destekler.",
+          "optionFeedback": {
+            "Enterobius vermicularis": {
+              "explanation": "Enterobius vermicularis özellikle gece perianal kaşıntı yapar ve tanıda sabah selofan bant testi kullanılır. Bu vakada perianal kaşıntı değil kronik demir eksikliği, kırsal çıplak ayak teması ve dışkıda ince kabuklu oval yumurtalar ön plandadır."
+            },
+            "Trichuris trichiura": {
+              "explanation": "Trichuris trichiura kamçı kurdu enfeksiyonunda fıçı şekilli, iki uçta tıkaçlı yumurtalar görülür ve ağır enfeksiyonda dizanteri/prolapsus olabilir. Bu olguda yumurta morfolojisi kutup tıkaçlı değildir; demir kaybı ve toprakla çıplak ayak teması hookworm döngüsünü daha iyi açıklar."
+            },
+            "Ascaris lumbricoides": {
+              "explanation": "Ascaris lumbricoides dışkıda kalın kabuklu mamillalı yumurtalar ve bazen intestinal obstrüksiyon ya da pulmoner göç bulgularıyla gündeme gelir. Kronik kan kaybına bağlı belirgin demir eksikliği ve larvanın deriden girişi Ascaris için temel patern değildir."
+            },
+            "Ancylostoma duodenale / Necator americanus": {
+              "explanation": "Bu seçenek en uygundur; hookworm larvaları kontamine topraktan deriden girer, erişkinler ince bağırsak mukozasına tutunup kan kaybına yol açar. Çıplak ayakla tarla teması, demir eksikliği, eozinofili ve dışkıda ince kabuklu segmentasyon gösteren oval yumurtalar bu tanıyı destekler."
+            },
+            "Taenia saginata": {
+              "explanation": "Taenia saginata az pişmiş sığır etiyle bulaşır ve dışkıda proglottid veya taeniid yumurta saptanmasıyla düşünülür. Bu vakada et tüketimi değil toprak teması ve kronik mikrositik anemi ön plandadır; yumurta morfolojisi de taeniid yumurtaya uymaz."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Hookworm enfeksiyonunda larvalar kontamine topraktan deriye girer ve erişkin formlar ince bağırsakta kan emerek demir eksikliği anemisi oluşturur. Tanı çoğunlukla dışkıda tipik yumurtaların mikroskobik gösterilmesiyle desteklenir.",
+      "examPearl": "Çıplak ayakla toprak teması + mikrositik demir eksikliği + eozinofili + dışkıda ince kabuklu oval yumurta → hookworm.",
+      "whyCorrect": "Bu seçenek en uygundur; hookworm larvaları kontamine topraktan deriden girer, erişkinler ince bağırsak mukozasına tutunup kan kaybına yol açar. Çıplak ayakla tarla teması, demir eksikliği, eozinofili ve dışkıda ince kabuklu segmentasyon gösteren oval yumurtalar bu tanıyı destekler.",
+      "optionComparison": {
+        "Enterobius vermicularis": "Enterobius vermicularis özellikle gece perianal kaşıntı yapar ve tanıda sabah selofan bant testi kullanılır. Bu vakada perianal kaşıntı değil kronik demir eksikliği, kırsal çıplak ayak teması ve dışkıda ince kabuklu oval yumurtalar ön plandadır.",
+        "Trichuris trichiura": "Trichuris trichiura kamçı kurdu enfeksiyonunda fıçı şekilli, iki uçta tıkaçlı yumurtalar görülür ve ağır enfeksiyonda dizanteri/prolapsus olabilir. Bu olguda yumurta morfolojisi kutup tıkaçlı değildir; demir kaybı ve toprakla çıplak ayak teması hookworm döngüsünü daha iyi açıklar.",
+        "Ascaris lumbricoides": "Ascaris lumbricoides dışkıda kalın kabuklu mamillalı yumurtalar ve bazen intestinal obstrüksiyon ya da pulmoner göç bulgularıyla gündeme gelir. Kronik kan kaybına bağlı belirgin demir eksikliği ve larvanın deriden girişi Ascaris için temel patern değildir.",
+        "Ancylostoma duodenale / Necator americanus": "Bu seçenek en uygundur; hookworm larvaları kontamine topraktan deriden girer, erişkinler ince bağırsak mukozasına tutunup kan kaybına yol açar. Çıplak ayakla tarla teması, demir eksikliği, eozinofili ve dışkıda ince kabuklu segmentasyon gösteren oval yumurtalar bu tanıyı destekler.",
+        "Taenia saginata": "Taenia saginata az pişmiş sığır etiyle bulaşır ve dışkıda proglottid veya taeniid yumurta saptanmasıyla düşünülür. Bu vakada et tüketimi değil toprak teması ve kronik mikrositik anemi ön plandadır; yumurta morfolojisi de taeniid yumurtaya uymaz."
+      },
+      "evidenceChain": [
+        {
+          "text": "Çıplak ayakla kırsal toprak teması → deriden larva girişi için uygun maruziyet",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Mikrositik anemi ve düşük ferritin → kronik kan kaybı/demir eksikliği",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Eozinofili → doku/helmint yanıtını destekler",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Dışkıda ince kabuklu oval yumurtalar → hookworm tipi yumurta morfolojisi",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Enterobius vermicularis": "Enterobius vermicularis özellikle gece perianal kaşıntı yapar ve tanıda sabah selofan bant testi kullanılır. Bu vakada perianal kaşıntı değil kronik demir eksikliği, kırsal çıplak ayak teması ve dışkıda ince kabuklu oval yumurtalar ön plandadır.",
+        "Trichuris trichiura": "Trichuris trichiura kamçı kurdu enfeksiyonunda fıçı şekilli, iki uçta tıkaçlı yumurtalar görülür ve ağır enfeksiyonda dizanteri/prolapsus olabilir. Bu olguda yumurta morfolojisi kutup tıkaçlı değildir; demir kaybı ve toprakla çıplak ayak teması hookworm döngüsünü daha iyi açıklar.",
+        "Ascaris lumbricoides": "Ascaris lumbricoides dışkıda kalın kabuklu mamillalı yumurtalar ve bazen intestinal obstrüksiyon ya da pulmoner göç bulgularıyla gündeme gelir. Kronik kan kaybına bağlı belirgin demir eksikliği ve larvanın deriden girişi Ascaris için temel patern değildir.",
+        "Taenia saginata": "Taenia saginata az pişmiş sığır etiyle bulaşır ve dışkıda proglottid veya taeniid yumurta saptanmasıyla düşünülür. Bu vakada et tüketimi değil toprak teması ve kronik mikrositik anemi ön plandadır; yumurta morfolojisi de taeniid yumurtaya uymaz."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v260-medical-microbiology-eleventh-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Çıplak ayak teması",
+        "Mikrositik anemi",
+        "Eozinofili",
+        "Dışkıda hookworm tipi yumurta",
+        "Gizli kan pozitifliği"
+      ],
+      "images": []
+    },
+  {
+      "id": "v261-new-502-hizli-ilerleyen-yumusak-doku-enfeksiyonu",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Hızlı ilerleyen yumuşak doku enfeksiyonu",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Şiddetli ağrı, hızlı doku yayılımı ve cerrahi örnek Gram/kültür bulgularından nekrotizan yumuşak doku enfeksiyonunda etkeni ayırt etme.",
+      "learningTarget": "Beta-hemolitik Gram pozitif kok zinciri, katalaz negatiflik ve PYR pozitifliğinin invaziv streptokok enfeksiyonu ile ilişkisini açıklayabilme.",
+      "demographics": "46 yaşında erkek hasta",
+      "setting": "Acil servis ve cerrahi konsültasyon",
+      "chiefComplaint": "Sağ bacakta hızla artan ağrı, şişlik ve ateş nedeniyle getiriliyor.",
+      "stem": "Hasta iki gün önce bahçede çalışırken sağ baldırında küçük bir sıyrık oluştuğunu, ertesi sabah bölgede yanma ve ağrı başladığını anlatır. Ağrı gün içinde beklenenden çok daha şiddetli hale gelmiş, bacağındaki kızarıklık diz üstüne doğru ilerlemiştir. Son saatlerde titreme, halsizlik ve ayağa kalkınca baş dönmesi eklenmiştir. Deniz suyu teması, hayvan ısırığı veya enjeksiyon kullanımı tariflemez; diyabeti yoktur.",
+      "patientIntro": {
+        "profile": "46 yaşında erkek hasta, Acil servis ve cerrahi konsültasyon ortamında değerlendiriliyor.",
+        "presentation": "Sağ bacakta hızla artan ağrı, şişlik ve ateş nedeniyle getiriliyor.",
+        "historySummary": "Hasta iki gün önce bahçede çalışırken sağ baldırında küçük bir sıyrık oluştuğunu, ertesi sabah bölgede yanma ve ağrı başladığını anlatır. Ağrı gün içinde beklenenden çok daha şiddetli hale gelmiş, bacağındaki kızarıklık diz üstüne doğru ilerlemiştir. Son saatlerde titreme, halsizlik ve ayağa kalkınca baş dönmesi eklenmiştir. Deniz suyu teması, hayvan ısırığı veya enjeksiyon kullanımı tariflemez; diyabeti yoktur."
+      },
+      "vitals": {
+        "TA": "92/56 mmHg",
+        "Nabız": "126/dk",
+        "Solunum": "24/dk",
+        "SpO2": "96%, oda havasında",
+        "Ateş": "39.1 °C",
+        "Şok indeksi": "1.37 - dolaşım riski yüksek"
+      },
+      "exam": [
+        "Hasta toksik görünümlü, ajite ve ağrı nedeniyle bacağını hareket ettirmekte zorlanıyor.",
+        "Sağ baldırda sınırları hızlı ilerleyen eritem, ödem ve palpasyonda hassasiyet vardır; ağrı deri görünümüne göre belirgindir.",
+        "Birkaç alanda morumsu renk değişikliği ve küçük büller izlenir; belirgin krepitasyon alınmaz.",
+        "Periferik nabızlar alınabilir, kapiller dolum yaklaşık 3 saniyedir."
+      ],
+      "investigations": [
+        {
+          "id": "v261-new-502-hizli-ilerleyen-yumusak-doku-enfeksiyonu-mikrobiyoloji-laboratuvar-verileri",
+          "label": "Cerrahi doku örneği, Gram boyama ve kültür",
+          "title": "Cerrahi doku örneği, Gram boyama ve kültür",
+          "orderLabel": "Cerrahi doku örneği, Gram boyama ve kültür",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Doku Gram boyaması, aerob kültür ve temel biyokimyasal ayırım",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Cerrahi doku örneğindeki kok morfolojisi ve kültür özellikleri etken grubunu ayırt ettirir.",
+          "clinicalMeaning": "Cerrahi doku örneğindeki kok morfolojisi ve kültür özellikleri etken grubunu ayırt ettirir.",
+          "result": {
+            "title": "Cerrahi doku örneği, Gram boyama ve kültür",
+            "summary": "Cerrahi doku örneğindeki kok morfolojisi ve kültür özellikleri etken grubunu ayırt ettirir.",
+            "interpretation": "Cerrahi doku örneğindeki kok morfolojisi ve kültür özellikleri etken grubunu ayırt ettirir.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Fasyadan alınan cerrahi doku ve aspirat",
+                "Sürüntü",
+                "Derin doku örneği"
+              ],
+              [
+                "Gram boyama",
+                "Gram pozitif koklar, çoğu kısa zincirler halinde",
+                "Mikroorganizma görülmedi",
+                "Zincir yapan kok paterni"
+              ],
+              [
+                "Kanlı agar",
+                "Geniş beta-hemolizli küçük koloniler",
+                "Üreme yok",
+                "Tam hemoliz"
+              ],
+              [
+                "Katalaz testi",
+                "Negatif",
+                "Pozitif",
+                "Stafilokoktan ayırır"
+              ],
+              [
+                "PYR testi",
+                "Pozitif",
+                "Negatif",
+                "Ayırt ettirici biyokimyasal veri"
+              ],
+              [
+                "Kan kültürü",
+                "Aynı morfolojide beta-hemolitik Gram pozitif kok üremesi",
+                "Üreme yok",
+                "İnvaziv yayılım desteği"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada en olası etken aşağıdakilerden hangisidir?",
+      "questionType": "etiologic-agent",
+      "answerTarget": "Bakteriyel etken",
+      "diagnosis": {
+        "correct": "Streptococcus pyogenes",
+        "options": [
+          "Clostridium perfringens",
+          "Staphylococcus aureus",
+          "Vibrio vulnificus",
+          "Pasteurella multocida",
+          "Streptococcus pyogenes"
+        ],
+        "question": "Bu hastada en olası etken aşağıdakilerden hangisidir?",
+        "explanation": "Bu seçenek en uygundur; hızla ilerleyen ağrılı yumuşak doku enfeksiyonu, sistemik toksisite ve cerrahi örnekte beta-hemolitik Gram pozitif kokların zincir yapması invaziv beta-hemolitik streptokok enfeksiyonunu destekler. Katalaz negatiflik ve PYR pozitifliği stafilokok, clostridial miyonekroz ve Gram negatif deniz/ısırık etkenlerinden ayrımı güçlendirir.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Hızla ilerleyen ağrılı yumuşak doku enfeksiyonu + cerrahi doku örneğinde beta-hemolitik, katalaz negatif, PYR pozitif Gram pozitif kok zincirleri → S. pyogenes."
+          }
+        ],
+        "optionFeedback": {
+          "Clostridium perfringens": {
+            "explanation": "Clostridium perfringens travmatik, kontamine yaralarda gazlı miyonekroz yapabilir; Gram boyamada büyük Gram pozitif çomaklar ve dokuda belirgin gaz üretimi beklenir. Bu vakada kültürde beta-hemolitik Gram pozitif kokların zincir yapması ve katalaz negatifliği clostridial çomak paterninden ayrılır."
+          },
+          "Staphylococcus aureus": {
+            "explanation": "Staphylococcus aureus deri apsesi, selülit ve bazen nekrotizan enfeksiyon yapabilir; Gram boyamada üzüm salkımı şeklinde Gram pozitif koklar ve katalaz pozitiflik beklenir. Burada zincir oluşturan katalaz negatif koklar ve PYR pozitifliği stafilokoktan çok beta-hemolitik streptokok yönündedir."
+          },
+          "Vibrio vulnificus": {
+            "explanation": "Vibrio vulnificus deniz suyu veya çiğ deniz ürünü teması sonrası hızla ilerleyen yara enfeksiyonu ve sepsis yapabilir; kavisli Gram negatif basil paterni beklenir. Bu olguda deniz teması yoktur ve laboratuvar Gram pozitif kok zincirleri göstermektedir."
+          },
+          "Pasteurella multocida": {
+            "explanation": "Pasteurella multocida kedi-köpek ısırığı sonrası hızlı gelişen yumuşak doku enfeksiyonunda akla gelir; küçük Gram negatif kokobasil görünümü tipiktir. Hasta ısırık öyküsü vermemekte ve kültür Gram pozitif beta-hemolitik kok paternindedir."
+          },
+          "Streptococcus pyogenes": {
+            "explanation": "Bu seçenek en uygundur; hızla ilerleyen ağrılı yumuşak doku enfeksiyonu, sistemik toksisite ve cerrahi örnekte beta-hemolitik Gram pozitif kokların zincir yapması invaziv beta-hemolitik streptokok enfeksiyonunu destekler. Katalaz negatiflik ve PYR pozitifliği stafilokok, clostridial miyonekroz ve Gram negatif deniz/ısırık etkenlerinden ayrımı güçlendirir."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; hızla ilerleyen ağrılı yumuşak doku enfeksiyonu, sistemik toksisite ve cerrahi örnekte beta-hemolitik Gram pozitif kokların zincir yapması invaziv beta-hemolitik streptokok enfeksiyonunu destekler. Katalaz negatiflik ve PYR pozitifliği stafilokok, clostridial miyonekroz ve Gram negatif deniz/ısırık etkenlerinden ayrımı güçlendirir.",
+          "optionFeedback": {
+            "Clostridium perfringens": {
+              "explanation": "Clostridium perfringens travmatik, kontamine yaralarda gazlı miyonekroz yapabilir; Gram boyamada büyük Gram pozitif çomaklar ve dokuda belirgin gaz üretimi beklenir. Bu vakada kültürde beta-hemolitik Gram pozitif kokların zincir yapması ve katalaz negatifliği clostridial çomak paterninden ayrılır."
+            },
+            "Staphylococcus aureus": {
+              "explanation": "Staphylococcus aureus deri apsesi, selülit ve bazen nekrotizan enfeksiyon yapabilir; Gram boyamada üzüm salkımı şeklinde Gram pozitif koklar ve katalaz pozitiflik beklenir. Burada zincir oluşturan katalaz negatif koklar ve PYR pozitifliği stafilokoktan çok beta-hemolitik streptokok yönündedir."
+            },
+            "Vibrio vulnificus": {
+              "explanation": "Vibrio vulnificus deniz suyu veya çiğ deniz ürünü teması sonrası hızla ilerleyen yara enfeksiyonu ve sepsis yapabilir; kavisli Gram negatif basil paterni beklenir. Bu olguda deniz teması yoktur ve laboratuvar Gram pozitif kok zincirleri göstermektedir."
+            },
+            "Pasteurella multocida": {
+              "explanation": "Pasteurella multocida kedi-köpek ısırığı sonrası hızlı gelişen yumuşak doku enfeksiyonunda akla gelir; küçük Gram negatif kokobasil görünümü tipiktir. Hasta ısırık öyküsü vermemekte ve kültür Gram pozitif beta-hemolitik kok paternindedir."
+            },
+            "Streptococcus pyogenes": {
+              "explanation": "Bu seçenek en uygundur; hızla ilerleyen ağrılı yumuşak doku enfeksiyonu, sistemik toksisite ve cerrahi örnekte beta-hemolitik Gram pozitif kokların zincir yapması invaziv beta-hemolitik streptokok enfeksiyonunu destekler. Katalaz negatiflik ve PYR pozitifliği stafilokok, clostridial miyonekroz ve Gram negatif deniz/ısırık etkenlerinden ayrımı güçlendirir."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Streptococcus pyogenes beta-hemolitik Gram pozitif koktur, zincir oluşturur, katalaz negatiftir ve invaziv yumuşak doku enfeksiyonlarında hızlı doku yayılımı yapabilir. Derin doku örneği sürüntüden daha anlamlıdır ve Gram/kültür paterninin diğer etkenlerden ayrılması gerekir.",
+      "examPearl": "Ağrı deri bulgusuna göre fazla + hızlı ilerleme + beta-hemolitik Gram pozitif kok zinciri + PYR pozitifliği → S. pyogenes nekrotizan enfeksiyon paterni.",
+      "whyCorrect": "Bu seçenek en uygundur; hızla ilerleyen ağrılı yumuşak doku enfeksiyonu, sistemik toksisite ve cerrahi örnekte beta-hemolitik Gram pozitif kokların zincir yapması invaziv beta-hemolitik streptokok enfeksiyonunu destekler. Katalaz negatiflik ve PYR pozitifliği stafilokok, clostridial miyonekroz ve Gram negatif deniz/ısırık etkenlerinden ayrımı güçlendirir.",
+      "optionComparison": {
+        "Clostridium perfringens": "Clostridium perfringens travmatik, kontamine yaralarda gazlı miyonekroz yapabilir; Gram boyamada büyük Gram pozitif çomaklar ve dokuda belirgin gaz üretimi beklenir. Bu vakada kültürde beta-hemolitik Gram pozitif kokların zincir yapması ve katalaz negatifliği clostridial çomak paterninden ayrılır.",
+        "Staphylococcus aureus": "Staphylococcus aureus deri apsesi, selülit ve bazen nekrotizan enfeksiyon yapabilir; Gram boyamada üzüm salkımı şeklinde Gram pozitif koklar ve katalaz pozitiflik beklenir. Burada zincir oluşturan katalaz negatif koklar ve PYR pozitifliği stafilokoktan çok beta-hemolitik streptokok yönündedir.",
+        "Vibrio vulnificus": "Vibrio vulnificus deniz suyu veya çiğ deniz ürünü teması sonrası hızla ilerleyen yara enfeksiyonu ve sepsis yapabilir; kavisli Gram negatif basil paterni beklenir. Bu olguda deniz teması yoktur ve laboratuvar Gram pozitif kok zincirleri göstermektedir.",
+        "Pasteurella multocida": "Pasteurella multocida kedi-köpek ısırığı sonrası hızlı gelişen yumuşak doku enfeksiyonunda akla gelir; küçük Gram negatif kokobasil görünümü tipiktir. Hasta ısırık öyküsü vermemekte ve kültür Gram pozitif beta-hemolitik kok paternindedir.",
+        "Streptococcus pyogenes": "Bu seçenek en uygundur; hızla ilerleyen ağrılı yumuşak doku enfeksiyonu, sistemik toksisite ve cerrahi örnekte beta-hemolitik Gram pozitif kokların zincir yapması invaziv beta-hemolitik streptokok enfeksiyonunu destekler. Katalaz negatiflik ve PYR pozitifliği stafilokok, clostridial miyonekroz ve Gram negatif deniz/ısırık etkenlerinden ayrımı güçlendirir."
+      },
+      "evidenceChain": [
+        {
+          "text": "Küçük sıyrık sonrası hızla ilerleyen ağrı ve eritem → invaziv yumuşak doku enfeksiyonu",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Derin doku örneğinde Gram pozitif kok zincirleri → streptokok morfolojisi",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Kanlı agarda beta-hemoliz → beta-hemolitik streptokok olasılığı",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Katalaz negatif ve PYR pozitif sonuç → S. aureus ve diğer çeldiricilerden ayrım",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Clostridium perfringens": "Clostridium perfringens travmatik, kontamine yaralarda gazlı miyonekroz yapabilir; Gram boyamada büyük Gram pozitif çomaklar ve dokuda belirgin gaz üretimi beklenir. Bu vakada kültürde beta-hemolitik Gram pozitif kokların zincir yapması ve katalaz negatifliği clostridial çomak paterninden ayrılır.",
+        "Staphylococcus aureus": "Staphylococcus aureus deri apsesi, selülit ve bazen nekrotizan enfeksiyon yapabilir; Gram boyamada üzüm salkımı şeklinde Gram pozitif koklar ve katalaz pozitiflik beklenir. Burada zincir oluşturan katalaz negatif koklar ve PYR pozitifliği stafilokoktan çok beta-hemolitik streptokok yönündedir.",
+        "Vibrio vulnificus": "Vibrio vulnificus deniz suyu veya çiğ deniz ürünü teması sonrası hızla ilerleyen yara enfeksiyonu ve sepsis yapabilir; kavisli Gram negatif basil paterni beklenir. Bu olguda deniz teması yoktur ve laboratuvar Gram pozitif kok zincirleri göstermektedir.",
+        "Pasteurella multocida": "Pasteurella multocida kedi-köpek ısırığı sonrası hızlı gelişen yumuşak doku enfeksiyonunda akla gelir; küçük Gram negatif kokobasil görünümü tipiktir. Hasta ısırık öyküsü vermemekte ve kültür Gram pozitif beta-hemolitik kok paternindedir."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v261-medical-microbiology-twelfth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Ağrı deri bulgusuna göre fazla",
+        "Beta-hemolitik Gram pozitif kok",
+        "Zincir formasyonu",
+        "Katalaz negatif",
+        "PYR pozitif"
+      ],
+      "images": []
+    },
+  {
+      "id": "v261-new-503-igne-batmasi-sonrasi-uyumsuz-hepatit-testleri",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "İğne batması sonrası uyumsuz hepatit testleri",
+      "difficulty": "Orta",
+      "difficultyTag": "Orta",
+      "clinicalFocus": "Yakın zamanlı kan teması sonrası hepatit testlerinde antikor-negatif/RNA-pozitif paternini akut enfeksiyon zamanlaması açısından yorumlama.",
+      "learningTarget": "HCV RNA'nın antikor serokonversiyonundan önce saptanabileceğini ve akut maruziyet sonrası negatif anti-HCV sonucunun enfeksiyonu dışlamayacağını açıklayabilme.",
+      "demographics": "28 yaşında kadın sağlık çalışanı",
+      "setting": "Enfeksiyon hastalıkları polikliniği",
+      "chiefComplaint": "İğne batması sonrası gelişen halsizlik ve karaciğer enzim yüksekliği nedeniyle değerlendiriliyor.",
+      "stem": "Hasta üç hafta önce acil serviste kanlı enjektörle yüzeyel iğne batması yaşadığını, olay sonrası iş yeri hekimine başvurduğunu anlatır. Son bir haftadır belirgin halsizlik, iştahsızlık ve hafif sağ üst kadran rahatsızlığı başlamıştır. Koyu idrar fark etmiş ancak ateş, döküntü, yeni ilaç kullanımı veya alkol alımında artış tariflememiştir. Daha önce bilinen kronik karaciğer hastalığı yoktur ve hepatit B aşısını çocukluk döneminde tamamlamıştır.",
+      "patientIntro": {
+        "profile": "28 yaşında kadın sağlık çalışanı, Enfeksiyon hastalıkları polikliniği ortamında değerlendiriliyor.",
+        "presentation": "İğne batması sonrası gelişen halsizlik ve karaciğer enzim yüksekliği nedeniyle değerlendiriliyor.",
+        "historySummary": "Hasta üç hafta önce acil serviste kanlı enjektörle yüzeyel iğne batması yaşadığını, olay sonrası iş yeri hekimine başvurduğunu anlatır. Son bir haftadır belirgin halsizlik, iştahsızlık ve hafif sağ üst kadran rahatsızlığı başlamıştır. Koyu idrar fark etmiş ancak ateş, döküntü, yeni ilaç kullanımı veya alkol alımında artış tariflememiştir. Daha önce bilinen kronik karaciğer hastalığı yoktur ve hepatit B aşısını çocukluk döneminde tamamlamıştır."
+      },
+      "vitals": {
+        "TA": "112/70 mmHg",
+        "Nabız": "88/dk",
+        "Solunum": "16/dk",
+        "SpO2": "99%, oda havasında",
+        "Ateş": "37.1 °C",
+        "Şok indeksi": "0.79 - stabil"
+      },
+      "exam": [
+        "Genel durumu iyi, bilinç açık ve koopere.",
+        "Skleralarda hafif ikter izlenir; döküntü yoktur.",
+        "Karında sağ üst kadranda hafif hassasiyet vardır; defans veya rebound yoktur.",
+        "Hepatosplenomegali belirgin değildir."
+      ],
+      "investigations": [
+        {
+          "id": "v261-new-503-igne-batmasi-sonrasi-uyumsuz-hepatit-testleri-mikrobiyoloji-laboratuvar-verileri",
+          "label": "Viral hepatit serolojisi ve nükleik asit testi",
+          "title": "Viral hepatit serolojisi ve nükleik asit testi",
+          "orderLabel": "Viral hepatit serolojisi ve nükleik asit testi",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Seroloji, karaciğer enzimleri ve viral RNA sonucu",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Yakın maruziyet sonrası RNA ve antikor zamanlaması akut enfeksiyon yorumunu belirler.",
+          "clinicalMeaning": "Yakın maruziyet sonrası RNA ve antikor zamanlaması akut enfeksiyon yorumunu belirler.",
+          "result": {
+            "title": "Viral hepatit serolojisi ve nükleik asit testi",
+            "summary": "Yakın maruziyet sonrası RNA ve antikor zamanlaması akut enfeksiyon yorumunu belirler.",
+            "interpretation": "Yakın maruziyet sonrası RNA ve antikor zamanlaması akut enfeksiyon yorumunu belirler.",
+            "values": [
+              [
+                "ALT / AST",
+                "ALT 842 U/L, AST 615 U/L",
+                "<40 U/L",
+                "Hepatoselüler hasar"
+              ],
+              [
+                "Total bilirubin",
+                "2.1 mg/dL",
+                "<1.2 mg/dL",
+                "Hafif ikter desteği"
+              ],
+              [
+                "Anti-HCV",
+                "Nonreaktif",
+                "Nonreaktif",
+                "Antikor henüz saptanmayabilir"
+              ],
+              [
+                "HCV RNA",
+                "Pozitif, 1.8 x 10^5 IU/mL",
+                "Saptanmadı",
+                "Viremi"
+              ],
+              [
+                "HBsAg / anti-HBc IgM",
+                "Negatif / negatif",
+                "Negatif",
+                "Akut HBV lehine değil"
+              ],
+              [
+                "HAV IgM",
+                "Negatif",
+                "Negatif",
+                "Akut HAV lehine değil"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu test paterninin en doğru mikrobiyolojik yorumu aşağıdakilerden hangisidir?",
+      "questionType": "serology-interpretation",
+      "answerTarget": "Viral hepatit test yorumu",
+      "diagnosis": {
+        "correct": "Akut HCV enfeksiyonu; viral RNA antikor yanıtından önce saptanabilir",
+        "options": [
+          "Geçirilmiş ve spontan temizlenmiş HCV enfeksiyonu",
+          "Akut HCV enfeksiyonu; viral RNA antikor yanıtından önce saptanabilir",
+          "HAV enfeksiyonuna bağlı pencere dönemi",
+          "Aşı sonrası beklenen koruyucu antikor yanıtı",
+          "HBV reaktivasyonu; HCV RNA sonucu klinik olarak önemsizdir"
+        ],
+        "question": "Bu test paterninin en doğru mikrobiyolojik yorumu aşağıdakilerden hangisidir?",
+        "explanation": "Bu seçenek en uygundur; yakın maruziyet sonrası anti-HCV negatifken HCV RNA pozitifliği, antikor yanıtı gelişmeden önce yakalanan akut enfeksiyon paternidir. ALT yüksekliği hepatoselüler hasarı destekler ve HBsAg/HAV IgM negatifliği diğer sık akut hepatit nedenlerini geri plana iter.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Yakın maruziyet + anti-HCV negatifliği + HCV RNA pozitifliği → erken akut HCV enfeksiyonu; RNA antikordan önce saptanabilir."
+          }
+        ],
+        "optionFeedback": {
+          "Geçirilmiş ve spontan temizlenmiş HCV enfeksiyonu": {
+            "explanation": "Geçirilmiş ve temizlenmiş HCV enfeksiyonunda anti-HCV genellikle reaktif kalır, HCV RNA ise saptanmaz. Bu vakada yakın zamanlı iğne batması sonrası ALT yüksekliği ve RNA pozitifliği aktif viremiye işaret eder; antikor negatifliği erken dönemi dışlamaz."
+          },
+          "Akut HCV enfeksiyonu; viral RNA antikor yanıtından önce saptanabilir": {
+            "explanation": "Bu seçenek en uygundur; yakın maruziyet sonrası anti-HCV negatifken HCV RNA pozitifliği, antikor yanıtı gelişmeden önce yakalanan akut enfeksiyon paternidir. ALT yüksekliği hepatoselüler hasarı destekler ve HBsAg/HAV IgM negatifliği diğer sık akut hepatit nedenlerini geri plana iter."
+          },
+          "HAV enfeksiyonuna bağlı pencere dönemi": {
+            "explanation": "Akut HAV tanısında HAV IgM pozitifliği beklenir ve HCV RNA pozitifliği HAV pencere dönemini açıklamaz. Bu hastada kanla temas öyküsü ve HCV RNA pozitifliği hepatit C yönünde daha doğrudan kanıttır."
+          },
+          "Aşı sonrası beklenen koruyucu antikor yanıtı": {
+            "explanation": "HCV için klinik kullanımda koruyucu aşı yoktur ve anti-HCV pozitifliği de koruyucu immüniteyi göstermez. Ayrıca bu vakada antikor değil viral RNA pozitifliği vardır; bu durum aktif enfeksiyon lehinedir."
+          },
+          "HBV reaktivasyonu; HCV RNA sonucu klinik olarak önemsizdir": {
+            "explanation": "HBV reaktivasyonunda HBsAg ve HBV DNA gibi HBV göstergeleri beklenir; burada HBsAg negatiftir. HCV RNA pozitifliği klinik olarak önemsiz değil, mevcut viremi ve akut HCV tanısı açısından temel veridir."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; yakın maruziyet sonrası anti-HCV negatifken HCV RNA pozitifliği, antikor yanıtı gelişmeden önce yakalanan akut enfeksiyon paternidir. ALT yüksekliği hepatoselüler hasarı destekler ve HBsAg/HAV IgM negatifliği diğer sık akut hepatit nedenlerini geri plana iter.",
+          "optionFeedback": {
+            "Geçirilmiş ve spontan temizlenmiş HCV enfeksiyonu": {
+              "explanation": "Geçirilmiş ve temizlenmiş HCV enfeksiyonunda anti-HCV genellikle reaktif kalır, HCV RNA ise saptanmaz. Bu vakada yakın zamanlı iğne batması sonrası ALT yüksekliği ve RNA pozitifliği aktif viremiye işaret eder; antikor negatifliği erken dönemi dışlamaz."
+            },
+            "Akut HCV enfeksiyonu; viral RNA antikor yanıtından önce saptanabilir": {
+              "explanation": "Bu seçenek en uygundur; yakın maruziyet sonrası anti-HCV negatifken HCV RNA pozitifliği, antikor yanıtı gelişmeden önce yakalanan akut enfeksiyon paternidir. ALT yüksekliği hepatoselüler hasarı destekler ve HBsAg/HAV IgM negatifliği diğer sık akut hepatit nedenlerini geri plana iter."
+            },
+            "HAV enfeksiyonuna bağlı pencere dönemi": {
+              "explanation": "Akut HAV tanısında HAV IgM pozitifliği beklenir ve HCV RNA pozitifliği HAV pencere dönemini açıklamaz. Bu hastada kanla temas öyküsü ve HCV RNA pozitifliği hepatit C yönünde daha doğrudan kanıttır."
+            },
+            "Aşı sonrası beklenen koruyucu antikor yanıtı": {
+              "explanation": "HCV için klinik kullanımda koruyucu aşı yoktur ve anti-HCV pozitifliği de koruyucu immüniteyi göstermez. Ayrıca bu vakada antikor değil viral RNA pozitifliği vardır; bu durum aktif enfeksiyon lehinedir."
+            },
+            "HBV reaktivasyonu; HCV RNA sonucu klinik olarak önemsizdir": {
+              "explanation": "HBV reaktivasyonunda HBsAg ve HBV DNA gibi HBV göstergeleri beklenir; burada HBsAg negatiftir. HCV RNA pozitifliği klinik olarak önemsiz değil, mevcut viremi ve akut HCV tanısı açısından temel veridir."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Akut HCV enfeksiyonunda viral RNA, anti-HCV serokonversiyonundan önce pozitifleşebilir. Bu nedenle son 6 ay içinde riskli temas öyküsü olan hastada yalnızca antikor negatifliği mevcut enfeksiyonu dışlamak için yeterli değildir.",
+      "examPearl": "Yakın kan teması sonrası ALT yüksekliği varsa anti-HCV negatif bile olsa HCV RNA pozitifliği akut HCV tanısını destekler.",
+      "whyCorrect": "Bu seçenek en uygundur; yakın maruziyet sonrası anti-HCV negatifken HCV RNA pozitifliği, antikor yanıtı gelişmeden önce yakalanan akut enfeksiyon paternidir. ALT yüksekliği hepatoselüler hasarı destekler ve HBsAg/HAV IgM negatifliği diğer sık akut hepatit nedenlerini geri plana iter.",
+      "optionComparison": {
+        "Geçirilmiş ve spontan temizlenmiş HCV enfeksiyonu": "Geçirilmiş ve temizlenmiş HCV enfeksiyonunda anti-HCV genellikle reaktif kalır, HCV RNA ise saptanmaz. Bu vakada yakın zamanlı iğne batması sonrası ALT yüksekliği ve RNA pozitifliği aktif viremiye işaret eder; antikor negatifliği erken dönemi dışlamaz.",
+        "Akut HCV enfeksiyonu; viral RNA antikor yanıtından önce saptanabilir": "Bu seçenek en uygundur; yakın maruziyet sonrası anti-HCV negatifken HCV RNA pozitifliği, antikor yanıtı gelişmeden önce yakalanan akut enfeksiyon paternidir. ALT yüksekliği hepatoselüler hasarı destekler ve HBsAg/HAV IgM negatifliği diğer sık akut hepatit nedenlerini geri plana iter.",
+        "HAV enfeksiyonuna bağlı pencere dönemi": "Akut HAV tanısında HAV IgM pozitifliği beklenir ve HCV RNA pozitifliği HAV pencere dönemini açıklamaz. Bu hastada kanla temas öyküsü ve HCV RNA pozitifliği hepatit C yönünde daha doğrudan kanıttır.",
+        "Aşı sonrası beklenen koruyucu antikor yanıtı": "HCV için klinik kullanımda koruyucu aşı yoktur ve anti-HCV pozitifliği de koruyucu immüniteyi göstermez. Ayrıca bu vakada antikor değil viral RNA pozitifliği vardır; bu durum aktif enfeksiyon lehinedir.",
+        "HBV reaktivasyonu; HCV RNA sonucu klinik olarak önemsizdir": "HBV reaktivasyonunda HBsAg ve HBV DNA gibi HBV göstergeleri beklenir; burada HBsAg negatiftir. HCV RNA pozitifliği klinik olarak önemsiz değil, mevcut viremi ve akut HCV tanısı açısından temel veridir."
+      },
+      "evidenceChain": [
+        {
+          "text": "Üç hafta önce iğne batması → yakın zamanlı parenteral maruziyet",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "ALT/AST yüksekliği → akut hepatoselüler hasar",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Anti-HCV nonreaktif → erken dönemde antikor gelişmemiş olabilir",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "HCV RNA pozitifliği → mevcut viremi ve aktif enfeksiyon",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Geçirilmiş ve spontan temizlenmiş HCV enfeksiyonu": "Geçirilmiş ve temizlenmiş HCV enfeksiyonunda anti-HCV genellikle reaktif kalır, HCV RNA ise saptanmaz. Bu vakada yakın zamanlı iğne batması sonrası ALT yüksekliği ve RNA pozitifliği aktif viremiye işaret eder; antikor negatifliği erken dönemi dışlamaz.",
+        "HAV enfeksiyonuna bağlı pencere dönemi": "Akut HAV tanısında HAV IgM pozitifliği beklenir ve HCV RNA pozitifliği HAV pencere dönemini açıklamaz. Bu hastada kanla temas öyküsü ve HCV RNA pozitifliği hepatit C yönünde daha doğrudan kanıttır.",
+        "Aşı sonrası beklenen koruyucu antikor yanıtı": "HCV için klinik kullanımda koruyucu aşı yoktur ve anti-HCV pozitifliği de koruyucu immüniteyi göstermez. Ayrıca bu vakada antikor değil viral RNA pozitifliği vardır; bu durum aktif enfeksiyon lehinedir.",
+        "HBV reaktivasyonu; HCV RNA sonucu klinik olarak önemsizdir": "HBV reaktivasyonunda HBsAg ve HBV DNA gibi HBV göstergeleri beklenir; burada HBsAg negatiftir. HCV RNA pozitifliği klinik olarak önemsiz değil, mevcut viremi ve akut HCV tanısı açısından temel veridir."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v261-medical-microbiology-twelfth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "İğne batması",
+        "ALT yüksekliği",
+        "Anti-HCV negatif",
+        "HCV RNA pozitif",
+        "Akut HCV zamanlaması"
+      ],
+      "images": []
+    },
+  {
+      "id": "v261-new-504-sefalosporin-tedavisi-sirasinda-direnc-degisimi",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Sefalosporin tedavisi sırasında direnç değişimi",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Enterobacterales izolatında tedavi sırasında değişen sefalosporin duyarlılığını direnç mekanizmasıyla ilişkilendirme.",
+      "learningTarget": "Enterobacter cloacae kompleksinde indüklenebilir kromozomal AmpC beta-laktamaz derepresyonunun üçüncü kuşak sefalosporin başarısızlığına yol açabileceğini açıklayabilme.",
+      "demographics": "67 yaşında erkek hasta",
+      "setting": "Yoğun bakım ünitesi",
+      "chiefComplaint": "Üriner kaynaklı bakteriyemi nedeniyle izlenirken ateşin yeniden yükselmesi üzerine değerlendiriliyor.",
+      "stem": "Hasta nörolojik hastalık sonrası uzun süredir mesane kateteriyle takip edilmektedir. Beş gün önce ateş ve hipotansiyon nedeniyle kan ve idrar kültürleri alınmış, başlangıçta seftriakson tedavisi başlanmıştır. İlk iki gün ateşi düşmüşken dördüncü günden sonra yeniden titreme, taşikardi ve lökositoz gelişmiştir. Kateter değiştirilmiş, aynı gün yeni kan kültürleri ve kontrol idrar kültürü gönderilmiştir.",
+      "patientIntro": {
+        "profile": "67 yaşında erkek hasta, Yoğun bakım ünitesi ortamında değerlendiriliyor.",
+        "presentation": "Üriner kaynaklı bakteriyemi nedeniyle izlenirken ateşin yeniden yükselmesi üzerine değerlendiriliyor.",
+        "historySummary": "Hasta nörolojik hastalık sonrası uzun süredir mesane kateteriyle takip edilmektedir. Beş gün önce ateş ve hipotansiyon nedeniyle kan ve idrar kültürleri alınmış, başlangıçta seftriakson tedavisi başlanmıştır. İlk iki gün ateşi düşmüşken dördüncü günden sonra yeniden titreme, taşikardi ve lökositoz gelişmiştir. Kateter değiştirilmiş, aynı gün yeni kan kültürleri ve kontrol idrar kültürü gönderilmiştir."
+      },
+      "vitals": {
+        "TA": "96/58 mmHg",
+        "Nabız": "118/dk",
+        "Solunum": "22/dk",
+        "SpO2": "95%, oda havasında",
+        "Ateş": "38.8 °C",
+        "Şok indeksi": "1.23 - izlem"
+      },
+      "exam": [
+        "Hasta halsiz, ateşli ve periferik perfüzyonu sınırda görünür.",
+        "Alt karında hafif suprapubik hassasiyet vardır.",
+        "Kateter çevresinde belirgin pürülan akıntı yoktur.",
+        "Akciğer oskültasyonunda yeni odak bulgusu saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v261-new-504-sefalosporin-tedavisi-sirasinda-direnc-degisimi-mikrobiyoloji-laboratuvar-verileri",
+          "label": "Kan-idrar kültürü ve seri antibiyogram",
+          "title": "Kan-idrar kültürü ve seri antibiyogram",
+          "orderLabel": "Kan-idrar kültürü ve seri antibiyogram",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Gram boyama, kültür tanımlama ve duyarlılık değişimi",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Başlangıç ve kontrol izolatları arasındaki duyarlılık değişimi direnç mekanizmasını düşündürür.",
+          "clinicalMeaning": "Başlangıç ve kontrol izolatları arasındaki duyarlılık değişimi direnç mekanizmasını düşündürür.",
+          "result": {
+            "title": "Kan-idrar kültürü ve seri antibiyogram",
+            "summary": "Başlangıç ve kontrol izolatları arasındaki duyarlılık değişimi direnç mekanizmasını düşündürür.",
+            "interpretation": "Başlangıç ve kontrol izolatları arasındaki duyarlılık değişimi direnç mekanizmasını düşündürür.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Kan kültürü ve idrar kültürü",
+                "Tek sürüntü",
+                "Steril alan + üriner kaynak"
+              ],
+              [
+                "Gram boyama",
+                "Gram negatif çomaklar",
+                "Kok görülmedi",
+                "Enterobacterales morfolojisi"
+              ],
+              [
+                "Tanımlama",
+                "Enterobacter cloacae kompleksi",
+                "Tanımlanmadı",
+                "AmpC riski olan grup"
+              ],
+              [
+                "İlk antibiyogram",
+                "Seftriakson duyarlı raporlandı; sefoksitin dirençli",
+                "-",
+                "Başlangıç duyarlılık paterni"
+              ],
+              [
+                "Kontrol antibiyogram",
+                "Seftriakson ve seftazidim dirençli; sefepim duyarlı",
+                "-",
+                "Tedavi sırasında direnç seçilimi"
+              ],
+              [
+                "Karbapenem sonucu",
+                "Meropenem duyarlı",
+                "-",
+                "Karbapenemaz paterni yok"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu direnç paternini en iyi açıklayan mekanizma aşağıdakilerden hangisidir?",
+      "questionType": "resistance-mechanism",
+      "answerTarget": "Antimikrobiyal direnç mekanizması",
+      "diagnosis": {
+        "correct": "Kromozomal indüklenebilir AmpC beta-laktamaz derepresyonu",
+        "options": [
+          "Porin kaybı ile karbapenem girişinin azalması",
+          "Plazmid aracılı genişlemiş spektrumlu beta-laktamaz üretimi",
+          "mecA genine bağlı alternatif penisilin bağlayan protein sentezi",
+          "Kromozomal indüklenebilir AmpC beta-laktamaz derepresyonu",
+          "23S rRNA metilasyonu ile makrolid-linkozamid hedef değişimi"
+        ],
+        "question": "Bu direnç paternini en iyi açıklayan mekanizma aşağıdakilerden hangisidir?",
+        "explanation": "Bu seçenek en uygundur; Enterobacter cloacae kompleksinde üçüncü kuşak sefalosporin tedavisi sırasında AmpC üretimi dereprese olabilir ve başlangıçta duyarlı görünen izolat dirençli hale gelebilir. Sefoksitin direnci, piperasilin-tazobaktamın güvenilmezleşmesi ve sefepim/karbapenem duyarlılığının korunması bu mekanizmayı destekler.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Enterobacter cloacae kompleksinde üçüncü kuşak sefalosporin tedavisi sırasında direnç gelişmesi ve sefoksitin direnci → indüklenebilir kromozomal AmpC beta-laktamaz derepresyonu."
+          }
+        ],
+        "optionFeedback": {
+          "Porin kaybı ile karbapenem girişinin azalması": {
+            "explanation": "Porin kaybı özellikle bazı Gram negatiflerde karbapenem veya beta-laktam girişini azaltarak direnci artırabilir; sıklıkla başka beta-laktamazlarla birlikte anlam kazanır. Bu vakada temel değişim üçüncü kuşak sefalosporin tedavisi sırasında ortaya çıkan sefalosporin direnci ve sefepimin korunmasıdır; bu patern porin kaybından çok indüklenebilir sefalosporinazı düşündürür."
+          },
+          "Plazmid aracılı genişlemiş spektrumlu beta-laktamaz üretimi": {
+            "explanation": "ESBL enzimleri üçüncü kuşak sefalosporinleri hidrolize eder ve çoğu zaman klavulanatla inhibisyon paternleriyle araştırılır. Ancak Enterobacter cloacae kompleksinde tedavi sırasında direnç seçilmesi ve sefoksitin direnci, kromozomal AmpC derepresyonu için daha tipiktir."
+          },
+          "mecA genine bağlı alternatif penisilin bağlayan protein sentezi": {
+            "explanation": "mecA, stafilokoklarda PBP2a üretimiyle metisilin/oksasilin direncine yol açar ve Gram pozitif kok enfeksiyonlarıyla ilişkilidir. Bu olguda etken Enterobacterales grubunda Gram negatif çomaktır; direnç paterni stafilokokal hedef değişimiyle açıklanmaz."
+          },
+          "Kromozomal indüklenebilir AmpC beta-laktamaz derepresyonu": {
+            "explanation": "Bu seçenek en uygundur; Enterobacter cloacae kompleksinde üçüncü kuşak sefalosporin tedavisi sırasında AmpC üretimi dereprese olabilir ve başlangıçta duyarlı görünen izolat dirençli hale gelebilir. Sefoksitin direnci, piperasilin-tazobaktamın güvenilmezleşmesi ve sefepim/karbapenem duyarlılığının korunması bu mekanizmayı destekler."
+          },
+          "23S rRNA metilasyonu ile makrolid-linkozamid hedef değişimi": {
+            "explanation": "23S rRNA metilasyonu stafilokoklarda MLSB tipi makrolid-klindamisin direnciyle ilişkilidir ve D-test ile yakalanabilir. Bu vakadaki sorun beta-laktam/sefalosporin direncidir; makrolid-linkozamid hedef değişimi Gram negatif çomak antibiyogramını açıklamaz."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; Enterobacter cloacae kompleksinde üçüncü kuşak sefalosporin tedavisi sırasında AmpC üretimi dereprese olabilir ve başlangıçta duyarlı görünen izolat dirençli hale gelebilir. Sefoksitin direnci, piperasilin-tazobaktamın güvenilmezleşmesi ve sefepim/karbapenem duyarlılığının korunması bu mekanizmayı destekler.",
+          "optionFeedback": {
+            "Porin kaybı ile karbapenem girişinin azalması": {
+              "explanation": "Porin kaybı özellikle bazı Gram negatiflerde karbapenem veya beta-laktam girişini azaltarak direnci artırabilir; sıklıkla başka beta-laktamazlarla birlikte anlam kazanır. Bu vakada temel değişim üçüncü kuşak sefalosporin tedavisi sırasında ortaya çıkan sefalosporin direnci ve sefepimin korunmasıdır; bu patern porin kaybından çok indüklenebilir sefalosporinazı düşündürür."
+            },
+            "Plazmid aracılı genişlemiş spektrumlu beta-laktamaz üretimi": {
+              "explanation": "ESBL enzimleri üçüncü kuşak sefalosporinleri hidrolize eder ve çoğu zaman klavulanatla inhibisyon paternleriyle araştırılır. Ancak Enterobacter cloacae kompleksinde tedavi sırasında direnç seçilmesi ve sefoksitin direnci, kromozomal AmpC derepresyonu için daha tipiktir."
+            },
+            "mecA genine bağlı alternatif penisilin bağlayan protein sentezi": {
+              "explanation": "mecA, stafilokoklarda PBP2a üretimiyle metisilin/oksasilin direncine yol açar ve Gram pozitif kok enfeksiyonlarıyla ilişkilidir. Bu olguda etken Enterobacterales grubunda Gram negatif çomaktır; direnç paterni stafilokokal hedef değişimiyle açıklanmaz."
+            },
+            "Kromozomal indüklenebilir AmpC beta-laktamaz derepresyonu": {
+              "explanation": "Bu seçenek en uygundur; Enterobacter cloacae kompleksinde üçüncü kuşak sefalosporin tedavisi sırasında AmpC üretimi dereprese olabilir ve başlangıçta duyarlı görünen izolat dirençli hale gelebilir. Sefoksitin direnci, piperasilin-tazobaktamın güvenilmezleşmesi ve sefepim/karbapenem duyarlılığının korunması bu mekanizmayı destekler."
+            },
+            "23S rRNA metilasyonu ile makrolid-linkozamid hedef değişimi": {
+              "explanation": "23S rRNA metilasyonu stafilokoklarda MLSB tipi makrolid-klindamisin direnciyle ilişkilidir ve D-test ile yakalanabilir. Bu vakadaki sorun beta-laktam/sefalosporin direncidir; makrolid-linkozamid hedef değişimi Gram negatif çomak antibiyogramını açıklamaz."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "AmpC üretebilen Enterobacterales türlerinde başlangıçta duyarlı görülen üçüncü kuşak sefalosporinler tedavi sırasında dirençli alt popülasyonların seçilmesine yol açabilir. Bu nedenle tür düzeyi tanımlama ve seri antibiyogram paterni mekanizmayı anlamada önemlidir.",
+      "examPearl": "Enterobacter cloacae + seftriakson tedavisi sırasında direnç seçilimi + sefoksitin direnci + sefepim duyarlılığı → AmpC derepresyonu.",
+      "whyCorrect": "Bu seçenek en uygundur; Enterobacter cloacae kompleksinde üçüncü kuşak sefalosporin tedavisi sırasında AmpC üretimi dereprese olabilir ve başlangıçta duyarlı görünen izolat dirençli hale gelebilir. Sefoksitin direnci, piperasilin-tazobaktamın güvenilmezleşmesi ve sefepim/karbapenem duyarlılığının korunması bu mekanizmayı destekler.",
+      "optionComparison": {
+        "Porin kaybı ile karbapenem girişinin azalması": "Porin kaybı özellikle bazı Gram negatiflerde karbapenem veya beta-laktam girişini azaltarak direnci artırabilir; sıklıkla başka beta-laktamazlarla birlikte anlam kazanır. Bu vakada temel değişim üçüncü kuşak sefalosporin tedavisi sırasında ortaya çıkan sefalosporin direnci ve sefepimin korunmasıdır; bu patern porin kaybından çok indüklenebilir sefalosporinazı düşündürür.",
+        "Plazmid aracılı genişlemiş spektrumlu beta-laktamaz üretimi": "ESBL enzimleri üçüncü kuşak sefalosporinleri hidrolize eder ve çoğu zaman klavulanatla inhibisyon paternleriyle araştırılır. Ancak Enterobacter cloacae kompleksinde tedavi sırasında direnç seçilmesi ve sefoksitin direnci, kromozomal AmpC derepresyonu için daha tipiktir.",
+        "mecA genine bağlı alternatif penisilin bağlayan protein sentezi": "mecA, stafilokoklarda PBP2a üretimiyle metisilin/oksasilin direncine yol açar ve Gram pozitif kok enfeksiyonlarıyla ilişkilidir. Bu olguda etken Enterobacterales grubunda Gram negatif çomaktır; direnç paterni stafilokokal hedef değişimiyle açıklanmaz.",
+        "Kromozomal indüklenebilir AmpC beta-laktamaz derepresyonu": "Bu seçenek en uygundur; Enterobacter cloacae kompleksinde üçüncü kuşak sefalosporin tedavisi sırasında AmpC üretimi dereprese olabilir ve başlangıçta duyarlı görünen izolat dirençli hale gelebilir. Sefoksitin direnci, piperasilin-tazobaktamın güvenilmezleşmesi ve sefepim/karbapenem duyarlılığının korunması bu mekanizmayı destekler.",
+        "23S rRNA metilasyonu ile makrolid-linkozamid hedef değişimi": "23S rRNA metilasyonu stafilokoklarda MLSB tipi makrolid-klindamisin direnciyle ilişkilidir ve D-test ile yakalanabilir. Bu vakadaki sorun beta-laktam/sefalosporin direncidir; makrolid-linkozamid hedef değişimi Gram negatif çomak antibiyogramını açıklamaz."
+      },
+      "evidenceChain": [
+        {
+          "text": "Enterobacter cloacae kompleksi tanımlanması → indüklenebilir AmpC riski olan Enterobacterales",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "İlk seftriakson duyarlılığına rağmen klinik yanıtsızlık → direnç seçilimi olasılığı",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Kontrolde üçüncü kuşak sefalosporin direnci → AmpC ekspresyon artışı",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Meropenem duyarlılığı → karbapenemaz yerine sefalosporinaz paternini destekler",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Porin kaybı ile karbapenem girişinin azalması": "Porin kaybı özellikle bazı Gram negatiflerde karbapenem veya beta-laktam girişini azaltarak direnci artırabilir; sıklıkla başka beta-laktamazlarla birlikte anlam kazanır. Bu vakada temel değişim üçüncü kuşak sefalosporin tedavisi sırasında ortaya çıkan sefalosporin direnci ve sefepimin korunmasıdır; bu patern porin kaybından çok indüklenebilir sefalosporinazı düşündürür.",
+        "Plazmid aracılı genişlemiş spektrumlu beta-laktamaz üretimi": "ESBL enzimleri üçüncü kuşak sefalosporinleri hidrolize eder ve çoğu zaman klavulanatla inhibisyon paternleriyle araştırılır. Ancak Enterobacter cloacae kompleksinde tedavi sırasında direnç seçilmesi ve sefoksitin direnci, kromozomal AmpC derepresyonu için daha tipiktir.",
+        "mecA genine bağlı alternatif penisilin bağlayan protein sentezi": "mecA, stafilokoklarda PBP2a üretimiyle metisilin/oksasilin direncine yol açar ve Gram pozitif kok enfeksiyonlarıyla ilişkilidir. Bu olguda etken Enterobacterales grubunda Gram negatif çomaktır; direnç paterni stafilokokal hedef değişimiyle açıklanmaz.",
+        "23S rRNA metilasyonu ile makrolid-linkozamid hedef değişimi": "23S rRNA metilasyonu stafilokoklarda MLSB tipi makrolid-klindamisin direnciyle ilişkilidir ve D-test ile yakalanabilir. Bu vakadaki sorun beta-laktam/sefalosporin direncidir; makrolid-linkozamid hedef değişimi Gram negatif çomak antibiyogramını açıklamaz."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v261-medical-microbiology-twelfth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Enterobacter cloacae",
+        "Seftriaksonda direnç seçilimi",
+        "Sefoksitin direnci",
+        "Sefepim duyarlı",
+        "AmpC derepresyonu"
+      ],
+      "images": []
+    },
+  {
+      "id": "v261-new-505-guneydogu-asya-sonrasi-ates-ve-umblike-papuller",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Güneydoğu Asya sonrası ateş ve umblike papüller",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "İleri immünsupresyon, coğrafi maruziyet, cilt bulgusu ve dimorfik mantar morfolojisinden fırsatçı etkeni tanıma.",
+      "learningTarget": "Talaromyces marneffei enfeksiyonunda Güneydoğu Asya maruziyeti, HIV/CD4 düşüklüğü, kırmızı pigmentli kültür ve transvers septumlu maya formlarını ilişkilendirebilme.",
+      "demographics": "34 yaşında erkek hasta",
+      "setting": "Enfeksiyon hastalıkları servisi",
+      "chiefComplaint": "Uzamış ateş, kilo kaybı ve yüzde küçük çökük papüller nedeniyle yatırılıyor.",
+      "stem": "Hasta iki ay önce Tayland ve Vietnam’da uzun süreli seyahat ettiğini, dönüşten sonra giderek artan halsizlik ve gece terlemeleri yaşadığını anlatır. Son üç haftada iştahı azalmış, yaklaşık 6 kg kaybetmiş ve yüzünde ağrısız küçük kabarıklıklar belirmiştir. Beş yıldır HIV tanısı olduğunu ancak antiretroviral tedavisini son aylarda düzenli kullanmadığını söyler. Öksürüğü hafiftir; belirgin baş ağrısı, ense sertliği veya yeni nöbet tariflemez.",
+      "patientIntro": {
+        "profile": "34 yaşında erkek hasta, Enfeksiyon hastalıkları servisi ortamında değerlendiriliyor.",
+        "presentation": "Uzamış ateş, kilo kaybı ve yüzde küçük çökük papüller nedeniyle yatırılıyor.",
+        "historySummary": "Hasta iki ay önce Tayland ve Vietnam’da uzun süreli seyahat ettiğini, dönüşten sonra giderek artan halsizlik ve gece terlemeleri yaşadığını anlatır. Son üç haftada iştahı azalmış, yaklaşık 6 kg kaybetmiş ve yüzünde ağrısız küçük kabarıklıklar belirmiştir. Beş yıldır HIV tanısı olduğunu ancak antiretroviral tedavisini son aylarda düzenli kullanmadığını söyler. Öksürüğü hafiftir; belirgin baş ağrısı, ense sertliği veya yeni nöbet tariflemez."
+      },
+      "vitals": {
+        "TA": "108/66 mmHg",
+        "Nabız": "112/dk",
+        "Solunum": "20/dk",
+        "SpO2": "96%, oda havasında",
+        "Ateş": "38.5 °C",
+        "Şok indeksi": "1.04 - izlem"
+      },
+      "exam": [
+        "Zayıf ve halsiz görünümlü, bilinç açık.",
+        "Yüz ve boyunda merkezinde hafif çöküklük bulunan çok sayıda küçük papül izlenir.",
+        "Servikal lenf nodları palpabl; karında dalak kot altında 3 cm ele gelir.",
+        "Akciğerlerde hafif yaygın ronküs dışında belirgin fokal bulgu yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v261-new-505-guneydogu-asya-sonrasi-ates-ve-umblike-papuller-mikrobiyoloji-laboratuvar-verileri",
+          "label": "Doku örneği, kan kültürü ve fungal inceleme",
+          "title": "Doku örneği, kan kültürü ve fungal inceleme",
+          "orderLabel": "Doku örneği, kan kültürü ve fungal inceleme",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Cilt biyopsisi, kemik iliği yayması ve dimorfik mantar kültürü",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Morfoloji ve kültür pigmenti sistemik dimorfik mantarlar arasında ayrım sağlar.",
+          "clinicalMeaning": "Morfoloji ve kültür pigmenti sistemik dimorfik mantarlar arasında ayrım sağlar.",
+          "result": {
+            "title": "Doku örneği, kan kültürü ve fungal inceleme",
+            "summary": "Morfoloji ve kültür pigmenti sistemik dimorfik mantarlar arasında ayrım sağlar.",
+            "interpretation": "Morfoloji ve kültür pigmenti sistemik dimorfik mantarlar arasında ayrım sağlar.",
+            "values": [
+              [
+                "CD4 sayısı",
+                "38 hücre/mm³",
+                ">500 hücre/mm³",
+                "İleri hücresel immünsupresyon"
+              ],
+              [
+                "Cilt biyopsisi",
+                "Makrofajlar içinde küçük maya benzeri yapılar",
+                "Mantar elemanı yok",
+                "Doku tutulumu"
+              ],
+              [
+                "Özel boyama",
+                "Bazı formlarda ortadan transvers septum görünümü",
+                "Kapsül belirgin",
+                "Ayırt ettirici bölünme paterni"
+              ],
+              [
+                "Kültür 25 °C",
+                "Küf formunda üreme ve besiyerine yayılan kırmızı pigment",
+                "Pigment yok",
+                "Dimorfik mantar ipucu"
+              ],
+              [
+                "Kan kültürü",
+                "Yavaş üreyen dimorfik mantar bildirimi",
+                "Üreme yok",
+                "Dissemine enfeksiyon desteği"
+              ],
+              [
+                "Kriptokok antijeni",
+                "Negatif",
+                "Negatif",
+                "Kapsüllü maya lehine değil"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu mikolojik laboratuvar bulgusu hangi etkenle en uyumludur?",
+      "questionType": "etiologic-agent",
+      "answerTarget": "Fungal etken",
+      "diagnosis": {
+        "correct": "Talaromyces marneffei",
+        "options": [
+          "Histoplasma capsulatum",
+          "Cryptococcus neoformans",
+          "Talaromyces marneffei",
+          "Coccidioides immitis/posadasii",
+          "Blastomyces dermatitidis"
+        ],
+        "question": "Bu mikolojik laboratuvar bulgusu hangi etkenle en uyumludur?",
+        "explanation": "Bu seçenek en uygundur; ileri HIV hastasında Güneydoğu Asya sonrası ateş, kilo kaybı, hepatosplenomegali ve umblike papüller talaromikoz için tipik klinik zemindir. Kültürde difüze kırmızı pigment ve dokuda transvers septumla bölünen maya benzeri formlar bu dimorfik mantarı diğer sistemik mantarlardan ayırır.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "İleri HIV + Güneydoğu Asya maruziyeti + umblike papüller + kırmızı pigmentli dimorfik kültür + transvers septumlu maya formları → Talaromyces marneffei."
+          }
+        ],
+        "optionFeedback": {
+          "Histoplasma capsulatum": {
+            "explanation": "Histoplasma capsulatum makrofaj içinde küçük oval mayalarla görülebilir ve özellikle kuş/yarasa dışkısı içeren mağara-toprak maruziyetinde düşünülür. Bu vakada Güneydoğu Asya maruziyeti, umblike papüller, kültürde kırmızı pigment ve transvers septumlu maya görünümü Histoplasma yerine Talaromyces için daha ayırt ettiricidir."
+          },
+          "Cryptococcus neoformans": {
+            "explanation": "Cryptococcus neoformans kapsüllü maya olup HIV hastasında menenjit yapabilir; çini mürekkebi veya kriptokok antijeni tanıda değerlidir. Bu olguda meningeal bulgular baskın değildir ve mikroskopide kapsüllü tomurcuklanan maya değil, makrofaj içinde transvers septumlu maya benzeri formlar verilmiştir."
+          },
+          "Talaromyces marneffei": {
+            "explanation": "Bu seçenek en uygundur; ileri HIV hastasında Güneydoğu Asya sonrası ateş, kilo kaybı, hepatosplenomegali ve umblike papüller talaromikoz için tipik klinik zemindir. Kültürde difüze kırmızı pigment ve dokuda transvers septumla bölünen maya benzeri formlar bu dimorfik mantarı diğer sistemik mantarlardan ayırır."
+          },
+          "Coccidioides immitis/posadasii": {
+            "explanation": "Coccidioides çöl bölgeleriyle ilişkili pnömoni yapar ve dokuda endospor içeren sferüller beklenir. Bu vakadaki coğrafi maruziyet Güneydoğu Asya’dır; transvers septumlu maya ve kırmızı pigmentli kültür Coccidioides morfolojisi değildir."
+          },
+          "Blastomyces dermatitidis": {
+            "explanation": "Blastomyces geniş tabanlı tomurcuklanan kalın duvarlı maya ile tanınır ve pulmoner-cilt tutulumu yapabilir. Ancak kültür pigmenti ve makrofaj içi transvers septumlu formlar Blastomyces için tipik değildir; cilt bulgusu nedeniyle ayırıcı tanıya girebilir."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; ileri HIV hastasında Güneydoğu Asya sonrası ateş, kilo kaybı, hepatosplenomegali ve umblike papüller talaromikoz için tipik klinik zemindir. Kültürde difüze kırmızı pigment ve dokuda transvers septumla bölünen maya benzeri formlar bu dimorfik mantarı diğer sistemik mantarlardan ayırır.",
+          "optionFeedback": {
+            "Histoplasma capsulatum": {
+              "explanation": "Histoplasma capsulatum makrofaj içinde küçük oval mayalarla görülebilir ve özellikle kuş/yarasa dışkısı içeren mağara-toprak maruziyetinde düşünülür. Bu vakada Güneydoğu Asya maruziyeti, umblike papüller, kültürde kırmızı pigment ve transvers septumlu maya görünümü Histoplasma yerine Talaromyces için daha ayırt ettiricidir."
+            },
+            "Cryptococcus neoformans": {
+              "explanation": "Cryptococcus neoformans kapsüllü maya olup HIV hastasında menenjit yapabilir; çini mürekkebi veya kriptokok antijeni tanıda değerlidir. Bu olguda meningeal bulgular baskın değildir ve mikroskopide kapsüllü tomurcuklanan maya değil, makrofaj içinde transvers septumlu maya benzeri formlar verilmiştir."
+            },
+            "Talaromyces marneffei": {
+              "explanation": "Bu seçenek en uygundur; ileri HIV hastasında Güneydoğu Asya sonrası ateş, kilo kaybı, hepatosplenomegali ve umblike papüller talaromikoz için tipik klinik zemindir. Kültürde difüze kırmızı pigment ve dokuda transvers septumla bölünen maya benzeri formlar bu dimorfik mantarı diğer sistemik mantarlardan ayırır."
+            },
+            "Coccidioides immitis/posadasii": {
+              "explanation": "Coccidioides çöl bölgeleriyle ilişkili pnömoni yapar ve dokuda endospor içeren sferüller beklenir. Bu vakadaki coğrafi maruziyet Güneydoğu Asya’dır; transvers septumlu maya ve kırmızı pigmentli kültür Coccidioides morfolojisi değildir."
+            },
+            "Blastomyces dermatitidis": {
+              "explanation": "Blastomyces geniş tabanlı tomurcuklanan kalın duvarlı maya ile tanınır ve pulmoner-cilt tutulumu yapabilir. Ancak kültür pigmenti ve makrofaj içi transvers septumlu formlar Blastomyces için tipik değildir; cilt bulgusu nedeniyle ayırıcı tanıya girebilir."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Talaromyces marneffei Güneydoğu Asya ve çevresinde görülen dimorfik bir mantardır; ileri HIV’de dissemine hastalık, ateş, kilo kaybı, hepatosplenomegali ve umblike cilt lezyonları yapabilir. Kültürde kırmızı pigment ve dokuda transvers septumlu maya benzeri yapılar ayırt ettiricidir.",
+      "examPearl": "HIV/CD4 çok düşük + Güneydoğu Asya + umblike papüller + kırmızı pigmentli kültür + transvers septum → Talaromyces marneffei.",
+      "whyCorrect": "Bu seçenek en uygundur; ileri HIV hastasında Güneydoğu Asya sonrası ateş, kilo kaybı, hepatosplenomegali ve umblike papüller talaromikoz için tipik klinik zemindir. Kültürde difüze kırmızı pigment ve dokuda transvers septumla bölünen maya benzeri formlar bu dimorfik mantarı diğer sistemik mantarlardan ayırır.",
+      "optionComparison": {
+        "Histoplasma capsulatum": "Histoplasma capsulatum makrofaj içinde küçük oval mayalarla görülebilir ve özellikle kuş/yarasa dışkısı içeren mağara-toprak maruziyetinde düşünülür. Bu vakada Güneydoğu Asya maruziyeti, umblike papüller, kültürde kırmızı pigment ve transvers septumlu maya görünümü Histoplasma yerine Talaromyces için daha ayırt ettiricidir.",
+        "Cryptococcus neoformans": "Cryptococcus neoformans kapsüllü maya olup HIV hastasında menenjit yapabilir; çini mürekkebi veya kriptokok antijeni tanıda değerlidir. Bu olguda meningeal bulgular baskın değildir ve mikroskopide kapsüllü tomurcuklanan maya değil, makrofaj içinde transvers septumlu maya benzeri formlar verilmiştir.",
+        "Talaromyces marneffei": "Bu seçenek en uygundur; ileri HIV hastasında Güneydoğu Asya sonrası ateş, kilo kaybı, hepatosplenomegali ve umblike papüller talaromikoz için tipik klinik zemindir. Kültürde difüze kırmızı pigment ve dokuda transvers septumla bölünen maya benzeri formlar bu dimorfik mantarı diğer sistemik mantarlardan ayırır.",
+        "Coccidioides immitis/posadasii": "Coccidioides çöl bölgeleriyle ilişkili pnömoni yapar ve dokuda endospor içeren sferüller beklenir. Bu vakadaki coğrafi maruziyet Güneydoğu Asya’dır; transvers septumlu maya ve kırmızı pigmentli kültür Coccidioides morfolojisi değildir.",
+        "Blastomyces dermatitidis": "Blastomyces geniş tabanlı tomurcuklanan kalın duvarlı maya ile tanınır ve pulmoner-cilt tutulumu yapabilir. Ancak kültür pigmenti ve makrofaj içi transvers septumlu formlar Blastomyces için tipik değildir; cilt bulgusu nedeniyle ayırıcı tanıya girebilir."
+      },
+      "evidenceChain": [
+        {
+          "text": "CD4 38 hücre/mm³ → fırsatçı sistemik mantar enfeksiyonu riski",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Güneydoğu Asya seyahati → Talaromyces için coğrafi ipucu",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Umblike papüller ve hepatosplenomegali → dissemine fungal enfeksiyon paterni",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Transvers septum ve kırmızı pigment → Talaromyces ayırıcı mikolojik bulgusu",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Histoplasma capsulatum": "Histoplasma capsulatum makrofaj içinde küçük oval mayalarla görülebilir ve özellikle kuş/yarasa dışkısı içeren mağara-toprak maruziyetinde düşünülür. Bu vakada Güneydoğu Asya maruziyeti, umblike papüller, kültürde kırmızı pigment ve transvers septumlu maya görünümü Histoplasma yerine Talaromyces için daha ayırt ettiricidir.",
+        "Cryptococcus neoformans": "Cryptococcus neoformans kapsüllü maya olup HIV hastasında menenjit yapabilir; çini mürekkebi veya kriptokok antijeni tanıda değerlidir. Bu olguda meningeal bulgular baskın değildir ve mikroskopide kapsüllü tomurcuklanan maya değil, makrofaj içinde transvers septumlu maya benzeri formlar verilmiştir.",
+        "Coccidioides immitis/posadasii": "Coccidioides çöl bölgeleriyle ilişkili pnömoni yapar ve dokuda endospor içeren sferüller beklenir. Bu vakadaki coğrafi maruziyet Güneydoğu Asya’dır; transvers septumlu maya ve kırmızı pigmentli kültür Coccidioides morfolojisi değildir.",
+        "Blastomyces dermatitidis": "Blastomyces geniş tabanlı tomurcuklanan kalın duvarlı maya ile tanınır ve pulmoner-cilt tutulumu yapabilir. Ancak kültür pigmenti ve makrofaj içi transvers septumlu formlar Blastomyces için tipik değildir; cilt bulgusu nedeniyle ayırıcı tanıya girebilir."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v261-medical-microbiology-twelfth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "İleri HIV",
+        "Güneydoğu Asya seyahati",
+        "Umblike papüller",
+        "Transvers septumlu maya",
+        "Kırmızı pigmentli kültür"
+      ],
+      "images": []
+    },
+  {
+      "id": "v261-new-506-su-bitkisi-tuketimi-sonrasi-safra-yolu-yakinmalari",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Su bitkisi tüketimi sonrası safra yolu yakınmaları",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Gıda maruziyeti, eozinofili, hepatobiliyer bulgu ve yumurta morfolojisinden trematod etkenini ayırt etme.",
+      "learningTarget": "Fasciola hepatica enfeksiyonunda su bitkileriyle metaserker alımı, hepatik göç, eozinofili ve kronik dönemde operkulumlu yumurta saptanması arasındaki ilişkiyi açıklayabilme.",
+      "demographics": "41 yaşında kadın hasta",
+      "setting": "Gastroenteroloji ve enfeksiyon hastalıkları ortak değerlendirmesi",
+      "chiefComplaint": "Tekrarlayan sağ üst kadran ağrısı, kaşıntı ve eozinofili nedeniyle başvuruyor.",
+      "stem": "Hasta son iki aydır aralıklı sağ üst kadran ağrısı ve yemeklerden sonra artan bulantı yaşadığını anlatır. Kırsal bölgede yaşadığını, bahçedeki dere kenarından topladığı su teresi benzeri bitkileri salatada sık tükettiğini söyler. Son haftalarda kaşıntı ve halsizlik eklenmiş, kısa süreli ateş atakları olmuştur. Ailede benzer yakınması olan yoktur; çiğ tatlı su balığı tüketimi veya köpek temasıyla ilişkili kistik hastalık öyküsü tariflemez.",
+      "patientIntro": {
+        "profile": "41 yaşında kadın hasta, Gastroenteroloji ve enfeksiyon hastalıkları ortak değerlendirmesi ortamında değerlendiriliyor.",
+        "presentation": "Tekrarlayan sağ üst kadran ağrısı, kaşıntı ve eozinofili nedeniyle başvuruyor.",
+        "historySummary": "Hasta son iki aydır aralıklı sağ üst kadran ağrısı ve yemeklerden sonra artan bulantı yaşadığını anlatır. Kırsal bölgede yaşadığını, bahçedeki dere kenarından topladığı su teresi benzeri bitkileri salatada sık tükettiğini söyler. Son haftalarda kaşıntı ve halsizlik eklenmiş, kısa süreli ateş atakları olmuştur. Ailede benzer yakınması olan yoktur; çiğ tatlı su balığı tüketimi veya köpek temasıyla ilişkili kistik hastalık öyküsü tariflemez."
+      },
+      "vitals": {
+        "TA": "118/74 mmHg",
+        "Nabız": "94/dk",
+        "Solunum": "17/dk",
+        "SpO2": "98%, oda havasında",
+        "Ateş": "37.8 °C",
+        "Şok indeksi": "0.80 - stabil"
+      },
+      "exam": [
+        "Genel durumu orta, bilinç açık.",
+        "Skleralarda hafif subikter vardır; ciltte yaygın kaşıntı izleri görülür.",
+        "Sağ üst kadranda hassasiyet vardır; belirgin defans yoktur.",
+        "Karaciğer kenarı hafif hassas palpe edilir, dalak büyüklüğü saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v261-new-506-su-bitkisi-tuketimi-sonrasi-safra-yolu-yakinmalari-mikrobiyoloji-laboratuvar-verileri",
+          "label": "Parazitolojik dışkı incelemesi, seroloji ve hepatobiliyer görüntüleme",
+          "title": "Parazitolojik dışkı incelemesi, seroloji ve hepatobiliyer görüntüleme",
+          "orderLabel": "Parazitolojik dışkı incelemesi, seroloji ve hepatobiliyer görüntüleme",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Dışkı yumurta morfolojisi, eozinofil sayımı, seroloji ve ultrasonografi",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Maruziyet tipi, yumurta morfolojisi ve biliyer tutulum trematod ayrımını sağlar.",
+          "clinicalMeaning": "Maruziyet tipi, yumurta morfolojisi ve biliyer tutulum trematod ayrımını sağlar.",
+          "result": {
+            "title": "Parazitolojik dışkı incelemesi, seroloji ve hepatobiliyer görüntüleme",
+            "summary": "Maruziyet tipi, yumurta morfolojisi ve biliyer tutulum trematod ayrımını sağlar.",
+            "interpretation": "Maruziyet tipi, yumurta morfolojisi ve biliyer tutulum trematod ayrımını sağlar.",
+            "values": [
+              [
+                "Tam kan sayımı",
+                "Eozinofil %18, lökosit 11.800/mm³",
+                "Eozinofil normal",
+                "Helmint/trematod yanıtı"
+              ],
+              [
+                "Karaciğer testleri",
+                "ALP ve GGT yüksek, bilirubin hafif yüksek",
+                "Normal",
+                "Kolestatik patern"
+              ],
+              [
+                "Ultrasonografi",
+                "Safra yollarında hafif düzensizlik ve hareketli ekodens odaklar",
+                "Normal",
+                "Biliyer tutulum"
+              ],
+              [
+                "Dışkı mikroskopisi",
+                "Büyük, oval, operkulumlu yumurtalar; tekrarlayan örnekte saptandı",
+                "Yumurta yok",
+                "Trematod yumurtası"
+              ],
+              [
+                "Seroloji",
+                "Fasciola antikoru pozitif",
+                "Negatif",
+                "Maruziyet ve klinikle destekleyici"
+              ],
+              [
+                "Dışkı kültürü",
+                "Patojen bakteri üremedi",
+                "Üreme yok",
+                "Bakteriyel enterit lehine değil"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu parazitolojik ve klinik bulgular için en olası etken aşağıdakilerden hangisidir?",
+      "questionType": "etiologic-agent",
+      "answerTarget": "Paraziter etken",
+      "diagnosis": {
+        "correct": "Fasciola hepatica",
+        "options": [
+          "Fasciola hepatica",
+          "Clonorchis sinensis",
+          "Schistosoma mansoni",
+          "Echinococcus granulosus",
+          "Entamoeba histolytica"
+        ],
+        "question": "Bu parazitolojik ve klinik bulgular için en olası etken aşağıdakilerden hangisidir?",
+        "explanation": "Bu seçenek en uygundur; çiğ su bitkisi tüketimi sonrası sağ üst kadran ağrısı, belirgin eozinofili, biliyer sistem tutulumu ve dışkıda büyük operkulumlu yumurta Fasciola enfeksiyonunu destekler. Akut dönemde yumurta her zaman görülmeyebileceğinden serolojinin pozitifliği ve hepatobiliyer görüntüleme bulguları tanısal zinciri güçlendirir.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Çiğ su bitkisi tüketimi + sağ üst kadran/kolestaz bulguları + eozinofili + büyük operkulumlu yumurta → Fasciola hepatica."
+          }
+        ],
+        "optionFeedback": {
+          "Fasciola hepatica": {
+            "explanation": "Bu seçenek en uygundur; çiğ su bitkisi tüketimi sonrası sağ üst kadran ağrısı, belirgin eozinofili, biliyer sistem tutulumu ve dışkıda büyük operkulumlu yumurta Fasciola enfeksiyonunu destekler. Akut dönemde yumurta her zaman görülmeyebileceğinden serolojinin pozitifliği ve hepatobiliyer görüntüleme bulguları tanısal zinciri güçlendirir."
+          },
+          "Clonorchis sinensis": {
+            "explanation": "Clonorchis sinensis genellikle çiğ veya az pişmiş tatlı su balığı tüketimiyle bulaşır ve küçük operkulumlu yumurtalarla ilişkilidir. Bu vakada maruziyet su bitkisi tüketimi şeklindedir; yumurta boyutu ve hepatik göç-eozinofili paterni Fasciola lehinedir."
+          },
+          "Schistosoma mansoni": {
+            "explanation": "Schistosoma mansoni portal hipertansiyon ve intestinal/hepatik hastalık yapabilir; dışkıda lateral dikenli yumurta beklenir. Bu olguda tatlı su teması değil su bitkisi tüketimi vardır ve operkulumlu yumurta şistozom yumurtasıyla uyumlu değildir."
+          },
+          "Echinococcus granulosus": {
+            "explanation": "Echinococcus granulosus karaciğerde kistik hidatik lezyonlar yapar ve dışkıda insan kaynaklı yumurta saptanması beklenmez; insan ara konaktır. Bu vakada biliyer yakınmalar, eozinofili, operkulumlu yumurta ve su bitkisi maruziyeti hidatik kistten farklıdır."
+          },
+          "Entamoeba histolytica": {
+            "explanation": "Entamoeba histolytica kanlı ishal ve amebik karaciğer apsesi yapabilir; dışkıda kist/trofozoit ve seroloji klinik bağlama göre kullanılır. Operkulumlu helmint yumurtası ve belirgin eozinofili protozoal amebiyazis için tipik değildir."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; çiğ su bitkisi tüketimi sonrası sağ üst kadran ağrısı, belirgin eozinofili, biliyer sistem tutulumu ve dışkıda büyük operkulumlu yumurta Fasciola enfeksiyonunu destekler. Akut dönemde yumurta her zaman görülmeyebileceğinden serolojinin pozitifliği ve hepatobiliyer görüntüleme bulguları tanısal zinciri güçlendirir.",
+          "optionFeedback": {
+            "Fasciola hepatica": {
+              "explanation": "Bu seçenek en uygundur; çiğ su bitkisi tüketimi sonrası sağ üst kadran ağrısı, belirgin eozinofili, biliyer sistem tutulumu ve dışkıda büyük operkulumlu yumurta Fasciola enfeksiyonunu destekler. Akut dönemde yumurta her zaman görülmeyebileceğinden serolojinin pozitifliği ve hepatobiliyer görüntüleme bulguları tanısal zinciri güçlendirir."
+            },
+            "Clonorchis sinensis": {
+              "explanation": "Clonorchis sinensis genellikle çiğ veya az pişmiş tatlı su balığı tüketimiyle bulaşır ve küçük operkulumlu yumurtalarla ilişkilidir. Bu vakada maruziyet su bitkisi tüketimi şeklindedir; yumurta boyutu ve hepatik göç-eozinofili paterni Fasciola lehinedir."
+            },
+            "Schistosoma mansoni": {
+              "explanation": "Schistosoma mansoni portal hipertansiyon ve intestinal/hepatik hastalık yapabilir; dışkıda lateral dikenli yumurta beklenir. Bu olguda tatlı su teması değil su bitkisi tüketimi vardır ve operkulumlu yumurta şistozom yumurtasıyla uyumlu değildir."
+            },
+            "Echinococcus granulosus": {
+              "explanation": "Echinococcus granulosus karaciğerde kistik hidatik lezyonlar yapar ve dışkıda insan kaynaklı yumurta saptanması beklenmez; insan ara konaktır. Bu vakada biliyer yakınmalar, eozinofili, operkulumlu yumurta ve su bitkisi maruziyeti hidatik kistten farklıdır."
+            },
+            "Entamoeba histolytica": {
+              "explanation": "Entamoeba histolytica kanlı ishal ve amebik karaciğer apsesi yapabilir; dışkıda kist/trofozoit ve seroloji klinik bağlama göre kullanılır. Operkulumlu helmint yumurtası ve belirgin eozinofili protozoal amebiyazis için tipik değildir."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Fasciola hepatica metaserkerlerinin kontamine su bitkileriyle alınması sonrası karaciğer parankiminden safra yollarına göç eder. Akut göç döneminde eozinofili belirgin olabilir; kronik biliyer dönemde dışkıda büyük operkulumlu yumurtalar saptanabilir.",
+      "examPearl": "Su teresi/çiğ su bitkisi + eozinofili + biliyer yakınma + büyük operkulumlu yumurta → Fasciola hepatica.",
+      "whyCorrect": "Bu seçenek en uygundur; çiğ su bitkisi tüketimi sonrası sağ üst kadran ağrısı, belirgin eozinofili, biliyer sistem tutulumu ve dışkıda büyük operkulumlu yumurta Fasciola enfeksiyonunu destekler. Akut dönemde yumurta her zaman görülmeyebileceğinden serolojinin pozitifliği ve hepatobiliyer görüntüleme bulguları tanısal zinciri güçlendirir.",
+      "optionComparison": {
+        "Fasciola hepatica": "Bu seçenek en uygundur; çiğ su bitkisi tüketimi sonrası sağ üst kadran ağrısı, belirgin eozinofili, biliyer sistem tutulumu ve dışkıda büyük operkulumlu yumurta Fasciola enfeksiyonunu destekler. Akut dönemde yumurta her zaman görülmeyebileceğinden serolojinin pozitifliği ve hepatobiliyer görüntüleme bulguları tanısal zinciri güçlendirir.",
+        "Clonorchis sinensis": "Clonorchis sinensis genellikle çiğ veya az pişmiş tatlı su balığı tüketimiyle bulaşır ve küçük operkulumlu yumurtalarla ilişkilidir. Bu vakada maruziyet su bitkisi tüketimi şeklindedir; yumurta boyutu ve hepatik göç-eozinofili paterni Fasciola lehinedir.",
+        "Schistosoma mansoni": "Schistosoma mansoni portal hipertansiyon ve intestinal/hepatik hastalık yapabilir; dışkıda lateral dikenli yumurta beklenir. Bu olguda tatlı su teması değil su bitkisi tüketimi vardır ve operkulumlu yumurta şistozom yumurtasıyla uyumlu değildir.",
+        "Echinococcus granulosus": "Echinococcus granulosus karaciğerde kistik hidatik lezyonlar yapar ve dışkıda insan kaynaklı yumurta saptanması beklenmez; insan ara konaktır. Bu vakada biliyer yakınmalar, eozinofili, operkulumlu yumurta ve su bitkisi maruziyeti hidatik kistten farklıdır.",
+        "Entamoeba histolytica": "Entamoeba histolytica kanlı ishal ve amebik karaciğer apsesi yapabilir; dışkıda kist/trofozoit ve seroloji klinik bağlama göre kullanılır. Operkulumlu helmint yumurtası ve belirgin eozinofili protozoal amebiyazis için tipik değildir."
+      },
+      "evidenceChain": [
+        {
+          "text": "Su bitkisi tüketimi → Fasciola metaserker maruziyeti",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Eozinofili → helmint/trematod yanıtı",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Kolestatik testler ve safra yolu bulgusu → biliyer yerleşim",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Büyük operkulumlu yumurta → Fasciola ile uyumlu trematod yumurtası",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Clonorchis sinensis": "Clonorchis sinensis genellikle çiğ veya az pişmiş tatlı su balığı tüketimiyle bulaşır ve küçük operkulumlu yumurtalarla ilişkilidir. Bu vakada maruziyet su bitkisi tüketimi şeklindedir; yumurta boyutu ve hepatik göç-eozinofili paterni Fasciola lehinedir.",
+        "Schistosoma mansoni": "Schistosoma mansoni portal hipertansiyon ve intestinal/hepatik hastalık yapabilir; dışkıda lateral dikenli yumurta beklenir. Bu olguda tatlı su teması değil su bitkisi tüketimi vardır ve operkulumlu yumurta şistozom yumurtasıyla uyumlu değildir.",
+        "Echinococcus granulosus": "Echinococcus granulosus karaciğerde kistik hidatik lezyonlar yapar ve dışkıda insan kaynaklı yumurta saptanması beklenmez; insan ara konaktır. Bu vakada biliyer yakınmalar, eozinofili, operkulumlu yumurta ve su bitkisi maruziyeti hidatik kistten farklıdır.",
+        "Entamoeba histolytica": "Entamoeba histolytica kanlı ishal ve amebik karaciğer apsesi yapabilir; dışkıda kist/trofozoit ve seroloji klinik bağlama göre kullanılır. Operkulumlu helmint yumurtası ve belirgin eozinofili protozoal amebiyazis için tipik değildir."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v261-medical-microbiology-twelfth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Su bitkisi tüketimi",
+        "Sağ üst kadran ağrısı",
+        "Eozinofili",
+        "Kolestatik patern",
+        "Büyük operkulumlu yumurta"
+      ],
+      "images": []
+    },
+  {
+      "id": "v262-new-507-az-pismis-tavuk-sonrasi-kanli-ishal",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Az pişmiş tavuk sonrası kanlı ishal",
+      "difficulty": "Orta",
+      "difficultyTag": "Orta",
+      "clinicalFocus": "Gıda kaynaklı bakteriyel gastroenteritte öykü, dışkı mikroskopisi ve kültür koşullarını birlikte yorumlayarak etkeni ayırt etme.",
+      "learningTarget": "Campylobacter jejuni enteritinde kümes hayvanı teması, kıvrık gram negatif basil morfolojisi ve mikroaerofilik inkübasyon bilgisini klinik tabloyla birleştirebilme.",
+      "demographics": "22 yaşında erkek hasta",
+      "setting": "Acil servis",
+      "chiefComplaint": "Hasta, kamp dönüşü başlayan ateş, karın ağrısı ve kanlı ishal nedeniyle acil serviste değerlendiriliyor.",
+      "stem": "Hasta üç gün önce arkadaşlarıyla kamp yaptığını ve akşam yemeğinde içi tam pişmemiş tavuk yediğini anlatır. Ertesi gün kramp tarzında karın ağrısı başlamış, ardından ateş ve günde 7-8 kez dışkılama gelişmiştir. Son 24 saatte dışkısında kan çizgileri fark etmiş ve halsizlik nedeniyle acile gelmiştir. Aynı yemekten yiyen iki arkadaşında da daha hafif ishal olduğu, hastanın yakın zamanda antibiyotik kullanmadığı öğrenilir.",
+      "patientIntro": {
+        "profile": "22 yaşında erkek hasta, Acil servis ortamında değerlendiriliyor.",
+        "presentation": "Hasta, kamp dönüşü başlayan ateş, karın ağrısı ve kanlı ishal nedeniyle acil serviste değerlendiriliyor.",
+        "historySummary": "Hasta üç gün önce arkadaşlarıyla kamp yaptığını ve akşam yemeğinde içi tam pişmemiş tavuk yediğini anlatır. Ertesi gün kramp tarzında karın ağrısı başlamış, ardından ateş ve günde 7-8 kez dışkılama gelişmiştir. Son 24 saatte dışkısında kan çizgileri fark etmiş ve halsizlik nedeniyle acile gelmiştir. Aynı yemekten yiyen iki arkadaşında da daha hafif ishal olduğu, hastanın yakın zamanda antibiyotik kullanmadığı öğrenilir."
+      },
+      "vitals": {
+        "TA": "108/68 mmHg",
+        "Nabız": "104/dk",
+        "Solunum": "18/dk",
+        "SpO₂": "98%",
+        "Ateş": "38.4 °C",
+        "Şok indeksi": "0.96"
+      },
+      "exam": [
+        "Genel durumu orta, mukozalar hafif kuru izlenir.",
+        "Karında yaygın hassasiyet vardır; defans ve rebound saptanmaz.",
+        "Deri döküntüsü veya meningeal irritasyon bulgusu yoktur.",
+        "Rektal muayenede az miktarda kanlı mukuslu dışkı görülür."
+      ],
+      "investigations": [
+        {
+          "id": "v262-new-507-az-pismis-tavuk-sonrasi-kanli-ishal-mikrobiyoloji-laboratuvar-verileri",
+          "label": "Dışkı mikrobiyolojisi ve kültür özellikleri",
+          "title": "Dışkı mikrobiyolojisi ve kültür özellikleri",
+          "orderLabel": "Dışkı mikrobiyolojisi ve kültür özellikleri",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Gram boyama, dışkı inflamasyon bulgusu ve seçici kültür",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Dışkı örneğinde inflamatuvar ishal bulguları ile mikroaerofilik ortamda üreyen kıvrık gram negatif basil paterni birlikte değerlendirilir.",
+          "clinicalMeaning": "Dışkı örneğinde inflamatuvar ishal bulguları ile mikroaerofilik ortamda üreyen kıvrık gram negatif basil paterni birlikte değerlendirilir.",
+          "result": {
+            "title": "Dışkı mikrobiyolojisi ve kültür özellikleri",
+            "summary": "Dışkı örneğinde inflamatuvar ishal bulguları ile mikroaerofilik ortamda üreyen kıvrık gram negatif basil paterni birlikte değerlendirilir.",
+            "interpretation": "Dışkı örneğinde inflamatuvar ishal bulguları ile mikroaerofilik ortamda üreyen kıvrık gram negatif basil paterni birlikte değerlendirilir.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Taze dışkı örneği",
+                "Serum",
+                "Akut enterit için uygun klinik örnek"
+              ],
+              [
+                "Dışkı lökositi",
+                "Bol polimorfonükleer lökosit",
+                "Yok",
+                "İnflamatuvar ishal desteği"
+              ],
+              [
+                "Gram boyama",
+                "Kıvrık, martı kanadı benzeri gram negatif basiller",
+                "Düz gram negatif çomak",
+                "Morfoloji ayırt ettirici"
+              ],
+              [
+                "Kültür koşulu",
+                "Mikroaerofilik atmosferde 42 °C inkübasyonda üreme",
+                "Rutin aerob inkübasyonda hızlı üreme",
+                "Etkenin kültür gereksinimiyle uyumlu"
+              ],
+              [
+                "Kan testi",
+                "Lökosit 13.400/mm³, CRP orta derecede yüksek",
+                "Normal",
+                "Bakteriyel inflamasyon desteği"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu klinik ve mikrobiyolojik laboratuvar bulguları hangi etkenle en uyumludur?",
+      "questionType": "etiology",
+      "answerTarget": "Bakteriyel etken",
+      "diagnosis": {
+        "correct": "Campylobacter jejuni",
+        "options": [
+          "Salmonella enterica serovar Enteritidis",
+          "Campylobacter jejuni",
+          "Shigella dysenteriae",
+          "Yersinia enterocolitica",
+          "Vibrio parahaemolyticus"
+        ],
+        "question": "Bu klinik ve mikrobiyolojik laboratuvar bulguları hangi etkenle en uyumludur?",
+        "explanation": "Bu seçenek en uygundur; az pişmiş kümes hayvanı sonrası ateşli, bazen kanlı ishal ve karın krampları Campylobacter enteritiyle uyumludur. Dışkı Gram boyamada kıvrık/martı kanadı benzeri gram negatif basiller ve mikroaerofilik 42 °C inkübasyonda üreme, C. jejuni lehine güçlü mikrobiyolojik kanıttır.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Az pişmiş tavuk + kanlı inflamatuvar ishal + kıvrık gram negatif basil + mikroaerofilik 42 °C üreme → Campylobacter jejuni."
+          }
+        ],
+        "optionFeedback": {
+          "Salmonella enterica serovar Enteritidis": {
+            "explanation": "Salmonella enterica serovar Enteritidis çiğ yumurta veya kümes hayvanı sonrası gastroenterit yapabilir, ancak mikroskopide martı kanadı benzeri kıvrık basiller ve mikroaerofilik 42 °C üreme paterni onun için tipik değildir. Salmonella daha çok hareketli gram negatif çomak olarak değerlendirilir ve seçici dışkı kültüründe farklı biyokimyasal ayrım gerektirir."
+          },
+          "Campylobacter jejuni": {
+            "explanation": "Bu seçenek en uygundur; az pişmiş kümes hayvanı sonrası ateşli, bazen kanlı ishal ve karın krampları Campylobacter enteritiyle uyumludur. Dışkı Gram boyamada kıvrık/martı kanadı benzeri gram negatif basiller ve mikroaerofilik 42 °C inkübasyonda üreme, C. jejuni lehine güçlü mikrobiyolojik kanıttır."
+          },
+          "Shigella dysenteriae": {
+            "explanation": "Shigella dysenteriae kanlı ishal ve düşük inokulumla bulaş açısından önemli bir ayırıcıdır, fakat belirgin kümes hayvanı öyküsü, kıvrık basil morfolojisi ve mikroaerofilik 42 °C üreme paterni Shigella için beklenmez. Shigella daha çok laktoz negatif enterik basil olarak değerlendirilir ve nörolojik sekel açısından bu vakadaki laboratuvar paterniyle ayrılır."
+          },
+          "Yersinia enterocolitica": {
+            "explanation": "Yersinia enterocolitica özellikle domuz ürünleri, soğukta üreyebilme ve pseudoapandisit/terminal ileit tablosuyla karışabilir. Bu hastada kıvrık gram negatif basil görünümü ve mikroaerofilik koşul gereksinimi Yersinia yerine Campylobacter yönünde ayırıcıdır."
+          },
+          "Vibrio parahaemolyticus": {
+            "explanation": "Vibrio parahaemolyticus çiğ deniz ürünü sonrası sulu ishal yapabilir ve kıvrık gram negatif basil morfolojisiyle ayırıcı tanıda yer alır. Ancak vaka kümes hayvanı temasıyla başlamakta, kanlı dışkı ve 42 °C mikroaerofilik üreme paterni deniz ürünü ilişkili Vibrio gastroenteritinden daha çok Campylobacter için öğreticidir."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; az pişmiş kümes hayvanı sonrası ateşli, bazen kanlı ishal ve karın krampları Campylobacter enteritiyle uyumludur. Dışkı Gram boyamada kıvrık/martı kanadı benzeri gram negatif basiller ve mikroaerofilik 42 °C inkübasyonda üreme, C. jejuni lehine güçlü mikrobiyolojik kanıttır.",
+          "optionFeedback": {
+            "Salmonella enterica serovar Enteritidis": {
+              "explanation": "Salmonella enterica serovar Enteritidis çiğ yumurta veya kümes hayvanı sonrası gastroenterit yapabilir, ancak mikroskopide martı kanadı benzeri kıvrık basiller ve mikroaerofilik 42 °C üreme paterni onun için tipik değildir. Salmonella daha çok hareketli gram negatif çomak olarak değerlendirilir ve seçici dışkı kültüründe farklı biyokimyasal ayrım gerektirir."
+            },
+            "Campylobacter jejuni": {
+              "explanation": "Bu seçenek en uygundur; az pişmiş kümes hayvanı sonrası ateşli, bazen kanlı ishal ve karın krampları Campylobacter enteritiyle uyumludur. Dışkı Gram boyamada kıvrık/martı kanadı benzeri gram negatif basiller ve mikroaerofilik 42 °C inkübasyonda üreme, C. jejuni lehine güçlü mikrobiyolojik kanıttır."
+            },
+            "Shigella dysenteriae": {
+              "explanation": "Shigella dysenteriae kanlı ishal ve düşük inokulumla bulaş açısından önemli bir ayırıcıdır, fakat belirgin kümes hayvanı öyküsü, kıvrık basil morfolojisi ve mikroaerofilik 42 °C üreme paterni Shigella için beklenmez. Shigella daha çok laktoz negatif enterik basil olarak değerlendirilir ve nörolojik sekel açısından bu vakadaki laboratuvar paterniyle ayrılır."
+            },
+            "Yersinia enterocolitica": {
+              "explanation": "Yersinia enterocolitica özellikle domuz ürünleri, soğukta üreyebilme ve pseudoapandisit/terminal ileit tablosuyla karışabilir. Bu hastada kıvrık gram negatif basil görünümü ve mikroaerofilik koşul gereksinimi Yersinia yerine Campylobacter yönünde ayırıcıdır."
+            },
+            "Vibrio parahaemolyticus": {
+              "explanation": "Vibrio parahaemolyticus çiğ deniz ürünü sonrası sulu ishal yapabilir ve kıvrık gram negatif basil morfolojisiyle ayırıcı tanıda yer alır. Ancak vaka kümes hayvanı temasıyla başlamakta, kanlı dışkı ve 42 °C mikroaerofilik üreme paterni deniz ürünü ilişkili Vibrio gastroenteritinden daha çok Campylobacter için öğreticidir."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Campylobacter jejuni, kümes hayvanı ilişkili ateşli gastroenteritte kıvrık gram negatif basil morfolojisi ve mikroaerofilik 42 °C üreme özelliğiyle tanınır. Dışkıda lökosit ve kan bulunması invaziv/inflamatuvar enterit lehinedir.",
+      "examPearl": "Az pişmiş tavuk + kanlı inflamatuvar ishal + kıvrık gram negatif basil + mikroaerofilik 42 °C üreme → Campylobacter jejuni.",
+      "whyCorrect": "Bu seçenek en uygundur; az pişmiş kümes hayvanı sonrası ateşli, bazen kanlı ishal ve karın krampları Campylobacter enteritiyle uyumludur. Dışkı Gram boyamada kıvrık/martı kanadı benzeri gram negatif basiller ve mikroaerofilik 42 °C inkübasyonda üreme, C. jejuni lehine güçlü mikrobiyolojik kanıttır.",
+      "optionComparison": {
+        "Salmonella enterica serovar Enteritidis": "Salmonella enterica serovar Enteritidis çiğ yumurta veya kümes hayvanı sonrası gastroenterit yapabilir, ancak mikroskopide martı kanadı benzeri kıvrık basiller ve mikroaerofilik 42 °C üreme paterni onun için tipik değildir. Salmonella daha çok hareketli gram negatif çomak olarak değerlendirilir ve seçici dışkı kültüründe farklı biyokimyasal ayrım gerektirir.",
+        "Campylobacter jejuni": "Bu seçenek en uygundur; az pişmiş kümes hayvanı sonrası ateşli, bazen kanlı ishal ve karın krampları Campylobacter enteritiyle uyumludur. Dışkı Gram boyamada kıvrık/martı kanadı benzeri gram negatif basiller ve mikroaerofilik 42 °C inkübasyonda üreme, C. jejuni lehine güçlü mikrobiyolojik kanıttır.",
+        "Shigella dysenteriae": "Shigella dysenteriae kanlı ishal ve düşük inokulumla bulaş açısından önemli bir ayırıcıdır, fakat belirgin kümes hayvanı öyküsü, kıvrık basil morfolojisi ve mikroaerofilik 42 °C üreme paterni Shigella için beklenmez. Shigella daha çok laktoz negatif enterik basil olarak değerlendirilir ve nörolojik sekel açısından bu vakadaki laboratuvar paterniyle ayrılır.",
+        "Yersinia enterocolitica": "Yersinia enterocolitica özellikle domuz ürünleri, soğukta üreyebilme ve pseudoapandisit/terminal ileit tablosuyla karışabilir. Bu hastada kıvrık gram negatif basil görünümü ve mikroaerofilik koşul gereksinimi Yersinia yerine Campylobacter yönünde ayırıcıdır.",
+        "Vibrio parahaemolyticus": "Vibrio parahaemolyticus çiğ deniz ürünü sonrası sulu ishal yapabilir ve kıvrık gram negatif basil morfolojisiyle ayırıcı tanıda yer alır. Ancak vaka kümes hayvanı temasıyla başlamakta, kanlı dışkı ve 42 °C mikroaerofilik üreme paterni deniz ürünü ilişkili Vibrio gastroenteritinden daha çok Campylobacter için öğreticidir."
+      },
+      "evidenceChain": [
+        {
+          "text": "Az pişmiş tavuk öyküsü → kümes hayvanı ilişkili enterit kaynağı",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Kanlı mukuslu dışkı ve dışkı lökositi → inflamatuvar bakteriyel ishal",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Kıvrık/martı kanadı gram negatif basil → Campylobacter morfolojisi",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Mikroaerofilik 42 °C üreme → C. jejuni için güçlü kültür ipucu",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Salmonella enterica serovar Enteritidis": "Salmonella enterica serovar Enteritidis çiğ yumurta veya kümes hayvanı sonrası gastroenterit yapabilir, ancak mikroskopide martı kanadı benzeri kıvrık basiller ve mikroaerofilik 42 °C üreme paterni onun için tipik değildir. Salmonella daha çok hareketli gram negatif çomak olarak değerlendirilir ve seçici dışkı kültüründe farklı biyokimyasal ayrım gerektirir.",
+        "Shigella dysenteriae": "Shigella dysenteriae kanlı ishal ve düşük inokulumla bulaş açısından önemli bir ayırıcıdır, fakat belirgin kümes hayvanı öyküsü, kıvrık basil morfolojisi ve mikroaerofilik 42 °C üreme paterni Shigella için beklenmez. Shigella daha çok laktoz negatif enterik basil olarak değerlendirilir ve nörolojik sekel açısından bu vakadaki laboratuvar paterniyle ayrılır.",
+        "Yersinia enterocolitica": "Yersinia enterocolitica özellikle domuz ürünleri, soğukta üreyebilme ve pseudoapandisit/terminal ileit tablosuyla karışabilir. Bu hastada kıvrık gram negatif basil görünümü ve mikroaerofilik koşul gereksinimi Yersinia yerine Campylobacter yönünde ayırıcıdır.",
+        "Vibrio parahaemolyticus": "Vibrio parahaemolyticus çiğ deniz ürünü sonrası sulu ishal yapabilir ve kıvrık gram negatif basil morfolojisiyle ayırıcı tanıda yer alır. Ancak vaka kümes hayvanı temasıyla başlamakta, kanlı dışkı ve 42 °C mikroaerofilik üreme paterni deniz ürünü ilişkili Vibrio gastroenteritinden daha çok Campylobacter için öğreticidir."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v263-medical-microbiology-thirteenth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Az pişmiş tavuk",
+        "Kanlı ishal",
+        "Kıvrık gram negatif basil",
+        "Mikroaerofilik kültür",
+        "42 °C üreme"
+      ],
+      "images": []
+    },
+  {
+      "id": "v262-new-508-persistan-yuksek-riskli-servikal-dna-pozitifligi",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Persistan yüksek riskli servikal DNA pozitifliği",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Servikal displazide viral onkoprotein mekanizmasını sitoloji, biyopsi ve moleküler test sonucu ile ilişkilendirme.",
+      "learningTarget": "Yüksek riskli papillomavirus enfeksiyonunda E6/E7 onkoproteinlerinin p53 ve Rb üzerinden hücre döngüsü kontrolünü nasıl bozduğunu açıklayabilme.",
+      "demographics": "34 yaşında kadın hasta",
+      "setting": "Kadın hastalıkları polikliniği",
+      "chiefComplaint": "Hasta, tarama testinde anormal servikal sitoloji ve yüksek riskli viral DNA pozitifliği nedeniyle değerlendiriliyor.",
+      "stem": "Hasta son iki yıldır yapılan kontrollerinde servikal sürüntü testlerinin normal olmadığını, son kontrolünde tekrar çağrıldığını anlatır. Düzensiz vajinal kanama tariflemez ancak ilişki sonrası lekelenmenin birkaç kez olduğunu belirtir. Daha önce benzer nedenle takip önerildiğini fakat kontrole düzenli gelemediğini söyler. Sigara kullandığı, immünsupresif ilaç kullanmadığı ve gebelik şüphesi olmadığı öğrenilir.",
+      "patientIntro": {
+        "profile": "34 yaşında kadın hasta, Kadın hastalıkları polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Hasta, tarama testinde anormal servikal sitoloji ve yüksek riskli viral DNA pozitifliği nedeniyle değerlendiriliyor.",
+        "historySummary": "Hasta son iki yıldır yapılan kontrollerinde servikal sürüntü testlerinin normal olmadığını, son kontrolünde tekrar çağrıldığını anlatır. Düzensiz vajinal kanama tariflemez ancak ilişki sonrası lekelenmenin birkaç kez olduğunu belirtir. Daha önce benzer nedenle takip önerildiğini fakat kontrole düzenli gelemediğini söyler. Sigara kullandığı, immünsupresif ilaç kullanmadığı ve gebelik şüphesi olmadığı öğrenilir."
+      },
+      "vitals": {
+        "TA": "118/74 mmHg",
+        "Nabız": "82/dk",
+        "Solunum": "16/dk",
+        "SpO₂": "99%",
+        "Ateş": "36.7 °C",
+        "Şok indeksi": "0.69"
+      },
+      "exam": [
+        "Genel durumu iyi, sistemik enfeksiyon bulgusu yoktur.",
+        "Spekulum muayenesinde servikste temasla hafif kanayan transformasyon zonu izlenir.",
+        "Palpasyonda belirgin pelvik kitle veya adneksiyal hassasiyet saptanmaz.",
+        "Kasık lenfadenopatisi yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v262-new-508-persistan-yuksek-riskli-servikal-dna-pozitifligi-mikrobiyoloji-laboratuvar-verileri",
+          "label": "Servikal sitoloji, moleküler test ve biyopsi bulguları",
+          "title": "Servikal sitoloji, moleküler test ve biyopsi bulguları",
+          "orderLabel": "Servikal sitoloji, moleküler test ve biyopsi bulguları",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Servikal sürüntü, yüksek riskli DNA testi ve histopatoloji",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Servikal epitelde kalıcı yüksek riskli viral DNA saptanması ve yüksek dereceli skuamöz değişiklikler viral onkoprotein mekanizmasını düşündürür.",
+          "clinicalMeaning": "Servikal epitelde kalıcı yüksek riskli viral DNA saptanması ve yüksek dereceli skuamöz değişiklikler viral onkoprotein mekanizmasını düşündürür.",
+          "result": {
+            "title": "Servikal sitoloji, moleküler test ve biyopsi bulguları",
+            "summary": "Servikal epitelde kalıcı yüksek riskli viral DNA saptanması ve yüksek dereceli skuamöz değişiklikler viral onkoprotein mekanizmasını düşündürür.",
+            "interpretation": "Servikal epitelde kalıcı yüksek riskli viral DNA saptanması ve yüksek dereceli skuamöz değişiklikler viral onkoprotein mekanizmasını düşündürür.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Servikal sürüntü ve kolposkopik biyopsi",
+                "Kan kültürü",
+                "Lokal epitel lezyonu için uygun örnek"
+              ],
+              [
+                "Sitoloji",
+                "HSIL ile uyumlu skuamöz hücre atipisi",
+                "Normal sitoloji",
+                "Yüksek dereceli intraepitelyal değişiklik"
+              ],
+              [
+                "Moleküler test",
+                "Yüksek riskli papillomavirus DNA pozitif",
+                "Düşük riskli tiplerle sınırlı",
+                "Onkojenik tip kalıcılığı"
+              ],
+              [
+                "Biyopsi",
+                "Koilositik değişiklikler ve tam katı tutmayan displazi alanları",
+                "Granülomatöz inflamasyon",
+                "Viral epitel etkisi"
+              ],
+              [
+                "İmmünhistokimya",
+                "p16 blok pozitifliği",
+                "p16 negatif",
+                "Transforme edici enfeksiyon desteği"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu lezyonun patogenezini en iyi açıklayan viral onkogenez mekanizması hangisidir?",
+      "questionType": "mechanism",
+      "answerTarget": "Viral onkogenez mekanizması",
+      "diagnosis": {
+        "correct": "E6 ile p53 yıkımı ve E7 ile Rb inhibisyonu üzerinden G1/S kontrolünün aşılması",
+        "options": [
+          "HBx aracılı hepatosit transkripsiyon kontrolünün bozulması ve kronik rejenerasyon",
+          "LMP1 proteininin CD40 benzeri sinyal vererek NF-kB aktivasyonunu artırması",
+          "Tax proteininin IL-2/IL-2R ekspresyonunu artırarak T hücre proliferasyonunu sürdürmesi",
+          "E6 ile p53 yıkımı ve E7 ile Rb inhibisyonu üzerinden G1/S kontrolünün aşılması",
+          "Viral IL-6 benzeri sinyal ve anjiyogenik uyarılarla damar kaynaklı proliferasyonun artması"
+        ],
+        "question": "Bu lezyonun patogenezini en iyi açıklayan viral onkogenez mekanizması hangisidir?",
+        "explanation": "Bu seçenek en uygundur; yüksek riskli papillomavirus kalıcılığında E6 p53 yıkımını, E7 ise Rb inhibisyonunu artırarak hücrenin G1/S kontrolünü aşmasına yol açar. Servikal sitolojide HSIL ve biyopside koilositoz/displazi bulguları bu epitel onkogenez mekanizmasıyla uyumludur.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Servikal HSIL + yüksek riskli DNA + p16 blok pozitifliği → E6/p53 ve E7/Rb ekseniyle G1/S kontrol kaybı."
+          }
+        ],
+        "optionFeedback": {
+          "HBx aracılı hepatosit transkripsiyon kontrolünün bozulması ve kronik rejenerasyon": {
+            "explanation": "HBx ilişkili transkripsiyon bozukluğu ve kronik inflamasyon hepatoselüler karsinom patogenezinde önemlidir. Bu hasta servikal yüksek riskli DNA pozitifliği ve skuamöz intraepitelyal lezyon ile geldiği için hepatotrop viral karsinogenez mekanizması vaka verisiyle uyuşmaz."
+          },
+          "LMP1 proteininin CD40 benzeri sinyal vererek NF-kB aktivasyonunu artırması": {
+            "explanation": "LMP1'in CD40 benzeri davranışı EBV ilişkili lenfoid veya nazofarengeal tümör biyolojisinde öğretici bir mekanizmadır. Servikal örnekte yüksek riskli papillomavirus DNA kalıcılığı ve koilositik değişiklikler EBV LMP1 mekanizmasından farklı bir viral onkogenez yolunu gösterir."
+          },
+          "Tax proteininin IL-2/IL-2R ekspresyonunu artırarak T hücre proliferasyonunu sürdürmesi": {
+            "explanation": "Tax aracılı IL-2/IL-2R uyarısı HTLV-1 ilişkili erişkin T hücre lösemi/lenfomasında beklenir. Bu vaka T hücre proliferasyonu veya retroviral lenfoproliferasyon değil, servikal epitelde yüksek riskli DNA ve displazi üzerinden ilerleyen bir süreçtir."
+          },
+          "E6 ile p53 yıkımı ve E7 ile Rb inhibisyonu üzerinden G1/S kontrolünün aşılması": {
+            "explanation": "Bu seçenek en uygundur; yüksek riskli papillomavirus kalıcılığında E6 p53 yıkımını, E7 ise Rb inhibisyonunu artırarak hücrenin G1/S kontrolünü aşmasına yol açar. Servikal sitolojide HSIL ve biyopside koilositoz/displazi bulguları bu epitel onkogenez mekanizmasıyla uyumludur."
+          },
+          "Viral IL-6 benzeri sinyal ve anjiyogenik uyarılarla damar kaynaklı proliferasyonun artması": {
+            "explanation": "Viral IL-6 benzeri sinyal ve anjiyogenik uyarılar HHV-8 ilişkili Kaposi sarkomu gibi vasküler proliferasyonlarda önemlidir. Bu hastada damar kaynaklı tümör paterni değil, servikal skuamöz epitelde yüksek riskli DNA ilişkili displazi vardır."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; yüksek riskli papillomavirus kalıcılığında E6 p53 yıkımını, E7 ise Rb inhibisyonunu artırarak hücrenin G1/S kontrolünü aşmasına yol açar. Servikal sitolojide HSIL ve biyopside koilositoz/displazi bulguları bu epitel onkogenez mekanizmasıyla uyumludur.",
+          "optionFeedback": {
+            "HBx aracılı hepatosit transkripsiyon kontrolünün bozulması ve kronik rejenerasyon": {
+              "explanation": "HBx ilişkili transkripsiyon bozukluğu ve kronik inflamasyon hepatoselüler karsinom patogenezinde önemlidir. Bu hasta servikal yüksek riskli DNA pozitifliği ve skuamöz intraepitelyal lezyon ile geldiği için hepatotrop viral karsinogenez mekanizması vaka verisiyle uyuşmaz."
+            },
+            "LMP1 proteininin CD40 benzeri sinyal vererek NF-kB aktivasyonunu artırması": {
+              "explanation": "LMP1'in CD40 benzeri davranışı EBV ilişkili lenfoid veya nazofarengeal tümör biyolojisinde öğretici bir mekanizmadır. Servikal örnekte yüksek riskli papillomavirus DNA kalıcılığı ve koilositik değişiklikler EBV LMP1 mekanizmasından farklı bir viral onkogenez yolunu gösterir."
+            },
+            "Tax proteininin IL-2/IL-2R ekspresyonunu artırarak T hücre proliferasyonunu sürdürmesi": {
+              "explanation": "Tax aracılı IL-2/IL-2R uyarısı HTLV-1 ilişkili erişkin T hücre lösemi/lenfomasında beklenir. Bu vaka T hücre proliferasyonu veya retroviral lenfoproliferasyon değil, servikal epitelde yüksek riskli DNA ve displazi üzerinden ilerleyen bir süreçtir."
+            },
+            "E6 ile p53 yıkımı ve E7 ile Rb inhibisyonu üzerinden G1/S kontrolünün aşılması": {
+              "explanation": "Bu seçenek en uygundur; yüksek riskli papillomavirus kalıcılığında E6 p53 yıkımını, E7 ise Rb inhibisyonunu artırarak hücrenin G1/S kontrolünü aşmasına yol açar. Servikal sitolojide HSIL ve biyopside koilositoz/displazi bulguları bu epitel onkogenez mekanizmasıyla uyumludur."
+            },
+            "Viral IL-6 benzeri sinyal ve anjiyogenik uyarılarla damar kaynaklı proliferasyonun artması": {
+              "explanation": "Viral IL-6 benzeri sinyal ve anjiyogenik uyarılar HHV-8 ilişkili Kaposi sarkomu gibi vasküler proliferasyonlarda önemlidir. Bu hastada damar kaynaklı tümör paterni değil, servikal skuamöz epitelde yüksek riskli DNA ilişkili displazi vardır."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Yüksek riskli papillomavirus tiplerinde E6 p53 fonksiyonunu azaltır, E7 ise Rb yolunu baskılayarak E2F aracılı hücre döngüsü ilerlemesini kolaylaştırır. Kalıcı enfeksiyon ve transformasyon zonu tutulumu servikal displazinin temel mikrobiyolojik zeminidir.",
+      "examPearl": "Servikal HSIL + yüksek riskli DNA + p16 blok pozitifliği → E6/p53 ve E7/Rb ekseniyle G1/S kontrol kaybı.",
+      "whyCorrect": "Bu seçenek en uygundur; yüksek riskli papillomavirus kalıcılığında E6 p53 yıkımını, E7 ise Rb inhibisyonunu artırarak hücrenin G1/S kontrolünü aşmasına yol açar. Servikal sitolojide HSIL ve biyopside koilositoz/displazi bulguları bu epitel onkogenez mekanizmasıyla uyumludur.",
+      "optionComparison": {
+        "HBx aracılı hepatosit transkripsiyon kontrolünün bozulması ve kronik rejenerasyon": "HBx ilişkili transkripsiyon bozukluğu ve kronik inflamasyon hepatoselüler karsinom patogenezinde önemlidir. Bu hasta servikal yüksek riskli DNA pozitifliği ve skuamöz intraepitelyal lezyon ile geldiği için hepatotrop viral karsinogenez mekanizması vaka verisiyle uyuşmaz.",
+        "LMP1 proteininin CD40 benzeri sinyal vererek NF-kB aktivasyonunu artırması": "LMP1'in CD40 benzeri davranışı EBV ilişkili lenfoid veya nazofarengeal tümör biyolojisinde öğretici bir mekanizmadır. Servikal örnekte yüksek riskli papillomavirus DNA kalıcılığı ve koilositik değişiklikler EBV LMP1 mekanizmasından farklı bir viral onkogenez yolunu gösterir.",
+        "Tax proteininin IL-2/IL-2R ekspresyonunu artırarak T hücre proliferasyonunu sürdürmesi": "Tax aracılı IL-2/IL-2R uyarısı HTLV-1 ilişkili erişkin T hücre lösemi/lenfomasında beklenir. Bu vaka T hücre proliferasyonu veya retroviral lenfoproliferasyon değil, servikal epitelde yüksek riskli DNA ve displazi üzerinden ilerleyen bir süreçtir.",
+        "E6 ile p53 yıkımı ve E7 ile Rb inhibisyonu üzerinden G1/S kontrolünün aşılması": "Bu seçenek en uygundur; yüksek riskli papillomavirus kalıcılığında E6 p53 yıkımını, E7 ise Rb inhibisyonunu artırarak hücrenin G1/S kontrolünü aşmasına yol açar. Servikal sitolojide HSIL ve biyopside koilositoz/displazi bulguları bu epitel onkogenez mekanizmasıyla uyumludur.",
+        "Viral IL-6 benzeri sinyal ve anjiyogenik uyarılarla damar kaynaklı proliferasyonun artması": "Viral IL-6 benzeri sinyal ve anjiyogenik uyarılar HHV-8 ilişkili Kaposi sarkomu gibi vasküler proliferasyonlarda önemlidir. Bu hastada damar kaynaklı tümör paterni değil, servikal skuamöz epitelde yüksek riskli DNA ilişkili displazi vardır."
+      },
+      "evidenceChain": [
+        {
+          "text": "Persistan yüksek riskli DNA pozitifliği → onkojenik papillomavirus kalıcılığı",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "HSIL ve koilositoz → servikal epitelde viral transformasyon etkisi",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "p16 blok pozitifliği → Rb yolunun fonksiyonel baskılanmasıyla uyumlu biyobelirteç",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "E6/E7 aktivitesi → p53 ve Rb kontrolünün aşılması",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "HBx aracılı hepatosit transkripsiyon kontrolünün bozulması ve kronik rejenerasyon": "HBx ilişkili transkripsiyon bozukluğu ve kronik inflamasyon hepatoselüler karsinom patogenezinde önemlidir. Bu hasta servikal yüksek riskli DNA pozitifliği ve skuamöz intraepitelyal lezyon ile geldiği için hepatotrop viral karsinogenez mekanizması vaka verisiyle uyuşmaz.",
+        "LMP1 proteininin CD40 benzeri sinyal vererek NF-kB aktivasyonunu artırması": "LMP1'in CD40 benzeri davranışı EBV ilişkili lenfoid veya nazofarengeal tümör biyolojisinde öğretici bir mekanizmadır. Servikal örnekte yüksek riskli papillomavirus DNA kalıcılığı ve koilositik değişiklikler EBV LMP1 mekanizmasından farklı bir viral onkogenez yolunu gösterir.",
+        "Tax proteininin IL-2/IL-2R ekspresyonunu artırarak T hücre proliferasyonunu sürdürmesi": "Tax aracılı IL-2/IL-2R uyarısı HTLV-1 ilişkili erişkin T hücre lösemi/lenfomasında beklenir. Bu vaka T hücre proliferasyonu veya retroviral lenfoproliferasyon değil, servikal epitelde yüksek riskli DNA ve displazi üzerinden ilerleyen bir süreçtir.",
+        "Viral IL-6 benzeri sinyal ve anjiyogenik uyarılarla damar kaynaklı proliferasyonun artması": "Viral IL-6 benzeri sinyal ve anjiyogenik uyarılar HHV-8 ilişkili Kaposi sarkomu gibi vasküler proliferasyonlarda önemlidir. Bu hastada damar kaynaklı tümör paterni değil, servikal skuamöz epitelde yüksek riskli DNA ilişkili displazi vardır."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v263-medical-microbiology-thirteenth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "HSIL",
+        "Yüksek riskli DNA",
+        "Koilositoz",
+        "p16 blok pozitifliği",
+        "E6/E7 mekanizması"
+      ],
+      "images": []
+    },
+  {
+      "id": "v262-new-509-kopuklu-akinti-ve-hareketli-trofozoitler",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Köpüklü akıntı ve hareketli trofozoitler",
+      "difficulty": "Kolay",
+      "difficultyTag": "Kolay",
+      "clinicalFocus": "Vajinit tablosunda pH, servikal görünüm ve ıslak preparat bulgusunu kullanarak protozoal etkeni tanıma.",
+      "learningTarget": "Trichomonas vaginalis enfeksiyonunda hareketli flagellalı trofozoit, vajinal pH artışı ve servikal punktat eritem ilişkisini açıklayabilme.",
+      "demographics": "27 yaşında kadın hasta",
+      "setting": "Kadın doğum polikliniği",
+      "chiefComplaint": "Hasta, kötü kokulu vajinal akıntı ve kaşıntı nedeniyle polikliniğe başvuruyor.",
+      "stem": "Hasta bir haftadır artan vajinal akıntı, yanma ve kaşıntı yaşadığını söyler. Akıntının özellikle son günlerde köpüklü ve kötü kokulu hale geldiğini, idrar yaparken dış bölgede yanma hissettiğini anlatır. Son bir ay içinde yeni cinsel partneri olduğunu ve düzenli bariyer yöntemi kullanmadığını belirtir. Ateş, pelvik şiddetli ağrı veya antibiyotik kullanımı tariflemez.",
+      "patientIntro": {
+        "profile": "27 yaşında kadın hasta, Kadın doğum polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Hasta, kötü kokulu vajinal akıntı ve kaşıntı nedeniyle polikliniğe başvuruyor.",
+        "historySummary": "Hasta bir haftadır artan vajinal akıntı, yanma ve kaşıntı yaşadığını söyler. Akıntının özellikle son günlerde köpüklü ve kötü kokulu hale geldiğini, idrar yaparken dış bölgede yanma hissettiğini anlatır. Son bir ay içinde yeni cinsel partneri olduğunu ve düzenli bariyer yöntemi kullanmadığını belirtir. Ateş, pelvik şiddetli ağrı veya antibiyotik kullanımı tariflemez."
+      },
+      "vitals": {
+        "TA": "112/70 mmHg",
+        "Nabız": "88/dk",
+        "Solunum": "16/dk",
+        "SpO₂": "99%",
+        "Ateş": "36.9 °C",
+        "Şok indeksi": "0.79"
+      },
+      "exam": [
+        "Genel durumu iyi, toksik görünüm yoktur.",
+        "Spekulum muayenesinde sarı-yeşil köpüklü akıntı izlenir.",
+        "Servikste punktat eritemli, kolay kanayan alanlar vardır.",
+        "Alt karında belirgin rebound veya defans saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v262-new-509-kopuklu-akinti-ve-hareketli-trofozoitler-mikrobiyoloji-laboratuvar-verileri",
+          "label": "Vajinal akıntı mikroskopisi ve hızlı değerlendirme",
+          "title": "Vajinal akıntı mikroskopisi ve hızlı değerlendirme",
+          "orderLabel": "Vajinal akıntı mikroskopisi ve hızlı değerlendirme",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Vajinal pH, ıslak preparat ve NAAT doğrulaması",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Vajinal örnekte pH artışı ve hareketli flagellalı trofozoitlerin görülmesi ürogenital protozoal enfeksiyonla uyumludur.",
+          "clinicalMeaning": "Vajinal örnekte pH artışı ve hareketli flagellalı trofozoitlerin görülmesi ürogenital protozoal enfeksiyonla uyumludur.",
+          "result": {
+            "title": "Vajinal akıntı mikroskopisi ve hızlı değerlendirme",
+            "summary": "Vajinal örnekte pH artışı ve hareketli flagellalı trofozoitlerin görülmesi ürogenital protozoal enfeksiyonla uyumludur.",
+            "interpretation": "Vajinal örnekte pH artışı ve hareketli flagellalı trofozoitlerin görülmesi ürogenital protozoal enfeksiyonla uyumludur.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Posterior forniksten vajinal akıntı örneği",
+                "Dışkı örneği",
+                "Vajinit için uygun örnek"
+              ],
+              [
+                "Vajinal pH",
+                "5.6",
+                "≤4.5",
+                "Normalden yüksek"
+              ],
+              [
+                "Islak preparat",
+                "Hızlı, düzensiz hareketli armut biçimli flagellalı trofozoitler",
+                "Hareketsiz maya hücreleri",
+                "Protozoal hareket bulgusu"
+              ],
+              [
+                "KOH testi",
+                "Belirgin psödohif görülmedi",
+                "Yoğun psödohif",
+                "Mantar ağırlıklı tablo dışlanır"
+              ],
+              [
+                "NAAT",
+                "Ürogenital protozoon hedefi pozitif",
+                "Negatif",
+                "Daha duyarlı doğrulama"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu mikrobiyolojik laboratuvar bulgusu hangi protozoonla en uyumludur?",
+      "questionType": "etiology",
+      "answerTarget": "Protozoal etken",
+      "diagnosis": {
+        "correct": "Trichomonas vaginalis",
+        "options": [
+          "Trichomonas vaginalis",
+          "Giardia lamblia",
+          "Entamoeba histolytica",
+          "Leishmania donovani kompleksi",
+          "Trypanosoma cruzi"
+        ],
+        "question": "Bu mikrobiyolojik laboratuvar bulgusu hangi protozoonla en uyumludur?",
+        "explanation": "Bu seçenek en uygundur; kötü kokulu köpüklü akıntı, vajinal pH artışı ve çilek serviks görünümü T. vaginalis vajinitini destekler. Islak preparatta hızlı, düzensiz hareketli armut biçimli flagellalı trofozoitlerin görülmesi bu protozoon için doğrudan mikroskopik ipucudur.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Köpüklü kötü kokulu akıntı + pH yüksekliği + çilek serviks + hareketli flagellalı trofozoit → Trichomonas vaginalis."
+          }
+        ],
+        "optionFeedback": {
+          "Trichomonas vaginalis": {
+            "explanation": "Bu seçenek en uygundur; kötü kokulu köpüklü akıntı, vajinal pH artışı ve çilek serviks görünümü T. vaginalis vajinitini destekler. Islak preparatta hızlı, düzensiz hareketli armut biçimli flagellalı trofozoitlerin görülmesi bu protozoon için doğrudan mikroskopik ipucudur."
+          },
+          "Giardia lamblia": {
+            "explanation": "Giardia lamblia malabsorptif, kötü kokulu yağlı ishal ve duodenal trofozoit/kist bulgularıyla ilişkilidir. Vajinal akıntı, çilek serviks ve ıslak preparatta ürogenital flagellalı trofozoit paterni Giardia için beklenen klinik alan değildir."
+          },
+          "Entamoeba histolytica": {
+            "explanation": "Entamoeba histolytica kanlı dizanteri ve karaciğer apsesiyle önemlidir; dışkıda eritrosit fagosite eden trofozoitler ayırıcıdır. Bu vakadaki genital örnek, vajinal pH artışı ve hareketli flagellalı organizma Entamoeba yerine T. vaginalis lehinedir."
+          },
+          "Leishmania donovani kompleksi": {
+            "explanation": "Leishmania donovani kompleksi visseral leishmaniasis tablosunda ateş, hepatosplenomegali ve kemik iliğinde amastigotlarla değerlendirilir. Vajinal akıntı ve ıslak preparatta hareketli trofozoitler Leishmania için beklenen tanısal bağlam değildir."
+          },
+          "Trypanosoma cruzi": {
+            "explanation": "Trypanosoma cruzi akut Chagas hastalığı veya kronik kardiyomiyopati/megakolon ile ilişkilidir. Genital akıntı, pH artışı ve ıslak preparatta hareketli flagellalı ürogenital protozoon görülmesi T. cruzi yerine T. vaginalis'i düşündürür."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; kötü kokulu köpüklü akıntı, vajinal pH artışı ve çilek serviks görünümü T. vaginalis vajinitini destekler. Islak preparatta hızlı, düzensiz hareketli armut biçimli flagellalı trofozoitlerin görülmesi bu protozoon için doğrudan mikroskopik ipucudur.",
+          "optionFeedback": {
+            "Trichomonas vaginalis": {
+              "explanation": "Bu seçenek en uygundur; kötü kokulu köpüklü akıntı, vajinal pH artışı ve çilek serviks görünümü T. vaginalis vajinitini destekler. Islak preparatta hızlı, düzensiz hareketli armut biçimli flagellalı trofozoitlerin görülmesi bu protozoon için doğrudan mikroskopik ipucudur."
+            },
+            "Giardia lamblia": {
+              "explanation": "Giardia lamblia malabsorptif, kötü kokulu yağlı ishal ve duodenal trofozoit/kist bulgularıyla ilişkilidir. Vajinal akıntı, çilek serviks ve ıslak preparatta ürogenital flagellalı trofozoit paterni Giardia için beklenen klinik alan değildir."
+            },
+            "Entamoeba histolytica": {
+              "explanation": "Entamoeba histolytica kanlı dizanteri ve karaciğer apsesiyle önemlidir; dışkıda eritrosit fagosite eden trofozoitler ayırıcıdır. Bu vakadaki genital örnek, vajinal pH artışı ve hareketli flagellalı organizma Entamoeba yerine T. vaginalis lehinedir."
+            },
+            "Leishmania donovani kompleksi": {
+              "explanation": "Leishmania donovani kompleksi visseral leishmaniasis tablosunda ateş, hepatosplenomegali ve kemik iliğinde amastigotlarla değerlendirilir. Vajinal akıntı ve ıslak preparatta hareketli trofozoitler Leishmania için beklenen tanısal bağlam değildir."
+            },
+            "Trypanosoma cruzi": {
+              "explanation": "Trypanosoma cruzi akut Chagas hastalığı veya kronik kardiyomiyopati/megakolon ile ilişkilidir. Genital akıntı, pH artışı ve ıslak preparatta hareketli flagellalı ürogenital protozoon görülmesi T. cruzi yerine T. vaginalis'i düşündürür."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "T. vaginalis yalnız trofozoit formda bulunan, cinsel yolla bulaşan, vajinal pH artışı ve köpüklü akıntı ile seyreden flagellalı bir protozoondur. Islak preparatta hareketli trofozoit görülmesi hızlı ama duyarlılığı sınırlı bir tanı ipucudur; NAAT daha duyarlıdır.",
+      "examPearl": "Köpüklü kötü kokulu akıntı + pH yüksekliği + çilek serviks + hareketli flagellalı trofozoit → Trichomonas vaginalis.",
+      "whyCorrect": "Bu seçenek en uygundur; kötü kokulu köpüklü akıntı, vajinal pH artışı ve çilek serviks görünümü T. vaginalis vajinitini destekler. Islak preparatta hızlı, düzensiz hareketli armut biçimli flagellalı trofozoitlerin görülmesi bu protozoon için doğrudan mikroskopik ipucudur.",
+      "optionComparison": {
+        "Trichomonas vaginalis": "Bu seçenek en uygundur; kötü kokulu köpüklü akıntı, vajinal pH artışı ve çilek serviks görünümü T. vaginalis vajinitini destekler. Islak preparatta hızlı, düzensiz hareketli armut biçimli flagellalı trofozoitlerin görülmesi bu protozoon için doğrudan mikroskopik ipucudur.",
+        "Giardia lamblia": "Giardia lamblia malabsorptif, kötü kokulu yağlı ishal ve duodenal trofozoit/kist bulgularıyla ilişkilidir. Vajinal akıntı, çilek serviks ve ıslak preparatta ürogenital flagellalı trofozoit paterni Giardia için beklenen klinik alan değildir.",
+        "Entamoeba histolytica": "Entamoeba histolytica kanlı dizanteri ve karaciğer apsesiyle önemlidir; dışkıda eritrosit fagosite eden trofozoitler ayırıcıdır. Bu vakadaki genital örnek, vajinal pH artışı ve hareketli flagellalı organizma Entamoeba yerine T. vaginalis lehinedir.",
+        "Leishmania donovani kompleksi": "Leishmania donovani kompleksi visseral leishmaniasis tablosunda ateş, hepatosplenomegali ve kemik iliğinde amastigotlarla değerlendirilir. Vajinal akıntı ve ıslak preparatta hareketli trofozoitler Leishmania için beklenen tanısal bağlam değildir.",
+        "Trypanosoma cruzi": "Trypanosoma cruzi akut Chagas hastalığı veya kronik kardiyomiyopati/megakolon ile ilişkilidir. Genital akıntı, pH artışı ve ıslak preparatta hareketli flagellalı ürogenital protozoon görülmesi T. cruzi yerine T. vaginalis'i düşündürür."
+      },
+      "evidenceChain": [
+        {
+          "text": "Yeni cinsel partner ve bariyer kullanmama → cinsel yolla bulaşan enfeksiyon riski",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Köpüklü kötü kokulu akıntı ve pH 5.6 → T. vaginalis vajinitiyle uyumlu klinik",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Çilek serviks görünümü → servikal punktat inflamasyon",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Hareketli flagellalı trofozoit → ürogenital protozoal etken",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Giardia lamblia": "Giardia lamblia malabsorptif, kötü kokulu yağlı ishal ve duodenal trofozoit/kist bulgularıyla ilişkilidir. Vajinal akıntı, çilek serviks ve ıslak preparatta ürogenital flagellalı trofozoit paterni Giardia için beklenen klinik alan değildir.",
+        "Entamoeba histolytica": "Entamoeba histolytica kanlı dizanteri ve karaciğer apsesiyle önemlidir; dışkıda eritrosit fagosite eden trofozoitler ayırıcıdır. Bu vakadaki genital örnek, vajinal pH artışı ve hareketli flagellalı organizma Entamoeba yerine T. vaginalis lehinedir.",
+        "Leishmania donovani kompleksi": "Leishmania donovani kompleksi visseral leishmaniasis tablosunda ateş, hepatosplenomegali ve kemik iliğinde amastigotlarla değerlendirilir. Vajinal akıntı ve ıslak preparatta hareketli trofozoitler Leishmania için beklenen tanısal bağlam değildir.",
+        "Trypanosoma cruzi": "Trypanosoma cruzi akut Chagas hastalığı veya kronik kardiyomiyopati/megakolon ile ilişkilidir. Genital akıntı, pH artışı ve ıslak preparatta hareketli flagellalı ürogenital protozoon görülmesi T. cruzi yerine T. vaginalis'i düşündürür."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v263-medical-microbiology-thirteenth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Köpüklü akıntı",
+        "pH artışı",
+        "Çilek serviks",
+        "Hareketli trofozoit",
+        "NAAT pozitifliği"
+      ],
+      "images": []
+    },
+  {
+      "id": "v262-new-510-magara-temasi-sonrasi-hemorajik-ates",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Mağara teması sonrası hemorajik ateş",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Yüksek riskli viral hemorajik ateş şüphesinde klinik maruziyet, laboratuvar bulgusu ve doğru moleküler doğrulama testini birleştirme.",
+      "learningTarget": "Filoviral hemorajik ateş şüphesinde tam kan/serum RT-PCR yaklaşımının seroloji ve rutin kültürlerden neden ayrıldığını açıklayabilme.",
+      "demographics": "31 yaşında erkek hasta",
+      "setting": "Enfeksiyon hastalıkları izolasyon odası",
+      "chiefComplaint": "Hasta, yurt dışı seyahati sonrası yüksek ateş, halsizlik, kusma ve mukozal kanama nedeniyle değerlendiriliyor.",
+      "stem": "Hasta on gün önce Doğu Afrika'da bir araştırma gezisinden döndüğünü, gezide yarasa kolonilerinin bulunduğu bir mağaraya girdiğini anlatır. Dönüşten birkaç gün sonra ateş, şiddetli halsizlik ve baş ağrısı başlamış, ardından kusma ve sulu dışkılama eklenmiştir. Son 24 saatte diş eti kanaması ve enjeksiyon yerlerinde morarma fark edilince sağlık kuruluşuna başvurmuştur. Seyahat grubunda benzer yakınması olan bir kişi daha olduğu, hastanın sıtma profilaksisini düzensiz kullandığı öğrenilir.",
+      "patientIntro": {
+        "profile": "31 yaşında erkek hasta, Enfeksiyon hastalıkları izolasyon odası ortamında değerlendiriliyor.",
+        "presentation": "Hasta, yurt dışı seyahati sonrası yüksek ateş, halsizlik, kusma ve mukozal kanama nedeniyle değerlendiriliyor.",
+        "historySummary": "Hasta on gün önce Doğu Afrika'da bir araştırma gezisinden döndüğünü, gezide yarasa kolonilerinin bulunduğu bir mağaraya girdiğini anlatır. Dönüşten birkaç gün sonra ateş, şiddetli halsizlik ve baş ağrısı başlamış, ardından kusma ve sulu dışkılama eklenmiştir. Son 24 saatte diş eti kanaması ve enjeksiyon yerlerinde morarma fark edilince sağlık kuruluşuna başvurmuştur. Seyahat grubunda benzer yakınması olan bir kişi daha olduğu, hastanın sıtma profilaksisini düzensiz kullandığı öğrenilir."
+      },
+      "vitals": {
+        "TA": "92/58 mmHg",
+        "Nabız": "124/dk",
+        "Solunum": "24/dk",
+        "SpO₂": "96%",
+        "Ateş": "39.2 °C",
+        "Şok indeksi": "1.35"
+      },
+      "exam": [
+        "Hasta halsiz ve toksik görünümdedir; bilinç açık ancak yavaş yanıt verir.",
+        "Diş etlerinde sızıntı tarzı kanama ve ön kollarda ekimozlar izlenir.",
+        "Karında yaygın hassasiyet vardır; belirgin defans yoktur.",
+        "Meningeal irritasyon bulgusu saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v262-new-510-magara-temasi-sonrasi-hemorajik-ates-mikrobiyoloji-laboratuvar-verileri",
+          "label": "Hemorajik ateş ön değerlendirmesi",
+          "title": "Hemorajik ateş ön değerlendirmesi",
+          "orderLabel": "Hemorajik ateş ön değerlendirmesi",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Tam kan, serum, yayma ve ayırıcı hızlı testler",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Ağır trombositopeni, transaminaz yüksekliği ve negatif sıtma yaymasıyla viral hemorajik ateş doğrulaması için özel moleküler test gerekir.",
+          "clinicalMeaning": "Ağır trombositopeni, transaminaz yüksekliği ve negatif sıtma yaymasıyla viral hemorajik ateş doğrulaması için özel moleküler test gerekir.",
+          "result": {
+            "title": "Hemorajik ateş ön değerlendirmesi",
+            "summary": "Ağır trombositopeni, transaminaz yüksekliği ve negatif sıtma yaymasıyla viral hemorajik ateş doğrulaması için özel moleküler test gerekir.",
+            "interpretation": "Ağır trombositopeni, transaminaz yüksekliği ve negatif sıtma yaymasıyla viral hemorajik ateş doğrulaması için özel moleküler test gerekir.",
+            "values": [
+              [
+                "Örnek tipi",
+                "EDTA'lı tam kan ve serum; biyogüvenlik bildirimiyle paketlendi",
+                "Nazal sürüntü",
+                "Viral hemorajik ateş için uygun örnek"
+              ],
+              [
+                "Tam kan sayımı",
+                "Trombosit 38.000/mm³, lökopeni",
+                "Normal trombosit",
+                "Kanama eğilimi desteği"
+              ],
+              [
+                "Biyokimya",
+                "AST/ALT belirgin yüksek, kreatinin sınırda yüksek",
+                "Normal",
+                "Sistemik viral tutulum ve hipoperfüzyon desteği"
+              ],
+              [
+                "Kalın damla/yayma",
+                "İntraeritrositik parazit görülmedi",
+                "Pozitif",
+                "Sıtma ayırıcı tanısı zayıflar"
+              ],
+              [
+                "Koagülasyon",
+                "PT uzamış, fibrinojen düşük-normal",
+                "Normal",
+                "Hemorajik sendrom desteği"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu tabloda beklenen en uygun mikrobiyolojik doğrulama testi hangisidir?",
+      "questionType": "diagnostic-test",
+      "answerTarget": "Tanı testi",
+      "diagnosis": {
+        "correct": "Tam kan veya serumda real-time RT-PCR ile yüksek güvenlikli viral doğrulama",
+        "options": [
+          "Serum heterofil antikor testi",
+          "Rutin aerob kan kültürü ve koloni biyokimyası",
+          "Nazofaringeal hızlı influenza antijen testi",
+          "Dışkıda ova-parazit konsantrasyon mikroskopisi",
+          "Tam kan veya serumda real-time RT-PCR ile yüksek güvenlikli viral doğrulama"
+        ],
+        "question": "Bu tabloda beklenen en uygun mikrobiyolojik doğrulama testi hangisidir?",
+        "explanation": "Bu seçenek en uygundur; yüksek riskli hemorajik ateş şüphesinde tam kan veya serum örneğinde real-time RT-PCR, uygun biyogüvenlik ve halk sağlığı bildirimiyle tanısal doğrulamanın merkezindedir. Erken dönemde seroloji negatif olabilirken viral RNA saptanması klinik izolasyon ve temas yönetimi açısından kritiktir.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Mağara-yarasa teması + hemorajik ateş + trombositopeni + negatif sıtma yayması → biyogüvenlik eşliğinde tam kan/serum RT-PCR."
+          }
+        ],
+        "optionFeedback": {
+          "Serum heterofil antikor testi": {
+            "explanation": "Heterofil antikor testi EBV ilişkili mononükleozda yardımcı olabilir; hemorajik ateş, trombositopeni ve mağara-yarasa teması olan bu tabloda temel doğrulama testi değildir. Bu test akut filoviral enfeksiyonun kan veya serumdaki viral RNA yükünü göstermez."
+          },
+          "Rutin aerob kan kültürü ve koloni biyokimyası": {
+            "explanation": "Rutin aerob kan kültürü bakteriyemi ve sepsis ayırıcı tanısında değerlidir, ancak hemorajik ateş şüphesinde yeterli ve güvenli doğrulama yaklaşımı değildir. Bu hastada ağır trombositopeni, transaminaz yüksekliği ve epidemiyolojik maruziyet viral hemorajik ateş için özel biyogüvenlik ve moleküler test gerektirir."
+          },
+          "Nazofaringeal hızlı influenza antijen testi": {
+            "explanation": "Nazofaringeal hızlı influenza antijen testi ateş ve miyalji yapan solunum virüsleri için düşünülebilir. Ancak bu vakada belirgin kanama bulguları, ağır trombositopeni ve mağara-yarasa teması influenza hızlı testinden çok yüksek riskli kan/serum örneğiyle viral hemorajik ateş doğrulamasını gerektirir."
+          },
+          "Dışkıda ova-parazit konsantrasyon mikroskopisi": {
+            "explanation": "Dışkıda ova-parazit konsantrasyonu eozinofili veya intestinal parazit şüphesinde anlamlıdır. Hastada hemorajik ateş paterni ve temas öyküsü ön plandadır; parazit mikroskopisi akut filoviral RNA'yı saptamaz."
+          },
+          "Tam kan veya serumda real-time RT-PCR ile yüksek güvenlikli viral doğrulama": {
+            "explanation": "Bu seçenek en uygundur; yüksek riskli hemorajik ateş şüphesinde tam kan veya serum örneğinde real-time RT-PCR, uygun biyogüvenlik ve halk sağlığı bildirimiyle tanısal doğrulamanın merkezindedir. Erken dönemde seroloji negatif olabilirken viral RNA saptanması klinik izolasyon ve temas yönetimi açısından kritiktir."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; yüksek riskli hemorajik ateş şüphesinde tam kan veya serum örneğinde real-time RT-PCR, uygun biyogüvenlik ve halk sağlığı bildirimiyle tanısal doğrulamanın merkezindedir. Erken dönemde seroloji negatif olabilirken viral RNA saptanması klinik izolasyon ve temas yönetimi açısından kritiktir.",
+          "optionFeedback": {
+            "Serum heterofil antikor testi": {
+              "explanation": "Heterofil antikor testi EBV ilişkili mononükleozda yardımcı olabilir; hemorajik ateş, trombositopeni ve mağara-yarasa teması olan bu tabloda temel doğrulama testi değildir. Bu test akut filoviral enfeksiyonun kan veya serumdaki viral RNA yükünü göstermez."
+            },
+            "Rutin aerob kan kültürü ve koloni biyokimyası": {
+              "explanation": "Rutin aerob kan kültürü bakteriyemi ve sepsis ayırıcı tanısında değerlidir, ancak hemorajik ateş şüphesinde yeterli ve güvenli doğrulama yaklaşımı değildir. Bu hastada ağır trombositopeni, transaminaz yüksekliği ve epidemiyolojik maruziyet viral hemorajik ateş için özel biyogüvenlik ve moleküler test gerektirir."
+            },
+            "Nazofaringeal hızlı influenza antijen testi": {
+              "explanation": "Nazofaringeal hızlı influenza antijen testi ateş ve miyalji yapan solunum virüsleri için düşünülebilir. Ancak bu vakada belirgin kanama bulguları, ağır trombositopeni ve mağara-yarasa teması influenza hızlı testinden çok yüksek riskli kan/serum örneğiyle viral hemorajik ateş doğrulamasını gerektirir."
+            },
+            "Dışkıda ova-parazit konsantrasyon mikroskopisi": {
+              "explanation": "Dışkıda ova-parazit konsantrasyonu eozinofili veya intestinal parazit şüphesinde anlamlıdır. Hastada hemorajik ateş paterni ve temas öyküsü ön plandadır; parazit mikroskopisi akut filoviral RNA'yı saptamaz."
+            },
+            "Tam kan veya serumda real-time RT-PCR ile yüksek güvenlikli viral doğrulama": {
+              "explanation": "Bu seçenek en uygundur; yüksek riskli hemorajik ateş şüphesinde tam kan veya serum örneğinde real-time RT-PCR, uygun biyogüvenlik ve halk sağlığı bildirimiyle tanısal doğrulamanın merkezindedir. Erken dönemde seroloji negatif olabilirken viral RNA saptanması klinik izolasyon ve temas yönetimi açısından kritiktir."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Viral hemorajik ateş şüphesinde hastanın temas öyküsü, klinik kanama bulguları ve biyogüvenlik riski nedeniyle örnek yönetimi tanısal test kadar önemlidir. Erken dönemde real-time RT-PCR, tam kan veya serumda viral RNA saptayarak serolojiye göre daha uygun doğrulama sağlar.",
+      "examPearl": "Mağara-yarasa teması + hemorajik ateş + trombositopeni + negatif sıtma yayması → biyogüvenlik eşliğinde tam kan/serum RT-PCR.",
+      "whyCorrect": "Bu seçenek en uygundur; yüksek riskli hemorajik ateş şüphesinde tam kan veya serum örneğinde real-time RT-PCR, uygun biyogüvenlik ve halk sağlığı bildirimiyle tanısal doğrulamanın merkezindedir. Erken dönemde seroloji negatif olabilirken viral RNA saptanması klinik izolasyon ve temas yönetimi açısından kritiktir.",
+      "optionComparison": {
+        "Serum heterofil antikor testi": "Heterofil antikor testi EBV ilişkili mononükleozda yardımcı olabilir; hemorajik ateş, trombositopeni ve mağara-yarasa teması olan bu tabloda temel doğrulama testi değildir. Bu test akut filoviral enfeksiyonun kan veya serumdaki viral RNA yükünü göstermez.",
+        "Rutin aerob kan kültürü ve koloni biyokimyası": "Rutin aerob kan kültürü bakteriyemi ve sepsis ayırıcı tanısında değerlidir, ancak hemorajik ateş şüphesinde yeterli ve güvenli doğrulama yaklaşımı değildir. Bu hastada ağır trombositopeni, transaminaz yüksekliği ve epidemiyolojik maruziyet viral hemorajik ateş için özel biyogüvenlik ve moleküler test gerektirir.",
+        "Nazofaringeal hızlı influenza antijen testi": "Nazofaringeal hızlı influenza antijen testi ateş ve miyalji yapan solunum virüsleri için düşünülebilir. Ancak bu vakada belirgin kanama bulguları, ağır trombositopeni ve mağara-yarasa teması influenza hızlı testinden çok yüksek riskli kan/serum örneğiyle viral hemorajik ateş doğrulamasını gerektirir.",
+        "Dışkıda ova-parazit konsantrasyon mikroskopisi": "Dışkıda ova-parazit konsantrasyonu eozinofili veya intestinal parazit şüphesinde anlamlıdır. Hastada hemorajik ateş paterni ve temas öyküsü ön plandadır; parazit mikroskopisi akut filoviral RNA'yı saptamaz.",
+        "Tam kan veya serumda real-time RT-PCR ile yüksek güvenlikli viral doğrulama": "Bu seçenek en uygundur; yüksek riskli hemorajik ateş şüphesinde tam kan veya serum örneğinde real-time RT-PCR, uygun biyogüvenlik ve halk sağlığı bildirimiyle tanısal doğrulamanın merkezindedir. Erken dönemde seroloji negatif olabilirken viral RNA saptanması klinik izolasyon ve temas yönetimi açısından kritiktir."
+      },
+      "evidenceChain": [
+        {
+          "text": "Yarasa kolonili mağara teması → filoviral maruziyet riski",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Ateş, kusma ve mukozal kanama → viral hemorajik ateş sendromu",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Trombositopeni ve transaminaz yüksekliği → sistemik ağır enfeksiyon desteği",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Negatif sıtma yayması → febril seyahat dönüşü ayırıcı tanısında paraziter açıklama zayıflar",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Tam kan/serum örneği → RT-PCR için uygun materyal",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Serum heterofil antikor testi": "Heterofil antikor testi EBV ilişkili mononükleozda yardımcı olabilir; hemorajik ateş, trombositopeni ve mağara-yarasa teması olan bu tabloda temel doğrulama testi değildir. Bu test akut filoviral enfeksiyonun kan veya serumdaki viral RNA yükünü göstermez.",
+        "Rutin aerob kan kültürü ve koloni biyokimyası": "Rutin aerob kan kültürü bakteriyemi ve sepsis ayırıcı tanısında değerlidir, ancak hemorajik ateş şüphesinde yeterli ve güvenli doğrulama yaklaşımı değildir. Bu hastada ağır trombositopeni, transaminaz yüksekliği ve epidemiyolojik maruziyet viral hemorajik ateş için özel biyogüvenlik ve moleküler test gerektirir.",
+        "Nazofaringeal hızlı influenza antijen testi": "Nazofaringeal hızlı influenza antijen testi ateş ve miyalji yapan solunum virüsleri için düşünülebilir. Ancak bu vakada belirgin kanama bulguları, ağır trombositopeni ve mağara-yarasa teması influenza hızlı testinden çok yüksek riskli kan/serum örneğiyle viral hemorajik ateş doğrulamasını gerektirir.",
+        "Dışkıda ova-parazit konsantrasyon mikroskopisi": "Dışkıda ova-parazit konsantrasyonu eozinofili veya intestinal parazit şüphesinde anlamlıdır. Hastada hemorajik ateş paterni ve temas öyküsü ön plandadır; parazit mikroskopisi akut filoviral RNA'yı saptamaz."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v263-medical-microbiology-thirteenth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Mağara teması",
+        "Hemorajik ateş",
+        "Trombositopeni",
+        "Negatif sıtma yayması",
+        "RT-PCR doğrulaması"
+      ],
+      "images": []
+    },
+  {
+      "id": "v262-new-511-kene-sonrasi-hemolitik-ates-ve-tetradlar",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Kene sonrası hemolitik ateş ve tetradlar",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Kene ilişkili febril hastalıkta hemoliz, aspleni ve kan yayması morfolojisini kullanarak intraeritrositik protozoonu ayırt etme.",
+      "learningTarget": "Babesia microti enfeksiyonunda Giemsa boyalı yaymada intraeritrositik halka/tetrad görünümü ve asplenide ağır seyir riskini açıklayabilme.",
+      "demographics": "64 yaşında kadın hasta",
+      "setting": "Acil servis",
+      "chiefComplaint": "Hasta, kene temasından sonra başlayan ateş, titreme, halsizlik ve koyu renk idrar nedeniyle acil serviste değerlendiriliyor.",
+      "stem": "Hasta iki hafta önce ormanlık bölgede yürüyüş yaptığını ve bacağından küçük bir kene çıkardığını anlatır. Son beş gündür aralıklı yüksek ateş, yoğun terleme ve kas ağrıları olmuş, son günlerde idrar renginin koyulaştığını fark etmiştir. Geçirilmiş trafik kazası sonrası splenektomi öyküsü olduğu öğrenilir. Yakın zamanda sıtma endemik bir bölgeye seyahat etmediğini, antibiyotik kullanmadığını ve döküntü fark etmediğini belirtir.",
+      "patientIntro": {
+        "profile": "64 yaşında kadın hasta, Acil servis ortamında değerlendiriliyor.",
+        "presentation": "Hasta, kene temasından sonra başlayan ateş, titreme, halsizlik ve koyu renk idrar nedeniyle acil serviste değerlendiriliyor.",
+        "historySummary": "Hasta iki hafta önce ormanlık bölgede yürüyüş yaptığını ve bacağından küçük bir kene çıkardığını anlatır. Son beş gündür aralıklı yüksek ateş, yoğun terleme ve kas ağrıları olmuş, son günlerde idrar renginin koyulaştığını fark etmiştir. Geçirilmiş trafik kazası sonrası splenektomi öyküsü olduğu öğrenilir. Yakın zamanda sıtma endemik bir bölgeye seyahat etmediğini, antibiyotik kullanmadığını ve döküntü fark etmediğini belirtir."
+      },
+      "vitals": {
+        "TA": "100/62 mmHg",
+        "Nabız": "116/dk",
+        "Solunum": "20/dk",
+        "SpO₂": "97%",
+        "Ateş": "38.8 °C",
+        "Şok indeksi": "1.16"
+      },
+      "exam": [
+        "Hasta soluk ve bitkin görünümdedir.",
+        "Skleralarda hafif ikter vardır; peteşi veya yaygın döküntü izlenmez.",
+        "Karaciğer kot altında hafif ele gelir; dalak palpe edilmez ve splenektomi skarı vardır.",
+        "Ense sertliği ve fokal nörolojik bulgu saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v262-new-511-kene-sonrasi-hemolitik-ates-ve-tetradlar-mikrobiyoloji-laboratuvar-verileri",
+          "label": "Periferik yayma ve hemoliz laboratuvarı",
+          "title": "Periferik yayma ve hemoliz laboratuvarı",
+          "orderLabel": "Periferik yayma ve hemoliz laboratuvarı",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Giemsa boyalı kan yayması, hemoliz göstergeleri ve PCR",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Kene teması sonrası hemolitik ateşte Giemsa boyalı yaymada eritrosit içi halka ve tetrad yapıları etken ayrımı için kritiktir.",
+          "clinicalMeaning": "Kene teması sonrası hemolitik ateşte Giemsa boyalı yaymada eritrosit içi halka ve tetrad yapıları etken ayrımı için kritiktir.",
+          "result": {
+            "title": "Periferik yayma ve hemoliz laboratuvarı",
+            "summary": "Kene teması sonrası hemolitik ateşte Giemsa boyalı yaymada eritrosit içi halka ve tetrad yapıları etken ayrımı için kritiktir.",
+            "interpretation": "Kene teması sonrası hemolitik ateşte Giemsa boyalı yaymada eritrosit içi halka ve tetrad yapıları etken ayrımı için kritiktir.",
+            "values": [
+              [
+                "Örnek tipi",
+                "EDTA'lı tam kan ve Giemsa boyalı ince yayma",
+                "Dışkı örneği",
+                "Eritrosit içi parazit için uygun örnek"
+              ],
+              [
+                "Periferik yayma",
+                "Eritrosit içinde halka formları ve nadir tetrad/Maltese-cross benzeri yapılar",
+                "Lökosit içi morula",
+                "Babesia lehine morfoloji"
+              ],
+              [
+                "Hemoliz",
+                "LDH yüksek, indirekt bilirubin yüksek, haptoglobin düşük",
+                "Normal",
+                "İntraeritrositik enfeksiyonla uyumlu"
+              ],
+              [
+                "Trombosit",
+                "82.000/mm³",
+                "Normal",
+                "Kene ilişkili sistemik enfeksiyon desteği"
+              ],
+              [
+                "Moleküler test",
+                "Kan örneğinde intraeritrositik protozoon hedefli PCR pozitif",
+                "Negatif",
+                "Mikroskopiyi destekleyen doğrulama"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu mikrobiyolojik laboratuvar bulgusu hangi etkenle en uyumludur?",
+      "questionType": "etiology",
+      "answerTarget": "Protozoal etken",
+      "diagnosis": {
+        "correct": "Babesia microti",
+        "options": [
+          "Plasmodium falciparum",
+          "Trypanosoma cruzi",
+          "Babesia microti",
+          "Leishmania infantum",
+          "Toxoplasma gondii"
+        ],
+        "question": "Bu mikrobiyolojik laboratuvar bulgusu hangi etkenle en uyumludur?",
+        "explanation": "Bu seçenek en uygundur; kene teması sonrası ateş, hemolitik anemi ve aspleni öyküsü ağır babesiosis riskini artırır. Giemsa boyalı yaymada intraeritrositik halkalar ve tetrad/Maltese-cross benzeri yapıların görülmesi B. microti için ayırt ettirici mikrobiyolojik ipucudur.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Kene teması + aspleni + hemolitik anemi + intraeritrositik halkalar/tetradlar → Babesia microti."
+          }
+        ],
+        "optionFeedback": {
+          "Plasmodium falciparum": {
+            "explanation": "Plasmodium falciparum ateş ve intraeritrositik halkalarla en önemli ayırıcıdır, fakat genellikle uygun seyahat öyküsü, pigmentli formlar ve farklı parazitemi paterni beklenir. Bu vakada kene teması, aspleni, hemolitik anemi ve tetrad/Maltese-cross benzeri yapı Plasmodium yerine Babesia'yı destekler."
+          },
+          "Trypanosoma cruzi": {
+            "explanation": "Trypanosoma cruzi triatomin böcek teması sonrası Chagas hastalığı ve ilerleyen kardiyomiyopati/megakolon ile ilişkilidir. İntraeritrositik halkalar ve Maltese-cross görünümü T. cruzi için beklenen kan yayması morfolojisi değildir."
+          },
+          "Babesia microti": {
+            "explanation": "Bu seçenek en uygundur; kene teması sonrası ateş, hemolitik anemi ve aspleni öyküsü ağır babesiosis riskini artırır. Giemsa boyalı yaymada intraeritrositik halkalar ve tetrad/Maltese-cross benzeri yapıların görülmesi B. microti için ayırt ettirici mikrobiyolojik ipucudur."
+          },
+          "Leishmania infantum": {
+            "explanation": "Leishmania infantum visseral leishmaniasis tablosunda kemik iliği veya dalak ilişkili amastigotlarla değerlendirilir. Bu hastadaki eritrosit içi parazit formları, hemoliz ve kene teması Leishmania'dan çok babesiosis ile uyumludur."
+          },
+          "Toxoplasma gondii": {
+            "explanation": "Toxoplasma gondii immün yetmezlikte ensefalit veya konjenital enfeksiyon yapabilir; tanıda seroloji/PCR ve doku kistleri bağlama göre kullanılır. İntraeritrositik halka formları ve Maltese-cross morfolojisi Toxoplasma için beklenmez."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; kene teması sonrası ateş, hemolitik anemi ve aspleni öyküsü ağır babesiosis riskini artırır. Giemsa boyalı yaymada intraeritrositik halkalar ve tetrad/Maltese-cross benzeri yapıların görülmesi B. microti için ayırt ettirici mikrobiyolojik ipucudur.",
+          "optionFeedback": {
+            "Plasmodium falciparum": {
+              "explanation": "Plasmodium falciparum ateş ve intraeritrositik halkalarla en önemli ayırıcıdır, fakat genellikle uygun seyahat öyküsü, pigmentli formlar ve farklı parazitemi paterni beklenir. Bu vakada kene teması, aspleni, hemolitik anemi ve tetrad/Maltese-cross benzeri yapı Plasmodium yerine Babesia'yı destekler."
+            },
+            "Trypanosoma cruzi": {
+              "explanation": "Trypanosoma cruzi triatomin böcek teması sonrası Chagas hastalığı ve ilerleyen kardiyomiyopati/megakolon ile ilişkilidir. İntraeritrositik halkalar ve Maltese-cross görünümü T. cruzi için beklenen kan yayması morfolojisi değildir."
+            },
+            "Babesia microti": {
+              "explanation": "Bu seçenek en uygundur; kene teması sonrası ateş, hemolitik anemi ve aspleni öyküsü ağır babesiosis riskini artırır. Giemsa boyalı yaymada intraeritrositik halkalar ve tetrad/Maltese-cross benzeri yapıların görülmesi B. microti için ayırt ettirici mikrobiyolojik ipucudur."
+            },
+            "Leishmania infantum": {
+              "explanation": "Leishmania infantum visseral leishmaniasis tablosunda kemik iliği veya dalak ilişkili amastigotlarla değerlendirilir. Bu hastadaki eritrosit içi parazit formları, hemoliz ve kene teması Leishmania'dan çok babesiosis ile uyumludur."
+            },
+            "Toxoplasma gondii": {
+              "explanation": "Toxoplasma gondii immün yetmezlikte ensefalit veya konjenital enfeksiyon yapabilir; tanıda seroloji/PCR ve doku kistleri bağlama göre kullanılır. İntraeritrositik halka formları ve Maltese-cross morfolojisi Toxoplasma için beklenmez."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Babesia microti, Ixodes keneleriyle bulaşan ve eritrositleri enfekte eden bir protozoondur. Asplenik hastalarda parazitemi ve hemoliz daha ağır seyreder; yaymada tetrad/Maltese-cross benzeri yapı Plasmodium'dan ayrımda yüksek değer taşır.",
+      "examPearl": "Kene teması + aspleni + hemolitik anemi + intraeritrositik halkalar/tetradlar → Babesia microti.",
+      "whyCorrect": "Bu seçenek en uygundur; kene teması sonrası ateş, hemolitik anemi ve aspleni öyküsü ağır babesiosis riskini artırır. Giemsa boyalı yaymada intraeritrositik halkalar ve tetrad/Maltese-cross benzeri yapıların görülmesi B. microti için ayırt ettirici mikrobiyolojik ipucudur.",
+      "optionComparison": {
+        "Plasmodium falciparum": "Plasmodium falciparum ateş ve intraeritrositik halkalarla en önemli ayırıcıdır, fakat genellikle uygun seyahat öyküsü, pigmentli formlar ve farklı parazitemi paterni beklenir. Bu vakada kene teması, aspleni, hemolitik anemi ve tetrad/Maltese-cross benzeri yapı Plasmodium yerine Babesia'yı destekler.",
+        "Trypanosoma cruzi": "Trypanosoma cruzi triatomin böcek teması sonrası Chagas hastalığı ve ilerleyen kardiyomiyopati/megakolon ile ilişkilidir. İntraeritrositik halkalar ve Maltese-cross görünümü T. cruzi için beklenen kan yayması morfolojisi değildir.",
+        "Babesia microti": "Bu seçenek en uygundur; kene teması sonrası ateş, hemolitik anemi ve aspleni öyküsü ağır babesiosis riskini artırır. Giemsa boyalı yaymada intraeritrositik halkalar ve tetrad/Maltese-cross benzeri yapıların görülmesi B. microti için ayırt ettirici mikrobiyolojik ipucudur.",
+        "Leishmania infantum": "Leishmania infantum visseral leishmaniasis tablosunda kemik iliği veya dalak ilişkili amastigotlarla değerlendirilir. Bu hastadaki eritrosit içi parazit formları, hemoliz ve kene teması Leishmania'dan çok babesiosis ile uyumludur.",
+        "Toxoplasma gondii": "Toxoplasma gondii immün yetmezlikte ensefalit veya konjenital enfeksiyon yapabilir; tanıda seroloji/PCR ve doku kistleri bağlama göre kullanılır. İntraeritrositik halka formları ve Maltese-cross morfolojisi Toxoplasma için beklenmez."
+      },
+      "evidenceChain": [
+        {
+          "text": "Kene teması → Ixodes ilişkili protozoal enfeksiyon riski",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Splenektomi öyküsü → ağır babesiosis için risk artışı",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Koyu idrar, LDH yüksekliği ve haptoglobin düşüklüğü → hemolitik süreç",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Eritrosit içi halka ve tetrad yapıları → Babesia için ayırt ettirici yayma bulgusu",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Plasmodium falciparum": "Plasmodium falciparum ateş ve intraeritrositik halkalarla en önemli ayırıcıdır, fakat genellikle uygun seyahat öyküsü, pigmentli formlar ve farklı parazitemi paterni beklenir. Bu vakada kene teması, aspleni, hemolitik anemi ve tetrad/Maltese-cross benzeri yapı Plasmodium yerine Babesia'yı destekler.",
+        "Trypanosoma cruzi": "Trypanosoma cruzi triatomin böcek teması sonrası Chagas hastalığı ve ilerleyen kardiyomiyopati/megakolon ile ilişkilidir. İntraeritrositik halkalar ve Maltese-cross görünümü T. cruzi için beklenen kan yayması morfolojisi değildir.",
+        "Leishmania infantum": "Leishmania infantum visseral leishmaniasis tablosunda kemik iliği veya dalak ilişkili amastigotlarla değerlendirilir. Bu hastadaki eritrosit içi parazit formları, hemoliz ve kene teması Leishmania'dan çok babesiosis ile uyumludur.",
+        "Toxoplasma gondii": "Toxoplasma gondii immün yetmezlikte ensefalit veya konjenital enfeksiyon yapabilir; tanıda seroloji/PCR ve doku kistleri bağlama göre kullanılır. İntraeritrositik halka formları ve Maltese-cross morfolojisi Toxoplasma için beklenmez."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v263-medical-microbiology-thirteenth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Kene teması",
+        "Aspleni",
+        "Hemolitik anemi",
+        "Maltese-cross tetrad",
+        "Babesia PCR"
+      ],
+      "images": []
+    },
+  {
+      "id": "v263-new-512-tropikal-seyahat-sonrasi-apseli-pnomoni",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Tropikal seyahat sonrası apseli pnömoni",
+      "difficulty": "Orta",
+      "difficultyTag": "Orta",
+      "clinicalFocus": "Tropikal seyahat sonrası gelişen pnömoni, bakteriyemi ve viseral apse birlikteliğinde kültür morfolojisini kullanarak etkeni ayırt etme.",
+      "learningTarget": "Melioidosis tablosunda diyabet, yağmur/çamur teması, bipolar boyanan oksidaz pozitif nonfermentatif gram negatif basil ve çok odaklı apse ipuçlarını birleştirebilme.",
+      "demographics": "56 yaşında erkek hasta",
+      "setting": "Enfeksiyon hastalıkları servisi",
+      "chiefComplaint": "Hasta, Güneydoğu Asya seyahati dönüşünde başlayan ateş, öksürük ve sağ üst kadran ağrısı nedeniyle enfeksiyon hastalıkları servisinde değerlendiriliyor.",
+      "stem": "Hasta iki hafta önce Tayland kırsalında yağmur sezonunda pirinç tarlası çevresinde çalıştığını ve birkaç kez çamurlu suya çıplak ayakla girdiğini anlatır. Türkiye’ye döndükten sonra üşüme-titreme, öksürük ve halsizlik başlamış, son günlerde balgamı koyulaşmış ve sağ üst kadranda künt ağrı eklenmiştir. Tip 2 diyabeti olduğu ve son aylarda glisemik kontrolünün düzensiz seyrettiği öğrenilir. Evde kullandığı antibiyotiğe rağmen ateşi düşmeyince yatırılarak değerlendirilmiştir.",
+      "patientIntro": {
+        "profile": "56 yaşında erkek hasta, Enfeksiyon hastalıkları servisi ortamında değerlendiriliyor.",
+        "presentation": "Hasta, Güneydoğu Asya seyahati dönüşünde başlayan ateş, öksürük ve sağ üst kadran ağrısı nedeniyle enfeksiyon hastalıkları servisinde değerlendiriliyor.",
+        "historySummary": "Hasta iki hafta önce Tayland kırsalında yağmur sezonunda pirinç tarlası çevresinde çalıştığını ve birkaç kez çamurlu suya çıplak ayakla girdiğini anlatır. Türkiye’ye döndükten sonra üşüme-titreme, öksürük ve halsizlik başlamış, son günlerde balgamı koyulaşmış ve sağ üst kadranda künt ağrı eklenmiştir. Tip 2 diyabeti olduğu ve son aylarda glisemik kontrolünün düzensiz seyrettiği öğrenilir. Evde kullandığı antibiyotiğe rağmen ateşi düşmeyince yatırılarak değerlendirilmiştir."
+      },
+      "vitals": {
+        "TA": "98/62 mmHg",
+        "Nabız": "116/dk",
+        "Solunum": "24/dk",
+        "SpO₂": "93%",
+        "Ateş": "39.1 °C",
+        "Şok indeksi": "1.18"
+      },
+      "exam": [
+        "Genel durumu düşkün, terli ve toksik görünümdedir.",
+        "Sağ alt akciğer alanında raller ve bronşiyal solunum sesi duyulur.",
+        "Karaciğer kenarı hassas palpe edilir; belirgin periton irritasyonu yoktur.",
+        "Alt ekstremitede eski küçük abrazyonlar izlenir, aktif sellülit odağı saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v263-new-512-tropikal-seyahat-sonrasi-apseli-pnomoni-mikrobiyoloji-laboratuvar-verileri",
+          "label": "Kan-balgam kültürü ve abdominal görüntüleme",
+          "title": "Kan-balgam kültürü ve abdominal görüntüleme",
+          "orderLabel": "Kan-balgam kültürü ve abdominal görüntüleme",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Gram boyama, kültür morfolojisi ve apse verisi",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Tropikal seyahat öyküsüyle birlikte kan ve balgamda aynı nonfermentatif gram negatif basil paterninin görülmesi klinik odağı güçlendirir.",
+          "clinicalMeaning": "Tropikal seyahat öyküsüyle birlikte kan ve balgamda aynı nonfermentatif gram negatif basil paterninin görülmesi klinik odağı güçlendirir.",
+          "result": {
+            "title": "Kan-balgam kültürü ve abdominal görüntüleme",
+            "summary": "Tropikal seyahat öyküsüyle birlikte kan ve balgamda aynı nonfermentatif gram negatif basil paterninin görülmesi klinik odağı güçlendirir.",
+            "interpretation": "Tropikal seyahat öyküsüyle birlikte kan ve balgamda aynı nonfermentatif gram negatif basil paterninin görülmesi klinik odağı güçlendirir.",
+            "values": [
+              [
+                "Örnek tipi",
+                "İki set kan kültürü ve balgam örneği",
+                "Boğaz sürüntüsü",
+                "Sistemik ve pulmoner enfeksiyon için uygun örnekler"
+              ],
+              [
+                "Gram boyama",
+                "Küçük gram negatif basiller; bazı hücrelerde bipolar boyanma",
+                "Gram pozitif dallanan filamentler",
+                "Etken grubunu daraltır"
+              ],
+              [
+                "Kültür özelliği",
+                "48 saatte kuru-buruşuk koloniler; oksidaz pozitif, nonfermentatif profil",
+                "Laktoz fermente eden mukoid koloni",
+                "Nonenterik çevresel gram negatif basil lehine"
+              ],
+              [
+                "Kan kültürü",
+                "Aerob şişede üreme; laboratuvar biyogüvenlik uyarısı oluşturuldu",
+                "Üreme yok",
+                "Bakteriyemi desteği"
+              ],
+              [
+                "Görüntüleme",
+                "Akciğerde nodüler konsolidasyonlar; karaciğer ve dalakta küçük apse odakları",
+                "Tek lobar konsolidasyon",
+                "Çok odaklı enfeksiyon paterni"
+              ],
+              [
+                "Temel laboratuvar",
+                "Lökosit 18.200/mm³, CRP yüksek, HbA1c %9.2",
+                "Normal inflamasyon belirteçleri",
+                "Risk ve inflamasyon desteği"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu hastada en olası etken aşağıdakilerden hangisidir?",
+      "questionType": "etiologic-agent",
+      "answerTarget": "Etken tanıma",
+      "diagnosis": {
+        "correct": "Burkholderia pseudomallei",
+        "options": [
+          "Klebsiella pneumoniae",
+          "Burkholderia pseudomallei",
+          "Nocardia farcinica",
+          "Brucella melitensis",
+          "Francisella tularensis"
+        ],
+        "question": "Bu hastada en olası etken aşağıdakilerden hangisidir?",
+        "explanation": "Bu seçenek en uygundur; diyabetli hastada Güneydoğu Asya yağmur sezonu sonrası pnömoni, bakteriyemi ve karaciğer/dalak apseleri melioidosis paternini destekler. Kan ve balgam kültüründe oksidaz pozitif, nonfermentatif gram negatif basil ile bipolar boyanma ve buruşuk-kuru koloni görünümü birlikte B. pseudomallei lehine güçlü mikrobiyolojik kanıttır.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Tropikal yağmur/çamur teması + diyabet + pnömoni/apse + bipolar boyanan nonfermentatif gram negatif basil → Burkholderia pseudomallei düşün."
+          }
+        ],
+        "optionFeedback": {
+          "Klebsiella pneumoniae": {
+            "explanation": "Klebsiella pneumoniae diyabetik veya alkol kullanımı olan hastada nekrotizan pnömoni ve kalın kapsüllü balgam nedeniyle ayırıcı tanıya girebilir; ancak tropikal yağmur sezonu teması, çok odaklı organ apseleri ve bipolar boyanan oksidaz pozitif nonfermentatif gram negatif basil paterni onun için tipik değildir. Klebsiella çoğunlukla laktoz fermente eden kapsüllü enterik basil olarak beklenir ve laboratuvar uyarısı bu vakadaki etken grubundan farklıdır."
+          },
+          "Burkholderia pseudomallei": {
+            "explanation": "Bu seçenek en uygundur; diyabetli hastada Güneydoğu Asya yağmur sezonu sonrası pnömoni, bakteriyemi ve karaciğer/dalak apseleri melioidosis paternini destekler. Kan ve balgam kültüründe oksidaz pozitif, nonfermentatif gram negatif basil ile bipolar boyanma ve buruşuk-kuru koloni görünümü birlikte B. pseudomallei lehine güçlü mikrobiyolojik kanıttır."
+          },
+          "Nocardia farcinica": {
+            "explanation": "Nocardia farcinica immünsüpresif hastada akciğer ve beyin apseleriyle karışabilir; fakat zayıf aside dirençli, dallanan filamentöz gram pozitif yapı beklenir. Bu vakadaki oksidaz pozitif nonfermentatif gram negatif basil ve bipolar boyanma Nocardia morfolojisiyle uyumlu değildir."
+          },
+          "Brucella melitensis": {
+            "explanation": "Brucella melitensis hayvancılık ve pastörize edilmemiş süt öyküsüyle dalgalı ateş, hepatosplenomegali ve osteoartiküler tutulum yapabilir. Akut nekrotizan pnömoni, çoklu viseral apse ve bipolar boyanan nonfermentatif gram negatif basil kültür paterni Brucella için beklenen tanısal akış değildir."
+          },
+          "Francisella tularensis": {
+            "explanation": "Francisella tularensis av hayvanı veya kene teması sonrası ülseroglandüler hastalık ve pnömonik tularemi yapabilir; laboratuvarda özel biyogüvenlik uyarısı gerektiren küçük gram negatif kokobasil olarak karışabilir. Ancak bu vakadaki Güneydoğu Asya yağmur-su teması, diyabet zemini ve çoklu organ apsesi melioidosis yönünde daha güçlüdür."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; diyabetli hastada Güneydoğu Asya yağmur sezonu sonrası pnömoni, bakteriyemi ve karaciğer/dalak apseleri melioidosis paternini destekler. Kan ve balgam kültüründe oksidaz pozitif, nonfermentatif gram negatif basil ile bipolar boyanma ve buruşuk-kuru koloni görünümü birlikte B. pseudomallei lehine güçlü mikrobiyolojik kanıttır.",
+          "optionFeedback": {
+            "Klebsiella pneumoniae": {
+              "explanation": "Klebsiella pneumoniae diyabetik veya alkol kullanımı olan hastada nekrotizan pnömoni ve kalın kapsüllü balgam nedeniyle ayırıcı tanıya girebilir; ancak tropikal yağmur sezonu teması, çok odaklı organ apseleri ve bipolar boyanan oksidaz pozitif nonfermentatif gram negatif basil paterni onun için tipik değildir. Klebsiella çoğunlukla laktoz fermente eden kapsüllü enterik basil olarak beklenir ve laboratuvar uyarısı bu vakadaki etken grubundan farklıdır."
+            },
+            "Burkholderia pseudomallei": {
+              "explanation": "Bu seçenek en uygundur; diyabetli hastada Güneydoğu Asya yağmur sezonu sonrası pnömoni, bakteriyemi ve karaciğer/dalak apseleri melioidosis paternini destekler. Kan ve balgam kültüründe oksidaz pozitif, nonfermentatif gram negatif basil ile bipolar boyanma ve buruşuk-kuru koloni görünümü birlikte B. pseudomallei lehine güçlü mikrobiyolojik kanıttır."
+            },
+            "Nocardia farcinica": {
+              "explanation": "Nocardia farcinica immünsüpresif hastada akciğer ve beyin apseleriyle karışabilir; fakat zayıf aside dirençli, dallanan filamentöz gram pozitif yapı beklenir. Bu vakadaki oksidaz pozitif nonfermentatif gram negatif basil ve bipolar boyanma Nocardia morfolojisiyle uyumlu değildir."
+            },
+            "Brucella melitensis": {
+              "explanation": "Brucella melitensis hayvancılık ve pastörize edilmemiş süt öyküsüyle dalgalı ateş, hepatosplenomegali ve osteoartiküler tutulum yapabilir. Akut nekrotizan pnömoni, çoklu viseral apse ve bipolar boyanan nonfermentatif gram negatif basil kültür paterni Brucella için beklenen tanısal akış değildir."
+            },
+            "Francisella tularensis": {
+              "explanation": "Francisella tularensis av hayvanı veya kene teması sonrası ülseroglandüler hastalık ve pnömonik tularemi yapabilir; laboratuvarda özel biyogüvenlik uyarısı gerektiren küçük gram negatif kokobasil olarak karışabilir. Ancak bu vakadaki Güneydoğu Asya yağmur-su teması, diyabet zemini ve çoklu organ apsesi melioidosis yönünde daha güçlüdür."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Melioidosis; özellikle diyabetli hastada tropikal toprak/su teması sonrası pnömoni, sepsis ve karaciğer-dalak apseleriyle gelebilen çevresel gram negatif basil enfeksiyonudur.",
+      "examPearl": "Tropikal yağmur/çamur teması + diyabet + pnömoni/apse + bipolar boyanan nonfermentatif gram negatif basil → Burkholderia pseudomallei düşün.",
+      "whyCorrect": "Bu seçenek en uygundur; diyabetli hastada Güneydoğu Asya yağmur sezonu sonrası pnömoni, bakteriyemi ve karaciğer/dalak apseleri melioidosis paternini destekler. Kan ve balgam kültüründe oksidaz pozitif, nonfermentatif gram negatif basil ile bipolar boyanma ve buruşuk-kuru koloni görünümü birlikte B. pseudomallei lehine güçlü mikrobiyolojik kanıttır.",
+      "optionComparison": {
+        "Klebsiella pneumoniae": "Klebsiella pneumoniae diyabetik veya alkol kullanımı olan hastada nekrotizan pnömoni ve kalın kapsüllü balgam nedeniyle ayırıcı tanıya girebilir; ancak tropikal yağmur sezonu teması, çok odaklı organ apseleri ve bipolar boyanan oksidaz pozitif nonfermentatif gram negatif basil paterni onun için tipik değildir. Klebsiella çoğunlukla laktoz fermente eden kapsüllü enterik basil olarak beklenir ve laboratuvar uyarısı bu vakadaki etken grubundan farklıdır.",
+        "Burkholderia pseudomallei": "Bu seçenek en uygundur; diyabetli hastada Güneydoğu Asya yağmur sezonu sonrası pnömoni, bakteriyemi ve karaciğer/dalak apseleri melioidosis paternini destekler. Kan ve balgam kültüründe oksidaz pozitif, nonfermentatif gram negatif basil ile bipolar boyanma ve buruşuk-kuru koloni görünümü birlikte B. pseudomallei lehine güçlü mikrobiyolojik kanıttır.",
+        "Nocardia farcinica": "Nocardia farcinica immünsüpresif hastada akciğer ve beyin apseleriyle karışabilir; fakat zayıf aside dirençli, dallanan filamentöz gram pozitif yapı beklenir. Bu vakadaki oksidaz pozitif nonfermentatif gram negatif basil ve bipolar boyanma Nocardia morfolojisiyle uyumlu değildir.",
+        "Brucella melitensis": "Brucella melitensis hayvancılık ve pastörize edilmemiş süt öyküsüyle dalgalı ateş, hepatosplenomegali ve osteoartiküler tutulum yapabilir. Akut nekrotizan pnömoni, çoklu viseral apse ve bipolar boyanan nonfermentatif gram negatif basil kültür paterni Brucella için beklenen tanısal akış değildir.",
+        "Francisella tularensis": "Francisella tularensis av hayvanı veya kene teması sonrası ülseroglandüler hastalık ve pnömonik tularemi yapabilir; laboratuvarda özel biyogüvenlik uyarısı gerektiren küçük gram negatif kokobasil olarak karışabilir. Ancak bu vakadaki Güneydoğu Asya yağmur-su teması, diyabet zemini ve çoklu organ apsesi melioidosis yönünde daha güçlüdür."
+      },
+      "evidenceChain": [
+        {
+          "text": "Yağmur sezonunda çamurlu su teması → çevresel tropikal gram negatif basil maruziyeti",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Diyabet ve sepsis bulguları → melioidosis için ağır hastalık riskini artırır",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Kan ve balgamda aynı oksidaz pozitif nonfermentatif basil → sistemik etken lehine",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Karaciğer-dalak apseleri → çok odaklı melioidosis paternini destekler",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Klebsiella pneumoniae": "Klebsiella pneumoniae diyabetik veya alkol kullanımı olan hastada nekrotizan pnömoni ve kalın kapsüllü balgam nedeniyle ayırıcı tanıya girebilir; ancak tropikal yağmur sezonu teması, çok odaklı organ apseleri ve bipolar boyanan oksidaz pozitif nonfermentatif gram negatif basil paterni onun için tipik değildir. Klebsiella çoğunlukla laktoz fermente eden kapsüllü enterik basil olarak beklenir ve laboratuvar uyarısı bu vakadaki etken grubundan farklıdır.",
+        "Nocardia farcinica": "Nocardia farcinica immünsüpresif hastada akciğer ve beyin apseleriyle karışabilir; fakat zayıf aside dirençli, dallanan filamentöz gram pozitif yapı beklenir. Bu vakadaki oksidaz pozitif nonfermentatif gram negatif basil ve bipolar boyanma Nocardia morfolojisiyle uyumlu değildir.",
+        "Brucella melitensis": "Brucella melitensis hayvancılık ve pastörize edilmemiş süt öyküsüyle dalgalı ateş, hepatosplenomegali ve osteoartiküler tutulum yapabilir. Akut nekrotizan pnömoni, çoklu viseral apse ve bipolar boyanan nonfermentatif gram negatif basil kültür paterni Brucella için beklenen tanısal akış değildir.",
+        "Francisella tularensis": "Francisella tularensis av hayvanı veya kene teması sonrası ülseroglandüler hastalık ve pnömonik tularemi yapabilir; laboratuvarda özel biyogüvenlik uyarısı gerektiren küçük gram negatif kokobasil olarak karışabilir. Ancak bu vakadaki Güneydoğu Asya yağmur-su teması, diyabet zemini ve çoklu organ apsesi melioidosis yönünde daha güçlüdür."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v264-medical-microbiology-fourteenth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Tropikal yağmur teması",
+        "Diyabet",
+        "Bakteriyemi",
+        "Apseli pnömoni",
+        "Bipolar boyanan gram negatif basil"
+      ],
+      "images": []
+    },
+  {
+      "id": "v263-new-513-hbsag-pozitif-hastada-agir-hepatit-alevlenmesi",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "HBsAg pozitif hastada ağır hepatit alevlenmesi",
+      "difficulty": "Orta",
+      "difficultyTag": "Orta",
+      "clinicalFocus": "HBsAg pozitif hastada beklenenden ağır hepatit alevlenmesini seroloji ve moleküler testlerle yorumlayarak viral bağımlılık mekanizmasını ayırt etme.",
+      "learningTarget": "Delta ajanının HBV yüzey antijenleri olmadan enfeksiyöz partikül oluşturamayacağını ve anti-HDV/HDV RNA sonucunun aktif enfeksiyon lehine değerlendirileceğini kavrayabilme.",
+      "demographics": "39 yaşında erkek hasta",
+      "setting": "Gastroenteroloji servisi",
+      "chiefComplaint": "Hasta, bilinen kronik HBV taşıyıcılığı zemininde gelişen sarılık, koyu idrar ve belirgin halsizlik nedeniyle yatırılarak değerlendiriliyor.",
+      "stem": "Hasta yıllardır HBsAg pozitif izlendiğini, ancak düzenli kontrole gitmediğini anlatır. Son üç haftada iştahsızlık ve halsizlik başlamış, ardından gözlerinde sararma ve koyu renkli idrar fark etmiştir. Yakın zamanda yeni dövme yaptırdığı ve korunmasız cinsel teması olduğu öğrenilir. Alkol alımının belirgin artmadığını, parasetamol veya bitkisel ürün kullanmadığını ifade eder.",
+      "patientIntro": {
+        "profile": "39 yaşında erkek hasta, Gastroenteroloji servisi ortamında değerlendiriliyor.",
+        "presentation": "Hasta, bilinen kronik HBV taşıyıcılığı zemininde gelişen sarılık, koyu idrar ve belirgin halsizlik nedeniyle yatırılarak değerlendiriliyor.",
+        "historySummary": "Hasta yıllardır HBsAg pozitif izlendiğini, ancak düzenli kontrole gitmediğini anlatır. Son üç haftada iştahsızlık ve halsizlik başlamış, ardından gözlerinde sararma ve koyu renkli idrar fark etmiştir. Yakın zamanda yeni dövme yaptırdığı ve korunmasız cinsel teması olduğu öğrenilir. Alkol alımının belirgin artmadığını, parasetamol veya bitkisel ürün kullanmadığını ifade eder."
+      },
+      "vitals": {
+        "TA": "112/70 mmHg",
+        "Nabız": "96/dk",
+        "Solunum": "17/dk",
+        "SpO₂": "98%",
+        "Ateş": "37.6 °C",
+        "Şok indeksi": "0.86"
+      },
+      "exam": [
+        "Skleralar ikteriktir, bilinç açık ve kooperedir.",
+        "Sağ üst kadranda hafif hassasiyet vardır; belirgin asit yoktur.",
+        "Karaciğer kenarı 2 cm ele gelir, dalak palpabl değildir.",
+        "Döküntü, ense sertliği veya aktif kanama bulgusu saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v263-new-513-hbsag-pozitif-hastada-agir-hepatit-alevlenmesi-mikrobiyoloji-laboratuvar-verileri",
+          "label": "Hepatit serolojisi ve moleküler testler",
+          "title": "Hepatit serolojisi ve moleküler testler",
+          "orderLabel": "Hepatit serolojisi ve moleküler testler",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "HBV belirteçleri, delta serolojisi ve viral RNA",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "HBsAg pozitif zeminde ağır hepatit alevlenmesini açıklamak için HBV belirteçleri ve delta enfeksiyon belirteçleri birlikte yorumlanır.",
+          "clinicalMeaning": "HBsAg pozitif zeminde ağır hepatit alevlenmesini açıklamak için HBV belirteçleri ve delta enfeksiyon belirteçleri birlikte yorumlanır.",
+          "result": {
+            "title": "Hepatit serolojisi ve moleküler testler",
+            "summary": "HBsAg pozitif zeminde ağır hepatit alevlenmesini açıklamak için HBV belirteçleri ve delta enfeksiyon belirteçleri birlikte yorumlanır.",
+            "interpretation": "HBsAg pozitif zeminde ağır hepatit alevlenmesini açıklamak için HBV belirteçleri ve delta enfeksiyon belirteçleri birlikte yorumlanır.",
+            "values": [
+              [
+                "HBsAg",
+                "Pozitif",
+                "Negatif",
+                "HBV yüzey antijeni varlığını gösterir"
+              ],
+              [
+                "Anti-HBc IgG / IgM",
+                "IgG pozitif, IgM negatif",
+                "Akut primer HBV paterni",
+                "Kronik HBV zeminini destekler"
+              ],
+              [
+                "HBeAg / HBV DNA",
+                "HBeAg negatif, HBV DNA düşük-orta düzey",
+                "Çok yüksek HBV DNA",
+                "Alevlenmeyi tek başına açıklamakta zayıf"
+              ],
+              [
+                "Delta testi",
+                "Total anti-HDV pozitif",
+                "Negatif",
+                "Maruziyet/enfeksiyon kanıtı"
+              ],
+              [
+                "Moleküler test",
+                "Serumda HDV RNA pozitif",
+                "HDV RNA negatif",
+                "Aktif delta replikasyonunu destekler"
+              ],
+              [
+                "Biyokimya",
+                "ALT 1260 U/L, AST 980 U/L, total bilirubin 7.4 mg/dL",
+                "Normal transaminaz",
+                "Ağır hepatit alevlenmesi"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu serolojik ve moleküler tabloyu en iyi açıklayan virolojik mekanizma aşağıdakilerden hangisidir?",
+      "questionType": "pathogenesis-mechanism",
+      "answerTarget": "Viral bağımlılık mekanizması",
+      "diagnosis": {
+        "correct": "HBV yüzey antijenini zarf olarak kullanarak enfeksiyöz partikül oluşturma",
+        "options": [
+          "Prekor/core promotör mutasyonuyla HBeAg üretiminin azalması",
+          "Konak genomuna proviral DNA entegrasyonu ile latent kalıcılık",
+          "NS5B polimeraz hata eğilimiyle yüksek quasispecies oluşumu",
+          "HBV yüzey antijenini zarf olarak kullanarak enfeksiyöz partikül oluşturma",
+          "Revers transkriptaz enzimiyle kısmi çift sarmallı DNA genomu sentezleme"
+        ],
+        "question": "Bu serolojik ve moleküler tabloyu en iyi açıklayan virolojik mekanizma aşağıdakilerden hangisidir?",
+        "explanation": "Bu seçenek en uygundur; delta ajanı kendi başına tam enfeksiyöz partikül oluşturmak için HBV yüzey antijenlerine gereksinim duyar. HBsAg pozitif hastada total anti-HDV ve HDV RNA pozitifliği ile ağır hepatit alevlenmesi, enfeksiyonun HBsAg zarfına bağımlı olduğunu gösterir.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "HBsAg pozitif hastada ağır alevlenme + total anti-HDV/HDV RNA pozitifliği → delta ajanı; ayırıcı mekanizma HBsAg zarf bağımlılığıdır."
+          }
+        ],
+        "optionFeedback": {
+          "Prekor/core promotör mutasyonuyla HBeAg üretiminin azalması": {
+            "explanation": "Prekor veya core promotör mutasyonları HBeAg negatif kronik HBV alevlenmelerinde önemlidir ve HBV replikasyon yorumunda karışabilir. Ancak bu vakada yeni saptanan total anti-HDV ve HDV RNA pozitifliği, ana sorunun HBeAg üretimi değil yardımcı HBV zarfına bağımlı defektif ajan olduğunu gösterir."
+          },
+          "Konak genomuna proviral DNA entegrasyonu ile latent kalıcılık": {
+            "explanation": "Proviral DNA entegrasyonu retrovirüs biyolojisi ve bazı viral onkogenez başlıklarında önemlidir. Hepatit D tablosunda belirleyici özellik, konak genomuna entegrasyon değil HBsAg içeren zarfın kullanılmasıdır; bu yüzden seroloji paternini açıklamaz."
+          },
+          "NS5B polimeraz hata eğilimiyle yüksek quasispecies oluşumu": {
+            "explanation": "NS5B polimeraz ve quasispecies kavramı özellikle HCV enfeksiyonunun genetik değişkenliğini açıklar. Bu hastada HBsAg pozitif zemin, anti-HDV/HDV RNA pozitifliği ve ağır hepatit alevlenmesi HCV polimeraz biyolojisinden çok delta ajanının HBV zarf bağımlılığıyla ilişkilidir."
+          },
+          "HBV yüzey antijenini zarf olarak kullanarak enfeksiyöz partikül oluşturma": {
+            "explanation": "Bu seçenek en uygundur; delta ajanı kendi başına tam enfeksiyöz partikül oluşturmak için HBV yüzey antijenlerine gereksinim duyar. HBsAg pozitif hastada total anti-HDV ve HDV RNA pozitifliği ile ağır hepatit alevlenmesi, enfeksiyonun HBsAg zarfına bağımlı olduğunu gösterir."
+          },
+          "Revers transkriptaz enzimiyle kısmi çift sarmallı DNA genomu sentezleme": {
+            "explanation": "Revers transkriptaz ve kısmi çift sarmallı DNA sentezi HBV replikasyonunun temel özelliğidir. Fakat bu vaka sadece HBV monoinfeksiyonunu değil HDV RNA pozitifliğiyle ağırlaşan tabloyu sorgular; mekanizmanın ayırıcı noktası HBV zarf proteinlerinin kullanılmasıdır."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; delta ajanı kendi başına tam enfeksiyöz partikül oluşturmak için HBV yüzey antijenlerine gereksinim duyar. HBsAg pozitif hastada total anti-HDV ve HDV RNA pozitifliği ile ağır hepatit alevlenmesi, enfeksiyonun HBsAg zarfına bağımlı olduğunu gösterir.",
+          "optionFeedback": {
+            "Prekor/core promotör mutasyonuyla HBeAg üretiminin azalması": {
+              "explanation": "Prekor veya core promotör mutasyonları HBeAg negatif kronik HBV alevlenmelerinde önemlidir ve HBV replikasyon yorumunda karışabilir. Ancak bu vakada yeni saptanan total anti-HDV ve HDV RNA pozitifliği, ana sorunun HBeAg üretimi değil yardımcı HBV zarfına bağımlı defektif ajan olduğunu gösterir."
+            },
+            "Konak genomuna proviral DNA entegrasyonu ile latent kalıcılık": {
+              "explanation": "Proviral DNA entegrasyonu retrovirüs biyolojisi ve bazı viral onkogenez başlıklarında önemlidir. Hepatit D tablosunda belirleyici özellik, konak genomuna entegrasyon değil HBsAg içeren zarfın kullanılmasıdır; bu yüzden seroloji paternini açıklamaz."
+            },
+            "NS5B polimeraz hata eğilimiyle yüksek quasispecies oluşumu": {
+              "explanation": "NS5B polimeraz ve quasispecies kavramı özellikle HCV enfeksiyonunun genetik değişkenliğini açıklar. Bu hastada HBsAg pozitif zemin, anti-HDV/HDV RNA pozitifliği ve ağır hepatit alevlenmesi HCV polimeraz biyolojisinden çok delta ajanının HBV zarf bağımlılığıyla ilişkilidir."
+            },
+            "HBV yüzey antijenini zarf olarak kullanarak enfeksiyöz partikül oluşturma": {
+              "explanation": "Bu seçenek en uygundur; delta ajanı kendi başına tam enfeksiyöz partikül oluşturmak için HBV yüzey antijenlerine gereksinim duyar. HBsAg pozitif hastada total anti-HDV ve HDV RNA pozitifliği ile ağır hepatit alevlenmesi, enfeksiyonun HBsAg zarfına bağımlı olduğunu gösterir."
+            },
+            "Revers transkriptaz enzimiyle kısmi çift sarmallı DNA genomu sentezleme": {
+              "explanation": "Revers transkriptaz ve kısmi çift sarmallı DNA sentezi HBV replikasyonunun temel özelliğidir. Fakat bu vaka sadece HBV monoinfeksiyonunu değil HDV RNA pozitifliğiyle ağırlaşan tabloyu sorgular; mekanizmanın ayırıcı noktası HBV zarf proteinlerinin kullanılmasıdır."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Hepatit D ajanı defektif bir RNA virüsüdür; enfeksiyöz partikül oluşturabilmesi için HBsAg içeren HBV zarf proteinlerine bağımlıdır.",
+      "examPearl": "HBsAg pozitif hastada ağır alevlenme + total anti-HDV/HDV RNA pozitifliği → delta ajanı; ayırıcı mekanizma HBsAg zarf bağımlılığıdır.",
+      "whyCorrect": "Bu seçenek en uygundur; delta ajanı kendi başına tam enfeksiyöz partikül oluşturmak için HBV yüzey antijenlerine gereksinim duyar. HBsAg pozitif hastada total anti-HDV ve HDV RNA pozitifliği ile ağır hepatit alevlenmesi, enfeksiyonun HBsAg zarfına bağımlı olduğunu gösterir.",
+      "optionComparison": {
+        "Prekor/core promotör mutasyonuyla HBeAg üretiminin azalması": "Prekor veya core promotör mutasyonları HBeAg negatif kronik HBV alevlenmelerinde önemlidir ve HBV replikasyon yorumunda karışabilir. Ancak bu vakada yeni saptanan total anti-HDV ve HDV RNA pozitifliği, ana sorunun HBeAg üretimi değil yardımcı HBV zarfına bağımlı defektif ajan olduğunu gösterir.",
+        "Konak genomuna proviral DNA entegrasyonu ile latent kalıcılık": "Proviral DNA entegrasyonu retrovirüs biyolojisi ve bazı viral onkogenez başlıklarında önemlidir. Hepatit D tablosunda belirleyici özellik, konak genomuna entegrasyon değil HBsAg içeren zarfın kullanılmasıdır; bu yüzden seroloji paternini açıklamaz.",
+        "NS5B polimeraz hata eğilimiyle yüksek quasispecies oluşumu": "NS5B polimeraz ve quasispecies kavramı özellikle HCV enfeksiyonunun genetik değişkenliğini açıklar. Bu hastada HBsAg pozitif zemin, anti-HDV/HDV RNA pozitifliği ve ağır hepatit alevlenmesi HCV polimeraz biyolojisinden çok delta ajanının HBV zarf bağımlılığıyla ilişkilidir.",
+        "HBV yüzey antijenini zarf olarak kullanarak enfeksiyöz partikül oluşturma": "Bu seçenek en uygundur; delta ajanı kendi başına tam enfeksiyöz partikül oluşturmak için HBV yüzey antijenlerine gereksinim duyar. HBsAg pozitif hastada total anti-HDV ve HDV RNA pozitifliği ile ağır hepatit alevlenmesi, enfeksiyonun HBsAg zarfına bağımlı olduğunu gösterir.",
+        "Revers transkriptaz enzimiyle kısmi çift sarmallı DNA genomu sentezleme": "Revers transkriptaz ve kısmi çift sarmallı DNA sentezi HBV replikasyonunun temel özelliğidir. Fakat bu vaka sadece HBV monoinfeksiyonunu değil HDV RNA pozitifliğiyle ağırlaşan tabloyu sorgular; mekanizmanın ayırıcı noktası HBV zarf proteinlerinin kullanılmasıdır."
+      },
+      "evidenceChain": [
+        {
+          "text": "Kronik HBV belirteçleri → HBsAg sağlayan zemin mevcut",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "HDV RNA pozitifliği → aktif delta replikasyonunu destekler",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "HBV DNA'nın alevlenmeye göre sınırlı kalması → tek başına HBV replikasyonu dışında neden düşündürür",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "text": "Ağır transaminaz yükselmesi → delta ile ağırlaşan hepatit paternine uyar",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Prekor/core promotör mutasyonuyla HBeAg üretiminin azalması": "Prekor veya core promotör mutasyonları HBeAg negatif kronik HBV alevlenmelerinde önemlidir ve HBV replikasyon yorumunda karışabilir. Ancak bu vakada yeni saptanan total anti-HDV ve HDV RNA pozitifliği, ana sorunun HBeAg üretimi değil yardımcı HBV zarfına bağımlı defektif ajan olduğunu gösterir.",
+        "Konak genomuna proviral DNA entegrasyonu ile latent kalıcılık": "Proviral DNA entegrasyonu retrovirüs biyolojisi ve bazı viral onkogenez başlıklarında önemlidir. Hepatit D tablosunda belirleyici özellik, konak genomuna entegrasyon değil HBsAg içeren zarfın kullanılmasıdır; bu yüzden seroloji paternini açıklamaz.",
+        "NS5B polimeraz hata eğilimiyle yüksek quasispecies oluşumu": "NS5B polimeraz ve quasispecies kavramı özellikle HCV enfeksiyonunun genetik değişkenliğini açıklar. Bu hastada HBsAg pozitif zemin, anti-HDV/HDV RNA pozitifliği ve ağır hepatit alevlenmesi HCV polimeraz biyolojisinden çok delta ajanının HBV zarf bağımlılığıyla ilişkilidir.",
+        "Revers transkriptaz enzimiyle kısmi çift sarmallı DNA genomu sentezleme": "Revers transkriptaz ve kısmi çift sarmallı DNA sentezi HBV replikasyonunun temel özelliğidir. Fakat bu vaka sadece HBV monoinfeksiyonunu değil HDV RNA pozitifliğiyle ağırlaşan tabloyu sorgular; mekanizmanın ayırıcı noktası HBV zarf proteinlerinin kullanılmasıdır."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v264-medical-microbiology-fourteenth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "HBsAg pozitifliği",
+        "HDV RNA pozitifliği",
+        "Ağır hepatit",
+        "Delta zarf bağımlılığı",
+        "Kronik HBV zemini"
+      ],
+      "images": []
+    },
+  {
+      "id": "v263-new-514-domuz-eti-sonrasi-sag-alt-kadran-agrisi",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Domuz eti sonrası sağ alt kadran ağrısı",
+      "difficulty": "Orta",
+      "difficultyTag": "Orta",
+      "clinicalFocus": "Gıda teması sonrası gelişen enterokolit ve pseudoapandisit benzeri tabloyu dışkı kültürü özellikleriyle birlikte değerlendirerek etkeni ayırt etme.",
+      "learningTarget": "Yersinia enterocolitica enfeksiyonunda domuz ürünü teması, terminal ileit/mezenterik adenit, soğukta üreme ve CIN agar koloni paternini tanıma.",
+      "demographics": "17 yaşında erkek hasta",
+      "setting": "Acil servis",
+      "chiefComplaint": "Hasta, ishal ve sağ alt kadran ağrısı nedeniyle akut apandisit ön tanısıyla acil serviste değerlendiriliyor.",
+      "stem": "Hasta iki gün önce aile yemeğinde az pişmiş domuz ürünü yediğini, ertesi gün ateş ve sulu dışkılama başladığını anlatır. Son 12 saatte ağrısı sağ alt kadranda belirginleşmiş ve yürürken artmıştır. Bulantısı vardır ancak sürekli kusması yoktur. Evde başka birinde hafif ishal olduğu, hastanın yakın zamanda antibiyotik kullanmadığı öğrenilir.",
+      "patientIntro": {
+        "profile": "17 yaşında erkek hasta, Acil servis ortamında değerlendiriliyor.",
+        "presentation": "Hasta, ishal ve sağ alt kadran ağrısı nedeniyle akut apandisit ön tanısıyla acil serviste değerlendiriliyor.",
+        "historySummary": "Hasta iki gün önce aile yemeğinde az pişmiş domuz ürünü yediğini, ertesi gün ateş ve sulu dışkılama başladığını anlatır. Son 12 saatte ağrısı sağ alt kadranda belirginleşmiş ve yürürken artmıştır. Bulantısı vardır ancak sürekli kusması yoktur. Evde başka birinde hafif ishal olduğu, hastanın yakın zamanda antibiyotik kullanmadığı öğrenilir."
+      },
+      "vitals": {
+        "TA": "114/72 mmHg",
+        "Nabız": "102/dk",
+        "Solunum": "18/dk",
+        "SpO₂": "99%",
+        "Ateş": "38.2 °C",
+        "Şok indeksi": "0.89"
+      },
+      "exam": [
+        "Genel durumu iyi-orta, mukozalar hafif kurudur.",
+        "Sağ alt kadranda hassasiyet vardır; belirgin rebound saptanmaz.",
+        "Barsak sesleri artmıştır.",
+        "Deri döküntüsü, artrit veya skleral ikter yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v263-new-514-domuz-eti-sonrasi-sag-alt-kadran-agrisi-mikrobiyoloji-laboratuvar-verileri",
+          "label": "Dışkı kültürü ve inflamasyon verileri",
+          "title": "Dışkı kültürü ve inflamasyon verileri",
+          "orderLabel": "Dışkı kültürü ve inflamasyon verileri",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Dışkı mikroskopisi, seçici kültür ve görüntüleme korelasyonu",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Sağ alt kadran ağrısı ve gıda öyküsü olan hastada dışkı kültürü özellikleri pseudoapandisit yapan enterik etkeni destekler.",
+          "clinicalMeaning": "Sağ alt kadran ağrısı ve gıda öyküsü olan hastada dışkı kültürü özellikleri pseudoapandisit yapan enterik etkeni destekler.",
+          "result": {
+            "title": "Dışkı kültürü ve inflamasyon verileri",
+            "summary": "Sağ alt kadran ağrısı ve gıda öyküsü olan hastada dışkı kültürü özellikleri pseudoapandisit yapan enterik etkeni destekler.",
+            "interpretation": "Sağ alt kadran ağrısı ve gıda öyküsü olan hastada dışkı kültürü özellikleri pseudoapandisit yapan enterik etkeni destekler.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Taze dışkı örneği",
+                "Kan serolojisi tek başına",
+                "Enterokolit için uygun örnek"
+              ],
+              [
+                "Dışkı mikroskopisi",
+                "Lökosit pozitif, eritrosit az sayıda",
+                "Lökosit yok",
+                "İnflamatuvar enterit desteği"
+              ],
+              [
+                "Kültür koşulu",
+                "Soğuk zenginleştirme sonrası üreme artışı",
+                "Sadece 42 °C mikroaerofilik üreme",
+                "Ayırıcı kültür özelliği"
+              ],
+              [
+                "Seçici agar",
+                "CIN agarda kırmızı merkezli bull's-eye benzeri koloniler",
+                "TCBS agarda sarı koloni",
+                "Enterik Yersinia lehine"
+              ],
+              [
+                "Görüntüleme",
+                "Ultrasonda terminal ileum duvar kalınlaşması ve mezenterik lenf nodları",
+                "Apendiks çapı belirgin artmış değil",
+                "Pseudoapandisit paternini destekler"
+              ],
+              [
+                "Temel laboratuvar",
+                "Lökosit 12.900/mm³, CRP hafif-orta yüksek",
+                "Normal",
+                "Bakteriyel inflamasyon desteği"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu klinik ve mikrobiyolojik laboratuvar bulguları hangi etkenle en uyumludur?",
+      "questionType": "etiologic-agent",
+      "answerTarget": "Etken tanıma",
+      "diagnosis": {
+        "correct": "Yersinia enterocolitica",
+        "options": [
+          "Yersinia enterocolitica",
+          "Campylobacter jejuni",
+          "Salmonella enterica serovar Typhimurium",
+          "Shigella sonnei",
+          "Vibrio cholerae"
+        ],
+        "question": "Bu klinik ve mikrobiyolojik laboratuvar bulguları hangi etkenle en uyumludur?",
+        "explanation": "Bu seçenek en uygundur; az pişmiş domuz ürünü sonrası ateş, ishal ve sağ alt kadran ağrısı terminal ileit/mezenterik adenit ile pseudoapandisit paternini oluşturur. Dışkı kültüründe soğukta üreyebilme ve CIN agarda bull's-eye benzeri koloni görünümü Y. enterocolitica için ayırt ettirici laboratuvar ipucudur.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Az pişmiş domuz ürünü + sağ alt kadran ağrısı + soğukta üreme/CIN bull's-eye kolonisi → Yersinia enterocolitica."
+          }
+        ],
+        "optionFeedback": {
+          "Yersinia enterocolitica": {
+            "explanation": "Bu seçenek en uygundur; az pişmiş domuz ürünü sonrası ateş, ishal ve sağ alt kadran ağrısı terminal ileit/mezenterik adenit ile pseudoapandisit paternini oluşturur. Dışkı kültüründe soğukta üreyebilme ve CIN agarda bull's-eye benzeri koloni görünümü Y. enterocolitica için ayırt ettirici laboratuvar ipucudur."
+          },
+          "Campylobacter jejuni": {
+            "explanation": "Campylobacter jejuni az pişmiş tavuk sonrası ateşli kanlı ishal ve karın krampları yapar; mikroskopide kıvrık/martı kanadı basiller ve mikroaerofilik 42 °C üreme beklenir. Bu vakada domuz ürünü, belirgin sağ alt kadran ağrısı ve CIN agarda bull's-eye benzeri koloni Yersinia lehinedir."
+          },
+          "Salmonella enterica serovar Typhimurium": {
+            "explanation": "Salmonella Typhimurium gıda kaynaklı inflamatuvar gastroenterit yapabilir ve domuz/kanatlı ürünlerle ilişkili olabilir. Ancak pseudoapandisit tarzı sağ alt kadran ağrısı, soğuk zenginleştirme ve CIN agar koloni paterni Salmonella’dan çok Yersinia’yı destekler."
+          },
+          "Shigella sonnei": {
+            "explanation": "Shigella sonnei düşük inokulumla kişiden kişiye bulaşan dizanteri tablosunda önemlidir. Bu vakadaki az pişmiş domuz ürünü öyküsü ve Yersinia için kullanılan seçici kültür/koloni paternleri Shigella tanısıyla uyumlu değildir."
+          },
+          "Vibrio cholerae": {
+            "explanation": "Vibrio cholerae bol pirinç suyu görünümünde sulu ishal ve ciddi dehidratasyonla klasikleşir. Sağ alt kadran ağrısı, inflamatuvar dışkı bulguları ve domuz ürünü ilişkisi kolera yerine enterik Yersinia enfeksiyonunu düşündürür."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; az pişmiş domuz ürünü sonrası ateş, ishal ve sağ alt kadran ağrısı terminal ileit/mezenterik adenit ile pseudoapandisit paternini oluşturur. Dışkı kültüründe soğukta üreyebilme ve CIN agarda bull's-eye benzeri koloni görünümü Y. enterocolitica için ayırt ettirici laboratuvar ipucudur.",
+          "optionFeedback": {
+            "Yersinia enterocolitica": {
+              "explanation": "Bu seçenek en uygundur; az pişmiş domuz ürünü sonrası ateş, ishal ve sağ alt kadran ağrısı terminal ileit/mezenterik adenit ile pseudoapandisit paternini oluşturur. Dışkı kültüründe soğukta üreyebilme ve CIN agarda bull's-eye benzeri koloni görünümü Y. enterocolitica için ayırt ettirici laboratuvar ipucudur."
+            },
+            "Campylobacter jejuni": {
+              "explanation": "Campylobacter jejuni az pişmiş tavuk sonrası ateşli kanlı ishal ve karın krampları yapar; mikroskopide kıvrık/martı kanadı basiller ve mikroaerofilik 42 °C üreme beklenir. Bu vakada domuz ürünü, belirgin sağ alt kadran ağrısı ve CIN agarda bull's-eye benzeri koloni Yersinia lehinedir."
+            },
+            "Salmonella enterica serovar Typhimurium": {
+              "explanation": "Salmonella Typhimurium gıda kaynaklı inflamatuvar gastroenterit yapabilir ve domuz/kanatlı ürünlerle ilişkili olabilir. Ancak pseudoapandisit tarzı sağ alt kadran ağrısı, soğuk zenginleştirme ve CIN agar koloni paterni Salmonella’dan çok Yersinia’yı destekler."
+            },
+            "Shigella sonnei": {
+              "explanation": "Shigella sonnei düşük inokulumla kişiden kişiye bulaşan dizanteri tablosunda önemlidir. Bu vakadaki az pişmiş domuz ürünü öyküsü ve Yersinia için kullanılan seçici kültür/koloni paternleri Shigella tanısıyla uyumlu değildir."
+            },
+            "Vibrio cholerae": {
+              "explanation": "Vibrio cholerae bol pirinç suyu görünümünde sulu ishal ve ciddi dehidratasyonla klasikleşir. Sağ alt kadran ağrısı, inflamatuvar dışkı bulguları ve domuz ürünü ilişkisi kolera yerine enterik Yersinia enfeksiyonunu düşündürür."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Yersinia enterocolitica özellikle domuz ürünleriyle bulaşabilir; çocuk ve gençlerde terminal ileit/mezenterik adenit nedeniyle apandisiti taklit eden sağ alt kadran ağrısı yapabilir.",
+      "examPearl": "Az pişmiş domuz ürünü + sağ alt kadran ağrısı + soğukta üreme/CIN bull's-eye kolonisi → Yersinia enterocolitica.",
+      "whyCorrect": "Bu seçenek en uygundur; az pişmiş domuz ürünü sonrası ateş, ishal ve sağ alt kadran ağrısı terminal ileit/mezenterik adenit ile pseudoapandisit paternini oluşturur. Dışkı kültüründe soğukta üreyebilme ve CIN agarda bull's-eye benzeri koloni görünümü Y. enterocolitica için ayırt ettirici laboratuvar ipucudur.",
+      "optionComparison": {
+        "Yersinia enterocolitica": "Bu seçenek en uygundur; az pişmiş domuz ürünü sonrası ateş, ishal ve sağ alt kadran ağrısı terminal ileit/mezenterik adenit ile pseudoapandisit paternini oluşturur. Dışkı kültüründe soğukta üreyebilme ve CIN agarda bull's-eye benzeri koloni görünümü Y. enterocolitica için ayırt ettirici laboratuvar ipucudur.",
+        "Campylobacter jejuni": "Campylobacter jejuni az pişmiş tavuk sonrası ateşli kanlı ishal ve karın krampları yapar; mikroskopide kıvrık/martı kanadı basiller ve mikroaerofilik 42 °C üreme beklenir. Bu vakada domuz ürünü, belirgin sağ alt kadran ağrısı ve CIN agarda bull's-eye benzeri koloni Yersinia lehinedir.",
+        "Salmonella enterica serovar Typhimurium": "Salmonella Typhimurium gıda kaynaklı inflamatuvar gastroenterit yapabilir ve domuz/kanatlı ürünlerle ilişkili olabilir. Ancak pseudoapandisit tarzı sağ alt kadran ağrısı, soğuk zenginleştirme ve CIN agar koloni paterni Salmonella’dan çok Yersinia’yı destekler.",
+        "Shigella sonnei": "Shigella sonnei düşük inokulumla kişiden kişiye bulaşan dizanteri tablosunda önemlidir. Bu vakadaki az pişmiş domuz ürünü öyküsü ve Yersinia için kullanılan seçici kültür/koloni paternleri Shigella tanısıyla uyumlu değildir.",
+        "Vibrio cholerae": "Vibrio cholerae bol pirinç suyu görünümünde sulu ishal ve ciddi dehidratasyonla klasikleşir. Sağ alt kadran ağrısı, inflamatuvar dışkı bulguları ve domuz ürünü ilişkisi kolera yerine enterik Yersinia enfeksiyonunu düşündürür."
+      },
+      "evidenceChain": [
+        {
+          "text": "Az pişmiş domuz ürünü → Yersinia için tipik gıda teması",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Sağ alt kadran ağrısı ve mezenterik lenf nodları → pseudoapandisit/terminal ileit paterni",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Soğuk zenginleştirmede üreme → Yersinia laboratuvar yaklaşımını destekler",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "text": "CIN agarda bull's-eye koloni → Y. enterocolitica lehine seçici kültür ipucu",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Campylobacter jejuni": "Campylobacter jejuni az pişmiş tavuk sonrası ateşli kanlı ishal ve karın krampları yapar; mikroskopide kıvrık/martı kanadı basiller ve mikroaerofilik 42 °C üreme beklenir. Bu vakada domuz ürünü, belirgin sağ alt kadran ağrısı ve CIN agarda bull's-eye benzeri koloni Yersinia lehinedir.",
+        "Salmonella enterica serovar Typhimurium": "Salmonella Typhimurium gıda kaynaklı inflamatuvar gastroenterit yapabilir ve domuz/kanatlı ürünlerle ilişkili olabilir. Ancak pseudoapandisit tarzı sağ alt kadran ağrısı, soğuk zenginleştirme ve CIN agar koloni paterni Salmonella’dan çok Yersinia’yı destekler.",
+        "Shigella sonnei": "Shigella sonnei düşük inokulumla kişiden kişiye bulaşan dizanteri tablosunda önemlidir. Bu vakadaki az pişmiş domuz ürünü öyküsü ve Yersinia için kullanılan seçici kültür/koloni paternleri Shigella tanısıyla uyumlu değildir.",
+        "Vibrio cholerae": "Vibrio cholerae bol pirinç suyu görünümünde sulu ishal ve ciddi dehidratasyonla klasikleşir. Sağ alt kadran ağrısı, inflamatuvar dışkı bulguları ve domuz ürünü ilişkisi kolera yerine enterik Yersinia enfeksiyonunu düşündürür."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v264-medical-microbiology-fourteenth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Domuz ürünü teması",
+        "Sağ alt kadran ağrısı",
+        "Pseudoapandisit",
+        "Soğuk zenginleştirme",
+        "CIN agar"
+      ],
+      "images": []
+    },
+  {
+      "id": "v263-new-515-cig-tatli-su-baligi-sonrasi-kolanjit",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Çiğ tatlı su balığı sonrası kolanjit",
+      "difficulty": "Orta",
+      "difficultyTag": "Orta",
+      "clinicalFocus": "Çiğ tatlı su balığı öyküsüyle gelişen kolanjit-kolestaz tablosunda dışkı/duodenal mikroskopi bulgusunu kullanarak hepatobiliyer paraziti ayırt etme.",
+      "learningTarget": "Clonorchis sinensis enfeksiyonunda tatlı su balığıyla bulaş, safra yolu yerleşimi ve küçük operkulumlu yumurta bilgisini klinik tabloyla birleştirebilme.",
+      "demographics": "44 yaşında kadın hasta",
+      "setting": "Gastroenteroloji polikliniği",
+      "chiefComplaint": "Hasta, tekrarlayan sağ üst kadran ağrısı, ateş atakları ve kolestatik enzim yüksekliği nedeniyle gastroenteroloji polikliniğine başvuruyor.",
+      "stem": "Hasta son bir yılda aralıklı sağ üst kadran ağrısı ve üşüme-titreme atakları yaşadığını, iki kez antibiyotikle rahatladığını anlatır. Altı ay önce Doğu Asya seyahatinde birkaç kez marine edilmiş çiğ tatlı su balığı tükettiğini belirtir. Kilo kaybı hafiftir, belirgin alkol kullanımı yoktur. Daha önce safra kesesi taşı nedeniyle ameliyat geçirmediği ve ailesinde inflamatuvar barsak hastalığı olmadığı öğrenilir.",
+      "patientIntro": {
+        "profile": "44 yaşında kadın hasta, Gastroenteroloji polikliniği ortamında değerlendiriliyor.",
+        "presentation": "Hasta, tekrarlayan sağ üst kadran ağrısı, ateş atakları ve kolestatik enzim yüksekliği nedeniyle gastroenteroloji polikliniğine başvuruyor.",
+        "historySummary": "Hasta son bir yılda aralıklı sağ üst kadran ağrısı ve üşüme-titreme atakları yaşadığını, iki kez antibiyotikle rahatladığını anlatır. Altı ay önce Doğu Asya seyahatinde birkaç kez marine edilmiş çiğ tatlı su balığı tükettiğini belirtir. Kilo kaybı hafiftir, belirgin alkol kullanımı yoktur. Daha önce safra kesesi taşı nedeniyle ameliyat geçirmediği ve ailesinde inflamatuvar barsak hastalığı olmadığı öğrenilir."
+      },
+      "vitals": {
+        "TA": "118/76 mmHg",
+        "Nabız": "94/dk",
+        "Solunum": "17/dk",
+        "SpO₂": "98%",
+        "Ateş": "37.9 °C",
+        "Şok indeksi": "0.80"
+      },
+      "exam": [
+        "Skleralarda hafif subikter vardır.",
+        "Sağ üst kadranda hafif hassasiyet izlenir; Murphy bulgusu net değildir.",
+        "Karında asit veya periton irritasyonu yoktur.",
+        "Ciltte yaygın döküntü yoktur, periferik ödem saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v263-new-515-cig-tatli-su-baligi-sonrasi-kolanjit-mikrobiyoloji-laboratuvar-verileri",
+          "label": "Parazitolojik dışkı incelemesi ve biliyer görüntüleme",
+          "title": "Parazitolojik dışkı incelemesi ve biliyer görüntüleme",
+          "orderLabel": "Parazitolojik dışkı incelemesi ve biliyer görüntüleme",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Dışkı/duodenal mikroskopi, eozinofili ve safra yolu görüntüleme",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Biliyer yakınması olan hastada parazitolojik yumurta morfolojisi ve çiğ balık teması birlikte değerlendirilir.",
+          "clinicalMeaning": "Biliyer yakınması olan hastada parazitolojik yumurta morfolojisi ve çiğ balık teması birlikte değerlendirilir.",
+          "result": {
+            "title": "Parazitolojik dışkı incelemesi ve biliyer görüntüleme",
+            "summary": "Biliyer yakınması olan hastada parazitolojik yumurta morfolojisi ve çiğ balık teması birlikte değerlendirilir.",
+            "interpretation": "Biliyer yakınması olan hastada parazitolojik yumurta morfolojisi ve çiğ balık teması birlikte değerlendirilir.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Üç ayrı dışkı örneği ve duodenal aspirat",
+                "Balgam örneği",
+                "Hepatobiliyer parazit için uygun örnekler"
+              ],
+              [
+                "Mikroskopi",
+                "Küçük, operkulumlu ve omuzlu yumurtalar; içerikleri embriyonlu görünümde",
+                "Terminal dikenli büyük yumurta",
+                "Karaciğer kelebeği grubunu destekler"
+              ],
+              [
+                "Kan testi",
+                "Eozinofil %9, ALP ve GGT belirgin yüksek",
+                "Transaminazlar izole yüksek",
+                "Biliyer-paraziter patern"
+              ],
+              [
+                "Görüntüleme",
+                "İntrahepatik safra yollarında hafif düzensiz dilatasyon; taş net izlenmedi",
+                "Normal safra yolları",
+                "Kronik biliyer irritasyon desteği"
+              ],
+              [
+                "Bakteriyel kültür",
+                "Kan kültürü negatif",
+                "Gram negatif bakteriyemi",
+                "Aktif bakteriyemi yok"
+              ],
+              [
+                "Kısa yorum",
+                "Yumurta morfolojisi tek başına yakın türlerden ayrımda sınırlıdır; temas coğrafyası ve klinik bağlamla yorumlanır",
+                "Etken adı doğrudan verilmedi",
+                "Answer leak önlenmiş yorum"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu mikrobiyolojik ve parazitolojik bulgular hangi etkenle en uyumludur?",
+      "questionType": "etiologic-agent",
+      "answerTarget": "Parazit etkenini ayırt etme",
+      "diagnosis": {
+        "correct": "Clonorchis sinensis",
+        "options": [
+          "Fasciola hepatica",
+          "Paragonimus westermani",
+          "Schistosoma japonicum",
+          "Diphyllobothrium latum",
+          "Clonorchis sinensis"
+        ],
+        "question": "Bu mikrobiyolojik ve parazitolojik bulgular hangi etkenle en uyumludur?",
+        "explanation": "Bu seçenek en uygundur; Doğu Asya’da çiğ tatlı su balığı tüketimi sonrası tekrarlayan kolanjit ve kolestaz, safra yollarında yaşayan küçük karaciğer kelebeğiyle uyumludur. Dışkı veya duodenal aspiratta küçük operkulumlu, omuzlu yumurta görülmesi Clonorchis/Opisthorchis grubunu destekler ve klinik bağlamda C. sinensis en uygun etkendir.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Çiğ tatlı su balığı + kolanjit/kolestaz + küçük operkulumlu yumurta → Clonorchis sinensis düşün; Fasciola’da tipik kaynak su bitkisidir."
+          }
+        ],
+        "optionFeedback": {
+          "Fasciola hepatica": {
+            "explanation": "Fasciola hepatica su teresi gibi su bitkilerindeki metaserkaryaların alınmasıyla bulaşır ve biliyer tutulum yapabilir. Bu vakada çiğ tatlı su balığı tüketimi, küçük operkulumlu yumurtalar ve distal safra yolu dilatasyonu Fasciola’dan çok Clonorchis/Opisthorchis grubunu destekler."
+          },
+          "Paragonimus westermani": {
+            "explanation": "Paragonimus westermani çiğ veya az pişmiş yengeç/kerevit sonrası akciğer paragonimiazisi, hemoptizi ve balgamda yumurta ile karışır. Hastanın baskın kolanjit-kolestaz tablosu ve tatlı su balığı öyküsü Paragonimus için beklenen akciğer odaklı patern değildir."
+          },
+          "Schistosoma japonicum": {
+            "explanation": "Schistosoma japonicum tatlı su temasıyla deriden giren serkaryalar sonrası intestinal/hepatosplenik şistozomiyazis yapabilir. Bu vakada bulaş yolu yenilen çiğ balık ve mikroskopide küçük operkulumlu yumurta olduğundan Schistosoma yumurtalarının lateral/terminal dikenli morfolojisinden ayrılır."
+          },
+          "Diphyllobothrium latum": {
+            "explanation": "Diphyllobothrium latum çiğ tatlı su balığıyla bulaşabilir ve megaloblastik anemiyle hatırlanır; dışkıda operkulumlu yumurta görülebilir. Ancak safra yolu dilatasyonu, kolanjit atakları ve küçük omuzlu-operculumlu yumurta paterni geniş balık tenyası yerine karaciğer kelebeği grubunu destekler."
+          },
+          "Clonorchis sinensis": {
+            "explanation": "Bu seçenek en uygundur; Doğu Asya’da çiğ tatlı su balığı tüketimi sonrası tekrarlayan kolanjit ve kolestaz, safra yollarında yaşayan küçük karaciğer kelebeğiyle uyumludur. Dışkı veya duodenal aspiratta küçük operkulumlu, omuzlu yumurta görülmesi Clonorchis/Opisthorchis grubunu destekler ve klinik bağlamda C. sinensis en uygun etkendir."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; Doğu Asya’da çiğ tatlı su balığı tüketimi sonrası tekrarlayan kolanjit ve kolestaz, safra yollarında yaşayan küçük karaciğer kelebeğiyle uyumludur. Dışkı veya duodenal aspiratta küçük operkulumlu, omuzlu yumurta görülmesi Clonorchis/Opisthorchis grubunu destekler ve klinik bağlamda C. sinensis en uygun etkendir.",
+          "optionFeedback": {
+            "Fasciola hepatica": {
+              "explanation": "Fasciola hepatica su teresi gibi su bitkilerindeki metaserkaryaların alınmasıyla bulaşır ve biliyer tutulum yapabilir. Bu vakada çiğ tatlı su balığı tüketimi, küçük operkulumlu yumurtalar ve distal safra yolu dilatasyonu Fasciola’dan çok Clonorchis/Opisthorchis grubunu destekler."
+            },
+            "Paragonimus westermani": {
+              "explanation": "Paragonimus westermani çiğ veya az pişmiş yengeç/kerevit sonrası akciğer paragonimiazisi, hemoptizi ve balgamda yumurta ile karışır. Hastanın baskın kolanjit-kolestaz tablosu ve tatlı su balığı öyküsü Paragonimus için beklenen akciğer odaklı patern değildir."
+            },
+            "Schistosoma japonicum": {
+              "explanation": "Schistosoma japonicum tatlı su temasıyla deriden giren serkaryalar sonrası intestinal/hepatosplenik şistozomiyazis yapabilir. Bu vakada bulaş yolu yenilen çiğ balık ve mikroskopide küçük operkulumlu yumurta olduğundan Schistosoma yumurtalarının lateral/terminal dikenli morfolojisinden ayrılır."
+            },
+            "Diphyllobothrium latum": {
+              "explanation": "Diphyllobothrium latum çiğ tatlı su balığıyla bulaşabilir ve megaloblastik anemiyle hatırlanır; dışkıda operkulumlu yumurta görülebilir. Ancak safra yolu dilatasyonu, kolanjit atakları ve küçük omuzlu-operculumlu yumurta paterni geniş balık tenyası yerine karaciğer kelebeği grubunu destekler."
+            },
+            "Clonorchis sinensis": {
+              "explanation": "Bu seçenek en uygundur; Doğu Asya’da çiğ tatlı su balığı tüketimi sonrası tekrarlayan kolanjit ve kolestaz, safra yollarında yaşayan küçük karaciğer kelebeğiyle uyumludur. Dışkı veya duodenal aspiratta küçük operkulumlu, omuzlu yumurta görülmesi Clonorchis/Opisthorchis grubunu destekler ve klinik bağlamda C. sinensis en uygun etkendir."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Clonorchis sinensis çiğ tatlı su balığıyla alınan metaserkaryalar sonrası safra yollarına yerleşir; kronik enfeksiyon tekrarlayan kolanjit, kolestaz ve küçük operkulumlu yumurta bulgusuyla desteklenir.",
+      "examPearl": "Çiğ tatlı su balığı + kolanjit/kolestaz + küçük operkulumlu yumurta → Clonorchis sinensis düşün; Fasciola’da tipik kaynak su bitkisidir.",
+      "whyCorrect": "Bu seçenek en uygundur; Doğu Asya’da çiğ tatlı su balığı tüketimi sonrası tekrarlayan kolanjit ve kolestaz, safra yollarında yaşayan küçük karaciğer kelebeğiyle uyumludur. Dışkı veya duodenal aspiratta küçük operkulumlu, omuzlu yumurta görülmesi Clonorchis/Opisthorchis grubunu destekler ve klinik bağlamda C. sinensis en uygun etkendir.",
+      "optionComparison": {
+        "Fasciola hepatica": "Fasciola hepatica su teresi gibi su bitkilerindeki metaserkaryaların alınmasıyla bulaşır ve biliyer tutulum yapabilir. Bu vakada çiğ tatlı su balığı tüketimi, küçük operkulumlu yumurtalar ve distal safra yolu dilatasyonu Fasciola’dan çok Clonorchis/Opisthorchis grubunu destekler.",
+        "Paragonimus westermani": "Paragonimus westermani çiğ veya az pişmiş yengeç/kerevit sonrası akciğer paragonimiazisi, hemoptizi ve balgamda yumurta ile karışır. Hastanın baskın kolanjit-kolestaz tablosu ve tatlı su balığı öyküsü Paragonimus için beklenen akciğer odaklı patern değildir.",
+        "Schistosoma japonicum": "Schistosoma japonicum tatlı su temasıyla deriden giren serkaryalar sonrası intestinal/hepatosplenik şistozomiyazis yapabilir. Bu vakada bulaş yolu yenilen çiğ balık ve mikroskopide küçük operkulumlu yumurta olduğundan Schistosoma yumurtalarının lateral/terminal dikenli morfolojisinden ayrılır.",
+        "Diphyllobothrium latum": "Diphyllobothrium latum çiğ tatlı su balığıyla bulaşabilir ve megaloblastik anemiyle hatırlanır; dışkıda operkulumlu yumurta görülebilir. Ancak safra yolu dilatasyonu, kolanjit atakları ve küçük omuzlu-operculumlu yumurta paterni geniş balık tenyası yerine karaciğer kelebeği grubunu destekler.",
+        "Clonorchis sinensis": "Bu seçenek en uygundur; Doğu Asya’da çiğ tatlı su balığı tüketimi sonrası tekrarlayan kolanjit ve kolestaz, safra yollarında yaşayan küçük karaciğer kelebeğiyle uyumludur. Dışkı veya duodenal aspiratta küçük operkulumlu, omuzlu yumurta görülmesi Clonorchis/Opisthorchis grubunu destekler ve klinik bağlamda C. sinensis en uygun etkendir."
+      },
+      "evidenceChain": [
+        {
+          "text": "Doğu Asya ve çiğ tatlı su balığı tüketimi → Clonorchis için doğal bulaş yolu",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Tekrarlayan sağ üst kadran ağrısı ve kolestatik enzim yüksekliği → biliyer yerleşimi destekler",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Küçük operkulumlu omuzlu yumurta → karaciğer kelebeği grubunu destekler",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Safra yolu dilatasyonu → kronik hepatobiliyer irritasyon ile uyumlu",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Fasciola hepatica": "Fasciola hepatica su teresi gibi su bitkilerindeki metaserkaryaların alınmasıyla bulaşır ve biliyer tutulum yapabilir. Bu vakada çiğ tatlı su balığı tüketimi, küçük operkulumlu yumurtalar ve distal safra yolu dilatasyonu Fasciola’dan çok Clonorchis/Opisthorchis grubunu destekler.",
+        "Paragonimus westermani": "Paragonimus westermani çiğ veya az pişmiş yengeç/kerevit sonrası akciğer paragonimiazisi, hemoptizi ve balgamda yumurta ile karışır. Hastanın baskın kolanjit-kolestaz tablosu ve tatlı su balığı öyküsü Paragonimus için beklenen akciğer odaklı patern değildir.",
+        "Schistosoma japonicum": "Schistosoma japonicum tatlı su temasıyla deriden giren serkaryalar sonrası intestinal/hepatosplenik şistozomiyazis yapabilir. Bu vakada bulaş yolu yenilen çiğ balık ve mikroskopide küçük operkulumlu yumurta olduğundan Schistosoma yumurtalarının lateral/terminal dikenli morfolojisinden ayrılır.",
+        "Diphyllobothrium latum": "Diphyllobothrium latum çiğ tatlı su balığıyla bulaşabilir ve megaloblastik anemiyle hatırlanır; dışkıda operkulumlu yumurta görülebilir. Ancak safra yolu dilatasyonu, kolanjit atakları ve küçük omuzlu-operculumlu yumurta paterni geniş balık tenyası yerine karaciğer kelebeği grubunu destekler."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v264-medical-microbiology-fourteenth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Çiğ tatlı su balığı",
+        "Kolanjit",
+        "Kolestaz",
+        "Operkulumlu yumurta",
+        "Safra yolu dilatasyonu"
+      ],
+      "images": []
+    },
+  {
+      "id": "v263-new-516-yogun-bakimda-kolistin-duyarlilik-kaybi",
+      "branchId": "medical-microbiology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Mikrobiyoloji",
+      "title": "Yoğun bakımda kolistin duyarlılık kaybı",
+      "difficulty": "Orta",
+      "difficultyTag": "Orta",
+      "clinicalFocus": "Yoğun bakım izolatında antibiyogram ve moleküler direnç sinyalini birlikte yorumlayarak kolistin direncinin hedef yüzey mekanizmasını ayırt etme.",
+      "learningTarget": "mcr aracılı kolistin direncinde lipid A modifikasyonunun polimiksin bağlanmasını azalttığını ve bu mekanizmanın karbapenemaz/porin kaybından ayrılması gerektiğini kavrayabilme.",
+      "demographics": "63 yaşında kadın hasta",
+      "setting": "Yoğun bakım ünitesi",
+      "chiefComplaint": "Hasta, ventilatör ilişkili pnömoni nedeniyle izlenirken tekrarlayan gram negatif üreme ve değişen antibiyogram sonucu nedeniyle değerlendiriliyor.",
+      "stem": "Hasta üç haftadır yoğun bakımda mekanik ventilasyon desteği almakta ve geniş spektrumlu antibiyotik öyküsü bulunmaktadır. İlk pnömoni atağında tedaviye yanıt alınmışken son 48 saatte ateş, pürülan sekresyon artışı ve oksijen ihtiyacında yükselme gelişmiştir. Santral kateter ve üriner kateteri mevcuttur. Son kültür raporunda daha önce duyarlı görülen kolistin için MİK artışı bildirilince enfeksiyon ekibi yeniden değerlendirme istemiştir.",
+      "patientIntro": {
+        "profile": "63 yaşında kadın hasta, Yoğun bakım ünitesi ortamında değerlendiriliyor.",
+        "presentation": "Hasta, ventilatör ilişkili pnömoni nedeniyle izlenirken tekrarlayan gram negatif üreme ve değişen antibiyogram sonucu nedeniyle değerlendiriliyor.",
+        "historySummary": "Hasta üç haftadır yoğun bakımda mekanik ventilasyon desteği almakta ve geniş spektrumlu antibiyotik öyküsü bulunmaktadır. İlk pnömoni atağında tedaviye yanıt alınmışken son 48 saatte ateş, pürülan sekresyon artışı ve oksijen ihtiyacında yükselme gelişmiştir. Santral kateter ve üriner kateteri mevcuttur. Son kültür raporunda daha önce duyarlı görülen kolistin için MİK artışı bildirilince enfeksiyon ekibi yeniden değerlendirme istemiştir."
+      },
+      "vitals": {
+        "TA": "104/66 mmHg",
+        "Nabız": "112/dk",
+        "Solunum": "28/dk ventilatörde",
+        "SpO₂": "92%",
+        "Ateş": "38.8 °C",
+        "Şok indeksi": "1.08"
+      },
+      "exam": [
+        "Ventilatörde, sedasyon altında izlenmektedir.",
+        "Trakeal aspiratta pürülan sekresyon artışı vardır.",
+        "Akciğer oskültasyonunda bilateral kaba raller duyulur.",
+        "Kateter giriş yerlerinde belirgin pürülan akıntı yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v263-new-516-yogun-bakimda-kolistin-duyarlilik-kaybi-mikrobiyoloji-laboratuvar-verileri",
+          "label": "Trakeal aspirat kültürü ve direnç paneli",
+          "title": "Trakeal aspirat kültürü ve direnç paneli",
+          "orderLabel": "Trakeal aspirat kültürü ve direnç paneli",
+          "type": "microbiology",
+          "priority": "essential",
+          "subtype": "Kültür, MİK takibi ve moleküler direnç taraması",
+          "category": "microbiology",
+          "testTypeCategory": "microbiology",
+          "summary": "Kolistin duyarlılık kaybı, beta-laktam direncinden ayrı bir hedef yüzey değişikliği olarak antibiyogram ve moleküler sinyalle birlikte yorumlanır.",
+          "clinicalMeaning": "Kolistin duyarlılık kaybı, beta-laktam direncinden ayrı bir hedef yüzey değişikliği olarak antibiyogram ve moleküler sinyalle birlikte yorumlanır.",
+          "result": {
+            "title": "Trakeal aspirat kültürü ve direnç paneli",
+            "summary": "Kolistin duyarlılık kaybı, beta-laktam direncinden ayrı bir hedef yüzey değişikliği olarak antibiyogram ve moleküler sinyalle birlikte yorumlanır.",
+            "interpretation": "Kolistin duyarlılık kaybı, beta-laktam direncinden ayrı bir hedef yüzey değişikliği olarak antibiyogram ve moleküler sinyalle birlikte yorumlanır.",
+            "values": [
+              [
+                "Örnek tipi",
+                "Trakeal aspirat ve eş zamanlı kan kültürü",
+                "Dışkı parazit incelemesi",
+                "Ventilatör ilişkili pnömoni için uygun örnek"
+              ],
+              [
+                "Gram boyama",
+                "Bol PMNL ve gram negatif basiller",
+                "Gram pozitif kok kümeleri",
+                "Bakteriyel pnömoni desteği"
+              ],
+              [
+                "Kültür",
+                "Enterobacterales grubunda tek baskın izolat; kan kültürü negatif",
+                "Polimikrobiyal kontaminasyon",
+                "Solunum yolu odağı lehine"
+              ],
+              [
+                "Antibiyogram",
+                "Meropenem duyarlı, seftazidim-avibaktam duyarlı; kolistin MİK 8 mg/L",
+                "Tüm beta-laktamlara dirençli, kolistin duyarlı",
+                "Seçici polimiksin duyarlılık kaybı"
+              ],
+              [
+                "Moleküler tarama",
+                "Karbapenemaz paneli negatif; plazmidik polimiksin direnç geni sinyali pozitif",
+                "vanA pozitif",
+                "Direnç sınıfını ayırır"
+              ],
+              [
+                "Temel laboratuvar",
+                "Lökosit 16.700/mm³, prokalsitonin yüksek",
+                "Normal inflamasyon",
+                "Aktif enfeksiyon desteği"
+              ]
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu direnç paternini en iyi açıklayan mekanizma aşağıdakilerden hangisidir?",
+      "questionType": "resistance-mechanism",
+      "answerTarget": "Direnç mekanizması",
+      "diagnosis": {
+        "correct": "Lipid A üzerine fosfoetanolamin eklenmesiyle polimiksin bağlanmasının azalması",
+        "options": [
+          "Karbapenemaz üretimiyle beta-laktam halkasının hidrolizi",
+          "Porin kaybı ile karbapenem girişinin azalması",
+          "Lipid A üzerine fosfoetanolamin eklenmesiyle polimiksin bağlanmasının azalması",
+          "23S rRNA metilasyonu ile makrolid-linkozamid hedef değişimi",
+          "D-Ala-D-Lac uç değişimiyle glikopeptid bağlanmasının azalması"
+        ],
+        "question": "Bu direnç paternini en iyi açıklayan mekanizma aşağıdakilerden hangisidir?",
+        "explanation": "Bu seçenek en uygundur; plazmid aracılı mcr genleri lipid A’ya fosfoetanolamin ekleyerek dış membranın negatif yükünü azaltır ve kolistin/polimiksin bağlanmasını zayıflatır. Meropenem duyarlılığı korunurken kolistin MİK artışı ve mcr gen sinyali bu mekanizma ile uyumludur.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Kolistin MİK artışı + karbapenemaz negatifliği + plazmidik polimiksin direnç sinyali → lipid A fosfoetanolamin modifikasyonu düşün."
+          }
+        ],
+        "optionFeedback": {
+          "Karbapenemaz üretimiyle beta-laktam halkasının hidrolizi": {
+            "explanation": "Karbapenemaz üretimi KPC, NDM veya OXA gibi enzimlerle karbapenem direncini açıklar ve yoğun bakım gram negatiflerinde çok önemlidir. Ancak bu vakada meropenem duyarlılığı korunurken kolistin MİK değerinin artması beta-laktam halkasının hidrolizinden çok polimiksin hedef yüzeyinin değiştiğini gösterir."
+          },
+          "Porin kaybı ile karbapenem girişinin azalması": {
+            "explanation": "Porin kaybı özellikle Enterobacterales ve Pseudomonas’ta beta-laktam/karbapenem duyarlılığını etkileyebilir. Bu patern genellikle karbapenem MİK artışıyla beklenir; vakada seçici sorun kolistin bağlanmasının azalmasıdır."
+          },
+          "Lipid A üzerine fosfoetanolamin eklenmesiyle polimiksin bağlanmasının azalması": {
+            "explanation": "Bu seçenek en uygundur; plazmid aracılı mcr genleri lipid A’ya fosfoetanolamin ekleyerek dış membranın negatif yükünü azaltır ve kolistin/polimiksin bağlanmasını zayıflatır. Meropenem duyarlılığı korunurken kolistin MİK artışı ve mcr gen sinyali bu mekanizma ile uyumludur."
+          },
+          "23S rRNA metilasyonu ile makrolid-linkozamid hedef değişimi": {
+            "explanation": "23S rRNA metilasyonu erm genleriyle makrolid-linkozamid-streptogramin B direncini açıklar ve D-test gibi fenotiplerle ilişkilidir. Kolistin bir ribozomal hedefe değil gram negatif dış membran lipid A bileşenine bağlandığı için bu mekanizma vakadaki duyarlılık kaybını açıklamaz."
+          },
+          "D-Ala-D-Lac uç değişimiyle glikopeptid bağlanmasının azalması": {
+            "explanation": "D-Ala-D-Lac uç değişimi vanA/vanB ilişkili enterokok glikopeptid direncinin temelidir. Kolistin gram negatif dış membranı hedefler; peptidoglikan uç değişimi veya glikopeptid bağlanması bu yoğun bakım izolatının polimiksin direnciyle ilişkili değildir."
+          }
+        },
+        "answerFeedback": {
+          "correct": "Bu seçenek en uygundur; plazmid aracılı mcr genleri lipid A’ya fosfoetanolamin ekleyerek dış membranın negatif yükünü azaltır ve kolistin/polimiksin bağlanmasını zayıflatır. Meropenem duyarlılığı korunurken kolistin MİK artışı ve mcr gen sinyali bu mekanizma ile uyumludur.",
+          "optionFeedback": {
+            "Karbapenemaz üretimiyle beta-laktam halkasının hidrolizi": {
+              "explanation": "Karbapenemaz üretimi KPC, NDM veya OXA gibi enzimlerle karbapenem direncini açıklar ve yoğun bakım gram negatiflerinde çok önemlidir. Ancak bu vakada meropenem duyarlılığı korunurken kolistin MİK değerinin artması beta-laktam halkasının hidrolizinden çok polimiksin hedef yüzeyinin değiştiğini gösterir."
+            },
+            "Porin kaybı ile karbapenem girişinin azalması": {
+              "explanation": "Porin kaybı özellikle Enterobacterales ve Pseudomonas’ta beta-laktam/karbapenem duyarlılığını etkileyebilir. Bu patern genellikle karbapenem MİK artışıyla beklenir; vakada seçici sorun kolistin bağlanmasının azalmasıdır."
+            },
+            "Lipid A üzerine fosfoetanolamin eklenmesiyle polimiksin bağlanmasının azalması": {
+              "explanation": "Bu seçenek en uygundur; plazmid aracılı mcr genleri lipid A’ya fosfoetanolamin ekleyerek dış membranın negatif yükünü azaltır ve kolistin/polimiksin bağlanmasını zayıflatır. Meropenem duyarlılığı korunurken kolistin MİK artışı ve mcr gen sinyali bu mekanizma ile uyumludur."
+            },
+            "23S rRNA metilasyonu ile makrolid-linkozamid hedef değişimi": {
+              "explanation": "23S rRNA metilasyonu erm genleriyle makrolid-linkozamid-streptogramin B direncini açıklar ve D-test gibi fenotiplerle ilişkilidir. Kolistin bir ribozomal hedefe değil gram negatif dış membran lipid A bileşenine bağlandığı için bu mekanizma vakadaki duyarlılık kaybını açıklamaz."
+            },
+            "D-Ala-D-Lac uç değişimiyle glikopeptid bağlanmasının azalması": {
+              "explanation": "D-Ala-D-Lac uç değişimi vanA/vanB ilişkili enterokok glikopeptid direncinin temelidir. Kolistin gram negatif dış membranı hedefler; peptidoglikan uç değişimi veya glikopeptid bağlanması bu yoğun bakım izolatının polimiksin direnciyle ilişkili değildir."
+            }
+          }
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Kolistin gram negatif dış membranındaki lipid A’ya bağlanır; mcr tipi fosfoetanolamin transferazlar lipid A yükünü değiştirerek polimiksin bağlanmasını azaltır.",
+      "examPearl": "Kolistin MİK artışı + karbapenemaz negatifliği + plazmidik polimiksin direnç sinyali → lipid A fosfoetanolamin modifikasyonu düşün.",
+      "whyCorrect": "Bu seçenek en uygundur; plazmid aracılı mcr genleri lipid A’ya fosfoetanolamin ekleyerek dış membranın negatif yükünü azaltır ve kolistin/polimiksin bağlanmasını zayıflatır. Meropenem duyarlılığı korunurken kolistin MİK artışı ve mcr gen sinyali bu mekanizma ile uyumludur.",
+      "optionComparison": {
+        "Karbapenemaz üretimiyle beta-laktam halkasının hidrolizi": "Karbapenemaz üretimi KPC, NDM veya OXA gibi enzimlerle karbapenem direncini açıklar ve yoğun bakım gram negatiflerinde çok önemlidir. Ancak bu vakada meropenem duyarlılığı korunurken kolistin MİK değerinin artması beta-laktam halkasının hidrolizinden çok polimiksin hedef yüzeyinin değiştiğini gösterir.",
+        "Porin kaybı ile karbapenem girişinin azalması": "Porin kaybı özellikle Enterobacterales ve Pseudomonas’ta beta-laktam/karbapenem duyarlılığını etkileyebilir. Bu patern genellikle karbapenem MİK artışıyla beklenir; vakada seçici sorun kolistin bağlanmasının azalmasıdır.",
+        "Lipid A üzerine fosfoetanolamin eklenmesiyle polimiksin bağlanmasının azalması": "Bu seçenek en uygundur; plazmid aracılı mcr genleri lipid A’ya fosfoetanolamin ekleyerek dış membranın negatif yükünü azaltır ve kolistin/polimiksin bağlanmasını zayıflatır. Meropenem duyarlılığı korunurken kolistin MİK artışı ve mcr gen sinyali bu mekanizma ile uyumludur.",
+        "23S rRNA metilasyonu ile makrolid-linkozamid hedef değişimi": "23S rRNA metilasyonu erm genleriyle makrolid-linkozamid-streptogramin B direncini açıklar ve D-test gibi fenotiplerle ilişkilidir. Kolistin bir ribozomal hedefe değil gram negatif dış membran lipid A bileşenine bağlandığı için bu mekanizma vakadaki duyarlılık kaybını açıklamaz.",
+        "D-Ala-D-Lac uç değişimiyle glikopeptid bağlanmasının azalması": "D-Ala-D-Lac uç değişimi vanA/vanB ilişkili enterokok glikopeptid direncinin temelidir. Kolistin gram negatif dış membranı hedefler; peptidoglikan uç değişimi veya glikopeptid bağlanması bu yoğun bakım izolatının polimiksin direnciyle ilişkili değildir."
+      },
+      "evidenceChain": [
+        {
+          "text": "Kolistin MİK artışı → polimiksin hedefiyle ilişkili direnç olasılığını artırır",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Meropenem duyarlılığının korunması → karbapenemaz/porin kaybını zayıflatır",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "text": "Plazmidik polimiksin direnç geni sinyali → mcr tipi mekanizmayı destekler",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Gram negatif basil izolatı → lipid A hedefli polimiksin direnci biyolojik olarak anlamlıdır",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Karbapenemaz üretimiyle beta-laktam halkasının hidrolizi": "Karbapenemaz üretimi KPC, NDM veya OXA gibi enzimlerle karbapenem direncini açıklar ve yoğun bakım gram negatiflerinde çok önemlidir. Ancak bu vakada meropenem duyarlılığı korunurken kolistin MİK değerinin artması beta-laktam halkasının hidrolizinden çok polimiksin hedef yüzeyinin değiştiğini gösterir.",
+        "Porin kaybı ile karbapenem girişinin azalması": "Porin kaybı özellikle Enterobacterales ve Pseudomonas’ta beta-laktam/karbapenem duyarlılığını etkileyebilir. Bu patern genellikle karbapenem MİK artışıyla beklenir; vakada seçici sorun kolistin bağlanmasının azalmasıdır.",
+        "23S rRNA metilasyonu ile makrolid-linkozamid hedef değişimi": "23S rRNA metilasyonu erm genleriyle makrolid-linkozamid-streptogramin B direncini açıklar ve D-test gibi fenotiplerle ilişkilidir. Kolistin bir ribozomal hedefe değil gram negatif dış membran lipid A bileşenine bağlandığı için bu mekanizma vakadaki duyarlılık kaybını açıklamaz.",
+        "D-Ala-D-Lac uç değişimiyle glikopeptid bağlanmasının azalması": "D-Ala-D-Lac uç değişimi vanA/vanB ilişkili enterokok glikopeptid direncinin temelidir. Kolistin gram negatif dış membranı hedefler; peptidoglikan uç değişimi veya glikopeptid bağlanması bu yoğun bakım izolatının polimiksin direnciyle ilişkili değildir."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v264-medical-microbiology-fourteenth-five-render-safe",
+        "generator": "manual-editorial-medical-microbiology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Kolistin MİK artışı",
+        "mcr sinyali",
+        "Lipid A modifikasyonu",
+        "Fosfoetanolamin",
+        "Polimiksin bağlanması azalması"
+      ],
+      "images": []
+    },
+  {
+      "id": "v265-new-517-lohusalikta-ani-dispne-ve-hipoksemi",
+      "branchId": "medical-pathology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Patoloji",
+      "title": "Lohusalıkta ani dispne ve hipoksemi",
+      "difficulty": "Orta",
+      "difficultyTag": "Orta",
+      "clinicalFocus": "Lohusalıkta ani hipoksemi, bacak şişliği, venöz Doppler ve BT anjiyografi bulgularını hemodinamik patoloji mekanizmasıyla ilişkilendirme.",
+      "learningTarget": "Hiperkoagülabilite ve immobilizasyon zemininde gelişen venöz trombüsün pulmoner dolaşımı tıkayarak ani solunum-dolaşım bozulması oluşturduğunu ayırt edebilme.",
+      "demographics": "31 yaşında kadın hasta",
+      "setting": "Acil servis",
+      "chiefComplaint": "Hasta, doğumdan bir hafta sonra başlayan ani nefes darlığı, çarpıntı ve sol baldırda ağrılı şişlik nedeniyle acile getiriliyor.",
+      "stem": "Hasta sezaryen sonrası evde çoğunlukla yatakta kaldığını ve son iki gündür sol baldırında gerginlik hissettiğini anlatır. Sabah kısa bir yürüyüş sırasında aniden nefesi kesilmiş, göğsünde batıcı ağrı ve çarpıntı başlamıştır. Ateş, balgamlı öksürük veya önceden bilinen kalp hastalığı tariflemez. Kanama veya travma öyküsü yoktur.",
+      "patientIntro": {
+        "profile": "31 yaşında kadın hasta, doğumdan bir hafta sonra ani solunum yakınmasıyla acil serviste değerlendiriliyor.",
+        "presentation": "Ani dispne, taşikardi, pleuritik göğüs ağrısı ve sol baldırda ağrılı şişlik vardır.",
+        "historySummary": "Hasta sezaryen sonrası evde çoğunlukla yatakta kaldığını ve son iki gündür sol baldırında gerginlik hissettiğini anlatır. Sabah kısa bir yürüyüş sırasında aniden nefesi kesilmiş, göğsünde batıcı ağrı ve çarpıntı başlamıştır. Ateş, balgamlı öksürük veya önceden bilinen kalp hastalığı tariflemez. Kanama veya travma öyküsü yoktur."
+      },
+      "vitals": {
+        "TA": "96/62 mmHg",
+        "Nabız": "124/dk",
+        "Solunum": "30/dk",
+        "SpO₂": "88%, oda havasında",
+        "Ateş": "36.9 °C",
+        "Şok indeksi": "1.29"
+      },
+      "exam": [
+        "Hasta kaygılı, takipneik ve kısa cümlelerle konuşmaktadır.",
+        "Sol baldır çevresi sağa göre 3 cm daha geniştir; palpasyonla hassasiyet vardır.",
+        "Akciğer oskültasyonunda belirgin fokal ronküs veya yaygın ral duyulmaz.",
+        "Kalp sesleri taşikardiktir; yeni belirgin üfürüm saptanmaz."
+      ],
+      "investigations": [
+        {
+          "id": "v265-new-517-lohusalikta-ani-dispne-ve-hipoksemi-temel-lab",
+          "label": "Temel laboratuvar ve koagülasyon göstergeleri",
+          "title": "Temel laboratuvar ve koagülasyon göstergeleri",
+          "orderLabel": "Temel laboratuvar ve koagülasyon göstergeleri",
+          "type": "laboratory",
+          "priority": "essential",
+          "subtype": "Hemogram, D-dimer ve biyokimya",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Hipoksemiyle birlikte D-dimer yüksekliği ve enfeksiyon lehine güçlü bulgu olmaması tromboembolik klinik bağlamı destekler.",
+          "clinicalMeaning": "Hipoksemiyle birlikte D-dimer yüksekliği ve enfeksiyon lehine güçlü bulgu olmaması tromboembolik klinik bağlamı destekler.",
+          "result": {
+            "title": "Temel laboratuvar ve koagülasyon göstergeleri",
+            "summary": "Hipoksemiyle birlikte D-dimer yüksekliği ve enfeksiyon lehine güçlü bulgu olmaması tromboembolik klinik bağlamı destekler.",
+            "interpretation": "Hipoksemiyle birlikte D-dimer yüksekliği ve enfeksiyon lehine güçlü bulgu olmaması tromboembolik klinik bağlamı destekler.",
+            "values": [
+              [
+                "Hemoglobin",
+                "11.1 g/dL",
+                "12-16 g/dL",
+                "Hafif düşük"
+              ],
+              [
+                "Lökosit",
+                "9.800/mm³",
+                "4.000-10.000/mm³",
+                "Üst sınıra yakın"
+              ],
+              [
+                "Trombosit",
+                "284.000/mm³",
+                "150.000-400.000/mm³",
+                "Normal"
+              ],
+              [
+                "D-dimer",
+                "4.900 ng/mL",
+                "<500 ng/mL",
+                "Belirgin yüksek"
+              ],
+              [
+                "Troponin I",
+                "Normal sınırda",
+                "Laboratuvara göre",
+                "Koroner nekroz lehine değil"
+              ]
+            ],
+            "rows": [
+              [
+                "Hemoglobin",
+                "11.1 g/dL",
+                "12-16 g/dL",
+                "Hafif düşük"
+              ],
+              [
+                "Lökosit",
+                "9.800/mm³",
+                "4.000-10.000/mm³",
+                "Üst sınıra yakın"
+              ],
+              [
+                "Trombosit",
+                "284.000/mm³",
+                "150.000-400.000/mm³",
+                "Normal"
+              ],
+              [
+                "D-dimer",
+                "4.900 ng/mL",
+                "<500 ng/mL",
+                "Belirgin yüksek"
+              ],
+              [
+                "Troponin I",
+                "Normal sınırda",
+                "Laboratuvara göre",
+                "Koroner nekroz lehine değil"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v265-new-517-lohusalikta-ani-dispne-ve-hipoksemi-doppler",
+          "label": "Alt ekstremite venöz Doppler USG",
+          "title": "Alt ekstremite venöz Doppler USG",
+          "orderLabel": "Alt ekstremite venöz Doppler USG",
+          "type": "ultrasound",
+          "priority": "essential",
+          "subtype": "Venöz Doppler",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Sol baldır derin ven sisteminde kompresyonla kapanmayan segment, emboli kaynağı olabilecek venöz trombüs odağını gösterir.",
+          "clinicalMeaning": "Sol baldır derin ven sisteminde kompresyonla kapanmayan segment, emboli kaynağı olabilecek venöz trombüs odağını gösterir.",
+          "result": {
+            "title": "Alt ekstremite venöz Doppler USG",
+            "summary": "Sol baldır derin ven sisteminde kompresyonla kapanmayan segment, emboli kaynağı olabilecek venöz trombüs odağını gösterir.",
+            "interpretation": "Sol baldır derin ven sisteminde kompresyonla kapanmayan segment, emboli kaynağı olabilecek venöz trombüs odağını gösterir.",
+            "values": [
+              {
+                "parameter": "Sol popliteal ven",
+                "value": "Lümen içinde ekojen materyal izlenir; kompresyonla tam kollabe olmaz ve renkli akım azalır.",
+                "note": "Derin ven trombüsü ile uyumlu segment"
+              },
+              {
+                "parameter": "Sağ alt ekstremite",
+                "value": "Derin venlerde kompresyon yanıtı ve renkli akım korunmuştur.",
+                "note": "Karşı taraf belirgin tutulmamış"
+              }
+            ],
+            "rows": [
+              {
+                "parameter": "Sol popliteal ven",
+                "value": "Lümen içinde ekojen materyal izlenir; kompresyonla tam kollabe olmaz ve renkli akım azalır.",
+                "note": "Derin ven trombüsü ile uyumlu segment"
+              },
+              {
+                "parameter": "Sağ alt ekstremite",
+                "value": "Derin venlerde kompresyon yanıtı ve renkli akım korunmuştur.",
+                "note": "Karşı taraf belirgin tutulmamış"
+              }
+            ]
+          }
+        },
+        {
+          "id": "v265-new-517-lohusalikta-ani-dispne-ve-hipoksemi-bt-anjiyo",
+          "label": "BT pulmoner anjiyografi",
+          "title": "BT pulmoner anjiyografi",
+          "orderLabel": "BT pulmoner anjiyografi",
+          "type": "ct",
+          "priority": "essential",
+          "subtype": "Pulmoner arter değerlendirmesi",
+          "category": "ct",
+          "testTypeCategory": "ct",
+          "summary": "Sağ alt lob segmenter pulmoner arter dalındaki kontrast dolum defekti ani hipoksemi ve taşikardiyi anatomik olarak açıklar.",
+          "clinicalMeaning": "Sağ alt lob segmenter pulmoner arter dalındaki kontrast dolum defekti ani hipoksemi ve taşikardiyi anatomik olarak açıklar.",
+          "result": {
+            "title": "BT pulmoner anjiyografi",
+            "summary": "Sağ alt lob segmenter pulmoner arter dalındaki kontrast dolum defekti ani hipoksemi ve taşikardiyi anatomik olarak açıklar.",
+            "interpretation": "Sağ alt lob segmenter pulmoner arter dalındaki kontrast dolum defekti ani hipoksemi ve taşikardiyi anatomik olarak açıklar.",
+            "values": [
+              {
+                "parameter": "Pulmoner arter dalları",
+                "value": "Sağ alt lob segmenter arter dalında intraluminal kontrast dolum defekti; periferal kama tarzı opasite eşlik ediyor.",
+                "note": "Segmenter vasküler tıkanıklık"
+              },
+              {
+                "parameter": "Plevral boşluk",
+                "value": "Belirgin plevral sıvı izlenmiyor.",
+                "note": "Alternatif açıklama zayıf"
+              }
+            ],
+            "rows": [
+              {
+                "parameter": "Pulmoner arter dalları",
+                "value": "Sağ alt lob segmenter arter dalında intraluminal kontrast dolum defekti; periferal kama tarzı opasite eşlik ediyor.",
+                "note": "Segmenter vasküler tıkanıklık"
+              },
+              {
+                "parameter": "Plevral boşluk",
+                "value": "Belirgin plevral sıvı izlenmiyor.",
+                "note": "Alternatif açıklama zayıf"
+              }
+            ]
+          }
+        },
+        {
+          "id": "v265-new-517-lohusalikta-ani-dispne-ve-hipoksemi-patoloji",
+          "label": "Trombüs materyali histopatolojisi",
+          "title": "Trombüs materyali histopatolojisi",
+          "orderLabel": "Trombüs materyali histopatolojisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "Mikroskopi",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "summary": "Fibrin ve eritrosit tabakalanması gösteren damar içi materyal, postmortem pıhtıdan farklı organize trombotik süreç lehinedir.",
+          "clinicalMeaning": "Fibrin ve eritrosit tabakalanması gösteren damar içi materyal, postmortem pıhtıdan farklı organize trombotik süreç lehinedir.",
+          "result": {
+            "title": "Trombüs materyali histopatolojisi",
+            "summary": "Fibrin ve eritrosit tabakalanması gösteren damar içi materyal, postmortem pıhtıdan farklı organize trombotik süreç lehinedir.",
+            "interpretation": "Fibrin ve eritrosit tabakalanması gösteren damar içi materyal, postmortem pıhtıdan farklı organize trombotik süreç lehinedir.",
+            "values": [
+              {
+                "parameter": "Mikroskobik bulgu",
+                "value": "Fibrin ağları içinde eritrosit ve trombosit tabakalanmaları izlenir; damar duvarına tutunma odağı bulunan mat kırmızı trombotik materyal tanımlanır.",
+                "note": "Damar içi trombüs morfolojisi"
+              },
+              {
+                "parameter": "Akciğer periferik alan",
+                "value": "Alveoler septalarda hemoraji ve kama biçimli iskemik-parankimal hasar alanları eşlik eder.",
+                "note": "Periferik perfüzyon bozukluğu"
+              }
+            ],
+            "rows": [
+              {
+                "parameter": "Mikroskobik bulgu",
+                "value": "Fibrin ağları içinde eritrosit ve trombosit tabakalanmaları izlenir; damar duvarına tutunma odağı bulunan mat kırmızı trombotik materyal tanımlanır.",
+                "note": "Damar içi trombüs morfolojisi"
+              },
+              {
+                "parameter": "Akciğer periferik alan",
+                "value": "Alveoler septalarda hemoraji ve kama biçimli iskemik-parankimal hasar alanları eşlik eder.",
+                "note": "Periferik perfüzyon bozukluğu"
+              }
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu ani klinik bozulmayı en iyi açıklayan patolojik mekanizma aşağıdakilerden hangisidir?",
+      "questionType": "pathologic-mechanism",
+      "answerTarget": "Patolojik mekanizma",
+      "diagnosis": {
+        "correct": "Alt ekstremite derin ven trombüsünün pulmoner arter dallarını tıkaması",
+        "options": [
+          "Aterosklerotik plağın ülserasyonu sonrası koroner arterde oklüzif trombüs gelişmesi",
+          "Sistemik venöz dolaşıma hava girişiyle sağ kalp çıkışının akut engellenmesi",
+          "Alt ekstremite derin ven trombüsünün pulmoner arter dallarını tıkaması",
+          "Uzun kemik iliğinden salınan yağ globüllerinin mikrovasküler dolaşımı bozması",
+          "Amniyotik sıvı içeriğinin maternal pulmoner dolaşıma karışması"
+        ],
+        "question": "Bu ani klinik bozulmayı en iyi açıklayan patolojik mekanizma aşağıdakilerden hangisidir?",
+        "explanation": "Lohusalık ve immobilizasyon venöz trombüs gelişimine zemin hazırlar; bacak Doppler bulgusu kaynak odağı, BT anjiyografi ise pulmoner arter dalındaki tıkanıklığı gösterir. Ani dispne, taşikardi, hipoksemi ve periferik kama tarzı parankimal değişiklikler birlikte alt ekstremite kaynaklı tromboembolik pulmoner tıkanmayı destekler.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Postpartum dönem + tek taraflı baldır şişliği + BT pulmoner arter dolum defekti birlikteliğinde venöz tromboemboli düşünülür."
+          }
+        ],
+        "optionFeedback": {
+          "Aterosklerotik plağın ülserasyonu sonrası koroner arterde oklüzif trombüs gelişmesi": {
+            "explanation": "Bu mekanizma akut miyokard infarktüsünde koroner arter lümeninin trombüsle kapanmasını açıklar ve göğüs ağrısı, ST değişikliği ve miyokard nekrozu zinciriyle beklenir. Bu vakada baskın tablo ani dispne, hipoksemi ve pulmoner arter dolum defektidir; koroner oklüzyon paternini destekleyen EKG veya troponin ağırlıklı veri yoktur."
+          },
+          "Sistemik venöz dolaşıma hava girişiyle sağ kalp çıkışının akut engellenmesi": {
+            "explanation": "Hava embolisi santral venöz kateter manipülasyonu, cerrahi girişim veya dalış/dekompresyon bağlamında ani dolaşım bozukluğu yapabilir. Hastada doğum sonrası immobilizasyon, bacak şişliği, D-dimer yüksekliği ve pulmoner arter dalında dolum defekti venöz tromboembolik süreci daha güçlü destekler."
+          },
+          "Alt ekstremite derin ven trombüsünün pulmoner arter dallarını tıkaması": {
+            "explanation": "Bu seçenek vakadaki klinik-patolojik zinciri en iyi açıklar. Lohusalıkta hiperkoagülabilite ve immobilizasyon derin ven trombüsü riskini artırır; alt ekstremitedeki organize olmayan kırmızı trombüsün koparak pulmoner arter dallarını tıkaması ani dispne, taşikardi ve segmenter perfüzyon bozukluğu oluşturur."
+          },
+          "Uzun kemik iliğinden salınan yağ globüllerinin mikrovasküler dolaşımı bozması": {
+            "explanation": "Yağ embolisi çoğunlukla uzun kemik kırığı veya ortopedik girişim sonrası 24-72 saat içinde solunum sıkıntısı, nörolojik bulgu ve peteşi triadıyla düşünülür. Bu hastada travma/kırık öyküsü yoktur; venöz Doppler ve BT anjiyografi trombotik embolik patern lehinedir."
+          },
+          "Amniyotik sıvı içeriğinin maternal pulmoner dolaşıma karışması": {
+            "explanation": "Amniyotik sıvı embolisi doğum eylemi sırasında veya hemen sonrasında ani hipoksi, hipotansiyon, nöbet ve DIC ile ağır bir tablo oluşturur; mikroskopide fetal skuamöz hücreler ve müsin görülebilir. Bu olguda başvuru doğumdan günler sonra gelişmiş, alt ekstremite venöz kaynak ve segmenter pulmoner arter tıkanıklığı ön plandadır."
+          }
+        },
+        "answerFeedback": {
+          "summary": "Lohusalık ve immobilizasyon venöz trombüs gelişimine zemin hazırlar; bacak Doppler bulgusu kaynak odağı, BT anjiyografi ise pulmoner arter dalındaki tıkanıklığı gösterir. Ani dispne, taşikardi, hipoksemi ve periferik kama tarzı parankimal değişiklikler birlikte alt ekstremite kaynaklı tromboembolik pulmoner tıkanmayı destekler.",
+          "whyCorrect": "Bu seçenek vakadaki klinik-patolojik zinciri en iyi açıklar. Lohusalıkta hiperkoagülabilite ve immobilizasyon derin ven trombüsü riskini artırır; alt ekstremitedeki organize olmayan kırmızı trombüsün koparak pulmoner arter dallarını tıkaması ani dispne, taşikardi ve segmenter perfüzyon bozukluğu oluşturur.",
+          "rationale": "Lohusalık ve immobilizasyon venöz trombüs gelişimine zemin hazırlar; bacak Doppler bulgusu kaynak odağı, BT anjiyografi ise pulmoner arter dalındaki tıkanıklığı gösterir. Ani dispne, taşikardi, hipoksemi ve periferik kama tarzı parankimal değişiklikler birlikte alt ekstremite kaynaklı tromboembolik pulmoner tıkanmayı destekler.",
+          "correctOptionFeedback": "Bu seçenek vakadaki klinik-patolojik zinciri en iyi açıklar. Lohusalıkta hiperkoagülabilite ve immobilizasyon derin ven trombüsü riskini artırır; alt ekstremitedeki organize olmayan kırmızı trombüsün koparak pulmoner arter dallarını tıkaması ani dispne, taşikardi ve segmenter perfüzyon bozukluğu oluşturur.",
+          "keyClues": [
+            "Sezaryen sonrası immobilizasyon ve lohusalık → venöz trombüs için hiperkoagülabilite ve staz zemini oluşturur.",
+            "Tek taraflı baldır şişliği ve Doppler’de komprese olmayan popliteal ven → derin ven kaynaklı trombotik odağı destekler.",
+            "BT pulmoner anjiyografide segmenter arter dolum defekti → pulmoner arter dalında intraluminal tıkanmayı gösterir.",
+            "Ani dispne, taşikardi ve hipoksemi → akut pulmoner vasküler obstrüksiyonun fizyolojik sonucuyla uyumludur."
+          ],
+          "evidenceChain": [
+            {
+              "text": "Sezaryen sonrası immobilizasyon ve lohusalık → venöz trombüs için hiperkoagülabilite ve staz zemini oluşturur.",
+              "weight": "high",
+              "source": "case"
+            },
+            {
+              "text": "Tek taraflı baldır şişliği ve Doppler’de komprese olmayan popliteal ven → derin ven kaynaklı trombotik odağı destekler.",
+              "weight": "high",
+              "source": "case"
+            },
+            {
+              "text": "BT pulmoner anjiyografide segmenter arter dolum defekti → pulmoner arter dalında intraluminal tıkanmayı gösterir.",
+              "weight": "high",
+              "source": "case"
+            },
+            {
+              "text": "Ani dispne, taşikardi ve hipoksemi → akut pulmoner vasküler obstrüksiyonun fizyolojik sonucuyla uyumludur.",
+              "weight": "medium",
+              "source": "case"
+            }
+          ],
+          "examPearl": "Postpartum dönem + tek taraflı baldır şişliği + BT pulmoner arter dolum defekti birlikteliğinde venöz tromboemboli düşünülür.",
+          "pearls": [
+            {
+              "label": "TUS notu",
+              "text": "Postpartum dönem + tek taraflı baldır şişliği + BT pulmoner arter dolum defekti birlikteliğinde venöz tromboemboli düşünülür."
+            }
+          ],
+          "clinicalPearls": [
+            {
+              "label": "TUS notu",
+              "text": "Postpartum dönem + tek taraflı baldır şişliği + BT pulmoner arter dolum defekti birlikteliğinde venöz tromboemboli düşünülür."
+            }
+          ],
+          "optionComparison": {
+            "Aterosklerotik plağın ülserasyonu sonrası koroner arterde oklüzif trombüs gelişmesi": "Bu mekanizma akut miyokard infarktüsünde koroner arter lümeninin trombüsle kapanmasını açıklar ve göğüs ağrısı, ST değişikliği ve miyokard nekrozu zinciriyle beklenir. Bu vakada baskın tablo ani dispne, hipoksemi ve pulmoner arter dolum defektidir; koroner oklüzyon paternini destekleyen EKG veya troponin ağırlıklı veri yoktur.",
+            "Sistemik venöz dolaşıma hava girişiyle sağ kalp çıkışının akut engellenmesi": "Hava embolisi santral venöz kateter manipülasyonu, cerrahi girişim veya dalış/dekompresyon bağlamında ani dolaşım bozukluğu yapabilir. Hastada doğum sonrası immobilizasyon, bacak şişliği, D-dimer yüksekliği ve pulmoner arter dalında dolum defekti venöz tromboembolik süreci daha güçlü destekler.",
+            "Alt ekstremite derin ven trombüsünün pulmoner arter dallarını tıkaması": "Bu seçenek vakadaki klinik-patolojik zinciri en iyi açıklar. Lohusalıkta hiperkoagülabilite ve immobilizasyon derin ven trombüsü riskini artırır; alt ekstremitedeki organize olmayan kırmızı trombüsün koparak pulmoner arter dallarını tıkaması ani dispne, taşikardi ve segmenter perfüzyon bozukluğu oluşturur.",
+            "Uzun kemik iliğinden salınan yağ globüllerinin mikrovasküler dolaşımı bozması": "Yağ embolisi çoğunlukla uzun kemik kırığı veya ortopedik girişim sonrası 24-72 saat içinde solunum sıkıntısı, nörolojik bulgu ve peteşi triadıyla düşünülür. Bu hastada travma/kırık öyküsü yoktur; venöz Doppler ve BT anjiyografi trombotik embolik patern lehinedir.",
+            "Amniyotik sıvı içeriğinin maternal pulmoner dolaşıma karışması": "Amniyotik sıvı embolisi doğum eylemi sırasında veya hemen sonrasında ani hipoksi, hipotansiyon, nöbet ve DIC ile ağır bir tablo oluşturur; mikroskopide fetal skuamöz hücreler ve müsin görülebilir. Bu olguda başvuru doğumdan günler sonra gelişmiş, alt ekstremite venöz kaynak ve segmenter pulmoner arter tıkanıklığı ön plandadır."
+          },
+          "whyWrong": {
+            "Aterosklerotik plağın ülserasyonu sonrası koroner arterde oklüzif trombüs gelişmesi": "Bu mekanizma akut miyokard infarktüsünde koroner arter lümeninin trombüsle kapanmasını açıklar ve göğüs ağrısı, ST değişikliği ve miyokard nekrozu zinciriyle beklenir. Bu vakada baskın tablo ani dispne, hipoksemi ve pulmoner arter dolum defektidir; koroner oklüzyon paternini destekleyen EKG veya troponin ağırlıklı veri yoktur.",
+            "Sistemik venöz dolaşıma hava girişiyle sağ kalp çıkışının akut engellenmesi": "Hava embolisi santral venöz kateter manipülasyonu, cerrahi girişim veya dalış/dekompresyon bağlamında ani dolaşım bozukluğu yapabilir. Hastada doğum sonrası immobilizasyon, bacak şişliği, D-dimer yüksekliği ve pulmoner arter dalında dolum defekti venöz tromboembolik süreci daha güçlü destekler.",
+            "Uzun kemik iliğinden salınan yağ globüllerinin mikrovasküler dolaşımı bozması": "Yağ embolisi çoğunlukla uzun kemik kırığı veya ortopedik girişim sonrası 24-72 saat içinde solunum sıkıntısı, nörolojik bulgu ve peteşi triadıyla düşünülür. Bu hastada travma/kırık öyküsü yoktur; venöz Doppler ve BT anjiyografi trombotik embolik patern lehinedir.",
+            "Amniyotik sıvı içeriğinin maternal pulmoner dolaşıma karışması": "Amniyotik sıvı embolisi doğum eylemi sırasında veya hemen sonrasında ani hipoksi, hipotansiyon, nöbet ve DIC ile ağır bir tablo oluşturur; mikroskopide fetal skuamöz hücreler ve müsin görülebilir. Bu olguda başvuru doğumdan günler sonra gelişmiş, alt ekstremite venöz kaynak ve segmenter pulmoner arter tıkanıklığı ön plandadır."
+          },
+          "managementSteps": [],
+          "management": [],
+          "learningOutcome": "Hiperkoagülabilite ve immobilizasyon zemininde gelişen venöz trombüsün pulmoner dolaşımı tıkayarak ani solunum-dolaşım bozulması oluşturduğunu ayırt edebilme.",
+          "coreKnowledge": "Pulmoner tromboembolide venöz trombüs genellikle alt ekstremite derin venlerinden kopar, sağ kalp üzerinden pulmoner arter dallarına ulaşır ve ventilasyon-perfüzyon uyumsuzluğu ile akut hipoksemi oluşturur."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Pulmoner tromboembolide venöz trombüs genellikle alt ekstremite derin venlerinden kopar, sağ kalp üzerinden pulmoner arter dallarına ulaşır ve ventilasyon-perfüzyon uyumsuzluğu ile akut hipoksemi oluşturur.",
+      "examPearl": "Postpartum dönem + tek taraflı baldır şişliği + BT pulmoner arter dolum defekti birlikteliğinde venöz tromboemboli düşünülür.",
+      "whyCorrect": "Bu seçenek vakadaki klinik-patolojik zinciri en iyi açıklar. Lohusalıkta hiperkoagülabilite ve immobilizasyon derin ven trombüsü riskini artırır; alt ekstremitedeki organize olmayan kırmızı trombüsün koparak pulmoner arter dallarını tıkaması ani dispne, taşikardi ve segmenter perfüzyon bozukluğu oluşturur.",
+      "optionComparison": {
+        "Aterosklerotik plağın ülserasyonu sonrası koroner arterde oklüzif trombüs gelişmesi": "Bu mekanizma akut miyokard infarktüsünde koroner arter lümeninin trombüsle kapanmasını açıklar ve göğüs ağrısı, ST değişikliği ve miyokard nekrozu zinciriyle beklenir. Bu vakada baskın tablo ani dispne, hipoksemi ve pulmoner arter dolum defektidir; koroner oklüzyon paternini destekleyen EKG veya troponin ağırlıklı veri yoktur.",
+        "Sistemik venöz dolaşıma hava girişiyle sağ kalp çıkışının akut engellenmesi": "Hava embolisi santral venöz kateter manipülasyonu, cerrahi girişim veya dalış/dekompresyon bağlamında ani dolaşım bozukluğu yapabilir. Hastada doğum sonrası immobilizasyon, bacak şişliği, D-dimer yüksekliği ve pulmoner arter dalında dolum defekti venöz tromboembolik süreci daha güçlü destekler.",
+        "Alt ekstremite derin ven trombüsünün pulmoner arter dallarını tıkaması": "Bu seçenek vakadaki klinik-patolojik zinciri en iyi açıklar. Lohusalıkta hiperkoagülabilite ve immobilizasyon derin ven trombüsü riskini artırır; alt ekstremitedeki organize olmayan kırmızı trombüsün koparak pulmoner arter dallarını tıkaması ani dispne, taşikardi ve segmenter perfüzyon bozukluğu oluşturur.",
+        "Uzun kemik iliğinden salınan yağ globüllerinin mikrovasküler dolaşımı bozması": "Yağ embolisi çoğunlukla uzun kemik kırığı veya ortopedik girişim sonrası 24-72 saat içinde solunum sıkıntısı, nörolojik bulgu ve peteşi triadıyla düşünülür. Bu hastada travma/kırık öyküsü yoktur; venöz Doppler ve BT anjiyografi trombotik embolik patern lehinedir.",
+        "Amniyotik sıvı içeriğinin maternal pulmoner dolaşıma karışması": "Amniyotik sıvı embolisi doğum eylemi sırasında veya hemen sonrasında ani hipoksi, hipotansiyon, nöbet ve DIC ile ağır bir tablo oluşturur; mikroskopide fetal skuamöz hücreler ve müsin görülebilir. Bu olguda başvuru doğumdan günler sonra gelişmiş, alt ekstremite venöz kaynak ve segmenter pulmoner arter tıkanıklığı ön plandadır."
+      },
+      "evidenceChain": [
+        {
+          "text": "Sezaryen sonrası immobilizasyon ve lohusalık → venöz trombüs için hiperkoagülabilite ve staz zemini oluşturur.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Tek taraflı baldır şişliği ve Doppler’de komprese olmayan popliteal ven → derin ven kaynaklı trombotik odağı destekler.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "BT pulmoner anjiyografide segmenter arter dolum defekti → pulmoner arter dalında intraluminal tıkanmayı gösterir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Ani dispne, taşikardi ve hipoksemi → akut pulmoner vasküler obstrüksiyonun fizyolojik sonucuyla uyumludur.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Aterosklerotik plağın ülserasyonu sonrası koroner arterde oklüzif trombüs gelişmesi": "Bu mekanizma akut miyokard infarktüsünde koroner arter lümeninin trombüsle kapanmasını açıklar ve göğüs ağrısı, ST değişikliği ve miyokard nekrozu zinciriyle beklenir. Bu vakada baskın tablo ani dispne, hipoksemi ve pulmoner arter dolum defektidir; koroner oklüzyon paternini destekleyen EKG veya troponin ağırlıklı veri yoktur.",
+        "Sistemik venöz dolaşıma hava girişiyle sağ kalp çıkışının akut engellenmesi": "Hava embolisi santral venöz kateter manipülasyonu, cerrahi girişim veya dalış/dekompresyon bağlamında ani dolaşım bozukluğu yapabilir. Hastada doğum sonrası immobilizasyon, bacak şişliği, D-dimer yüksekliği ve pulmoner arter dalında dolum defekti venöz tromboembolik süreci daha güçlü destekler.",
+        "Uzun kemik iliğinden salınan yağ globüllerinin mikrovasküler dolaşımı bozması": "Yağ embolisi çoğunlukla uzun kemik kırığı veya ortopedik girişim sonrası 24-72 saat içinde solunum sıkıntısı, nörolojik bulgu ve peteşi triadıyla düşünülür. Bu hastada travma/kırık öyküsü yoktur; venöz Doppler ve BT anjiyografi trombotik embolik patern lehinedir.",
+        "Amniyotik sıvı içeriğinin maternal pulmoner dolaşıma karışması": "Amniyotik sıvı embolisi doğum eylemi sırasında veya hemen sonrasında ani hipoksi, hipotansiyon, nöbet ve DIC ile ağır bir tablo oluşturur; mikroskopide fetal skuamöz hücreler ve müsin görülebilir. Bu olguda başvuru doğumdan günler sonra gelişmiş, alt ekstremite venöz kaynak ve segmenter pulmoner arter tıkanıklığı ön plandadır."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v265-medical-pathology-five-render-safe",
+        "generator": "manual-editorial-medical-pathology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Lohusalık",
+        "Derin ven trombüsü",
+        "BT pulmoner anjiyografi dolum defekti",
+        "Segmenter pulmoner arter tıkanıklığı"
+      ],
+      "images": []
+    },
+  {
+      "id": "v265-new-518-nakil-sonrasi-kreatinin-yukselmesi",
+      "branchId": "medical-pathology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Patoloji",
+      "title": "Nakil sonrası kreatinin yükselmesi",
+      "difficulty": "Zor",
+      "difficultyTag": "Zor",
+      "clinicalFocus": "Transplant böbrekte erken kreatinin yükselmesini biyopsi bulgularıyla ilişkilendirerek rejeksiyon paternini ayırt etme.",
+      "learningTarget": "Tubulit, interstisyel lenfositik infiltrasyon ve endotelitin T hücre aracılı akut hücresel rejeksiyonla ilişkisini kavrayabilme.",
+      "demographics": "44 yaşında erkek hasta",
+      "setting": "Nefroloji ve transplantasyon servisi",
+      "chiefComplaint": "Hasta, böbrek naklinden 12 gün sonra idrar miktarında azalma ve kreatinin yükselmesi nedeniyle yatırılıyor.",
+      "stem": "Hasta nakil sonrası ilk günlerde idrar çıkışının iyi olduğunu ve taburculukta kreatininin belirgin düştüğünü söyler. Son üç gündür halsizlik ve idrar miktarında azalma fark etmiştir. İmmünsüpresif ilaçlarından bazı dozları bulantı nedeniyle atladığını belirtir. Ateş, yan ağrısı, belirgin dizüri veya yeni antibiyotik kullanımı tariflemez.",
+      "patientIntro": {
+        "profile": "44 yaşında erkek hasta, böbrek naklinden kısa süre sonra graft fonksiyon bozukluğu nedeniyle değerlendiriliyor.",
+        "presentation": "İdrar miktarında azalma ve kreatinin yükselmesi vardır.",
+        "historySummary": "Hasta nakil sonrası ilk günlerde idrar çıkışının iyi olduğunu ve taburculukta kreatininin belirgin düştüğünü söyler. Son üç gündür halsizlik ve idrar miktarında azalma fark etmiştir. İmmünsüpresif ilaçlarından bazı dozları bulantı nedeniyle atladığını belirtir. Ateş, yan ağrısı, belirgin dizüri veya yeni antibiyotik kullanımı tariflemez."
+      },
+      "vitals": {
+        "TA": "142/86 mmHg",
+        "Nabız": "92/dk",
+        "Solunum": "18/dk",
+        "SpO₂": "97%, oda havasında",
+        "Ateş": "37.2 °C",
+        "Şok indeksi": "0.65"
+      },
+      "exam": [
+        "Hasta hafif halsiz görünür; belirgin toksik görünüm yoktur.",
+        "Transplant böbrek lojunda hafif hassasiyet vardır; belirgin eritem veya akıntı izlenmez.",
+        "Pretibial bölgede hafif ödem mevcuttur.",
+        "Akciğer oskültasyonu doğal, kardiyak ritim düzenlidir."
+      ],
+      "investigations": [
+        {
+          "id": "v265-new-518-nakil-sonrasi-kreatinin-yukselmesi-laboratuvar",
+          "label": "Böbrek fonksiyon testleri ve idrar analizi",
+          "title": "Böbrek fonksiyon testleri ve idrar analizi",
+          "orderLabel": "Böbrek fonksiyon testleri ve idrar analizi",
+          "type": "laboratory",
+          "priority": "essential",
+          "subtype": "Biyokimya ve idrar",
+          "category": "laboratory",
+          "testTypeCategory": "laboratory",
+          "summary": "Yeni graft fonksiyonunda bozulma ve hafif proteinüri/hematüri, graft parankiminde aktif hasar ihtimalini artırır.",
+          "clinicalMeaning": "Yeni graft fonksiyonunda bozulma ve hafif proteinüri/hematüri, graft parankiminde aktif hasar ihtimalini artırır.",
+          "result": {
+            "title": "Böbrek fonksiyon testleri ve idrar analizi",
+            "summary": "Yeni graft fonksiyonunda bozulma ve hafif proteinüri/hematüri, graft parankiminde aktif hasar ihtimalini artırır.",
+            "interpretation": "Yeni graft fonksiyonunda bozulma ve hafif proteinüri/hematüri, graft parankiminde aktif hasar ihtimalini artırır.",
+            "values": [
+              [
+                "Kreatinin",
+                "2.8 mg/dL",
+                "0.6-1.2 mg/dL",
+                "Bazale göre artmış"
+              ],
+              [
+                "Üre",
+                "74 mg/dL",
+                "15-45 mg/dL",
+                "Yüksek"
+              ],
+              [
+                "İdrar protein",
+                "1+",
+                "Negatif/trace",
+                "Hafif proteinüri"
+              ],
+              [
+                "İdrar eritrosit",
+                "8-10/HPF",
+                "0-3/HPF",
+                "Hafif hematüri"
+              ],
+              [
+                "Tacrolimus düzeyi",
+                "Düşük terapötik aralığın altında",
+                "Merkez aralığına göre",
+                "İmmünsüpresyon yetersizliği"
+              ]
+            ],
+            "rows": [
+              [
+                "Kreatinin",
+                "2.8 mg/dL",
+                "0.6-1.2 mg/dL",
+                "Bazale göre artmış"
+              ],
+              [
+                "Üre",
+                "74 mg/dL",
+                "15-45 mg/dL",
+                "Yüksek"
+              ],
+              [
+                "İdrar protein",
+                "1+",
+                "Negatif/trace",
+                "Hafif proteinüri"
+              ],
+              [
+                "İdrar eritrosit",
+                "8-10/HPF",
+                "0-3/HPF",
+                "Hafif hematüri"
+              ],
+              [
+                "Tacrolimus düzeyi",
+                "Düşük terapötik aralığın altında",
+                "Merkez aralığına göre",
+                "İmmünsüpresyon yetersizliği"
+              ]
+            ]
+          }
+        },
+        {
+          "id": "v265-new-518-nakil-sonrasi-kreatinin-yukselmesi-doppler",
+          "label": "Transplant böbrek Doppler USG",
+          "title": "Transplant böbrek Doppler USG",
+          "orderLabel": "Transplant böbrek Doppler USG",
+          "type": "ultrasound",
+          "priority": "essential",
+          "subtype": "Transplant böbrek görüntüleme",
+          "category": "imaging",
+          "testTypeCategory": "imaging",
+          "summary": "Vasküler akımın korunması ve obstrüksiyon olmaması, kreatinin yükselmesini mekanik veya büyük damar tıkanıklığı dışında parankimal süreçlere yönlendirir.",
+          "clinicalMeaning": "Vasküler akımın korunması ve obstrüksiyon olmaması, kreatinin yükselmesini mekanik veya büyük damar tıkanıklığı dışında parankimal süreçlere yönlendirir.",
+          "result": {
+            "title": "Transplant böbrek Doppler USG",
+            "summary": "Vasküler akımın korunması ve obstrüksiyon olmaması, kreatinin yükselmesini mekanik veya büyük damar tıkanıklığı dışında parankimal süreçlere yönlendirir.",
+            "interpretation": "Vasküler akımın korunması ve obstrüksiyon olmaması, kreatinin yükselmesini mekanik veya büyük damar tıkanıklığı dışında parankimal süreçlere yönlendirir.",
+            "values": [
+              {
+                "parameter": "Perfüzyon",
+                "value": "Renal arter ve ven akımı izleniyor; büyük damar trombozu saptanmıyor.",
+                "note": "Makrovasküler tıkanıklık yok"
+              },
+              {
+                "parameter": "Toplayıcı sistem",
+                "value": "Hidronefroz izlenmiyor.",
+                "note": "Obstrüksiyon lehine değil"
+              }
+            ],
+            "rows": [
+              {
+                "parameter": "Perfüzyon",
+                "value": "Renal arter ve ven akımı izleniyor; büyük damar trombozu saptanmıyor.",
+                "note": "Makrovasküler tıkanıklık yok"
+              },
+              {
+                "parameter": "Toplayıcı sistem",
+                "value": "Hidronefroz izlenmiyor.",
+                "note": "Obstrüksiyon lehine değil"
+              }
+            ]
+          }
+        },
+        {
+          "id": "v265-new-518-nakil-sonrasi-kreatinin-yukselmesi-biyopsi",
+          "label": "Transplant böbrek tru-cut biyopsisi",
+          "title": "Transplant böbrek tru-cut biyopsisi",
+          "orderLabel": "Transplant böbrek tru-cut biyopsisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "Mikroskopi ve immün boyama",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "summary": "Tübül epitelini ve endoteli hedefleyen mononükleer infiltrasyon, erken graft disfonksiyonunda hücre aracılı immün hasar paternini gösterir.",
+          "clinicalMeaning": "Tübül epitelini ve endoteli hedefleyen mononükleer infiltrasyon, erken graft disfonksiyonunda hücre aracılı immün hasar paternini gösterir.",
+          "result": {
+            "title": "Transplant böbrek tru-cut biyopsisi",
+            "summary": "Tübül epitelini ve endoteli hedefleyen mononükleer infiltrasyon, erken graft disfonksiyonunda hücre aracılı immün hasar paternini gösterir.",
+            "interpretation": "Tübül epitelini ve endoteli hedefleyen mononükleer infiltrasyon, erken graft disfonksiyonunda hücre aracılı immün hasar paternini gösterir.",
+            "values": [
+              {
+                "parameter": "Örnek tipi",
+                "value": "Transplant böbrekten iki kortikal tru-cut biyopsi silindiri; glomerül ve arter içeren yeterli örnek.",
+                "note": "Yeterli biyopsi materyali"
+              },
+              {
+                "parameter": "Mikroskopi",
+                "value": "İnterstisyumda yoğun mononükleer hücre infiltrasyonu, tübül epiteline lenfosit geçişleri ve küçük arter endoteli altında lenfosit birikimi izlenir. Yaygın kortikal nekroz yoktur.",
+                "note": "Tubulit ve endotelit paterni"
+              },
+              {
+                "parameter": "İmmün boyama",
+                "value": "Peritübüler kapillerlerde C4d boyanması negatif; glomerüllerde baskın granüler immün kompleks paterni izlenmez.",
+                "note": "Antikor aracılı baskın patern zayıf"
+              }
+            ],
+            "rows": [
+              {
+                "parameter": "Örnek tipi",
+                "value": "Transplant böbrekten iki kortikal tru-cut biyopsi silindiri; glomerül ve arter içeren yeterli örnek.",
+                "note": "Yeterli biyopsi materyali"
+              },
+              {
+                "parameter": "Mikroskopi",
+                "value": "İnterstisyumda yoğun mononükleer hücre infiltrasyonu, tübül epiteline lenfosit geçişleri ve küçük arter endoteli altında lenfosit birikimi izlenir. Yaygın kortikal nekroz yoktur.",
+                "note": "Tubulit ve endotelit paterni"
+              },
+              {
+                "parameter": "İmmün boyama",
+                "value": "Peritübüler kapillerlerde C4d boyanması negatif; glomerüllerde baskın granüler immün kompleks paterni izlenmez.",
+                "note": "Antikor aracılı baskın patern zayıf"
+              }
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu biyopsi paternine göre graft disfonksiyonunu en iyi açıklayan patolojik süreç hangisidir?",
+      "questionType": "transplant-pathology",
+      "answerTarget": "Rejeksiyon paterni",
+      "diagnosis": {
+        "correct": "Akut hücresel rejeksiyon",
+        "options": [
+          "Hiperakut antikor aracılı rejeksiyon",
+          "Akut hücresel rejeksiyon",
+          "Kronik allograft vaskülopatisi",
+          "İlaç toksisitesine bağlı akut tübüler hasar",
+          "Rekürren immün kompleks glomerülonefriti"
+        ],
+        "question": "Bu biyopsi paternine göre graft disfonksiyonunu en iyi açıklayan patolojik süreç hangisidir?",
+        "explanation": "Graftın başlangıçta çalışması, günler içinde kreatinin yükselmesi ve biyopside tübül/endotel hedefli mononükleer infiltrasyon saptanması T hücre aracılı akut hasar paternini destekler. C4d negatifliği ve yaygın trombotik nekroz olmaması hiperakut ya da baskın antikor aracılı rejeksiyonu geri plana iter.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Transplant böbrekte tubulit + endotelit + interstisyel lenfositik infiltrasyon, akut hücresel rejeksiyon için yüksek getirili biyopsi paternidir."
+          }
+        ],
+        "optionFeedback": {
+          "Hiperakut antikor aracılı rejeksiyon": {
+            "explanation": "Hiperakut rejeksiyon dakikalar-saatler içinde önceden oluşmuş anti-donör antikorlarla gelişir; trombotik damar oklüzyonu, yaygın nekroz ve graftın hemen işlevsizleşmesi beklenir. Bu hastada graft başlangıçta çalışmış, kreatinin günler içinde yükselmiş ve biyopside baskın bulgu lenfositik tubulit/endotelittir."
+          },
+          "Akut hücresel rejeksiyon": {
+            "explanation": "Bu seçenek en uygundur; akut hücresel rejeksiyon T lenfosit aracılı graft hasarıdır ve böbrek biyopsisinde interstisyel mononükleer infiltrasyon, tubulit ve endotelyal inflamasyonla izlenir. Hastada nakilden sonra gecikmeli kreatinin yükselmesi, ilaç uyumsuzluğu öyküsü ve C4d-negatif lenfosit ağırlıklı biyopsi paterni bu süreci destekler."
+          },
+          "Kronik allograft vaskülopatisi": {
+            "explanation": "Kronik allograft vaskülopatisi aylar-yıllar içinde ilerleyen intimal fibroproliferasyon, damar daralması, interstisyel fibrozis ve tübüler atrofi ile beklenir. Bu vakada erken dönemde ani kreatinin yükselmesi ve aktif tubulit-endotelit bulguları kronik sklerozan süreçten çok akut hücresel inflamasyonu gösterir."
+          },
+          "İlaç toksisitesine bağlı akut tübüler hasar": {
+            "explanation": "Kalsinörin inhibitörü toksisitesi kreatinin yükselmesi yapabilir; arterioler hiyalinozis, izometrik vakuolizasyon veya akut tübüler hasar paternleriyle değerlendirilebilir. Ancak burada biyopsinin ana bulgusu tübül epitelini hedefleyen lenfositik infiltrasyon ve endotelittir; bu patern salt ilaç toksisitesinden daha özgüldür."
+          },
+          "Rekürren immün kompleks glomerülonefriti": {
+            "explanation": "Rekürren immün kompleks glomerülonefritinde glomerüler hipersellülarite, immün kompleks birikimi ve IF/EM bulguları ön planda olur. Bu olguda glomerül merkezli granüler immün birikim değil, interstisyel-tübüler ve vasküler T hücre ağırlıklı inflamasyon baskındır."
+          }
+        },
+        "answerFeedback": {
+          "summary": "Graftın başlangıçta çalışması, günler içinde kreatinin yükselmesi ve biyopside tübül/endotel hedefli mononükleer infiltrasyon saptanması T hücre aracılı akut hasar paternini destekler. C4d negatifliği ve yaygın trombotik nekroz olmaması hiperakut ya da baskın antikor aracılı rejeksiyonu geri plana iter.",
+          "whyCorrect": "Bu seçenek en uygundur; akut hücresel rejeksiyon T lenfosit aracılı graft hasarıdır ve böbrek biyopsisinde interstisyel mononükleer infiltrasyon, tubulit ve endotelyal inflamasyonla izlenir. Hastada nakilden sonra gecikmeli kreatinin yükselmesi, ilaç uyumsuzluğu öyküsü ve C4d-negatif lenfosit ağırlıklı biyopsi paterni bu süreci destekler.",
+          "rationale": "Graftın başlangıçta çalışması, günler içinde kreatinin yükselmesi ve biyopside tübül/endotel hedefli mononükleer infiltrasyon saptanması T hücre aracılı akut hasar paternini destekler. C4d negatifliği ve yaygın trombotik nekroz olmaması hiperakut ya da baskın antikor aracılı rejeksiyonu geri plana iter.",
+          "correctOptionFeedback": "Bu seçenek en uygundur; akut hücresel rejeksiyon T lenfosit aracılı graft hasarıdır ve böbrek biyopsisinde interstisyel mononükleer infiltrasyon, tubulit ve endotelyal inflamasyonla izlenir. Hastada nakilden sonra gecikmeli kreatinin yükselmesi, ilaç uyumsuzluğu öyküsü ve C4d-negatif lenfosit ağırlıklı biyopsi paterni bu süreci destekler.",
+          "keyClues": [
+            "Nakil sonrası ilk günlerde graftın çalışıp daha sonra kreatininin yükselmesi → hiperakut dakikalar-saatler tablosundan uzaklaştırır.",
+            "İmmünsüpresif doz atlama öyküsü → T hücre aracılı alloimmün yanıt için klinik zemin oluşturur.",
+            "İnterstisyel mononükleer infiltrasyon ve tubulit → graft tübüllerini hedefleyen hücresel immün hasarı destekler.",
+            "C4d negatifliği ve yaygın kortikal nekroz olmaması → baskın antikor aracılı/hiperakut damar hasarını zayıflatır."
+          ],
+          "evidenceChain": [
+            {
+              "text": "Nakil sonrası ilk günlerde graftın çalışıp daha sonra kreatininin yükselmesi → hiperakut dakikalar-saatler tablosundan uzaklaştırır.",
+              "weight": "medium",
+              "source": "case"
+            },
+            {
+              "text": "İmmünsüpresif doz atlama öyküsü → T hücre aracılı alloimmün yanıt için klinik zemin oluşturur.",
+              "weight": "high",
+              "source": "case"
+            },
+            {
+              "text": "İnterstisyel mononükleer infiltrasyon ve tubulit → graft tübüllerini hedefleyen hücresel immün hasarı destekler.",
+              "weight": "high",
+              "source": "case"
+            },
+            {
+              "text": "C4d negatifliği ve yaygın kortikal nekroz olmaması → baskın antikor aracılı/hiperakut damar hasarını zayıflatır.",
+              "weight": "medium",
+              "source": "case"
+            }
+          ],
+          "examPearl": "Transplant böbrekte tubulit + endotelit + interstisyel lenfositik infiltrasyon, akut hücresel rejeksiyon için yüksek getirili biyopsi paternidir.",
+          "pearls": [
+            {
+              "label": "TUS notu",
+              "text": "Transplant böbrekte tubulit + endotelit + interstisyel lenfositik infiltrasyon, akut hücresel rejeksiyon için yüksek getirili biyopsi paternidir."
+            }
+          ],
+          "clinicalPearls": [
+            {
+              "label": "TUS notu",
+              "text": "Transplant böbrekte tubulit + endotelit + interstisyel lenfositik infiltrasyon, akut hücresel rejeksiyon için yüksek getirili biyopsi paternidir."
+            }
+          ],
+          "optionComparison": {
+            "Hiperakut antikor aracılı rejeksiyon": "Hiperakut rejeksiyon dakikalar-saatler içinde önceden oluşmuş anti-donör antikorlarla gelişir; trombotik damar oklüzyonu, yaygın nekroz ve graftın hemen işlevsizleşmesi beklenir. Bu hastada graft başlangıçta çalışmış, kreatinin günler içinde yükselmiş ve biyopside baskın bulgu lenfositik tubulit/endotelittir.",
+            "Akut hücresel rejeksiyon": "Bu seçenek en uygundur; akut hücresel rejeksiyon T lenfosit aracılı graft hasarıdır ve böbrek biyopsisinde interstisyel mononükleer infiltrasyon, tubulit ve endotelyal inflamasyonla izlenir. Hastada nakilden sonra gecikmeli kreatinin yükselmesi, ilaç uyumsuzluğu öyküsü ve C4d-negatif lenfosit ağırlıklı biyopsi paterni bu süreci destekler.",
+            "Kronik allograft vaskülopatisi": "Kronik allograft vaskülopatisi aylar-yıllar içinde ilerleyen intimal fibroproliferasyon, damar daralması, interstisyel fibrozis ve tübüler atrofi ile beklenir. Bu vakada erken dönemde ani kreatinin yükselmesi ve aktif tubulit-endotelit bulguları kronik sklerozan süreçten çok akut hücresel inflamasyonu gösterir.",
+            "İlaç toksisitesine bağlı akut tübüler hasar": "Kalsinörin inhibitörü toksisitesi kreatinin yükselmesi yapabilir; arterioler hiyalinozis, izometrik vakuolizasyon veya akut tübüler hasar paternleriyle değerlendirilebilir. Ancak burada biyopsinin ana bulgusu tübül epitelini hedefleyen lenfositik infiltrasyon ve endotelittir; bu patern salt ilaç toksisitesinden daha özgüldür.",
+            "Rekürren immün kompleks glomerülonefriti": "Rekürren immün kompleks glomerülonefritinde glomerüler hipersellülarite, immün kompleks birikimi ve IF/EM bulguları ön planda olur. Bu olguda glomerül merkezli granüler immün birikim değil, interstisyel-tübüler ve vasküler T hücre ağırlıklı inflamasyon baskındır."
+          },
+          "whyWrong": {
+            "Hiperakut antikor aracılı rejeksiyon": "Hiperakut rejeksiyon dakikalar-saatler içinde önceden oluşmuş anti-donör antikorlarla gelişir; trombotik damar oklüzyonu, yaygın nekroz ve graftın hemen işlevsizleşmesi beklenir. Bu hastada graft başlangıçta çalışmış, kreatinin günler içinde yükselmiş ve biyopside baskın bulgu lenfositik tubulit/endotelittir.",
+            "Kronik allograft vaskülopatisi": "Kronik allograft vaskülopatisi aylar-yıllar içinde ilerleyen intimal fibroproliferasyon, damar daralması, interstisyel fibrozis ve tübüler atrofi ile beklenir. Bu vakada erken dönemde ani kreatinin yükselmesi ve aktif tubulit-endotelit bulguları kronik sklerozan süreçten çok akut hücresel inflamasyonu gösterir.",
+            "İlaç toksisitesine bağlı akut tübüler hasar": "Kalsinörin inhibitörü toksisitesi kreatinin yükselmesi yapabilir; arterioler hiyalinozis, izometrik vakuolizasyon veya akut tübüler hasar paternleriyle değerlendirilebilir. Ancak burada biyopsinin ana bulgusu tübül epitelini hedefleyen lenfositik infiltrasyon ve endotelittir; bu patern salt ilaç toksisitesinden daha özgüldür.",
+            "Rekürren immün kompleks glomerülonefriti": "Rekürren immün kompleks glomerülonefritinde glomerüler hipersellülarite, immün kompleks birikimi ve IF/EM bulguları ön planda olur. Bu olguda glomerül merkezli granüler immün birikim değil, interstisyel-tübüler ve vasküler T hücre ağırlıklı inflamasyon baskındır."
+          },
+          "managementSteps": [],
+          "management": [],
+          "learningOutcome": "Tubulit, interstisyel lenfositik infiltrasyon ve endotelitin T hücre aracılı akut hücresel rejeksiyonla ilişkisini kavrayabilme.",
+          "coreKnowledge": "Akut hücresel rejeksiyon T lenfositlerin allograft tübül epiteli ve damar endoteline yöneldiği, biyopside interstisyel inflamasyon, tubulit ve endotelit ile tanınan erken graft disfonksiyonu nedenidir."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Akut hücresel rejeksiyon T lenfositlerin allograft tübül epiteli ve damar endoteline yöneldiği, biyopside interstisyel inflamasyon, tubulit ve endotelit ile tanınan erken graft disfonksiyonu nedenidir.",
+      "examPearl": "Transplant böbrekte tubulit + endotelit + interstisyel lenfositik infiltrasyon, akut hücresel rejeksiyon için yüksek getirili biyopsi paternidir.",
+      "whyCorrect": "Bu seçenek en uygundur; akut hücresel rejeksiyon T lenfosit aracılı graft hasarıdır ve böbrek biyopsisinde interstisyel mononükleer infiltrasyon, tubulit ve endotelyal inflamasyonla izlenir. Hastada nakilden sonra gecikmeli kreatinin yükselmesi, ilaç uyumsuzluğu öyküsü ve C4d-negatif lenfosit ağırlıklı biyopsi paterni bu süreci destekler.",
+      "optionComparison": {
+        "Hiperakut antikor aracılı rejeksiyon": "Hiperakut rejeksiyon dakikalar-saatler içinde önceden oluşmuş anti-donör antikorlarla gelişir; trombotik damar oklüzyonu, yaygın nekroz ve graftın hemen işlevsizleşmesi beklenir. Bu hastada graft başlangıçta çalışmış, kreatinin günler içinde yükselmiş ve biyopside baskın bulgu lenfositik tubulit/endotelittir.",
+        "Akut hücresel rejeksiyon": "Bu seçenek en uygundur; akut hücresel rejeksiyon T lenfosit aracılı graft hasarıdır ve böbrek biyopsisinde interstisyel mononükleer infiltrasyon, tubulit ve endotelyal inflamasyonla izlenir. Hastada nakilden sonra gecikmeli kreatinin yükselmesi, ilaç uyumsuzluğu öyküsü ve C4d-negatif lenfosit ağırlıklı biyopsi paterni bu süreci destekler.",
+        "Kronik allograft vaskülopatisi": "Kronik allograft vaskülopatisi aylar-yıllar içinde ilerleyen intimal fibroproliferasyon, damar daralması, interstisyel fibrozis ve tübüler atrofi ile beklenir. Bu vakada erken dönemde ani kreatinin yükselmesi ve aktif tubulit-endotelit bulguları kronik sklerozan süreçten çok akut hücresel inflamasyonu gösterir.",
+        "İlaç toksisitesine bağlı akut tübüler hasar": "Kalsinörin inhibitörü toksisitesi kreatinin yükselmesi yapabilir; arterioler hiyalinozis, izometrik vakuolizasyon veya akut tübüler hasar paternleriyle değerlendirilebilir. Ancak burada biyopsinin ana bulgusu tübül epitelini hedefleyen lenfositik infiltrasyon ve endotelittir; bu patern salt ilaç toksisitesinden daha özgüldür.",
+        "Rekürren immün kompleks glomerülonefriti": "Rekürren immün kompleks glomerülonefritinde glomerüler hipersellülarite, immün kompleks birikimi ve IF/EM bulguları ön planda olur. Bu olguda glomerül merkezli granüler immün birikim değil, interstisyel-tübüler ve vasküler T hücre ağırlıklı inflamasyon baskındır."
+      },
+      "evidenceChain": [
+        {
+          "text": "Nakil sonrası ilk günlerde graftın çalışıp daha sonra kreatininin yükselmesi → hiperakut dakikalar-saatler tablosundan uzaklaştırır.",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "text": "İmmünsüpresif doz atlama öyküsü → T hücre aracılı alloimmün yanıt için klinik zemin oluşturur.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "İnterstisyel mononükleer infiltrasyon ve tubulit → graft tübüllerini hedefleyen hücresel immün hasarı destekler.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "C4d negatifliği ve yaygın kortikal nekroz olmaması → baskın antikor aracılı/hiperakut damar hasarını zayıflatır.",
+          "weight": "medium",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Hiperakut antikor aracılı rejeksiyon": "Hiperakut rejeksiyon dakikalar-saatler içinde önceden oluşmuş anti-donör antikorlarla gelişir; trombotik damar oklüzyonu, yaygın nekroz ve graftın hemen işlevsizleşmesi beklenir. Bu hastada graft başlangıçta çalışmış, kreatinin günler içinde yükselmiş ve biyopside baskın bulgu lenfositik tubulit/endotelittir.",
+        "Kronik allograft vaskülopatisi": "Kronik allograft vaskülopatisi aylar-yıllar içinde ilerleyen intimal fibroproliferasyon, damar daralması, interstisyel fibrozis ve tübüler atrofi ile beklenir. Bu vakada erken dönemde ani kreatinin yükselmesi ve aktif tubulit-endotelit bulguları kronik sklerozan süreçten çok akut hücresel inflamasyonu gösterir.",
+        "İlaç toksisitesine bağlı akut tübüler hasar": "Kalsinörin inhibitörü toksisitesi kreatinin yükselmesi yapabilir; arterioler hiyalinozis, izometrik vakuolizasyon veya akut tübüler hasar paternleriyle değerlendirilebilir. Ancak burada biyopsinin ana bulgusu tübül epitelini hedefleyen lenfositik infiltrasyon ve endotelittir; bu patern salt ilaç toksisitesinden daha özgüldür.",
+        "Rekürren immün kompleks glomerülonefriti": "Rekürren immün kompleks glomerülonefritinde glomerüler hipersellülarite, immün kompleks birikimi ve IF/EM bulguları ön planda olur. Bu olguda glomerül merkezli granüler immün birikim değil, interstisyel-tübüler ve vasküler T hücre ağırlıklı inflamasyon baskındır."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v265-medical-pathology-five-render-safe",
+        "generator": "manual-editorial-medical-pathology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Transplant böbrek",
+        "Tubulit",
+        "Endotelit",
+        "C4d negatif",
+        "Akut hücresel rejeksiyon"
+      ],
+      "images": []
+    },
+  {
+      "id": "v265-new-519-pigmente-deri-lezyonunda-biyopsi-paterni",
+      "branchId": "medical-pathology",
+      "caseType": "standard",
+      "relatedBranch": "Tıbbi Patoloji",
+      "title": "Pigmente deri lezyonunda biyopsi paterni",
+      "difficulty": "Orta",
+      "difficultyTag": "Orta",
+      "clinicalFocus": "Atipik pigmente deri lezyonunda makroskopi, mikroskopi ve IHC panelini birlikte yorumlayarak tümör tipini ayırt etme.",
+      "learningTarget": "Pagetoid yayılım, dermal invazyon ve melanositik marker pozitifliğinin malign melanositik neoplazi lehine olduğunu kavrayabilme.",
+      "demographics": "56 yaşında erkek hasta",
+      "setting": "Dermatoloji polikliniği",
+      "chiefComplaint": "Hasta, sırtında son aylarda büyüyen ve rengi koyulaşan ben nedeniyle dermatolojiye başvuruyor.",
+      "stem": "Hasta lezyonu yıllardır küçük bir kahverengi ben olarak bildiğini, son altı ayda kenarlarının düzensizleştiğini ve renginin koyulaştığını fark ettiğini anlatır. Kaşıntı ara sıra vardır; belirgin kanama veya travma öyküsü yoktur. Gençlik döneminde sık güneş yanığı geçirdiğini ve açık tenli olduğunu belirtir. Ailede bilinen deri kanseri öyküsü yoktur.",
+      "patientIntro": {
+        "profile": "56 yaşında erkek hasta, değişim gösteren pigmente deri lezyonu nedeniyle değerlendiriliyor.",
+        "presentation": "Sırtta asimetrik, düzensiz sınırlı ve çok renkli lezyon vardır.",
+        "historySummary": "Hasta lezyonu yıllardır küçük bir kahverengi ben olarak bildiğini, son altı ayda kenarlarının düzensizleştiğini ve renginin koyulaştığını fark ettiğini anlatır. Kaşıntı ara sıra vardır; belirgin kanama veya travma öyküsü yoktur. Gençlik döneminde sık güneş yanığı geçirdiğini ve açık tenli olduğunu belirtir. Ailede bilinen deri kanseri öyküsü yoktur."
+      },
+      "vitals": {
+        "TA": "128/78 mmHg",
+        "Nabız": "76/dk",
+        "Solunum": "16/dk",
+        "SpO₂": "98%, oda havasında",
+        "Ateş": "36.5 °C",
+        "Şok indeksi": "0.59"
+      },
+      "exam": [
+        "Sırt orta hatta düzensiz sınırlı pigmentli lezyon izlenir.",
+        "Bölgesel lenf nodlarında belirgin büyüme palpe edilmez.",
+        "Lezyon çevresinde aktif enfeksiyon veya yaygın dermatit bulgusu yoktur."
+      ],
+      "investigations": [
+        {
+          "id": "v265-new-519-pigmente-deri-lezyonunda-biyopsi-paterni-dermatoskopi",
+          "label": "Dermatoskopik değerlendirme",
+          "title": "Dermatoskopik değerlendirme",
+          "orderLabel": "Dermatoskopik değerlendirme",
+          "type": "clinical",
+          "priority": "essential",
+          "subtype": "Deri lezyonu değerlendirmesi",
+          "category": "clinicalAssessment",
+          "testTypeCategory": "clinicalAssessment",
+          "summary": "Asimetri, düzensiz pigment ağı ve çok renkli yapı biyopsi gerektiren atipik pigmente lezyon bağlamı oluşturur.",
+          "clinicalMeaning": "Asimetri, düzensiz pigment ağı ve çok renkli yapı biyopsi gerektiren atipik pigmente lezyon bağlamı oluşturur.",
+          "result": {
+            "title": "Dermatoskopik değerlendirme",
+            "summary": "Asimetri, düzensiz pigment ağı ve çok renkli yapı biyopsi gerektiren atipik pigmente lezyon bağlamı oluşturur.",
+            "interpretation": "Asimetri, düzensiz pigment ağı ve çok renkli yapı biyopsi gerektiren atipik pigmente lezyon bağlamı oluşturur.",
+            "values": [
+              {
+                "parameter": "Lezyon görünümü",
+                "value": "Sırt orta hatta 1.1 cm çaplı, asimetrik, düzensiz sınırlı, siyah-kahverengi ve yer yer kırmızı alanlar içeren makülonodüler lezyon.",
+                "note": "Atipik pigmente lezyon"
+              },
+              {
+                "parameter": "Dermoskopi",
+                "value": "Düzensiz pigment ağı, mavi-beyaz yapı ve odaksal atipik damar paternleri izlenir.",
+                "note": "Eksizyon endikasyonu"
+              }
+            ],
+            "rows": [
+              {
+                "parameter": "Lezyon görünümü",
+                "value": "Sırt orta hatta 1.1 cm çaplı, asimetrik, düzensiz sınırlı, siyah-kahverengi ve yer yer kırmızı alanlar içeren makülonodüler lezyon.",
+                "note": "Atipik pigmente lezyon"
+              },
+              {
+                "parameter": "Dermoskopi",
+                "value": "Düzensiz pigment ağı, mavi-beyaz yapı ve odaksal atipik damar paternleri izlenir.",
+                "note": "Eksizyon endikasyonu"
+              }
+            ]
+          }
+        },
+        {
+          "id": "v265-new-519-pigmente-deri-lezyonunda-biyopsi-paterni-eksizyon",
+          "label": "Eksizyon materyali makroskopisi",
+          "title": "Eksizyon materyali makroskopisi",
+          "orderLabel": "Eksizyon materyali makroskopisi",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "Makroskopi",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "summary": "Eksizyon materyalindeki düzensiz pigmentli makülonodüler görünüm, mikroskobik ve IHC korelasyon için hedef lezyonu tanımlar.",
+          "clinicalMeaning": "Eksizyon materyalindeki düzensiz pigmentli makülonodüler görünüm, mikroskobik ve IHC korelasyon için hedef lezyonu tanımlar.",
+          "result": {
+            "title": "Eksizyon materyali makroskopisi",
+            "summary": "Eksizyon materyalindeki düzensiz pigmentli makülonodüler görünüm, mikroskobik ve IHC korelasyon için hedef lezyonu tanımlar.",
+            "interpretation": "Eksizyon materyalindeki düzensiz pigmentli makülonodüler görünüm, mikroskobik ve IHC korelasyon için hedef lezyonu tanımlar.",
+            "values": [
+              {
+                "parameter": "Örnek tipi",
+                "value": "Eliptik deri eksizyonu; ortasında 1.1 cm düzensiz sınırlı koyu kahverengi-siyah makülonodüler odak.",
+                "note": "Pigmente lezyon"
+              },
+              {
+                "parameter": "Cerrahi sınırlar",
+                "value": "Lezyon makroskopik olarak en yakın yan sınıra 4 mm uzaklıktadır.",
+                "note": "Rezeksiyon değerlendirmesi"
+              }
+            ],
+            "rows": [
+              {
+                "parameter": "Örnek tipi",
+                "value": "Eliptik deri eksizyonu; ortasında 1.1 cm düzensiz sınırlı koyu kahverengi-siyah makülonodüler odak.",
+                "note": "Pigmente lezyon"
+              },
+              {
+                "parameter": "Cerrahi sınırlar",
+                "value": "Lezyon makroskopik olarak en yakın yan sınıra 4 mm uzaklıktadır.",
+                "note": "Rezeksiyon değerlendirmesi"
+              }
+            ]
+          }
+        },
+        {
+          "id": "v265-new-519-pigmente-deri-lezyonunda-biyopsi-paterni-histoloji-ihc",
+          "label": "Deri eksizyonu histopatolojisi ve IHC",
+          "title": "Deri eksizyonu histopatolojisi ve IHC",
+          "orderLabel": "Deri eksizyonu histopatolojisi ve IHC",
+          "type": "pathology",
+          "priority": "essential",
+          "subtype": "Mikroskopi ve immünohistokimya",
+          "category": "pathology",
+          "testTypeCategory": "pathology",
+          "summary": "Atipik pigmentli hücrelerin epidermal ve dermal dağılımı ile melanositik marker pozitifliği, epitel veya nöroendokrin deri tümörlerinden ayrım sağlar.",
+          "clinicalMeaning": "Atipik pigmentli hücrelerin epidermal ve dermal dağılımı ile melanositik marker pozitifliği, epitel veya nöroendokrin deri tümörlerinden ayrım sağlar.",
+          "result": {
+            "title": "Deri eksizyonu histopatolojisi ve IHC",
+            "summary": "Atipik pigmentli hücrelerin epidermal ve dermal dağılımı ile melanositik marker pozitifliği, epitel veya nöroendokrin deri tümörlerinden ayrım sağlar.",
+            "interpretation": "Atipik pigmentli hücrelerin epidermal ve dermal dağılımı ile melanositik marker pozitifliği, epitel veya nöroendokrin deri tümörlerinden ayrım sağlar.",
+            "values": [
+              {
+                "parameter": "Mikroskopi",
+                "value": "Epidermal-dermal bileşkede düzensiz yuvalar yapan, epidermis üst tabakalarına tek tek yükselen ve dermise geçen atipik pigmentli hücreler izlenir; nükleol belirginliği ve mitotik figürler mevcuttur.",
+                "note": "Junctional yayılım ve dermal invazyon"
+              },
+              {
+                "parameter": "Breslow kalınlığı",
+                "value": "1.2 mm; ülserasyon izlenmez.",
+                "note": "Evreleme için ölçüm"
+              },
+              {
+                "parameter": "IHC",
+                "value": "Tümör hücrelerinde SOX10 ve S100 yaygın nükleer/sitoplazmik pozitif; Melan-A odaksal kuvvetli pozitif. CK20 paranükleer dot paterni ve p40 negatif.",
+                "note": "Melanositik diferansiasyon"
+              }
+            ],
+            "rows": [
+              {
+                "parameter": "Mikroskopi",
+                "value": "Epidermal-dermal bileşkede düzensiz yuvalar yapan, epidermis üst tabakalarına tek tek yükselen ve dermise geçen atipik pigmentli hücreler izlenir; nükleol belirginliği ve mitotik figürler mevcuttur.",
+                "note": "Junctional yayılım ve dermal invazyon"
+              },
+              {
+                "parameter": "Breslow kalınlığı",
+                "value": "1.2 mm; ülserasyon izlenmez.",
+                "note": "Evreleme için ölçüm"
+              },
+              {
+                "parameter": "IHC",
+                "value": "Tümör hücrelerinde SOX10 ve S100 yaygın nükleer/sitoplazmik pozitif; Melan-A odaksal kuvvetli pozitif. CK20 paranükleer dot paterni ve p40 negatif.",
+                "note": "Melanositik diferansiasyon"
+              }
+            ]
+          }
+        }
+      ],
+      "useSyntheticInvestigationBank": true,
+      "managementSequence": {
+        "enabled": false
+      },
+      "hideExamSignal": true,
+      "question": "Bu histopatolojik ve IHC paternini en iyi açıklayan tümör tipi aşağıdakilerden hangisidir?",
+      "questionType": "tumor-diagnosis",
+      "answerTarget": "Tümör tipi",
+      "diagnosis": {
+        "correct": "Malign melanom",
+        "options": [
+          "Bazal hücreli karsinom",
+          "Kutanöz skuamöz hücreli karsinom",
+          "Merkel hücreli karsinom",
+          "Malign melanom",
+          "Dermatofibrosarkoma protuberans"
+        ],
+        "question": "Bu histopatolojik ve IHC paternini en iyi açıklayan tümör tipi aşağıdakilerden hangisidir?",
+        "explanation": "Asimetrik değişen pigmente deri lezyonunda atipik hücrelerin epidermal-dermal bileşkede yuvalanması, pagetoid yayılım göstermesi ve dermise invaze olması melanositik maligniteyi düşündürür. SOX10/S100 ve Melan-A pozitifliği, p40 ve CK20 negatifliği skuamöz, bazal hücreli ve nöroendokrin deri tümörlerinden ayrımı güçlendirir.",
+        "pearls": [
+          {
+            "label": "TUS notu",
+            "text": "Pagetoid yayılım + dermal invazyon + SOX10/S100 pozitifliği, pigmentli deri lezyonunda melanom lehine güçlü kombinasyondur."
+          }
+        ],
+        "optionFeedback": {
+          "Bazal hücreli karsinom": {
+            "explanation": "Bazal hücreli karsinom çoğunlukla güneş gören bölgede inci kenarlı papül/ülser ve mikroskopide periferik palizadlanma gösteren bazaloid hücre adalarıyla tanınır. Bu olguda epidermal-dermal bileşkede atipik melanositik proliferasyon, pagetoid yayılım ve SOX10/S100-Melan-A pozitifliği bazaloid epitel tümöründen farklıdır."
+          },
+          "Kutanöz skuamöz hücreli karsinom": {
+            "explanation": "Kutanöz skuamöz hücreli karsinom keratinizasyon, intersellüler köprüler ve dermise invazyon gösteren atipik skuamöz hücrelerle beklenir. Buradaki pigmente asimetrik lezyon, melanositik marker pozitifliği ve pagetoid hücre dağılımı skuamöz diferansiasyondan çok melanositik maligniteyi destekler."
+          },
+          "Merkel hücreli karsinom": {
+            "explanation": "Merkel hücreli karsinom yaşlı hastada hızlı büyüyen dermal nöroendokrin tümördür; küçük yuvarlak mavi hücreler, nöroendokrin marker pozitifliği ve tipik CK20 paranükleer dot paterniyle düşünülür. Bu vakada nöroendokrin marker değil melanositik marker paneli ve melanin pigmenti ön plandadır."
+          },
+          "Malign melanom": {
+            "explanation": "Bu seçenek klinik ve morfolojik paterni en iyi karşılar. Asimetrik, düzensiz sınırlı pigmentli lezyonda atipik melanositlerin epidermis boyunca pagetoid yayılımı ve dermise invazyonu ile SOX10/S100 ve Melan-A pozitifliği malign melanom lehinedir."
+          },
+          "Dermatofibrosarkoma protuberans": {
+            "explanation": "Dermatofibrosarkoma protuberans dermiste storiform iğsi hücre proliferasyonu ve CD34 pozitifliğiyle gelişen yavaş büyüyen plak/nodül şeklinde görülür. Junctional atipik melanositler, pagetoid yayılım ve melanositik marker pozitifliği bu fibrohistiokitik tümörle uyumlu değildir."
+          }
+        },
+        "answerFeedback": {
+          "summary": "Asimetrik değişen pigmente deri lezyonunda atipik hücrelerin epidermal-dermal bileşkede yuvalanması, pagetoid yayılım göstermesi ve dermise invaze olması melanositik maligniteyi düşündürür. SOX10/S100 ve Melan-A pozitifliği, p40 ve CK20 negatifliği skuamöz, bazal hücreli ve nöroendokrin deri tümörlerinden ayrımı güçlendirir.",
+          "whyCorrect": "Bu seçenek klinik ve morfolojik paterni en iyi karşılar. Asimetrik, düzensiz sınırlı pigmentli lezyonda atipik melanositlerin epidermis boyunca pagetoid yayılımı ve dermise invazyonu ile SOX10/S100 ve Melan-A pozitifliği malign melanom lehinedir.",
+          "rationale": "Asimetrik değişen pigmente deri lezyonunda atipik hücrelerin epidermal-dermal bileşkede yuvalanması, pagetoid yayılım göstermesi ve dermise invaze olması melanositik maligniteyi düşündürür. SOX10/S100 ve Melan-A pozitifliği, p40 ve CK20 negatifliği skuamöz, bazal hücreli ve nöroendokrin deri tümörlerinden ayrımı güçlendirir.",
+          "correctOptionFeedback": "Bu seçenek klinik ve morfolojik paterni en iyi karşılar. Asimetrik, düzensiz sınırlı pigmentli lezyonda atipik melanositlerin epidermis boyunca pagetoid yayılımı ve dermise invazyonu ile SOX10/S100 ve Melan-A pozitifliği malign melanom lehinedir.",
+          "keyClues": [
+            "Lezyonun son aylarda büyümesi ve çok renkli asimetrik yapı kazanması → malign pigmentli lezyon olasılığını artırır.",
+            "Junctional düzensiz yuvalanma ve pagetoid epidermal yayılım → melanositik proliferasyonun ayırt edici dağılımını gösterir.",
+            "Dermise invazyon ve mitotik figürler → benign nevüsten ayrılan malign davranış göstergesidir.",
+            "SOX10/S100 ve Melan-A pozitifliği, p40 ve CK20 negatifliği → epitel/nöroendokrin tümörlerden ayrımı destekler."
+          ],
+          "evidenceChain": [
+            {
+              "text": "Lezyonun son aylarda büyümesi ve çok renkli asimetrik yapı kazanması → malign pigmentli lezyon olasılığını artırır.",
+              "weight": "medium",
+              "source": "case"
+            },
+            {
+              "text": "Junctional düzensiz yuvalanma ve pagetoid epidermal yayılım → melanositik proliferasyonun ayırt edici dağılımını gösterir.",
+              "weight": "high",
+              "source": "case"
+            },
+            {
+              "text": "Dermise invazyon ve mitotik figürler → benign nevüsten ayrılan malign davranış göstergesidir.",
+              "weight": "high",
+              "source": "case"
+            },
+            {
+              "text": "SOX10/S100 ve Melan-A pozitifliği, p40 ve CK20 negatifliği → epitel/nöroendokrin tümörlerden ayrımı destekler.",
+              "weight": "high",
+              "source": "case"
+            }
+          ],
+          "examPearl": "Pagetoid yayılım + dermal invazyon + SOX10/S100 pozitifliği, pigmentli deri lezyonunda melanom lehine güçlü kombinasyondur.",
+          "pearls": [
+            {
+              "label": "TUS notu",
+              "text": "Pagetoid yayılım + dermal invazyon + SOX10/S100 pozitifliği, pigmentli deri lezyonunda melanom lehine güçlü kombinasyondur."
+            }
+          ],
+          "clinicalPearls": [
+            {
+              "label": "TUS notu",
+              "text": "Pagetoid yayılım + dermal invazyon + SOX10/S100 pozitifliği, pigmentli deri lezyonunda melanom lehine güçlü kombinasyondur."
+            }
+          ],
+          "optionComparison": {
+            "Bazal hücreli karsinom": "Bazal hücreli karsinom çoğunlukla güneş gören bölgede inci kenarlı papül/ülser ve mikroskopide periferik palizadlanma gösteren bazaloid hücre adalarıyla tanınır. Bu olguda epidermal-dermal bileşkede atipik melanositik proliferasyon, pagetoid yayılım ve SOX10/S100-Melan-A pozitifliği bazaloid epitel tümöründen farklıdır.",
+            "Kutanöz skuamöz hücreli karsinom": "Kutanöz skuamöz hücreli karsinom keratinizasyon, intersellüler köprüler ve dermise invazyon gösteren atipik skuamöz hücrelerle beklenir. Buradaki pigmente asimetrik lezyon, melanositik marker pozitifliği ve pagetoid hücre dağılımı skuamöz diferansiasyondan çok melanositik maligniteyi destekler.",
+            "Merkel hücreli karsinom": "Merkel hücreli karsinom yaşlı hastada hızlı büyüyen dermal nöroendokrin tümördür; küçük yuvarlak mavi hücreler, nöroendokrin marker pozitifliği ve tipik CK20 paranükleer dot paterniyle düşünülür. Bu vakada nöroendokrin marker değil melanositik marker paneli ve melanin pigmenti ön plandadır.",
+            "Malign melanom": "Bu seçenek klinik ve morfolojik paterni en iyi karşılar. Asimetrik, düzensiz sınırlı pigmentli lezyonda atipik melanositlerin epidermis boyunca pagetoid yayılımı ve dermise invazyonu ile SOX10/S100 ve Melan-A pozitifliği malign melanom lehinedir.",
+            "Dermatofibrosarkoma protuberans": "Dermatofibrosarkoma protuberans dermiste storiform iğsi hücre proliferasyonu ve CD34 pozitifliğiyle gelişen yavaş büyüyen plak/nodül şeklinde görülür. Junctional atipik melanositler, pagetoid yayılım ve melanositik marker pozitifliği bu fibrohistiokitik tümörle uyumlu değildir."
+          },
+          "whyWrong": {
+            "Bazal hücreli karsinom": "Bazal hücreli karsinom çoğunlukla güneş gören bölgede inci kenarlı papül/ülser ve mikroskopide periferik palizadlanma gösteren bazaloid hücre adalarıyla tanınır. Bu olguda epidermal-dermal bileşkede atipik melanositik proliferasyon, pagetoid yayılım ve SOX10/S100-Melan-A pozitifliği bazaloid epitel tümöründen farklıdır.",
+            "Kutanöz skuamöz hücreli karsinom": "Kutanöz skuamöz hücreli karsinom keratinizasyon, intersellüler köprüler ve dermise invazyon gösteren atipik skuamöz hücrelerle beklenir. Buradaki pigmente asimetrik lezyon, melanositik marker pozitifliği ve pagetoid hücre dağılımı skuamöz diferansiasyondan çok melanositik maligniteyi destekler.",
+            "Merkel hücreli karsinom": "Merkel hücreli karsinom yaşlı hastada hızlı büyüyen dermal nöroendokrin tümördür; küçük yuvarlak mavi hücreler, nöroendokrin marker pozitifliği ve tipik CK20 paranükleer dot paterniyle düşünülür. Bu vakada nöroendokrin marker değil melanositik marker paneli ve melanin pigmenti ön plandadır.",
+            "Dermatofibrosarkoma protuberans": "Dermatofibrosarkoma protuberans dermiste storiform iğsi hücre proliferasyonu ve CD34 pozitifliğiyle gelişen yavaş büyüyen plak/nodül şeklinde görülür. Junctional atipik melanositler, pagetoid yayılım ve melanositik marker pozitifliği bu fibrohistiokitik tümörle uyumlu değildir."
+          },
+          "managementSteps": [],
+          "management": [],
+          "learningOutcome": "Pagetoid yayılım, dermal invazyon ve melanositik marker pozitifliğinin malign melanositik neoplazi lehine olduğunu kavrayabilme.",
+          "coreKnowledge": "Malign melanom, atipik melanositlerin epidermiste pagetoid yayılım ve dermiste invazyon gösterebildiği; SOX10, S100, Melan-A/HMB-45 gibi melanositik markerlarla desteklenen agresif deri tümörüdür."
+        }
+      },
+      "shuffleOptions": false,
+      "coreKnowledge": "Malign melanom, atipik melanositlerin epidermiste pagetoid yayılım ve dermiste invazyon gösterebildiği; SOX10, S100, Melan-A/HMB-45 gibi melanositik markerlarla desteklenen agresif deri tümörüdür.",
+      "examPearl": "Pagetoid yayılım + dermal invazyon + SOX10/S100 pozitifliği, pigmentli deri lezyonunda melanom lehine güçlü kombinasyondur.",
+      "whyCorrect": "Bu seçenek klinik ve morfolojik paterni en iyi karşılar. Asimetrik, düzensiz sınırlı pigmentli lezyonda atipik melanositlerin epidermis boyunca pagetoid yayılımı ve dermise invazyonu ile SOX10/S100 ve Melan-A pozitifliği malign melanom lehinedir.",
+      "optionComparison": {
+        "Bazal hücreli karsinom": "Bazal hücreli karsinom çoğunlukla güneş gören bölgede inci kenarlı papül/ülser ve mikroskopide periferik palizadlanma gösteren bazaloid hücre adalarıyla tanınır. Bu olguda epidermal-dermal bileşkede atipik melanositik proliferasyon, pagetoid yayılım ve SOX10/S100-Melan-A pozitifliği bazaloid epitel tümöründen farklıdır.",
+        "Kutanöz skuamöz hücreli karsinom": "Kutanöz skuamöz hücreli karsinom keratinizasyon, intersellüler köprüler ve dermise invazyon gösteren atipik skuamöz hücrelerle beklenir. Buradaki pigmente asimetrik lezyon, melanositik marker pozitifliği ve pagetoid hücre dağılımı skuamöz diferansiasyondan çok melanositik maligniteyi destekler.",
+        "Merkel hücreli karsinom": "Merkel hücreli karsinom yaşlı hastada hızlı büyüyen dermal nöroendokrin tümördür; küçük yuvarlak mavi hücreler, nöroendokrin marker pozitifliği ve tipik CK20 paranükleer dot paterniyle düşünülür. Bu vakada nöroendokrin marker değil melanositik marker paneli ve melanin pigmenti ön plandadır.",
+        "Malign melanom": "Bu seçenek klinik ve morfolojik paterni en iyi karşılar. Asimetrik, düzensiz sınırlı pigmentli lezyonda atipik melanositlerin epidermis boyunca pagetoid yayılımı ve dermise invazyonu ile SOX10/S100 ve Melan-A pozitifliği malign melanom lehinedir.",
+        "Dermatofibrosarkoma protuberans": "Dermatofibrosarkoma protuberans dermiste storiform iğsi hücre proliferasyonu ve CD34 pozitifliğiyle gelişen yavaş büyüyen plak/nodül şeklinde görülür. Junctional atipik melanositler, pagetoid yayılım ve melanositik marker pozitifliği bu fibrohistiokitik tümörle uyumlu değildir."
+      },
+      "evidenceChain": [
+        {
+          "text": "Lezyonun son aylarda büyümesi ve çok renkli asimetrik yapı kazanması → malign pigmentli lezyon olasılığını artırır.",
+          "weight": "medium",
+          "source": "case"
+        },
+        {
+          "text": "Junctional düzensiz yuvalanma ve pagetoid epidermal yayılım → melanositik proliferasyonun ayırt edici dağılımını gösterir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "Dermise invazyon ve mitotik figürler → benign nevüsten ayrılan malign davranış göstergesidir.",
+          "weight": "high",
+          "source": "case"
+        },
+        {
+          "text": "SOX10/S100 ve Melan-A pozitifliği, p40 ve CK20 negatifliği → epitel/nöroendokrin tümörlerden ayrımı destekler.",
+          "weight": "high",
+          "source": "case"
+        }
+      ],
+      "whyWrong": {
+        "Bazal hücreli karsinom": "Bazal hücreli karsinom çoğunlukla güneş gören bölgede inci kenarlı papül/ülser ve mikroskopide periferik palizadlanma gösteren bazaloid hücre adalarıyla tanınır. Bu olguda epidermal-dermal bileşkede atipik melanositik proliferasyon, pagetoid yayılım ve SOX10/S100-Melan-A pozitifliği bazaloid epitel tümöründen farklıdır.",
+        "Kutanöz skuamöz hücreli karsinom": "Kutanöz skuamöz hücreli karsinom keratinizasyon, intersellüler köprüler ve dermise invazyon gösteren atipik skuamöz hücrelerle beklenir. Buradaki pigmente asimetrik lezyon, melanositik marker pozitifliği ve pagetoid hücre dağılımı skuamöz diferansiasyondan çok melanositik maligniteyi destekler.",
+        "Merkel hücreli karsinom": "Merkel hücreli karsinom yaşlı hastada hızlı büyüyen dermal nöroendokrin tümördür; küçük yuvarlak mavi hücreler, nöroendokrin marker pozitifliği ve tipik CK20 paranükleer dot paterniyle düşünülür. Bu vakada nöroendokrin marker değil melanositik marker paneli ve melanin pigmenti ön plandadır.",
+        "Dermatofibrosarkoma protuberans": "Dermatofibrosarkoma protuberans dermiste storiform iğsi hücre proliferasyonu ve CD34 pozitifliğiyle gelişen yavaş büyüyen plak/nodül şeklinde görülür. Junctional atipik melanositler, pagetoid yayılım ve melanositik marker pozitifliği bu fibrohistiokitik tümörle uyumlu değildir."
+      },
+      "preserveInvestigationOrder": true,
+      "aiMeta": {
+        "generatedAt": "manual-v265-medical-pathology-five-render-safe",
+        "generator": "manual-editorial-medical-pathology-case-addition",
+        "schemaVersion": "clinical-standard-v396-compatible",
+        "provider": "manual-editorial",
+        "validationWarnings": []
+      },
+      "findings": [
+        "Pigmente lezyon",
+        "Pagetoid yayılım",
+        "Dermal invazyon",
+        "SOX10/S100 pozitifliği",
+        "Melan-A pozitifliği"
+      ],
+      "images": []
+    }
+];
