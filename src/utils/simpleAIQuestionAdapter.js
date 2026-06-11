@@ -109,12 +109,12 @@ function compactItems(items = []) {
       label = first;
       value = rest.join(':');
     } else if (item && typeof item === 'object') {
-      label = item.label || item.name || item.parameter || item.title || item.key || '';
-      value = item.value || item.result || item.text || item.finding || item.data || item.meaning || '';
+      label = item.label || item.name || item.parameter || item.title || '';
+      value = item.value || item.result || item.text || '';
     }
     label = standardizeTurkishMedicalText(label);
     value = standardizeTurkishMedicalText(value);
-    if (isEmptyLike(label) || isEmptyLike(value) || /\b(?:A feedback|B feedback|TUS ipucu\.?|öğrenme hedefi|hedeflenen ayırıcı|kısıtlama)\b/iu.test(`${label} ${value}`)) return;
+    if (isEmptyLike(label) || isEmptyLike(value)) return;
     const key = normalizeForCompare(`${label} ${value}`);
     if (seen.has(key)) return;
     seen.add(key);
@@ -123,20 +123,38 @@ function compactItems(items = []) {
   return out;
 }
 
+
+function compactDisplayItems(items = []) {
+  const seen = new Set();
+  const out = [];
+  asArray(items).forEach((item) => {
+    let text = '';
+    if (typeof item === 'string') {
+      text = standardizeTurkishMedicalText(item);
+    } else if (item && typeof item === 'object') {
+      const label = standardizeTurkishMedicalText(item.label || item.name || item.parameter || item.title || item.key || '');
+      const value = standardizeTurkishMedicalText(item.value || item.result || item.text || item.finding || item.data || '');
+      text = [label, value].filter(Boolean).join(': ');
+    }
+    text = ensureSentence(text);
+    if (isEmptyLike(text)) return;
+    const key = normalizeForCompare(text);
+    if (seen.has(key)) return;
+    seen.add(key);
+    out.push(text);
+  });
+  return out;
+}
+
 function normalizeOptions(rawOptions = []) {
-  const arr = Array.isArray(rawOptions)
-    ? rawOptions
-    : rawOptions && typeof rawOptions === 'object'
-      ? OPTION_IDS.map((id) => rawOptions[id] || rawOptions[id.toLowerCase()] || rawOptions[`option${id}`] || rawOptions[`secenek${id}`])
-      : [];
+  const arr = Array.isArray(rawOptions) ? rawOptions : [];
   return OPTION_IDS.map((id, index) => {
-    const source = arr.find((item) => typeof item === 'object' && String(item?.id || item?.harf || '').toUpperCase() === id) ?? arr[index];
-    let text = standardizeTurkishMedicalText(typeof source === 'string' ? source : source?.text || source?.label || source?.value || '');
-    text = text.replace(/^\s*[A-E]\s*[).:-]\s*/iu, '').trim();
+    const source = arr.find((item) => String(item?.id || '').toUpperCase() === id) ?? arr[index];
+    let text = standardizeTurkishMedicalText(typeof source === 'string' ? source : source?.text || source?.label || '');
+    text = text.replace(/^\s*[A-E]\s*\)\s*/iu, '').trim();
     return { id, text };
   }).filter((item) => item.text);
 }
-
 
 function getCorrectOption(options = [], correctAnswer = '') {
   const correctId = String(correctAnswer || '').trim().toUpperCase();
@@ -147,11 +165,7 @@ function getCorrectOption(options = [], correctAnswer = '') {
 function containsAnswerLeak(text = '', correct = '') {
   const value = normalizeForCompare(text);
   const answer = normalizeForCompare(correct);
-  if (!value || !answer || answer.length < 5) return false;
-  if (value.includes(answer)) return true;
-  const words = answer.split(/\s+/u).filter((word) => word.length >= 4);
-  if (words.length < 2) return false;
-  return words.filter((word) => value.includes(word)).length >= Math.ceil(words.length * 0.8);
+  return Boolean(value && answer && value.includes(answer));
 }
 
 function isManagementTarget(answerTarget = '') {
@@ -236,32 +250,15 @@ export function isTooSimilarToRecent(question = {}, recent = []) {
     const itemSignature = item.contentSignature || item.semanticFingerprint || item.signature || '';
     if (itemSignature && signature && itemSignature === signature) return true;
     if (correct && itemCorrect && correct === itemCorrect && optionSet && itemOptions && (optionSet === itemOptions || optionSet.includes(itemOptions) || itemOptions.includes(optionSet))) return true;
-    if (stem && itemStem && stem.length > 80 && itemStem.length > 80 && (stem.includes(itemStem.slice(0, 120)) || itemStem.includes(stem.slice(0, 120)))) return true;
+    if (stem && itemStem && (stem === itemStem || stem.includes(itemStem) || itemStem.includes(stem))) return true;
     return false;
   });
 }
 
 
-function looksLikeObjectiveSentence(sentence = '') {
-  const text = cleanText(sentence);
-  if (!text) return false;
-  if (/^(?:ek klinik verilerde|tetkik ve destekleyici bulgularda|laboratuvar|tetkiklerde|vital bulgu|serum|idrar|plazma|bt|mr|mri|usg|ekg|transvajinal|β-hcg|hcg)\b/iu.test(text)) return true;
-  const hits = [
-    /\b(?:serum|idrar|plazma|laktat|sodyum|osmolalite|trigliserid|troponin|hcg|β-hcg|bt|mr|mri|usg|ekg|doppler|kortizol|acth|renin|aldosteron)\b/iu,
-    /\b(?:mmol\/L|mEq\/L|mOsm\/kg|IU\/L|mg\/dL|ng\/mL|mmHg|%)\b/iu,
-    /[:：=]/u,
-  ].filter((pattern) => pattern.test(text)).length;
-  return hits >= 2;
-}
-
 function sanitizeNarrativeStem(stem = '', { demographics = '', setting = '', chiefComplaint = '', branch = '' } = {}) {
-  const sentences = cleanText(stem)
-    .split(/(?<=[.!?])\s+/u)
-    .map((item) => standardizeTurkishMedicalText(item))
-    .filter(Boolean)
-    .filter((item) => !looksLikeObjectiveSentence(item));
-  const story = sentences.join(' ').trim();
-  if (story && !/^(?:ek klinik verilerde|tetkik ve destekleyici bulgularda)/iu.test(story)) return ensureSentence(story);
+  const story = standardizeTurkishMedicalText(stem);
+  if (story) return ensureSentence(story);
   const dem = standardizeTurkishMedicalText(demographics || 'Hasta');
   const set = standardizeTurkishMedicalText(setting || 'klinik değerlendirmede');
   const cc = standardizeTurkishMedicalText(chiefComplaint || 'yakınmaları');
@@ -272,32 +269,21 @@ function sanitizeNarrativeStem(stem = '', { demographics = '', setting = '', chi
   return `${dem}, ${cc} nedeniyle ${lowerSetting} değerlendirilmektedir. ${context}`;
 }
 
-function isLowQualityFeedback(value = '') {
-  const text = cleanText(value);
-  return !text
-    || /\b(?:bu seçenek,? kökteki ana bulguları birlikte|ayırt ettirici açıklama üretilemedi|ayrıntılı açıklama eklenemedi)\b/iu.test(text)
-    || /^(?:doğru|yanlış|uygun değildir|uygun değil|çeldiricidir|akla gelebilir|kısmen doğru)[.!]?$/iu.test(text);
-}
-
 function rationalesObject(raw = {}, explanation = '', correctId = 'A') {
-  const normalizeFeedbackValue = (value = '') => {
-    const cleaned = ensureSentence(standardizeTurkishMedicalText(value));
-    if (isLowQualityFeedback(cleaned)) return '';
-    return cleaned;
-  };
+  const normalizeFeedbackValue = (value = '') => ensureSentence(standardizeTurkishMedicalText(value));
   if (Array.isArray(raw)) {
     return OPTION_IDS.reduce((acc, id, index) => {
-      acc[id] = normalizeFeedbackValue(raw[index] || '');
+      const value = raw[index] || (id === correctId ? explanation : '');
+      acc[id] = normalizeFeedbackValue(value);
       return acc;
     }, {});
   }
   return OPTION_IDS.reduce((acc, id) => {
-    const value = raw?.[id] || raw?.[id.toLowerCase()] || raw?.[`option${id}`] || raw?.[`secenek${id}`] || '';
+    const value = raw?.[id] || raw?.[id.toLowerCase()] || raw?.[`option${id}`] || (id === correctId ? explanation : '');
     acc[id] = normalizeFeedbackValue(value);
     return acc;
   }, {});
 }
-
 
 export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   if (payload?.diagnosis?.correct && Array.isArray(payload?.diagnosis?.options)) {
@@ -315,15 +301,14 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   const correctText = cleanText(correctOption?.text || payload.correctAnswerText || '');
   const compactVitals = compactItems(payload.compactVitals || payload.cv || payload.vitals || []);
   const compactObjectiveData = compactItems(payload.compactObjectiveData || payload.co || payload.objectiveData || []);
-  const physicalExamItems = compactItems(payload.physicalExam || payload.exam || payload.muayene || []);
-  const physicalExamText = physicalExamItems.map((item) => `${item.label}: ${item.value}`);
+  const physicalExam = compactDisplayItems(payload.physicalExam || payload.exam || payload.muayene || []);
   const branch = standardizeTurkishMedicalText(payload.relatedBranch || payload.branch || payload.b || meta.branchFilter || 'TUS');
   const normalizedBranch = BRANCH_ALIASES.get(normalizeForCompare(branch)) || branch;
   const demographics = standardizeTurkishMedicalText(payload.demographics || payload.dem || '');
   const setting = standardizeTurkishMedicalText(payload.setting || payload.set || '');
   const chiefComplaint = standardizeTurkishMedicalText(payload.chiefComplaint || payload.cc || '');
   const stem = sanitizeNarrativeStem(payload.clinicalStem || payload.stem || payload.s || '', { demographics, setting, chiefComplaint, branch: normalizedBranch });
-  const evidenceChain = buildEvidence(payload.evidenceBasedReasoning || payload.evidenceChain || payload.evidence || payload.k)
+  const evidenceChain = buildEvidence(payload.evidenceChain || payload.evidence || payload.k)
     .filter((item) => !containsAnswerLeak(item, correctText))
 
   const answerTarget = cleanText(payload.answerTarget || payload.at || payload.questionIntent || payload.intent || '');
@@ -332,7 +317,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
     : [];
   const examPearl = ensureSentence(standardizeTurkishMedicalText(payload.examPearl || payload.teachingPoint || payload.pearl || payload.p || ''));
   const explanation = ensureSentence(standardizeTurkishMedicalText(payload.explanation || payload.whyCorrect || payload.e || ''));
-  const optionRationales = rationalesObject(payload.optionFeedback || payload.optionRationales || payload.wrongOptionFeedback || payload.rationales || payload.f || {}, explanation, correctOption?.id || 'A');
+  const optionRationales = rationalesObject(payload.optionRationales || payload.wrongOptionFeedback || payload.optionFeedback || payload.rationales || payload.f || {}, explanation, correctOption?.id || 'A');
 
   const question = {
     id: cleanText(payload.id) || `ai-spot-simple-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
@@ -351,18 +336,16 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
     chiefComplaint,
     stem,
     narrativeStem: stem,
-    clinicalStem: stem,
     stemMode: 'narrative',
     compactVitals,
     compactObjectiveData,
-    physicalExam: physicalExamItems,
     vitals: makeVitalsObject(compactVitals),
-    exam: physicalExamText,
+    exam: physicalExam,
     history: asArray(payload.history).map(standardizeTurkishMedicalText).filter(Boolean),
     investigations: compactObjectiveData,
     findings: {
       history: asArray(payload.history).map(standardizeTurkishMedicalText).filter(Boolean),
-      exam: physicalExamText,
+      exam: physicalExam,
       vitals: makeVitalsObject(compactVitals),
       investigations: compactObjectiveData,
     },
@@ -387,10 +370,8 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
       pearls: [examPearl].filter(Boolean),
       answerFeedback: {
         whyCorrect: explanation,
-        correctOptionFeedback: ensureSentence(optionRationales?.[correctOption?.id] || ''),
+        correctOptionFeedback: ensureSentence(optionRationales?.[correctOption?.id] || explanation),
         optionRationales,
-        optionFeedback: optionRationales,
-        evidenceBasedReasoning: evidenceChain,
         evidenceChain: evidenceChain.length ? evidenceChain : [stem, chiefComplaint].filter(Boolean).map(ensureSentence),
         pearls: [examPearl].filter(Boolean),
         clinicalPearls: [examPearl].filter(Boolean),

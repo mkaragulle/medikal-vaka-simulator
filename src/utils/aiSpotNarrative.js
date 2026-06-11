@@ -121,7 +121,7 @@ function ensureQuestion(value = '') {
 function removeCorrectAnswer(text = '', correct = '') {
   const cleaned = asText(text);
   const correctText = asText(correct);
-  if (!cleaned || !correctText || correctText.length < 4) return cleaned;
+  if (!cleaned || !correctText) return cleaned;
   const escaped = correctText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   return cleaned.replace(new RegExp(escaped, 'giu'), 'etken');
 }
@@ -152,7 +152,7 @@ function splitSentences(value = '') {
 
 function addUniqueSentence(sentences, sentence, correct = '') {
   const clean = stripPreAnswerTeaching(ensureSentence(sentence), correct);
-  if (!clean || clean.length < 8) return sentences;
+  if (!clean) return sentences;
   const key = normalizeComparable(clean);
   const duplicate = sentences.some((item) => {
     const itemKey = normalizeComparable(item);
@@ -449,11 +449,10 @@ function supportItemAppearsInSentence(sentence = '', item = {}) {
     .filter(Boolean);
   const hasLabel = labelTokens.some((token) => haystack.includes(normalizeDataComparable(token)));
   if (!hasLabel) return false;
-  if (value.length <= 7 && /^(pozitif|negatif|düşük|dusuk|yüksek|yuksek|normal)$/u.test(value)) return true;
+  if (/^(pozitif|negatif|düşük|dusuk|yüksek|yuksek|normal)$/u.test(value)) return true;
   if (haystack.includes(value)) return true;
   if (numericToken && haystack.includes(normalizeDataComparable(numericToken))) return true;
-  const valueKeywords = value.split(' ').filter((token) => token.length >= 4).slice(0, 4);
-  return valueKeywords.length >= 2 && valueKeywords.every((token) => haystack.includes(token));
+  return false;
 }
 
 function sentenceLooksLikeRawSupportData(sentence = '', supportItems = []) {
@@ -724,30 +723,16 @@ export function buildAISpotQuestionPrompt(question = {}) {
 
 function limitNarrativeLength(sentences = [], questionPrompt = '') {
   const prompt = ensureQuestion(questionPrompt || 'Bu olguda en uygun seçenek aşağıdakilerden hangisidir?');
-  const selected = [];
-  let words = 0;
-  sentences.forEach((sentence) => {
-    const clean = ensureSentence(sentence);
-    if (!clean || isQuestionSentence(clean) || questionsLookSimilar(clean, prompt)) return;
-    const count = clean.split(/\s+/).filter(Boolean).length;
-    if (selected.length < 5 && words + count <= 185) {
-      selected.push(clean);
-      words += count;
-    }
-  });
-  return selected;
+  return sentences
+    .map((sentence) => ensureSentence(sentence))
+    .filter((clean) => clean && !isQuestionSentence(clean) && !questionsLookSimilar(clean, prompt));
 }
 
 function splitTusParagraphsFromSentences(sentences = []) {
   const bodySentences = sentences.filter((sentence) => sentence && !isQuestionSentence(sentence));
   if (!bodySentences.length) return ['Bu soru için klinik bağlam eksik üretildi; lütfen yeni bir TUS sorusu üretin.'];
   const body = bodySentences.join(' ').trim();
-  if (body.length < 760) return [body];
-
-  const midpoint = Math.ceil(bodySentences.length / 2);
-  const first = bodySentences.slice(0, midpoint).join(' ').trim();
-  const second = bodySentences.slice(midpoint).join(' ').trim();
-  return [first, second].filter(Boolean).slice(0, 2);
+  return [body];
 }
 
 export function buildSafeAISpotTitle(question = {}) {
@@ -759,11 +744,11 @@ export function buildSafeAISpotTitle(question = {}) {
   const comparableTitle = normalizeComparable(rawTitle);
   const type = String(question.questionType || '').toLocaleLowerCase('tr');
   const fallback = TITLE_FALLBACK_BY_TYPE[type] || TITLE_FALLBACK_BY_TYPE.spot;
-  if (!originalTitle || originalTitle.length < 6) return fallback;
+  if (!originalTitle) return fallback;
   if (comparableCorrect && comparableOriginalTitle.includes(comparableCorrect)) return fallback;
-  if (!rawTitle || rawTitle.length < 6) return fallback;
+  if (!rawTitle) return fallback;
   if (/tanisi|tanısı|tedavisi|yönetimi|yonetimi|ilk ilac|ilk ilaç|etkeni$/u.test(comparableTitle)) return fallback;
-  return rawTitle.length > 74 ? `${rawTitle.slice(0, 71).trim()}…` : rawTitle;
+  return rawTitle;
 }
 
 export function buildAISpotContextLine(question = {}) {
@@ -790,11 +775,11 @@ export function buildAISpotNarrativeStem(question = {}) {
     addUniqueSentence(baseSentences, sentence, correct);
   });
 
-  if (baseSentences.length < 2) {
+  if (!baseSentences.length) {
     const history = Array.isArray(question.history || question.findings?.history) ? (question.history || question.findings?.history) : [];
-    history.slice(0, 2).forEach((item) => addUniqueSentence(baseSentences, item, correct));
+    history.forEach((item) => addUniqueSentence(baseSentences, item, correct));
     const exam = Array.isArray(question.exam || question.findings?.exam) ? (question.exam || question.findings?.exam) : [];
-    exam.slice(0, 2).forEach((item) => addUniqueSentence(baseSentences, `Fizik muayenede ${item}`, correct));
+    exam.forEach((item) => addUniqueSentence(baseSentences, `Fizik muayenede ${item}`, correct));
   }
 
   const questionPrompt = stripPreAnswerTeaching(question.question || question.diagnosis?.question || '', correct)
@@ -819,10 +804,10 @@ export function applyAISpotDuplicateDataGate(question = {}) {
   );
   const next = {
     ...question,
-    compactVitals: mergeCompactDataItems(question.compactVitals || question.compactVitalData || [], vitals).slice(0, 5),
-    compactObjectiveData: mergeCompactDataItems(question.compactObjectiveData || question.compactObjective || [], objective).slice(0, 10),
+    compactVitals: mergeCompactDataItems(question.compactVitals || question.compactVitalData || [], vitals),
+    compactObjectiveData: mergeCompactDataItems(question.compactObjectiveData || question.compactObjective || [], objective),
   };
-  if (cleanedStem && cleanedStem.split(/\s+/).filter(Boolean).length >= 8) {
+  if (cleanedStem) {
     next.stem = cleanedStem;
     next.narrativeStem = cleanedStem;
     if (next.patientIntro) {
@@ -840,7 +825,6 @@ export function getAISpotPreviewDiagnostics(question = {}) {
   const text = paragraphs.join(' ');
   return {
     paragraphCount: paragraphs.length,
-    wordCount: text.split(/\s+/).filter(Boolean).length,
     supportGroupCount: getAISpotSupportDataGroups(question).length,
     supportItemCount: getAISpotSupportDataGroups(question).reduce((total, group) => total + group.items.length, 0),
     hasLegacyBoxLabels: /profil|başvuru|risk bağlamı|ayırt ettirici ipuçları|kısa klinik öykü özeti/iu.test(text),
