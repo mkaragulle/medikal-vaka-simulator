@@ -6,8 +6,8 @@ import {
 import { envFlag, envNumber, logAIUsage, resolveModelForScope } from '../server/lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-v442-source-checked-no-rigid-rules';
-const SCHEMA_VERSION = 'simple-ai-spot-v13-source-checked';
+const PROMPT_VERSION = 'klinikiq-v443-promptless-source-read';
+const SCHEMA_VERSION = 'simple-ai-spot-v14-promptless';
 const TASK_NAME = 'tusSpotQuestion';
 
 const ALLOWED_BRANCHES = [
@@ -50,91 +50,14 @@ function parseJsonBody(request) {
   });
 }
 
-function normalizeMedicalTurkish(value = '') {
-  return String(value ?? '')
-    .replace(/\bacil\s*[-‑]?\s*CoA\b/giu, 'açil-CoA')
-    .replace(/\bacil‑CoA\b/giu, 'açil-CoA')
-    .replace(/\baçil‑CoA\b/giu, 'açil-CoA')
-    .replace(/\bcreatinine\b/giu, 'kreatinin')
-    .replace(/\bhipokalseüri\b/giu, 'hipokalsiüri')
-    .replace(/\bdistal\s+tubulus(?:ta)?\b/giu, (m) => /ta$/iu.test(m) ? 'distal tübülde' : 'distal tübül')
-    .replace(/\bsupressed\s+renin\b/giu, 'baskılanmış renin')
-    .replace(/\bserum\s+Ca(?:2\+)?\s+normal\b/giu, 'serum kalsiyumu normal')
-    .replace(/\bHCO3-\s*32\s*mmol\/L\s*\.\s*\(/giu, 'HCO3- 32 mmol/L (')
-    .replace(/\bacylcarnitine\b/giu, 'açilkarnitin')
-    .replace(/\bdicarboksilik\b/giu, 'dikarboksilik')
-    .replace(/\basidüre\b/giu, 'asidüri')
-    .replace(/\btandem\s+mas\s+spektrometrisi\b/giu, 'tandem kütle spektrometrisi')
-    .replace(/\bfasting\b/giu, 'açlık')
-    .replace(/\blife[-\s]?threatening\b/giu, 'yaşamı tehdit eden')
-    .replace(/\bsole\s+bekleme\b/giu, 'tek başına bekleme')
-    .replace(/\bvaginal\b/giu, 'vajinal')
-    .replace(/\blacerasyon\b/giu, 'laserasyon')
-    .replace(/\bRetine\s+plasenta\b/giu, 'Retansiyone plasenta')
-    .replace(/\bretine\s+plasenta\b/giu, 'retansiyone plasenta')
-    .replace(/\bmidline\b/giu, 'orta hatta')
-    .replace(/\bGenelize\b/gu, 'Yaygın')
-    .replace(/\bgenelize\b/giu, 'yaygın')
-    .replace(/\bLoop\s+diüretik\b/g, 'Loop diüretik')
-    .replace(/\bmyometriyum\b/giu, 'miyometriyum')
-    .replace(/\bmyometrium\b/giu, 'miyometriyum')
-    .replace(/\btransvaginal\b/giu, 'transvajinal')
-    .replace(/\bmethotrexate\b/giu, 'metotreksat')
-    .replace(/\bgranulomatöz\b/giu, 'granülomatöz')
-    .replace(/\bpercentil(?:i)?\b/giu, 'persentil')
-    .replace(/\bpersistente\b/giu, 'persistan')
-    .replace(/\bİnhclusion\b/gu, 'Inclusion')
-    .replace(/\bİnclusion\b/gu, 'Inclusion')
-    .replace(/\binklüzyon\s+body\s+miyopatisi\b/giu, 'inklüzyon cisimcikli miyozit')
-    .replace(/\bPolimyozitis\b/giu, 'Polimiyozit')
-    .replace(/\bDermatomyozitis\b/giu, 'Dermatomiyozit')
-    .replace(/\bMyastenia\b/giu, 'Miyastenia')
-    .replace(/\bquadriceps\b/giu, 'kuadriseps')
-    .replace(/\bfluktüan\b/giu, 'dalgalanan')
-    .replace(/\bkranial\b/giu, 'kraniyal')
-    .replace(/\bsensoryal\b/giu, 'duyusal')
-    .replace(/\bthorax\b/giu, 'toraks')
-    .replace(/\borsal\s+intercostal\b/giu, 'dorsal interkostal')
-    .replace(/\bDorsal\s+intercostal\b/gu, 'Dorsal interkostal')
-    .replace(/\bFresh\s+frozen\s+plasma\b/giu, 'taze donmuş plazma')
-    .replace(/\bCT\s+angiografi\b/giu, 'BT anjiyografi')
-    .replace(/\bexploratif\b/giu, 'eksploratif')
-    .replace(/\bmesenterik\b/giu, 'mezenterik')
-    .replace(/\bproximal\b/giu, 'proksimal')
-    .replace(/\brekannalizasyon\b/giu, 'rekanalizasyon')
-    .replace(/\bvasopresör\b/giu, 'vazopressör')
-    .replace(/\bdiffuse\b/giu, 'yaygın')
-    .replace(/\bpürsüz yüksek INR\b/giu, 'belirgin yüksek INR')
-    .replace(/\byaşinde\b/giu, 'yaşında')
-    .replace(/\bpersistens\b/giu, 'persistan')
-    .replace(/\bdekolerasyon\b/giu, 'deselerasyon')
-    .replace(/\btocolizis\b/giu, 'tokoliz')
-    .replace(/\baraknoid yüz\b/giu, 'dismorfik yüz görünümü')
-    .replace(/\bİmmunoglobulin\b/gu, 'İmmünoglobulin')
-    .replace(/\bimmunoglobulin\b/giu, 'immünoglobulin')
-    .replace(/\beczema\b/giu, 'egzama')
-    .replace(/\brekürren\b/giu, 'tekrarlayan')
-    .replace(/\babsolute lymphocyte count\b/giu, 'mutlak lenfosit sayısı')
-    .replace(/\bplatelet count\b/giu, 'trombosit sayısı')
-    .replace(/\btrombozitoz\b/giu, 'trombositopeni');
-}
-
 function cleanText(value = '') {
-  return normalizeMedicalTurkish(value)
+  return String(value ?? '')
     .replace(/[“”]/g, '"')
     .replace(/[‘’]/g, "'")
     .replace(/\u00a0/g, ' ')
     .replace(/```(?:json)?|```/giu, ' ')
-    .replace(/\b(?:Doğru\s+cevap|Seçimin|Açıklama)\s*[:：-]?\s*/giu, ' ')
-    .replace(/\b[A-E]\s*(?:geri\s*bildirim|feedback|gerekçe)\s*[:：.-]?\s*/giu, ' ')
-    .replace(/^\s*[A-E]\s*\)\s*(?:doğru|yanlış)\s*[:：.-]?\s*/iu, '')
-    .replace(/^\s*(?:doğru|yanlış)\s*[:：.-]?\s*/iu, '')
-    .replace(/\b([A-E])\s*\)\s*\1\s*\)?\s*/giu, '$1) ')
-    .replace(/\b([A-E])\s*:\s*\(\s*(?:Doğru|Yanlış)\s*\)\s*/giu, '')
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
-    .replace(/\s+\.\s*\(/g, ' (')
-    .replace(/([,;:!?])(?=\S)/g, '$1 ')
     .trim();
 }
 
@@ -155,194 +78,19 @@ function chooseBranch(value = '') {
   return ALLOWED_BRANCHES.find((branch) => normalize(branch) === normalize(raw)) || raw;
 }
 
-function ensureSentence(value = '') {
-  const text = cleanText(value).replace(/[\s,;:]+$/u, '');
-  if (!text) return '';
-  return /[.!?]$/u.test(text) ? text : `${text}.`;
-}
-
-function ensureQuestion(value = '') {
-  const text = cleanText(value).replace(/[\s,;:.]+$/u, '');
-  if (!text) return 'Bu olguda en uygun seçenek hangisidir?';
-  return /\?$/u.test(text) ? text : `${text}?`;
-}
-
 function asArray(value) {
   if (!value) return [];
   return Array.isArray(value) ? value : [value];
 }
 
-function uniqueSentences(value = '') {
-  const seen = new Set();
-  return cleanText(value)
-    .split(/(?<=[.!?])\s+/u)
-    .map(ensureSentence)
-    .filter((sentence) => {
-      const key = normalize(sentence);
-      if (!key || seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    })
-    .join(' ')
-    .trim();
-}
-
-function splitSentences(value = '') {
-  return cleanText(value).split(/(?<=[.!?])\s+/u).map((s) => cleanText(s)).filter(Boolean);
-}
-
-function looksBrokenSentence(sentence = '') {
-  const text = cleanText(sentence);
-  if (!text) return true;
-  const words = text.split(/\s+/u);
-  const last = (words[words.length - 1] || '').replace(/[.!?]+$/u, '');
-  if (/\b(?:ve|veya|ile|için|olarak|fakat|ancak|çünkü|z)$/iu.test(last)) return true;
-  if (last.length <= 1) return true;
-  if (words.length < 3 && !/[.!?]$/u.test(text)) return true;
-  if (/[,:;]\s*$/u.test(text)) return true;
-  if (/\(\s*$|\[\s*$/u.test(text)) return true;
-  return false;
-}
-
-function cleanBrokenSentences(value = '') {
-  const sentences = splitSentences(value)
-    .map((sentence) => ensureSentence(sentence.replace(/[,:;\s]+$/u, '')))
-    .filter((sentence) => !looksBrokenSentence(sentence));
-  return uniqueSentences(sentences.join(' '));
-}
-
-function keyTerms(value = '') {
-  return [...new Set(contentTokens(value).filter((word) => word.length >= 5))];
-}
-
-function optionSelfSupport(feedback = '', optionText = '') {
-  const terms = keyTerms(optionText);
-  if (!terms.length) return 0;
-  const fb = normalize(feedback);
-  return terms.filter((term) => fb.includes(term)).length / terms.length;
-}
-
-function detectFeedbackDrift(feedback = '', currentOption = {}, allOptions = []) {
-  const own = optionSelfSupport(feedback, currentOption.text);
-  const other = allOptions
-    .filter((option) => option.id !== currentOption.id)
-    .map((option) => optionSelfSupport(feedback, option.text))
-    .sort((a, b) => b - a)[0] || 0;
-  return other >= 0.5 && other > own + 0.2;
-}
-
-function fallbackFeedback(id = '', correctId = '') {
-  return id === correctId
-    ? 'Bu seçenek, kökteki ayırt edici bulgularla en iyi uyumu gösterir.'
-    : 'Bu seçenek, kökteki ana bulguları birlikte açıklamaz.';
-}
-
-
-function cleanFeedback(value = '') {
-  return cleanText(value)
-    .replace(/^\s*[A-E]\s*\)?\s*(?:geri\s*bildirim|feedback|gerekçe)\s*[:：.-]?\s*/iu, '')
-    .replace(/^\s*[A-E]\s*\)\s*(?:doğru|yanlış)\s*[:：.-]?\s*/iu, '')
-    .replace(/^\s*(?:doğru|yanlış)\s*[:：.-]?\s*/iu, '')
-    .replace(/^\s*(?:seçimin|doğru\s+cevap|açıklama)\s*[:：.-]?\s*/iu, '')
-    .trim();
-}
-
-
-const COMMON_TR_WORDS = new Set('ve veya ile için olan olarak hasta hastada bu şu bir daha çok en ise ancak çünkü nedenle göre olguda seçenek doğru yanlış tanı tedavi test bulgu klinik saptanır değildir beklenir düşündürür destekler'.split(' '));
-
-function contentTokens(value = '') {
-  return normalize(value).split(/\s+/u).filter((word) => word.length >= 4 && !COMMON_TR_WORDS.has(word));
-}
-
-function isEvidenceSentence(sentence = '') {
-  return /\b(?:yüksek|düşük|artmış|azalmış|pozitif|negatif|saptan|izlen|görül|bulun|mevcut|yok|normal|patolojik|belirgin|değer|sonuç|laboratuvar|görüntüleme|BT|MR|USG|kan|idrar|serum|plazma|ferritin|laktat|kreatinin|lenfosit|trombosit|glukoz|keton|antikoru|biyopsi|Doppler|röntgen|grafi)\b/iu.test(sentence)
-    || /\d/.test(sentence);
-}
-
-function stemSupportRatio(sentence = '', visibleText = '') {
-  const visible = new Set(contentTokens(visibleText));
-  const tokens = [...new Set(contentTokens(sentence))];
-  if (!tokens.length) return 1;
-  const supported = tokens.filter((token) => visible.has(token)).length;
-  return supported / tokens.length;
-}
-
-function pruneUnsupportedEvidence(text = '', visibleText = '', fallback = '') {
-  const sentences = cleanText(text).split(/(?<=[.!?])\s+/u).map(cleanFeedback).filter(Boolean);
-  const kept = sentences.filter((sentence) => !isEvidenceSentence(sentence) || stemSupportRatio(sentence, visibleText) >= 0.25);
-  const result = uniqueSentences(kept.join(' '));
-  return result || fallback || uniqueSentences(text);
-}
-
-function normalizeOptions(raw = []) {
-  const arr = Array.isArray(raw)
-    ? raw
-    : raw && typeof raw === 'object'
-      ? OPTION_IDS.map((id) => raw[id] || raw[id.toLowerCase()] || raw[`option${id}`])
-      : [];
-  return OPTION_IDS.map((id, index) => {
-    const source = arr.find((item) => typeof item === 'object' && String(item?.id || '').toUpperCase() === id) ?? arr[index];
-    const rawText = typeof source === 'string' ? source : source?.text || source?.label || source?.value || '';
-    const text = cleanText(rawText).replace(/^\s*[A-E]\s*\)\s*/iu, '').trim();
-    return { id, text };
-  }).filter((option) => option.text);
-}
-
-function resolveCorrectId(payload = {}, options = []) {
-  const raw = String(payload.c || payload.correctAnswer || payload.correct || payload.answer || '').trim().toUpperCase();
-  if (OPTION_IDS.includes(raw)) return raw;
-  const wanted = normalize(payload.c || payload.correctAnswer || payload.correct || payload.correctAnswerText || payload.answer || '');
-  if (!wanted) return '';
-  const exact = options.find((option) => normalize(option.text) === wanted);
-  if (exact) return exact.id;
-  const loose = options.find((option) => wanted.length >= 5 && (normalize(option.text).includes(wanted) || wanted.includes(normalize(option.text))));
-  return loose?.id || '';
-}
-
-function feedbackObject(rawFeedback = [], correctId = 'A', explanation = '', options = [], visibleText = '') {
-  const arr = Array.isArray(rawFeedback)
-    ? rawFeedback
-    : OPTION_IDS.map((id) => rawFeedback?.[id] || rawFeedback?.[id.toLowerCase()] || rawFeedback?.[`option${id}`] || '');
-  return OPTION_IDS.reduce((acc, id, index) => {
-    const option = options.find((item) => item.id === id) || { id, text: '' };
-    const rawText = arr[index] || fallbackFeedback(id, correctId);
-    let text = cleanBrokenSentences(cleanFeedback(rawText));
-    if (!text || detectFeedbackDrift(text, option, options)) text = fallbackFeedback(id, correctId);
-    text = pruneUnsupportedEvidence(text, visibleText, fallbackFeedback(id, correctId));
-    if (id === correctId && normalize(text) === normalize(fallbackFeedback(id, correctId)) && explanation) {
-      text = cleanBrokenSentences(explanation) || text;
-    }
-    acc[id] = ensureSentence(text);
-    return acc;
-  }, {});
-}
-
-function compactItems(items = []) {
-  return asArray(items)
-    .map((item) => {
-      if (typeof item === 'string') {
-        const [label, ...rest] = item.split(/[:：]/u);
-        return { label: cleanText(label), value: cleanText(rest.join(':')) };
-      }
-      return { label: cleanText(item?.label || item?.name || item?.parameter || item?.title || ''), value: cleanText(item?.value || item?.result || item?.text || '') };
-    })
-    .filter((item) => item.label && item.value);
-}
-
-function formatPanelDataForStem(items = []) {
-  return items.map((item) => `${item.label}: ${item.value}`).filter(Boolean).join('; ');
-}
-
-function addVisibleDataToStem(stem = '', compactVitals = [], compactObjectiveData = []) {
-  let text = cleanText(stem);
-  const visible = normalize(text);
-  const missing = [...compactItems(compactVitals), ...compactItems(compactObjectiveData)].filter((item) => {
-    const label = normalize(item.label);
-    const value = normalize(item.value);
-    return label && value && !(visible.includes(label) && visible.includes(value));
-  });
-  const line = formatPanelDataForStem(missing);
-  return line ? `${text} Değerlendirmede ${line} saptanır.` : text;
+function getByPaths(payload = {}, paths = []) {
+  for (const path of paths) {
+    const parts = String(path).split('.');
+    let current = payload;
+    for (const part of parts) current = current?.[part];
+    if (current !== undefined && current !== null && cleanText(current) !== '') return current;
+  }
+  return undefined;
 }
 
 function getJsonCandidate(text = '') {
@@ -362,29 +110,67 @@ function parseModelJson(text = '') {
   }
 }
 
+function normalizeOptions(raw = []) {
+  const arr = Array.isArray(raw)
+    ? raw
+    : raw && typeof raw === 'object'
+      ? OPTION_IDS.map((id) => raw[id] || raw[id.toLowerCase()] || raw[`option${id}`] || raw[`secenek${id}`])
+      : [];
+
+  return OPTION_IDS.map((id, index) => {
+    const source = arr.find((item) => typeof item === 'object' && String(item?.id || item?.harf || '').toUpperCase() === id) ?? arr[index];
+    const rawText = typeof source === 'string' ? source : source?.text || source?.label || source?.value || source?.metin || '';
+    const text = cleanText(rawText).replace(/^\s*[A-E]\s*[).:-]\s*/iu, '').trim();
+    return { id, text };
+  }).filter((option) => option.text);
+}
+
+function resolveCorrectId(payload = {}, options = []) {
+  const rawValue = getByPaths(payload, ['c', 'correctAnswer', 'correct', 'answer', 'dogruCevap', 'doğruCevap', 'yanit', 'yanıt', 'cevap']);
+  const raw = String(rawValue || '').trim().toUpperCase();
+  if (OPTION_IDS.includes(raw)) return raw;
+  const wanted = normalize(rawValue || '');
+  if (!wanted) return '';
+  const exact = options.find((option) => normalize(option.text) === wanted);
+  if (exact) return exact.id;
+  const loose = options.find((option) => wanted.length >= 5 && (normalize(option.text).includes(wanted) || wanted.includes(normalize(option.text))));
+  return loose?.id || '';
+}
+
+function normalizeFeedback(rawFeedback = []) {
+  if (Array.isArray(rawFeedback)) return OPTION_IDS.reduce((acc, id, index) => ({ ...acc, [id]: cleanText(rawFeedback[index] || '') }), {});
+  if (rawFeedback && typeof rawFeedback === 'object') {
+    return OPTION_IDS.reduce((acc, id) => ({
+      ...acc,
+      [id]: cleanText(rawFeedback[id] || rawFeedback[id.toLowerCase()] || rawFeedback[`option${id}`] || rawFeedback[`secenek${id}`] || ''),
+    }), {});
+  }
+  return OPTION_IDS.reduce((acc, id) => ({ ...acc, [id]: '' }), {});
+}
+
 function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, mode } = {}) {
-  const options = normalizeOptions(payload.o || payload.options).map((option) => ({ ...option, text: ensureSentence(option.text).replace(/[.!?]$/u, '') }));
-  const correctAnswer = resolveCorrectId(payload, options);
-  const vitals = compactItems(payload.cv || payload.compactVitals || payload.vitals || []);
-  const objective = compactItems(payload.co || payload.compactObjectiveData || payload.objectiveData || []);
-  const stem = ensureSentence(cleanBrokenSentences(uniqueSentences(addVisibleDataToStem(payload.s || payload.stem || '', vitals, objective))));
-  const visibleText = [stem, ...options.map((option) => option.text)].join(' ');
-  const explanationRaw = payload.e || payload.explanation || '';
-  const explanation = ensureSentence(pruneUnsupportedEvidence(cleanBrokenSentences(explanationRaw), visibleText, 'Kökteki ayırt edici bulgular doğru cevabı destekler.'));
-  const feedback = feedbackObject(payload.f || payload.wrongOptionFeedback || payload.optionFeedback || {}, correctAnswer, explanation, options, visibleText);
+  const source = payload.question && typeof payload.question === 'object' ? { ...payload, ...payload.question } : payload;
+  const stem = cleanText(getByPaths(source, ['s', 'stem', 'soruKoku', 'soruKökü', 'soru_koku', 'soru_kökü', 'olgu', 'vaka', 'case', 'clinicalCase']) || '');
+  const questionText = cleanText(getByPaths(source, ['q', 'question', 'soru', 'soruCumlesi', 'soruCümlesi', 'soru_cumlesi', 'soru_cümlesi']) || '');
+  const rawOptions = getByPaths(source, ['o', 'options', 'secenekler', 'seçenekler', 'choices', 'siklar', 'şıklar']) || [];
+  const options = normalizeOptions(rawOptions);
+  const correctAnswer = resolveCorrectId(source, options);
+  const explanation = cleanText(getByPaths(source, ['e', 'explanation', 'aciklama', 'açıklama', 'rationale', 'gerekce', 'gerekçe']) || '');
+  const feedback = normalizeFeedback(getByPaths(source, ['f', 'feedback', 'optionFeedback', 'wrongOptionFeedback', 'secenekFeedback', 'seçenekFeedback', 'sikFeedback', 'şıkFeedback']) || []);
+
   return {
     id: `ai-spot-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-    relatedBranch: cleanText(payload.b || payload.relatedBranch || branch),
-    difficulty: normalizeDifficulty(payload.d || payload.difficulty || difficulty),
+    relatedBranch: cleanText(source.b || source.relatedBranch || branch),
+    difficulty: normalizeDifficulty(source.d || source.difficulty || difficulty),
     learningTarget: '',
-    answerTarget: cleanText(payload.at || payload.answerTarget || 'diagnosis'),
+    answerTarget: cleanText(source.at || source.answerTarget || 'diagnosis'),
     demographics: '',
     setting: '',
     chiefComplaint: '',
     stem,
     compactVitals: [],
     compactObjectiveData: [],
-    question: ensureQuestion(payload.q || payload.question || ''),
+    question: questionText,
     options,
     correctAnswer,
     explanation,
@@ -397,20 +183,19 @@ function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, m
     openAIMode: mode || '',
     promptVersion: PROMPT_VERSION,
     schemaVersion: SCHEMA_VERSION,
-    aiMeta: { provider: 'openai', remote: true, fallback: false, simplified: true, ultraCompact: true, deterministicQC: true, noTextLimits: true },
+    aiMeta: { provider: 'openai', remote: true, fallback: false, promptless: true, sourceRequired: true },
   };
 }
 
-function assertStructuralQuestion(question = {}) {
+function assertRenderableQuestion(question = {}) {
   const errors = [];
   if (!cleanText(question.stem)) errors.push('soru kökü boş');
   if (!cleanText(question.question)) errors.push('soru cümlesi boş');
   if (!Array.isArray(question.options) || question.options.length !== 5) errors.push(`tam 5 seçenek yok (${question.options?.length || 0})`);
   if (!OPTION_IDS.includes(String(question.correctAnswer || '').toUpperCase())) errors.push(`correctAnswer A-E değil (${question.correctAnswer || 'boş'})`);
   if (!question.options?.some((option) => option.id === question.correctAnswer)) errors.push('correctAnswer seçeneklerle eşleşmiyor');
-  if (!cleanText(question.explanation)) errors.push('açıklama boş');
   if (errors.length) {
-    const error = new Error(`Model JSON döndürdü ama temel soru alanları eksik: ${errors.join('; ')}`);
+    const error = new Error(`AI çıktısı ekranda gösterilebilir TUS sorusu formatına çevrilemedi: ${errors.join('; ')}`);
     error.statusCode = 422;
     throw error;
   }
@@ -440,10 +225,6 @@ function shouldUseResponsesApi(model = '', explicitStyle = '') {
   return /^gpt-5/i.test(String(model || '')) || /^o\d/i.test(String(model || ''));
 }
 
-function modelSupportsReasoningEffort(model = '') {
-  return /^gpt-5/i.test(String(model || '')) || /^o\d/i.test(String(model || ''));
-}
-
 function isOfficialOpenAIBaseUrl(baseUrl = '') {
   return /\/\/api\.openai\.com\/v1$/i.test(String(baseUrl || '').replace(/\/$/, ''));
 }
@@ -453,6 +234,11 @@ function sourceCheckEnabled(baseUrl = '', useResponses = false) {
   if (!useResponses) return false;
   if (envFlag('TUS_FORCE_SOURCE_CHECK_ON_NON_OPENAI_BASE_URL', false)) return true;
   return isOfficialOpenAIBaseUrl(baseUrl);
+}
+
+function sourceCheckRequired(baseUrl = '', useResponses = false) {
+  if (!envFlag('TUS_REQUIRE_SCIENTIFIC_SOURCE_CHECK', true)) return false;
+  return sourceCheckEnabled(baseUrl, useResponses);
 }
 
 function extractResponseSourceMeta(payload = {}) {
@@ -498,6 +284,7 @@ async function callOpenAI(prompt) {
   const useResponses = shouldUseResponsesApi(model, explicitStyle) || envFlag('TUS_ENABLE_SCIENTIFIC_SOURCE_CHECK', true);
   const style = useResponses ? 'responses' : 'chat';
   const enableScientificSourceCheck = sourceCheckEnabled(baseUrl, useResponses);
+  const requireScientificSourceCheck = sourceCheckRequired(baseUrl, useResponses);
   const { signal, cancel } = createAbortSignal(timeoutMs);
 
   try {
@@ -507,8 +294,8 @@ async function callOpenAI(prompt) {
           instructions: OPTIMIZED_TUS_SYSTEM_PROMPT,
           input: prompt,
           text: { format: { type: 'json_object' } },
-          ...(enableScientificSourceCheck ? { tools: [{ type: 'web_search' }] } : {}),
-          ...(modelSupportsReasoningEffort(model) ? { reasoning: { effort: 'low' } } : {}),
+          ...(enableScientificSourceCheck ? { tools: [{ type: process.env.TUS_OPENAI_WEB_SEARCH_TOOL_TYPE || 'web_search' }] } : {}),
+          ...(enableScientificSourceCheck ? { tool_choice: process.env.TUS_OPENAI_WEB_SEARCH_TOOL_CHOICE || 'required' } : {}),
           store: false,
         }
       : {
@@ -518,7 +305,6 @@ async function callOpenAI(prompt) {
             { role: 'user', content: prompt },
           ],
           response_format: { type: 'json_object' },
-          ...(modelSupportsReasoningEffort(model) ? { reasoning_effort: 'low' } : {}),
         };
 
     const endpoint = `${baseUrl}${useResponses ? '/responses' : '/chat/completions'}`;
@@ -536,6 +322,11 @@ async function callOpenAI(prompt) {
     }
     const data = JSON.parse(raw || '{}');
     const sourceMeta = useResponses ? extractResponseSourceMeta(data) : { usedWebSearch: false, sourceUrls: [] };
+    if (requireScientificSourceCheck && !sourceMeta.usedWebSearch) {
+      const error = new Error('Bilimsel kaynak okuma/web search gerçekleşmeden soru üretilmedi.');
+      error.statusCode = 502;
+      throw error;
+    }
     logAIUsage({ task: TASK_NAME, model: data.model || model, usage: data.usage || null, cached: false, apiStyle: style, sourceChecked: Boolean(enableScientificSourceCheck && sourceMeta.usedWebSearch) });
     const text = useResponses ? extractResponsesText(data) : extractChatText(data);
     if (!cleanText(text)) {
@@ -564,13 +355,13 @@ export default async function handler(request, response) {
 
   const branch = chooseBranch(body.branchFilter || body.branch || 'Rastgele');
   const difficulty = normalizeDifficulty(body.difficulty || body.requestedDifficulty || body.aiDifficulty || 'Orta');
-  const prompt = buildUserPrompt({ branch, difficulty, variationSeed: Math.random().toString(36).slice(2, 8) });
+  const prompt = buildUserPrompt({ branch, difficulty });
 
   try {
     const result = await callOpenAI(prompt);
     const question = normalizeGeneratedQuestion(result.payload, { branch, difficulty, model: result.model, mode: result.mode });
     question.aiMeta = { ...(question.aiMeta || {}), sourceChecked: result.sourceChecked, scientificSourceCheckEnabled: result.scientificSourceCheckEnabled, sourceUrls: result.sourceUrls };
-    assertStructuralQuestion(question);
+    assertRenderableQuestion(question);
     return sendJson(response, 200, { ok: true, provider: 'openai', fallback: false, repaired: false, sourceChecked: result.sourceChecked, sourceUrls: result.sourceUrls, question });
   } catch (error) {
     return sendJson(response, error?.statusCode || 502, {

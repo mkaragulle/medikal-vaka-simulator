@@ -1,5 +1,5 @@
-// KlinikIQ V442 — scientific source checked TUS prompt
-// Amaç: kural yığını olmadan bilimsel, klinik TUS sorusu üretmek.
+// KlinikIQ V443 — promptless scientific TUS generation
+// Aktif TUS AI talimatı bilinçli olarak tek cümleye indirildi.
 
 function cleanText(value = '') {
   return String(value ?? '').replace(/\s+/g, ' ').trim();
@@ -12,15 +12,10 @@ export function normalizeDifficulty(value = 'Orta') {
   return 'Orta';
 }
 
-export const OPTIMIZED_TUS_SYSTEM_PROMPT = `Türkçe TUS klinik soru yazarı gibi çalış. Soru yazmadan önce güvenilir bilimsel tıp bilgisini kontrol et; tartışmalı veya doğrulanmamış bilgiyle soru üretme. Yalnız geçerli JSON döndür.
+export const OPTIMIZED_TUS_SYSTEM_PROMPT = 'Bilimsel kaynakları oku ve bilimsel Türkçe TUS klinik sorusu üret.';
 
-Seçilen branşa uygun, bilimsel, klinik akıl yürütme gerektiren, tek doğru cevaplı bir TUS sorusu üret. Soru kökü, soru cümlesi, seçenekler ve feedback doğal Türkçe tıp diliyle yazılsın. Gereken klinik veriler kullanıcıya görünen soru kökünde bulunsun; feedback yeni hasta bulgusu eklemek yerine kökteki bilgiyi açıklasın. Şıkları aynı sınav bağlamında ciddi çeldiriciler olarak kur. Metni belirli uzunluk, cümle sayısı veya kalıba sıkıştırma.
-
-JSON şeması: {"s":"soru kökü","q":"soru cümlesi","o":["A","B","C","D","E"],"c":"A|B|C|D|E","e":"açıklama","f":["A feedback","B feedback","C feedback","D feedback","E feedback"]}`;
-
-export function buildUserPrompt({ branch, difficulty = 'Orta', variationSeed = '' } = {}) {
+export function buildUserPrompt({ branch, difficulty = 'Orta' } = {}) {
   const branchText = cleanText(branch || 'Rastgele');
   const selectedDifficulty = normalizeDifficulty(difficulty);
-  const seed = cleanText(variationSeed || Math.random().toString(36).slice(2, 8));
-  return `Branş: ${branchText}\nZorluk: ${selectedDifficulty}\nVaryasyon: ${seed}\n\nBilimsel kaynak kontrolü yaparak bu branşa uygun klinik TUS sorusu üret. JSON döndür.`;
+  return `Branş: ${branchText}\nZorluk: ${selectedDifficulty}\nBilimsel kaynakları oku ve bilimsel Türkçe TUS klinik sorusu üret. JSON döndür.`;
 }
