@@ -1,3 +1,3 @@
-// Yerel branch template içerikleri kaldırıldı. TUS AI Spot gerçek AI endpointi üzerinden çalışır.
+// Neutral stub: legacy branch template bank removed.
+// Direct TUS AI generation should not be steered by hidden branch templates.
 export const AI_BRANCH_TEMPLATE_SEEDS = [];
-export default AI_BRANCH_TEMPLATE_SEEDS;

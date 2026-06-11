@@ -1,5 +1,5 @@
 export const casesPart19 = [
-{
+  {
     "id": "v224-new-359-makrositoz-ve-idrarda-kristal",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -364,7 +364,7 @@ export const casesPart19 = [
       "Yetersiz retikülosit yanıtı"
     ]
   },
-{
+  {
     "id": "v224-new-360-epigastrik-agri-ve-enzim-paterni",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -729,7 +729,7 @@ export const casesPart19 = [
       "Normal CK"
     ]
   },
-{
+  {
     "id": "v224-new-361-cocukta-karin-agrisi-ve-sut-beyazi-serum",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -1082,7 +1082,7 @@ export const casesPart19 = [
       "Yağlı öğün sonrası karın ağrısı"
     ]
   },
-{
+  {
     "id": "v224-new-362-dis-eti-kanamasi-ve-gec-iyilesen-yara",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -1436,7 +1436,7 @@ export const casesPart19 = [
       "Geç yara iyileşmesi"
     ]
   },
-{
+  {
     "id": "v224-new-363-garajda-baygin-bulunma-ve-kristalli-idrar",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -1827,7 +1827,7 @@ export const casesPart19 = [
       "Akut kreatinin yüksekliği"
     ]
   },
-{
+  {
     "id": "v224-new-364-yenidoganda-uzayan-sarilik-ve-kabizlik",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -2181,7 +2181,7 @@ export const casesPart19 = [
       "Kabızlık"
     ]
   },
-{
+  {
     "id": "v224-new-365-tekrarlayan-enfeksiyon-ve-lenfopeni",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -2553,7 +2553,7 @@ export const casesPart19 = [
       "Deoksiadenozin/dATP artışı"
     ]
   },
-{
+  {
     "id": "v224-new-366-bademcik-buyumesi-ve-uyusma",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -2907,7 +2907,7 @@ export const casesPart19 = [
       "Periferik uyuşma"
     ]
   },
-{
+  {
     "id": "v224-new-367-dudakta-morarma-ve-oksijen-uyumsuzlugu",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -3261,7 +3261,7 @@ export const casesPart19 = [
       "Normal karboksihemoglobin"
     ]
   },
-{
+  {
     "id": "v224-new-368-bas-agrisi-ve-dusuk-sodyum",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -3615,7 +3615,7 @@ export const casesPart19 = [
       "Normal glukoz-kortizol-TSH"
     ]
   },
-{
+  {
     "id": "v224-new-369-bebekte-sarilik-ve-tubuler-kayip",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -3987,7 +3987,7 @@ export const casesPart19 = [
       "Tirozin yüksekliği"
     ]
   },
-{
+  {
     "id": "v224-new-370-dusuk-sodyum-ve-yogun-serum-ornegi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -4341,7 +4341,7 @@ export const casesPart19 = [
       "Yüksek globulin farkı"
     ]
   },
-{
+  {
     "id": "v224-new-371-el-ayakta-yanma-ve-proteinuri",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -4695,7 +4695,7 @@ export const casesPart19 = [
       "GL-3 türevi yüksekliği"
     ]
   },
-{
+  {
     "id": "v224-new-372-gunes-sonrasi-dokuntu-ve-ataksi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -5049,7 +5049,7 @@ export const casesPart19 = [
       "Sistin negatifliği"
     ]
   },
-{
+  {
     "id": "v224-new-373-kulak-cinlamasi-ve-karisik-kan-gazi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -5403,7 +5403,7 @@ export const casesPart19 = [
       "Yüksek anyon açığı"
     ]
   },
-{
+  {
     "id": "v224-new-374-bebekte-kirik-sac-ve-nobet",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -5757,7 +5757,7 @@ export const casesPart19 = [
       "Düşük seruloplazmin"
     ]
   },
-{
+  {
     "id": "v224-new-375-yangin-sonrasi-laktat-ve-venoz-oksijen",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -6111,7 +6111,7 @@ export const casesPart19 = [
       "Yüksek anyon açığı"
     ]
   },
-{
+  {
     "id": "v224-new-376-tekrarlayan-tas-ve-bobrek-fonksiyon-kaybi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -6386,7 +6386,7 @@ export const casesPart19 = [
       "Böbrek fonksiyon kaybı"
     ]
   },
-{
+  {
     "id": "v224-new-377-hipotoni-ve-uzayan-sarilik",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -6673,7 +6673,7 @@ export const casesPart19 = [
       "Plazmalojen düşüklüğü"
     ]
   },
-{
+  {
     "id": "v224-new-378-dis-kaybi-ve-kemik-agrisi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -6948,7 +6948,7 @@ export const casesPart19 = [
       "Yüksek PLP"
     ]
   },
-{
+  {
     "id": "v224-new-379-morarma-ve-uzamis-pihtilasma",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -7235,7 +7235,7 @@ export const casesPart19 = [
       "Kolestatik patern"
     ]
   },
-{
+  {
     "id": "v224-new-380-aclikta-bayilma-ve-baskilanmis-keton",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -7510,7 +7510,7 @@ export const casesPart19 = [
       "Baskılanmış keton"
     ]
   },
-{
+  {
     "id": "v224-new-381-ates-sonrasi-uykululuk-ve-dusuk-keton",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -7797,7 +7797,7 @@ export const casesPart19 = [
       "Açlıkla tetiklenen letarji"
     ]
   },
-{
+  {
     "id": "v224-new-382-meyve-puresi-sonrasi-kusma-ve-terleme",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -8085,7 +8085,7 @@ export const casesPart19 = [
       "Hepatoselüler enzim yüksekliği"
     ]
   },
-{
+  {
     "id": "v224-new-383-sac-dokulmesi-ve-direnc-nobet",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -8373,7 +8373,7 @@ export const casesPart19 = [
       "Çoklu organik asit artışı"
     ]
   },
-{
+  {
     "id": "v224-new-384-bol-su-icme-ve-yogunlasmayan-idrar",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -8661,7 +8661,7 @@ export const casesPart19 = [
       "Desmopressine minimal yanıt"
     ]
   },
-{
+  {
     "id": "v224-new-385-yagli-diski-ve-cok-dusuk-lipid-paneli",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -8949,7 +8949,7 @@ export const casesPart19 = [
       "Vitamin E düşüklüğü"
     ]
   },
-{
+  {
     "id": "v224-new-386-titreme-ve-karaciger-enzim-yuksekligi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -9270,7 +9270,7 @@ export const casesPart19 = [
       "Yüksek idrar bakırı"
     ]
   },
-{
+  {
     "id": "v224-new-387-karin-agrisi-ve-mikrositer-anemi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -9591,7 +9591,7 @@ export const casesPart19 = [
       "Yüksek çinko protoporfirin"
     ]
   },
-{
+  {
     "id": "v224-new-388-buyume-geriligi-ve-tekrarlayan-tas",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -9954,7 +9954,7 @@ export const casesPart19 = [
       "Nefrokalsinozis"
     ]
   },
-{
+  {
     "id": "v224-new-389-hipertansiyon-ve-geciken-puberte",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -10305,7 +10305,7 @@ export const casesPart19 = [
       "Yüksek DOC"
     ]
   },
-{
+  {
     "id": "v224-new-390-ates-sonrasi-hipoglisemi-ve-laktat",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -10655,7 +10655,7 @@ export const casesPart19 = [
       "Belirgin amonyak yüksekliği yok"
     ]
   },
-{
+  {
     "id": "v224-new-391-egzersiz-sonrasi-koyu-idrar-ve-ck",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -11005,7 +11005,7 @@ export const casesPart19 = [
       "Uzun zincirli acylcarnitine artışı"
     ]
   },
-{
+  {
     "id": "v224-new-392-yenidoganda-hickirik-ve-direncli-nobet",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -11355,7 +11355,7 @@ export const casesPart19 = [
       "Keton/asidoz yok"
     ]
   },
-{
+  {
     "id": "v224-new-393-safra-tasi-ve-kronik-hemoliz",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -11705,7 +11705,7 @@ export const casesPart19 = [
       "2,3-BPG artışı"
     ]
   },
-{
+  {
     "id": "v224-new-394-korneal-bulaniklik-ve-proteinuri",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -12055,7 +12055,7 @@ export const casesPart19 = [
       "Düşük esterifiye kolesterol oranı"
     ]
   },
-{
+  {
     "id": "v224-new-395-kramp-ve-hipokalemik-alkaloz",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -12406,7 +12406,7 @@ export const casesPart19 = [
       "Düşük-normal kan basıncı"
     ]
   },
-{
+  {
     "id": "v224-new-396-agiz-cevresi-dokuntu-ve-ishal",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -12740,7 +12740,7 @@ export const casesPart19 = [
       "Normal bakır-demir göstergeleri"
     ]
   },
-{
+  {
     "id": "v224-new-397-cocukta-tekrarlayan-tas-ve-altigen-kristal",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -13074,7 +13074,7 @@ export const casesPart19 = [
       "Ailede erken taş öyküsü"
     ]
   },
-{
+  {
     "id": "v224-new-398-yenidoganda-genital-belirsizlik-ve-yuksek-t-dht",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -13408,7 +13408,7 @@ export const casesPart19 = [
       "Normal elektrolit-kortizol"
     ]
   },
-{
+  {
     "id": "v224-new-399-bebekte-uzayan-sarilik-ve-dusuk-proteaz-inhibitoru",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -13754,7 +13754,7 @@ export const casesPart19 = [
       "Laktat normal"
     ]
   },
-{
+  {
     "id": "v224-new-400-diyabette-bulanik-gorme-ve-sorbitol-birikimi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -14100,7 +14100,7 @@ export const casesPart19 = [
       "Ketoasidoz ve hemoliz yok"
     ]
   },
-{
+  {
     "id": "v224-new-401-sabah-nobeti-ve-dusuk-bos-glukozu",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -14433,7 +14433,7 @@ export const casesPart19 = [
       "Enfeksiyon bulgusu yok"
     ]
   },
-{
+  {
     "id": "v224-new-402-kaba-yuz-ve-yuksek-lizozomal-enzimler",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -14766,7 +14766,7 @@ export const casesPart19 = [
       "Peroksizomal panel normal"
     ]
   },
-{
+  {
     "id": "v224-new-403-sekerli-gida-sonrasi-sulu-ishal",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -15099,7 +15099,7 @@ export const casesPart19 = [
       "Fekal elastaz normal"
     ]
   },
-{
+  {
     "id": "v224-new-404-tekrarlayan-kandida-ve-normal-oksidatif-patlama",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -15432,7 +15432,7 @@ export const casesPart19 = [
       "IgG normal"
     ]
   },
-{
+  {
     "id": "v224-new-405-hipotoni-nobet-ve-yuksek-idrar-fumarati",
     "branchId": "medical-biochemistry",
     "caseType": "standard",

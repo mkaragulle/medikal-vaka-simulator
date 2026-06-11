@@ -1,14 +1,13 @@
 import {
   OPTIMIZED_TUS_SYSTEM_PROMPT,
-  TUS_QUALITY_REWRITE_SYSTEM_PROMPT,
   buildUserPrompt,
   normalizeDifficulty,
 } from '../server/tus-question-prompt.js';
-import { envFlag, envNumber, logAIUsage, resolveModelForScope } from '../server/lib/ai-token-optimizer.js';
+import { envNumber, logAIUsage, resolveModelForScope } from '../server/lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-v448-minimum-published-quality-rich-feedback';
-const SCHEMA_VERSION = 'professional-tus-json-v4-rich-feedback';
+const PROMPT_VERSION = 'klinikiq-v437-clean-no-text-limits';
+const SCHEMA_VERSION = 'simple-ai-spot-v12-clean-no-text-limits';
 const TASK_NAME = 'tusSpotQuestion';
 
 const ALLOWED_BRANCHES = [
@@ -36,7 +35,13 @@ function sendJson(response, status, payload) {
 function parseJsonBody(request) {
   return new Promise((resolve, reject) => {
     let body = '';
-    request.on('data', (chunk) => { body += chunk; });
+    request.on('data', (chunk) => {
+      body += chunk;
+      if (body.length > 600_000) {
+        reject(new Error('Request body too large'));
+        request.destroy();
+      }
+    });
     request.on('end', () => {
       if (!body) return resolve({});
       try { return resolve(JSON.parse(body)); } catch (error) { return reject(error); }
@@ -45,14 +50,90 @@ function parseJsonBody(request) {
   });
 }
 
-function cleanText(value = '') {
+function normalizeMedicalTurkish(value = '') {
   return String(value ?? '')
+    .replace(/\bacil\s*[-‑]?\s*CoA\b/giu, 'açil-CoA')
+    .replace(/\bacil‑CoA\b/giu, 'açil-CoA')
+    .replace(/\baçil‑CoA\b/giu, 'açil-CoA')
+    .replace(/\bcreatinine\b/giu, 'kreatinin')
+    .replace(/\bhipokalseüri\b/giu, 'hipokalsiüri')
+    .replace(/\bdistal\s+tubulus(?:ta)?\b/giu, (m) => /ta$/iu.test(m) ? 'distal tübülde' : 'distal tübül')
+    .replace(/\bsupressed\s+renin\b/giu, 'baskılanmış renin')
+    .replace(/\bserum\s+Ca(?:2\+)?\s+normal\b/giu, 'serum kalsiyumu normal')
+    .replace(/\bHCO3-\s*32\s*mmol\/L\s*\.\s*\(/giu, 'HCO3- 32 mmol/L (')
+    .replace(/\bacylcarnitine\b/giu, 'açilkarnitin')
+    .replace(/\bdicarboksilik\b/giu, 'dikarboksilik')
+    .replace(/\basidüre\b/giu, 'asidüri')
+    .replace(/\btandem\s+mas\s+spektrometrisi\b/giu, 'tandem kütle spektrometrisi')
+    .replace(/\bfasting\b/giu, 'açlık')
+    .replace(/\blife[-\s]?threatening\b/giu, 'yaşamı tehdit eden')
+    .replace(/\bsole\s+bekleme\b/giu, 'tek başına bekleme')
+    .replace(/\bvaginal\b/giu, 'vajinal')
+    .replace(/\blacerasyon\b/giu, 'laserasyon')
+    .replace(/\bRetine\s+plasenta\b/giu, 'Retansiyone plasenta')
+    .replace(/\bretine\s+plasenta\b/giu, 'retansiyone plasenta')
+    .replace(/\bmidline\b/giu, 'orta hatta')
+    .replace(/\bGenelize\b/gu, 'Yaygın')
+    .replace(/\bgenelize\b/giu, 'yaygın')
+    .replace(/\bLoop\s+diüretik\b/g, 'Loop diüretik')
+    .replace(/\bmyometriyum\b/giu, 'miyometriyum')
+    .replace(/\bmyometrium\b/giu, 'miyometriyum')
+    .replace(/\btransvaginal\b/giu, 'transvajinal')
+    .replace(/\bmethotrexate\b/giu, 'metotreksat')
+    .replace(/\bgranulomatöz\b/giu, 'granülomatöz')
+    .replace(/\bpercentil(?:i)?\b/giu, 'persentil')
+    .replace(/\bpersistente\b/giu, 'persistan')
+    .replace(/\bİnhclusion\b/gu, 'Inclusion')
+    .replace(/\bİnclusion\b/gu, 'Inclusion')
+    .replace(/\binklüzyon\s+body\s+miyopatisi\b/giu, 'inklüzyon cisimcikli miyozit')
+    .replace(/\bPolimyozitis\b/giu, 'Polimiyozit')
+    .replace(/\bDermatomyozitis\b/giu, 'Dermatomiyozit')
+    .replace(/\bMyastenia\b/giu, 'Miyastenia')
+    .replace(/\bquadriceps\b/giu, 'kuadriseps')
+    .replace(/\bfluktüan\b/giu, 'dalgalanan')
+    .replace(/\bkranial\b/giu, 'kraniyal')
+    .replace(/\bsensoryal\b/giu, 'duyusal')
+    .replace(/\bthorax\b/giu, 'toraks')
+    .replace(/\borsal\s+intercostal\b/giu, 'dorsal interkostal')
+    .replace(/\bDorsal\s+intercostal\b/gu, 'Dorsal interkostal')
+    .replace(/\bFresh\s+frozen\s+plasma\b/giu, 'taze donmuş plazma')
+    .replace(/\bCT\s+angiografi\b/giu, 'BT anjiyografi')
+    .replace(/\bexploratif\b/giu, 'eksploratif')
+    .replace(/\bmesenterik\b/giu, 'mezenterik')
+    .replace(/\bproximal\b/giu, 'proksimal')
+    .replace(/\brekannalizasyon\b/giu, 'rekanalizasyon')
+    .replace(/\bvasopresör\b/giu, 'vazopressör')
+    .replace(/\bdiffuse\b/giu, 'yaygın')
+    .replace(/\bpürsüz yüksek INR\b/giu, 'belirgin yüksek INR')
+    .replace(/\byaşinde\b/giu, 'yaşında')
+    .replace(/\bpersistens\b/giu, 'persistan')
+    .replace(/\bdekolerasyon\b/giu, 'deselerasyon')
+    .replace(/\btocolizis\b/giu, 'tokoliz')
+    .replace(/\baraknoid yüz\b/giu, 'dismorfik yüz görünümü')
+    .replace(/\bİmmunoglobulin\b/gu, 'İmmünoglobulin')
+    .replace(/\bimmunoglobulin\b/giu, 'immünoglobulin')
+    .replace(/\beczema\b/giu, 'egzama')
+    .replace(/\brekürren\b/giu, 'tekrarlayan')
+    .replace(/\babsolute lymphocyte count\b/giu, 'mutlak lenfosit sayısı')
+    .replace(/\bplatelet count\b/giu, 'trombosit sayısı')
+    .replace(/\btrombozitoz\b/giu, 'trombositopeni');
+}
+
+function cleanText(value = '') {
+  return normalizeMedicalTurkish(value)
     .replace(/[“”]/g, '"')
     .replace(/[‘’]/g, "'")
     .replace(/\u00a0/g, ' ')
     .replace(/```(?:json)?|```/giu, ' ')
+    .replace(/\b(?:Doğru\s+cevap|Seçimin|Açıklama)\s*[:：-]?\s*/giu, ' ')
+    .replace(/\b[A-E]\s*(?:geri\s*bildirim|feedback|gerekçe)\s*[:：.-]?\s*/giu, ' ')
+    .replace(/^\s*[A-E]\s*\)\s*(?:doğru|yanlış)\s*[:：.-]?\s*/iu, '')
+    .replace(/^\s*(?:doğru|yanlış)\s*[:：.-]?\s*/iu, '')
+    .replace(/\b([A-E])\s*\)\s*\1\s*\)?\s*/giu, '$1) ')
+    .replace(/\b([A-E])\s*:\s*\(\s*(?:Doğru|Yanlış)\s*\)\s*/giu, '')
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
+    .replace(/\s+\.\s*\(/g, ' (')
     .replace(/([,;:!?])(?=\S)/g, '$1 ')
     .trim();
 }
@@ -74,19 +155,194 @@ function chooseBranch(value = '') {
   return ALLOWED_BRANCHES.find((branch) => normalize(branch) === normalize(raw)) || raw;
 }
 
+function ensureSentence(value = '') {
+  const text = cleanText(value).replace(/[\s,;:]+$/u, '');
+  if (!text) return '';
+  return /[.!?]$/u.test(text) ? text : `${text}.`;
+}
+
+function ensureQuestion(value = '') {
+  const text = cleanText(value).replace(/[\s,;:.]+$/u, '');
+  if (!text) return 'Bu olguda en uygun seçenek hangisidir?';
+  return /\?$/u.test(text) ? text : `${text}?`;
+}
+
 function asArray(value) {
-  if (value === undefined || value === null || value === '') return [];
+  if (!value) return [];
   return Array.isArray(value) ? value : [value];
 }
 
-function getByPaths(payload = {}, paths = []) {
-  for (const path of paths) {
-    const parts = String(path).split('.');
-    let current = payload;
-    for (const part of parts) current = current?.[part];
-    if (current !== undefined && current !== null && cleanText(current) !== '') return current;
-  }
-  return undefined;
+function uniqueSentences(value = '') {
+  const seen = new Set();
+  return cleanText(value)
+    .split(/(?<=[.!?])\s+/u)
+    .map(ensureSentence)
+    .filter((sentence) => {
+      const key = normalize(sentence);
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .join(' ')
+    .trim();
+}
+
+function splitSentences(value = '') {
+  return cleanText(value).split(/(?<=[.!?])\s+/u).map((s) => cleanText(s)).filter(Boolean);
+}
+
+function looksBrokenSentence(sentence = '') {
+  const text = cleanText(sentence);
+  if (!text) return true;
+  const words = text.split(/\s+/u);
+  const last = (words[words.length - 1] || '').replace(/[.!?]+$/u, '');
+  if (/\b(?:ve|veya|ile|için|olarak|fakat|ancak|çünkü|z)$/iu.test(last)) return true;
+  if (last.length <= 1) return true;
+  if (words.length < 3 && !/[.!?]$/u.test(text)) return true;
+  if (/[,:;]\s*$/u.test(text)) return true;
+  if (/\(\s*$|\[\s*$/u.test(text)) return true;
+  return false;
+}
+
+function cleanBrokenSentences(value = '') {
+  const sentences = splitSentences(value)
+    .map((sentence) => ensureSentence(sentence.replace(/[,:;\s]+$/u, '')))
+    .filter((sentence) => !looksBrokenSentence(sentence));
+  return uniqueSentences(sentences.join(' '));
+}
+
+function keyTerms(value = '') {
+  return [...new Set(contentTokens(value).filter((word) => word.length >= 5))];
+}
+
+function optionSelfSupport(feedback = '', optionText = '') {
+  const terms = keyTerms(optionText);
+  if (!terms.length) return 0;
+  const fb = normalize(feedback);
+  return terms.filter((term) => fb.includes(term)).length / terms.length;
+}
+
+function detectFeedbackDrift(feedback = '', currentOption = {}, allOptions = []) {
+  const own = optionSelfSupport(feedback, currentOption.text);
+  const other = allOptions
+    .filter((option) => option.id !== currentOption.id)
+    .map((option) => optionSelfSupport(feedback, option.text))
+    .sort((a, b) => b - a)[0] || 0;
+  return other >= 0.5 && other > own + 0.2;
+}
+
+function fallbackFeedback(id = '', correctId = '') {
+  return id === correctId
+    ? 'Bu seçenek, kökteki ayırt edici bulgularla en iyi uyumu gösterir.'
+    : 'Bu seçenek, kökteki ana bulguları birlikte açıklamaz.';
+}
+
+
+function cleanFeedback(value = '') {
+  return cleanText(value)
+    .replace(/^\s*[A-E]\s*\)?\s*(?:geri\s*bildirim|feedback|gerekçe)\s*[:：.-]?\s*/iu, '')
+    .replace(/^\s*[A-E]\s*\)\s*(?:doğru|yanlış)\s*[:：.-]?\s*/iu, '')
+    .replace(/^\s*(?:doğru|yanlış)\s*[:：.-]?\s*/iu, '')
+    .replace(/^\s*(?:seçimin|doğru\s+cevap|açıklama)\s*[:：.-]?\s*/iu, '')
+    .trim();
+}
+
+
+const COMMON_TR_WORDS = new Set('ve veya ile için olan olarak hasta hastada bu şu bir daha çok en ise ancak çünkü nedenle göre olguda seçenek doğru yanlış tanı tedavi test bulgu klinik saptanır değildir beklenir düşündürür destekler'.split(' '));
+
+function contentTokens(value = '') {
+  return normalize(value).split(/\s+/u).filter((word) => word.length >= 4 && !COMMON_TR_WORDS.has(word));
+}
+
+function isEvidenceSentence(sentence = '') {
+  return /\b(?:yüksek|düşük|artmış|azalmış|pozitif|negatif|saptan|izlen|görül|bulun|mevcut|yok|normal|patolojik|belirgin|değer|sonuç|laboratuvar|görüntüleme|BT|MR|USG|kan|idrar|serum|plazma|ferritin|laktat|kreatinin|lenfosit|trombosit|glukoz|keton|antikoru|biyopsi|Doppler|röntgen|grafi)\b/iu.test(sentence)
+    || /\d/.test(sentence);
+}
+
+function stemSupportRatio(sentence = '', visibleText = '') {
+  const visible = new Set(contentTokens(visibleText));
+  const tokens = [...new Set(contentTokens(sentence))];
+  if (!tokens.length) return 1;
+  const supported = tokens.filter((token) => visible.has(token)).length;
+  return supported / tokens.length;
+}
+
+function pruneUnsupportedEvidence(text = '', visibleText = '', fallback = '') {
+  const sentences = cleanText(text).split(/(?<=[.!?])\s+/u).map(cleanFeedback).filter(Boolean);
+  const kept = sentences.filter((sentence) => !isEvidenceSentence(sentence) || stemSupportRatio(sentence, visibleText) >= 0.25);
+  const result = uniqueSentences(kept.join(' '));
+  return result || fallback || uniqueSentences(text);
+}
+
+function normalizeOptions(raw = []) {
+  const arr = Array.isArray(raw)
+    ? raw
+    : raw && typeof raw === 'object'
+      ? OPTION_IDS.map((id) => raw[id] || raw[id.toLowerCase()] || raw[`option${id}`])
+      : [];
+  return OPTION_IDS.map((id, index) => {
+    const source = arr.find((item) => typeof item === 'object' && String(item?.id || '').toUpperCase() === id) ?? arr[index];
+    const rawText = typeof source === 'string' ? source : source?.text || source?.label || source?.value || '';
+    const text = cleanText(rawText).replace(/^\s*[A-E]\s*\)\s*/iu, '').trim();
+    return { id, text };
+  }).filter((option) => option.text);
+}
+
+function resolveCorrectId(payload = {}, options = []) {
+  const raw = String(payload.c || payload.correctAnswer || payload.correct || payload.answer || '').trim().toUpperCase();
+  if (OPTION_IDS.includes(raw)) return raw;
+  const wanted = normalize(payload.c || payload.correctAnswer || payload.correct || payload.correctAnswerText || payload.answer || '');
+  if (!wanted) return '';
+  const exact = options.find((option) => normalize(option.text) === wanted);
+  if (exact) return exact.id;
+  const loose = options.find((option) => wanted.length >= 5 && (normalize(option.text).includes(wanted) || wanted.includes(normalize(option.text))));
+  return loose?.id || '';
+}
+
+function feedbackObject(rawFeedback = [], correctId = 'A', explanation = '', options = [], visibleText = '') {
+  const arr = Array.isArray(rawFeedback)
+    ? rawFeedback
+    : OPTION_IDS.map((id) => rawFeedback?.[id] || rawFeedback?.[id.toLowerCase()] || rawFeedback?.[`option${id}`] || '');
+  return OPTION_IDS.reduce((acc, id, index) => {
+    const option = options.find((item) => item.id === id) || { id, text: '' };
+    const rawText = arr[index] || fallbackFeedback(id, correctId);
+    let text = cleanBrokenSentences(cleanFeedback(rawText));
+    if (!text || detectFeedbackDrift(text, option, options)) text = fallbackFeedback(id, correctId);
+    text = pruneUnsupportedEvidence(text, visibleText, fallbackFeedback(id, correctId));
+    if (id === correctId && normalize(text) === normalize(fallbackFeedback(id, correctId)) && explanation) {
+      text = cleanBrokenSentences(explanation) || text;
+    }
+    acc[id] = ensureSentence(text);
+    return acc;
+  }, {});
+}
+
+function compactItems(items = []) {
+  return asArray(items)
+    .map((item) => {
+      if (typeof item === 'string') {
+        const [label, ...rest] = item.split(/[:：]/u);
+        return { label: cleanText(label), value: cleanText(rest.join(':')) };
+      }
+      return { label: cleanText(item?.label || item?.name || item?.parameter || item?.title || ''), value: cleanText(item?.value || item?.result || item?.text || '') };
+    })
+    .filter((item) => item.label && item.value);
+}
+
+function formatPanelDataForStem(items = []) {
+  return items.map((item) => `${item.label}: ${item.value}`).filter(Boolean).join('; ');
+}
+
+function addVisibleDataToStem(stem = '', compactVitals = [], compactObjectiveData = []) {
+  let text = cleanText(stem);
+  const visible = normalize(text);
+  const missing = [...compactItems(compactVitals), ...compactItems(compactObjectiveData)].filter((item) => {
+    const label = normalize(item.label);
+    const value = normalize(item.value);
+    return label && value && !(visible.includes(label) && visible.includes(value));
+  });
+  const line = formatPanelDataForStem(missing);
+  return line ? `${text} Değerlendirmede ${line} saptanır.` : text;
 }
 
 function getJsonCandidate(text = '') {
@@ -101,345 +357,63 @@ function getJsonCandidate(text = '') {
 
 function parseModelJson(text = '') {
   const candidate = getJsonCandidate(text);
-  try {
-    return JSON.parse(candidate);
-  } catch {
-    const repaired = candidate
-      .replace(/,\s*([}\]])/g, '$1')
-      .replace(/[\u0000-\u001F\u007F]+/g, ' ');
-    return JSON.parse(repaired);
+  try { return JSON.parse(candidate); } catch {
+    return JSON.parse(candidate.replace(/,\s*([}\]])/g, '$1').replace(/[\u0000-\u001F\u007F]+/g, ' '));
   }
-}
-
-function normalizeItems(items = []) {
-  const output = [];
-  asArray(items).forEach((item) => {
-    let label = '';
-    let value = '';
-    if (typeof item === 'string') {
-      const [first, ...rest] = item.split(/[:：]/u);
-      label = first || 'Veri';
-      value = rest.length ? rest.join(':') : item;
-    } else if (item && typeof item === 'object') {
-      label = item.label || item.name || item.parameter || item.title || item.key || '';
-      value = item.value || item.result || item.text || item.finding || item.data || '';
-    }
-    label = cleanText(label);
-    value = cleanText(value);
-    if (label && value) output.push({ label, value });
-  });
-  return output;
-}
-
-
-function normalizePhysicalExam(items = []) {
-  return normalizeItems(items).map((item) => ({
-    label: item.label || 'Muayene',
-    value: item.value,
-  }));
-}
-
-function flattenItems(items = []) {
-  return normalizeItems(items)
-    .map((item) => cleanText([item.label, item.value].filter(Boolean).join(': ')))
-    .filter(Boolean);
-}
-
-function joinedItemText(items = []) {
-  return flattenItems(items).join(' ');
-}
-
-function normalizeOptions(raw = []) {
-  const arr = Array.isArray(raw)
-    ? raw
-    : raw && typeof raw === 'object'
-      ? OPTION_IDS.map((id) => raw[id] || raw[id.toLowerCase()] || raw[`option${id}`] || raw[`secenek${id}`])
-      : [];
-
-  return OPTION_IDS.map((id, index) => {
-    const source = arr.find((item) => typeof item === 'object' && String(item?.id || item?.harf || '').toUpperCase() === id) ?? arr[index];
-    const rawText = typeof source === 'string' ? source : source?.text || source?.label || source?.value || source?.metin || '';
-    const text = cleanText(rawText).replace(/^\s*[A-E]\s*[).:-]\s*/iu, '').trim();
-    return { id, text };
-  }).filter((option) => option.text);
-}
-
-function resolveCorrectId(payload = {}, options = []) {
-  const rawValue = getByPaths(payload, [
-    'correctAnswer', 'c', 'correct', 'answer', 'dogruCevap', 'doğruCevap', 'yanit', 'yanıt', 'cevap',
-  ]);
-  const raw = String(rawValue || '').trim().toUpperCase();
-  if (OPTION_IDS.includes(raw)) return raw;
-  const wanted = normalize(rawValue || '');
-  if (!wanted) return '';
-  const exact = options.find((option) => normalize(option.text) === wanted);
-  if (exact) return exact.id;
-  const loose = options.find((option) => normalize(option.text).includes(wanted) || wanted.includes(normalize(option.text)));
-  return loose?.id || '';
-}
-
-function normalizeFeedback(rawFeedback = {}) {
-  if (Array.isArray(rawFeedback)) {
-    return OPTION_IDS.reduce((acc, id, index) => {
-      acc[id] = cleanText(rawFeedback[index] || '');
-      return acc;
-    }, {});
-  }
-  if (rawFeedback && typeof rawFeedback === 'object') {
-    return OPTION_IDS.reduce((acc, id) => {
-      acc[id] = cleanText(rawFeedback[id] || rawFeedback[id.toLowerCase()] || rawFeedback[`option${id}`] || rawFeedback[`secenek${id}`] || '');
-      return acc;
-    }, {});
-  }
-  return OPTION_IDS.reduce((acc, id) => ({ ...acc, [id]: '' }), {});
-}
-
-function normalizeEvidence(value = []) {
-  return asArray(value)
-    .map((item) => {
-      if (typeof item === 'object' && item) {
-        return cleanText([item.label, item.clue, item.finding, item.meaning, item.text].filter(Boolean).join(' — '));
-      }
-      return cleanText(item);
-    })
-    .filter(Boolean);
 }
 
 function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, mode } = {}) {
-  const source = payload.question && typeof payload.question === 'object' ? { ...payload, ...payload.question } : payload;
-  const options = normalizeOptions(getByPaths(source, ['options', 'o', 'secenekler', 'seçenekler', 'choices', 'siklar', 'şıklar']) || []);
-  const correctAnswer = resolveCorrectId(source, options);
-  const optionFeedback = normalizeFeedback(getByPaths(source, ['optionFeedback', 'feedback', 'f', 'wrongOptionFeedback', 'secenekFeedback', 'seçenekFeedback', 'sikFeedback', 'şıkFeedback']) || {});
-
+  const options = normalizeOptions(payload.o || payload.options).map((option) => ({ ...option, text: ensureSentence(option.text).replace(/[.!?]$/u, '') }));
+  const correctAnswer = resolveCorrectId(payload, options);
+  const vitals = compactItems(payload.cv || payload.compactVitals || payload.vitals || []);
+  const objective = compactItems(payload.co || payload.compactObjectiveData || payload.objectiveData || []);
+  const stem = ensureSentence(cleanBrokenSentences(uniqueSentences(addVisibleDataToStem(payload.s || payload.stem || '', vitals, objective))));
+  const visibleText = [stem, ...options.map((option) => option.text)].join(' ');
+  const explanationRaw = payload.e || payload.explanation || '';
+  const explanation = ensureSentence(pruneUnsupportedEvidence(cleanBrokenSentences(explanationRaw), visibleText, 'Kökteki ayırt edici bulgular doğru cevabı destekler.'));
+  const feedback = feedbackObject(payload.f || payload.wrongOptionFeedback || payload.optionFeedback || {}, correctAnswer, explanation, options, visibleText);
   return {
     id: `ai-spot-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-    relatedBranch: cleanText(getByPaths(source, ['branch', 'b', 'relatedBranch']) || branch),
-    difficulty: normalizeDifficulty(getByPaths(source, ['difficulty', 'd']) || difficulty),
-    learningTarget: cleanText(getByPaths(source, ['learningTarget', 'lt', 'target']) || ''),
-    answerTarget: cleanText(getByPaths(source, ['answerTarget', 'at', 'questionIntent', 'intent']) || 'diagnosis'),
-    demographics: cleanText(getByPaths(source, ['demographics', 'dem']) || ''),
-    setting: cleanText(getByPaths(source, ['setting', 'set']) || ''),
-    chiefComplaint: cleanText(getByPaths(source, ['chiefComplaint', 'cc']) || ''),
-    stem: cleanText(getByPaths(source, ['clinicalStem', 'stem', 's', 'soruKoku', 'soruKökü', 'olgu', 'vaka', 'case', 'clinicalCase']) || ''),
-    compactVitals: normalizeItems(getByPaths(source, ['vitals', 'compactVitals', 'cv']) || []),
-    compactObjectiveData: normalizeItems(getByPaths(source, ['objectiveData', 'compactObjectiveData', 'co', 'supportingData']) || []),
-    physicalExam: normalizePhysicalExam(getByPaths(source, ['physicalExam', 'exam', 'muayene']) || []),
-    history: asArray(getByPaths(source, ['history', 'anamnesis', 'anamnez']) || []).map(cleanText).filter(Boolean),
-    question: cleanText(getByPaths(source, ['question', 'q', 'soru', 'soruCumlesi', 'soruCümlesi']) || ''),
+    relatedBranch: cleanText(payload.b || payload.relatedBranch || branch),
+    difficulty: normalizeDifficulty(payload.d || payload.difficulty || difficulty),
+    learningTarget: '',
+    answerTarget: cleanText(payload.at || payload.answerTarget || 'diagnosis'),
+    demographics: '',
+    setting: '',
+    chiefComplaint: '',
+    stem,
+    compactVitals: [],
+    compactObjectiveData: [],
+    question: ensureQuestion(payload.q || payload.question || ''),
     options,
     correctAnswer,
-    explanation: cleanText(getByPaths(source, ['explanation', 'e', 'whyCorrect', 'aciklama', 'açıklama', 'rationale', 'gerekce', 'gerekçe']) || ''),
-    wrongOptionFeedback: optionFeedback,
-    evidenceChain: normalizeEvidence(getByPaths(source, ['evidenceBasedReasoning', 'evidenceChain', 'evidence', 'k']) || []),
-    examPearl: cleanText(getByPaths(source, ['examPearl', 'pearl', 'p', 'teachingPoint']) || ''),
-    sourceUseNote: cleanText(getByPaths(source, ['sourceUseNote', 'sourceNote']) || ''),
-    managementSteps: asArray(getByPaths(source, ['managementSteps', 'management', 'm']) || []).map(cleanText).filter(Boolean),
+    explanation,
+    wrongOptionFeedback: feedback,
+    evidenceChain: [],
+    examPearl: '',
+    managementSteps: [],
     provider: 'openai',
     openAIModel: model || '',
     openAIMode: mode || '',
     promptVersion: PROMPT_VERSION,
     schemaVersion: SCHEMA_VERSION,
-    aiMeta: {
-      provider: 'openai',
-      remote: true,
-      fallback: false,
-      promptVersion: PROMPT_VERSION,
-      schemaVersion: SCHEMA_VERSION,
-      sourceUseNote: cleanText(getByPaths(source, ['sourceUseNote', 'sourceNote']) || ''),
-    },
+    aiMeta: { provider: 'openai', remote: true, fallback: false, simplified: true, ultraCompact: true, deterministicQC: true, noTextLimits: true },
   };
 }
 
-function assertRenderableQuestion(question = {}) {
+function assertStructuralQuestion(question = {}) {
   const errors = [];
   if (!cleanText(question.stem)) errors.push('soru kökü boş');
   if (!cleanText(question.question)) errors.push('soru cümlesi boş');
   if (!Array.isArray(question.options) || question.options.length !== 5) errors.push(`tam 5 seçenek yok (${question.options?.length || 0})`);
   if (!OPTION_IDS.includes(String(question.correctAnswer || '').toUpperCase())) errors.push(`correctAnswer A-E değil (${question.correctAnswer || 'boş'})`);
   if (!question.options?.some((option) => option.id === question.correctAnswer)) errors.push('correctAnswer seçeneklerle eşleşmiyor');
+  if (!cleanText(question.explanation)) errors.push('açıklama boş');
   if (errors.length) {
-    const error = new Error(`AI çıktısı ekranda gösterilebilir TUS sorusu formatına çevrilemedi: ${errors.join('; ')}`);
+    const error = new Error(`Model JSON döndürdü ama temel soru alanları eksik: ${errors.join('; ')}`);
     error.statusCode = 422;
     throw error;
   }
-}
-
-
-function hasContent(value = '') {
-  return cleanText(value) !== '';
-}
-
-function arrayHasContent(items = []) {
-  return Array.isArray(items) && joinedItemText(items) !== '';
-}
-
-function optionTextById(question = {}, id = '') {
-  return question.options?.find((option) => option.id === id)?.text || '';
-}
-
-function looksLikeNonNarrativeStem(value = '') {
-  // V448-clean: kelime/cümle/karakter eşiği veya kelime-listesi regexi kullanılmaz.
-  // Klinik anlatı kalitesi prompt + rewrite editörüne bırakılır; backend yalnızca boş alanı yakalar.
-  return !hasContent(value);
-}
-
-function isBrokenOrTruncatedFeedback(value = '') {
-  // V448-clean: "şu kelimeyle biterse bozuk", "şu kelime geçerse yasak" tarzı regex filtreleri kaldırıldı.
-  // API seviyesinde kesilmiş çıktı zaten JSON parse / OpenAI hata akışında yakalanır; burada sadece boş feedback engellenir.
-  return !hasContent(value);
-}
-
-function looksTruncated(value = '') {
-  return !hasContent(value);
-}
-
-function containsLowQualityResidue() {
-  // V448-clean: hard-coded placeholder / yasak kelime listeleri kullanılmaz.
-  return false;
-}
-
-function containsAnswerLeak(text = '', correctOptionText = '') {
-  const source = normalize(text);
-  const answer = normalize(correctOptionText);
-  return Boolean(source && answer && source.includes(answer));
-}
-
-function looksMultiTargetQuestion(value = '') {
-  // V448-clean: soru cümlesini kelime-listesiyle cezalandırma kaldırıldı.
-  return !hasContent(value);
-}
-
-function evidenceLooksEducational(items = []) {
-  // Metin uzunluğu veya belirli kelime arama yok; kanıt zinciri alanının dolu olması yeterli yapısal kontroldür.
-  return asArray(items).map(cleanText).some(Boolean);
-}
-
-function isEducationalFeedback(value = '', optionText = '') {
-  const text = cleanText(value);
-  const comparable = normalize(text);
-  const optionComparable = normalize(optionText);
-  if (!text) return false;
-  if (optionComparable && comparable === optionComparable) return false;
-  return true;
-}
-
-function isShallowFeedback(value = '', optionText = '') {
-  return !isEducationalFeedback(value, optionText);
-}
-
-function isShallowExplanation(value = '') {
-  return !hasContent(value);
-}
-
-function findEducationalDefects(question = {}) {
-  const defects = [];
-  const feedback = question.wrongOptionFeedback || {};
-  const correctOption = optionTextById(question, question.correctAnswer);
-
-  if (looksLikeNonNarrativeStem(question.stem)) defects.push('clinicalStem alanı boş.');
-  if (!arrayHasContent(question.physicalExam)) defects.push('physicalExam alanı boş.');
-  if (!arrayHasContent(question.compactVitals)) defects.push('vitals alanı boş.');
-  if (!arrayHasContent(question.compactObjectiveData)) defects.push('objectiveData alanı boş.');
-  if (looksMultiTargetQuestion(question.question)) defects.push('question alanı boş.');
-  if (!Array.isArray(question.options) || question.options.length !== 5) defects.push('options alanı tam beş seçenek içermiyor.');
-  if (!OPTION_IDS.includes(String(question.correctAnswer || '').toUpperCase()) || !question.options?.some((option) => option.id === question.correctAnswer)) defects.push('correctAnswer A-E seçenekleriyle güvenli biçimde eşleşmiyor.');
-  if (isShallowExplanation(question.explanation)) defects.push('explanation alanı boş.');
-
-  const missingFeedback = OPTION_IDS.filter((id) => !cleanText(feedback[id]));
-  if (missingFeedback.length) defects.push(`optionFeedback eksik: ${missingFeedback.join(', ')}.`);
-  const shallow = OPTION_IDS.filter((id) => isShallowFeedback(feedback[id], optionTextById(question, id)));
-  if (shallow.length) defects.push(`optionFeedback boş veya seçenek metnini aynen tekrar ediyor: ${shallow.join(', ')}.`);
-
-  if (!evidenceLooksEducational(question.evidenceChain)) defects.push('evidenceBasedReasoning alanı boş.');
-
-  const leakText = [question.stem, question.question, joinedItemText(question.physicalExam), joinedItemText(question.compactObjectiveData)].join(' ');
-  if (containsAnswerLeak(leakText, correctOption)) defects.push('answer leak riski var; doğru seçenek metni kök/veri alanlarında doğrudan geçiyor.');
-
-  const optionTexts = question.options?.map((option) => cleanText(option.text)).filter(Boolean) || [];
-  if (new Set(optionTexts.map(normalize)).size !== optionTexts.length) defects.push('seçeneklerde tekrar veya eşdeğer ifade riski var.');
-  return [...new Set(defects)];
-}
-
-function compactPayloadFromQuestion(question = {}) {
-  return {
-    branch: question.relatedBranch,
-    difficulty: question.difficulty,
-    learningTarget: question.learningTarget,
-    answerTarget: question.answerTarget,
-    clinicalStem: question.stem,
-    physicalExam: question.physicalExam || [],
-    vitals: question.compactVitals || [],
-    objectiveData: question.compactObjectiveData || [],
-    question: question.question,
-    options: question.options || [],
-    correctAnswer: question.correctAnswer,
-    explanation: question.explanation,
-    optionFeedback: question.wrongOptionFeedback || {},
-    evidenceBasedReasoning: question.evidenceChain || [],
-    examPearl: question.examPearl,
-    sourceUseNote: question.sourceUseNote || '',
-  };
-}
-
-async function maybeRewriteForEducationalQuality(question, defects, context, attempt = 1) {
-  const enabled = String(process.env.TUS_AI_ENABLE_QUALITY_REWRITE ?? 'true').toLowerCase() !== 'false';
-  if (!enabled) return { question, rewritten: false };
-  const prompt = [
-    defects.length
-      ? 'Aşağıdaki TUS soru JSON çıktısı KlinikIQ kalite denetiminde yetersiz bulundu.'
-      : 'Aşağıdaki TUS soru JSON çıktısını yayınlanabilir KlinikIQ kalite standardına yükselt.',
-    defects.length ? `Denetim bulguları: ${defects.join(' | ')}` : 'Denetim bulgusu yok; yine de üst kalite editör gibi klinik anlatı, açıklama ve optionFeedback alanlarını güçlendir.',
-    `Düzeltme turu: ${attempt}`,
-    'Aynı soru niyetini, branşı, karar hedefini, doğru cevap mantığını ve JSON schema alanlarını koruyarak çıktıyı kalite editörü gibi yeniden yaz.',
-    'clinicalStem gerçek hasta başvuru/anamnez akışına dönsün; muayene, vital ve objektif veriler kendi alanlarında kalsın.',
-    'explanation vaka özelinde klinik bağlamdan doğru cevaba giden gerekçeyi kursun.',
-    'Her optionFeedback öğrencinin yanlış seçeneği neden düşüneceğini ve neden elemesi gerektiğini öğretsin.',
-    'Her optionFeedback; seçeneğin klinik anlamını, hangi durumda doğru olabileceğini, bu vakada neden uygun/uygunsuz olduğunu ve doğru cevapla ayırıcı noktasını açıkça anlatsın.',
-    'Yarım kalmış, yüzeysel, seçenek adını tekrar eden veya sadece hüküm veren feedback bırakma.',
-    'Yalnızca geçerli JSON döndür.',
-    JSON.stringify(compactPayloadFromQuestion(question), null, 2),
-  ].join('\n\n');
-  try {
-    const result = await callOpenAI(prompt, { systemPrompt: TUS_QUALITY_REWRITE_SYSTEM_PROMPT, purpose: `${TASK_NAME}:quality-rewrite:${attempt}` });
-    const rewritten = normalizeGeneratedQuestion(result.payload, { ...context, model: result.model, mode: result.mode });
-    assertRenderableQuestion(rewritten);
-    rewritten.aiMeta = { ...(rewritten.aiMeta || {}), qualityRewritten: true, qualityRewriteAttempt: attempt, originalQualityDefects: defects };
-    return { question: rewritten, rewritten: true };
-  } catch (error) {
-    question.aiMeta = { ...(question.aiMeta || {}), qualityRewriteFailed: true, qualityRewriteError: error?.message || String(error), originalQualityDefects: defects };
-    return { question, rewritten: false };
-  }
-}
-
-async function enforceEducationalQuality(question, context) {
-  let current = question;
-  let rewritten = false;
-  const maxAttempts = envNumber('TUS_AI_QUALITY_REWRITE_ATTEMPTS', 3);
-  const alwaysRewrite = String(process.env.TUS_AI_ALWAYS_QUALITY_REWRITE ?? 'true').toLowerCase() !== 'false';
-
-  if (alwaysRewrite) {
-    const first = await maybeRewriteForEducationalQuality(current, [], context, 1);
-    rewritten = rewritten || first.rewritten;
-    current = first.question;
-  }
-
-  for (let attempt = alwaysRewrite ? 2 : 1; attempt <= maxAttempts; attempt += 1) {
-    const defects = findEducationalDefects(current);
-    if (!defects.length) return { question: current, rewritten, defects: [] };
-    const result = await maybeRewriteForEducationalQuality(current, defects, context, attempt);
-    rewritten = rewritten || result.rewritten;
-    current = result.question;
-    if (!result.rewritten) break;
-  }
-
-  const remaining = findEducationalDefects(current);
-  if (remaining.length) {
-    const error = new Error('AI soru üretimi kalite standardını karşılamadı; lütfen tekrar deneyin.');
-    error.statusCode = 422;
-    error.qualityDefects = remaining;
-    throw error;
-  }
-  return { question: current, rewritten, defects: remaining };
 }
 
 function extractChatText(payload = {}) {
@@ -466,6 +440,10 @@ function shouldUseResponsesApi(model = '', explicitStyle = '') {
   return /^gpt-5/i.test(String(model || '')) || /^o\d/i.test(String(model || ''));
 }
 
+function modelSupportsReasoningEffort(model = '') {
+  return /^gpt-5/i.test(String(model || '')) || /^o\d/i.test(String(model || ''));
+}
+
 function createAbortSignal(timeoutMs) {
   const controller = new AbortController();
   const timeout = setTimeout(() => {
@@ -477,7 +455,7 @@ function createAbortSignal(timeoutMs) {
   return { signal: controller.signal, cancel: () => clearTimeout(timeout) };
 }
 
-async function callOpenAI(prompt, { systemPrompt = OPTIMIZED_TUS_SYSTEM_PROMPT, purpose = TASK_NAME } = {}) {
+async function callOpenAI(prompt) {
   const apiKey = process.env.TUS_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
   if (!apiKey) {
     const error = new Error('OPENAI_API_KEY tanımlı değil.');
@@ -487,8 +465,7 @@ async function callOpenAI(prompt, { systemPrompt = OPTIMIZED_TUS_SYSTEM_PROMPT, 
 
   const model = resolveModelForScope('TUS');
   const baseUrl = (process.env.TUS_OPENAI_BASE_URL || process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
-  const timeoutMs = envNumber('TUS_OPENAI_PER_REQUEST_TIMEOUT_MS', envNumber('OPENAI_PER_REQUEST_TIMEOUT_MS', 90000));
-  const outputLimit = envNumber('TUS_OPENAI_MAX_OUTPUT_TOKENS', envNumber('OPENAI_MAX_OUTPUT_TOKENS', 6000));
+  const timeoutMs = envNumber('TUS_OPENAI_PER_REQUEST_TIMEOUT_MS', envNumber('OPENAI_PER_REQUEST_TIMEOUT_MS', 60000));
   const explicitStyle = process.env.TUS_OPENAI_API_STYLE || process.env.OPENAI_API_STYLE || '';
   const useResponses = shouldUseResponsesApi(model, explicitStyle);
   const style = useResponses ? 'responses' : 'chat';
@@ -498,20 +475,20 @@ async function callOpenAI(prompt, { systemPrompt = OPTIMIZED_TUS_SYSTEM_PROMPT, 
     const body = useResponses
       ? {
           model,
-          instructions: systemPrompt,
+          instructions: OPTIMIZED_TUS_SYSTEM_PROMPT,
           input: prompt,
           text: { format: { type: 'json_object' } },
-          max_output_tokens: outputLimit,
+          ...(modelSupportsReasoningEffort(model) ? { reasoning: { effort: 'low' } } : {}),
           store: false,
         }
       : {
           model,
           messages: [
-            { role: 'system', content: systemPrompt },
+            { role: 'system', content: OPTIMIZED_TUS_SYSTEM_PROMPT },
             { role: 'user', content: prompt },
           ],
           response_format: { type: 'json_object' },
-          max_completion_tokens: outputLimit,
+          ...(modelSupportsReasoningEffort(model) ? { reasoning_effort: 'low' } : {}),
         };
 
     const endpoint = `${baseUrl}${useResponses ? '/responses' : '/chat/completions'}`;
@@ -528,7 +505,7 @@ async function callOpenAI(prompt, { systemPrompt = OPTIMIZED_TUS_SYSTEM_PROMPT, 
       throw error;
     }
     const data = JSON.parse(raw || '{}');
-    logAIUsage({ task: purpose, model: data.model || model, usage: data.usage || null, cached: false, apiStyle: style });
+    logAIUsage({ task: TASK_NAME, model: data.model || model, usage: data.usage || null, cached: false, apiStyle: style });
     const text = useResponses ? extractResponsesText(data) : extractChatText(data);
     if (!cleanText(text)) {
       const error = new Error('OpenAI boş çıktı döndürdü.');
@@ -548,15 +525,6 @@ async function callOpenAI(prompt, { systemPrompt = OPTIMIZED_TUS_SYSTEM_PROMPT, 
   }
 }
 
-function extractSourceText(body = {}) {
-  if (body.sourceText || body.materialText || body.contextText) return String(body.sourceText || body.materialText || body.contextText || '');
-  const files = Array.isArray(body.materialPacket?.files) ? body.materialPacket.files : [];
-  return files
-    .map((file) => file?.cleanedExtractedText || file?.text || file?.content || '')
-    .filter(Boolean)
-    .join('\n\n---\n\n');
-}
-
 export default async function handler(request, response) {
   if (request.method !== 'POST') return sendJson(response, 405, { ok: false, error: 'Method not allowed' });
 
@@ -565,36 +533,19 @@ export default async function handler(request, response) {
 
   const branch = chooseBranch(body.branchFilter || body.branch || 'Rastgele');
   const difficulty = normalizeDifficulty(body.difficulty || body.requestedDifficulty || body.aiDifficulty || 'Orta');
-  const prompt = buildUserPrompt({
-    branch,
-    difficulty,
-    target: body.target || body.answerTarget || body.learningTarget || '',
-    sourceText: extractSourceText(body),
-    recentReviewNote: body.recentReviewNote || body.reviewContext || body.lastReviewStatus || '',
-  });
+  const prompt = buildUserPrompt({ branch, difficulty, variationSeed: Math.random().toString(36).slice(2, 8) });
 
   try {
     const result = await callOpenAI(prompt);
-    let question = normalizeGeneratedQuestion(result.payload, { branch, difficulty, model: result.model, mode: result.mode });
-    assertRenderableQuestion(question);
-    const quality = await enforceEducationalQuality(question, { branch, difficulty, model: result.model, mode: result.mode });
-    question = quality.question;
-    assertRenderableQuestion(question);
-    question.aiMeta = {
-      ...(question.aiMeta || {}),
-      promptVersion: PROMPT_VERSION,
-      qualityRewritten: Boolean(question.aiMeta?.qualityRewritten || quality.rewritten),
-      qualityWarnings: quality.defects,
-      strictEducationalQuality: envFlag('TUS_AI_STRICT_EDUCATIONAL_QUALITY', true),
-    };
-    return sendJson(response, 200, { ok: true, provider: 'openai', fallback: false, repaired: Boolean(question.aiMeta?.qualityRewritten), question });
+    const question = normalizeGeneratedQuestion(result.payload, { branch, difficulty, model: result.model, mode: result.mode });
+    assertStructuralQuestion(question);
+    return sendJson(response, 200, { ok: true, provider: 'openai', fallback: false, repaired: false, question });
   } catch (error) {
     return sendJson(response, error?.statusCode || 502, {
       ok: false,
       provider: 'openai',
       fallback: false,
       error: error?.message || 'AI soru üretimi başarısız oldu.',
-      qualityDefects: Array.isArray(error?.qualityDefects) ? error.qualityDefects : undefined,
     });
   }
 }

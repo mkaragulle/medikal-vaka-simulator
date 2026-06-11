@@ -1,5 +1,5 @@
 export const casesPart07 = [
-{
+  {
     "id": "v189-new-283-otel-konaklamasi-sonrasi-pnomoni",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -331,7 +331,7 @@ export const casesPart07 = [
       "Chlamydophila psittaci": "Psittakoz kuş teması sonrası atipik pnömoni yapar ve maruziyet öyküsü ayırıcıdır. Bu olguda kuş teması yoktur; su sistemi ve idrar antijen-kültür bulguları farklı bir atipik etkeni destekler."
     }
   },
-{
+  {
     "id": "v189-new-284-antibiyotik-sonrasi-oral-plaklar",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -583,7 +583,7 @@ export const casesPart07 = [
       "Pneumocystis jirovecii": "Pneumocystis özellikle ileri hücresel immünsüpresyonda interstisyel pnömoni yapar ve BAL örneğinde kistik formlarla aranır. Oral mukozal plak ve KOH’da psödohif görülmesi bu etkeni desteklemez."
     }
   },
-{
+  {
     "id": "v189-new-285-akintisiz-dizuri-ve-uretrit",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -835,7 +835,7 @@ export const casesPart07 = [
       "Treponema pallidum": "T. pallidum sifilizde ağrısız şankr, döküntü veya geç evre bulgularıyla düşünülür; primer klinik üretrit etkeni değildir. Genital ülserin olmaması ve üretrit-NAAT paterni bu seçeneği zayıflatır."
     }
   },
-{
+  {
     "id": "v189-new-286-kronik-inflamasyon-sonrasi-proteinuri",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -1230,7 +1230,7 @@ export const casesPart07 = [
       "Ziehl-Neelsen ile aside dirençli basil gösterimi": "Ziehl-Neelsen aside dirençli mikroorganizmaları göstermek için kullanılır; granülomatöz enfeksiyon veya basil varlığına ait morfolojik veri yoktur."
     }
   },
-{
+  {
     "id": "v189-new-287-uzun-suren-gastrit-sonrasi-metaplazi",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -1468,7 +1468,7 @@ export const casesPart07 = [
       "Renal hücreli karsinom": "Renal hücreli karsinom farklı bir klinik-patolojik paternle beklenir. Bu vakada belirleyici klinik bağlam ve doku bulguları İntestinal tip mide adenokarsinomu lehine olduğundan bu çeldirici doğru tanı/mekanizma değildir."
     }
   },
-{
+  {
     "id": "v189-new-288-sigara-icen-hastada-hiponatremi",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -1886,7 +1886,7 @@ export const casesPart07 = [
       "İnsülin benzeri büyüme faktörü II üretimi": "IGF-II aracılı paraneoplastik sendromda baskın tablo genellikle açlık hipoglisemisidir. Bu olguda glukoz düşüklüğü veya hipoglisemi nöbetleri değil, hipotonik hiponatremi ve idrarın uygunsuz konsantre kalması ön plandadır."
     }
   },
-{
+  {
     "id": "v189-new-289-agri-kesici-asiri-alimi",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -2258,7 +2258,7 @@ export const casesPart07 = [
       "Pralidoksim": "Pralidoksim organofosfat zehirlenmesinde asetilkolinesterazı reaktive etmek için atropinle birlikte düşünülür. Bu hastada salivasyon, bronkore, miyozis veya kolinerjik kriz bulgusu yoktur."
     }
   },
-{
+  {
     "id": "v189-new-290-heparin-sonrasi-trombosit-dususu-ve-bacak-agrisi",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -2611,7 +2611,7 @@ export const casesPart07 = [
       "Trombosit transfüzyonu yapıp heparin profilaksisine devam etmek": "Aktif kanama yokken trombosit transfüzyonu trombotik süreci çözmez ve gereksiz trombosit substratı sağlayabilir. Heparine devam etmek immün aktivasyonu sürdüren temel hatadır."
     }
   },
-{
+  {
     "id": "v189-new-291-vagal-bradikardi-atagi",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -2879,7 +2879,7 @@ export const casesPart07 = [
       "L-tipi kalsiyum kanallarının inhibisyonu": "L-tipi kalsiyum kanal inhibisyonu non-dihidropiridin kalsiyum kanal blokerlerinin AV nodal yavaşlatıcı etkisini açıklar. Atropin böyle çalışmaz ve bu mekanizma bradikardiyi artırabilir."
     }
   },
-{
+  {
     "id": "v189-new-292-cilt-enfeksiyonunda-orantisiz-agri",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -3536,7 +3536,7 @@ export const casesPart07 = [
       "note": "Yalnızca 16-20. Genel Cerrahi kayıtlarında anamnez, objektif veri, seçenek ve feedback zinciri yeniden denetlendi."
     }
   },
-{
+  {
     "id": "v189-new-293-karin-sisligi-ve-gaz-cikaramama",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -4276,7 +4276,7 @@ export const casesPart07 = [
       "note": "Genel Cerrahi vakasında objektif veri katmanı cerrahi ilk değerlendirme → acil güvenlik → laboratuvar → hedefli görüntüleme/doğrulama → girişim/kaynak kontrolü sırasına göre düzenlendi."
     }
   },
-{
+  {
     "id": "v189-new-294-supheli-tiroid-nodulu",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -5093,7 +5093,7 @@ export const casesPart07 = [
       "note": "Genel Cerrahi vakasında objektif veri katmanı cerrahi ilk değerlendirme → acil güvenlik → laboratuvar → hedefli görüntüleme/doğrulama → girişim/kaynak kontrolü sırasına göre düzenlendi."
     }
   },
-{
+  {
     "id": "v189-new-295-erken-gebelikte-asiri-bulanti-ve-kanama",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -5472,7 +5472,7 @@ export const casesPart07 = [
     "obgynInvestigationLayerEnhanced": true,
     "obgynInvestigationLayerVersion": "v397-obgyn-investigation-layer"
   },
-{
+  {
     "id": "v189-new-296-erken-membran-rupturu",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -5780,7 +5780,7 @@ export const casesPart07 = [
     "obgynInvestigationLayerEnhanced": true,
     "obgynInvestigationLayerVersion": "v397-obgyn-investigation-layer"
   },
-{
+  {
     "id": "v189-new-297-ovulasyon-induksiyonu-sonrasi-karin-sisligi",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -6135,7 +6135,7 @@ export const casesPart07 = [
     "obgynInvestigationLayerEnhanced": true,
     "obgynInvestigationLayerVersion": "v397-obgyn-investigation-layer"
   },
-{
+  {
     "id": "v189-new-298-enfeksiyon-sonrasi-gucsuzluk",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -6535,7 +6535,7 @@ export const casesPart07 = [
       "note": "Postenfeksiyöz güçsüzlük vakasında nörolojik lokalizasyon, solunum güvenliği, BOS ve elektrofizyoloji birlikte yapılandırıldı."
     }
   },
-{
+  {
     "id": "v189-new-299-diyabetik-hastada-siddetli-kulak-agrisi",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -7200,7 +7200,7 @@ export const casesPart07 = [
       "note": "Malign eksternal otit vakasında akış KBB muayenesi ve kraniyal sinir güvenliği → inflamasyon/glisemik durum → temporal kemik görüntüleme → kültür/tedavi izlemi şeklinde düzenlendi."
     }
   },
-{
+  {
     "id": "v189-new-300-el-uzerine-dusme-sonrasi-bilek-agrisi",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -7738,7 +7738,7 @@ export const casesPart07 = [
       "note": "Skafoid travma vakasında akış nörovasküler muayene → skafoid grafileri → immobilizasyon-kontrol görüntüleme → seçilmiş MRG/BT şeklinde düzenlendi."
     }
   },
-{
+  {
     "id": "v192-new-301-halsizlik-ve-direncli-hipotansiyon",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -8883,7 +8883,7 @@ export const casesPart07 = [
       "note": "Adrenal kriz olgusunda hidrokortizon uygulanmış gibi post-intervention veri verilmedi; tetkikler dolaşım, elektrolit ve doğrulayıcı hormon paternini ayırıyor."
     }
   },
-{
+  {
     "id": "v192-new-302-yasli-hastada-bilinc-bulanikligi-ve-hiperglisemi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -10100,7 +10100,7 @@ export const casesPart07 = [
       "note": "HHS olgusunda insülin verilmiş veya tedavi sonrası seri yanıt gösterilmiş gibi post-intervention veri kaldırıldı; pre-decision metabolik ve volüm verileri korundu."
     }
   },
-{
+  {
     "id": "v192-new-303-kabizlik-poliuri-ve-konfuzyon",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -11245,7 +11245,7 @@ export const casesPart07 = [
       "note": "Ağır hiperkalsemi vakasında tedavi uygulanmış yanıt verisi verilmedi; veri katmanı semptom şiddeti, biyokimya, PTH/PTHrP ayrımı ve malignite odağıyla sınırlı tutuldu."
     }
   },
-{
+  {
     "id": "v192-new-304-halsizlik-ve-pika",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -12498,7 +12498,7 @@ export const casesPart07 = [
       "note": "Mikrositik anemi olgusunda veri alanı tanı cümlesi yerine ayırıcı tanı paternlerini gösteren gerçek sonuçlarla düzenlendi; nitel klinik satırlarda referans zorlanmadı."
     }
   },
-{
+  {
     "id": "v192-new-305-hemoptizi-ve-bobrek-yetmezligi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -13746,7 +13746,7 @@ export const casesPart07 = [
       "note": "Biyopsi sonucu veri alanından çıkarıldı; soru beklenen immünfloresan paternine çevrildi ve seroloji-idrar-akciğer verileri tanı adını ezberletmeden histopatolojik eşleştirme yaptıracak şekilde düzenlendi."
     }
   },
-{
+  {
     "id": "v194-new-306-dogum-analjezisi-sonrasi-perineal-uyusma",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -14007,7 +14007,7 @@ export const casesPart07 = [
       "Os coccygis": "Os coccygis pelvisin posterior orta hattındadır. Pudendal sinirin doğum analjezisi için hedeflenen lateral pelvik landmarkı değildir."
     }
   },
-{
+  {
     "id": "v194-new-307-testis-kitlesinde-lenf-nodu-degerlendirmesi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -14268,7 +14268,7 @@ export const casesPart07 = [
       "İnternal iliak lenf nodları": "İnternal iliak nodlar pelvis organlarının önemli bir drenaj alanıdır. Ancak testis parankiminin lenfatikleri pelvis içinde sonlanmak yerine gonadal damarları izleyerek paraaortik bölgeye gider."
     }
   },
-{
+  {
     "id": "v194-new-308-boyun-cerrahisi-sonrasi-sut-gorunumunde-drenaj",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -14580,7 +14580,7 @@ export const casesPart07 = [
       "Truncus bronchomediastinalis sinister": "Sol bronchomediastinal trunk torasik visseral ve mediastinal lenf drenajıyla ilişkilidir. Boyun diseksiyonu sonrası intestinal şil karakterindeki yüksek trigliseridli drenaj terminal ductus thoracicus yaralanmasını daha güçlü destekler."
     }
   },
-{
+  {
     "id": "v194-new-309-karbondioksit-tasinmasi-mekanizmasi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -14930,7 +14930,7 @@ export const casesPart07 = [
     "helpText": "Akciğer tarafında O₂ bağlanması, hemoglobinin CO₂/H+ taşıma kapasitesini düşürerek CO₂ boşaltımını destekler.",
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v194-new-310-bobrek-plazma-akimi-olcumu",
     "branchId": "physiology",
     "caseType": "standard",
@@ -15269,7 +15269,7 @@ export const casesPart07 = [
     "helpText": "Klirensin GFR ile ilişkisine ve maddenin tübülde geri emilip emilmediğine odaklan; yalnız filtre edilen maddeler ile filtre edilip sekrete edilen maddeler farklı fizyolojik büyüklükleri temsil eder.",
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v194-new-311-mide-asit-salgisinin-son-basamagi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -15608,7 +15608,7 @@ export const casesPart07 = [
     "scientificComment": "Parietal hücrede H⁺ üretimi destek basamaklarıyla hazırlanır; lümene protonun son aktif geçişi apikal H⁺/K⁺ ATPaz üzerinden gerçekleşir.",
     "helpText": "Soruda “son ortak apikal taşıyıcı” ifadesine odaklan; destekleyici basolateral taşıyıcılarla lümene doğrudan H⁺ veren taşıyıcıyı ayır."
   },
-{
+  {
     "id": "v194-new-312-dil-hareketiyle-yukselen-boyun-kitlesi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -16022,7 +16022,7 @@ export const casesPart07 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v194-new-313-testis-biyopsisinde-destek-hucresi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -16385,7 +16385,7 @@ export const casesPart07 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v194-new-314-erken-gebelikte-trofoblast-islevi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -16875,7 +16875,7 @@ export const casesPart07 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v194-new-315-meyve-puresi-sonrasi-kusma-ve-hipoglisemi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -17286,7 +17286,7 @@ export const casesPart07 = [
       "Fruktoz-1,6-bisfosfataz eksikliği": "Bu glukoneogenez defekti açlık, enfeksiyon veya katabolik stresle laktik asidoz ve hipoglisemi yapar. Özgül olarak fruktoz/sükroz alımı sonrası fosfat tuzaklanması ve hepatotoksisite paterni aldolaz B eksikliğini öne çıkarır."
     }
   },
-{
+  {
     "id": "v194-new-316-gunesle-artan-dokuntu-ve-ataksi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -17564,7 +17564,7 @@ export const casesPart07 = [
       "Dallı zincirli aminoasitlerin oksidatif dekarboksilasyonunda bozukluk": "Dallı zincirli aminoasitlerin oksidatif dekarboksilasyon kusuru MSUD’ye yol açar; yenidoğan letarjisi ve tatlı kokulu idrar beklenir. Güneşle artan dermatit ve nötral aminoasidüri Hartnup ile uyumludur."
     }
   },
-{
+  {
     "id": "v194-new-317-genc-hastada-karaciger-ve-hareket-bulgulari",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -17947,7 +17947,7 @@ export const casesPart07 = [
       "Ferroportin aracılı makrofaj ve hepatosit demir çıkışının bozulması": "Ferroportin kusuru demir taşıma bozukluğudur; korneal pigment halkası ve bakır paneliyle uyumlu değildir."
     }
   },
-{
+  {
     "id": "v194-new-318-sel-sonrasi-ates-ve-sarilik",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -18279,7 +18279,7 @@ export const casesPart07 = [
       "Borrelia burgdorferi": "Borrelia Ixodes kenesiyle Lyme hastalığı yapar; eritema migrans, artrit, nörolojik veya kardiyak bulgular beklenir. Sel suyu sonrası sarılık-böbrek hasarı ve konjonktival suffüzyon Lyme paternine uymaz."
     }
   },
-{
+  {
     "id": "v194-new-319-magara-gezisi-sonrasi-ates-ve-oksuruk",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -18568,7 +18568,7 @@ export const casesPart07 = [
       "Blastomyces dermatitidis": "Blastomyces pulmoner enfeksiyon yapabilir ve deri/kemik tutulumu eşlik edebilir; dokuda geniş tabanlı tomurcuklanan kalın duvarlı maya beklenir. Bu olgudaki makrofaj içi küçük oval maya ve mağara maruziyeti Blastomyces yerine Histoplasma lehinedir."
     }
   },
-{
+  {
     "id": "v194-new-320-karacigerde-kistik-lezyon",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -18901,7 +18901,7 @@ export const casesPart07 = [
       "Schistosoma mansoni": "Schistosoma mansoni portal hipertansiyon ve periportal fibrozisle ilişkili hepatosplenik hastalık yapabilir. Çok odacıklı karaciğer kisti ve kız vezikül görünümüyle açıklanmaz."
     }
   },
-{
+  {
     "id": "v194-new-321-kanli-ishal-ve-rektumdan-baslayan-tutulum",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -19294,7 +19294,7 @@ export const casesPart07 = [
       "Amebik kolit": "Amebik kolitte flask şeklinde ülserler ve doku içinde eritrosit fagosite etmiş trofozoitler beklenir; seyahat veya epidemiyolojik risk öyküsü de destekleyici olurdu. Bu olgudaki kript mimarisi bozulması ve rektal başlangıçlı kesintisiz kronik aktif kolit paterni amebiyazı desteklemez."
     }
   },
-{
+  {
     "id": "v194-new-322-farenjit-sonrasi-eklem-agrisi-ve-kardit",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -19589,7 +19589,7 @@ export const casesPart07 = [
       "Kronik komissüral füzyon": "Komissüral füzyon ve kapak kalınlaşması tekrarlayan veya kronik romatizmal kapak hastalığının geç skarlı sonucudur. Bu olguda sorulan akut fazdaki karakteristik miyokardiyal histopatolojik lezyondur."
     }
   },
-{
+  {
     "id": "v194-new-323-ergende-diz-cevresinde-agrili-kitle",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -19873,7 +19873,7 @@ export const casesPart07 = [
       "Osteoid osteom": "Osteoid osteom küçük nidus, gece artan ve NSAİİ ile belirgin rahatlayan ağrı ile tipiktir; radyolojide büyük agresif yumuşak doku uzanımlı kitle ve biyopside pleomorfik malign hücreler beklenmez. Bu nedenle bu olgu osteoid osteom değildir."
     }
   },
-{
+  {
     "id": "v194-new-324-antibiyotik-infuzyonu-sirasinda-kizarma",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -20218,7 +20218,7 @@ export const casesPart07 = [
       "Reaksiyonu enfeksiyon ateşi kabul edip herhangi bir ilaç uygulama değişikliği yapmamak": "Ateş enfeksiyonla ilişkili olabilir; ancak kızarma ve kaşıntının infüzyon sırasında başlaması ilaç uygulama hızıyla bağlantılıdır. Uygulama değişikliği yapmadan devam etmek reaksiyonu yineletebilir."
     }
   },
-{
+  {
     "id": "v194-new-325-antipsikotik-sonrasi-ates-ve-bogaz-agrisi",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -20563,7 +20563,7 @@ export const casesPart07 = [
       "Clozapine’i sürdürürken yalnız antipiretik verip kan sayımı takibini ay sonuna ertelemek": "Antipiretik ateşi maskeleyebilir fakat nötropenik enfeksiyon riskini ve ilaç nedenli kemik iliği baskılanmasını düzeltmez. Kan sayımı takibini ertelemek bu tabloda güvenli değildir."
     }
   },
-{
+  {
     "id": "v194-new-326-tekrarlayan-gut-ataklari",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -20872,7 +20872,7 @@ export const casesPart07 = [
       "IL-1β sinyalini bloke ederek kristal inflamasyonunu baskılama": "IL-1β blokajı kristal inflamasyonunun sitokin aracılı kısmını baskılayabilir; ancak ürik asit üretimini düşürmez. Bu seçenek akut/dirençli inflamasyon kontrolüyle daha ilişkilidir."
     }
   },
-{
+  {
     "id": "v194-new-327-yutma-sonrasi-agiza-gida-gelmesi",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -21539,7 +21539,7 @@ export const casesPart07 = [
       "note": "Genel Cerrahi vakasında objektif veri katmanı cerrahi ilk değerlendirme → acil güvenlik → laboratuvar → hedefli görüntüleme/doğrulama → girişim/kaynak kontrolü sırasına göre düzenlendi."
     }
   },
-{
+  {
     "id": "v194-new-328-agrisiz-sarilik-ve-kilo-kaybi",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -22723,7 +22723,7 @@ export const casesPart07 = [
       "note": "Genel Cerrahi vakasında objektif veri katmanı cerrahi ilk değerlendirme → acil güvenlik → laboratuvar → hedefli görüntüleme/doğrulama → girişim/kaynak kontrolü sırasına göre düzenlendi."
     }
   },
-{
+  {
     "id": "v194-new-329-siklik-pelvik-agri-ve-infertilite",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",

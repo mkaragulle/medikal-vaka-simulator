@@ -229,6 +229,7 @@ function AISpotNarrativePanel({ question, hardMode = false, embedded = false }) 
       {diagnostics ? (
         <div className="ai-spot-dev-diagnostics" aria-hidden="true">
           <span>paragraphs: {diagnostics.paragraphCount}</span>
+          <span>words: {diagnostics.wordCount}</span>
           <span>support groups: {diagnostics.supportGroupCount}</span>
           <span>support items: {diagnostics.supportItemCount}</span>
           <span>legacy labels: {diagnostics.hasLegacyBoxLabels ? 'yes' : 'no'}</span>

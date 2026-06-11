@@ -121,7 +121,7 @@ function ensureQuestion(value = '') {
 function removeCorrectAnswer(text = '', correct = '') {
   const cleaned = asText(text);
   const correctText = asText(correct);
-  if (!cleaned || !correctText) return cleaned;
+  if (!cleaned || !correctText || correctText.length < 4) return cleaned;
   const escaped = correctText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   return cleaned.replace(new RegExp(escaped, 'giu'), 'etken');
 }
@@ -152,7 +152,7 @@ function splitSentences(value = '') {
 
 function addUniqueSentence(sentences, sentence, correct = '') {
   const clean = stripPreAnswerTeaching(ensureSentence(sentence), correct);
-  if (!clean) return sentences;
+  if (!clean || clean.length < 8) return sentences;
   const key = normalizeComparable(clean);
   const duplicate = sentences.some((item) => {
     const itemKey = normalizeComparable(item);
@@ -449,10 +449,11 @@ function supportItemAppearsInSentence(sentence = '', item = {}) {
     .filter(Boolean);
   const hasLabel = labelTokens.some((token) => haystack.includes(normalizeDataComparable(token)));
   if (!hasLabel) return false;
-  if (/^(pozitif|negatif|düşük|dusuk|yüksek|yuksek|normal)$/u.test(value)) return true;
+  if (value.length <= 7 && /^(pozitif|negatif|düşük|dusuk|yüksek|yuksek|normal)$/u.test(value)) return true;
   if (haystack.includes(value)) return true;
   if (numericToken && haystack.includes(normalizeDataComparable(numericToken))) return true;
-  return false;
+  const valueKeywords = value.split(' ').filter((token) => token.length >= 4).slice(0, 4);
+  return valueKeywords.length >= 2 && valueKeywords.every((token) => haystack.includes(token));
 }
 
 function sentenceLooksLikeRawSupportData(sentence = '', supportItems = []) {
@@ -480,33 +481,14 @@ function cleanSupportDataOrphans(text = '') {
 }
 
 export function stripDuplicateSupportDataFromStem(value = '', supportItems = []) {
-  const text = normalizeAiNarrativeText(value);
-  if (!text || !supportItems.length) return cleanSupportDataOrphans(text);
-  const sentences = splitSentences(text);
-  const kept = sentences.filter((sentence) => !sentenceLooksLikeRawSupportData(sentence, supportItems));
-  const cleaned = cleanSupportDataOrphans(kept.join(' '));
-  if (cleaned.split(/\s+/).filter(Boolean).length >= 8) return cleaned;
-  return cleanSupportDataOrphans(text)
-    .replace(/\b(?:Ek klinik verilerde|Ek klinik veri|Ek verilerde|Ek veri|Laboratuvar|Seroloji|Serolojik incelemede|Otoimmünite verileri|Kan gazı|Elektrolit paneli|Vital bulgularda)\s*[:：]?\s*[^.?!]*(?:[.?!]|$)/giu, ' ')
-    .replace(/\b(?:ANA|Anti-dsDNA|HBsAg|Anti-HBc\s*IgM|HBV\s*DNA|C3|C4|CRP|Lökosit|Lokosit|WBC|K⁺|K\+|Potasyum|Glukoz|pH|HCO₃|HCO3|Kreatinin)\s*(?:[:=]|\s+)\s*[^,.;?!]*(?:[,;]\s*)?/giu, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
+  // AI spot sorularında karar verdirici laboratuvar/görüntüleme verileri görünür kökte korunur.
+  return cleanSupportDataOrphans(normalizeAiNarrativeText(value));
 }
 
 function removeStructuredDataFragmentsFromText(value = '', hasSupportData = false, supportItems = []) {
-  if (!hasSupportData) return value;
-  let text = normalizeAiNarrativeText(value);
-  text = text
-    .replace(/\b(?:Ek klinik verilerde|Ek klinik veri|Ek verilerde|Ek veri|Laboratuvar|Laboratuvar sonuçları|Laboratuvar değerlendirmesinde|Objektif değerlendirmede|Kan gazı|Elektrolit paneli|Seroloji|Otoimmünite verileri)\s*[:：]?\s*.*?(?=\s+(?:Abdominal|Toraks|Akciğer|Görüntüleme|Fizik|Muayenede|Bu\s|Hangi\s|Aşağıdakiler)|$)/giu, ' ')
-    .replace(/\b(?:Serolojik inceleme(?:de)?|Serolojide|Serolojik veriler)\s*[:：]?\s*.*?(?=\s+(?:Bu\s|Hangi\s|Aşağıdakiler|Fizik|Muayenede|Görüntüleme)|$)/giu, ' ')
-    .replace(/\b(?:Vital bulgularda|Vital bulgularında)\s+.*?(?=\s+(?:Fizik|Muayenede|Laboratuvar|Abdominal|Toraks|Akciğer|Görüntüleme|Bu\s|Hangi\s|Aşağıdakiler)|$)/giu, ' ')
-    .replace(/\s*(?:Serolojik incelemede|Serolojide)\s+[^.?!]*(?:HBsAg|Anti-HBs|Anti-HBc|HBeAg|Anti-HBe|HBV\s*DNA|ANA|Anti-dsDNA|C3|C4)[^.?!]*(?:saptanıyor|bildiriliyor|bulunuyor|saptanır)[.?!]?/giu, ' ')
-    .replace(/\bhastada\s*[.]/giu, 'hasta değerlendiriliyor.')
-    .replace(/\bbaşvuran hastada\s+(Bu\s)/giu, 'başvuran hasta değerlendiriliyor. $1')
-    .replace(/\bhastada\s+(Bu\s)/giu, 'hasta değerlendiriliyor. $1')
-    .replace(/\s{2,}/g, ' ')
-    .trim();
-  return stripDuplicateSupportDataFromStem(text, supportItems);
+  // Önceki sürümlerde bu fonksiyon objektif verileri kökten temizleyebiliyordu.
+  // TUS spot üretiminde tüm çözdürücü bilgiler görünür metinde kalmalıdır.
+  return cleanSupportDataOrphans(normalizeAiNarrativeText(value));
 }
 
 function isMeaningfulVital(value = '') {
@@ -725,14 +707,14 @@ function limitNarrativeLength(sentences = [], questionPrompt = '') {
   const prompt = ensureQuestion(questionPrompt || 'Bu olguda en uygun seçenek aşağıdakilerden hangisidir?');
   return sentences
     .map((sentence) => ensureSentence(sentence))
-    .filter((clean) => clean && !isQuestionSentence(clean) && !questionsLookSimilar(clean, prompt));
+    .filter((sentence) => sentence && !isQuestionSentence(sentence) && !questionsLookSimilar(sentence, prompt));
 }
 
 function splitTusParagraphsFromSentences(sentences = []) {
   const bodySentences = sentences.filter((sentence) => sentence && !isQuestionSentence(sentence));
   if (!bodySentences.length) return ['Bu soru için klinik bağlam eksik üretildi; lütfen yeni bir TUS sorusu üretin.'];
   const body = bodySentences.join(' ').trim();
-  return [body];
+  return body ? [body] : [];
 }
 
 export function buildSafeAISpotTitle(question = {}) {
@@ -744,11 +726,11 @@ export function buildSafeAISpotTitle(question = {}) {
   const comparableTitle = normalizeComparable(rawTitle);
   const type = String(question.questionType || '').toLocaleLowerCase('tr');
   const fallback = TITLE_FALLBACK_BY_TYPE[type] || TITLE_FALLBACK_BY_TYPE.spot;
-  if (!originalTitle) return fallback;
+  if (!originalTitle || originalTitle.length < 6) return fallback;
   if (comparableCorrect && comparableOriginalTitle.includes(comparableCorrect)) return fallback;
-  if (!rawTitle) return fallback;
+  if (!rawTitle || rawTitle.length < 6) return fallback;
   if (/tanisi|tanısı|tedavisi|yönetimi|yonetimi|ilk ilac|ilk ilaç|etkeni$/u.test(comparableTitle)) return fallback;
-  return rawTitle;
+  return rawTitle.length > 74 ? `${rawTitle.slice(0, 71).trim()}…` : rawTitle;
 }
 
 export function buildAISpotContextLine(question = {}) {
@@ -756,36 +738,18 @@ export function buildAISpotContextLine(question = {}) {
 }
 
 export function buildAISpotNarrativeStem(question = {}) {
-  const correct = question.diagnosis?.correct || question.correctAnswerText || '';
-  const vitalsBox = getAISpotCompactVitals(question);
-  const objectiveBox = getAISpotCompactObjectiveData(question);
-  const supportItems = [...vitalsBox, ...objectiveBox];
-  const baseRaw = question.narrativeStem || question.primaryStem || question.stem || question.patientIntro?.historySummary || '';
-  let cleanBase = stripPreAnswerTeaching(baseRaw, correct);
-  cleanBase = removeDenseVitalSentences(cleanBase, vitalsBox.length > 0);
-  cleanBase = removeStructuredDataFragmentsFromText(cleanBase, Boolean(vitalsBox.length || objectiveBox.length), supportItems);
-  cleanBase = stripDuplicateSupportDataFromStem(cleanBase, supportItems);
-  cleanBase = simplifyInlineObjectiveText(cleanBase);
+  // V429 root fix: the visible TUS stem must remain complete.
+  // Do not strip lab/imaging/serology/vital sentences out of the stem just because they can be shown
+  // in a support panel. The support panel is optional; the stem is what makes the question solvable.
+  const raw = question.narrativeStem || question.primaryStem || question.stem || question.patientIntro?.historySummary || '';
+  const questionPrompt = buildAISpotQuestionPrompt(question);
+  const sentences = splitSentences(raw)
+    .map((sentence) => ensureSentence(sentence))
+    .filter(Boolean)
+    .filter((sentence) => !isQuestionSentence(sentence));
 
-  const baseSentences = [];
-  splitSentences(cleanBase).forEach((sentence) => {
-    if (/^vital bulgularda/iu.test(sentence) && vitalsBox.length) return;
-    if (objectiveBox.length && looksLikeDenseObjectiveSentence(sentence)) return;
-    if (/^objektif değerlendirmede/iu.test(sentence)) return;
-    addUniqueSentence(baseSentences, sentence, correct);
-  });
-
-  if (!baseSentences.length) {
-    const history = Array.isArray(question.history || question.findings?.history) ? (question.history || question.findings?.history) : [];
-    history.forEach((item) => addUniqueSentence(baseSentences, item, correct));
-    const exam = Array.isArray(question.exam || question.findings?.exam) ? (question.exam || question.findings?.exam) : [];
-    exam.forEach((item) => addUniqueSentence(baseSentences, `Fizik muayenede ${item}`, correct));
-  }
-
-  const questionPrompt = stripPreAnswerTeaching(question.question || question.diagnosis?.question || '', correct)
-    .replace(/^[Bb]u olguda\s*,?\s*/u, 'Bu olguda ');
-  const finalSentences = limitNarrativeLength(baseSentences, questionPrompt);
-  return splitTusParagraphsFromSentences(finalSentences);
+  if (!sentences.length) return ['Bu soru için klinik bağlam eksik üretildi; lütfen yeni bir TUS sorusu üretin.'];
+  return splitTusParagraphsFromSentences(sentences);
 }
 
 
@@ -794,37 +758,28 @@ function mergeCompactDataItems(...groups) {
 }
 
 export function applyAISpotDuplicateDataGate(question = {}) {
+  // V429 root fix: keep complete objective data visible in the stem.
+  // This function no longer removes structured-data sentences from AI spot stems.
   const vitals = getAISpotCompactVitals(question);
   const objective = getAISpotCompactObjectiveData(question);
-  const supportItems = [...vitals, ...objective];
-  const rawStem = question.narrativeStem || question.primaryStem || question.stem || question.patientIntro?.historySummary || '';
-  const cleanedStem = stripDuplicateSupportDataFromStem(
-    removeStructuredDataFragmentsFromText(removeDenseVitalSentences(stripPreAnswerTeaching(rawStem, question.diagnosis?.correct || question.correctAnswerText || ''), vitals.length > 0), Boolean(supportItems.length), supportItems),
-    supportItems,
-  );
   const next = {
     ...question,
     compactVitals: mergeCompactDataItems(question.compactVitals || question.compactVitalData || [], vitals),
     compactObjectiveData: mergeCompactDataItems(question.compactObjectiveData || question.compactObjective || [], objective),
   };
-  if (cleanedStem) {
-    next.stem = cleanedStem;
-    next.narrativeStem = cleanedStem;
-    if (next.patientIntro) {
-      next.patientIntro = {
-        ...next.patientIntro,
-        historySummary: cleanedStem,
-      };
-    }
+  if (question.stem && question.patientIntro) {
+    next.patientIntro = { ...question.patientIntro, historySummary: question.stem };
   }
   return next;
 }
+
 
 export function getAISpotPreviewDiagnostics(question = {}) {
   const paragraphs = buildAISpotNarrativeStem(question);
   const text = paragraphs.join(' ');
   return {
     paragraphCount: paragraphs.length,
+    wordCount: text.split(/\s+/).filter(Boolean).length,
     supportGroupCount: getAISpotSupportDataGroups(question).length,
     supportItemCount: getAISpotSupportDataGroups(question).reduce((total, group) => total + group.items.length, 0),
     hasLegacyBoxLabels: /profil|başvuru|risk bağlamı|ayırt ettirici ipuçları|kısa klinik öykü özeti/iu.test(text),

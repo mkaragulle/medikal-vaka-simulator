@@ -1,5 +1,5 @@
 export const casesPart02 = [
-{
+  {
     "seq": 17,
     "globalIndex": 47,
     "id": "v167-new-048-hemoliz-ve-norolojik-bulgular",
@@ -1369,7 +1369,7 @@ export const casesPart02 = [
       "note": "ADAMTS13 sonucu bekleme gibi süreç cümleleri çıkarıldı; tanı klinik-laboratuvar patern üzerinden tek doğru cevaplı hale getirildi."
     }
   },
-{
+  {
     "seq": 18,
     "globalIndex": 48,
     "id": "v167-new-049-kolik-yan-agrisi",
@@ -2303,7 +2303,7 @@ export const casesPart02 = [
       "note": "Objektif veri alanında doğru cevabı kelime düzeyinde söyleyen kristal adı kaldırıldı; morfoloji cevabı sızdırmadan bırakıldı."
     }
   },
-{
+  {
     "seq": 19,
     "globalIndex": 49,
     "id": "v167-new-050-akut-gogus-agrisi-ve-hipotansiyon",
@@ -3237,7 +3237,7 @@ export const casesPart02 = [
       "note": "Objektif veri alanında nitrat yanıtını söyleyen yorumlar kaldırıldı; veri pre-intervention hemodinamik karar noktasında tutuldu."
     }
   },
-{
+  {
     "id": "v168-new-051-omuz-hareketinde-postoperatif-gucluk",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -3443,7 +3443,7 @@ export const casesPart02 = [
       "Nervus axillaris": "Deltoid ve lateral omuz duyusu etkilenirdi; olguda distal duyu ve deltoid odaklı bulgu yoktur."
     }
   },
-{
+  {
     "id": "v168-new-052-bilinc-bulanikligi-ve-hiponatremi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -3947,7 +3947,7 @@ export const casesPart02 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v168-new-053-yenidoganda-santral-siyanoz",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -4423,7 +4423,7 @@ export const casesPart02 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v168-new-054-tromboz-egilimi-olan-ergen",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -4754,7 +4754,7 @@ export const casesPart02 = [
       "Methylenetetrahydrofolate reductase (MTHFR) eksikliği": "MTHFR, 5-metil-THF sağlayarak remetilasyonu destekler. MTHFR kusurunda metiyonin artışı beklenmez; lens subluksasyonu ile metiyonin-homosistein birlikte yüksekliği transsülfürasyon blokajını daha güçlü gösterir."
     }
   },
-{
+  {
     "id": "v168-new-055-yenidoganda-okuler-ve-norolojik-bulgular",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -5107,7 +5107,7 @@ export const casesPart02 = [
       "Listeria monocytogenes": "Listeria gebelikte neonatal sepsis veya menenjit yapabilen hücre içi gram pozitif basildir; çoğunlukla pastörize edilmemiş süt/şarküteri maruziyetiyle düşünülür. Retinokoroidit-hidrosefali-kalsifikasyon paterni Listeria için tipik tanısal patern değildir."
     }
   },
-{
+  {
     "id": "v168-new-056-agrisiz-hematuri-ve-renal-kitle",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -5434,7 +5434,7 @@ export const casesPart02 = [
       "Ürotelyal karsinom": "Ürotelyal karsinom renal pelvis/üreter kaynaklıdır ve papiller ya da invaziv ürotelyal morfoloji beklenir. Bu vakada kitle renal kortekste yerleşmiştir ve mikroskopik patern ürotelyal değil renal tübüler epitelyal kökeni destekler."
     }
   },
-{
+  {
     "id": "v168-new-057-yeni-baslayan-kuru-oksuruk",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -5746,7 +5746,7 @@ export const casesPart02 = [
       "Histamin H1 reseptör aktivasyonuna bağlı mukozal ödem": "H1 aktivasyonu alerjik rinit, ürtiker, kaşıntı veya mukozal ödemle beklenir. Burada rinore, kaşıntı ve alerjik ödem yoktur; zaman ilişkisi ilaca bağlı pro-tüssif mediyatör birikimini destekler."
     }
   },
-{
+  {
     "seq": 20,
     "globalIndex": 57,
     "id": "v168-new-058-hiperglisemi-ve-asidotik-solunum",
@@ -6898,7 +6898,7 @@ export const casesPart02 = [
       "note": "Objektif veri alanında ilk tedaviyi söyleyen yorumlar temizlendi; tedavi uygulanmamış başlangıç verisi korunarak seçenek-feedback zinciri yenilendi."
     }
   },
-{
+  {
     "id": "v168-new-059-ates-ve-sarilikla-basvuran-hasta",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -8188,7 +8188,7 @@ export const casesPart02 = [
       "note": "Genel Cerrahi vakasında objektif veri katmanı cerrahi ilk değerlendirme → acil güvenlik → laboratuvar → hedefli görüntüleme/doğrulama → girişim/kaynak kontrolü sırasına göre düzenlendi."
     }
   },
-{
+  {
     "id": "v168-new-060-agiz-yaralari-ve-gevsek-buller",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -8788,7 +8788,7 @@ export const casesPart02 = [
     "listTitle": "Ağız yaraları ve gevşek büller",
     "cardTitle": "Ağız yaraları ve gevşek büller"
   },
-{
+  {
     "id": "v169-new-061-uzamis-ates-ve-mukokutanoz-bulgular",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -9447,7 +9447,7 @@ export const casesPart02 = [
       ]
     }
   },
-{
+  {
     "id": "v169-new-062-gebelikte-hipertansiyon-ve-norolojik-yakinma",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -9803,7 +9803,7 @@ export const casesPart02 = [
     "obgynInvestigationLayerEnhanced": true,
     "obgynInvestigationLayerVersion": "v397-obgyn-investigation-layer"
   },
-{
+  {
     "id": "v169-new-063-trombositopeni-ve-norolojik-bulgu",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -11020,7 +11020,7 @@ export const casesPart02 = [
       "note": "TTP şüphesinde pre-decision veri korunarak ADAMTS13 sonucu bekleme ya da plazma değişimi uygulanmış gibi post-intervention veri yazılmadı."
     }
   },
-{
+  {
     "id": "v169-new-064-antibiyotik-sonrasi-ishal",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -11385,7 +11385,7 @@ export const casesPart02 = [
       "Giardia lamblia": "Giardia kontamine suyla bulaşan yağlı, kötü kokulu, malabsorptif ishal yapar ve dışkıda kist/trofozoit veya antijenle gösterilir. Bu vakada toksin A/B pozitifliği ve psödomembranöz kolit bulgusu Giardia’yı dışlar."
     }
   },
-{
+  {
     "id": "v169-new-065-anestezi-sirasinda-ani-kriz",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -11726,7 +11726,7 @@ export const casesPart02 = [
       "Dopamin D2 reseptörlerini bloke ederek otonom hiperaktiviteyi azaltması": "D2 blokajı antipsikotik ilaçların etkisidir ve nöroleptik malign sendrom ayrımında karışabilir. Bu olguda uçucu anestezik/süksinilkolin tetikleyicisi, erken hiperkapni ve rijidite malign hipertermi mekanizmasını gösterir."
     }
   },
-{
+  {
     "id": "v169-new-066-eriskinde-nefrotik-tablo",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -12031,7 +12031,7 @@ export const casesPart02 = [
       "Tram-track çift kontur görünümü ve belirgin mezangial interpozisyon": "Tram-track görünümü membranoproliferatif glomerülonefrit gibi mezangial interpozisyon ve kapiller duvar yeniden şekillenmesiyle giden süreçlerde beklenir. Bu soruda depo lokalizasyonu subepitelyaldir; mezangial interpozisyon paterni verilmemiştir."
     }
   },
-{
+  {
     "id": "v169-new-067-kalca-cerrahisi-sonrasi-yurume-bozuklugu",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -12237,7 +12237,7 @@ export const casesPart02 = [
       "Nervus femoralis": "Diz ekstansiyonu ve patella refleksi etkilenirdi; bu bulgular normaldir."
     }
   },
-{
+  {
     "id": "v169-new-068-kronik-dispne-ve-hava-hapsi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -12759,7 +12759,7 @@ export const casesPart02 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v169-new-069-protein-alimi-sonrasi-ensefalopati",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -13169,7 +13169,7 @@ export const casesPart02 = [
       "Arginaz eksikliği": "Arginaz eksikliği üre döngüsünün son basamağındadır; çoğu kez daha geç başlangıçlı spastisite ve arginin yüksekliğiyle tanınır. Yenidoğan döneminde protein yüküyle gelişen ağır hiperammonemi, düşük sitrülin ve yüksek orotik asit bu tabloya uymaz."
     }
   },
-{
+  {
     "id": "v169-new-070-ani-goz-agrisi-ve-gorme-bulanikligi",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -13808,7 +13808,7 @@ export const casesPart02 = [
       "note": "Hasta öyküsü olay akışına çevrildi; post-intervention veya cevabı doğrudan uygulamış veri bırakılmadan acil göz muayenesi, GİB ölçümü, slit-lamp ve sistemik tedavi güvenliği akışı korundu."
     }
   },
-{
+  {
     "id": "v172-new-071-cocukta-agrisiz-alt-gastrointestinal-kanama",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -14284,7 +14284,7 @@ export const casesPart02 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v172-new-072-direncli-hipertansiyon-ve-kas-gucsuzlugu",
     "branchId": "physiology",
     "caseType": "standard",
@@ -14801,7 +14801,7 @@ export const casesPart02 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v172-new-073-kirli-yara-sonrasi-kas-spazmlari",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -15104,7 +15104,7 @@ export const casesPart02 = [
       "Adenilat siklaz aktivasyonu ile sulu sekresyonun artırılması": "Kolera toksini ve ETEC ısıya duyarlı toksini gibi enterotoksinler adenilat siklaz-cAMP üzerinden sekretuvar ishale neden olur. Kirli yara sonrası trismus ve spastik spazm tablosuyla bu mekanizma ilişkili değildir."
     }
   },
-{
+  {
     "id": "v172-new-074-siddetli-karin-agrisi-ve-atriyal-fibrilasyon",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -15853,7 +15853,7 @@ export const casesPart02 = [
       "note": "Genel Cerrahi vakasında objektif veri katmanı cerrahi ilk değerlendirme → acil güvenlik → laboratuvar → hedefli görüntüleme/doğrulama → girişim/kaynak kontrolü sırasına göre düzenlendi."
     }
   },
-{
+  {
     "id": "v172-new-075-servikal-lenf-nodu-ile-saptanan-tiroid-nodulu",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -16100,7 +16100,7 @@ export const casesPart02 = [
       "Granülomatöz inflamasyon ve multinükleer dev hücreler": "Bu patern subakut granülomatöz tiroidit gibi inflamatuvar süreçlerle ilişkilidir. Ağrılı tiroid, viral prodrom veya inflamatuvar destrüksiyon bulgusu olmadığı için neoplastik papiller patern daha uygundur."
     }
   },
-{
+  {
     "id": "v172-new-076-hiperurisemi-ve-davranissal-bulgular",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -16412,7 +16412,7 @@ export const casesPart02 = [
       "Adenozin deaminaz eksikliği": "ADA eksikliği toksik purin metabolitleri nedeniyle ağır kombine immün yetmezlik yapar. Bu hastada tekrarlayan ağır enfeksiyon değil hiperürisemi, ürat kristalleri ve kendini yaralama davranışı ön plandadır."
     }
   },
-{
+  {
     "id": "v172-new-077-antikoagulan-tedavi-sirasinda-yeni-tromboz",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -16709,7 +16709,7 @@ export const casesPart02 = [
       "Düşük doz asetilsalisilik asit ile izlem yapmak": "Aspirin antiplatelet etkilidir, fakat HIT’te venöz tromboz ve trombin oluşumu baskın olduğu için heparin dışı antikoagülasyonun yerini tutmaz."
     }
   },
-{
+  {
     "id": "v172-new-078-yenidoganda-hipokalsemik-nobet",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -17167,7 +17167,7 @@ export const casesPart02 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v172-new-079-yanik-yarasinda-kotulesen-enfeksiyon",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -17432,7 +17432,7 @@ export const casesPart02 = [
       "Shiga-benzeri etkiyle 60S ribozomal alt birimi inaktive etmesi": "Shiga toksini ve Shiga-benzeri toksinler 28S rRNA hasarı üzerinden 60S ribozomal alt birimi etkiler; hemorajik kolit ve HUS bağlamında düşünülür. Exotoxin A ribozomu doğrudan değil EF-2 üzerinden translasyonu durdurur."
     }
   },
-{
+  {
     "id": "v172-new-080-kronik-karbondioksit-retansiyonu",
     "branchId": "physiology",
     "caseType": "standard",
@@ -17931,7 +17931,7 @@ export const casesPart02 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v173-new-081-yenidoganda-mekonyum-cikaramama",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -18389,7 +18389,7 @@ export const casesPart02 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v173-new-082-beslenmeyle-artan-solunum-sikintisi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -18830,7 +18830,7 @@ export const casesPart02 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v173-new-083-atipik-pnomoni-ve-hiponatremi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -19175,7 +19175,7 @@ export const casesPart02 = [
       "Klebsiella pneumoniae": "Klebsiella alkolizm, aspirasyon ve diyabet bağlamında nekrotizan lober pnömoni ve “currant jelly” balgamla düşünülür. Rutin kültürde üreyen kapsüllü gram negatif basil paterni beklenirdi; su sistemi-hiponatremi-özel besiyeri zinciri Legionella lehinedir."
     }
   },
-{
+  {
     "id": "v173-new-084-ates-ve-yaygin-lenfadenopati",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -19436,7 +19436,7 @@ export const casesPart02 = [
       "Human herpesvirus 6": "HHV-6 çoğunlukla küçük çocukta yüksek ateş sonrası döküntü ile seyreden roseola infantumla ilişkilidir. Genç erişkinde heterofil pozitif eksüdatif mononükleoz ve VCA IgM paterni HHV-6 için beklenen tablo değildir."
     }
   },
-{
+  {
     "id": "v173-new-085-sigara-oykusu-olan-hastada-hiponatremi",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -19828,7 +19828,7 @@ export const casesPart02 = [
       "Tipik pulmoner karsinoid tümör": "Tipik karsinoid düşük dereceli nöroendokrin tümördür; nekroz ve çok yüksek mitotik/proliferatif aktivite beklenmez. Bu vakada yaygın nekroz, çok yüksek Ki-67 ve paraneoplastik SIADH ile agresif yüksek dereceli süreç söz konusudur."
     }
   },
-{
+  {
     "id": "v173-new-086-yasli-hastada-mekanik-obstruksiyon",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -20681,7 +20681,7 @@ export const casesPart02 = [
       "note": "Genel Cerrahi vakasında objektif veri katmanı cerrahi ilk değerlendirme → acil güvenlik → laboratuvar → hedefli görüntüleme/doğrulama → girişim/kaynak kontrolü sırasına göre düzenlendi."
     }
   },
-{
+  {
     "id": "v173-new-087-kapali-ortamda-bas-agrisi-ve-bilinc-bulanikligi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -21162,7 +21162,7 @@ export const casesPart02 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v173-new-088-norolojik-bulgular-ve-laktik-asidoz",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -21492,7 +21492,7 @@ export const casesPart02 = [
       "Medium-chain acyl-CoA dehydrogenase aktivitesinin azalması": "MCAD eksikliği açlık veya enfeksiyon sırasında hipoketotik hipoglisemiyle ortaya çıkan yağ asidi oksidasyon kusurudur. Burada kan glukozu normaldir ve ana patern karbonhidrat sonrası pirüvat türevlerinin artmasıdır."
     }
   },
-{
+  {
     "id": "v173-new-089-gece-artan-el-uyusmasi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -21770,7 +21770,7 @@ export const casesPart02 = [
       "Nervus ulnaris": "Nervus ulnaris beşinci parmak, yüzük parmağının ulnar yarısı ve interosseöz kaslarla ilişkilidir. Küçük parmakta baskın duyu kaybı ya da parmak abdüksiyon-adduksiyon zayıflığı olmaması ulnar sinir basısını geri plana iter."
     }
   },
-{
+  {
     "id": "v173-new-090-solunum-depresyonu-ve-miyozis",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -22009,7 +22009,7 @@ export const casesPart02 = [
       "Fomepizol": "Toksik alkollerde kullanılır; burada anyon açıklıklı metabolik asidoz değil hipoventilasyona bağlı CO₂ retansiyonu vardır."
     }
   },
-{
+  {
     "id": "v174-new-091-yenidoganda-surekli-ufurum",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -22499,7 +22499,7 @@ export const casesPart02 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v174-new-092-yenidoganda-safrali-kusma",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -22974,7 +22974,7 @@ export const casesPart02 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v174-new-093-travma-sonrasi-karin-hassasiyeti",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -23879,7 +23879,7 @@ export const casesPart02 = [
       "note": "Genel Cerrahi vakasında objektif veri katmanı cerrahi ilk değerlendirme → acil güvenlik → laboratuvar → hedefli görüntüleme/doğrulama → girişim/kaynak kontrolü sırasına göre düzenlendi."
     }
   },
-{
+  {
     "id": "v174-new-094-sag-ust-kadran-agrisi",
     "branchId": "general-surgery",
     "caseType": "standard",

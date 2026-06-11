@@ -1,6 +1,7 @@
 import { attachClinicalVisualsToCases } from '../utils/clinicalVisuals.js';
 import { clinicalVisualManifest } from './clinicalVisualManifest.js';
 import { sanitizeClinicalCaseExam } from '../utils/clinicalExamSanitizer.js';
+
 import { casesPart01 } from './caseBank/cases-part-01.js';
 import { casesPart02 } from './caseBank/cases-part-02.js';
 import { casesPart03 } from './caseBank/cases-part-03.js';
@@ -64,6 +65,7 @@ export const rawCases = [
   ...casesPart29,
   ...casesPart30
 ];
+;
 
 export const cases = attachClinicalVisualsToCases(rawCases.map(sanitizeClinicalCaseExam), clinicalVisualManifest);
 

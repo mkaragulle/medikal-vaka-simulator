@@ -1,3 +1,3 @@
-// TUS AI Spot dışındaki yerel AI seed/prompt içerikleri kaldırıldı.
+// Neutral stub: legacy local AI seed bank removed.
+// Direct TUS AI generation does not use local seed steering.
 export const AI_QUESTION_SEEDS = [];
-export default AI_QUESTION_SEEDS;

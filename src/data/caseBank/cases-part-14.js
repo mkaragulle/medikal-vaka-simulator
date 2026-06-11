@@ -1,5 +1,5 @@
 export const casesPart14 = [
-{
+  {
     "id": "v339-peds-002-biloz-kusma-ve-batin-hassasiyeti",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -470,7 +470,7 @@ export const casesPart14 = [
       "E": "Antiemetik ve oral rehidratasyon, mekanik obstrüksiyon/iskemi olasılığı olan yenidoğanda güvenli değildir. Oral alımın sürdürülmesi aspirasyon ve gecikmiş cerrahi riskini artırır."
     }
   },
-{
+  {
     "id": "v339-peds-003-premature-bebekte-batin-distansiyonu",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -1001,7 +1001,7 @@ export const casesPart14 = [
       "Probiyotik desteği vererek enteral beslenmeyi düşük hızda sürdürmek": "Probiyotikler bazı koruyucu stratejilerde tartışılsa da akut şüpheli nekrotizan enterokolitte tedavi yerine geçmez. Bu aşamada enteral beslenmeyi sürdürmek ve yalnız destek tedavisi vermek ciddi klinik tabloyu yetersiz yönetir."
     }
   },
-{
+  {
     "id": "v339-peds-004-grip-sonrasi-kusma-ve-bilinc-degisikligi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -1534,7 +1534,7 @@ export const casesPart14 = [
       "Bakteriyel menenjit": "Bakteriyel menenjitte ateş, toksik görünüm, ense sertliği, peteşi veya BOS’ta nötrofilik pleositoz gibi bulgular ön plandadır. Burada meningeal bulgular yoktur ve laboratuvar paterni hepatik-metabolik ensefalopatiyi desteklemektedir."
     }
   },
-{
+  {
     "id": "v339-peds-005-viral-enfeksiyon-sonrasi-morarma",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -2067,7 +2067,7 @@ export const casesPart14 = [
       "Aplastik anemi": "Aplastik anemide tek başına trombosit düşüklüğü değil pansitopeni beklenir. Hemoglobin ve lökositin korunması bu seçeneği immün trombositopeniye göre daha az olası yapar."
     }
   },
-{
+  {
     "id": "v339-peds-006-bebekte-tekrarlayan-agir-enfeksiyon",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -2678,7 +2678,7 @@ export const casesPart14 = [
       "Selektif IgA eksikliği": "Selektif IgA eksikliği çoğu kez daha hafif mukozal enfeksiyonlarla seyreder ve T hücre sayısında ağır düşüklük, fırsatçı kandidiyazis, canlı aşı reaksiyonu veya belirgin gelişme geriliği beklenmez. Bu olgu çok daha ağır ve kombine bir immün yetmezlik paternindedir."
     }
   },
-{
+  {
     "id": "v339-peds-007-fotografta-beyaz-pupilla",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -3175,7 +3175,7 @@ export const casesPart14 = [
       "Oküler toksokariazis": "Oküler toksokariazis lökokori ve granülomla karışabilir; genellikle inflamatuvar vitreus bulguları, maruziyet öyküsü veya serolojik destek beklenir. Bu vakada kalsifiye solid intraoküler kitle paterni retinoblastom lehine daha güçlüdür."
     }
   },
-{
+  {
     "id": "v339-peds-008-kas-gucsuzlugu-ve-goz-cevresinde-mor-dokuntu",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -3550,7 +3550,7 @@ export const casesPart14 = [
       "Metabolik miyopati": "Metabolik miyopatiler egzersiz intoleransı, rabdomiyoliz atakları veya hipoglisemi/laktat paternleriyle düşünülebilir. Bu çocukta sürekli ilerleyen inflamatuvar deri bulguları ve MRG’de kas ödemi metabolik miyopatiden çok inflamatuvar miyopatiyi destekler."
     }
   },
-{
+  {
     "id": "v339-peds-009-yenidogan-taramasinda-metabolik-risk",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -3909,7 +3909,7 @@ export const casesPart14 = [
       "Heksozaminidaz A aktivitesinde azalma": "Heksozaminidaz A eksikliği Tay-Sachs hastalığıyla ilişkilidir ve lizozomal GM2 gangliozid birikimi üzerinden ilerleyici nörodejenerasyon yapar. Yenidoğan taramasında izole fenilalanin yüksekliği bu mekanizmayı açıklamaz."
     }
   },
-{
+  {
     "id": "v339-peds-010-erken-meme-gelisimi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -4272,7 +4272,7 @@ export const casesPart14 = [
       "McCune-Albright sendromu": "McCune-Albright sendromunda otonom periferik puberte, café-au-lait makülleri ve fibröz displazi gibi bulgular beklenebilir; gonadotropin yanıtı başlangıçta baskılı olabilir. Bu vakada bu fenotipik bulgular yoktur ve yanıt santral aks aktivasyonunu destekler."
     }
   },
-{
+  {
     "id": "v196-new-338-bisiklet-sonrasi-ulnar-el-guclugu",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -4625,7 +4625,7 @@ export const casesPart14 = [
       "Nervus axillaris": "Axillaris sinir deltoid ve lateral omuz duyusuyla ilişkilidir. Omuz abdüksiyonu ve rozet alanı duyusu etkilenmediğinden el bileği düzeyindeki ulnar motor-duyusal bulgularla uyumlu değildir."
     }
   },
-{
+  {
     "id": "v196-new-339-ayak-bilegi-ic-yaninda-yanma-ve-uyusma",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -4978,7 +4978,7 @@ export const casesPart14 = [
       "Nervus saphenus": "Saphenus sinir femoral sinirin saf duyusal dalıdır ve medial bacak ile medial ayak kenarında duyu taşır. Ayak tabanı duyusu ve intrinsik ayak kas fonksiyonu ile ilişkili olmadığı için bu vaka paternini açıklamaz."
     }
   },
-{
+  {
     "id": "v196-new-340-plevral-girisimde-kaburga-komsulugu",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -5331,7 +5331,7 @@ export const casesPart14 = [
       "Sternuma en yakın medial hattan": "Medial hat seçimi güvenli anatomik ilişkiyi tek başına belirlemez ve internal torasik damarlar gibi farklı komşuluklar da önem kazanabilir. Sorunun ana hedefi interkostal aralıkta kaburga üst-alt kenar ayrımıdır."
     }
   },
-{
+  {
     "id": "v196-new-341-karotis-cerrahisi-sonrasi-dil-deviasyonu",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -5684,7 +5684,7 @@ export const casesPart14 = [
       "Nervus facialis": "Facial sinir mimik kasları, stapedius ve bazı tat-parasempatik fonksiyonlarla ilişkilidir. Yüz asimetrisi veya orbiküler kas güçsüzlüğü yoktur; dil protrüzyon motoru facial sinirle açıklanmaz."
     }
   },
-{
+  {
     "id": "v196-new-342-torakal-bicaklanma-sonrasi-cift-duyu-paterni",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -6037,7 +6037,7 @@ export const casesPart14 = [
       "Sol medulla oblongata lezyonu": "Medulla lezyonları kraniyal sinir, bulber bulgu veya beyin sapı çapraz bulgularıyla ilişkilidir. Bu vakada travma torakal düzeydedir ve MRG torakal sağ hemikord lezyonunu göstermektedir."
     }
   },
-{
+  {
     "id": "v197-new-343-dirsek-travmasi-sonrasi-parmak-ekstansiyon-kaybi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -6356,7 +6356,7 @@ export const casesPart14 = [
       "Nervus musculocutaneus": "Musculocutaneus sinir dirsek fleksiyonu ve ön kol lateral duyusuyla ilişkilidir. Bu olguda biseps gücü ve ön kol lateral duyusu korunmuştur."
     }
   },
-{
+  {
     "id": "v197-new-344-orbita-travmasi-sonrasi-cift-gorme",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -6675,7 +6675,7 @@ export const casesPart14 = [
       "Musculus obliquus superior": "Superior oblik depresyon ve intorsiyon fonksiyonlarıyla ilişkilidir; troklear sinir paterninde aşağı bakışta zorlanma beklenebilir. Taban kırığına bağlı yukarı bakış kısıtlılığını en iyi açıklamaz."
     }
   },
-{
+  {
     "id": "v197-new-345-ust-gastrointestinal-kanama-ve-venoz-genisleme",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -6994,7 +6994,7 @@ export const casesPart14 = [
       "Vena epigastrica superficialis": "Yüzeyel epigastrik ven ön karın duvarının sistemik venöz drenajıyla ilişkilidir. Göbek çevresi kollateral görünümünde yardımcı olabilir; endoskopideki distal özofagus bulgusunu primer açıklamaz."
     }
   },
-{
+  {
     "id": "v197-new-346-toraks-girisimi-sonrasi-nefes-darligi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -7313,7 +7313,7 @@ export const casesPart14 = [
       "Nervus splanchnicus major": "Majör splanknik sinir sempatik lifleri abdomen prevertebral ganglionlarına taşır. Toraks girişimi sonrası gelişen solunum mekaniği ve hemidiyafram bulgusunu açıklamaz."
     }
   },
-{
+  {
     "id": "v197-new-347-bas-donmesi-ve-capraz-duyu-kaybi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -7633,7 +7633,7 @@ export const casesPart14 = [
       "Arteria spinalis anterior": "Anterior spinal arter medial medulla veya spinal kord ön iki üçte alanıyla ilişkilidir; piramidal motor kayıp daha belirgin olurdu. Bu olguda motor güç korunmuş, çapraz ağrı-sıcaklık ve bulber bulgu öndedir."
     }
   },
-{
+  {
     "id": "v198-new-348-el-ayasi-kesigi-sonrasi-kavrama-guclugu",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -7952,7 +7952,7 @@ export const casesPart14 = [
       "Nervus radialis superficialis": "Yüzeyel radial sinir el sırtının radial kısmında duyu taşır ve motor lif içermez. Bu hastadaki palmar kesi ve tenar motor güçsüzlük radial duyu dalı dağılımına uymaz."
     }
   },
-{
+  {
     "id": "v198-new-349-ayak-sirti-travmasi-sonrasi-parmak-arasi-uyusma",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -8271,7 +8271,7 @@ export const casesPart14 = [
       "Nervus saphenus": "Saphen sinir saf duyu dalıdır ve medial bacak-medial ayak bileği bölgesini etkiler. Birinci interdigital aralık bulgusu ve motor ekstansiyon zayıflığı bu dağılıma uymaz."
     }
   },
-{
+  {
     "id": "v198-new-350-dis-cekimi-sonrasi-dilde-uyusma",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -8590,7 +8590,7 @@ export const casesPart14 = [
       "N. mandibularis - auriculotemporal dalı": "Auriculotemporal sinir temporal bölge, dış kulak çevresi ve parotisle ilişkili lifler taşır. Alt molar işlem sonrası ön dil duyusu ve tat bulgusu bu sinirin dağılımına uymaz."
     }
   },
-{
+  {
     "id": "v198-new-351-epigastrik-agri-sonrasi-masif-kanama",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -8909,7 +8909,7 @@ export const casesPart14 = [
       "Arteria pancreaticoduodenalis inferior": "İnferior pankreatikoduodenal arter SMA kökenli olup duodenumun daha distal bölümleri ve pankreas başı çevresiyle ilişkilidir. Posterior birinci kısım ülserinin klasik kanama kaynağı farklıdır."
     }
   },
-{
+  {
     "id": "v198-new-352-aksiller-islem-sonrasi-ic-kol-uyusmasi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -9228,7 +9228,7 @@ export const casesPart14 = [
       "Nervus suprascapularis": "Supraskapular sinir supraspinatus-infraspinatus kaslarıyla ilişkilidir ve daha posterior omuz fonksiyonunu etkiler. Aksilla tabanı çevresindeki dar medial kol duyusu bu sinirin dağılımı değildir."
     }
   },
-{
+  {
     "id": "v199-new-391-posterior-burun-kanamasi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -9547,7 +9547,7 @@ export const casesPart14 = [
       "Arteria facialis": "Fasiyal arter yüzün yüzeyel yumuşak dokuları, dudaklar ve burun çevresine dallar verir. Yüzeyel yüz yaralanması veya dudak-burun dış kısmı kanaması beklenirdi; bu hastada kanama burun boşluğunun derin posterior bölümünden gelmektedir."
     }
   },
-{
+  {
     "id": "v199-new-392-parasternal-girisim-sonrasi-kanama",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -9866,7 +9866,7 @@ export const casesPart14 = [
       "Arteria thoracoacromialis": "Thorakoakromiyal arter pektoralis, deltoid ve akromiyal dallarıyla klavikula-altı/pektoral üst bölgeye yönelir. Alt parasternal interkostal girişimde görülen kanama için beklenen ana komşuluk değildir."
     }
   },
-{
+  {
     "id": "v199-new-393-dalak-hilusu-diseksiyonu-sonrasi-dren-amilazi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -10185,7 +10185,7 @@ export const casesPart14 = [
       "Ren sinister": "Sol böbrek retroperitoneal yerleşimiyle posterior komşulukta bulunur. Böbrek yaralanmasında hematüri, retroperitoneal kanama veya üriner kaçak daha beklenir; dren amilaz artışı renal komşuluğa uymaz."
     }
   },
-{
+  {
     "id": "v199-new-394-diz-cikigi-sonrasi-distal-dolasim-azalmasi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -10504,7 +10504,7 @@ export const casesPart14 = [
       "Arteria descendens genus": "Desendan geniküler arter diz çevresi anastomozlarına katkı verir ve femoral arterden ayrılır. Kollateral rolü olsa da akut diz çıkığında distal ayak nabızlarının belirgin azalmasını açıklayan ana yaralanma hedefi değildir."
     }
   },
-{
+  {
     "id": "v199-new-395-omuz-kusagi-duzeyinde-ayrismis-duyu-kaybi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -10823,7 +10823,7 @@ export const casesPart14 = [
       "Tractus corticospinalis lateralis": "Lateral kortikospinal trakt istemli motor kontrolle ilişkilidir ve lezyonunda spastisite, hiperrefleksi veya piramidal güçsüzlük beklenir. Hastanın kuvveti ve refleksleri korunmuş olduğundan duyu paternini bu trakt açıklamaz."
     }
   },
-{
+  {
     "id": "v200-new-396-dirsek-travmasi-sonrasi-distal-dolasim-azalmasi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -11149,7 +11149,7 @@ export const casesPart14 = [
       "Arteria interossea anterior": "Anterior interosseöz arter önkol derin fleksör kompartmanı ve interosseöz membran çevresine dallar verir. Dirsek travması sonrası elin genel perfüzyonunun azalması ve iki ana distal nabzın zayıflaması bu küçük derin dal ile açıklanamaz."
     }
   },
-{
+  {
     "id": "v200-new-397-kulak-islemi-sonrasi-tat-degisikligi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -11475,7 +11475,7 @@ export const casesPart14 = [
       "N. mandibularis - auriculotemporal dalı": "Auriculotemporal sinir mandibular sinir dalıdır; temporal bölge, dış kulak çevresi duyusu ve parotisle ilişkili lifler taşır. Dilin ön bölümündeki tat kaybı ve orta kulak işlemine bağlı tabloyu primer olarak açıklamaz."
     }
   },
-{
+  {
     "id": "v200-new-398-meme-ic-kadraninda-nodal-degerlendirme",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -11801,7 +11801,7 @@ export const casesPart14 = [
       "Nodi lymphatici supraclaviculares": "Supraklaviküler nodlar daha ileri veya üst lenfatik yayılım değerlendirmesinde önemlidir. İlk anatomik drenaj ayrımı iç kadran yerleşiminde parasternal yol üzerinedir; muayenede supraklaviküler kitle de saptanmamıştır."
     }
   },
-{
+  {
     "id": "v200-new-399-retroperitoneal-cerrahi-sonrasi-ejakulasyon-bozuklugu",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -12127,7 +12127,7 @@ export const casesPart14 = [
       "Plexus sacralis": "Sakral pleksus alt ekstremite motor-duyu innervasyonunun ana kaynağıdır. Bacak güçsüzlüğü, duyu kaybı veya refleks asimetrisi beklenirdi; muayenenin korunması bu seçeneği zayıflatır."
     }
   },
-{
+  {
     "id": "v200-new-400-derin-yerlesimli-kucuk-inme-sonrasi-saf-motor-kayip",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -12453,7 +12453,7 @@ export const casesPart14 = [
       "Corona radiata": "Corona radiata korteksten inen liflerin daha yaygın ve fan şeklindeki üst bölümüdür; lezyonları motor kayıp yapabilir. Ancak MRG odak lentiform nukleus-talamus arasında dar derin bölgede tanımlanmıştır ve klinik tablo daha kompakt iç kapsül motor liflerine uyar."
     }
   },
-{
+  {
     "id": "v201-new-401-omuz-arkasinda-agri-ve-dis-rotasyon-zayifligi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -12779,7 +12779,7 @@ export const casesPart14 = [
       "Nervus thoracicus longus": "Long thoracic sinir serratus anterior kasını innerve eder ve duvara itme sırasında medial skapular kanatlanma ile akla gelir. Bu vakada duvara itme testi belirgin kanatlanma oluşturmamakta, sorun glenohumeral dış rotasyon ve rotator cuff kas paternindedir."
     }
   },
-{
+  {
     "id": "v201-new-402-oturur-pozisyondan-kalkarken-kalca-ekstansiyon-zayifligi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -13105,7 +13105,7 @@ export const casesPart14 = [
       "Nervus obturatorius": "Obturator sinir medial uyluk adduktor kaslarını ve medial uyluk duyusunu etkiler. Bu vakada adduksiyon kaybı veya medial uyluk hipoestezisi yoktur; asıl sorun posterior kalça motor kuvvetidir."
     }
   },
-{
+  {
     "id": "v201-new-403-boyun-on-yaklasimi-sonrasi-goz-kapagi-dusuklugu",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -13431,7 +13431,7 @@ export const casesPart14 = [
       "Nervus hypoglossus cervicalis": "Hypoglossal sinir dil kaslarının motor innervasyonunu taşır; lezyonunda dil protrüzyonunda deviasyon ve artikülasyon etkilenimi beklenir. Bu hastada dil hareketleri normaldir ve temel bulgu pupil-kapak-terleme birlikteliğidir."
     }
   },
-{
+  {
     "id": "v201-new-404-kilo-kaybi-sonrasi-yemekle-artan-kusma",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -13757,7 +13757,7 @@ export const casesPart14 = [
       "Bulbus duodeni": "Duodenal bulbus pylorus sonrası geniş başlangıç kısmıdır ve ön duvar ülseri gibi tablolarla karışabilir. Burada yemek sonrası kusmayı açıklayan odak bulbus değil, damarlar arasında sıkışan daha distal horizontal segmenttir."
     }
   },
-{
+  {
     "id": "v201-new-405-karanlikta-artan-dengesizlik-ve-vibrasyon-kaybi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -14083,7 +14083,7 @@ export const casesPart14 = [
       "Commissura alba anterior": "Anterior beyaz komissür ağrı-sıcaklık liflerinin segmental çaprazlaşma bölgesidir; santral kord lezyonlarında iki taraflı segmental ağrı-sıcaklık kaybı yapabilir. Bu hastada ayrışmış ağrı-sıcaklık kaybı değil, vibrasyon ve pozisyon duyusu kaybı vardır."
     }
   },
-{
+  {
     "id": "v202-new-406-kol-on-yuz-kesisi-sonrasi-dirsek-fleksiyon-zayifligi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -14411,7 +14411,7 @@ export const casesPart14 = [
       "Nervus axillaris": "Axillary sinir deltoid-teres minor fonksiyonu ve lateral omuz rozet alanı duyusuyla ilişkilidir. Olguda omuz abdüksiyonu ve lateral omuz duyusu korunmuş; defisit üst kol ön kompartımanı ve ön kol lateral duyusunda sınırlıdır."
     }
   },
-{
+  {
     "id": "v202-new-407-bogaz-islemi-sonrasi-yutkunma-ve-tat-degisikligi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -14739,7 +14739,7 @@ export const casesPart14 = [
       "Nervus trigeminus": "Trigeminal sinir yüz duyusu ve çiğneme kaslarıyla ilişkilidir; mandibular dal ağız tabanı ve genel somatik duyuda rol alsa da posterior dil tat duyusunu ve gag afferentini açıklamaz. Çene hareketleri ve yüz duyusu korunmuş olduğu için bu seçenek geri plandadır."
     }
   },
-{
+  {
     "id": "v202-new-408-perineal-travma-sonrasi-idrar-kacagi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -15067,7 +15067,7 @@ export const casesPart14 = [
       "Pars preprostatica urethrae": "Preprostatik segment mesane boynu ile prostatik üretra arasında kısa bir proksimal bölgedir. Straddle travma sonrası kan meatus ve yüzeyel perineal-skrotal yayılım bu proksimal segmentten çok distal perineal üretra yaralanmasıyla uyumludur."
     }
   },
-{
+  {
     "id": "v202-new-409-ani-cift-gorme-ve-karsi-taraf-gucsuzluk",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -15395,7 +15395,7 @@ export const casesPart14 = [
       "Arteria cerebelli posterior inferior": "PICA lezyonu lateral medulla paterninde disfaji, ses kısıklığı, vertigo, ipsilateral yüz ve karşı gövde ağrı-sıcaklık kaybı gibi bulgularla düşünülür. Hastada bu lateral medüller bulgular yok; esas tablo okülomotor bulgu ve karşı taraf motor kayıptır."
     }
   },
-{
+  {
     "id": "v202-new-410-bazal-plevral-sivi-ve-girisim-plani",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -15723,7 +15723,7 @@ export const casesPart14 = [
       "Fissura obliqua pulmonis": "Oblik fissür akciğer lobları arasında yer alan intrapulmoner yarıktır; plevral boşluğun en bağımlı toplama alanı değildir. Görüntüleme loblar arası sıvıdan çok bazal plevral sıvı birikimini göstermektedir."
     }
   },
-{
+  {
     "id": "v203-new-411-on-kol-kesisi-sonrasi-ince-kavrama-zorlugu",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -15978,7 +15978,7 @@ export const casesPart14 = [
       "Ramus palmaris nervi mediani": "Bu dal cilt duyusuyla ilişkilidir ve karpal tünelin yüzeyinden geçtiği için palmar duyu yakınmalarıyla karışabilir. Motor kayıp oluşturması beklenmez; hastada avuç içi duyusu korunurken belirgin fleksiyon zayıflığı vardır."
     }
   },
-{
+  {
     "id": "v203-new-412-boyun-islemi-sonrasi-ince-ses-kontrolu-zorlugu",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -16233,7 +16233,7 @@ export const casesPart14 = [
       "Ansa cervicalis": "İnfrahyoid kasları innerve ettiği için boyun ön cerrahilerinde anatomik olarak akla gelebilir. Ancak larenks içi ses perdesi ayarını doğrudan açıklamaz; hastada boyun fleksiyonu veya hyoid hareketine özgü bir kayıp tariflenmemiştir."
     }
   },
-{
+  {
     "id": "v203-new-413-gobek-cevresinde-belirginlesen-yuzeyel-venler",
     "branchId": "anatomy",
     "caseType": "standard",

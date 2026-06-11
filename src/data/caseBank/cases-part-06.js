@@ -1,5 +1,5 @@
 export const casesPart06 = [
-{
+  {
     "id": "v186-new-236-derin-yumusak-doku-kitlesi",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -439,7 +439,7 @@ export const casesPart06 = [
       "Dediferansiye liposarkom": "Dediferansiye liposarkomda iyi diferansiye lipomatöz alana komşu abrupt geçişli yüksek dereceli non-lipogenik sarkom alanı beklenir. Biyopside böyle bir yüksek dereceli komponent saptanmamıştır."
     }
   },
-{
+  {
     "id": "v186-new-237-gogus-agrisinda-dil-alti-ilac",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -777,7 +777,7 @@ export const casesPart06 = [
       "Trombosit agregasyonunu baskılayarak koroner trombüs oluşumunu akut çözmek": "Trombosit agregasyonunu baskılamak aspirin veya P2Y12 inhibitörleriyle ilişkilidir ve mevcut koroner trombüsü akut olarak çözmez. Nitrogliserin semptomu antitrombotik etkiyle değil hemodinamik oksijen ihtiyacını azaltarak hafifletir."
     }
   },
-{
+  {
     "id": "v186-new-238-bakla-sonrasi-sarilik-ve-koyu-idrar",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -1127,7 +1127,7 @@ export const casesPart06 = [
       "Heksokinaz aktivitesinin azalması": "Heksokinaz eksikliği eritrosit glikolizini bozarak enerji yetmezliği ve hemoliz yapabilir; ancak bakla/ilaçla tetiklenen oksidatif hasar ve Heinz cisimciği paterni için daha özgül basamak G6PD’dir."
     }
   },
-{
+  {
     "id": "v186-new-239-diskilama-sirasinda-siddetli-agri",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -1412,7 +1412,7 @@ export const casesPart06 = [
       "note": "Yalnızca 16-20. Genel Cerrahi kayıtlarında anamnez, objektif veri, seçenek ve feedback zinciri yeniden denetlendi."
     }
   },
-{
+  {
     "id": "v186-new-240-renal-perfuzyon-azalmasina-yanit",
     "branchId": "physiology",
     "caseType": "standard",
@@ -1868,7 +1868,7 @@ export const casesPart06 = [
     "helpText": "Bu bilgi tetkik sonucu değildir; verilen klinik ve objektif verilerin fizyolojik mekanizma düzeyindeki yorumudur. Efektif renal perfüzyon azalınca RAAS aktivasyonu artar; orta düzey anjiyotensin II efferent arteriyol direncini artırarak glomerüler kapiller hidrostatik basıncı destekler.",
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v187-new-241-gece-artan-el-uyusmasi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -2155,7 +2155,7 @@ export const casesPart06 = [
       "Nervus interosseus anterior": "Duyusal belirti oluşturmaz; olgudaki gece parestezisi ve dijital duyu kaybı bu seçenekle açıklanamaz."
     }
   },
-{
+  {
     "id": "v187-new-242-tiroid-ameliyati-sonrasi-ses-kisikligi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -2425,7 +2425,7 @@ export const casesPart06 = [
       "Nervus laryngeus superior - ramus externus": "Krikotiroid fonksiyonu ve ses perdesi etkilenir; unilateral vokal fold abdüksiyon-adduksiyon kaybı rekürren laringeal sinir lehinedir."
     }
   },
-{
+  {
     "id": "v187-new-243-yenidoganda-lumbosakral-kese",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -2942,7 +2942,7 @@ export const casesPart06 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v187-new-244-hormonal-uretim-bolgesinin-belirlenmesi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -3382,7 +3382,7 @@ export const casesPart06 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v187-new-245-hipertansiyon-ve-hipokalemi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -3870,7 +3870,7 @@ export const casesPart06 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v187-new-246-egzersizde-oksijen-dusuklugu",
     "branchId": "physiology",
     "caseType": "standard",
@@ -4310,7 +4310,7 @@ export const casesPart06 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v187-new-247-aclikta-hipoglisemi-ve-kas-agrisi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -4696,7 +4696,7 @@ export const casesPart06 = [
       "Lizozomal asit alfa-glukozidaz aktivitesinin azalmasına bağlı glikojen yıkımının bozulması": "Lizozomal asit alfa-glukozidaz eksikliği Pompe hastalığında glikojenin lizozomal yıkımını bozar; kardiyomiyopati/hipotoni veya ilerleyici kas tutulumu beklenir. Açlıkta düşük keton ve uzun zincirli açilkarnitin artışı bu seçeneği desteklemez."
     }
   },
-{
+  {
     "id": "v187-new-248-yenidoganda-tatli-kokulu-idrar",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -5082,7 +5082,7 @@ export const casesPart06 = [
       "Sistationin beta-sentaz eksikliği": "Sistationin beta-sentaz eksikliği homosistinüri yapar; lens subluksasyonu, tromboz ve marfanoid görünüm beklenir. Yenidoğan döneminde tatlı kokulu idrar ve dallı zincirli amino asit birikimi bu mekanizmaya uymaz."
     }
   },
-{
+  {
     "id": "v187-new-249-antibiyotik-sonrasi-sulu-ishal",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -5373,7 +5373,7 @@ export const casesPart06 = [
       "Vibrio cholerae": "V. cholerae kontamine su ve pirinç suyu dışkısıyla ağır sekretuar ishal yapar; ateş-lökositozlu antibiyotik ilişkili kolit ve toksin A/B paneli bu etken için bu vaka için doğru klinik hedef değildir."
     }
   },
-{
+  {
     "id": "v187-new-250-hemolitik-hastada-ani-anemi",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -5664,7 +5664,7 @@ export const casesPart06 = [
       "Hepatitis A virus": "HAV fekal-oral bulaşan akut hepatit yapar; transaminaz yüksekliği ve sarılık beklenir, retikülositopenik ani anemi paternini açıklamaz."
     }
   },
-{
+  {
     "id": "v187-new-251-boyunda-agrisiz-lenf-nodu",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -6158,7 +6158,7 @@ export const casesPart06 = [
       "Reaktif parakortikal hiperplazi": "Reaktif hiperplazide mimari tamamen neoplastik şekilde silinmez ve tanısal büyük atipik hücre/klasik İHK paterni beklenmez. Sistemik semptomlar ve eksizyonel biyopsi bulguları reaktif süreci aşar."
     }
   },
-{
+  {
     "id": "v187-new-252-kalp-ilaci-sonrasi-bulanti-ve-gorme-bozuklugu",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -6548,7 +6548,7 @@ export const casesPart06 = [
       "Acil hemodiyalizle ilacın uzaklaştırılması": "Digoksinin geniş doku dağılımı nedeniyle hemodiyaliz toksisiteyi güvenilir biçimde geri çeviren yöntem değildir. Böbrek fonksiyon bozukluğu risk faktörüdür, fakat spesifik bağlayıcı tedavinin yerini almaz."
     }
   },
-{
+  {
     "id": "v187-new-253-siddetli-karin-agrisi-ve-hafif-muayene-bulgusu",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -7157,7 +7157,7 @@ export const casesPart06 = [
       "note": "Yalnızca 16-20. Genel Cerrahi kayıtlarında anamnez, objektif veri, seçenek ve feedback zinciri yeniden denetlendi."
     }
   },
-{
+  {
     "id": "v187-new-254-bas-dogduktan-sonra-omuzlarin-takilmasi",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -7501,7 +7501,7 @@ export const casesPart06 = [
     "obgynInvestigationLayerEnhanced": true,
     "obgynInvestigationLayerVersion": "v397-obgyn-investigation-layer"
   },
-{
+  {
     "id": "v187-new-255-yasli-hastada-yeni-bas-agrisi",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -7875,7 +7875,7 @@ export const casesPart06 = [
       "note": "Dev hücreli arterit vakasında akış görme tehdidi muayenesi → ESR/CRP → temporal arter USG/biyopsi → tedavi güvenliği şeklinde düzenlendi; steroid biyopsi beklenerek geciktirilmez."
     }
   },
-{
+  {
     "id": "v188-new-256-kalca-travmasi-sonrasi-yuruyememe",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -8145,7 +8145,7 @@ export const casesPart06 = [
       "Arteria obturatoria": "Ligamentum capitis femoris aracılığıyla sınırlı katkı yapabilir; erişkin femur başı için ana kaynak değildir."
     }
   },
-{
+  {
     "id": "v188-new-257-parotis-kitlesi-ameliyati-sonrasi-yuz-asimetrisi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -8334,7 +8334,7 @@ export const casesPart06 = [
       "Nervus trigeminus - n. mandibularis": "Çiğneme kasları ve yüz duyusu etkilenirdi; masseter gücü ve yüz duyusu korunmuştur."
     }
   },
-{
+  {
     "id": "v188-new-258-akciger-embolisinde-oksijen-dusuklugu",
     "branchId": "physiology",
     "caseType": "standard",
@@ -8793,7 +8793,7 @@ export const casesPart06 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v188-new-259-otonom-reseptor-yaniti",
     "branchId": "physiology",
     "caseType": "standard",
@@ -9144,7 +9144,7 @@ export const casesPart06 = [
     "helpText": "Soğuk bası yanıtı doğru transmitterleri doğrudan söylemez; hedef, ganglion ve efektör sinapsını sırayla düşünmektir.",
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v188-new-260-karacigerde-fagositik-hucre",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -9495,7 +9495,7 @@ export const casesPart06 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v188-new-261-yenidoganda-siyanoz-ve-tek-buyuk-damar-cikisi",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -9956,7 +9956,7 @@ export const casesPart06 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v188-new-262-oksidatif-stres-ve-eritrosit-korunmasi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -10288,7 +10288,7 @@ export const casesPart06 = [
       "Ferroşelataz basamağını hızlandırıp hem sentezini artırarak": "Ferroşelataz hem sentezinin mitokondriyal son basamağıdır; olgun eritrositte hem sentezi aktif değildir ve oksidatif ilaç sonrası akut hemolizi açıklayan temel NADPH görevi bu değildir."
     }
   },
-{
+  {
     "id": "v188-new-263-erkek-bebekte-hiperammonemi",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -10711,7 +10711,7 @@ export const casesPart06 = [
       "Arginaz eksikliği": "Arginaz eksikliği daha distal bir basamaktır; arginin yüksekliği ve daha geç başlayan spastisite beklenir. Yenidoğanda düşük sitrülin-yüksek orotik asit paterni arginaz eksikliğiyle uyumlu değildir."
     }
   },
-{
+  {
     "id": "v188-new-264-ates-ve-petesiyal-dokuntu",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -11002,7 +11002,7 @@ export const casesPart06 = [
       "Cryptococcus neoformans": "Cryptococcus kapsüllü maya olarak immünsüprese hastada subakut menenjit yapar; India ink/kapsül bulgusu beklenir. Saatler içinde şok-peteşi ve nötrofilik BOS profili kriptokok için tipik değildir."
     }
   },
-{
+  {
     "id": "v188-new-265-yanik-yarasinda-kotu-kokulu-akinti",
     "branchId": "medical-microbiology",
     "caseType": "standard",
@@ -11254,7 +11254,7 @@ export const casesPart06 = [
       "Clostridium perfringens": "C. perfringens toprakla kirlenmiş travma sonrası gazlı gangren, kas nekrozu ve belirgin krepitasyonla düşünülür; gram pozitif anaerob sporlu basildir. Bu vakada krepitasyonun olmaması ve oksidaz pozitif aerob/non-fermenter üreme bu seçeneği zayıflatır."
     }
   },
-{
+  {
     "id": "v188-new-266-gogus-agrisi-sonrasi-miyokard-hasari",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -11676,7 +11676,7 @@ export const casesPart06 = [
       "Likefaksiyon nekrozu": "Likefaksiyon nekrozu beyin infarktında veya apse içinde enzimatik doku sindirimiyle sıvılaşma şeklinde beklenir. Bu olguda miyokard mimarisi korunmuş, sıvılaşma paterni verilmemiştir."
     }
   },
-{
+  {
     "id": "v188-new-267-antikoagulan-kullanirken-ciddi-kanama",
     "branchId": "medical-pharmacology",
     "caseType": "standard",
@@ -12004,7 +12004,7 @@ export const casesPart06 = [
       "Nalokson uygulanması": "Nalokson opioid reseptör antagonisti olup solunum depresyonu ve miyozisle seyreden opioid toksisitesinde kullanılır. Koagülasyon faktörü eksikliğini veya INR yüksekliğini düzeltmez."
     }
   },
-{
+  {
     "id": "v188-new-268-epigastrik-agri-ve-lipaz-yuksekligi",
     "branchId": "general-surgery",
     "caseType": "standard",
@@ -12811,7 +12811,7 @@ export const casesPart06 = [
       "note": "Yalnızca 16-20. Genel Cerrahi kayıtlarında anamnez, objektif veri, seçenek ve feedback zinciri yeniden denetlendi."
     }
   },
-{
+  {
     "id": "v188-new-269-dogum-sonrasi-yogun-kanama",
     "branchId": "obstetrics-gynecology",
     "caseType": "standard",
@@ -13243,7 +13243,7 @@ export const casesPart06 = [
     "obgynInvestigationLayerEnhanced": true,
     "obgynInvestigationLayerVersion": "v397-obgyn-investigation-layer"
   },
-{
+  {
     "id": "v188-new-270-goz-cevresinde-sislik-ve-agri",
     "branchId": "minor-rotations",
     "caseType": "standard",
@@ -13667,7 +13667,7 @@ export const casesPart06 = [
       "note": "Orbital selülit vakasında eksik acil göz güvenliği verisi eklendi; akış görme/pupilla-göz hareketi → enfeksiyon laboratuvarı → kontrastlı orbita-sinüs BT → kültür/drenaj şeklinde düzenlendi."
     }
   },
-{
+  {
     "id": "v189-new-271-kalca-enjeksiyonu-sonrasi-yurume-bozuklugu",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -13928,7 +13928,7 @@ export const casesPart06 = [
       "Nervus femoralis": "Nervus femoralis quadriceps, diz ekstansiyonu ve patella refleksiyle ilişkilidir. Bu bulgular korunmuşken tek ayak duruşunda pelvis düşmesi femoral sinirden çok kalça abdüktör mekanizmasına işaret eder."
     }
   },
-{
+  {
     "id": "v189-new-272-temporal-travma-sonrasi-bilinc-kotulesmesi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -14189,7 +14189,7 @@ export const casesPart06 = [
       "Arteria meningea posterior": "Arteria meningea posterior posterior kraniyal fossa durasıyla ilişkilidir. Verilen kanama sağ temporal bölgede olduğundan bu seçenek anatomik yerleşim açısından daha az uygundur."
     }
   },
-{
+  {
     "id": "v189-new-273-duvara-itme-sirasinda-kurek-kemigi-belirginlesmesi",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -14450,7 +14450,7 @@ export const casesPart06 = [
       "Nervus axillaris": "Nervus axillaris deltoid, teres minor ve lateral omuz duyusuyla ilişkilidir. Deltoid gücü ve lateral omuz duyusu korunmuşken medial skapular kanatlanma axiller sinir lezyonuna uymaz."
     }
   },
-{
+  {
     "id": "v189-new-274-kalp-yetmezliginde-bacak-odemi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -14881,7 +14881,7 @@ export const casesPart06 = [
     "scientificComment": "Bu soru düşük onkotik basınç, geçirgenlik artışı, lenfatik tıkanıklık ve hidrostatik basınç artışını aynı ödem tablosunda ayırt ettirir.",
     "helpText": "Ödemin mekanizmasını seçerken dağılım, JVD, albumin/proteinüri ve kardiyak fonksiyon verilerini birlikte değerlendir."
   },
-{
+  {
     "id": "v189-new-275-su-kisitlamasinda-idrar-yogunlasmasi",
     "branchId": "physiology",
     "caseType": "standard",
@@ -15312,7 +15312,7 @@ export const casesPart06 = [
     "helpText": "Yüksek idrar osmolalitesini doğrudan sağlayan olay, su geçirgenliğinin toplayıcı kanal düzeyinde artırılmasıdır.",
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v189-new-276-sivi-yuklenmesine-kardiyak-yanit",
     "branchId": "physiology",
     "caseType": "standard",
@@ -15663,7 +15663,7 @@ export const casesPart06 = [
     "helpText": "EDV ve SV birlikte artıyorsa, dış sempatik uyarıdan önce lif uzunluğu–kasılma gücü ilişkisini düşün.",
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v189-new-277-yenidoganda-surekli-ufurum",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -16059,7 +16059,7 @@ export const casesPart06 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v189-new-278-emilim-yuzeyinin-histolojik-temeli",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -16407,7 +16407,7 @@ export const casesPart06 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v189-new-279-yenidoganda-solunum-sikintisi-ve-barsak-sesleri",
     "branchId": "histology-embryology",
     "caseType": "standard",
@@ -16821,7 +16821,7 @@ export const casesPart06 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v189-new-280-karbonhidrat-sonrasi-laktik-asidoz",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -17200,7 +17200,7 @@ export const casesPart06 = [
       "Homogentizatın maleylasetoasetata oksidasyonu": "Bu basamak tirozin yıkımında yer alır; bozukluğu alkaptonüriye, koyulaşan idrar ve okronotik artrite yol açar. Laktik asidoz ve nörometabolik enerji yetmezliği paternini açıklamaz."
     }
   },
-{
+  {
     "id": "v189-new-281-bebekte-gelisim-gerilemesi-ve-makula-bulgusu",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -17495,7 +17495,7 @@ export const casesPart06 = [
       "Heparan sülfat": "Heparan sülfat mukopolisakkaridozlarda birikir; kaba yüz görünümü, iskelet bulguları ve çok sistemli tutulum beklenir. Bu vaka nöronal gangliozid depo paternindedir."
     }
   },
-{
+  {
     "id": "v189-new-282-cig-yumurta-tuketimi-sonrasi-dermatit",
     "branchId": "medical-biochemistry",
     "caseType": "standard",

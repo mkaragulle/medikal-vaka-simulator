@@ -1,5 +1,5 @@
 export const casesPart09 = [
-{
+  {
     "id": "v196-new-377-ates-ve-tek-dizde-sislik",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -521,7 +521,7 @@ export const casesPart09 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v196-new-378-yenidoganda-emme-azalmasi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -1162,7 +1162,7 @@ export const casesPart09 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v196-new-379-yenidogan-taramasinda-tiroid-bozuklugu",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -1695,7 +1695,7 @@ export const casesPart09 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v196-new-380-periorbital-odem-ve-kopuklu-idrar",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -2336,7 +2336,7 @@ export const casesPart09 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v196-new-381-purpura-ve-karin-agrisi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -2941,7 +2941,7 @@ export const casesPart09 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v196-new-382-bes-gunu-asan-ates",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -3618,7 +3618,7 @@ export const casesPart09 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v196-new-383-yenidoganda-kusma-ve-ambigus-genital-yapi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -4215,7 +4215,7 @@ export const casesPart09 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v196-new-384-tekrarlayan-oksuruk-ve-yagli-diski",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -4705,7 +4705,7 @@ export const casesPart09 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v196-new-385-uzamis-sarilik-ve-acik-renk-diski",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -5322,7 +5322,7 @@ export const casesPart09 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v196-new-386-gec-yurume-ve-bacak-egriligi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -5848,7 +5848,7 @@ export const casesPart09 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v196-new-387-uzayan-oksuruk-nobetleri",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -6373,7 +6373,7 @@ export const casesPart09 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v196-new-388-solukluk-morarma-ve-kemik-agrisi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -6922,7 +6922,7 @@ export const casesPart09 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v196-new-389-aksamlari-artan-aglama",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -7400,7 +7400,7 @@ export const casesPart09 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v196-new-390-kilo-alamama-ve-kronik-ishal",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -7932,7 +7932,7 @@ export const casesPart09 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v337-peds-clinical-unique-001-infantta-hisilti-ve-beslenememe",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -8457,7 +8457,7 @@ export const casesPart09 = [
       "Akciğer grafisi ve viral panel sonucu çıkana kadar tedaviyi erteleme": "Akciğer grafisi veya viral panel tipik bronşiolitte tedavinin ön koşulu değildir. Hipoksemik ve beslenemeyen infantta destek tedaviyi tetkik sonucu bekleyerek ertelemek klinik öncelik sırasını bozar."
     }
   },
-{
+  {
     "id": "v337-peds-clinical-unique-002-merdiven-cikmada-zorlanma",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -8909,7 +8909,7 @@ export const casesPart09 = [
       "Myastenia gravis": "Myastenia graviste güçsüzlük dalgalanır; oküler veya bulber bulgular belirgin olabilir ve CK genellikle çok yüksek değildir. Bu çocukta sabit/progresif proksimal güçsüzlük ve baldır psödohipertrofisi nöromüsküler kavşak hastalığından çok kas hastalığını gösterir."
     }
   },
-{
+  {
     "id": "v337-peds-clinical-unique-003-ates-sirasinda-kisa-nobet",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -9413,7 +9413,7 @@ export const casesPart09 = [
       "Hipoglisemiye bağlı nöbet": "Hipoglisemi her nöbet başvurusunda hızla dışlanması gereken metabolik bir nedendir. Ancak yatak başı glukoz normaldir ve öykü ateşle tetiklenen kısa jeneralize nöbet paternini desteklemektedir."
     }
   },
-{
+  {
     "id": "v337-peds-clinical-unique-004-tekrarlayan-atesli-idrar-yolu-enfeksiyonu",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -9935,7 +9935,7 @@ export const casesPart09 = [
       "MAG3 diüretikli renografi": "MAG3 renografi obstrüksiyon ve diferansiyel böbrek fonksiyonunu değerlendirmede yararlıdır. Tekrarlayan febril İYE ile reflü şüphesinde ilk hedef test değildir; özellikle reflünün gösterilmesi için VCUG gerekir."
     }
   },
-{
+  {
     "id": "v337-peds-clinical-unique-005-kucuk-cocukta-tek-diz-sisligi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -10457,7 +10457,7 @@ export const casesPart09 = [
       "Kraniyal bilgisayarlı tomografi": "Kraniyal BT nörolojik acil bulgu, travma veya intrakraniyal patoloji şüphesinde kullanılır. Kronik tek eklem artriti olan iyi görünümlü çocukta sessiz üveit taraması için bu vaka için doğru klinik hedef değildir."
     }
   },
-{
+  {
     "id": "v337-peds-clinical-unique-006-karinda-kitle-ve-kilo-kaybi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -10979,7 +10979,7 @@ export const casesPart09 = [
       "Basit fekal impaksiyon": "Fekal impaksiyon kabızlık ve karında dolgunluk hissi yapabilir; ancak sert, düzensiz, orta hattı geçen solid kitle, kilo kaybı, periorbital morluk ve katekolamin metabolit yüksekliğiyle uyumlu değildir."
     }
   },
-{
+  {
     "id": "v337-peds-clinical-unique-007-ust-solunum-yolu-enfeksiyonu-sonrasi-topal",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -11483,7 +11483,7 @@ export const casesPart09 = [
       "Femur şaft kırığı": "Femur şaft kırığında travma öyküsü, deformite, belirgin ağrı ve yük verememe beklenir; direkt grafide kırık bulgusu olur. Bu çocukta travma yoktur, grafide kırık izlenmemiştir ve klinik viral sonrası eklem efüzyonuna yöneliktir."
     }
   },
-{
+  {
     "id": "v337-peds-clinical-unique-008-duzenli-tekrarlayan-ates-ataklari",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -11954,7 +11954,7 @@ export const casesPart09 = [
       "Kronik granülomatöz hastalık": "Kronik granülomatöz hastalıkta tekrarlayan derin apse, pnömoni, lenfadenit veya invaziv bakteri/mantar enfeksiyonları beklenir. Bu çocukta ataklar kısa, düzenli ve aralarda tamamen iyilikle seyretmektedir."
     }
   },
-{
+  {
     "id": "v337-peds-clinical-unique-009-sarilik-ve-dalak-buyuklugu",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -12515,7 +12515,7 @@ export const casesPart09 = [
       "Demir eksikliği anemisi": "Demir eksikliği anemisi mikrositoz, hipokromi ve düşük MCHC ile seyreder; indirekt hiperbilirubinemi, retikülositoz, sferosit ve splenomegali beklenen ana patern değildir."
     }
   },
-{
+  {
     "id": "v337-peds-clinical-unique-010-diz-agrisiyla-gelen-adolesan",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -12986,7 +12986,7 @@ export const casesPart09 = [
       "Septik kalça artriti": "Septik kalça artritinde ateş, toksik görünüm, kalçayı oynatmama ve belirgin inflamatuvar belirteç yüksekliği beklenir. Bu olguda subakut seyir ve normal inflamasyon paneli enfeksiyonu desteklememektedir."
     }
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-001-ace-inhibitorleri-ve-bradikinin",
     "seedId": "manual-vaka-disi-tus-set-01-001",
     "source": "manual-vaka-disi-tus-secki-v1",
@@ -13185,7 +13185,7 @@ export const casesPart09 = [
     "listTitle": "ACE inhibitörleri ve bradikinin",
     "cardTitle": "ACE inhibitörleri ve bradikinin"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-002-dna-viruslerinde-zarf-ozelligi",
     "seedId": "manual-vaka-disi-tus-set-01-002",
     "source": "manual-vaka-disi-tus-secki-v1",
@@ -13384,7 +13384,7 @@ export const casesPart09 = [
     "listTitle": "DNA virüslerinde zarf özelliği",
     "cardTitle": "DNA virüslerinde zarf özelliği"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-003-ure-siklusu-enzim-lokalizasyonu",
     "seedId": "manual-vaka-disi-tus-set-01-003",
     "source": "manual-vaka-disi-tus-secki-v1",
@@ -13586,7 +13586,7 @@ export const casesPart09 = [
     "listTitle": "Üre siklusu enzim lokalizasyonu",
     "cardTitle": "Üre siklusu enzim lokalizasyonu"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-004-primer-respiratuvar-alkaloz",
     "seedId": "manual-vaka-disi-tus-set-01-004",
     "source": "manual-vaka-disi-tus-secki-v1",
@@ -13785,7 +13785,7 @@ export const casesPart09 = [
     "listTitle": "Primer respiratuvar alkaloz",
     "cardTitle": "Primer respiratuvar alkaloz"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-005-kafa-tabani-foramenleri",
     "seedId": "manual-vaka-disi-tus-set-01-005",
     "source": "manual-vaka-disi-tus-secki-v1",
@@ -13984,7 +13984,7 @@ export const casesPart09 = [
     "listTitle": "Kafa tabanı foramenleri",
     "cardTitle": "Kafa tabanı foramenleri"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-006-granulomatoz-inflamasyon",
     "seedId": "manual-vaka-disi-tus-set-01-006",
     "source": "manual-vaka-disi-tus-secki-v1",
@@ -14183,7 +14183,7 @@ export const casesPart09 = [
     "listTitle": "Granülomatöz inflamasyon",
     "cardTitle": "Granülomatöz inflamasyon"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-007-sle-aktivite-takibi",
     "seedId": "manual-vaka-disi-tus-set-01-007",
     "source": "manual-vaka-disi-tus-secki-v1",
@@ -14382,7 +14382,7 @@ export const casesPart09 = [
     "listTitle": "SLE aktivite takibi",
     "cardTitle": "SLE aktivite takibi"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-009-gestasyonel-trofoblastik-hastalik-izlemi",
     "seedId": "manual-vaka-disi-tus-set-01-009",
     "source": "manual-vaka-disi-tus-secki-v1",
@@ -14581,7 +14581,7 @@ export const casesPart09 = [
     "listTitle": "Trofoblastik hastalık izlemi",
     "cardTitle": "Trofoblastik hastalık izlemi"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-010-akut-kolanjit-reynolds-pentadi",
     "seedId": "manual-vaka-disi-tus-set-01-010",
     "source": "manual-vaka-disi-tus-secki-v1",
@@ -14780,7 +14780,7 @@ export const casesPart09 = [
     "listTitle": "Akut kolanjit ve reynolds pentadı",
     "cardTitle": "Akut kolanjit ve reynolds pentadı"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-012-linezolid-yan-etki-ve-mekanizma-ayirimi",
     "seedId": "manual-vaka-disi-tus-set-02-012",
     "source": "manual-vaka-disi-tus-secki-v2",
@@ -14979,7 +14979,7 @@ export const casesPart09 = [
     "listTitle": "Linezolid: mekanizma ve yan etki",
     "cardTitle": "Linezolid: mekanizma ve yan etki"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-013-pentoz-fosfat-yolu-nadph-ve-glutatyon",
     "seedId": "manual-vaka-disi-tus-set-02-013",
     "source": "manual-vaka-disi-tus-secki-v2",
@@ -15178,7 +15178,7 @@ export const casesPart09 = [
     "listTitle": "Pentoz fosfat yolu ve NADPH",
     "cardTitle": "Pentoz fosfat yolu ve NADPH"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-014-tubuloglomeruler-geri-bildirim-macula-densa",
     "seedId": "manual-vaka-disi-tus-set-02-014",
     "source": "manual-vaka-disi-tus-secki-v2",
@@ -15377,7 +15377,7 @@ export const casesPart09 = [
     "listTitle": "Makula densa geri bildirimi",
     "cardTitle": "Makula densa geri bildirimi"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-017-antifosfolipid-sendromu-laboratuvar-kriterleri",
     "seedId": "manual-vaka-disi-tus-set-02-017",
     "source": "manual-vaka-disi-tus-secki-v2",
@@ -15576,7 +15576,7 @@ export const casesPart09 = [
     "listTitle": "APS laboratuvar kriterleri",
     "cardTitle": "APS laboratuvar kriterleri"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-018-minimal-degisiklik-hastaligi-nefrotik-sendrom",
     "seedId": "manual-vaka-disi-tus-set-02-018",
     "source": "manual-vaka-disi-tus-secki-v2",
@@ -15775,7 +15775,7 @@ export const casesPart09 = [
     "listTitle": "Minimal değişiklik hastalığı",
     "cardTitle": "Minimal değişiklik hastalığı"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-020-meduller-tiroid-karsinomu-marker-ve-genetik",
     "seedId": "manual-vaka-disi-tus-set-02-020",
     "source": "manual-vaka-disi-tus-secki-v2",
@@ -15974,7 +15974,7 @@ export const casesPart09 = [
     "listTitle": "Medüller tiroid karsinomu",
     "cardTitle": "Medüller tiroid karsinomu"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-021-noral-krest-kokenli-olmayan-hucre",
     "seedId": "manual-vaka-disi-tus-set-03-021",
     "source": "manual-vaka-disi-tus-secki-v3",
@@ -16173,7 +16173,7 @@ export const casesPart09 = [
     "listTitle": "Nöral krest kökeni",
     "cardTitle": "Nöral krest kökeni"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-023-pseudomonas-aeruginosa-alginat-biyofilm",
     "seedId": "manual-vaka-disi-tus-set-03-023",
     "source": "manual-vaka-disi-tus-secki-v3",
@@ -16372,7 +16372,7 @@ export const casesPart09 = [
     "listTitle": "Pseudomonas alginat biyofilmi",
     "cardTitle": "Pseudomonas alginat biyofilmi"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-024-karnitin-satili-cpt1-malonil-koa",
     "seedId": "manual-vaka-disi-tus-set-03-024",
     "source": "manual-vaka-disi-tus-secki-v3",
@@ -16571,7 +16571,7 @@ export const casesPart09 = [
     "listTitle": "Karnitin şantı ve CPT-1",
     "cardTitle": "Karnitin şantı ve CPT-1"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-025-oksihemoglobin-egrisi-sola-kayma",
     "seedId": "manual-vaka-disi-tus-set-03-025",
     "source": "manual-vaka-disi-tus-secki-v3",
@@ -16770,7 +16770,7 @@ export const casesPart09 = [
     "listTitle": "Oksihemoglobin eğrisi sola kayma",
     "cardTitle": "Oksihemoglobin eğrisi sola kayma"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-026-anca-vaskulit-pr3-mpo-eslestirme",
     "seedId": "manual-vaka-disi-tus-set-03-026",
     "source": "manual-vaka-disi-tus-secki-v3",
@@ -16969,7 +16969,7 @@ export const casesPart09 = [
     "listTitle": "ANCA vaskülit PR3/MPO ayrımı",
     "cardTitle": "ANCA vaskülit PR3/MPO ayrımı"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-027-konjenital-hipotiroidi-yenidogan-taramasi",
     "seedId": "manual-vaka-disi-tus-set-03-027",
     "source": "manual-vaka-disi-tus-secki-v3",
@@ -17168,7 +17168,7 @@ export const casesPart09 = [
     "listTitle": "Konjenital hipotiroidi taraması",
     "cardTitle": "Konjenital hipotiroidi taraması"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-028-granuloza-hucreli-tumor-inhibin",
     "seedId": "manual-vaka-disi-tus-set-03-028",
     "source": "manual-vaka-disi-tus-secki-v3",
@@ -17367,7 +17367,7 @@ export const casesPart09 = [
     "listTitle": "Granüloza hücreli tümör",
     "cardTitle": "Granüloza hücreli tümör"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-029-meme-kanserinde-sentinel-lenf-nodu-kontrendikasyon",
     "seedId": "manual-vaka-disi-tus-set-03-029",
     "source": "manual-vaka-disi-tus-secki-v3",

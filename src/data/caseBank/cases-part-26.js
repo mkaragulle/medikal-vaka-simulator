@@ -1,5 +1,5 @@
 export const casesPart26 = [
-{
+  {
     "id": "v285-new-614-baski-tarzinda-gogus-agrisi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -305,7 +305,7 @@ export const casesPart26 = [
     ],
     "images": []
   },
-{
+  {
     "id": "v285-new-615-siddetli-epigastrik-agri-ve-kusma",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -623,7 +623,7 @@ export const casesPart26 = [
     ],
     "images": []
   },
-{
+  {
     "id": "v285-new-616-ates-oksuruk-ve-yan-agrisi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -941,7 +941,7 @@ export const casesPart26 = [
     ],
     "images": []
   },
-{
+  {
     "id": "v285-new-617-cay-rengi-idrar-ve-kas-agrisi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -1305,7 +1305,7 @@ export const casesPart26 = [
     ],
     "images": []
   },
-{
+  {
     "id": "v285-new-618-sol-ust-kadran-dolgunlugu-ve-lokositoz",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -1681,7 +1681,7 @@ export const casesPart26 = [
     ],
     "images": []
   },
-{
+  {
     "id": "v286-new-619-uykuya-meyil-ve-dalginlik",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -1988,7 +1988,7 @@ export const casesPart26 = [
     ],
     "images": []
   },
-{
+  {
     "id": "v286-new-620-ates-balgam-ve-oksijen-dusuklugu",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -2283,7 +2283,7 @@ export const casesPart26 = [
     ],
     "images": []
   },
-{
+  {
     "id": "v286-new-621-yuzde-dolgunluk-ve-kolay-morarma",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -2578,7 +2578,7 @@ export const casesPart26 = [
     ],
     "images": []
   },
-{
+  {
     "id": "v286-new-622-uyusma-ve-yururken-dengesizlik",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -2897,7 +2897,7 @@ export const casesPart26 = [
     ],
     "images": []
   },
-{
+  {
     "id": "v286-new-623-yeni-ilac-sonrasi-dokuntu-ve-kreatinin-artisi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -3273,7 +3273,7 @@ export const casesPart26 = [
     ],
     "images": []
   },
-{
+  {
     "id": "v287-new-624-merdiven-cikarken-bayilma",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -3575,7 +3575,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v287-new-625-kilo-kaybi-ve-demir-eksikligi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -3877,7 +3877,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v287-new-626-nefes-alirken-konusamama",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -4179,7 +4179,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v287-new-627-bacaklarda-sislik-ve-kopuklu-idrar",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -4481,7 +4481,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v287-new-628-kuru-oksuruk-ve-efor-dispnesi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -4783,7 +4783,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v288-new-629-boyun-damarlarinda-belirginlesme-ve-nefes-darligi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -5085,7 +5085,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v288-new-630-makat-cevresinde-agri-ve-akinti",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -5387,7 +5387,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v288-new-631-tekrarlayan-akciger-odemi-ve-direnc-tansiyon",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -5689,7 +5689,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v288-new-632-susuzluk-kabizlik-ve-bilinclilikte-azalma",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -6003,7 +6003,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v288-new-633-gorme-bulanikligi-ve-burun-kanamasi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -6317,7 +6317,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v289-new-634-eforla-gelen-bayilacak-gibi-olma",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -6513,7 +6513,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v289-new-635-titreme-sarilik-ve-ders-basarisinda-dusus",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -6814,7 +6814,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v289-new-636-ayak-bilegi-agrisi-ve-kuru-oksuruk",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -7065,7 +7065,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v289-new-637-kopuklu-idrar-ve-goz-kapaklarinda-sislik",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -7379,7 +7379,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v289-new-638-yuz-hatlari-kalinlasma-ve-yuzuklerin-daralmasi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -7564,7 +7564,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v290-new-639-ilac-sonrasi-carpinti-ve-bayilacak-gibi-olma",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -7795,7 +7795,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v290-new-640-kasinti-yorgunluk-ve-kolestatik-enzim-yuksekligi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -8085,7 +8085,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v290-new-641-ust-solunum-yolu-sonrasi-kola-rengi-idrar",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -8410,7 +8410,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v290-new-642-dis-eti-kanamasi-morarma-ve-lokopeni",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -8664,7 +8664,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v290-new-643-biyolojik-tedavi-oncesi-pozitif-tarama",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -8906,7 +8906,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v291-new-644-sabaha-karsi-gelen-gogus-sikismasi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -9171,7 +9171,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v291-new-645-yorgunluk-eklem-agrisi-ve-transaminaz-yuksekligi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -9484,7 +9484,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v291-new-646-genc-yasta-inme-ve-tekrarlayan-gebelik-kaybi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -9773,7 +9773,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v291-new-647-cok-su-icme-ve-gece-idrara-kalkma",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -10062,7 +10062,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v291-new-648-yeni-baslayan-sakak-agrisi-ve-cene-yorulmasi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -10339,7 +10339,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v292-new-649-aniden-baslayan-carpinti-ve-bas-donmesi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -10616,7 +10616,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v292-new-650-sarilik-istahsizlik-ve-sag-ust-kadran-hassasiyeti",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -11056,7 +11056,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v292-new-651-kas-gucsuzlugu-ve-tekrarlayan-bobrek-tasi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -11463,7 +11463,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v292-new-652-merdiven-cikmada-zorlanma-ve-morumsu-goz-kapagi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -11821,7 +11821,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v292-new-653-burun-kanamasi-ve-petesi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -12204,7 +12204,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v293-new-654-yavas-nabiz-ve-bayilma",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -12455,7 +12455,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v293-new-655-yutma-guclugu-ve-gece-regurjitasyon",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -12682,7 +12682,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v293-new-656-sirozlu-hastada-kreatinin-artisi-ve-az-idrar",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -13015,7 +13015,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v293-new-657-bas-agrisi-kizariklik-ve-kasinti",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -13266,7 +13266,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v293-new-658-adet-duzensizligi-ve-sut-gelmesi",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -13505,7 +13505,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v294-new-659-yirtilir-tarzda-agri-ve-kol-basinc-farki",
     "branchId": "internal-medicine",
     "caseType": "standard",
@@ -13720,7 +13720,7 @@ export const casesPart26 = [
     "findings": [],
     "images": []
   },
-{
+  {
     "id": "v294-new-660-kanli-kusma-ve-siyah-diskilama",
     "branchId": "internal-medicine",
     "caseType": "standard",

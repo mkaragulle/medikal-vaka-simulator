@@ -1,5 +1,5 @@
 export const casesPart04 = [
-{
+  {
     "id": "v179-new-142-uzayan-nobet",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -481,7 +481,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v179-new-143-hiperglisemi-ve-kusma",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -1062,7 +1062,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v179-new-144-hisilti-ve-solunum-sikintisi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -1589,7 +1589,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v179-new-145-havlar-tarzda-oksuruk-ve-stridor",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -2097,7 +2097,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v179-new-146-ates-ve-salya-akmasi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -2605,7 +2605,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v179-new-147-ates-ve-dolasim-bozuklugu",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -3236,7 +3236,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v179-new-148-ani-baslayan-tek-tarafli-hisilti",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -3744,7 +3744,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v179-new-149-tablet-alimi-sonrasi-kusma-ve-metabolik-asidoz",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -4426,7 +4426,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v179-new-150-yenidoganda-direncli-siyanoz",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -5035,7 +5035,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v180-new-151-kemoterapi-sonrasi-ates",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -5644,7 +5644,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v180-new-152-ani-baslayan-carpinti",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -6178,7 +6178,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v180-new-153-ates-ve-ense-sertligi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -6769,7 +6769,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v180-new-154-aclik-sonrasi-nobet",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -7360,7 +7360,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v180-new-155-sicak-ortamda-bilinc-degisikligi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -7891,7 +7891,7 @@ export const casesPart04 = [
       "qualityPass": "pediatrics-sixth5-ultra-refined"
     }
   },
-{
+  {
     "id": "v180-new-156-kafa-travmasi-sonrasi-yeniden-bilinc-kaybi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -8261,7 +8261,7 @@ export const casesPart04 = [
       "qualityPass": "pediatrics-sixth5-ultra-refined"
     }
   },
-{
+  {
     "id": "v180-new-157-yenidoganda-kasilma-ve-jitteriness",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -8714,7 +8714,7 @@ export const casesPart04 = [
       "qualityPass": "pediatrics-sixth5-ultra-refined"
     }
   },
-{
+  {
     "id": "v180-new-158-bas-agrisi-ve-yuksek-tansiyon",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -9233,7 +9233,7 @@ export const casesPart04 = [
       "qualityPass": "pediatrics-sixth5-ultra-refined"
     }
   },
-{
+  {
     "id": "v180-new-159-kulak-agrisi-sonrasi-kulak-arkasinda-sislik",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -9660,7 +9660,7 @@ export const casesPart04 = [
       "qualityPass": "pediatrics-sixth5-ultra-refined"
     }
   },
-{
+  {
     "id": "v180-new-160-kapali-ortam-sonrasi-bas-agrisi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -10043,7 +10043,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v181-new-161-yenidoganda-beslenme-bozulmasi-ve-hipotermi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -10581,7 +10581,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v181-new-162-yenidoganda-kusma-ve-sok",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -11047,7 +11047,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v181-new-163-bobrek-hastasinda-kas-gucsuzlugu",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -11495,7 +11495,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v181-new-164-ilac-alimi-sonrasi-bilinc-degisikligi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -11943,7 +11943,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v181-new-165-kulak-cinlamasi-ve-hiperventilasyon",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -12341,7 +12341,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v181-new-166-ani-baslayan-skrotal-agri",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -12667,7 +12667,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v181-new-167-fiskirir-tarzda-kusma",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -13065,7 +13065,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v181-new-168-anestezi-sirasinda-ani-hipertermi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -13481,7 +13481,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v181-new-169-su-alimi-sonrasi-nobet",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -13862,7 +13862,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v181-new-170-sag-alt-kadran-agrisi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -14342,7 +14342,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v182-new-171-travma-sonrasi-ani-solunum-bozulmasi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -14756,7 +14756,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v182-new-172-pestisid-temasi-sonrasi-sekresyon-artisi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -15224,7 +15224,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v182-new-173-temizlik-maddesi-icme-sonrasi-agiz-yanigi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -15611,7 +15611,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v182-new-174-gaz-yagi-icme-sonrasi-oksuruk",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -16109,7 +16109,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v182-new-175-orak-hucreli-cocukta-ani-solukluk",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -16672,7 +16672,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v182-new-176-aglama-sonrasi-morarma-atagi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -17147,7 +17147,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v182-new-177-sicak-su-yanigi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -17638,7 +17638,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v182-new-178-havuzdan-cikarilma-sonrasi-oksuruk",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -18113,7 +18113,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v182-new-179-dka-tedavisi-sirasinda-bilinc-kotulesmesi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -18712,7 +18712,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v182-new-180-alci-sonrasi-artan-ekstremite-agrisi",
     "branchId": "pediatrics",
     "caseType": "standard",
@@ -19073,7 +19073,7 @@ export const casesPart04 = [
       "validationWarnings": []
     }
   },
-{
+  {
     "id": "v183-new-181-omuz-travmasi-sonrasi-abduksiyon-guclugu",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -19344,7 +19344,7 @@ export const casesPart04 = [
       "Nervus radialis": "Nervus radialis humerus şaftında spiral oluk komşuluğunda risk altındadır ve wrist drop ile birinci dorsal aralık duyusu azalması beklenir. Bu hastada el bileği ve parmak ekstansiyonu korunmuş olduğundan ana lezyon radial sinir paterninde değildir."
     }
   },
-{
+  {
     "id": "v183-new-182-yuz-enfeksiyonu-sonrasi-cift-gorme",
     "branchId": "anatomy",
     "caseType": "standard",
@@ -19615,7 +19615,7 @@ export const casesPart04 = [
       "N. maxillaris": "N. maxillaris yüz orta bölümü duyusunu taşıyan trigeminal daldır. Kavernöz sinüs lateral duvarı ile ilişkili olsa da lateral rektus motor fonksiyonunu sağlamadığı için abduksiyon kaybını açıklamaz."
     }
   },
-{
+  {
     "id": "v183-new-183-yuksek-irtifada-hizli-soluma",
     "branchId": "physiology",
     "caseType": "standard",
@@ -20068,7 +20068,7 @@ export const casesPart04 = [
     },
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v183-new-184-glomeruler-filtrasyonun-lokal-kontrolu",
     "branchId": "physiology",
     "caseType": "standard",
@@ -20634,7 +20634,7 @@ export const casesPart04 = [
     "helpText": "İpucu: Bu soruda sistemik hormonlardan önce, distal tübüldeki solüt yükünün aynı nefronun filtrasyon hızını nasıl geri beslediğini düşün.",
     "preserveInvestigationOrder": true
   },
-{
+  {
     "id": "v183-new-185-cocukta-hiperurisemi-ve-kendine-zarar-verme",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -20982,7 +20982,7 @@ export const casesPart04 = [
       "Ksantin oksidaz eksikliği": "Ksantin oksidaz eksikliğinde hipoksantin ve ksantin ürik aside dönüştürülemediği için serum ürik asit yüksek değil düşük beklenir. Bu vakadaki belirgin hiperürisemi bu seçeneği ters yönde dışlar."
     }
   },
-{
+  {
     "id": "v183-new-186-uzun-boy-ve-lens-subluksasyonu",
     "branchId": "medical-biochemistry",
     "caseType": "standard",
@@ -21331,7 +21331,7 @@ export const casesPart04 = [
       "Metilentetrahidrofolat redüktaz (MTHFR) eksikliği": "MTHFR eksikliği 5-metil-THF oluşumunu azaltarak remetilasyonu bozar; homosistein artabilir fakat metiyonin genellikle düşük/normaldir. Metiyoninin yüksek olması ve sisteinin düşük kalması CBS basamağını öne çıkarır."
     }
   },
-{
+  {
     "id": "v183-new-187-eriskinde-belirgin-proteinuri",
     "branchId": "medical-pathology",
     "caseType": "standard",
@@ -21750,7 +21750,7 @@ export const casesPart04 = [
       "Postenfeksiyöz büyük subepitelyal hump birikimi": "Postenfeksiyöz glomerülonefritte büyük subepitelyal hump birikimleri, hipokomplementemi ve nefritik tablo daha tipiktir. Burada büyük hump değil yaygın subepitelyal depozitler, granüler kapiller duvar boyanması ve nefrotik proteinüri ön plandadır."
     }
   },
-{
+  {
     "id": "v183-new-188-antihipertansif-sonrasi-kuru-oksuruk",
     "branchId": "medical-pharmacology",
     "caseType": "standard",

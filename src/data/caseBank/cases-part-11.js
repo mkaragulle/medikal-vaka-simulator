@@ -1,5 +1,5 @@
 export const casesPart11 = [
-{
+  {
     "id": "ai-spot-vakasiz-secki-081",
     "seedId": "manual-vaka-disi-tus-set-generated-081",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -198,7 +198,7 @@ export const casesPart11 = [
     "listTitle": "SGLT2 inhibitörleri ve yan etki mekanizması",
     "cardTitle": "SGLT2 inhibitörleri ve yan etki mekanizması"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-082",
     "seedId": "manual-vaka-disi-tus-set-generated-082",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -397,7 +397,7 @@ export const casesPart11 = [
     "listTitle": "Clostridioides difficile toksinleri",
     "cardTitle": "Clostridioides difficile toksinleri"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-083",
     "seedId": "manual-vaka-disi-tus-set-generated-083",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -596,7 +596,7 @@ export const casesPart11 = [
     "listTitle": "Ornitin transkarbamilaz eksikliği",
     "cardTitle": "Ornitin transkarbamilaz eksikliği"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-084",
     "seedId": "manual-vaka-disi-tus-set-generated-084",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -795,7 +795,7 @@ export const casesPart11 = [
     "listTitle": "Makula densa geri bildirimi",
     "cardTitle": "Makula densa geri bildirimi"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-085",
     "seedId": "manual-vaka-disi-tus-set-generated-085",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -994,7 +994,7 @@ export const casesPart11 = [
     "listTitle": "Apoptoz ve nekroz ayrımı",
     "cardTitle": "Apoptoz ve nekroz ayrımı"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-086",
     "seedId": "manual-vaka-disi-tus-set-generated-086",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -1193,7 +1193,7 @@ export const casesPart11 = [
     "listTitle": "PALM-COEIN sınıflaması",
     "cardTitle": "PALM-COEIN sınıflaması"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-087",
     "seedId": "manual-vaka-disi-tus-set-generated-087",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -1392,7 +1392,7 @@ export const casesPart11 = [
     "listTitle": "Konjenital CMV enfeksiyonu",
     "cardTitle": "Konjenital CMV enfeksiyonu"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-088",
     "seedId": "manual-vaka-disi-tus-set-generated-088",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -1591,7 +1591,7 @@ export const casesPart11 = [
     "listTitle": "ANCA ilişkili vaskülitler",
     "cardTitle": "ANCA ilişkili vaskülitler"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-089",
     "seedId": "manual-vaka-disi-tus-set-generated-089",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -1790,7 +1790,7 @@ export const casesPart11 = [
     "listTitle": "Medüller tiroid karsinomu",
     "cardTitle": "Medüller tiroid karsinomu"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-090",
     "seedId": "manual-vaka-disi-tus-set-generated-090",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -1989,7 +1989,7 @@ export const casesPart11 = [
     "listTitle": "Prevalans ve prediktif değer ilişkisi",
     "cardTitle": "Prevalans ve prediktif değer ilişkisi"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-091",
     "seedId": "manual-vaka-disi-tus-set-generated-091",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -2188,7 +2188,7 @@ export const casesPart11 = [
     "listTitle": "Primer metabolik asidoz ve kompansasyon",
     "cardTitle": "Primer metabolik asidoz ve kompansasyon"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-092",
     "seedId": "manual-vaka-disi-tus-set-generated-092",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -2387,7 +2387,7 @@ export const casesPart11 = [
     "listTitle": "Heparin ve protamin sülfat",
     "cardTitle": "Heparin ve protamin sülfat"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-093",
     "seedId": "manual-vaka-disi-tus-set-generated-093",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -2586,7 +2586,7 @@ export const casesPart11 = [
     "listTitle": "HBV serolojik belirteçleri",
     "cardTitle": "HBV serolojik belirteçleri"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-094",
     "seedId": "manual-vaka-disi-tus-set-generated-094",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -2785,7 +2785,7 @@ export const casesPart11 = [
     "listTitle": "RB geni ve hücre döngüsü",
     "cardTitle": "RB geni ve hücre döngüsü"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-095",
     "seedId": "manual-vaka-disi-tus-set-generated-095",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -2984,7 +2984,7 @@ export const casesPart11 = [
     "listTitle": "Canlı aşı kontrendikasyonları",
     "cardTitle": "Canlı aşı kontrendikasyonları"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-096",
     "seedId": "manual-vaka-disi-tus-set-generated-096",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -3183,7 +3183,7 @@ export const casesPart11 = [
     "listTitle": "Primer adrenal yetmezlik",
     "cardTitle": "Primer adrenal yetmezlik"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-097",
     "seedId": "manual-vaka-disi-tus-set-generated-097",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -3382,7 +3382,7 @@ export const casesPart11 = [
     "listTitle": "Uzun torasik sinir hasarı",
     "cardTitle": "Uzun torasik sinir hasarı"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-098",
     "seedId": "manual-vaka-disi-tus-set-generated-098",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -3581,7 +3581,7 @@ export const casesPart11 = [
     "listTitle": "Ağır özellikli preeklampsi kriterleri",
     "cardTitle": "Ağır özellikli preeklampsi kriterleri"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-099",
     "seedId": "manual-vaka-disi-tus-set-generated-099",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -3780,7 +3780,7 @@ export const casesPart11 = [
     "listTitle": "Frank-Starling mekanizması",
     "cardTitle": "Frank-Starling mekanizması"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-100",
     "seedId": "manual-vaka-disi-tus-set-generated-100",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -3979,7 +3979,7 @@ export const casesPart11 = [
     "listTitle": "Vaka-kontrol çalışmaları",
     "cardTitle": "Vaka-kontrol çalışmaları"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-101",
     "seedId": "manual-vaka-disi-tus-set-generated-101",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -4178,7 +4178,7 @@ export const casesPart11 = [
     "listTitle": "Tip II pnömosit ve surfaktan",
     "cardTitle": "Tip II pnömosit ve surfaktan"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-102",
     "seedId": "manual-vaka-disi-tus-set-generated-102",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -4377,7 +4377,7 @@ export const casesPart11 = [
     "listTitle": "Tüberküloz kord faktörü",
     "cardTitle": "Tüberküloz kord faktörü"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-103",
     "seedId": "manual-vaka-disi-tus-set-generated-103",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -4576,7 +4576,7 @@ export const casesPart11 = [
     "listTitle": "Malign hipertermi ve dantrolen",
     "cardTitle": "Malign hipertermi ve dantrolen"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-104",
     "seedId": "manual-vaka-disi-tus-set-generated-104",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -4775,7 +4775,7 @@ export const casesPart11 = [
     "listTitle": "G6PD eksikliği ve oksidatif stres",
     "cardTitle": "G6PD eksikliği ve oksidatif stres"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-105",
     "seedId": "manual-vaka-disi-tus-set-generated-105",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -4974,7 +4974,7 @@ export const casesPart11 = [
     "listTitle": "Oksihemoglobin disosiasyon eğrisi",
     "cardTitle": "Oksihemoglobin disosiasyon eğrisi"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-106",
     "seedId": "manual-vaka-disi-tus-set-generated-106",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -5173,7 +5173,7 @@ export const casesPart11 = [
     "listTitle": "Nefrotik sendrom patofizyolojisi",
     "cardTitle": "Nefrotik sendrom patofizyolojisi"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-107",
     "seedId": "manual-vaka-disi-tus-set-generated-107",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -5372,7 +5372,7 @@ export const casesPart11 = [
     "listTitle": "Kavernöz sinüs içeriği",
     "cardTitle": "Kavernöz sinüs içeriği"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-108",
     "seedId": "manual-vaka-disi-tus-set-generated-108",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -5571,7 +5571,7 @@ export const casesPart11 = [
     "listTitle": "Kawasaki hastalığı bulguları",
     "cardTitle": "Kawasaki hastalığı bulguları"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-109",
     "seedId": "manual-vaka-disi-tus-set-generated-109",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -5770,7 +5770,7 @@ export const casesPart11 = [
     "listTitle": "Polikistik over sendromu patofizyolojisi",
     "cardTitle": "Polikistik over sendromu patofizyolojisi"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-110",
     "seedId": "manual-vaka-disi-tus-set-generated-110",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -5969,7 +5969,7 @@ export const casesPart11 = [
     "listTitle": "Atfedilen risk",
     "cardTitle": "Atfedilen risk"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-111",
     "seedId": "manual-vaka-disi-tus-set-generated-111",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -6168,7 +6168,7 @@ export const casesPart11 = [
     "listTitle": "Parathormon ve Ca-P dengesi",
     "cardTitle": "Parathormon ve Ca-P dengesi"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-112",
     "seedId": "manual-vaka-disi-tus-set-generated-112",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -6367,7 +6367,7 @@ export const casesPart11 = [
     "listTitle": "HIV giriş reseptörleri ve tropizm",
     "cardTitle": "HIV giriş reseptörleri ve tropizm"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-113",
     "seedId": "manual-vaka-disi-tus-set-generated-113",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -6566,7 +6566,7 @@ export const casesPart11 = [
     "listTitle": "Parasetamol toksisitesi ve N-asetilsistein",
     "cardTitle": "Parasetamol toksisitesi ve N-asetilsistein"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-114",
     "seedId": "manual-vaka-disi-tus-set-generated-114",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -6765,7 +6765,7 @@ export const casesPart11 = [
     "listTitle": "Amiloidozun histokimyasal özellikleri",
     "cardTitle": "Amiloidozun histokimyasal özellikleri"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-115",
     "seedId": "manual-vaka-disi-tus-set-generated-115",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -6964,7 +6964,7 @@ export const casesPart11 = [
     "listTitle": "IgA vasküliti bulguları",
     "cardTitle": "IgA vasküliti bulguları"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-116",
     "seedId": "manual-vaka-disi-tus-set-generated-116",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -7163,7 +7163,7 @@ export const casesPart11 = [
     "listTitle": "Rh immünoprofilaksisi",
     "cardTitle": "Rh immünoprofilaksisi"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-117",
     "seedId": "manual-vaka-disi-tus-set-generated-117",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -7362,7 +7362,7 @@ export const casesPart11 = [
     "listTitle": "Pudendal sinir fonksiyonu",
     "cardTitle": "Pudendal sinir fonksiyonu"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-118",
     "seedId": "manual-vaka-disi-tus-set-generated-118",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -7561,7 +7561,7 @@ export const casesPart11 = [
     "listTitle": "SIADH laboratuvar paterni",
     "cardTitle": "SIADH laboratuvar paterni"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-119",
     "seedId": "manual-vaka-disi-tus-set-generated-119",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -7760,7 +7760,7 @@ export const casesPart11 = [
     "listTitle": "Akut kolanjit bulguları",
     "cardTitle": "Akut kolanjit bulguları"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-120",
     "seedId": "manual-vaka-disi-tus-set-generated-120",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -7959,7 +7959,7 @@ export const casesPart11 = [
     "listTitle": "Nöral krest türevleri",
     "cardTitle": "Nöral krest türevleri"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-121",
     "seedId": "manual-vaka-disi-tus-set-generated-121",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -8158,7 +8158,7 @@ export const casesPart11 = [
     "listTitle": "Tip IV aşırı duyarlılık reaksiyonu",
     "cardTitle": "Tip IV aşırı duyarlılık reaksiyonu"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-122",
     "seedId": "manual-vaka-disi-tus-set-generated-122",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -8357,7 +8357,7 @@ export const casesPart11 = [
     "listTitle": "Lesch-Nyhan sendromu",
     "cardTitle": "Lesch-Nyhan sendromu"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-123",
     "seedId": "manual-vaka-disi-tus-set-generated-123",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -8556,7 +8556,7 @@ export const casesPart11 = [
     "listTitle": "Organofosfat zehirlenmesi ve pralidoksim",
     "cardTitle": "Organofosfat zehirlenmesi ve pralidoksim"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-124",
     "seedId": "manual-vaka-disi-tus-set-generated-124",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -8755,7 +8755,7 @@ export const casesPart11 = [
     "listTitle": "Cryptococcus neoformans",
     "cardTitle": "Cryptococcus neoformans"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-125",
     "seedId": "manual-vaka-disi-tus-set-generated-125",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -8954,7 +8954,7 @@ export const casesPart11 = [
     "listTitle": "Rekürren laringeal sinir",
     "cardTitle": "Rekürren laringeal sinir"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-126",
     "seedId": "manual-vaka-disi-tus-set-generated-126",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -9153,7 +9153,7 @@ export const casesPart11 = [
     "listTitle": "Karıştırıcı değişken",
     "cardTitle": "Karıştırıcı değişken"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-127",
     "seedId": "manual-vaka-disi-tus-set-generated-127",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",

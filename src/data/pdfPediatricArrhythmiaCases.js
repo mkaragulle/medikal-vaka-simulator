@@ -1,3 +1,2 @@
-// PDF-derived local AI case içeriği kaldırıldı.
-export const PDF_PEDIATRIC_ARRHYTHMIA_CASES = [];
-export default PDF_PEDIATRIC_ARRHYTHMIA_CASES;
+// Neutral stub: legacy pediatric arrhythmia PDF-derived cases removed from clean package.
+export const pediatricArrhythmiaPdfCases = [];

@@ -1,5 +1,5 @@
 export const casesPart12 = [
-{
+  {
     "id": "ai-spot-vakasiz-secki-128",
     "seedId": "manual-vaka-disi-tus-set-generated-128",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -198,7 +198,7 @@ export const casesPart12 = [
     "listTitle": "Pankreatik psödokist",
     "cardTitle": "Pankreatik psödokist"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-129",
     "seedId": "manual-vaka-disi-tus-set-generated-129",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -397,7 +397,7 @@ export const casesPart12 = [
     "listTitle": "Metotreksat tedavi uygunluğu",
     "cardTitle": "Metotreksat tedavi uygunluğu"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-130",
     "seedId": "manual-vaka-disi-tus-set-generated-130",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -596,7 +596,7 @@ export const casesPart12 = [
     "listTitle": "Kistik fibrozis patofizyolojisi",
     "cardTitle": "Kistik fibrozis patofizyolojisi"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-131",
     "seedId": "manual-vaka-disi-tus-set-generated-131",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -795,7 +795,7 @@ export const casesPart12 = [
     "listTitle": "Von Gierke hastalığı ve metabolik sonuçları",
     "cardTitle": "Von Gierke hastalığı ve metabolik sonuçları"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-132",
     "seedId": "manual-vaka-disi-tus-set-generated-132",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -994,7 +994,7 @@ export const casesPart12 = [
     "listTitle": "Klirens ve renal plazma akımı",
     "cardTitle": "Klirens ve renal plazma akımı"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-133",
     "seedId": "manual-vaka-disi-tus-set-generated-133",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -1193,7 +1193,7 @@ export const casesPart12 = [
     "listTitle": "IgA proteaz üreten mikroorganizmalar",
     "cardTitle": "IgA proteaz üreten mikroorganizmalar"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-134",
     "seedId": "manual-vaka-disi-tus-set-generated-134",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -1392,7 +1392,7 @@ export const casesPart12 = [
     "listTitle": "Aminoglikozidlerin etki mekanizması",
     "cardTitle": "Aminoglikozidlerin etki mekanizması"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-135",
     "seedId": "manual-vaka-disi-tus-set-generated-135",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -1591,7 +1591,7 @@ export const casesPart12 = [
     "listTitle": "Granülomatöz inflamasyon",
     "cardTitle": "Granülomatöz inflamasyon"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-136",
     "seedId": "manual-vaka-disi-tus-set-generated-136",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -1790,7 +1790,7 @@ export const casesPart12 = [
     "listTitle": "B12 ve folat eksikliği ayrımı",
     "cardTitle": "B12 ve folat eksikliği ayrımı"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-137",
     "seedId": "manual-vaka-disi-tus-set-generated-137",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -1989,7 +1989,7 @@ export const casesPart12 = [
     "listTitle": "Papiller tiroid karsinomu",
     "cardTitle": "Papiller tiroid karsinomu"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-138",
     "seedId": "manual-vaka-disi-tus-set-generated-138",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -2188,7 +2188,7 @@ export const casesPart12 = [
     "listTitle": "Fototerapi mekanizması",
     "cardTitle": "Fototerapi mekanizması"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-139",
     "seedId": "manual-vaka-disi-tus-set-generated-139",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -2387,7 +2387,7 @@ export const casesPart12 = [
     "listTitle": "Over tümör belirteçleri",
     "cardTitle": "Over tümör belirteçleri"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-140",
     "seedId": "manual-vaka-disi-tus-set-generated-140",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -2586,7 +2586,7 @@ export const casesPart12 = [
     "listTitle": "Intention-to-treat analizi",
     "cardTitle": "Intention-to-treat analizi"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-141",
     "seedId": "manual-vaka-disi-tus-set-generated-141",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -2785,7 +2785,7 @@ export const casesPart12 = [
     "listTitle": "Kiesselbach pleksusu",
     "cardTitle": "Kiesselbach pleksusu"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-142",
     "seedId": "manual-vaka-disi-tus-set-generated-142",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -2984,7 +2984,7 @@ export const casesPart12 = [
     "listTitle": "Nöral tüp kapanma defektleri",
     "cardTitle": "Nöral tüp kapanma defektleri"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-143",
     "seedId": "manual-vaka-disi-tus-set-generated-143",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -3183,7 +3183,7 @@ export const casesPart12 = [
     "listTitle": "Akçaağaç şurubu idrar hastalığı",
     "cardTitle": "Akçaağaç şurubu idrar hastalığı"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-144",
     "seedId": "manual-vaka-disi-tus-set-generated-144",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -3382,7 +3382,7 @@ export const casesPart12 = [
     "listTitle": "Ventrikül aksiyon potansiyeli fazları",
     "cardTitle": "Ventrikül aksiyon potansiyeli fazları"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-145",
     "seedId": "manual-vaka-disi-tus-set-generated-145",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -3581,7 +3581,7 @@ export const casesPart12 = [
     "listTitle": "Bordetella pertussis toksin mekanizması",
     "cardTitle": "Bordetella pertussis toksin mekanizması"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-146",
     "seedId": "manual-vaka-disi-tus-set-generated-146",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -3780,7 +3780,7 @@ export const casesPart12 = [
     "listTitle": "Lityum ve nefrojenik diabetes insipidus",
     "cardTitle": "Lityum ve nefrojenik diabetes insipidus"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-147",
     "seedId": "manual-vaka-disi-tus-set-generated-147",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -3979,7 +3979,7 @@ export const casesPart12 = [
     "listTitle": "Osteosarkomun patolojik özellik",
     "cardTitle": "Osteosarkomun patolojik özellik"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-148",
     "seedId": "manual-vaka-disi-tus-set-generated-148",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -4178,7 +4178,7 @@ export const casesPart12 = [
     "listTitle": "Herediter hemokromatozis",
     "cardTitle": "Herediter hemokromatozis"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-149",
     "seedId": "manual-vaka-disi-tus-set-generated-149",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -4377,7 +4377,7 @@ export const casesPart12 = [
     "listTitle": "Konjenital hipotiroidi taraması",
     "cardTitle": "Konjenital hipotiroidi taraması"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-150",
     "seedId": "manual-vaka-disi-tus-set-generated-150",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -4576,7 +4576,7 @@ export const casesPart12 = [
     "listTitle": "Komplet mol hidatiform",
     "cardTitle": "Komplet mol hidatiform"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-151",
     "seedId": "manual-vaka-disi-tus-set-generated-151",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -4775,7 +4775,7 @@ export const casesPart12 = [
     "listTitle": "Hirschsprung hastalığı patogenezi",
     "cardTitle": "Hirschsprung hastalığı patogenezi"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-152",
     "seedId": "manual-vaka-disi-tus-set-generated-152",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -4974,7 +4974,7 @@ export const casesPart12 = [
     "listTitle": "Özgüllük ve yanlış pozitiflik",
     "cardTitle": "Özgüllük ve yanlış pozitiflik"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-153",
     "seedId": "manual-vaka-disi-tus-set-generated-153",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -5173,7 +5173,7 @@ export const casesPart12 = [
     "listTitle": "Savunma mekanizmaları",
     "cardTitle": "Savunma mekanizmaları"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-154",
     "seedId": "manual-vaka-disi-tus-set-generated-154",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -5372,7 +5372,7 @@ export const casesPart12 = [
     "listTitle": "Parkinson hastalığı patofizyolojisi",
     "cardTitle": "Parkinson hastalığı patofizyolojisi"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-155",
     "seedId": "manual-vaka-disi-tus-set-generated-155",
     "source": "manual-vaka-disi-tus-secki-ultra-quality",
@@ -5571,7 +5571,7 @@ export const casesPart12 = [
     "listTitle": "Pemfigus vulgaris ve büllöz pemfigoid ayrımı",
     "cardTitle": "Pemfigus vulgaris ve büllöz pemfigoid ayrımı"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-156",
     "seedId": "manual-vaka-disi-tus-set-16-156",
     "source": "manual-vaka-disi-tus-set16-super-kalite",
@@ -5799,7 +5799,7 @@ export const casesPart12 = [
     "listTitle": "Paneth hücreleri",
     "cardTitle": "Paneth hücreleri"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-157",
     "seedId": "manual-vaka-disi-tus-set-16-157",
     "source": "manual-vaka-disi-tus-set16-super-kalite",
@@ -6027,7 +6027,7 @@ export const casesPart12 = [
     "listTitle": "Meckel divertikülü",
     "cardTitle": "Meckel divertikülü"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-158",
     "seedId": "manual-vaka-disi-tus-set-16-158",
     "source": "manual-vaka-disi-tus-set16-super-kalite",
@@ -6255,7 +6255,7 @@ export const casesPart12 = [
     "listTitle": "Karşı akım çoğaltıcı sistem",
     "cardTitle": "Karşı akım çoğaltıcı sistem"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-159",
     "seedId": "manual-vaka-disi-tus-set-16-159",
     "source": "manual-vaka-disi-tus-set16-super-kalite",
@@ -6483,7 +6483,7 @@ export const casesPart12 = [
     "listTitle": "Helicobacter pylori virülans ve tanı",
     "cardTitle": "Helicobacter pylori virülans ve tanı"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-160",
     "seedId": "manual-vaka-disi-tus-set-16-160",
     "source": "manual-vaka-disi-tus-set16-super-kalite",
@@ -6711,7 +6711,7 @@ export const casesPart12 = [
     "listTitle": "Makrolidlerin mekanizması ve yan etkileri",
     "cardTitle": "Makrolidlerin mekanizması ve yan etkileri"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-161",
     "seedId": "manual-vaka-disi-tus-set-16-161",
     "source": "manual-vaka-disi-tus-set16-super-kalite",
@@ -6939,7 +6939,7 @@ export const casesPart12 = [
     "listTitle": "Barrett özofagusu",
     "cardTitle": "Barrett özofagusu"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-162",
     "seedId": "manual-vaka-disi-tus-set-16-162",
     "source": "manual-vaka-disi-tus-set16-super-kalite",
@@ -7167,7 +7167,7 @@ export const casesPart12 = [
     "listTitle": "Sjögren sendromu otoantikorları",
     "cardTitle": "Sjögren sendromu otoantikorları"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-163",
     "seedId": "manual-vaka-disi-tus-set-16-163",
     "source": "manual-vaka-disi-tus-set16-super-kalite",
@@ -7395,7 +7395,7 @@ export const casesPart12 = [
     "listTitle": "Respiratuvar distres sendromu",
     "cardTitle": "Respiratuvar distres sendromu"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-164",
     "seedId": "manual-vaka-disi-tus-set-16-164",
     "source": "manual-vaka-disi-tus-set16-super-kalite",
@@ -7623,7 +7623,7 @@ export const casesPart12 = [
     "listTitle": "Magnesium sülfat ve eklampsi profilaksisi",
     "cardTitle": "Magnesium sülfat ve eklampsi profilaksisi"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-165",
     "seedId": "manual-vaka-disi-tus-set-16-165",
     "source": "manual-vaka-disi-tus-set16-super-kalite",
@@ -7851,7 +7851,7 @@ export const casesPart12 = [
     "listTitle": "Tansiyon pnömotoraks acil yaklaşımı",
     "cardTitle": "Tansiyon pnömotoraks acil yaklaşımı"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-166",
     "seedId": "manual-vaka-disi-tus-set-16-166",
     "source": "manual-vaka-disi-tus-set16-super-kalite",
@@ -8079,7 +8079,7 @@ export const casesPart12 = [
     "listTitle": "Primer korunma",
     "cardTitle": "Primer korunma"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-167",
     "seedId": "manual-vaka-disi-tus-set-16-167",
     "source": "manual-vaka-disi-tus-set16-super-kalite",
@@ -8307,7 +8307,7 @@ export const casesPart12 = [
     "listTitle": "Myastenia gravis patofizyolojisi",
     "cardTitle": "Myastenia gravis patofizyolojisi"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-168",
     "seedId": "manual-vaka-disi-tus-set-16-168",
     "source": "manual-vaka-disi-tus-set16-super-kalite",
@@ -8535,7 +8535,7 @@ export const casesPart12 = [
     "listTitle": "Psoriasis histopatolojisi",
     "cardTitle": "Psoriasis histopatolojisi"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-169",
     "seedId": "manual-vaka-disi-tus-set-16-169",
     "source": "manual-vaka-disi-tus-set16-super-kalite",
@@ -8763,7 +8763,7 @@ export const casesPart12 = [
     "listTitle": "Ölü lekeleri",
     "cardTitle": "Ölü lekeleri"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-170",
     "seedId": "manual-vaka-disi-tus-set-16-170",
     "source": "manual-vaka-disi-tus-set16-super-kalite",
@@ -8991,7 +8991,7 @@ export const casesPart12 = [
     "listTitle": "Açık açılı glokom",
     "cardTitle": "Açık açılı glokom"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-171",
     "seedId": "manual-vaka-disi-tus-set17-171",
     "source": "manual-vaka-disi-tus-set17-super-kalite",
@@ -9218,7 +9218,7 @@ export const casesPart12 = [
     "listTitle": "Portal triad yapıları",
     "cardTitle": "Portal triad yapıları"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-172",
     "seedId": "manual-vaka-disi-tus-set17-172",
     "source": "manual-vaka-disi-tus-set17-super-kalite",
@@ -9445,7 +9445,7 @@ export const casesPart12 = [
     "listTitle": "Tiroglossal kanal kisti",
     "cardTitle": "Tiroglossal kanal kisti"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-174",
     "seedId": "manual-vaka-disi-tus-set17-174",
     "source": "manual-vaka-disi-tus-set17-super-kalite",
@@ -9672,7 +9672,7 @@ export const casesPart12 = [
     "listTitle": "Sekretin fizyolojisi",
     "cardTitle": "Sekretin fizyolojisi"
   },
-{
+  {
     "id": "ai-spot-vakasiz-secki-175",
     "seedId": "manual-vaka-disi-tus-set17-175",
     "source": "manual-vaka-disi-tus-set17-super-kalite",
