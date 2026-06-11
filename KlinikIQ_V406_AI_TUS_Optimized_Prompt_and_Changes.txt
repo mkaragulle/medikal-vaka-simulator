@@ -1,0 +1,43 @@
+KLİNİKİQ V406 — AI TUS PROMPT OPTİMİZASYONU
+
+ÖZET:
+Bu revizyonda amaç promptu körlemesine kısaltmak değil; kaliteyi düşüren çelişkileri azaltmak, token kullanımını düşürmek, stem-feedback lock kuralını daha doğru hale getirmek, structured clinical data panellerini korumak, tekrar riskini azaltmak ve “Yeni TUS sorusu” beklentisini bozan question-bank/output-cache geri dönüşlerini varsayılan olarak kapatmaktır.
+
+DEĞİŞEN ANA DOSYALAR:
+1) api/tus-question-prompt.js
+2) api/generate-ai-question.js
+
+YAPILAN ANA DÜZELTMELER:
+
+1. Sistem promptu sadeleştirildi.
+Eski prompt çok fazla defansif kural, uzun klinik örnek listeleri ve terim manipülasyonu içeriyordu. Yeni prompt daha prensip bazlı yazıldı: tek doğru cevap, clean Turkish, no hidden patient-specific data, aynı kategori seçenekler, seçenek-özel feedback, JSON schema.
+
+2. Stem-feedback lock daha doğru hale getirildi.
+Eski mantık feedback/explanation içinde kullanılan her bilginin stem’de görünmesini istiyordu. Yeni mantık şu ayrımı yapıyor: olguya özel karar verdirici veri stem, compactVitals veya compactObjectiveData içinde görünmeli; genel tıbbi bilgi feedback/explanation içinde kullanılabilir.
+
+3. compactVitals ve compactObjectiveData korunur hale getirildi.
+Önceki sanitizer bu verileri stem’e gömüp dizileri boşaltıyordu. Yeni sistem bu alanları UI için koruyor. Validator da bu alanları görünür pre-answer data olarak kabul ediyor.
+
+4. Anti-repeat güçlendirildi.
+buildRecentCompact artık sadece branch/target/correct değil; doğru cevap metni, stem parçası ve seçenek seti özetini de modele iletiyor. Böylece model aynı konu, aynı seçenek seti veya aynı klinik akışı daha zor tekrarlar.
+
+5. Near-duplicate detection güçlendirildi.
+questionMatchesRecent içine token-overlap similarity eklendi. Artık birebir ID/fingerprint dışında stem benzerliği, seçenek seti benzerliği ve aynı doğru cevap + hedef benzerliği de kontrol ediliyor.
+
+6. Question-bank varsayılan olarak kapatıldı.
+Kullanıcı “Yeni TUS sorusu” beklerken eski bankadan soru dönmesi kalite algısını bozabiliyordu. Artık KLINIKIQ_AI_QUESTION_BANK açıkça true yapılmadıkça bankadan reusable soru dönmez.
+
+7. Output cache varsayılan olarak kapatıldı.
+KLINIKIQ_TUS_OUTPUT_CACHE veya KLINIKIQ_AI_OUTPUT_CACHE açıkça true yapılmadıkça eski output cache kullanılmaz. Böylece taze soru üretimi korunur.
+
+8. Correct-answer letter balance soft kaldı.
+Doğru şık dağılımı hâlâ yumuşak hedeftir. Tıbbi doğruluk, doğru cevabın hedeflenen harfte olmasından üstündür.
+
+9. Prompt version güncellendi.
+Yeni sürüm: klinikiq-clean-tus-spot-v46-lean-quality-anti-repeat
+
+10. Syntax ve smoke test yapıldı.
+node --check iki dosyada da geçti. Prompt module import testi geçti. Handler fallback smoke testi JSON döndürdü ve compactObjectiveData korundu.
+
+TOKEN ETKİSİ:
+Sistem promptu yaklaşık 6255 karakterden 3416 karaktere indirildi. Bu yaklaşık %45 sistem promptu azalması anlamına gelir. Recent anti-repeat özeti biraz daha bilgi içerdiği için kullanıcı promptu bazı senaryolarda hafif uzayabilir; fakat bu bilinçli bir kalite takasıdır çünkü tekrar problemini azaltır.
