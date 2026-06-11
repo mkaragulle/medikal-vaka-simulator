@@ -271,6 +271,7 @@ function ensureSentence(value = '') {
 
 function truncateSentence(value = '', limit = 230) {
   const text = normalizeText(value).replace(/\.\.\.|…/g, '.');
+  if (!Number.isFinite(Number(limit)) || Number(limit) <= 0) return text;
   if (text.length <= limit) return text;
   const cut = text.slice(0, limit).replace(/\s+\S*$/u, '').replace(/[,:;\-–—]+$/u, '').trim();
   if (!cut) return text.slice(0, limit).trim();
@@ -758,7 +759,7 @@ function getAISpotMapValue(map, optionText = '', letter = '') {
   return matched ? itemText(matched[1]) : '';
 }
 
-function mergeUniqueSentences(parts = [], maxSentences = 7, maxLength = 1350) {
+function mergeUniqueSentences(parts = [], maxSentences = Infinity, maxLength = Infinity) {
   const seen = new Set();
   const sentences = [];
   parts.forEach((part) => {
@@ -770,7 +771,8 @@ function mergeUniqueSentences(parts = [], maxSentences = 7, maxLength = 1350) {
       sentences.push(cleaned);
     });
   });
-  const text = sentences.slice(0, maxSentences).join(' ');
+  const selectedSentences = Number.isFinite(Number(maxSentences)) ? sentences.slice(0, Number(maxSentences)) : sentences;
+  const text = selectedSentences.join(' ');
   return truncateSentence(text, maxLength);
 }
 
@@ -791,7 +793,7 @@ function resolveAISpotOptionExplanation(clinicalCase = {}, optionText = '', fall
     getAISpotMapValue(clinicalCase.diagnosis?.answerFeedbackByOption, optionText, letter),
     fallback,
   ].filter(Boolean);
-  return mergeUniqueSentences(sources, 4, 760) || 'Bu seçenek için ayrıntılı açıklama eklenemedi.';
+  return mergeUniqueSentences(sources) || 'Bu seçenek için ayrıntılı açıklama eklenemedi.';
 }
 
 function buildAISpotDetailedRows(clinicalCase = {}, selectedOption = '') {
@@ -849,7 +851,7 @@ function buildAISpotScienceText(clinicalCase = {}, whyCorrect = '') {
     feedback.rationale,
     whyCorrect,
     ...evidenceTexts,
-  ], 12, 2600);
+  ]);
 }
 
 function groupSentencesForAISpotScience(sentences = []) {

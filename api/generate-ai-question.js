@@ -1,13 +1,14 @@
 import {
   OPTIMIZED_TUS_SYSTEM_PROMPT,
+  TUS_QUALITY_REWRITE_SYSTEM_PROMPT,
   buildUserPrompt,
   normalizeDifficulty,
 } from '../server/tus-question-prompt.js';
 import { envNumber, logAIUsage, resolveModelForScope } from '../server/lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-v445-professional-tus-scratch-no-limits';
-const SCHEMA_VERSION = 'professional-tus-json-v1';
+const PROMPT_VERSION = 'klinikiq-v446-clinical-narrative-rich-feedback';
+const SCHEMA_VERSION = 'professional-tus-json-v2-rich-feedback';
 const TASK_NAME = 'tusSpotQuestion';
 
 const ALLOWED_BRANCHES = [
@@ -204,6 +205,8 @@ function normalizeGeneratedQuestion(payload = {}, { branch, difficulty, model, m
     stem: cleanText(getByPaths(source, ['clinicalStem', 'stem', 's', 'soruKoku', 'soruKökü', 'olgu', 'vaka', 'case', 'clinicalCase']) || ''),
     compactVitals: normalizeItems(getByPaths(source, ['vitals', 'compactVitals', 'cv']) || []),
     compactObjectiveData: normalizeItems(getByPaths(source, ['objectiveData', 'compactObjectiveData', 'co', 'supportingData']) || []),
+    physicalExam: asArray(getByPaths(source, ['physicalExam', 'exam', 'muayene']) || []).map(cleanText).filter(Boolean),
+    history: asArray(getByPaths(source, ['history', 'anamnesis', 'anamnez']) || []).map(cleanText).filter(Boolean),
     question: cleanText(getByPaths(source, ['question', 'q', 'soru', 'soruCumlesi', 'soruCümlesi']) || ''),
     options,
     correctAnswer,
@@ -247,6 +250,106 @@ function assertRenderableQuestion(question = {}) {
   }
 }
 
+
+function sentenceList(value = '') {
+  return cleanText(value).split(/(?<=[.!?])\s+/u).map((item) => item.trim()).filter(Boolean);
+}
+
+function looksLikeNonNarrativeStem(value = '') {
+  const text = cleanText(value);
+  if (!text) return true;
+  const labelHits = (text.match(/\b(?:öykü|anamnez|fizik|muayene|laboratuvar|lab|cbc|hemogram|akut sorun|vital|tetkik|görüntüleme)\s*[:：]/giu) || []).length;
+  if (labelHits >= 2) return true;
+  if (labelHits && text.split(/[;；]/u).length >= 3) return true;
+  if (/^(?:öykü|anamnez|fizik|muayene|laboratuvar|lab|cbc|hemogram|akut sorun)\s*[:：]/iu.test(text)) return true;
+  const hasPatientFlow = /\b(?:başvur|getiril|yakınma|şikayet|öykü|sonra|önce|süredir|gündür|haftadır|aydır|giderek|tekrarlayan|devam eden|eşlik eden|beslenme|kilo|ateş|ağrı|kusma|ishal|öksürük|nefes darlığı)\b/iu.test(text);
+  return !hasPatientFlow && text.split(/[;；]/u).length >= 2;
+}
+
+function optionTextById(question = {}, id = '') {
+  return question.options?.find((option) => option.id === id)?.text || '';
+}
+
+function isShallowFeedback(value = '', optionText = '') {
+  const text = cleanText(value);
+  const comparable = normalize(text);
+  const optionComparable = normalize(optionText);
+  if (!text) return true;
+  if (optionComparable && (comparable === optionComparable || comparable === `${optionComparable} dogru` || comparable === `${optionComparable} yanlis`)) return true;
+  if (/^(?:doğru|yanlış|uygun değildir|uygun değil|bu seçenek uygun değildir|bu seçenek doğru değildir|çeldiricidir|akla gelebilir|seçenek doğrudur|seçenek yanlıştır)[.!]?$/iu.test(text)) return true;
+  if (/^[A-E]\)?\s*[^.?!]*[.?!]?$/iu.test(text) && !/\b(?:çünkü|ancak|fakat|oysa|bu vakada|bu olguda|beklen|dışlan|destek|geri plana|ayırt|klinik|bulgu|veri|mekanizma|tanı|tedavi|tetkik|muayene|laboratuvar|görüntüleme)\b/iu.test(text)) return true;
+  if (/\bkökteki\s+(?:ana|ayırt edici)\s+bulgular\b/iu.test(text) && !/\b(?:lenfosit|lökosit|ateş|nabız|basınç|tansiyon|ishal|kandidiyaz|pnömoni|kilo|tonsil|lenf nodu|akım|flow|hiv|igg|igm|iga|trec|nbt|bt|usg|crp|troponin|laktat|ph|hco3)\b/iu.test(text)) return true;
+  if (/\b[A-Za-zÇĞİÖŞÜçğıöşü]\.?$/u.test(text) && !/[.!?]$/u.test(text.slice(0, -2))) return true;
+  return false;
+}
+
+function isShallowExplanation(value = '') {
+  const text = cleanText(value);
+  if (!text) return true;
+  if (/^(?:kökteki ayırt edici bulgular doğru cevabı destekler|doğru cevap budur|bu seçenek doğrudur)[.!]?$/iu.test(text)) return true;
+  const hasReasoning = /\b(?:çünkü|bu nedenle|bu olguda|bu vakada|ancak|fakat|oysa|ile uyumlu|destekler|beklenir|beklenmez|ayırt|tanı|tedavi|mekanizma|laboratuvar|görüntüleme|muayene|vital|patofizyoloji|klinik)\b/iu.test(text);
+  return !hasReasoning;
+}
+
+function findEducationalDefects(question = {}) {
+  const defects = [];
+  if (looksLikeNonNarrativeStem(question.stem)) defects.push('clinicalStem gerçek anamnez akışı taşımıyor; öykü/muayene/lab başlıklı kısa özet veya veri listesi gibi duruyor.');
+  if (isShallowExplanation(question.explanation)) defects.push('explanation vaka özelinde klinik gerekçe vermiyor veya çok yüzeysel kalıyor.');
+  const feedback = question.wrongOptionFeedback || {};
+  const shallow = OPTION_IDS.filter((id) => isShallowFeedback(feedback[id], optionTextById(question, id)));
+  if (shallow.length) defects.push(`optionFeedback öğreticiliği yetersiz: ${shallow.join(', ')}.`);
+  const sameCategoryHint = question.options?.map((option) => cleanText(option.text)).filter(Boolean) || [];
+  if (sameCategoryHint.length === 5) {
+    const hasLongOutlier = sameCategoryHint.some((text) => text.length > 0 && text.length > Math.max(120, sameCategoryHint.reduce((a, b) => a + b.length, 0) / 5 * 2.2));
+    if (hasLongOutlier) defects.push('seçeneklerden biri diğerlerine göre belirgin uzun ve answer leak riski oluşturuyor.');
+  }
+  return defects;
+}
+
+function compactPayloadFromQuestion(question = {}) {
+  return {
+    branch: question.relatedBranch,
+    difficulty: question.difficulty,
+    learningTarget: question.learningTarget,
+    answerTarget: question.answerTarget,
+    clinicalStem: question.stem,
+    physicalExam: question.physicalExam || [],
+    vitals: question.compactVitals || [],
+    objectiveData: question.compactObjectiveData || [],
+    question: question.question,
+    options: question.options || [],
+    correctAnswer: question.correctAnswer,
+    explanation: question.explanation,
+    optionFeedback: question.wrongOptionFeedback || {},
+    evidenceBasedReasoning: question.evidenceChain || [],
+    examPearl: question.examPearl,
+    sourceUseNote: question.sourceUseNote || '',
+  };
+}
+
+async function maybeRewriteForEducationalQuality(question, defects, context) {
+  if (!defects.length) return { question, rewritten: false };
+  const enabled = String(process.env.TUS_AI_ENABLE_QUALITY_REWRITE ?? 'true').toLowerCase() !== 'false';
+  if (!enabled) return { question, rewritten: false };
+  const prompt = [
+    'Aşağıdaki TUS soru JSON çıktısı kalite denetiminden geçti ancak öğreticilik/anlatı açısından yetersiz bulundu.',
+    `Sorunlar: ${defects.join(' | ')}`,
+    'Aynı soru niyetini, doğru cevap mantığını ve schema alanlarını koruyarak daha iyi klinik anlatı ve daha öğretici optionFeedback ile yeniden yaz.',
+    'Yalnızca geçerli JSON döndür.',
+    JSON.stringify(compactPayloadFromQuestion(question), null, 2),
+  ].join('\n\n');
+  try {
+    const result = await callOpenAI(prompt, { systemPrompt: TUS_QUALITY_REWRITE_SYSTEM_PROMPT, purpose: `${TASK_NAME}:quality-rewrite` });
+    const rewritten = normalizeGeneratedQuestion(result.payload, { ...context, model: result.model, mode: result.mode });
+    assertRenderableQuestion(rewritten);
+    rewritten.aiMeta = { ...(rewritten.aiMeta || {}), qualityRewritten: true, originalQualityDefects: defects };
+    return { question: rewritten, rewritten: true };
+  } catch (error) {
+    question.aiMeta = { ...(question.aiMeta || {}), qualityRewriteFailed: true, qualityRewriteError: error?.message || String(error), originalQualityDefects: defects };
+    return { question, rewritten: false };
+  }
+}
+
 function extractChatText(payload = {}) {
   const content = payload?.choices?.[0]?.message?.content;
   if (typeof content === 'string') return content;
@@ -282,7 +385,7 @@ function createAbortSignal(timeoutMs) {
   return { signal: controller.signal, cancel: () => clearTimeout(timeout) };
 }
 
-async function callOpenAI(prompt) {
+async function callOpenAI(prompt, { systemPrompt = OPTIMIZED_TUS_SYSTEM_PROMPT, purpose = TASK_NAME } = {}) {
   const apiKey = process.env.TUS_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
   if (!apiKey) {
     const error = new Error('OPENAI_API_KEY tanımlı değil.');
@@ -302,7 +405,7 @@ async function callOpenAI(prompt) {
     const body = useResponses
       ? {
           model,
-          instructions: OPTIMIZED_TUS_SYSTEM_PROMPT,
+          instructions: systemPrompt,
           input: prompt,
           text: { format: { type: 'json_object' } },
           store: false,
@@ -310,7 +413,7 @@ async function callOpenAI(prompt) {
       : {
           model,
           messages: [
-            { role: 'system', content: OPTIMIZED_TUS_SYSTEM_PROMPT },
+            { role: 'system', content: systemPrompt },
             { role: 'user', content: prompt },
           ],
           response_format: { type: 'json_object' },
@@ -330,7 +433,7 @@ async function callOpenAI(prompt) {
       throw error;
     }
     const data = JSON.parse(raw || '{}');
-    logAIUsage({ task: TASK_NAME, model: data.model || model, usage: data.usage || null, cached: false, apiStyle: style });
+    logAIUsage({ task: purpose, model: data.model || model, usage: data.usage || null, cached: false, apiStyle: style });
     const text = useResponses ? extractResponsesText(data) : extractChatText(data);
     if (!cleanText(text)) {
       const error = new Error('OpenAI boş çıktı döndürdü.');
@@ -376,9 +479,20 @@ export default async function handler(request, response) {
 
   try {
     const result = await callOpenAI(prompt);
-    const question = normalizeGeneratedQuestion(result.payload, { branch, difficulty, model: result.model, mode: result.mode });
+    let question = normalizeGeneratedQuestion(result.payload, { branch, difficulty, model: result.model, mode: result.mode });
     assertRenderableQuestion(question);
-    return sendJson(response, 200, { ok: true, provider: 'openai', fallback: false, repaired: false, question });
+    const firstDefects = findEducationalDefects(question);
+    const rewriteResult = await maybeRewriteForEducationalQuality(question, firstDefects, { branch, difficulty, model: result.model, mode: result.mode });
+    question = rewriteResult.question;
+    assertRenderableQuestion(question);
+    const remainingDefects = findEducationalDefects(question);
+    question.aiMeta = {
+      ...(question.aiMeta || {}),
+      promptVersion: PROMPT_VERSION,
+      qualityRewritten: Boolean(question.aiMeta?.qualityRewritten || rewriteResult.rewritten),
+      qualityWarnings: remainingDefects,
+    };
+    return sendJson(response, 200, { ok: true, provider: 'openai', fallback: false, repaired: Boolean(question.aiMeta?.qualityRewritten), question });
   } catch (error) {
     return sendJson(response, error?.statusCode || 502, {
       ok: false,

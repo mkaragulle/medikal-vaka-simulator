@@ -268,12 +268,14 @@ function sanitizeNarrativeStem(stem = '', { demographics = '', setting = '', chi
 function rationalesObject(raw = {}, explanation = '', correctId = 'A') {
   if (Array.isArray(raw)) {
     return OPTION_IDS.reduce((acc, id, index) => {
-      acc[id] = ensureSentence(standardizeTurkishMedicalText(raw[index] || (id === correctId ? explanation : 'Bu seçenek aynı alanda düşünülür; ancak olgudaki ipuçları doğru cevabı desteklemez.')));
+      const value = raw[index] || (id === correctId ? explanation : '');
+      acc[id] = ensureSentence(standardizeTurkishMedicalText(value));
       return acc;
     }, {});
   }
   return OPTION_IDS.reduce((acc, id) => {
-    acc[id] = ensureSentence(standardizeTurkishMedicalText(raw?.[id] || raw?.[id.toLowerCase()] || raw?.[`option${id}`] || (id === correctId ? explanation : 'Bu seçenek aynı alanda düşünülür; ancak olgudaki ipuçları doğru cevabı desteklemez.')));
+    const value = raw?.[id] || raw?.[id.toLowerCase()] || raw?.[`option${id}`] || (id === correctId ? explanation : '');
+    acc[id] = ensureSentence(standardizeTurkishMedicalText(value));
     return acc;
   }, {});
 }
