@@ -8,19 +8,25 @@
       "maxDuration": 60
     },
     "api/generate-lesson.js": {
-      "maxDuration": 300
+      "maxDuration": 60
     },
     "api/analyze-uploaded-material.js": {
-      "maxDuration": 300
+      "maxDuration": 60
     },
     "api/generate-material-questions.js": {
-      "maxDuration": 300
+      "maxDuration": 60
     },
     "api/generate-material-flashcards.js": {
-      "maxDuration": 300
+      "maxDuration": 60
     },
     "api/validate-ai-output.js": {
-      "maxDuration": 300
+      "maxDuration": 60
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/((?!api/.*).*)",
+      "destination": "/index.html"
+    }
+  ]
 }

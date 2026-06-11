@@ -3,14 +3,14 @@ import {
   buildRecentCompact,
   buildUserPrompt,
   normalizeDifficulty,
-} from './tus-question-prompt.js';
+} from '../server/tus-question-prompt.js';
 import {
   defaultReasoningEffortForProfile,
   defaultVerbosityForProfile,
   envNumber,
   logAIUsage,
   resolveModelForScope,
-} from './lib/ai-token-optimizer.js';
+} from '../server/lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 const PROMPT_VERSION = 'klinikiq-v419-branch-only-no-topic-steering';

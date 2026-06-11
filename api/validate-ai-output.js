@@ -1,5 +1,5 @@
-import { sendJson, parseJsonBody, callOpenAIJson, validateLessonShape, validateQuestionsShape, validateFlashcardsShape } from './lib/komite-ai-common.js';
-import { VALIDATE_AI_OUTPUT_SYSTEM_PROMPT, buildValidateAIOutputPrompt } from './prompts/validateAIOutputPrompt.js';
+import { sendJson, parseJsonBody, callOpenAIJson, validateLessonShape, validateQuestionsShape, validateFlashcardsShape } from '../server/lib/komite-ai-common.js';
+import { VALIDATE_AI_OUTPUT_SYSTEM_PROMPT, buildValidateAIOutputPrompt } from '../server/prompts/validateAIOutputPrompt.js';
 
 function localValidate(outputType, output) {
   if (outputType === 'questions') return validateQuestionsShape(output);
