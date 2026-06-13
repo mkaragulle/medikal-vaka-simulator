@@ -27,6 +27,14 @@ const EMPTY_TEMPLATE_PATTERNS = [
   /sonuçlar tek bir tanı adını yazmaz/iu,
   /patern ve mekanizma birlikte yorumlanmalıdır/iu,
   /morfolojik patern\s*[:.]/iu,
+  /klinik bağlamda yeterince açıklamaz/iu,
+  /klinik baglamda yeterince aciklamaz/iu,
+  /temel karar noktasını desteklemez/iu,
+  /temel karar noktasini desteklemez/iu,
+  /bu seçenek öncelikli değildir/iu,
+  /bu secenek oncelikli degildir/iu,
+  /öncelikli karar noktasını yeterince açıklamaz/iu,
+  /oncelikli karar noktasini yeterince aciklamaz/iu,
 ];
 
 const BROKEN_END_PATTERN = /(?:ve|veya|ile|için|açısından|sağlayarak|yaparak|ederek|tanısını|paternini|basamağını)$/iu;

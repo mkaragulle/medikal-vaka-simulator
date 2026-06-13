@@ -71,7 +71,11 @@ Stem–açıklama–feedback veri tutarlılığı:
 - Kritik veri stemde yoksa iki yoldan birini seç: veriyi doğal hasta akışı içinde stemde belirt veya açıklama/feedbacki o veriye dayanmayacak şekilde yeniden kur. Asla kökte olmayan kritik veriyi “bu olguda normal/yüksek/yok” diye gerekçe yapma.
 - Son iç kontrolün şu olsun: “Açıklamadaki her kritik gerekçe soru kökünde görünen bir bulguya dayanıyor mu?” Hayırsa JSON’u vermeden önce düzelt.
 - Soru değerlendirmesi yalnızca doğru cevabın varlığına göre yapılmaz; stem, question, options, explanation ve wrongOptionFeedback birlikte tutarlı olmalıdır. Kök doğru cevabı seçtirecek kadar yeterli değilse daha belirgin ama yönlendirici olmayan klinik veri ekle.
+- Doğru cevap kökteki yaş, zamanlama, bulgu paterni, muayene, laboratuvar veya bağlamla gerçekten uyumlu olmalıdır. Kök başka bir seçeneği destekliyorsa mevcut doğru cevabı açıklamayla zorla savunma; doğru cevabı kökle uyumlu seç veya kökü baştan doğru cevabı destekleyecek şekilde kur.
+- Klinik olgu yalnızca süs gibi kalmamalıdır. Doğru cevap, olgudaki verilerden seçilebilmelidir; yalnız genel ezber bilgisiyle çözülen teorik soru üretme.
 - Yanlış seçenekleri bilimsel olarak hatalı gerekçeyle eleme. Bir seçenek başka bağlamda doğru olabilirse feedbackte bunu belirt; bu vakada neden öncelikli olmadığını kökteki verilere bağla.
+- Birden fazla seçenek makul doğru kabul edilebiliyorsa soru üretimini yeniden kur. “İlk basamak”, “en uygun sonraki adım”, “kesin tanı testi” gibi hedeflerde öncelik stemde açık olmalıdır.
+- Zorluk veri eksikliğinden kaynaklanmamalıdır. Kök çok açık tanı koyduruyorsa soruyu “Zor” etiketleme; zor soru, eksik veri değil daha derin klinik akıl yürütme içermelidir.
 - Aşırı kesin dil kullanma: “asla”, “kesinlikle”, “hiçbir zaman” gibi ifadeleri yalnızca evrensel ve güvenli tıbbi bilgi varsa kullan. Klinik bağlama bağlı durumlarda daha dengeli yaz.
 - Final iç kontrol: kök yeterli mi, doğru cevap tek mi, seçenekler aynı kategoride mi, feedbackler köke sadık mı, tıbbi terimler doğru Türkçe mi, metinde kırık cümle/otomatik üretim izi var mı? Zayıfsa JSON’u vermeden önce düzelt.
 
@@ -79,6 +83,8 @@ Açıklama ve feedback:
 - explanation genel ders notu değil; stemdeki verileri doğru cevapla bağlayan vaka özelinde karar zinciri olsun.
 - wrongOptionFeedback içinde A, B, C, D, E anahtarlarının tamamı dolu olsun; doğru seçenek için de öğretici feedback yaz.
 - Her yanlış seçenek feedbacki doğal biçimde şunu anlatsın: hangi durumda düşünülebilir, bu vakada neden uygun değildir, doğru seçenekle ayırıcı farkı nedir.
+- Feedback, seçenek özelinde ve kökteki veriye bağlı olmalıdır. “Bu seçenek öncelikli değildir”, “klinik bağlamda yeterince açıklamaz”, “temel karar noktasını desteklemez”, “tek başına açıklamaz” gibi otomatik ve yüzeysel cümleleri gerçek feedback yerine kullanma.
+- Doğru seçenek feedbacki de yalnızca “uyumludur” dememeli; kökteki kritik verilerin doğru cevaba nasıl bağlandığını açıklamalıdır.
 - Boş, yarım, tek kelimelik, placeholder, “bu seçenek yanlıştır”, “ayırt ettirici açıklama üretilemedi” gibi metinler kullanma.
 - Feedback cümleleri “Da/De ...”, “Ancak ...” öncesi kopuk, öznesiz veya bağlaç artığıyla başlamamalıdır. Örneğin “Da renin/aldosteron ...” gibi metin kesinlikle üretme; gerekiyorsa “Bu tabloda renin/aldosteron ...” veya doğrudan klinik özneyle yaz.
 
@@ -189,4 +195,4 @@ Bu bilgilerle bilimsel doğruluğu yüksek, klinik bağlamlı, tek doğru cevapl
 
 Final çıktıda yalnızca kullanıcıya gösterilecek JSON yer alsın. Üretim sürecini, kaynak tarama sürecini, iç yönergeleri veya teknik notları yazma.
 
-Final kontrol: tek doğru cevap; stemden çözülebilir; explanation/feedbackte kullanılan her kritik veri stemde görünür; seçenekler aynı kategoride; answer leak yok; explanation ve tüm feedbackler vaka özelinde öğretici. Return only valid JSON. relatedBranch must be "${branchText}" and difficulty must be "${selectedDifficulty}".`;}
+Final kontrol: tek doğru cevap; stemden çözülebilir; doğru cevap kökle çelişmez; klinik olgu süs gibi kalmaz; explanation/feedbackte kullanılan her kritik veri stemde görünür; seçenekler aynı kategoride; answer leak yok; explanation ve tüm feedbackler seçenek özelinde, köke bağlı ve öğretici. Return only valid JSON. relatedBranch must be "${branchText}" and difficulty must be "${selectedDifficulty}".`;}

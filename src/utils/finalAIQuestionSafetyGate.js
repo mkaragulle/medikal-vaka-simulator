@@ -27,6 +27,10 @@ const GENERIC_BAD_PATTERNS = [
   /tek\s+en\s+iyi\s+yan[ıi]t\s+yapacak\s+d[üu]zeyde\s+desteklemez/iu,
   /bu\s+karar\s+d[üu]zeyinde\s+[öo]ncelikli\s+yan[ıi]t[ıi]\s+kar[şs][ıi]lamad[ıi][ğg][ıi]/iu,
   /se[çc]enekler\s+aras[ıi]ndaki\s+temel\s+ayr[ıi]m[ıi]\s+g[öo]sterir/iu,
+  /klinik\s+ba[ğg]lamda\s+yeterince\s+a[çc][ıi]klamaz/iu,
+  /temel\s+karar\s+noktas[ıi]n[ıi]\s+desteklemez/iu,
+  /bu\s+se[çc]enek\s+[öo]ncelikli\s+de[ğg]ildir/iu,
+  /[öo]ncelikli\s+karar\s+noktas[ıi]n[ıi]\s+yeterince\s+a[çc][ıi]klamaz/iu,
 ];
 
 const PREANSWER_SPOILER_PATTERNS = [

@@ -7,7 +7,7 @@ import {
 import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from '../server/lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-tus-v48-global-quality-review';
+const PROMPT_VERSION = 'klinikiq-tus-v49-global-coherence-feedback-gate';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
@@ -571,7 +571,12 @@ function assessGlobalTusQuestionQuality(question = {}) {
   const demand = questionDemandLevel(question);
   const unsupported = findUnsupportedCriticalDataClaims(question);
   const feedbackQuality = hasFeedbackQuality(question, normalizeOptions(question.options), String(question.correctAnswer || '').toUpperCase());
+  const feedbackSpecificity = assessFeedbackSpecificity(question);
   const category = assessOptionCategoryConsistency(question);
+  const optionAxis = assessQuestionOptionAxis(question);
+  const caseUse = assessCaseIsNotDecorative(question);
+  const difficultyReview = assessDifficultyLabel(question);
+  const answerConflicts = detectStemCorrectAnswerConflict(question);
   const preAnswer = getPreAnswerDataText(question);
   const postAnswer = getPostAnswerReasoningText(question);
   const correctText = getCorrectText(question);
@@ -582,7 +587,12 @@ function assessGlobalTusQuestionQuality(question = {}) {
   if (!hasEvidenceBasedOnVisibleStem(question)) issues.push({ code: 'evidence_not_grounded_in_stem', severity: 'revision_required', message: 'Kanıt zinciri ana metindeki görünür verilere yeterince dayanmıyor.' });
   if (isBroadQuestionWording(question.question) && !hasClinicalContext(question)) issues.push({ code: 'broad_question_without_context', severity: 'revision_required', message: 'Soru hedefi geniş; klinik bağlam daraltılmamış.' });
   if (!category.ok) issues.push({ code: 'option_category_mismatch', severity: 'revision_required', message: `Seçenekler aynı karar kategorisinde değil (${category.detail}).` });
+  if (!optionAxis.ok) issues.push({ code: 'question_option_axis_mismatch', severity: 'revision_required', message: `Soru hedefi ile seçenek türleri uyumsuz olabilir (${optionAxis.detail}).` });
   if (!feedbackQuality.ok) issues.push({ code: 'weak_or_missing_option_feedback', severity: 'revision_required', message: feedbackQuality.errors.join('; ') });
+  if (!feedbackSpecificity.ok) issues.push({ code: 'superficial_or_ungrounded_feedback', severity: 'revision_required', message: feedbackSpecificity.errors.join('; ') });
+  if (answerConflicts.length) issues.push({ code: 'stem_correct_answer_conflict', severity: 'reject', message: `Kök ile doğru cevap arasında olası veri çelişkisi var: ${answerConflicts.join(', ')}.` });
+  if (!caseUse.ok) issues.push({ code: 'clinical_vignette_as_decoration', severity: 'revision_required', message: 'Klinik olgu doğru cevabı seçtiren gerekçeye yeterince bağlanmıyor; olgu süs gibi kalmış olabilir.', detail: caseUse });
+  if (!difficultyReview.ok) issues.push({ code: 'difficulty_label_mismatch', severity: difficultyReview.severity || 'revision_required', message: difficultyReview.detail });
   if (stemHasQuestionFragment(question.stem)) issues.push({ code: 'stem_contains_question_fragment', severity: 'reject', message: 'Soru kökü içinde soru cümlesi veya yarım karar kırıntısı var.' });
   if (correctText && containsAnswerLeak(preAnswer, correctText)) issues.push({ code: 'answer_leak_in_pre_answer_text', severity: 'reject', message: 'Soru kökü/veri paneli doğru cevabı fazla açık ediyor.' });
   if (hasDuplicateFeedbackSentences(question)) issues.push({ code: 'duplicate_feedback_sentences', severity: 'revision_required', message: 'Feedback veya açıklama içinde tekrar eden cümle var.' });
@@ -597,6 +607,11 @@ function assessGlobalTusQuestionQuality(question = {}) {
     decision,
     signals,
     demand,
+    feedbackSpecificity,
+    optionAxis,
+    caseUse,
+    difficultyReview,
+    answerConflicts,
     issues,
     summary: issues.length ? issues.map((issue) => `${issue.code}: ${issue.message}`) : ['global kalite kontrol geçti'],
   };
@@ -756,6 +771,18 @@ const FORBIDDEN_PHRASES = [
   /bu seçenek doğrudur çünkü/iu,
   /hedeflenen karar/iu,
   /klinik hedef/iu,
+  /öncelikli değildir\.?$/iu,
+  /oncelikli degildir\.?$/iu,
+  /klinik bağlamda yeterince açıklamaz/iu,
+  /klinik baglamda yeterince aciklamaz/iu,
+  /temel karar noktasını desteklemez/iu,
+  /temel karar noktasini desteklemez/iu,
+  /bu seçenek öncelikli değildir/iu,
+  /bu secenek oncelikli degildir/iu,
+  /yeterince açıklamaz/iu,
+  /yeterince aciklamaz/iu,
+  /öncelikli karar noktasını yeterince açıklamaz/iu,
+  /oncelikli karar noktasini yeterince aciklamaz/iu,
 ];
 
 function hasTruncatedText(text = '') {
@@ -833,6 +860,135 @@ function hasWrongOptionContrast(text = '') {
   const hasContrastConnector = /burada|bu olguda|bu vakada|oysa|ancak|fakat|ama|verilen|eşlik etmez|eslik etmez|desteklenmez|uymaz|yoktur|değildir|degildir|öncelik değildir|oncelik degildir/iu.test(value);
   const hasUseCaseOrClinicalCue = /düşünülür|dusunulur|beklenir|uygundur|seçilir|secilir|kullanılır|kullanilir|önceliklidir|endikedir|doğru olur|dogru olur|tipiktir|görülür|gorulur|tanıda|tedavide|izlemde|tarama|profilaksi|acilde|stabil|şok|sok|hipotansiyon|ateş|ates|ağrı|agri|laboratuvar|ekg|grafi|seroloji|kültür|kultur/iu.test(value);
   return hasContrastConnector || hasUseCaseOrClinicalCue;
+}
+
+
+function clinicalAnchorTokens(question = {}) {
+  const visible = normalize(getPreAnswerDataText(question));
+  const stop = new Set('hasta olgu cocuk bebek eriskin kadin erkek birlikte nedeniyle olarak olan icin ile ve veya bir bu su verilen klinik bulgu bulgular destekler uygun secenek tani tedavi test mekanizma ilk sonraki karar soruda vakada burada'.split(' '));
+  return Array.from(new Set(visible.split(/\s+/u).filter((token) => token.length >= 5 && !stop.has(token))));
+}
+
+function hasFeedbackStemAnchor(text = '', question = {}) {
+  const feedback = normalize(text);
+  if (!feedback) return false;
+  const anchors = clinicalAnchorTokens(question);
+  if (!anchors.length) return hasWrongOptionContrast(text);
+  const hits = anchors.filter((token) => feedback.includes(token)).length;
+  if (hits >= 1) return true;
+  return /bu olguda|bu vakada|verilen|burada|oysa|ancak|fakat|ama|eşlik|eslik|saptan|yok|var|normal|düşük|dusuk|yüksek|yuksek|pozitif|negatif|laboratuvar|muayene|öykü|oyku|tetkik|görüntüleme|goruntuleme/iu.test(text);
+}
+
+function isSuperficialFeedback(text = '', question = {}) {
+  const value = cleanText(text);
+  const n = normalize(value);
+  if (!value) return true;
+  if (isGenericFeedback(value) || hasIsolatedFeedbackAbbreviation(value, question)) return true;
+  const sentences = splitSentencesSafe(value);
+  const genericOnly = [
+    /^bu secenek oncelikli degildir$/u,
+    /^bu secenek klinik baglamda yeterince aciklamaz$/u,
+    /^temel karar noktasini desteklemez$/u,
+    /^verilen klinik baglamda oncelikli karar noktasini yeterince aciklamaz$/u,
+    /^bu secenek verilen klinik baglamda oncelikli degildir$/u,
+    /^klinik baglamda yeterince aciklamaz$/u,
+  ].some((pattern) => pattern.test(n));
+  if (genericOnly) return true;
+  const hasSpecificMedicalContent = /trombosit|koagülasyon|koagulasyon|pt|aptt|inr|crp|lökosit|lokosit|kreatinin|sodyum|potasyum|glukoz|ph|hco3|ateş|ates|hipotansiyon|hipoksi|döküntü|dokuntu|artralji|karın|karin|kusma|ishal|kültür|kultur|biyopsi|ekg|bt|mr|usg|grafi|enzim|reseptör|reseptor|mekanizma|komplikasyon|tedavi|tanı|tani|test|tarama|profilaksi|immün|immun|vaskülit|vaskulit|menenjit|sepsis|şok|sok|anemi|hemoliz|antikor|hormon|renal|böbrek|bobrek/iu.test(value);
+  if (!hasSpecificMedicalContent && sentences.length <= 1 && /uygun|öncelikli|oncelikli|desteklemez|açıklamaz|aciklamaz|düşündürmez|dusundurmez/.test(n)) return true;
+  return false;
+}
+
+function assessFeedbackSpecificity(question = {}) {
+  const errors = [];
+  const options = normalizeOptions(question.options);
+  const correctId = String(question.correctAnswer || '').trim().toUpperCase();
+  options.forEach((option) => {
+    const feedback = getFeedbackText(question, option.id);
+    if (!feedback) {
+      errors.push(`seçenek ${option.id} feedback yok`);
+      return;
+    }
+    if (isSuperficialFeedback(feedback, question)) errors.push(`seçenek ${option.id} feedback yüzeysel/fallback gibi`);
+    if (option.id !== correctId && !hasFeedbackStemAnchor(feedback, question)) errors.push(`seçenek ${option.id} feedback kökteki veriye yeterince bağlanmıyor`);
+    if (option.id !== correctId && !hasWrongOptionContrast(feedback)) errors.push(`seçenek ${option.id} feedback hangi bağlamda yanlış olduğunu açıklamıyor`);
+  });
+  return { ok: errors.length === 0, errors };
+}
+
+function optionAxisFromQuestion(question = {}) {
+  const text = normalize([question.answerTarget, question.question, question.learningTarget].filter(Boolean).join(' '));
+  if (/tedavi|yaklasim|mudahale|yonetim|profilaksi|ilk basamak|sonraki adim|ilk adim/.test(text)) return 'treatment';
+  if (/test|tetkik|laboratuvar|görüntüleme|goruntuleme|dogrula|kesin tani|tarama|tanisal/.test(text)) return 'test';
+  if (/mekanizma|patofizyoloji|reseptor|enzim|transport|inhibisyon|aktivasyon/.test(text)) return 'mechanism';
+  if (/tani|olasi tani|en olasi|komplikasyon/.test(text)) return 'diagnosis';
+  return 'other';
+}
+
+function assessQuestionOptionAxis(question = {}) {
+  const axis = optionAxisFromQuestion(question);
+  if (axis === 'other') return { ok: true, axis, detail: 'soru ekseni çıkarılamadı' };
+  const options = normalizeOptions(question.options);
+  const categories = options.map((option) => optionCategory(option.text));
+  const mismatches = options.filter((option, idx) => categories[idx] !== 'other' && categories[idx] !== axis).map((option) => option.id);
+  return { ok: mismatches.length <= 1, axis, mismatches, detail: `axis=${axis} mismatches=${mismatches.join(',') || 'yok'}` };
+}
+
+function detectStemCorrectAnswerConflict(question = {}) {
+  const visible = normalize(getPreAnswerDataText(question));
+  const correct = normalize(getCorrectText(question));
+  const conflicts = [];
+  if (!visible || !correct) return conflicts;
+  const pairs = [
+    ['hipotansiyon', /hipotansiyon|sok|hemodinamik bozuk|kan basinci dusuk/u, /hipotansiyon yok|hemodinamik stabil|kan basinci normal/u],
+    ['hipoksi', /hipoksi|spo2 dusuk|saturasyon dusuk/u, /hipoksi yok|saturasyon normal|spo2 normal/u],
+    ['ates', /ates|febril/u, /ates yok|afebril/u],
+    ['trombosit', /trombositopeni|trombosit dusuk/u, /trombosit normal|trombosit sayisi normal/u],
+    ['renal', /bobrek yetmez|kreatinin yuksek|renal bozuk/u, /bobrek fonksiyon normal|kreatinin normal/u],
+    ['koagulasyon', /koagulasyon bozuk|pt uzamis|aptt uzamis|inr yuksek/u, /pt normal|aptt normal|koagulasyon normal/u],
+  ];
+  pairs.forEach(([id, positive, negative]) => {
+    const correctPositive = positive.test(correct);
+    const correctNegative = negative.test(correct);
+    const stemPositive = positive.test(visible);
+    const stemNegative = negative.test(visible);
+    if ((correctPositive && stemNegative) || (correctNegative && stemPositive)) conflicts.push(id);
+  });
+  return conflicts;
+}
+
+function assessCaseIsNotDecorative(question = {}) {
+  const stem = normalize(getPreAnswerDataText(question));
+  const post = normalize(getPostAnswerReasoningText(question));
+  const correct = normalize(getCorrectText(question));
+  const signals = stemDecisionSupportSignals(question);
+  const correctInQuestionOnly = correct && !stem.includes(correct) && post.includes(correct);
+  const evidenceGrounded = hasEvidenceBasedOnVisibleStem(question);
+  const stemAnchors = clinicalAnchorTokens(question).filter((token) => token.length >= 6);
+  const postHits = stemAnchors.filter((token) => post.includes(token)).length;
+  const decorative = correctInQuestionOnly && signals.length < 3 && postHits === 0;
+  return { ok: !decorative && evidenceGrounded, decorative, signals, postAnchorHits: postHits };
+}
+
+function inferEffectiveDifficulty(question = {}) {
+  const signals = stemDecisionSupportSignals(question).length;
+  const stem = normalize(getPreAnswerDataText(question));
+  const correct = normalize(getCorrectText(question));
+  const answerLeak = correct && containsAnswerLeak(stem, correct);
+  const hasManySpecificData = signals >= 6;
+  const asksSimpleDiagnosis = /en olasi tani|tani hangisi|hangisi tani/.test(normalize(question.question || ''));
+  if (answerLeak || (hasManySpecificData && asksSimpleDiagnosis)) return 'Kolay';
+  if (signals <= 2) return 'Eksik';
+  if (signals >= 5 && /mekanizma|sonraki|ilk|tedavi|test|yorum/.test(normalize([question.question, question.answerTarget].join(' ')))) return 'Zor/Orta';
+  return 'Orta';
+}
+
+function assessDifficultyLabel(question = {}) {
+  const requested = normalizeDifficulty(question.difficulty || 'Orta');
+  const inferred = inferEffectiveDifficulty(question);
+  if (inferred === 'Eksik') return { ok: false, severity: 'revision_required', detail: 'zorluk veri eksikliğinden kaynaklanıyor; bu kaliteli zor soru değildir' };
+  if (requested === 'Zor' && inferred === 'Kolay') return { ok: false, severity: 'revision_required', detail: 'kök çok doğrudan tanı koyduruyor; Zor etiketi uyumsuz olabilir' };
+  return { ok: true, inferred, requested };
 }
 
 function hasFeedbackQuality(question = {}, options = [], correctId = '') {
@@ -965,7 +1121,9 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   const unsupportedCriticalClaims = findUnsupportedCriticalDataClaims(question);
   if (unsupportedCriticalClaims.length) errors.push(`kritik gerekçe stemde görünmüyor: ${unsupportedCriticalClaims.join(', ')}`);
   const globalReview = assessGlobalTusQuestionQuality(question);
-  globalReview.issues.forEach((issue) => errors.push(`global-quality:${issue.severity}:${issue.code}:${issue.message}`));
+  globalReview.issues
+    .filter((issue) => issue.severity === 'reject')
+    .forEach((issue) => errors.push(`global-quality:${issue.severity}:${issue.code}:${issue.message}`));
   if (!question.question || !/\?$/u.test(ensureQuestion(question.question))) errors.push('question net soru cümlesi değil');
   if (stemHasQuestionFragment(question.stem)) errors.push('stem içinde soru cümlesi veya yarım soru kırıntısı var');
   if (options.length !== 5) errors.push('tam 5 seçenek yok');
@@ -1202,7 +1360,7 @@ function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
     if (!cleanText(sanitized.wrongOptionFeedback[id])) {
       sanitized.wrongOptionFeedback[id] = id === sanitized.correctAnswer
         ? ensureSentence(sanitized.explanation || `${correctText} verilen klinik verilerle en uyumlu yanıttır`)
-        : 'Bu seçenek, verilen klinik bağlamda öncelikli karar noktasını yeterince açıklamaz.';
+        : 'Bu seçenek için gerçek, seçenek özelinde ve köke dayalı ayırt ettirici feedback üretilemediği için soru revizyon gerektirir.';
     }
   });
   if (!cleanText(sanitized.examPearl)) sanitized.examPearl = 'Soru kökünde verilen ayırt ettirici ipuçları, seçenekleri aynı karar ekseninde karşılaştırarak kullanılmalıdır.';
