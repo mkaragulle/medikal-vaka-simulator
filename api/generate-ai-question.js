@@ -8,7 +8,7 @@ import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfi
 import { normalizeQuestionQualityFields, repairQuestionQualityIssues, runQuestionQualityGate } from '../server/lib/question-quality-gate.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-tus-v50-global-publisher-quality-gate';
+const PROMPT_VERSION = 'klinikiq-tus-v51-remote-first-quality-review';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
@@ -49,6 +49,35 @@ function summarizeQualityFailure({ gate, legacyBlocking = [], validationBlocking
     ...legacyBlocking.map((issue) => `${issue.code}: ${issue.message || ''}`.trim()),
     ...validationBlocking,
   ].filter(Boolean);
+}
+
+const FATAL_PUBLISHER_ERROR_PATTERNS = [
+  /^question-stem-missing-or-too-thin$/,
+  /^options-not-five$/,
+  /^correct-answer-id-invalid$/,
+  /^correct-answer-text-missing$/,
+  /^question-target-missing$/,
+];
+
+const FATAL_LEGACY_REVIEW_CODES = new Set([
+  'stem_contains_question_fragment',
+  'answer_leak_in_pre_answer_text',
+  'truncated_or_broken_text',
+]);
+
+function isFatalPublisherGateError(message = '') {
+  return FATAL_PUBLISHER_ERROR_PATTERNS.some((pattern) => pattern.test(String(message || '')));
+}
+
+function splitFatalAndQualityErrors(errors = []) {
+  const fatal = [];
+  const quality = [];
+  asArray(errors).forEach((error) => {
+    const message = String(error || '');
+    if (isFatalPublisherGateError(message)) fatal.push(message);
+    else quality.push(message);
+  });
+  return { fatal, quality };
 }
 
 function logFallbackTrigger(context = {}) {
@@ -1602,6 +1631,11 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
       publisherGate = runQuestionQualityGate(sanitized, { version: PROMPT_VERSION });
     }
   }
+  const publisherFatalSplit = splitFatalAndQualityErrors(publisherGate.blockingErrors || []);
+  const publisherQualityNotes = [
+    ...publisherFatalSplit.quality,
+    ...(publisherGate.repairableErrors || []),
+  ];
   sanitized.aiMeta = {
     ...(sanitized.aiMeta || {}),
     backendQualityGate: {
@@ -1609,28 +1643,31 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
       decision: publisherGate.decision,
       errors: publisherGate.errors,
       blockingErrors: publisherGate.blockingErrors,
+      fatalBlockingErrors: publisherFatalSplit.fatal,
+      nonFatalQualityErrors: publisherQualityNotes,
       repairableErrors: publisherGate.repairableErrors,
       warnings: publisherGate.warnings,
       cues: publisherGate.cues,
       demand: publisherGate.demand,
       version: publisherGate.version,
       repairApplied,
+      remoteQuestionPreserved: publisherQualityNotes.length > 0,
     },
     publishable: publisherGate.publishable,
   };
-  if (publisherGate.blockingErrors.length) {
-    const error = new Error(`Backend quality gate failed: ${publisherGate.errors.join('; ')}`);
-    error.validationErrors = publisherGate.errors;
+  if (publisherFatalSplit.fatal.length) {
+    const error = new Error(`Backend quality gate failed: ${publisherFatalSplit.fatal.join('; ')}`);
+    error.validationErrors = publisherFatalSplit.fatal;
     error.qualitySeverity = 'blocking';
     error.question = sanitized;
     throw error;
   }
-  if (publisherGate.repairableErrors.length) {
-    const error = new Error(`Backend quality gate needs targeted repair: ${publisherGate.repairableErrors.join('; ')}`);
-    error.validationErrors = publisherGate.repairableErrors;
-    error.qualitySeverity = 'repairable';
-    error.question = sanitized;
-    throw error;
+  if (publisherQualityNotes.length) {
+    sanitized.qualityNotes = Array.from(new Set([
+      ...(sanitized.qualityNotes || []),
+      ...publisherQualityNotes,
+    ]));
+    sanitized.qualityGate = 'remote-ai-preserved-with-quality-review';
   }
   const validation = validateQuestion(sanitized, recentQuestionSummaries);
   if (!validation.ok) {
@@ -1644,19 +1681,30 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
       throw error;
     }
 
-    sanitized.qualityNotes = validation.errors;
-    sanitized.qualityGate = 'publisher-passed-with-legacy-warnings';
-  } else {
+    sanitized.qualityNotes = Array.from(new Set([
+      ...(sanitized.qualityNotes || []),
+      ...(validation.errors || []),
+    ]));
+    sanitized.qualityGate = sanitized.qualityGate || 'remote-ai-preserved-with-legacy-quality-review';
+  } else if (!sanitized.qualityGate) {
     sanitized.qualityGate = publisherGate.warnings.length ? 'publisher-passed-with-warnings' : 'strict-passed';
   }
   const legacyBlocking = legacyBlockingReviewIssues(sanitized);
-  if (legacyBlocking.length) {
-    const errors = summarizeQualityFailure({ gate: publisherGate, legacyBlocking });
-    const error = new Error(errors.join('; ') || 'Question failed blocking legacy quality review.');
+  const fatalLegacyBlocking = legacyBlocking.filter((issue) => FATAL_LEGACY_REVIEW_CODES.has(issue.code));
+  if (fatalLegacyBlocking.length) {
+    const errors = summarizeQualityFailure({ gate: publisherGate, legacyBlocking: fatalLegacyBlocking });
+    const error = new Error(errors.join('; ') || 'Question failed fatal legacy quality review.');
     error.validationErrors = errors;
     error.qualitySeverity = 'blocking';
     error.question = sanitized;
     throw error;
+  }
+  if (legacyBlocking.length) {
+    sanitized.qualityNotes = Array.from(new Set([
+      ...(sanitized.qualityNotes || []),
+      ...legacyBlocking.map((issue) => `global-quality:${issue.code}:${issue.message || ''}`.trim()),
+    ]));
+    sanitized.qualityGate = sanitized.qualityGate || 'remote-ai-preserved-with-global-quality-review';
   }
   const legacyReview = sanitized.aiMeta?.globalQualityReview;
   if (legacyReview?.decision && legacyReview.decision !== 'addable') {
@@ -1665,9 +1713,15 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
       ...(legacyReview.summary || []),
     ]));
   }
-  sanitized.qualityGate = sanitized.qualityNotes?.length || publisherGate.warnings.length
+  sanitized.qualityGate = sanitized.qualityGate || (sanitized.qualityNotes?.length || publisherGate.warnings.length
     ? 'publisher-passed-with-warnings'
-    : 'strict-publisher-passed';
+    : 'strict-publisher-passed');
+  sanitized.aiMeta = {
+    ...(sanitized.aiMeta || {}),
+    qualityDecision: sanitized.qualityNotes?.length ? 'revision_required' : 'addable',
+    publishable: !sanitized.qualityNotes?.length && publisherGate.publishable,
+    remotePreservedInsteadOfLocalFallback: Boolean(sanitized.qualityNotes?.length),
+  };
   return sanitized;
 }
 
