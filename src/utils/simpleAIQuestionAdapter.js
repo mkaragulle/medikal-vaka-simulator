@@ -230,20 +230,36 @@ export function makeSimpleSignature(question = {}) {
   ].filter(Boolean).join(' :: '))}`;
 }
 
+function tokenSimilarity(left = '', right = '') {
+  const leftTokens = new Set(normalizeForCompare(left).split(/\s+/u).filter((token) => token.length >= 4));
+  const rightTokens = new Set(normalizeForCompare(right).split(/\s+/u).filter((token) => token.length >= 4));
+  if (!leftTokens.size || !rightTokens.size) return 0;
+  let overlap = 0;
+  leftTokens.forEach((token) => {
+    if (rightTokens.has(token)) overlap += 1;
+  });
+  return overlap / Math.max(leftTokens.size, rightTokens.size);
+}
+
 export function isTooSimilarToRecent(question = {}, recent = []) {
   const correct = normalizeForCompare(question.diagnosis?.correct || question.correctAnswerText || '');
   const stem = normalizeForCompare(question.stem || '');
+  const target = normalizeForCompare(question.learningTarget || question.clinicalFocus || question.question || '');
   const optionSet = normalizeForCompare((question.diagnosis?.options || []).slice().sort().join(' | '));
   const signature = question.contentSignature || makeSimpleSignature(question);
 
   return asArray(recent).some((item) => {
     const itemCorrect = normalizeForCompare(item.correct || item.correctAnswer || '');
     const itemStem = normalizeForCompare(item.stem || item.normalizedStem || '');
+    const itemTarget = normalizeForCompare(item.learningTarget || item.normalizedLearningTarget || item.question || '');
     const itemOptions = normalizeForCompare(asArray(item.optionTexts).slice().sort().join(' | ') || item.optionSetSignature || '');
     const itemSignature = item.contentSignature || item.semanticFingerprint || item.signature || '';
+    const stemOverlap = tokenSimilarity(stem, itemStem);
+    const targetOverlap = tokenSimilarity(target, itemTarget);
     if (itemSignature && signature && itemSignature === signature) return true;
-    if (correct && itemCorrect && correct === itemCorrect && optionSet && itemOptions && (optionSet === itemOptions || optionSet.includes(itemOptions) || itemOptions.includes(optionSet))) return true;
-    if (stem && itemStem && stem.length > 80 && itemStem.length > 80 && (stem.includes(itemStem.slice(0, 120)) || itemStem.includes(stem.slice(0, 120)))) return true;
+    if (correct && itemCorrect && correct === itemCorrect && optionSet && itemOptions && optionSet === itemOptions && Math.max(stemOverlap, targetOverlap) >= 0.72) return true;
+    if (stem && itemStem && stem.length > 80 && itemStem.length > 80 && stemOverlap >= 0.86) return true;
+    if (correct && itemCorrect && correct === itemCorrect && targetOverlap >= 0.9 && stemOverlap >= 0.45) return true;
     return false;
   });
 }

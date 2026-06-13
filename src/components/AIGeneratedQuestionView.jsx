@@ -646,13 +646,19 @@ function AIReadyState({ branchFilter, difficulty, onGenerateQuestion }) {
   );
 }
 
-function AIErrorState({ onGenerateQuestion }) {
+function AIErrorState({ error = null, onGenerateQuestion }) {
+  const errorMessage = typeof error === 'string'
+    ? error
+    : (error?.message || '');
+  const description = errorMessage && !/AI endpoint failed|publisher quality gate|AI question generation failed/i.test(errorMessage)
+    ? errorMessage
+    : 'Tüm üretim denemeleri kalite kapısından geçemedi. Sistem küçük format, dil, tekrar ve feedback sorunlarında onarım dener; yalnızca güvenli sonuç oluşmadığında bu ekran gösterilir.';
   return (
     <section className="ai-generation-state card-surface error" aria-live="polite">
       <span className="ai-generation-orb" aria-hidden="true"><Icon name="AlertTriangle" /></span>
       <div>
         <h2>Uygun soru üretilemedi.</h2>
-        <p>Bu denemede TUS dili, bilimsel doğruluk ve tekrar kontrolünden geçen yeni bir soru oluşturulamadı. Farklı bir branş seçerek yeniden deneyebilirsin.</p>
+        <p>{description}</p>
       </div>
       <button type="button" className="btn btn-primary" onClick={onGenerateQuestion}>
         <Icon name="RotateCcw" /> Tekrar dene
@@ -832,7 +838,7 @@ function AIGeneratedQuestionView({
           />
         </div>
       ) : null}
-      {!loading && error ? <AIErrorState onGenerateQuestion={onGenerateQuestion} /> : null}
+      {!loading && error ? <AIErrorState error={error} onGenerateQuestion={onGenerateQuestion} /> : null}
       {!loading && !error && !question ? (
         <AIReadyState branchFilter={branchFilter} difficulty={difficulty} onGenerateQuestion={onGenerateQuestion} />
       ) : null}

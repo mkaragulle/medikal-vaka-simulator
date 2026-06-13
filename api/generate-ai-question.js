@@ -43,6 +43,97 @@ function legacyHardBlockingValidationErrors(errors = []) {
   );
 }
 
+function classifyTusValidationError(message = '') {
+  const text = normalize(message);
+  const raw = String(message || '');
+  let stage = 'legacy_validation';
+  let severity = 'warning';
+  let action = 'allow_with_note';
+
+  if (/branch|stem eksik|question net|tam 5|se[cÃ§]enek yok|correctanswer|options-not-five|correct-answer-id-invalid|correct-answer-text-missing/.test(text)) {
+    stage = 'schema';
+    severity = 'blocking';
+    action = 'regenerate';
+  } else if (/imkans|bozuk klinik de[gÄ]er|clinical value|medical contradiction|stem correct answer conflict|celiski|conflict/.test(text)) {
+    stage = 'scientific_accuracy';
+    severity = 'blocking';
+    action = 'regenerate';
+  } else if (/unsupported|grounding|kritik|stemde|kanit zinciri|evidence|post answer data/.test(text)) {
+    stage = 'medical_grounding';
+    severity = /unsupported|global quality reject|reject/.test(text) ? 'blocking' : 'repairable';
+    action = severity === 'blocking' ? 'regenerate' : 'repair';
+  } else if (/answer leak|dogru cevabi ele|cevabi fazla ele|objective direction/.test(text)) {
+    stage = 'answer_leak';
+    severity = 'blocking';
+    action = 'regenerate';
+  } else if (/bozuk turk|makine|ceviri|tus ipucu|broken ending|orphan connector|truncated|kesik|uc nokta/.test(text)) {
+    stage = 'tus_language';
+    severity = 'repairable';
+    action = 'repair';
+  } else if (/feedback|explanation|exampearl|jenerik|yasak|placeholder|surface/.test(text)) {
+    stage = 'feedback_quality';
+    severity = 'repairable';
+    action = 'repair';
+  } else if (/yakin|gecmis|ayn|duplicate|tekrar|option set|se[cÃ§]enek seti|ogrenme hedefi|soru kok/.test(text)) {
+    stage = 'repeat_control';
+    severity = 'repairable';
+    action = 'regenerate_different_pattern';
+  } else if (/stem sufficiency|soru kokunde|klinik olgu yetersiz|gorunur klinik patern|critical data|kavram/.test(text)) {
+    stage = 'stem_quality';
+    severity = 'repairable';
+    action = 'regenerate_richer_stem';
+  } else if (/se[cÃ§]enekler ayn|kavramsal kategori|option axis|distractor/.test(text)) {
+    stage = 'option_architecture';
+    severity = 'repairable';
+    action = 'regenerate_options';
+  } else if (/global-quality:reject:/u.test(raw)) {
+    stage = 'global_quality_review';
+    severity = 'blocking';
+    action = 'regenerate';
+  }
+
+  return { message: raw, stage, severity, action };
+}
+
+export function classifyTusValidationErrors(errors = []) {
+  const issues = Array.from(new Set(asArray(errors).filter(Boolean))).map(classifyTusValidationError);
+  return {
+    issues,
+    blockingErrors: issues.filter((issue) => issue.severity === 'blocking').map((issue) => issue.message),
+    repairableErrors: issues.filter((issue) => issue.severity === 'repairable').map((issue) => issue.message),
+    warnings: issues.filter((issue) => issue.severity === 'warning').map((issue) => issue.message),
+    stages: issues.reduce((acc, issue) => {
+      acc[issue.stage] = acc[issue.stage] || { warning: 0, repairable: 0, blocking: 0 };
+      acc[issue.stage][issue.severity] += 1;
+      return acc;
+    }, {}),
+  };
+}
+
+function logQuestionGenerationGate(context = {}) {
+  console.warn(JSON.stringify({
+    event: 'ai-question-generation-gate',
+    at: new Date().toISOString(),
+    ...context,
+  }));
+}
+
+function buildRetryQualityFeedback(failure = {}) {
+  const issues = asArray(failure.issues).length
+    ? failure.issues
+    : classifyTusValidationErrors(failure.validationErrors || [failure.message].filter(Boolean)).issues;
+  const stageSummary = issues
+    .map((issue) => `${issue.stage}/${issue.severity}: ${issue.message}`)
+    .slice(0, 8)
+    .join(' | ');
+  if (!stageSummary) return cleanText(failure.message || '');
+  return [
+    `Hata seviyesi: ${failure.severity || 'repairable'}.`,
+    `Takilan asamalar: ${stageSummary}.`,
+    'Repairable hatalarda ayni soru iskeletini yuzeysel savunma; kok, secenek feedbacki veya dil sorununu hedefli duzelt. Repeat-control hatasinda ayni hedefi farkli klinik patern, farkli ayirt ettirici veri ve farkli distractor duzlemiyle yeniden kur.',
+  ].join(' ');
+}
+
 function summarizeQualityFailure({ gate, legacyBlocking = [], validationBlocking = [] } = {}) {
   return [
     ...(gate?.blockingErrors || []),
@@ -1145,6 +1236,50 @@ function hasEvidenceBasedOnVisibleStem(question = {}) {
   });
 }
 
+function tokenSimilarity(left = '', right = '') {
+  const leftTokens = new Set(normalize(left).split(/\s+/u).filter((token) => token.length >= 4));
+  const rightTokens = new Set(normalize(right).split(/\s+/u).filter((token) => token.length >= 4));
+  if (!leftTokens.size || !rightTokens.size) return 0;
+  let overlap = 0;
+  leftTokens.forEach((token) => {
+    if (rightTokens.has(token)) overlap += 1;
+  });
+  return overlap / Math.max(leftTokens.size, rightTokens.size);
+}
+
+function optionSetSignature(value = {}) {
+  const fromOptions = normalizeOptions(value.options)
+    .map((item) => item.text)
+    .filter(Boolean);
+  const fromSummary = asArray(value.optionTexts)
+    .map((item) => cleanText(item?.text || item))
+    .filter(Boolean);
+  const items = fromOptions.length ? fromOptions : fromSummary;
+  return normalize(items.slice().sort().join(' | ') || value.optionSetSignature || '');
+}
+
+function questionLikeCorrectText(value = {}) {
+  return normalize(
+    getCorrectText(value)
+    || value.correctAnswerText
+    || value.correct
+    || value.correctAnswer
+    || ''
+  );
+}
+
+function questionLikeStem(value = {}) {
+  return normalize(value.stem || value.normalizedStem || value.questionStem || '');
+}
+
+function questionLikeTarget(value = {}) {
+  return normalize([
+    value.relatedBranch || value.branch,
+    value.answerTarget || value.questionType,
+    value.learningTarget,
+    value.question,
+  ].filter(Boolean).join(' | '));
+}
 
 function validateQuestion(question = {}, recentQuestionSummaries = []) {
   const errors = [];
@@ -1201,21 +1336,42 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   if (dominant && categories.filter((category) => category !== dominant).length >= 2) errors.push('seçenekler aynı kavramsal kategoride değil');
 
   const correctNorm = normalize(correctText);
-  const optionSetNorm = normalize(options.map((item) => item.text).sort().join(' | '));
-  const stemNorm = normalize(question.stem);
-  const currentTargetNorm = normalize([question.relatedBranch, question.answerTarget, question.learningTarget, correctText].filter(Boolean).join(' | '));
+  const stemNorm = questionLikeStem(question);
+  const repeatOptionSetNorm = optionSetSignature({ ...question, options });
+  const optionSetNorm = `${repeatOptionSetNorm} ${stableHash(stemNorm.slice(0, 160))}`;
+  const repeatTargetNorm = normalize([question.relatedBranch, question.answerTarget, question.learningTarget, correctText].filter(Boolean).join(' | '));
+  const currentTargetNorm = stableHash(`${repeatTargetNorm} ${stemNorm.slice(0, 160)}`);
   asArray(recentQuestionSummaries).slice(0, 12).forEach((recent) => {
     const recentBranch = normalize(recent.branch || recent.relatedBranch || recent.branchName || '');
     const sameBranch = !recentBranch || !normalize(question.relatedBranch) || recentBranch === normalize(question.relatedBranch);
-    const recentCorrect = normalize(recent.correct || recent.correctAnswer || recent.correctAnswerText || '');
+    const recentCorrect = questionLikeCorrectText(recent);
     if (correctNorm && recentCorrect === correctNorm && optionSetNorm && normalize(asArray(recent.optionTexts).slice().sort().join(' | ') || recent.optionSetSignature) === optionSetNorm) errors.push('yakın geçmişte aynı doğru cevap ve seçenek seti var');
     const recentStem = normalize(recent.stem || recent.normalizedStem || '');
     if (stemNorm.length > 100 && recentStem.length > 100 && (stemNorm.includes(recentStem.slice(0, 100)) || recentStem.includes(stemNorm.slice(0, 100)))) errors.push('yakın geçmişte aynı soru kökü var');
     const recentTargetNorm = normalize([recent.branch || recent.relatedBranch, recent.answerTarget || recent.questionType, recent.learningTarget, recent.correct || recent.correctAnswer || recent.correctAnswerText].filter(Boolean).join(' | '));
+    const recentOptionSet = optionSetSignature(recent);
+    const stemOverlap = tokenSimilarity(stemNorm, recentStem);
+    const targetOverlap = tokenSimilarity(repeatTargetNorm, recentTargetNorm);
+    const sameOptionSet = repeatOptionSetNorm && recentOptionSet && repeatOptionSetNorm === recentOptionSet;
+    if (correctNorm && recentCorrect === correctNorm && sameOptionSet && Math.max(stemOverlap, targetOverlap) >= 0.72) errors.push('yakÄ±n geÃ§miÅŸte aynÄ± doÄŸru cevap ve seÃ§enek seti var');
+    if (stemNorm.length > 100 && recentStem.length > 100 && stemOverlap >= 0.86) errors.push('yakÄ±n geÃ§miÅŸte aynÄ± soru kÃ¶kÃ¼ var');
+    if (sameBranch && correctNorm && recentCorrect === correctNorm && repeatTargetNorm && recentTargetNorm && targetOverlap >= 0.9 && stemOverlap >= 0.45) errors.push('yakÄ±n geÃ§miÅŸte aynÄ± Ã¶ÄŸrenme hedefi var');
     if (sameBranch && correctNorm && recentCorrect === correctNorm && currentTargetNorm && recentTargetNorm && (currentTargetNorm.includes(recentTargetNorm) || recentTargetNorm.includes(currentTargetNorm))) errors.push('yakın geçmişte aynı öğrenme hedefi var');
   });
 
-  return { ok: errors.length === 0, errors: Array.from(new Set(errors)), options, correctText };
+  const uniqueErrors = Array.from(new Set(errors));
+  const classified = classifyTusValidationErrors(uniqueErrors);
+  return {
+    ok: classified.blockingErrors.length === 0 && classified.repairableErrors.length === 0,
+    errors: uniqueErrors,
+    blockingErrors: classified.blockingErrors,
+    repairableErrors: classified.repairableErrors,
+    warnings: classified.warnings,
+    issues: classified.issues,
+    stages: classified.stages,
+    options,
+    correctText,
+  };
 }
 
 
@@ -1670,6 +1826,17 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
     throw error;
   }
   const validation = validateQuestion(sanitized, recentQuestionSummaries);
+  sanitized.aiMeta = {
+    ...(sanitized.aiMeta || {}),
+    legacyValidationGate: {
+      ok: validation.ok,
+      stages: validation.stages,
+      issues: validation.issues,
+      blockingErrors: validation.blockingErrors,
+      repairableErrors: validation.repairableErrors,
+      warnings: validation.warnings,
+    },
+  };
   if (!validation.ok) {
     const hardBlockingErrors = legacyHardBlockingValidationErrors(validation.errors);
 
@@ -1681,7 +1848,15 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
       throw error;
     }
 
-    sanitized.qualityNotes = validation.errors;
+    if (validation.repairableErrors.length) {
+      const error = new Error(`Legacy validation needs targeted repair: ${validation.repairableErrors.join('; ')}`);
+      error.validationErrors = validation.repairableErrors;
+      error.qualitySeverity = 'repairable';
+      error.question = sanitized;
+      throw error;
+    }
+
+    sanitized.qualityNotes = validation.warnings;
     sanitized.qualityGate = 'publisher-passed-with-legacy-warnings';
   } else {
     sanitized.qualityGate = (publisherGate.warnings.length || finalFeedbackGate.warnings.length) ? 'publisher-passed-with-warnings' : 'strict-passed';
@@ -1709,16 +1884,27 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
 }
 
 
-function questionMatchesRecent(question = {}, recentQuestionSummaries = []) {
+export function questionMatchesRecent(question = {}, recentQuestionSummaries = []) {
   const signature = normalize(question.semanticFingerprint || question.id || '');
-  const correct = normalize(getCorrectText(question));
-  const target = normalize(question.learningTarget || question.answerTarget || question.question || '');
+  const correct = questionLikeCorrectText(question);
+  const target = questionLikeTarget(question);
+  const stem = questionLikeStem(question);
+  const options = optionSetSignature(question);
   return asArray(recentQuestionSummaries).some((item) => {
     const itemSignature = normalize(item.semanticFingerprint || item.id || item.questionId || '');
     if (signature && itemSignature && signature === itemSignature) return true;
-    const itemCorrect = normalize(item.correct || item.correctAnswerText || item.correctAnswer || '');
-    const itemTarget = normalize(item.learningTarget || item.answerTarget || item.question || '');
-    return Boolean(correct && itemCorrect && correct === itemCorrect && target && itemTarget && target === itemTarget);
+    const itemCorrect = questionLikeCorrectText(item);
+    const itemTarget = questionLikeTarget(item);
+    const itemStem = questionLikeStem(item);
+    const itemOptions = optionSetSignature(item);
+    const stemOverlap = tokenSimilarity(stem, itemStem);
+    const targetOverlap = tokenSimilarity(target, itemTarget);
+    const sameAnswer = correct && itemCorrect && correct === itemCorrect;
+    const sameOptions = options && itemOptions && options === itemOptions;
+    if (stem.length > 100 && itemStem.length > 100 && stemOverlap >= 0.86) return true;
+    if (sameAnswer && sameOptions && Math.max(stemOverlap, targetOverlap) >= 0.72) return true;
+    if (sameAnswer && targetOverlap >= 0.9 && stemOverlap >= 0.45) return true;
+    return false;
   });
 }
 
@@ -1734,7 +1920,14 @@ async function getReusableBankQuestion({ branch, target, difficulty, recentQuest
     const publisherGate = runQuestionQualityGate(candidate, { version: PROMPT_VERSION });
     const finalFeedbackGate = runFinalFeedbackQualityGate(candidate, { version: `${PROMPT_VERSION}:final-feedback`, baseVersion: PROMPT_VERSION });
     const validationBlocking = legacyHardBlockingValidationErrors(validation.errors || []);
-    if (publisherGate.publishable && finalFeedbackGate.publishable && !validationBlocking.length && !legacyBlockingReviewIssues(candidate).length) return true;
+    if (
+      publisherGate.publishable
+      && finalFeedbackGate.publishable
+      && !validationBlocking.length
+      && !(validation.blockingErrors || []).length
+      && !(validation.repairableErrors || []).length
+      && !legacyBlockingReviewIssues(candidate).length
+    ) return true;
     return false;
   });
   if (!reusable) return null;
@@ -1753,7 +1946,8 @@ async function storeReusableQuestion({ branch, target, difficulty, question }) {
   if (legacyBlockingReviewIssues(question).length) return false;
   const publisherGate = runQuestionQualityGate(question, { version: PROMPT_VERSION });
   const finalFeedbackGate = runFinalFeedbackQualityGate(question, { version: `${PROMPT_VERSION}:final-feedback`, baseVersion: PROMPT_VERSION });
-  if (!publisherGate.publishable || !finalFeedbackGate.publishable) return false;
+  const validation = validateQuestion(question, []);
+  if (!publisherGate.publishable || !finalFeedbackGate.publishable || !validation.ok) return false;
   const model = question.openAIModel || currentTusModel();
   const bankKey = buildQuestionBankKey({ scope: 'TUS', branch, difficulty, target, promptVersion: PROMPT_VERSION, model });
   return addQuestionToBank(bankKey, question);
@@ -1768,6 +1962,7 @@ export default async function handler(request, response) {
   const requestedDifficulty = normalizeDifficulty(body.difficulty || body.requestedDifficulty || body.aiDifficulty || 'Orta');
   const recentQuestionSummaries = asArray(body.recentQuestionSummaries).slice(0, 12);
   const remoteAttempts = Math.max(1, Math.min(2, Number(process.env.REMOTE_AI_ATTEMPTS || process.env.TUS_REMOTE_AI_ATTEMPTS || 2)));
+  const repairRegenerationBudget = Math.max(0, Math.min(2, Number(process.env.TUS_REPAIR_REGENERATION_ATTEMPTS || 1)));
   const errors = [];
   const failureDetails = [];
   const target = body.target || body.answerTarget || '';
@@ -1799,8 +1994,9 @@ export default async function handler(request, response) {
     if (cachedPayload?.question && !questionMatchesRecent(cachedPayload.question, recentQuestionSummaries)) {
       const cachedGate = runQuestionQualityGate(cachedPayload.question, { version: PROMPT_VERSION });
       const cachedFinalGate = runFinalFeedbackQualityGate(cachedPayload.question, { version: `${PROMPT_VERSION}:final-feedback`, baseVersion: PROMPT_VERSION });
-      if (cachedGate.publishable && cachedFinalGate.publishable && !legacyBlockingReviewIssues(cachedPayload.question).length) {
-        logAIUsage({ task: `${TASK_NAME}:outputCache`, model: cachedPayload.question.openAIModel || model, cached: true, apiStyle: 'output_cache', promptVersion: PROMPT_VERSION, sourceFingerprint: oneShotCacheKey, finalOutput: true, validator: { cachedGate: cachedGate.decision, finalFeedbackGate: cachedFinalGate.decision } });
+      const cachedValidation = validateQuestion(cachedPayload.question, recentQuestionSummaries);
+      if (cachedGate.publishable && cachedFinalGate.publishable && cachedValidation.ok && !legacyBlockingReviewIssues(cachedPayload.question).length) {
+        logAIUsage({ task: `${TASK_NAME}:outputCache`, model: cachedPayload.question.openAIModel || model, cached: true, apiStyle: 'output_cache', promptVersion: PROMPT_VERSION, sourceFingerprint: oneShotCacheKey, finalOutput: true, validator: { cachedGate: cachedGate.decision, finalFeedbackGate: cachedFinalGate.decision, legacyValidation: cachedValidation.stages } });
         return sendJson(response, 200, { ok: true, cached: true, fallback: false, provider: cachedPayload.provider || 'openai-output-cache', question: cachedPayload.question });
       }
     }
@@ -1816,31 +2012,48 @@ export default async function handler(request, response) {
 
     const detailMode = tusQuestionDetailMode();
     let qualityFeedback = '';
-    for (let attempt = 1; attempt <= remoteAttempts; attempt += 1) {
-    try {
-      const question = await generateRemote({ branch, target, difficulty: requestedDifficulty, recentQuestionSummaries, sourceText, attempt, antiRepeatNonce: body.antiRepeatNonce, detailMode, qualityFeedback });
+    let repairExtensionsUsed = 0;
+    for (let attempt = 1; attempt <= remoteAttempts + repairExtensionsUsed; attempt += 1) {
+      try {
+        const question = await generateRemote({ branch, target, difficulty: requestedDifficulty, recentQuestionSummaries, sourceText, attempt, antiRepeatNonce: body.antiRepeatNonce, detailMode, qualityFeedback });
         await storeReusableQuestion({ branch, target, difficulty: requestedDifficulty, question });
         await setDurableCachedOutput(oneShotCacheKey, { provider: 'openai-output-cache', question });
         return sendJson(response, 200, {
-        ok: true,
-        provider: 'openai',
-        fallback: false,
-        question,
-      });
-    } catch (error) {
-      const message = error?.message || String(error);
-      const severity = error?.qualitySeverity || 'blocking';
-      errors.push(message);
-      failureDetails.push({
-        severity,
-        message,
-        validationErrors: error?.validationErrors || [],
-      });
-      qualityFeedback = errors.slice(-1)[0] || '';
+          ok: true,
+          provider: 'openai',
+          fallback: false,
+          question,
+        });
+      } catch (error) {
+        const message = error?.message || String(error);
+        const classified = classifyTusValidationErrors(error?.validationErrors?.length ? error.validationErrors : [message]);
+        const severity = error?.qualitySeverity || (classified.blockingErrors.length ? 'blocking' : (classified.repairableErrors.length ? 'repairable' : 'warning'));
+        const failure = {
+          attempt,
+          severity,
+          message,
+          validationErrors: error?.validationErrors || [],
+          stages: classified.stages,
+          issues: classified.issues,
+        };
+        errors.push(message);
+        failureDetails.push(failure);
+        logQuestionGenerationGate({
+          branch,
+          difficulty: requestedDifficulty,
+          attempt,
+          severity,
+          stages: classified.stages,
+          issues: classified.issues.slice(0, 8),
+        });
+        if (severity === 'repairable' && attempt >= remoteAttempts && repairExtensionsUsed < repairRegenerationBudget) {
+          repairExtensionsUsed += 1;
+        }
+        qualityFeedback = buildRetryQualityFeedback(failure);
+      }
     }
-  }
 
-  const hasBlockingFailure = failureDetails.some((failure) => failure.severity !== 'repairable');
+  const hasBlockingFailure = failureDetails.some((failure) => failure.severity === 'blocking');
   const safeFallbackEnabled = String(process.env.AI_ENABLE_SAFE_FALLBACK || 'false').toLowerCase() === 'true';
   if (safeFallbackEnabled && hasBlockingFailure) {
     logFallbackTrigger({
@@ -1912,13 +2125,34 @@ export default async function handler(request, response) {
     });
   }
 
+    const failureStageSummary = failureDetails.reduce((acc, failure) => {
+      Object.entries(failure.stages || {}).forEach(([stage, counts]) => {
+        acc[stage] = acc[stage] || { warning: 0, repairable: 0, blocking: 0 };
+        acc[stage].warning += counts.warning || 0;
+        acc[stage].repairable += counts.repairable || 0;
+        acc[stage].blocking += counts.blocking || 0;
+      });
+      return acc;
+    }, {});
+    const userError = hasBlockingFailure
+      ? 'Soru üretimi kalite kapısında güvenli biçimde durduruldu. Kök, doğru cevap veya tıbbi tutarlılık yeniden denenmeli.'
+      : 'Soru üretimi onarılabilir kalite sorunlarını gideremedi. Yeniden denendiğinde farklı klinik paternle üretim yapılacak.';
+    logQuestionGenerationGate({
+      branch,
+      difficulty: requestedDifficulty,
+      finalFailure: true,
+      hasBlockingFailure,
+      stages: failureStageSummary,
+      attempts: failureDetails.length,
+    });
     return sendJson(response, 422, {
       ok: false,
-      error: 'AI question generation failed publisher quality gate',
+      error: userError,
       manualReviewRequired: true,
       fallback: false,
-      attempts: errors.slice(0, 3),
-      attemptDetails: failureDetails.slice(0, 3),
+      attempts: errors.slice(0, 4),
+      attemptDetails: failureDetails.slice(0, 4),
+      stageSummary: failureStageSummary,
     });
   });
 }
