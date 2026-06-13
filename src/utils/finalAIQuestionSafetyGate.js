@@ -47,8 +47,17 @@ function normalizeSpaces(value = '') {
     .replace(/\s+/gu, ' ')
     .replace(/\s+([,.;:!?])/gu, '$1')
     .replace(/([,;:!?])(?=\S)/gu, '$1 ')
-    .replace(/(^|[.!?]\s+)(?:Da|De|da|de)\s+(?=[a-zçğıöşü0-9%/>])/gu, '$1Bu tabloda ')
-    .replace(/\b(?:Da|De)\s+(?=renin\/aldosteron\b)/gu, 'Bu tabloda ')
+    .replace(/(^|[.!?]\s+)(?:Da|De|da|de)\s+(?=[a-zçğıöşü0-9%/>])/gu, '$1Bu olguda ')
+    .replace(/\b(?:Da|De|da|de)\s+(?=renin\/aldosteron\b)/gu, 'Bu olguda ')
+    .replace(/\bçocuklık\b/giu, 'çocukluk')
+    .replace(/\barthraljia\b/giu, 'artralji')
+    .replace(/\barthralji\b/giu, 'artralji')
+    .replace(/\bplatelet\b/giu, 'trombosit')
+    .replace(/\bhematuri\b/giu, 'hematüri')
+    .replace(/\bproteinuri\b/giu, 'proteinüri')
+    .replace(/\bpurpurasi\b/giu, 'purpurası')
+    .replace(/\bkoagulasyon\b/giu, 'koagülasyon')
+    .replace(/\bProteinüri\b/g, 'proteinüri')
     .trim();
 }
 
@@ -275,7 +284,7 @@ function deriveRoles(question = {}) {
 }
 
 function roleAwareFeedback(optionText = '', role = 'wrong_condition', target = 'diagnosis', existing = '') {
-  const cleanedExisting = removeDuplicateSentences(stripGenericPhrases(existing), { maxSentences: 2, limit: 300 });
+  const cleanedExisting = removeDuplicateSentences(stripGenericPhrases(existing));
   if (cleanedExisting && cleanedExisting.length >= 58 && !hasGenericFeedback(cleanedExisting) && !detectTruncatedText(cleanedExisting).truncated) return cleanedExisting;
   const targetPhrase = targetQuestionText(target).replace(/\?$/u, '').replace(/^Bu olguda\s*/iu, '').replace(/^Bu bulguları\s*/iu, 'bulguları ').toLocaleLowerCase(TR_LOCALE);
   if (role === 'primary_correct') return ensureSentence(`${optionText} belirleyici ipuçlarını en doğrudan açıklar ve ${targetPhrase} hedefini karşılar`);
@@ -342,7 +351,7 @@ function sourceBound(item = '', source = '') {
   if (numericTokens.length && /\b(ta|spo|spo2|nabiz|ate[sş]|solunum|gks|laktat|ph|hco3|glukoz|kreatinin|sodyum|potasyum)\b/i.test(clueKey)) return true;
   const clueTokens = tokens(clue)
     .filter((token) => token.length > 3 && !STOPWORDS.has(token))
-    .slice(0, 8);
+;
   if (!clueTokens.length) return false;
   const hits = clueTokens.filter((token) => sourceKey.includes(token));
   if (hits.length >= 2) return true;
@@ -358,12 +367,12 @@ function buildEvidenceFallback(question = {}, target = 'diagnosis') {
     const type = classifyEvidenceType(clue);
     evidence.push(`Veri: ${type} — ${clue.replace(/[.!?]$/u, '')}. Anlamı: ${makeEvidenceMeaning(type, target)}`);
   };
-  (Array.isArray(question.compactObjectiveData) ? question.compactObjectiveData : []).slice(0, 3).forEach((item) => add(`${item.label}: ${item.value}`));
-  (Array.isArray(question.compactVitals) ? question.compactVitals : []).slice(0, 2).forEach((item) => add(`${item.label}: ${item.value}`));
-  (Array.isArray(question.findings?.exam) ? question.findings.exam : []).slice(0, 2).forEach(add);
-  (Array.isArray(question.findings?.history) ? question.findings.history : []).slice(0, 2).forEach(add);
-  splitSentences(question.stem || '').slice(0, 3).forEach(add);
-  return evidence.slice(0, 4);
+  (Array.isArray(question.compactObjectiveData) ? question.compactObjectiveData : []).forEach((item) => add(`${item.label}: ${item.value}`));
+  (Array.isArray(question.compactVitals) ? question.compactVitals : []).forEach((item) => add(`${item.label}: ${item.value}`));
+  (Array.isArray(question.findings?.exam) ? question.findings.exam : []).forEach(add);
+  (Array.isArray(question.findings?.history) ? question.findings.history : []).forEach(add);
+  splitSentences(question.stem || '').forEach(add);
+  return evidence;
 }
 
 export function normalizeEvidenceLabels(evidenceChain = [], question = {}) {
@@ -376,17 +385,16 @@ export function normalizeEvidenceLabels(evidenceChain = [], question = {}) {
     if (source && !sourceBound(clue, source)) return;
     const type = classifyEvidenceType(clue);
     const meaningMatch = String(item || '').match(/anlam[ıi]\s*[:：]\s*(.+)$/iu);
-    const rawMeaning = meaningMatch?.[1] ? removeDuplicateSentences(meaningMatch[1], { maxSentences: 1, limit: 150 }) : makeEvidenceMeaning(type, target);
+    const rawMeaning = meaningMatch?.[1] ? removeDuplicateSentences(meaningMatch[1]) : makeEvidenceMeaning(type, target);
     const line = `Veri: ${type} — ${clue.replace(/[.!?]$/u, '')}. Anlamı: ${rawMeaning.replace(/[.!?]$/u, '')}.`;
     if (normalized.some((existing) => similarity(existing, line) > 0.78)) return;
     normalized.push(line);
   });
   const fallback = buildEvidenceFallback(question, target);
   fallback.forEach((item) => {
-    if (normalized.length >= 4) return;
     if (!normalized.some((existing) => similarity(existing, item) > 0.78)) normalized.push(item);
   });
-  return normalized.slice(0, 4);
+  return normalized;
 }
 
 function normalizeDataLabel(label = '') {
@@ -414,7 +422,7 @@ function compactDataKey(item = {}) {
     .trim();
 }
 
-function normalizeCompactData(items = [], max = 10) {
+function normalizeCompactData(items = [], _max = Number.POSITIVE_INFINITY) {
   const out = [];
   const seen = new Set();
   (Array.isArray(items) ? items : []).forEach((item) => {
@@ -429,7 +437,7 @@ function normalizeCompactData(items = [], max = 10) {
     seen.add(key);
     out.push(candidate);
   });
-  return out.slice(0, max);
+  return out;
 }
 
 export function normalizeDataPanels(question = {}) {
@@ -444,7 +452,7 @@ export function normalizeDataPanels(question = {}) {
       .map((finding) => normalizeDataValue(finding))
       .filter((finding) => finding && !PREANSWER_SPOILER_PATTERNS.some((pattern) => pattern.test(finding)))
       .filter((finding, idx, list) => list.findIndex((other) => similarity(other, finding) > 0.86) === idx)
-      .slice(0, 4);
+;
     const rows = (Array.isArray(item?.rows) ? item.rows : [])
       .filter(Array.isArray)
       .map((row) => row.map((cell) => normalizeDataValue(cell)).filter(Boolean))
@@ -596,7 +604,7 @@ export function applyFinalAIQuestionSafetyStandard(question = {}) {
       .map((step) => sanitizeTextField(typeof step === 'string' ? step : `${step?.title || ''} ${step?.text || step?.description || ''}`))
       .filter(Boolean)
       .filter((step, index, list) => list.findIndex((other) => similarity(other, step) > 0.86) === index)
-      .slice(0, 4);
+;
     repaired.managementSteps = steps.length ? steps : [
       'Önce hastanın acil klinik önceliği güvenli biçimde değerlendirilir.',
       'Soru kökünün hedeflediği karar düzeyine karşılık gelen seçenek seçilir.',
@@ -666,7 +674,7 @@ export function validateFinalAIQuestionSafetyGate(question = {}, { soft = false 
 
   const evidence = Array.isArray(question.evidenceChain) ? question.evidenceChain : [];
   if (evidence.length < 3) errors.push('evidence-too-short');
-  evidence.slice(0, 5).forEach((item, index) => {
+  evidence.forEach((item, index) => {
     if (!/^Veri:\s*(?:Öykü|Muayene|Vital|Laboratuvar|Seroloji|Görüntüleme|EKG|Mikrobiyoloji|Mekanizma)\s*—\s*/u.test(String(item || '')) || !/Anlam[ıi]:/u.test(String(item || ''))) {
       errors.push(`evidence-label-format:${index + 1}`);
     }

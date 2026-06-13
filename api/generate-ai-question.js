@@ -7,7 +7,7 @@ import {
 import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from '../server/lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-tus-v44-text-coherence-stem-feedback-fix';
+const PROMPT_VERSION = 'klinikiq-tus-v46-full-pipeline-audit';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
@@ -99,6 +99,23 @@ function normalize(value = '') {
     .trim();
 }
 
+
+function normalizeMedicalTurkishLanguage(value = '') {
+  return String(value ?? '')
+    .replace(/\bçocuklık\b/giu, 'çocukluk')
+    .replace(/\barthraljia\b/giu, 'artralji')
+    .replace(/\barthralji\b/giu, 'artralji')
+    .replace(/\bplatelet\b/giu, 'trombosit')
+    .replace(/\bhematuri\b/giu, 'hematüri')
+    .replace(/\bproteinuri\b/giu, 'proteinüri')
+    .replace(/\bpurpurasi\b/giu, 'purpurası')
+    .replace(/\bkoagulasyon\b/giu, 'koagülasyon')
+    .replace(/\blökosit\s+sayisi\b/giu, 'lökosit sayısı')
+    .replace(/\btrombosit\s+sayisi\b/giu, 'trombosit sayısı')
+    .replace(/\bProteinüri\b/gu, 'proteinüri')
+    .replace(/\bHematuri\b/gu, 'hematüri');
+}
+
 function stableHash(value = '') {
   const text = normalize(value);
   let hash = 2166136261;
@@ -118,15 +135,15 @@ function repairTurkishConnectorArtifacts(value = '') {
   return cleanText(value)
     // Model/token repair can occasionally leave a sentence starting with a bare Turkish clitic: "Da/De ...".
     // Keep the medical content, but turn the orphan connector into a natural clinical reference.
-    .replace(/(^|[.!?]\s+)(?:Da|De)\s+(?=[a-zçğıöşü0-9%/>])/gu, '$1Bu tabloda ')
-    .replace(/(^|[.!?]\s+)(?:da|de)\s+(?=[a-zçğıöşü0-9%/>])/gu, '$1Bu tabloda ')
-    .replace(/\b(?:Da|De)\s+(?=renin\/aldosteron\b)/gu, 'Bu tabloda ')
+    .replace(/(^|[.!?]\s+)(?:Da|De)\s+(?=[a-zçğıöşü0-9%/>])/gu, '$1Bu olguda ')
+    .replace(/(^|[.!?]\s+)(?:da|de)\s+(?=[a-zçğıöşü0-9%/>])/gu, '$1Bu olguda ')
+    .replace(/\b(?:Da|De|da|de)\s+(?=renin\/aldosteron\b)/gu, 'Bu olguda ')
     .replace(/\s+/g, ' ')
     .trim();
 }
 
 function cleanGeneratedText(value = '') {
-  return repairTurkishConnectorArtifacts(value)
+  return normalizeMedicalTurkishLanguage(repairTurkishConnectorArtifacts(value))
     .replace(/\s+([,.;:!?])/g, '$1')
     .replace(/([,;:!?])(?=\S)/g, '$1 ')
     .trim();
@@ -207,7 +224,7 @@ function normalizeOptions(rawOptions = []) {
   }).filter((item) => item.text);
 }
 
-function compactItems(items = [], max = 8) {
+function compactItems(items = [], _max = Number.POSITIVE_INFINITY) {
   const seen = new Set();
   const out = [];
   asArray(items).forEach((item) => {
@@ -219,7 +236,7 @@ function compactItems(items = [], max = 8) {
     seen.add(key);
     out.push({ label, value });
   });
-  return out.slice(0, max);
+  return out;
 }
 
 function makeSignature(question = {}) {
@@ -262,6 +279,250 @@ function getPreAnswerDataText(question = {}) {
     ...compactItems(question.compactVitals || question.vitals || [], 5).flatMap((item) => [item.label, item.value]),
     ...compactItems(question.compactObjectiveData || question.objectiveData || [], 8).flatMap((item) => [item.label, item.value]),
   ].filter(Boolean).join(' | ');
+}
+
+
+function getPostAnswerReasoningText(question = {}) {
+  return [
+    question.explanation,
+    question.examPearl,
+    ...asArray(question.evidenceChain),
+    ...Object.values(question.wrongOptionFeedback || question.optionFeedback || question.optionRationales || {}),
+    ...asArray(question.managementSteps),
+  ].filter(Boolean).join(' | ');
+}
+
+const STEM_GROUNDING_RULES = [
+  {
+    id: 'trombosit-sayisi',
+    visible: /\b(?:trombosit|plt|platelet|trombositopeni)\b/iu,
+    claim: /\b(?:trombosit|plt|platelet|trombositopeni)\b/iu,
+    sentence(post) {
+      const text = cleanText(post);
+      if (/(?:trombosit|plt|platelet)[^.?!]{0,70}(?:normal|normaldir|normal sınırlarda|normal sinir|korunmuş|korunmustur|düşük değil|dusuk degil)|(?:normal|korunmuş|korunmus)[^.?!]{0,40}(?:trombosit|plt|platelet)/iu.test(text)) return 'Tam kan sayımında trombosit sayısı normaldir.';
+      if (/(?:trombositopeni|(?:trombosit|plt|platelet)[^.?!]{0,60}(?:düşük|dusuk|azalmış|azalmis))/iu.test(text)) return 'Tam kan sayımında trombosit sayısı düşüktür.';
+      return '';
+    },
+  },
+  {
+    id: 'koagulasyon-testleri',
+    visible: /\b(?:pt|aPTT|aptt|inr|koagülasyon|koagulasyon|pıhtılaşma|pihtilasma)\b/iu,
+    claim: /\b(?:pt|aPTT|aptt|inr|koagülasyon|koagulasyon|pıhtılaşma|pihtilasma)\b/iu,
+    sentence(post) {
+      const text = cleanText(post);
+      if (/(?:pt|aPTT|aptt|inr|koagülasyon|koagulasyon|pıhtılaşma|pihtilasma)[^.?!]{0,80}(?:normal|normaldir|normal sınırlarda|bozuk değil|bozuk degil)|(?:normal|bozuk değildir|bozuk degildir)[^.?!]{0,50}(?:pt|aPTT|aptt|inr|koagülasyon|koagulasyon)/iu.test(text)) return 'PT ve aPTT normal sınırlardadır.';
+      if (/(?:pt|aPTT|aptt|inr|koagülasyon|koagulasyon)[^.?!]{0,80}(?:uzamış|uzamis|yüksek|yuksek|bozuk)/iu.test(text)) return 'Koagülasyon testlerinde bozulma vardır.';
+      return '';
+    },
+  },
+  {
+    id: 'lokosit-crp',
+    visible: /\b(?:lökosit|lokosit|wbc|crp|sedimentasyon|esr)\b/iu,
+    claim: /\b(?:lökosit|lokosit|wbc|crp|sedimentasyon|esr)\b/iu,
+    sentence(post) {
+      const text = cleanText(post);
+      if (/(?:lökosit|lokosit|wbc|crp|sedimentasyon|esr)[^.?!]{0,90}(?:normal|belirgin yüksek değil|belirgin yuksek degil|yüksek değildir|yuksek degildir)|(?:normal|belirgin yüksek değildir|belirgin yuksek degildir)[^.?!]{0,60}(?:lökosit|lokosit|wbc|crp)/iu.test(text)) return 'Lökosit sayısı ve CRP belirgin yüksek değildir.';
+      if (/(?:lökosit|lokosit|wbc|crp|sedimentasyon|esr)[^.?!]{0,90}(?:yüksek|yuksek|artmış|artmis|lökositoz|lokositoz)/iu.test(text)) return 'Laboratuvarda inflamasyon/enfeksiyon belirteçleri yüksektir.';
+      return '';
+    },
+  },
+  {
+    id: 'renal-fonksiyon',
+    visible: /\b(?:kreatinin|üre|ure|bun|böbrek fonksiyon|bobrek fonksiyon)\b/iu,
+    claim: /\b(?:kreatinin|üre|ure|bun|böbrek fonksiyon|bobrek fonksiyon)\b/iu,
+    sentence(post) {
+      const text = cleanText(post);
+      if (/(?:kreatinin|üre|ure|bun|böbrek fonksiyon|bobrek fonksiyon)[^.?!]{0,80}(?:normal|korunmuş|korunmus|bozuk değil|bozuk degil)/iu.test(text)) return 'Böbrek fonksiyon testleri normaldir.';
+      if (/(?:kreatinin|üre|ure|bun)[^.?!]{0,80}(?:yüksek|yuksek|artmış|artmis)|(?:böbrek|bobrek)[^.?!]{0,50}(?:yetmezlik|bozuk)/iu.test(text)) return 'Böbrek fonksiyon testlerinde bozulma vardır.';
+      return '';
+    },
+  },
+  {
+    id: 'idrar-bulgusu',
+    visible: /\b(?:idrar|hematüri|hematuri|proteinüri|proteinuri|piyüri|piyuri|lökositüri|lokositurı|silendir)\b/iu,
+    claim: /\b(?:idrar|hematüri|hematuri|proteinüri|proteinuri|piyüri|piyuri|lökositüri|silendir)\b/iu,
+    sentence(post) {
+      const text = cleanText(post);
+      if (/(?:hematüri|hematuri|proteinüri|proteinuri|piyüri|piyuri|lökositüri|silendir)[^.?!]{0,70}(?:yok|saptanmaz|negatif|eşlik etmez|eslik etmez)/iu.test(text)) return 'İdrar incelemesinde belirgin hematüri veya proteinüri saptanmaz.';
+      if (/(?:hematüri|hematuri|proteinüri|proteinuri|piyüri|piyuri|lökositüri|silendir)[^.?!]{0,70}(?:var|saptanır|saptanir|pozitif|eşlik eder|eslik eder)/iu.test(text)) return 'İdrar incelemesinde patolojik bulgu saptanır.';
+      return '';
+    },
+  },
+  {
+    id: 'ates',
+    visible: /\b(?:ateş|ates|febril|afebril|sıcaklık|sicaklik|°c)\b/iu,
+    claim: /\b(?:ateş|ates|febril|afebril)\b/iu,
+    sentence(post) {
+      const text = cleanText(post);
+      if (/(?:ateş|ates)[^.?!]{0,45}(?:yok|yoktur|saptanmaz)|\bafebril\b/iu.test(text)) return 'Ateşi yoktur.';
+      if (/(?:ateş|ates|febril)[^.?!]{0,45}(?:var|yüksek|yuksek|saptanır|saptanir)/iu.test(text)) return 'Ateşi vardır.';
+      return '';
+    },
+  },
+  {
+    id: 'hemodinami',
+    visible: /\b(?:kan basıncı|kan basinci|tansiyon|hipotansiyon|hemodinamik|şok|sok|kapiller dolum)\b/iu,
+    claim: /\b(?:hipotansiyon|hemodinamik|şok|sok|stabil|kapiller dolum)\b/iu,
+    sentence(post) {
+      const text = cleanText(post);
+      if (/(?:hipotansiyon|şok|sok)[^.?!]{0,55}(?:yok|saptanmaz|eşlik etmez|eslik etmez)|hemodinamik[^.?!]{0,40}stabil|genel durum[^.?!]{0,50}stabil/iu.test(text)) return 'Kan basıncı yaşına göre normaldir ve hemodinamik olarak stabildir.';
+      if (/(?:hipotansiyon|şok|sok|kapiller dolum)[^.?!]{0,60}(?:var|uzamış|uzamis|bozuk|saptanır|saptanir)/iu.test(text)) return 'Perfüzyon bulgularında bozulma vardır.';
+      return '';
+    },
+  },
+  {
+    id: 'hipoksi',
+    visible: /\b(?:spo2|spo₂|satürasyon|saturasyon|hipoksi|oksijen)\b/iu,
+    claim: /\b(?:spo2|spo₂|satürasyon|saturasyon|hipoksi)\b/iu,
+    sentence(post) {
+      const text = cleanText(post);
+      if (/(?:hipoksi)[^.?!]{0,45}(?:yok|saptanmaz)|(?:spo2|spo₂|satürasyon|saturasyon)[^.?!]{0,60}(?:normal|korunmuş|korunmus)/iu.test(text)) return 'Oksijen satürasyonu normal sınırlardadır.';
+      if (/(?:hipoksi)[^.?!]{0,45}(?:var|saptanır)|(?:spo2|spo₂|satürasyon|saturasyon)[^.?!]{0,60}(?:düşük|dusuk|azalmış|azalmis)/iu.test(text)) return 'Oksijen satürasyonu düşüktür.';
+      return '';
+    },
+  },
+  {
+    id: 'toksik-gorunum',
+    visible: /\b(?:toksik|genel durumu|letarji|bilinç|bilinc)\b/iu,
+    claim: /\b(?:toksik|genel durumu|letarji|bilinç|bilinc)\b/iu,
+    sentence(post) {
+      const text = cleanText(post);
+      if (/(?:toksik)[^.?!]{0,40}(?:değil|degil|görünüm yok|gorunum yok)|genel durumu[^.?!]{0,40}stabil/iu.test(text)) return 'Genel durumu stabildir ve toksik görünümde değildir.';
+      if (/(?:toksik|letarji|bilinç|bilinc)[^.?!]{0,60}(?:var|bozuk|kötü|kotu|azalma|değişikliği|degisikligi)/iu.test(text)) return 'Genel durumunda bozulma vardır.';
+      return '';
+    },
+  },
+  {
+    id: 'meningeal-bulgu',
+    visible: /\b(?:ense sertliği|ense sertligi|meningeal|kernig|brudzinski)\b/iu,
+    claim: /\b(?:ense sertliği|ense sertligi|meningeal|kernig|brudzinski)\b/iu,
+    sentence(post) {
+      const text = cleanText(post);
+      if (/(?:ense sertliği|ense sertligi|meningeal)[^.?!]{0,60}(?:yok|negatif|saptanmaz)/iu.test(text)) return 'Meningeal irritasyon bulgusu yoktur.';
+      if (/(?:ense sertliği|ense sertligi|meningeal)[^.?!]{0,60}(?:var|pozitif|saptanır|saptanir)/iu.test(text)) return 'Meningeal irritasyon bulgusu vardır.';
+      return '';
+    },
+  },
+  {
+    id: 'organomegali',
+    visible: /\b(?:hepatomegali|splenomegali|hepatosplenomegali|organomegali)\b/iu,
+    claim: /\b(?:hepatomegali|splenomegali|hepatosplenomegali|organomegali)\b/iu,
+    sentence(post) {
+      const text = cleanText(post);
+      if (/(?:hepatomegali|splenomegali|hepatosplenomegali|organomegali)[^.?!]{0,60}(?:yok|saptanmaz|eşlik etmez|eslik etmez)/iu.test(text)) return 'Hepatosplenomegali saptanmaz.';
+      if (/(?:hepatomegali|splenomegali|hepatosplenomegali|organomegali)[^.?!]{0,60}(?:var|saptanır|saptanir|eşlik eder|eslik eder)/iu.test(text)) return 'Hepatosplenomegali saptanır.';
+      return '';
+    },
+  },
+  {
+    id: 'norolojik-defisit',
+    visible: /\b(?:nörolojik|norolojik|fokal defisit|parezi|duyu kaybı|duyu kaybi|konfüzyon|konfuzyon)\b/iu,
+    claim: /\b(?:nörolojik|norolojik|fokal defisit|parezi|duyu kaybı|duyu kaybi|konfüzyon|konfuzyon)\b/iu,
+    sentence(post) {
+      const text = cleanText(post);
+      if (/(?:nörolojik|norolojik|fokal defisit)[^.?!]{0,60}(?:yok|saptanmaz|eşlik etmez|eslik etmez)/iu.test(text)) return 'Fokal nörolojik defisit saptanmaz.';
+      if (/(?:nörolojik|norolojik|fokal defisit|parezi|duyu kaybı|duyu kaybi)[^.?!]{0,60}(?:var|saptanır|saptanir|eşlik eder|eslik eder)/iu.test(text)) return 'Fokal nörolojik bulgu saptanır.';
+      return '';
+    },
+  },
+  {
+    id: 'goruntuleme-bulgusu',
+    visible: /\b(?:grafi|akciğer grafisi|akciger grafisi|bt|mrg|mr|usg|ultrason|tomografi|görüntüleme|goruntuleme)\b/iu,
+    claim: /\b(?:grafi|akciğer grafisi|akciger grafisi|bt|mrg|mr|usg|ultrason|tomografi|görüntüleme|goruntuleme)\b/iu,
+    sentence(post) {
+      const text = cleanText(post);
+      if (/(?:grafi|bt|mrg|mr|usg|ultrason|tomografi|görüntüleme|goruntuleme)[^.?!]{0,90}(?:normal|patoloji yok|belirgin patoloji izlenmez|özellik saptanmaz|ozellik saptanmaz)/iu.test(text)) return 'Görüntülemede belirgin ek patoloji izlenmez.';
+      return '';
+    },
+  },
+  {
+    id: 'mikrobiyoloji-patoloji',
+    visible: /\b(?:kültür|kultur|pcr|boyama|gram|biyopsi|histoloji|immünohistokimya|immunohistokimya|ihk|patoloji)\b/iu,
+    claim: /\b(?:kültür|kultur|pcr|boyama|gram|biyopsi|histoloji|immünohistokimya|immunohistokimya|ihk|patoloji)\b/iu,
+    sentence(post) {
+      const text = cleanText(post);
+      if (/(?:kültür|kultur|pcr|boyama|gram)[^.?!]{0,80}(?:negatif|üreme yok|ureme yok|saptanmaz)/iu.test(text)) return 'Mikrobiyolojik incelemede etken gösterilemez.';
+      return '';
+    },
+  },
+  {
+    id: 'oyku-risk-faktoru',
+    visible: /\b(?:immünsüpresyon|immunosupresyon|ilaç|ilac|seyahat|travma|temas|aşı|asi|antibiyotik|steroid|antikoagülan|antikoagulan)\b/iu,
+    claim: /\b(?:immünsüpresyon|immunosupresyon|ilaç|ilac|seyahat|travma|temas|aşı|asi|antibiyotik|steroid|antikoagülan|antikoagulan)\b/iu,
+    sentence(post) {
+      const text = cleanText(post);
+      if (/(?:immünsüpresyon|immunosupresyon|seyahat|travma|temas|ilaç|ilac|antibiyotik|steroid|antikoagülan|antikoagulan)[^.?!]{0,80}(?:yok|saptanmaz|kullanmıyor|kullanmiyor|öyküsü yok|oykusu yok)/iu.test(text)) return 'Öyküde belirgin ilaç kullanımı, immünsüpresyon, seyahat, travma veya enfeksiyon teması bildirilmez.';
+      return '';
+    },
+  },
+];
+
+function appendUniqueStemSentence(stem = '', sentence = '') {
+  const base = ensureSentence(stem);
+  const cleanSentence = ensureSentence(sentence);
+  if (!cleanSentence) return base;
+  if (normalize(base).includes(normalize(cleanSentence).slice(0, 36))) return base;
+  return [base, cleanSentence].filter(Boolean).join(' ').replace(/\s+/g, ' ').trim();
+}
+
+function groundingVisibleText(question = {}) {
+  return normalize([
+    question.demographics,
+    question.setting,
+    question.chiefComplaint,
+    question.stem,
+    question.question,
+    ...compactItems(question.compactVitals || question.vitals || [], 8).flatMap((item) => [item.label, item.value]),
+    ...compactItems(question.compactObjectiveData || question.objectiveData || [], 12).flatMap((item) => [item.label, item.value]),
+  ].filter(Boolean).join(' | '));
+}
+
+
+function hasPatientSpecificCriticalClaim(post = '', claimPattern = null) {
+  const text = cleanGeneratedText(post);
+  if (!text || !claimPattern?.test?.(text)) return false;
+  const sentences = splitSentencesSafe(text).filter((sentence) => claimPattern.test(sentence));
+  if (!sentences.length) return false;
+  return sentences.some((sentence) => {
+    const n = normalize(sentence);
+    const patientCue = /(?:bu olgu|bu hasta|bu bebek|bu çocuk|bu cocuk|bu vakada|olguda|hastada|bebekte|çocukta|cocukta|burada|verilen|mevcut olgu|klinikte|muayenede|laboratuvarda|tetkikte|incelemede|sonuçlarda|sonuclarda|kök|kok)/u.test(n);
+    const resultCue = /(?:normal|düşük|dusuk|yüksek|yuksek|artmış|artmis|azalmış|azalmis|pozitif|negatif|saptanır|saptanir|saptanmaz|yok|var|izlenir|izlenmez|gösterir|gosterir|mevcut|eşlik eder|eslik eder|eşlik etmez|eslik etmez)/u.test(n);
+    const generalDiseaseCue = /(?:de|da|inde|ında|tipik|beklenir|görülür|gorulur|olabilir|genellikle|klasik olarak)/u.test(n) && !patientCue;
+    return patientCue || (resultCue && !generalDiseaseCue);
+  });
+}
+
+function applyStemDataGrounding(question = {}) {
+  const repaired = { ...question };
+  let visible = groundingVisibleText(repaired);
+  const post = cleanGeneratedText(getPostAnswerReasoningText(repaired));
+  const added = [];
+  for (const rule of STEM_GROUNDING_RULES) {
+    if (!hasPatientSpecificCriticalClaim(post, rule.claim)) continue;
+    if (rule.visible.test(visible)) continue;
+    const sentence = cleanGeneratedText(rule.sentence(post));
+    if (!sentence) continue;
+    repaired.stem = appendUniqueStemSentence(repaired.stem, sentence);
+    added.push(rule.id);
+    visible = groundingVisibleText(repaired);
+  }
+  if (added.length) {
+    repaired.aiMeta = { ...(repaired.aiMeta || {}), groundedStemAdditions: Array.from(new Set([...(repaired.aiMeta?.groundedStemAdditions || []), ...added])) };
+  }
+  return repaired;
+}
+
+function findUnsupportedCriticalDataClaims(question = {}) {
+  const visible = groundingVisibleText(question);
+  const post = cleanGeneratedText(getPostAnswerReasoningText(question));
+  const unsupported = [];
+  for (const rule of STEM_GROUNDING_RULES) {
+    if (!hasPatientSpecificCriticalClaim(post, rule.claim)) continue;
+    if (rule.visible.test(visible)) continue;
+    if (cleanGeneratedText(rule.sentence(post))) continue;
+    unsupported.push(rule.id);
+  }
+  return Array.from(new Set(unsupported));
 }
 
 function isDirectionalAnswer(text = '') {
@@ -483,7 +744,7 @@ function hasWrongOptionContrast(text = '') {
   // concise and still useful without using a fixed phrase such as "bu olguda".
   const hasContrastConnector = /burada|bu olguda|bu vakada|oysa|ancak|fakat|ama|verilen|eşlik etmez|eslik etmez|desteklenmez|uymaz|yoktur|değildir|degildir|öncelik değildir|oncelik degildir/iu.test(value);
   const hasUseCaseOrClinicalCue = /düşünülür|dusunulur|beklenir|uygundur|seçilir|secilir|kullanılır|kullanilir|önceliklidir|endikedir|doğru olur|dogru olur|tipiktir|görülür|gorulur|tanıda|tedavide|izlemde|tarama|profilaksi|acilde|stabil|şok|sok|hipotansiyon|ateş|ates|ağrı|agri|laboratuvar|ekg|grafi|seroloji|kültür|kultur/iu.test(value);
-  return value.length >= 45 && (hasContrastConnector || hasUseCaseOrClinicalCue);
+  return hasContrastConnector || hasUseCaseOrClinicalCue;
 }
 
 function hasFeedbackQuality(question = {}, options = [], correctId = '') {
@@ -613,6 +874,8 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   if (!hasVisibleClinicalPattern(question)) errors.push('soru kökünde görünür klinik patern yok');
   errors.push(...hasSufficientClinicalVignette(question));
   if (!hasEvidenceBasedOnVisibleStem(question)) errors.push('kanıt zinciri ana metindeki görünür verilere dayanmıyor');
+  const unsupportedCriticalClaims = findUnsupportedCriticalDataClaims(question);
+  if (unsupportedCriticalClaims.length) errors.push(`kritik gerekçe stemde görünmüyor: ${unsupportedCriticalClaims.join(', ')}`);
   if (!question.question || !/\?$/u.test(ensureQuestion(question.question))) errors.push('question net soru cümlesi değil');
   if (stemHasQuestionFragment(question.stem)) errors.push('stem içinde soru cümlesi veya yarım soru kırıntısı var');
   if (options.length !== 5) errors.push('tam 5 seçenek yok');
@@ -837,6 +1100,8 @@ function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
     examPearl: ensureSentence(stripFeedbackLabel(cleanGeneratedText(question.examPearl || question.teachingPoint))),
     managementSteps: allowManagementSteps ? asArray(question.managementSteps).map(ensureSentence).filter(Boolean) : [],
   };
+  const grounded = applyStemDataGrounding(sanitized);
+  Object.assign(sanitized, grounded);
   if (!sanitized.evidenceChain.length) {
     sanitized.evidenceChain = [sanitized.stem, ...sanitized.compactObjectiveData.map((item) => `${item.label}: ${item.value}`)]
       .map(ensureSentence)
@@ -852,6 +1117,18 @@ function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
   });
   if (!cleanText(sanitized.examPearl)) sanitized.examPearl = 'Soru kökünde verilen ayırt ettirici ipuçları, seçenekleri aynı karar ekseninde karşılaştırarak kullanılmalıdır.';
   sanitized.correctAnswerText = correctText;
+  sanitized.aiMeta = {
+    ...(sanitized.aiMeta || {}),
+    promptVersion: PROMPT_VERSION,
+    schemaVersion: SCHEMA_VERSION,
+    pipelineAudit: {
+      compactVitalsInputCount: rawCompactVitals.length,
+      compactObjectiveDataInputCount: rawCompactObjectiveData.length,
+      compactDataIntegratedIntoStem: true,
+      postAnswerGroundingOk: findUnsupportedCriticalDataClaims(sanitized).length === 0,
+      frontendShouldNotTruncate: true,
+    },
+  };
   sanitized.semanticFingerprint = makeSignature(sanitized);
   return sanitized;
 }
@@ -1044,7 +1321,7 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
     // Educational polish issues are kept as quality notes so live AI generation
     // does not collapse into safe local fallback on every request.
     const hardBlockingErrors = validation.errors.filter((message) =>
-      /branch eksik|stem eksik|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|imkansız veya bozuk klinik değer/iu.test(message)
+      /branch eksik|stem eksik|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|imkansız veya bozuk klinik değer|kritik gerekçe stemde görünmüyor/iu.test(message)
     );
 
     if (hardBlockingErrors.length) {
@@ -1087,7 +1364,7 @@ async function getReusableBankQuestion({ branch, target, difficulty, recentQuest
     const validation = validateQuestion(candidate, recentQuestionSummaries);
     if (validation.ok) return true;
     return !validation.errors.some((message) =>
-      /branch eksik|stem eksik|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|imkansız veya bozuk klinik değer/iu.test(message)
+      /branch eksik|stem eksik|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|imkansız veya bozuk klinik değer|kritik gerekçe stemde görünmüyor/iu.test(message)
     );
   });
   if (!reusable) return null;

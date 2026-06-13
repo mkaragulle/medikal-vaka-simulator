@@ -202,7 +202,7 @@ function filterQualityItems(items = [], max = 4) {
     seen.add(key);
     output.push(item);
   });
-  return output.slice(0, max);
+  return output;
 }
 
 function textBundle(question = {}) {
@@ -316,7 +316,7 @@ function deriveBranchSpecificClues(question = {}) {
     ...(Array.isArray(question.exam) ? question.exam : []),
     ...(Array.isArray(question.findings?.exam) ? question.findings.exam : []),
   ], 4);
-  if (extracted.length >= 3) return extracted.slice(0, 4);
+  if (extracted.length >= 3) return extracted;
 
   const stemItems = splitClinicalFragments(question.stem || question.patientIntro?.historySummary || '');
   const mixed = filterQualityItems([...stemItems, ...extracted], 4);
@@ -333,7 +333,7 @@ function splitClinicalFragments(text = '') {
     .split(/[.;]\s+|\s+-\s+|;|\|/)
     .map(cleanSentence)
     .filter((fragment) => fragment.length >= 12 && fragment.length <= 140 && !hasForbiddenPhrase(fragment))
-    .slice(0, 5);
+;
 }
 
 function safeDemographic(question = {}) {
@@ -398,7 +398,7 @@ function buildNaturalHistorySummary(question = {}) {
   const profile = safeDemographic(question);
   const presentation = normalizePediatricPresentation(question);
   const setting = String(question.setting || '').trim();
-  const clues = deriveBranchSpecificClues(question).slice(0, 2);
+  const clues = deriveBranchSpecificClues(question);
   const intro = isBasicScience(question)
     ? `${profile}, ${presentation.toLocaleLowerCase('tr')} bağlamında değerlendirilir.`
     : `${profile}, ${presentation.toLocaleLowerCase('tr')} nedeniyle ${setting || 'başvurur'}.`;
@@ -442,9 +442,9 @@ function normalizeInvestigationQuality(investigation = {}, index = 0) {
 
 function repairFeedbackText(text = '', question = {}) {
   const correct = getQuestionCorrectText(question);
-  const clues = deriveBranchSpecificClues(question).slice(0, 2);
+  const clues = deriveBranchSpecificClues(question);
   const cleaned = repairEditorialFeedbackText(cleanSentence(text), { correct, clue: clues[0] });
-  if (cleaned && cleaned.length >= 40 && !hasForbiddenPhrase(cleaned) && !detectBrokenSentence(cleaned) && !detectTemplateLikeFeedback(cleaned)) return cleaned;
+  if (cleaned && !hasForbiddenPhrase(cleaned) && !detectBrokenSentence(cleaned) && !detectTemplateLikeFeedback(cleaned)) return cleaned;
   if (correct) {
     return cleanSentence(`${correct} en uygun yanıttır; çünkü ${clues.join(' ve ') || 'verilen somut klinik bulgular'} bu seçeneği diğer olasılıklardan ayırır.`);
   }
@@ -488,14 +488,14 @@ function buildContextualWrongFeedback(optionText = '', question = {}) {
   if (isGeneralAnaphylaxis(question)) {
     return `${purpose} Ancak anafilakside hava yolu, bronkospazm veya hipotansiyon varsa destek tedavileri adrenalin temelli acil yaklaşımın yerine geçmez.`;
   }
-  const clues = deriveBranchSpecificClues(question).slice(0, 2).join(' ve ') || 'olgudaki somut bulgular';
+  const clues = deriveBranchSpecificClues(question).join(' ve ') || 'olgudaki somut bulgular';
   const correctTarget = correct ? `ölçülen karar hedefi ${correct} seçeneğine yönelir` : 'ölçülen karar hedefi bu seçeneğe yönelmez';
   return `${purpose} Bu olguda ${clues} dikkate alındığında ${correctTarget}; bu seçenek aynı hedefi doğrudan karşılamadığı için tek en iyi yanıt olmaz.`;
 }
 
 function repairWrongFeedback(text = '', optionText = '', question = {}) {
   const cleaned = cleanSentence(text);
-  if (cleaned && cleaned.length >= 45 && !hasForbiddenPhrase(cleaned) && !detectTemplateLikeFeedback(cleaned) && !detectBrokenSentence(cleaned)) return cleaned;
+  if (cleaned && !hasForbiddenPhrase(cleaned) && !detectTemplateLikeFeedback(cleaned) && !detectBrokenSentence(cleaned)) return cleaned;
   return cleanSentence(buildContextualWrongFeedback(optionText, question));
 }
 
@@ -509,7 +509,7 @@ function repairDifferentialComparison(comparison = {}, question = {}) {
       comparisonPoints: points.length ? points : [
         describeOptionPurpose(optionText),
         repairWrongFeedback('', optionText, question),
-      ].map(cleanSentence).filter(Boolean).slice(0, 2),
+      ].map(cleanSentence).filter(Boolean),
     };
   });
   return repaired;
@@ -635,13 +635,13 @@ export function repairAIQuestionQuality(question = {}) {
     ...(repaired.patientIntro || {}),
     profile: [repaired.demographics, repaired.setting].filter(Boolean).join(' · '),
     presentation: repaired.chiefComplaint || repaired.title,
-    riskContext: risks.length >= 2 ? risks : deriveBranchSpecificRisk(repaired).slice(0, 3),
-    distinctiveClues: clues.length >= 3 ? clues : deriveBranchSpecificClues(repaired).slice(0, 4),
+    riskContext: risks.length >= 2 ? risks : deriveBranchSpecificRisk(repaired),
+    distinctiveClues: clues.length >= 3 ? clues : deriveBranchSpecificClues(repaired),
     historySummary: buildNaturalHistorySummary(repaired),
   };
 
   repaired.evidenceChain = filterQualityItems(repaired.evidenceChain || repaired.patientIntro.distinctiveClues, 4);
-  if (repaired.evidenceChain.length < 3) repaired.evidenceChain = deriveBranchSpecificClues(repaired).slice(0, 4);
+  if (repaired.evidenceChain.length < 3) repaired.evidenceChain = deriveBranchSpecificClues(repaired);
   repaired.examPearls = filterQualityItems(repaired.examPearls || repaired.diagnosis?.pearls || [], 3);
   if (!repaired.examPearls.length) {
     repaired.examPearls = [deriveBranchSpecificClues(repaired)[0] || 'Somut klinik bulgu tanısal kararı yönlendirir.'];

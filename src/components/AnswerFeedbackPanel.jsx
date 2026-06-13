@@ -5,10 +5,10 @@ import { feedbackDuplicationGate } from '../utils/feedbackDuplicationGate.js';
 import './tusPearlCards.css';
 import { repairAIGeneratedText, isForbiddenEditorialText, isPlaceholderInvestigationText } from '../utils/editorialQuality.js';
 
-const MAX_EVIDENCE_ITEMS = 5;
-const MAX_PEARL_ITEMS = 4;
-const MAX_MANAGEMENT_ITEMS = 4;
-const MAX_COMPARISON_ITEMS = 6;
+const MAX_EVIDENCE_ITEMS = Number.POSITIVE_INFINITY;
+const MAX_PEARL_ITEMS = Number.POSITIVE_INFINITY;
+const MAX_MANAGEMENT_ITEMS = Number.POSITIVE_INFINITY;
+const MAX_COMPARISON_ITEMS = Number.POSITIVE_INFINITY;
 
 const GENERIC_COMPARISON_PATTERNS = [
   /belirleyici klinik bulgular doğru tanı lehine/i,
@@ -456,10 +456,10 @@ function deriveWhyWrong(clinicalCase, selectedOption, selectedComparison) {
   const clue = getMainClue(clinicalCase);
   const correctDiagnosis = clinicalCase.diagnosis?.correct || 'doğru seçenek';
   if (selectedOption) {
-    return 'Seçilen seçenek için ayırt ettirici açıklama üretilemedi.';
+    return ''; 
   }
 
-  return 'Seçilen seçenek için ayırt ettirici açıklama üretilemedi.';
+  return ''; 
 }
 
 function inferEvidenceTitle(text = '', index = 0) {
@@ -533,7 +533,7 @@ function deriveEvidenceChain(clinicalCase) {
 
   if (rawEvidence.length < 3) {
     const explanationSentences = splitIntoSentences(clinicalCase.diagnosis?.explanation || '');
-    explanationSentences.slice(0, 2).forEach((sentence) => rawEvidence.push({ title: 'Gerekçe ipucu', text: trimTrailingPunctuation(sentence) }));
+    explanationSentences.forEach((sentence) => rawEvidence.push({ title: 'Gerekçe ipucu', text: trimTrailingPunctuation(sentence) }));
   }
 
   const correct = clinicalCase.diagnosis?.correct || '';
@@ -653,7 +653,7 @@ function deriveCorrectOptionSummary(clinicalCase, option, evidenceChain = []) {
     return singleSentence(removeMetaLanguage(whyCorrect), 240);
   }
 
-  return 'Doğru seçenek için ayrıntılı açıklama üretilemedi.';
+  return ''; 
 }
 
 function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []) {
@@ -683,7 +683,7 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
     }
 
     const explicit = wrongMap[option] || normalizedWrongMap[normalizeForCompare(option)] || {};
-    const rawExplanation = removeMetaLanguage(explicit.explanation || 'Bu seçenek için ayırt ettirici açıklama üretilemedi.');
+    const rawExplanation = removeMetaLanguage(explicit.explanation || '');
     const explanation = isAISpot ? compactParagraph(rawExplanation, 3, 360) : singleSentence(rawExplanation, 190);
     return {
       option,

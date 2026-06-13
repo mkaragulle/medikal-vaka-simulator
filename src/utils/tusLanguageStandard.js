@@ -1,4 +1,14 @@
 const WEAK_TEXT_REPLACEMENTS = [
+  [/\bçocuklık\b/giu, 'çocukluk'],
+  [/\barthraljia\b/giu, 'artralji'],
+  [/\barthralji\b/giu, 'artralji'],
+  [/\bplatelet\b/giu, 'trombosit'],
+  [/\bhematuri\b/giu, 'hematüri'],
+  [/\bproteinuri\b/giu, 'proteinüri'],
+  [/\bpurpurasi\b/giu, 'purpurası'],
+  [/\bkoagulasyon\b/giu, 'koagülasyon'],
+  [/\bProteinüri\b/g, 'proteinüri'],
+  [/\bHematuri\b/g, 'hematüri'],
   [/\bİlk karar\b/giu, 'Öncelikli yaklaşım'],
   [/\bTedavi önceliği\b/giu, 'Tedavi basamağı'],
   [/\bLaboratuvar paterni\b/giu, 'Laboratuvar bulgusu'],
@@ -103,6 +113,8 @@ export function normalizeTusLanguageText(value = '') {
     .replace(/\bçeldirici\b/giu, 'alternatif')
     .replace(/\bÇeldirici\b/giu, 'Alternatif')
     .replace(/\bAI\s*Spot\b/gu, 'TUS Spot')
+    .replace(/(^|[.!?]\s+)(?:Da|De|da|de)\s+(?=[a-zçğıöşü0-9%/>])/gu, '$1Bu olguda ')
+    .replace(/\b(?:Da|De|da|de)\s+(?=renin\/aldosteron\b)/gu, 'Bu olguda ')
     .replace(/\bE\.\s*Coli\b/gu, 'Escherichia coli')
     .replace(/\bC\.\s*Difficile\b/gu, 'Clostridioides difficile')
     .replace(/\s+\.\s*/gu, '. ')

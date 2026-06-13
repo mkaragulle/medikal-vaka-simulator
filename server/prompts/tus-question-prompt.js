@@ -65,6 +65,12 @@ Soru hedefi ve seçenekler:
 - Çeldiriciler gerçek klinikte karışabilecek makul seçeneklerden seçilsin.
 - Doğru cevap seçenek uzunluğu, ayrıntı düzeyi veya bariz ipucuyla ele verilmesin.
 
+Stem–açıklama–feedback veri tutarlılığı:
+- Explanation, evidenceChain, examPearl veya wrongOptionFeedback içinde tanıyı dışlamak, doğru cevabı güçlendirmek ya da ayırıcı tanı yapmak için kullanılan her kritik klinik/laboratuvar/görüntüleme/muayene/öykü verisi stem içinde görünür olmalıdır.
+- Kök verilmemiş veriye dayanma. Örneğin trombosit sayısı, PT/aPTT, INR, kreatinin, lökosit/CRP, elektrolitler, ateş, hipotansiyon, hipoksi, meningeal bulgu, organomegali, nörolojik defisit, görüntüleme, kültür, biyopsi veya ilaç/seyahat/travma/temas öyküsü açıklamada kullanılacaksa stemde doğal biçimde verilmelidir.
+- Kritik veri stemde yoksa iki yoldan birini seç: veriyi doğal hasta akışı içinde stemde belirt veya açıklama/feedbacki o veriye dayanmayacak şekilde yeniden kur. Asla kökte olmayan kritik veriyi “bu olguda normal/yüksek/yok” diye gerekçe yapma.
+- Son iç kontrolün şu olsun: “Açıklamadaki her kritik gerekçe soru kökünde görünen bir bulguya dayanıyor mu?” Hayırsa JSON’u vermeden önce düzelt.
+
 Açıklama ve feedback:
 - explanation genel ders notu değil; stemdeki verileri doğru cevapla bağlayan vaka özelinde karar zinciri olsun.
 - wrongOptionFeedback içinde A, B, C, D, E anahtarlarının tamamı dolu olsun; doğru seçenek için de öğretici feedback yaz.
@@ -74,6 +80,7 @@ Açıklama ve feedback:
 
 Dil ve güvenlik:
 - Akıcı, akademik ve doğal Türkçe tıp dili kullan. Makine çevirisi, bozuk belirti adı, yarım cümle, anlamsız kısaltma veya debug dili yazma.
+- Türkçe tıp dili standardı kullan: çocuklık değil çocukluk; arthralji/arthraljia değil artralji; platelet değil trombosit; hematuri değil hematüri; Proteinüri cümle içinde proteinüri; purpurasi değil purpurası; koagulasyon değil koagülasyon.
 - Pediatri, gebelik, sepsis, travma, zehirlenme, neonatal sarılık, hiperamonyemi, antikoagülan geri döndürme gibi acil/yönetim konularında stabilite, şiddet, zamanlama ve kritik eşik görünür değilse o soruyu tedavi/ilk adım sorusu yapma.
 - Temel bilim/anatomi sorularını da mümkünse klinik veya fonksiyonel bağlama bağla.
 
@@ -115,7 +122,9 @@ export const TUS_QUALITY_REWRITE_PROMPT = `Sen KlinikIQ için çalışan kıdeml
 
 Verilen TUS sorusunu konu ve doğru cevap mantığını bozmadan kalite açısından yeniden düzenle. Amaç: klinik öyküyü gerçek anamnez akışına çevirmek, soru cümlesini tek hedefli yapmak, seçenekleri aynı karar kategorisinde tutmak, açıklamayı vaka özelinde klinik akıl yürütme zinciriyle güçlendirmek ve her seçenek feedbackini üst düzey öğretici hale getirmektir.
 
-Doğru cevabı yalnızca açık bilimsel hata veya çift doğru sorununda değiştir. Answer leak, kategori karışıklığı, belirsiz çift doğru, yüzeysel/placeholder feedback ve bozuk Türkçe varsa tamamen düzelt. Her yanlış seçenek için hangi durumda doğru olabileceğini, bu vakada neden uygun olmadığını ve doğru seçenekle ayırıcı noktasını açıkla. Doğru seçenek için vakadaki kritik verilerin doğru karara nasıl bağlandığını anlat.
+Doğru cevabı yalnızca açık bilimsel hata veya çift doğru sorununda değiştir. Answer leak, kategori karışıklığı, belirsiz çift doğru, yüzeysel/placeholder feedback, bozuk Türkçe ve stem–açıklama veri uyumsuzluğu varsa tamamen düzelt. Her yanlış seçenek için hangi durumda doğru olabileceğini, bu vakada neden uygun olmadığını ve doğru seçenekle ayırıcı noktasını açıkla. Doğru seçenek için vakadaki kritik verilerin doğru karara nasıl bağlandığını anlat.
+
+Açıklama veya seçenek feedbackinde kullanılan her kritik gerekçe stemde görünür olmalıdır. Kökte olmayan trombosit, koagülasyon, vital, görüntüleme, kültür, biyopsi, ilaç/seyahat/travma/temas gibi veriye dayanma; gerekiyorsa veriyi doğal biçimde stem’e ekle veya feedbacki o veriye dayanmayacak şekilde yeniden yaz.
 
 Final çıktıda yalnızca düzeltilmiş soru JSON'unu ver; iç yönerge, kalite kontrol notu, kaynak arama süreci veya teknik açıklama yazma.`;
 
@@ -174,4 +183,4 @@ Bu bilgilerle bilimsel doğruluğu yüksek, klinik bağlamlı, tek doğru cevapl
 
 Final çıktıda yalnızca kullanıcıya gösterilecek JSON yer alsın. Üretim sürecini, kaynak tarama sürecini, iç yönergeleri veya teknik notları yazma.
 
-Final kontrol: tek doğru cevap; stemden çözülebilir; seçenekler aynı kategoride; answer leak yok; explanation ve tüm feedbackler vaka özelinde öğretici. Return only valid JSON. relatedBranch must be "${branchText}" and difficulty must be "${selectedDifficulty}".`;}
+Final kontrol: tek doğru cevap; stemden çözülebilir; explanation/feedbackte kullanılan her kritik veri stemde görünür; seçenekler aynı kategoride; answer leak yok; explanation ve tüm feedbackler vaka özelinde öğretici. Return only valid JSON. relatedBranch must be "${branchText}" and difficulty must be "${selectedDifficulty}".`;}

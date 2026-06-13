@@ -1,8 +1,8 @@
 const TR_LOCALE = 'tr';
-const MAX_EXPLANATION_LENGTH = 4000;
-const MAX_FEEDBACK_LENGTH = 4000;
-const MAX_EVIDENCE_ITEMS = 5;
-const MAX_MANAGEMENT_ITEMS = 4;
+const MAX_EXPLANATION_LENGTH = Number.POSITIVE_INFINITY;
+const MAX_FEEDBACK_LENGTH = Number.POSITIVE_INFINITY;
+const MAX_EVIDENCE_ITEMS = Number.POSITIVE_INFINITY;
+const MAX_MANAGEMENT_ITEMS = Number.POSITIVE_INFINITY;
 
 const MECHANICAL_LABEL_PATTERN = /^(?:kan[ıi]t\s*\d+|[Kk]linik\s*gerekçe|neden\s*doğru|neden\s*yanlış|tus\s*işareti|hap\s*bilgi|spot\s*bilgi|sınav\s*notu|seçenek\s*karşılaştırması|çeldirici\s*açıklaması|doğru\s*seçenek\s*açıklaması|laboratuvar\s*paterni|objektif\s*karar\s*verisi|[İIıi]lk\s*karar|[Tt]edavi\s*önceliği)\s*[:：|\-.]\s*/iu;
 
@@ -36,8 +36,17 @@ function normalizeSpaces(value = '') {
     .replace(/\s+/gu, ' ')
     .replace(/\s+([,.;:!?])/gu, '$1')
     .replace(/([,;:!?])(?=\S)/gu, '$1 ')
-    .replace(/(^|[.!?]\s+)(?:Da|De|da|de)\s+(?=[a-zçğıöşü0-9%/>])/gu, '$1Bu tabloda ')
-    .replace(/\b(?:Da|De)\s+(?=renin\/aldosteron\b)/gu, 'Bu tabloda ')
+    .replace(/(^|[.!?]\s+)(?:Da|De|da|de)\s+(?=[a-zçğıöşü0-9%/>])/gu, '$1Bu olguda ')
+    .replace(/\b(?:Da|De|da|de)\s+(?=renin\/aldosteron\b)/gu, 'Bu olguda ')
+    .replace(/\bçocuklık\b/giu, 'çocukluk')
+    .replace(/\barthraljia\b/giu, 'artralji')
+    .replace(/\barthralji\b/giu, 'artralji')
+    .replace(/\bplatelet\b/giu, 'trombosit')
+    .replace(/\bhematuri\b/giu, 'hematüri')
+    .replace(/\bproteinuri\b/giu, 'proteinüri')
+    .replace(/\bpurpurasi\b/giu, 'purpurası')
+    .replace(/\bkoagulasyon\b/giu, 'koagülasyon')
+    .replace(/\bProteinüri\b/g, 'proteinüri')
     .trim();
 }
 
@@ -145,7 +154,6 @@ function truncateAtSentence(value = '', limit = MAX_FEEDBACK_LENGTH) {
 
 function isBrokenOrEmpty(value = '') {
   const text = normalizeSpaces(value);
-  if (text.length < 24) return true;
   if (BROKEN_END_PATTERN.test(text.replace(/[.!?]$/u, ''))) return true;
   return EMPTY_TEMPLATE_PATTERNS.some((pattern) => pattern.test(text));
 }
@@ -194,7 +202,7 @@ function pickClues(question = {}, limit = 3) {
     if (isTooSimilar(cleaned, clues, 0.82)) return;
     clues.push(cleaned);
   });
-  return clues.slice(0, limit);
+  return clues;
 }
 
 function buildCorrectFallback(question = {}) {
@@ -251,7 +259,7 @@ function cleanEvidenceChain(question = {}) {
       if (!isTooSimilar(clue, output, 0.82)) output.push(clue);
     });
   }
-  return output.slice(0, MAX_EVIDENCE_ITEMS);
+  return output;
 }
 
 function cleanExamPearl(question = {}, context = []) {
@@ -275,7 +283,7 @@ function cleanManagementSteps(question = {}, context = []) {
     if (!cleaned || isTooSimilar(cleaned, steps, 0.84)) return;
     steps.push(cleaned);
   });
-  return steps.slice(0, MAX_MANAGEMENT_ITEMS);
+  return steps;
 }
 
 function cleanWrongFeedbackMap(question = {}, context = []) {
@@ -301,7 +309,7 @@ function cleanPearlArray(items = [], context = []) {
     const cleaned = cleanFeedbackText(raw, { fallback: '', limit: 220, context: [...context, ...output] });
     if (cleaned) output.push(cleaned);
   });
-  return output.slice(0, 3);
+  return output;
 }
 
 export function applyFeedbackQualityStandardToQuestion(question = {}) {
@@ -366,7 +374,7 @@ export function validateFeedbackQualityStandard(question = {}) {
   const wrong = question.wrongOptionFeedback || {};
   optionIdList(question).forEach((option) => {
     const text = normalizeSpaces(wrong[option.id] || '');
-    if (!text || text.length < 45) errors.push(`feedback-option-too-short:${option.id}`);
+    if (!text) errors.push(`feedback-option-empty:${option.id}`);
   });
   return { ok: errors.length === 0, errors: Array.from(new Set(errors)) };
 }

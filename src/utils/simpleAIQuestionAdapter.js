@@ -60,17 +60,32 @@ function asArray(value) {
   return Array.isArray(value) ? value : [value];
 }
 
+
+function normalizeMedicalTurkishLanguage(value = '') {
+  return String(value ?? '')
+    .replace(/çocuklık/giu, 'çocukluk')
+    .replace(/arthraljia/giu, 'artralji')
+    .replace(/arthralji/giu, 'artralji')
+    .replace(/platelet/giu, 'trombosit')
+    .replace(/hematuri/giu, 'hematüri')
+    .replace(/proteinuri/giu, 'proteinüri')
+    .replace(/purpurasi/giu, 'purpurası')
+    .replace(/koagulasyon/giu, 'koagülasyon')
+    .replace(/Proteinüri/gu, 'proteinüri')
+    .replace(/Hematuri/gu, 'hematüri');
+}
+
 function repairTurkishConnectorArtifacts(value = '') {
   return cleanText(value)
-    .replace(/(^|[.!?]\s+)(?:Da|De)\s+(?=[a-zçğıöşü0-9%/>])/gu, '$1Bu tabloda ')
-    .replace(/(^|[.!?]\s+)(?:da|de)\s+(?=[a-zçğıöşü0-9%/>])/gu, '$1Bu tabloda ')
-    .replace(/\b(?:Da|De)\s+(?=renin\/aldosteron\b)/gu, 'Bu tabloda ')
+    .replace(/(^|[.!?]\s+)(?:Da|De)\s+(?=[a-zçğıöşü0-9%/>])/gu, '$1Bu olguda ')
+    .replace(/(^|[.!?]\s+)(?:da|de)\s+(?=[a-zçğıöşü0-9%/>])/gu, '$1Bu olguda ')
+    .replace(/\b(?:Da|De|da|de)\s+(?=renin\/aldosteron\b)/gu, 'Bu olguda ')
     .replace(/\s+/g, ' ')
     .trim();
 }
 
 function cleanGeneratedText(value = '') {
-  return repairTurkishConnectorArtifacts(value)
+  return normalizeMedicalTurkishLanguage(repairTurkishConnectorArtifacts(value))
     .replace(/\s+([,.;:!?])/g, '$1')
     .replace(/([,;:!?])(?=\S)/g, '$1 ')
     .trim();
@@ -106,7 +121,7 @@ function cleanStemQuestionPair(stem = '', question = '') {
   return { stem: rawStem, question: rawQuestion };
 }
 
-function compactItems(items = [], max = 8) {
+function compactItems(items = [], _max = Number.POSITIVE_INFINITY) {
   const seen = new Set();
   const out = [];
   asArray(items).forEach((item) => {
@@ -118,7 +133,7 @@ function compactItems(items = [], max = 8) {
     seen.add(key);
     out.push({ label, value });
   });
-  return out.slice(0, max);
+  return out;
 }
 
 function normalizeOptions(rawOptions = []) {
@@ -198,7 +213,7 @@ function buildEvidence(evidence = []) {
       unique.push(ensureSentence(item));
     }
   });
-  return unique.slice(0, 4);
+  return unique;
 }
 
 export function makeSimpleSignature(question = {}) {
@@ -283,11 +298,10 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   const compactVitals = [];
   const compactObjectiveData = [];
   const evidenceChain = buildEvidence(payload.evidenceChain || payload.evidence || payload.k)
-    .filter((item) => !containsAnswerLeak(item, correctText))
-    .slice(0, 3);
+    .filter((item) => !containsAnswerLeak(item, correctText));
   const answerTarget = cleanText(payload.answerTarget || payload.questionIntent || payload.intent || '');
   const managementSteps = isManagementTarget(answerTarget)
-    ? asArray(payload.managementSteps || payload.management || []).map((item) => ensureSentence(item)).filter(Boolean).slice(0, 3)
+    ? asArray(payload.managementSteps || payload.management || []).map((item) => ensureSentence(item)).filter(Boolean)
     : [];
   const examPearl = ensureSentence(cleanGeneratedText(payload.examPearl || payload.teachingPoint || payload.pearl || payload.p || ''));
   const explanation = ensureSentence(cleanGeneratedText(payload.explanation || payload.whyCorrect || payload.e || ''));
@@ -314,12 +328,12 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
     compactVitals,
     compactObjectiveData,
     vitals: makeVitalsObject(compactVitals),
-    exam: asArray(payload.exam || payload.physicalExam).map(cleanText).filter(Boolean).slice(0, 4),
-    history: asArray(payload.history).map(cleanText).filter(Boolean).slice(0, 4),
+    exam: asArray(payload.exam || payload.physicalExam).map(cleanText).filter(Boolean),
+    history: asArray(payload.history).map(cleanText).filter(Boolean),
     investigations: [],
     findings: {
-      history: asArray(payload.history).map(cleanText).filter(Boolean).slice(0, 4),
-      exam: asArray(payload.exam || payload.physicalExam).map(cleanText).filter(Boolean).slice(0, 4),
+      history: asArray(payload.history).map(cleanText).filter(Boolean),
+      exam: asArray(payload.exam || payload.physicalExam).map(cleanText).filter(Boolean),
       vitals: makeVitalsObject(compactVitals),
       investigations: [],
     },
@@ -328,12 +342,13 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
     clinicalFocus: cleanText(payload.learningTarget || payload.target || ''),
     options,
     correctAnswer: correctOption?.id || 'A',
+    wrongOptionFeedback: Object.fromEntries(Object.entries(optionRationales || {}).map(([key, value]) => [key, ensureSentence(cleanGeneratedText(value))])),
     managementSequence: { enabled: false, showInSpot: false, steps: [] },
     patientIntro: {
       profile: cleanText(payload.demographics || normalizedBranch),
       presentation: cleanText(payload.chiefComplaint || payload.cc || ''),
       riskContext: '',
-      distinctiveClues: evidenceChain.slice(0, 4),
+      distinctiveClues: evidenceChain,
       historySummary: stem,
     },
     diagnosis: {
@@ -346,7 +361,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
         whyCorrect: explanation,
         correctOptionFeedback: ensureSentence(cleanGeneratedText(optionRationales?.[correctOption?.id] || explanation)),
         optionRationales: Object.fromEntries(Object.entries(optionRationales || {}).map(([key, value]) => [key, ensureSentence(cleanGeneratedText(value))])),
-        evidenceChain: evidenceChain.length ? evidenceChain : [stem, cleanText(payload.chiefComplaint || payload.cc || '')].filter(Boolean).map(ensureSentence).slice(0, 3),
+        evidenceChain: evidenceChain.length ? evidenceChain : [stem, cleanText(payload.chiefComplaint || payload.cc || '')].filter(Boolean).map(ensureSentence),
         pearls: [examPearl].filter(Boolean),
         clinicalPearls: [examPearl].filter(Boolean),
         differentialComparison: buildDifferentialComparison({ options, correctOption, optionRationales, wrongOptionFeedback: payload.wrongOptionFeedback || payload.optionFeedback || {} }),
@@ -360,7 +375,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
       model: meta.model || payload.model || payload.openAIModel || null,
       remote: meta.remote !== false,
       fallback: Boolean(meta.fallback || payload.fallback),
-      validationWarnings: asArray(payload.qualityNotes || payload.warnings).slice(0, 5),
+      validationWarnings: asArray(payload.qualityNotes || payload.warnings),
     },
   };
 

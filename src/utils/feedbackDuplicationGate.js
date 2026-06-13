@@ -98,11 +98,8 @@ function ensureSentence(value = '') {
   return /[.!?]$/u.test(text) ? text : `${text}.`;
 }
 
-function truncateText(value = '', limit = MAX_EXAM_NOTE_LENGTH) {
-  const text = normalizeText(value);
-  if (text.length <= limit) return text;
-  const cut = text.slice(0, limit).replace(/\s+\S*$/u, '').replace(/[,:;\-–—]+$/u, '').trim();
-  return ensureSentence(cut || text.slice(0, limit).trim());
+function truncateText(value = '', _limit = Number.POSITIVE_INFINITY) {
+  return normalizeText(value);
 }
 
 function isAnaphylaxisContext(text = '') {
@@ -143,7 +140,7 @@ function cleanExamNoteText(value = '', contextTexts = []) {
   });
 
   if (!uniqueSentences.length && text && !isTooSimilarToAny(text, contextTexts, 0.94)) uniqueSentences.push(text);
-  return truncateText(uniqueSentences.slice(0, 2).join(' '), MAX_EXAM_NOTE_LENGTH);
+  return truncateText(uniqueSentences.join(' '), MAX_EXAM_NOTE_LENGTH);
 }
 
 function normalizeChip(value = '') {
@@ -212,10 +209,10 @@ function cleanKeywordList(keywords = [], contextTexts = []) {
       if (seen.has(key) || chips.some((item) => semanticKey(item) === key)) return false;
       seen.add(key);
       return true;
-    }).concat(chips).slice(0, MAX_FEEDBACK_CHIPS);
+    }).concat(chips);
   }
 
-  return chips.slice(0, MAX_FEEDBACK_CHIPS);
+  return chips;
 }
 
 function isLongKeywordCandidate(value = '') {
@@ -254,7 +251,7 @@ function cleanInsightList(keywords = [], contextTexts = [], chips = []) {
     points.push(point);
   });
 
-  return points.slice(0, 4);
+  return points;
 }
 
 function cleanTrap(value = '', contextTexts = []) {
@@ -276,8 +273,7 @@ function cleanPearls(pearls = [], contextTexts = []) {
       contextTexts.push(text);
       return { label, text };
     })
-    .filter(Boolean)
-    .slice(0, 3);
+    .filter(Boolean);
 }
 
 export function feedbackDuplicationGate({
