@@ -370,6 +370,104 @@ function validateFrontendCompatibility(question = {}) {
   return warnings;
 }
 
+const BLOCKING_ERROR_PATTERNS = [
+  /^question-stem-missing-or-too-thin$/,
+  /^options-not-five$/,
+  /^correct-answer-id-invalid$/,
+  /^correct-answer-text-missing$/,
+  /^answer-leak-in-stem$/,
+  /^explanation-may-support-other-option:/,
+  /^correct-option-feedback-contradicts-answer$/,
+  /^explanation-to-stem-grounding:/,
+  /^truncated-text:/,
+  /^stem-sufficiency-failed:no-cues$/,
+];
+
+const REPAIRABLE_ERROR_PATTERNS = [
+  /^question-target-missing$/,
+  /^explanation-missing-or-too-thin$/,
+  /^option-feedback-missing:/,
+  /^option-feedback-placeholder-or-weak:/,
+  /^option-feedback-broken-sentence:/,
+  /^option-feedback-duplicated:/,
+  /^correct-option-feedback-not-specific$/,
+  /^difficulty-hard-but-stem-data-thin$/,
+  /^missing-critical-data-not-a-hard-question$/,
+  /^stem-sufficiency-failed:/,
+  /^broken-ending:/,
+  /^orphan-connector:/,
+];
+
+function matchesAny(value = '', patterns = []) {
+  return patterns.some((pattern) => pattern.test(value));
+}
+
+export function classifyQualityGateErrors(errors = []) {
+  const blocking = [];
+  const repairable = [];
+  const warnings = [];
+  Array.from(new Set(errors)).forEach((error) => {
+    if (matchesAny(error, BLOCKING_ERROR_PATTERNS)) blocking.push(error);
+    else if (matchesAny(error, REPAIRABLE_ERROR_PATTERNS)) repairable.push(error);
+    else warnings.push(error);
+  });
+  return { blocking, repairable, warnings };
+}
+
+function ensureTerminalPunctuation(value = '', punctuation = '.') {
+  const text = cleanText(value).replace(/[\s,;:]+$/u, '');
+  if (!text) return '';
+  return /[.!?]$/u.test(text) ? text : `${text}${punctuation}`;
+}
+
+function repairLeadingConnector(value = '') {
+  return cleanText(value)
+    .replace(/^(?:da|de)\s+/iu, 'Bu olguda ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+export function repairQuestionQualityIssues(rawQuestion = {}, gateResult = {}) {
+  const question = normalizeQuestionQualityFields(rawQuestion);
+  const errors = gateResult.errors || [];
+  const applied = [];
+
+  if (errors.includes('question-target-missing') && question.question) {
+    question.question = ensureTerminalPunctuation(question.question, '?').replace(/[.!]$/u, '?');
+    applied.push('question-target-punctuation');
+  }
+
+  if (errors.includes('difficulty-hard-but-stem-data-thin')) {
+    const current = cleanText(question.difficulty || '');
+    if (/hard/i.test(current)) question.difficulty = 'medium';
+    else if (/zor/iu.test(current)) question.difficulty = 'Orta';
+    if (question.difficulty !== current) applied.push('difficulty-recalibrated');
+  }
+
+  const feedback = { ...(question.optionFeedback || question.wrongOptionFeedback || {}) };
+  OPTION_IDS.forEach((id) => {
+    const key = `option-feedback-broken-sentence:${id}`;
+    if (errors.includes(key) && feedback[id]) {
+      feedback[id] = ensureTerminalPunctuation(repairLeadingConnector(feedback[id]));
+      applied.push(`feedback-punctuation:${id}`);
+    }
+  });
+  question.optionFeedback = feedback;
+  question.wrongOptionFeedback = feedback;
+
+  if (question.explanation) question.explanation = ensureTerminalPunctuation(repairLeadingConnector(question.explanation));
+  if (question.examPearl) question.examPearl = ensureTerminalPunctuation(repairLeadingConnector(question.examPearl));
+
+  question.aiMeta = {
+    ...(question.aiMeta || {}),
+    qualityRepair: {
+      attempted: applied.length > 0,
+      applied,
+    },
+  };
+  return { question, applied };
+}
+
 export function runQuestionQualityGate(rawQuestion = {}, options = {}) {
   const question = normalizeQuestionQualityFields(rawQuestion);
   const errors = [];
@@ -386,13 +484,20 @@ export function runQuestionQualityGate(rawQuestion = {}, options = {}) {
   warnings.push(...validateFrontendCompatibility(question));
 
   const uniqueErrors = Array.from(new Set(errors));
-  const uniqueWarnings = Array.from(new Set(warnings));
-  const decision = uniqueErrors.length ? 'manual_review_required' : 'publishable';
+  const classified = classifyQualityGateErrors(uniqueErrors);
+  const uniqueWarnings = Array.from(new Set([...warnings, ...classified.warnings]));
+  const publishErrors = [...classified.blocking, ...classified.repairable];
+  const decision = classified.blocking.length
+    ? 'blocked'
+    : (classified.repairable.length ? 'repair_required' : 'publishable');
   return {
-    ok: uniqueErrors.length === 0,
+    ok: publishErrors.length === 0,
     decision,
-    publishable: uniqueErrors.length === 0,
-    errors: uniqueErrors,
+    publishable: publishErrors.length === 0,
+    canAttemptRepair: classified.repairable.length > 0 && classified.blocking.length === 0,
+    blockingErrors: classified.blocking,
+    repairableErrors: classified.repairable,
+    errors: publishErrors,
     warnings: uniqueWarnings,
     cues,
     demand: demandLevel(question),

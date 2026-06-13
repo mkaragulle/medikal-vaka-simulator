@@ -1,7 +1,7 @@
 import { sendJson, parseJsonBody, callOpenAIJson, validateQuestionsShape, verifyCurrentSourceManifest } from '../server/lib/komite-ai-common.js';
 import { GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT, buildGenerateMaterialQuestionsPrompt } from '../server/prompts/generateMaterialQuestionsPrompt.js';
 import { buildOutputCacheKey, compactMaterialSources, createSourceFingerprint, defaultModelForScope, getDurableCachedOutput, logAIUsage, resolveModelForScope, resolveSourceCharLimit, setDurableCachedOutput, withInFlightDedupe } from '../server/lib/ai-token-optimizer.js';
-import { runQuestionQualityGate } from '../server/lib/question-quality-gate.js';
+import { repairQuestionQualityIssues, runQuestionQualityGate } from '../server/lib/question-quality-gate.js';
 
 
 const TASK_NAME = 'materialQuestions';
@@ -78,6 +78,39 @@ function compactTextWindow(text = '', maxChars = 12000) {
   return [start, middle, end].join('\n\n');
 }
 
+function publicGate(gate = {}) {
+  const { question, ...rest } = gate;
+  return rest;
+}
+
+function runAndRepairQuestionGates(questions = []) {
+  const repairedQuestions = [];
+  const qualityGate = [];
+  questions.forEach((question, index) => {
+    let current = question;
+    let gate = runQuestionQualityGate(current, { version: PROMPT_VERSION });
+    let repairApplied = [];
+    if (gate.canAttemptRepair) {
+      const repaired = repairQuestionQualityIssues(current, gate);
+      repairApplied = repaired.applied || [];
+      if (repairApplied.length) {
+        current = repaired.question;
+        gate = runQuestionQualityGate(current, { version: PROMPT_VERSION });
+      }
+    }
+    repairedQuestions.push(current);
+    qualityGate.push({ index, repairApplied, ...gate });
+  });
+  return { questions: repairedQuestions, qualityGate };
+}
+
+function qualityFeedbackFromGates(gates = []) {
+  return gates
+    .filter((gate) => gate.blockingErrors?.length || gate.repairableErrors?.length)
+    .map((gate) => `Soru ${Number(gate.index) + 1}: ${[...(gate.blockingErrors || []), ...(gate.repairableErrors || [])].join('; ')}`)
+    .join('\n');
+}
+
 function sourceTextFromMaterialPacket(packet = {}, maxTotalChars = resolveSourceCharLimit('KOMITE_QUESTIONS_MAX_SOURCE_CHARS', 14000, 'KOMITE', TASK_NAME)) {
   const files = Array.isArray(packet.files)
     ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
@@ -111,22 +144,55 @@ export default async function handler(request, response) {
           return sendJson(response, 200, { ok: true, cached: true, ...cachedOutput, qualityGate: cachedQuality.map(({ question, ...item }) => item) });
         }
       }
-      const prompt = buildGenerateMaterialQuestionsPrompt({ sourceTextChunks: currentSourceText });
-      const result = await callOpenAIJson({ systemPrompt: GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: envNumber('KOMITE_QUESTIONS_MAX_OUTPUT_TOKENS', 4200), jsonSchema: QUESTION_JSON_SCHEMA, scope: 'KOMITE', task: TASK_NAME, promptVersion: PROMPT_VERSION });
-      const questions = Array.isArray(result.json.questions) ? result.json.questions : [];
-      const validation = validateQuestionsShape({ questions });
-      const qualityGate = questions.map((question, index) => ({ index, ...runQuestionQualityGate(question, { version: PROMPT_VERSION }) }));
-      const failedQuality = qualityGate.filter((item) => !item.ok);
-      if (!validation.ok || failedQuality.length) {
+      const remoteAttempts = Math.max(1, Math.min(2, Number(process.env.KOMITE_QUESTIONS_REMOTE_ATTEMPTS || 2)));
+      let lastResult = null;
+      let lastValidation = null;
+      let lastQualityGate = [];
+      let qualityFeedback = '';
+      for (let attempt = 1; attempt <= remoteAttempts; attempt += 1) {
+        const prompt = buildGenerateMaterialQuestionsPrompt({ sourceTextChunks: currentSourceText, qualityFeedback });
+        const result = await callOpenAIJson({ systemPrompt: GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: envNumber('KOMITE_QUESTIONS_MAX_OUTPUT_TOKENS', 4200), jsonSchema: QUESTION_JSON_SCHEMA, scope: 'KOMITE', task: TASK_NAME, promptVersion: PROMPT_VERSION });
+        const rawQuestions = Array.isArray(result.json.questions) ? result.json.questions : [];
+        const repaired = runAndRepairQuestionGates(rawQuestions);
+        const questions = repaired.questions;
+        const qualityGate = repaired.qualityGate;
+        const validation = validateQuestionsShape({ questions });
+        const failedQuality = qualityGate.filter((item) => item.blockingErrors?.length || item.repairableErrors?.length);
+        lastResult = { ...result, questions };
+        lastValidation = validation;
+        lastQualityGate = qualityGate;
+        if (validation.ok && !failedQuality.length && questions.length === 10) {
+          const payload = { provider: 'openai', model: result.model, apiStyle: result.apiStyle, questions, validation, qualityGate: qualityGate.map(publicGate) };
+          await setDurableCachedOutput(cacheKey, payload);
+          return sendJson(response, 200, { ok: true, cached: false, ...payload });
+        }
+        qualityFeedback = [
+          ...(validation.errors || []),
+          qualityFeedbackFromGates(qualityGate),
+        ].filter(Boolean).join('\n');
+      }
+      const payload = {
+        provider: 'openai',
+        model: lastResult?.model,
+        apiStyle: lastResult?.apiStyle,
+        questions: lastResult?.questions || [],
+        validation: lastValidation,
+        qualityGate: lastQualityGate.map(publicGate),
+      };
+      const blockingQuality = lastQualityGate.filter((item) => item.blockingErrors?.length);
+      const repairableQuality = lastQualityGate.filter((item) => item.repairableErrors?.length);
+      if (!lastValidation?.ok || blockingQuality.length || repairableQuality.length || payload.questions.length !== 10) {
         return sendJson(response, 422, {
           ok: false,
-          error: 'Generated material questions failed publisher quality gate.',
+          error: blockingQuality.length
+            ? 'Generated material questions failed blocking publisher quality gate.'
+            : 'Generated material questions need targeted repair and were not sent to safe fallback.',
           manualReviewRequired: true,
-          validation,
-          qualityGate: qualityGate.map(({ question, ...item }) => item),
+          fallback: false,
+          validation: lastValidation,
+          qualityGate: lastQualityGate.map(publicGate),
         });
       }
-      const payload = { provider: 'openai', model: result.model, apiStyle: result.apiStyle, questions, validation, qualityGate: qualityGate.map(({ question, ...item }) => item) };
       await setDurableCachedOutput(cacheKey, payload);
       return sendJson(response, 200, { ok: true, cached: false, ...payload });
     });

@@ -496,23 +496,46 @@ function hasDateLikeText(value = '') {
 export function validateQuestionsShape(output = {}) {
   const questions = Array.isArray(output.questions) ? output.questions : [];
   const errors = findGlobalQualityErrors(output);
-  if (questions.length !== 10) errors.push('Tam 10 soru yok.');
+  const blockingErrors = [...errors];
+  const repairableErrors = [];
+  const warnings = [];
+  const addBlocking = (message) => {
+    errors.push(message);
+    blockingErrors.push(message);
+  };
+  const addRepairable = (message) => {
+    errors.push(message);
+    repairableErrors.push(message);
+  };
+  if (questions.length !== 10) addBlocking('Tam 10 soru yok.');
   questions.forEach((question, index) => {
-    if (!Array.isArray(question.options) || question.options.length !== 5) errors.push(`${index + 1}. soruda 5 seçenek yok.`);
+    if (!Array.isArray(question.options) || question.options.length !== 5) addBlocking(`${index + 1}. soruda 5 seçenek yok.`);
     const optionIds = (question.options || []).map((option) => String(option.id || '').trim()).sort().join('');
-    if (optionIds && optionIds !== 'ABCDE') errors.push(`${index + 1}. soruda A-E seçenek kimlikleri eksik veya hatalı.`);
-    if (!['A', 'B', 'C', 'D', 'E'].includes(String(question.correctOptionId || ''))) errors.push(`${index + 1}. soruda correctOptionId geçersiz.`);
+    if (optionIds && optionIds !== 'ABCDE') addBlocking(`${index + 1}. soruda A-E seçenek kimlikleri eksik veya hatalı.`);
+    if (!['A', 'B', 'C', 'D', 'E'].includes(String(question.correctOptionId || ''))) addBlocking(`${index + 1}. soruda correctOptionId geçersiz.`);
     ['A', 'B', 'C', 'D', 'E'].forEach((id) => {
       const feedback = String(question.optionFeedback?.[id] || '').trim();
-      if (!feedback || feedback.length < 18 || /^(yanlış|doğru|bu seçenek doğrudur)\.?$/iu.test(feedback)) errors.push(`${index + 1}. soruda ${id} feedback zayıf.`);
-      if (/\b[NHnm]\.?\s*$/u.test(feedback) || /\bN\.\s/u.test(feedback)) errors.push(`${index + 1}. soruda kısaltılmış anatomi feedbacki var.`);
+      if (!feedback || feedback.length < 18 || /^(yanlış|doğru|bu seçenek doğrudur)\.?$/iu.test(feedback)) addRepairable(`${index + 1}. soruda ${id} feedback zayıf.`);
+      if (/\b[NHnm]\.?\s*$/u.test(feedback) || /\bN\.\s/u.test(feedback)) addRepairable(`${index + 1}. soruda kısaltılmış anatomi feedbacki var.`);
     });
     const gate = runQuestionQualityGate(question, { version: 'komite-common-question-quality-gate' });
-    gate.errors.forEach((message) => {
-      errors.push(`${index + 1}. soruda kalite kapısı hatası: ${message}`);
+    gate.blockingErrors.forEach((message) => {
+      addBlocking(`${index + 1}. soruda bloklayıcı kalite hatası: ${message}`);
+    });
+    gate.repairableErrors.forEach((message) => {
+      addRepairable(`${index + 1}. soruda onarılabilir kalite hatası: ${message}`);
+    });
+    gate.warnings.forEach((message) => {
+      warnings.push(`${index + 1}. soruda kalite uyarısı: ${message}`);
     });
   });
-  return { ok: errors.length === 0, errors };
+  return {
+    ok: errors.length === 0,
+    errors: Array.from(new Set(errors)),
+    blockingErrors: Array.from(new Set(blockingErrors)),
+    repairableErrors: Array.from(new Set(repairableErrors)),
+    warnings: Array.from(new Set(warnings)),
+  };
 }
 
 export function validateFlashcardsShape(output = {}) {

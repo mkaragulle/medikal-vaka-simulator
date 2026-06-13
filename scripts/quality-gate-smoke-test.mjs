@@ -1,5 +1,9 @@
 import assert from 'node:assert/strict';
-import { runQuestionQualityGate, normalizeQuestionQualityFields } from '../server/lib/question-quality-gate.js';
+import {
+  normalizeQuestionQualityFields,
+  repairQuestionQualityIssues,
+  runQuestionQualityGate,
+} from '../server/lib/question-quality-gate.js';
 
 const baseQuestion = {
   relatedBranch: 'İç Hastalıkları',
@@ -120,5 +124,21 @@ expectFail(clone({
     D: 'Bu nedenle uygun değildir.',
   },
 }), 'option-feedback-placeholder-or-weak:D', 'empty eliminator phrase');
+
+const punctuationRepairSource = clone({
+  wrongOptionFeedback: {
+    ...baseQuestion.wrongOptionFeedback,
+    E: 'Primer hiperkalemi potasyum yüksekliğiyle ilişkilidir; verilen objektif veriler sodyum-osmolalite paternini açıklar',
+  },
+});
+const punctuationGate = runQuestionQualityGate(punctuationRepairSource);
+assert.equal(punctuationGate.decision, 'repair_required', 'missing feedback punctuation should be repairable');
+const punctuationRepair = repairQuestionQualityIssues(punctuationRepairSource, punctuationGate);
+assert.ok(punctuationRepair.applied.includes('feedback-punctuation:E'), 'feedback punctuation repair should be applied');
+assert.equal(runQuestionQualityGate(punctuationRepair.question).ok, true, 'punctuation repair should make the question publishable');
+
+const warningOnly = runQuestionQualityGate(clone({ learningTarget: '', answerTarget: '', diagnosisTarget: '' }));
+assert.equal(warningOnly.ok, true, 'missing target metadata should be a warning, not a fallback trigger');
+assert.ok(warningOnly.warnings.some((item) => item.includes('diagnosis-target-or-learning-objective-missing')), 'target warning should be reported');
 
 console.log('quality-gate-smoke-test: ok');

@@ -2,7 +2,10 @@ import { KOMITE_GLOBAL_EDUCATIONAL_PROMPT } from './komiteGlobalEducationalPromp
 
 export const GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT = KOMITE_GLOBAL_EDUCATIONAL_PROMPT;
 
-export function buildGenerateMaterialQuestionsPrompt({ sourceTextChunks = '' } = {}) {
+export function buildGenerateMaterialQuestionsPrompt({ sourceTextChunks = '', qualityFeedback = '' } = {}) {
+  const feedbackBlock = qualityFeedback
+    ? `\nÖnceki üretim kalite kapısından geçmedi. Aşağıdaki hata özetini yalnızca düzeltme amacıyla kullan; kullanıcıya yazma:\n${qualityFeedback}\n`
+    : '';
   return `Aşağıdaki kaynak metinden 10 adet kaliteli KOMİTE çalışma sorusu üret.
 
 Kurallar:
@@ -22,6 +25,7 @@ Kurallar:
 - difficulty rastgele verilmesin: easy klasik/tek basamak, medium ayırıcı yorum, hard çoklu veri entegrasyonu olsun.
 - Karakter/sentence limitine uymak için metni kesme; kırık cümle, üç nokta veya otomatik üretim izi bırakma.
 - JSON şemasındaki alan adlarını aynen kullan: stem, supportingData, question, options, correctOptionId, explanation, optionFeedback, learningPoint, memoryNote.
+${feedbackBlock}
 
 Kaynak metin:
 ${sourceTextChunks || 'Okunabilir metin yok.'}`;
