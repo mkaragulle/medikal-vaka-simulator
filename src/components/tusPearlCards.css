@@ -20382,3 +20382,35 @@ html.ki-route-transitioning .catalog-card-virtual-row > .tus-pearl-library-card.
 .app-shell[data-theme='dark'] .ai-spot-feedback-pearl-text-v402 {
   color: #cbd5e1 !important;
 }
+
+/* V403 - final option feedback is full learner content, not a preview. */
+.ai-spot-detailed-feedback-panel,
+.ai-spot-detailed-feedback-panel-v246,
+.ai-spot-detailed-feedback-shell,
+.ai-spot-detailed-feedback-shell-v246,
+.ai-spot-feedback-choice-card,
+.ai-spot-feedback-section-card,
+.ai-spot-feedback-option-row,
+.ai-spot-feedback-pearl-card,
+.ai-spot-feedback-pearl-card-v246 {
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+.ai-spot-detailed-feedback-panel :where(p, .glossary-text-flow, .glossary-plain-segment),
+.ai-spot-detailed-feedback-panel-v246 :where(p, .glossary-text-flow, .glossary-plain-segment),
+.ai-spot-feedback-choice-card p,
+.ai-spot-feedback-section-card p,
+.ai-spot-feedback-option-row p,
+.ai-spot-feedback-pearl-card p,
+.ai-spot-feedback-pearl-text-v402 {
+  display: block !important;
+  overflow: visible !important;
+  max-height: none !important;
+  text-overflow: clip !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+}

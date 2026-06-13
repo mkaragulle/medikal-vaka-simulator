@@ -19,6 +19,9 @@ Kurallar:
 - correctOptionId alanını yalnızca kök + supportingData gerçekten o seçeneği destekliyorsa seç.
 - Başka bir seçenek kökle daha güçlü uyumluysa soruyu yeniden kur; açıklamayla hatalı cevabı savunma.
 - optionFeedback A-E için zorunludur; her feedback seçenek özelinde, bilimsel ve ayırt ettirici olsun.
+- Her optionFeedback en az iki tam ve öğretici cümle içersin: seçeneğin temsil ettiği kavramı tanıt, sonra kök/supportingData içindeki bilgiyle neden desteklendiğini veya neden elendiğini açıkla.
+- Doğru seçenek feedbacki cevabı sadece ad olarak söylemesin; materyal/kök verisini doğru karar noktasına bağlasın.
+- Yanlış seçenek feedbacki o seçeneğin hangi bağlamda doğru olabileceğini ve bu soruda doğru cevaptan ayrıldığı temel noktayı yazsın.
 - Yanlış seçenek feedbacki, o seçeneğin hangi durumda doğru olabileceğini ve bu soruda neden elendiğini anlatabilsin.
 - "Bu seçenek klinik bağlamda öncelikli değildir", "verilen bulgularla yeterince uyumlu değildir", "temel karar noktasını açıklamaz", "bu nedenle uygun değildir" gibi boş/fallback cümleleri tek başına kullanma.
 - Açıklama doğru cevabı ve yanlış seçeneklerin neden uygun olmadığını öğretici şekilde anlatsın; açıklamadaki kritik veri kökte veya supportingData içinde görünür olmalı.

@@ -82,6 +82,9 @@ Stem–açıklama–feedback veri tutarlılığı:
 Açıklama ve feedback:
 - explanation genel ders notu değil; stemdeki verileri doğru cevapla bağlayan vaka özelinde karar zinciri olsun.
 - wrongOptionFeedback içinde A, B, C, D, E anahtarlarının tamamı dolu olsun; doğru seçenek için de öğretici feedback yaz.
+- Her seçenek feedbacki en az iki tam ve öğretici cümle olsun: ilk cümle seçeneğin temsil ettiği klinik tablo, mekanizma, tanı kriteri veya tedavi mantığını tanıtsın; ikinci cümle bu olgudaki kök bulgularıyla neden desteklendiğini veya neden geri planda kaldığını somutlaştırsın.
+- Doğru seçenek feedbacki cevabı yalnızca ad olarak söylemesin; kökteki kritik bulgu kombinasyonunu, mekanizmayı veya sınav karar noktasını açıklasın.
+- Yanlış seçenek feedbacki o seçeneğin hangi durumda doğru olabileceğini ve bu olguda doğru seçenekten ayrılan temel noktayı yazsın.
 - optionFeedback alanı da A-E anahtarlarının tamamını içersin ve wrongOptionFeedback ile aynı seçenek-özel feedbackleri taşısın; hiçbir seçenek feedbacksiz kalmasın.
 - Yaşam bulgusu, laboratuvar, görüntüleme, mikrobiyoloji veya patoloji verisi üretiliyorsa ilgili structured alanlarda da görünür tut; backend/frontend bu alanları ayrıca denetler ve gösterir.
 - Her yanlış seçenek feedbacki doğal biçimde şunu anlatsın: hangi durumda düşünülebilir, bu vakada neden uygun değildir, doğru seçenekle ayırıcı farkı nedir.

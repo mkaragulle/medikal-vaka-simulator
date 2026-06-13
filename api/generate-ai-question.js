@@ -5,10 +5,11 @@ import {
   normalizeDifficulty,
 } from '../server/prompts/tus-question-prompt.js';
 import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from '../server/lib/ai-token-optimizer.js';
+import { applyFinalFeedbackQualityGate, runFinalFeedbackQualityGate } from '../server/lib/final-feedback-quality-gate.js';
 import { normalizeQuestionQualityFields, repairQuestionQualityIssues, runQuestionQualityGate } from '../server/lib/question-quality-gate.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-tus-v51-remote-first-quality-review';
+const PROMPT_VERSION = 'klinikiq-tus-v50-global-publisher-quality-gate';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
@@ -49,35 +50,6 @@ function summarizeQualityFailure({ gate, legacyBlocking = [], validationBlocking
     ...legacyBlocking.map((issue) => `${issue.code}: ${issue.message || ''}`.trim()),
     ...validationBlocking,
   ].filter(Boolean);
-}
-
-const FATAL_PUBLISHER_ERROR_PATTERNS = [
-  /^question-stem-missing-or-too-thin$/,
-  /^options-not-five$/,
-  /^correct-answer-id-invalid$/,
-  /^correct-answer-text-missing$/,
-  /^question-target-missing$/,
-];
-
-const FATAL_LEGACY_REVIEW_CODES = new Set([
-  'stem_contains_question_fragment',
-  'answer_leak_in_pre_answer_text',
-  'truncated_or_broken_text',
-]);
-
-function isFatalPublisherGateError(message = '') {
-  return FATAL_PUBLISHER_ERROR_PATTERNS.some((pattern) => pattern.test(String(message || '')));
-}
-
-function splitFatalAndQualityErrors(errors = []) {
-  const fatal = [];
-  const quality = [];
-  asArray(errors).forEach((error) => {
-    const message = String(error || '');
-    if (isFatalPublisherGateError(message)) fatal.push(message);
-    else quality.push(message);
-  });
-  return { fatal, quality };
 }
 
 function logFallbackTrigger(context = {}) {
@@ -1536,6 +1508,7 @@ function safeVerbosity(value = '') {
 }
 
 async function callOpenAI(prompt, { detailMode = tusQuestionDetailMode() } = {}) {
+  const startedAt = Date.now();
   const apiKey = process.env.TUS_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
   if (!apiKey) return null;
   const model = currentTusModel();
@@ -1597,7 +1570,7 @@ async function callOpenAI(prompt, { detailMode = tusQuestionDetailMode() } = {})
       throw error;
     }
     const data = JSON.parse(apiResult.text || '{}');
-    logAIUsage({ task: TASK_NAME, model: data.model || model, usage: data.usage || null, cached: false, apiStyle: style });
+    logAIUsage({ task: TASK_NAME, model: data.model || model, usage: data.usage || null, cached: false, apiStyle: style, promptVersion: PROMPT_VERSION, durationMs: Date.now() - startedAt });
     const text = useResponses ? extractResponsesText(data) : extractChatText(data);
     if (!String(text || '').trim()) {
       const reason = data?.incomplete_details?.reason || data?.status || 'empty_output';
@@ -1631,11 +1604,16 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
       publisherGate = runQuestionQualityGate(sanitized, { version: PROMPT_VERSION });
     }
   }
-  const publisherFatalSplit = splitFatalAndQualityErrors(publisherGate.blockingErrors || []);
-  const publisherQualityNotes = [
-    ...publisherFatalSplit.quality,
-    ...(publisherGate.repairableErrors || []),
-  ];
+  const finalFeedbackResult = applyFinalFeedbackQualityGate(sanitized, {
+    version: `${PROMPT_VERSION}:final-feedback`,
+    baseVersion: PROMPT_VERSION,
+  });
+  const finalFeedbackRepairApplied = finalFeedbackResult.repairApplied || [];
+  if (finalFeedbackRepairApplied.length) {
+    Object.assign(sanitized, finalFeedbackResult.question);
+    publisherGate = runQuestionQualityGate(sanitized, { version: PROMPT_VERSION });
+  }
+  const finalFeedbackGate = finalFeedbackResult.gate;
   sanitized.aiMeta = {
     ...(sanitized.aiMeta || {}),
     backendQualityGate: {
@@ -1643,31 +1621,53 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
       decision: publisherGate.decision,
       errors: publisherGate.errors,
       blockingErrors: publisherGate.blockingErrors,
-      fatalBlockingErrors: publisherFatalSplit.fatal,
-      nonFatalQualityErrors: publisherQualityNotes,
       repairableErrors: publisherGate.repairableErrors,
       warnings: publisherGate.warnings,
       cues: publisherGate.cues,
       demand: publisherGate.demand,
       version: publisherGate.version,
       repairApplied,
-      remoteQuestionPreserved: publisherQualityNotes.length > 0,
     },
-    publishable: publisherGate.publishable,
+    finalFeedbackQualityGate: {
+      ok: finalFeedbackGate.ok,
+      decision: finalFeedbackGate.decision,
+      errors: finalFeedbackGate.errors,
+      blockingErrors: finalFeedbackGate.blockingErrors,
+      repairableErrors: finalFeedbackGate.repairableErrors,
+      warnings: finalFeedbackGate.warnings,
+      version: finalFeedbackGate.version,
+      repairApplied: finalFeedbackRepairApplied,
+      baseGate: finalFeedbackGate.baseGate,
+    },
+    publishable: publisherGate.publishable && finalFeedbackGate.publishable,
   };
-  if (publisherFatalSplit.fatal.length) {
-    const error = new Error(`Backend quality gate failed: ${publisherFatalSplit.fatal.join('; ')}`);
-    error.validationErrors = publisherFatalSplit.fatal;
+  if (publisherGate.blockingErrors.length) {
+    const error = new Error(`Backend quality gate failed: ${publisherGate.errors.join('; ')}`);
+    error.validationErrors = publisherGate.errors;
     error.qualitySeverity = 'blocking';
     error.question = sanitized;
     throw error;
   }
-  if (publisherQualityNotes.length) {
-    sanitized.qualityNotes = Array.from(new Set([
-      ...(sanitized.qualityNotes || []),
-      ...publisherQualityNotes,
-    ]));
-    sanitized.qualityGate = 'remote-ai-preserved-with-quality-review';
+  if (finalFeedbackGate.blockingErrors.length) {
+    const error = new Error(`Final feedback quality gate failed: ${finalFeedbackGate.blockingErrors.join('; ')}`);
+    error.validationErrors = finalFeedbackGate.blockingErrors;
+    error.qualitySeverity = 'blocking';
+    error.question = sanitized;
+    throw error;
+  }
+  if (publisherGate.repairableErrors.length) {
+    const error = new Error(`Backend quality gate needs targeted repair: ${publisherGate.repairableErrors.join('; ')}`);
+    error.validationErrors = publisherGate.repairableErrors;
+    error.qualitySeverity = 'repairable';
+    error.question = sanitized;
+    throw error;
+  }
+  if (finalFeedbackGate.repairableErrors.length) {
+    const error = new Error(`Final feedback quality gate needs targeted repair: ${finalFeedbackGate.repairableErrors.join('; ')}`);
+    error.validationErrors = finalFeedbackGate.repairableErrors;
+    error.qualitySeverity = 'repairable';
+    error.question = sanitized;
+    throw error;
   }
   const validation = validateQuestion(sanitized, recentQuestionSummaries);
   if (!validation.ok) {
@@ -1681,30 +1681,19 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
       throw error;
     }
 
-    sanitized.qualityNotes = Array.from(new Set([
-      ...(sanitized.qualityNotes || []),
-      ...(validation.errors || []),
-    ]));
-    sanitized.qualityGate = sanitized.qualityGate || 'remote-ai-preserved-with-legacy-quality-review';
-  } else if (!sanitized.qualityGate) {
-    sanitized.qualityGate = publisherGate.warnings.length ? 'publisher-passed-with-warnings' : 'strict-passed';
+    sanitized.qualityNotes = validation.errors;
+    sanitized.qualityGate = 'publisher-passed-with-legacy-warnings';
+  } else {
+    sanitized.qualityGate = (publisherGate.warnings.length || finalFeedbackGate.warnings.length) ? 'publisher-passed-with-warnings' : 'strict-passed';
   }
   const legacyBlocking = legacyBlockingReviewIssues(sanitized);
-  const fatalLegacyBlocking = legacyBlocking.filter((issue) => FATAL_LEGACY_REVIEW_CODES.has(issue.code));
-  if (fatalLegacyBlocking.length) {
-    const errors = summarizeQualityFailure({ gate: publisherGate, legacyBlocking: fatalLegacyBlocking });
-    const error = new Error(errors.join('; ') || 'Question failed fatal legacy quality review.');
+  if (legacyBlocking.length) {
+    const errors = summarizeQualityFailure({ gate: publisherGate, legacyBlocking });
+    const error = new Error(errors.join('; ') || 'Question failed blocking legacy quality review.');
     error.validationErrors = errors;
     error.qualitySeverity = 'blocking';
     error.question = sanitized;
     throw error;
-  }
-  if (legacyBlocking.length) {
-    sanitized.qualityNotes = Array.from(new Set([
-      ...(sanitized.qualityNotes || []),
-      ...legacyBlocking.map((issue) => `global-quality:${issue.code}:${issue.message || ''}`.trim()),
-    ]));
-    sanitized.qualityGate = sanitized.qualityGate || 'remote-ai-preserved-with-global-quality-review';
   }
   const legacyReview = sanitized.aiMeta?.globalQualityReview;
   if (legacyReview?.decision && legacyReview.decision !== 'addable') {
@@ -1713,15 +1702,9 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
       ...(legacyReview.summary || []),
     ]));
   }
-  sanitized.qualityGate = sanitized.qualityGate || (sanitized.qualityNotes?.length || publisherGate.warnings.length
+  sanitized.qualityGate = sanitized.qualityNotes?.length || publisherGate.warnings.length || finalFeedbackGate.warnings.length
     ? 'publisher-passed-with-warnings'
-    : 'strict-publisher-passed');
-  sanitized.aiMeta = {
-    ...(sanitized.aiMeta || {}),
-    qualityDecision: sanitized.qualityNotes?.length ? 'revision_required' : 'addable',
-    publishable: !sanitized.qualityNotes?.length && publisherGate.publishable,
-    remotePreservedInsteadOfLocalFallback: Boolean(sanitized.qualityNotes?.length),
-  };
+    : 'strict-publisher-passed';
   return sanitized;
 }
 
@@ -1749,8 +1732,9 @@ async function getReusableBankQuestion({ branch, target, difficulty, recentQuest
     const candidate = sanitizeQuestion({ ...item, id: `ai-spot-bank-check-${Date.now()}` }, branch, difficulty);
     const validation = validateQuestion(candidate, recentQuestionSummaries);
     const publisherGate = runQuestionQualityGate(candidate, { version: PROMPT_VERSION });
+    const finalFeedbackGate = runFinalFeedbackQualityGate(candidate, { version: `${PROMPT_VERSION}:final-feedback`, baseVersion: PROMPT_VERSION });
     const validationBlocking = legacyHardBlockingValidationErrors(validation.errors || []);
-    if (publisherGate.publishable && !validationBlocking.length && !legacyBlockingReviewIssues(candidate).length) return true;
+    if (publisherGate.publishable && finalFeedbackGate.publishable && !validationBlocking.length && !legacyBlockingReviewIssues(candidate).length) return true;
     return false;
   });
   if (!reusable) return null;
@@ -1768,7 +1752,8 @@ async function storeReusableQuestion({ branch, target, difficulty, question }) {
   if (!useQuestionBank() || !question || question.fallback) return false;
   if (legacyBlockingReviewIssues(question).length) return false;
   const publisherGate = runQuestionQualityGate(question, { version: PROMPT_VERSION });
-  if (!publisherGate.publishable) return false;
+  const finalFeedbackGate = runFinalFeedbackQualityGate(question, { version: `${PROMPT_VERSION}:final-feedback`, baseVersion: PROMPT_VERSION });
+  if (!publisherGate.publishable || !finalFeedbackGate.publishable) return false;
   const model = question.openAIModel || currentTusModel();
   const bankKey = buildQuestionBankKey({ scope: 'TUS', branch, difficulty, target, promptVersion: PROMPT_VERSION, model });
   return addQuestionToBank(bankKey, question);
@@ -1800,7 +1785,7 @@ export default async function handler(request, response) {
   return await withInFlightDedupe(oneShotCacheKey, async () => {
     const reusable = await getReusableBankQuestion({ branch, target, difficulty: requestedDifficulty, recentQuestionSummaries });
     if (reusable) {
-      logAIUsage({ task: `${TASK_NAME}:questionBank`, model: reusable.openAIModel || model, cached: true, apiStyle: 'question_bank' });
+      logAIUsage({ task: `${TASK_NAME}:questionBank`, model: reusable.openAIModel || model, cached: true, apiStyle: 'question_bank', promptVersion: PROMPT_VERSION, sourceFingerprint: oneShotCacheKey, finalOutput: true });
       return sendJson(response, 200, {
         ok: true,
         provider: 'openai-question-bank',
@@ -1813,8 +1798,9 @@ export default async function handler(request, response) {
     const cachedPayload = await getDurableCachedOutput(oneShotCacheKey);
     if (cachedPayload?.question && !questionMatchesRecent(cachedPayload.question, recentQuestionSummaries)) {
       const cachedGate = runQuestionQualityGate(cachedPayload.question, { version: PROMPT_VERSION });
-      if (cachedGate.publishable && !legacyBlockingReviewIssues(cachedPayload.question).length) {
-        logAIUsage({ task: `${TASK_NAME}:outputCache`, model: cachedPayload.question.openAIModel || model, cached: true, apiStyle: 'output_cache' });
+      const cachedFinalGate = runFinalFeedbackQualityGate(cachedPayload.question, { version: `${PROMPT_VERSION}:final-feedback`, baseVersion: PROMPT_VERSION });
+      if (cachedGate.publishable && cachedFinalGate.publishable && !legacyBlockingReviewIssues(cachedPayload.question).length) {
+        logAIUsage({ task: `${TASK_NAME}:outputCache`, model: cachedPayload.question.openAIModel || model, cached: true, apiStyle: 'output_cache', promptVersion: PROMPT_VERSION, sourceFingerprint: oneShotCacheKey, finalOutput: true, validator: { cachedGate: cachedGate.decision, finalFeedbackGate: cachedFinalGate.decision } });
         return sendJson(response, 200, { ok: true, cached: true, fallback: false, provider: cachedPayload.provider || 'openai-output-cache', question: cachedPayload.question });
       }
     }
@@ -1865,12 +1851,13 @@ export default async function handler(request, response) {
     });
     const question = fallbackQuestion({ branchFilter: branch, difficulty: requestedDifficulty, recentQuestionSummaries });
     const fallbackGate = runQuestionQualityGate(question, { version: PROMPT_VERSION });
-    if (!fallbackGate.publishable || legacyBlockingReviewIssues(question).length) {
+    const fallbackFinalGate = runFinalFeedbackQualityGate(question, { version: `${PROMPT_VERSION}:final-feedback`, baseVersion: PROMPT_VERSION });
+    if (!fallbackGate.publishable || !fallbackFinalGate.publishable || legacyBlockingReviewIssues(question).length) {
       logFallbackTrigger({
         branch,
         difficulty: requestedDifficulty,
         reason: 'local-safe-fallback-suppressed-by-quality-gate',
-        failures: fallbackGate.errors,
+        failures: [...fallbackGate.errors, ...fallbackFinalGate.errors],
       });
       return sendJson(response, 422, {
         ok: false,
@@ -1885,6 +1872,11 @@ export default async function handler(request, response) {
           decision: fallbackGate.decision,
           errors: fallbackGate.errors,
           warnings: fallbackGate.warnings,
+        },
+        fallbackFinalFeedbackQualityGate: {
+          decision: fallbackFinalGate.decision,
+          errors: fallbackFinalGate.errors,
+          warnings: fallbackFinalGate.warnings,
         },
       });
     }

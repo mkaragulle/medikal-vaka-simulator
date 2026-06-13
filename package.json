@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "quality:smoke": "node scripts/quality-gate-smoke-test.mjs"
+    "quality:smoke": "node scripts/quality-gate-smoke-test.mjs",
+    "feedback:smoke": "node scripts/final-feedback-quality-smoke-test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.1.4",

@@ -1,4 +1,5 @@
 import { applyCostProfileToMaxTokens, buildPromptCacheConfig, callOpenAIWithPromptCacheFallback, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, getAICostProfile, logAIUsage, resolveModelForScope } from './ai-token-optimizer.js';
+import { runFinalFeedbackQualityGate } from './final-feedback-quality-gate.js';
 import { runQuestionQualityGate } from './question-quality-gate.js';
 export function sendJson(response, status, payload) {
   response.statusCode = status;
@@ -321,6 +322,7 @@ function parseOpenAIJsonOrThrow(text = '', data = {}) {
 }
 
 export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 2500, jsonSchema = null, scope = 'KOMITE', task = 'komiteJson', promptVersion = 'v1' } = {}) {
+  const startedAt = Date.now();
   const envPrefix = String(scope || 'KOMITE').toUpperCase();
   const apiKey = firstEnv(`${envPrefix}_OPENAI_API_KEY`, 'OPENAI_API_KEY');
   if (!apiKey) {
@@ -374,7 +376,7 @@ export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 250
     const data = JSON.parse(result.text || '{}');
     const text = useResponses ? extractResponsesText(data) : (extractChatText(data) || extractResponsesText(data));
     const apiStyleName = useResponses ? 'responses' : 'chat_completions';
-    logAIUsage({ task, model: data.model || model, usage: data.usage || null, cached: false, apiStyle: apiStyleName });
+    logAIUsage({ task, model: data.model || model, usage: data.usage || null, cached: false, apiStyle: apiStyleName, promptVersion, durationMs: Date.now() - startedAt });
     return { json: parseOpenAIJsonOrThrow(text, data), model: data.model || model, apiStyle: apiStyleName, usage: data.usage || null, promptCacheFallback: result.cacheFallback };
   } catch (error) {
     if (error?.name === 'AbortError' || /aborted/i.test(String(error?.message || ''))) {
@@ -391,6 +393,7 @@ export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 250
 
 
 export async function callOpenAIText({ systemPrompt, userPrompt, maxTokens = 3000, scope = 'KOMITE', task = 'komiteText', promptVersion = 'v1' } = {}) {
+  const startedAt = Date.now();
   const envPrefix = String(scope || 'KOMITE').toUpperCase();
   const apiKey = firstEnv(`${envPrefix}_OPENAI_API_KEY`, 'OPENAI_API_KEY');
   if (!apiKey) {
@@ -445,7 +448,7 @@ export async function callOpenAIText({ systemPrompt, userPrompt, maxTokens = 300
     const text = useResponses ? extractResponsesText(data) : (extractChatText(data) || extractResponsesText(data));
     const cleanText = String(text || '').trim();
     const apiStyleName = useResponses ? 'responses' : 'chat_completions';
-    logAIUsage({ task, model: data.model || model, usage: data.usage || null, cached: false, apiStyle: apiStyleName });
+    logAIUsage({ task, model: data.model || model, usage: data.usage || null, cached: false, apiStyle: apiStyleName, promptVersion, durationMs: Date.now() - startedAt });
     if (cleanText) {
       return { text: cleanText, model: data.model || model, apiStyle: apiStyleName, usage: data.usage || null, status: data.status || '', promptCacheFallback: result.cacheFallback };
     }
@@ -519,6 +522,19 @@ export function validateQuestionsShape(output = {}) {
       if (/\b[NHnm]\.?\s*$/u.test(feedback) || /\bN\.\s/u.test(feedback)) addRepairable(`${index + 1}. soruda kısaltılmış anatomi feedbacki var.`);
     });
     const gate = runQuestionQualityGate(question, { version: 'komite-common-question-quality-gate' });
+    const finalFeedbackGate = runFinalFeedbackQualityGate(question, {
+      version: 'komite-common-final-feedback-quality-gate',
+      baseVersion: 'komite-common-question-quality-gate',
+    });
+    finalFeedbackGate.blockingErrors.forEach((message) => {
+      addBlocking(`${index + 1}. soruda bloklayici final feedback kalite hatasi: ${message}`);
+    });
+    finalFeedbackGate.repairableErrors.forEach((message) => {
+      addRepairable(`${index + 1}. soruda onarilabilir final feedback kalite hatasi: ${message}`);
+    });
+    finalFeedbackGate.warnings.forEach((message) => {
+      warnings.push(`${index + 1}. soruda final feedback kalite uyarisi: ${message}`);
+    });
     gate.blockingErrors.forEach((message) => {
       addBlocking(`${index + 1}. soruda bloklayıcı kalite hatası: ${message}`);
     });

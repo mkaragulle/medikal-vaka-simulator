@@ -16,10 +16,6 @@ const MAX_PREFETCHED_PER_KEY = Math.max(0, Math.min(2, Number(runtimeEnv.VITE_AI
 const PREFETCH_FIRST_WAIT_MS = Math.max(0, Math.min(4500, Number(runtimeEnv.VITE_AI_PREFETCH_FIRST_WAIT_MS || 1200)));
 const FALLBACK_GRACE_WAIT_MS = Math.max(0, Math.min(6500, Number(runtimeEnv.VITE_AI_FALLBACK_GRACE_WAIT_MS || 5000)));
 const SHOW_FALLBACK_NOTICE = String(runtimeEnv.VITE_AI_SHOW_FALLBACK_NOTICE ?? 'false').toLowerCase() === 'true';
-// Remote AI should not silently degrade to local questions during quality/API errors.
-// Local safe generation is now opt-in with a new explicit flag so old VITE_AI_ENABLE_CLIENT_FALLBACK=true
-// values in Vercel cannot mask real remote failures.
-const ALLOW_LOCAL_SAFE_FALLBACK = String(runtimeEnv.VITE_AI_ALLOW_LOCAL_SAFE_FALLBACK ?? 'false').toLowerCase() === 'true';
 
 const prefetchedQuestionQueues = new Map();
 const activePrefetches = new Map();
@@ -140,13 +136,7 @@ async function fetchOneRemoteQuestion({ previousQuestionId, branchFilter, diffic
 
     let payload = null;
     try { payload = await response.json(); } catch { payload = null; }
-    if (!response.ok || !payload?.ok) {
-      const error = new Error(getPayloadError(payload, response.status));
-      error.status = response.status;
-      error.payload = payload;
-      error.source = 'remote-ai-endpoint';
-      throw error;
-    }
+    if (!response.ok || !payload?.ok) throw new Error(getPayloadError(payload, response.status));
 
     const rawQuestion = payload.question || payload;
     const isFallback = Boolean(payload.fallback || payload.safeFallback || rawQuestion.fallback || String(payload.provider || rawQuestion.provider || '').toLowerCase().includes('fallback'));
@@ -277,13 +267,13 @@ export async function createAIQuestion({ previousQuestionId = null, branchFilter
     const recoveredPrefetch = await waitForActivePrefetch({ branchFilter, difficulty, context, timeoutMs: FALLBACK_GRACE_WAIT_MS });
     if (recoveredPrefetch?.ok) return { ...recoveredPrefetch, source: recoveredPrefetch.source || 'client-prefetch-cache', usedRemoteAI: true, showFallbackNotice: false };
 
-    if (!ALLOW_LOCAL_SAFE_FALLBACK) {
+    if (String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'false').toLowerCase() !== 'true') {
       return { ok: false, question: null, source: 'openai-error', usedRemoteAI: false, fallback: false, showFallbackNotice: false, error };
     }
     return createClientFallback({ branchFilter, difficulty, context, reason: error });
   }
 
-  if (ALLOW_LOCAL_SAFE_FALLBACK) {
+  if (String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'false').toLowerCase() === 'true') {
     return createClientFallback({ branchFilter, difficulty, context, reason: null });
   }
   return { ok: false, question: null, source: 'openai-unavailable', usedRemoteAI: false, fallback: false, showFallbackNotice: false, error: new Error('AI servisi kullanılamıyor.') };

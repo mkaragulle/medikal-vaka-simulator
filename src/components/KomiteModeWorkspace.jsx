@@ -727,9 +727,26 @@ function qualityGateLesson() {
   return { ok: true };
 }
 
+function visibleSentenceCount(value = '') {
+  return String(value || '')
+    .replace(/(\d)\.(\d)/g, '$1<dot>$2')
+    .split(/(?<=[.!?])\s+/u)
+    .map((sentence) => sentence.replace(/<dot>/g, '.').trim())
+    .filter((sentence) => /[.!?]$/u.test(sentence)).length;
+}
+
+function isWeakLearnerFeedback(value = '') {
+  const text = String(value || '').trim();
+  if (!text || visibleSentenceCount(text) < 2) return true;
+  return /^(?:uygun deÄŸildir|uygun degildir|Ã¶ncelik taÅŸÄ±maz|oncelik tasimaz|yeterli veri yoktur|klinik baÄŸlamÄ± aÃ§Ä±klamaz|klinik baglami aciklamaz|bu nedenle cevap deÄŸildir|bu nedenle cevap degildir)\.?$/iu.test(text);
+}
+
 function qualityGateQuestions(questions = []) {
   if (!Array.isArray(questions) || questions.length !== 10) return { ok: false, reason: '10 soru üretilemedi.' };
-  const bad = questions.find((question) => !Array.isArray(question.options) || question.options.length !== 5 || !question.correctOptionId || !question.optionFeedback?.[question.correctOptionId]);
+  const bad = questions.find((question) => {
+    if (!Array.isArray(question.options) || question.options.length !== 5 || !question.correctOptionId) return true;
+    return ['A', 'B', 'C', 'D', 'E'].some((id) => isWeakLearnerFeedback(question.optionFeedback?.[id]));
+  });
   if (bad) return { ok: false, reason: 'Soru seçenekleri veya feedback eksik.' };
   const lowValue = questions.filter((question) => /en uygun tanımı|nedir\??$/iu.test(question.question || '') && String(question.stem || '').length < 120);
   if (lowValue.length > 1) return { ok: false, reason: 'Tanım düzeyinde düşük kaliteli soru fazla.' };
@@ -809,10 +826,11 @@ function buildSourceObjectiveList(material, topic) {
 }
 
 function optionFeedbackForSourceQuestion(option, correctId, target, sourceClue) {
+  const clue = truncate(sourceClue, 120);
   if (option.id === correctId) {
-    return `Bu seçenek materyaldeki “${truncate(sourceClue, 80)}” ipucuyla doğrudan ilişkilidir ve ${target} hedefini en iyi karşılar.`;
+    return `Bu secenek materyaldeki "${clue}" ipucunu dogrudan aciklayan karar noktasini temsil eder. Bu nedenle ${target} hedefi acisindan kokte gorunen kaynak bulguyla en tutarli secenektir.`;
   }
-  return `Bu seçenek benzer bir kavramı çağrıştırabilir; ancak materyalde verilen “${truncate(sourceClue, 80)}” ipucunu ${target} açısından doğrudan açıklamaz.`;
+  return `Bu secenek yakin bir kavrami cagristirabilir; fakat materyaldeki "${clue}" ipucu oncelikle farkli bir karar noktasina yonelir. Bu soruda ${target} hedefi icin beklenen ayirt edici baglanti kokte verilen kaynak bulguyla kurulmadigindan bu secenek geri planda kalir.`;
 }
 
 

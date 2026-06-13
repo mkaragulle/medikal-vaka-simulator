@@ -1,6 +1,7 @@
 import { sendJson, parseJsonBody, callOpenAIJson, validateQuestionsShape, verifyCurrentSourceManifest } from '../server/lib/komite-ai-common.js';
 import { GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT, buildGenerateMaterialQuestionsPrompt } from '../server/prompts/generateMaterialQuestionsPrompt.js';
 import { buildOutputCacheKey, compactMaterialSources, createSourceFingerprint, defaultModelForScope, getDurableCachedOutput, logAIUsage, resolveModelForScope, resolveSourceCharLimit, setDurableCachedOutput, withInFlightDedupe } from '../server/lib/ai-token-optimizer.js';
+import { applyFinalFeedbackQualityGate, runFinalFeedbackQualityGate } from '../server/lib/final-feedback-quality-gate.js';
 import { repairQuestionQualityIssues, runQuestionQualityGate } from '../server/lib/question-quality-gate.js';
 
 
@@ -79,8 +80,11 @@ function compactTextWindow(text = '', maxChars = 12000) {
 }
 
 function publicGate(gate = {}) {
-  const { question, ...rest } = gate;
-  return rest;
+  const { question, finalFeedbackGate, ...rest } = gate;
+  const publicFinalFeedbackGate = finalFeedbackGate
+    ? (({ question: _question, ...publicGateValue }) => publicGateValue)(finalFeedbackGate)
+    : finalFeedbackGate;
+  return { ...rest, finalFeedbackGate: publicFinalFeedbackGate };
 }
 
 function runAndRepairQuestionGates(questions = []) {
@@ -98,16 +102,31 @@ function runAndRepairQuestionGates(questions = []) {
         gate = runQuestionQualityGate(current, { version: PROMPT_VERSION });
       }
     }
+    const finalFeedbackResult = applyFinalFeedbackQualityGate(current, {
+      version: `${PROMPT_VERSION}:final-feedback`,
+      baseVersion: PROMPT_VERSION,
+    });
+    const finalFeedbackRepairApplied = finalFeedbackResult.repairApplied || [];
+    if (finalFeedbackRepairApplied.length) {
+      current = finalFeedbackResult.question;
+      gate = runQuestionQualityGate(current, { version: PROMPT_VERSION });
+    }
+    const finalFeedbackGate = finalFeedbackResult.gate;
     repairedQuestions.push(current);
-    qualityGate.push({ index, repairApplied, ...gate });
+    qualityGate.push({ index, repairApplied, finalFeedbackRepairApplied, finalFeedbackGate, ...gate });
   });
   return { questions: repairedQuestions, qualityGate };
 }
 
 function qualityFeedbackFromGates(gates = []) {
   return gates
-    .filter((gate) => gate.blockingErrors?.length || gate.repairableErrors?.length)
-    .map((gate) => `Soru ${Number(gate.index) + 1}: ${[...(gate.blockingErrors || []), ...(gate.repairableErrors || [])].join('; ')}`)
+    .filter((gate) => gate.blockingErrors?.length || gate.repairableErrors?.length || gate.finalFeedbackGate?.blockingErrors?.length || gate.finalFeedbackGate?.repairableErrors?.length)
+    .map((gate) => `Soru ${Number(gate.index) + 1}: ${[
+      ...(gate.blockingErrors || []),
+      ...(gate.repairableErrors || []),
+      ...(gate.finalFeedbackGate?.blockingErrors || []),
+      ...(gate.finalFeedbackGate?.repairableErrors || []),
+    ].join('; ')}`)
     .join('\n');
 }
 
@@ -131,16 +150,20 @@ export default async function handler(request, response) {
     const sourceCheck = verifyCurrentSourceManifest(body);
     if (!sourceCheck.ok) return sendJson(response, 409, { ok: false, error: 'Current source session validation failed', validation: sourceCheck });
     const sourceFingerprint = createSourceFingerprint({ clientFingerprint: body.sourceFingerprint || sourceCheck.fingerprint || '', files: body.materialPacket?.files || [] });
-    const currentSourceText = compactMaterialSources(body.materialPacket?.files || [], resolveSourceCharLimit('KOMITE_QUESTIONS_MAX_SOURCE_CHARS', 14000, 'KOMITE', TASK_NAME));
+    const currentSourceText = compactMaterialSources(body.materialPacket?.files || [], resolveSourceCharLimit('KOMITE_QUESTIONS_MAX_SOURCE_CHARS', 14000, 'KOMITE', TASK_NAME), { task: TASK_NAME });
     if (!currentSourceText) return sendJson(response, 422, { ok: false, error: 'Current material packet has no readable text.' });
     const cacheKey = buildOutputCacheKey({ scope: 'KOMITE', task: TASK_NAME, promptVersion: PROMPT_VERSION, model: currentKomiteModel(), sourceFingerprint });
     return await withInFlightDedupe(cacheKey, async () => {
       const cachedOutput = await getDurableCachedOutput(cacheKey);
       if (cachedOutput) {
         const cachedQuestions = Array.isArray(cachedOutput.questions) ? cachedOutput.questions : [];
-        const cachedQuality = cachedQuestions.map((question, index) => ({ index, ...runQuestionQualityGate(question, { version: PROMPT_VERSION }) }));
-        if (cachedQuestions.length === 10 && cachedQuality.every((item) => item.ok)) {
-          logAIUsage({ task: TASK_NAME, model: cachedOutput.model || currentKomiteModel(), cached: true, apiStyle: cachedOutput.apiStyle || 'output_cache' });
+        const cachedQuality = cachedQuestions.map((question, index) => ({
+          index,
+          finalFeedbackGate: runFinalFeedbackQualityGate(question, { version: `${PROMPT_VERSION}:final-feedback`, baseVersion: PROMPT_VERSION }),
+          ...runQuestionQualityGate(question, { version: PROMPT_VERSION }),
+        }));
+        if (cachedQuestions.length === 10 && cachedQuality.every((item) => item.ok && item.finalFeedbackGate.publishable)) {
+          logAIUsage({ task: TASK_NAME, model: cachedOutput.model || currentKomiteModel(), cached: true, apiStyle: cachedOutput.apiStyle || 'output_cache', promptVersion: PROMPT_VERSION, sourceFingerprint, finalOutput: true, validator: { cachedQuality: 'publishable', finalFeedbackGate: 'publishable' } });
           return sendJson(response, 200, { ok: true, cached: true, ...cachedOutput, qualityGate: cachedQuality.map(({ question, ...item }) => item) });
         }
       }
@@ -157,7 +180,7 @@ export default async function handler(request, response) {
         const questions = repaired.questions;
         const qualityGate = repaired.qualityGate;
         const validation = validateQuestionsShape({ questions });
-        const failedQuality = qualityGate.filter((item) => item.blockingErrors?.length || item.repairableErrors?.length);
+        const failedQuality = qualityGate.filter((item) => item.blockingErrors?.length || item.repairableErrors?.length || item.finalFeedbackGate?.blockingErrors?.length || item.finalFeedbackGate?.repairableErrors?.length);
         lastResult = { ...result, questions };
         lastValidation = validation;
         lastQualityGate = qualityGate;
@@ -180,11 +203,12 @@ export default async function handler(request, response) {
         qualityGate: lastQualityGate.map(publicGate),
       };
       const blockingQuality = lastQualityGate.filter((item) => item.blockingErrors?.length);
-      const repairableQuality = lastQualityGate.filter((item) => item.repairableErrors?.length);
-      if (!lastValidation?.ok || blockingQuality.length || repairableQuality.length || payload.questions.length !== 10) {
+      const blockingFinalFeedbackQuality = lastQualityGate.filter((item) => item.finalFeedbackGate?.blockingErrors?.length);
+      const repairableQuality = lastQualityGate.filter((item) => item.repairableErrors?.length || item.finalFeedbackGate?.repairableErrors?.length);
+      if (!lastValidation?.ok || blockingQuality.length || blockingFinalFeedbackQuality.length || repairableQuality.length || payload.questions.length !== 10) {
         return sendJson(response, 422, {
           ok: false,
-          error: blockingQuality.length
+          error: blockingQuality.length || blockingFinalFeedbackQuality.length
             ? 'Generated material questions failed blocking publisher quality gate.'
             : 'Generated material questions need targeted repair and were not sent to safe fallback.',
           manualReviewRequired: true,

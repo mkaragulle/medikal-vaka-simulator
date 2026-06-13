@@ -54,9 +54,94 @@ export function createSourceFingerprint(value) {
   return `src_${sha256(normalizeForFingerprint(value)).slice(0, 32)}`;
 }
 
-export function compactSourceText(text = '', maxChars = 12000) {
+function normalizeForSourceRank(value = '') {
+  return safeString(value)
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/ı/g, 'i')
+    .replace(/ğ/g, 'g')
+    .replace(/ü/g, 'u')
+    .replace(/ş/g, 's')
+    .replace(/ö/g, 'o')
+    .replace(/ç/g, 'c');
+}
+
+function splitSourceSentences(text = '') {
+  return safeString(text)
+    .replace(/(\d)\.(\d)/g, '$1<dot>$2')
+    .split(/(?<=[.!?])\s+|\n+/u)
+    .map((sentence) => sentence.replace(/<dot>/g, '.').trim())
+    .filter((sentence) => sentence.length >= 35 && sentence.length <= 520);
+}
+
+const SOURCE_CONTEXT_PATTERNS = [
+  /\b(?:hipotansiyon|preload|infarkt|nitrat|v4r|st\s+elevasyonu|troponin|reperf)\b/u,
+  /\b(?:tani|tanisal|tedavi|yaklasim|yonetim|ilk basamak|profilaksi|kontrendikasyon|komplikasyon)\b/u,
+  /\b(?:ayirici|klinik|olgu|semptom|bulgu|muayene|oyku|risk|maruziyet|travma|gebelik|yenidogan|pediatrik)\b/u,
+  /\b(?:laboratuvar|trombosit|lokosit|hemoglobin|glukoz|sodyum|potasyum|kreatinin|ph|hco3|laktat|troponin|enzim|bilirubin|proteinuri|hematuri)\b/u,
+  /\b(?:hipotansiyon|hipertansiyon|hipoksi|saturasyon|preload|afterload|infarkt|iskemi|st elevasyonu|v4r|nitrat|reperfizyon|reperfuzyon)\b/u,
+  /\b(?:goruntuleme|bt|mrg|mr|usg|ultrason|grafi|ekg|eko|patoloji|biyopsi|kultur|pcr|gram)\b/u,
+  /\b(?:mekanizma|reseptor|enzim|gen|mutasyon|protein|hormon|feedback|inhibe|aktive|substrat|urun)\b/u,
+  /\b(?:sinav|tus|final|ipucu|tuzak|sik|klasik|patognomonik|tipik|beklenir)\b/u,
+  /\b(?:mmhg|mg\/dl|mg\/l|u\/l|iu\/l|meq\/l|mmol\/l|ng\/ml|pg\/ml|%|<|>|≥|≤)\b/u,
+];
+
+const TASK_CONTEXT_BONUS = {
+  materialquestions: /\b(?:ayirici|soru|secenek|celdirici|tani|tedavi|test|mekanizma|komplikasyon|bulgu|laboratuvar|klinik)\b/u,
+  materialflashcards: /\b(?:tanim|mekanizma|enzim|reseptor|anahtar|ipucu|hatirla|klasik|sik)\b/u,
+  materialanalysis: /\b(?:konu|alt konu|kavram|mekanizma|klinik|sinav|hedef|ozet)\b/u,
+  lesson: /\b(?:mekanizma|klinik|sinav|tani|tedavi|ayirici|temel|kavram|baglanti)\b/u,
+};
+
+function sourceTaskKey(task = '') {
+  return normalizeForSourceRank(task).replace(/[^a-z0-9]/g, '');
+}
+
+function scoreSourceSentence(sentence = '', task = '') {
+  const normalized = normalizeForSourceRank(sentence);
+  let score = 0;
+  SOURCE_CONTEXT_PATTERNS.forEach((pattern) => { if (pattern.test(normalized)) score += 2; });
+  const taskPattern = TASK_CONTEXT_BONUS[sourceTaskKey(task)];
+  if (taskPattern?.test(normalized)) score += 3;
+  if (/\d/.test(sentence) && /(?:mg|mmol|meq|u\/l|mmhg|hafta|gun|ay|yil|%|<|>)/i.test(sentence)) score += 2;
+  if (sentence.length >= 70 && sentence.length <= 260) score += 1;
+  if (/^(?:kaynak|sayfa|slayt|file|dosya)\b/i.test(normalized)) score -= 3;
+  return score;
+}
+
+function buildTaskAwareSourceDigest(clean = '', maxChars = 12000, task = '') {
+  const sentences = splitSourceSentences(clean);
+  if (sentences.length < 8) return '';
+  const scored = sentences
+    .map((sentence, index) => ({ sentence, index, score: scoreSourceSentence(sentence, task) }))
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score || a.index - b.index);
+  const selected = new Map();
+  const targetChars = Math.max(1000, Math.floor(Number(maxChars || 12000) * 0.86));
+  let used = 0;
+  for (const item of scored) {
+    if (selected.has(item.index)) continue;
+    if (used + item.sentence.length > targetChars && selected.size >= 8) continue;
+    selected.set(item.index, item.sentence);
+    used += item.sentence.length + 1;
+    if (used >= targetChars) break;
+  }
+  const topScore = scored[0]?.score || 0;
+  if (selected.size < 6 && topScore < 2) return '';
+  return Array.from(selected.entries())
+    .sort((a, b) => a[0] - b[0])
+    .map(([, sentence]) => sentence)
+    .join(' ')
+    .slice(0, maxChars)
+    .trim();
+}
+
+export function compactSourceText(text = '', maxChars = 12000, options = {}) {
   const clean = safeString(text);
   if (!clean || clean.length <= maxChars) return clean;
+  const digest = buildTaskAwareSourceDigest(clean, maxChars, options.task || '');
+  if (digest && digest.length >= Math.min(160, maxChars * 0.2)) return digest;
   const segment = Math.max(800, Math.floor(maxChars / 3));
   const head = clean.slice(0, segment);
   const middleStart = Math.max(0, Math.floor(clean.length / 2) - Math.floor(segment / 2));
@@ -65,7 +150,7 @@ export function compactSourceText(text = '', maxChars = 12000) {
   return [head, '[... kaynak metnin orta bölümü ...]', middle, '[... kaynak metnin son bölümü ...]', tail].join('\n\n').slice(0, maxChars + 250);
 }
 
-export function compactMaterialSources(files = [], maxTotalChars = 16000) {
+export function compactMaterialSources(files = [], maxTotalChars = 16000, options = {}) {
   const readableFiles = (Array.isArray(files) ? files : [])
     .map((file, index) => ({
       index,
@@ -73,11 +158,12 @@ export function compactMaterialSources(files = [], maxTotalChars = 16000) {
     }))
     .filter((file) => file.text);
   if (!readableFiles.length) return '';
-  const perFile = Math.max(3000, Math.floor(Number(maxTotalChars || 16000) / readableFiles.length));
+  const totalBudget = Number(maxTotalChars || 16000);
+  const perFile = Math.min(totalBudget, Math.max(3000, Math.floor(totalBudget / readableFiles.length)));
   return readableFiles
-    .map((file) => `Kaynak Bölüm ${file.index + 1}:\n${compactSourceText(file.text, perFile)}`)
+    .map((file) => `Kaynak Bölüm ${file.index + 1}:\n${compactSourceText(file.text, perFile, { task: options.task || '' })}`)
     .join('\n\n---\n\n')
-    .slice(0, Number(maxTotalChars || 16000) + readableFiles.length * 80)
+    .slice(0, totalBudget + readableFiles.length * 80)
     .trim();
 }
 
@@ -252,7 +338,23 @@ function usageMetric(usage = {}, ...paths) {
   return 0;
 }
 
-export function logAIUsage({ task = 'unknown', model = '', usage = null, cached = false, apiStyle = '' } = {}) {
+export function logAIUsage({
+  task = 'unknown',
+  model = '',
+  usage = null,
+  cached = false,
+  apiStyle = '',
+  promptVersion = '',
+  sourceFingerprint = '',
+  retryCount = 0,
+  repairCall = false,
+  cacheWrite = false,
+  finalOutput = false,
+  validator = null,
+  quality = null,
+  fallbackReason = '',
+  durationMs = 0,
+} = {}) {
   if (!envFlag('KLINIKIQ_AI_USAGE_LOGS', true)) return;
   const safeUsage = usage || {};
   const inputTokens = usageMetric(safeUsage, 'input_tokens', 'prompt_tokens');
@@ -271,6 +373,16 @@ export function logAIUsage({ task = 'unknown', model = '', usage = null, cached 
     totalTokens,
     estimatedCostUsd: estimateOpenAICostUsd({ usage: safeUsage }),
     cacheHit: Boolean(cached),
+    cacheWrite: Boolean(cacheWrite),
+    promptVersion: safeString(promptVersion),
+    sourceFingerprint: safeString(sourceFingerprint),
+    retryCount: Number(retryCount || 0),
+    repairCall: Boolean(repairCall),
+    finalOutput: Boolean(finalOutput),
+    validator,
+    quality,
+    fallbackReason: safeString(fallbackReason),
+    durationMs: Number(durationMs || 0),
   }));
 }
 

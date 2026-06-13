@@ -57794,3 +57794,41 @@ html[data-theme="dark"] .ai-generation-countdown-live.ai-generation-compact-stat
 .ai-waiting-pearl-carousel-arrow-next svg {
   transform: translateX(0.5px) !important;
 }
+
+/* === V403 - learner-facing feedback must never be clipped === */
+.answer-feedback-panel,
+.answer-feedback-panel-pro,
+.answer-feedback-panel-v393,
+.answer-feedback-grid,
+.answer-feedback-grid-pro,
+.feedback-card,
+.feedback,
+.exam-feedback-compact,
+.komite-feedback-box,
+.komite-question-card,
+.option-comparison-list,
+.option-comparison-item,
+.clinical-reasoning-card,
+.evidence-chain-card,
+.management-action-item-pro,
+.clinical-pearl-item-pro {
+  overflow: visible !important;
+  max-height: none !important;
+}
+
+.answer-feedback-panel :where(p, .feedback-body-copy, .evidence-chain-copy, .option-comparison-item p, .management-action-item-pro p, .clinical-pearl-item-pro p),
+.answer-feedback-panel-pro :where(p, .feedback-body-copy, .evidence-chain-copy, .option-comparison-item p, .management-action-item-pro p, .clinical-pearl-item-pro p),
+.answer-feedback-panel-v393 :where(p, .feedback-body-copy, .evidence-chain-copy, .option-comparison-item p),
+.komite-feedback-box p,
+.komite-question-stem,
+.komite-supporting-data span {
+  display: block !important;
+  overflow: visible !important;
+  max-height: none !important;
+  text-overflow: clip !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+}

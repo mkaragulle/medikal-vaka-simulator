@@ -89,13 +89,13 @@ export default async function handler(request, response) {
     const sourceCheck = verifyCurrentSourceManifest(body);
     if (!sourceCheck.ok) return sendJson(response, 409, { ok: false, error: 'Current source session validation failed', validation: sourceCheck });
     const sourceFingerprint = createSourceFingerprint({ clientFingerprint: body.sourceFingerprint || sourceCheck.fingerprint || '', files: body.materialPacket?.files || [] });
-    const currentSourceText = compactMaterialSources(body.materialPacket?.files || [], resolveSourceCharLimit('KOMITE_FLASHCARDS_MAX_SOURCE_CHARS', 12000, 'KOMITE', TASK_NAME));
+    const currentSourceText = compactMaterialSources(body.materialPacket?.files || [], resolveSourceCharLimit('KOMITE_FLASHCARDS_MAX_SOURCE_CHARS', 12000, 'KOMITE', TASK_NAME), { task: TASK_NAME });
     if (!currentSourceText) return sendJson(response, 422, { ok: false, error: 'Current material packet has no readable text.' });
     const cacheKey = buildOutputCacheKey({ scope: 'KOMITE', task: TASK_NAME, promptVersion: PROMPT_VERSION, model: currentKomiteModel(), sourceFingerprint });
     return await withInFlightDedupe(cacheKey, async () => {
       const cachedOutput = await getDurableCachedOutput(cacheKey);
       if (cachedOutput) {
-        logAIUsage({ task: TASK_NAME, model: cachedOutput.model || currentKomiteModel(), cached: true, apiStyle: cachedOutput.apiStyle || 'output_cache' });
+        logAIUsage({ task: TASK_NAME, model: cachedOutput.model || currentKomiteModel(), cached: true, apiStyle: cachedOutput.apiStyle || 'output_cache', promptVersion: PROMPT_VERSION, sourceFingerprint, finalOutput: true });
         return sendJson(response, 200, { ok: true, cached: true, ...cachedOutput });
       }
       const prompt = buildGenerateFlashcardsPrompt({ sourceTextChunks: currentSourceText });
