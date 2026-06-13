@@ -135,7 +135,7 @@ export function setCachedOutput(cacheKey, value, ttlMs = envNumber('KLINIKIQ_AI_
 // and keep high-detail generation available via env overrides.
 export function getAICostProfile(scope = 'GENERAL') {
   const prefix = String(scope || 'GENERAL').toUpperCase();
-  const raw = process.env[`${prefix}_AI_COST_PROFILE`] || process.env.KLINIKIQ_AI_COST_PROFILE || 'ultra';
+  const raw = process.env[`${prefix}_AI_COST_PROFILE`] || process.env.KLINIKIQ_AI_COST_PROFILE || 'balanced';
   const value = safeString(raw).toLowerCase();
   if (['quality', 'high', 'full'].includes(value)) return 'quality';
   if (['balanced', 'standard'].includes(value)) return 'balanced';
@@ -145,7 +145,7 @@ export function getAICostProfile(scope = 'GENERAL') {
 export function defaultModelForScope(scope = 'GENERAL') {
   const prefix = String(scope || 'GENERAL').toUpperCase();
   const profile = getAICostProfile(prefix);
-  const fastModel = process.env[`${prefix}_OPENAI_FAST_MODEL`] || process.env.OPENAI_FAST_MODEL || 'gpt-5-mini';
+  const fastModel = process.env[`${prefix}_OPENAI_FAST_MODEL`] || process.env.OPENAI_FAST_MODEL || 'gpt-4.1-mini';
   const qualityModel = process.env[`${prefix}_OPENAI_QUALITY_MODEL`] || process.env.OPENAI_QUALITY_MODEL || 'gpt-4.1-mini';
   return profile === 'quality' ? qualityModel : fastModel;
 }
@@ -183,7 +183,7 @@ export function applyCostProfileToMaxTokens(scope = 'GENERAL', task = 'default',
 
   const caps = {
     ultra: {
-      tusspotquestion: 1450,
+      tusspotquestion: 3600,
       materialanalysis: 950,
       materialflashcards: 2200,
       materialquestions: 3400,
@@ -191,7 +191,7 @@ export function applyCostProfileToMaxTokens(scope = 'GENERAL', task = 'default',
       default: Math.ceil(base * 0.58),
     },
     balanced: {
-      tusspotquestion: 1450,
+      tusspotquestion: 4200,
       materialanalysis: 1300,
       materialflashcards: 2400,
       materialquestions: 3400,
@@ -241,7 +241,7 @@ export function detailModeForProfile(scope = 'GENERAL') {
   if (['full', 'detailed', 'quality'].includes(normalized)) return 'full';
   if (['standard', 'balanced'].includes(normalized)) return 'standard';
   if (['minimal', 'concise', 'fast'].includes(normalized)) return 'concise';
-  return getAICostProfile(scope) === 'quality' ? 'full' : 'concise';
+  return getAICostProfile(scope) === 'ultra' ? 'concise' : 'standard';
 }
 
 function usageMetric(usage = {}, ...paths) {

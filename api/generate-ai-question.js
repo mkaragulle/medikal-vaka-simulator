@@ -7,7 +7,7 @@ import {
 import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from '../server/lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-tus-v46-full-pipeline-audit';
+const PROMPT_VERSION = 'klinikiq-tus-v47-remote-ai-recovery';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
@@ -485,9 +485,9 @@ function hasPatientSpecificCriticalClaim(post = '', claimPattern = null) {
   if (!sentences.length) return false;
   return sentences.some((sentence) => {
     const n = normalize(sentence);
-    const patientCue = /(?:bu olgu|bu hasta|bu bebek|bu çocuk|bu cocuk|bu vakada|olguda|hastada|bebekte|çocukta|cocukta|burada|verilen|mevcut olgu|klinikte|muayenede|laboratuvarda|tetkikte|incelemede|sonuçlarda|sonuclarda|kök|kok)/u.test(n);
-    const resultCue = /(?:normal|düşük|dusuk|yüksek|yuksek|artmış|artmis|azalmış|azalmis|pozitif|negatif|saptanır|saptanir|saptanmaz|yok|var|izlenir|izlenmez|gösterir|gosterir|mevcut|eşlik eder|eslik eder|eşlik etmez|eslik etmez)/u.test(n);
-    const generalDiseaseCue = /(?:de|da|inde|ında|tipik|beklenir|görülür|gorulur|olabilir|genellikle|klasik olarak)/u.test(n) && !patientCue;
+    const patientCue = /\b(?:bu olgu|bu hasta|bu bebek|bu çocuk|bu cocuk|bu vakada|olguda|hastada|bebekte|çocukta|cocukta|burada|verilen|mevcut olgu|klinikte|muayenede|laboratuvarda|tetkikte|incelemede|sonuçlarda|sonuclarda|kök|kok)\b/u.test(n);
+    const resultCue = /\b(?:normal|düşük|dusuk|yüksek|yuksek|artmış|artmis|azalmış|azalmis|pozitif|negatif|saptanır|saptanir|saptanmaz|yok|var|izlenir|izlenmez|gösterir|gosterir|mevcut|eşlik eder|eslik eder|eşlik etmez|eslik etmez)\b/u.test(n);
+    const generalDiseaseCue = /\b(?:de|da|inde|ında|tipik|beklenir|görülür|gorulur|olabilir|genellikle|klasik olarak)\b/u.test(n) && !patientCue;
     return patientCue || (resultCue && !generalDiseaseCue);
   });
 }
@@ -1235,11 +1235,14 @@ async function callOpenAI(prompt, { detailMode = tusQuestionDetailMode() } = {})
   if (!apiKey) return null;
   const model = currentTusModel();
   const baseUrl = (process.env.TUS_OPENAI_BASE_URL || process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
-  const requestedTimeoutMs = Number(process.env.TUS_OPENAI_PER_REQUEST_TIMEOUT_MS || process.env.OPENAI_PER_REQUEST_TIMEOUT_MS || 52000);
-  const timeoutMs = Math.max(45000, Math.min(58000, requestedTimeoutMs || 52000));
+  const requestedTimeoutMs = Number(process.env.TUS_OPENAI_PER_REQUEST_TIMEOUT_MS || process.env.OPENAI_PER_REQUEST_TIMEOUT_MS || 48000);
+  const timeoutMs = Math.max(35000, Math.min(52000, requestedTimeoutMs || 48000));
   const requestedMaxTokens = Number(process.env.TUS_OPENAI_MAX_OUTPUT_TOKENS || process.env.OPENAI_MAX_OUTPUT_TOKENS || 0);
-  const maxTokens = requestedMaxTokens > 0 ? Math.max(3000, requestedMaxTokens) : applyCostProfileToMaxTokens('TUS', TASK_NAME, 3200);
-  const explicitStyle = process.env.TUS_OPENAI_API_STYLE || process.env.OPENAI_API_STYLE || '';
+  const maxTokens = requestedMaxTokens > 0 ? Math.max(3600, requestedMaxTokens) : applyCostProfileToMaxTokens('TUS', TASK_NAME, 4200);
+  // TUS üretiminde global OPENAI_API_STYLE değerini zorunlu kabul etmiyoruz.
+  // Daha önce global responses ayarı + düşük token limiti, output kesilince endpoint'in local fallback dönmesine yol açabiliyordu.
+  // TUS_OPENAI_API_STYLE açıkça verilmediyse modelin en stabil varsayılan akışını kullan.
+  const explicitStyle = process.env.TUS_OPENAI_API_STYLE || '';
   const useResponses = shouldUseResponsesApi(model, explicitStyle);
   const style = useResponses ? 'responses' : 'chat';
   const reasoningEffort = safeReasoningEffort(process.env.TUS_OPENAI_REASONING_EFFORT || process.env.OPENAI_REASONING_EFFORT || defaultReasoningEffortForProfile('TUS'));
@@ -1321,7 +1324,7 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
     // Educational polish issues are kept as quality notes so live AI generation
     // does not collapse into safe local fallback on every request.
     const hardBlockingErrors = validation.errors.filter((message) =>
-      /branch eksik|stem eksik|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|imkansız veya bozuk klinik değer|kritik gerekçe stemde görünmüyor/iu.test(message)
+      /branch eksik|stem eksik|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|imkansız veya bozuk klinik değer/iu.test(message)
     );
 
     if (hardBlockingErrors.length) {
@@ -1364,7 +1367,7 @@ async function getReusableBankQuestion({ branch, target, difficulty, recentQuest
     const validation = validateQuestion(candidate, recentQuestionSummaries);
     if (validation.ok) return true;
     return !validation.errors.some((message) =>
-      /branch eksik|stem eksik|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|imkansız veya bozuk klinik değer|kritik gerekçe stemde görünmüyor/iu.test(message)
+      /branch eksik|stem eksik|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|imkansız veya bozuk klinik değer/iu.test(message)
     );
   });
   if (!reusable) return null;
@@ -1453,14 +1456,24 @@ export default async function handler(request, response) {
 
   if (String(process.env.AI_ENABLE_SAFE_FALLBACK || 'true').toLowerCase() === 'true') {
     const question = fallbackQuestion({ branchFilter: branch, difficulty: requestedDifficulty, recentQuestionSummaries });
+    const primaryError = errors[0] || null;
     question.provider = 'local-safe-fallback';
     question.fallback = true;
+    question.aiMeta = {
+      ...(question.aiMeta || {}),
+      fallback: true,
+      remote: false,
+      remoteFailureReason: primaryError,
+      remoteFailureAttempts: errors.slice(0, 3),
+      promptVersion: PROMPT_VERSION,
+    };
     return sendJson(response, 200, {
       ok: true,
       provider: 'local-safe-fallback',
       fallback: true,
       safeFallback: true,
-      error: errors[0] || null,
+      error: primaryError,
+      attempts: errors.slice(0, 3),
       question,
     });
   }
