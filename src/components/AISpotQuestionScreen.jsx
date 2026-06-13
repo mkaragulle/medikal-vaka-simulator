@@ -6,6 +6,7 @@ import {
   buildAISpotContextLine,
   buildAISpotNarrativeStem,
   buildAISpotQuestionPrompt,
+  getAISpotSupportDataGroups,
   getAISpotPreviewDiagnostics,
 } from '../utils/aiSpotNarrative.js';
 
@@ -185,7 +186,7 @@ function AISpotNarrativePanel({ question, hardMode = false, embedded = false }) 
   const contextLine = buildAISpotContextLine(question);
   const paragraphs = buildAISpotNarrativeStem(question);
   // V383: AI TUS sorularında sağ taraftaki destek/veri paneli gösterilmez; tüm veri soru paragrafına entegre edilir.
-  const supportDataGroups = [];
+  const supportDataGroups = getAISpotSupportDataGroups(question);
   const difficultyMeta = getDifficultyMeta(question.difficulty);
   const diagnostics = import.meta.env?.DEV ? getAISpotPreviewDiagnostics(question) : null;
 

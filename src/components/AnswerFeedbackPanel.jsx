@@ -764,6 +764,8 @@ function mergeUniqueSentences(parts = [], maxSentences = 7, maxLength = 1350) {
   return sentences.join(' ');
 }
 
+const MISSING_OPTION_FEEDBACK_NOTICE = 'Bu soru seçenek feedbacki eksik olduğu için kalite incelemesi gerektirir.';
+
 function resolveAISpotOptionExplanation(clinicalCase = {}, optionText = '', fallback = '') {
   const feedback = getFeedback(clinicalCase);
   const letter = getAISpotOptionLetter(clinicalCase, optionText);
@@ -781,7 +783,7 @@ function resolveAISpotOptionExplanation(clinicalCase = {}, optionText = '', fall
     getAISpotMapValue(clinicalCase.diagnosis?.answerFeedbackByOption, optionText, letter),
     fallback,
   ].filter(Boolean);
-  return mergeUniqueSentences(sources, 4, 760) || 'Bu seçenek için ayrıntılı açıklama eklenemedi.';
+  return mergeUniqueSentences(sources, 4, 760);
 }
 
 function buildAISpotDetailedRows(clinicalCase = {}, selectedOption = '') {
@@ -882,14 +884,14 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCo
           <article className={`ai-spot-feedback-choice-card ${isCorrect ? 'is-correct' : 'is-selected-wrong'}`.trim()}>
             <span className="ai-spot-choice-kicker">Seçimin</span>
             <strong><GlossaryText text={selectedText || 'Seçim bulunamadı'} enabled={glossaryEnabled} /></strong>
-            <p><GlossaryText text={ensureSentence(selectedExplanation || 'Seçilen seçenek için açıklama bulunamadı.')} enabled={glossaryEnabled} /></p>
+            <p><GlossaryText text={ensureSentence(selectedExplanation || MISSING_OPTION_FEEDBACK_NOTICE)} enabled={glossaryEnabled} /></p>
           </article>
 
           {!isCorrect ? (
             <article className="ai-spot-feedback-choice-card is-correct">
               <span className="ai-spot-choice-kicker">Doğru cevap</span>
               <strong><GlossaryText text={correctText || 'Doğru cevap bulunamadı'} enabled={glossaryEnabled} /></strong>
-              <p><GlossaryText text={ensureSentence(correctExplanation || 'Doğru seçenek için açıklama bulunamadı.')} enabled={glossaryEnabled} /></p>
+              <p><GlossaryText text={ensureSentence(correctExplanation || MISSING_OPTION_FEEDBACK_NOTICE)} enabled={glossaryEnabled} /></p>
             </article>
           ) : null}
         </div>
@@ -935,7 +937,7 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCo
                   {row.isSelected ? <em>Seçimin</em> : null}
                   {row.status === 'correct' ? <em className="correct">Doğru cevap</em> : null}
                 </div>
-                <p><GlossaryText text={ensureSentence(row.explanation)} enabled={glossaryEnabled} revealMode="postAnswer" maxTerms={6} /></p>
+                <p><GlossaryText text={ensureSentence(row.explanation || MISSING_OPTION_FEEDBACK_NOTICE)} enabled={glossaryEnabled} revealMode="postAnswer" maxTerms={6} /></p>
               </article>
             ))}
           </div>

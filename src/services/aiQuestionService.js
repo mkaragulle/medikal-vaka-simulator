@@ -267,13 +267,13 @@ export async function createAIQuestion({ previousQuestionId = null, branchFilter
     const recoveredPrefetch = await waitForActivePrefetch({ branchFilter, difficulty, context, timeoutMs: FALLBACK_GRACE_WAIT_MS });
     if (recoveredPrefetch?.ok) return { ...recoveredPrefetch, source: recoveredPrefetch.source || 'client-prefetch-cache', usedRemoteAI: true, showFallbackNotice: false };
 
-    if (String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'true').toLowerCase() !== 'true') {
+    if (String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'false').toLowerCase() !== 'true') {
       return { ok: false, question: null, source: 'openai-error', usedRemoteAI: false, fallback: false, showFallbackNotice: false, error };
     }
     return createClientFallback({ branchFilter, difficulty, context, reason: error });
   }
 
-  if (String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'true').toLowerCase() === 'true') {
+  if (String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'false').toLowerCase() === 'true') {
     return createClientFallback({ branchFilter, difficulty, context, reason: null });
   }
   return { ok: false, question: null, source: 'openai-unavailable', usedRemoteAI: false, fallback: false, showFallbackNotice: false, error: new Error('AI servisi kullanılamıyor.') };

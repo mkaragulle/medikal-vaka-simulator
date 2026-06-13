@@ -1,10 +1,11 @@
 import { sendJson, parseJsonBody, callOpenAIJson, validateQuestionsShape, verifyCurrentSourceManifest } from '../server/lib/komite-ai-common.js';
 import { GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT, buildGenerateMaterialQuestionsPrompt } from '../server/prompts/generateMaterialQuestionsPrompt.js';
 import { buildOutputCacheKey, compactMaterialSources, createSourceFingerprint, defaultModelForScope, getDurableCachedOutput, logAIUsage, resolveModelForScope, resolveSourceCharLimit, setDurableCachedOutput, withInFlightDedupe } from '../server/lib/ai-token-optimizer.js';
+import { runQuestionQualityGate } from '../server/lib/question-quality-gate.js';
 
 
 const TASK_NAME = 'materialQuestions';
-const PROMPT_VERSION = 'komite-material-questions-v3-cost-capped';
+const PROMPT_VERSION = 'komite-material-questions-v4-publisher-quality-gate';
 
 function currentKomiteModel() {
   return resolveModelForScope('KOMITE');
@@ -103,15 +104,29 @@ export default async function handler(request, response) {
     return await withInFlightDedupe(cacheKey, async () => {
       const cachedOutput = await getDurableCachedOutput(cacheKey);
       if (cachedOutput) {
-        logAIUsage({ task: TASK_NAME, model: cachedOutput.model || currentKomiteModel(), cached: true, apiStyle: cachedOutput.apiStyle || 'output_cache' });
-        return sendJson(response, 200, { ok: true, cached: true, ...cachedOutput });
+        const cachedQuestions = Array.isArray(cachedOutput.questions) ? cachedOutput.questions : [];
+        const cachedQuality = cachedQuestions.map((question, index) => ({ index, ...runQuestionQualityGate(question, { version: PROMPT_VERSION }) }));
+        if (cachedQuestions.length === 10 && cachedQuality.every((item) => item.ok)) {
+          logAIUsage({ task: TASK_NAME, model: cachedOutput.model || currentKomiteModel(), cached: true, apiStyle: cachedOutput.apiStyle || 'output_cache' });
+          return sendJson(response, 200, { ok: true, cached: true, ...cachedOutput, qualityGate: cachedQuality.map(({ question, ...item }) => item) });
+        }
       }
       const prompt = buildGenerateMaterialQuestionsPrompt({ sourceTextChunks: currentSourceText });
       const result = await callOpenAIJson({ systemPrompt: GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: envNumber('KOMITE_QUESTIONS_MAX_OUTPUT_TOKENS', 4200), jsonSchema: QUESTION_JSON_SCHEMA, scope: 'KOMITE', task: TASK_NAME, promptVersion: PROMPT_VERSION });
       const questions = Array.isArray(result.json.questions) ? result.json.questions : [];
       const validation = validateQuestionsShape({ questions });
-      const responseValidation = validation.ok ? validation : { ok: true, warnings: validation.errors || [], note: 'Non-blocking question normalization warnings.' };
-      const payload = { provider: 'openai', model: result.model, apiStyle: result.apiStyle, questions, validation: responseValidation };
+      const qualityGate = questions.map((question, index) => ({ index, ...runQuestionQualityGate(question, { version: PROMPT_VERSION }) }));
+      const failedQuality = qualityGate.filter((item) => !item.ok);
+      if (!validation.ok || failedQuality.length) {
+        return sendJson(response, 422, {
+          ok: false,
+          error: 'Generated material questions failed publisher quality gate.',
+          manualReviewRequired: true,
+          validation,
+          qualityGate: qualityGate.map(({ question, ...item }) => item),
+        });
+      }
+      const payload = { provider: 'openai', model: result.model, apiStyle: result.apiStyle, questions, validation, qualityGate: qualityGate.map(({ question, ...item }) => item) };
       await setDurableCachedOutput(cacheKey, payload);
       return sendJson(response, 200, { ok: true, cached: false, ...payload });
     });

@@ -273,9 +273,8 @@ function cleanEvidenceChain(question = {}) {
 function cleanExamPearl(question = {}, context = []) {
   const feedback = question.diagnosis?.answerFeedback || {};
   const raw = question.examPearl || (Array.isArray(question.examPearls) ? question.examPearls[0] : '') || feedback.spotPearl || feedback.pearls?.[0] || feedback.clinicalPearls?.[0] || '';
-  const fallback = 'TUS tipi sorularda karar, tek bir ezber cümlesinden çok olgudaki ayırt ettirici ipuçlarının aynı klinik eksende birleşmesiyle verilir.';
-  const cleaned = cleanFeedbackText(raw, { fallback, limit: 240, context });
-  if (isTooSimilar(cleaned, context, 0.82)) return fallback;
+  const cleaned = cleanFeedbackText(raw, { fallback: '', limit: 240, context });
+  if (isTooSimilar(cleaned, context, 0.82)) return '';
   return cleaned;
 }
 
@@ -297,12 +296,10 @@ function cleanManagementSteps(question = {}, context = []) {
 function cleanWrongFeedbackMap(question = {}, context = []) {
   const feedback = question.wrongOptionFeedback && typeof question.wrongOptionFeedback === 'object' ? question.wrongOptionFeedback : {};
   const options = optionIdList(question);
-  const correctId = String(question.correctAnswer || '').toUpperCase();
   const output = {};
   options.forEach((option) => {
-    const fallback = option.id === correctId ? buildCorrectFallback(question) : buildWrongFallback(option.text, question);
     output[option.id] = cleanFeedbackText(feedback[option.id] || feedback[option.text] || '', {
-      fallback,
+      fallback: '',
       limit: MAX_FEEDBACK_LENGTH,
       context,
     });
@@ -324,7 +321,7 @@ export function applyFeedbackQualityStandardToQuestion(question = {}) {
   const repaired = { ...question };
   const evidenceChain = cleanEvidenceChain(repaired);
   const explanation = cleanFeedbackText(repaired.explanation || repaired.diagnosis?.answerFeedback?.whyCorrect || repaired.diagnosis?.explanation || '', {
-    fallback: buildCorrectFallback(repaired),
+    fallback: '',
     limit: MAX_EXPLANATION_LENGTH,
     context: evidenceChain,
   });
@@ -335,7 +332,7 @@ export function applyFeedbackQualityStandardToQuestion(question = {}) {
   repaired.explanation = explanation;
   repaired.evidenceChain = evidenceChain.length >= 3 ? evidenceChain : pickClues(repaired, 3);
   repaired.examPearl = examPearl;
-  repaired.examPearls = [examPearl];
+  repaired.examPearls = [examPearl].filter(Boolean);
   repaired.managementSteps = managementSteps;
   repaired.wrongOptionFeedback = wrongOptionFeedback;
 
@@ -348,12 +345,12 @@ export function applyFeedbackQualityStandardToQuestion(question = {}) {
       ...answerFeedback,
       whyCorrect: explanation,
       evidenceChain: repaired.evidenceChain,
-      pearls: feedbackPearls.length ? feedbackPearls : [examPearl],
-      clinicalPearls: feedbackPearls.length ? feedbackPearls : [examPearl],
+      pearls: feedbackPearls.length ? feedbackPearls : [examPearl].filter(Boolean),
+      clinicalPearls: feedbackPearls.length ? feedbackPearls : [examPearl].filter(Boolean),
       managementSteps,
       whyWrong: Object.fromEntries(optionIdList(repaired)
         .filter((option) => option.id !== String(repaired.correctAnswer || '').toUpperCase())
-        .map((option) => [option.text, wrongOptionFeedback[option.id] || buildWrongFallback(option.text, repaired)])),
+        .map((option) => [option.text, wrongOptionFeedback[option.id] || ''])),
     },
   };
 
@@ -378,6 +375,8 @@ export function validateFeedbackQualityStandard(question = {}) {
     if (BROKEN_END_PATTERN.test(normalized.replace(/[.!?]$/u, ''))) errors.push(`broken-feedback-sentence:${normalized.slice(0, 100)}`);
   });
   const evidence = Array.isArray(question.evidenceChain) ? question.evidenceChain : [];
+  if (!normalizeSpaces(question.explanation || question.diagnosis?.answerFeedback?.whyCorrect || '')) errors.push('feedback-explanation-empty');
+  if (!normalizeSpaces(question.examPearl || question.diagnosis?.answerFeedback?.spotPearl || '')) errors.push('feedback-exam-pearl-empty');
   if (evidence.length < 3) errors.push('feedback-evidence-chain-too-short');
   const wrong = question.wrongOptionFeedback || {};
   optionIdList(question).forEach((option) => {

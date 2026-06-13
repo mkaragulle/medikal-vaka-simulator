@@ -1,4 +1,5 @@
 import { applyCostProfileToMaxTokens, buildPromptCacheConfig, callOpenAIWithPromptCacheFallback, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, getAICostProfile, logAIUsage, resolveModelForScope } from './ai-token-optimizer.js';
+import { runQuestionQualityGate } from './question-quality-gate.js';
 export function sendJson(response, status, payload) {
   response.statusCode = status;
   response.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -505,6 +506,10 @@ export function validateQuestionsShape(output = {}) {
       const feedback = String(question.optionFeedback?.[id] || '').trim();
       if (!feedback || feedback.length < 18 || /^(yanlış|doğru|bu seçenek doğrudur)\.?$/iu.test(feedback)) errors.push(`${index + 1}. soruda ${id} feedback zayıf.`);
       if (/\b[NHnm]\.?\s*$/u.test(feedback) || /\bN\.\s/u.test(feedback)) errors.push(`${index + 1}. soruda kısaltılmış anatomi feedbacki var.`);
+    });
+    const gate = runQuestionQualityGate(question, { version: 'komite-common-question-quality-gate' });
+    gate.errors.forEach((message) => {
+      errors.push(`${index + 1}. soruda kalite kapısı hatası: ${message}`);
     });
   });
   return { ok: errors.length === 0, errors };

@@ -82,6 +82,8 @@ Stem–açıklama–feedback veri tutarlılığı:
 Açıklama ve feedback:
 - explanation genel ders notu değil; stemdeki verileri doğru cevapla bağlayan vaka özelinde karar zinciri olsun.
 - wrongOptionFeedback içinde A, B, C, D, E anahtarlarının tamamı dolu olsun; doğru seçenek için de öğretici feedback yaz.
+- optionFeedback alanı da A-E anahtarlarının tamamını içersin ve wrongOptionFeedback ile aynı seçenek-özel feedbackleri taşısın; hiçbir seçenek feedbacksiz kalmasın.
+- Yaşam bulgusu, laboratuvar, görüntüleme, mikrobiyoloji veya patoloji verisi üretiliyorsa ilgili structured alanlarda da görünür tut; backend/frontend bu alanları ayrıca denetler ve gösterir.
 - Her yanlış seçenek feedbacki doğal biçimde şunu anlatsın: hangi durumda düşünülebilir, bu vakada neden uygun değildir, doğru seçenekle ayırıcı farkı nedir.
 - Feedback, seçenek özelinde ve kökteki veriye bağlı olmalıdır. “Bu seçenek öncelikli değildir”, “klinik bağlamda yeterince açıklamaz”, “temel karar noktasını desteklemez”, “tek başına açıklamaz” gibi otomatik ve yüzeysel cümleleri gerçek feedback yerine kullanma.
 - Doğru seçenek feedbacki de yalnızca “uyumludur” dememeli; kökteki kritik verilerin doğru cevaba nasıl bağlandığını açıklamalıdır.
@@ -103,9 +105,17 @@ Return JSON in this exact schema:
   "demographics": "",
   "setting": "",
   "chiefComplaint": "",
+  "caseType": "ai-spot",
   "stem": "",
+  "questionStem": "",
   "compactVitals": [],
   "compactObjectiveData": [],
+  "vitalSigns": [],
+  "objectiveData": [],
+  "laboratoryData": [],
+  "imagingData": [],
+  "microbiologyData": [],
+  "pathologyData": [],
   "question": "",
   "options": [
     {"id": "A", "text": ""},
@@ -115,8 +125,17 @@ Return JSON in this exact schema:
     {"id": "E", "text": ""}
   ],
   "correctAnswer": "",
+  "correctOptionId": "",
   "explanation": "",
+  "diagnosisTarget": "",
   "wrongOptionFeedback": {
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "optionFeedback": {
     "A": "",
     "B": "",
     "C": "",
@@ -163,6 +182,7 @@ export function buildUserPrompt({
   attempt = 1,
   antiRepeatNonce = '',
   detailMode = 'concise',
+  qualityFeedback = '',
 }) {
   const branchText = cleanText(branch);
   const targetText = cleanText(target);
@@ -175,6 +195,7 @@ export function buildUserPrompt({
       ? 'Standart derinlik: tüm alanlar eksiksiz, vaka özelinde ve öğretici olsun; uzunluk kalıbı uygulama.'
       : 'Hızlı ama kaliteli derinlik: JSON şeması, tıbbi güvenlik ve öğreticilik korunur; gereksiz uzatma yapma.';
   const cleanSourceText = cleanText(sourceText);
+  const cleanQualityFeedback = cleanText(qualityFeedback);
   const sourceBlock = cleanSourceText
     ? `\nVarsa kullanıcının verdiği ek bilgi veya kaynak metin:\n${cleanSourceText}\n\nBu metni körlemesine kopyalama; yalnızca tıbbi olarak doğru, sınav değeri yüksek ve klinik akıl yürütmeye uygun bilgiyi özgün soru kurgusuna dönüştür.`
     : '\nVarsa kullanıcının verdiği ek bilgi veya kaynak metin: Yok';
@@ -190,6 +211,7 @@ Anti-repeat anahtarı: ${cleanText(antiRepeatNonce)}-${attempt}
 Yakın zamanda üretilen soru özetleri:
 ${recentCompact}
 ${sourceBlock}
+${cleanQualityFeedback ? `\nÖnceki deneme backend kalite kapısından geçmedi. Aşağıdaki hata listesini kullanıcıya yazma; soru kökünü, doğru cevabı, açıklamayı ve seçenek feedbacklerini yeniden kurarken düzelt:\n${cleanQualityFeedback}\n` : ''}
 
 Bu bilgilerle bilimsel doğruluğu yüksek, klinik bağlamlı, tek doğru cevaplı ve öğretici bir soru üret. Yakın soru özetleri verilmişse aynı hastalığı, aynı klinik senaryoyu, aynı doğru cevap mantığını, aynı seçenek setini veya aynı veri paternini tekrar etme.
 

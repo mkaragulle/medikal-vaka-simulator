@@ -289,14 +289,28 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   const options = normalizeOptions(payload.options || payload.o);
   const correctOption = getCorrectOption(options, payload.correctAnswer || payload.c);
   const correctText = cleanText(correctOption?.text || payload.correctAnswerText || '');
-  const rawCompactVitals = compactItems(payload.compactVitals || payload.cv || payload.vitals || [], 5);
-  const rawCompactObjectiveData = compactItems(payload.compactObjectiveData || payload.co || payload.objectiveData || [], 8);
+  const rawCompactVitals = compactItems([
+    ...asArray(payload.compactVitals || []),
+    ...asArray(payload.cv || []),
+    ...asArray(payload.vitalSigns || []),
+    ...asArray(payload.vitals || []),
+  ], 5);
+  const rawCompactObjectiveData = compactItems([
+    ...asArray(payload.compactObjectiveData || []),
+    ...asArray(payload.co || []),
+    ...asArray(payload.objectiveData || []),
+    ...asArray(payload.supportingData || []),
+    ...asArray(payload.laboratoryData || []),
+    ...asArray(payload.imagingData || []),
+    ...asArray(payload.microbiologyData || []),
+    ...asArray(payload.pathologyData || []),
+  ], 12);
   const branch = cleanText(payload.relatedBranch || payload.branch || payload.b || meta.branchFilter || 'TUS');
   const normalizedBranch = BRANCH_ALIASES.get(normalizeForCompare(branch)) || branch;
   const stemQuestionPair = cleanStemQuestionPair(payload.stem || payload.s || 'Kısa klinik olgu verileri birlikte değerlendirilir.', payload.question || payload.q || '');
   const stem = integrateCompactDataIntoStem(stemQuestionPair.stem, rawCompactVitals, rawCompactObjectiveData);
-  const compactVitals = [];
-  const compactObjectiveData = [];
+  const compactVitals = rawCompactVitals;
+  const compactObjectiveData = rawCompactObjectiveData;
   const evidenceChain = buildEvidence(payload.evidenceChain || payload.evidence || payload.k)
     .filter((item) => !containsAnswerLeak(item, correctText));
   const answerTarget = cleanText(payload.answerTarget || payload.questionIntent || payload.intent || '');
@@ -323,10 +337,17 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
     setting: cleanText(payload.setting || ''),
     chiefComplaint: cleanText(payload.chiefComplaint || payload.cc || ''),
     stem,
+    questionStem: stem,
     narrativeStem: stem,
     stemMode: 'narrative',
     compactVitals,
     compactObjectiveData,
+    vitalSigns: compactVitals,
+    objectiveData: compactObjectiveData,
+    laboratoryData: compactItems(payload.laboratoryData || [], 8),
+    imagingData: compactItems(payload.imagingData || [], 6),
+    microbiologyData: compactItems(payload.microbiologyData || [], 6),
+    pathologyData: compactItems(payload.pathologyData || [], 6),
     vitals: makeVitalsObject(compactVitals),
     exam: asArray(payload.exam || payload.physicalExam).map(cleanText).filter(Boolean),
     history: asArray(payload.history).map(cleanText).filter(Boolean),
@@ -343,6 +364,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
     options,
     correctAnswer: correctOption?.id || 'A',
     wrongOptionFeedback: Object.fromEntries(Object.entries(optionRationales || {}).map(([key, value]) => [key, ensureSentence(cleanGeneratedText(value))])),
+    optionFeedback: Object.fromEntries(Object.entries(optionRationales || {}).map(([key, value]) => [key, ensureSentence(cleanGeneratedText(value))])),
     managementSequence: { enabled: false, showInSpot: false, steps: [] },
     patientIntro: {
       profile: cleanText(payload.demographics || normalizedBranch),

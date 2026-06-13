@@ -81,7 +81,7 @@ function plain(value) {
   return '';
 }
 
-function compactSentence(text = '', fallback = '', limit = 260) {
+function compactSentence(text = '', fallback = '', _limit = 260) {
   const cleaned = String(text || fallback || '')
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
@@ -89,7 +89,7 @@ function compactSentence(text = '', fallback = '', limit = 260) {
     .replace(/^[,.;:!\-\s]+|[,.;:!\-\s]+$/g, '')
     .trim();
   if (!cleaned) return fallback;
-  return cleaned.length > limit ? `${cleaned.slice(0, limit - 1).trim()}…` : cleaned;
+  return cleaned;
 }
 
 function getOptions(question = {}) {

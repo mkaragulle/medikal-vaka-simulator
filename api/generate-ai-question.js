@@ -5,9 +5,10 @@ import {
   normalizeDifficulty,
 } from '../server/prompts/tus-question-prompt.js';
 import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from '../server/lib/ai-token-optimizer.js';
+import { normalizeQuestionQualityFields, runQuestionQualityGate } from '../server/lib/question-quality-gate.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-tus-v49-global-coherence-feedback-gate';
+const PROMPT_VERSION = 'klinikiq-tus-v50-global-publisher-quality-gate';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
@@ -1332,16 +1333,15 @@ function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
     setting: cleanText(question.setting || ''),
     chiefComplaint: cleanText(question.chiefComplaint || ''),
     stem: isGenericOrPlaceholderStem(integratedStem) ? '' : integratedStem,
-    compactVitals: [],
-    compactObjectiveData: [],
+    compactVitals: rawCompactVitals,
+    compactObjectiveData: rawCompactObjectiveData,
     question: ensureQuestion(sanitizedQuestionText),
     options,
     correctAnswer: OPTION_IDS.includes(correctId) ? correctId : (options[0]?.id || 'A'),
     explanation: ensureSentence(cleanGeneratedText(question.explanation || question.whyCorrect || '')),
     wrongOptionFeedback: OPTION_IDS.reduce((acc, id) => {
       const rawFeedback = cleanGeneratedText(question.wrongOptionFeedback?.[id] || question.optionFeedback?.[id] || question.optionRationales?.[id] || '');
-      const fallbackFeedback = id === correctId ? cleanGeneratedText(question.explanation || question.whyCorrect || '') : '';
-      acc[id] = ensureSentence(rawFeedback || fallbackFeedback);
+      acc[id] = ensureSentence(rawFeedback);
       return acc;
     }, {}),
     evidenceChain: asArray(question.evidenceChain).map(ensureSentence).filter(Boolean),
@@ -1350,20 +1350,7 @@ function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
   };
   const grounded = applyStemDataGrounding(sanitized);
   Object.assign(sanitized, grounded);
-  if (!sanitized.evidenceChain.length) {
-    sanitized.evidenceChain = [sanitized.stem, ...sanitized.compactObjectiveData.map((item) => `${item.label}: ${item.value}`)]
-      .map(ensureSentence)
-      .filter(Boolean)
-      ;
-  }
-  OPTION_IDS.forEach((id) => {
-    if (!cleanText(sanitized.wrongOptionFeedback[id])) {
-      sanitized.wrongOptionFeedback[id] = id === sanitized.correctAnswer
-        ? ensureSentence(sanitized.explanation || `${correctText} verilen klinik verilerle en uyumlu yanıttır`)
-        : 'Bu seçenek için gerçek, seçenek özelinde ve köke dayalı ayırt ettirici feedback üretilemediği için soru revizyon gerektirir.';
-    }
-  });
-  if (!cleanText(sanitized.examPearl)) sanitized.examPearl = 'Soru kökünde verilen ayırt ettirici ipuçları, seçenekleri aynı karar ekseninde karşılaştırarak kullanılmalıdır.';
+  Object.assign(sanitized, normalizeQuestionQualityFields(sanitized));
   sanitized.correctAnswerText = correctText;
   sanitized.aiMeta = {
     ...(sanitized.aiMeta || {}),
@@ -1435,7 +1422,7 @@ function tusQuestionDetailMode() {
   return mode === 'concise' ? 'standard' : mode;
 }
 
-function buildPrompt({ branch, target, difficulty = 'Orta', recentQuestionSummaries = [], sourceText = '', attempt = 1, antiRepeatNonce = '', detailMode = tusQuestionDetailMode() }) {
+function buildPrompt({ branch, target, difficulty = 'Orta', recentQuestionSummaries = [], sourceText = '', attempt = 1, antiRepeatNonce = '', detailMode = tusQuestionDetailMode(), qualityFeedback = '' }) {
   const answerTarget = cleanText(target || '');
   const selectedDifficulty = normalizeDifficulty(difficulty);
   const recentCompact = buildRecentCompact(recentQuestionSummaries);
@@ -1448,6 +1435,7 @@ function buildPrompt({ branch, target, difficulty = 'Orta', recentQuestionSummar
     sourceText,
     antiRepeatNonce: antiRepeatNonce || Date.now(),
     detailMode,
+    qualityFeedback,
   });
 }
 
@@ -1554,8 +1542,8 @@ async function callOpenAI(prompt, { detailMode = tusQuestionDetailMode() } = {})
   }
 }
 
-async function generateRemote({ branch, target, difficulty, recentQuestionSummaries, sourceText = '', attempt, antiRepeatNonce, detailMode = tusQuestionDetailMode() }) {
-  const prompt = buildPrompt({ branch, target, difficulty, recentQuestionSummaries, sourceText, attempt, antiRepeatNonce, detailMode });
+async function generateRemote({ branch, target, difficulty, recentQuestionSummaries, sourceText = '', attempt, antiRepeatNonce, detailMode = tusQuestionDetailMode(), qualityFeedback = '' }) {
+  const prompt = buildPrompt({ branch, target, difficulty, recentQuestionSummaries, sourceText, attempt, antiRepeatNonce, detailMode, qualityFeedback });
   const result = await callOpenAI(prompt, { detailMode });
   if (!result) throw new Error('OPENAI_API_KEY tanımlı değil; AI üretim yapılamadı.');
   const sanitized = sanitizeQuestion(result.question, branch, difficulty);
@@ -1565,6 +1553,26 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
   sanitized.promptVersion = PROMPT_VERSION;
   sanitized.schemaVersion = SCHEMA_VERSION;
   sanitized.aiMeta = { ...(sanitized.aiMeta || {}), costProfile: getAICostProfile('TUS'), detailMode };
+  const publisherGate = runQuestionQualityGate(sanitized, { version: PROMPT_VERSION });
+  sanitized.aiMeta = {
+    ...(sanitized.aiMeta || {}),
+    backendQualityGate: {
+      ok: publisherGate.ok,
+      decision: publisherGate.decision,
+      errors: publisherGate.errors,
+      warnings: publisherGate.warnings,
+      cues: publisherGate.cues,
+      demand: publisherGate.demand,
+      version: publisherGate.version,
+    },
+    publishable: publisherGate.publishable,
+  };
+  if (!publisherGate.ok) {
+    const error = new Error(`Backend quality gate failed: ${publisherGate.errors.join('; ')}`);
+    error.validationErrors = publisherGate.errors;
+    error.question = sanitized;
+    throw error;
+  }
   const validation = validateQuestion(sanitized, recentQuestionSummaries);
   if (!validation.ok) {
     // V398 balanced gate:
@@ -1588,6 +1596,17 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
   } else {
     sanitized.qualityGate = 'strict-passed';
   }
+  if (sanitized.qualityGate !== 'strict-passed' || sanitized.aiMeta?.qualityDecision !== 'addable') {
+    const errors = [
+      ...(sanitized.qualityNotes || []),
+      ...(sanitized.aiMeta?.globalQualityReview?.summary || []),
+    ].filter(Boolean);
+    const error = new Error(errors.join('; ') || 'Question failed strict publisher quality gate.');
+    error.validationErrors = errors;
+    error.question = sanitized;
+    throw error;
+  }
+  sanitized.qualityGate = 'strict-publisher-passed';
   return sanitized;
 }
 
@@ -1614,10 +1633,9 @@ async function getReusableBankQuestion({ branch, target, difficulty, recentQuest
     if (questionMatchesRecent(item, recentQuestionSummaries)) return false;
     const candidate = sanitizeQuestion({ ...item, id: `ai-spot-bank-check-${Date.now()}` }, branch, difficulty);
     const validation = validateQuestion(candidate, recentQuestionSummaries);
-    if (validation.ok) return true;
-    return !validation.errors.some((message) =>
-      /branch eksik|stem eksik|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|imkansız veya bozuk klinik değer/iu.test(message)
-    );
+    const publisherGate = runQuestionQualityGate(candidate, { version: PROMPT_VERSION });
+    if (validation.ok && publisherGate.ok && candidate.aiMeta?.qualityDecision === 'addable') return true;
+    return false;
   });
   if (!reusable) return null;
   const cloned = sanitizeQuestion({ ...reusable, id: `ai-spot-bank-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, branch, difficulty);
@@ -1633,6 +1651,8 @@ async function getReusableBankQuestion({ branch, target, difficulty, recentQuest
 async function storeReusableQuestion({ branch, target, difficulty, question }) {
   if (!useQuestionBank() || !question || question.fallback) return false;
   if (question.aiMeta?.qualityDecision && question.aiMeta.qualityDecision !== 'addable') return false;
+  const publisherGate = runQuestionQualityGate(question, { version: PROMPT_VERSION });
+  if (!publisherGate.ok) return false;
   const model = question.openAIModel || currentTusModel();
   const bankKey = buildQuestionBankKey({ scope: 'TUS', branch, difficulty, target, promptVersion: PROMPT_VERSION, model });
   return addQuestionToBank(bankKey, question);
@@ -1646,7 +1666,7 @@ export default async function handler(request, response) {
   const branch = chooseBranch(body.branchFilter);
   const requestedDifficulty = normalizeDifficulty(body.difficulty || body.requestedDifficulty || body.aiDifficulty || 'Orta');
   const recentQuestionSummaries = asArray(body.recentQuestionSummaries).slice(0, 12);
-  const remoteAttempts = Math.max(1, Math.min(2, Number(process.env.REMOTE_AI_ATTEMPTS || process.env.TUS_REMOTE_AI_ATTEMPTS || 1)));
+  const remoteAttempts = Math.max(1, Math.min(2, Number(process.env.REMOTE_AI_ATTEMPTS || process.env.TUS_REMOTE_AI_ATTEMPTS || 2)));
   const errors = [];
   const target = body.target || body.answerTarget || '';
   const sourceText = cleanText(body.sourceText || body.userSourceText || body.referenceText || '');
@@ -1675,22 +1695,27 @@ export default async function handler(request, response) {
 
     const cachedPayload = await getDurableCachedOutput(oneShotCacheKey);
     if (cachedPayload?.question && !questionMatchesRecent(cachedPayload.question, recentQuestionSummaries)) {
-      logAIUsage({ task: `${TASK_NAME}:outputCache`, model: cachedPayload.question.openAIModel || model, cached: true, apiStyle: 'output_cache' });
-      return sendJson(response, 200, { ok: true, cached: true, fallback: false, provider: cachedPayload.provider || 'openai-output-cache', question: cachedPayload.question });
+      const cachedGate = runQuestionQualityGate(cachedPayload.question, { version: PROMPT_VERSION });
+      if (cachedGate.ok && cachedPayload.question.aiMeta?.qualityDecision === 'addable') {
+        logAIUsage({ task: `${TASK_NAME}:outputCache`, model: cachedPayload.question.openAIModel || model, cached: true, apiStyle: 'output_cache' });
+        return sendJson(response, 200, { ok: true, cached: true, fallback: false, provider: cachedPayload.provider || 'openai-output-cache', question: cachedPayload.question });
+      }
     }
 
     if (!envFlag('KLINIKIQ_LIVE_TUS_AI', true)) {
-      const question = fallbackQuestion({ branchFilter: branch, difficulty: requestedDifficulty, recentQuestionSummaries });
-      question.provider = 'local-cost-safe-bank';
-      question.fallback = true;
-      question.aiMeta = { ...(question.aiMeta || {}), liveAIDisabled: true, costProfile: getAICostProfile('TUS') };
-      return sendJson(response, 200, { ok: true, provider: 'local-cost-safe-bank', fallback: true, safeFallback: true, question });
+      return sendJson(response, 503, {
+        ok: false,
+        error: 'Live AI generation is disabled; no learner-facing fallback question is served.',
+        manualReviewRequired: true,
+        fallback: false,
+      });
     }
 
     const detailMode = tusQuestionDetailMode();
+    let qualityFeedback = '';
     for (let attempt = 1; attempt <= remoteAttempts; attempt += 1) {
     try {
-      const question = await generateRemote({ branch, target, difficulty: requestedDifficulty, recentQuestionSummaries, sourceText, attempt, antiRepeatNonce: body.antiRepeatNonce, detailMode });
+      const question = await generateRemote({ branch, target, difficulty: requestedDifficulty, recentQuestionSummaries, sourceText, attempt, antiRepeatNonce: body.antiRepeatNonce, detailMode, qualityFeedback });
         await storeReusableQuestion({ branch, target, difficulty: requestedDifficulty, question });
         await setDurableCachedOutput(oneShotCacheKey, { provider: 'openai-output-cache', question });
         return sendJson(response, 200, {
@@ -1701,10 +1726,11 @@ export default async function handler(request, response) {
       });
     } catch (error) {
       errors.push(error?.message || String(error));
+      qualityFeedback = errors.slice(-1)[0] || '';
     }
   }
 
-  if (String(process.env.AI_ENABLE_SAFE_FALLBACK || 'true').toLowerCase() === 'true') {
+  if (String(process.env.AI_ENABLE_SAFE_FALLBACK || 'false').toLowerCase() === 'true') {
     const question = fallbackQuestion({ branchFilter: branch, difficulty: requestedDifficulty, recentQuestionSummaries });
     const primaryError = errors[0] || null;
     question.provider = 'local-safe-fallback';
@@ -1717,18 +1743,24 @@ export default async function handler(request, response) {
       remoteFailureAttempts: errors.slice(0, 3),
       promptVersion: PROMPT_VERSION,
     };
-    return sendJson(response, 200, {
-      ok: true,
+    return sendJson(response, 422, {
+      ok: false,
       provider: 'local-safe-fallback',
-      fallback: true,
-      safeFallback: true,
+      fallback: false,
+      safeFallback: false,
+      manualReviewRequired: true,
       error: primaryError,
       attempts: errors.slice(0, 3),
-      question,
+      internalDebugFallback: question,
     });
   }
 
-    return sendJson(response, 502, { ok: false, error: 'AI question generation failed', attempts: errors.slice(0, 3) });
+    return sendJson(response, 422, {
+      ok: false,
+      error: 'AI question generation failed publisher quality gate',
+      manualReviewRequired: true,
+      fallback: false,
+      attempts: errors.slice(0, 3),
+    });
   });
 }
-
