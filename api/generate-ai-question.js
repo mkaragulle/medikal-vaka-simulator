@@ -7,7 +7,7 @@ import {
 import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from '../server/lib/ai-token-optimizer.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-tus-v47-remote-ai-recovery';
+const PROMPT_VERSION = 'klinikiq-tus-v48-global-quality-review';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
@@ -525,6 +525,94 @@ function findUnsupportedCriticalDataClaims(question = {}) {
   return Array.from(new Set(unsupported));
 }
 
+
+function questionDemandLevel(question = {}) {
+  const text = normalize([question.question, question.answerTarget, question.learningTarget].filter(Boolean).join(' '));
+  if (/ilk|oncelikli|acil|tedavi|mudahale|yaklasim|yonetim|profilaksi|kesin tani|dogrulama|confirm|definitif/.test(text)) return 'high';
+  if (/tani|olasi|mekanizma|komplikasyon|lokalizasyon|yorum/.test(text)) return 'standard';
+  return 'standard';
+}
+
+function stemDecisionSupportSignals(question = {}) {
+  const visible = normalize(getPreAnswerDataText(question));
+  const signals = [];
+  if (/\b(?:yas|yaş|gunluk|günlük|haftalik|haftalık|aylik|aylık|erkek|kadin|kadın|bebek|cocuk|çocuk|ergen|eriskin|erişkin|gebe|gebelik|yenidogan|yenidoğan)\b/.test(visible)) signals.push('profile');
+  if (/\b(?:saat|gun|gün|hafta|ay|yil|yıl|son|akut|kronik|tekrarlayan|ilerleyen|baslayan|başlayan|azalan|artan)\b/.test(visible)) signals.push('timeCourse');
+  if (/\b(?:ates|ateş|agri|ağrı|kusma|ishal|kanama|dokuntu|döküntü|dispne|öksürük|oksuruk|senkop|nobet|nöbet|sarilik|sarılık|halsizlik|bilinc|bilinç)\b/.test(visible)) signals.push('symptoms');
+  if (/\b(?:muayene|hassasiyet|sertlik|defisit|purpura|ödem|odem|artralji|hepatomegali|splenomegali|meningeal|solunum sesi|üfürüm|ufurum|klitoris|genital|turgor)\b/.test(visible)) signals.push('exam');
+  if (/\b(?:nabiz|nabız|kan basinci|kan basıncı|tansiyon|spo2|spo₂|satürasyon|saturasyon|ateşi|atesi|\d+\s*°c|hipotansiyon|taşikardi|tasikardi)\b/.test(visible)) signals.push('vitals');
+  if (/\b(?:trombosit|plt|lökosit|lokosit|hb|hemoglobin|crp|esr|sedimentasyon|kreatinin|sodyum|potasyum|glukoz|ph|hco3|laktat|amonyak|idrar|hematüri|hematuri|proteinüri|proteinuri|pt|aptt|inr|17\s*-?ohp|troponin)\b/.test(visible)) signals.push('lab');
+  if (/\b(?:grafi|bt|mrg|mr|usg|ultrason|ekg|eko|tomografi|görüntüleme|goruntuleme|biyopsi|kültür|kultur|pcr|boyama)\b/.test(visible)) signals.push('objectiveTest');
+  if (/\b(?:ilaç|ilac|steroid|antibiyotik|travma|seyahat|temas|aşı|asi|immünsüpresyon|immunosupresyon|aile öyküsü|aile oykusu)\b/.test(visible)) signals.push('riskContext');
+  return Array.from(new Set(signals));
+}
+
+function detectOverconfidentClinicalLanguage(value = '') {
+  const text = cleanGeneratedText(value);
+  if (!text) return false;
+  return /\b(?:asla|kesinlikle|hiçbir zaman|hicbir zaman|tamamen dışlanır|tamamen dislanir|mutlaka|daima)\b/iu.test(text);
+}
+
+function assessOptionCategoryConsistency(question = {}) {
+  const options = normalizeOptions(question.options);
+  const categories = options.map((option) => optionCategory(option.text));
+  const meaningful = categories.filter((category) => category !== 'other');
+  if (options.length !== 5) return { ok: false, detail: 'beş seçenek yok' };
+  if (!meaningful.length) return { ok: true, detail: 'kategori çıkarılamadı' };
+  const counts = meaningful.reduce((acc, category) => ({ ...acc, [category]: (acc[category] || 0) + 1 }), {});
+  const dominant = Object.entries(counts).sort((a, b) => b[1] - a[1])[0];
+  const offAxis = meaningful.length - (dominant?.[1] || 0);
+  return { ok: offAxis <= 1, detail: `dominant=${dominant?.[0] || 'other'} offAxis=${offAxis}` };
+}
+
+function assessGlobalTusQuestionQuality(question = {}) {
+  const issues = [];
+  const signals = stemDecisionSupportSignals(question);
+  const demand = questionDemandLevel(question);
+  const unsupported = findUnsupportedCriticalDataClaims(question);
+  const feedbackQuality = hasFeedbackQuality(question, normalizeOptions(question.options), String(question.correctAnswer || '').toUpperCase());
+  const category = assessOptionCategoryConsistency(question);
+  const preAnswer = getPreAnswerDataText(question);
+  const postAnswer = getPostAnswerReasoningText(question);
+  const correctText = getCorrectText(question);
+
+  if (!hasVisibleClinicalPattern(question)) issues.push({ code: 'stem_no_visible_clinical_pattern', severity: 'reject', message: 'Soru kökü görünür klinik patern içermiyor.' });
+  if (signals.length < (demand === 'high' ? 4 : 3)) issues.push({ code: 'stem_insufficient_decision_data', severity: 'revision_required', message: 'Soru kökü doğru cevabı tartışmasız seçtirecek kadar karar verdirici veri içermeyebilir.', signals });
+  if (unsupported.length) issues.push({ code: 'unsupported_post_answer_data', severity: 'reject', message: `Açıklama/feedback kökte görünmeyen kritik veriye dayanıyor: ${unsupported.join(', ')}.` });
+  if (!hasEvidenceBasedOnVisibleStem(question)) issues.push({ code: 'evidence_not_grounded_in_stem', severity: 'revision_required', message: 'Kanıt zinciri ana metindeki görünür verilere yeterince dayanmıyor.' });
+  if (isBroadQuestionWording(question.question) && !hasClinicalContext(question)) issues.push({ code: 'broad_question_without_context', severity: 'revision_required', message: 'Soru hedefi geniş; klinik bağlam daraltılmamış.' });
+  if (!category.ok) issues.push({ code: 'option_category_mismatch', severity: 'revision_required', message: `Seçenekler aynı karar kategorisinde değil (${category.detail}).` });
+  if (!feedbackQuality.ok) issues.push({ code: 'weak_or_missing_option_feedback', severity: 'revision_required', message: feedbackQuality.errors.join('; ') });
+  if (stemHasQuestionFragment(question.stem)) issues.push({ code: 'stem_contains_question_fragment', severity: 'reject', message: 'Soru kökü içinde soru cümlesi veya yarım karar kırıntısı var.' });
+  if (correctText && containsAnswerLeak(preAnswer, correctText)) issues.push({ code: 'answer_leak_in_pre_answer_text', severity: 'reject', message: 'Soru kökü/veri paneli doğru cevabı fazla açık ediyor.' });
+  if (hasDuplicateFeedbackSentences(question)) issues.push({ code: 'duplicate_feedback_sentences', severity: 'revision_required', message: 'Feedback veya açıklama içinde tekrar eden cümle var.' });
+  if (hasTruncatedText([question.stem, question.question, question.explanation, postAnswer].filter(Boolean).join(' '))) issues.push({ code: 'truncated_or_broken_text', severity: 'reject', message: 'Kesik, üç noktalı veya yarım kalmış metin var.' });
+  if (detectOverconfidentClinicalLanguage(postAnswer)) issues.push({ code: 'overconfident_clinical_language', severity: 'revision_required', message: 'Açıklama/feedback klinik bağlama göre aşırı kesin dil içeriyor.' });
+  if (hasMalformedTurkishClinicalWording(question)) issues.push({ code: 'malformed_turkish_medical_language', severity: 'revision_required', message: 'Bozuk Türkçe veya standart dışı tıbbi ifade var.' });
+
+  const severities = new Set(issues.map((issue) => issue.severity));
+  const decision = severities.has('reject') ? 'reject' : (severities.has('revision_required') ? 'revision_required' : 'addable');
+  return {
+    ok: decision === 'addable',
+    decision,
+    signals,
+    demand,
+    issues,
+    summary: issues.length ? issues.map((issue) => `${issue.code}: ${issue.message}`) : ['global kalite kontrol geçti'],
+  };
+}
+
+function attachGlobalQualityReview(question = {}) {
+  const review = assessGlobalTusQuestionQuality(question);
+  question.aiMeta = {
+    ...(question.aiMeta || {}),
+    globalQualityReview: review,
+    qualityDecision: review.decision,
+    publishable: review.decision === 'addable',
+  };
+  return question;
+}
+
 function isDirectionalAnswer(text = '') {
   const value = normalize(text);
   if (!value || value.length > 40) return false;
@@ -876,6 +964,8 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   if (!hasEvidenceBasedOnVisibleStem(question)) errors.push('kanıt zinciri ana metindeki görünür verilere dayanmıyor');
   const unsupportedCriticalClaims = findUnsupportedCriticalDataClaims(question);
   if (unsupportedCriticalClaims.length) errors.push(`kritik gerekçe stemde görünmüyor: ${unsupportedCriticalClaims.join(', ')}`);
+  const globalReview = assessGlobalTusQuestionQuality(question);
+  globalReview.issues.forEach((issue) => errors.push(`global-quality:${issue.severity}:${issue.code}:${issue.message}`));
   if (!question.question || !/\?$/u.test(ensureQuestion(question.question))) errors.push('question net soru cümlesi değil');
   if (stemHasQuestionFragment(question.stem)) errors.push('stem içinde soru cümlesi veya yarım soru kırıntısı var');
   if (options.length !== 5) errors.push('tam 5 seçenek yok');
@@ -1129,6 +1219,7 @@ function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
       frontendShouldNotTruncate: true,
     },
   };
+  attachGlobalQualityReview(sanitized);
   sanitized.semanticFingerprint = makeSignature(sanitized);
   return sanitized;
 }
@@ -1383,6 +1474,7 @@ async function getReusableBankQuestion({ branch, target, difficulty, recentQuest
 
 async function storeReusableQuestion({ branch, target, difficulty, question }) {
   if (!useQuestionBank() || !question || question.fallback) return false;
+  if (question.aiMeta?.qualityDecision && question.aiMeta.qualityDecision !== 'addable') return false;
   const model = question.openAIModel || currentTusModel();
   const bankKey = buildQuestionBankKey({ scope: 'TUS', branch, difficulty, target, promptVersion: PROMPT_VERSION, model });
   return addQuestionToBank(bankKey, question);

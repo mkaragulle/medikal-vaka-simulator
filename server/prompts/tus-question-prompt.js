@@ -70,6 +70,10 @@ Stem–açıklama–feedback veri tutarlılığı:
 - Kök verilmemiş veriye dayanma. Örneğin trombosit sayısı, PT/aPTT, INR, kreatinin, lökosit/CRP, elektrolitler, ateş, hipotansiyon, hipoksi, meningeal bulgu, organomegali, nörolojik defisit, görüntüleme, kültür, biyopsi veya ilaç/seyahat/travma/temas öyküsü açıklamada kullanılacaksa stemde doğal biçimde verilmelidir.
 - Kritik veri stemde yoksa iki yoldan birini seç: veriyi doğal hasta akışı içinde stemde belirt veya açıklama/feedbacki o veriye dayanmayacak şekilde yeniden kur. Asla kökte olmayan kritik veriyi “bu olguda normal/yüksek/yok” diye gerekçe yapma.
 - Son iç kontrolün şu olsun: “Açıklamadaki her kritik gerekçe soru kökünde görünen bir bulguya dayanıyor mu?” Hayırsa JSON’u vermeden önce düzelt.
+- Soru değerlendirmesi yalnızca doğru cevabın varlığına göre yapılmaz; stem, question, options, explanation ve wrongOptionFeedback birlikte tutarlı olmalıdır. Kök doğru cevabı seçtirecek kadar yeterli değilse daha belirgin ama yönlendirici olmayan klinik veri ekle.
+- Yanlış seçenekleri bilimsel olarak hatalı gerekçeyle eleme. Bir seçenek başka bağlamda doğru olabilirse feedbackte bunu belirt; bu vakada neden öncelikli olmadığını kökteki verilere bağla.
+- Aşırı kesin dil kullanma: “asla”, “kesinlikle”, “hiçbir zaman” gibi ifadeleri yalnızca evrensel ve güvenli tıbbi bilgi varsa kullan. Klinik bağlama bağlı durumlarda daha dengeli yaz.
+- Final iç kontrol: kök yeterli mi, doğru cevap tek mi, seçenekler aynı kategoride mi, feedbackler köke sadık mı, tıbbi terimler doğru Türkçe mi, metinde kırık cümle/otomatik üretim izi var mı? Zayıfsa JSON’u vermeden önce düzelt.
 
 Açıklama ve feedback:
 - explanation genel ders notu değil; stemdeki verileri doğru cevapla bağlayan vaka özelinde karar zinciri olsun.
@@ -125,6 +129,8 @@ Verilen TUS sorusunu konu ve doğru cevap mantığını bozmadan kalite açısı
 Doğru cevabı yalnızca açık bilimsel hata veya çift doğru sorununda değiştir. Answer leak, kategori karışıklığı, belirsiz çift doğru, yüzeysel/placeholder feedback, bozuk Türkçe ve stem–açıklama veri uyumsuzluğu varsa tamamen düzelt. Her yanlış seçenek için hangi durumda doğru olabileceğini, bu vakada neden uygun olmadığını ve doğru seçenekle ayırıcı noktasını açıkla. Doğru seçenek için vakadaki kritik verilerin doğru karara nasıl bağlandığını anlat.
 
 Açıklama veya seçenek feedbackinde kullanılan her kritik gerekçe stemde görünür olmalıdır. Kökte olmayan trombosit, koagülasyon, vital, görüntüleme, kültür, biyopsi, ilaç/seyahat/travma/temas gibi veriye dayanma; gerekiyorsa veriyi doğal biçimde stem’e ekle veya feedbacki o veriye dayanmayacak şekilde yeniden yaz.
+
+Kalite kararı örnek bazlı yama gibi düşünülmemelidir. Kök yeterliliği, tek doğru cevap netliği, seçenek kategorisi, seçeneklerin bilimsel rolü, feedbackin köke sadakati, aşırı kesin dil ve kırık Türkçe tüm soru için birlikte denetlenmelidir. Kök eksik veya doğru cevap tartışmalıysa soruyu mevcut haliyle bırakma; soru hedefini netleştirip stem, seçenekler ve açıklamayı yeniden kur.
 
 Final çıktıda yalnızca düzeltilmiş soru JSON'unu ver; iç yönerge, kalite kontrol notu, kaynak arama süreci veya teknik açıklama yazma.`;
 
