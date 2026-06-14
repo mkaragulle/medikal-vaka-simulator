@@ -29169,7 +29169,7 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-to
 }
 
 /* =========================================================
-   KLINIKIQ V156 — Dark mode home dashboard contrast repair
+   KLINIKIQ V156 — Dark mode home dashboard contrast cleanup
    Fixes muddy/washed-out hero and session cards on the main dashboard.
    Keeps premium teal identity while restoring readable contrast hierarchy.
    ========================================================= */

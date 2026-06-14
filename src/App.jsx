@@ -554,6 +554,57 @@ function App() {
     return activeBranchCasePool[0] ?? null;
   }, [selectedCaseId, activeBranchCasePool, examState, accessibleCaseIds, accessibleCases, accessibleCaseIndex]);
 
+
+  const visibleWrongAnswers = useMemo(
+    () => (Array.isArray(wrongAnswers) ? wrongAnswers : []).filter((entry) => {
+      const caseId = entry?.caseId || entry?.id;
+      return caseId ? accessibleCaseIds.has(caseId) : true;
+    }),
+    [wrongAnswers, accessibleCaseIds],
+  );
+
+  useEffect(() => {
+    if (!examState?.active) return undefined;
+    const timerId = window.setInterval(() => setClockTick(Date.now()), 1000);
+    return () => window.clearInterval(timerId);
+  }, [examState?.active]);
+
+  const remainingSeconds = useMemo(() => {
+    if (!examState?.active || !examState.startedAt || !examState.durationSeconds) return 0;
+    const elapsedSeconds = Math.floor((clockTick - examState.startedAt) / 1000);
+    return Math.max(0, examState.durationSeconds - elapsedSeconds);
+  }, [clockTick, examState]);
+
+  const activeExamCaseMeta = useMemo(() => {
+    if (!examState?.active) return null;
+    return {
+      active: true,
+      title: examState.title,
+      currentIndex: examState.currentIndex,
+      total: Array.isArray(examState.caseIds) ? examState.caseIds.length : 0,
+      answeredCount: Object.keys(examState.answers || {}).length,
+      remainingSeconds,
+    };
+  }, [examState, remainingSeconds]);
+
+  const noopRandomCase = useCallback(() => {}, []);
+
+  const leaderboardEntries = useMemo(() => {
+    const historyEntries = (Array.isArray(examHistory) ? examHistory : []).slice(0, 5).map((exam, index) => ({
+      id: exam.id || `exam-${index}`,
+      name: exam.title || `Blok ${index + 1}`,
+      score: exam.score || 0,
+      accuracy: exam.accuracy || 0,
+    }));
+    if (historyEntries.length) return historyEntries;
+    return [{
+      id: currentUser?.id || 'current-user',
+      name: currentUser?.name || 'Kullanıcı',
+      score: sessionStats.score || 0,
+      accuracy: sessionStats.accuracy || 0,
+    }];
+  }, [currentUser?.id, currentUser?.name, examHistory, sessionStats.accuracy, sessionStats.score]);
+
   const persistCurrentUser = (patch) => {
     setCurrentUser((current) => {
       if (!current?.id) return current;

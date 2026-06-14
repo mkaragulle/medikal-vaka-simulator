@@ -230,7 +230,7 @@ function deriveSingleLinePearl(clinicalCase = {}, reasoningText = '') {
   let pearl = compactParagraph(source, 2, 360);
 
   // Safety: if a dotted abbreviation or Roman-numeral cranial nerve shorthand
-  // slipped through and produced only "C.", "VI.", etc., use the repaired full note.
+  // slipped through and produced only "C.", "VI.", etc., use the normalized full note.
   if (/^(?:[A-ZÇĞİÖŞÜ]|I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII)\.$/u.test(pearl) || pearl.length < 12 || /\b(?:[A-ZÇĞİÖŞÜ]|I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII)\.$/u.test(pearl)) {
     pearl = truncateSentence(source, 360);
   }
@@ -692,6 +692,47 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
       comparisonPoints: [],
     };
   });
+}
+
+function FeedbackSection({
+  icon = null,
+  tone = 'blue',
+  eyebrow = '',
+  title = '',
+  className = '',
+  minimal = false,
+  children,
+}) {
+  return (
+    <section className={['feedback-section-card', `feedback-section-${tone}`, minimal ? 'feedback-section-minimal' : '', className].filter(Boolean).join(' ')}>
+      {icon || eyebrow || title ? (
+        <header className="feedback-section-head">
+          {icon ? <IconBadge name={icon} /> : null}
+          <div className="feedback-section-title-wrap">
+            {eyebrow ? <span className="feedback-section-eyebrow">{eyebrow}</span> : null}
+            {title ? <h3>{title}</h3> : null}
+          </div>
+        </header>
+      ) : null}
+      <div className="feedback-section-body">
+        {children}
+      </div>
+    </section>
+  );
+}
+
+function ExamNoteFeedback({ signal, glossaryEnabled = true }) {
+  if (!signal?.hasContent) return null;
+  const appearedYears = formatAppearedYears(signal);
+  const title = signal.title || signal.label || 'Sınav sinyali';
+  const note = signal.note || signal.text || signal.summary || '';
+
+  return (
+    <FeedbackSection icon="ClipboardCheck" tone="accent" eyebrow="Sınav notu" title={title} className="exam-note-feedback-card">
+      {appearedYears ? <p className="feedback-body-copy"><strong>Çıkmış bağlantısı:</strong> {appearedYears}</p> : null}
+      {note ? <p className="feedback-body-copy"><GlossaryText text={ensureSentence(note)} enabled={glossaryEnabled} revealMode="postAnswer" maxTerms={6} /></p> : null}
+    </FeedbackSection>
+  );
 }
 
 function ReasoningCard({ reasoningText, isCorrect = true, glossaryEnabled = true, minimal = false }) {

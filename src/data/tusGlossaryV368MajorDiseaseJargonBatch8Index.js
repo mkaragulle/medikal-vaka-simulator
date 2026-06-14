@@ -54,7 +54,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 17,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 17 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 17 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -65,7 +65,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "latedBranch : Çocuk Sağlığı ve Hastalıkları , title : Kemoterapi sonrası ateş , difficulty : Zor , clinicalFocus : Acil öncelik ve ilk basamak yönetimini seçme. , learningTarget : Febril nötropenide ilk saat antibiyotik tedavisini seçebilme , demographics : 8 yaşında erkek çocuk , setting : Çocuk acil servisinde , chiefComplaint : Çocuk, kemoterapi sonrası gelişen ateş ve halsizlik nedeniyle acile getiriliyor. ,"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -118,7 +118,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 10,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 10 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 10 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -129,7 +129,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "siyon acili , subcategory : cerrahi-enfeksiyon acili , sourceLayer : V330 ultra-deep glossary batch 5 + foundation batch 6 , previewDefinition : Genital/perineal nekrotizan yumuşak doku enfeksiyonunu ifade eder. , preAnswerSafeDefinition : Genital/perineal nekrotizan yumuşak doku enfeksiyonunu ifade eder. , shortDefinition : Perineal-genital bölgede gelişen nekrotizan fasiit formudur. , definition"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -182,7 +182,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 4511,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 4511 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 4511 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -193,7 +193,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "cursor bilgi moduna geçer ve küçük “i” işareti gösterir. - Loading/aria-busy/loading class içeren alanlarda minimal dönen progress halkası görünür. - Input, textarea, select ve contenteditable alanlarda özel cursor gizlenir; klasik text cursor korunur. - Mobil/tablet, hover desteklemeyen cihazlar ve prefers-reduced-motion kullanıcılarında özel cursor otomatik kapalıdır. - Cursor pointer-events:none i"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -246,7 +246,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 7,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 7 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 7 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryV319TeachableIndex.js",
@@ -257,7 +257,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "senkronize kardiyoversiyon düşünülür. , mechanism : , relatedBranches : internal-medicine , relatedTerms : SVT , Adenozin , AVNRT , Senkronize kardiyoversiyon , safeNestedTerms : SVT , Adenozin , AVNRT , Senkronize kardiyoversiyon , difficulty : P1 , answerLeakRisk : medium , q"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -310,7 +310,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 52,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 52 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 52 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryV320QualityBatch3Index.js",
@@ -321,7 +321,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "Embriyoloji) - Öglisemik diyabetik ketoasidoz (P0, TUS Klinik Pattern / Karma) - İnme (P0, Majör hastalık / nöroloji) - ABO hemolitik hastalık (P1, Kadın Hastalıkları ve Doğum) - Akalazya manometrisi (P1, İç Hastalıkları / Klinik Karar) - Akut ekstremite iskemisi (P1, Majör hastalık / vasküler acil) - Akut lösemi (P1, Majör hastalık / hematoloji) - Akut miyeloid lösemi (P1, Majör hastalık / hematoloji) -"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -374,7 +374,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Hap Kartlar",
     "occurrenceCount": 20,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 20 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 20 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusPearlCards.js",
@@ -385,7 +385,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "Psammoma cisimciği : Psammoma cisimciği papiller tümörler gibi kalsifik yapılarla ilişkilidir; romatizmal ateş bulgusu değildir. , Mallory-Denk cisimciği : Mallory-Denk cisimciği alkolik hepatit gibi karaciğer hasarlarında görülür. , Councilman cisimciği : Councilman cisimciği viral hepatitte apoptotik hepatositleri ifade eder; kardit lezyonu değildir. , answerFeedback : summary : Aschoff cisimciği, bu olguda"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -438,7 +438,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 3472,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3472 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3472 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/index.css",
@@ -449,7 +449,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "$schema : https://openapi.vercel.sh/vercel.json , installCommand : npm install --package-lock=false --legacy-peer-deps --no-audit --no-fund , buildCommand : npm run build , outputDirectory : dist , functions : kaldırılmış üretim route notu"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -498,7 +498,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 3,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryClinicalBranchDeepIndex.js",
@@ -509,7 +509,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "erken dönemde değerlidir. , tusPearl : Miyozis + bronkore + bradikardi + sekresyon artışı = kolinerjik toksidrom; ilk hayat kurtarıcı atropindir. , differentialPoint : Antikolinerjik toksidromda kuru deri, midriyazis, taşikardi ve idrar retansiyonu beklenir. , clinicalRelevance : Miyozis + bronkore + bradikardi + sekresyon artışı = kolinerjik toksidrom; ilk hayat kurtarıcı atropindir. , mechanism :"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -557,14 +557,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Hap Kartlar",
     "occurrenceCount": 6,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 6 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 6 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusPearlCards.js",
         "text": "geciktirilmemelidir? , extraAnswer : intravenöz glukoz. , difficulty : orta , branchId : minor-rotations , subject : Küçük Stajlar , topic : Açık pnömotoraks ilk yaklaşım , mainQuestion : Göğüs duvarında emici açık yara ile gelişen açık pnömotoraksta ilk kapatma nasıl yapılır? , mainAnswer : Üç tarafı bantlı oklüzif pansuman. , explanation : Üç taraflı kapa"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -617,7 +617,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 14,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 14 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 14 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryExpandedIndex.js",
@@ -628,7 +628,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "toksisiteyi düzeltmez. , Vitamin K tedavisi : Vitamin K warfarin etkisini geri çevirmek için kullanılır; demir zehirlenmesinde antidot değildir. , Flumazenil tedavisi : Flumazenil benzodiazepin toksisitesinde reseptör antagonizması yapar; demir toksisitesini tedavi etmez. , answerFeedback : summary : Deferoksamin tedavisi, bu olgudaki klinik akışla en uyumlu yanıttır. , whyCorrect : Demir tableti alımı sonrası tekrar"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -681,7 +681,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 22,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Önceki auditlerde geçmiş olabilir ancak aktif V366 glossary’ye import edilmemiş görünüyor. Proje metinlerinde 22 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Önceki auditlerde geçmiş olabilir ancak aktif V366 glossary’ye import edilmemiş görünüyor. Proje metinlerinde 22 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryV332MajorJargonBatch7Index.js",
@@ -692,7 +692,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "Seri EKG, glukoz, elektrolit, laktat ve organ fonksiyonlarını izle. , Tıbbi stabilizasyon sonrası psikiyatrik güvenlik değerlendirmesi yap. , glossary : Beta bloker toksisitesi , Kalsiyum kanal bloker toksisitesi , Yüksek doz insülin euglisemik tedavi , Antidigoksin Fab , id : pdf-peds-arrhythmia-athlete-pvc-015 , branchId : pediatrics , titl"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -739,7 +739,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 16,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 16 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 16 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -750,7 +750,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "llanılır. , tusPearl : Basamaklı ateş + karın yakınmaları + rölatif bradikardi enterik ateşi düşündürebilir. , differentialPoint : Malaryada periyodik ateş paternleri, brusellozda dalgalı ateş anlatımı daha tipiktir. , clinicalRelevance : Enfeksiyon sorularında ateş paterniyle etken/hastalık daraltmayı sağlar. , mechanism : Sistemik enfeksiyon yanıtının günler içinde artan sitokin c"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -797,14 +797,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 7,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 7 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 7 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
         "text": "i paternidir. , explanation : Porselen kese safra kesesi kalsifikasyonunu, tek taş dolum defekti koledokolitiazisi, psödokist pankreatit komplikasyonunu, hepatik ven oklüzyonu ise Budd-Chiari sendromunu düşündürür. PSC’de ayırıcı görüntü safra yollarında multifokal striktür-dilatasyondur. Primer sklerozan kolanjit safra yollarında inflamasyon ve fibrozise bağlı çok odaklı darlıklar ve aradaki dilatasyonlarla karakter"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -852,7 +852,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 34,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 34 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 34 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -863,7 +863,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "7.5h10a2 2 0 0 1 2 2v7.2a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V9.5a2 2 0 0 1 2-2Z /><path d= M8.5 5h8 /><path d= M9.8 2.8h4.4 /><path d= M8.5 12h7 /><path d= M8.5 15.2h4.8 /></>, InsightGauge: <><path d= M5 16a7 7 0 1 1 14 0 /><path d= M12 16l3.2-4.4 /><path d= M8.2 19h7.6 /><path d= M7.5 13.2h.01M16.5 13.2h.01 /></>, Stopwatch: <><circle cx= 12 cy= 13.2 r= 6.6 /><path d= M12 13.2V9.6 /><path d= M12 1"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -910,7 +910,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 19,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 19 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 19 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -921,7 +921,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "title : Kas güçsüzlüğü ve göz çevresinde mor döküntü , difficulty : Zor , clinicalFocus : Klinik bulgular ve tetkik verileriyle olası tanıyı belirleme. , learningTarget : Juvenil dermatomiyozitte proksimal kas güçsüzlüğü ve karakteristik deri bulgularıyla tanıyı seçebilme , demographics : 8 yaşında kız çocuk , setting : Çocuk polikliniği , chiefComplaint : Çocuk, merdiven çıkmada zorlanma, saç tarayamama ve gö"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -968,14 +968,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 5,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 5 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 5 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
         "text": ", text : Kanserin erken saptanması için tarama testi uygulanması , id : C , text : İnme sonrası fizik tedavi ve rehabilitasyon verilmesi , id : D , text : Komplikasyon gelişen diyabetik ayakta ampütasyon sonrası protez eğitimi , id : E , text : Hipertansif retinopati geliştikten sonra görme rehabilitasyonu , correctAnswer : A , correctOptionText : Hastalığı ortaya çıkmadan önce önlemek amacıyla aşılama"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1022,7 +1022,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 15,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 15 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 15 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -1033,7 +1033,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "r? , extraAnswer : Ovaryan torsiyon. , difficulty : orta , branchId : obstetrics-gynecology , subject : Kadın Hastalıkları ve Doğum , topic : Endometrium kanseri uyarısı , mainQuestion : Postmenopozal kanamada öncelikle dışlanması gereken malignite hangisidir? , mainAnswer : Endometrium kanseri. , explanation : Postmenopozal kanama endometrial hiperplazi veya m"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1081,7 +1081,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 30,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 30 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 30 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -1092,7 +1092,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "dülü/hemoptizi ve hızlı ilerleyen glomerülonefrit üçlüsüyle sorulur. , keywords : sinüzit; hemoptizi; glomerülonefrit; c-ANCA , trap : MPO-ANCA mikroskopik polianjitis/EGPA ile daha çok ilişkilidir. , extraQuestion : GPA’da tipik histolojik bulgu nedir? , extraAnswer : Nekrotizan granülomatöz inflamasyon ve vaskülit. , difficulty : orta , branchId : internal"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1139,7 +1139,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 59,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 59 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 59 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -1150,7 +1150,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "ficulty : orta , branchId : anatomy , subject : Anatomi , topic : Pterion ve orta meningeal arter , mainQuestion : Temporal bölge travması sonrası epidural hematom gelişiminde en çok hangi damar yaralanır? , mainAnswer : Orta meningeal arter. , explanation : Pterion bölgesi incedir ve orta meningeal arter burada kemiğe yakın seyreder. , keywords : pterion"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1198,7 +1198,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 3545,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3545 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3545 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -1209,7 +1209,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "clinical stability, the needed context must be explicitly present in the stem, vitals or objective data; otherwise choose a safer question target. - Do not treat a supportive, partially correct or stage-dependent option as simply wrong. Explain whether it is unsafe, insufficient, used in another stage or correct for a different diagnosis. - For guideline- or threshold-dependent topics such as neonat"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1256,14 +1256,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 20,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 20 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 20 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
         "text": "Tıbbi Mikrobiyoloji , title : Diş işlemi sonrası subakut ateş , difficulty : Zor , clinicalFocus : Etkeni klinik ve laboratuvar ipuçlarıyla seçme. , learningTarget : Endokarditte HACEK grubu etken özelliklerini klinik bağlamda tanıyabilme , demographics : 41 yaşında erkek hasta , setting : Servis , chiefComplaint : Hasta, üç haftadır süren ateş, gece terlemesi ve halsizlik nedeniyle yatırılıyor. , stem : Ya"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1310,7 +1310,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 20,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 20 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 20 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -1321,7 +1321,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "eksikliği. , explanation : G6PD pentoz fosfat yolunda NADPH üretir; NADPH azalınca eritrosit oksidan strese duyarlı hale gelir. , keywords : bakla; dapson/primaquine; Heinz cisimciği; NADPH , trap : Piruvat kinaz eksikliği enerji üretim bozukluğu ile hemoliz yapar; oksidan tetik ve Heinz cismi G6PD lehinedir. , extraQuestion : G6PD eksikliğinde eritrositte hangi koruyucu molekülün yenile"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1369,7 +1369,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 50,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 50 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 50 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -1380,7 +1380,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "em ve seçici proteinüriyle giden minimal değişiklik hastalığının temel elektron mikroskobik bulgusudur. , Kresent oluşumu ve fibrinoid nekroz : Kresent oluşumu ve fibrinoid nekroz hızlı ilerleyen glomerülonefrit paternini düşündürür; bu olguda nefrotik tablo ve normal kompleman ön plandadır. , rationale : Çocukta ödem, nefrotik düzeyde proteinüri, hipoalbüminemi, normal kompleman ve hipertansiyon/hematüri yokluğu min"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1427,14 +1427,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 3,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
         "text": "if enfeksiyonlar çoğu zaman aşılamayı geciktirmez. , optionFeedback : A : Gebelik canlı zayıflatılmış aşılar için genel kontrendikasyon kabul edilir. Özellikle kızamık-kızamıkçık-kabakulak ve varisella gibi canlı aşılar gebelikte uygulanmaz. , B : Ağır kombine immün yetmezlik ciddi hücresel ve humoral bağışıklık kusuru içerir. Canlı aşılar bu hastalarda dissemine enfeksiyon riski oluşturabilir. , C : Yüks"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1487,7 +1487,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 3,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryV332MajorJargonBatch7Index.js",
@@ -1498,7 +1498,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "ion : Glukoz homeostazı ve bazı toksikoloji tedavileriyle ilişkili hormondur. , shortDefinition : Hepatik glikojenoliz ve glukoneogenezi artıran; hipoglisemi ve beta bloker/kalsiyum kanal blokeri toksisitesinde kullanılan hormondur. , definition : Hepatik glikojenoliz ve glukoneogenezi artıran; hipoglisemi ve beta bloker/kalsiyum kanal blokeri toksisitesinde kullanılan hormondur. , detailedExplanation : Glukagon"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1545,7 +1545,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 59,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 59 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 59 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -1556,7 +1556,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "nları (P2, TUS Klinik Pattern / Karma) - Kapiller Starling kuvvetleri (P2, Fizyoloji) - Karbondioksit atılımı ile metabolik asidoz kompanzasyonu (P2, TUS Klinik Pattern / Karma) - Karbonmonoksit zehirlenmesinde sola kaymış oksijen-hemoglobin eğrisi (P2, TUS Klinik Pattern / Karma) - Karnitin palmitoiltransferaz II eksikliği (P2, Biyokimya / Genetik / Metabolizma) - Karpal tünel içeriği (P2, Anatomi / Histoloji / Embr"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1603,14 +1603,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Hap Kartlar",
     "occurrenceCount": 3,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusPearlCards.js",
         "text": "explanation : İntra ve ekstrahepatik safra yollarında darlık-genişleme alanları oluşur. , keywords : PSC , boncuk dizisi , ülseratif kolit , kolanjiyokarsinom , trap : PBC daha çok küçük intrahepatik kanallar ve AMA pozitifliği ile ayrılır. , extraQuestion : Vaka kökünde PSC, boncuk dizisi ve ülseratif kolit birlikte verilirse hangi tanı öncelikle düşünülür?"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1657,7 +1657,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 55,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 55 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 55 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -1668,7 +1668,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "topic : Vibrio cholerae , mainQuestion : Pirinç suyu dışkı ve hızlı dehidratasyon hangi etkeni düşündürür? , mainAnswer : Vibrio cholerae. , explanation : Kolera toksini Gs üzerinden adenilat siklazı artırır; sekretuar diyare oluşur. , keywords : pirinç suyu dışkı; dehidratasyon; Gs; cAMP , trap : İnvazyon değil toksin aracılı sekretuar diyare ana mekanizmadır. ,"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1716,14 +1716,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 1,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 1 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 1 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryGlobalQualityIndex.js",
         "text": "ganizma üretilmesine dayanan mikrobiyolojik tetkiktir.', postAnswerExplanation: 'Semptom, piyüri, nitrit/lökosit esteraz ve koloni sayısı birlikte yorumlanır.', tusPearl: 'Komplike ÜSE, gebelik ve pyelonefrit şüphesinde kültür değeri artar.', differentialPoint: 'Asemptomatik bakteriüri her hastada tedavi gerektirmez; gebelik ve ürolojik girişim istisnadır.', matchingPriority: 120, isMultiW"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1770,7 +1770,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 34,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Önceki auditlerde geçmiş olabilir ancak aktif V366 glossary’ye import edilmemiş görünüyor. Proje metinlerinde 34 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Önceki auditlerde geçmiş olabilir ancak aktif V366 glossary’ye import edilmemiş görünüyor. Proje metinlerinde 34 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryV330UltraDeepBatch5And6Index.js",
@@ -1781,7 +1781,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "ılıf (P0, Anatomi / Histoloji / Embriyoloji) - Fournier gangreni (P0, Majör hastalık / cerrahi-enfeksiyon acili) - HBV pencere dönemi serolojisi (P0, Mikrobiyoloji / Enfeksiyon) - Koryoamniyonit yaklaşımı (P0, Kadın Hastalıkları ve Doğum) - Kritik aort koarktasyonu (P0, Pediatri) - Linezolid ilişkili trombositopeni ve serotonin sendromu riski (P0, Farmakoloji / Tedavi / Toksikoloji) - Masif hemotoraks (P0, Cerr"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1829,9 +1829,9 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Diğer Proje Metinleri",
     "occurrenceCount": 1564,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 1564 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 1564 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1879,7 +1879,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 28,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 28 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 28 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryV330UltraDeepBatch5And6Index.js",
@@ -1890,7 +1890,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "rtansif öncelik (P1, Majör hastalık / kardiyoloji-acil) - Hipotonik övolemik hiponatremi (P1, İç Hastalıkları / Klinik Karar) - IGF-1 düzeyi (P1, İç Hastalıkları / Klinik Karar) - KLL tanısı (P1, İç Hastalıkları / Klinik Karar) - Kavernöz sinüs trombozu (P1, Majör hastalık / nöroloji-enfeksiyon acil) - Koanal atrezi (P1, Pediatri) - Kolon kanseri (P1, Majör hastalık / onkoloji) - Koryokarsinom yayılı"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1937,14 +1937,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 3,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryV332MajorJargonBatch7Index.js",
         "text": "r nedenler önemlidir. , examPearl : Migren sorusunda aura, fotofobi-fonofobi ve tetikleyiciler; kırmızı bayrak varsa sekonder nedenler önemlidir. , differentialPoint : Küme baş ağrısı otonom bulgulu kısa şiddetli ataklar; gerilim tipi baş ağrısı bilateral baskı tarzındadır. , clinicalRelevance : Migren tanısı kliniktir; nörolojik defisit, ani başlangıç veya sistemik bulgular sekonder baş ağrısı"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1991,7 +1991,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 10,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 10 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 10 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusPearlCards.js",
@@ -2002,7 +2002,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "rla gelişen nöromüsküler kavşak hastalığıdır. Klinik bağlamla birlikte yorumlanmalıdır. , postAnswerExpandedExplanation : Proksimal güçsüzlük + kullanım sonrası güç artışı + küçük hücreli akciğer kanseri ilişkisi önemlidir. , tusPearl : Proksimal güçsüzlük + kullanım sonrası güç artışı + küçük hücreli akciğer kanseri ilişkisi önemlidir. , differentialPoint : Myastenia graviste postsinaptik ACh reseptörü hede"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2049,7 +2049,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 6,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 6 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 6 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -2060,7 +2060,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": ". , explanation : Ateş, öksürük, konjonktivit, koriza ve kraniokaudal makülopapüler döküntü tipiktir. , keywords : Koplik; öksürük; koriza; konjonktivit , trap : Kızamıkçık posterior auriküler LAP ile; kızamık Koplik ve 3C ile ayrılır. , extraQuestion : Kızamıkta döküntü genellikle hangi yönde yayılır? , extraAnswer : Kraniokaudal. , difficulty : orta , branc"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2107,7 +2107,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 15,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 15 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 15 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusPearlCards.js",
@@ -2118,7 +2118,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "anation : Uzamış ateş ve mukokutanöz bulgularla sorulur; IVIG ilk 10 gün içinde önemlidir. , keywords : 5 günden uzun ateş; konjonktivit; çilek dili; döküntü , trap : Kızıl da çilek dili yapabilir; bilateral nonpürülan konjonktivit ve ekstremite bulguları Kawasaki lehinedir. , extraQuestion : Kawasaki hastalığının en önemli kardiyak komplikasyonu nedir? , extraAnswer : Koroner"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2165,14 +2165,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 3,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
         "text": "a interrogans : Leptospira interrogans kirli su maruziyeti sonrası sarılık, böbrek yetmezliği ve baldır ağrısıyla en uyumlu etkendir. , Borrelia burgdorferi : Borrelia burgdorferi Lyme hastalığı yapar ve kene maruziyeti, eritema migrans ile ilişkilidir. , Treponema pallidum : Treponema pallidum sifiliz etkenidir; sel sonrası sarılık-böbrek yetmezliği paternini açıklamaz. , Rickettsia rickettsii : Rickettsia ric"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2219,14 +2219,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 5,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 5 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 5 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
         "text": "questionType : diagnosis , answerTarget : diagnosis , diagnosis : correct : Santral puberte prekoks , options : Prematür telarş , Prematür adrenarş , Periferik puberte prekoks , McCune-Albright sendromu , Santral puberte prekoks , question : Bu çocukta en olası tanı aşağıdakilerden hangisidir? , explanation : Sekiz yaşından önce ilerleyici meme gelişimi, büyüme hızlanması, ileri kemik yaşı, pubertal LH yanıtı ve pelv"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2273,7 +2273,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 17,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 17 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 17 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryDefinitionQualityIndex.js",
@@ -2284,7 +2284,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "bölgesinden lenfatik drenajın ilk ulaştığı lenf nodudur. , postAnswerExpandedExplanation : Bir tümör bölgesinden lenfatik drenajın ilk ulaştığı lenf nodudur. Meme kanseri ve melanomda nodal evreleme için sentinel nod biyopsisi kullanılır. , tusPearl : Meme kanseri ve melanomda nodal evreleme için sentinel nod biyopsisi kullanılır. , differentialPoint : Pozitif sentinel nod daha ileri no"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2331,7 +2331,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Hap Kartlar",
     "occurrenceCount": 7,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Önceki auditlerde geçmiş olabilir ancak aktif V366 glossary’ye import edilmemiş görünüyor. Proje metinlerinde 7 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Önceki auditlerde geçmiş olabilir ancak aktif V366 glossary’ye import edilmemiş görünüyor. Proje metinlerinde 7 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusPearlCards.js",
@@ -2342,7 +2342,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": ", /opioid|morfin|eroin|miyozis|solunum s+depresyonu/, /nalokson/ , /organofosfat|kolinerjik|salivasyon|lakrimasyon|bronkore/, /atropin|pralidoksim/ , /methemoglobin|methemoglobinemi/, /metilen s+mavisi/ , ; for (const contextPattern, expectedPattern of pairs) if (contextPattern.test(text) && !expectedPattern.test(correct)) return errors: 'toxicology-rule: toksin ile antidot"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2389,14 +2389,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 3,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryV321DeepHighYieldBatch4Index.js",
         "text": "oproliferatif neoplazilerde klonal proliferasyona katkı sağlayan mutasyondur. , detailedExplanation : JAK2 V617F özellikle polisitemia vera, esansiyel trombositemi ve primer miyelofibroziste önemlidir. Sitokin bağımlılığını azaltarak hematopoetik hücre proliferasyonunu artırır. , postAnswerExplanation : JAK2 V617F özellikle polisitemia vera, esansiyel trombositemi ve primer miyelofibroziste önemlidi"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2444,14 +2444,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 5,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 5 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 5 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryExpandedIndex.js",
         "text": "Explanation : Atriyoventriküler düğüm veya iletim sisteminde ileti gecikmesi ya da kesilmesidir. Klinik bağlamla birlikte yorumlanmalıdır. , postAnswerExpandedExplanation : Mobitz II ve üçüncü derece AV blok pacemaker gereksinimi açısından daha ciddidir. , tusPearl : Mobitz II ve üçüncü derece AV blok pacemaker gereksinimi açısından daha ciddidir. , differentialPoint : Mobitz I’de PR gi"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2498,14 +2498,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 4,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 4 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 4 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryExpandedIndex.js",
         "text": "Explanation : Atriyoventriküler düğüm veya iletim sisteminde ileti gecikmesi ya da kesilmesidir. Klinik bağlamla birlikte yorumlanmalıdır. , postAnswerExpandedExplanation : Mobitz II ve üçüncü derece AV blok pacemaker gereksinimi açısından daha ciddidir. , tusPearl : Mobitz II ve üçüncü derece AV blok pacemaker gereksinimi açısından daha ciddidir. , differentialPoint : Mobitz I’de PR gid"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2553,18 +2553,18 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 8,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 8 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 8 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryV304ExtraIndex.js",
-        "text": "paraprotein , normalizedTerm : m proteini , TurkishName : M proteini , EnglishName : , category : Laboratuvar / Hematoloji , subcategory : Monoklonal gammopati belirteci , sourceLayer : V304 extra glossary quality filter , previewDefinition : Tek bir plazma hücresi klonundan kaynaklanan monoklonal immünoglobulin veya hafif zincir proteinidir. , preAnswerSafeDe"
+        "text": "paraprotein , normalizedTerm : m proteini , TurkishName : M proteini , EnglishName : , category : Laboratuvar / Hematoloji , subcategory : Monoklonal gammopati belirteci , sourceLayer : V304 extra glossary curated glossary layer , previewDefinition : Tek bir plazma hücresi klonundan kaynaklanan monoklonal immünoglobulin veya hafif zincir proteinidir. , preAnswerSafeDe"
       },
       {
         "sourceFilePath": "src/data/tusGlossaryV304ExtraIndex.js",
         "text": "lonundan kaynaklanan monoklonal immünoglobulin veya hafif zincir proteinidir. , detailedExplanation : Serum protein elektroforezinde M spike, multipl miyelom veya MGUS gibi monoklonal gammopatileri düşündürür. Anemi, kemik lezyonu, hiperkalsemi ve böbrek hasarı miyelom lehinedir. , postAnswerExplanation : Serum protein elektroforezinde M... , M spike, multipl miyelom veya MGUS gibi monoklonal gam"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2611,14 +2611,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 3,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryExpandedIndex.js",
         "text": ": Tübüler hücre/debris kaynaklı granüler görünümde silendirdir. Klinik bağlamla birlikte yorumlanmalıdır. , postAnswerExpandedExplanation : Akut tübüler nekrozda çamurumsu kahverengi granüler silendir tipiktir. , tusPearl : Akut tübüler nekrozda çamurumsu kahverengi granüler silendir tipiktir. , differentialPoint : Eritrosit silendiri glomerülonefriti daha çok destekler. , clinicalRelevance : Akut t"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2665,14 +2665,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 3,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryV330UltraDeepBatch5And6Index.js",
         "text": "işen şok tipidir. , definition : Sistemik vazodilatasyon ve göreceli damar içi hacim yetersizliğiyle gelişen şok tipidir. , detailedExplanation : Sepsis, anafilaksi ve nörojenik şok distributif şok başlıklarıdır; periferik direnç düşer, tedavi nedene göre antibiyotik/epinefrin/sıvı-vazopressör şeklinde değişir. , postAnswerExplanation : Sepsis, anafilaksi ve nörojenik şok distributif şok başl"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2721,7 +2721,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 613,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 613 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 613 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -2732,7 +2732,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "nik pelvik ağrı ve infertilite , stem : 28 yaş kadın giderek artan dismenore, derin disparoni ve bir yıldır gebelik oluşmaması nedeniyle başvurur. , exam : Uterosakral ligamentlerde hassasiyet , Adneksiyal hassasiyet olabilir , Ateş veya akut batın bulgusu yok , vitals : TA : 112/70 mmHg , Nabız : 84/dk , Solunum : 16/dk ,"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2782,14 +2782,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Hap Kartlar",
     "occurrenceCount": 2,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 2 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 2 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusPearlCards.js",
         "text": ". , difficulty : orta , branchId : medical-pharmacology , subject : Tıbbi Farmakoloji , topic : Adenozin ve SVT , mainQuestion : Dar kompleks paroksismal supraventriküler taşikardide akut sonlandırma için kullanılan kısa etkili ilaç hangisidir? , mainAnswer : Adenozin. , explanation : Adenozin AV nod iletimini geçici olarak bloke eder. , keywords : adenozin , SVT ,"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2836,14 +2836,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 5,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 5 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 5 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
         "text": "ağıdakilerden hangisidir? , questionType : diagnosis , answerTarget : diagnosis , diagnosis : correct : Santral puberte prekoks , options : Prematür telarş , Prematür adrenarş , Periferik puberte prekoks , McCune-Albright sendromu , Santral puberte prekoks , question : Bu çocukta en olası tanı aşağıdakilerden hangisidir? , explanation : Sekiz yaşından önce ilerleyici meme gelişimi, büyüme hızlanması, ileri kemik yaşı"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2890,7 +2890,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 8299,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 8299 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 8299 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/index.css",
@@ -2898,10 +2898,10 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
       },
       {
         "sourceFilePath": "src/index.css",
-        "text": "nı normal .webp URL’ye eşitlendi. 2. thumbnailFileName alanı da normal fileName ile eşitlendi. 3. Manifest içinde _thumb.webp referansı bırakılmadı. 4. src/components/InvestigationPanel.jsx içine görsel yüklenemezse imageUrl’ye düşen onError fallback eklendi. 5. src/components/CasePlayer.jsx içindeki fizik muayene görselleri için de aynı onError fallback eklendi. Sonuç: - Vercel Blob’dan sildiğin _t"
+        "text": "nı normal .webp URL’ye eşitlendi. 2. thumbnailFileName alanı da normal fileName ile eşitlendi. 3. Manifest içinde _thumb.webp referansı bırakılmadı. 4. src/components/InvestigationPanel.jsx içine görsel yüklenemezse imageUrl’ye geçen onError yedek görsel akışı eklendi. 5. src/components/CasePlayer.jsx içindeki fizik muayene görselleri için de aynı onError yedek görsel akışı eklendi. Sonuç: - Vercel Blob’dan sildiğin _t"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2948,7 +2948,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Hap Kartlar",
     "occurrenceCount": 10,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 10 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 10 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusPearlCards.js",
@@ -2959,7 +2959,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "ntasyon hızı inflamasyon göstergesi olarak kullanılan nonspesifik testtir. Klinik bağlamla birlikte yorumlanmalıdır. , postAnswerExpandedExplanation : Dev hücreli arterit ve polimiyalji romatikada yüksek ESR klasik ipucudur. , tusPearl : Dev hücreli arterit ve polimiyalji romatikada yüksek ESR klasik ipucudur. , differentialPoint : CRP daha hızlı değişebilir; ESR yaş/anemi gibi durumlardan etkileneb"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3006,7 +3006,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 8,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 8 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 8 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -3017,7 +3017,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "kluk tipiktir; gerçek kas güçsüzlüğü beklenmez. , keywords : polimiyalji romatika , omuz kuşağı , kalça kuşağı , ESR yüksek , trap : Polimiyozitte CK yüksekliği ve gerçek kas güçsüzlüğü daha belirgindir. , extraQuestion : Vaka kökünde omuz kuşağı, kalça kuşağı ve ESR yüksek birlikte verilirse hangi tanı öncelikle düşünülür? , extraAnswer : Polimiyalj"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3064,7 +3064,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 6,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 6 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 6 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryV330UltraDeepBatch5And6Index.js",
@@ -3075,7 +3075,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "efinition : Cerrahi aciliyet veya girişim planlamasıyla ilişkili güvenli bir kavramdır. , shortDefinition : Göğüs duvarı segmenti ventilasyon sırasında ters hareket eder ve pulmoner kontüzyon eşlik edebilir. , definition : Göğüs duvarı segmenti ventilasyon sırasında ters hareket eder ve pulmoner kontüzyon eşlik edebilir. , detailedExplanation : Flail chest Göğüs duvarı segmenti ventilasyon sırası"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3122,7 +3122,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 14,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 14 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 14 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryV304ExtraIndex.js",
@@ -3133,7 +3133,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "inhibe ederek RAAS aktivitesini azaltır. Klinik bağlamla birlikte yorumlanmalıdır. , postAnswerExpandedExplanation : Kuru öksürük, hiperkalemi, gebelikte kontrendikasyon ve renal arter stenozu uyarıları yüksek verimlidir. , tusPearl : Kuru öksürük, hiperkalemi, gebelikte kontrendikasyon ve renal arter stenozu uyarıları yüksek verimlidir. , differentialPoint : ARB bradikinin artışı yapmadığı için ö"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3180,7 +3180,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 6,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 6 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 6 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryExpandedIndex.js",
@@ -3191,7 +3191,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "yasal boyadır. , postAnswerExpandedExplanation : Amiloid birikimini boyayan ve polarize ışıkta elma yeşili çift kırılma gösteren histokimyasal boyadır. Nefrotik sendrom veya restriktif kardiyomiyopati bağlamında amiloidoz düşünülürse Kongo kırmızısı ipucudur. , tusPearl : Nefrotik sendrom veya restriktif kardiyomiyopati bağlamında amiloidoz düşünülürse Kongo kırmızısı ipucudur. , differentialPoint : PAS b"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3238,7 +3238,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 24,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 24 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 24 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -3249,7 +3249,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "ject : Genel Cerrahi , topic : Safra taşı ileus , mainQuestion : Yaşlı hastada mekanik ileus ve pnömobilia birlikteliği hangi tabloyu düşündürür? , mainAnswer : Safra taşı ileusu. , explanation : Kolesistoenterik fistül ile geçen taş barsak obstrüksiyonu yapabilir. , keywords : safra taşı ileusu , pnömobilia , mekanik obstrüksiyon , fistül , tr"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3296,7 +3296,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 15,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 15 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 15 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -3307,7 +3307,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "anch : Pediatri / Endokrinoloji , title : Erken meme gelişimi , difficulty : Zor , clinicalFocus : Klinik bulgular ve tetkik verileriyle olası tanıyı belirleme. , learningTarget : Santral puberte prekoksu erken pubertal gelişim, ileri kemik yaşı ve pubertal LH yanıtıyla tanıyabilme , demographics : 6 yaşında kız çocuk , setting : Çocuk polikliniği , chiefComplaint : Çocuk, son aylarda belirginleşen meme gelişimi, hız"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3354,14 +3354,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 19,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 19 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 19 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
         "text": "n Hastalıkları ve Doğum , title : İkinci trimesterde ağrısız servikal açılma , difficulty : Zor , clinicalFocus : Klinik tabloya uygun tedavi yaklaşımını seçme. , learningTarget : Servikal yetmezlikte ağrısız ikinci trimester servikal dilatasyon ve serklaj yaklaşımını seçebilme , demographics : 29 yaşında gebe hasta , setting : Klinik değerlendirme , chiefComplaint : Hasta, rutin kontrolde servikal kısalma ve açılm"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3408,7 +3408,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 31,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 31 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 31 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryV332MajorJargonBatch7Index.js",
@@ -3419,7 +3419,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "EnglishName : , category : Serolojik test , subcategory : Serolojik test , sourceLayer : V332 major disease + jargon gap batch 7 , previewDefinition : Sifiliz tarama ve tedavi yanıtı izleminde kullanılan serolojik testtir. , preAnswerSafeDefinition : Sifiliz tarama ve tedavi yanıtı izleminde kullanılan serolojik testtir. , shortDefinition : Sifiliz taramasında kul"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3465,7 +3465,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 27,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 27 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 27 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -3476,7 +3476,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": ": Bağırsak segmentinin mezenteri etrafında dönerek obstrüksiyon ve iskemi riski oluşturmasıdır. Klinik bağlamla birlikte yorumlanmalıdır. , postAnswerExpandedExplanation : Sigmoid volvulusta coffee-bean sign klasik radyolojik ipucudur. , tusPearl : Sigmoid volvulusta coffee-bean sign klasik radyolojik ipucudur. , differentialPoint : İnvajinasyon çocukta hedef işareti ve çilek jölesi dışkıyla d"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3523,7 +3523,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 95,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 95 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 95 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -3534,7 +3534,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "rn / Karma) - Sekretin etkisi (P2, Fizyoloji) - Sertoli hücresi bariyeri (P2, Anatomi / Histoloji / Embriyoloji) - Serum triptaz düzeyi (P2, TUS Klinik Pattern / Karma) - Servikal skuamöz hücreli karsinom (P2, Patoloji / Hematoloji / Onkoloji) - Silikozis (P2, Patoloji / Hematoloji / Onkoloji) - Sol varikosel anatomisi (P2, TUS Klinik Pattern / Karma) - Soğuk nodül (P2, TUS Klinik Pattern / Karma) - Subepidermal gerg"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3582,7 +3582,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 4,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 4 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 4 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -3593,7 +3593,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "kardide sinüs taşikardisi ile otomatik atriyal taşikardiyi ayırma. , riskContext : Uzun süren taşikardi taşikardiye bağlı kardiyomiyopati riski taşır. , Hafif enfeksiyon taşikardiyi açıklayamayacak kadar düşük ateşle seyreder. , distinctiveClues : Kalp hızı muayene boyunca sabit. , Ateş düşük ve taşikardi düzeyini açıklamıyor. , Yorgunluk ve hepatomegali kar"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3647,7 +3647,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 20,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Önceki auditlerde geçmiş olabilir ancak aktif V366 glossary’ye import edilmemiş görünüyor. Proje metinlerinde 20 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Önceki auditlerde geçmiş olabilir ancak aktif V366 glossary’ye import edilmemiş görünüyor. Proje metinlerinde 20 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/pdfPediatricArrhythmiaCases.js",
@@ -3658,7 +3658,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "Atriyoventriküler düğüm veya iletim sisteminde ileti gecikmesi ya da kesilmesidir. Klinik bağlamla birlikte yorumlanmalıdır. , postAnswerExpandedExplanation : Mobitz II ve üçüncü derece AV blok pacemaker gereksinimi açısından daha ciddidir. , tusPearl : Mobitz II ve üçüncü derece AV blok pacemaker gereksinimi açısından daha ciddidir. , differentialPoint : Mobitz I’de PR giderek uzar; Mobitz II’de P"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3705,7 +3705,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 19,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 19 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 19 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -3716,7 +3716,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "result : Tek büyük arteriyel trunkustan sistemik, pulmoner ve koroner dolaşımın çıktığı ve ventriküler septal defekt eşlik ettiği izlendi. , clinicalMeaning : Persistan trunkus arteriozus ile uyumludur. , rawInvestigationRow : Ekokardiyografi | Tek büyük arteriyel trunkustan sistemik, pulmoner ve koroner dolaşımın çıktığı ve ventriküler septal defekt eşlik ettiği izlendi. | Persistan trunkus arteri"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3765,7 +3765,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 849,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 849 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 849 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -3776,7 +3776,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "rd fix: management card width + tooltip top layer ===== */ :root --z-base: 0; --z-sticky: 100; --z-dropdown: 300; --z-tooltip: 2147483000; --z-modal: 2147483200; --z-toast: 2147483400; #klinikiq-tooltip-layer position: fixed !important; inset: 0 !important; z-index: var(--z-tooltip, 2147483000) !important; pointer-events: none !important; overflow: visible !important; c"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3823,7 +3823,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 81,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 81 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 81 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -3834,7 +3834,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "extraAnswer : Nöbet. , difficulty : orta , branchId : obstetrics-gynecology , subject : Kadın Hastalıkları ve Doğum , topic : Postpartum kanama ve uterin atoni , mainQuestion : Doğum sonrası yumuşak, gevşek uterusla masif kanama en çok hangi nedeni düşündürür? , mainAnswer : Uterin atoni. , explanation : Postpartum kanamanın en sık nedeni uterin atonidir; ilk"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3882,7 +3882,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 48,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 48 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 48 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -3893,7 +3893,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "is , answerTarget : diagnosis , diagnosis : correct : Komplet hidatidiform mol , options : Komplet hidatidiform mol , Ektopik gebelik , Plasenta previa , Erken membran rüptürü , Uterin leiomyom dejenerasyonu , question : Bu hastada en olası tanı aşağıdakilerden hangisidir? , explanation : Gebeliğin erken döneminde vajinal kanama, gebelik haftasına göre büyük uterus, aşırı bulantı-kusma, çok yüksek beta-hCG ve"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3934,20 +3934,20 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     "priority": "P1",
     "recommendation": "addNewEntry",
     "existingGlossaryStatus": "missingActiveGlossary",
-    "sourceFilePath": "src/utils/clinicalScientificAccuracyGate.js",
+    "sourceFilePath": "static-glossary-source",
     "sourceFiles": [
-      "src/utils/clinicalScientificAccuracyGate.js"
+      "static-glossary-source"
     ],
     "sourceArea": "Diğer Proje Metinleri",
     "occurrenceCount": 1,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 1 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 1 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/utils/clinicalScientificAccuracyGate.js",
+        "sourceFilePath": "static-glossary-source",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3994,7 +3994,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 20,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 20 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 20 kez geçiyor veya varyantı yakalandı. Mevcut glossary entry’lerinde relatedTerms/safeNestedTerms içinde geçiyor; standalone veya kontrollü nested entry’ye yükseltilebilir. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -4005,7 +4005,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "moid kolon ve üst rektum kanlanmasına katkı veren abdominal arterdir. , detailedExplanation : İMA sol kolik, sigmoid ve superior rektal dallarla hindgut kanlanmasını sağlar. İskemik kolit ve kolon cerrahisi bağlamında marjinal arter/kollateral dolaşım bilgisi önemlidir. , postAnswerExplanation : İMA sol kolik, sigmoid ve superior rektal dallarla hindgut kanlanmasını sağlar. İskemik kolit ve kolon c"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4053,14 +4053,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 7,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 7 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 7 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
         "text": "dakilerden hangisidir? , questionType : pathogen , answerTarget : pathogen , diagnosis : correct : Chlamydia trachomatis , options : Chlamydia trachomatis , Treponema pallidum , Haemophilus ducreyi , Klebsiella granulomatis , Trichomonas vaginalis , question : Bu klinik tabloya en olası neden olan mikroorganizma aşağıdakilerden hangisidir? , explanation : Genç erkekte korunmasız cinsel ilişki sonrası dizüri ve ha"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4107,7 +4107,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 46,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 46 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 46 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -4118,7 +4118,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "Klozapin , mainQuestion : Klozapin kullanımında hangi ciddi hematolojik yan etki nedeniyle takip gerekir? , mainAnswer : Agranülositoz. , explanation : Dirençli şizofrenide etkilidir; nötrofil takibi sınavda sık sorulur. , keywords : klozapin; agranülositoz; nötrofil; dirençli şizofreni , trap : Olanzapin metabolik sendrom yapabilir; agranülositoz klozapine özgü yüksek verimd"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4165,14 +4165,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4219,14 +4219,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4273,14 +4273,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4327,14 +4327,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4381,14 +4381,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4435,14 +4435,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4489,14 +4489,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4545,14 +4545,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4599,14 +4599,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4653,14 +4653,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4708,14 +4708,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4762,14 +4762,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4816,14 +4816,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4870,14 +4870,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4925,14 +4925,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4979,14 +4979,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -5033,14 +5033,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -5087,14 +5087,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -5141,14 +5141,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -5196,14 +5196,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -5252,14 +5252,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -5308,14 +5308,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -5362,14 +5362,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -5417,14 +5417,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -5472,14 +5472,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -5527,14 +5527,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -5581,14 +5581,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -5635,14 +5635,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -5689,14 +5689,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -5745,14 +5745,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -5799,14 +5799,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -5854,14 +5854,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -5908,14 +5908,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -5962,14 +5962,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -6018,14 +6018,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -6072,14 +6072,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -6126,14 +6126,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -6180,14 +6180,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -6234,14 +6234,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -6288,14 +6288,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Curated major disease/jargon gap review",
     "occurrenceCount": 0,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "curated major disease/jargon gap bank",
         "text": "Exact proje cümlesi bulunamadı; major disease/jargon gap bankasından aktif glossary eksikliği olarak işaretlendi."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -6342,7 +6342,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 60,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 60 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 60 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -6353,7 +6353,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "ve kulak burun boğaz tarafından değerlendiriliyor , chiefComplaint : Çocuk, ateş, göz çevresinde şişlik ve göz hareketleriyle ağrı nedeniyle getiriliyor. , stem : Son bir haftadır sinüzit bulguları olduğu, son iki günde sağ göz çevresinde hızla artan şişlik ve ateş geliştiği öğreniliyor. Görmesinin bulanıklaştığını söylemektedir. , patientIntro : profile : 8 yaşında erkek çocuk, acil serviste göz hastal"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -6400,7 +6400,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 60,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 60 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 60 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -6411,7 +6411,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "ibiyotik tek başına yeterli değildir; kaynak kontrolü gerekir. , keywords : perianal apse , insizyon , drenaj , fluktuasyon , trap : Anal fissürde şiddetli defekasyon ağrısı olur ancak fluktuasyon veren apse beklenmez. , extraQuestion : perianal apse ve fluktuasyon birlikteliği öğrenciyi hangi tedavi veya klinik yaklaşım yanıtına götürür? , extraAnswe"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -6459,7 +6459,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 8,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 8 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 8 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryV332MajorJargonBatch7Index.js",
@@ -6470,7 +6470,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "Chlamydophila ve Legionella gibi etkenlerde kuru öksürük, baş ağrısı, sistemik yakınmalar ve daha az belirgin oskültasyon bulgusu görülebilir. Beta-laktamlar hücre duvarı olmayan/atipik etkenlerde yetersiz kalabilir; makrolid veya doksisiklin düşünülür. , postAnswerExplanation : Mycoplasma, Chlamydophila ve Legionella gibi etkenlerde kuru öksürük, baş ağrısı, sistemik yakınmalar ve daha az belirgin osk"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": [
       {
         "alias": "atipik etken",
@@ -6521,7 +6521,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 65,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 65 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 65 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryV321DeepHighYieldBatch4Index.js",
@@ -6532,7 +6532,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "arı / hematoloji — leak risk: low - **Atipik lenfosit** — P1 — Hematoloji / enfeksiyon — leak risk: low - **Atipik lenfositoz** — P1 — Hematoloji / enfeksiyon — leak risk: low - **Eksüdatif farenjit + posterior servikal lenfadenopati** — P1 — Enfeksiyon hastalıkları — leak risk: low - **Anti-β2 glikoprotein I** — P1 — Romatoloji / hematoloji — leak risk: low - **Antifosfolipid antikorlarına bağlı arteri"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": [
       {
         "alias": "eksüdatif efüzyon",
@@ -6590,7 +6590,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 2,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 2 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 2 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryV319TeachableIndex.js",
@@ -6598,10 +6598,10 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
       },
       {
         "sourceFilePath": "src/data/tusGlossaryV319TeachableIndex.js",
-        "text": "ue = repairTusQuestionText(text) .replace(WEAK_LABEL_PATTERN, '') .replace(/ s*; s*/g, '. ') .replace(/ s* / s*/g, '/') .replace(/ s* + s*/g, ' ve ') .replace(/Erysipelas/giu, 'Erizipel') .replace(/ bçeldiricileri b/giu, 'alternatifleri') .replace(/ bçeldiriciler b/giu, 'alternatifler') .replace(/ bçeldiriciyi b/giu, 'alternatifi') .replace(/ bçeldirici b/giu, 'alternatif"
+        "text": "Erisipel keskin sınırlı yüzeyel selülit paternidir; ayırıcı tanıda nekrotik lezyon ve immünsüpresyon bulguları ayrıca değerlendirilir."
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": [],
     "contextRequired": true,
     "allowedContextKeywords": [
@@ -6655,7 +6655,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 299,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 299 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 299 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -6666,7 +6666,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "if zinciri. , difficulty : orta , branchId : medical-pathology , subject : Tıbbi Patoloji , topic : Barrett özofagusu , mainQuestion : Kronik GERD zemininde distal özofagusta intestinal metaplazi hangi lezyondur? , mainAnswer : Barrett özofagusu. , explanation : Adenokarsinom riskini artıran premalign metaplazidir. , keywords : GERD; distal özofa"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -6712,7 +6712,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 16,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 16 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 16 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -6723,7 +6723,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "ik değerlendirmesidir. , preAnswerSafeDefinition : Kan hücrelerinin mikroskobik morfolojik değerlendirmesidir. , postAnswerExplanation : Şistosit, blast, sferosit veya hedef hücre gibi bulgular tanısal yönlendirme sağlar. , postAnswerExpandedExplanation : Şistosit, blast, sferosit veya hedef hücre gibi bulgular tanısal yönlendirme sağlar. , tusPearl : Şistosit, blast, sferosit veya he"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": [
       {
         "alias": "target cell",
@@ -6775,7 +6775,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 35,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 35 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 35 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -6786,7 +6786,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "lonidal sinüs Dışkılama sırasında cam kesiği tarzında şiddetli ağrı, az miktarda parlak kanama, kabızlık öyküsü ve posterior orta hatta lineer yırtık anal fissür için tipiktir. İç hemoroid kanaması genellikle ağrısızdır. , postAnswerExplanation : Pilonidal sinüs Dışkılama sırasında cam kesiği tarzında şiddetli ağrı, az miktarda parlak kanama, kabızlık öyküsü ve posterior orta hatta lineer yırtık ana"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": [],
     "contextRequired": true,
     "allowedContextKeywords": [
@@ -6841,14 +6841,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 10,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 10 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 10 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
         "text": "/ Nefroloji , title : Kolik yan ağrısı , difficulty : Orta , clinicalFocus : Objektif verileri doğru yorumlayarak karar verdirici bulguyu seçme. , learningTarget : Nefrolitiaziste kalsiyum oksalat taşını idrar mikroskopisi ile ayırt edebilme , demographics : 46 yaşında erkek hasta , setting : Acil servis , chiefComplaint : Hasta, ani başlayan sağ yan ağrısı ve bulantı nedeniyle acile başvuruyor. , stem : Ağrının dalg"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -6895,14 +6895,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 7,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 7 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 7 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
         "text": "question : Bu hastada en olası tanı aşağıdakilerden hangisidir? , questionType : diagnosis , answerTarget : diagnosis , diagnosis : correct : Mani atağı , options : Mani atağı , Panik bozukluk , Major depresif epizod , Somatizasyon bozukluğu , Deliryum , question : Bu hastada en olası tanı aşağıdakilerden hangisidir? , explanation : Uyku ihtiyacında azalma, taşkın duygudurum, basınçlı konuşma, grandiyözite,"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -6949,14 +6949,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 5,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 5 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 5 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
         "text": "kta en olası tanı aşağıdakilerden hangisidir? , questionType : diagnosis , answerTarget : diagnosis , diagnosis : correct : Santral puberte prekoks , options : Prematür telarş , Prematür adrenarş , Periferik puberte prekoks , McCune-Albright sendromu , Santral puberte prekoks , question : Bu çocukta en olası tanı aşağıdakilerden hangisidir? , explanation : Sekiz yaşından önce ilerleyici meme gelişimi, büyüme hı"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -7003,14 +7003,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 5,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 5 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 5 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
         "text": "question : Bu çocukta en olası tanı aşağıdakilerden hangisidir? , questionType : diagnosis , answerTarget : diagnosis , diagnosis : correct : Santral puberte prekoks , options : Prematür telarş , Prematür adrenarş , Periferik puberte prekoks , McCune-Albright sendromu , Santral puberte prekoks , question : Bu çocukta en olası tanı aşağıdakilerden hangisidir? , explanation : Sekiz yaşından önce ilerleyici meme"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -7060,14 +7060,14 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 3,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 3 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
         "text": "omparison : Cytomegalovirus : Cytomegalovirus mononükleoz benzeri tablo yapabilir ancak heterofil antikor genellikle negatif beklenir. , Human herpesvirus 6 : Human herpesvirus 6 roseola infantumla ilişkilidir; ergen hastadaki heterofil pozitif mononükleoz tablosunu en iyi açıklamaz. , Epstein-Barr virus : Epstein-Barr virus heterofil antikor pozitifliği, atipik lenfositoz, farenjit, posterior servikal lenfadeno"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -7114,7 +7114,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Glossary / Tooltip Data",
     "occurrenceCount": 6,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 6 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Proje metinlerinde 6 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryV320QualityBatch3Index.js",
@@ -7125,7 +7125,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "iktir; organik nedenler dışlanır. , tusPearl : Çarpıntı, terleme, nefes darlığı ve ölüm korkusu panik atakta tipiktir; organik nedenler dışlanır. , differentialPoint : Yaygın anksiyete bozukluğu sürekli ve uzun süreli endişeyle seyreder. , clinicalRelevance : Çarpıntı, terleme, nefes darlığı ve ölüm korkusu panik atakta tipiktir; organik nedenler dışlanır. , mechanism : , relatedBranches :"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -7175,7 +7175,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / Olgu Data",
     "occurrenceCount": 29,
-    "reasonForRecommendation": "V366 aktif glossary exact term/alias setinde bulunmuyor. Önceki auditlerde geçmiş olabilir ancak aktif V366 glossary’ye import edilmemiş görünüyor. Proje metinlerinde 29 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
+    "reasonForRecommendation": "Aktif glossary exact term/alias setinde bulunmuyor. Önceki auditlerde geçmiş olabilir ancak aktif V366 glossary’ye import edilmemiş görünüyor. Proje metinlerinde 29 kez geçiyor veya varyantı yakalandı. Öğretici değer: mekanizma/ayırıcı tanı/ilk yaklaşım veya TUS karar paterni taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -7186,7 +7186,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
         "text": "sı tanı aşağıdakilerden hangisidir? , questionType : diagnosis , answerTarget : diagnosis , diagnosis : correct : Kolorektal adenokarsinom , options : Kolorektal adenokarsinom , İrritabl bağırsak sendromu , Akut enfeksiyöz gastroenterit , Hemoroidal hastalık , Çölyak hastalığı , question : Bu hastada en olası tanı aşağıdakilerden hangisidir? , explanation : Yaşlı hastada dışkılama alışkanlığında değişiklik, dışkı çap"
       }
     ],
-    "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
+    "notes": "Batch 8 glossary katmanında eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
     "droppedAliases": []
   }
 ];

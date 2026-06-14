@@ -58,7 +58,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 9,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -69,7 +69,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "ı artmış olabilir. , difficulty : orta , branchId : minor-rotations , subject : Küçük Stajlar , topic : HSV ensefaliti , mainQuestion : Ateş, davranış değişikliği, nöbet ve temporal lob tutulumu hangi ensefaliti düşündürür? , mainAnswer : HSV ensefaliti. , exp"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -128,7 +128,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 172,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "removed-question-source",
@@ -139,7 +139,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "ti-HAV IgG negatif, HBsAg negatif, Anti-HBc IgM negatif, Anti-HCV negatif. , findings : HAV IgM saptanır , HBV akut belirteçleri negatif , HCV taraması negatif , question : Bu serolojik patern en güçlü olarak hangi sonucu destekler? , options : id : A , text :"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -198,7 +198,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 140,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -209,7 +209,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "tyum nefrojenik DI ve tiroidle karışır. , extraQuestion : Lityumun klasik endokrin yan etkilerinden biri nedir? , extraAnswer : Hipotiroidi. , difficulty : orta , branchId : medical-pharmacology , subject : Tıbbi Farmakoloji , topic : Metformin , mainQuestion "
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -268,7 +268,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 101,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -279,7 +279,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "emi, karaciğer enzim yüksekliği ve klima öyküsü hangi etkeni düşündürür? , mainAnswer : Legionella pneumophila. , explanation : Atipik pnömoni, gastrointestinal bulgu, hiponatremi ve su sistemi/klima maruziyeti birlikteliği Legionella lehinedir. , keywords : k"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -338,7 +338,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 78,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "removed-static-template-source",
@@ -349,7 +349,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "erden hangisidir? , questionType : treatment , answerTarget : treatment , diagnosis : correct : Nitrogliserin , options : Nitrogliserin , Aspirin , Heparin , Klopidogrel , Atropin , question : Bu hastada başlangıç yönetiminde kaçınılması gereken ilaç aşağıdaki"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -407,7 +407,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 75,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -418,7 +418,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "oji , topic : Heparin antidotu , mainQuestion : Heparin etkisini geri çevirmek için hangi ajan kullanılır? , mainAnswer : Protamin sülfat. , explanation : Pozitif yüklü protamin negatif yüklü heparini bağlar. , keywords : heparin; protamin; aPTT; antidot , tra"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -477,7 +477,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 74,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -488,7 +488,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "n : Altmış yaşında yeni başlayan dispepside ilk değerlendirme için hangi yaklaşım daha uygundur? , mainAnswer : Üst gastrointestinal endoskopi. , explanation : İleri yaşta yeni başlayan dispepsi alarm bulgusu kabul edilir ve endoskopi ile değerlendirilir. , ke"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -546,7 +546,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 66,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -557,7 +557,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "makroglossi ve kabızlık hangi endokrin tabloyu düşündürür? , mainAnswer : Konjenital hipotiroidi. , explanation : Erken tanı ve levotiroksin nörogelişim için kritiktir. , keywords : uzamış sarılık; makroglossi; kabızlık; hipotoni , trap : Down sendromu hipoton"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -611,11 +611,11 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
       "src/data/tusPearlCards.js",
       "src/data/tusGlossaryV319TeachableIndex.js",
       "src/data/tusGlossaryV330UltraDeepBatch5And6Index.js",
-      "src/utils/clinicalScientificAccuracyGate.js"
+      "static-glossary-source"
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 63,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -626,7 +626,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "eni uterin atonidir; ilk yaklaşım uterin masaj ve uterotonik tedavidir. , keywords : postpartum kanama; yumuşak uterus; uterin atoni; oksitosin , trap : Travma kaynaklı kanamada uterus sert/toparlanmış olabilir; yumuşak uterus atoni lehinedir. , extraQuestion "
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": [
       "uterotonik"
     ]
@@ -687,7 +687,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 60,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "removed-topic-source",
@@ -698,7 +698,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "şağıdakilerden hangisidir? , questionType : pathogen , answerTarget : pathogen , diagnosis : correct : Neisseria meningitidis , options : Streptococcus pneumoniae , Neisseria meningitidis , Haemophilus influenzae tip b , Listeria monocytogenes , Staphylococcus"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -757,7 +757,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 52,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -768,7 +768,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "yon depolarını yenileyerek toksik NAPQI metabolitini detoksifiye eder. , keywords : parasetamol; NAPQI; glutatyon; NAC , trap : Aktif kömür erken dönemde yararlı olabilir ama özgül antidot NAC’dir. , extraQuestion : Parasetamol toksisitesinde hepatotoksik meta"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -826,7 +826,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 51,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -837,7 +837,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "influenzae tip b , mainQuestion : Epiglottit ve kapsüllü gram negatif kokobasil denince hangi etken akla gelir? , mainAnswer : Haemophilus influenzae tip b. , explanation : Aşısız çocukta epiglottit ve menenjit klasik klinik bilgidir. , keywords : epiglottit; "
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -895,7 +895,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 50,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -906,7 +906,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "pic : Candida germ tüp testi , mainQuestion : Germ tüp testi pozitifliği en çok hangi Candida türünü destekler? , mainAnswer : Candida albicans. , explanation : Candida albicans serumda germ tüp oluşturabilir ve mukokutanöz enfeksiyonlarda sık görülür. , keywo"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -965,7 +965,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 49,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "removed-topic-source",
@@ -976,7 +976,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "s , answerTarget : diagnosis , diagnosis : correct : Akut kolesistit , options : Akut kolesistit , Akut viral hepatit , Akut pankreatit , Peptik ülser perforasyonu , Akut apandisit , question : Bu hastada en olası tanı aşağıdakilerden hangisidir? , explanation"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1035,7 +1035,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 47,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -1046,7 +1046,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "rculation basamağında. , difficulty : orta , branchId : general-surgery , subject : Genel Cerrahi , topic : Tiroid nodülü , mainQuestion : Tiroid nodülünde malignite riskini değerlendirmede temel ilk görüntüleme hangisidir? , mainAnswer : Tiroid ultrasonografi"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1103,7 +1103,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 46,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -1114,7 +1114,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "ct : Kadın Hastalıkları ve Doğum , topic : Serviks kanseri taraması , mainQuestion : Serviks kanseri taramasında yüksek riskli HPV testinin önemi nedir? , mainAnswer : Onkojenik HPV enfeksiyonunu saptaması. , explanation : Persistan yüksek riskli HPV enfeksiyo"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1171,7 +1171,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 44,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -1182,7 +1182,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "z; etki trombosit ömrü boyunca sürer. , keywords : aspirin , COX , TXA2 , trombosit , trap : Klopidogrel P2Y12 ADP reseptörünü inhibe eder. , extraQuestion : Vaka kökünde aspirin, COX ve TXA2 birlikte verilirse hangi mekanizma, enzim veya molekül öncelikle düş"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1238,7 +1238,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 39,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -1249,7 +1249,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "mainQuestion : Pnömoniyle birlikte hiponatremi, karaciğer enzim yüksekliği ve klima öyküsü hangi etkeni düşündürür? , mainAnswer : Legionella pneumophila. , explanation : Atipik pnömoni, gastrointestinal bulgu, hiponatremi ve su sistemi/klima maruziyeti birlik"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1305,7 +1305,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 39,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -1316,7 +1316,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "iti , mainQuestion :DS hastasında halka şeklinde kontrastlanan beyin lezyonları hangi enfeksiyonu düşündürür? , mainAnswer : Toxoplasma gondii ensefaliti. , explanation : Toxoplasma latent enfeksiyonun reaktivasyonu ile çoklu beyin lezyonları yapabilir. , k"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1375,7 +1375,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 38,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -1386,7 +1386,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "tör V ve X. , difficulty : orta , branchId : medical-microbiology , subject : Tıbbi Mikrobiyoloji , topic : Neisseria meningitidis , mainQuestion : Peteşiyal döküntü ve meningokoksemi hangi bakteriyi düşündürür? , mainAnswer : Neisseria meningitidis. , explana"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1445,7 +1445,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 36,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "removed-question-source",
@@ -1456,7 +1456,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "priority : essential , summary : Anti-HAV IgM pozitif, Anti-HAV IgG negatif, HBsAg negatif, Anti-HBc IgM negatif, Anti-HCV negatif. , findings : HAV IgM saptanır , HBV akut belirteçleri negatif , HCV taraması negatif , question : Bu serolojik patern en güçlü o"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1513,7 +1513,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot Olgular",
     "occurrenceCount": 35,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -1524,7 +1524,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "tusPearl : CEA tarama testi değil, tedavi sonrası izlem ve nüks takibinde daha değerlidir. , differentialPoint : PSA prostat, CA-125 over kanseri bağlamında daha sık sorulur. , clinicalRelevance : CEA tarama testi değil, tedavi sonrası izlem ve nüks takibinde "
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1583,7 +1583,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 33,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -1594,7 +1594,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "dikardisi/sinüs aritmisi , options : Yaşa göre benign sinüs bradikardisi/sinüs aritmisi , Edinsel tam AV blok , Miyokardit , Lyme karditi , Uzun QT sendromu , question : Bu çocukta en olası ritim yorumu hangisidir? , learningOutcome : Asemptomatik, perfüzyonu "
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1649,11 +1649,11 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
       "src/data/tusPearlCards.js",
       "src/data/tusGlossaryCandidateAuditIndex.js",
       "src/data/tusGlossaryV319TeachableIndex.js",
-      "src/utils/clinicalScientificAccuracyGate.js"
+      "static-glossary-source"
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 28,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -1664,7 +1664,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "itesi , mainQuestion : Beta bloker zehirlenmesinde hipoglisemi ve bradikardi varsa özgül tedavide ne kullanılır? , mainAnswer : Glukagon. , explanation : Glukagon beta reseptörden bağımsız cAMP artırarak kardiyak inotropi/ kronotropiyi destekler. , keywords : "
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1723,7 +1723,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 27,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "removed-question-template-source",
@@ -1734,7 +1734,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "elenme ile risk artmıştır. , C : Molar gebelikte çok yüksek beta-hCG ve üzüm salkımı benzeri uterin görünüm beklenir. , D : PID ateş, pürülan akıntı ve enfeksiyon bulgularıyla daha olasıdır; amenore ve beta-hCG pozitifliği yön değiştirir. , E : Torsiyonda ani "
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1790,7 +1790,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 26,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusPearlCards.js",
@@ -1801,7 +1801,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "aşım veya temel klinik dil açısından öğretici değeri yüksek. , droppedAliases : , id : v330-ultradeep-batch5-6-ehec-tedavi-tuzagi , term : EHEC tedavi tuzağı , aliases : EHEC tedavi tuzağı , normalizedTerm : ehec tedavi tuzagi , TurkishName : EHEC tedavi tuzağ"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1858,7 +1858,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 25,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -1869,7 +1869,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "ri tablosu oluşturur. , keywords : Shigella , dizanteri , tenesmus , düşük inokulum , trap : ETEC invazyon yapmadan sulu gezgin ishali oluşturur. , extraQuestion : Vaka kökünde dizanteri, tenesmus ve düşük inokulum birlikte verilirse hangi tanı öncelikle düşün"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1922,11 +1922,11 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "sourceFiles": [
       "src/data/tusPearlCards.js",
       "src/data/tusGlossaryV319TeachableIndex.js",
-      "src/utils/clinicalScientificAccuracyGate.js"
+      "static-glossary-source"
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 24,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusPearlCards.js",
@@ -1937,7 +1937,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "karar mantığı, mekanizma, ayırıcı tanı veya güvenli nested zincir açısından öğretici değeri var. , id : v319-teachable-metimazol-agranulositozu , term : Metimazol agranülositozu , aliases : Metimazol agranülositozu , metimazole agranulocytosis , antitiroid ila"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -1993,7 +1993,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot Olgular",
     "occurrenceCount": 24,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "removed-static-template-source",
@@ -2004,7 +2004,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "tedavi ağrıyı azaltabilir fakat arteriyel inflamasyonu yeterince baskılayarak görme kaybını önlemez. , Triptan tedavisi başlamak : Triptan migren atağında kullanılabilir; çene kladikasyonu, temporal arter hassasiyeti ve yüksek sedimentasyonla uyumlu bu vasküli"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2063,7 +2063,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 23,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "removed-question-source",
@@ -2074,7 +2074,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "nthetic-template-bank , difficulty : Orta-Zor , questionType : spot , managementSteps : , seedId : synthetic-micro-hav-variant-001 , title : Akut hepatit paneli yorumu , relatedBranch : Tıbbi Mikrobiyoloji , learningTarget : HAV IgM ve IgG paterninin akut enfe"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2129,7 +2129,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot Olgular",
     "occurrenceCount": 23,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -2140,7 +2140,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "Neisseria gonorrhoeae terimi bu kaynak dosyada geçmektedir; raw kaynak metinde biçimsel kaçış/JSON sıkıştırması nedeniyle bağlam otomatik kısaltılmıştır."
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2196,7 +2196,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 23,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -2207,7 +2207,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "tibiyotik ve sıvı geciktirilmemelidir. , extraQuestion : Sepsiste ilk tercih vazopressör genellikle hangisidir? , extraAnswer : Norepinefrin. , difficulty : orta , branchId : internal-medicine , subject : İç Hastalıkları , topic : Yüksek riskli pulmoner emboli"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2266,7 +2266,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot Olgular",
     "occurrenceCount": 21,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -2277,7 +2277,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "kir , options : Isı/dehidratasyonla ilişkili egzersiz senkopu; kardiyak kırmızı bayrakların dışlanması gerekir , Kesin epilepsi tanısı , Panik atak , Asemptomatik WPW tanısı , Bakteriyel sepsis , question : Bu olguda en uygun değerlendirme yorumu hangisidir? ,"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2334,7 +2334,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 16,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -2345,7 +2345,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "estion : Çocukta nefrotik sendromun en sık nedeni nedir? , mainAnswer : Minimal değişiklik hastalığı. , explanation : Selektif albuminüri ve steroid yanıtı klasik pediatrik nefrotik sendrom bilgisidir. , keywords : çocuk; nefrotik sendrom; steroid yanıtı; podo"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2404,7 +2404,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot Olgular",
     "occurrenceCount": 16,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -2415,7 +2415,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "litik anemi lehinedir. , tusPearl : Şistosit + trombositopeni mikroanjiyopatik hemolitik anemi lehinedir. , differentialPoint : Sferosit daha çok herediter sferositoz/otoimmün hemolizi düşündürür. , clinicalRelevance : Şistosit + trombositopeni mikroanjiyopati"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2472,7 +2472,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot Olgular",
     "occurrenceCount": 15,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -2483,7 +2483,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "yıkımıyla hipotiroidiye yol açabilen kronik tiroidittir. Klinik bağlamla birlikte yorumlanmalıdır. , postAnswerExpandedExplanation : Anti-TPO pozitifliği ve ağrısız guatr Hashimoto için tipiktir. , tusPearl : Anti-TPO pozitifliği ve ağrısız guatr Hashimoto içi"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2536,11 +2536,11 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "sourceFiles": [
       "src/data/tusPearlCards.js",
       "src/data/tusGlossaryV330UltraDeepBatch5And6Index.js",
-      "src/utils/clinicalScientificAccuracyGate.js"
+      "static-glossary-source"
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 15,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusPearlCards.js",
@@ -2551,7 +2551,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "mında soru çözme / ayırıcı tanı / mekanizma öğrenimi sağlar. , droppedAliases : , id : v330-ultradeep-batch5-6-cha2ds2-vasc-skoru , term : CHA2DS2-VASc skoru , aliases : CHA2DS2-VASc skoru , normalizedTerm : cha2ds2-vasc skoru , TurkishName : CHA2DS2-VASc skor"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2607,7 +2607,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot Olgular",
     "occurrenceCount": 14,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -2618,7 +2618,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "xtExamples : da albicans\\ :\\ Candida albicans silinebilir oral plak, psödohif ve pozitif germ tüp testiyle en uyumlu etkendir.\\ ,\\ Aspergillus fumigatus\\ :\\ Aspergillus fumigatus septalı hiflerle invaziv akciğer enfeksiyonu yapabilir; oral psödohifli plak için"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2675,7 +2675,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot Olgular",
     "occurrenceCount": 14,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "removed-topic-source",
@@ -2686,7 +2686,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "fComplaint : Vajinal doğum sırasında fetal baş çıktıktan sonra omuzların ilerlememesi nedeniyle acil obstetrik müdahale gerekiyor. , stem : Gestasyonel diyabet öyküsü vardır ve ultrasonografide fetüsün iri olduğu belirtilmiştir. Doğum eylemi vajinal olarak ile"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2745,7 +2745,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Glossary body / nested terms",
     "occurrenceCount": 13,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryExpandedIndex.js",
@@ -2756,7 +2756,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "erden geçen eritrositlerin mekanik parçalanmasıyla gelişen intravasküler hemolizdir. Şistosit, LDH yüksekliği, indirekt bilirubin artışı ve haptoglobin düşüklüğü beklenir. , tusPearl : Şistosit, LDH yüksekliği, indirekt bilirubin artışı ve haptoglobin düşüklüğ"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2813,7 +2813,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot Olgular",
     "occurrenceCount": 12,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -2824,7 +2824,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "ağrı, şişlik, hematom, enfeksiyon veya fıtık nüksü değerlendirilmelidir. , differentialPoint : Skrotal ağrı eşlik ediyorsa torsiyon, epididimit, inkarsere herni ve postoperatif komplikasyonlar ayrılmalıdır. , clinicalContext : , clinicalRelevance : , mechanism"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2881,7 +2881,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 12,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusPearlCards.js",
@@ -2892,7 +2892,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "zeri lezyonlarla seyreden hipersensitivite reaksiyonudur. Klinik bağlamla birlikte yorumlanmalıdır. , postAnswerExpandedExplanation : HSV ve bazı ilaçlarla ilişkilidir; hedef lezyon ifadesi ayırıcıdır. , tusPearl : HSV ve bazı ilaçlarla ilişkilidir; hedef lezy"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -2948,7 +2948,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot Olgular",
     "occurrenceCount": 11,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -2959,7 +2959,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "eğerlendiren biyokimyasal testtir. Klinik bağlamla birlikte yorumlanmalıdır. , postAnswerExpandedExplanation : E. coli indol pozitif, Klebsiella pneumoniae indol negatif klasik ayrımdır. , tusPearl : E. coli indol pozitif, Klebsiella pneumoniae indol negatif k"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3017,7 +3017,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 11,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "removed-static-template-source",
@@ -3028,7 +3028,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "stionType : diagnosis , answerTarget : diagnosis , diagnosis : correct : IgA vasküliti , options : IgA vasküliti , İmmün trombositopeni , Kızamık , İlaç ürtikeri , Akut lenfadenit , question : Bu çocukta en olası tanı aşağıdakilerden hangisidir? , explanation "
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3085,7 +3085,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot Olgular",
     "occurrenceCount": 10,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -3096,7 +3096,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "atremi + yüksek idrar ozmolalitesi + idrar sodyum yüksekliği SIADH düşündürür. , differentialPoint : Diabetes insipidusta su kaybı ve hipernatremi eğilimi beklenir. , clinicalRelevance : Övolemik hiponatremi + yüksek idrar ozmolalitesi + idrar sodyum yüksekliğ"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3152,7 +3152,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot Olgular",
     "occurrenceCount": 9,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -3163,7 +3163,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "ağlı kreatinin/üre artışıdır. Klinik bağlamla birlikte yorumlanmalıdır. , postAnswerExpandedExplanation : BUN/kreatinin oranı yüksek, FeNa düşük ve idrar sodyumu düşük olması prerenal tabloyu destekler. , tusPearl : BUN/kreatinin oranı yüksek, FeNa düşük ve id"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3219,7 +3219,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 8,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusPearlCards.js",
@@ -3230,7 +3230,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "ağlamla birlikte yorumlanmalıdır. , postAnswerExpandedExplanation : Proksimal güçsüzlük + kullanım sonrası güç artışı + küçük hücreli akciğer kanseri ilişkisi önemlidir. , tusPearl : Proksimal güçsüzlük + kullanım sonrası güç artışı + küçük hücreli akciğer kan"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3286,7 +3286,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot / Hap Kart",
     "occurrenceCount": 8,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/pdfPediatricArrhythmiaCases.js",
@@ -3294,10 +3294,10 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
       },
       {
         "sourceFilePath": "src/data/tusGlossaryV319TeachableIndex.js",
-        "text": ": long-tail teachable candidate , sourceLayer : V319 teachable glossary quality filter , previewDefinition : Beta bloker veya kalsiyum kanal blokeri zehirlenmesinde miyokard enerji kullanımını desteklemek için verilen insülin-glukoz tedavisidir. , preAnswerSaf"
+        "text": ": long-tail teachable candidate , sourceLayer : V319 teachable glossary curated glossary layer , previewDefinition : Beta bloker veya kalsiyum kanal blokeri zehirlenmesinde miyokard enerji kullanımını desteklemek için verilen insülin-glukoz tedavisidir. , preAnswerSaf"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3354,7 +3354,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 8,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "removed-topic-source",
@@ -3365,7 +3365,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "azı yapabilir. , keywords : koryokarsinom , hematojen metastaz , akciğer , beta-hCG , trap : Serviks kanserinde lenfatik yayılım daha ön plandadır. , extraQuestion : Vaka kökünde koryokarsinom, akciğer ve beta-hCG birlikte verilirse hangi komplikasyon veya kli"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3420,7 +3420,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot / Hap Kart",
     "occurrenceCount": 8,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/pdfPediatricArrhythmiaCases.js",
@@ -3431,7 +3431,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "WPW terimi bu kaynak dosyada geçmektedir; raw kaynak metinde biçimsel kaçış/JSON sıkıştırması nedeniyle bağlam otomatik kısaltılmıştır."
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3488,7 +3488,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot / Hap Kart",
     "occurrenceCount": 7,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryExpandedIndex.js",
@@ -3499,7 +3499,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "ion : Böbrek fonksiyon kaybı ve metabolik atık birikimiyle ilişkili klinik kavramdır. , postAnswerExplanation : Üremik ensefalopati, perikardit, bulantı, kaşıntı ve kanama eğilimi gibi sistemik bulgular oluşturabilir. , tusPearl : Üremik perikardit veya ensefa"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3556,7 +3556,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Glossary body / nested terms",
     "occurrenceCount": 7,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryExpandedIndex.js",
@@ -3567,7 +3567,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "tAnswerExpandedExplanation : Protein metabolizması sonucu oluşan ürenin kandaki azot karşılığını gösteren parametredir. Prerenal azotemide BUN/kreatinin oranı artabilir. , tusPearl : Prerenal azotemide BUN/kreatinin oranı artabilir. , differentialPoint : Kreat"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3619,22 +3619,22 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "sourceFilePath": "src/data/tusGlossaryV319TeachableIndex.js",
     "sourceFiles": [
       "src/data/tusGlossaryV319TeachableIndex.js",
-      "src/utils/clinicalScientificAccuracyGate.js"
+      "static-glossary-source"
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot / Hap Kart",
     "occurrenceCount": 7,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryV319TeachableIndex.js",
         "text": "on : Metimazol tedavisi sırasında gelişebilen ciddi nötropeni/agranülositoz komplikasyonudur. , detailedExplanation : Metimazol veya propiltiyourasil kullanan hastada ateş ve boğaz ağrısı gelişirse agranülositoz düşünülmeli ve kan sayımı değerlendirilmelidir. "
       },
       {
-        "sourceFilePath": "src/utils/clinicalScientificAccuracyGate.js",
+        "sourceFilePath": "static-glossary-source",
         "text": "k\\s+kriz|tiroid\\s+firtinasi|thyroid\\s+storm/.test(text) && hasExplicitManagementIntent(question)) if (!/beta\\s*bloker|propranolol|ptu|propiltiyourasil|metimazol|iyot|lugol|steroid|hidrokortizon/.test(correct)) return errors: 'thyroid-adrenal-rule: tirotoksik k"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3690,7 +3690,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 7,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -3701,7 +3701,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "logy , subject : Tıbbi Mikrobiyoloji , topic : Varicella neonatal profilaksi , mainQuestion : Doğuma yakın dönemde annede suçiçeği döküntüsü gelişirse yenidoğana ne verilmelidir? , mainAnswer : Varicella-zoster immünoglobulini. , explanation : Doğum çevresinde"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3759,7 +3759,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 6,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusPearlCards.js",
@@ -3770,7 +3770,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "nlük yaşamı etkileyen ilerleyici bilişsel işlev kaybıdır. Klinik bağlamla birlikte yorumlanmalıdır. , postAnswerExpandedExplanation : Alzheimer’da erken epizodik bellek kaybı; Lewy cisimcikli demansta görsel halüsinasyon/parkinsonizm öne çıkar. , tusPearl : Al"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3827,18 +3827,18 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot / Hap Kart",
     "occurrenceCount": 6,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryV321DeepHighYieldBatch4Index.js",
-        "text": "hes : endocrinology , relatedTerms : İnsülin direnci , Hiperglisemi , Metabolik sendrom , HbA1c , safeNestedTerms : İnsülin direnci , Hiperglisemi , Metabolik sendrom , HbA1c , difficulty : P1 , answerLeakRisk : low , qualityScore : 93, matchingPriority : 96, "
+        "text": "hes : endocrinology , relatedTerms : İnsülin direnci , Hiperglisemi , Metabolik sendrom , HbA1c , safeNestedTerms : İnsülin direnci , Hiperglisemi , Metabolik sendrom , HbA1c , difficulty : P1 , answerLeakRisk : low , curationScore : 93, matchingPriority : 96, "
       },
       {
         "sourceFilePath": "src/utils/clinicalValueFormatters.js",
         "text": "dL','' , 'Serum beta-hCG', 'beta-hcg','β-hcg','serum beta-hcg' ,'mIU/mL','Negatif veya <5 mIU/mL','2.400 mIU/mL','','<5 mIU/mL','' , 'HbA1c', 'hba1c','hbA1c' ,'%','<%5.7','%8.1','','%5.3','' , 'Proteinüri', 'proteinüri','proteinuri' ,'mg/gün','<150 mg/gün','1."
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3893,7 +3893,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot Olgular",
     "occurrenceCount": 6,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -3904,7 +3904,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "Influenza terimi bu kaynak dosyada geçmektedir; raw kaynak metinde biçimsel kaçış/JSON sıkıştırması nedeniyle bağlam otomatik kısaltılmıştır."
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -3960,7 +3960,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Glossary body / nested terms",
     "occurrenceCount": 6,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryContextualPhraseIndex.js",
@@ -3971,7 +3971,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "ledExplanation : Akut sistitte dizüri, sık idrara çıkma, urgency ve suprapubik ağrı tipiktir; ateş ve kostovertebral açı hassasiyeti varsa piyelonefrit düşünülür. İdrar tahlili ve kültür klinik bağlama göre kullanılır. , postAnswerExplanation : Akut sistitte d"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4027,7 +4027,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Glossary body / nested terms",
     "occurrenceCount": 6,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossarySupplementalIndex.js",
@@ -4038,7 +4038,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "nsiyon yapabilir. Alfa-1 bloker ve 5-alfa redüktaz inhibitörü mekanizmaları TUS açısından önemlidir. , tusPearl : BPH transizyon zon; prostat kanseri periferal zon ile klasik ayrılır. , differentialPoint : Prostat kanseri genellikle periferik zondan çıkar; BPH"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4094,7 +4094,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot / Hap Kart",
     "occurrenceCount": 5,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/pdfPediatricArrhythmiaCases.js",
@@ -4105,7 +4105,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "rdisi ve QRS genişlemesi izlendi. , Sinüs taşikardisinde hız beslenme, ağlama, ateş veya sıvı durumuyla değişir; burada sabit hız ve atriyal flutter dalgaları vardır. , candidateAudit : candidateTerm : Sinüs Taşikardi , recommendation : addNewEntry , confidenc"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4161,7 +4161,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot Olgular",
     "occurrenceCount": 5,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -4172,7 +4172,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "gory : İmmünoloji / hipersensitivite , shortDefinition : T hücre aracılı gecikmiş tip aşırı duyarlılık reaksiyonudur. , tusPearl : Tüberkülin deri testi ve kontakt dermatit Tip IV mekanizma örnekleridir. , differentialPoint : Tip I IgE aracılı hızlıdır; Tip IV"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4221,25 +4221,25 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "priority": "P1",
     "recommendation": "addNewEntry",
     "existingGlossaryStatus": "missingInActiveV331GlossaryExactAlias",
-    "sourceFilePath": "removed-question-quality-source",
+    "sourceFilePath": "static-glossary-source",
     "sourceFiles": [
-      "removed-question-quality-source",
-      "src/utils/clinicalScientificAccuracyGate.js"
+      "static-glossary-source",
+      "static-glossary-source"
     ],
-    "sourceArea": "soru şablonları / topic pools",
+    "sourceArea": "statik glossary veri kaynağı",
     "occurrenceCount": 3,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
-        "sourceFilePath": "removed-question-quality-source",
+        "sourceFilePath": "static-glossary-source",
         "text": "poksik|iskemik|asfiksi|term|near term|ensefalopati/.test(bundle)) return 'Term veya near-term yenidoğan', 'Asfiksi kanıtı ve düşük Apgar öyküsü', 'Orta-ağır ensefalopati bulguları', 'İlk 6 saatte nöroprotektif yaklaşım gereksinimi' ; if (/bruton|pyojenik|b huc"
       },
       {
-        "sourceFilePath": "src/utils/clinicalScientificAccuracyGate.js",
+        "sourceFilePath": "static-glossary-source",
         "text": "değerlendirilir/iu, ; const SCORE_NAMES = 'PESI', 'Wells', 'CURB-65', 'CHA₂DS₂-VASc', 'CHA2DS2-VASc', 'HAS-BLED', 'Child-Pugh', 'MELD', 'APGAR', 'Bishop', 'Centor', 'Alvarado', 'Glasgow', 'Ranson' ; function normalizeTR(text = '') return normalizeQuestionText("
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4294,7 +4294,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot Olgular",
     "occurrenceCount": 3,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -4305,7 +4305,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "Hemofili A terimi bu kaynak dosyada geçmektedir; raw kaynak metinde biçimsel kaçış/JSON sıkıştırması nedeniyle bağlam otomatik kısaltılmıştır."
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4360,7 +4360,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Glossary body / nested terms",
     "occurrenceCount": 3,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryContextualPhraseIndex.js",
@@ -4371,7 +4371,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "VZV terimi bu kaynak dosyada geçmektedir; raw kaynak metinde biçimsel kaçış/JSON sıkıştırması nedeniyle bağlam otomatik kısaltılmıştır."
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4426,7 +4426,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot Olgular",
     "occurrenceCount": 3,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js",
@@ -4437,7 +4437,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "Üre döngüsü defekti terimi bu kaynak dosyada geçmektedir; raw kaynak metinde biçimsel kaçış/JSON sıkıştırması nedeniyle bağlam otomatik kısaltılmıştır."
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4486,24 +4486,24 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "priority": "P1",
     "recommendation": "addNewEntry",
     "existingGlossaryStatus": "missingInActiveV331GlossaryExactAlias",
-    "sourceFilePath": "src/utils/clinicalScientificAccuracyGate.js",
+    "sourceFilePath": "static-glossary-source",
     "sourceFiles": [
-      "src/utils/clinicalScientificAccuracyGate.js"
+      "static-glossary-source"
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot / Hap Kart",
     "occurrenceCount": 2,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/utils/clinicalScientificAccuracyGate.js",
+        "sourceFilePath": "static-glossary-source",
         "text": "irilir/iu, ; const SCORE_NAMES = 'PESI', 'Wells', 'CURB-65', 'CHA₂DS₂-VASc', 'CHA2DS2-VASc', 'HAS-BLED', 'Child-Pugh', 'MELD', 'APGAR', 'Bishop', 'Centor', 'Alvarado', 'Glasgow', 'Ranson' ; function normalizeTR(text = '') return normalizeQuestionText(toPlainTe"
       },
       {
-        "sourceFilePath": "src/utils/clinicalScientificAccuracyGate.js",
+        "sourceFilePath": "static-glossary-source",
         "text": "Bishop terimi bu kaynak dosyada geçmektedir; raw kaynak metinde biçimsel kaçış/JSON sıkıştırması nedeniyle bağlam otomatik kısaltılmıştır."
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4557,9 +4557,9 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
       "removed-tus-narrative-source",
       "src/utils/clinicalValueFormatters.js"
     ],
-    "sourceArea": "soru şablonları / topic pools",
+    "sourceArea": "statik glossary veri kaynağı",
     "occurrenceCount": 2,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "removed-tus-narrative-source",
@@ -4570,7 +4570,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "ction qualitativeReference(parameter = '') if (/kültür|kultur|üreme/i.test(parameter)) return 'Üreme olmamalı'; if (/anti-|hbsag|hiv|vdrl|rpr|pcr|antijen|antikor|seroloji|coombs|nitrit|keton|protein|kan/i.test(parameter)) return 'Negatif'; if (/yayma|mikroskop"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4625,7 +4625,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot / Hap Kart",
     "occurrenceCount": 2,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/pdfPediatricArrhythmiaCases.js",
@@ -4636,7 +4636,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "Transözofageal ekokardiyografi terimi bu kaynak dosyada geçmektedir; raw kaynak metinde biçimsel kaçış/JSON sıkıştırması nedeniyle bağlam otomatik kısaltılmıştır."
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4690,9 +4690,9 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
       "removed-tus-narrative-source",
       "src/utils/clinicalValueFormatters.js"
     ],
-    "sourceArea": "soru şablonları / topic pools",
+    "sourceArea": "statik glossary veri kaynağı",
     "occurrenceCount": 2,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "removed-tus-narrative-source",
@@ -4703,7 +4703,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "function qualitativeReference(parameter = '') if (/kültür|kultur|üreme/i.test(parameter)) return 'Üreme olmamalı'; if (/anti-|hbsag|hiv|vdrl|rpr|pcr|antijen|antikor|seroloji|coombs|nitrit|keton|protein|kan/i.test(parameter)) return 'Negatif'; if (/yayma|mikros"
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4758,7 +4758,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Glossary body / nested terms",
     "occurrenceCount": 1,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusGlossaryContentCoverageIndex.js",
@@ -4769,7 +4769,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "Mitral yetmezlik terimi bu kaynak dosyada geçmektedir; raw kaynak metinde biçimsel kaçış/JSON sıkıştırması nedeniyle bağlam otomatik kısaltılmıştır."
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4824,7 +4824,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot / Hap Kart",
     "occurrenceCount": 1,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/utils/glossary.js",
@@ -4835,7 +4835,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "böbrek taşı terimi bu kaynak dosyada geçmektedir; raw kaynak metinde biçimsel kaçış/JSON sıkıştırması nedeniyle bağlam otomatik kısaltılmıştır."
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   },
   {
@@ -4890,7 +4890,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 1,
-    "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
+    "reasonForRecommendation": "Aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/tusPearlCards.js",
@@ -4901,7 +4901,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "Trastuzumab terimi bu kaynak dosyada geçmektedir; raw kaynak metinde biçimsel kaçış/JSON sıkıştırması nedeniyle bağlam otomatik kısaltılmıştır."
       }
     ],
-    "notes": "Batch 7 kalite filtresiyle eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
+    "notes": "Batch 7 glossary katmanında eklenmiştir; geniş/çakışan aliaslar temizlenmiştir.",
     "droppedAliases": []
   }
 ];

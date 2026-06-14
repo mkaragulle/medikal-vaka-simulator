@@ -46,7 +46,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P0",
     "answerLeakRisk": "high",
-    "qualityScore": 96,
+    "curationScore": 96,
     "matchingPriority": 98,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -74,7 +74,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 24
+      "curationScoreFromAudit": 24
     }
   },
   {
@@ -117,7 +117,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "medium",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -143,7 +143,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/tusGlossaryCandidateAuditIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -186,7 +186,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "medium",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -212,7 +212,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/pdfPediatricArrhythmiaCases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -255,7 +255,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -281,7 +281,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -324,7 +324,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -350,7 +350,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/tusGlossaryCaseDerivedIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -393,7 +393,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -419,7 +419,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/tusGlossaryDefinitionQualityIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -462,7 +462,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P0",
     "answerLeakRisk": "medium",
-    "qualityScore": 96,
+    "curationScore": 96,
     "matchingPriority": 98,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -488,7 +488,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/tusGlossaryCaseDerivedIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 24
+      "curationScoreFromAudit": 24
     }
   },
   {
@@ -533,7 +533,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -561,7 +561,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-static-template-source, src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -604,7 +604,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P0",
     "answerLeakRisk": "medium",
-    "qualityScore": 96,
+    "curationScore": 96,
     "matchingPriority": 98,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -630,7 +630,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-source, removed-static-template-source",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 24
+      "curationScoreFromAudit": 24
     }
   },
   {
@@ -673,7 +673,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -699,7 +699,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/tusGlossarySupplementalIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -744,7 +744,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -772,7 +772,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -815,7 +815,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -841,7 +841,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -884,7 +884,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -910,7 +910,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/pdfPediatricArrhythmiaCases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -953,7 +953,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P0",
     "answerLeakRisk": "medium",
-    "qualityScore": 96,
+    "curationScore": 96,
     "matchingPriority": 98,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -979,7 +979,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/pdfPediatricArrhythmiaCases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 24
+      "curationScoreFromAudit": 24
     }
   },
   {
@@ -1022,7 +1022,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -1048,7 +1048,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/tusGlossaryCandidateAuditIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -1091,7 +1091,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -1117,7 +1117,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/pdfPediatricArrhythmiaCases.js, src/data/tusGlossaryIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -1160,7 +1160,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P0",
     "answerLeakRisk": "medium",
-    "qualityScore": 96,
+    "curationScore": 96,
     "matchingPriority": 98,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -1186,7 +1186,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/tusGlossaryCandidateAuditIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 24
+      "curationScoreFromAudit": 24
     }
   },
   {
@@ -1229,7 +1229,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -1255,7 +1255,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-template-source, removed-static-template-source",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -1299,7 +1299,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P0",
     "answerLeakRisk": "medium",
-    "qualityScore": 96,
+    "curationScore": 96,
     "matchingPriority": 98,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -1325,7 +1325,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 24
+      "curationScoreFromAudit": 24
     }
   },
   {
@@ -1368,7 +1368,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -1394,7 +1394,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/tusGlossaryClinicalBranchDeepIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -1438,7 +1438,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P2",
     "answerLeakRisk": "low",
-    "qualityScore": 86,
+    "curationScore": 86,
     "matchingPriority": 90,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -1464,7 +1464,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/tusGlossaryExpandedIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 18
+      "curationScoreFromAudit": 18
     }
   },
   {
@@ -1507,7 +1507,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P2",
     "answerLeakRisk": "low",
-    "qualityScore": 86,
+    "curationScore": 86,
     "matchingPriority": 90,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -1533,7 +1533,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/tusGlossaryDefinitionQualityIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 18
+      "curationScoreFromAudit": 18
     }
   },
   {
@@ -1574,7 +1574,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -1600,7 +1600,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/tusGlossaryV304ExtraIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -1643,7 +1643,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -1669,7 +1669,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/tusGlossaryV304ExtraIndex.js, src/data/tusPearlCards.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -1712,7 +1712,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -1738,7 +1738,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/tusGlossaryV304ExtraIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -1781,7 +1781,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -1807,7 +1807,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/tusGlossaryV304ExtraIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -1850,7 +1850,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -1876,7 +1876,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/tusGlossaryIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -1919,7 +1919,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -1945,7 +1945,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/tusGlossaryV304ExtraIndex.js, src/data/tusPearlCards.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -1986,7 +1986,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2012,7 +2012,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -2055,7 +2055,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -2081,7 +2081,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -2124,7 +2124,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2150,7 +2150,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -2191,7 +2191,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2217,7 +2217,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -2260,7 +2260,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2286,7 +2286,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/tusGlossaryV304ExtraIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -2327,7 +2327,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2353,7 +2353,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -2394,7 +2394,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2420,7 +2420,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/tusGlossaryV304ExtraIndex.js, src/data/tusPearlCards.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -2461,7 +2461,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2487,7 +2487,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -2528,7 +2528,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2554,7 +2554,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/tusGlossaryCandidateAuditIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -2595,7 +2595,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2621,7 +2621,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -2662,7 +2662,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2688,7 +2688,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -2731,7 +2731,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2757,7 +2757,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -2800,7 +2800,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -2826,7 +2826,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/cases.js, src/data/tusGlossaryCandidateAuditIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -2869,7 +2869,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2895,7 +2895,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/tusGlossaryCandidateAuditIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -2938,7 +2938,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2964,7 +2964,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/tusGlossarySupplementalIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -3007,7 +3007,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3033,7 +3033,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/tusGlossaryIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -3076,7 +3076,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3102,7 +3102,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -3145,7 +3145,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3171,7 +3171,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -3214,7 +3214,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P0",
     "answerLeakRisk": "medium",
-    "qualityScore": 96,
+    "curationScore": 96,
     "matchingPriority": 98,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3240,7 +3240,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 24
+      "curationScoreFromAudit": 24
     }
   },
   {
@@ -3283,7 +3283,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P0",
     "answerLeakRisk": "medium",
-    "qualityScore": 96,
+    "curationScore": 96,
     "matchingPriority": 98,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3309,7 +3309,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-source, src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 24
+      "curationScoreFromAudit": 24
     }
   },
   {
@@ -3352,7 +3352,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P0",
     "answerLeakRisk": "medium",
-    "qualityScore": 96,
+    "curationScore": 96,
     "matchingPriority": 98,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -3378,7 +3378,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/tusGlossaryIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 24
+      "curationScoreFromAudit": 24
     }
   },
   {
@@ -3422,7 +3422,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P0",
     "answerLeakRisk": "medium",
-    "qualityScore": 96,
+    "curationScore": 96,
     "matchingPriority": 98,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3448,7 +3448,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-source, removed-static-template-source",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 24
+      "curationScoreFromAudit": 24
     }
   },
   {
@@ -3491,7 +3491,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3517,7 +3517,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/tusGlossaryNestedClinicalIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -3558,7 +3558,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P2",
     "answerLeakRisk": "low",
-    "qualityScore": 86,
+    "curationScore": 86,
     "matchingPriority": 90,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3584,7 +3584,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/tusGlossarySupplementalIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 18
+      "curationScoreFromAudit": 18
     }
   },
   {
@@ -3629,7 +3629,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3657,7 +3657,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/tusGlossaryClinicalBranchDeepIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -3702,7 +3702,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3730,7 +3730,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/cases.js, src/data/tusGlossaryContentCoverageIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -3773,7 +3773,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3799,7 +3799,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/cases.js, src/data/tusGlossaryContentCoverageIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -3842,7 +3842,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -3868,7 +3868,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/tusGlossaryClinicalBranchDeepIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -3911,7 +3911,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3937,7 +3937,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -3980,7 +3980,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P0",
     "answerLeakRisk": "medium",
-    "qualityScore": 96,
+    "curationScore": 96,
     "matchingPriority": 98,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4006,7 +4006,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-source, removed-static-template-source",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 24
+      "curationScoreFromAudit": 24
     }
   },
   {
@@ -4051,7 +4051,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -4079,7 +4079,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js, src/data/tusGlossaryClinicalBranchDeepIndex.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -4122,7 +4122,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4147,7 +4147,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/*",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -4190,7 +4190,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4216,7 +4216,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -4259,7 +4259,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P2",
     "answerLeakRisk": "low",
-    "qualityScore": 86,
+    "curationScore": 86,
     "matchingPriority": 90,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4284,7 +4284,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/*",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 18
+      "curationScoreFromAudit": 18
     }
   },
   {
@@ -4327,7 +4327,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4352,7 +4352,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/*",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -4395,7 +4395,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4421,7 +4421,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-template-source, src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -4464,7 +4464,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -4490,7 +4490,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -4533,7 +4533,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P0",
     "answerLeakRisk": "medium",
-    "qualityScore": 96,
+    "curationScore": 96,
     "matchingPriority": 98,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4559,7 +4559,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-topic-source, src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 24
+      "curationScoreFromAudit": 24
     }
   },
   {
@@ -4602,7 +4602,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4627,7 +4627,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/*",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   },
   {
@@ -4670,7 +4670,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "qualityScore": 92,
+    "curationScore": 92,
     "matchingPriority": 95,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4696,7 +4696,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-static-template-source, src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
-      "qualityScoreFromAudit": 21
+      "curationScoreFromAudit": 21
     }
   }
 ];
