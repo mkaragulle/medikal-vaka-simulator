@@ -70,26 +70,11 @@ Stem–açıklama–feedback veri tutarlılığı:
 - Kök verilmemiş veriye dayanma. Örneğin trombosit sayısı, PT/aPTT, INR, kreatinin, lökosit/CRP, elektrolitler, ateş, hipotansiyon, hipoksi, meningeal bulgu, organomegali, nörolojik defisit, görüntüleme, kültür, biyopsi veya ilaç/seyahat/travma/temas öyküsü açıklamada kullanılacaksa stemde doğal biçimde verilmelidir.
 - Kritik veri stemde yoksa iki yoldan birini seç: veriyi doğal hasta akışı içinde stemde belirt veya açıklama/feedbacki o veriye dayanmayacak şekilde yeniden kur. Asla kökte olmayan kritik veriyi “bu olguda normal/yüksek/yok” diye gerekçe yapma.
 - Son iç kontrolün şu olsun: “Açıklamadaki her kritik gerekçe soru kökünde görünen bir bulguya dayanıyor mu?” Hayırsa JSON’u vermeden önce düzelt.
-- Soru değerlendirmesi yalnızca doğru cevabın varlığına göre yapılmaz; stem, question, options, explanation ve wrongOptionFeedback birlikte tutarlı olmalıdır. Kök doğru cevabı seçtirecek kadar yeterli değilse daha belirgin ama yönlendirici olmayan klinik veri ekle.
-- Doğru cevap kökteki yaş, zamanlama, bulgu paterni, muayene, laboratuvar veya bağlamla gerçekten uyumlu olmalıdır. Kök başka bir seçeneği destekliyorsa mevcut doğru cevabı açıklamayla zorla savunma; doğru cevabı kökle uyumlu seç veya kökü baştan doğru cevabı destekleyecek şekilde kur.
-- Klinik olgu yalnızca süs gibi kalmamalıdır. Doğru cevap, olgudaki verilerden seçilebilmelidir; yalnız genel ezber bilgisiyle çözülen teorik soru üretme.
-- Yanlış seçenekleri bilimsel olarak hatalı gerekçeyle eleme. Bir seçenek başka bağlamda doğru olabilirse feedbackte bunu belirt; bu vakada neden öncelikli olmadığını kökteki verilere bağla.
-- Birden fazla seçenek makul doğru kabul edilebiliyorsa soru üretimini yeniden kur. “İlk basamak”, “en uygun sonraki adım”, “kesin tanı testi” gibi hedeflerde öncelik stemde açık olmalıdır.
-- Zorluk veri eksikliğinden kaynaklanmamalıdır. Kök çok açık tanı koyduruyorsa soruyu “Zor” etiketleme; zor soru, eksik veri değil daha derin klinik akıl yürütme içermelidir.
-- Aşırı kesin dil kullanma: “asla”, “kesinlikle”, “hiçbir zaman” gibi ifadeleri yalnızca evrensel ve güvenli tıbbi bilgi varsa kullan. Klinik bağlama bağlı durumlarda daha dengeli yaz.
-- Final iç kontrol: kök yeterli mi, doğru cevap tek mi, seçenekler aynı kategoride mi, feedbackler köke sadık mı, tıbbi terimler doğru Türkçe mi, metinde kırık cümle/otomatik üretim izi var mı? Zayıfsa JSON’u vermeden önce düzelt.
 
 Açıklama ve feedback:
 - explanation genel ders notu değil; stemdeki verileri doğru cevapla bağlayan vaka özelinde karar zinciri olsun.
 - wrongOptionFeedback içinde A, B, C, D, E anahtarlarının tamamı dolu olsun; doğru seçenek için de öğretici feedback yaz.
-- Her seçenek feedbacki seçenek özelinde ve öğretici olsun: seçeneğin temsil ettiği klinik tablo, mekanizma, tanı kriteri veya tedavi mantığını tanıt; ardından bu olgudaki kök bulgularıyla neden desteklendiğini veya neden geri planda kaldığını somutlaştır. Gerektiği yerde iki kısa cümle yeterlidir; kaliteyi yapay uzunlukla değil klinik gerekçeyle sağla.
-- Doğru seçenek feedbacki cevabı yalnızca ad olarak söylemesin; kökteki kritik bulgu kombinasyonunu, mekanizmayı veya sınav karar noktasını açıklasın.
-- Yanlış seçenek feedbacki o seçeneğin hangi durumda doğru olabileceğini ve bu olguda doğru seçenekten ayrılan temel noktayı yazsın.
-- optionFeedback alanı da A-E anahtarlarının tamamını içersin ve wrongOptionFeedback ile aynı seçenek-özel feedbackleri taşısın; hiçbir seçenek feedbacksiz kalmasın.
-- Yaşam bulgusu, laboratuvar, görüntüleme, mikrobiyoloji veya patoloji verisi üretiliyorsa ilgili structured alanlarda da görünür tut; backend/frontend bu alanları ayrıca denetler ve gösterir.
 - Her yanlış seçenek feedbacki doğal biçimde şunu anlatsın: hangi durumda düşünülebilir, bu vakada neden uygun değildir, doğru seçenekle ayırıcı farkı nedir.
-- Feedback, seçenek özelinde ve kökteki veriye bağlı olmalıdır. “Bu seçenek öncelikli değildir”, “klinik bağlamda yeterince açıklamaz”, “temel karar noktasını desteklemez”, “tek başına açıklamaz” gibi otomatik ve yüzeysel cümleleri gerçek feedback yerine kullanma.
-- Doğru seçenek feedbacki de yalnızca “uyumludur” dememeli; kökteki kritik verilerin doğru cevaba nasıl bağlandığını açıklamalıdır.
 - Boş, yarım, tek kelimelik, placeholder, “bu seçenek yanlıştır”, “ayırt ettirici açıklama üretilemedi” gibi metinler kullanma.
 - Feedback cümleleri “Da/De ...”, “Ancak ...” öncesi kopuk, öznesiz veya bağlaç artığıyla başlamamalıdır. Örneğin “Da renin/aldosteron ...” gibi metin kesinlikle üretme; gerekiyorsa “Bu tabloda renin/aldosteron ...” veya doğrudan klinik özneyle yaz.
 
@@ -108,17 +93,9 @@ Return JSON in this exact schema:
   "demographics": "",
   "setting": "",
   "chiefComplaint": "",
-  "caseType": "ai-spot",
   "stem": "",
-  "questionStem": "",
   "compactVitals": [],
   "compactObjectiveData": [],
-  "vitalSigns": [],
-  "objectiveData": [],
-  "laboratoryData": [],
-  "imagingData": [],
-  "microbiologyData": [],
-  "pathologyData": [],
   "question": "",
   "options": [
     {"id": "A", "text": ""},
@@ -128,17 +105,8 @@ Return JSON in this exact schema:
     {"id": "E", "text": ""}
   ],
   "correctAnswer": "",
-  "correctOptionId": "",
   "explanation": "",
-  "diagnosisTarget": "",
   "wrongOptionFeedback": {
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "optionFeedback": {
     "A": "",
     "B": "",
     "C": "",
@@ -157,8 +125,6 @@ Verilen TUS sorusunu konu ve doğru cevap mantığını bozmadan kalite açısı
 Doğru cevabı yalnızca açık bilimsel hata veya çift doğru sorununda değiştir. Answer leak, kategori karışıklığı, belirsiz çift doğru, yüzeysel/placeholder feedback, bozuk Türkçe ve stem–açıklama veri uyumsuzluğu varsa tamamen düzelt. Her yanlış seçenek için hangi durumda doğru olabileceğini, bu vakada neden uygun olmadığını ve doğru seçenekle ayırıcı noktasını açıkla. Doğru seçenek için vakadaki kritik verilerin doğru karara nasıl bağlandığını anlat.
 
 Açıklama veya seçenek feedbackinde kullanılan her kritik gerekçe stemde görünür olmalıdır. Kökte olmayan trombosit, koagülasyon, vital, görüntüleme, kültür, biyopsi, ilaç/seyahat/travma/temas gibi veriye dayanma; gerekiyorsa veriyi doğal biçimde stem’e ekle veya feedbacki o veriye dayanmayacak şekilde yeniden yaz.
-
-Kalite kararı örnek bazlı yama gibi düşünülmemelidir. Kök yeterliliği, tek doğru cevap netliği, seçenek kategorisi, seçeneklerin bilimsel rolü, feedbackin köke sadakati, aşırı kesin dil ve kırık Türkçe tüm soru için birlikte denetlenmelidir. Kök eksik veya doğru cevap tartışmalıysa soruyu mevcut haliyle bırakma; soru hedefini netleştirip stem, seçenekler ve açıklamayı yeniden kur.
 
 Final çıktıda yalnızca düzeltilmiş soru JSON'unu ver; iç yönerge, kalite kontrol notu, kaynak arama süreci veya teknik açıklama yazma.`;
 
@@ -185,7 +151,6 @@ export function buildUserPrompt({
   attempt = 1,
   antiRepeatNonce = '',
   detailMode = 'concise',
-  qualityFeedback = '',
 }) {
   const branchText = cleanText(branch);
   const targetText = cleanText(target);
@@ -198,7 +163,6 @@ export function buildUserPrompt({
       ? 'Standart derinlik: tüm alanlar eksiksiz, vaka özelinde ve öğretici olsun; uzunluk kalıbı uygulama.'
       : 'Hızlı ama kaliteli derinlik: JSON şeması, tıbbi güvenlik ve öğreticilik korunur; gereksiz uzatma yapma.';
   const cleanSourceText = cleanText(sourceText);
-  const cleanQualityFeedback = cleanText(qualityFeedback);
   const sourceBlock = cleanSourceText
     ? `\nVarsa kullanıcının verdiği ek bilgi veya kaynak metin:\n${cleanSourceText}\n\nBu metni körlemesine kopyalama; yalnızca tıbbi olarak doğru, sınav değeri yüksek ve klinik akıl yürütmeye uygun bilgiyi özgün soru kurgusuna dönüştür.`
     : '\nVarsa kullanıcının verdiği ek bilgi veya kaynak metin: Yok';
@@ -214,10 +178,9 @@ Anti-repeat anahtarı: ${cleanText(antiRepeatNonce)}-${attempt}
 Yakın zamanda üretilen soru özetleri:
 ${recentCompact}
 ${sourceBlock}
-${cleanQualityFeedback ? `\nÖnceki deneme backend kalite kapısından geçmedi. Aşağıdaki hata listesini kullanıcıya yazma; soru kökünü, doğru cevabı, açıklamayı ve seçenek feedbacklerini yeniden kurarken düzelt:\n${cleanQualityFeedback}\n` : ''}
 
 Bu bilgilerle bilimsel doğruluğu yüksek, klinik bağlamlı, tek doğru cevaplı ve öğretici bir soru üret. Yakın soru özetleri verilmişse aynı hastalığı, aynı klinik senaryoyu, aynı doğru cevap mantığını, aynı seçenek setini veya aynı veri paternini tekrar etme.
 
 Final çıktıda yalnızca kullanıcıya gösterilecek JSON yer alsın. Üretim sürecini, kaynak tarama sürecini, iç yönergeleri veya teknik notları yazma.
 
-Final kontrol: tek doğru cevap; stemden çözülebilir; doğru cevap kökle çelişmez; klinik olgu süs gibi kalmaz; explanation/feedbackte kullanılan her kritik veri stemde görünür; seçenekler aynı kategoride; answer leak yok; explanation ve tüm feedbackler seçenek özelinde, köke bağlı ve öğretici. Return only valid JSON. relatedBranch must be "${branchText}" and difficulty must be "${selectedDifficulty}".`;}
+Final kontrol: tek doğru cevap; stemden çözülebilir; explanation/feedbackte kullanılan her kritik veri stemde görünür; seçenekler aynı kategoride; answer leak yok; explanation ve tüm feedbackler vaka özelinde öğretici. Return only valid JSON. relatedBranch must be "${branchText}" and difficulty must be "${selectedDifficulty}".`;}

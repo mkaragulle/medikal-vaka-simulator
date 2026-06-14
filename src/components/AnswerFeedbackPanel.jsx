@@ -394,10 +394,10 @@ function deriveWhyCorrect(clinicalCase) {
   const feedback = getFeedback(clinicalCase);
   const isSpotCase = clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular';
   const explicit = normalizeText(feedback.whyCorrect || '');
-  if (explicit) return compactParagraph(removeMetaLanguage(explicit), isSpotCase ? 6 : 4, isSpotCase ? 900 : 620);
+  if (explicit) return isSpotCase ? removeMetaLanguage(explicit) : compactParagraph(removeMetaLanguage(explicit), 4, 620);
 
   const explanation = normalizeText(clinicalCase.diagnosis?.explanation || clinicalCase.explanation || '');
-  if (explanation) return compactParagraph(removeMetaLanguage(explanation), isSpotCase ? 6 : 4, isSpotCase ? 900 : 620);
+  if (explanation) return isSpotCase ? removeMetaLanguage(explanation) : compactParagraph(removeMetaLanguage(explanation), 4, 620);
 
   const clue = getMainClue(clinicalCase);
   const correct = clinicalCase.diagnosis?.correct || 'doğru seçenek';
@@ -447,11 +447,12 @@ function normalizeWrongMap(clinicalCase) {
 
 function deriveWhyWrong(clinicalCase, selectedOption, selectedComparison) {
   const feedback = getFeedback(clinicalCase);
+  const isSpotCase = clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular';
   if (selectedOption && feedback.whyWrong && typeof feedback.whyWrong === 'object' && typeof feedback.whyWrong[selectedOption] === 'string') {
-    return compactParagraph(removeMetaLanguage(feedback.whyWrong[selectedOption]), 4, 620);
+    return isSpotCase ? removeMetaLanguage(feedback.whyWrong[selectedOption]) : compactParagraph(removeMetaLanguage(feedback.whyWrong[selectedOption]), 4, 620);
   }
-  if (typeof feedback.whyWrong === 'string') return compactParagraph(removeMetaLanguage(feedback.whyWrong), 4, 620);
-  if (selectedComparison?.explanation) return compactParagraph(removeMetaLanguage(selectedComparison.explanation), 4, 620);
+  if (typeof feedback.whyWrong === 'string') return isSpotCase ? removeMetaLanguage(feedback.whyWrong) : compactParagraph(removeMetaLanguage(feedback.whyWrong), 4, 620);
+  if (selectedComparison?.explanation) return isSpotCase ? removeMetaLanguage(selectedComparison.explanation) : compactParagraph(removeMetaLanguage(selectedComparison.explanation), 4, 620);
 
   const clue = getMainClue(clinicalCase);
   const correctDiagnosis = clinicalCase.diagnosis?.correct || 'doğru seçenek';
@@ -645,12 +646,16 @@ function deriveCorrectOptionSummary(clinicalCase, option, evidenceChain = []) {
     || clinicalCase.diagnosis?.optionComparison?.[correctLetter]
     || '';
   if (explicit) {
-    return singleSentence(removeMetaLanguage(explicit), 240);
+    return clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular'
+      ? removeMetaLanguage(explicit)
+      : singleSentence(removeMetaLanguage(explicit), 240);
   }
 
   const whyCorrect = feedback.whyCorrect || feedback.rationale || clinicalCase.diagnosis?.whyCorrect || clinicalCase.diagnosis?.explanation || '';
   if (whyCorrect) {
-    return singleSentence(removeMetaLanguage(whyCorrect), 240);
+    return clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular'
+      ? removeMetaLanguage(whyCorrect)
+      : singleSentence(removeMetaLanguage(whyCorrect), 240);
   }
 
   return ''; 
@@ -676,7 +681,7 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
         isSelected: selectedOption === option,
         title: 'En iyi seçenek',
         explanation: isAISpot
-          ? compactParagraph(removeMetaLanguage(deriveCorrectOptionSummary(clinicalCase, option, evidenceChain)), 3, 420)
+          ? removeMetaLanguage(deriveCorrectOptionSummary(clinicalCase, option, evidenceChain))
           : singleSentence(deriveCorrectOptionSummary(clinicalCase, option, evidenceChain), 210),
         comparisonPoints: [],
       };
@@ -684,7 +689,7 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
 
     const explicit = wrongMap[option] || normalizedWrongMap[normalizeForCompare(option)] || {};
     const rawExplanation = removeMetaLanguage(explicit.explanation || '');
-    const explanation = isAISpot ? compactParagraph(rawExplanation, 3, 360) : singleSentence(rawExplanation, 190);
+    const explanation = isAISpot ? rawExplanation : singleSentence(rawExplanation, 190);
     return {
       option,
       status: 'wrong',
@@ -783,7 +788,7 @@ function resolveAISpotOptionExplanation(clinicalCase = {}, optionText = '', fall
     getAISpotMapValue(clinicalCase.diagnosis?.answerFeedbackByOption, optionText, letter),
     fallback,
   ].filter(Boolean);
-  return mergeUniqueSentences(sources, 4, 760);
+  return mergeUniqueSentences(sources, 10, 2200);
 }
 
 function buildAISpotDetailedRows(clinicalCase = {}, selectedOption = '') {
@@ -818,7 +823,7 @@ function decorateAISpotSelectedExplanation(clinicalCase = {}, row = {}, isCorrec
     return mergeUniqueSentences([
       `Seçtiğin ifade bilimsel olarak doğrudur; ancak soru kökü yanlış veya istisna olan ifadeyi sorduğu için bu yanıt elenir.`,
       text,
-    ], 4, 760);
+    ], 10, 2200);
   }
   return text;
 }

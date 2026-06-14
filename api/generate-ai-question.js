@@ -5,11 +5,10 @@ import {
   normalizeDifficulty,
 } from '../server/prompts/tus-question-prompt.js';
 import { applyCostProfileToMaxTokens, buildOutputCacheKey, buildPromptCacheConfig, buildQuestionBankKey, callOpenAIWithPromptCacheFallback, addQuestionToBank, defaultModelForScope, defaultReasoningEffortForProfile, defaultVerbosityForProfile, detailModeForProfile, envFlag, getAICostProfile, getDurableCachedOutput, getQuestionBankItems, logAIUsage, resolveModelForScope, setDurableCachedOutput, withInFlightDedupe } from '../server/lib/ai-token-optimizer.js';
-import { applyFinalFeedbackQualityGate, runFinalFeedbackQualityGate } from '../server/lib/final-feedback-quality-gate.js';
-import { normalizeQuestionQualityFields, repairQuestionQualityIssues, runQuestionQualityGate } from '../server/lib/question-quality-gate.js';
+import { normalizeQuestionQualityFields } from '../server/lib/question-quality-gate.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-tus-v50-global-publisher-quality-gate';
+const PROMPT_VERSION = 'klinikiq-tus-v51-normal-first-balanced';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 const TASK_NAME = 'tusSpotQuestion';
@@ -1764,7 +1763,7 @@ function tusQuestionDetailMode() {
   return mode === 'concise' ? 'standard' : mode;
 }
 
-function buildPrompt({ branch, target, difficulty = 'Orta', recentQuestionSummaries = [], sourceText = '', attempt = 1, antiRepeatNonce = '', detailMode = tusQuestionDetailMode(), qualityFeedback = '' }) {
+function buildPrompt({ branch, target, difficulty = 'Orta', recentQuestionSummaries = [], sourceText = '', attempt = 1, antiRepeatNonce = '', detailMode = tusQuestionDetailMode() }) {
   const answerTarget = cleanText(target || '');
   const selectedDifficulty = normalizeDifficulty(difficulty);
   const recentCompact = buildRecentCompact(recentQuestionSummaries);
@@ -1777,7 +1776,6 @@ function buildPrompt({ branch, target, difficulty = 'Orta', recentQuestionSummar
     sourceText,
     antiRepeatNonce: antiRepeatNonce || Date.now(),
     detailMode,
-    qualityFeedback,
   });
 }
 
@@ -1896,8 +1894,8 @@ async function callOpenAI(prompt, { detailMode = tusQuestionDetailMode() } = {})
   }
 }
 
-async function generateRemote({ branch, target, difficulty, recentQuestionSummaries, sourceText = '', attempt, antiRepeatNonce, detailMode = tusQuestionDetailMode(), qualityFeedback = '' }) {
-  const prompt = buildPrompt({ branch, target, difficulty, recentQuestionSummaries, sourceText, attempt, antiRepeatNonce, detailMode, qualityFeedback });
+async function generateRemote({ branch, target, difficulty, recentQuestionSummaries, sourceText = '', attempt, antiRepeatNonce, detailMode = tusQuestionDetailMode() }) {
+  const prompt = buildPrompt({ branch, target, difficulty, recentQuestionSummaries, sourceText, attempt, antiRepeatNonce, detailMode });
   const result = await callOpenAI(prompt, { detailMode });
   if (!result) throw new Error('OPENAI_API_KEY tanımlı değil; AI üretim yapılamadı.');
   const sanitized = sanitizeQuestion(result.question, branch, difficulty);
@@ -1907,111 +1905,13 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
   sanitized.promptVersion = PROMPT_VERSION;
   sanitized.schemaVersion = SCHEMA_VERSION;
   sanitized.aiMeta = { ...(sanitized.aiMeta || {}), costProfile: getAICostProfile('TUS'), detailMode };
-  let publisherGate = runQuestionQualityGate(sanitized, { version: PROMPT_VERSION });
-  let repairApplied = [];
-  if (publisherGate.canAttemptRepair) {
-    const repaired = repairQuestionQualityIssues(sanitized, publisherGate);
-    repairApplied = repaired.applied || [];
-    if (repairApplied.length) {
-      Object.assign(sanitized, repaired.question);
-      publisherGate = runQuestionQualityGate(sanitized, { version: PROMPT_VERSION });
-    }
-  }
-  const finalFeedbackResult = applyFinalFeedbackQualityGate(sanitized, {
-    version: `${PROMPT_VERSION}:final-feedback`,
-    baseVersion: PROMPT_VERSION,
-  });
-  const finalFeedbackRepairApplied = finalFeedbackResult.repairApplied || [];
-  if (finalFeedbackRepairApplied.length) {
-    Object.assign(sanitized, finalFeedbackResult.question);
-    publisherGate = runQuestionQualityGate(sanitized, { version: PROMPT_VERSION });
-  }
-  let finalFeedbackGate = finalFeedbackResult.gate;
-  let localPublishRepairApplied = [];
-  const localRepairReasons = [
-    ...publisherGate.repairableErrors,
-    ...finalFeedbackGate.repairableErrors,
-    ...publisherGate.blockingErrors.filter(canAttemptLocalPublishRepair),
-    ...finalFeedbackGate.blockingErrors.filter(canAttemptLocalPublishRepair),
-  ];
-  if (localRepairReasons.length) {
-    const repaired = repairTusQuestionForPublish(sanitized, localRepairReasons);
-    localPublishRepairApplied = repaired.applied || [];
-    if (!repaired.blocked && localPublishRepairApplied.length) {
-      Object.assign(sanitized, repaired.question);
-      publisherGate = runQuestionQualityGate(sanitized, { version: PROMPT_VERSION });
-      const refreshedFinalFeedback = applyFinalFeedbackQualityGate(sanitized, {
-        version: `${PROMPT_VERSION}:final-feedback`,
-        baseVersion: PROMPT_VERSION,
-      });
-      if ((refreshedFinalFeedback.repairApplied || []).length) {
-        Object.assign(sanitized, refreshedFinalFeedback.question);
-        publisherGate = runQuestionQualityGate(sanitized, { version: PROMPT_VERSION });
-      }
-      finalFeedbackGate = refreshedFinalFeedback.gate;
-      localPublishRepairApplied.push(...(refreshedFinalFeedback.repairApplied || []).map((item) => `post-local-${item}`));
-    }
-  }
-  sanitized.aiMeta = {
-    ...(sanitized.aiMeta || {}),
-    backendQualityGate: {
-      ok: publisherGate.ok,
-      decision: publisherGate.decision,
-      errors: publisherGate.errors,
-      blockingErrors: publisherGate.blockingErrors,
-      repairableErrors: publisherGate.repairableErrors,
-      warnings: publisherGate.warnings,
-      cues: publisherGate.cues,
-      demand: publisherGate.demand,
-      version: publisherGate.version,
-      repairApplied,
-    },
-    finalFeedbackQualityGate: {
-      ok: finalFeedbackGate.ok,
-      decision: finalFeedbackGate.decision,
-      errors: finalFeedbackGate.errors,
-      blockingErrors: finalFeedbackGate.blockingErrors,
-      repairableErrors: finalFeedbackGate.repairableErrors,
-      warnings: finalFeedbackGate.warnings,
-      version: finalFeedbackGate.version,
-      repairApplied: finalFeedbackRepairApplied,
-      localPublishRepairApplied,
-      baseGate: finalFeedbackGate.baseGate,
-    },
-    publishable: publisherGate.publishable && finalFeedbackGate.publishable,
-  };
-  if (publisherGate.blockingErrors.length) {
-    const error = new Error(`Backend quality gate failed: ${publisherGate.errors.join('; ')}`);
-    error.validationErrors = publisherGate.errors;
-    error.qualitySeverity = 'blocking';
-    error.question = sanitized;
-    throw error;
-  }
-  if (finalFeedbackGate.blockingErrors.length) {
-    const error = new Error(`Final feedback quality gate failed: ${finalFeedbackGate.blockingErrors.join('; ')}`);
-    error.validationErrors = finalFeedbackGate.blockingErrors;
-    error.qualitySeverity = 'blocking';
-    error.question = sanitized;
-    throw error;
-  }
-  if (publisherGate.repairableErrors.length) {
-    const error = new Error(`Backend quality gate needs targeted repair: ${publisherGate.repairableErrors.join('; ')}`);
-    error.validationErrors = publisherGate.repairableErrors;
-    error.qualitySeverity = 'repairable';
-    error.question = sanitized;
-    throw error;
-  }
-  if (finalFeedbackGate.repairableErrors.length) {
-    const error = new Error(`Final feedback quality gate needs targeted repair: ${finalFeedbackGate.repairableErrors.join('; ')}`);
-    error.validationErrors = finalFeedbackGate.repairableErrors;
-    error.qualitySeverity = 'repairable';
-    error.question = sanitized;
-    throw error;
-  }
+  // Normal TUS production is intentionally kept on a short, local-only path.
+  // Editorial issues are repaired or recorded as notes; only hard safety/schema
+  // failures below can reject the remote question and trigger a retry/fallback.
   let validation = validateQuestion(sanitized, recentQuestionSummaries);
   sanitized.aiMeta = {
     ...(sanitized.aiMeta || {}),
-    legacyValidationGate: {
+    validationGate: {
       ok: validation.ok,
       stages: validation.stages,
       issues: validation.issues,
@@ -2039,20 +1939,10 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
       const repaired = repairTusQuestionForPublish(sanitized, validationRepairReasons);
       if (!repaired.blocked && (repaired.applied || []).length) {
         Object.assign(sanitized, repaired.question);
-        publisherGate = runQuestionQualityGate(sanitized, { version: PROMPT_VERSION });
-        const refreshedFinalFeedback = applyFinalFeedbackQualityGate(sanitized, {
-          version: `${PROMPT_VERSION}:final-feedback`,
-          baseVersion: PROMPT_VERSION,
-        });
-        if ((refreshedFinalFeedback.repairApplied || []).length) {
-          Object.assign(sanitized, refreshedFinalFeedback.question);
-          publisherGate = runQuestionQualityGate(sanitized, { version: PROMPT_VERSION });
-        }
-        finalFeedbackGate = refreshedFinalFeedback.gate;
         validation = validateQuestion(sanitized, recentQuestionSummaries);
         sanitized.aiMeta = {
           ...(sanitized.aiMeta || {}),
-          legacyValidationGate: {
+          validationGate: {
             ok: validation.ok,
             stages: validation.stages,
             issues: validation.issues,
@@ -2065,27 +1955,66 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
       }
     }
 
-    if (publisherGate.blockingErrors.length || finalFeedbackGate.blockingErrors.length || validation.blockingErrors.length || validation.repairableErrors.length) {
-      const error = new Error(`Legacy validation needs targeted repair: ${validation.repairableErrors.join('; ')}`);
-      error.validationErrors = [
-        ...publisherGate.blockingErrors,
-        ...finalFeedbackGate.blockingErrors,
-        ...validation.blockingErrors,
-        ...validation.repairableErrors,
-      ];
-      error.qualitySeverity = (publisherGate.blockingErrors.length || finalFeedbackGate.blockingErrors.length || validation.blockingErrors.length) ? 'blocking' : 'repairable';
+    const remainingHardBlockingErrors = legacyHardBlockingValidationErrors(validation.errors || []);
+    if (remainingHardBlockingErrors.length) {
+      const error = new Error(remainingHardBlockingErrors.join('; '));
+      error.validationErrors = remainingHardBlockingErrors;
+      error.qualitySeverity = 'blocking';
       error.question = sanitized;
       throw error;
     }
 
-    sanitized.qualityNotes = validation.warnings;
-    sanitized.qualityGate = 'publisher-passed-with-legacy-warnings';
+    sanitized.qualityNotes = Array.from(new Set([
+      ...(validation.warnings || []),
+      ...(validation.repairableErrors || []),
+      ...(validation.blockingErrors || []).filter(canAttemptLocalPublishRepair),
+    ]));
+    sanitized.qualityGate = 'passed-with-editorial-notes';
   } else {
-    sanitized.qualityGate = (publisherGate.warnings.length || finalFeedbackGate.warnings.length) ? 'publisher-passed-with-warnings' : 'strict-passed';
+    sanitized.qualityGate = 'strict-passed';
+  }
+  const softReviewIssues = asArray(sanitized.aiMeta?.globalQualityReview?.issues).filter((issue) =>
+    issue?.severity === 'revision_required'
+    && /feedback|malformed_turkish|duplicate_feedback|truncated_or_broken_text|evidence_not_grounded/i.test(String(issue.code || ''))
+  );
+  if (softReviewIssues.length) {
+    const repaired = repairTusQuestionForPublish(sanitized, softReviewIssues.map((issue) => `global-review:${issue.code}`));
+    if (!repaired.blocked && (repaired.applied || []).length) {
+      Object.assign(sanitized, repaired.question);
+      Object.assign(sanitized, normalizeQuestionQualityFields(sanitized));
+      attachGlobalQualityReview(sanitized);
+      validation = validateQuestion(sanitized, recentQuestionSummaries);
+      sanitized.aiMeta = {
+        ...(sanitized.aiMeta || {}),
+        validationGate: {
+          ok: validation.ok,
+          stages: validation.stages,
+          issues: validation.issues,
+          blockingErrors: validation.blockingErrors,
+          repairableErrors: validation.repairableErrors,
+          warnings: validation.warnings,
+          localPublishRepairApplied: repaired.applied,
+        },
+      };
+      const repairHardBlockingErrors = legacyHardBlockingValidationErrors(validation.errors || []);
+      if (repairHardBlockingErrors.length) {
+        const error = new Error(repairHardBlockingErrors.join('; '));
+        error.validationErrors = repairHardBlockingErrors;
+        error.qualitySeverity = 'blocking';
+        error.question = sanitized;
+        throw error;
+      }
+      sanitized.qualityNotes = Array.from(new Set([
+        ...(sanitized.qualityNotes || []),
+        ...(validation.warnings || []),
+        ...(validation.repairableErrors || []),
+      ]));
+      sanitized.qualityGate = 'passed-with-local-feedback-repair';
+    }
   }
   const legacyBlocking = legacyBlockingReviewIssues(sanitized);
   if (legacyBlocking.length) {
-    const errors = summarizeQualityFailure({ gate: publisherGate, legacyBlocking });
+    const errors = summarizeQualityFailure({ legacyBlocking });
     const error = new Error(errors.join('; ') || 'Question failed blocking legacy quality review.');
     error.validationErrors = errors;
     error.qualitySeverity = 'blocking';
@@ -2099,9 +2028,7 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
       ...(legacyReview.summary || []),
     ]));
   }
-  sanitized.qualityGate = sanitized.qualityNotes?.length || publisherGate.warnings.length || finalFeedbackGate.warnings.length
-    ? 'publisher-passed-with-warnings'
-    : 'strict-publisher-passed';
+  sanitized.qualityGate = sanitized.qualityNotes?.length ? 'passed-with-editorial-notes' : 'strict-passed';
   return sanitized;
 }
 
@@ -2138,18 +2065,8 @@ async function getReusableBankQuestion({ branch, target, difficulty, recentQuest
     if (questionMatchesRecent(item, recentQuestionSummaries)) return false;
     const candidate = sanitizeQuestion({ ...item, id: `ai-spot-bank-check-${Date.now()}` }, branch, difficulty);
     const validation = validateQuestion(candidate, recentQuestionSummaries);
-    const publisherGate = runQuestionQualityGate(candidate, { version: PROMPT_VERSION });
-    const finalFeedbackGate = runFinalFeedbackQualityGate(candidate, { version: `${PROMPT_VERSION}:final-feedback`, baseVersion: PROMPT_VERSION });
     const validationBlocking = legacyHardBlockingValidationErrors(validation.errors || []);
-    if (
-      publisherGate.publishable
-      && finalFeedbackGate.publishable
-      && !validationBlocking.length
-      && !(validation.blockingErrors || []).length
-      && !(validation.repairableErrors || []).length
-      && !legacyBlockingReviewIssues(candidate).length
-    ) return true;
-    return false;
+    return !validationBlocking.length && !legacyBlockingReviewIssues(candidate).length;
   });
   if (!reusable) return null;
   const cloned = sanitizeQuestion({ ...reusable, id: `ai-spot-bank-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, branch, difficulty);
@@ -2165,10 +2082,8 @@ async function getReusableBankQuestion({ branch, target, difficulty, recentQuest
 async function storeReusableQuestion({ branch, target, difficulty, question }) {
   if (!useQuestionBank() || !question || question.fallback) return false;
   if (legacyBlockingReviewIssues(question).length) return false;
-  const publisherGate = runQuestionQualityGate(question, { version: PROMPT_VERSION });
-  const finalFeedbackGate = runFinalFeedbackQualityGate(question, { version: `${PROMPT_VERSION}:final-feedback`, baseVersion: PROMPT_VERSION });
   const validation = validateQuestion(question, []);
-  if (!publisherGate.publishable || !finalFeedbackGate.publishable || !validation.ok) return false;
+  if (legacyHardBlockingValidationErrors(validation.errors || []).length) return false;
   const model = question.openAIModel || currentTusModel();
   const bankKey = buildQuestionBankKey({ scope: 'TUS', branch, difficulty, target, promptVersion: PROMPT_VERSION, model });
   return addQuestionToBank(bankKey, question);
@@ -2182,9 +2097,7 @@ export default async function handler(request, response) {
   const branch = chooseBranch(body.branchFilter);
   const requestedDifficulty = normalizeDifficulty(body.difficulty || body.requestedDifficulty || body.aiDifficulty || 'Orta');
   const recentQuestionSummaries = asArray(body.recentQuestionSummaries).slice(0, 12);
-  const remoteAttempts = Math.max(1, Math.min(3, Number(process.env.REMOTE_AI_ATTEMPTS || process.env.TUS_REMOTE_AI_ATTEMPTS || 3)));
-  const repairRegenerationBudget = Math.max(0, Math.min(2, Number(process.env.TUS_REPAIR_REGENERATION_ATTEMPTS || 1)));
-  const blockingRegenerationBudget = Math.max(0, Math.min(2, Number(process.env.TUS_BLOCKING_REGENERATION_ATTEMPTS || 1)));
+  const remoteAttempts = Math.max(1, Math.min(2, Number(process.env.REMOTE_AI_ATTEMPTS || process.env.TUS_REMOTE_AI_ATTEMPTS || 1)));
   const errors = [];
   const failureDetails = [];
   const target = body.target || body.answerTarget || '';
@@ -2214,11 +2127,9 @@ export default async function handler(request, response) {
 
     const cachedPayload = await getDurableCachedOutput(oneShotCacheKey);
     if (cachedPayload?.question && !cachedPayload.question.fallback && !questionMatchesRecent(cachedPayload.question, recentQuestionSummaries)) {
-      const cachedGate = runQuestionQualityGate(cachedPayload.question, { version: PROMPT_VERSION });
-      const cachedFinalGate = runFinalFeedbackQualityGate(cachedPayload.question, { version: `${PROMPT_VERSION}:final-feedback`, baseVersion: PROMPT_VERSION });
       const cachedValidation = validateQuestion(cachedPayload.question, recentQuestionSummaries);
-      if (cachedGate.publishable && cachedFinalGate.publishable && cachedValidation.ok && !legacyBlockingReviewIssues(cachedPayload.question).length) {
-        logAIUsage({ task: `${TASK_NAME}:outputCache`, model: cachedPayload.question.openAIModel || model, cached: true, apiStyle: 'output_cache', promptVersion: PROMPT_VERSION, sourceFingerprint: oneShotCacheKey, finalOutput: true, validator: { cachedGate: cachedGate.decision, finalFeedbackGate: cachedFinalGate.decision, legacyValidation: cachedValidation.stages } });
+      if (!legacyHardBlockingValidationErrors(cachedValidation.errors || []).length && !legacyBlockingReviewIssues(cachedPayload.question).length) {
+        logAIUsage({ task: `${TASK_NAME}:outputCache`, model: cachedPayload.question.openAIModel || model, cached: true, apiStyle: 'output_cache', promptVersion: PROMPT_VERSION, sourceFingerprint: oneShotCacheKey, finalOutput: true, validator: { legacyValidation: cachedValidation.stages } });
         return sendJson(response, 200, { ok: true, cached: true, fallback: false, provider: cachedPayload.provider || 'openai-output-cache', question: cachedPayload.question });
       }
     }
@@ -2244,12 +2155,9 @@ export default async function handler(request, response) {
     }
 
     const detailMode = tusQuestionDetailMode();
-    let qualityFeedback = '';
-    let repairExtensionsUsed = 0;
-    let blockingExtensionsUsed = 0;
-    for (let attempt = 1; attempt <= remoteAttempts + repairExtensionsUsed + blockingExtensionsUsed; attempt += 1) {
+    for (let attempt = 1; attempt <= remoteAttempts; attempt += 1) {
       try {
-        const question = await generateRemote({ branch, target, difficulty: requestedDifficulty, recentQuestionSummaries, sourceText, attempt, antiRepeatNonce: body.antiRepeatNonce, detailMode, qualityFeedback });
+        const question = await generateRemote({ branch, target, difficulty: requestedDifficulty, recentQuestionSummaries, sourceText, attempt, antiRepeatNonce: body.antiRepeatNonce, detailMode });
         await storeReusableQuestion({ branch, target, difficulty: requestedDifficulty, question });
         await setDurableCachedOutput(oneShotCacheKey, { provider: 'openai-output-cache', question });
         return sendJson(response, 200, {
@@ -2280,13 +2188,6 @@ export default async function handler(request, response) {
           stages: classified.stages,
           issues: classified.issues.slice(0, 8),
         });
-        if (severity === 'repairable' && attempt >= remoteAttempts && repairExtensionsUsed < repairRegenerationBudget) {
-          repairExtensionsUsed += 1;
-        }
-        if (severity === 'blocking' && attempt >= remoteAttempts && blockingExtensionsUsed < blockingRegenerationBudget) {
-          blockingExtensionsUsed += 1;
-        }
-        qualityFeedback = buildRetryQualityFeedback(failure);
       }
     }
 
@@ -2296,24 +2197,19 @@ export default async function handler(request, response) {
       reason: errors[0] || 'unknown',
       failures: failureDetails.slice(0, 3),
       normalAttempts: remoteAttempts,
-      repairRegenerationUsed: repairExtensionsUsed,
-      blockingRegenerationUsed: blockingExtensionsUsed,
-      safeFallbackPolicy: 'last-resort-after-normal-repair-and-regeneration',
+      safeFallbackPolicy: 'last-resort-after-normal-ai-attempt',
     });
     const question = fallbackQuestion({ branchFilter: branch, difficulty: requestedDifficulty, recentQuestionSummaries: [] });
-    const fallbackGate = runQuestionQualityGate(question, { version: PROMPT_VERSION });
-    const fallbackFinalGate = runFinalFeedbackQualityGate(question, { version: `${PROMPT_VERSION}:final-feedback`, baseVersion: PROMPT_VERSION });
     const fallbackValidation = validateQuestion(question, []);
-    if (!fallbackGate.publishable || !fallbackFinalGate.publishable || !fallbackValidation.ok || legacyBlockingReviewIssues(question).length) {
+    const fallbackHardErrors = legacyHardBlockingValidationErrors(fallbackValidation.errors || []);
+    if (fallbackHardErrors.length || legacyBlockingReviewIssues(question).length) {
       logFallbackTrigger({
         branch,
         difficulty: requestedDifficulty,
         reason: 'local-safe-fallback-suppressed-by-quality-gate',
-        failures: [...fallbackGate.errors, ...fallbackFinalGate.errors, ...(fallbackValidation.errors || [])],
+        failures: [...fallbackHardErrors, ...(fallbackValidation.errors || [])],
         normalAttempts: remoteAttempts,
-        repairRegenerationUsed: repairExtensionsUsed,
-        blockingRegenerationUsed: blockingExtensionsUsed,
-        safeFallbackPolicy: 'last-resort-after-normal-repair-and-regeneration',
+        safeFallbackPolicy: 'last-resort-after-normal-ai-attempt',
       });
       return sendJson(response, 422, {
         ok: false,
@@ -2324,19 +2220,9 @@ export default async function handler(request, response) {
         error: 'Yerel güvenli soru bankası kalite kontrolünden geçemedi.',
         attempts: errors.slice(0, 3),
         attemptDetails: failureDetails.slice(0, 3),
-        fallbackQualityGate: {
-          decision: fallbackGate.decision,
-          errors: fallbackGate.errors,
-          warnings: fallbackGate.warnings,
-        },
-        fallbackFinalFeedbackQualityGate: {
-          decision: fallbackFinalGate.decision,
-          errors: fallbackFinalGate.errors,
-          warnings: fallbackFinalGate.warnings,
-        },
         fallbackValidationGate: {
           stages: fallbackValidation.stages,
-          errors: fallbackValidation.errors,
+          errors: fallbackHardErrors,
         },
       });
     }
@@ -2357,9 +2243,7 @@ export default async function handler(request, response) {
       reason: 'local-safe-fallback-passed-quality-gate',
       failures: failureDetails.slice(0, 3),
       normalAttempts: remoteAttempts,
-      repairRegenerationUsed: repairExtensionsUsed,
-      blockingRegenerationUsed: blockingExtensionsUsed,
-      safeFallbackPolicy: 'last-resort-after-normal-repair-and-regeneration',
+      safeFallbackPolicy: 'last-resort-after-normal-ai-attempt',
     });
     return sendJson(response, 200, {
       ok: true,
