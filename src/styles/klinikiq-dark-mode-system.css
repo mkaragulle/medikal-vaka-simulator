@@ -516,7 +516,7 @@ html[data-theme="dark"] *::-webkit-scrollbar-thumb:hover { background: var(--scr
   color: var(--ki-success-contrast) !important;
 }
 
-/* TUS Spot / TUS generated question screens -------------------------------- */
+/* TUS Spot / AI generated question screens -------------------------------- */
 .app-shell[data-theme="dark"] :where(.tus-spot-olgular-feature-row, .tus-spot-olgular-card, .tus-spot-bank-shell, .tus-spot-bank-main, .ai-spot-player-shell, .ai-spot-answer-flow, .tus-spot-olgular-question-callout) {
   border-color: var(--ki-border) !important;
   background: linear-gradient(180deg, rgba(11, 34, 48, 0.88), rgba(7, 26, 33, 0.92)) !important;
@@ -620,7 +620,7 @@ html[data-theme="dark"] :where(.smart-glossary-category, .smart-glossary-difficu
 
 /* ========================================================================== 
    V301 — Global dark-mode visual hardening
-   Scope: topbar, hero CTA, dashboard metrics, personal repeat, TUS/TUS feedback
+   Scope: topbar, hero CTA, dashboard metrics, personal repeat, AI/TUS feedback
    and glossary overlays. Keeps all rules inside dark theme to protect light mode.
    ========================================================================== */
 .app-shell[data-theme="dark"] {
@@ -911,8 +911,8 @@ html[data-theme="dark"] :where(#klinikiq-tooltip-layer .floating-glossary-toolti
    badges, and glossary popover readability. Scoped to dark mode only.
    -------------------------------------------------------------------------- */
 
-/* TUS CTA icon: remove remaining light/dirty icon-box look while keeping the
-   TUS action visually distinct from the primary and timed-exam CTAs. */
+/* AI CTA icon: remove remaining light/dirty icon-box look while keeping the
+   AI action visually distinct from the primary and timed-exam CTAs. */
 .app-shell[data-theme="dark"] .tus-ai-action-redesign.tus-ai-action-redesign .tus-action-icon,
 html[data-theme="dark"] .tus-ai-action-redesign.tus-ai-action-redesign .tus-action-icon {
   border-color: rgba(94, 234, 212, 0.24) !important;

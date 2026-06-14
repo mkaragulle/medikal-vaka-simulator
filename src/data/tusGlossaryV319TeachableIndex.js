@@ -490,7 +490,7 @@ export const TUS_GLOSSARY_V319_TEACHABLE_TERMS = [
       "answerLeakRisk": "medium",
       "priority": "P1",
       "recommendation": "addNewEntry",
-      "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js, removed-static-seed-source",
+      "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js, src/data/aiQuestionSeeds.js",
       "reasonForRecommendation": "HBV seroloji yorumunda HBsAg/anti-HBs’den farklı olarak geçirilmiş veya akut enfeksiyon ayrımını öğretir."
     }
   },
@@ -3371,7 +3371,7 @@ export const TUS_GLOSSARY_V319_TEACHABLE_TERMS = [
       "answerLeakRisk": "medium",
       "priority": "P1",
       "recommendation": "addNewEntry",
-      "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js, removed-static-seed-source",
+      "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js, src/data/aiQuestionSeeds.js",
       "reasonForRecommendation": "Uzun-kuyruk olmasına rağmen TUS karar mantığı, mekanizma, ayırıcı tanı veya güvenli nested zincir açısından öğretici değeri var."
     }
   },
@@ -5075,7 +5075,7 @@ export const TUS_GLOSSARY_V319_TEACHABLE_TERMS = [
       "answerLeakRisk": "low",
       "priority": "P2",
       "recommendation": "addNewEntry",
-      "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js, removed-safe-bank-source",
+      "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js, src/data/aiSyntheticFallbackTemplates.js",
       "reasonForRecommendation": "Uzun-kuyruk olmasına rağmen TUS karar mantığı, mekanizma, ayırıcı tanı veya güvenli nested zincir açısından öğretici değeri var."
     }
   }

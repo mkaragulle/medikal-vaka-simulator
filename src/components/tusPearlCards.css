@@ -9487,7 +9487,7 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
   }
 }
 
-/* V130: TUS-generated wrong-answer review records */
+/* V130: AI-generated wrong-answer review records */
 .wrong-answer-card.is-ai-generated {
   border-color: rgba(20, 184, 166, 0.18) !important;
   background: linear-gradient(135deg, rgba(240, 253, 250, 0.86), rgba(255, 255, 255, 0.92)) !important;
@@ -19677,7 +19677,7 @@ html.ki-route-transitioning .catalog-card-virtual-row > .tus-pearl-library-card.
 
 
 /* ==========================================================
-   V399 — TUS feedback clean UI
+   V399 — AI TUS feedback clean UI
    Purpose: make generated-question feedback calmer, flatter,
    more readable and less visually heavy.
    ========================================================== */
@@ -19947,7 +19947,7 @@ html.ki-route-transitioning .catalog-card-virtual-row > .tus-pearl-library-card.
 
 
 /* ==========================================================
-   V400 — TUS feedback refined minimalist UI
+   V400 — AI TUS feedback refined minimalist UI
    Purpose: cleaner typography, calmer cards, better hierarchy.
    ========================================================== */
 .ai-spot-detailed-feedback-panel.ai-spot-detailed-feedback-panel-v246 {
@@ -20283,7 +20283,7 @@ html.ki-route-transitioning .catalog-card-virtual-row > .tus-pearl-library-card.
 
 
 /* ==========================================================
-   V401 — TUS pearl text spacing fix
+   V401 — AI TUS pearl text spacing fix
    Purpose: prevent odd word distribution in TUS ipucu text.
    ========================================================== */
 .ai-spot-feedback-pearl-card-v246 > div:last-child {
@@ -20329,7 +20329,7 @@ html.ki-route-transitioning .catalog-card-virtual-row > .tus-pearl-library-card.
 
 
 /* ==========================================================
-   V402 — TUS pearl text hard layout fix
+   V402 — AI TUS pearl text hard layout fix
    Purpose: render TUS ipucu as plain readable text with stable spacing.
    ========================================================== */
 .ai-spot-feedback-pearl-card-v246 > div:last-child {

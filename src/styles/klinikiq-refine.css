@@ -4409,7 +4409,7 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .global-topbar-v55 {
 
 /* ==========================================================
    KlinikIQ v67 — final unified topbar-to-first-card rhythm
-   Purpose: keep Komite, TUS, clinical case, TUS question and exam
+   Purpose: keep Komite, TUS, clinical case, AI question and exam
    pages at the same visual distance from the global top bar.
    TUS dashboard spacing is the source of truth. UI-only.
    ========================================================== */

@@ -1,6 +1,6 @@
 /* =========================================================
-   KlinikIQ V390 — TUS action button hard center lock
-   Purpose: force the icon + label content of the TUS answer
+   KlinikIQ V390 — AI TUS action button hard center lock
+   Purpose: force the icon + label content of the AI TUS answer
    buttons and generation CTAs to sit in the exact visual center.
    This file is imported last from App.jsx so earlier grid/flex rules
    cannot pull the content left/right or up/down.

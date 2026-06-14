@@ -1,0 +1,219 @@
+const WEAK_TEXT_REPLACEMENTS = [
+  [/\bçocuklık\b/giu, 'çocukluk'],
+  [/\barthraljia\b/giu, 'artralji'],
+  [/\barthralji\b/giu, 'artralji'],
+  [/\bplatelet\b/giu, 'trombosit'],
+  [/\bhematuri\b/giu, 'hematüri'],
+  [/\bproteinuri\b/giu, 'proteinüri'],
+  [/\bpurpurasi\b/giu, 'purpurası'],
+  [/\bkoagulasyon\b/giu, 'koagülasyon'],
+  [/\bProteinüri\b/g, 'proteinüri'],
+  [/\bHematuri\b/g, 'hematüri'],
+  [/\bİlk karar\b/giu, 'Öncelikli yaklaşım'],
+  [/\bTedavi önceliği\b/giu, 'Tedavi basamağı'],
+  [/\bLaboratuvar paterni\b/giu, 'Laboratuvar bulgusu'],
+  [/\bKanıt\s*[2-4]\b/giu, 'Klinik ipucu'],
+  [/\bObjektif bulguların karar basamağını desteklemesi\b/giu, 'Objektif bulguların klinik kararı desteklemesi'],
+  [/\bDoğru yanıta götüren ana bulgudur\b/giu, 'seçenekler arasındaki ayrımı belirginleştirir'],
+  [/\bdoğru yanıta götüren ana bulgudur\b/giu, 'seçenekler arasındaki ayrımı belirginleştirir'],
+  [/\bdoğru cevabı destekleyen ana ipucudur\b/giu, 'uygun yanıtı destekleyen temel ipucudur'],
+  [/\bdoğru yanıta yönelten destekleyici kanıttır\b/giu, 'klinik kararı destekleyen objektif bulgudur'],
+  [/\bBu veri klinik bağlamda değerlendirilir\b/giu, 'Bu veri tek başına yorumlanmaz; öykü ve objektif bulgularla birlikte ele alınır'],
+  [/\bklinik bağlamda değerlendirilir\b/giu, 'öykü ve objektif bulgularla birlikte ele alınır'],
+  [/\bBeklenen ana ipuçları bu tabloda baskın değildir\b/giu, 'Bu seçenek olgudaki baskın ipuçlarını açıklamaz'],
+  [/\bKarar\s+[^.]{0,90}\s+yönünde güçlenir\b/giu, 'Ayırt ettirici bulgular uygun yaklaşımı destekler'],
+  [/\bAncak kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır\b/giu, 'Ancak bu olgudaki ayırt ettirici bulgularla desteklenmemektedir'],
+  [/\bMorfolojik patern\.\s*Morfolojik patern\.?/giu, ''],
+  [/\bMorfolojik patern\s*[:：]/giu, 'Histopatolojik bulgu:'],
+  [/\bkarar verdirici paternyla\b/giu, 'ayırt ettirici bulguyla'],
+  [/\blikefaksiyon nekrozuyla\b/giu, 'sıvılaşma nekrozu ile'],
+  [/\bkısa TUS pratiğinde ele alınır\b/giu, 'sınav odaklı olarak yorumlanır'],
+  [/\bKlinik değerlendirme için ek veri\b/giu, 'Destekleyici objektif veri'],
+  [/\bgündeme gelebilir\b/giu, 'düşünülebilir'],
+  [/\bGündeme gelebilir\b/giu, 'Düşünülebilir'],
+  [/\bhedefe yönelik yorumlanır\b/giu, 'öykü ve objektif verilerle birlikte yorumlanır'],
+  [/\bObjektif karar verisi\b/giu, 'Objektif bulgu'],
+  [/\bverilen öğrenme hedefi\b/giu, 'ölçülen klinik bilgi'],
+  [/\byanıt ekseni\b/giu, 'klinik karar noktası'],
+  [/\bNedeniyle Ameliyathane\b/giu, 'Ameliyathane izlemi'],
+  [/\bwheezing\b/giu, 'hışıltılı solunum'],
+  [/\binsulin\s*\+\s*glucose\b/giu, 'intravenöz insülin + glukoz'],
+  [/\bwidened\s*QRS\b/giu, 'QRS genişlemesi'],
+  [/\btall\s*T\s*waves?\b/giu, 'sivri T dalgaları'],
+];
+
+const TITLE_REPLACEMENTS = new Map([
+  ['İlk karar', 'Öncelikli yaklaşım'],
+  ['Tedavi önceliği', 'Tedavi basamağı'],
+  ['Laboratuvar paterni', 'Laboratuvar bulgusu'],
+  ['Kanıt 2', 'Klinik ipucu'],
+  ['Kanıt 3', 'Klinik ipucu'],
+  ['Kanıt 4', 'Klinik ipucu'],
+]);
+
+
+function normalizeMedicalAbbreviations(value = '') {
+  let text = String(value ?? '');
+  const replacements = [
+    [/\b[Cc]\.\s*[Dd]ifficile([’'`]?nin|[’'`]?de|[’'`]?den|[’'`]?ye|[’'`]?yi|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Clostridioides difficile${suffix}`],
+    [/\b[Ee]\.\s*[Cc]oli([’'`]?nin|[’'`]?de|[’'`]?den|[’'`]?ye|[’'`]?yi|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Escherichia coli${suffix}`],
+    [/\b[Ss]\.\s*[Aa]ureus([’'`]?un|[’'`]?ta|[’'`]?tan|[’'`]?a|[’'`]?u)?\b/gu, (_match, suffix = '') => `Staphylococcus aureus${suffix}`],
+    [/\b[Ss]\.\s*[Pp]neumoniae([’'`]?nin|[’'`]?de|[’'`]?den|[’'`]?ye|[’'`]?yi|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Streptococcus pneumoniae${suffix}`],
+    [/\b[Hh]\.\s*[Pp]ylori([’'`]?nin|[’'`]?de|[’'`]?den|[’'`]?ye|[’'`]?yi|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Helicobacter pylori${suffix}`],
+    [/\b[Nn]\.\s*[Mm]eningitidis([’'`]?in|[’'`]?te|[’'`]?ten|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Neisseria meningitidis${suffix}`],
+    [/\b[Pp]\.\s*[Aa]eruginosa([’'`]?n[ıi]n|[’'`]?da|[’'`]?dan|[’'`]?ya|[’'`]?y[ıi])?\b/gu, (_match, suffix = '') => `Pseudomonas aeruginosa${suffix}`],
+    [/\b[Mm]\.\s*[Tt]uberculosis([’'`]?in|[’'`]?te|[’'`]?ten|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Mycobacterium tuberculosis${suffix}`],
+    [/\b[Bb]\.\s*[Pp]ertussis([’'`]?in|[’'`]?te|[’'`]?ten|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Bordetella pertussis${suffix}`],
+    [/\b[nN]\.\s*facialisin\b/gu, 'fasiyal sinirin'], [/\b[nN]\.\s*facialis\b/gu, 'fasiyal sinir'],
+    [/\b[nN]\.\s*maxillarisin\b/gu, 'maksiller sinirin'], [/\b[nN]\.\s*maxillaris\b/gu, 'maksiller sinir'],
+    [/\b[nN]\.\s*mandibularisin\b/gu, 'mandibular sinirin'], [/\b[nN]\.\s*mandibularis\b/gu, 'mandibular sinir'],
+    [/\b[nN]\.\s*hypoglossusun\b/gu, 'hipoglossal sinirin'], [/\b[nN]\.\s*hypoglossus\b/gu, 'hipoglossal sinir'],
+    [/\b[nN]\.\s*thoracicus\s+longusun\b/gu, 'uzun torasik sinirin'], [/\b[nN]\.\s*thoracicus\s+longus\b/gu, 'uzun torasik sinir'],
+    [/\b[aA]\.\s*meningea\s+media\b/gu, 'orta meningeal arter'],
+    [/\b[mM]\.\s*serratus\s+anterior\b/gu, 'serratus anterior kası'], [/\b[mM]\.\s*deltoideus\b/gu, 'deltoid kas'],
+    [/\b[mM]\.\s*latissimus\s+dorsi\b/gu, 'latissimus dorsi kası'], [/\b[mM]\.\s*supraspinatus\b/gu, 'supraspinatus kası'],
+    [/\b[mM]\.\s*rhomboideus\s+major\b/gu, 'rhomboid major kası'],
+    [/\b[vV]\.\s*jugularis\s+interna\b/gu, 'internal juguler ven'],
+    [/\b[Ll]ig\.\s*/gu, 'ligamentum '], [/\b[Pp]roc\.\s*/gu, 'processus '], [/\b[Ff]or\.\s*/gu, 'foramen '], [/\b[Aa]rt\.\s*/gu, 'articulatio '],
+    [/\bNervus thoracicus longus\b/gu, 'Uzun torasik sinir'], [/\bnervus thoracicus longus\b/gu, 'uzun torasik sinir'],
+    [/\bMusculus serratus anterior\b/gu, 'Serratus anterior kası'], [/\bmusculus serratus anterior\b/gu, 'serratus anterior kası'],
+    [/\bMusculus deltoideus\b/gu, 'Deltoid kas'], [/\bmusculus deltoideus\b/gu, 'deltoid kas'],
+    [/\bMusculus latissimus dorsi\b/gu, 'Latissimus dorsi kası'], [/\bmusculus latissimus dorsi\b/gu, 'latissimus dorsi kası'],
+    [/\bMusculus supraspinatus\b/gu, 'Supraspinatus kası'], [/\bmusculus supraspinatus\b/gu, 'supraspinatus kası'],
+    [/\bMusculus rhomboideus major\b/gu, 'Rhomboid major kası'], [/\bmusculus rhomboideus major\b/gu, 'rhomboid major kası'],
+  ];
+  replacements.forEach(([pattern, replacement]) => {
+    text = text.replace(pattern, replacement);
+  });
+  return text
+    .replace(/\bn\.\s*([A-Za-zÇĞİÖŞÜçğıöşü-]+)/gu, 'nervus $1')
+    .replace(/\bm\.\s*([A-Za-zÇĞİÖŞÜçğıöşü-]+)/gu, 'musculus $1')
+    .replace(/\ba\.\s*([A-Za-zÇĞİÖŞÜçğıöşü-]+)/gu, 'arteria $1')
+    .replace(/\bv\.\s*([A-Za-zÇĞİÖŞÜçğıöşü-]+)/gu, 'vena $1');
+}
+
+function compactSpaces(text = '') {
+  return String(text || '')
+    .replace(/\s+([,.;:!?])/gu, '$1')
+    .replace(/([,;:!?])(?=\S)/gu, '$1 ')
+    .replace(/\s{2,}/gu, ' ')
+    .trim();
+}
+
+export function normalizeTusLanguageText(value = '') {
+  let text = normalizeMedicalAbbreviations(String(value || ''));
+  WEAK_TEXT_REPLACEMENTS.forEach(([pattern, replacement]) => {
+    text = text.replace(pattern, replacement);
+  });
+  text = text
+    .replace(/\bhangi\s+tedavi\s+yöntemi\s+ilk\s+sırada\s+uygulanmalıdır\b/giu, 'Bu hastada uygulanması gereken öncelikli tedavi basamağı hangisidir')
+    .replace(/\bBu nedenle en iyi yanıt\b/giu, 'Bu nedenle en uygun seçenek')
+    .replace(/\bdoğru seçenek\b/giu, 'uygun seçenek')
+    .replace(/\bDoğru seçenek\b/giu, 'Uygun seçenek')
+    .replace(/\bçeldirici\b/giu, 'alternatif')
+    .replace(/\bÇeldirici\b/giu, 'Alternatif')
+    .replace(/\bAI\s*Spot\b/gu, 'TUS Spot')
+    .replace(/(^|[.!?]\s+)(?:Da|De|da|de)\s+(?=[a-zçğıöşü0-9%/>])/gu, '$1Bu olguda ')
+    .replace(/\b(?:Da|De|da|de)\s+(?=renin\/aldosteron\b)/gu, 'Bu olguda ')
+    .replace(/\bE\.\s*Coli\b/gu, 'Escherichia coli')
+    .replace(/\bC\.\s*Difficile\b/gu, 'Clostridioides difficile')
+    .replace(/\s+\.\s*/gu, '. ')
+    .replace(/\s+;\s*/gu, '; ');
+  return compactSpaces(text);
+}
+
+export function normalizeTusLabel(value = '') {
+  const text = normalizeTusLanguageText(value);
+  return TITLE_REPLACEMENTS.get(text) || text;
+}
+
+function normalizeItem(value, key = '') {
+  if (typeof value === 'string') {
+    if (/^(title|label|eyebrow|heading)$/iu.test(key)) return normalizeTusLabel(value);
+    return normalizeTusLanguageText(value);
+  }
+  if (Array.isArray(value)) return value.map((item) => normalizeItem(item, key));
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(Object.entries(value).map(([childKey, childValue]) => [childKey, normalizeItem(childValue, childKey)]));
+  }
+  return value;
+}
+
+
+
+function normalizeOptionMapKeys(map = {}) {
+  if (!map || typeof map !== 'object' || Array.isArray(map)) return map;
+  return Object.fromEntries(
+    Object.entries(map).map(([key, value]) => [normalizeTusLanguageText(key), value])
+  );
+}
+
+function alignOptionFeedbackMaps(caseItem = {}) {
+  const diagnosis = caseItem.diagnosis;
+  if (!diagnosis || typeof diagnosis !== 'object') return caseItem;
+  const mapFields = [
+    'optionComparison',
+    'optionFeedback',
+    'optionRationales',
+    'feedbackByOption',
+    'whyWrong',
+    'optionComparisonByText',
+  ];
+  for (const field of mapFields) {
+    if (diagnosis[field]) diagnosis[field] = normalizeOptionMapKeys(diagnosis[field]);
+  }
+  const feedback = diagnosis.answerFeedback;
+  if (feedback && typeof feedback === 'object') {
+    for (const field of mapFields) {
+      if (feedback[field]) feedback[field] = normalizeOptionMapKeys(feedback[field]);
+    }
+    if (feedback.differentialComparison) {
+      feedback.differentialComparison = normalizeOptionMapKeys(feedback.differentialComparison);
+    }
+  }
+  return caseItem;
+}
+
+function normalizeManagementSteps(steps = []) {
+  if (!Array.isArray(steps)) return steps;
+  let treatmentIndex = 0;
+  return steps.map((step, index) => {
+    if (typeof step === 'string') return normalizeTusLanguageText(step);
+    if (!step || typeof step !== 'object') return step;
+    const normalized = normalizeItem(step);
+    const title = normalizeTusLabel(normalized.title || '');
+    if (/^Tedavi basamağı$/iu.test(title)) {
+      treatmentIndex += 1;
+      return { ...normalized, title: treatmentIndex > 1 ? 'Sonraki tedavi basamağı' : 'Tedavi basamağı' };
+    }
+    if (/^Öncelikli yaklaşım$/iu.test(title) && index > 0) return { ...normalized, title: 'Klinik karar' };
+    return { ...normalized, title: title || (index === 0 ? 'Öncelikli yaklaşım' : 'Sonraki adım') };
+  });
+}
+
+export function applyTusLanguageStandardToCase(caseItem = {}) {
+  const normalized = alignOptionFeedbackMaps(normalizeItem(caseItem));
+  const feedback = normalized.diagnosis?.answerFeedback;
+  if (feedback) {
+    const managementSteps = normalizeManagementSteps(feedback.managementSteps || feedback.management || []);
+    normalized.diagnosis.answerFeedback = {
+      ...feedback,
+      managementSteps,
+      management: normalizeManagementSteps(feedback.management || managementSteps),
+    };
+  }
+  if (normalized.diagnosis?.pearls) normalized.diagnosis.pearls = normalizeItem(normalized.diagnosis.pearls);
+  if (normalized.patientIntro?.priorityFocus && /ilk basamak.*tanıdır|tanı.*ilk basamak/iu.test(normalized.patientIntro.priorityFocus)) {
+    normalized.patientIntro.priorityFocus = normalizeTusLanguageText(normalized.patientIntro.priorityFocus);
+  }
+  return normalized;
+}
+
+export function applyTusLanguageStandardToQuestion(question = {}) {
+  return applyTusLanguageStandardToCase(question);
+}
+
+export function hasWeakTusLanguage(value = '') {
+  const text = String(value || '');
+  return WEAK_TEXT_REPLACEMENTS.some(([pattern]) => pattern.test(text));
+}

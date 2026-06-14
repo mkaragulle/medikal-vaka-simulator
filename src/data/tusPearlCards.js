@@ -8726,7 +8726,7 @@ function isPearlCardQualityApproved(card = {}) {
 
 
 // V233 — Full high-yield rewrite for 1000 Hap Bilgi cards.
-// Goal: remove vague/meta wording and make every card concrete, clinical/mechanistic and exam-oriented.
+// Goal: remove vague/meta prompts and make every card concrete, clinical/mechanistic and exam-oriented.
 // Only text fields are overridden; ID, branch metadata, topic, card type and order remain generated from the original schema.
 const TUS_PEARL_REVISED_TEXT_OVERRIDES = Object.freeze({
   "tus-pearl-anatomy-001-spot": {

@@ -1,78 +1,81 @@
-# KlinikIQ AI kaldırma raporu
+# KlinikIQ AI Kaldırma Raporu
 
-## Özet
-AI üretim altyapısı fiziksel olarak kaldırıldı. TUS soru üretim ekranı ve KlinikIQ Komite UI shell’i korunarak butonlar üretim yapmayan statik/no-op davranışa bağlandı.
+## Silinen AI backend / servis / route dosyaları
 
-## Silinen AI modülleri / dosyaları
-- `api/` klasörü kaldırıldı.
-- `server/` klasörü kaldırıldı.
-- `src/services/aiQuestionService.js` kaldırıldı.
-- `src/components/AISpotQuestionScreen.jsx` kaldırıldı.
-- `src/utils/aiBranchRules.js` kaldırıldı.
-- `src/utils/aiQuestionDiversity.js` kaldırıldı.
-- `src/utils/aiQuestionGenerator.js` kaldırıldı.
-- `src/utils/aiQuestionHistory.js` kaldırıldı.
-- `src/utils/aiQuestionQualityGate.js` kaldırıldı.
-- `src/utils/aiSpotNarrative.js` kaldırıldı.
-- `src/utils/answerLeakageGate.js` kaldırıldı.
-- `src/utils/clinicalCoherenceHardGate.js` kaldırıldı.
-- `src/utils/clinicalScientificAccuracyGate.js` kaldırıldı.
-- `src/utils/feedbackDuplicationGate.js` kaldırıldı.
-- `src/utils/feedbackQualityStandard.js` kaldırıldı.
-- `src/utils/finalAIQuestionSafetyGate.js` kaldırıldı.
-- `src/utils/simpleAIQuestionAdapter.js` kaldırıldı.
-- `src/utils/singleBestAnswerGate.js` kaldırıldı.
-- `src/utils/tusLanguageStandard.js` kaldırıldı.
-- `src/utils/validateAIQuestion.js` kaldırıldı.
-- `src/utils/questionDeduplication.js` kaldırıldı.
-- `src/data/aiBranchQuestionTemplates.js` kaldırıldı.
-- `src/data/aiQuestionSeeds.js` kaldırıldı.
-- `src/data/aiSyntheticFallbackTemplates.js` kaldırıldı.
-- `src/data/aiTopicPools.js` kaldırıldı.
+- `api/analyze-uploaded-material.js`
+- `api/generate-ai-question.js`
+- `api/generate-lesson.js`
+- `api/generate-material-flashcards.js`
+- `api/generate-material-questions.js`
+- `api/validate-ai-output.js`
+- `server/lib/ai-token-optimizer.js`
+- `server/lib/komite-ai-common.js`
+- `src/services/aiQuestionService.js`
 
-## API / environment temizliği
-- Vercel serverless AI route mapping’i `vercel.json` içinden kaldırıldı.
-- Kod artık `OPENAI_API_KEY`, `GEMINI_API_KEY`, `ANTHROPIC_API_KEY` veya benzeri AI env değişkenlerine bağlı değil.
-- `OpenAI`, `Gemini`, `Anthropic`, `chat.completions`, `generateContent` ve model çağrılarına ait aktif kod bulunmuyor.
+## Silinen prompt / quality gate / repair / fallback / local generation dosyaları
 
-## Prompt / quality gate / repair temizliği
-- `server/prompts/*` prompt katmanı kaldırıldı.
-- TUS üretim promptları, Komite promptları, feedback promptları, repair promptları, safe generation/local generation promptları ve schema repair/validator parçaları kaldırıldı.
-- `src/data/cases.js` içindeki eski `aiMeta` blokları temizlendi.
-- Kullanılmayan AI pearl/card çıktı normalizer ve generated-case validator fonksiyonları kaldırıldı.
+- `server/prompts/analyzeUploadedMaterialPrompt.js`
+- `server/prompts/generateFlashcardsPrompt.js`
+- `server/prompts/generateLessonPrompt.js`
+- `server/prompts/generateMaterialQuestionsPrompt.js`
+- `server/prompts/komiteGlobalEducationalPrompt.js`
+- `server/prompts/tus-question-prompt.js`
+- `server/prompts/validateAIOutputPrompt.js`
+- `src/data/aiBranchQuestionTemplates.js`
+- `src/data/aiQuestionSeeds.js`
+- `src/data/aiSyntheticFallbackTemplates.js`
+- `src/data/aiTopicPools.js`
+- `src/utils/aiBranchRules.js`
+- `src/utils/aiQuestionDiversity.js`
+- `src/utils/aiQuestionGenerator.js`
+- `src/utils/aiQuestionHistory.js`
+- `src/utils/aiQuestionQualityGate.js`
+- `src/utils/aiSpotNarrative.js`
+- `src/utils/answerLeakageGate.js`
+- `src/utils/clinicalCoherenceHardGate.js`
+- `src/utils/clinicalScientificAccuracyGate.js`
+- `src/utils/editorialQuality.js`
+- `src/utils/finalAIQuestionSafetyGate.js`
+- `src/utils/questionDeduplication.js`
+- `src/utils/simpleAIQuestionAdapter.js`
+- `src/utils/singleBestAnswerGate.js`
+- `src/utils/validateAIQuestion.js`
 
-## Korunan UI sayfaları
-- Dashboard
-- Yeni TUS Sorusu Üret ekranı
-- KlinikIQ Komite ana/workspace ekranı
-- Çalıştıklarım
-- Hap Kartlar
-- Tekrar Merkezi
-- Yanlışlar / tekrar alanları
+## Güncellenen route / deployment ayarı
 
-## No-op / statik hale getirilen yerler
-- Yeni TUS Sorusu Üret butonu artık üretim başlatmaz; yalnızca “Bu modül şu anda aktif değil.” mesajını gösterir.
-- Komite ders anlatımı, soru oluşturma ve hap kart üretimi aksiyonları üretim yapmaz; statik devre dışı mesajı gösterir.
-- Dosya yükleme/metin ayrıştırma UI’ı korunmuştur; ancak dosyadan AI özet, ders, soru veya kart üretimi yapılmaz.
+- `vercel.json` içindeki AI function tanımları kaldırıldı. Artık `/api/generate-ai-question`, `/api/generate-lesson`, `/api/analyze-uploaded-material`, `/api/generate-material-questions`, `/api/generate-material-flashcards`, `/api/validate-ai-output` function ayarları yok.
 
-## Korunan statik içerikler
-- Elle yazılmış klinik vaka/soru verileri korundu.
-- Hap kartlar ve glossary/statik çalışma içerikleri korundu.
-- Eski CSS class isimleri bazı yerlerde tasarımı bozmamak için korunmuştur; bunlar üretim motoru değildir.
-- Komite içinde görünen “AI Ders Anlatımı” / “AI Soruları” gibi etiketler sadece statik UI metnidir; arkasında üretim logic’i yoktur.
+## Birebir korunması hedeflenen UI sayfaları / componentleri
 
-## Kontrol sonuçları
-- `npm install --package-lock=false --legacy-peer-deps --no-audit --no-fund`: başarılı. Not: sandbox Node sürümü 22.16.0, proje `20.x` öneriyor; install tamamlandı.
-- `npm run build`: başarılı. Sadece mevcut büyük chunk uyarıları var.
-- `npm run lint`: package.json içinde script yok.
-- `npm run typecheck`: package.json içinde script yok.
-- Runtime render kontrolü: Vite preview HTTP 200 verdi; ayrıca React SSR render kontrolü `SSR_RENDER_OK` verdi ve giriş ekranı HTML’i üretildi.
+- `src/App.jsx` ana route ve navigation akışı korundu.
+- `src/components/AIGeneratedQuestionView.jsx` sayfa/hero/filter/button layout’u korunarak yalnızca üretim aksiyonu güvenli statik mesaja bağlandı.
+- `src/components/KomiteModeWorkspace.jsx` ana Komite arayüzü, kartlar ve sekmeler korunarak AI fetch/generation çağrıları kaldırıldı.
+- `src/components/AISpotQuestionScreen.jsx` UI component olarak korundu; silinen AI narrative helper importu yerine component içinde statik görüntüleme helperları kullanıldı.
+- `src/components/AnswerFeedbackPanel.jsx` statik cevap değerlendirme/feedback UI’ı korunacak şekilde AI repair importu çıkarıldı ve yalnızca local statik metin filtreleri bırakıldı.
+- `src/utils/investigationOrders.js` statik tetkik/özet akışı korunacak şekilde AI leakage gate importu kaldırıldı.
 
-## Arama sonuçları
-Aşağıdaki hedefli arama sıfır sonuç verdi:
+## TUS üret butonu davranışı
 
-```bash
-rg -n "\b(openai|gemini|anthropic)\b|generateContent|chat\.completions|OPENAI_API_KEY|GEMINI_API_KEY|ANTHROPIC_API_KEY|qualityGate|safeGeneration|localGeneration|feedbackGenerator|questionGenerator|aiClient|aiService|callOpenAI|postKomiteAI|createAIQuestion|prefetchNextAIQuestion|listAIQuestionBranches|AISpotQuestionScreen|aiQuestionService|aiQuestionGenerator|feedbackDuplicationGate|answerLeakageGate|finalAIQuestionSafetyGate|validateAIQuestion|simpleAIQuestionAdapter|repairAIGeneratedText|normalizeAIPearlCardOutput|ai_generated|generatedFrom|generatedAt" -S --glob '!node_modules' --glob '!dist'
-```
+- `src/App.jsx` içinde `createAIQuestion` ve `prefetchNextAIQuestion` importları tamamen kaldırıldı.
+- “Yeni TUS Sorusu Üret” butonu artık hiçbir async AI servisi, local generation, quality gate, repair, fallback veya API route çağırmaz.
+- Buton yalnızca mevcut sayfa tasarımı içinde küçük statik mesaj gösterir: `Bu modül şu anda aktif değil.`
 
-`prompt|Prompt` araması da sıfır sonuç verdi.
+## Komite AI aksiyonları davranışı
+
+- `KomiteModeWorkspace.jsx` içindeki `/api/generate-lesson`, `/api/generate-material-questions`, `/api/generate-material-flashcards` fetch akışı kaldırıldı.
+- “AI Ders Anlatımı oluştur”, “10 soru oluştur”, “Hap kartları oluştur” aksiyonları artık API/model çağırmaz.
+- Tıklanınca mevcut Komite UI içinde statik mesaj gösterir: `Bu modül şu anda aktif değil.`
+
+## Klinik Branş Seç / statik vaka çözme koruması
+
+- Statik vaka/soru data dosyaları silinmedi.
+- Şık seçme state’i, doğru/yanlış değerlendirme akışı, `DiagnosisQuiz`, `AnswerFeedbackPanel`, `CasePlayer`, `CaseList` ve açıklama/feedback gösterme componentleri korunmuştur.
+- “Yanıtı değerlendir” ve “Yeni vaka çöz” akışı AI servisine bağlanmadı; AI bağımlılığı olmayan statik frontend akışı korunmuştur.
+
+## Kontrol sonucu
+
+- `npm run build` başarılı.
+- `npm run lint` script’i bu pakette yok.
+- `npm run typecheck` script’i bu pakette yok.
+- Statik taramada `/api/generate-*`, `/api/validate-ai-output`, OpenAI/Gemini/Anthropic client/import/fetch çağrısı aktif kaynak dosyalarda kalmadı.
+- Sandbox Chromium, localhost sayfasını “blocked by organization” policy ile açmadığı için burada tam manuel tarayıcı tıklama testi yapılamadı. Build ve statik import/API taramaları temizdir.

@@ -2254,7 +2254,7 @@ const definitions = [
     "clinicalFocus": "Pacemaker hastasında senkopta cihaz disfonksiyonu ve lead problemini tanıma.",
     "riskContext": [
       "Pacemaker bağımlı hastada capture kaybı bradikardi ve senkop yapabilir.",
-      "Cihaz kartı yoksa üretici ve providerLabel bilgisi hızlıca bulunmalıdır."
+      "Cihaz kartı yoksa üretici ve model bilgisi hızlıca bulunmalıdır."
     ],
     "distinctiveClues": [
       "Pacemaker öyküsü var.",

@@ -31449,7 +31449,7 @@ body:not(.klinikiq-auth-lock) .nav-brand-mark-pulse {
   }
 }
 
-/* ===== TUS generated TUS spot question module ===== */
+/* ===== AI generated TUS spot question module ===== */
 .ai-hero-action {
   position: relative;
   overflow: hidden;
@@ -31743,7 +31743,7 @@ html[data-theme="dark"] .ai-generation-state p,
   color: #a9bbca !important;
 }
 
-/* ===== TUS question anti-repeat + provider controls ===== */
+/* ===== AI question anti-repeat + provider controls ===== */
 .ai-practice-meta-row {
   display: flex;
   align-items: center;
@@ -33631,7 +33631,7 @@ html[data-theme="dark"] .qualitative-result-finding,
   }
 }
 
-/* TUS Spot narrative question screen: replaces embedded case-card stack for generated TUS questions */
+/* AI Spot narrative question screen: replaces embedded case-card stack for generated TUS questions */
 .ai-spot-player-shell {
   width: 100%;
 }
@@ -34082,8 +34082,8 @@ html[data-theme="dark"] .ai-spot-answer-shell .tus-spot-olgular-question-callout
 }
 
 /* =========================================================
-   KLINIKIQ V176 — TUS Spot single-flow layout, no nested scroll
-   The TUS generated TUS Spot screen must not inherit the sticky,
+   KLINIKIQ V176 — AI Spot single-flow layout, no nested scroll
+   The AI generated TUS Spot screen must not inherit the sticky,
    viewport-bound right workspace from the classic case player.
    Narrative, options and feedback now live inside one natural-height
    panel; only the page/body scrolls when feedback expands.
@@ -34288,7 +34288,7 @@ html[data-theme="dark"] .ai-spot-answer-flow .question-panel-head.diagnostic-hea
 }
 
 /* =========================================================
-   KLINIKIQ V177 — TUS Spot hero premium control cluster
+   KLINIKIQ V177 — AI Spot hero premium control cluster
    Aligns the branch selector and action buttons as one compact,
    balanced control group in the generated TUS Spot hero.
    ========================================================= */
@@ -34503,7 +34503,7 @@ html[data-theme="dark"] .ai-practice-actions-pro .ai-spot-dashboard-btn,
 }
 
 /* --------------------------------------------------------------------------
-   TUS Spot feedback de-duplication: single exam-note card + compact chips
+   AI Spot feedback de-duplication: single exam-note card + compact chips
    -------------------------------------------------------------------------- */
 .answer-feedback-panel-pro .exam-note-feedback-card,
 .answer-feedback-panel .exam-note-feedback-card {
@@ -34842,7 +34842,7 @@ html[data-theme="dark"] .spot-note-insight-list,
 }
 
 /* =========================================================
-   KLINIKIQ V178 — TUS Spot hero control cluster spacing tune
+   KLINIKIQ V178 — AI Spot hero control cluster spacing tune
    Removes the optically heavy left gutter in the Konu/Branş
    control card and keeps select/actions on one compact column.
    ========================================================= */
@@ -34942,7 +34942,7 @@ html[data-theme="dark"] .spot-note-insight-list,
 }
 
 /* =========================================================
-   KLINIKIQ V179 — TUS Spot hero control inset correction
+   KLINIKIQ V179 — AI Spot hero control inset correction
    The control card must hug its own content; no large left gutter.
    Overrides older flex/grid alignment that right-aligned children inside
    a wider card and created the empty left area visible in the hero.
@@ -35040,7 +35040,7 @@ html[data-theme="dark"] .spot-note-insight-list,
 }
 
 /* =========================================================
-   KLINIKIQ V181 — TUS Spot stem below answer heading
+   KLINIKIQ V181 — AI Spot prompt below answer heading
    Keeps the exact soru kökü visible directly under “Yanıt seçenekleri”
    without reintroducing the old separate scrollable question card.
    ========================================================= */
@@ -35161,7 +35161,7 @@ html[data-theme="dark"] .ai-spot-answer-flow .ai-spot-inline-question-stem stron
 }
 
 /* =========================================================
-   KLINIKIQ V183 — TUS Spot support data readability guard
+   KLINIKIQ V183 — AI Spot support data readability guard
    Keeps right-side objective data fully readable without changing
    the page hierarchy: long labels/values wrap inside the same pills
    instead of being hidden with ellipsis.
@@ -35205,7 +35205,7 @@ html[data-theme="dark"] .ai-spot-answer-flow .ai-spot-inline-question-stem stron
 }
 
 /* =========================================================
-   KLINIKIQ V184 — TUS Spot final readability guard
+   KLINIKIQ V184 — AI Spot final readability guard
    Critical educational text must wrap inside existing cards instead of
    being hidden with ellipsis. This keeps the current visual hierarchy and
    only removes information loss from generated support/feedback text.
@@ -35236,7 +35236,7 @@ html[data-theme="dark"] .ai-spot-answer-flow .ai-spot-inline-question-stem stron
 }
 
 
-/* TUS spot compact feedback/title refinements */
+/* AI spot compact feedback/title refinements */
 .ai-spot-narrative-heading.no-title {
   margin-bottom: 18px;
 }
@@ -35437,10 +35437,10 @@ html[data-theme="dark"] .ai-spot-compact-feedback-grid .minimal-option-card,
 }
 
 /* =========================================================
-   KLINIKIQ V185 — TUS Spot right-column data polish
-   Generated TUS data can occasionally arrive as bare values (e.g. "Ateş 36" or
+   KLINIKIQ V185 — AI Spot right-column data polish
+   Generated AI data can occasionally arrive as bare values (e.g. "Ateş 36" or
    "Lökosit 14"). The UI now displays common clinical values with polished units
-   and a calmer medical-data card rhythm without changing the TUS pipeline.
+   and a calmer medical-data card rhythm without changing the AI pipeline.
    ========================================================= */
 .ai-spot-support-data-panel .ai-spot-compact-data-group {
   padding: 16px !important;
@@ -35574,7 +35574,7 @@ html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.i
 
 
 /* =========================================================
-   KLINIKIQ V186 — TUS Spot right-panel label/value alignment fix
+   KLINIKIQ V186 — AI Spot right-panel label/value alignment fix
    Standardizes every support-data card item as stacked label above value.
    This removes the inconsistent inline/pill rendering seen on short vitals
    such as TA while keeping long objective findings readable.
@@ -35644,7 +35644,7 @@ html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.u
   color: #e5edf6 !important;
 }
 
-/* KlinikIQ v26 — TUS difficulty selector */
+/* KlinikIQ v26 — AI difficulty selector */
 .ai-practice-actions-pro .ai-practice-filter-grid {
   display: grid !important;
   grid-template-columns: minmax(0, 1.35fr) minmax(118px, .65fr) !important;
@@ -35664,8 +35664,8 @@ html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.u
 }
 
 /* =========================================================
-   KLINIKIQ V28 — TUS Spot focused option feedback
-   Incorrect TUS spot answers now show only two option cards:
+   KLINIKIQ V28 — AI Spot focused option feedback
+   Incorrect AI spot answers now show only two option cards:
    the user's selected wrong answer and the correct answer.
    Correct answers hide the option-comparison block completely.
    ========================================================= */
@@ -35680,8 +35680,8 @@ html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.u
 }
 
 /* =========================================================
-   KLINIKIQ V36 — Home TUS action emphasis
-   Makes the existing "TUS ile Soru Üret" CTA more noticeable
+   KLINIKIQ V36 — Home AI action emphasis
+   Makes the existing "AI ile Soru Üret" CTA more noticeable
    without changing its size, position, or layout rhythm.
    ========================================================= */
 body:not(.klinikiq-auth-lock) .home-actions-v10 .ai-hero-action,
@@ -37283,7 +37283,7 @@ body:not(.klinikiq-auth-lock) .app-shell {
   }
 }
 
-/* Komite TUS generation button loading state */
+/* Komite AI generation button loading state */
 .komite-loading-primary {
   display: inline-flex !important;
   align-items: center;
@@ -38140,7 +38140,7 @@ html[data-theme='dark'] .komite-sidebar-card {
 /* --------------------------------------------------------------------------
    KlinikIQ TUS dashboard refinement v45
    Neutral UI-only cleanup: top bar alignment, softer labels, lighter hero copy,
-   and cleaner session insight cards. No source behavior changes.
+   and cleaner session insight cards. No AI prompt/source behavior changes.
    -------------------------------------------------------------------------- */
 body:not(.klinikiq-auth-lock) .top-shell-nav {
   width: min(1780px, calc(100% - 36px)) !important;
@@ -40757,7 +40757,7 @@ body:not(.klinikiq-auth-lock) .tus-stat-sparkline-dot {
 /* ==========================================================
    KlinikIQ v59 — global authenticated content frame
    Purpose: keep TUS dashboard, Komite, clinical case solving,
-   TUS-generated question, exam/review and study screens inside
+   AI-generated question, exam/review and study screens inside
    the same premium page boundaries as the expanded TUS layout.
    UI-only; no application logic is changed.
    ========================================================== */
@@ -41899,7 +41899,7 @@ body:not(.klinikiq-auth-lock) .komite-hero-unified-v63 .komite-action-panel-v63 
 
 /* ==========================================================
    KlinikIQ v66 — unified topbar-to-hero spacing
-   Purpose: make Komite, TUS, clinical case, TUS and exam screens
+   Purpose: make Komite, TUS, clinical case, AI and exam screens
    start from the same authenticated frame distance. The TUS
    dashboard spacing is treated as the source of truth.
    UI-only; no routes, handlers or data logic changed.
@@ -42258,7 +42258,7 @@ body:not(.klinikiq-auth-lock) .nav-mode-switch.global-context-switch-v55 button 
    KlinikIQ v72 — compact centered Öğrenme/Sınav selector
    Purpose: make the middle mode selector smaller and keep the
    active/inactive tabs perfectly centered inside the white pill.
-   UI-only; no handlers, routes, scoring or TUS logic changed.
+   UI-only; no handlers, routes, scoring or AI logic changed.
    ========================================================== */
 body:not(.klinikiq-auth-lock) .home-mode-v8.home-mode-v10.tus-mode-redesign,
 body:not(.klinikiq-auth-lock) .tus-mode-redesign {
@@ -43031,7 +43031,7 @@ html[data-theme='dark'] .komite-file-drop-note-icon {
 }
 
 
-/* === V104 — Manual TUS question generation + countdown === */
+/* === V104 — Manual AI question generation + countdown === */
 .ai-generation-state-countdown,
 .ai-generation-ready {
   justify-content: space-between;
@@ -43107,7 +43107,7 @@ html[data-theme='dark'] .komite-file-drop-note-icon {
 }
 
 /* =========================================================
-   KLINIKIQ V178 — TUS Spot compact theme dropdowns
+   KLINIKIQ V178 — AI Spot compact theme dropdowns
    Replaces native select menus with compact themed popovers
    for branch and difficulty selection.
    ========================================================= */
@@ -43342,7 +43342,7 @@ html[data-theme="dark"] .ai-practice-actions-pro .ai-compact-dropdown-option.act
 }
 
 /* =========================================================
-   KLINIKIQ V107 — TUS Spot dropdown portal / clipping fix
+   KLINIKIQ V107 — AI Spot dropdown portal / clipping fix
    The branch and difficulty menus now render above every card,
    independent of parent overflow and stacking contexts.
    ========================================================= */
@@ -43449,7 +43449,7 @@ html[data-theme="dark"] .ai-compact-dropdown-menu-floating .ai-compact-dropdown-
 
 
 /* =========================================================
-   KLINIKIQ V108 — TUS Spot dropdown chevron optical alignment
+   KLINIKIQ V108 — AI Spot dropdown chevron optical alignment
    Generic label span rules previously leaked into the chevron
    wrapper and made the arrow look vertically off-center.
    ========================================================= */
@@ -43506,7 +43506,7 @@ html[data-theme="dark"] .ai-practice-actions-pro .ai-compact-dropdown-shell.open
 }
 
 /* =========================================================
-   KLINIKIQ V109 — TUS ready-state text alignment refinement
+   KLINIKIQ V109 — AI ready-state text alignment refinement
    Balances the ready card copy with icon and CTA, and turns
    selected branch/difficulty into a clean compact line.
    ========================================================= */
@@ -43636,7 +43636,7 @@ html[data-theme="dark"] .ai-generation-ready .ai-ready-selection span,
 }
 
 /* =========================================================
-   KLINIKIQ V110 — TUS hero alignment polish
+   KLINIKIQ V110 — AI TUS hero alignment polish
    Removes the visual dependency on the old kicker badge and
    balances the title/copy block against the filter action card.
    ========================================================= */
@@ -44021,7 +44021,7 @@ body:not(.klinikiq-auth-lock) .global-topbar-v55 .nav-actions .btn span {
 }
 
 /* =========================================================
-   KlinikIQ V113 — TUS right control panel alignment
+   KlinikIQ V113 — TUS AI right control panel alignment
    Purpose: remove the unnecessary empty area on the right side
    of the Yeni TUS Sorusu Üret control card and make all controls
    fill the panel edge-to-edge in a balanced way.
@@ -44094,7 +44094,7 @@ body:not(.klinikiq-auth-lock) .global-topbar-v55 .nav-actions .btn span {
 }
 
 /* =========================================================
-   KLINIKIQ V114 — TUS generated question layout and right-rail cleanup
+   KLINIKIQ V114 — AI generated question layout and right-rail cleanup
    - Uses the empty right side by widening the answer area
    - Converts options into a compact 2-column desktop grid
    - Simplifies the support-data rail and normalizes label/title rhythm
@@ -44524,7 +44524,7 @@ html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.u
 }
 
 /* =========================================================
-   KLINIKIQ V118 — TUS üretim paneli sağ boşluk düzeltmesi
+   KLINIKIQ V118 — TUS AI üretim paneli sağ boşluk düzeltmesi
    Sağ seçim/aksiyon kartındaki kontrol satırlarını panelin tamamına yayar.
    ========================================================= */
 .ai-practice-hero .ai-practice-actions.ai-practice-actions-pro {
@@ -44604,7 +44604,7 @@ html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.u
   }
 }
 
-/* === V120 — Adaptive TUS generation ETA + staged loading card === */
+/* === V120 — Adaptive AI generation ETA + staged loading card === */
 .ai-generation-state.ai-generation-state-live {
   align-items: stretch !important;
   justify-content: space-between !important;
@@ -44811,7 +44811,7 @@ html[data-theme="dark"] .ai-generation-stage-list span,
   }
 }
 
-/* === V121 — cleaner TUS generation loading state === */
+/* === V121 — cleaner AI generation loading state === */
 .ai-generation-state.ai-generation-state-live {
   min-height: 156px !important;
   align-items: center !important;
@@ -44920,7 +44920,7 @@ html[data-theme="dark"] .ai-generation-countdown.ai-generation-countdown-live,
 }
 
 /* =========================================================
-   KLINIKIQ V122 — TUS answer option containment polish
+   KLINIKIQ V122 — AI TUS answer option containment polish
    Keeps the generated-question answer cards inside their grid columns
    and prevents selected/correct/wrong states from visually overflowing.
    ========================================================= */
@@ -45067,7 +45067,7 @@ html[data-theme="dark"] .ai-generation-countdown.ai-generation-countdown-live,
 }
 
 /* =========================================================
-   KLINIKIQ V123 — definitive TUS answer icon containment
+   KLINIKIQ V123 — definitive AI TUS answer icon containment
    The status icon is positioned inside the option card with a
    fixed right inset, so it can no longer touch or exceed the
    card edge in correct/wrong states.
@@ -45212,9 +45212,9 @@ html[data-theme="dark"] .ai-generation-countdown.ai-generation-countdown-live,
 }
 
 /* =========================================================
-   KLINIKIQ V124 — TUS answer options redesign
+   KLINIKIQ V124 — AI TUS answer options redesign
    Removes the problematic far-right status/radio icon column in
-   TUS-generated TUS questions. Feedback is now carried by the
+   AI-generated TUS questions. Feedback is now carried by the
    option card state, the option letter and the status chip, so
    cards never visually overflow on the right edge.
    ========================================================= */
@@ -45421,7 +45421,7 @@ html[data-theme="dark"] .ai-generation-countdown.ai-generation-countdown-live,
 }
 
 /* =========================================================
-   KLINIKIQ V125 — TUS option edge-safe layout
+   KLINIKIQ V125 — AI TUS option edge-safe layout
    Ensures every answer option is visually inset from the right
    boundary, so borders/backgrounds never look clipped even when
    the answer grid is rendered close to the viewport edge.
@@ -46757,7 +46757,7 @@ html[data-theme='dark'] .komite-review-scope button.active {
    Purpose: make clinical branch detail screens align with the
    global topbar width and give the right answer column enough
    space for five TUS-style options without crowding.
-   UI-only; generation flow is inactive.
+   UI-only; TUS AI generation flow and prompts are untouched.
    ========================================================== */
 body:not(.klinikiq-auth-lock) .page-shell.case-page-shell.stable-case-page-shell,
 body:not(.klinikiq-auth-lock) .page-shell.case-page-shell.case-page-bottomrail {
@@ -46831,7 +46831,7 @@ body:not(.klinikiq-auth-lock) .case-page-shell .right-workspace-shell .answer-ti
 }
 
 /* ==========================================================
-   KlinikIQ V153 — Branch case frame width parity with TUS question screen
+   KlinikIQ V153 — Branch case frame width parity with AI question screen
    Purpose: selected clinical branch case screens should use the same
    authenticated content frame as "Yeni TUS Sorusu Üret" instead of the
    wider V151 experimental frame. Five-option normalization and embedded
@@ -48842,7 +48842,7 @@ html[data-theme="dark"] .branch-card[data-branch]:not([data-branch="tus-spot-olg
    V241 — TUS Spot Olgular question-bank layout
    Spot questions are no longer rendered as clinical case stories.
    Removes the Öykü/Muayene/Tetkik rail, patient-summary blocks and
-   right/left split; keeps UI layout untouched.
+   right/left split; keeps AI prompt/generation logic untouched.
    ========================================================== */
 .tus-spot-bank-case {
   width: 100% !important;
@@ -49152,7 +49152,7 @@ body:not(.klinikiq-auth-lock) .tus-spot-bank-main .question-panel.diagnostic-dec
    Renders I., II., III., IV. style proposition stems as clear
    stacked rows without changing the stored question text.
    ========================================================= */
-.formatted-question-stem.has-roman-items {
+.formatted-question-prompt.has-roman-items {
   display: grid !important;
   gap: 0.72rem !important;
   width: 100% !important;
@@ -49197,7 +49197,7 @@ body:not(.klinikiq-auth-lock) .tus-spot-bank-main .question-panel.diagnostic-dec
   display: inline !important;
 }
 
-.tus-spot-bank-main .tus-spot-olgular-question-callout .formatted-question-stem.has-roman-items {
+.tus-spot-bank-main .tus-spot-olgular-question-callout .formatted-question-prompt.has-roman-items {
   gap: clamp(0.7rem, 0.55rem + 0.28vw, 0.92rem) !important;
 }
 
@@ -56525,7 +56525,7 @@ html[data-theme='dark'] .vitals-grid .vital-card .vital-note,
   }
 }
 
-/* === V376 — TUS soru bekleme ekranı mini hap kart tekrarı === */
+/* === V376 — AI soru bekleme ekranı mini hap kart tekrarı === */
 .ai-generation-state.ai-generation-study-wait {
   display: grid !important;
   grid-template-columns: minmax(0, 1fr) minmax(180px, 230px) !important;
@@ -56971,7 +56971,7 @@ html[data-theme="dark"] .ai-waiting-pearl-carousel-status,
   color: #d1fae5;
 }
 
-/* === V378 — TUS bekleme kartları scroll/CTA refinement === */
+/* === V378 — AI bekleme kartları scroll/CTA refinement === */
 .ai-practice-scroll-anchor {
   scroll-margin-top: clamp(1rem, 2vw, 1.5rem);
 }
@@ -57083,7 +57083,7 @@ html[data-theme="dark"] .ai-waiting-pearl-back-explanation,
 }
 
 
-/* === V382 — TUS bekleme hap kart carousel boşluk/ok/refinement === */
+/* === V382 — AI bekleme hap kart carousel boşluk/ok/refinement === */
 .ai-waiting-pearl-review-head {
   justify-content: flex-start !important;
 }
@@ -57156,7 +57156,7 @@ html[data-theme="dark"] .ai-waiting-pearl-carousel-arrow,
 
 
 
-/* === V383 — TUS soru kalite düzeltmesi: sağ veri paneli kapalı === */
+/* === V383 — AI TUS soru kalite düzeltmesi: sağ veri paneli kapalı === */
 .ai-spot-narrative-content-grid.has-support-data,
 .ai-spot-narrative-content-grid.no-support-data {
   grid-template-columns: minmax(0, 1fr) !important;
@@ -57171,7 +57171,7 @@ html[data-theme="dark"] .ai-waiting-pearl-carousel-arrow,
 }
 
 
-/* === V384 — TUS soru ekranı üst/alt görsel sadeleştirme === */
+/* === V384 — AI TUS soru ekranı üst/alt görsel sadeleştirme === */
 .ai-spot-narrative-heading.no-title.refined {
   display: flex !important;
   align-items: center !important;
@@ -57271,7 +57271,7 @@ html[data-theme="dark"] .ai-spot-answer-flow .ai-spot-inline-question-stem.label
 }
 
 
-/* === V385 — TUS action buttons hard-center alignment === */
+/* === V385 — AI TUS action buttons hard-center alignment === */
 .ai-spot-answer-flow .quiz-actions .btn,
 .ai-spot-answer-flow .answer-evaluate-btn,
 .ai-spot-answer-flow .answer-next-case-btn,
@@ -57349,9 +57349,9 @@ html[data-theme="dark"] .ai-spot-answer-flow .ai-spot-inline-question-stem.label
 }
 
 /* ==========================================================
-   KlinikIQ V388 — TUS button icon/text true center lock
+   KlinikIQ V388 — AI TUS button icon/text true center lock
    Keeps the icon + label group mathematically centered inside
-   both answer action buttons and TUS question generation buttons.
+   both answer action buttons and AI question generation buttons.
    ========================================================== */
 .ai-button-content-center,
 .quiz-action-btn-inner {
@@ -57453,7 +57453,7 @@ html[data-theme="dark"] .ai-spot-answer-flow .ai-spot-inline-question-stem.label
 }
 
 /* =========================================================
-   KLINIKIQ V389 — TUS üst bilgi sadeleştirme
+   KLINIKIQ V389 — AI TUS üst bilgi sadeleştirme
    - Yeni TUS Sorusu Üret ekranındaki TUS soru / Doğruluk / Pratik puanı kutuları JSX'ten kaldırıldı.
    - Üretilen TUS sorusu üst bilgisi tek satırlı, sade ve hizalı bir header yapısına alındı.
    ========================================================= */
@@ -57549,7 +57549,7 @@ html[data-theme="dark"] .ai-spot-simple-dot,
 }
 
 /* =========================================================
-   KLINIKIQ V392 — TUS generation status compact cleanup
+   KLINIKIQ V392 — AI TUS generation status compact cleanup
    Makes ETA / final-control / reveal states quieter, smaller and less dominant.
    Moves the live generation stage into the right-side compact status chip.
    ========================================================= */
@@ -57761,7 +57761,7 @@ html[data-theme="dark"] .ai-generation-countdown-live.ai-generation-compact-stat
 }
 
 
-/* === V393 — TUS waiting flashcards carousel arrows redesigned === */
+/* === V393 — AI waiting flashcards carousel arrows redesigned === */
 .ai-waiting-pearl-carousel-arrow {
   display: inline-flex !important;
   align-items: center !important;

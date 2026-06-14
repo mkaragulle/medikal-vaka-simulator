@@ -156,10 +156,10 @@ function sourceManifestMatches(material = {}, manifest = {}, packet = null) {
 }
 
 function getOutputSourceFingerprint(output = {}) {
-  return output?.sourceFingerprint || output?.derivedFrom?.sourceFingerprint || output?.qualityCheck?.sourceFingerprint || '';
+  return output?.sourceFingerprint || output?.generatedFrom?.sourceFingerprint || output?.qualityCheck?.sourceFingerprint || '';
 }
 
-function stampMaterialOutput(output, material = {}, packet = null) {
+function stampGeneratedOutput(output, material = {}, packet = null) {
   if (!output || typeof output !== 'object') return output;
   const sourceFingerprint = buildSourceFingerprint(material, packet);
   const activePacket = packet || buildCombinedMaterialPacket(material);
@@ -168,14 +168,14 @@ function stampMaterialOutput(output, material = {}, packet = null) {
   return {
     ...output,
     sourceFingerprint,
-    derivedFrom: {
-      ...(output.derivedFrom || {}),
+    generatedFrom: {
+      ...(output.generatedFrom || {}),
       sourceFingerprint,
       sourceSchemaVersion: KOMITE_SOURCE_SCHEMA_VERSION,
       sourceManifest,
       materialId: material.id || '',
       fileNames: files.map((file) => file.fileName || file.name || 'Materyal'),
-      createdAt: Date.now(),
+      generatedAt: Date.now(),
     },
     qualityCheck: {
       ...(output.qualityCheck || {}),
@@ -184,39 +184,39 @@ function stampMaterialOutput(output, material = {}, packet = null) {
   };
 }
 
-function stampMaterialQuestions(questions = [], material = {}, packet = null) {
+function stampGeneratedQuestions(questions = [], material = {}, packet = null) {
   const sourceFingerprint = buildSourceFingerprint(material, packet);
   const sourceManifest = buildSourceManifest(material, packet || buildCombinedMaterialPacket(material), sourceFingerprint);
   return questions.map((question) => ({
     ...question,
     sourceFingerprint,
-    derivedFrom: {
-      ...(question.derivedFrom || {}),
+    generatedFrom: {
+      ...(question.generatedFrom || {}),
       sourceFingerprint,
       sourceSchemaVersion: KOMITE_SOURCE_SCHEMA_VERSION,
       sourceManifest,
       materialId: material.id || '',
-      createdAt: Date.now(),
+      generatedAt: Date.now(),
     },
   }));
 }
 
-function isMaterialOutputStale(asset, material = {}, packet = null) {
+function isGeneratedAssetStale(asset, material = {}, packet = null) {
   if (!asset) return false;
   const expected = buildSourceFingerprint(material, packet);
   const actual = getOutputSourceFingerprint(asset);
   return !actual || actual !== expected;
 }
 
-function areMaterialQuestionsStale(material = {}, packet = null) {
+function areGeneratedQuestionsStale(material = {}, packet = null) {
   const questions = Array.isArray(material.questions) ? material.questions : [];
   if (!questions.length) return false;
   const expected = buildSourceFingerprint(material, packet);
-  const actual = material.questionsSourceFingerprint || questions[0]?.sourceFingerprint || questions[0]?.derivedFrom?.sourceFingerprint || '';
+  const actual = material.questionsSourceFingerprint || questions[0]?.sourceFingerprint || questions[0]?.generatedFrom?.sourceFingerprint || '';
   return !actual || actual !== expected;
 }
 
-function resetDerivedAssetsForSourceChange(material = {}, reason = 'Kaynak materyal değiştiği için eski hazır çalışma çıktıları temizlendi.') {
+function resetGeneratedAssetsForSourceChange(material = {}, reason = 'Kaynak materyal değiştiği için eski AI çıktıları temizlendi.') {
   return {
     ...material,
     sourceFingerprint: buildSourceFingerprint(material),
@@ -225,20 +225,20 @@ function resetDerivedAssetsForSourceChange(material = {}, reason = 'Kaynak mater
     questionsSourceFingerprint: '',
     flashcardDeck: null,
     processingStatus: buildCombinedMaterialPacket(material).files.some((file) => String(file.cleanedExtractedText || '').trim()) ? 'text-extracted' : 'metadata-ready',
-    sourceNotice: reason,
+    repairNotice: reason,
   };
 }
 
 function sanitizeLoadedKomiteMaterial(material = {}) {
   const packet = buildCombinedMaterialPacket(material);
   const sourceFingerprint = buildSourceFingerprint(material, packet);
-  const staleLesson = isMaterialOutputStale(material.lesson, material, packet);
-  const staleQuestions = areMaterialQuestionsStale(material, packet);
-  const staleDeck = isMaterialOutputStale(material.flashcardDeck, material, packet);
+  const staleLesson = isGeneratedAssetStale(material.lesson, material, packet);
+  const staleQuestions = areGeneratedQuestionsStale(material, packet);
+  const staleDeck = isGeneratedAssetStale(material.flashcardDeck, material, packet);
   if (staleLesson || staleQuestions || staleDeck) {
-    return resetDerivedAssetsForSourceChange(
+    return resetGeneratedAssetsForSourceChange(
       { ...material, sourceFingerprint },
-      'Eski hazır çalışma çıktıları kaynak parmak iziyle eşleşmediği için temizlendi.'
+      'Eski AI çıktıları kaynak parmak iziyle eşleşmediği için temizlendi.'
     );
   }
   return { ...material, sourceFingerprint };
@@ -477,7 +477,7 @@ function normalizeSourceText(material = {}) {
 
 
 
-function cleanExtractedText(text = '') {
+function cleanExtractedTextForAI(text = '') {
   const seen = new Set();
   return String(text || '')
     .split(/\n+/u)
@@ -507,7 +507,7 @@ function splitMergedExtractedTextIntoFiles(text = '', material = {}) {
     const end = index + 1 < matches.length ? matches[index + 1].index : raw.length;
     const fallbackFile = Array.isArray(material.files) ? material.files[index] : null;
     const fileName = String(match[2] || fallbackFile?.name || `Materyal ${index + 1}`).trim();
-    const cleanedExtractedText = cleanExtractedText(raw.slice(start, end));
+    const cleanedExtractedText = cleanExtractedTextForAI(raw.slice(start, end));
     return {
       fileName,
       fileType: fallbackFile?.type || getFileType(fileName),
@@ -518,8 +518,8 @@ function splitMergedExtractedTextIntoFiles(text = '', material = {}) {
 }
 
 function buildCombinedMaterialPacket(material = {}) {
-  // Source-isolation rule: when the current workspace has uploaded files,
-  // build the source packet only from the per-file extraction packets created
+  // Critical source-isolation rule: when the current workspace has uploaded files,
+  // build the AI source packet only from the per-file extraction packets created
   // for this upload batch. Do not re-split or reuse material.extractedText here,
   // because that field can contain merged display text and may preserve old session
   // content after browser/localStorage state changes.
@@ -534,9 +534,9 @@ function buildCombinedMaterialPacket(material = {}) {
         cleanedExtractedText: '',
         detectedTopics: [],
       }))
-      : [{ fileName: material.fileName || 'Ek metin', fileType: material.fileType || 'text', cleanedExtractedText: cleanExtractedText(material.extractedText || material.pastedText || ''), detectedTopics: [] }]);
+      : [{ fileName: material.fileName || 'Ek metin', fileType: material.fileType || 'text', cleanedExtractedText: cleanExtractedTextForAI(material.extractedText || material.pastedText || ''), detectedTopics: [] }]);
   const normalizedFiles = files.map((file) => {
-    const cleaned = cleanExtractedText(file.cleanedExtractedText || file.text || '');
+    const cleaned = cleanExtractedTextForAI(file.cleanedExtractedText || file.text || '');
     return {
       fileName: file.fileName || file.name || 'Materyal',
       fileType: file.fileType || file.type || getFileType(file.fileName || file.name || ''),
@@ -544,11 +544,11 @@ function buildCombinedMaterialPacket(material = {}) {
       detectedTopics: [],
     };
   });
-  const pasted = cleanExtractedText(material.pastedText || '');
-  // For uploaded-material workspaces, the source packet is limited to the current
+  const pasted = cleanExtractedTextForAI(material.pastedText || '');
+  // For uploaded-material workspaces, the AI source must be only the current
   // upload batch filePackets. Pasted text is accepted only for text-only
   // materials with no uploaded files/filePackets, preventing stale notes from
-  // previous sessions from entering disabled workspace state.
+  // previous sessions from entering the AI request.
   if (pasted && !hasCurrentFiles && !hasCurrentFilePackets) {
     normalizedFiles.push({ fileName: 'Ek ders notu', fileType: 'text', cleanedExtractedText: pasted, detectedTopics: [] });
   }
@@ -687,7 +687,8 @@ function buildSectionDepthText(section = {}, material = {}) {
     .replace(/\s+/g, ' ')
     .trim();
 
-  // Empty sections are handled honestly without padding unrelated source sentences.
+  // Never pad weak AI output with unrelated global source sentences. That caused OCR fragments from
+  // another slide/topic to leak into otherwise correct sections. Empty sections are handled honestly.
   if (merged) return merged;
   const heading = section.heading || section.title || 'Bu kavram';
   return `${heading} başlığı için kaynak metinden yeterli güvenilir açıklama çıkarılamadı.`;
@@ -722,6 +723,43 @@ function normalizeQuestionForDisplay(question = {}) {
   return { ...question, stem, question: isMeaningfullyDifferent(q, stem) ? q : '', supportingData };
 }
 
+function qualityGateLesson() {
+  return { ok: true };
+}
+
+function qualityGateQuestions(questions = []) {
+  if (!Array.isArray(questions) || questions.length !== 10) return { ok: false, reason: '10 soru üretilemedi.' };
+  const bad = questions.find((question) => !Array.isArray(question.options) || question.options.length !== 5 || !question.correctOptionId || !question.optionFeedback?.[question.correctOptionId]);
+  if (bad) return { ok: false, reason: 'Soru seçenekleri veya feedback eksik.' };
+  const lowValue = questions.filter((question) => /en uygun tanımı|nedir\??$/iu.test(question.question || '') && String(question.stem || '').length < 120);
+  if (lowValue.length > 1) return { ok: false, reason: 'Tanım düzeyinde düşük kaliteli soru fazla.' };
+  return { ok: true };
+}
+
+function qualityGateDeck(deck = {}) {
+  const cards = deck?.cards || [];
+  if (!Array.isArray(cards) || cards.length < 8) return { ok: false, reason: 'Yeterli kaliteli hap kart üretilemedi.' };
+  const metaCard = cards.find((card) => /Materyalde geçen|Bu kart|slaytta geçen|ayrıştırılan gerçek metne dayanır/iu.test(`${card.front} ${card.explanation}`));
+  if (metaCard) return { ok: false, reason: 'Meta veya kopya kart üretildi.' };
+  return { ok: true };
+}
+
+function extractKeywords(text = '', topic = '') {
+  const stop = new Set(['olan', 'için', 'ile', 'bir', 've', 'veya', 'gibi', 'daha', 'sonra', 'önce', 'olarak', 'bu', 'şu', 'çok', 'hasta', 'hastalık', 'sistem']);
+  const words = String(text || '')
+    .toLocaleLowerCase('tr')
+    .replace(/[^a-zA-ZğüşöçıİĞÜŞÖÇ0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter((word) => word.length >= 5 && !stop.has(word));
+  const counts = words.reduce((acc, word) => {
+    acc[word] = (acc[word] || 0) + 1;
+    return acc;
+  }, {});
+  const fromText = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 8).map(([word]) => word);
+  const fromTopic = String(topic || '').split(/\s+/).filter((word) => word.length >= 4);
+  return [...new Set([...fromTopic, ...fromText])].slice(0, 10);
+}
+
 function splitSourceBlocks(text = '') {
   return String(text || '')
     .split(/\n\s*\n|(?=\[(?:Sayfa|Slayt|Ana belge)[^\]]*\])/iu)
@@ -740,6 +778,64 @@ function getImportantSentences(text = '', max = 8) {
   return splitSourceBlocks(text).map((block) => truncate(block, 260)).slice(0, max);
 }
 
+function sourceDrivenSections(material, topic) {
+  const text = material.__sourceText || normalizeSourceText(material);
+  const blocks = splitSourceBlocks(text);
+  if (!blocks.length) return [];
+  return blocks.slice(0, 5).map((block, index) => {
+    const headingMatch = block.match(/^\[(.*?)\]\s*(.{0,90})/u);
+    const sourceLabel = headingMatch?.[1] || `Materyal bölümü ${index + 1}`;
+    const firstLine = block.replace(/^\[[^\]]+\]\s*/u, '').split(/[.!?]\s|\n/u)[0]?.trim();
+    const heading = firstLine && firstLine.length >= 8 && firstLine.length <= 72 ? firstLine : sourceLabel;
+    const sentences = getImportantSentences(block, 3);
+    const content = sentences.length ? sentences.join(' ') : truncate(block.replace(/^\[[^\]]+\]\s*/u, ''), 520);
+    const keywords = extractKeywords(block, topic).slice(0, 4);
+    return {
+      heading: truncate(heading, 80),
+      content,
+      mechanismFlow: keywords.length ? keywords.slice(0, 4) : [],
+      examAngle: '',
+      commonTrap: '',
+      sourceReferences: [sourceLabel],
+    };
+  });
+}
+
+function buildSourceObjectiveList(material, topic) {
+  const text = material.__sourceText || normalizeSourceText(material);
+  const sentences = getImportantSentences(text, 6);
+  if (!sentences.length) return [];
+  return sentences.map((sentence) => truncate(sentence, 170));
+}
+
+function optionFeedbackForSourceQuestion(option, correctId, target, sourceClue) {
+  if (option.id === correctId) {
+    return `Bu seçenek materyaldeki “${truncate(sourceClue, 80)}” ipucuyla doğrudan ilişkilidir ve ${target} hedefini en iyi karşılar.`;
+  }
+  return `Bu seçenek benzer bir kavramı çağrıştırabilir; ancak materyalde verilen “${truncate(sourceClue, 80)}” ipucunu ${target} açısından doğrudan açıklamaz.`;
+}
+
+
+function countMatches(text = '', pattern) {
+  return (String(text || '').match(pattern) || []).length;
+}
+
+function buildTopicProfileFromText() {
+  return { dominant: [] };
+}
+
+function getMaterialTopicProfile() {
+  return { dominant: [] };
+}
+
+function isAminoProteinMaterial() {
+  return false;
+}
+
+function inferTitleFromTopicProfile() {
+  return '';
+}
+
 function inferAcademicTitle(material = {}, packet = null) {
   if (material.inferredTitle) return material.inferredTitle;
   if (material.lesson?.inferredTitle) return material.lesson.inferredTitle;
@@ -754,6 +850,103 @@ function inferAcademicTitle(material = {}, packet = null) {
     .trim();
   return base || 'Komite Materyali';
 }
+
+function buildLocalLesson(material, packet = null) {
+  return {
+    id: createId('lesson'),
+    materialId: material.id,
+    title: cleanMaterialTitle(material) || 'Komite Ders Anlatımı',
+    shortIntro: 'AI servisi bu materyalden ders anlatımı üretemedi. Bu ekranda eski oturumdan, dosya adından veya yerel şablondan otomatik ders uydurulmaz.',
+    learningObjectives: [],
+    bigPicture: 'AI yanıtı alınamadığı için güvenilir ders anlatımı oluşturulamadı. Lütfen dosyanın okunabilir olduğundan ve AI servisinin çalıştığından emin olup tekrar deneyin.',
+    sections: [],
+    figureExplanations: [],
+    commonConfusions: [],
+    highYieldPoints: [],
+    mustKnow: [],
+    limitations: ['AI servisi yanıt vermedi veya geçerli ders şeması döndürmedi. Yerel fallback ders üretimi kapalıdır.'],
+    sourceCoverage: { filesUploadedCount: getMaterialFileCount(material, packet), filesAnalyzedCount: 0, usedFiles: [], coverageNote: 'Kaynak metin yalnızca AI servisine gönderilir; yerel şablon kullanılmaz.' },
+    qualityCheck: { usesAllFiles: false, notSlideBySlide: true, noRawOCR: true, noMeaninglessTags: true, sectionDepthAdequate: false },
+    createdAt: Date.now(),
+  };
+}
+
+function buildLocalQuestions() {
+  return [];
+}
+
+function buildLocalFlashcards(material) {
+  return {
+    id: createId('deck'),
+    deckTitle: `${cleanMaterialTitle(material)} Hap Kartları`,
+    materialId: material.id,
+    cards: [],
+  };
+}
+
+function normalizeGeneratedLessonShape(lesson = {}) {
+  const rawSections = Array.isArray(lesson.sections) && lesson.sections.length
+    ? lesson.sections
+    : (Array.isArray(lesson.lessonSections) && lesson.lessonSections.length
+      ? lesson.lessonSections
+      : (lesson.coreExplanation || []));
+  return {
+    ...lesson,
+    title: lesson.title || lesson.academicTitle || 'Komite Ders Anlatımı',
+    overview: lesson.overview || lesson.shortOverview || lesson.shortIntro || '',
+    shortIntro: lesson.shortIntro || lesson.shortOverview || lesson.overview || '',
+    bigPicture: lesson.bigPicture || '',
+    sections: rawSections.map((section) => ({
+      ...section,
+      heading: section.heading || section.title || 'Kavram',
+      content: section.content || section.teachingText || '',
+      teachingText: section.teachingText || section.content || '',
+      whyItMatters: section.whyItMatters || '',
+      examAngle: section.examAngle || section.examConnection || section.clinicalConnection || '',
+      commonTrap: section.commonTrap || section.commonMistake || '',
+    })),
+    clinicalExamRelevance: lesson.clinicalExamRelevance || lesson.clinicalOrExamRelevance || lesson.examRelevance || '',
+    highYieldPoints: lesson.highYieldPoints || lesson.highYieldSummary || [],
+    mustKnow: lesson.mustKnow || lesson.mustRemember || [],
+    figureExplanations: lesson.figureExplanations || lesson.figureTableExplanations || lesson.visualNotes || [],
+    sourceCoverage: lesson.sourceCoverage || {},
+  };
+}
+
+function normalizeGeneratedDeckShape(deck = {}, material = {}) {
+  const cleanTitle = `${cleanMaterialTitle(material)} Hap Kartları`;
+  const cards = (deck.cards || []).map((card) => ({
+    ...card,
+    front: stripGenericMeta(card.front),
+    explanation: stripGenericMeta(card.explanation),
+  })).filter((card) => card.front && card.back);
+  return { ...deck, deckTitle: cleanTitle, cards };
+}
+
+function buildMaterialAnalysisFallback(material, packet = null) {
+  return {
+    materialTitle: cleanMaterialTitle(material) || 'Komite Materyali',
+    detectedCourseOrTopic: material.course || material.committee || cleanMaterialTitle(material) || '',
+    sourceQuality: {
+      readableText: Boolean(combinedPacketToSourceText(packet || buildCombinedMaterialPacket(material))),
+      figuresDetected: false,
+      tablesDetected: false,
+      limitations: [],
+    },
+    lectureStructure: [],
+    keyConcepts: [],
+    mechanisms: [],
+    clinicalRelevance: [],
+    examRelevance: [],
+    figureTableNotes: [],
+    commonConfusions: [],
+    recommendedLessonPlan: [],
+    questionGenerationTargets: [],
+    flashcardGenerationTargets: [],
+    sourceReferences: [],
+  };
+}
+
 
 function StatusPill({ children, tone = 'neutral' }) {
   return <span className={`komite-status-pill tone-${tone}`}>{children}</span>;
@@ -1158,7 +1351,7 @@ function StartFlow({ onCreate, onCancel }) {
         catch { return { file, extraction: { ok: false, text: '', notice: `${file.name} otomatik okunamadı.` } }; }
       }));
       const filePackets = extractions.map(({ file, extraction }) => {
-        const cleanedExtractedText = cleanExtractedText(extraction.text || '');
+        const cleanedExtractedText = cleanExtractedTextForAI(extraction.text || '');
         return {
           fileName: file.name,
           fileType: getFileType(file.name),
@@ -1321,7 +1514,7 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
   const lesson = material.lesson;
   if (!lesson) {
     const hasExtractedText = combinedPacketToSourceText(buildCombinedMaterialPacket(material)).length > 120;
-    return <EmptyState title="Ders anlatımı henüz hazır değil" text={hasExtractedText ? "Dosya metni ayrıştırıldı. Bu modül şu anda aktif değil; içerik üretimi yapılmaz." : "Bu dosyadan yeterli metin çıkarılamadı. Daha okunabilir dosya yükleyebilir veya metni ek not alanına yapıştırabilirsin."} action={<LoadingPrimaryButton status={status} idleLabel="Ders anlatımı modülü aktif değil" loadingLabel="Ders anlatımı modülü aktif değiluyor…" onClick={onGenerate} />} />;
+    return <EmptyState title="Ders anlatımı henüz hazır değil" text={hasExtractedText ? "Dosya metni ayrıştırıldı. AI bu dosyadan profesyonel bir konu anlatımı oluşturur." : "Bu dosyadan yeterli metin çıkarılamadı. Daha okunabilir dosya yükleyebilir veya metni ek not alanına yapıştırabilirsin."} action={<LoadingPrimaryButton status={status} idleLabel="AI Ders Anlatımı oluştur" loadingLabel="AI Ders Anlatımı oluşturuyor…" onClick={onGenerate} />} />;
   }
 
   const sections = Array.isArray(lesson.sections) ? lesson.sections : [];
@@ -1471,7 +1664,7 @@ function QuestionsView({ material, onGenerate, onAnswer, onToggleQuestionFlag })
   useEffect(() => { if (index > questions.length - 1) setIndex(0); }, [questions.length, index]);
 
   if (!questions.length) {
-    return <EmptyState title="Soru oluşturma modülü aktif değil" text="Bu alandaki üretim akışı kaldırıldı; buton herhangi bir içerik üretmez." action={<button type="button" className="btn btn-primary" onClick={onGenerate}>Modül aktif değil</button>} />;
+    return <EmptyState title="AI soruları henüz oluşturulmadı" text="Bu materyal için 10 soruluk GoodNotes benzeri soru seti oluştur." action={<button type="button" className="btn btn-primary" onClick={onGenerate}>10 soru oluştur</button>} />;
   }
 
   const selected = active?.userAnswer;
@@ -1545,7 +1738,7 @@ function FlashcardsView({ material, onGenerate, onUpdateCard }) {
   useEffect(() => { setFlipped(false); }, [index]);
 
   if (!cards.length) {
-    return <EmptyState title="Hap kart destesi yok" text="Bu alandaki otomatik kart üretimi kaldırıldı; mevcut kartlar varsa çalışmaya devam eder." action={<button type="button" className="btn btn-primary" onClick={onGenerate}>Modül aktif değil</button>} />;
+    return <EmptyState title="Hap kart destesi yok" text="Bu materyalden aktif geri çağırma kartları oluşturabilirsin." action={<button type="button" className="btn btn-primary" onClick={onGenerate}>Hap kartları oluştur</button>} />;
   }
 
   return (
@@ -1690,17 +1883,18 @@ function ReviewCenter({ materials, activeMaterial, onOpenMaterial }) {
 
 function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMaterial }) {
   const [tab, setTab] = useState('lesson');
-  const [actionStatus, setActionStatus] = useState({ lesson: 'idle', questions: 'idle', cards: 'idle' });
-  const [actionMessage, setActionMessage] = useState({});
-  const busy = Object.values(actionStatus).find((status) => status === 'loading') ? 'loading' : '';
+  const [aiStatus, setAiStatus] = useState({ lesson: 'idle', questions: 'idle', cards: 'idle' });
+  const [aiError, setAiError] = useState({});
+  const busy = Object.values(aiStatus).find((status) => status === 'loading') ? 'loading' : '';
   const setKindStatus = (kind, status, message = '') => {
-    setActionStatus((current) => ({ ...current, [kind]: status }));
-    setActionMessage((current) => ({ ...current, [kind]: message }));
+    setAiStatus((current) => ({ ...current, [kind]: status }));
+    setAiError((current) => ({ ...current, [kind]: message }));
   };
 
-  const runDisabledAction = (kind) => {
-    setKindStatus(kind, 'error', 'Bu modül şu anda aktif değil. İşlem herhangi bir üretim, analiz veya servis çağrısı başlatmaz.');
-    window.setTimeout(() => setKindStatus(kind, 'idle', ''), 2600);
+  const runAIAction = async (kind) => {
+    if (aiStatus[kind] === 'loading') return;
+    setKindStatus(kind, 'idle', 'Bu modül şu anda aktif değil.');
+    window.setTimeout(() => setKindStatus(kind, 'idle', ''), 2400);
   };
 
   const answerQuestion = (questionId, selectedId) => {
@@ -1740,15 +1934,15 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
           <h2>{inferAcademicTitle(material)}</h2>
         </div>
       </div>
-      <InlineStatus status={Object.values(actionStatus).includes('error') ? 'error' : 'idle'} message={Object.values(actionMessage).find(Boolean) || ''} />
+      <InlineStatus status={Object.values(aiStatus).includes('error') ? 'error' : 'idle'} message={Object.values(aiError).find(Boolean) || ''} />
       <div className="komite-tabbar" role="tablist" aria-label="Materyal çalışma alanı sekmeleri">
         {STUDY_TABS.map((item) => <button key={item.id} type="button" className={tab === item.id ? 'active' : ''} onClick={() => setTab(item.id)}><Icon name={item.icon} /> {item.label}</button>)}
       </div>
       <div className="komite-tab-panel">
-        {tab === 'lesson' ? <LessonView material={material} status={actionStatus.lesson} onGenerate={() => runDisabledAction('lesson')} /> : null}
+        {tab === 'lesson' ? <LessonView material={material} status={aiStatus.lesson} onGenerate={() => runAIAction('lesson')} /> : null}
         {tab === 'figures' ? <FiguresView material={material} /> : null}
-        {tab === 'questions' ? <QuestionsView material={material} onGenerate={() => runDisabledAction('questions')} onAnswer={answerQuestion} onToggleQuestionFlag={toggleQuestionFlag} /> : null}
-        {tab === 'cards' ? <FlashcardsView material={material} onGenerate={() => runDisabledAction('cards')} onUpdateCard={updateCard} /> : null}
+        {tab === 'questions' ? <QuestionsView material={material} onGenerate={() => runAIAction('questions')} onAnswer={answerQuestion} onToggleQuestionFlag={toggleQuestionFlag} /> : null}
+        {tab === 'cards' ? <FlashcardsView material={material} onGenerate={() => runAIAction('cards')} onUpdateCard={updateCard} /> : null}
         {tab === 'review' ? <ReviewCenter materials={materials} activeMaterial={material} onOpenMaterial={onOpenMaterial} /> : null}
       </div>
     </section>
@@ -1873,7 +2067,7 @@ export default function KomiteModeWorkspace({ currentUser }) {
                 KlinikIQ <span>Komite</span>
               </h1>
               <p>
-                Komite materyallerini tek yerde topla; ders, soru, hap kart ve tekrar arayüzünü aynı panelden yönet.
+                Komite materyallerini tek yerde topla; AI destekli ders anlatımı, soru, hap kart ve tekrar akışını aynı panelden öğren.
               </p>
               <div className="home-hero-proof-row-v10 tus-hero-proof-redesign" aria-label="Klinik öğrenme özellikleri">
                 <span><Icon name="Brain" /><strong>AI Ders Anlatımı</strong></span>
