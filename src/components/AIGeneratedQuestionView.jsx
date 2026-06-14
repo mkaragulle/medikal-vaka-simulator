@@ -652,12 +652,12 @@ function AIErrorState({ error = null, onGenerateQuestion }) {
     : (error?.message || '');
   const description = errorMessage && !/AI endpoint failed|publisher quality gate|AI question generation failed/i.test(errorMessage)
     ? errorMessage
-    : 'Tüm üretim denemeleri kalite kapısından geçemedi. Sistem küçük format, dil, tekrar ve feedback sorunlarında onarım dener; yalnızca güvenli sonuç oluşmadığında bu ekran gösterilir.';
+    : 'Soru servisi teknik olarak yanıt veremedi. Bağlantı veya sunucu isteği tamamlanamadı.';
   return (
     <section className="ai-generation-state card-surface error" aria-live="polite">
       <span className="ai-generation-orb" aria-hidden="true"><Icon name="AlertTriangle" /></span>
       <div>
-        <h2>Uygun soru üretilemedi.</h2>
+        <h2>Soru oluşturma durdu.</h2>
         <p>{description}</p>
       </div>
       <button type="button" className="btn btn-primary" onClick={onGenerateQuestion}>

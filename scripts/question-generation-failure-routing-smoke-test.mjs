@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
-import {
+import { Readable } from 'node:stream';
+import handler, {
   classifyTusValidationErrors,
   fallbackQuestion,
   questionMatchesRecent,
@@ -119,5 +120,30 @@ const repairedFinalGate = runFinalFeedbackQualityGate(repaired.question);
 assert.equal(repairedPublisherGate.publishable, true, `repaired shallow question should pass publisher gate: ${repairedPublisherGate.errors.join('; ')}`);
 assert.equal(repairedFinalGate.publishable, true, `repaired shallow question should pass final feedback gate: ${repairedFinalGate.errors.join('; ')}`);
 assert.equal(repaired.question.correctAnswer, shallowFeedbackQuestion.correctAnswer, 'repair must preserve correct answer');
+
+async function callTusHandler(body = {}) {
+  const request = Readable.from([JSON.stringify(body)]);
+  request.method = 'POST';
+  return new Promise((resolve) => {
+    const response = {
+      statusCode: 200,
+      headers: {},
+      setHeader(key, value) { this.headers[key] = value; },
+      end(payload) {
+        resolve({ statusCode: this.statusCode, payload: JSON.parse(payload || '{}') });
+      },
+    };
+    void handler(request, response);
+  });
+}
+
+const originalLiveFlag = process.env.KLINIKIQ_LIVE_TUS_AI;
+process.env.KLINIKIQ_LIVE_TUS_AI = 'false';
+const disabledLiveResponse = await callTusHandler({ branchFilter: 'random', difficulty: 'Orta' });
+if (originalLiveFlag === undefined) delete process.env.KLINIKIQ_LIVE_TUS_AI;
+else process.env.KLINIKIQ_LIVE_TUS_AI = originalLiveFlag;
+assert.equal(disabledLiveResponse.statusCode, 200, 'live AI disabled should still return a curated question');
+assert.equal(disabledLiveResponse.payload.ok, true, 'live AI disabled fallback should be ok');
+assert.ok(disabledLiveResponse.payload.question?.stem, 'curated fallback should include a visible stem');
 
 console.log('question-generation-failure-routing-smoke-test: ok');

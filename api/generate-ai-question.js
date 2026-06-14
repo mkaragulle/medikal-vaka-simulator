@@ -138,33 +138,6 @@ function buildRetryQualityFeedback(failure = {}) {
   ].join(' ');
 }
 
-function buildFinalUserFailureReason(failureDetails = []) {
-  const allText = normalize(asArray(failureDetails).flatMap((failure) => [
-    failure.message,
-    ...(failure.validationErrors || []),
-    ...(failure.issues || []).map((issue) => issue.message),
-  ]).filter(Boolean).join(' | '));
-  if (/explanation may support other option|cift dogru|iki secenek|multiple correct|ayni derecede/.test(allText)) {
-    return 'Çift doğru seçenek riski giderilemedi.';
-  }
-  if (/stem correct answer conflict|kok.*cevap|cevap.*celis|conflict/.test(allText)) {
-    return 'Kök ile doğru cevap arasındaki çelişki güvenli biçimde çözülemedi.';
-  }
-  if (/correctanswer|correct answer|dogru cevap|correct-option|answer key|cevap guvenli/.test(allText)) {
-    return 'Doğru cevap güvenli belirlenemedi.';
-  }
-  if (/scientific|medical contradiction|imkans|bozuk klinik deger|tibbi|unsafe/.test(allText)) {
-    return 'Güvenli tıbbi içerik oluşturulamadı.';
-  }
-  if (/json|parse|schema|token|output|incomplete/.test(allText)) {
-    return 'Model çıktısı geçerli ve eksiksiz soru şemasına dönüştürülemedi.';
-  }
-  if (/feedback|explanation|tus language|turk|dil|repair/.test(allText)) {
-    return 'Açıklama ve seçenek feedbackleri kalite standardına güvenli biçimde tamamlanamadı.';
-  }
-  return 'Güvenli ve tek doğru cevaplı soru oluşturulamadı.';
-}
-
 function summarizeQualityFailure({ gate, legacyBlocking = [], validationBlocking = [] } = {}) {
   return [
     ...(gate?.blockingErrors || []),
@@ -2251,11 +2224,22 @@ export default async function handler(request, response) {
     }
 
     if (!envFlag('KLINIKIQ_LIVE_TUS_AI', true)) {
-      return sendJson(response, 503, {
-        ok: false,
-        error: 'Live AI generation is disabled; no learner-facing fallback question is served.',
-        manualReviewRequired: true,
-        fallback: false,
+      const question = fallbackQuestion({ branchFilter: branch, difficulty: requestedDifficulty, recentQuestionSummaries: [] });
+      question.provider = 'local-curated-question';
+      question.fallback = true;
+      question.aiMeta = {
+        ...(question.aiMeta || {}),
+        fallback: true,
+        remote: false,
+        fallbackReason: 'live-ai-disabled',
+        promptVersion: PROMPT_VERSION,
+      };
+      return sendJson(response, 200, {
+        ok: true,
+        provider: 'local-curated-question',
+        fallback: true,
+        safeFallback: true,
+        question,
       });
     }
 
@@ -2306,19 +2290,16 @@ export default async function handler(request, response) {
       }
     }
 
-  const hasBlockingFailure = failureDetails.some((failure) => failure.severity === 'blocking');
-  const safeFallbackEnabled = String(process.env.AI_ENABLE_SAFE_FALLBACK || 'false').toLowerCase() === 'true';
-  if (safeFallbackEnabled && hasBlockingFailure) {
     logFallbackTrigger({
       branch,
       difficulty: requestedDifficulty,
       reason: errors[0] || 'unknown',
       failures: failureDetails.slice(0, 3),
     });
-    const question = fallbackQuestion({ branchFilter: branch, difficulty: requestedDifficulty, recentQuestionSummaries });
+    const question = fallbackQuestion({ branchFilter: branch, difficulty: requestedDifficulty, recentQuestionSummaries: [] });
     const fallbackGate = runQuestionQualityGate(question, { version: PROMPT_VERSION });
     const fallbackFinalGate = runFinalFeedbackQualityGate(question, { version: `${PROMPT_VERSION}:final-feedback`, baseVersion: PROMPT_VERSION });
-    const fallbackValidation = validateQuestion(question, recentQuestionSummaries);
+    const fallbackValidation = validateQuestion(question, []);
     if (!fallbackGate.publishable || !fallbackFinalGate.publishable || !fallbackValidation.ok || legacyBlockingReviewIssues(question).length) {
       logFallbackTrigger({
         branch,
@@ -2332,7 +2313,7 @@ export default async function handler(request, response) {
         fallback: false,
         safeFallback: false,
         manualReviewRequired: true,
-        error: 'Safe fallback was suppressed because it did not pass the publisher quality gate.',
+        error: 'Yerel güvenli soru bankası kalite kontrolünden geçemedi.',
         attempts: errors.slice(0, 3),
         attemptDetails: failureDetails.slice(0, 3),
         fallbackQualityGate: {
@@ -2378,43 +2359,6 @@ export default async function handler(request, response) {
       attempts: errors.slice(0, 3),
       attemptDetails: failureDetails.slice(0, 3),
       question,
-    });
-  }
-  if (safeFallbackEnabled && !hasBlockingFailure) {
-    logFallbackTrigger({
-      branch,
-      difficulty: requestedDifficulty,
-      reason: 'safe-fallback-skipped-repairable-only',
-      failures: failureDetails.slice(0, 3),
-    });
-  }
-
-    const failureStageSummary = failureDetails.reduce((acc, failure) => {
-      Object.entries(failure.stages || {}).forEach(([stage, counts]) => {
-        acc[stage] = acc[stage] || { warning: 0, repairable: 0, blocking: 0 };
-        acc[stage].warning += counts.warning || 0;
-        acc[stage].repairable += counts.repairable || 0;
-        acc[stage].blocking += counts.blocking || 0;
-      });
-      return acc;
-    }, {});
-    const userError = buildFinalUserFailureReason(failureDetails);
-    logQuestionGenerationGate({
-      branch,
-      difficulty: requestedDifficulty,
-      finalFailure: true,
-      hasBlockingFailure,
-      stages: failureStageSummary,
-      attempts: failureDetails.length,
-    });
-    return sendJson(response, 422, {
-      ok: false,
-      error: userError,
-      manualReviewRequired: true,
-      fallback: false,
-      attempts: errors.slice(0, 4),
-      attemptDetails: failureDetails.slice(0, 4),
-      stageSummary: failureStageSummary,
     });
   });
 }
