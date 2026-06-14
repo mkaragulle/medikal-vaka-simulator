@@ -8,6 +8,7 @@ import handler, {
 } from '../api/generate-ai-question.js';
 import { runFinalFeedbackQualityGate } from '../server/lib/final-feedback-quality-gate.js';
 import { runQuestionQualityGate } from '../server/lib/question-quality-gate.js';
+import { createAIQuestion } from '../src/services/aiQuestionService.js';
 
 const language = classifyTusValidationErrors([
   'bozuk Türkçe veya makine çevirisi klinik ifade var',
@@ -145,5 +146,40 @@ else process.env.KLINIKIQ_LIVE_TUS_AI = originalLiveFlag;
 assert.equal(disabledLiveResponse.statusCode, 200, 'live AI disabled should still return a curated question');
 assert.equal(disabledLiveResponse.payload.ok, true, 'live AI disabled fallback should be ok');
 assert.ok(disabledLiveResponse.payload.question?.stem, 'curated fallback should include a visible stem');
+
+const clientFallbackResponse = await createAIQuestion({ branchFilter: 'random', difficulty: 'Orta' });
+assert.equal(clientFallbackResponse.ok, true, 'client should return a local question when remote endpoint is unavailable');
+assert.equal(clientFallbackResponse.fallback, true, 'client unavailable remote path should be marked as fallback');
+assert.ok(clientFallbackResponse.question?.stem, 'client fallback should include a visible stem');
+for (const id of ['A', 'B', 'C', 'D', 'E']) {
+  const feedback = clientFallbackResponse.question?.optionFeedback?.[id] || clientFallbackResponse.question?.wrongOptionFeedback?.[id] || '';
+  assert.ok(feedback.split(/[.!?]/).filter(Boolean).length >= 2, `client fallback feedback ${id} should be instructional`);
+}
+
+const originalWindow = globalThis.window;
+const originalFetch = globalThis.fetch;
+globalThis.window = {
+  setTimeout: globalThis.setTimeout,
+  clearTimeout: globalThis.clearTimeout,
+  localStorage: {
+    getItem: () => null,
+    setItem: () => undefined,
+    removeItem: () => undefined,
+  },
+};
+globalThis.fetch = async () => {
+  throw new Error('simulated network failure');
+};
+try {
+  const clientNetworkFailureResponse = await createAIQuestion({ branchFilter: 'random', difficulty: 'Orta' });
+  assert.equal(clientNetworkFailureResponse.ok, true, 'client fetch failure should still return a local question');
+  assert.equal(clientNetworkFailureResponse.fallback, true, 'client fetch failure should be marked as fallback');
+  assert.ok(clientNetworkFailureResponse.question?.stem, 'client network fallback should include a visible stem');
+} finally {
+  if (originalWindow === undefined) delete globalThis.window;
+  else globalThis.window = originalWindow;
+  if (originalFetch === undefined) delete globalThis.fetch;
+  else globalThis.fetch = originalFetch;
+}
 
 console.log('question-generation-failure-routing-smoke-test: ok');

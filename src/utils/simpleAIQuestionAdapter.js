@@ -487,6 +487,71 @@ const FALLBACK_BANK = [
   },
 ];
 
+function buildFallbackOptionFeedback(item = {}) {
+  const optionTexts = Object.fromEntries((item.options || []).map((option) => [option.id, option.text]));
+  const correct = optionTexts[item.correctAnswer] || '';
+  if (/Hipotonik hiponatremi/iu.test(correct)) {
+    return {
+      A: 'Hipotonik hiponatremi, serum sodyum düşüklüğüne düşük serum osmolalitesinin eşlik ettiği gerçek hiponatremi tablosudur. Bu olguda sodyumun 122 mEq/L ve osmolalitenin düşük verilmesi doğru seçeneği doğrudan destekler.',
+      B: 'Hipertonik hiponatremi genellikle belirgin hiperglisemi veya mannitol gibi etkili ozmotik solütler varlığında düşünülür. Kökte serum osmolalitesi düşük olduğu için bu mekanizma bu olgudaki laboratuvar paternini açıklamaz.',
+      C: 'İzotonik psödohiponatremi, ölçüm artefaktı veya belirgin lipid-protein yüksekliği gibi durumlarda osmolalitenin genellikle normal kaldığı tablodur. Bu soruda osmolalitenin düşük verilmesi psödohiponatremiden çok hipotonik hiponatremiyi öne çıkarır.',
+      D: 'Hipernatremik dehidratasyonda su kaybı baskındır ve serum sodyumunun yüksek olması beklenir. Bu hastada sodyum düşük olduğu için seçenek mevcut elektrolit paterninin ters yönünde kalır.',
+      E: 'Primer hiperkalemi potasyum yüksekliği ve buna bağlı kardiyak-elektrofizyolojik risklerle ilişkilidir. Soruda karar verdiren veri potasyum değil sodyum-osmolalite ilişkisi olduğu için bu seçenek doğru hedef değildir.',
+    };
+  }
+  if (/Perfüzyon|Perf/u.test(correct)) {
+    return {
+      A: 'Perfüzyon ve hidrasyon durumu, ateşli ve halsiz çocukta acil triyajı belirleyen temel klinik önceliktir. Bu olguda uzamış kapiller dolum, taşikardi ve turgor azalması dolaşım-hidrasyon değerlendirmesini doğrudan destekler.',
+      B: 'Uzun dönem büyüme izlemi sağlam çocuk takibi ve kronik sorunlarda önemlidir. Ancak bu olguda akut ateş, halsizlik ve perfüzyon bozukluğu bulguları varken ilk karar büyüme izlemi değil acil stabilite değerlendirmesidir.',
+      C: 'Rutin aşı takvimi koruyucu pediatri uygulamalarının parçasıdır. Bu hastada akut genel durum değişikliği ve dehidratasyon-perfüzyon bulguları verildiği için aşı planı ilk klinik öncelik olmaz.',
+      D: 'Elektif dermatoloji değerlendirmesi acil dolaşım veya hidrasyon sorunu olmayan deri yakınmalarında planlanabilir. Kökte deri lezyonu değil kapiller dolum uzaması ve turgor azalması verildiğinden bu seçenek olgunun karar noktasını karşılamaz.',
+      E: 'Okul çağı psikososyal taraması koruyucu sağlık ve gelişim izlemi bağlamında değerlidir. Bu olguda akut ateşli hastalık ve dolaşım-hidrasyon bulguları ön planda olduğundan acil yaklaşımı açıklamaz.',
+    };
+  }
+  if (/İlac|Ilac|etki mekanizmas/iu.test(correct)) {
+    return {
+      A: 'İlacın etki mekanizması ile yakınmanın başlama zamanını birlikte yorumlamak advers etki nedenselliğinin temelidir. Bu olguda semptomların tedavi sonrası başlaması ve klinik tablonun beklenen farmakolojik etkiyle ilişkili olması bu seçeneği destekler.',
+      B: 'Her ilacı aynı yan etki profiline sahip kabul etmek farmakolojik seçiciliği ve hedef reseptör farklarını yok sayar. Bu olguda belirli bir tedavi sonrası belirli mekanizmayla uyumlu yakınma geliştiği için genelleyici yaklaşım doğru değildir.',
+      C: 'Doz ve başlangıç zamanı advers etki olasılığını değerlendirmede kritik bilgiler arasındadır. Kökte yakınmanın ilaç başlandıktan sonra ortaya çıktığı vurgulandığı için bu bilgileri dışlamak klinik akıl yürütmeyi bozar.',
+      D: 'Klinik yakınmayı ilaç öyküsünden bağımsız yorumlamak ilaç advers etkisini kaçırma riski taşır. Bu olguda semptom-zaman ilişkisi açıkça verildiğinden ilaç öyküsü kararın merkezinde olmalıdır.',
+      E: 'Bazı ilaç yan etkileri laboratuvarla desteklenebilir, ancak advers etki şüphesi yalnızca laboratuvar varlığına bağlanmaz. Bu soruda klinik zamanlama ve mekanizma ilişkisi yeterli karar verdirici veri olduğu için bu seçenek fazla dar bir yaklaşımdır.',
+    };
+  }
+  if (/Hipotonik hiponatremi/iu.test(correct)) {
+    return {
+      A: 'Hipotonik hiponatremi, serum sodyum düşüklüğüne düşük serum osmolalitesinin eşlik ettiği gerçek hiponatremi tablosudur. Bu olguda sodyumun 122 mEq/L ve osmolalitenin düşük verilmesi doğru seçeneği doğrudan destekler.',
+      B: 'Hipertonik hiponatremi genellikle belirgin hiperglisemi veya mannitol gibi etkili ozmotik solütler varlığında düşünülür. Kökte serum osmolalitesi düşük olduğu için bu mekanizma bu olgudaki laboratuvar paternini açıklamaz.',
+      C: 'İzotonik psödohiponatremi, ölçüm artefaktı veya belirgin lipid/protein yüksekliği gibi durumlarda osmolalitenin genellikle normal kaldığı tablodur. Bu soruda osmolalitenin düşük verilmesi psödohiponatremiden çok hipotonik hiponatremiyi öne çıkarır.',
+      D: 'Hipernatremik dehidratasyonda su kaybı baskındır ve serum sodyumunun yüksek olması beklenir. Bu hastada sodyum düşük olduğu için seçenek mevcut elektrolit paterninin ters yönünde kalır.',
+      E: 'Primer hiperkalemi potasyum yüksekliği ve buna bağlı kardiyak-elektrofizyolojik risklerle ilişkilidir. Soruda karar verdiren veri potasyum değil sodyum-osmolalite ilişkisi olduğu için bu seçenek doğru hedef değildir.',
+    };
+  }
+  if (/Perfüzyon|PerfÃ¼zyon/iu.test(correct)) {
+    return {
+      A: 'PerfÃ¼zyon ve hidrasyon durumu, ateÅŸli ve halsiz Ã§ocukta acil triyajÄ± belirleyen temel klinik Ã¶nceliktir. Bu olguda uzamÄ±ÅŸ kapiller dolum, taÅŸikardi ve turgor azalmasÄ± dolaÅŸÄ±m-hidrasyon deÄŸerlendirmesini doÄŸrudan destekler.',
+      B: 'Uzun dÃ¶nem bÃ¼yÃ¼me izlemi saÄŸlam Ã§ocuk takibi ve kronik sorunlarda Ã¶nemlidir. Ancak bu olguda akut ateÅŸ, halsizlik ve perfÃ¼zyon bozukluÄŸu bulgularÄ± varken ilk karar bÃ¼yÃ¼me izlemi deÄŸil acil stabilite deÄŸerlendirmesidir.',
+      C: 'Rutin aÅŸÄ± takvimi koruyucu pediatri uygulamalarÄ±nÄ±n parÃ§asÄ±dÄ±r. Bu hastada akut genel durum deÄŸiÅŸikliÄŸi ve dehidratasyon/perfÃ¼zyon bulgularÄ± verildiÄŸi iÃ§in aÅŸÄ± planÄ± ilk klinik Ã¶ncelik olmaz.',
+      D: 'Elektif dermatoloji deÄŸerlendirmesi acil dolaÅŸÄ±m veya hidrasyon sorunu olmayan deri yakÄ±nmalarÄ±nda planlanabilir. KÃ¶kte deri lezyonu deÄŸil kapiller dolum uzamasÄ± ve turgor azalmasÄ± verildiÄŸinden bu seÃ§enek olgunun karar noktasÄ±nÄ± karÅŸÄ±lamaz.',
+      E: 'Okul Ã§aÄŸÄ± psikososyal taramasÄ± koruyucu saÄŸlÄ±k ve geliÅŸim izlemi baÄŸlamÄ±nda deÄŸerlidir. Bu olguda akut ateÅŸli hastalÄ±k ve dolaÅŸÄ±m/hidrasyon bulgularÄ± Ã¶n planda olduÄŸundan acil yaklaÅŸÄ±mÄ± aÃ§Ä±klamaz.',
+    };
+  }
+  if (/etki mekanizmas/iu.test(correct)) {
+    return {
+      A: 'Ä°lacÄ±n etki mekanizmasÄ± ile yakÄ±nmanÄ±n baÅŸlama zamanÄ±nÄ± birlikte yorumlamak advers etki nedenselliÄŸinin temelidir. Bu olguda semptomlarÄ±n tedavi sonrasÄ± baÅŸlamasÄ± ve klinik tablonun beklenen farmakolojik etkiyle iliÅŸkili olmasÄ± bu seÃ§eneÄŸi destekler.',
+      B: 'Her ilacÄ± aynÄ± yan etki profiline sahip kabul etmek farmakolojik seÃ§iciliÄŸi ve hedef reseptÃ¶r farklarÄ±nÄ± yok sayar. Bu olguda belirli bir tedavi sonrasÄ± belirli mekanizmayla uyumlu yakÄ±nma geliÅŸtiÄŸi iÃ§in genelleyici yaklaÅŸÄ±m doÄŸru deÄŸildir.',
+      C: 'Doz ve baÅŸlangÄ±Ã§ zamanÄ± advers etki olasÄ±lÄ±ÄŸÄ±nÄ± deÄŸerlendirmede kritik bilgiler arasÄ±ndadÄ±r. KÃ¶kte yakÄ±nmanÄ±n ilaÃ§ baÅŸlandÄ±ktan sonra ortaya Ã§Ä±ktÄ±ÄŸÄ± vurgulandÄ±ÄŸÄ± iÃ§in bu bilgileri dÄ±ÅŸlamak klinik akÄ±l yÃ¼rÃ¼tmeyi bozar.',
+      D: 'Klinik yakÄ±nmayÄ± ilaÃ§ Ã¶ykÃ¼sÃ¼nden baÄŸÄ±msÄ±z yorumlamak ilaÃ§ advers etkisini kaÃ§Ä±rma riski taÅŸÄ±r. Bu olguda semptom-zaman iliÅŸkisi aÃ§Ä±kÃ§a verildiÄŸinden ilaÃ§ Ã¶ykÃ¼sÃ¼ kararÄ±n merkezinde olmalÄ±dÄ±r.',
+      E: 'BazÄ± ilaÃ§ yan etkileri laboratuvarla desteklenebilir, ancak advers etki ÅŸÃ¼phesi yalnÄ±zca laboratuvar varlÄ±ÄŸÄ±na baÄŸlanmaz. Bu soruda klinik zamanlama ve mekanizma iliÅŸkisi yeterli karar verdirici veri olduÄŸu iÃ§in bu seÃ§enek fazla dar bir yaklaÅŸÄ±mdÄ±r.',
+    };
+  }
+  return Object.fromEntries((item.options || []).map((option) => [
+    option.id,
+    option.id === item.correctAnswer
+      ? `${option.text} seÃ§eneÄŸi, kÃ¶kte verilen klinik veri ile en doÄŸrudan iliÅŸkili karar noktasÄ±nÄ± temsil eder. Bu olguda verilen bulgular birlikte yorumlandÄ±ÄŸÄ±nda en gÃ¼venli ve tek en iyi cevap bu seÃ§enektir.`
+      : `${option.text} bazÄ± klinik baÄŸlamlarda ayÄ±rÄ±cÄ± tanÄ± veya karar seÃ§eneÄŸi olabilir. Bu olguda kÃ¶kte verilen ana bulgular doÄŸru seÃ§eneÄŸin karar noktasÄ±nÄ± daha doÄŸrudan desteklediÄŸi iÃ§in bu alternatif geri planda kalÄ±r.`,
+  ]));
+}
+
 export function createSimpleFallbackQuestion({ branchFilter = 'random', difficulty = 'Orta', recentQuestionSummaries = [] } = {}) {
   const normalizedBranch = normalizeForCompare(branchFilter);
   const candidates = FALLBACK_BANK.filter((item) => normalizedBranch === 'random' || normalizedBranch === 'rastgele' || normalizeForCompare(item.relatedBranch).includes(normalizedBranch) || normalizedBranch.includes(normalizeForCompare(item.relatedBranch)));
@@ -494,5 +559,6 @@ export function createSimpleFallbackQuestion({ branchFilter = 'random', difficul
   const recentCorrectAnswers = new Set(asArray(recentQuestionSummaries).map((item) => normalizeForCompare(item.correct || item.correctAnswer || item.correctAnswerText || '')));
   const selected = pool.find((item) => !recentCorrectAnswers.has(normalizeForCompare(item.options?.find?.((option) => option.id === item.correctAnswer)?.text || item.correctAnswer || ''))) || pool[Math.floor(Math.random() * pool.length)];
   const selectedDifficulty = normalizeDifficulty(difficulty);
-  return normalizeSimpleAIQuestion({ ...selected, difficulty: selectedDifficulty, id: `ai-spot-fallback-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, { source: 'local-safe-fallback', provider: 'local-safe-fallback', remote: false, fallback: true, branchFilter, difficulty: selectedDifficulty });
+  const optionFeedback = selected.optionFeedback || buildFallbackOptionFeedback(selected);
+  return normalizeSimpleAIQuestion({ ...selected, optionFeedback, wrongOptionFeedback: optionFeedback, difficulty: selectedDifficulty, id: `ai-spot-fallback-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, { source: 'local-safe-fallback', provider: 'local-safe-fallback', remote: false, fallback: true, branchFilter, difficulty: selectedDifficulty });
 }
