@@ -56,7 +56,7 @@ function classifyTusValidationError(message = '') {
     action = 'repair_or_regenerate_with_more_output_budget';
   } else if (/branch|stem eksik|question net|tam 5|se[cÃ§]enek yok|correctanswer|options-not-five|correct-answer-id-invalid|correct-answer-text-missing/.test(text)) {
     stage = 'schema';
-    severity = /branch eksik|stem eksik|correctanswer/.test(text) ? 'blocking' : 'repairable';
+    severity = /correctanswer|correct-answer-id-invalid|correct-answer-text-missing/.test(text) ? 'blocking' : 'repairable';
     action = severity === 'blocking' ? 'regenerate' : 'repair_schema';
   } else if (/imkans|bozuk klinik de[gÄ]er|clinical value|medical contradiction|stem correct answer conflict|celiski|conflict/.test(text)) {
     stage = 'scientific_accuracy';
@@ -64,8 +64,8 @@ function classifyTusValidationError(message = '') {
     action = 'regenerate';
   } else if (/unsupported|grounding|kritik|stemde|kanit zinciri|evidence|post answer data/.test(text)) {
     stage = 'medical_grounding';
-    severity = /unsupported|global quality reject|reject/.test(text) ? 'blocking' : 'repairable';
-    action = severity === 'blocking' ? 'regenerate' : 'repair';
+    severity = 'repairable';
+    action = 'repair';
   } else if (/answer leak|dogru cevabi ele|cevabi fazla ele|objective direction/.test(text)) {
     stage = 'answer_leak';
     severity = 'blocking';
@@ -1357,6 +1357,7 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
     const stemOverlap = tokenSimilarity(stemNorm, recentStem);
     const targetOverlap = tokenSimilarity(repeatTargetNorm, recentTargetNorm);
     const sameOptionSet = repeatOptionSetNorm && recentOptionSet && repeatOptionSetNorm === recentOptionSet;
+    if (correctNorm && recentCorrect === correctNorm && stemOverlap < 0.72) return;
     if (correctNorm && recentCorrect === correctNorm && sameOptionSet && Math.max(stemOverlap, targetOverlap) >= 0.72) errors.push('yakÄ±n geÃ§miÅŸte aynÄ± doÄŸru cevap ve seÃ§enek seti var');
     if (stemNorm.length > 100 && recentStem.length > 100 && stemOverlap >= 0.86) errors.push('yakÄ±n geÃ§miÅŸte aynÄ± soru kÃ¶kÃ¼ var');
     if (sameBranch && correctNorm && recentCorrect === correctNorm && repeatTargetNorm && recentTargetNorm && targetOverlap >= 0.9 && stemOverlap >= 0.45) errors.push('yakÄ±n geÃ§miÅŸte aynÄ± Ã¶ÄŸrenme hedefi var');
@@ -2123,8 +2124,7 @@ export function questionMatchesRecent(question = {}, recentQuestionSummaries = [
     const sameAnswer = correct && itemCorrect && correct === itemCorrect;
     const sameOptions = options && itemOptions && options === itemOptions;
     if (stem.length > 100 && itemStem.length > 100 && stemOverlap >= 0.86) return true;
-    if (sameAnswer && sameOptions && Math.max(stemOverlap, targetOverlap) >= 0.72) return true;
-    if (sameAnswer && targetOverlap >= 0.9 && stemOverlap >= 0.45) return true;
+    if (sameAnswer && sameOptions && stemOverlap >= 0.72) return true;
     return false;
   });
 }
@@ -2213,7 +2213,7 @@ export default async function handler(request, response) {
     }
 
     const cachedPayload = await getDurableCachedOutput(oneShotCacheKey);
-    if (cachedPayload?.question && !questionMatchesRecent(cachedPayload.question, recentQuestionSummaries)) {
+    if (cachedPayload?.question && !cachedPayload.question.fallback && !questionMatchesRecent(cachedPayload.question, recentQuestionSummaries)) {
       const cachedGate = runQuestionQualityGate(cachedPayload.question, { version: PROMPT_VERSION });
       const cachedFinalGate = runFinalFeedbackQualityGate(cachedPayload.question, { version: `${PROMPT_VERSION}:final-feedback`, baseVersion: PROMPT_VERSION });
       const cachedValidation = validateQuestion(cachedPayload.question, recentQuestionSummaries);
@@ -2295,6 +2295,10 @@ export default async function handler(request, response) {
       difficulty: requestedDifficulty,
       reason: errors[0] || 'unknown',
       failures: failureDetails.slice(0, 3),
+      normalAttempts: remoteAttempts,
+      repairRegenerationUsed: repairExtensionsUsed,
+      blockingRegenerationUsed: blockingExtensionsUsed,
+      safeFallbackPolicy: 'last-resort-after-normal-repair-and-regeneration',
     });
     const question = fallbackQuestion({ branchFilter: branch, difficulty: requestedDifficulty, recentQuestionSummaries: [] });
     const fallbackGate = runQuestionQualityGate(question, { version: PROMPT_VERSION });
@@ -2306,6 +2310,10 @@ export default async function handler(request, response) {
         difficulty: requestedDifficulty,
         reason: 'local-safe-fallback-suppressed-by-quality-gate',
         failures: [...fallbackGate.errors, ...fallbackFinalGate.errors, ...(fallbackValidation.errors || [])],
+        normalAttempts: remoteAttempts,
+        repairRegenerationUsed: repairExtensionsUsed,
+        blockingRegenerationUsed: blockingExtensionsUsed,
+        safeFallbackPolicy: 'last-resort-after-normal-repair-and-regeneration',
       });
       return sendJson(response, 422, {
         ok: false,
@@ -2348,6 +2356,10 @@ export default async function handler(request, response) {
       difficulty: requestedDifficulty,
       reason: 'local-safe-fallback-passed-quality-gate',
       failures: failureDetails.slice(0, 3),
+      normalAttempts: remoteAttempts,
+      repairRegenerationUsed: repairExtensionsUsed,
+      blockingRegenerationUsed: blockingExtensionsUsed,
+      safeFallbackPolicy: 'last-resort-after-normal-repair-and-regeneration',
     });
     return sendJson(response, 200, {
       ok: true,

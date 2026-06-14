@@ -371,21 +371,21 @@ function validateFrontendCompatibility(question = {}) {
 }
 
 const BLOCKING_ERROR_PATTERNS = [
-  /^question-stem-missing-or-too-thin$/,
   /^options-not-five$/,
   /^correct-answer-id-invalid$/,
   /^correct-answer-text-missing$/,
   /^answer-leak-in-stem$/,
   /^explanation-may-support-other-option:/,
   /^correct-option-feedback-contradicts-answer$/,
-  /^explanation-to-stem-grounding:/,
-  /^truncated-text:/,
   /^stem-sufficiency-failed:no-cues$/,
 ];
 
 const REPAIRABLE_ERROR_PATTERNS = [
+  /^question-stem-missing-or-too-thin$/,
   /^question-target-missing$/,
   /^explanation-missing-or-too-thin$/,
+  /^explanation-to-stem-grounding:/,
+  /^truncated-text:/,
   /^option-feedback-missing:/,
   /^option-feedback-placeholder-or-weak:/,
   /^option-feedback-broken-sentence:/,

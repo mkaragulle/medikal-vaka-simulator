@@ -81,7 +81,7 @@ expectFinalFail(clone({
 
 expectFinalFail(clone({
   explanation: 'Hastada trombosit sayisinin 18.000/mm3 olmasi immun trombositopeniyi destekler. Bu laboratuvar paterninde hiponatremi ana karar noktasi degildir.',
-}), 'base-blocking:explanation-to-stem-grounding', 'absent lab grounding');
+}), 'base-repairable:explanation-to-stem-grounding', 'absent lab grounding');
 
 const broken = clone({
   optionFeedback: {
@@ -98,8 +98,8 @@ assert.doesNotMatch(repaired.question.optionFeedback.E, /\bDa\b/, 'orphan connec
 
 const truncated = expectFinalFail(clone({
   explanation: 'Dusuk sodyum ve dusuk osmolalite hipotonik hiponatremiyi destekler...',
-}), 'base-blocking:truncated-text', 'truncated explanation');
-assert.equal(truncated.decision, 'blocked', 'truncated output should block cache/publish');
+}), 'base-repairable:truncated-text', 'truncated explanation');
+assert.equal(truncated.decision, 'repair_required', 'truncated output should trigger repair before cache/publish');
 
 const applied = applyFinalFeedbackQualityGate(validQuestion);
 assert.equal(applied.gate.publishable, true, 'apply helper should keep valid question publishable');

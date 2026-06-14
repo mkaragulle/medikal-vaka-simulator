@@ -136,7 +136,12 @@ async function fetchOneRemoteQuestion({ previousQuestionId, branchFilter, diffic
 
     let payload = null;
     try { payload = await response.json(); } catch { payload = null; }
-    if (!response.ok || !payload?.ok) throw new Error(getPayloadError(payload, response.status));
+    if (!response.ok || !payload?.ok) {
+      const error = new Error(getPayloadError(payload, response.status));
+      error.status = response.status;
+      error.payload = payload;
+      throw error;
+    }
 
     const rawQuestion = payload.question || payload;
     const isFallback = Boolean(payload.fallback || payload.safeFallback || rawQuestion.fallback || String(payload.provider || rawQuestion.provider || '').toLowerCase().includes('fallback'));
@@ -268,6 +273,9 @@ export async function createAIQuestion({ previousQuestionId = null, branchFilter
     const recoveredPrefetch = await waitForActivePrefetch({ branchFilter, difficulty, context, timeoutMs: FALLBACK_GRACE_WAIT_MS });
     if (recoveredPrefetch?.ok) return { ...recoveredPrefetch, source: recoveredPrefetch.source || 'client-prefetch-cache', usedRemoteAI: true, showFallbackNotice: false };
 
+    if (error?.status === 422 || error?.payload?.manualReviewRequired) {
+      return { ok: false, question: null, source: 'server-quality-rejection', usedRemoteAI: false, fallback: false, showFallbackNotice: false, error };
+    }
     return createClientFallback({ branchFilter, difficulty, context, reason: error });
   }
 

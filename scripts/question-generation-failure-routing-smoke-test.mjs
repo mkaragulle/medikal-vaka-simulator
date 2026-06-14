@@ -38,6 +38,13 @@ assert.equal(tokenOutput.blockingErrors.length, 0, 'token/JSON truncation should
 assert.equal(tokenOutput.repairableErrors.length, 2, 'token/JSON truncation should trigger repair/regeneration');
 assert.ok(tokenOutput.issues.every((issue) => issue.stage === 'json_schema_or_token_output'), 'token/JSON stage should be logged separately');
 
+const grounding = classifyTusValidationErrors([
+  'explanation-to-stem-grounding:laboratory_data',
+]);
+assert.equal(grounding.blockingErrors.length, 0, 'grounding mismatch should be repaired before safe fallback');
+assert.equal(grounding.repairableErrors.length, 1, 'grounding mismatch should be repairable');
+assert.ok(grounding.issues.some((issue) => issue.stage === 'medical_grounding'), 'grounding stage should be logged');
+
 const baseQuestion = {
   id: 'new-question',
   relatedBranch: 'İç Hastalıkları',
@@ -175,6 +182,15 @@ try {
   assert.equal(clientNetworkFailureResponse.ok, true, 'client fetch failure should still return a local question');
   assert.equal(clientNetworkFailureResponse.fallback, true, 'client fetch failure should be marked as fallback');
   assert.ok(clientNetworkFailureResponse.question?.stem, 'client network fallback should include a visible stem');
+
+  globalThis.fetch = async () => ({
+    ok: false,
+    status: 422,
+    json: async () => ({ ok: false, manualReviewRequired: true, error: 'safe fallback failed quality gate' }),
+  });
+  const clientQualityRejection = await createAIQuestion({ branchFilter: 'random', difficulty: 'Orta' });
+  assert.equal(clientQualityRejection.ok, false, 'server manual-review rejection should not be hidden by client fallback');
+  assert.equal(clientQualityRejection.fallback, false, 'server manual-review rejection should not become local fallback');
 } finally {
   if (originalWindow === undefined) delete globalThis.window;
   else globalThis.window = originalWindow;
