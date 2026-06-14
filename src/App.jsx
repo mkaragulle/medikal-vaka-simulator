@@ -19,6 +19,7 @@ import { scoreAttempt, calculateAccuracy } from './utils/scoring.js';
 import { pickRandom, shuffleArray } from './utils/randomize.js';
 import { localBackend } from './services/localBackend.js';
 import { isGoogleAuthConfigured, signInWithGoogle } from './services/googleAuth.js';
+import { generateTusQuestion, TUS_GENERATION_ERROR_MESSAGE } from './services/tusQuestionApi.js';
 
 const loadCasePlayer = () => import('./components/CasePlayer.jsx');
 const loadInvestigationPanel = () => import('./components/InvestigationPanel.jsx');
@@ -47,7 +48,6 @@ const CURRENT_USER_STORAGE_KEY = 'klinikiq-auth-current-user-v1';
 const PRODUCT_MODE_STORAGE_KEY = 'klinikiq-product-mode-v1';
 const SOLVED_CASES_STORAGE_KEY = 'klinikiq-solved-cases-v1';
 const BRANCH_DIFFICULTY_OPTIONS = ['Kolay', 'Orta', 'Zor', 'Acil'];
-const TUS_MODULE_INACTIVE_MESSAGE = 'Soru üretim modülü bu sürümde aktif değildir.';
 const STATIC_TUS_BRANCH_OPTIONS = [
   'Rastgele',
   'Çocuk Sağlığı ve Hastalıkları',
@@ -538,6 +538,7 @@ function App() {
   const [branchRouteTransition, setBranchRouteTransition] = useState(null);
   const branchRouteTimers = useRef([]);
   const tusQuestionTimer = useRef(null);
+  const tusQuestionAbortController = useRef(null);
   const latestTusQuestionRequestId = useRef(0);
   const isDemoUser = isDemoAccount(currentUser);
 
@@ -574,6 +575,10 @@ function App() {
 
   function clearTusQuestionTimer() {
     latestTusQuestionRequestId.current += 1;
+    if (tusQuestionAbortController.current) {
+      tusQuestionAbortController.current.abort();
+      tusQuestionAbortController.current = null;
+    }
     if (tusQuestionTimer.current) {
       window.clearTimeout(tusQuestionTimer.current);
       tusQuestionTimer.current = null;
@@ -1250,19 +1255,6 @@ function App() {
   }, [addWrongAnswer, examState, markCaseSolved, sessionStats.streak]);
 
 
-  const showTusGeneratorInactiveMessage = useCallback(() => {
-    clearTusQuestionTimer();
-    latestTusQuestionRequestId.current += 1;
-    setTusPracticeState((current) => ({
-      ...current,
-      active: true,
-      question: null,
-      loading: false,
-      error: null,
-      inactiveMessage: TUS_MODULE_INACTIVE_MESSAGE,
-    }));
-  }, []);
-
   const handleStartTusGeneratorModule = useCallback(() => {
     clearTusQuestionTimer();
     latestTusQuestionRequestId.current += 1;
@@ -1280,9 +1272,53 @@ function App() {
     scrollToTopSmart({ smooth: false });
   }, [closePearlStudy]);
 
-  const handleShowTusGeneratorInactiveMessage = useCallback(() => {
-    showTusGeneratorInactiveMessage();
-  }, [showTusGeneratorInactiveMessage]);
+  const handleGenerateTusQuestion = useCallback(async () => {
+    if (tusPracticeState.loading) return;
+
+    clearTusQuestionTimer();
+    const requestId = latestTusQuestionRequestId.current + 1;
+    latestTusQuestionRequestId.current = requestId;
+    const controller = new AbortController();
+    tusQuestionAbortController.current = controller;
+
+    setTusPracticeState({
+      active: true,
+      question: null,
+      loading: true,
+      error: null,
+      inactiveMessage: '',
+    });
+
+    try {
+      const question = await generateTusQuestion({
+        branch: tusBranchFilter,
+        difficulty: tusDifficulty,
+        signal: controller.signal,
+      });
+      if (latestTusQuestionRequestId.current !== requestId) return;
+      setTusPracticeState({
+        active: true,
+        question,
+        loading: false,
+        error: null,
+        inactiveMessage: '',
+      });
+    } catch (error) {
+      if (controller.signal.aborted || latestTusQuestionRequestId.current !== requestId) return;
+      console.error('[tus-generator]', error);
+      setTusPracticeState({
+        active: true,
+        question: null,
+        loading: false,
+        error: TUS_GENERATION_ERROR_MESSAGE,
+        inactiveMessage: '',
+      });
+    } finally {
+      if (latestTusQuestionRequestId.current === requestId) {
+        tusQuestionAbortController.current = null;
+      }
+    }
+  }, [tusBranchFilter, tusDifficulty, tusPracticeState.loading]);
 
   const handleTusBranchFilterChange = useCallback((nextFilter) => {
     setTusBranchFilter(nextFilter);
@@ -1656,7 +1692,7 @@ function App() {
           difficulty={tusDifficulty}
           onChangeDifficulty={handleTusDifficultyChange}
           onChangeBranchFilter={handleTusBranchFilterChange}
-          onGenerateQuestion={handleShowTusGeneratorInactiveMessage}
+          onGenerateQuestion={handleGenerateTusQuestion}
           onSubmitAnswer={handleSubmitTusGeneratorAnswer}
           onBackHome={resetExamToHome}
           tutorMode={tutorMode}

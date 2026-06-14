@@ -24,38 +24,38 @@ const TUS_DEFAULT_ESTIMATE_BY_DIFFICULTY = {
 const TUS_MODULE_STAGES = [
   {
     min: 0,
-    title: 'Modül durumu kontrol ediliyor...',
-    detail: 'Seçtiğin branş ve zorluk ayarları arayüzde korunuyor.',
+    title: 'Üretim isteği hazırlanıyor...',
+    detail: 'Seçtiğin branş ve zorluk güvenli API hattına gönderiliyor.',
   },
   {
     min: 2,
-    title: 'Sayfa hazırlanıyor...',
-    detail: 'Bu sürümde otomatik olgu oluşturulmaz.',
+    title: 'TUS soru kökü kuruluyor...',
+    detail: 'Branşa uygun, tek doğru cevaplı özgün soru tasarlanıyor.',
   },
   {
     min: 5,
-    title: 'Statik bilgilendirme hazırlanıyor...',
-    detail: 'Üretim hattı çalıştırılmadan güvenli mesaj gösterilir.',
+    title: 'Seçenekler dengeleniyor...',
+    detail: 'Doğru seçenek ve öğretici çeldiriciler aynı düzlemde tutuluyor.',
   },
   {
     min: 8,
-    title: 'Son durum gösteriliyor...',
-    detail: 'Sayfa tasarımı korunarak işlem durdurulur.',
+    title: 'Açıklamalar yazılıyor...',
+    detail: 'Ana açıklama, seçenek geri bildirimleri ve TUS ipucu hazırlanıyor.',
   },
   {
     min: 10,
-    title: 'Modül kapalı durumu gösteriliyor...',
-    detail: 'Otomatik içerik üretimi yapılmaz.',
+    title: 'Bilimsel dayanak toparlanıyor...',
+    detail: 'Soru sınav mantığı ve temel tıp bilgisiyle tutarlı hale getiriliyor.',
   },
   {
     min: 12,
-    title: 'Arayüz korunuyor...',
-    detail: 'Şık üretimi tetiklenmez.',
+    title: 'Yanıt yapısı düzenleniyor...',
+    detail: 'Mevcut soru arayüzünün güvenle okuyacağı format hazırlanıyor.',
   },
   {
     min: 14,
-    title: 'Güvenli statik davranış sürdürülüyor...',
-    detail: 'Eski üretim işlevleri çağrılmaz.',
+    title: 'Son kontrol yapılıyor...',
+    detail: 'Eksik seçenek veya geri bildirim olmadan soru gösterime hazırlanıyor.',
   },
 ];
 
@@ -276,9 +276,9 @@ function TusStat({ label, value, icon, tone = 'teal' }) {
 
 function ModuleStatusBadge() {
   return (
-    <span className="tus-source-badge local" title="Otomatik soru üretimi kapalı">
+    <span className="tus-source-badge local" title="AI üretimi Vercel API route üzerinden çalışır">
       <Icon name="Info" />
-      Modül kapalı
+      Güvenli AI üretim
     </span>
   );
 }
@@ -626,7 +626,7 @@ function TusReadyState({ branchFilter, difficulty, onGenerateQuestion }) {
     <section className="tus-generation-state tus-generation-ready card-surface" aria-live="polite">
       <span className="tus-generation-orb" aria-hidden="true"><Icon name="Sparkles" /></span>
       <div className="tus-ready-copy">
-        <h2>Branş ve zorluğu seç; üretim modülü bu sürümde kapalıdır.</h2>
+        <h2>Branş ve zorluğu seç; tek doğru cevaplı yeni bir TUS sorusu üret.</h2>
         <p className="tus-ready-selection"><strong>{branchLabel}</strong><span aria-hidden="true">·</span><strong>{difficulty}</strong></p>
       </div>
       <button type="button" className="btn btn-primary tus-ready-cta" onClick={onGenerateQuestion}>
@@ -639,16 +639,16 @@ function TusReadyState({ branchFilter, difficulty, onGenerateQuestion }) {
   );
 }
 
-function TusInactiveState({ onGenerateQuestion }) {
+function TusInactiveState({ onGenerateQuestion, message }) {
   return (
     <section className="tus-generation-state card-surface error" aria-live="polite">
       <span className="tus-generation-orb" aria-hidden="true"><Icon name="AlertTriangle" /></span>
       <div>
-        <h2>Soru üretim modülü aktif değil.</h2>
-        <p>Bu sürümde otomatik soru üretimi çalışmaz. Buton yalnızca statik bilgilendirme mesajı gösterir.</p>
+        <h2>Soru üretimi tamamlanamadı.</h2>
+        <p>{message || 'Soru üretimi şu anda tamamlanamadı. Lütfen tekrar deneyin.'}</p>
       </div>
       <button type="button" className="btn btn-primary" onClick={onGenerateQuestion}>
-        <Icon name="RotateCcw" /> Bilgi mesajını göster
+        <Icon name="RotateCcw" /> Tekrar dene
       </button>
     </section>
   );
@@ -726,6 +726,10 @@ function TusQuestionGeneratorView({
   }, [error]);
 
   useEffect(() => {
+    if (!loading && question) setQuestionRevealPending(false);
+  }, [loading, question?.id]);
+
+  useEffect(() => {
     if (!loading) {
       if (loadingStartedAtRef.current) {
         const elapsed = (performance.now() - loadingStartedAtRef.current) / 1000;
@@ -766,11 +770,11 @@ function TusQuestionGeneratorView({
       <section className="tus-practice-hero card-surface">
         <div className="tus-practice-title-block">
           <h1>Yeni TUS Sorusu Üret</h1>
-          <p>Spot bilgileri çalışmak için kullanılan sayfa arayüzü korunur; otomatik soru üretimi bu sürümde kapalıdır.</p>
+          <p>Branş ve zorluğu seç; Vercel API üzerinden güvenli şekilde özgün, öğretici bir TUS sorusu üret.</p>
           <div className="tus-practice-meta-row">
             <ModuleStatusBadge />
-            <span className="tus-demo-notice-badge" title="Otomatik soru üretimi bu sürümde kapalıdır.">
-              <Icon name="AlertTriangle" /> Modül kapalı
+            <span className="tus-demo-notice-badge" title="API anahtarı frontend paketine eklenmez.">
+              <Icon name="ShieldCheck" /> Backend API route
             </span>
           </div>
         </div>
@@ -796,7 +800,7 @@ function TusQuestionGeneratorView({
             <button type="button" className="btn btn-primary tus-generate-cta tus-spot-generate-btn" onClick={onGenerateQuestion} disabled={loading}>
               <span className="tus-button-content-center">
                 <Icon name="Sparkles" />
-                <span>Yeni TUS Sorusu Üret</span>
+                <span>{loading ? 'Soru Üretiliyor...' : 'Yeni TUS Sorusu Üret'}</span>
               </span>
             </button>
           </div>
@@ -822,7 +826,7 @@ function TusQuestionGeneratorView({
           />
         </div>
       ) : null}
-      {!loading && error ? <TusInactiveState onGenerateQuestion={onGenerateQuestion} /> : null}
+      {!loading && error ? <TusInactiveState onGenerateQuestion={onGenerateQuestion} message={error} /> : null}
       {!loading && !error && !question ? (
         <TusReadyState branchFilter={branchFilter} difficulty={difficulty} onGenerateQuestion={onGenerateQuestion} />
       ) : null}
