@@ -139,6 +139,9 @@ const shallowFeedbackQuestion = {
 const repaired = repairTusQuestionForPublish(shallowFeedbackQuestion, ['option-feedback-placeholder-or-weak:B']);
 assert.equal(repaired.blocked, false, 'repair should preserve valid answer/options');
 assert.ok(repaired.applied.includes('stem-explanation-feedback-evidence-rebuilt'), 'repair should rebuild stem/explanation/feedback');
+assert.ok(repaired.applied.some((item) => item.includes('topic-locked-feedback-rebuilt:hyponatremia')), 'repair should use topic-locked medical feedback rather than generic fallback text');
+const repairedFeedbackText = [repaired.question.explanation, ...Object.values(repaired.question.optionFeedback || {})].join(' ');
+assert.doesNotMatch(repairedFeedbackText, /Bu yanıt belirli|kökte bu ekseni|hangi veri kümesi|daha güçlü kalır|bulgu bütünlüğü|görünür veriler/i, 'topic-locked repair must not emit forbidden template feedback');
 const repairedPublisherGate = runQuestionQualityGate(repaired.question);
 const repairedFinalGate = runFinalFeedbackQualityGate(repaired.question);
 assert.equal(repairedPublisherGate.publishable, true, `repaired shallow question should pass publisher gate: ${repairedPublisherGate.errors.join('; ')}`);

@@ -72,9 +72,14 @@ Stem–açıklama–feedback veri tutarlılığı:
 - Son iç kontrolün şu olsun: “Açıklamadaki her kritik gerekçe soru kökünde görünen bir bulguya dayanıyor mu?” Hayırsa JSON’u vermeden önce düzelt.
 
 Açıklama ve feedback:
-- explanation genel ders notu değil; stemdeki verileri doğru cevapla bağlayan vaka özelinde karar zinciri olsun.
+- Önce kendi içinde sessiz bir konu kilidi kur: branş, ana klinik eksen, doğru cevap ekseni ve A-E seçeneklerinin gerçek tıbbi eksenleri. Final JSON içine bu konu kilidini yazma; ancak explanation ve wrongOptionFeedback yalnızca bu kilide bağlı kalsın.
+- explanation genel ders notu değil; stemdeki verileri doğru cevapla bağlayan vaka özelinde karar zinciri olsun. Doğru cevabı “en uyumlu seçenek” diye savunma; tanıyı/testi/mekanizmayı seçtiren ana klinik kombinasyonu açık yaz.
 - wrongOptionFeedback içinde A, B, C, D, E anahtarlarının tamamı dolu olsun; doğru seçenek için de öğretici feedback yaz.
-- Her yanlış seçenek feedbacki doğal biçimde şunu anlatsın: hangi durumda düşünülebilir, bu vakada neden uygun değildir, doğru seçenekle ayırıcı farkı nedir.
+- Her yanlış seçenek feedbacki doğal biçimde şunu anlatsın: bu seçenek hangi gerçek klinik/mekanistik tabloda düşünülür, bu vakada neden uygun değildir, doğru seçenekle ayırıcı farkı nedir.
+- Feedback kök metnini aynen kopyalayarak doldurulamaz. Kök verileri kısa özetlenebilir; ama her cümle tıbbi akıl yürütme veya ayırıcı tanı katkısı taşımalıdır.
+- Seçenek adı her cümlede tekrar edilmemelidir. Seçenek adını yalnızca gerektiğinde kullan; kalan cümlelerde “bu tabloda”, “bu olguda”, “buna karşılık” gibi doğal tıbbi bağlaçlarla ayırıcı mantığı kur.
+- Bir önceki sorudan veya başka konudan terim taşıma. Örneğin nefrotik sendrom sorusunda immün yetmezlik, aşı antikoru, Neisseria, MODY veya diyabet açıklaması geçemez; intussusepsiyon sorusunda tiroid/adrenal/immünoloji açıklaması geçemez; konjenital hipotiroidi sorusunda gastroenterit veya nefrotik sendrom mantığı geçemez.
+- Şablon feedback kesin yasaktır. Şu kalıpları veya benzerlerini kullanma: “Bu yanıt belirli bir tanı, test, tedavi veya mekanizma eksenini temsil eder”, “kökte bu ekseni doğrudan güçlendiren özgül bulgu dizisi baskın değildir”, “hangi veri kümesinin daha seçici olduğudur”, “daha güçlü kalır”, “bulgu bütünlüğü”, “görünür veriler”, “klinik karar ekseni”.
 - Boş, yarım, tek kelimelik, placeholder, “bu seçenek yanlıştır”, “ayırt ettirici açıklama üretilemedi” gibi metinler kullanma.
 - Feedback cümleleri “Da/De ...”, “Ancak ...” öncesi kopuk, öznesiz veya bağlaç artığıyla başlamamalıdır. Örneğin “Da renin/aldosteron ...” gibi metin kesinlikle üretme; gerekiyorsa “Bu tabloda renin/aldosteron ...” veya doğrudan klinik özneyle yaz.
 
@@ -122,7 +127,9 @@ export const TUS_QUALITY_REWRITE_PROMPT = `Sen KlinikIQ için çalışan kıdeml
 
 Verilen TUS sorusunu konu ve doğru cevap mantığını bozmadan kalite açısından yeniden düzenle. Amaç: klinik öyküyü gerçek anamnez akışına çevirmek, soru cümlesini tek hedefli yapmak, seçenekleri aynı karar kategorisinde tutmak, açıklamayı vaka özelinde klinik akıl yürütme zinciriyle güçlendirmek ve her seçenek feedbackini üst düzey öğretici hale getirmektir.
 
-Doğru cevabı yalnızca açık bilimsel hata veya çift doğru sorununda değiştir. Answer leak, kategori karışıklığı, belirsiz çift doğru, yüzeysel/placeholder feedback, bozuk Türkçe ve stem–açıklama veri uyumsuzluğu varsa tamamen düzelt. Her yanlış seçenek için hangi durumda doğru olabileceğini, bu vakada neden uygun olmadığını ve doğru seçenekle ayırıcı noktasını açıkla. Doğru seçenek için vakadaki kritik verilerin doğru karara nasıl bağlandığını anlat.
+Önce sessiz bir konu kilidi kur: branş, ana klinik eksen, doğru cevap ekseni ve A-E seçeneklerinin gerçek tıbbi eksenleri. Açıklama ve feedback yalnızca bu kilitteki hastalık/test/tedavi/mekanizma ailesinden beslenmelidir; önceki soru örneklerinden gelen terim, hastalık, test veya mekanizma final çıktıya sızarsa soru başarısızdır.
+
+Doğru cevabı yalnızca açık bilimsel hata veya çift doğru sorununda değiştir. Answer leak, kategori karışıklığı, belirsiz çift doğru, yüzeysel/placeholder feedback, şablon feedback, konu dışı içerik bulaşması, bozuk Türkçe ve stem–açıklama veri uyumsuzluğu varsa tamamen düzelt. Her yanlış seçenek için hangi durumda doğru olabileceğini, bu vakada neden uygun olmadığını ve doğru seçenekle ayırıcı noktasını açıkla. Doğru seçenek için vakadaki kritik verilerin doğru karara nasıl bağlandığını anlat. “Bu yanıt belirli bir tanı/test/tedavi/mekanizma eksenini temsil eder”, “kökte bu ekseni...”, “hangi veri kümesi...”, “daha güçlü kalır”, “bulgu bütünlüğü”, “görünür veriler” gibi şablon savunma cümlelerini asla kullanma.
 
 Açıklama veya seçenek feedbackinde kullanılan her kritik gerekçe stemde görünür olmalıdır. Kökte olmayan trombosit, koagülasyon, vital, görüntüleme, kültür, biyopsi, ilaç/seyahat/travma/temas gibi veriye dayanma; gerekiyorsa veriyi doğal biçimde stem’e ekle veya feedbacki o veriye dayanmayacak şekilde yeniden yaz.
 
@@ -183,4 +190,4 @@ Bu bilgilerle bilimsel doğruluğu yüksek, klinik bağlamlı, tek doğru cevapl
 
 Final çıktıda yalnızca kullanıcıya gösterilecek JSON yer alsın. Üretim sürecini, kaynak tarama sürecini, iç yönergeleri veya teknik notları yazma.
 
-Final kontrol: tek doğru cevap; stemden çözülebilir; explanation/feedbackte kullanılan her kritik veri stemde görünür; seçenekler aynı kategoride; answer leak yok; explanation ve tüm feedbackler vaka özelinde öğretici. Return only valid JSON. relatedBranch must be "${branchText}" and difficulty must be "${selectedDifficulty}".`;}
+Final kontrol: tek doğru cevap; stemden çözülebilir; explanation/feedbackte kullanılan her kritik veri stemde görünür; seçenekler aynı kategoride; answer leak yok; explanation ve tüm feedbackler vaka özelinde öğretici; feedbackte şablon cümle, kök kopyası, seçenek adı tekrarı veya konu dışı terim yok. Return only valid JSON. relatedBranch must be "${branchText}" and difficulty must be "${selectedDifficulty}".`;}

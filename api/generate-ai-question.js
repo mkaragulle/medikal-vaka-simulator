@@ -1487,33 +1487,6 @@ function visibleRepairEvidence(question = {}) {
   return { evidence, summary };
 }
 
-function optionConceptSentence(optionText = '') {
-  const option = cleanText(optionText || 'Bu seçenek');
-  return `${option}, sınav sorularında kendi özgün klinik paternini, mekanizmasını veya karar basamağını temsil eden ayrı bir seçenektir.`;
-}
-
-function buildGroundedFeedback({ option, correctId, correctText, evidenceSummary }) {
-  const optionText = cleanText(option?.text || '');
-  if (option?.id === correctId) {
-    return [
-      `${optionText}, kökte verilen ${evidenceSummary} bulgu bütünlüğünü en iyi birleştiren seçenektir.`,
-      `Bu nedenle doğru cevap, yalnızca isim olarak değil kökteki görünür verilerin birlikte desteklediği klinik karar noktası olarak değerlendirilir.`,
-    ].join(' ');
-  }
-  const contrastById = {
-    A: `Ayırıcı nokta, ${optionText} için beklenen belirleyici işaretlerin kökte ana eksen olarak verilmemesi; mevcut görünür verilerin ${correctText} lehine gruplanmasıdır.`,
-    B: `Bu seçenek ile ${correctText} arasındaki fark, kökteki verilerin ${optionText} için tipik karar yolunu değil doğru cevabın klinik eksenini desteklemesidir.`,
-    C: `${optionText} ancak kendi tanısal veya mekanistik ipuçları kökte baskın olduğunda güç kazanır; bu soruda görünür bulgular ${correctText} seçeneğini daha tutarlı kılar.`,
-    D: `Bu olguda ${optionText} seçeneğini öne çıkaracak ayrı bir bulgu dizisi kurulmamıştır; soru kökü karar verdirici verileri ${correctText} çevresinde toplar.`,
-    E: `${optionText} farklı bir klinik karar hattını temsil eder; kökteki hasta bağlamı ve objektif veriler bu hattı değil ${correctText} yanıtını destekleyen ekseni kurar.`,
-  };
-  return [
-    optionConceptSentence(optionText),
-    `Bu olguda karar verdiren ${evidenceSummary} bilgileri ${correctText} yönünde daha tutarlı bir bütünlük kurar.`,
-    contrastById[option?.id] || `${optionText} bu kökte doğru cevabın taşıdığı klinik ekseni karşılamaz; temel ayrım görünür verilerin ${correctText} lehine birleşmesidir.`,
-  ].join(' ');
-}
-
 const FINAL_ARTIFICIAL_FEEDBACK_PATTERNS = [
   /kendi\s+(?:ozgun|Ã¶zgÃ¼n|özgün)\s+klinik\s+patern/iu,
   /bulgu\s+b[uÃ¼]t[uÃ¼]nl[uÃ¼][gÄŸ]/iu,
@@ -1633,7 +1606,7 @@ function finalFeedbackRepeatsOptionName(text = '', optionText = '') {
   const firstSentence = normalize(splitSentencesSafe(text)[0] || '');
   const startsWithOption = firstSentence.startsWith(option);
   const count = feedback.split(option).length - 1;
-  return startsWithOption || count >= 2;
+  return count >= 3;
 }
 
 function finalFeedbackLooksArtificial(text = '', question = {}, option = {}) {
@@ -1641,6 +1614,7 @@ function finalFeedbackLooksArtificial(text = '', question = {}, option = {}) {
   if (!value) return true;
   if (splitSentencesSafe(value).length < 2) return true;
   if (FINAL_ARTIFICIAL_FEEDBACK_PATTERNS.some((pattern) => pattern.test(value))) return true;
+  if (hasForbiddenTemplateFeedback(value)) return true;
   if (finalFeedbackCopiesStem(value, question)) return true;
   if (finalFeedbackRepeatsOptionName(value, option.text)) return true;
   return false;
@@ -1661,6 +1635,7 @@ export function runFinalAnswerFeedbackSanityGate(rawQuestion = {}) {
     if (key && seen.has(key)) repairable.push(`feedback-authenticity:duplicate:${seen.get(key)}-${option.id}`);
     else if (key) seen.set(key, option.id);
   });
+  repairable.push(...detectFeedbackTopicContamination(question));
   return {
     ok: blocking.length === 0 && repairable.length === 0,
     blockingErrors: Array.from(new Set(blocking)),
@@ -1694,160 +1669,341 @@ function applyFocusedDomainStemRepair(question = {}, correctText = '') {
   return { question: repaired, applied };
 }
 
+
 function finalSemanticStemSummary(question = {}) {
   const source = normalize(finalStemBundle(question));
   const parts = [];
   if (/yas|yil|aylik|cocuk|gebe|erkek|kadin|ergen/.test(source)) parts.push('hasta profili');
   if (/akut|kronik|tekrarlayan|saat|gun|hafta|ay|yil/.test(source)) parts.push('zamanlama');
   if (/ates|agri|dispne|kusma|ishal|nobet|kilo|poliuri|polidipsi/.test(source)) parts.push('semptom paterni');
-  if (/muayene|hipotansiyon|hipoksi|tansiyon|nabiz|solunum|lenfosit|ig|glukoz|hba1c|keton|c[-\s]?peptid|antikor|crp|trombosit|grafi|bt|mr|usg/.test(source)) parts.push('muayene ve tetkik verileri');
+  if (/muayene|hipotansiyon|hipoksi|tansiyon|nabiz|solunum|lenfosit|ig|glukoz|hba1c|keton|c[-\s]?peptid|antikor|crp|trombosit|grafi|bt|mr|usg|proteinuri|albumin|kompleman|tsh|t4/.test(source)) parts.push('muayene ve tetkik verileri');
   if (/aile|oyku|asi|ilac|maruziyet/.test(source)) parts.push('öykü bilgisi');
-  return parts.length ? parts.join(', ') : 'klinik bağlam ve karar verdirici ipuçları';
+  return parts.length ? parts.join(', ') : 'hasta bağlamı ve karar verdirici klinik bilgiler';
 }
 
-function focusedOptionDifferentialProfile(optionText = '') {
+const FORBIDDEN_FINAL_FEEDBACK_PATTERNS = [
+  /bu\s+yan[iı]t\s+belirli\s+bir\s+tan[ıi].*eksenini\s+temsil\s+eder/iu,
+  /k[oö]kte\s+bu\s+ekseni\s+do[ğg]rudan\s+g[uü][çc]lendiren/iu,
+  /hangi\s+veri\s+k[uü]mesinin\s+daha\s+se[çc]ici/iu,
+  /daha\s+g[uü][çc]l[uü]\s+kal[ıi]r/iu,
+  /bulgu\s+b[uü]t[uü]nl[uü][ğg]/iu,
+  /g[oö]r[uü]n[uü]r\s+veri/iu,
+  /klinik\s+karar\s+ekseni/iu,
+  /klinik\s+karar\s+noktas/iu,
+  /kendi\s+[oö]zg[uü]n\s+klinik\s+patern/iu,
+  /tan[ıi]sal\s+veya\s+mekanistik\s+ipu[çc]lar/iu,
+  /do[ğg]ru\s+cevab[ıi]n\s+klinik\s+eksenini\s+destekler/iu,
+];
+
+const FEEDBACK_TOPIC_CLUSTERS = [
+  { id: 'humoral-immunodeficiency', terms: ['igg', 'iga', 'igm', 'immünoglobulin', 'immunoglobulin', 'humoral', 'b hücresi', 'b hucresi', 'cd19', 'aşı antikor', 'asi antikor', 'spesifik antikor', 'pnömokok antikor', 'pnomokok antikor', 'tetanoz antikor', 'neisseria', 'ch50', 'ah50', 'dhr', 'nbt'] },
+  { id: 'diabetes-mody', terms: ['mody', 'monojenik', 'glukokinaz', 'hnf1a', 'hnf4a', 'c-peptid', 'c peptid', 'anti-gad', 'anti gad', 'otoantikor', 'keton', 'ketoasidoz', 'hba1c', 'poliüri', 'poliuri', 'polidipsi'] },
+  { id: 'nephrotic-glomerular', terms: ['nefrotik', 'proteinüri', 'proteinuri', 'hipoalbüminemi', 'hipoalbuminemi', 'hiperlipidemi', 'minimal değişiklik', 'minimal degisiklik', 'fsgs', 'fokal segmental', 'membranöz', 'membranoz', 'membranoproliferatif', 'mpgn', 'postenfeksiyöz', 'postenfeksiyoz', 'glomerülonefrit', 'glomerulonefrit', 'podosit', 'ayakçık', 'ayakcik', 'subepitelyal', 'subendotelyal', 'mezangial'] },
+  { id: 'intussusception-abdomen', terms: ['intussusepsiyon', 'invajinasyon', 'kanlı mukus', 'kanli mukus', 'kolik ağrı', 'kolik agri', 'sosis şeklinde', 'sosis seklinde', 'palpabl kitle', 'hedef bulgusu', 'apandisit', 'meckel', 'volvulus', 'gastroenterit', 'safralı kusma', 'safrali kusma'] },
+  { id: 'congenital-hypothyroidism', terms: ['konjenital hipotiroidi', 'hipotiroidi', 'tsh', 'serbest t4', 'ft4', 'kabızlık', 'kabizlik', 'hipotoni', 'makroglossi', 'kuru saç', 'kuru sac', 'seyrek saç', 'seyrek sac', 'uzamış sarılık', 'uzamis sarilik', 'guatr'] },
+  { id: 'cystic-fibrosis', terms: ['kistik fibrozis', 'ter testi', 'mekonyum ileusu', 'pankreatik yetmezlik', 'cftr'] },
+  { id: 'adrenal-axis', terms: ['adrenal yetmezlik', 'kortizol', 'acth', 'hiperpigmentasyon', 'hipoglisemi', 'hiperkalemi'] },
+];
+
+function includesTopicTerm(text = '', term = '') {
+  const haystack = normalize(text);
+  const needle = normalize(term);
+  return Boolean(needle && haystack.includes(needle));
+}
+
+function topicClusterHits(text = '', cluster = {}) {
+  return (cluster.terms || []).filter((term) => includesTopicTerm(text, term));
+}
+
+function buildClinicalTopicLock(question = {}, correctText = '') {
+  const lockText = [
+    question.relatedBranch,
+    question.branch,
+    question.learningTarget,
+    question.answerTarget,
+    question.diagnosisTarget,
+    question.question,
+    question.stem,
+    question.questionStem,
+    correctText,
+    ...normalizeOptions(question.options).map((option) => option.text),
+    ...compactItems(question.compactVitals || question.vitals || [], 8).flatMap((item) => [item.label, item.value]),
+    ...compactItems(question.compactObjectiveData || question.objectiveData || [], 12).flatMap((item) => [item.label, item.value]),
+  ].filter(Boolean).join(' | ');
+  const normalized = normalize(lockText);
+  const clusters = new Set();
+  FEEDBACK_TOPIC_CLUSTERS.forEach((cluster) => {
+    if (topicClusterHits(lockText, cluster).length) clusters.add(cluster.id);
+  });
+  let domain = 'unsupported';
+  if (/hipotonik|hipertonik|ps[oö]dohiponatremi|hiponatremi|osmolalite/.test(normalized)) domain = 'hyponatremia';
+  else if (/nefrotik|minimal degisiklik|fsgs|membranoz|membranoproliferatif|postenfeksiyoz|glomerulonefrit|proteinuri|podosit/.test(normalized)) domain = 'nephrotic_glomerular';
+  else if (/intussusepsiyon|invajinasyon|apandisit|meckel|volvulus|gastroenterit|kanli mukus|palpabl kitle/.test(normalized)) domain = 'intussusception';
+  else if (/konjenital hipotiroidi|hipotiroidi|serbest t4|tsh|kabizlik|hipotoni|makroglossi/.test(normalized)) domain = 'congenital_hypothyroidism';
+  else if (isSpecificAntibodyResponseAnswer(correctText) || /immun yetmezlik|humoral|igg|iga|asi antikor|spesifik antikor/.test(normalized)) domain = 'humoral_immunodeficiency';
+  else if (isModyAnswer(correctText) || /mody|monojenik|c[-\s]?peptid|otoantikor|hba1c/.test(normalized)) domain = 'mody_diabetes';
+  else if (/perf[uü]zyon|hidrasyon|kapiller dolum|turgor/.test(normalized)) domain = 'pediatric_perfusion';
+  return { domain, text: lockText, normalized, clusters };
+}
+
+function detectFeedbackTopicContamination(question = {}) {
+  const correctText = getCorrectText(question);
+  const lock = buildClinicalTopicLock(question, correctText);
+  const postAnswer = [
+    question.explanation,
+    question.examPearl,
+    ...asArray(question.evidenceChain),
+    ...Object.values(question.optionFeedback || question.wrongOptionFeedback || {}),
+  ].filter(Boolean).join(' | ');
+  const errors = [];
+  FEEDBACK_TOPIC_CLUSTERS.forEach((cluster) => {
+    if (lock.clusters.has(cluster.id)) return;
+    const hits = Array.from(new Set(topicClusterHits(postAnswer, cluster).map(normalize)));
+    if (hits.length >= 2 || (hits.length >= 1 && ['humoral-immunodeficiency', 'diabetes-mody'].includes(cluster.id))) {
+      errors.push(`feedback-authenticity:cross-topic:${cluster.id}:${hits.slice(0, 4).join(',')}`);
+    }
+  });
+  return errors;
+}
+
+function hasForbiddenTemplateFeedback(text = '') {
+  return FORBIDDEN_FINAL_FEEDBACK_PATTERNS.some((pattern) => pattern.test(cleanText(text)));
+}
+
+function profile(usual, mismatch, distinction, correct = '') {
+  return { usual, mismatch, distinction, correct: correct || mismatch };
+}
+
+function domainOptionProfile(optionText = '', lock = {}) {
   const value = normalize(optionText);
-  if (/hipotonik.*hiponatremi/.test(value)) {
-    return {
-      usual: 'Hipotonik hiponatremi, ölçülen düşüklüğün gerçek plazma hipotonisitesiyle birlikte olduğu tablodur',
-      mismatch: 'olguda sınıflandırmayı belirleyen eksen, ölçüm artefaktından çok gerçek tonisite azalmasıdır',
-      distinction: 'hipertonik ve izotonik nedenlerden farkı, plazma tonisitesinin gerçekten azalmış olmasıdır',
-    };
+  switch (lock.domain) {
+    case 'hyponatremia':
+      if (/hipotonik.*hiponatremi/.test(value)) return profile(
+        'düşük serum sodyumuna düşük serum osmolalitesinin eşlik ettiği gerçek hiponatremi tablosudur',
+        'sodyum düşüklüğünün ölçüm artefaktı veya hipertonik solüt etkisiyle değil gerçek plazma hipotonisitesiyle açıklanmasıdır',
+        'hipertonik tabloda osmolalite yüksek, psödohiponatremide ise osmolalite çoğunlukla normal beklenir',
+        'düşük sodyum ile düşük osmolalite aynı anda verildiğinde ilk sınıflama hipotonik hiponatremidir',
+      );
+      if (/hipertonik.*hiponatremi/.test(value)) return profile(
+        'ağır hiperglisemi veya mannitol gibi efektif osmollerin suyu ekstrasellüler alana çektiği durumda düşünülür',
+        'serum osmolalitesinin düşük verilmesi hipertonik mekanizmayı dışlar',
+        'bu ayrımda belirleyici nokta osmolalitenin düşük değil yüksek olmasıdır',
+      );
+      if (/izotonik.*hiponatremi|ps[oö]dohiponatremi/.test(value)) return profile(
+        'hiperlipidemi veya paraproteinemi gibi ölçüm artefaktlarında, osmolalite korunmuşken sodyumun düşük ölçülmesiyle gündeme gelir',
+        'osmolalitenin düşük olması ölçüm artefaktından çok gerçek hipotonik süreci destekler',
+        'psödohiponatremide plazma tonisitesi genellikle normal kalır',
+      );
+      if (/hipernatremik.*dehidratasyon|hipernatremi/.test(value)) return profile(
+        'su kaybının veya hipertonik yükün baskın olduğu ve serum sodyumunun yüksek beklendiği tablodur',
+        'sodyumun düşük verilmesi hipernatremik tabloyla uyumlu değildir',
+        'buradaki ayrım dehidratasyon öyküsünden önce ölçülen sodyum ve osmolalite yönüdür',
+      );
+      if (/hiperkalemi|potasyum/.test(value)) return profile(
+        'potasyum yüksekliği ve kardiyak iletim riski üzerinden değerlendirilen ayrı bir elektrolit bozukluğudur',
+        'karar verdiren veri potasyum değil sodyum-osmolalite ilişkisidir',
+        'bu nedenle sınıflama hiponatremi tonisitesi üzerinden yapılır',
+      );
+      break;
+    case 'nephrotic_glomerular':
+      if (/minimal.*degisiklik|minimal.*değişiklik/.test(value)) return profile(
+        'çocukluk çağında nefrotik sendromun en sık nedeni olup ışık mikroskobunda belirgin değişiklik olmadan podosit ayakçıklarında yaygın silinme ile ilişkilidir',
+        'ödem, belirgin proteinüri, hipoalbüminemi ve minimal hematüri/normal kompleman paterni bu tanıyı destekler',
+        'FSGS skarlaşma, membranöz nefropati subepitelyal immün depozit, MPGN ve postenfeksiyöz glomerülonefrit ise daha nefritik veya kompleman ilişkili bulgularla ayrılır',
+        'çocukta saf nefrotik tablo ve podosit ayakçık kaybı minimal değişiklik hastalığını en olası seçenek yapar',
+      );
+      if (/fsgs|fokal.*segmental/.test(value)) return profile(
+        'glomerüllerin bir kısmında segmental skleroz ve skar gelişimiyle giden, sıklıkla steroid direnci veya böbrek fonksiyon bozukluğu riski taşıyan nefrotik sendrom nedenidir',
+        'tipik çocukluk çağı steroid duyarlı saf nefrotik başlangıç FSGS için daha az tipiktir',
+        'FSGS’de segmental skar ve nonselektif proteinüri ön plandayken minimal değişiklikte podosit ayakçık silinmesi baskındır',
+      );
+      if (/membranoz|membranöz/.test(value)) return profile(
+        'erişkinde nefrotik sendromun önemli nedenlerinden biri olup subepitelyal immün kompleks depozitleri ve kapiller duvar kalınlaşmasıyla ilişkilidir',
+        'küçük çocukta klasik saf nefrotik tablo membranöz nefropatiden çok minimal değişiklik hastalığını düşündürür',
+        'ayırt edici patoloji membranözde subepitelyal depozit, minimal değişiklikte yaygın podosit ayakçık kaybıdır',
+      );
+      if (/mpgn|membranoproliferatif/.test(value)) return profile(
+        'mezangial/endokapiller proliferasyon, çift kontur görünümü ve çoğu tabloda kompleman düşüklüğüyle giden nefritik-nefrotik karışık paternde düşünülür',
+        'belirgin hematüri, kompleman düşüklüğü veya nefritik bulgular baskın değilse MPGN doğru eksen olmaz',
+        'MPGN kompleman ve proliferatif glomerül hasarıyla, minimal değişiklik ise podosit bariyer bozukluğuyla ayrılır',
+      );
+      if (/post.*enfeks|poststreptokok|post.*streptokok|glomerulonefrit|glomerülonefrit/.test(value)) return profile(
+        'streptokok enfeksiyonu sonrası hematüri, hipertansiyon, ödem ve düşük C3 ile giden nefritik sendrom tablosudur',
+        'ağır proteinüri baskın olup hematüri/kompleman düşüklüğü belirgin değilse postenfeksiyöz glomerülonefrit beklenmez',
+        'nefritik tabloda eritrosit silendirleri ve kompleman tüketimi öne çıkar; saf nefrotik tabloda podosit geçirgenlik bozukluğu öne geçer',
+      );
+      break;
+    case 'intussusception':
+      if (/intussusepsiyon|invajinasyon/.test(value)) return profile(
+        'sıklıkla küçük çocukta ileokolik segmentin iç içe geçmesiyle aralıklı kolik ağrı, kusma, kanlı mukuslu dışkı ve sosis şeklinde kitle yapar',
+        'ataklar halinde ağrı ile kusma ve kanlı mukuslu dışkının birlikte bulunması bu tanıyı destekler',
+        'apandisit sürekli sağ alt kadran ağrısı, gastroenterit yaygın ishal, Meckel divertikülü ağrısız kanama, volvulus ise safralı kusma-obstrüksiyon ağırlığıyla ayrılır',
+        'aralıklı kolik ağrı, kusma, kanlı mukuslu dışkı ve palpabl kitle birlikteliği intussusepsiyon için seçtiricidir',
+      );
+      if (/apandisit|appendisit/.test(value)) return profile(
+        'periumblikal başlayıp sağ alt kadrana yerleşen daha sürekli ağrı, ateş, iştahsızlık ve lokal periton bulgularıyla düşünülür',
+        'ataklar halinde kolik ağrı, kanlı mukuslu dışkı ve palpabl kitle apandisitten çok intussusepsiyona uyar',
+        'apandisitte inflamatuvar sağ alt kadran odağı; intussusepsiyonda aralıklı obstrüksiyon ve barsak invajinasyonu baskındır',
+      );
+      if (/gastroenterit/.test(value)) return profile(
+        'enfeksiyöz ishal, kusma, karın krampları ve dehidratasyonla giden yaygın mukozal hastalık tablosudur',
+        'palpabl kitle veya kanlı mukuslu dışkı ile aralıklı şiddetli ağrı gastroenterit için beklenen ana patern değildir',
+        'gastroenteritte difüz ishal-kusma; intussusepsiyonda kolik ağrı atakları ve obstrüksiyon bulguları ayırt ettirir',
+      );
+      if (/meckel/.test(value)) return profile(
+        'ektopik gastrik mukoza nedeniyle genellikle ağrısız alt gastrointestinal kanama yapan konjenital divertiküldür',
+        'kolik tarzda tekrarlayan ağrı ve palpabl kitle Meckel divertikülünden çok intussusepsiyonu düşündürür',
+        'Meckel kanaması çoğunlukla ağrısızdır; intussusepsiyon ise ağrı-kusma-obstrüksiyon birlikteliğiyle gider',
+      );
+      if (/volvulus/.test(value)) return profile(
+        'malrotasyon zemininde barsak dönmesiyle safralı kusma, akut obstrüksiyon ve hızla kötüleşebilen iskemi tablosu oluşturur',
+        'kanlı mukuslu dışkı ve sosis şeklinde kitle intussusepsiyon lehine daha özgüldür',
+        'volvulusta safralı kusma ve akut obstrüksiyon; intussusepsiyonda aralıklı kolik ataklar ve hedef/kitle bulgusu ayrımı yapar',
+      );
+      break;
+    case 'congenital_hypothyroidism':
+      if (/konjenital.*hipotiroidi|hipotiroidi/.test(value)) return profile(
+        'yenidoğan veya süt çocukluğunda tiroid hormon eksikliği nedeniyle uzamış sarılık, kabızlık, hipotoni, makroglossi, beslenme güçlüğü ve gelişim geriliği yapabilir',
+        'yüksek TSH ile düşük serbest T4 primer konjenital hipotiroidiyi destekler',
+        'kistik fibrozis malabsorpsiyon/enfeksiyon, hipofiz cüceliği büyüme hormonu ekseni, adrenal yetmezlik ise kortizol-elektrolit bulgularıyla ayrılır',
+        'gelişim geriliğiyle birlikte kabızlık, hipotoni ve yüksek TSH-düşük serbest T4 paterni primer konjenital hipotiroidiyi seçtirir',
+      );
+      if (/kistik.*fibrozis|cystic/.test(value)) return profile(
+        'CFTR kusuruna bağlı tekrarlayan akciğer enfeksiyonları, pankreatik yetmezlik, yağlı dışkı ve ter klorür yüksekliğiyle düşünülür',
+        'yüksek TSH ve düşük serbest T4 tiroid hormon eksikliğini gösterir; bu eksen kistik fibrozisle açıklanmaz',
+        'kistik fibrozis solunum ve pankreas bulgularıyla; konjenital hipotiroidi nörogelişim ve tiroid hormon eksikliğiyle ayrılır',
+      );
+      if (/hipofiz|cucelik|cücelik|büyüme hormonu|buyume hormonu/.test(value)) return profile(
+        'büyüme hormonu eksikliğiyle orantılı kısa boy ve büyüme hızında azalma yapar',
+        'kabızlık, hipotoni ve primer tiroid fonksiyon testleri bozukluğu büyüme hormonu eksikliğinin ana bulgusu değildir',
+        'hipofiz cüceliğinde IGF-1/büyüme hormonu ekseni; konjenital hipotiroidide TSH-serbest T4 ekseni belirleyicidir',
+      );
+      if (/guatr/.test(value)) return profile(
+        'tiroid bezinin büyümesini ifade eder ve iyot eksikliği, tiroidit veya hormon sentez bozukluklarında görülebilir',
+        'tek başına bez büyümesi gelişim geriliği ve düşük serbest T4-yüksek TSH kombinasyonunu tam tanımlamaz',
+        'burada tanısal karar tiroid bezinin büyüklüğünden çok hormon eksikliği paternidir',
+      );
+      if (/adrenal/.test(value)) return profile(
+        'kortizol eksikliği, hipoglisemi, hipotansiyon, hiponatremi-hiperkalemi ve bazen hiperpigmentasyonla düşünülür',
+        'tiroid hormon testlerindeki primer hipotiroidi paterni adrenal yetmezliği açıklamaz',
+        'adrenal yetmezlik kortizol-elektrolit ekseniyle; konjenital hipotiroidi TSH-serbest T4 ve nörogelişim bulgularıyla ayrılır',
+      );
+      break;
+    case 'humoral_immunodeficiency':
+      if (/(?:t\s*)?h(?:ucre|ücre)|akim|ak[ıi]m|sitometri|flow|cd3|cd4|cd8|lenfosit\s+alt/.test(value)) return profile(
+        'T hücre veya kombine immün yetmezlik şüphesinde lenfosit alt grupları ve T hücre fonksiyonu için kullanılır',
+        'tekrarlayan kapsüllü bakteri enfeksiyonları ve düşük immünoglobulin paterni humoral ekseni öne çıkarır',
+        'T hücre kusurunda fırsatçı/viral enfeksiyonlar ve lenfopeni; humoral kusurda antikor üretimi ve aşı yanıtı belirleyicidir',
+      );
+      if (/spesifik.*antikor|antikor.*yan[ıi]t|a[sş][ıi].*antikor/.test(value)) return profile(
+        'humoral immün yetmezlikte immünoglobulin miktarının yanında aşı antijenlerine koruyucu antikor üretimi ölçülür',
+        'bakteriyel sinopulmoner enfeksiyonlar ve düşük Ig düzeyleri antikor fonksiyonunun test edilmesini gerekli kılar',
+        'bu test hücresel bağışıklığı değil B hücre-antikor yanıtının klinik koruyuculuğunu değerlendirir',
+        'düşük immünoglobulinlerle birlikte aşıya özgül antikor yanıtının yetersizliği humoral fonksiyon kusurunu gösterir',
+      );
+      if (/imm[uü]noglobulin|igg|iga|igm/.test(value)) return profile(
+        'humoral yetmezlik taramasında nicel antikor eksikliğini gösterir',
+        'fonksiyonel yanıt soruluyorsa yalnız düzey bakmak koruyucu antikor üretimini tam kanıtlamaz',
+        'spesifik antikor yanıtı, immünoglobulin varlığının etkili bağışıklığa dönüşüp dönüşmediğini ayırır',
+      );
+      if (/dhr|nitroblue|nbt|oksidatif|fagositoz|n[oö]trofil/.test(value)) return profile(
+        'nötrofil oksidatif patlama kusurlarında, özellikle kronik granülomatöz hastalık kuşkusunda kullanılır',
+        'derin apse, katalaz pozitif etken veya invaziv fungal enfeksiyon paterni yoksa bu eksen geri plandadır',
+        'humoral tabloda sorun nötrofil öldürme fonksiyonu değil antikor aracılı koruyucu yanıttır',
+      );
+      if (/kompleman|ch50|ah50/.test(value)) return profile(
+        'kompleman eksiklikleri özellikle tekrarlayan Neisseria enfeksiyonları veya kompleman tüketimiyle düşünülür',
+        'mevcut tablo antikor üretim/yanıt eksenini öne çıkarıyorsa kompleman taraması doğru ilk açıklama değildir',
+        'kompleman lizis sistemiyle, humoral yetmezlik B hücre-antikor fonksiyonuyla ayrılır',
+      );
+      break;
+    case 'mody_diabetes':
+      if (isModyAnswer(optionText)) return profile(
+        'otoimmün olmayan, ketozis beklenmeyen ve ailede genç yaşta diyabet kümelenmesiyle giden monojenik diyabet formudur',
+        'keton negatifliği, korunmuş C-peptid, otoantikor negatifliği ve çok kuşaklı aile öyküsü bu tanıyı destekler',
+        'tip 1 diyabetten akut insülin eksikliği-ketozis olmamasıyla; tip 2 diyabetten belirgin obezite/insülin direnci olmamasıyla ayrılır',
+        'ketozisiz hafif hiperglisemi, korunmuş beta hücre rezervi ve otozomal dominant aile paterni MODY lehinedir',
+      );
+      if (/tip\s*1|otoimm[uü]n.*diyabet|ins[uü]lin.*eksikli/.test(value)) return profile(
+        'akut poliüri-polidipsi, kilo kaybı, ketozis/ketoasidoz ve pozitif pankreas otoantikorlarıyla düşünülür',
+        'keton negatifliği, korunmuş C-peptid ve otoantikor negatifliği akut otoimmün insülin eksikliğini zayıflatır',
+        'MODY’de beta hücre rezervi korunur ve ailevi-monojenik patern belirgindir',
+      );
+      if (/tip\s*2|ins[uü]lin\s+direnci|obez|metabolik/.test(value)) return profile(
+        'obezite, insülin direnci, akantozis nigrikans ve metabolik risklerle desteklenir',
+        'obezite veya belirgin insülin direnci yokken genç yaşta ailevi hiperglisemi MODY yönünde yorumlanır',
+        'temel ayrım metabolik sendromdan çok otozomal dominant monojenik diyabet paternidir',
+      );
+      if (/ketoasidoz|dka|keton/.test(value)) return profile(
+        'belirgin insülin eksikliği, hiperglisemi, keton pozitifliği ve metabolik asidozla acil tablo oluşturur',
+        'keton negatif ve klinik olarak stabil hafif hiperglisemi varlığında DKA doğru eksen olmaz',
+        'MODY kronik, ketozisiz ve ailevi hiperglisemi paterniyle ayrılır',
+      );
+      break;
+    case 'pediatric_perfusion':
+      if (/perf[uü]zyon|hidrasyon/.test(value)) return profile(
+        'ateşli çocukta dolaşım yeterliliği, kapiller dolum ve sıvı açığı riskini değerlendiren akut klinik önceliktir',
+        'uzamış kapiller dolum ve turgor azalması ilk değerlendirmeyi dolaşım-hidrasyon üzerine taşır',
+        'koruyucu veya elektif başlıklar akut perfüzyon bulgularının önüne geçmez',
+        'ateş, halsizlik, uzamış kapiller dolum ve turgor azalması dolaşım-hidrasyon değerlendirmesini ilk adım yapar',
+      );
+      if (/b[uü]y[uü]me|a[sş][ıi]|dermatoloji|psikososyal|elektif|rutin/.test(value)) return profile(
+        'stabil izlem veya koruyucu sağlık bağlamında değer taşıyan bir başlıktır',
+        'akut başvuruda perfüzyon ve hidrasyon bozukluğu bulguları varken ilk önceliği karşılamaz',
+        'acil triyajda önce dolaşım ve sıvı durumu, sonra elektif/koruyucu planlar değerlendirilir',
+      );
+      break;
+    default:
+      break;
   }
-  if (/hipertonik.*hiponatremi/.test(value)) {
-    return {
-      usual: 'Hipertonik hiponatremi genellikle ağır hiperglisemi veya mannitol gibi efektif osmollerin suyu ekstrasellüler alana çekmesiyle oluşur',
-      mismatch: 'olguda tonisite azalması ekseni kurulduğu için hipertonik mekanizma geri planda kalır',
-      distinction: 'hipotonik hiponatremide tonisite azalırken hipertonik tabloda efektif osmoller artmış olur',
-    };
-  }
-  if (/izotonik.*hiponatremi|ps[oÃö]dohiponatremi/.test(value)) {
-    return {
-      usual: 'İzotonik hiponatremi veya psödohiponatremi ağır hiperlipidemi ya da paraproteinemi gibi ölçüm artefaktlarında düşünülür',
-      mismatch: 'olguda gerçek tonisite azalması ekseni kurulduğu için ölçüm artefaktı açıklaması zayıflar',
-      distinction: 'psödohiponatremide plazma tonisitesi genellikle korunur',
-    };
-  }
-  if (/hipernatremik.*dehidratasyon|hipernatremi/.test(value)) {
-    return {
-      usual: 'Hipernatremik dehidratasyon ölçülen ana elektrolit değerinin yüksek olduğu ve çoğunlukla su kaybı ya da hipertonik yükle gelişen tablodur',
-      mismatch: 'olguda yüksek değer ekseni değil düşüklüğün tonisiteye göre sınıflanması hedeflenir',
-      distinction: 'bu soruda temel ayrım yüksek değer tanısı değil hipotonik sınıflamanın tanınmasıdır',
-    };
-  }
-  if (/hiperkalemi|potasyum/.test(value)) {
-    return {
-      usual: 'Hiperkalemi kardiyak iletim riski ve elektrolit yönetimi gerektiren ayrı bir tablodur',
-      mismatch: 'primer hiperkalemi ekseni sorunun hedeflediği hiponatremi sınıflamasını açıklamaz',
-      distinction: 'buradaki ayrım hiperkalemi değil düşük değer tablosunun tonisiteye göre yorumlanmasıdır',
-    };
-  }
-  if (/(?:t\s*)?h(?:ucre|ücre|Ã¼cre)|akim|ak[ıi]m|sitometri|flow|cd3|cd4|cd8|lenfosit\s+alt/.test(value)) {
-    return {
-      usual: 'T hücre veya kombine immün yetmezlik kuşkusunda lenfosit alt grupları ve T hücre fonksiyonu ön plana çıkar',
-      mismatch: 'ağır viral/fırsatçı enfeksiyon, kronik kandidiyazis, lenfopeni veya timus yokluğu gibi T hücre ekseni bulguları baskın değildir',
-      distinction: 'humoral yetmezlikte ayırıcı nokta tekrarlayan bakteriyel sinopulmoner enfeksiyonlar ve antikor yanıtının bozulmasıdır',
-    };
-  }
-  if (/spesifik.*antikor|antikor.*yan[ıi]t|a[sş][ıi].*antikor/.test(value)) {
-    return {
-      usual: 'Humoral immün yetmezlikte yalnız immünoglobulin miktarı değil, aşı antijenlerine karşı fonksiyonel antikor üretimi de değerlendirilir',
-      mismatch: 'kök humoral eksene oturduğunda bu test doğrudan antikor fonksiyonunu gösterir',
-      distinction: 'T hücre testlerinden farkı hücresel bağışıklığı değil B hücre-antikor yanıtının etkinliğini ölçmesidir',
-    };
-  }
-  if (/imm[uÃ¼]noglobulin|igg|iga|igm/.test(value)) {
-    return {
-      usual: 'Serum immünoglobulin düzeyleri humoral yetmezlik taramasında nicel eksikliği gösterir',
-      mismatch: 'fonksiyonel aşı yanıtı sorulduğunda yalnız düzey bakmak antikor işlevini tam olarak kanıtlamaz',
-      distinction: 'spesifik antikor yanıtı, immünoglobulin varlığının işlevsel koruyuculuğa dönüşüp dönüşmediğini ayırır',
-    };
-  }
-  if (/dhr|nitroblue|nbt|oksidatif|fagositoz|n[oÃö]trofil/.test(value)) {
-    return {
-      usual: 'DHR veya NBT testi nötrofil oksidatif patlama kusurlarında, özellikle kronik granülomatöz hastalık şüphesinde kullanılır',
-      mismatch: 'bu eksende katalaz pozitif mikroorganizmalarla derin apse veya invaziv fungal enfeksiyon paterni beklenir',
-      distinction: 'humoral tabloda temel sorun nötrofil öldürme fonksiyonu değil antikor aracılı opsonizasyon ve aşı yanıtıdır',
-    };
-  }
-  if (/kompleman|ch50|ah50/.test(value)) {
-    return {
-      usual: 'Kompleman incelemesi tekrarlayan Neisseria enfeksiyonları veya kompleman tüketimi düşündüren tabloda öne çıkar',
-      mismatch: 'kökte kompleman eksikliğini düşündüren meningokok enfeksiyonu veya klasik kompleman tüketimi paterni baskın değildir',
-      distinction: 'buradaki ayrım kompleman lizisi değil antikor yanıtının yetersizliğidir',
-    };
-  }
-  if (/triptaz|anafilaksi|mast/.test(value)) {
-    return {
-      usual: 'Serum triptaz mast hücre aktivasyonu ve anafilaksi değerlendirmesinde yardımcı bir biyobelirteçtir',
-      mismatch: 'tekrarlayan bakteriyel solunum yolu enfeksiyonları ve düşük immünoglobulin paterni mast hücre aktivasyonu eksenini desteklemez',
-      distinction: 'humoral yetmezlikte temel ayrım alerjik mediyatör salınımı değil antikor üretim ve yanıt kapasitesidir',
-    };
-  }
-  if (isModyAnswer(optionText)) {
-    return {
-      usual: 'MODY, otoimmün olmayan, ketozis beklenmeyen ve ailede genç yaşta diyabet kümelenmesiyle giden monojenik diyabet formudur',
-      mismatch: 'keton negatifliği, korunmuş C-peptid, otoantikor negatifliği ve çok kuşaklı aile öyküsü bu tanıyı güçlendirir',
-      distinction: 'tip 1 diyabetten farkı akut insülin eksikliği-ketozis yerine korunmuş beta hücre rezervi göstermesidir',
-    };
-  }
-  if (/tip\s*1|otoimm[uÃü]n.*diyabet|ins[uÃü]lin.*eksikli/.test(value)) {
-    return {
-      usual: 'Tip 1 diyabet akut poliüri-polidipsi, kilo kaybı, ketozis/ketoasidoz ve pozitif pankreas otoantikorlarıyla düşünülür',
-      mismatch: 'keton negatifliği, korunmuş C-peptid ve otoantikor negatifliği akut otoimmün insülin eksikliği eksenini zayıflatır',
-      distinction: 'MODY’de ailevi-monojenik patern ve beta hücre rezervinin korunması ayırt ettiricidir',
-    };
-  }
-  if (/tip\s*2|ins[uÃü]lin\s+direnci|obez|metabolik/.test(value)) {
-    return {
-      usual: 'Tip 2 diyabet genellikle obezite, insülin direnci, akantozis nigrikans ve metabolik risklerle desteklenir',
-      mismatch: 'obezite veya belirgin insülin direnci yoksa genç yaşta ailevi hafif hiperglisemi MODY lehine kayar',
-      distinction: 'MODY’de temel ayrım metabolik sendromdan çok otozomal dominant ailevi diyabet paternidir',
-    };
-  }
-  if (/ketoasidoz|dka|keton/.test(value)) {
-    return {
-      usual: 'Diyabetik ketoasidoz belirgin insülin eksikliği, hiperglisemi, keton pozitifliği ve metabolik asidozla acil tablo oluşturur',
-      mismatch: 'keton negatif ve klinik olarak stabil hafif hiperglisemi varlığında DKA doğru eksen olmaz',
-      distinction: 'MODY kronik, ketozisiz ve ailevi hiperglisemi paterniyle ayrılır',
-    };
-  }
-  return {
-    usual: 'Bu yanıt belirli bir tanı, test, tedavi veya mekanizma eksenini temsil eder',
-    mismatch: 'kökte bu ekseni doğrudan güçlendiren özgül bulgu dizisi baskın değildir',
-    distinction: 'doğru yanıtla ayrım, sorunun hedeflediği klinik karar için hangi veri kümesinin daha seçici olduğudur',
-  };
+  return null;
 }
 
-function buildFocusedDifferentialExplanation(question = {}, correctText = '') {
-  if (isSpecificAntibodyResponseAnswer(correctText)) {
-    return 'Tekrarlayan bakteriyel sinopulmoner enfeksiyonlar, düşük IgG/IgA ve normal T hücre ekseni humoral immün yetmezliği düşündürür. Bu durumda en öğretici karar noktası, hastanın aşı antijenlerine karşı koruyucu ve spesifik antikor yanıtı oluşturup oluşturamadığını ölçmektir.';
-  }
-  if (isModyAnswer(correctText)) {
-    return 'Ketozis olmadan seyreden hafif-orta hiperglisemi, korunmuş C-peptid, negatif pankreas otoantikorları ve birkaç kuşakta genç yaşta diyabet öyküsü MODY lehinedir. Bu patern akut tip 1 diyabetten keton/asidoz olmamasıyla, tip 2 diyabetten ise obezite ve belirgin insülin direnci olmamasıyla ayrılır.';
-  }
-  return `Doğru yanıt, kökteki ${finalSemanticStemSummary(question)} birlikte yorumlandığında en tutarlı klinik karar eksenini oluşturur. Yanlış seçenekler ise kendi tipik tanı, test veya mekanizma bağlamları için gerekli ayırt ettirici veriler kökte baskın olmadığı için geri planda kalır.`;
+function buildTopicLockedExplanation(question = {}, correctText = '', lock = {}) {
+  const correctProfile = domainOptionProfile(correctText, lock);
+  if (!correctProfile) return '';
+  const stemSummary = finalSemanticStemSummary(question);
+  return joinCompleteSentences([
+    `Doğru cevap ${correctText} çünkü olgudaki ${stemSummary} bu seçeneğin beklenen tıbbi paternini karşılar`,
+    correctProfile.correct,
+    `Yanlış seçenekler aynı başlık içinde farklı hastalık, test veya mekanizma paternleriyle ilişkilidir; ayırıcı karar bu paternlerin olgudaki verilerle uyuşmamasına dayanır`,
+  ]);
 }
 
 function joinCompleteSentences(parts = []) {
   return parts.map((part) => ensureSentence(part)).filter(Boolean).join(' ');
 }
 
-function buildFocusedDifferentialFeedback({ option, correctId, correctText }) {
+function buildTopicLockedFeedback({ option, correctId, correctText, question, lock }) {
   const optionText = cleanText(option?.text || '');
-  const profile = focusedOptionDifferentialProfile(optionText);
+  const optionProfile = domainOptionProfile(optionText, lock);
+  const correctProfile = domainOptionProfile(correctText, lock);
+  if (!optionProfile || !correctProfile) return '';
   if (option?.id === correctId) {
     return joinCompleteSentences([
-      `Doğru yanıtı destekleyen ana ayrım şudur: ${profile.mismatch}`,
-      profile.usual,
-      profile.distinction,
+      `Bu seçenek olgudaki verilerle uyumludur; ${optionProfile.correct}`,
+      optionProfile.usual,
+      optionProfile.distinction,
     ]);
   }
   return joinCompleteSentences([
-    `Bu yanlış şık normalde şu durumda düşünülür: ${profile.usual}.`,
-    `Bu soruda ${profile.mismatch}.`,
-    `Kritik ayrım: ${profile.distinction}; bu nedenle ${correctText} daha güçlü kalır.`,
+    `Bu seçenek tipik olarak ${optionProfile.usual}.`,
+    `Bu soruda ${optionProfile.mismatch}.`,
+    `Ayırıcı nokta şudur: ${optionProfile.distinction}. Bu nedenle doğru tercih ${correctText}; ${correctProfile.correct}.`,
   ]);
+}
+
+function buildTopicLockedExamPearl(question = {}, correctText = '', lock = {}) {
+  const correctProfile = domainOptionProfile(correctText, lock);
+  if (!correctProfile) return '';
+  if (lock.domain === 'hyponatremia') return 'Hiponatremide ilk sınıflama serum osmolalitesine göre yapılır; düşük osmolalite gerçek hipotonik tabloyu destekler.';
+  if (lock.domain === 'nephrotic_glomerular') return 'Çocukta saf nefrotik sendromda minimal değişiklik hastalığı düşünülür; nefritik bulgu, düşük kompleman veya skar/depozit paterni varsa diğer glomerülopatiler öne çıkar.';
+  if (lock.domain === 'intussusception') return 'İntussusepsiyonda aralıklı kolik ağrı, kusma, kanlı mukuslu dışkı ve palpabl kitle birlikte arandığında çeldiricilerden ayrım güçlenir.';
+  if (lock.domain === 'congenital_hypothyroidism') return 'Konjenital hipotiroidide nörogelişimsel gecikmeyi önlemek için yüksek TSH-düşük serbest T4 paterni hızlı tanınmalı ve tedavi geciktirilmemelidir.';
+  if (lock.domain === 'humoral_immunodeficiency') return 'Humoral yetmezlikte enfeksiyon öyküsü ve immünoglobulin düzeyleri kadar aşı antijenlerine özgül koruyucu antikor yanıtı da ayırt ettiricidir.';
+  if (lock.domain === 'mody_diabetes') return 'Genç yaşta ketozisiz hafif hiperglisemi, korunmuş C-peptid, negatif otoantikor ve otozomal dominant aile öyküsü MODY için yüksek değerli ipuçlarıdır.';
+  if (lock.domain === 'pediatric_perfusion') return 'Pediatrik acilde genel durum, kapiller dolum ve hidrasyon bulguları elektif değerlendirmelerden önce ele alınır.';
+  return ensureSentence(correctProfile.correct);
 }
 
 export function repairTusQuestionForPublish(rawQuestion = {}, repairReasons = []) {
@@ -1857,7 +2013,7 @@ export function repairTusQuestionForPublish(rawQuestion = {}, repairReasons = []
   const correctText = getCorrectText({ ...question, options });
   const applied = [];
   if (!options.length || !OPTION_IDS.includes(correctId) || !correctText) {
-    return { question, applied, blocked: true };
+    return { question, applied, blocked: true, reason: 'schema-or-correct-answer-missing' };
   }
 
   const domainRepair = applyFocusedDomainStemRepair(question, correctText);
@@ -1873,23 +2029,46 @@ export function repairTusQuestionForPublish(rawQuestion = {}, repairReasons = []
   );
   question.question = ensureQuestion(question.question || 'Bu olguda en uygun seçenek hangisidir?');
 
-  const { evidence } = visibleRepairEvidence(question);
-  question.explanation = buildFocusedDifferentialExplanation(question, correctText);
+  const lock = buildClinicalTopicLock(question, correctText);
+  const canRebuildAllFeedback = lock.domain !== 'unsupported'
+    && options.every((option) => domainOptionProfile(option.text, lock))
+    && domainOptionProfile(correctText, lock);
 
-  const feedback = {};
-  options.forEach((option) => {
-    feedback[option.id] = buildFocusedDifferentialFeedback({ option, correctId, correctText, question });
-  });
-  question.optionFeedback = feedback;
-  question.wrongOptionFeedback = feedback;
-  question.evidenceChain = evidence.length
-    ? evidence.map((item) => ensureSentence(item))
-    : [`Kök, ${correctText} lehine yorumlanacak görünür klinik bağlam içerir.`];
-  question.examPearl = isSpecificAntibodyResponseAnswer(correctText)
-    ? 'Tekrarlayan bakteriyel sinopulmoner enfeksiyon ve düşük immünoglobulin düzeyleri humoral ekseni güçlendirir; fonksiyonel değerlendirme için aşı antijenlerine özgül antikor yanıtı aranır.'
-    : (isModyAnswer(correctText)
-      ? 'Genç yaşta ketozisiz hafif hiperglisemi, korunmuş C-peptid, negatif otoantikor ve otozomal dominant aile öyküsü MODY için yüksek değerli ipuçlarıdır.'
-      : `${correctText} ancak kökteki ayırt ettirici klinik veriler rakip seçenekleri dışlayacak kadar güçlü olduğunda doğru kabul edilmelidir.`);
+  const mustRewriteFeedback = repairReasons.some((reason) => /feedback|explanation|placeholder|surface|template|authenticity|cross-topic|final-option|final-explanation|duplicate|unsupported_post_answer_data|evidence_not_grounded/i.test(String(reason || '')));
+
+  if (canRebuildAllFeedback && mustRewriteFeedback) {
+    if (lock.domain === 'hyponatremia' && !compactItems(question.compactObjectiveData || question.objectiveData || []).length) {
+      question.compactObjectiveData = [
+        { label: 'Serum sodyum', value: /122/.test(finalStemBundle(question)) ? '122 mEq/L' : 'Düşük' },
+        { label: 'Serum osmolalitesi', value: /osmolalite[^.?!;:,]*d[üu]ş[üu]k/iu.test(finalStemBundle(question)) ? 'Düşük' : 'Değerlendirildi' },
+      ];
+    }
+    const { evidence } = visibleRepairEvidence(question);
+    question.explanation = buildTopicLockedExplanation(question, correctText, lock);
+    const feedback = {};
+    options.forEach((option) => {
+      feedback[option.id] = buildTopicLockedFeedback({ option, correctId, correctText, question, lock });
+    });
+    question.optionFeedback = feedback;
+    question.wrongOptionFeedback = feedback;
+    question.evidenceChain = evidence.length
+      ? evidence.map((item) => ensureSentence(item))
+      : [`Olgudaki ${finalSemanticStemSummary(question)} doğru cevabı destekleyecek şekilde verilmiştir.`];
+    question.examPearl = buildTopicLockedExamPearl(question, correctText, lock);
+    applied.push(`topic-locked-feedback-rebuilt:${lock.domain}`);
+  } else if (mustRewriteFeedback) {
+    question.aiMeta = {
+      ...(question.aiMeta || {}),
+      localPublishRepair: {
+        attempted: true,
+        reasons: repairReasons,
+        correctAnswerPreserved: correctId,
+        blockedReason: `topic-lock-no-deterministic-feedback:${lock.domain}`,
+      },
+    };
+    return { question, applied, blocked: true, reason: `topic-lock-no-deterministic-feedback:${lock.domain}` };
+  }
+
   question.semanticFingerprint = makeSignature(question);
   question.aiMeta = {
     ...(question.aiMeta || {}),
@@ -1897,10 +2076,12 @@ export function repairTusQuestionForPublish(rawQuestion = {}, repairReasons = []
       attempted: true,
       reasons: repairReasons,
       correctAnswerPreserved: correctId,
+      topicLock: lock.domain,
+      ...(question.aiMeta?.localPublishRepair || {}),
     },
   };
-  applied.push('stem-explanation-feedback-evidence-rebuilt');
-  return { question, applied, blocked: false };
+  if (applied.length) applied.push('stem-explanation-feedback-evidence-rebuilt');
+  return { question, applied: Array.from(new Set(applied)), blocked: false };
 }
 
 function canAttemptLocalPublishRepair(error = '') {
@@ -2453,10 +2634,12 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
     throw error;
   }
   if (finalSanity.repairableErrors.length) {
-    sanitized.qualityNotes = Array.from(new Set([
-      ...(sanitized.qualityNotes || []),
-      ...finalSanity.repairableErrors.map((item) => `final-feedback-repairable:${item}`),
-    ]));
+    const finalErrors = finalSanity.repairableErrors;
+    const error = new Error(finalErrors.join('; ') || 'Final answer/feedback repair could not produce publishable feedback.');
+    error.validationErrors = finalErrors;
+    error.qualitySeverity = 'repairable';
+    error.question = sanitized;
+    throw error;
   }
   sanitized.aiMeta = {
     ...(sanitized.aiMeta || {}),
@@ -2592,13 +2775,13 @@ export default async function handler(request, response) {
         if (!repaired.blocked && (repaired.applied || []).length) Object.assign(question, repaired.question);
         disabledFinalSanity = runFinalAnswerFeedbackSanityGate(question);
       }
-      if (disabledFinalSanity.blockingErrors?.length) {
+      if (disabledFinalSanity.blockingErrors?.length || disabledFinalSanity.repairableErrors?.length) {
         logQuestionGenerationGate({
           branch,
           difficulty: requestedDifficulty,
           provider: 'local-curated-question',
           severity: 'blocking',
-          stages: { final_feedback_quality: { blocking: disabledFinalSanity.blockingErrors.length, repairable: disabledFinalSanity.repairableErrors?.length || 0, warning: 0 } },
+          stages: { final_feedback_quality: { blocking: disabledFinalSanity.blockingErrors?.length || 0, repairable: disabledFinalSanity.repairableErrors?.length || 0, warning: 0 } },
           issues: [...disabledFinalSanity.blockingErrors, ...(disabledFinalSanity.repairableErrors || [])].slice(0, 8).map((message) => ({ stage: 'final_feedback_quality', severity: 'blocking', message })),
         });
         return sendJson(response, 422, {
@@ -2695,6 +2878,7 @@ export default async function handler(request, response) {
       ...fallbackHardErrors,
       ...fallbackLegacyBlocking.map((issue) => `${issue.code}: ${issue.message || ''}`.trim()),
       ...(fallbackFinalSanity.blockingErrors || []),
+      ...(fallbackFinalSanity.repairableErrors || []).map((item) => `final-feedback-unresolved:${item}`),
     ];
     if (fallbackBlockingFailures.length) {
       const classifiedFallback = classifyTusValidationErrors([

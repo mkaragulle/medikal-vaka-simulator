@@ -80,6 +80,20 @@ expectFinalFail(clone({
 }), 'final-option-feedback-duplicated:B-C', 'duplicated feedback');
 
 expectFinalFail(clone({
+  optionFeedback: {
+    ...validQuestion.optionFeedback,
+    B: 'Bu yanıt belirli bir tanı, test, tedavi veya mekanizma eksenini temsil eder. Kökte bu ekseni doğrudan güçlendiren özgül bulgu dizisi baskın değildir.',
+  },
+}), 'final-option-feedback-template:B', 'forbidden template feedback');
+
+expectFinalFail(clone({
+  optionFeedback: {
+    ...validQuestion.optionFeedback,
+    D: 'Bu olguda IgG ve IgA düşüklüğü ile aşı antikor yanıtının zayıf olması humoral immün yetmezliği destekler. Neisseria enfeksiyonları ve kompleman taraması da aynı bağışıklık ekseninde düşünülebilir.',
+  },
+}), 'final-feedback-cross-topic-contamination:humoral-immunodeficiency', 'cross-topic feedback contamination');
+
+expectFinalFail(clone({
   explanation: 'Hastada trombosit sayisinin 18.000/mm3 olmasi immun trombositopeniyi destekler. Bu laboratuvar paterninde hiponatremi ana karar noktasi degildir.',
 }), 'base-repairable:explanation-to-stem-grounding', 'absent lab grounding');
 

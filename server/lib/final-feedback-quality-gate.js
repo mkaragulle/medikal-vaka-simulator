@@ -69,6 +69,143 @@ const SURFACE_PHRASE_PATTERNS = [
   /\bverilen bulgularla yeterince uyumlu degildir\b/u,
 ];
 
+
+const FORBIDDEN_TEMPLATE_FEEDBACK_PATTERNS = [
+  /bu yanit belirli bir tani test tedavi veya mekanizma eksenini temsil eder/u,
+  /bu yanit belirli bir tani.*eksenini temsil eder/u,
+  /kokte bu ekseni dogrudan guclendiren ozgul bulgu dizisi baskin degildir/u,
+  /hangi veri kumesinin daha secici oldugudur/u,
+  /daha guclu kalir/u,
+  /bulgu butunlug/u,
+  /gorunur veriler/u,
+  /gorunur veri/u,
+  /klinik karar ekseni/u,
+  /klinik karar noktasi/u,
+  /kendi ozgun klinik patern/u,
+  /kendi tanisal veya mekanistik ipuclari/u,
+  /tanisal veya mekanistik ipuclari kokte baskin/u,
+  /dogru cevabin klinik eksenini destekler/u,
+  /temel ayrim.*lehine birles/u,
+];
+
+const CROSS_TOPIC_CLUSTERS = [
+  {
+    id: 'humoral-immunodeficiency',
+    terms: ['igg', 'iga', 'igm', 'immunoglobulin', 'immun yetmezlik', 'humoral', 'b hucresi', 'cd19', 'asi antikor', 'spesifik antikor', 'pnömokok antikor', 'tetanoz antikor', 'neisseria', 'ch50', 'ah50', 'dhr', 'nbt'],
+  },
+  {
+    id: 'diabetes-mody',
+    terms: ['mody', 'monojenik', 'glukokinaz', 'hnf1a', 'hnf4a', 'c peptid', 'c-peptid', 'anti gad', 'otoantikor', 'keton', 'ketoasidoz', 'hba1c', 'polidipsi', 'poliuri'],
+  },
+  {
+    id: 'nephrotic-glomerular',
+    terms: ['nefrotik', 'proteinuri', 'hipoalbuminemi', 'hiperlipidemi', 'minimal degisiklik', 'fsgs', 'fokal segmental', 'membranoz', 'membranoproliferatif', 'mpgn', 'postenfeksiyoz', 'glomerulonefrit', 'kompleman', 'podosit', 'ayakcik', 'subepitelyal', 'subendotelyal', 'mezangial'],
+  },
+  {
+    id: 'intussusception-abdomen',
+    terms: ['intussusepsiyon', 'invajinasyon', 'currant jelly', 'kanli mukus', 'kolik agri', 'sosis seklinde', 'palpabl kitle', 'hedef bulgusu', 'apandisit', 'meckel', 'volvulus', 'gastroenterit', 'bilious', 'safra'],
+  },
+  {
+    id: 'congenital-hypothyroidism',
+    terms: ['konjenital hipotiroidi', 'hipotiroidi', 'tsh', 'serbest t4', 'ft4', 'kabizlik', 'hipotoni', 'makroglossi', 'kuru sac', 'seyrek sac', 'uzamis sarilik', 'primer hipotiroidi', 'guatr'],
+  },
+  {
+    id: 'adrenal-axis',
+    terms: ['adrenal yetmezlik', 'kortizol', 'acth', 'hiperpigmentasyon', 'hipoglisemi', 'hiponatremi', 'hiperkalemi'],
+  },
+  {
+    id: 'cystic-fibrosis',
+    terms: ['kistik fibrozis', 'ter testi', 'mekonyum ileusu', 'pankreatik yetmezlik', 'tekrarlayan akciger enfeksiyonu', 'cftr'],
+  },
+];
+
+function includesNormalizedTerm(text = '', term = '') {
+  const haystack = normalizeForAudit(text);
+  const needle = normalizeForAudit(term);
+  if (!needle) return false;
+  return haystack.includes(needle);
+}
+
+function clusterHits(text = '', cluster = {}) {
+  return (cluster.terms || []).filter((term) => includesNormalizedTerm(text, term));
+}
+
+function topicLockText(question = {}) {
+  return [
+    question.relatedBranch,
+    question.branch,
+    question.learningTarget,
+    question.answerTarget,
+    question.diagnosisTarget,
+    question.question,
+    question.questionStem,
+    question.stem,
+    question.correctAnswerText,
+    ...(question.options || []).map((option) => option?.text || ''),
+    ...(question.compactObjectiveData || []).flatMap((item) => [item.label, item.value]),
+    ...(question.objectiveData || []).flatMap((item) => [item.label, item.value]),
+  ].filter(Boolean).join(' | ');
+}
+
+function supportedTopicClusters(question = {}) {
+  const lockText = topicLockText(question);
+  const supported = new Set();
+  CROSS_TOPIC_CLUSTERS.forEach((cluster) => {
+    if (clusterHits(lockText, cluster).length >= 1) supported.add(cluster.id);
+  });
+  return supported;
+}
+
+function detectCrossTopicContamination(question = {}) {
+  const supported = supportedTopicClusters(question);
+  const postAnswer = [
+    question.explanation,
+    question.examPearl,
+    ...(Array.isArray(question.evidenceChain) ? question.evidenceChain : []),
+    ...Object.values(question.optionFeedback || question.wrongOptionFeedback || {}),
+  ].filter(Boolean).join(' | ');
+  const contamination = [];
+  CROSS_TOPIC_CLUSTERS.forEach((cluster) => {
+    if (supported.has(cluster.id)) return;
+    const hits = clusterHits(postAnswer, cluster);
+    const uniqueHits = Array.from(new Set(hits.map((item) => normalizeForAudit(item))));
+    if (uniqueHits.length >= 2) contamination.push(`${cluster.id}:${uniqueHits.slice(0, 4).join(',')}`);
+    if (uniqueHits.length >= 1 && ['humoral-immunodeficiency', 'diabetes-mody'].includes(cluster.id)) {
+      // These clusters are common carry-over residues in the current generator and
+      // should not appear at all unless the current question lock supports them.
+      contamination.push(`${cluster.id}:${uniqueHits.slice(0, 4).join(',')}`);
+    }
+  });
+  return Array.from(new Set(contamination));
+}
+
+function hasForbiddenTemplateFeedback(value = '') {
+  const normalized = normalizeForAudit(value);
+  return FORBIDDEN_TEMPLATE_FEEDBACK_PATTERNS.some((pattern) => pattern.test(normalized));
+}
+
+function feedbackCopiesStem(value = '', question = {}) {
+  const normalizedFeedback = normalizeForAudit(value);
+  if (!normalizedFeedback || normalizedFeedback.length < 80) return false;
+  const stemSentences = splitSentences([
+    question.questionStem,
+    question.stem,
+    question.question,
+  ].filter(Boolean).join(' '))
+    .map(normalizeForAudit)
+    .filter((sentence) => sentence.length >= 60);
+  return stemSentences.some((sentence) => normalizedFeedback.includes(sentence.slice(0, 60)));
+}
+
+function feedbackRepeatsOptionName(value = '', optionText = '') {
+  const normalizedFeedback = normalizeForAudit(value);
+  const normalizedOption = normalizeForAudit(optionText);
+  if (!normalizedFeedback || !normalizedOption || normalizedOption.length < 8) return false;
+  const firstSentence = normalizeForAudit(splitSentences(value)[0] || '');
+  const count = normalizedFeedback.split(normalizedOption).length - 1;
+  return count >= 3;
+}
+
 const BROKEN_TURKISH_PATTERNS = [
   /^(?:da|de)\s+\S/u,
   /(?:^|[.!?]\s+)(?:da|de)\s+\S/u,
@@ -195,6 +332,8 @@ function validateExplanation(question = {}) {
   if (sentenceCount(explanation) < 2 || wordCount(explanation) < 28) errors.push('final-explanation-too-thin');
   if (hasBrokenTurkish(explanation)) errors.push('final-explanation-broken-turkish');
   if (hasSurfaceOnlyPhrase(explanation)) errors.push('final-explanation-surface-phrase');
+  if (hasForbiddenTemplateFeedback(explanation)) errors.push('final-explanation-template-feedback');
+  if (feedbackCopiesStem(explanation, question)) errors.push('final-explanation-copies-stem');
   if (hasDebugResidue(explanation)) errors.push('final-explanation-meta-residue');
   if (hasEnglishMedicalMix(explanation)) errors.push('final-explanation-english-medical-term');
   return errors;
@@ -217,6 +356,9 @@ function validateOptionFeedback(question = {}) {
     if (wordCount(text) < 24) errors.push(`final-option-feedback-too-thin${suffix}`);
     if (hasBrokenTurkish(text)) errors.push(`final-option-feedback-broken-turkish${suffix}`);
     if (hasSurfaceOnlyPhrase(text)) errors.push(`final-option-feedback-surface-phrase${suffix}`);
+    if (hasForbiddenTemplateFeedback(text)) errors.push(`final-option-feedback-template${suffix}`);
+    if (feedbackCopiesStem(text, question)) errors.push(`final-option-feedback-copies-stem${suffix}`);
+    if (feedbackRepeatsOptionName(text, optionText)) errors.push(`final-option-feedback-option-name-repeat${suffix}`);
     if (hasDebugResidue(text)) errors.push(`final-option-feedback-meta-residue${suffix}`);
     if (hasEnglishMedicalMix(text)) errors.push(`final-option-feedback-english-medical-term${suffix}`);
     if (!optionSpecificEnough(text, optionText)) errors.push(`final-option-feedback-not-option-specific${suffix}`);
@@ -265,6 +407,7 @@ export function runFinalFeedbackQualityGate(rawQuestion = {}, options = {}) {
     ...baseGate.repairableErrors.map((error) => `base-repairable:${error}`),
     ...validateExplanation(question),
     ...validateOptionFeedback(question),
+    ...detectCrossTopicContamination(question).map((item) => `final-feedback-cross-topic-contamination:${item}`),
   ];
   const classified = classifyFinalFeedbackErrors(errors);
   const warnings = Array.from(new Set([...(baseGate.warnings || []), ...classified.warnings]));
