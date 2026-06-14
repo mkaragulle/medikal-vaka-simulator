@@ -50,10 +50,14 @@ function classifyTusValidationError(message = '') {
   let severity = 'warning';
   let action = 'allow_with_note';
 
-  if (/branch|stem eksik|question net|tam 5|se[cÃ§]enek yok|correctanswer|options-not-five|correct-answer-id-invalid|correct-answer-text-missing/.test(text)) {
+  if (/bos cikti|bo[sÅ] cikti|output token|token limit|max output|max tokens|incomplete|json|parse|invalid json|schema repair|model-json/.test(text)) {
+    stage = 'json_schema_or_token_output';
+    severity = 'repairable';
+    action = 'repair_or_regenerate_with_more_output_budget';
+  } else if (/branch|stem eksik|question net|tam 5|se[cÃ§]enek yok|correctanswer|options-not-five|correct-answer-id-invalid|correct-answer-text-missing/.test(text)) {
     stage = 'schema';
-    severity = 'blocking';
-    action = 'regenerate';
+    severity = /branch eksik|stem eksik|correctanswer/.test(text) ? 'blocking' : 'repairable';
+    action = severity === 'blocking' ? 'regenerate' : 'repair_schema';
   } else if (/imkans|bozuk klinik de[gÄ]er|clinical value|medical contradiction|stem correct answer conflict|celiski|conflict/.test(text)) {
     stage = 'scientific_accuracy';
     severity = 'blocking';
@@ -1572,14 +1576,52 @@ const FALLBACK_BANK = [
     relatedBranch: 'Çocuk Sağlığı ve Hastalıkları', difficulty: 'Orta', learningTarget: 'Pediatrik acilde risk bulgularını ayırt etme.', answerTarget: 'first_step', demographics: 'Küçük çocuk', setting: 'Çocuk acil', chiefComplaint: 'Ateş ve halsizlik', stem: 'Küçük çocuk ateş ve beslenmede azalma nedeniyle acile getirilir. Aile çocuğun son saatlerde daha halsiz olduğunu belirtir. Muayenede kapiller dolum süresi uzamış ve cilt turgoru azalmıştır.', compactVitals: [{ label: 'Ateş', value: '39 °C' }, { label: 'Nabız', value: 'Taşikardik' }], question: 'Bu olguda öncelikle değerlendirilmesi gereken klinik öncelik hangisidir?', options: [{ id: 'A', text: 'Perfüzyon ve hidrasyon durumu' }, { id: 'B', text: 'Uzun dönem büyüme izlemi' }, { id: 'C', text: 'Rutin aşı takvimi planı' }, { id: 'D', text: 'Elektif dermatoloji değerlendirmesi' }, { id: 'E', text: 'Okul çağı psikososyal taraması' }], correctAnswer: 'A', explanation: 'Ateşli çocukta halsizlik, uzamış kapiller dolum ve turgor azalması dolaşım ve hidrasyon değerlendirmesini öncelikli kılar. Diğer seçenekler akut acil karar düzeyini karşılamaz.', wrongOptionFeedback: { A: 'Bu seçenek akut risk değerlendirmesinin merkezindedir.', B: 'Büyüme izlemi önemlidir; ancak akut perfüzyon bulguları varken ilk öncelik değildir.', C: 'Aşı takvimi koruyucu sağlık başlığıdır; bu acil başvurunun ilk kararını açıklamaz.', D: 'Elektif değerlendirme akut sistemik bulguların önüne geçmez.', E: 'Psikososyal tarama bu akut perfüzyon sorununu yanıtlamaz.' }, evidenceChain: ['Beslenme azalmıştır.', 'Kapiller dolum süresi uzamıştır.', 'Cilt turgoru azalmıştır.'], examPearl: 'Pediatrik acilde genel durum ve perfüzyon bulguları tanısal ayrıntılardan önce değerlendirilir.', managementSteps: ['Hava yolu, solunum ve dolaşım hızlıca değerlendirilir.', 'Perfüzyon ve hidrasyon bulgularına göre sıvı planı yapılır.'] },
 ];
 
-function fallbackQuestion({ branchFilter, difficulty = 'Orta', recentQuestionSummaries }) {
+function enhanceFallbackQuestionQuality(question = {}) {
+  const correctText = normalize(getCorrectText(question));
+  if (/hipotonik hiponatremi/.test(correctText)) {
+    question.explanation = 'Serum sodyumunun düşük olması ve buna düşük serum osmolalitesinin eşlik etmesi gerçek hipotonik hiponatremi paternini destekler. Bu olguda dikkat azalması semptomatik hiponatremi bağlamı kurar; sonraki klinik ayrım volüm durumu ve idrar elektrolitleriyle yapılır.';
+    question.wrongOptionFeedback = {
+      A: 'Hipotonik hiponatremi, düşük serum sodyumuna düşük serum osmolalitesinin eşlik ettiği gerçek hiponatremi tablosunu temsil eder. Bu olguda sodyum 122 mEq/L ve osmolalite düşük verildiği için seçenek kökteki laboratuvar paternini doğrudan açıklar.',
+      B: 'Hipertonik hiponatremi, hiperglisemi veya mannitol gibi osmotik aktif solütlerin serum osmolalitesini yükselttiği durumlarda düşünülür. Bu olguda serum osmolalitesi düşük verildiği için tablo hipertonik değil, hipotonik hiponatremi yönündedir.',
+      C: 'İzotonik psödohiponatremi, serum sodyumu düşük ölçülse bile serum osmolalitesinin genellikle normal kaldığı ölçüm/pseudo bozukluklarıyla ilişkilidir. Burada osmolalitenin düşük olması gerçek hipotonik süreci destekler ve psödohiponatremiyi geri plana iter.',
+      D: 'Hipernatremik dehidratasyonda temel laboratuvar beklentisi serum sodyumunun yüksek olmasıdır. Bu olguda sodyum 122 mEq/L olarak düşük verildiğinden dehidratasyon öyküsü olsa bile seçenek ana laboratuvar paternini açıklamaz.',
+      E: 'Primer hiperkalemi, potasyum yüksekliği ve buna bağlı kardiyak ya da nöromüsküler risk üzerinden yorumlanan farklı bir elektrolit bozukluğudur. Kökte potasyum yüksekliği değil sodyum-osmolalite uyumsuzluğu verildiği için karar noktası hiponatremi sınıflaması ve osmolalite ayrımıdır.',
+    };
+    question.optionFeedback = question.wrongOptionFeedback;
+    question.evidenceChain = [
+      'Serum sodyumu 122 mEq/L olarak düşüktür.',
+      'Serum osmolalitesi düşük verilmiştir.',
+      'Dikkat azalması semptomatik hiponatremi bağlamını destekler.',
+    ];
+    question.examPearl = 'Hiponatremide ilk sınıflama serum osmolalitesine göre yapılır; düşük osmolalite gerçek hipotonik hiponatremiyi destekler.';
+  } else if (/perf[uü]zyon|hidrasyon/.test(correctText)) {
+    question.explanation = 'Ateşli ve halsiz çocukta uzamış kapiller dolum ile cilt turgorunda azalma, dolaşım ve hidrasyon değerlendirmesini ilk klinik öncelik yapar. Bu bulgular akut risk triyajını belirlediği için elektif veya koruyucu sağlık başlıkları bu başvuruda ilk adım değildir.';
+    question.wrongOptionFeedback = {
+      A: 'Perfüzyon ve hidrasyon durumu, ateşli çocukta dolaşım yeterliliği ve sıvı açığı riskini değerlendiren akut klinik önceliktir. Bu olguda uzamış kapiller dolum ve azalmış cilt turgoru verildiği için doğru karar noktası bu seçenektir.',
+      B: 'Uzun dönem büyüme izlemi pediatrik takipte önemlidir ve kronik gelişim değerlendirmesinde kullanılır. Ancak kökte akut ateş, halsizlik, uzamış kapiller dolum ve turgor azalması bulunduğundan ilk öncelik büyüme izlemi değil dolaşım-hidrasyon değerlendirmesidir.',
+      C: 'Rutin aşı takvimi planı koruyucu sağlık hizmetinin parçasıdır ve stabil çocuğun izlemlerinde ele alınır. Bu başvuruda akut perfüzyon ve hidrasyon bulguları ön planda olduğu için aşı planı ilk klinik karar değildir.',
+      D: 'Elektif dermatoloji değerlendirmesi cilt bulgularının acil sistemik risk taşımadığı durumlarda düşünülebilir. Burada karar verdiren bulgular kapiller dolum uzaması ve turgor azalmasıdır; bu nedenle elektif değerlendirme akut önceliği karşılamaz.',
+      E: 'Okul çağı psikososyal taraması gelişimsel ve sosyal izlemin parçasıdır. Bu olguda çocuk acile ateş ve halsizlikle getirilmiş, muayenede perfüzyon-hidrasyon riski verilmiştir; bu nedenle tarama yaklaşımı doğru ilk adım değildir.',
+    };
+    question.optionFeedback = question.wrongOptionFeedback;
+    question.evidenceChain = [
+      'Ateş ve halsizlik akut başvuru bağlamı oluşturur.',
+      'Kapiller dolum süresi uzamıştır.',
+      'Cilt turgorunun azalması hidrasyon riskini destekler.',
+    ];
+    question.examPearl = 'Pediatrik acilde ilk öncelik genel durum, dolaşım ve hidrasyon riskini belirleyen bulguları hızla değerlendirmektir.';
+  }
+  return question;
+}
+
+export function fallbackQuestion({ branchFilter, difficulty = 'Orta', recentQuestionSummaries }) {
   const branch = chooseBranch(branchFilter);
   const selectedDifficulty = normalizeDifficulty(difficulty);
   const recentCorrectAnswers = new Set(asArray(recentQuestionSummaries).map((item) => normalize(item.correct || item.correctAnswer || item.correctAnswerText || '')));
   const candidates = FALLBACK_BANK.filter((item) => normalize(branchFilter).includes(normalize(item.relatedBranch)) || normalize(item.relatedBranch).includes(normalize(branchFilter)) || ['random', 'rastgele', ''].includes(normalize(branchFilter)));
   const pool = candidates.length ? candidates : FALLBACK_BANK;
   const selected = pool.find((item) => !recentCorrectAnswers.has(normalize(getCorrectText(item)))) || pool[Math.floor(Math.random() * pool.length)];
-  return sanitizeQuestion({ ...selected, difficulty: selectedDifficulty, id: `ai-spot-fallback-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, branch, selectedDifficulty);
+  return enhanceFallbackQuestionQuality(sanitizeQuestion({ ...selected, difficulty: selectedDifficulty, id: `ai-spot-fallback-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, branch, selectedDifficulty));
 }
 
 function getJsonCandidate(text = '') {
@@ -1730,9 +1772,20 @@ async function callOpenAI(prompt, { detailMode = tusQuestionDetailMode() } = {})
     const text = useResponses ? extractResponsesText(data) : extractChatText(data);
     if (!String(text || '').trim()) {
       const reason = data?.incomplete_details?.reason || data?.status || 'empty_output';
-      throw new Error(`OpenAI boş çıktı döndürdü (${reason}). Output token limitini artırın veya reasoning effort değerini low/none kullanın.`);
+      const error = new Error(`OpenAI boş çıktı döndürdü (${reason}). Output token limitini artırın veya reasoning effort değerini low/none kullanın.`);
+      error.validationErrors = [`token/output incomplete: ${reason}`];
+      error.qualitySeverity = 'repairable';
+      throw error;
     }
-    const question = parseModelJson(text);
+    let question;
+    try {
+      question = parseModelJson(text);
+    } catch (parseError) {
+      const error = new Error(`model-json-parse-failed: ${parseError?.message || parseError}`);
+      error.validationErrors = ['json parse/schema repair required'];
+      error.qualitySeverity = 'repairable';
+      throw error;
+    }
     return { question, model: data.model || model, mode: style };
   } finally {
     cancel();
@@ -1961,8 +2014,9 @@ export default async function handler(request, response) {
   const branch = chooseBranch(body.branchFilter);
   const requestedDifficulty = normalizeDifficulty(body.difficulty || body.requestedDifficulty || body.aiDifficulty || 'Orta');
   const recentQuestionSummaries = asArray(body.recentQuestionSummaries).slice(0, 12);
-  const remoteAttempts = Math.max(1, Math.min(2, Number(process.env.REMOTE_AI_ATTEMPTS || process.env.TUS_REMOTE_AI_ATTEMPTS || 2)));
+  const remoteAttempts = Math.max(1, Math.min(3, Number(process.env.REMOTE_AI_ATTEMPTS || process.env.TUS_REMOTE_AI_ATTEMPTS || 3)));
   const repairRegenerationBudget = Math.max(0, Math.min(2, Number(process.env.TUS_REPAIR_REGENERATION_ATTEMPTS || 1)));
+  const blockingRegenerationBudget = Math.max(0, Math.min(2, Number(process.env.TUS_BLOCKING_REGENERATION_ATTEMPTS || 1)));
   const errors = [];
   const failureDetails = [];
   const target = body.target || body.answerTarget || '';
@@ -2013,7 +2067,8 @@ export default async function handler(request, response) {
     const detailMode = tusQuestionDetailMode();
     let qualityFeedback = '';
     let repairExtensionsUsed = 0;
-    for (let attempt = 1; attempt <= remoteAttempts + repairExtensionsUsed; attempt += 1) {
+    let blockingExtensionsUsed = 0;
+    for (let attempt = 1; attempt <= remoteAttempts + repairExtensionsUsed + blockingExtensionsUsed; attempt += 1) {
       try {
         const question = await generateRemote({ branch, target, difficulty: requestedDifficulty, recentQuestionSummaries, sourceText, attempt, antiRepeatNonce: body.antiRepeatNonce, detailMode, qualityFeedback });
         await storeReusableQuestion({ branch, target, difficulty: requestedDifficulty, question });
@@ -2049,6 +2104,9 @@ export default async function handler(request, response) {
         if (severity === 'repairable' && attempt >= remoteAttempts && repairExtensionsUsed < repairRegenerationBudget) {
           repairExtensionsUsed += 1;
         }
+        if (severity === 'blocking' && attempt >= remoteAttempts && blockingExtensionsUsed < blockingRegenerationBudget) {
+          blockingExtensionsUsed += 1;
+        }
         qualityFeedback = buildRetryQualityFeedback(failure);
       }
     }
@@ -2065,12 +2123,13 @@ export default async function handler(request, response) {
     const question = fallbackQuestion({ branchFilter: branch, difficulty: requestedDifficulty, recentQuestionSummaries });
     const fallbackGate = runQuestionQualityGate(question, { version: PROMPT_VERSION });
     const fallbackFinalGate = runFinalFeedbackQualityGate(question, { version: `${PROMPT_VERSION}:final-feedback`, baseVersion: PROMPT_VERSION });
-    if (!fallbackGate.publishable || !fallbackFinalGate.publishable || legacyBlockingReviewIssues(question).length) {
+    const fallbackValidation = validateQuestion(question, recentQuestionSummaries);
+    if (!fallbackGate.publishable || !fallbackFinalGate.publishable || !fallbackValidation.ok || legacyBlockingReviewIssues(question).length) {
       logFallbackTrigger({
         branch,
         difficulty: requestedDifficulty,
         reason: 'local-safe-fallback-suppressed-by-quality-gate',
-        failures: [...fallbackGate.errors, ...fallbackFinalGate.errors],
+        failures: [...fallbackGate.errors, ...fallbackFinalGate.errors, ...(fallbackValidation.errors || [])],
       });
       return sendJson(response, 422, {
         ok: false,
@@ -2091,6 +2150,10 @@ export default async function handler(request, response) {
           errors: fallbackFinalGate.errors,
           warnings: fallbackFinalGate.warnings,
         },
+        fallbackValidationGate: {
+          stages: fallbackValidation.stages,
+          errors: fallbackValidation.errors,
+        },
       });
     }
     const primaryError = errors[0] || null;
@@ -2104,16 +2167,22 @@ export default async function handler(request, response) {
       remoteFailureAttempts: errors.slice(0, 3),
       promptVersion: PROMPT_VERSION,
     };
-    return sendJson(response, 422, {
-      ok: false,
+    logFallbackTrigger({
+      branch,
+      difficulty: requestedDifficulty,
+      reason: 'local-safe-fallback-passed-quality-gate',
+      failures: failureDetails.slice(0, 3),
+    });
+    return sendJson(response, 200, {
+      ok: true,
       provider: 'local-safe-fallback',
-      fallback: false,
-      safeFallback: false,
-      manualReviewRequired: true,
-      error: primaryError,
+      fallback: true,
+      safeFallback: true,
+      manualReviewRequired: false,
+      error: null,
       attempts: errors.slice(0, 3),
       attemptDetails: failureDetails.slice(0, 3),
-      internalDebugFallback: question,
+      question,
     });
   }
   if (safeFallbackEnabled && !hasBlockingFailure) {

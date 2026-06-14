@@ -1,8 +1,11 @@
 import assert from 'node:assert/strict';
 import {
   classifyTusValidationErrors,
+  fallbackQuestion,
   questionMatchesRecent,
 } from '../api/generate-ai-question.js';
+import { runFinalFeedbackQualityGate } from '../server/lib/final-feedback-quality-gate.js';
+import { runQuestionQualityGate } from '../server/lib/question-quality-gate.js';
 
 const language = classifyTusValidationErrors([
   'bozuk Türkçe veya makine çevirisi klinik ifade var',
@@ -23,6 +26,14 @@ const duplicate = classifyTusValidationErrors([
 assert.equal(duplicate.blockingErrors.length, 0, 'repeat control should not be a hard failure');
 assert.equal(duplicate.repairableErrors.length, 1, 'repeat control should trigger controlled regeneration');
 assert.ok(duplicate.issues.some((issue) => issue.stage === 'repeat_control'), 'repeat stage should be logged');
+
+const tokenOutput = classifyTusValidationErrors([
+  'token/output incomplete: max_output_tokens',
+  'model-json-parse-failed: Unexpected end of JSON input',
+]);
+assert.equal(tokenOutput.blockingErrors.length, 0, 'token/JSON truncation should not be treated as medical-quality blocking');
+assert.equal(tokenOutput.repairableErrors.length, 2, 'token/JSON truncation should trigger repair/regeneration');
+assert.ok(tokenOutput.issues.every((issue) => issue.stage === 'json_schema_or_token_output'), 'token/JSON stage should be logged separately');
 
 const baseQuestion = {
   id: 'new-question',
@@ -70,5 +81,15 @@ assert.equal(
   true,
   'same stem pattern with same answer and option axis should still be blocked as a true duplicate',
 );
+
+const safeFallback = fallbackQuestion({
+  branchFilter: 'İç Hastalıkları',
+  difficulty: 'Orta',
+  recentQuestionSummaries: [],
+});
+const fallbackPublisherGate = runQuestionQualityGate(safeFallback);
+const fallbackFinalGate = runFinalFeedbackQualityGate(safeFallback);
+assert.equal(fallbackPublisherGate.publishable, true, `safe fallback should pass publisher gate: ${fallbackPublisherGate.errors.join('; ')}`);
+assert.equal(fallbackFinalGate.publishable, true, `safe fallback should pass final feedback gate: ${fallbackFinalGate.errors.join('; ')}`);
 
 console.log('question-generation-failure-routing-smoke-test: ok');
