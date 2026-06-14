@@ -554,14 +554,14 @@ export const TUS_PEARL_INTERNAL_MEDICINE_FIRST50_TEXT_OVERRIDES = Object.freeze(
     "keywords": [
       "tirotoksikozis faktitisya",
       "düşük tiroglobulin",
-      "düşük RAI tutulumu",
+      "düşük Rtutulumu",
       "ekzojen hormon"
     ],
     "back": "Tirotoksikozis faktitisya.",
     "answer": "Ekzojen tiroid hormonu alımına bağlı tirotoksikozis faktitisya.",
     "explanation": "Tirotoksikozis faktitisyada hormon fazlalığı tiroid bezinin aşırı üretiminden değil dışarıdan hormon alınmasından kaynaklanır. Bu nedenle TSH baskılanır ve T4 yüksek olur; ancak tiroid bezi aktif üretim yapmadığı için radyoaktif iyot tutulumu ve tiroglobulin düşüktür. Bu patern Graves ve tiroiditten ayırımda değerlidir.",
-    "tusTip": "Düşük RAI + düşük tiroglobulin ekzojen hormon alımını düşündürür.",
-    "differentialNote": "Subakut tiroiditte RAI düşüktür ama tiroglobulin genellikle artar ve ağrılı tiroid/ESR yüksekliği beklenir."
+    "tusTip": "Düşük R+ düşük tiroglobulin ekzojen hormon alımını düşündürür.",
+    "differentialNote": "Subakut tiroiditte Rdüşüktür ama tiroglobulin genellikle artar ve ağrılı tiroid/ESR yüksekliği beklenir."
   },
   "tus-pearl-internal-medicine-148-extra": {
     "front": "Subakut tiroiditi tirotoksikozis faktitisyadan ayıran klasik klinik-laboratuvar ipucu nedir?",
@@ -573,9 +573,9 @@ export const TUS_PEARL_INTERNAL_MEDICINE_FIRST50_TEXT_OVERRIDES = Object.freeze(
     ],
     "back": "Ağrılı tiroid bezi ve yüksek sedimentasyon.",
     "answer": "Ağrılı/tender tiroid ve belirgin inflamasyon bulguları.",
-    "explanation": "Subakut tiroiditte folikül yıkımı depolanmış hormonun kana salınmasına neden olur; bu yüzden geçici tirotoksikoz ve düşük RAI tutulumu görülebilir. Ancak inflamatuvar süreç nedeniyle boyun ağrısı, hassas tiroid ve yüksek ESR beklenir. Faktitisyada ise ekzojen hormon alımı nedeniyle tiroglobulin düşüklüğü daha ayırt ettiricidir.",
-    "tusTip": "Düşük RAI iki tabloda da olabilir; ağrı/ESR subakut tiroiditi, düşük tiroglobulin faktitisyayı destekler.",
-    "differentialNote": "Graves’te RAI tutulumu genellikle artar ve oftalmopati eşlik edebilir."
+    "explanation": "Subakut tiroiditte folikül yıkımı depolanmış hormonun kana salınmasına neden olur; bu yüzden geçici tirotoksikoz ve düşük Rtutulumu görülebilir. Ancak inflamatuvar süreç nedeniyle boyun ağrısı, hassas tiroid ve yüksek ESR beklenir. Faktitisyada ise ekzojen hormon alımı nedeniyle tiroglobulin düşüklüğü daha ayırt ettiricidir.",
+    "tusTip": "Düşük Riki tabloda da olabilir; ağrı/ESR subakut tiroiditi, düşük tiroglobulin faktitisyayı destekler.",
+    "differentialNote": "Graves’te Rtutulumu genellikle artar ve oftalmopati eşlik edebilir."
   },
   "tus-pearl-internal-medicine-149-spot": {
     "front": "Dirençli hipertansiyon, abdominal üfürüm, böbrek fonksiyonunda ACE inhibitörü sonrası bozulma veya flash akciğer ödemi hangi tanıyı düşündürür?",
@@ -678,16 +678,16 @@ export const TUS_PEARL_INTERNAL_MEDICINE_FIRST50_TEXT_OVERRIDES = Object.freeze(
   "tus-pearl-internal-medicine-152-extra": {
     "front": "Sıcak otoimmün hemolitik anemide eritrositlere en sık bağlanan antikor sınıfı hangisidir?",
     "keywords": [
-      "sıcak AIHA",
+      "sıcakHA",
       "IgG",
       "ekstravasküler hemoliz",
       "dalak"
     ],
     "back": "IgG.",
     "answer": "IgG tipi otoantikor.",
-    "explanation": "Sıcak AIHA’da IgG kaplı eritrositler özellikle dalak makrofajları tarafından tanınır ve ekstravasküler hemoliz gelişir. Bu nedenle splenomegali ve indirekt hiperbilirubinemi görülebilir. Soğuk aglutinin hastalığında ise IgM ve kompleman aracılı süreç daha ön plandadır.",
-    "tusTip": "Sıcak AIHA = IgG; soğuk aglutinin = IgM/kompleman ilişkisi şeklinde ayrılır.",
-    "differentialNote": "Soğuk aglutinin hastalığı düşük ısıda semptom verir ve akrosiyanozla sorulabilir; sıcak AIHA daha çok IgG ile ekstravasküler hemoliz yapar."
+    "explanation": "SıcakHA’da IgG kaplı eritrositler özellikle dalak makrofajları tarafından tanınır ve ekstravasküler hemoliz gelişir. Bu nedenle splenomegali ve indirekt hiperbilirubinemi görülebilir. Soğuk aglutinin hastalığında ise IgM ve kompleman aracılı süreç daha ön plandadır.",
+    "tusTip": "SıcakHA = IgG; soğuk aglutinin = IgM/kompleman ilişkisi şeklinde ayrılır.",
+    "differentialNote": "Soğuk aglutinin hastalığı düşük ısıda semptom verir ve akrosiyanozla sorulabilir; sıcakHA daha çok IgG ile ekstravasküler hemoliz yapar."
   },
   "tus-pearl-internal-medicine-171-spot": {
     "front": "ALP ve GGT belirgin yüksek, AST/ALT artışı daha sınırlıysa baskın karaciğer biyokimyası paterni nasıl adlandırılır?",

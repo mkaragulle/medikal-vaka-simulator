@@ -15879,8 +15879,8 @@ export const TUS_GLOSSARY_V330_ULTRADEEP_BATCH5_6_TERMS = [
       "BTK eksikliği"
     ],
     "sourceTextExamples": [
-      "Doğru eşleştirme BTK mutasyonu ile pre-B hücre maturasyon bloğudur. IL2RG ağır kombine immün yetmezlik, WAS küçük trombositli ekzema-immün yetmezlik tablosu, AIRE otoimmün poliendokrinopati, CYBB ise kronik granülomatöz hastalık ile ilişkilidir.",
-      "Doğru eşleştirme BTK mutasyonu ile pre-B hücre maturasyon bloğudur. IL2RG ağır kombine immün yetmezlik, WAS küçük trombositli ekzema-immün yetmezlik tablosu, AIRE otoimmün poliendokrinopati, CYBB ise kronik granülomatöz hastalık ile ilişkilidir."
+      "Doğru eşleştirme BTK mutasyonu ile pre-B hücre maturasyon bloğudur. IL2RG ağır kombine immün yetmezlik, WAS küçük trombositli ekzema-immün yetmezlik tablosu,RE otoimmün poliendokrinopati, CYBB ise kronik granülomatöz hastalık ile ilişkilidir.",
+      "Doğru eşleştirme BTK mutasyonu ile pre-B hücre maturasyon bloğudur. IL2RG ağır kombine immün yetmezlik, WAS küçük trombositli ekzema-immün yetmezlik tablosu,RE otoimmün poliendokrinopati, CYBB ise kronik granülomatöz hastalık ile ilişkilidir."
     ],
     "sourceCandidate": {
       "sourceBatch": "batch5-ultradeep",

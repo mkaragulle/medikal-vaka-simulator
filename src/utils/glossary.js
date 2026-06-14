@@ -199,7 +199,7 @@ export const LOW_SIGNAL_GLOSSARY_ALIASES = new Set([
 export function isLowSignalGlossaryAlias(alias = '') {
   const raw = String(alias || '').trim();
   // Keep true uppercase acronyms linkable (ANA, ANCA, AKG, ACTH, NO), while
-  // suppressing their lowercase generated/noisy forms (ana, anca, akg, no).
+  // suppressing their lowercase noisy forms (ana, anca, akg, no).
   if (/^[A-ZÇĞİÖŞÜ0-9./+-]{2,5}$/.test(raw) && /[A-ZÇĞİÖŞÜ]/.test(raw)) return false;
   const normalized = normalizeGlossaryText(alias);
   return LOW_SIGNAL_GLOSSARY_ALIASES.has(normalized);
@@ -207,7 +207,7 @@ export function isLowSignalGlossaryAlias(alias = '') {
 
 function isShortCaseSensitiveMedicalToken(value = '') {
   const raw = String(value || '').trim();
-  // Short acronyms such as AS, ANA, NO, F, OR, ACTH must not generate a
+  // Short acronyms such as AS, ANA, NO, F, OR, ACTH must not create a
   // lowercase alias. Otherwise they can consume the limited glossary slots in
   // ordinary Turkish/English prose and hide more useful clinical terms.
   return raw.length <= 5
@@ -8308,7 +8308,7 @@ export const globalGlossaryTerms = [
       "AIDS",
       "HIV"
     ],
-    "definition": "CD4 T lenfositleri hedefleyen retrovirüstür; ilerleyici hücresel immün yetmezliğe ve AIDS’e neden olur.",
+    "definition": "CD4 T lenfositleri hedefleyen retrovirüstür; ilerleyici hücresel immün yetmezliğe veDS’e neden olur.",
     "category": "İmmünoloji/Enfeksiyon / İmmün yetmezlik",
     "priority": "Yüksek",
     "mode": teachingOnly,

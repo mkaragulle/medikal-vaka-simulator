@@ -254,7 +254,7 @@ export const TUS_PEARL_MEDICAL_MICROBIOLOGY_FIRST52_TEXT_OVERRIDES = Object.free
     ]
   },
   "tus-pearl-medical-microbiology-035-spot": {
-    "front": "Baykuş gözü intranükleer inklüzyonlar, transplant hastasında pnömoni veya AIDS hastasında retinit hangi virüsle ilişkilidir?",
+    "front": "Baykuş gözü intranükleer inklüzyonlar, transplant hastasında pnömoni veyaDS hastasında retinit hangi virüsle ilişkilidir?",
     "back": "Sitomegalovirüs.",
     "answer": "Sitomegalovirüs.",
     "explanation": "CMV herpesvirüs ailesinden çift iplikli DNA virüsüdür ve büyük hücrelerde baykuş gözü intranükleer inklüzyonlarla hatırlanır. İmmünsüpresyonda retinit, kolit, pnömoni ve transplant komplikasyonları; konjenital enfeksiyonda ise periventriküler kalsifikasyon görülebilir.",

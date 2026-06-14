@@ -3299,14 +3299,6 @@ body:not(.klinikiq-auth-lock) .home-actions-v10 .btn-secondary {
   box-shadow: 0 10px 24px rgba(15, 23, 42, .045) !important;
 }
 
-body:not(.klinikiq-auth-lock) .home-actions-v10 .ai-hero-action {
-  color: #0f766e !important;
-  background:
-    linear-gradient(135deg, rgba(240, 253, 250, .96), rgba(236, 253, 245, .86)) !important;
-  border-color: rgba(20, 184, 166, .20) !important;
-  box-shadow: 0 12px 28px rgba(20, 184, 166, .10) !important;
-}
-
 body:not(.klinikiq-auth-lock) .home-mode-v10,
 body:not(.klinikiq-auth-lock) .home-mode-v8.home-mode-v10 {
   width: max-content !important;
@@ -3602,13 +3594,6 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-action-panel-head-v1
 html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-action-panel-head-v10 small,
 .app-shell[data-theme="dark"] .home-action-panel-head-v10 small {
   color: #94a3b8 !important;
-}
-
-html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-actions-v10 .ai-hero-action,
-.app-shell[data-theme="dark"] .home-actions-v10 .ai-hero-action {
-  color: #dffdfa !important;
-  background: linear-gradient(135deg, rgba(19, 78, 74, .92), rgba(8, 47, 73, .76)) !important;
-  border-color: rgba(94, 234, 212, .22) !important;
 }
 
 html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-mode-v10,
@@ -4279,14 +4264,6 @@ body:not(.klinikiq-auth-lock) .home-page-shell {
   padding-top: 0 !important;
 }
 
-body:not(.klinikiq-auth-lock) .page-shell,
-body:not(.klinikiq-auth-lock) .komite-shell,
-body:not(.klinikiq-auth-lock) .komite-workspace-shell,
-body:not(.klinikiq-auth-lock) .pearl-study-shell,
-body:not(.klinikiq-auth-lock) .ai-spot-shell {
-  scroll-margin-top: calc(var(--kiq-topbar-height) + 24px) !important;
-}
-
 .app-shell[data-theme="dark"] .global-topbar-v55,
 html[data-theme="dark"] body:not(.klinikiq-auth-lock) .global-topbar-v55 {
   border-color: rgba(45, 212, 191, 0.18) !important;
@@ -4407,40 +4384,9 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .global-topbar-v55 {
   }
 }
 
-/* ==========================================================
-   KlinikIQ v67 — final unified topbar-to-first-card rhythm
-   Purpose: keep Komite, TUS, clinical case, AI question and exam
-   pages at the same visual distance from the global top bar.
-   TUS dashboard spacing is the source of truth. UI-only.
-   ========================================================== */
+
 :root {
   --kiq-unified-first-card-gap: 8px !important;
-}
-
-body:not(.klinikiq-auth-lock) .home-page-shell,
-body:not(.klinikiq-auth-lock) .home-page-shell.minimal-home-shell,
-body:not(.klinikiq-auth-lock) .minimal-home-shell,
-body:not(.klinikiq-auth-lock) .komite-page-shell,
-body:not(.klinikiq-auth-lock) .case-page-shell,
-body:not(.klinikiq-auth-lock) .stable-case-page-shell,
-body:not(.klinikiq-auth-lock) .ai-practice-page-shell,
-body:not(.klinikiq-auth-lock) .exam-active-shell,
-body:not(.klinikiq-auth-lock) .exam-results-shell,
-body:not(.klinikiq-auth-lock) .tus-pearl-study-shell {
-  margin-top: var(--kiq-unified-first-card-gap) !important;
-  padding-top: 0 !important;
-}
-
-body:not(.klinikiq-auth-lock) .home-dashboard-v8.tus-dashboard-redesign,
-body:not(.klinikiq-auth-lock) .komite-page-shell > .home-hero-v8:first-child,
-body:not(.klinikiq-auth-lock) .komite-page-shell > .tus-hero-redesign:first-child,
-body:not(.klinikiq-auth-lock) .case-page-shell > :first-child,
-body:not(.klinikiq-auth-lock) .stable-case-page-shell > :first-child,
-body:not(.klinikiq-auth-lock) .ai-practice-page-shell > :first-child,
-body:not(.klinikiq-auth-lock) .exam-active-shell > :first-child,
-body:not(.klinikiq-auth-lock) .exam-results-shell > :first-child,
-body:not(.klinikiq-auth-lock) .tus-pearl-study-shell > :first-child {
-  margin-top: 0 !important;
 }
 
 @media (max-width: 920px) {

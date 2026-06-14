@@ -51,7 +51,7 @@ function FormattedQuestionPrompt({ text = '', glossaryEnabled = true, revealMode
   }
 
   return (
-    <span className="formatted-question-prompt has-roman-items">
+    <span className="formatted-question-stem has-roman-items">
       {formatted.intro ? (
         <span className="formatted-question-intro">
           <GlossaryText text={formatted.intro} enabled={glossaryEnabled} revealMode={revealMode} maxTerms={maxTerms} />
@@ -272,8 +272,8 @@ function DiagnosisQuiz({
       ) : null}
 
       {showInlineQuestionStem ? (
-        <div className={`ai-spot-inline-question-stem ${hideInlineQuestionStemLabel ? 'label-hidden' : ''}`.trim()} role="note" aria-label="Soru kökü">
-          {!hideInlineQuestionStemLabel ? <span className="ai-spot-inline-question-stem-label">Soru kökü</span> : null}
+        <div className={`tus-spot-inline-question-stem ${hideInlineQuestionStemLabel ? 'label-hidden' : ''}`.trim()} role="note" aria-label="Soru kökü">
+          {!hideInlineQuestionStemLabel ? <span className="tus-spot-inline-question-stem-label">Soru kökü</span> : null}
           <strong>
             <FormattedQuestionPrompt text={questionPrompt} glossaryEnabled={glossaryEnabled} revealMode={glossaryRevealMode} />
           </strong>

@@ -976,11 +976,11 @@ export const TUS_GLOSSARY_V401_PATHOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 126,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-046-p53-p21-g1-s-kontrolu-dna-hasari::ai-spot-vakasiz-secki-046-p53-p21-g1-s-kontrolu-dna-hasari.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-046-p53-p21-g1-s-kontrolu-dna-hasari::tus-spot-vakasiz-secki-046-p53-p21-g1-s-kontrolu-dna-hasari.explanation",
         "text": "p21, p53 aracılı hücre döngüsü arrestinin temel efektör CDK inhibitörüdür. Cyclin D CDK aktivasyonuyla proliferasyonu destekler; MDM2 p53’ü negatif düzenleyen ubiquitin ligazdır; BCL-2 antiapoptotik, MYC ise proliferatif transkripsiyon faktörüdür. P53 DNA h..."
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-046-p53-p21-g1-s-kontrolu-dna-hasari::ai-spot-vakasiz-secki-046-p53-p21-g1-s-kontrolu-dna-hasari.optionFeedback.BCL-2",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-046-p53-p21-g1-s-kontrolu-dna-hasari::tus-spot-vakasiz-secki-046-p53-p21-g1-s-kontrolu-dna-hasari.optionFeedback.BCL-2",
         "text": "Yanlıştır; mitokondriyal apoptozu baskılayan antiapoptotik proteindir."
       }
     ],
@@ -1043,11 +1043,11 @@ export const TUS_GLOSSARY_V401_PATHOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 21,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-094::ai-spot-vakasiz-secki-094.options[1].text",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-094::tus-spot-vakasiz-secki-094.options[1].text",
         "text": "Mitokondriyal sitokrom c salınımının artması ve apoptozun hızlanması"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-094::ai-spot-vakasiz-secki-094.optionFeedback.Mitokondriyal sitokrom c salınımının artması ve apoptozun hızlanması",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-094::tus-spot-vakasiz-secki-094.optionFeedback.Mitokondriyal sitokrom c salınımının artması ve apoptozun hızlanması",
         "text": "Yanlıştır. Sitokrom c salınımı intrinsik apoptoz yolunun parçasıdır. RB kaybı apoptozu hızlandırmaktan çok proliferatif kontrolün kaybına neden olur."
       }
     ],
@@ -1109,11 +1109,11 @@ export const TUS_GLOSSARY_V401_PATHOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 47,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-085::ai-spot-vakasiz-secki-085.learningTarget",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-085::tus-spot-vakasiz-secki-085.learningTarget",
         "text": "Apoptoz programlı hücre ölümüdür; kaspaz aktivasyonu, hücre büzüşmesi, kromatin yoğunlaşması ve apoptotik cisimcik oluşumu ile seyreder. Membran bütünlüğünün korunması inflamasyonu sınırlar; hücre şişmesi ve membran rüptürü nekroza daha özgüdür."
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-085::ai-spot-vakasiz-secki-085.coreKnowledge",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-085::tus-spot-vakasiz-secki-085.coreKnowledge",
         "text": "Apoptoz programlı hücre ölümüdür; kaspaz aktivasyonu, hücre büzüşmesi, kromatin yoğunlaşması ve apoptotik cisimcik oluşumu ile seyreder. Membran bütünlüğünün korunması inflamasyonu sınırlar; hücre şişmesi ve membran rüptürü nekroza daha özgüdür."
       }
     ],
@@ -2704,11 +2704,11 @@ export const TUS_GLOSSARY_V401_PATHOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 25,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-135::ai-spot-vakasiz-secki-135.options[1].text",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-135::tus-spot-vakasiz-secki-135.options[1].text",
         "text": "Th1 yanıtı ve interferon-gama makrofaj aktivasyonunda önemlidir"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-135::ai-spot-vakasiz-secki-135.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-135::tus-spot-vakasiz-secki-135.explanation",
         "text": "Doğru cevap D’dir çünkü ifade yanlıştır. Granülomlar epiteloid makrofajlar, dev hücreler ve çevresel lenfositlerden oluşabilir. Th1 hücrelerinden salınan interferon-gama makrofaj aktivasyonunu destekler; TNF ise granülom bütünlüğü için önemlidir. Tüberküloz..."
       }
     ],
@@ -3034,11 +3034,11 @@ export const TUS_GLOSSARY_V401_PATHOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 68,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-106::ai-spot-vakasiz-secki-106.learningTarget",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-106::tus-spot-vakasiz-secki-106.learningTarget",
         "text": "Nefrotik sendrom glomerüler filtrasyon bariyerinde protein geçirgenliğinin artmasıyla gelişir. Masif proteinüri hipoalbüminemiye, plazma onkotik basıncında azalmaya ve ödem oluşumuna yol açar; hiperlipidemi ve tromboz eğilimi eşlik edebilir."
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-106::ai-spot-vakasiz-secki-106.options[3].text",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-106::tus-spot-vakasiz-secki-106.options[3].text",
         "text": "Protein kaybı tromboz riskini azaltır"
       }
     ],
@@ -4290,11 +4290,11 @@ export const TUS_GLOSSARY_V401_PATHOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 30,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-094::ai-spot-vakasiz-secki-094.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-094::tus-spot-vakasiz-secki-094.explanation",
         "text": "RB proteini G1 kontrol noktasının merkezi tümör baskılayıcılarından biridir. Normalde hipofosforile RB, E2F’yi bağlayarak S fazına geçiş için gerekli genlerin transkripsiyonunu engeller. Siklin D-CDK4/6 aracılı fosforilasyon RB’yi inaktive eder ve E2F kontr..."
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-094::ai-spot-vakasiz-secki-094.diagnosis.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-094::tus-spot-vakasiz-secki-094.diagnosis.explanation",
         "text": "RB proteini G1 kontrol noktasının merkezi tümör baskılayıcılarından biridir. Normalde hipofosforile RB, E2F’yi bağlayarak S fazına geçiş için gerekli genlerin transkripsiyonunu engeller. Siklin D-CDK4/6 aracılı fosforilasyon RB’yi inaktive eder ve E2F kontr..."
       }
     ],
@@ -5816,11 +5816,11 @@ export const TUS_GLOSSARY_V401_PATHOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 66,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-187::ai-spot-vakasiz-secki-187.topic",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-187::tus-spot-vakasiz-secki-187.topic",
         "text": "Alfa-1 antitripsin eksikliği"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-187::ai-spot-vakasiz-secki-187.clinicalFocus",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-187::tus-spot-vakasiz-secki-187.clinicalFocus",
         "text": "Alfa-1 antitripsin eksikliği"
       }
     ],
@@ -5882,11 +5882,11 @@ export const TUS_GLOSSARY_V401_PATHOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 94,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-177::ai-spot-vakasiz-secki-177.optionFeedback.Alfa-1 antitripsin gen mutasyonu nedeniyle hepatositlerde yanlış katlanmış protein birikmesi",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-177::tus-spot-vakasiz-secki-177.optionFeedback.Alfa-1 antitripsin gen mutasyonu nedeniyle hepatositlerde yanlış katlanmış protein birikmesi",
         "text": "Yanlıştır. Alfa-1 antitripsin mutasyonu hepatositlerde yanlış katlanmış protein birikimi ve akciğerde elastaz hasarı ile ilişkilidir. Wilson mekanizması değildir."
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-177::ai-spot-vakasiz-secki-177.diagnosis.optionComparison.Alfa-1 antitripsin gen mutasyonu nedeniyle hepatositlerde yanlış katlanmış protein birikmesi",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-177::tus-spot-vakasiz-secki-177.diagnosis.optionComparison.Alfa-1 antitripsin gen mutasyonu nedeniyle hepatositlerde yanlış katlanmış protein birikmesi",
         "text": "Yanlıştır. Alfa-1 antitripsin mutasyonu hepatositlerde yanlış katlanmış protein birikimi ve akciğerde elastaz hasarı ile ilişkilidir. Wilson mekanizması değildir."
       }
     ],
@@ -7418,11 +7418,11 @@ export const TUS_GLOSSARY_V401_PATHOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 58,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-094::ai-spot-vakasiz-secki-094.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-094::tus-spot-vakasiz-secki-094.explanation",
         "text": "RB proteini G1 kontrol noktasının merkezi tümör baskılayıcılarından biridir. Normalde hipofosforile RB, E2F’yi bağlayarak S fazına geçiş için gerekli genlerin transkripsiyonunu engeller. Siklin D-CDK4/6 aracılı fosforilasyon RB’yi inaktive eder ve E2F kontr..."
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-094::ai-spot-vakasiz-secki-094.diagnosis.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-094::tus-spot-vakasiz-secki-094.diagnosis.explanation",
         "text": "RB proteini G1 kontrol noktasının merkezi tümör baskılayıcılarından biridir. Normalde hipofosforile RB, E2F’yi bağlayarak S fazına geçiş için gerekli genlerin transkripsiyonunu engeller. Siklin D-CDK4/6 aracılı fosforilasyon RB’yi inaktive eder ve E2F kontr..."
       }
     ],
@@ -7486,11 +7486,11 @@ export const TUS_GLOSSARY_V401_PATHOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 64,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-056-lynch-sendromu-mismatch-repair-mikrosatellit::ai-spot-vakasiz-secki-056-lynch-sendromu-mismatch-repair-mikrosatellit.options[0].text",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-056-lynch-sendromu-mismatch-repair-mikrosatellit::tus-spot-vakasiz-secki-056-lynch-sendromu-mismatch-repair-mikrosatellit.options[0].text",
         "text": "APC geninde iki vuruşlu inaktivasyon — yaygın osteom ve epidermoid kist birlikteliği"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-056-lynch-sendromu-mismatch-repair-mikrosatellit::ai-spot-vakasiz-secki-056-lynch-sendromu-mismatch-repair-mikrosatellit.diagnosis.options[0]",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-056-lynch-sendromu-mismatch-repair-mikrosatellit::tus-spot-vakasiz-secki-056-lynch-sendromu-mismatch-repair-mikrosatellit.diagnosis.options[0]",
         "text": "APC geninde iki vuruşlu inaktivasyon — yaygın osteom ve epidermoid kist birlikteliği"
       }
     ],

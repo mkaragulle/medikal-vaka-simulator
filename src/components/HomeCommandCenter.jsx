@@ -87,7 +87,7 @@ function HomeCommandCenter({
   onChangeMode,
   stats,
   onStartExam,
-  onStartAIQuestion,
+  onOpenTusQuestionModule,
 }) {
   return (
     <section className="home-dashboard-v8 tus-dashboard-redesign" id="dashboard">
@@ -107,7 +107,7 @@ function HomeCommandCenter({
             <div className="home-hero-proof-row-v10 tus-hero-proof-redesign" aria-label="Klinik öğrenme özellikleri">
               <span><Icon name="Brain" /><strong>Klinik Akıl Yürütme</strong></span>
               <span><Icon name="ClipboardCheck" /><strong>Tetkik Seçimi</strong></span>
-              <span><Icon name="Sparkles" /><strong>AI Destekli Pratik</strong></span>
+              <span><Icon name="ClipboardList" /><strong>TUS Soru Modülü</strong></span>
             </div>
           </div>
 
@@ -123,9 +123,9 @@ function HomeCommandCenter({
                 <span>Zamanlı sınav oluştur</span>
                 <Icon name="ArrowRight" />
               </button>
-              <button type="button" className="btn btn-secondary ai-hero-action tus-ai-action-redesign" onClick={onStartAIQuestion}>
+              <button type="button" className="btn btn-secondary tus-secondary-action-redesign" onClick={onOpenTusQuestionModule}>
                 <span className="tus-action-icon"><Icon name="Sparkles" /></span>
-                <span>AI İle Soru Üret</span>
+                <span>Yeni TUS Sorusu Üret</span>
                 <Icon name="ArrowRight" />
               </button>
             </div>

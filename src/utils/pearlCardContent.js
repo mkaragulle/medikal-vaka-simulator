@@ -22,33 +22,6 @@ export const PEARL_META_FORBIDDEN_PATTERNS = [
   /\bverilen\s+soruda\b/iu,
 ];
 
-export const PEARL_AI_CARD_FORBIDDEN_EXPRESSIONS = Object.freeze([
-  'sorusunda',
-  'bu soruda',
-  'soru kökünde',
-  'doğru cevaba götüren',
-  'doğru cevabı destekleyen',
-  'doğru şık',
-  'yanlış şık',
-  'seçeneklerde',
-  'şıklarda',
-  'yukarıdaki soruda',
-  'kaynak soruda',
-  'cevap anahtarı',
-]);
-
-export const PEARL_AI_CARD_OUTPUT_SCHEMA = Object.freeze({
-  front: 'Aktif hatırlama sorusu',
-  answer: 'Net cevap',
-  explanation: '1–2 cümlelik kısa gerekçe',
-  tusTip: 'Sınavda yakalanacak anahtar patern',
-  differentialNote: 'Benzer kavramdan ayrım',
-  branch: 'Branş',
-  topic: 'Konu',
-  difficulty: 'easy | medium | hard',
-  sourceType: 'embedded | ai_generated | user_created',
-});
-
 function polishPearlMedicalTerminology(value = '') {
   return String(value || '')
     .replace(/\bN\.\s*fibularis\s+communis\b/giu, 'ortak fibular sinir')
@@ -367,26 +340,6 @@ export function getPearlFrontText(card = {}) {
 export function hasPearlMetaExpression(card = {}) {
   const text = [card.front, card.back, card.answer, card.explanation, card.tusTip, card.differentialNote].filter(Boolean).join(' ');
   return PEARL_META_FORBIDDEN_PATTERNS.some((pattern) => pattern.test(text));
-}
-
-export function normalizeAIPearlCardOutput(output = {}) {
-  const rawHasForbiddenMeta = hasPearlMetaExpression(output);
-  const normalized = normalizePearlCardFields({
-    ...output,
-    sourceType: output.sourceType || 'ai_generated',
-    answer: output.answer || output.back,
-    back: output.back || output.answer,
-  });
-  const normalizedHasForbiddenMeta = hasPearlMetaExpression(normalized);
-  const qualityWarnings = [];
-  if (rawHasForbiddenMeta) qualityWarnings.push('AI hap kart çıktısında bağlamsız meta-sınav ifadesi saptandı; üretim yeniden istenmeli.');
-  if (normalizedHasForbiddenMeta) qualityWarnings.push('Normalize edilmiş hap kartta hâlâ bağlamsız meta-sınav ifadesi var.');
-  return {
-    ...normalized,
-    sourceType: normalized.sourceType || 'ai_generated',
-    qualityWarnings,
-    isPearlCardOutputAccepted: !rawHasForbiddenMeta && !normalizedHasForbiddenMeta && Boolean(normalized.front && normalized.answer),
-  };
 }
 
 export function getPearlBackContent(card = {}) {

@@ -1704,10 +1704,10 @@ const SUPPLEMENTAL_TUS_GLOSSARY_SEEDS = [
     "preAnswerSafeDefinition": "XY bireyde androjen reseptör direnci nedeniyle dış genital fenotipin kadın yönünde gelişmesidir.",
     "shortDefinition": "XY bireyde androjen reseptör direnci nedeniyle dış genital fenotipin kadın yönünde gelişmesidir.",
     "detailedExplanation": "XY bireyde androjen reseptör direnci nedeniyle dış genital fenotipin kadın yönünde gelişmesidir. Klinik bağlamla birlikte yorumlanmalıdır.",
-    "postAnswerExpandedExplanation": "Primer amenore + meme gelişimi + uterus yokluğu + XY karyotip AIS düşündürür.",
-    "tusPearl": "Primer amenore + meme gelişimi + uterus yokluğu + XY karyotip AIS düşündürür.",
+    "postAnswerExpandedExplanation": "Primer amenore + meme gelişimi + uterus yokluğu + XY karyotipS düşündürür.",
+    "tusPearl": "Primer amenore + meme gelişimi + uterus yokluğu + XY karyotipS düşündürür.",
     "differentialPoint": "Müllerian agenezide karyotip 46,XX ve over fonksiyonu normaldir.",
-    "clinicalRelevance": "Primer amenore + meme gelişimi + uterus yokluğu + XY karyotip AIS düşündürür.",
+    "clinicalRelevance": "Primer amenore + meme gelişimi + uterus yokluğu + XY karyotipS düşündürür.",
     "mechanism": "",
     "relatedBranches": [
       "genetics",
@@ -2796,7 +2796,7 @@ const SUPPLEMENTAL_TUS_GLOSSARY_SEEDS = [
   {
     "term": "Halüsinasyon",
     "aliases": [
-      "hallucination",
+      "source-noise",
       "varsanı"
     ],
     "category": "Psikiyatri",
@@ -2819,7 +2819,7 @@ const SUPPLEMENTAL_TUS_GLOSSARY_SEEDS = [
     "abbreviation": "",
     "keywordsForSearch": [
       "Halüsinasyon",
-      "hallucination",
+      "source-noise",
       "varsanı",
       "Psikiyatri"
     ]

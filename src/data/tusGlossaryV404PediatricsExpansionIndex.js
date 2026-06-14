@@ -50,11 +50,11 @@ export const TUS_GLOSSARY_V404_PEDIATRICS_EXPANSION_TERMS = [
     "occurrenceCount": 14,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-138.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-138.explanation",
         "text": "Doğru cevap A’dır. Yenidoğanda indirekt bilirubin yüksekliği karaciğer konjugasyon kapasitesinin sınırlı olması ve bilirubin üretiminin artmış olabilmesiyle ilişkilidir. Fototerapi bilirubini toksik olmayan ve suda daha çözünür fotoizomerlere dönüştürür; böylece bilirubinin konjugasyona gerek kalmadan atılması kolaylaşır. Fototerapi bilirubin üretimini artırmaz, UDP-glukuronil transferazı inhibe etmez ve bilirubini hemoglobine geri çevi"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-138.optionFeedback.Albümine bağlı bilirubini kan-beyin bariyerinden geçebilir hâle getirmesi",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-138.optionFeedback.Albümine bağlı bilirubini kan-beyin bariyerinden geçebilir hâle getirmesi",
         "text": "Yanlıştır. Albümine bağlı olmayan indirekt bilirubinin beyne geçmesi kernikterus riskini oluşturur. Fototerapi bu riski artırmak için değil azaltmak için uygulanır."
       }
     ],
@@ -927,11 +927,11 @@ export const TUS_GLOSSARY_V404_PEDIATRICS_EXPANSION_TERMS = [
     "occurrenceCount": 57,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-068-x-bagli-agammaglobulinemi-btk-pre-b-hucre.explanation",
-        "text": "Doğru eşleştirme BTK mutasyonu ile pre-B hücre maturasyon bloğudur. IL2RG ağır kombine immün yetmezlik, WAS küçük trombositli ekzema-immün yetmezlik tablosu, AIRE otoimmün poliendokrinopati, CYBB ise kronik granülomatöz hastalık ile ilişkilidir. X’e bağlı agammaglobulinemi Bruton tirozin kinaz (BTK) mutasyonuna bağlıdır; pre-B hücre maturasyonu durur, periferik olgun B hücreleri ve tüm immünoglobulin düzeyleri belirgin azalır. Doğru cev"
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-068-x-bagli-agammaglobulinemi-btk-pre-b-hucre.explanation",
+        "text": "Doğru eşleştirme BTK mutasyonu ile pre-B hücre maturasyon bloğudur. IL2RG ağır kombine immün yetmezlik, WAS küçük trombositli ekzema-immün yetmezlik tablosu,RE otoimmün poliendokrinopati, CYBB ise kronik granülomatöz hastalık ile ilişkilidir. X’e bağlı agammaglobulinemi Bruton tirozin kinaz (BTK) mutasyonuna bağlıdır; pre-B hücre maturasyonu durur, periferik olgun B hücreleri ve tüm immünoglobulin düzeyleri belirgin azalır. Doğru cev"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-068-x-bagli-agammaglobulinemi-btk-pre-b-hucre.optionFeedback.IL2RG mutasyonu – İzole nötrofil adezyon kusuru ve gecikmiş göbek kordonu düşmesi",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-068-x-bagli-agammaglobulinemi-btk-pre-b-hucre.optionFeedback.IL2RG mutasyonu – İzole nötrofil adezyon kusuru ve gecikmiş göbek kordonu düşmesi",
         "text": "Yanlıştır; IL2RG mutasyonu X’e bağlı SCID ile ilişkilidir, lökosit adezyon defekti ise CD18/integrin kusuru ile düşünülür."
       }
     ],
@@ -2602,11 +2602,11 @@ export const TUS_GLOSSARY_V404_PEDIATRICS_EXPANSION_TERMS = [
     "occurrenceCount": 10,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-179.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-179.explanation",
         "text": "Doğru cevap A’dır. 21-hidroksilaz, kortizol ve aldosteron sentez yollarında gereklidir. Enzim eksikliğinde kortizol üretimi azalır ve hipofizden ACTH salınımı artar; bu da adrenal hiperplaziye ve steroid prekürsörlerinin androjen sentezine yönelmesine neden olur. Bu nedenle virilizasyon, erken pubarş veya kız bebekte ambigus genitalya gibi bulgular gelişebilir. Ağır klasik formlarda aldosteron eksikliği tuz kaybı, hiponatremi, hiperkale"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-179.diagnosis.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-179.diagnosis.explanation",
         "text": "Doğru cevap A’dır. 21-hidroksilaz, kortizol ve aldosteron sentez yollarında gereklidir. Enzim eksikliğinde kortizol üretimi azalır ve hipofizden ACTH salınımı artar; bu da adrenal hiperplaziye ve steroid prekürsörlerinin androjen sentezine yönelmesine neden olur. Bu nedenle virilizasyon, erken pubarş veya kız bebekte ambigus genitalya gibi bulgular gelişebilir. Ağır klasik formlarda aldosteron eksikliği tuz kaybı, hiponatremi, hiperkale"
       }
     ],
@@ -3206,11 +3206,11 @@ export const TUS_GLOSSARY_V404_PEDIATRICS_EXPANSION_TERMS = [
     "occurrenceCount": 27,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-219.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-219.explanation",
         "text": "Doğru cevap A’dır. Hemofili A, X’e bağlı kalıtılan faktör VIII eksikliğiyle karakterizedir. Faktör VIII intrinsik koagülasyon yolunda görev aldığı için aPTT uzar, PT genellikle normal kalır. Trombosit sayısı normaldir çünkü sorun primer hemostaz değil koagülasyon faktörü eksikliğidir. Klinik olarak derin doku kanamaları, hemartroz ve kas içi kanamalar daha tipiktir. Trombositopenilerde ise mukokutanöz kanama ve peteşi/purpura daha ön pl"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-219.evidenceChain[2].text",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-219.evidenceChain[2].text",
         "text": "Hemofili A = faktör VIII eksikliği + uzamış aPTT + normal PT + normal trombosit; derin kanama/hemartroz beklenir."
       }
     ],
@@ -3475,11 +3475,11 @@ export const TUS_GLOSSARY_V404_PEDIATRICS_EXPANSION_TERMS = [
     "occurrenceCount": 5,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-068-x-bagli-agammaglobulinemi-btk-pre-b-hucre.options[0].text",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-068-x-bagli-agammaglobulinemi-btk-pre-b-hucre.options[0].text",
         "text": "IL2RG mutasyonu – İzole nötrofil adezyon kusuru ve gecikmiş göbek kordonu düşmesi"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-068-x-bagli-agammaglobulinemi-btk-pre-b-hucre.diagnosis.options[0]",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-068-x-bagli-agammaglobulinemi-btk-pre-b-hucre.diagnosis.options[0]",
         "text": "IL2RG mutasyonu – İzole nötrofil adezyon kusuru ve gecikmiş göbek kordonu düşmesi"
       }
     ],

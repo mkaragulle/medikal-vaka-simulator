@@ -2396,11 +2396,11 @@ export const TUS_GLOSSARY_V405_GENERAL_SURGERY_EXPANSION_TERMS = [
     "occurrenceCount": 18,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-128.options[4].text",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-128.options[4].text",
         "text": "Akut apandisit sonrası gelişen periapendiküler apseyle eş anlamlıdır"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-128.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-128.explanation",
         "text": "Doğru cevap B’dir. Pankreatik psödokist, pankreatit veya pankreatik travma sonrası pankreatik enzimlerden zengin sıvının fibröz/granülasyon dokusu ile çevrilmesi sonucu oluşur. Gerçek kistlerden farklı olarak epitel döşemesi yoktur. Her psödokist acil cerrahi gerektirmez; semptom, boyut, süre, enfeksiyon, kanama, rüptür veya obstrüksiyon gibi komplikasyonlara göre izlem ya da drenaj kararı verilir. Safra içeriği veya apendiküler apse ile eş anlamlı değildir. Pankreatik psödokist çoğunlukla akut veya kronik pankr..."
       }
     ],
@@ -2796,11 +2796,11 @@ export const TUS_GLOSSARY_V405_GENERAL_SURGERY_EXPANSION_TERMS = [
     "occurrenceCount": 11,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-029-meme-kanserinde-sentinel-lenf-nodu-kontrendikasyon.options[4].text",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-029-meme-kanserinde-sentinel-lenf-nodu-kontrendikasyon.options[4].text",
         "text": "Duktal karsinoma in situya mastektomi planlanması"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-029-meme-kanserinde-sentinel-lenf-nodu-kontrendikasyon.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-029-meme-kanserinde-sentinel-lenf-nodu-kontrendikasyon.explanation",
         "text": "Klinik olarak belirgin aksiller metastaz, sentinel nodun tarama/evreleme mantığını zayıflatır ve doğrudan aksiller değerlendirme/tedavi gerektirir. Erken evre klinik nod-negatif invaziv meme kanseri sentinel biyopsinin tipik endikasyonudur; mastektomi planlanan DCIS olgularında da sonradan sentinel değerlendirme yapılamayacağı için uygulanabilir. Sentinel lenf nodu biyopsisi esas olarak klinik olarak nod-negatif aksillanın evrelenmesinde kullanılır; belirgin klinik nod pozitiflik varlığında aksillanın zaten hast..."
       }
     ],
@@ -2863,11 +2863,11 @@ export const TUS_GLOSSARY_V405_GENERAL_SURGERY_EXPANSION_TERMS = [
     "occurrenceCount": 10,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-029-meme-kanserinde-sentinel-lenf-nodu-kontrendikasyon.options[3].text",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-029-meme-kanserinde-sentinel-lenf-nodu-kontrendikasyon.options[3].text",
         "text": "Meme koruyucu cerrahi planlanması"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-029-meme-kanserinde-sentinel-lenf-nodu-kontrendikasyon.optionFeedback.Meme koruyucu cerrahi planlanması",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-029-meme-kanserinde-sentinel-lenf-nodu-kontrendikasyon.optionFeedback.Meme koruyucu cerrahi planlanması",
         "text": "Meme koruyucu cerrahi planlanması sentinel lenf nodu biyopsisi yapılmasına engel değildir."
       }
     ],

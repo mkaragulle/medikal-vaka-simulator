@@ -1,5 +1,5 @@
 import { neutralModalityTitle, stripDiagnosticLeakage, toSentence } from './displayText.js';
-import { sanitizePreAnswerText } from './answerLeakageGate.js';
+import { sanitizePreAnswerText } from './preAnswerTextSanitizer.js';
 import { visualMatchesInvestigation } from './clinicalVisuals.js';
 
 export const priorityMeta = {
