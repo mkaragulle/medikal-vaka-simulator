@@ -29,7 +29,7 @@ function buildTusSpotNarrativeStem(question = {}) {
   return text.split(/(?<=[.!?])\s+(?=[A-ZÇĞİÖŞÜ0-9])/u).map(compactText).filter(Boolean);
 }
 
-function buildTusSpotQuestionPrompt(question = {}) {
+function buildTusSpotQuestionStem(question = {}) {
   return compactText(question.question || question.prompt || question.clinicalFocus || 'En olası seçenek hangisidir?');
 }
 
@@ -283,7 +283,7 @@ function TusSpotQuestionScreen({
   hardMode = false,
   randomActionLabel = 'Yeni TUS sorusu üret',
 }) {
-  const questionPrompt = buildTusSpotQuestionPrompt(question);
+  const questionStem = buildTusSpotQuestionStem(question);
 
   return (
     <article className="case-player-shell tus-spot-player-shell">
@@ -303,7 +303,7 @@ function TusSpotQuestionScreen({
             hardMode={hardMode}
             randomActionLabel={randomActionLabel}
             hideSpotQuestionCallout
-            questionPromptOverride={questionPrompt}
+            questionStemOverride={questionStem}
             questionHeadingOverride=""
             questionSubtextOverride=""
             hideQuestionScoreChip

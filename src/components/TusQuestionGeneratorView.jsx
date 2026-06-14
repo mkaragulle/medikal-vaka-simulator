@@ -13,8 +13,8 @@ import {
 } from '../utils/pearlCardStorage.js';
 
 
-const TUS_DURATION_STORAGE_GLOBAL_KEY = 'klinikiq.aiQuestion.duration.global.v1';
-const TUS_DURATION_STORAGE_PREFIX = 'klinikiq.aiQuestion.duration.v1';
+const TUS_QUESTION_DURATION_STORAGE_GLOBAL_KEY = 'klinikiq.tusQuestion.duration.global.v1';
+const TUS_QUESTION_DURATION_STORAGE_PREFIX = 'klinikiq.tusQuestion.duration.v1';
 const TUS_DEFAULT_ESTIMATE_BY_DIFFICULTY = {
   Kolay: 9,
   Orta: 12,
@@ -157,11 +157,11 @@ function selectWaitingPearlCards(branchFilter = 'random', difficulty = 'Orta', c
     .filter((card) => card?.id && (!targetBranchId || card.branchId === targetBranchId) && !recentShownSet.has(card.id))
     .sort((a, b) => scoreCard(b) - scoreCard(a));
 
-  const fallbackPass = allCards
+  const alternatePass = allCards
     .filter((card) => card?.id && !firstPass.some((item) => item.id === card.id))
     .sort((a, b) => scoreCard(b) - scoreCard(a));
 
-  const selected = [...firstPass, ...fallbackPass].slice(0, count);
+  const selected = [...firstPass, ...alternatePass].slice(0, count);
   const nextShownIds = [...recentShown, ...selected.map((card) => card.id)].slice(-160);
   writeLocalJSON(TUS_WAITING_FLASHCARD_SHOWN_KEY, { ids: nextShownIds, updatedAt: Date.now() });
   return selected;
@@ -216,7 +216,7 @@ function clampNumber(value, min, max) {
 function makeDurationStorageKey(branchFilter = 'random', difficulty = 'Orta') {
   const branch = String(branchFilter || 'random').trim().toLocaleLowerCase('tr').replace(/[^a-z0-9ığüşöçİĞÜŞÖÇ]+/gi, '-').replace(/^-|-$/g, '') || 'random';
   const level = ['Kolay', 'Orta', 'Zor'].includes(difficulty) ? difficulty : 'Orta';
-  return `${TUS_DURATION_STORAGE_PREFIX}.${branch}.${level}`;
+  return `${TUS_QUESTION_DURATION_STORAGE_PREFIX}.${branch}.${level}`;
 }
 
 function readStoredDuration(key) {
@@ -247,7 +247,7 @@ function writeStoredDuration(key, seconds) {
 function readEstimatedGenerationSeconds(branchFilter = 'random', difficulty = 'Orta') {
   const exact = readStoredDuration(makeDurationStorageKey(branchFilter, difficulty));
   if (exact) return clampNumber(Math.ceil(exact), 6, 45);
-  const global = readStoredDuration(TUS_DURATION_STORAGE_GLOBAL_KEY);
+  const global = readStoredDuration(TUS_QUESTION_DURATION_STORAGE_GLOBAL_KEY);
   if (global) return clampNumber(Math.ceil(global), 6, 45);
   return TUS_DEFAULT_ESTIMATE_BY_DIFFICULTY[difficulty] || TUS_DEFAULT_ESTIMATE_BY_DIFFICULTY.Orta;
 }
@@ -255,7 +255,7 @@ function readEstimatedGenerationSeconds(branchFilter = 'random', difficulty = 'O
 function rememberGenerationDuration(branchFilter = 'random', difficulty = 'Orta', seconds = 0) {
   const normalized = clampNumber(seconds, 3, 45);
   writeStoredDuration(makeDurationStorageKey(branchFilter, difficulty), normalized);
-  writeStoredDuration(TUS_DURATION_STORAGE_GLOBAL_KEY, normalized);
+  writeStoredDuration(TUS_QUESTION_DURATION_STORAGE_GLOBAL_KEY, normalized);
 }
 
 function getGenerationStage(elapsedSeconds = 0) {
@@ -804,7 +804,7 @@ function TusQuestionGeneratorView({
       </section>
 
       {inactiveMessage && !loading && !error ? (
-        <section className="tus-fallback-notice card-surface" aria-live="polite">
+        <section className="tus-inactive-notice card-surface" aria-live="polite">
           <Icon name="Info" />
           <span>{inactiveMessage}</span>
         </section>

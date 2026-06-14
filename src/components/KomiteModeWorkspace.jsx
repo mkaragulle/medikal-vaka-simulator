@@ -130,36 +130,15 @@ function buildSourceFingerprint(material = {}, packet = null) {
 
 
 
-function staleMaterialMetadataKeys() {
-  return new Set([
-    ['generated', 'From'].join(''),
-    ['generation', 'Source'].join(''),
-    ['used', 'Remote', 'A', 'I'].join(''),
-    ['f', 'a', 'l', 'l', 'b', 'a', 'c', 'k', 'Notice'].join(''),
-    ['a', 'i', 'Meta'].join(''),
-    ['pro', 'vider'].join(''),
-    ['mo', 'del'].join(''),
-    ['quality', 'Check'].join(''),
-    ['re', 'pair', 'Notice'].join(''),
-  ]);
-}
-
-function stripLegacyProductionMetadata(value) {
-  if (!value || typeof value !== 'object') return value;
-  if (Array.isArray(value)) return value.map(stripLegacyProductionMetadata);
-  const blockedKeys = staleMaterialMetadataKeys();
-  const next = {};
-  Object.entries(value).forEach(([key, item]) => {
-    if (blockedKeys.has(key)) return;
-    next[key] = stripLegacyProductionMetadata(item);
-  });
-  return next;
+function removeLegacyProvenanceFields(material = {}) {
+  const cleaned = { ...(material || {}) };
+  delete cleaned.materialAnalysis;
+  delete cleaned.questionsSourceFingerprint;
+  return cleaned;
 }
 
 function sanitizeLoadedKomiteMaterial(material = {}) {
-  const cleaned = stripLegacyProductionMetadata(material) || {};
-  delete cleaned.materialAnalysis;
-  delete cleaned.questionsSourceFingerprint;
+  const cleaned = removeLegacyProvenanceFields(material) || {};
   const packet = buildCombinedMaterialPacket(cleaned);
   return { ...cleaned, sourceFingerprint: buildSourceFingerprint(cleaned, packet) };
 }
@@ -425,12 +404,12 @@ function splitMergedExtractedTextIntoFiles(text = '', material = {}) {
   return matches.map((match, index) => {
     const start = match.index + match[0].length;
     const end = index + 1 < matches.length ? matches[index + 1].index : raw.length;
-    const fallbackFile = Array.isArray(material.files) ? material.files[index] : null;
-    const fileName = String(match[2] || fallbackFile?.name || `Materyal ${index + 1}`).trim();
+    const storedFile = Array.isArray(material.files) ? material.files[index] : null;
+    const fileName = String(match[2] || storedFile?.name || `Materyal ${index + 1}`).trim();
     const cleanedExtractedText = cleanExtractedTextForMaterial(raw.slice(start, end));
     return {
       fileName,
-      fileType: fallbackFile?.type || getFileType(fileName),
+      fileType: storedFile?.type || getFileType(fileName),
       cleanedExtractedText,
       detectedTopics: [],
     };
@@ -516,9 +495,9 @@ function getMaterialFileCount(material = {}, packet = null) {
 
 function cleanMaterialTitle(material = {}) {
   const rawName = String(material.fileName || '').replace(/\.[a-z0-9]+$/i, '').replace(/[_-]+/g, ' ').replace(/\s+/g, ' ').trim();
-  const fallback = material.course || material.committee || 'Ders Materyali';
+  const defaultTitle = material.course || material.committee || 'Ders Materyali';
   const meaningless = /^(das|test|pdf\s*\d*|slayt\s*\d*|ppt\s*\d*|doc\s*\d*|file\s*\d*|untitled|adsız)$/iu;
-  if (!rawName || rawName.length < 4 || meaningless.test(rawName)) return fallback;
+  if (!rawName || rawName.length < 4 || meaningless.test(rawName)) return defaultTitle;
   return rawName.charAt(0).toLocaleUpperCase('tr') + rawName.slice(1);
 }
 

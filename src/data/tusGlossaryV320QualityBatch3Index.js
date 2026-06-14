@@ -616,7 +616,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "Seri β-hCG"
     ],
     "sourceTextExamples": [
-      "src/data/aiQuestionSeeds.js içinde 'Rüptüre ektopik gebelik' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi.",
+      "eski TUS soru kaynak kayıtlarında 'Rüptüre ektopik gebelik' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi.",
       "src/data/cases.js içinde 'Rüptüre ektopik gebelik' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
@@ -628,7 +628,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "priority": "P0",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiQuestionSeeds.js, src/data/cases.js",
+      "sourceFilePath": "src/data/tusQuestionArchive.js, src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
       "qualityScoreFromAudit": 24
     }
@@ -3295,7 +3295,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "Atropin"
     ],
     "sourceTextExamples": [
-      "src/data/aiQuestionSeeds.js içinde 'Kolinerjik toksidrom' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi.",
+      "eski TUS soru kaynak kayıtlarında 'Kolinerjik toksidrom' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi.",
       "src/data/cases.js içinde 'Kolinerjik toksidrom' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
@@ -3307,7 +3307,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "priority": "P0",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiQuestionSeeds.js, src/data/cases.js",
+      "sourceFilePath": "src/data/tusQuestionArchive.js, src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
       "qualityScoreFromAudit": 24
     }
@@ -3434,7 +3434,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "Miyozis"
     ],
     "sourceTextExamples": [
-      "src/data/aiQuestionSeeds.js içinde 'Opioid toksisitesi' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi.",
+      "eski TUS soru kaynak kayıtlarında 'Opioid toksisitesi' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi.",
       "src/data/cases.js içinde 'Opioid toksisitesi' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
@@ -3446,7 +3446,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "priority": "P0",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiQuestionSeeds.js, src/data/cases.js",
+      "sourceFilePath": "src/data/tusQuestionArchive.js, src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
       "qualityScoreFromAudit": 24
     }
@@ -3992,7 +3992,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "Üre döngüsü"
     ],
     "sourceTextExamples": [
-      "src/data/aiQuestionSeeds.js içinde 'Hiperamonyemi + yüksek idrar orotik asit' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi.",
+      "eski TUS soru kaynak kayıtlarında 'Hiperamonyemi + yüksek idrar orotik asit' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi.",
       "src/data/cases.js içinde 'Hiperamonyemi + yüksek idrar orotik asit' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
@@ -4004,7 +4004,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "priority": "P0",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiQuestionSeeds.js, src/data/cases.js",
+      "sourceFilePath": "src/data/tusQuestionArchive.js, src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
       "qualityScoreFromAudit": 24
     }

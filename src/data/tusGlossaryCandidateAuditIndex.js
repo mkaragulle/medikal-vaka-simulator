@@ -592,7 +592,7 @@ export const TUS_GLOSSARY_CANDIDATE_AUDIT_TERMS = [
       "confidenceScore": "high",
       "occurrenceCount": 92,
       "sourceArea": "TUS Spot Olgular, Hap Kartlar / Kataloglarım, Diğer eğitim metni",
-      "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js, src/data/aiQuestionSeeds.js"
+      "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js, src/data/tusQuestionArchive.js"
     }
   },
   {
@@ -2168,7 +2168,7 @@ export const TUS_GLOSSARY_CANDIDATE_AUDIT_TERMS = [
       "confidenceScore": "high",
       "occurrenceCount": 16,
       "sourceArea": "Diğer eğitim metni, Hap Kartlar / Kataloglarım, TUS Spot Olgular",
-      "sourceFilePath": "src/data/tusPearlCards.js, src/data/aiQuestionSeeds.js, src/data/cases.js"
+      "sourceFilePath": "src/data/tusPearlCards.js, src/data/tusQuestionArchive.js, src/data/cases.js"
     }
   },
   {

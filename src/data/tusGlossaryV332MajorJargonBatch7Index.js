@@ -118,9 +118,9 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "priority": "P1",
     "recommendation": "addNewEntryWithAliasGuard",
     "existingGlossaryStatus": "missingInActiveV331GlossaryExactAlias",
-    "sourceFilePath": "src/data/aiQuestionSeeds.js",
+    "sourceFilePath": "src/data/tusQuestionArchive.js",
     "sourceFiles": [
-      "src/data/aiQuestionSeeds.js",
+      "src/data/tusQuestionArchive.js",
       "src/data/cases.js",
       "src/data/cases.js",
       "src/data/tusPearlCards.js",
@@ -131,7 +131,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/aiQuestionSeeds.js",
+        "sourceFilePath": "src/data/tusQuestionArchive.js",
         "text": "AV IgG negatif; HBsAg negatif; Anti-HBc IgM negatif; Anti-HCV negatif. , findings : Anti-HAV IgM pozitif , HBV akut enfeksiyon göstergeleri negatif , HCV taraması negatif , question : Bu serolojik patern en çok hangi tabloyu destekler? , options : id : A , tex"
       },
       {
@@ -1435,9 +1435,9 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "priority": "P1",
     "recommendation": "addNewEntryWithAliasGuard",
     "existingGlossaryStatus": "missingInActiveV331GlossaryExactAlias",
-    "sourceFilePath": "src/data/aiQuestionSeeds.js",
+    "sourceFilePath": "src/data/tusQuestionArchive.js",
     "sourceFiles": [
-      "src/data/aiQuestionSeeds.js",
+      "src/data/tusQuestionArchive.js",
       "src/data/cases.js",
       "src/data/tusPearlCards.js",
       "src/data/tusGlossaryCandidateAuditIndex.js",
@@ -1448,7 +1448,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/aiQuestionSeeds.js",
+        "sourceFilePath": "src/data/tusQuestionArchive.js",
         "text": "priority : essential , summary : Anti-HAV IgM pozitif; Anti-HAV IgG negatif; HBsAg negatif; Anti-HBc IgM negatif; Anti-HCV negatif. , findings : Anti-HAV IgM pozitif , HBV akut enfeksiyon göstergeleri negatif , HCV taraması negatif , question : Bu serolojik pa"
       },
       {
@@ -2053,9 +2053,9 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "priority": "P1",
     "recommendation": "addNewEntryWithAliasGuard",
     "existingGlossaryStatus": "missingInActiveV331GlossaryExactAlias",
-    "sourceFilePath": "src/data/aiQuestionSeeds.js",
+    "sourceFilePath": "src/data/tusQuestionArchive.js",
     "sourceFiles": [
-      "src/data/aiQuestionSeeds.js",
+      "src/data/tusQuestionArchive.js",
       "src/data/cases.js",
       "src/data/tusPearlCards.js",
       "src/data/tusGlossaryV319TeachableIndex.js",
@@ -2066,7 +2066,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/aiQuestionSeeds.js",
+        "sourceFilePath": "src/data/tusQuestionArchive.js",
         "text": "export const TUS_STATIC_QUESTION_RECORDS = seedId : tus-hav-serology-pattern-001 , title : Sarılık ve viral seroloji paterni , relatedBranch : Tıbbi Mikrobiyoloji , branchId : tus-spot-olgular , spotCategory : TUS Spot • Mikrobiyoloji , difficulty : Orta-Zor , lear"
       },
       {

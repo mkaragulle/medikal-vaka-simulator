@@ -14779,7 +14779,7 @@ html[data-theme="dark"] .professional-patient-summary-card .summary-risk-chip-ro
   color: #ffffff !important;
 }
 
-/* Fallback when theme attribute is momentarily unavailable */
+/* Default when theme attribute is momentarily unavailable */
 .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card > span,
 .professional-patient-summary-card .summary-detail-card > span {
   color: #7b8aa0 !important;
@@ -29169,7 +29169,7 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-to
 }
 
 /* =========================================================
-   KLINIKIQ V156 — Dark mode home dashboard contrast repair
+   KLINIKIQ V156 — Dark mode home dashboard contrast adjustment
    Fixes muddy/washed-out hero and session cards on the main dashboard.
    Keeps premium teal identity while restoring readable contrast hierarchy.
    ========================================================= */
@@ -31811,11 +31811,6 @@ html[data-theme="dark"] .tus-demo-notice-badge,
   border-color: color-mix(in srgb, var(--accent) 26%, var(--border-subtle));
 }
 
-.tus-source-badge.fallback {
-  color: color-mix(in srgb, var(--warning) 76%, var(--text-primary));
-  background: color-mix(in srgb, var(--warning) 10%, var(--surface-1));
-  border-color: color-mix(in srgb, var(--warning) 26%, var(--border-subtle));
-}
 
 .tus-signature-chip {
   max-width: 240px;
@@ -31871,7 +31866,7 @@ html[data-theme="dark"] .tus-demo-notice-badge,
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 10%, transparent);
 }
 
-.tus-fallback-notice {
+.tus-inactive-notice {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -31884,7 +31879,7 @@ html[data-theme="dark"] .tus-demo-notice-badge,
   font-weight: 750;
 }
 
-.tus-fallback-notice svg {
+.tus-inactive-notice svg {
   width: 18px;
   height: 18px;
   flex: 0 0 auto;
@@ -31923,8 +31918,8 @@ html[data-theme="dark"] .tus-branch-filter-control select,
   color: #c7d7e2;
 }
 
-html[data-theme="dark"] .tus-fallback-notice,
-.app-shell[data-theme="dark"] .tus-fallback-notice {
+html[data-theme="dark"] .tus-inactive-notice,
+.app-shell[data-theme="dark"] .tus-inactive-notice {
   background: rgba(76, 50, 12, .38) !important;
   border-color: rgba(245, 158, 11, .24) !important;
   color: #f8d99a;
@@ -35040,7 +35035,7 @@ html[data-theme="dark"] .spot-note-insight-list,
 }
 
 /* =========================================================
-   KLINIKIQ V181 — TUS Spot prompt below answer heading
+   KLINIKIQ V181 — TUS Spot question stem below answer heading
    Keeps the exact soru kökü visible directly under “Yanıt seçenekleri”
    without reintroducing the old separate scrollable question card.
    ========================================================= */
@@ -43031,7 +43026,7 @@ html[data-theme='dark'] .komite-file-drop-note-icon {
 }
 
 
-/* === V104 — Manual TUS question generation + countdown === */
+/* === V104 — Manual TUS question module + countdown === */
 .tus-generation-state-countdown,
 .tus-generation-ready {
   justify-content: space-between;
@@ -49152,7 +49147,7 @@ body:not(.klinikiq-auth-lock) .tus-spot-bank-main .question-panel.diagnostic-dec
    Renders I., II., III., IV. style proposition stems as clear
    stacked rows without changing the stored question text.
    ========================================================= */
-.formatted-question-prompt.has-roman-items {
+.formatted-question-stem.has-roman-items {
   display: grid !important;
   gap: 0.72rem !important;
   width: 100% !important;
@@ -49197,7 +49192,7 @@ body:not(.klinikiq-auth-lock) .tus-spot-bank-main .question-panel.diagnostic-dec
   display: inline !important;
 }
 
-.tus-spot-bank-main .tus-spot-olgular-question-callout .formatted-question-prompt.has-roman-items {
+.tus-spot-bank-main .tus-spot-olgular-question-callout .formatted-question-stem.has-roman-items {
   gap: clamp(0.7rem, 0.55rem + 0.28vw, 0.92rem) !important;
 }
 
@@ -57351,7 +57346,7 @@ html[data-theme="dark"] .tus-spot-answer-flow .tus-spot-inline-question-stem.lab
 /* ==========================================================
    KlinikIQ V388 — TUS button icon/text true center lock
    Keeps the icon + label group mathematically centered inside
-   both answer action buttons and TUS question generation buttons.
+   both answer action buttons and TUS question module buttons.
    ========================================================== */
 .tus-button-content-center,
 .quiz-action-btn-inner {
@@ -57549,9 +57544,9 @@ html[data-theme="dark"] .tus-spot-simple-dot,
 }
 
 /* =========================================================
-   KLINIKIQ V392 — TUS generation status compact cleanup
+   KLINIKIQ V392 — TUS status compact cleanup
    Makes ETA / final-control / reveal states quieter, smaller and less dominant.
-   Moves the live generation stage into the right-side compact status chip.
+   Moves the live module stage into the right-side compact status chip.
    ========================================================= */
 .tus-generation-state.tus-generation-state-live.tus-generation-study-wait {
   grid-template-columns: minmax(0, 1fr) auto !important;

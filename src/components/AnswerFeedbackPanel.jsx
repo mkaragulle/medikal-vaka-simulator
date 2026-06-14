@@ -256,7 +256,7 @@ function deriveSingleLinePearl(clinicalCase = {}, reasoningText = '') {
   let pearl = compactParagraph(source, 2, 360);
 
   // Safety: if a dotted abbreviation or Roman-numeral cranial nerve shorthand
-  // slipped through and produced only "C.", "VI.", etc., use the repaired full note.
+  // slipped through and produced only "C.", "VI.", etc., use the complete note.
   if (/^(?:[A-ZÇĞİÖŞÜ]|I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII)\.$/u.test(pearl) || pearl.length < 12 || /\b(?:[A-ZÇĞİÖŞÜ]|I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII)\.$/u.test(pearl)) {
     pearl = truncateSentence(source, 360);
   }

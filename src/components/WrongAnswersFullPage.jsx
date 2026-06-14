@@ -74,15 +74,15 @@ function WrongAnswersFullPage({ wrongAnswers = [], onBack, onOpenCase, onRemoveC
       <section className="wrong-full-list card-surface" aria-label="Yanlış olgu listesi">
         {filteredWrongAnswers.length ? (
           filteredWrongAnswers.map((item) => {
-            const isAI = isTusGeneratorWrongAnswer(item);
+            const isLegacyTusQuestion = isTusGeneratorWrongAnswer(item);
             const displayTitle = item.title || item.questionPreview || 'Kayıtlı yanlış soru';
             const wrongDate = formatWrongDate(item.lastWrongAt || item.createdAt);
             return (
-              <article className={`wrong-full-card ${isAI ? 'is-legacy-generated' : ''}`.trim()} key={item.caseId}>
+              <article className={`wrong-full-card ${isLegacyTusQuestion ? 'is-legacy-generated' : ''}`.trim()} key={item.caseId}>
                 <div className="wrong-full-card-main">
-                  <span className={`wrong-answer-branch ${isAI ? 'legacy-generated' : ''}`.trim()}>
-                    {isAI ? <Icon name="Sparkles" size={13} /> : null}
-                    {item.branchName || (isAI ? 'TUS soru' : 'Klinik branş')}
+                  <span className={`wrong-answer-branch ${isLegacyTusQuestion ? 'legacy-generated' : ''}`.trim()}>
+                    {isLegacyTusQuestion ? <Icon name="Sparkles" size={13} /> : null}
+                    {item.branchName || (isLegacyTusQuestion ? 'TUS soru' : 'Klinik branş')}
                   </span>
                   <h2>{displayTitle}</h2>
                   {item.questionPreview && item.questionPreview !== displayTitle ? <p>{item.questionPreview}</p> : null}

@@ -34,17 +34,17 @@ function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClea
       {hasItems ? (
         <div className="wrong-answers-list">
           {visibleItems.map((item) => {
-            const isAI = isTusGeneratorWrongAnswer(item);
+            const isLegacyTusQuestion = isTusGeneratorWrongAnswer(item);
             const displayTitle = item.title || item.questionPreview || 'Kayıtlı yanlış soru';
             return (
-              <article className={`wrong-answer-card ${isAI ? 'is-legacy-generated' : ''}`.trim()} key={item.caseId}>
+              <article className={`wrong-answer-card ${isLegacyTusQuestion ? 'is-legacy-generated' : ''}`.trim()} key={item.caseId}>
                 <div className="wrong-answer-main">
-                  <span className={`wrong-answer-branch ${isAI ? 'legacy-generated' : ''}`.trim()}>
-                    {isAI ? <Icon name="Sparkles" size={13} /> : null}
-                    {item.branchName || (isAI ? 'TUS soru' : 'Klinik branş')}
+                  <span className={`wrong-answer-branch ${isLegacyTusQuestion ? 'legacy-generated' : ''}`.trim()}>
+                    {isLegacyTusQuestion ? <Icon name="Sparkles" size={13} /> : null}
+                    {item.branchName || (isLegacyTusQuestion ? 'TUS soru' : 'Klinik branş')}
                   </span>
                   <h3>{displayTitle}</h3>
-                  {isAI && item.questionPreview && item.questionPreview !== displayTitle ? (
+                  {isLegacyTusQuestion && item.questionPreview && item.questionPreview !== displayTitle ? (
                     <small>{item.questionPreview}</small>
                   ) : null}
                 </div>
