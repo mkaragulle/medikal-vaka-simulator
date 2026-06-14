@@ -47,7 +47,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -74,7 +74,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-template-source, removed-static-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": [
         {
           "alias": "ARA",
@@ -124,7 +124,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -150,7 +150,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-template-source, removed-static-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -198,7 +198,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -226,7 +226,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -271,7 +271,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -297,7 +297,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -342,7 +342,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -368,7 +368,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -414,7 +414,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -442,7 +442,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -489,7 +489,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -518,7 +518,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -563,7 +563,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -589,7 +589,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -634,7 +634,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "medium",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -660,7 +660,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -707,7 +707,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -735,7 +735,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-static-template-source, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -780,7 +780,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -806,7 +806,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -851,7 +851,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -877,7 +877,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -921,7 +921,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "medium",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -947,7 +947,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "removed-question-template-source, removed-static-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -994,7 +994,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -1022,7 +1022,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-template-source, removed-static-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -1067,7 +1067,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -1093,7 +1093,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "removed-static-template-source, removed-topic-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -1140,7 +1140,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -1168,7 +1168,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -1214,7 +1214,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -1241,7 +1241,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": [
         {
           "alias": "miyeloperoksidaz ANCA",
@@ -1294,7 +1294,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -1323,7 +1323,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -1369,7 +1369,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P2",
     "answerLeakRisk": "low",
-    "curationScore": 88,
+    "qualityScore": 88,
     "matchingPriority": 91,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -1397,7 +1397,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 17,
+      "qualityScoreFromAudit": 17,
       "droppedAliases": []
     }
   },
@@ -1444,7 +1444,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P2",
     "answerLeakRisk": "low",
-    "curationScore": 88,
+    "qualityScore": 88,
     "matchingPriority": 91,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -1472,7 +1472,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 17,
+      "qualityScoreFromAudit": 17,
       "droppedAliases": []
     }
   },
@@ -1516,7 +1516,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P0",
     "answerLeakRisk": "medium",
-    "curationScore": 97,
+    "qualityScore": 97,
     "matchingPriority": 99,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -1542,7 +1542,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "removed-question-template-source, removed-static-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 24,
+      "qualityScoreFromAudit": 24,
       "droppedAliases": []
     }
   },
@@ -1587,7 +1587,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -1614,7 +1614,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-topic-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": [
         {
           "alias": "ARR",
@@ -1666,7 +1666,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -1695,7 +1695,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-topic-source, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -1739,7 +1739,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -1765,7 +1765,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -1810,7 +1810,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -1837,7 +1837,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": [
         {
           "alias": "SIADH",
@@ -1887,7 +1887,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -1913,7 +1913,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "removed-static-template-source, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -1958,7 +1958,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -1984,7 +1984,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "removed-static-template-source, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -2028,7 +2028,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2054,7 +2054,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "removed-static-template-source, removed-topic-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -2098,7 +2098,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2124,7 +2124,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "removed-question-template-source, removed-static-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -2169,7 +2169,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2195,7 +2195,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-template-source, removed-static-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -2240,7 +2240,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2266,7 +2266,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "removed-question-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -2310,7 +2310,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "medium",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2336,7 +2336,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -2382,7 +2382,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2410,7 +2410,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "removed-static-template-source, removed-topic-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -2454,7 +2454,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "medium",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2480,7 +2480,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "removed-static-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -2525,7 +2525,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "medium",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2551,7 +2551,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "removed-static-template-source, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -2595,7 +2595,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2621,7 +2621,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "removed-static-template-source, removed-topic-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -2665,7 +2665,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "medium",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2691,7 +2691,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -2736,7 +2736,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2762,7 +2762,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -2807,7 +2807,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2833,7 +2833,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -2878,7 +2878,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2904,7 +2904,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-static-template-source, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -2949,7 +2949,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -2975,7 +2975,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-template-source, removed-static-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -3019,7 +3019,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -3045,7 +3045,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "removed-topic-source, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -3090,7 +3090,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3116,7 +3116,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -3161,7 +3161,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3187,7 +3187,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "removed-topic-source, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -3232,7 +3232,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3258,7 +3258,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -3302,7 +3302,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3328,7 +3328,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": [
         {
           "alias": "bite cell",
@@ -3378,7 +3378,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3404,7 +3404,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "removed-static-template-source, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -3449,7 +3449,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3475,7 +3475,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "removed-question-template-source, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -3519,7 +3519,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3545,7 +3545,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -3589,7 +3589,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -3615,7 +3615,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -3661,7 +3661,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -3688,7 +3688,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -3732,7 +3732,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P0",
     "answerLeakRisk": "medium",
-    "curationScore": 97,
+    "qualityScore": 97,
     "matchingPriority": 99,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3758,7 +3758,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "removed-static-template-source, removed-topic-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 24,
+      "qualityScoreFromAudit": 24,
       "droppedAliases": []
     }
   },
@@ -3802,7 +3802,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3828,7 +3828,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-template-source, removed-static-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -3873,7 +3873,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3899,7 +3899,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-topic-source, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -3944,7 +3944,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -3970,7 +3970,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-topic-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -4015,7 +4015,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4041,7 +4041,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -4086,7 +4086,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P0",
     "answerLeakRisk": "medium",
-    "curationScore": 97,
+    "qualityScore": 97,
     "matchingPriority": 99,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4112,7 +4112,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 24,
+      "qualityScoreFromAudit": 24,
       "droppedAliases": []
     }
   },
@@ -4156,7 +4156,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4182,7 +4182,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/tusGlossaryContextualPhraseIndex.js, src/data/tusGlossarySupplementalIndex.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -4226,7 +4226,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "medium",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4252,7 +4252,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-template-source, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -4296,7 +4296,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P2",
     "answerLeakRisk": "low",
-    "curationScore": 88,
+    "qualityScore": 88,
     "matchingPriority": 91,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4322,7 +4322,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-topic-source, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 17,
+      "qualityScoreFromAudit": 17,
       "droppedAliases": []
     }
   },
@@ -4364,7 +4364,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P2",
     "answerLeakRisk": "low",
-    "curationScore": 88,
+    "qualityScore": 88,
     "matchingPriority": 91,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4390,7 +4390,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-topic-source, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 17,
+      "qualityScoreFromAudit": 17,
       "droppedAliases": []
     }
   },
@@ -4437,7 +4437,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -4465,7 +4465,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -4510,7 +4510,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4537,7 +4537,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -4581,7 +4581,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4607,7 +4607,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -4651,7 +4651,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4677,7 +4677,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-topic-source, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -4721,7 +4721,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4747,7 +4747,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -4792,7 +4792,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -4819,7 +4819,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-tus-question-screen, src/data/tusGlossarySupplementalIndex.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -4864,7 +4864,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4891,7 +4891,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-static-template-source, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": [
         {
           "alias": "T2DM",
@@ -4940,7 +4940,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -4966,7 +4966,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-template-source, removed-topic-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -5010,7 +5010,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -5036,7 +5036,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-static-template-source, removed-topic-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -5080,7 +5080,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -5106,7 +5106,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -5152,7 +5152,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -5180,7 +5180,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-template-source, removed-static-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -5224,7 +5224,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -5250,7 +5250,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-template-source, removed-static-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -5294,7 +5294,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P2",
     "answerLeakRisk": "medium",
-    "curationScore": 88,
+    "qualityScore": 88,
     "matchingPriority": 91,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -5320,7 +5320,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 17,
+      "qualityScoreFromAudit": 17,
       "droppedAliases": []
     }
   },
@@ -5364,7 +5364,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -5390,7 +5390,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -5434,7 +5434,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "medium",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -5460,7 +5460,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -5505,7 +5505,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P2",
     "answerLeakRisk": "low",
-    "curationScore": 88,
+    "qualityScore": 88,
     "matchingPriority": 91,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -5531,7 +5531,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 17,
+      "qualityScoreFromAudit": 17,
       "droppedAliases": []
     }
   },
@@ -5575,7 +5575,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P2",
     "answerLeakRisk": "low",
-    "curationScore": 88,
+    "qualityScore": 88,
     "matchingPriority": 91,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -5601,7 +5601,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 17,
+      "qualityScoreFromAudit": 17,
       "droppedAliases": []
     }
   },
@@ -5645,7 +5645,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P2",
     "answerLeakRisk": "low",
-    "curationScore": 88,
+    "qualityScore": 88,
     "matchingPriority": 91,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -5671,7 +5671,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 17,
+      "qualityScoreFromAudit": 17,
       "droppedAliases": []
     }
   },
@@ -5717,7 +5717,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -5744,7 +5744,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-template-source, removed-static-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -5789,7 +5789,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -5815,7 +5815,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -5860,7 +5860,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -5886,7 +5886,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -5930,7 +5930,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P2",
     "answerLeakRisk": "low",
-    "curationScore": 88,
+    "qualityScore": 88,
     "matchingPriority": 91,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -5956,7 +5956,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 17,
+      "qualityScoreFromAudit": 17,
       "droppedAliases": []
     }
   },
@@ -6001,7 +6001,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": true,
@@ -6028,7 +6028,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -6072,7 +6072,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -6098,7 +6098,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-static-template-source, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -6142,7 +6142,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "low",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -6168,7 +6168,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "missing",
       "sourceFilePath": "removed-question-template-source, removed-static-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -6212,7 +6212,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "medium",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -6238,7 +6238,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "removed-question-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   },
@@ -6283,7 +6283,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "difficulty": "P1",
     "answerLeakRisk": "medium",
-    "curationScore": 93,
+    "qualityScore": 93,
     "matchingPriority": 96,
     "nestedGlossaryAllowed": true,
     "caseSensitiveDisplay": false,
@@ -6309,7 +6309,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "existingGlossaryStatus": "partialMatch",
       "sourceFilePath": "removed-question-template-source",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
-      "curationScoreFromAudit": 21,
+      "qualityScoreFromAudit": 21,
       "droppedAliases": []
     }
   }

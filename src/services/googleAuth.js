@@ -1,4 +1,4 @@
-import { signInWithPopup } from '@firebase/auth';
+import { signInWithPopup } from 'firebase/auth';
 import { getFirebaseAuth, getGoogleProvider, isFirebaseConfigured } from './firebaseClient.js';
 
 export function isGoogleAuthConfigured() {

@@ -18192,7 +18192,7 @@ html.ki-route-transitioning .catalog-card-virtual-row > .tus-pearl-library-card.
 }
 
 /* ========================================================================== 
-   V401 — Hap Bilgi right-panel icon/text vertical alignment cleanup
+   V401 — Hap Bilgi right-panel icon/text vertical alignment repair
    Fixes clipping caused by taller rows plus padded SVG icons by making icon
    boxes border-box, removing vertical padding conflict from the buttons, and
    centering every label/icon/count inside the same row height.

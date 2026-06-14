@@ -336,7 +336,7 @@ function normalizeResultRow(row) {
       reference: row.reference,
       note: row.note || row.interpretation,
     };
-  const normalizedRow = normalizeLabResultRow({
+  const repaired = normalizeLabResultRow({
     ...normalized,
     parameter: uniqueCellLines(normalized.parameter || ''),
     value: uniqueCellLines(normalized.value || ''),
@@ -344,13 +344,13 @@ function normalizeResultRow(row) {
     note: uniqueCellLines(normalized.note || ''),
   });
 
-  const value = sanitizeUniqueCellText(normalizedRow.value || '');
-  const note = sanitizeUniqueCellText(normalizedRow.note || '');
+  const value = sanitizeUniqueCellText(repaired.value || '');
+  const note = sanitizeUniqueCellText(repaired.note || '');
 
   return {
-    parameter: sanitizeUniqueCellText(normalizedRow.parameter || ''),
+    parameter: sanitizeUniqueCellText(repaired.parameter || ''),
     value,
-    reference: sanitizeUniqueCellText(normalizedRow.reference || ''),
+    reference: sanitizeUniqueCellText(repaired.reference || ''),
     note: isDuplicateCellLine(value, note) ? '' : note,
   };
 }

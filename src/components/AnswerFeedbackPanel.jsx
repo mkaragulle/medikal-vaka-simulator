@@ -230,7 +230,7 @@ function deriveSingleLinePearl(clinicalCase = {}, reasoningText = '') {
   let pearl = compactParagraph(source, 2, 360);
 
   // Safety: if a dotted abbreviation or Roman-numeral cranial nerve shorthand
-  // slipped through and produced only "C.", "VI.", etc., use the normalized full note.
+  // slipped through and produced only "C.", "VI.", etc., use the repaired full note.
   if (/^(?:[A-ZÇĞİÖŞÜ]|I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII)\.$/u.test(pearl) || pearl.length < 12 || /\b(?:[A-ZÇĞİÖŞÜ]|I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII)\.$/u.test(pearl)) {
     pearl = truncateSentence(source, 360);
   }
@@ -694,43 +694,64 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
   });
 }
 
-function FeedbackSection({
-  icon = null,
-  tone = 'blue',
-  eyebrow = '',
-  title = '',
-  className = '',
-  minimal = false,
-  children,
-}) {
+
+function FeedbackSection({ icon, tone = 'blue', eyebrow, title, children, className = '', minimal = false }) {
+  const shouldRenderHead = !minimal && (icon || eyebrow || title);
   return (
-    <section className={['feedback-section-card', `feedback-section-${tone}`, minimal ? 'feedback-section-minimal' : '', className].filter(Boolean).join(' ')}>
-      {icon || eyebrow || title ? (
-        <header className="feedback-section-head">
-          {icon ? <IconBadge name={icon} /> : null}
-          <div className="feedback-section-title-wrap">
-            {eyebrow ? <span className="feedback-section-eyebrow">{eyebrow}</span> : null}
-            {title ? <h3>{title}</h3> : null}
+    <section className={`feedback-card ${minimal ? 'feedback-card-minimal' : ''} ${className}`.trim()}>
+      {shouldRenderHead ? (
+        <header className="feedback-card-head">
+          {icon ? <IconBadge icon={icon} tone={tone} size="sm" /> : null}
+          <div>
+            {eyebrow ? <span>{eyebrow}</span> : null}
+            {title ? <h4>{title}</h4> : null}
           </div>
         </header>
       ) : null}
-      <div className="feedback-section-body">
-        {children}
-      </div>
+      {children}
     </section>
   );
 }
 
 function ExamNoteFeedback({ signal, glossaryEnabled = true }) {
   if (!signal?.hasContent) return null;
-  const appearedYears = formatAppearedYears(signal);
-  const title = signal.title || signal.label || 'Sınav sinyali';
-  const note = signal.note || signal.text || signal.summary || '';
+  const yearsLabel = formatAppearedYears(signal);
+  const metaChips = [
+    yearsLabel || '',
+    signal.appearanceCount > 1 && !yearsLabel ? `${signal.appearanceCount} kez sorulmuş` : '',
+    signal.isPastQuestionDerived && !yearsLabel ? 'Çıkmış bilgi' : '',
+  ].filter(Boolean);
+  const keyPoints = Array.isArray(signal.keyPoints) ? signal.keyPoints.slice(0, 4) : [];
+  const keywordChips = Array.isArray(signal.keywords) ? signal.keywords.slice(0, 3) : [];
 
   return (
-    <FeedbackSection icon="ClipboardCheck" tone="accent" eyebrow="Sınav notu" title={title} className="exam-note-feedback-card">
-      {appearedYears ? <p className="feedback-body-copy"><strong>Çıkmış bağlantısı:</strong> {appearedYears}</p> : null}
-      {note ? <p className="feedback-body-copy"><GlossaryText text={ensureSentence(note)} enabled={glossaryEnabled} revealMode="postAnswer" maxTerms={6} /></p> : null}
+    <FeedbackSection icon="Sparkles" tone="accent" eyebrow="TUS ipucu" title="Kısa sınav notu" className="tus-spot-signal-feedback exam-note-feedback-card spot-note-card">
+      <div className="exam-note-content-stack">
+        {metaChips.length ? (
+          <div className="exam-note-meta-row" aria-label="Sınav geçmişi">
+            {metaChips.slice(0, 2).map((chip) => <span className="exam-signal-chip past keyword-badge" key={chip}>{chip}</span>)}
+          </div>
+        ) : null}
+        {signal.spotPearl ? (
+          <p className="exam-signal-pearl exam-note-pearl spot-note-copy">
+            <span className="spot-note-label">Spot bilgi:</span> {signal.spotPearl}
+          </p>
+        ) : null}
+        {keyPoints.length ? (
+          <div className="spot-note-insight-list" aria-label="Kritik ipuçları">
+            <span className="spot-note-list-title">Kritik ipuçları</span>
+            <ul>
+              {keyPoints.map((point, index) => <li key={`${point}-${index}`}>{point}</li>)}
+            </ul>
+          </div>
+        ) : null}
+        {keywordChips.length ? (
+          <div className="exam-signal-keywords exam-note-keywords keyword-badge-row" aria-label="Kısa anahtarlar">
+            {keywordChips.map((keyword) => <span className="keyword-badge" key={keyword}>{keyword}</span>)}
+          </div>
+        ) : null}
+        {signal.examTrap ? <p className="exam-signal-trap exam-note-trap"><strong>Sık tuzak:</strong> {signal.examTrap}</p> : null}
+      </div>
     </FeedbackSection>
   );
 }

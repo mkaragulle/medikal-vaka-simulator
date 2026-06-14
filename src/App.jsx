@@ -554,57 +554,6 @@ function App() {
     return activeBranchCasePool[0] ?? null;
   }, [selectedCaseId, activeBranchCasePool, examState, accessibleCaseIds, accessibleCases, accessibleCaseIndex]);
 
-
-  const visibleWrongAnswers = useMemo(
-    () => (Array.isArray(wrongAnswers) ? wrongAnswers : []).filter((entry) => {
-      const caseId = entry?.caseId || entry?.id;
-      return caseId ? accessibleCaseIds.has(caseId) : true;
-    }),
-    [wrongAnswers, accessibleCaseIds],
-  );
-
-  useEffect(() => {
-    if (!examState?.active) return undefined;
-    const timerId = window.setInterval(() => setClockTick(Date.now()), 1000);
-    return () => window.clearInterval(timerId);
-  }, [examState?.active]);
-
-  const remainingSeconds = useMemo(() => {
-    if (!examState?.active || !examState.startedAt || !examState.durationSeconds) return 0;
-    const elapsedSeconds = Math.floor((clockTick - examState.startedAt) / 1000);
-    return Math.max(0, examState.durationSeconds - elapsedSeconds);
-  }, [clockTick, examState]);
-
-  const activeExamCaseMeta = useMemo(() => {
-    if (!examState?.active) return null;
-    return {
-      active: true,
-      title: examState.title,
-      currentIndex: examState.currentIndex,
-      total: Array.isArray(examState.caseIds) ? examState.caseIds.length : 0,
-      answeredCount: Object.keys(examState.answers || {}).length,
-      remainingSeconds,
-    };
-  }, [examState, remainingSeconds]);
-
-  const noopRandomCase = useCallback(() => {}, []);
-
-  const leaderboardEntries = useMemo(() => {
-    const historyEntries = (Array.isArray(examHistory) ? examHistory : []).slice(0, 5).map((exam, index) => ({
-      id: exam.id || `exam-${index}`,
-      name: exam.title || `Blok ${index + 1}`,
-      score: exam.score || 0,
-      accuracy: exam.accuracy || 0,
-    }));
-    if (historyEntries.length) return historyEntries;
-    return [{
-      id: currentUser?.id || 'current-user',
-      name: currentUser?.name || 'Kullanıcı',
-      score: sessionStats.score || 0,
-      accuracy: sessionStats.accuracy || 0,
-    }];
-  }, [currentUser?.id, currentUser?.name, examHistory, sessionStats.accuracy, sessionStats.score]);
-
   const persistCurrentUser = (patch) => {
     setCurrentUser((current) => {
       if (!current?.id) return current;
@@ -858,6 +807,132 @@ function App() {
   };
 
   const clearWrongAnswers = () => setWrongAnswers([]);
+
+  useEffect(() => {
+    if (currentUser?.id) return;
+    localBackend.writeDeferred(STATS_STORAGE_KEY, sessionStats);
+  }, [sessionStats, currentUser?.id]);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    localBackend.write(THEME_STORAGE_KEY, theme);
+  }, [theme]);
+
+  useEffect(() => {
+    const shouldLockAuth = !currentUser;
+    document.documentElement.classList.toggle('klinikiq-auth-lock', shouldLockAuth);
+    document.body.classList.toggle('klinikiq-auth-lock', shouldLockAuth);
+
+    if (shouldLockAuth) {
+      document.documentElement.style.overflow = 'hidden';
+      document.documentElement.style.height = '100dvh';
+      document.body.style.overflow = 'hidden';
+      document.body.style.height = '100dvh';
+      document.body.style.maxHeight = '100dvh';
+      document.body.style.position = 'relative';
+    } else {
+      document.documentElement.style.overflow = '';
+      document.documentElement.style.height = '';
+      document.body.style.overflow = '';
+      document.body.style.height = '';
+      document.body.style.maxHeight = '';
+      document.body.style.position = '';
+    }
+
+    return () => {
+      document.documentElement.classList.remove('klinikiq-auth-lock');
+      document.body.classList.remove('klinikiq-auth-lock');
+      document.documentElement.style.overflow = '';
+      document.documentElement.style.height = '';
+      document.body.style.overflow = '';
+      document.body.style.height = '';
+      document.body.style.maxHeight = '';
+      document.body.style.position = '';
+    };
+  }, [currentUser]);
+
+  useEffect(() => {
+    if (currentUser?.id) return;
+    localBackend.writeDeferred(EXAM_HISTORY_STORAGE_KEY, examHistory);
+  }, [examHistory, currentUser?.id]);
+
+  useEffect(() => {
+    setBottomCaseSearchQuery('');
+  }, [selectedBranchId]);
+
+  useEffect(() => {
+    if (!selectedBranchId) return;
+    if (!visibleBranches.some((branch) => branch.id === selectedBranchId)) {
+      setSelectedBranchId(null);
+      setSelectedCaseId(null);
+      return;
+    }
+    if (!activeBranchCasePool.some((clinicalCase) => clinicalCase.id === selectedCaseId)) {
+      setSelectedCaseId(activeBranchCasePool[0]?.id ?? null);
+    }
+  }, [selectedBranchId, activeBranchCasePool, selectedCaseId, visibleBranches]);
+
+  useEffect(() => {
+    if (!examState?.active) return undefined;
+    const interval = window.setInterval(() => setClockTick(Date.now()), 1000);
+    return () => window.clearInterval(interval);
+  }, [examState?.active]);
+
+  useEffect(() => () => {
+    branchRouteTimers.current.forEach((timerId) => window.clearTimeout(timerId));
+  }, []);
+
+  const remainingSeconds = useMemo(() => {
+    if (!examState?.active) return 0;
+    const elapsed = Math.floor((clockTick - examState.startedAt) / 1000);
+    return Math.max(0, examState.durationSeconds - elapsed);
+  }, [examState, clockTick]);
+
+  const leaderboardEntries = useMemo(() => {
+    const entries = [];
+    if (sessionStats.attempts) {
+      entries.push({
+        label: 'Toplam puan',
+        subtext: `${sessionStats.attempts} olgu · %${Math.round(sessionStats.accuracy)} doğruluk`,
+        value: sessionStats.score,
+      });
+    }
+
+    if (sessionStats.bestStreak) {
+      entries.push({
+        label: 'En iyi seri',
+        subtext: 'Art arda doğru yanıt',
+        value: sessionStats.bestStreak,
+      });
+    }
+
+    if (examHistory.length) {
+      const bestExam = [...examHistory].sort((a, b) => b.score - a.score)[0];
+      entries.push({
+        label: 'En iyi blok sınav',
+        subtext: `${bestExam.correct}/${bestExam.total} doğru · %${bestExam.accuracy}`,
+        value: bestExam.score,
+      });
+    }
+
+    return entries.slice(0, 3);
+  }, [examHistory, sessionStats]);
+
+  const visibleWrongAnswers = useMemo(() => (
+    isDemoUser
+      ? wrongAnswers.filter((entry) => accessibleCaseIds.has(entry.caseId))
+      : wrongAnswers
+  ), [wrongAnswers, isDemoUser, accessibleCaseIds]);
+
+  const activeExamCaseMeta = useMemo(() => (examState?.active ? {
+    active: true,
+    title: examState.title,
+    currentIndex: examState.currentIndex,
+    total: examState.caseIds.length,
+    answers: examState.answers,
+  } : null), [examState?.active, examState?.title, examState?.currentIndex, examState?.caseIds, examState?.answers]);
+
+  const noopRandomCase = useCallback(() => {}, []);
 
   const openWrongCase = (caseIdOrEntry) => {
     const caseId = typeof caseIdOrEntry === 'object' ? caseIdOrEntry?.caseId : caseIdOrEntry;
