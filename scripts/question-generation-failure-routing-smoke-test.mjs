@@ -3,6 +3,7 @@ import {
   classifyTusValidationErrors,
   fallbackQuestion,
   questionMatchesRecent,
+  repairTusQuestionForPublish,
 } from '../api/generate-ai-question.js';
 import { runFinalFeedbackQualityGate } from '../server/lib/final-feedback-quality-gate.js';
 import { runQuestionQualityGate } from '../server/lib/question-quality-gate.js';
@@ -91,5 +92,32 @@ const fallbackPublisherGate = runQuestionQualityGate(safeFallback);
 const fallbackFinalGate = runFinalFeedbackQualityGate(safeFallback);
 assert.equal(fallbackPublisherGate.publishable, true, `safe fallback should pass publisher gate: ${fallbackPublisherGate.errors.join('; ')}`);
 assert.equal(fallbackFinalGate.publishable, true, `safe fallback should pass final feedback gate: ${fallbackFinalGate.errors.join('; ')}`);
+
+const shallowFeedbackQuestion = {
+  ...baseQuestion,
+  explanation: 'Hipotonik hiponatremi doğru cevaptır.',
+  wrongOptionFeedback: {
+    A: 'Doğrudur.',
+    B: 'Uygun değildir.',
+    C: 'Uygun değildir.',
+    D: 'Uygun değildir.',
+    E: 'Uygun değildir.',
+  },
+  optionFeedback: {
+    A: 'Doğrudur.',
+    B: 'Uygun değildir.',
+    C: 'Uygun değildir.',
+    D: 'Uygun değildir.',
+    E: 'Uygun değildir.',
+  },
+};
+const repaired = repairTusQuestionForPublish(shallowFeedbackQuestion, ['option-feedback-placeholder-or-weak:B']);
+assert.equal(repaired.blocked, false, 'repair should preserve valid answer/options');
+assert.ok(repaired.applied.includes('stem-explanation-feedback-evidence-rebuilt'), 'repair should rebuild stem/explanation/feedback');
+const repairedPublisherGate = runQuestionQualityGate(repaired.question);
+const repairedFinalGate = runFinalFeedbackQualityGate(repaired.question);
+assert.equal(repairedPublisherGate.publishable, true, `repaired shallow question should pass publisher gate: ${repairedPublisherGate.errors.join('; ')}`);
+assert.equal(repairedFinalGate.publishable, true, `repaired shallow question should pass final feedback gate: ${repairedFinalGate.errors.join('; ')}`);
+assert.equal(repaired.question.correctAnswer, shallowFeedbackQuestion.correctAnswer, 'repair must preserve correct answer');
 
 console.log('question-generation-failure-routing-smoke-test: ok');

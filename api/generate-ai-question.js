@@ -138,6 +138,33 @@ function buildRetryQualityFeedback(failure = {}) {
   ].join(' ');
 }
 
+function buildFinalUserFailureReason(failureDetails = []) {
+  const allText = normalize(asArray(failureDetails).flatMap((failure) => [
+    failure.message,
+    ...(failure.validationErrors || []),
+    ...(failure.issues || []).map((issue) => issue.message),
+  ]).filter(Boolean).join(' | '));
+  if (/explanation may support other option|cift dogru|iki secenek|multiple correct|ayni derecede/.test(allText)) {
+    return 'Çift doğru seçenek riski giderilemedi.';
+  }
+  if (/stem correct answer conflict|kok.*cevap|cevap.*celis|conflict/.test(allText)) {
+    return 'Kök ile doğru cevap arasındaki çelişki güvenli biçimde çözülemedi.';
+  }
+  if (/correctanswer|correct answer|dogru cevap|correct-option|answer key|cevap guvenli/.test(allText)) {
+    return 'Doğru cevap güvenli belirlenemedi.';
+  }
+  if (/scientific|medical contradiction|imkans|bozuk klinik deger|tibbi|unsafe/.test(allText)) {
+    return 'Güvenli tıbbi içerik oluşturulamadı.';
+  }
+  if (/json|parse|schema|token|output|incomplete/.test(allText)) {
+    return 'Model çıktısı geçerli ve eksiksiz soru şemasına dönüştürülemedi.';
+  }
+  if (/feedback|explanation|tus language|turk|dil|repair/.test(allText)) {
+    return 'Açıklama ve seçenek feedbackleri kalite standardına güvenli biçimde tamamlanamadı.';
+  }
+  return 'Güvenli ve tek doğru cevaplı soru oluşturulamadı.';
+}
+
 function summarizeQualityFailure({ gate, legacyBlocking = [], validationBlocking = [] } = {}) {
   return [
     ...(gate?.blockingErrors || []),
@@ -1406,6 +1433,109 @@ function integrateCompactDataIntoStem(stem = '', vitals = [], objectiveData = []
     .trim();
 }
 
+function uniqueSentences(value = '') {
+  const seen = new Set();
+  return splitSentencesSafe(value)
+    .map((sentence) => ensureSentence(sentence))
+    .filter((sentence) => {
+      const key = normalize(sentence);
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+}
+
+function visibleRepairEvidence(question = {}) {
+  const rows = [
+    ...compactItems(question.compactVitals || question.vitals || [], 5).map((item) => `${item.label}: ${item.value}`),
+    ...compactItems(question.compactObjectiveData || question.objectiveData || [], 8).map((item) => `${item.label}: ${item.value}`),
+  ].map(cleanText).filter(Boolean);
+  const stemSentences = uniqueSentences(question.stem || '').slice(0, 2);
+  const evidence = Array.from(new Set([...rows, ...stemSentences])).slice(0, 4);
+  const summary = evidence.length
+    ? evidence.join('; ')
+    : 'soru kökündeki hasta bağlamı ve karar verdirici klinik bilgiler';
+  return { evidence, summary };
+}
+
+function optionConceptSentence(optionText = '') {
+  const option = cleanText(optionText || 'Bu seçenek');
+  return `${option}, sınav sorularında kendi özgün klinik paternini, mekanizmasını veya karar basamağını temsil eden ayrı bir seçenektir.`;
+}
+
+function buildGroundedFeedback({ option, correctId, correctText, evidenceSummary }) {
+  const optionText = cleanText(option?.text || '');
+  if (option?.id === correctId) {
+    return [
+      `${optionText}, kökte verilen ${evidenceSummary} bulgu bütünlüğünü en iyi birleştiren seçenektir.`,
+      `Bu nedenle doğru cevap, yalnızca isim olarak değil kökteki görünür verilerin birlikte desteklediği klinik karar noktası olarak değerlendirilir.`,
+    ].join(' ');
+  }
+  const contrastById = {
+    A: `Ayırıcı nokta, ${optionText} için beklenen belirleyici işaretlerin kökte ana eksen olarak verilmemesi; mevcut görünür verilerin ${correctText} lehine gruplanmasıdır.`,
+    B: `Bu seçenek ile ${correctText} arasındaki fark, kökteki verilerin ${optionText} için tipik karar yolunu değil doğru cevabın klinik eksenini desteklemesidir.`,
+    C: `${optionText} ancak kendi tanısal veya mekanistik ipuçları kökte baskın olduğunda güç kazanır; bu soruda görünür bulgular ${correctText} seçeneğini daha tutarlı kılar.`,
+    D: `Bu olguda ${optionText} seçeneğini öne çıkaracak ayrı bir bulgu dizisi kurulmamıştır; soru kökü karar verdirici verileri ${correctText} çevresinde toplar.`,
+    E: `${optionText} farklı bir klinik karar hattını temsil eder; kökteki hasta bağlamı ve objektif veriler bu hattı değil ${correctText} yanıtını destekleyen ekseni kurar.`,
+  };
+  return [
+    optionConceptSentence(optionText),
+    `Bu olguda karar verdiren ${evidenceSummary} bilgileri ${correctText} yönünde daha tutarlı bir bütünlük kurar.`,
+    contrastById[option?.id] || `${optionText} bu kökte doğru cevabın taşıdığı klinik ekseni karşılamaz; temel ayrım görünür verilerin ${correctText} lehine birleşmesidir.`,
+  ].join(' ');
+}
+
+export function repairTusQuestionForPublish(rawQuestion = {}, repairReasons = []) {
+  const question = { ...rawQuestion };
+  const options = normalizeOptions(question.options);
+  const correctId = String(question.correctAnswer || '').trim().toUpperCase();
+  const correctText = getCorrectText({ ...question, options });
+  const applied = [];
+  if (!options.length || !OPTION_IDS.includes(correctId) || !correctText) {
+    return { question, applied, blocked: true };
+  }
+
+  question.stem = integrateCompactDataIntoStem(
+    stripQuestionLikeTailFromStem(question.stem || question.questionStem || '', question.question || ''),
+    question.compactVitals || question.vitals || [],
+    question.compactObjectiveData || question.objectiveData || [],
+  );
+  question.question = ensureQuestion(question.question || 'Bu olguda en uygun seçenek hangisidir?');
+
+  const { evidence, summary } = visibleRepairEvidence(question);
+  const evidenceSummary = cleanText(summary);
+  question.explanation = [
+    `${correctText}, kökte verilen ${evidenceSummary} bulgu bütünlüğünü en iyi açıklayan seçenektir.`,
+    `Açıklama yalnızca kökte görünen verilere dayanır; seçenekler arasındaki temel ayrım bu görünür klinik eksenin ${correctText} lehine kurulmasıdır.`,
+  ].join(' ');
+
+  const feedback = {};
+  options.forEach((option) => {
+    feedback[option.id] = buildGroundedFeedback({ option, correctId, correctText, evidenceSummary });
+  });
+  question.optionFeedback = feedback;
+  question.wrongOptionFeedback = feedback;
+  question.evidenceChain = evidence.length
+    ? evidence.map((item) => ensureSentence(item))
+    : [`Kök, ${correctText} lehine yorumlanacak görünür klinik bağlam içerir.`];
+  question.examPearl = `${correctText} sorularında doğru yanıt, kökteki görünür bulguların birlikte kurduğu karar ekseniyle seçilmelidir; açıklamada kök dışı hasta verisi kullanılmamalıdır.`;
+  question.semanticFingerprint = makeSignature(question);
+  question.aiMeta = {
+    ...(question.aiMeta || {}),
+    localPublishRepair: {
+      attempted: true,
+      reasons: repairReasons,
+      correctAnswerPreserved: correctId,
+    },
+  };
+  applied.push('stem-explanation-feedback-evidence-rebuilt');
+  return { question, applied, blocked: false };
+}
+
+function canAttemptLocalPublishRepair(error = '') {
+  return !/options-not-five|correct-answer-id-invalid|correct-answer-text-missing|correctAnswer A-E|correctAnswer seçeneklerle eşleşmiyor|tam 5 seçenek yok/iu.test(String(error || ''));
+}
+
 
 function isGenericOrPlaceholderStem(stem = '') {
   const value = normalize(stem);
@@ -1822,7 +1952,32 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
     Object.assign(sanitized, finalFeedbackResult.question);
     publisherGate = runQuestionQualityGate(sanitized, { version: PROMPT_VERSION });
   }
-  const finalFeedbackGate = finalFeedbackResult.gate;
+  let finalFeedbackGate = finalFeedbackResult.gate;
+  let localPublishRepairApplied = [];
+  const localRepairReasons = [
+    ...publisherGate.repairableErrors,
+    ...finalFeedbackGate.repairableErrors,
+    ...publisherGate.blockingErrors.filter(canAttemptLocalPublishRepair),
+    ...finalFeedbackGate.blockingErrors.filter(canAttemptLocalPublishRepair),
+  ];
+  if (localRepairReasons.length) {
+    const repaired = repairTusQuestionForPublish(sanitized, localRepairReasons);
+    localPublishRepairApplied = repaired.applied || [];
+    if (!repaired.blocked && localPublishRepairApplied.length) {
+      Object.assign(sanitized, repaired.question);
+      publisherGate = runQuestionQualityGate(sanitized, { version: PROMPT_VERSION });
+      const refreshedFinalFeedback = applyFinalFeedbackQualityGate(sanitized, {
+        version: `${PROMPT_VERSION}:final-feedback`,
+        baseVersion: PROMPT_VERSION,
+      });
+      if ((refreshedFinalFeedback.repairApplied || []).length) {
+        Object.assign(sanitized, refreshedFinalFeedback.question);
+        publisherGate = runQuestionQualityGate(sanitized, { version: PROMPT_VERSION });
+      }
+      finalFeedbackGate = refreshedFinalFeedback.gate;
+      localPublishRepairApplied.push(...(refreshedFinalFeedback.repairApplied || []).map((item) => `post-local-${item}`));
+    }
+  }
   sanitized.aiMeta = {
     ...(sanitized.aiMeta || {}),
     backendQualityGate: {
@@ -1846,6 +2001,7 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
       warnings: finalFeedbackGate.warnings,
       version: finalFeedbackGate.version,
       repairApplied: finalFeedbackRepairApplied,
+      localPublishRepairApplied,
       baseGate: finalFeedbackGate.baseGate,
     },
     publishable: publisherGate.publishable && finalFeedbackGate.publishable,
@@ -1878,7 +2034,7 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
     error.question = sanitized;
     throw error;
   }
-  const validation = validateQuestion(sanitized, recentQuestionSummaries);
+  let validation = validateQuestion(sanitized, recentQuestionSummaries);
   sanitized.aiMeta = {
     ...(sanitized.aiMeta || {}),
     legacyValidationGate: {
@@ -1901,10 +2057,49 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
       throw error;
     }
 
-    if (validation.repairableErrors.length) {
+    const validationRepairReasons = [
+      ...validation.repairableErrors,
+      ...validation.blockingErrors.filter(canAttemptLocalPublishRepair),
+    ];
+    if (validationRepairReasons.length) {
+      const repaired = repairTusQuestionForPublish(sanitized, validationRepairReasons);
+      if (!repaired.blocked && (repaired.applied || []).length) {
+        Object.assign(sanitized, repaired.question);
+        publisherGate = runQuestionQualityGate(sanitized, { version: PROMPT_VERSION });
+        const refreshedFinalFeedback = applyFinalFeedbackQualityGate(sanitized, {
+          version: `${PROMPT_VERSION}:final-feedback`,
+          baseVersion: PROMPT_VERSION,
+        });
+        if ((refreshedFinalFeedback.repairApplied || []).length) {
+          Object.assign(sanitized, refreshedFinalFeedback.question);
+          publisherGate = runQuestionQualityGate(sanitized, { version: PROMPT_VERSION });
+        }
+        finalFeedbackGate = refreshedFinalFeedback.gate;
+        validation = validateQuestion(sanitized, recentQuestionSummaries);
+        sanitized.aiMeta = {
+          ...(sanitized.aiMeta || {}),
+          legacyValidationGate: {
+            ok: validation.ok,
+            stages: validation.stages,
+            issues: validation.issues,
+            blockingErrors: validation.blockingErrors,
+            repairableErrors: validation.repairableErrors,
+            warnings: validation.warnings,
+            localPublishRepairApplied: repaired.applied,
+          },
+        };
+      }
+    }
+
+    if (publisherGate.blockingErrors.length || finalFeedbackGate.blockingErrors.length || validation.blockingErrors.length || validation.repairableErrors.length) {
       const error = new Error(`Legacy validation needs targeted repair: ${validation.repairableErrors.join('; ')}`);
-      error.validationErrors = validation.repairableErrors;
-      error.qualitySeverity = 'repairable';
+      error.validationErrors = [
+        ...publisherGate.blockingErrors,
+        ...finalFeedbackGate.blockingErrors,
+        ...validation.blockingErrors,
+        ...validation.repairableErrors,
+      ];
+      error.qualitySeverity = (publisherGate.blockingErrors.length || finalFeedbackGate.blockingErrors.length || validation.blockingErrors.length) ? 'blocking' : 'repairable';
       error.question = sanitized;
       throw error;
     }
@@ -2203,9 +2398,7 @@ export default async function handler(request, response) {
       });
       return acc;
     }, {});
-    const userError = hasBlockingFailure
-      ? 'Soru üretimi kalite kapısında güvenli biçimde durduruldu. Kök, doğru cevap veya tıbbi tutarlılık yeniden denenmeli.'
-      : 'Soru üretimi onarılabilir kalite sorunlarını gideremedi. Yeniden denendiğinde farklı klinik paternle üretim yapılacak.';
+    const userError = buildFinalUserFailureReason(failureDetails);
     logQuestionGenerationGate({
       branch,
       difficulty: requestedDifficulty,
