@@ -121,7 +121,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "sourceFilePath": "src/data/aiQuestionSeeds.js",
     "sourceFiles": [
       "src/data/aiQuestionSeeds.js",
-      "src/data/aiSyntheticFallbackTemplates.js",
+      "src/data/cases.js",
       "src/data/cases.js",
       "src/data/tusPearlCards.js",
       "src/data/tusGlossaryContextualPhraseIndex.js"
@@ -135,7 +135,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "AV IgG negatif; HBsAg negatif; Anti-HBc IgM negatif; Anti-HCV negatif. , findings : Anti-HAV IgM pozitif , HBV akut enfeksiyon göstergeleri negatif , HCV taraması negatif , question : Bu serolojik patern en çok hangi tabloyu destekler? , options : id : A , tex"
       },
       {
-        "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js",
+        "sourceFilePath": "src/data/cases.js",
         "text": "ti-HAV IgG negatif, HBsAg negatif, Anti-HBc IgM negatif, Anti-HCV negatif. , findings : HAV IgM saptanır , HBV akut belirteçleri negatif , HCV taraması negatif , question : Bu serolojik patern en güçlü olarak hangi sonucu destekler? , options : id : A , text :"
       }
     ],
@@ -328,9 +328,9 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "priority": "P1",
     "recommendation": "addNewEntry",
     "existingGlossaryStatus": "missingInActiveV331GlossaryExactAlias",
-    "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js",
+    "sourceFilePath": "src/data/cases.js",
     "sourceFiles": [
-      "src/data/aiSyntheticFallbackTemplates.js",
+      "src/data/cases.js",
       "src/data/cases.js",
       "src/data/tusPearlCards.js",
       "src/data/tusGlossaryIndex.js",
@@ -341,7 +341,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js",
+        "sourceFilePath": "src/data/cases.js",
         "text": "get : Kawasaki hastalığında uzamış ateş, mukokutanöz bulgular ve IVIG zamanlaması , correctConcept : Kawasaki hastalığı için IVIG ve aspirin başlamak , demographics : 4 yaş kız çocuk , setting : Pediatri polikliniği , chiefComplaint : Beş gündür ateş ve dökünt"
       },
       {
@@ -1438,7 +1438,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "sourceFilePath": "src/data/aiQuestionSeeds.js",
     "sourceFiles": [
       "src/data/aiQuestionSeeds.js",
-      "src/data/aiSyntheticFallbackTemplates.js",
+      "src/data/cases.js",
       "src/data/tusPearlCards.js",
       "src/data/tusGlossaryCandidateAuditIndex.js",
       "src/data/tusGlossaryV319TeachableIndex.js"
@@ -1452,7 +1452,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "priority : essential , summary : Anti-HAV IgM pozitif; Anti-HAV IgG negatif; HBsAg negatif; Anti-HBc IgM negatif; Anti-HCV negatif. , findings : Anti-HAV IgM pozitif , HBV akut enfeksiyon göstergeleri negatif , HCV taraması negatif , question : Bu serolojik pa"
       },
       {
-        "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js",
+        "sourceFilePath": "src/data/cases.js",
         "text": "priority : essential , summary : Anti-HAV IgM pozitif, Anti-HAV IgG negatif, HBsAg negatif, Anti-HBc IgM negatif, Anti-HCV negatif. , findings : HAV IgM saptanır , HBV akut belirteçleri negatif , HCV taraması negatif , question : Bu serolojik patern en güçlü o"
       }
     ],
@@ -1716,7 +1716,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "sourceFilePath": "src/data/aiBranchQuestionTemplates.js",
     "sourceFiles": [
       "src/data/aiBranchQuestionTemplates.js",
-      "src/data/aiSyntheticFallbackTemplates.js",
+      "src/data/cases.js",
       "src/data/cases.js",
       "src/data/tusPearlCards.js",
       "src/data/tusGlossaryV321DeepHighYieldBatch4Index.js"
@@ -1730,7 +1730,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
         "text": "esif dismenore, derin disparoni ve infertilite birlikteliği endometriozis için karakteristiktir. , wrongOptionFeedback : B : PID’de ateş, servikal hareket hassasiyeti ve enfeksiyon bulguları ön plandadır. , C : Miyom anormal uterin kanama ve bası semptomları y"
       },
       {
-        "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js",
+        "sourceFilePath": "src/data/cases.js",
         "text": "elenme ile risk artmıştır. , C : Molar gebelikte çok yüksek beta-hCG ve üzüm salkımı benzeri uterin görünüm beklenir. , D : PID ateş, pürülan akıntı ve enfeksiyon bulgularıyla daha olasıdır; amenore ve beta-hCG pozitifliği yön değiştirir. , E : Torsiyonda ani "
       }
     ],
@@ -1986,9 +1986,9 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "priority": "P1",
     "recommendation": "addNewEntry",
     "existingGlossaryStatus": "missingInActiveV331GlossaryExactAlias",
-    "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js",
+    "sourceFilePath": "src/data/cases.js",
     "sourceFiles": [
-      "src/data/aiSyntheticFallbackTemplates.js",
+      "src/data/cases.js",
       "src/data/cases.js"
     ],
     "sourceArea": "Klinik Branş Seç / TUS Spot Olgular",
@@ -1996,7 +1996,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js",
+        "sourceFilePath": "src/data/cases.js",
         "text": "options : id : A , text : Kontrastsız beyin BT istemek , id : B , text : Migren tedavisi verip taburcu etmek , id : C , text : Elektif EEG planlamak , id : D , text : Sinüzit için antibiyotik başlamak , id : E ,"
       },
       {
@@ -2056,10 +2056,10 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "sourceFilePath": "src/data/aiQuestionSeeds.js",
     "sourceFiles": [
       "src/data/aiQuestionSeeds.js",
-      "src/data/aiSyntheticFallbackTemplates.js",
+      "src/data/cases.js",
       "src/data/tusPearlCards.js",
       "src/data/tusGlossaryV319TeachableIndex.js",
-      "src/utils/aiSpotNarrative.js"
+      "src/utils/tusSpotNarrative.js"
     ],
     "sourceArea": "Hap Kartlar / Kataloglarım",
     "occurrenceCount": 23,
@@ -2067,10 +2067,10 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/aiQuestionSeeds.js",
-        "text": "export const AI_QUESTION_SEEDS = seedId : ai-hav-serology-pattern-001 , title : Sarılık ve viral seroloji paterni , relatedBranch : Tıbbi Mikrobiyoloji , branchId : tus-spot-olgular , spotCategory : AI Spot • Mikrobiyoloji , difficulty : Orta-Zor , lear"
+        "text": "export const TUS_STATIC_QUESTION_RECORDS = seedId : tus-hav-serology-pattern-001 , title : Sarılık ve viral seroloji paterni , relatedBranch : Tıbbi Mikrobiyoloji , branchId : tus-spot-olgular , spotCategory : TUS Spot • Mikrobiyoloji , difficulty : Orta-Zor , lear"
       },
       {
-        "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js",
+        "sourceFilePath": "src/data/cases.js",
         "text": "nthetic-template-bank , difficulty : Orta-Zor , questionType : spot , managementSteps : , seedId : synthetic-micro-hav-variant-001 , title : Akut hepatit paneli yorumu , relatedBranch : Tıbbi Mikrobiyoloji , learningTarget : HAV IgM ve IgG paterninin akut enfe"
       }
     ],
@@ -3008,9 +3008,9 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "priority": "P1",
     "recommendation": "addNewEntry",
     "existingGlossaryStatus": "missingInActiveV331GlossaryExactAlias",
-    "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js",
+    "sourceFilePath": "src/data/cases.js",
     "sourceFiles": [
-      "src/data/aiSyntheticFallbackTemplates.js",
+      "src/data/cases.js",
       "src/data/cases.js",
       "src/data/tusPearlCards.js",
       "src/data/tusGlossaryExpandedIndex.js"
@@ -3020,7 +3020,7 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js",
+        "sourceFilePath": "src/data/cases.js",
         "text": "id : A , text : Kawasaki hastalığı için IVIG ve aspirin başlamak , id : B , text : Kızamık için yalnız izolasyon ve A vitamini vermek , id : C , text : Streptokok tonsilliti için tek doz penisilin vermek , id : D , text : Anafilaksi için intramüsküler adrena"
       },
       {
@@ -4221,17 +4221,17 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "priority": "P1",
     "recommendation": "addNewEntry",
     "existingGlossaryStatus": "missingInActiveV331GlossaryExactAlias",
-    "sourceFilePath": "src/utils/aiQuestionQualityGate.js",
+    "sourceFilePath": "src/utils/clinicalStaticQualityReview.js",
     "sourceFiles": [
-      "src/utils/aiQuestionQualityGate.js",
+      "src/utils/clinicalStaticQualityReview.js",
       "src/utils/clinicalScientificAccuracyGate.js"
     ],
-    "sourceArea": "AI soru şablonları / topic pools",
+    "sourceArea": "TUS soru kayıtları / konu havuzları",
     "occurrenceCount": 3,
     "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/utils/aiQuestionQualityGate.js",
+        "sourceFilePath": "src/utils/clinicalStaticQualityReview.js",
         "text": "poksik|iskemik|asfiksi|term|near term|ensefalopati/.test(bundle)) return 'Term veya near-term yenidoğan', 'Asfiksi kanıtı ve düşük Apgar öyküsü', 'Orta-ağır ensefalopati bulguları', 'İlk 6 saatte nöroprotektif yaklaşım gereksinimi' ; if (/bruton|pyojenik|b huc"
       },
       {
@@ -4552,17 +4552,17 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "priority": "P1",
     "recommendation": "addNewEntryWithAliasGuard",
     "existingGlossaryStatus": "missingInActiveV331GlossaryExactAlias",
-    "sourceFilePath": "src/utils/aiSpotNarrative.js",
+    "sourceFilePath": "src/utils/tusSpotNarrative.js",
     "sourceFiles": [
-      "src/utils/aiSpotNarrative.js",
+      "src/utils/tusSpotNarrative.js",
       "src/utils/clinicalValueFormatters.js"
     ],
-    "sourceArea": "AI soru şablonları / topic pools",
+    "sourceArea": "TUS soru kayıtları / konu havuzları",
     "occurrenceCount": 2,
     "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/utils/aiSpotNarrative.js",
+        "sourceFilePath": "src/utils/tusSpotNarrative.js",
         "text": "_PATTERN = /^(?:HBsAg|Anti-HBs|Anti-HBc(?:\\s+IgM)?|HBeAg|Anti-HBe|HBV\\s*DNA|Anti-HAV\\s*IgM|Anti-HCV|HCV\\s*RNA|HIV(?:\\s*Ag\\/Ab|\\s*RNA)?|VDRL|RPR|ANA|Anti-dsDNA|Anti-Sm|C3|C4|IgG|IgM|IgA)$/iu; const LAB_PARAM_PATTERN = /^(?:Lökosit|Lokosit|WBC|CRP|pH|HCO₃|HCO3|L"
       },
       {
@@ -4685,17 +4685,17 @@ export const TUS_GLOSSARY_V332_MAJOR_JARGON_BATCH7_TERMS = [
     "priority": "P1",
     "recommendation": "addNewEntryWithAliasGuard",
     "existingGlossaryStatus": "missingInActiveV331GlossaryExactAlias",
-    "sourceFilePath": "src/utils/aiSpotNarrative.js",
+    "sourceFilePath": "src/utils/tusSpotNarrative.js",
     "sourceFiles": [
-      "src/utils/aiSpotNarrative.js",
+      "src/utils/tusSpotNarrative.js",
       "src/utils/clinicalValueFormatters.js"
     ],
-    "sourceArea": "AI soru şablonları / topic pools",
+    "sourceArea": "TUS soru kayıtları / konu havuzları",
     "occurrenceCount": 2,
     "reasonForRecommendation": "V331 aktif glossary term/alias setinde exact karşılığı yok; proje metinlerinde geçiyor ve TUS karar mantığı, hastalık tanıma, laboratuvar yorumu veya tedavi güvenliği açısından öğretici değer taşıyor.",
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/utils/aiSpotNarrative.js",
+        "sourceFilePath": "src/utils/tusSpotNarrative.js",
         "text": "PARAM_PATTERN = /^(?:HBsAg|Anti-HBs|Anti-HBc(?:\\s+IgM)?|HBeAg|Anti-HBe|HBV\\s*DNA|Anti-HAV\\s*IgM|Anti-HCV|HCV\\s*RNA|HIV(?:\\s*Ag\\/Ab|\\s*RNA)?|VDRL|RPR|ANA|Anti-dsDNA|Anti-Sm|C3|C4|IgG|IgM|IgA)$/iu; const LAB_PARAM_PATTERN = /^(?:Lökosit|Lokosit|WBC|CRP|pH|HCO₃|H"
       },
       {

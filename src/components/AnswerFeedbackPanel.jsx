@@ -416,7 +416,7 @@ function getMainClue(clinicalCase) {
 
 function deriveWhyCorrect(clinicalCase) {
   const feedback = getFeedback(clinicalCase);
-  const isSpotCase = clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular';
+  const isSpotCase = clinicalCase.branchId === 'tus-spot-olgular';
   const explicit = normalizeText(feedback.whyCorrect || '');
   if (explicit) return compactParagraph(removeMetaLanguage(explicit), isSpotCase ? 6 : 4, isSpotCase ? 900 : 620);
 
@@ -689,7 +689,7 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
     accumulator[normalizeForCompare(key)] = value;
     return accumulator;
   }, {});
-  const isAISpot = clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular';
+  const isTusSpot = clinicalCase.branchId === 'tus-spot-olgular';
 
   return options.slice(0, MAX_COMPARISON_ITEMS).map((option) => {
     const isCorrectOption = option === correct;
@@ -699,7 +699,7 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
         status: 'correct',
         isSelected: selectedOption === option,
         title: 'En iyi seçenek',
-        explanation: isAISpot
+        explanation: isTusSpot
           ? compactParagraph(removeMetaLanguage(deriveCorrectOptionSummary(clinicalCase, option, evidenceChain)), 3, 420)
           : singleSentence(deriveCorrectOptionSummary(clinicalCase, option, evidenceChain), 210),
         comparisonPoints: [],
@@ -708,7 +708,7 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
 
     const explicit = wrongMap[option] || normalizedWrongMap[normalizeForCompare(option)] || {};
     const rawExplanation = removeMetaLanguage(explicit.explanation || '');
-    const explanation = isAISpot ? compactParagraph(rawExplanation, 3, 360) : singleSentence(rawExplanation, 190);
+    const explanation = isTusSpot ? compactParagraph(rawExplanation, 3, 360) : singleSentence(rawExplanation, 190);
     return {
       option,
       status: 'wrong',
@@ -720,7 +720,7 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
   });
 }
 
-function buildAISpotFocusedComparisons(optionComparisons = [], selectedOption = '', isCorrect = false) {
+function buildTusSpotFocusedComparisons(optionComparisons = [], selectedOption = '', isCorrect = false) {
   if (isCorrect) return [];
   const selectedCard = optionComparisons.find((item) => item.isSelected || item.option === selectedOption);
   const correctCard = optionComparisons.find((item) => item.status === 'correct');
@@ -731,22 +731,22 @@ function buildAISpotFocusedComparisons(optionComparisons = [], selectedOption = 
 }
 
 
-function getAISpotOptions(clinicalCase = {}) {
+function getTusSpotOptions(clinicalCase = {}) {
   const diagnosisOptions = Array.isArray(clinicalCase.diagnosis?.options) ? clinicalCase.diagnosis.options : [];
   if (diagnosisOptions.length) return diagnosisOptions.map(itemText).filter(Boolean);
   const rawOptions = Array.isArray(clinicalCase.options) ? clinicalCase.options : [];
   return rawOptions.map((option) => itemText(option?.text || option)).filter(Boolean);
 }
 
-function getAISpotOptionLetter(clinicalCase = {}, optionText = '') {
-  const options = getAISpotOptions(clinicalCase);
+function getTusSpotOptionLetter(clinicalCase = {}, optionText = '') {
+  const options = getTusSpotOptions(clinicalCase);
   const normalized = normalizeForCompare(optionText);
   const index = options.findIndex((option) => normalizeForCompare(option) === normalized);
   return index >= 0 ? String.fromCharCode(65 + index) : '';
 }
 
-function resolveAISpotOptionText(clinicalCase = {}, key = '') {
-  const options = getAISpotOptions(clinicalCase);
+function resolveTusSpotOptionText(clinicalCase = {}, key = '') {
+  const options = getTusSpotOptions(clinicalCase);
   const rawKey = normalizeText(key);
   const letterMatch = rawKey.match(/^[A-E]$/iu);
   if (letterMatch) return options[rawKey.toLocaleUpperCase('tr').charCodeAt(0) - 65] || rawKey;
@@ -754,17 +754,17 @@ function resolveAISpotOptionText(clinicalCase = {}, key = '') {
   return options.find((option) => normalizeForCompare(option) === normalized) || rawKey;
 }
 
-function pickAISpotCorrectOption(clinicalCase = {}) {
+function pickTusSpotCorrectOption(clinicalCase = {}) {
   return normalizeText(
     clinicalCase.diagnosis?.correct
     || clinicalCase.correctOptionText
     || clinicalCase.correctAnswerText
-    || resolveAISpotOptionText(clinicalCase, clinicalCase.correctAnswer || '')
+    || resolveTusSpotOptionText(clinicalCase, clinicalCase.correctAnswer || '')
     || ''
   );
 }
 
-function getAISpotMapValue(map, optionText = '', letter = '') {
+function getTusSpotMapValue(map, optionText = '', letter = '') {
   if (!map || typeof map !== 'object' || Array.isArray(map)) return '';
   const direct = map[optionText] || map[letter] || map[letter?.toLocaleUpperCase?.('tr')];
   if (direct) return itemText(direct);
@@ -788,30 +788,30 @@ function mergeUniqueSentences(parts = [], maxSentences = 7, maxLength = 1350) {
   return sentences.join(' ');
 }
 
-function resolveAISpotOptionExplanation(clinicalCase = {}, optionText = '', fallback = '') {
+function resolveTusSpotOptionExplanation(clinicalCase = {}, optionText = '', fallback = '') {
   const feedback = getFeedback(clinicalCase);
-  const letter = getAISpotOptionLetter(clinicalCase, optionText);
+  const letter = getTusSpotOptionLetter(clinicalCase, optionText);
   const sources = [
-    getAISpotMapValue(feedback.whyWrong, optionText, letter),
-    getAISpotMapValue(feedback.optionComparison, optionText, letter),
-    getAISpotMapValue(feedback.optionFeedback, optionText, letter),
-    getAISpotMapValue(feedback.feedbackByOption, optionText, letter),
-    getAISpotMapValue(feedback.answerFeedbackByOption, optionText, letter),
-    getAISpotMapValue(feedback.optionRationales, optionText, letter),
-    getAISpotMapValue(clinicalCase.diagnosis?.whyWrong, optionText, letter),
-    getAISpotMapValue(clinicalCase.diagnosis?.optionComparison, optionText, letter),
-    getAISpotMapValue(clinicalCase.diagnosis?.optionFeedback, optionText, letter),
-    getAISpotMapValue(clinicalCase.diagnosis?.feedbackByOption, optionText, letter),
-    getAISpotMapValue(clinicalCase.diagnosis?.answerFeedbackByOption, optionText, letter),
+    getTusSpotMapValue(feedback.whyWrong, optionText, letter),
+    getTusSpotMapValue(feedback.optionComparison, optionText, letter),
+    getTusSpotMapValue(feedback.optionFeedback, optionText, letter),
+    getTusSpotMapValue(feedback.feedbackByOption, optionText, letter),
+    getTusSpotMapValue(feedback.answerFeedbackByOption, optionText, letter),
+    getTusSpotMapValue(feedback.optionRationales, optionText, letter),
+    getTusSpotMapValue(clinicalCase.diagnosis?.whyWrong, optionText, letter),
+    getTusSpotMapValue(clinicalCase.diagnosis?.optionComparison, optionText, letter),
+    getTusSpotMapValue(clinicalCase.diagnosis?.optionFeedback, optionText, letter),
+    getTusSpotMapValue(clinicalCase.diagnosis?.feedbackByOption, optionText, letter),
+    getTusSpotMapValue(clinicalCase.diagnosis?.answerFeedbackByOption, optionText, letter),
     fallback,
   ].filter(Boolean);
   return mergeUniqueSentences(sources, 4, 760) || 'Bu seçenek için ayrıntılı açıklama eklenemedi.';
 }
 
-function buildAISpotDetailedRows(clinicalCase = {}, selectedOption = '') {
-  const options = getAISpotOptions(clinicalCase);
-  const correctOption = pickAISpotCorrectOption(clinicalCase);
-  const selectedNormalized = normalizeForCompare(resolveAISpotOptionText(clinicalCase, selectedOption));
+function buildTusSpotDetailedRows(clinicalCase = {}, selectedOption = '') {
+  const options = getTusSpotOptions(clinicalCase);
+  const correctOption = pickTusSpotCorrectOption(clinicalCase);
+  const selectedNormalized = normalizeForCompare(resolveTusSpotOptionText(clinicalCase, selectedOption));
   const correctNormalized = normalizeForCompare(correctOption);
 
   return options.map((option, index) => {
@@ -823,20 +823,20 @@ function buildAISpotDetailedRows(clinicalCase = {}, selectedOption = '') {
       option,
       status: isCorrectOption ? 'correct' : 'wrong',
       isSelected: isSelectedOption,
-      explanation: resolveAISpotOptionExplanation(clinicalCase, option),
+      explanation: resolveTusSpotOptionExplanation(clinicalCase, option),
     };
   });
 }
 
-function isAISpotExceptionQuestion(clinicalCase = {}) {
+function isTusSpotExceptionQuestion(clinicalCase = {}) {
   const stem = normalizeText(clinicalCase.stem || clinicalCase.question || clinicalCase.diagnosis?.question || '');
   return /yanl[ıi][şs]t[ıi]r|hatal[ıi]d[ıi]r|do[ğg]ru de[ğg]ildir|de[ğg]ildir|olmayan|istisna/iu.test(stem);
 }
 
-function decorateAISpotSelectedExplanation(clinicalCase = {}, row = {}, isCorrect = false) {
+function decorateTusSpotSelectedExplanation(clinicalCase = {}, row = {}, isCorrect = false) {
   const text = removeMetaLanguage(row?.explanation || '');
   if (isCorrect) return text;
-  if (isAISpotExceptionQuestion(clinicalCase) && /do[ğg]rudur|ifade do[ğg]rudur|seçenek do[ğg]ru/iu.test(text)) {
+  if (isTusSpotExceptionQuestion(clinicalCase) && /do[ğg]rudur|ifade do[ğg]rudur|seçenek do[ğg]ru/iu.test(text)) {
     return mergeUniqueSentences([
       `Seçtiğin ifade bilimsel olarak doğrudur; ancak soru kökü yanlış veya istisna olan ifadeyi sorduğu için bu yanıt elenir.`,
       text,
@@ -845,12 +845,12 @@ function decorateAISpotSelectedExplanation(clinicalCase = {}, row = {}, isCorrec
   return text;
 }
 
-function decorateAISpotCorrectExplanation(clinicalCase = {}, row = {}) {
+function decorateTusSpotCorrectExplanation(clinicalCase = {}, row = {}) {
   const text = removeMetaLanguage(row?.explanation || '');
   return text;
 }
 
-function buildAISpotScienceText(clinicalCase = {}, whyCorrect = '') {
+function buildTusSpotScienceText(clinicalCase = {}, whyCorrect = '') {
   const feedback = getFeedback(clinicalCase);
   const evidenceTexts = Array.isArray(clinicalCase.evidenceChain)
     ? clinicalCase.evidenceChain.map((item) => item?.text || item)
@@ -866,7 +866,7 @@ function buildAISpotScienceText(clinicalCase = {}, whyCorrect = '') {
   ], 12, 2600);
 }
 
-function groupSentencesForAISpotScience(sentences = []) {
+function groupSentencesForTusSpotScience(sentences = []) {
   const clean = sentences.map((sentence) => ensureSentence(sentence)).filter(Boolean);
   if (clean.length <= 2) return [{ title: 'Temel mantık', text: clean.join(' ') }];
 
@@ -883,35 +883,35 @@ function groupSentencesForAISpotScience(sentences = []) {
   return blocks.length ? blocks : [{ title: 'Temel mantık', text: clean.join(' ') }];
 }
 
-function buildAISpotScienceBlocks(scienceText = '') {
+function buildTusSpotScienceBlocks(scienceText = '') {
   const sentences = splitIntoSentences(scienceText);
   if (!sentences.length) return [];
-  return groupSentencesForAISpotScience(sentences);
+  return groupSentencesForTusSpotScience(sentences);
 }
 
-function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCorrect, whyWrong, pearl, children, glossaryEnabled = true }) {
-  const rows = buildAISpotDetailedRows(clinicalCase, selectedOption);
-  const selectedText = resolveAISpotOptionText(clinicalCase, selectedOption);
-  const correctText = pickAISpotCorrectOption(clinicalCase);
+function TusSpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCorrect, whyWrong, pearl, children, glossaryEnabled = true }) {
+  const rows = buildTusSpotDetailedRows(clinicalCase, selectedOption);
+  const selectedText = resolveTusSpotOptionText(clinicalCase, selectedOption);
+  const correctText = pickTusSpotCorrectOption(clinicalCase);
   const selectedRow = rows.find((row) => normalizeForCompare(row.option) === normalizeForCompare(selectedText));
   const correctRow = rows.find((row) => row.status === 'correct') || rows.find((row) => normalizeForCompare(row.option) === normalizeForCompare(correctText));
-  const selectedExplanation = decorateAISpotSelectedExplanation(clinicalCase, selectedRow, isCorrect) || whyWrong;
-  const correctExplanation = decorateAISpotCorrectExplanation(clinicalCase, correctRow) || whyCorrect;
-  const scienceText = buildAISpotScienceText(clinicalCase, whyCorrect);
-  const scienceBlocks = buildAISpotScienceBlocks(scienceText);
+  const selectedExplanation = decorateTusSpotSelectedExplanation(clinicalCase, selectedRow, isCorrect) || whyWrong;
+  const correctExplanation = decorateTusSpotCorrectExplanation(clinicalCase, correctRow) || whyCorrect;
+  const scienceText = buildTusSpotScienceText(clinicalCase, whyCorrect);
+  const scienceBlocks = buildTusSpotScienceBlocks(scienceText);
   return (
-    <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro ai-spot-detailed-feedback-panel ai-spot-detailed-feedback-panel-v246`} aria-live="polite">
-      <div className="ai-spot-detailed-feedback-shell ai-spot-detailed-feedback-shell-v246">
-        <div className={`ai-spot-feedback-choice-grid ai-spot-feedback-choice-grid-v246 ${isCorrect ? 'single' : ''}`.trim()}>
-          <article className={`ai-spot-feedback-choice-card ${isCorrect ? 'is-correct' : 'is-selected-wrong'}`.trim()}>
-            <span className="ai-spot-choice-kicker">Seçimin</span>
+    <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro tus-spot-detailed-feedback-panel tus-spot-detailed-feedback-panel-v246`} aria-live="polite">
+      <div className="tus-spot-detailed-feedback-shell tus-spot-detailed-feedback-shell-v246">
+        <div className={`tus-spot-feedback-choice-grid tus-spot-feedback-choice-grid-v246 ${isCorrect ? 'single' : ''}`.trim()}>
+          <article className={`tus-spot-feedback-choice-card ${isCorrect ? 'is-correct' : 'is-selected-wrong'}`.trim()}>
+            <span className="tus-spot-choice-kicker">Seçimin</span>
             <strong><GlossaryText text={selectedText || 'Seçim bulunamadı'} enabled={glossaryEnabled} /></strong>
             <p><GlossaryText text={ensureSentence(selectedExplanation || 'Seçilen seçenek için açıklama bulunamadı.')} enabled={glossaryEnabled} /></p>
           </article>
 
           {!isCorrect ? (
-            <article className="ai-spot-feedback-choice-card is-correct">
-              <span className="ai-spot-choice-kicker">Doğru cevap</span>
+            <article className="tus-spot-feedback-choice-card is-correct">
+              <span className="tus-spot-choice-kicker">Doğru cevap</span>
               <strong><GlossaryText text={correctText || 'Doğru cevap bulunamadı'} enabled={glossaryEnabled} /></strong>
               <p><GlossaryText text={ensureSentence(correctExplanation || 'Doğru seçenek için açıklama bulunamadı.')} enabled={glossaryEnabled} /></p>
             </article>
@@ -919,41 +919,41 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCo
         </div>
 
         {scienceBlocks.length ? (
-          <section className="ai-spot-feedback-section-card ai-spot-feedback-science-card ai-spot-feedback-science-card-v246 ai-spot-feedback-science-card-v249">
+          <section className="tus-spot-feedback-section-card tus-spot-feedback-science-card tus-spot-feedback-science-card-v246 tus-spot-feedback-science-card-v249">
             <header>
               <h4>Mekanizma ve sınav mantığı</h4>
             </header>
-            <div className="ai-spot-science-flow-v249">
+            <div className="tus-spot-science-flow-v249">
               {scienceBlocks.map((block, index) => (
-                <article className="ai-spot-science-item-v249" key={`${block.title}-${index}`}>
-                  <span className="ai-spot-science-step-v249">{block.title}</span>
+                <article className="tus-spot-science-item-v249" key={`${block.title}-${index}`}>
+                  <span className="tus-spot-science-step-v249">{block.title}</span>
                   <p><GlossaryText text={block.text} enabled={glossaryEnabled} /></p>
                 </article>
               ))}
             </div>
             {pearl ? (
-              <div className="ai-spot-feedback-pearl-card ai-spot-feedback-pearl-card-v246">
-                <div className="ai-spot-pearl-icon"><Icon name="Sparkles" size={15} /></div>
+              <div className="tus-spot-feedback-pearl-card tus-spot-feedback-pearl-card-v246">
+                <div className="tus-spot-pearl-icon"><Icon name="Sparkles" size={15} /></div>
                 <div>
                   <span>TUS ipucu</span>
-                  <p className="ai-spot-feedback-pearl-text-v402">{ensureSentence(pearl)}</p>
+                  <p className="tus-spot-feedback-pearl-text-v402">{ensureSentence(pearl)}</p>
                 </div>
               </div>
             ) : null}
           </section>
         ) : null}
 
-        <section className="ai-spot-feedback-section-card ai-spot-feedback-options-card ai-spot-feedback-options-card-v246">
+        <section className="tus-spot-feedback-section-card tus-spot-feedback-options-card tus-spot-feedback-options-card-v246">
           <header>
             <h4>Seçenekleri nasıl elemeliydin?</h4>
           </header>
-          <div className="ai-spot-feedback-option-list">
+          <div className="tus-spot-feedback-option-list">
             {rows.map((row) => (
               <article
-                className={`ai-spot-feedback-option-row ${row.status === 'correct' ? 'is-correct' : 'is-wrong'} ${row.isSelected ? 'is-selected' : ''}`.trim()}
+                className={`tus-spot-feedback-option-row ${row.status === 'correct' ? 'is-correct' : 'is-wrong'} ${row.isSelected ? 'is-selected' : ''}`.trim()}
                 key={`${row.letter}-${row.option}`}
               >
-                <div className="ai-spot-feedback-option-head">
+                <div className="tus-spot-feedback-option-head">
                   <b>{row.letter}</b>
                   <strong><GlossaryText text={row.option} enabled={glossaryEnabled} /></strong>
                   {row.isSelected ? <em>Seçimin</em> : null}
@@ -966,7 +966,7 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCo
         </section>
       </div>
 
-      {children ? <div className="answer-feedback-actions ai-spot-feedback-actions">{children}</div> : null}
+      {children ? <div className="answer-feedback-actions tus-spot-feedback-actions">{children}</div> : null}
     </div>
   );
 }
@@ -1187,7 +1187,7 @@ function AnswerFeedbackPanel({
   const rawPearls = derivePearls(clinicalCase);
   const managementSteps = deriveManagementSteps(clinicalCase);
   const glossaryEnabled = !hardMode;
-  const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular';
+  const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.branchId === 'tus-spot-olgular';
   const dedupedFeedback = feedbackDuplicationGate({
     signal: resolveExamSignal(clinicalCase),
     pearls: rawPearls,
@@ -1199,13 +1199,13 @@ function AnswerFeedbackPanel({
   const examSignal = dedupedFeedback.signal;
   const pearls = dedupedFeedback.pearls;
   const shouldRenderPearls = pearls.length && (!isSpotCase || !examSignal.hasContent);
-  const isAISpot = clinicalCase.caseType === 'ai-spot';
+  const isTusSpot = clinicalCase.branchId === 'tus-spot-olgular' || clinicalCase.caseType === 'spot';
   const singleLinePearl = deriveSingleLinePearl(clinicalCase, reasoningText);
-  const aiSpotFocusedComparisons = buildAISpotFocusedComparisons(optionComparisons, selectedDiagnosis, isCorrect);
+  const tusSpotFocusedComparisons = buildTusSpotFocusedComparisons(optionComparisons, selectedDiagnosis, isCorrect);
 
-  if (isAISpot) {
+  if (isTusSpot) {
     return (
-      <AISpotDetailedFeedback
+      <TusSpotDetailedFeedback
         clinicalCase={clinicalCase}
         selectedOption={selectedDiagnosis}
         isCorrect={isCorrect}
@@ -1215,7 +1215,7 @@ function AnswerFeedbackPanel({
         glossaryEnabled={glossaryEnabled}
       >
         {children}
-      </AISpotDetailedFeedback>
+      </TusSpotDetailedFeedback>
     );
   }
 

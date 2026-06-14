@@ -189,11 +189,11 @@ export const TUS_GLOSSARY_V402_PHARMACOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 19,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-113::topic",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-113::topic",
         "text": "Parasetamol toksisitesi ve N-asetilsistein"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-113::clinicalFocus",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-113::clinicalFocus",
         "text": "Parasetamol toksisitesi ve N-asetilsistein"
       }
     ],
@@ -667,11 +667,11 @@ export const TUS_GLOSSARY_V402_PHARMACOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 10,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-001-ace-inhibitorleri-ve-bradikinin::explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-001-ace-inhibitorleri-ve-bradikinin::explanation",
         "text": "ACE inhibitörleri bradikinin yıkımını azalttığı için bradikinin birikimi kuru öksürük ve anjiyoödemden sorumludur. Anjiyotensin II ve aldosteron azalır; endotelin-1 ve vazopressin bu klasik yan etkinin temel mediyatörü değildir. ACE inhibitörleri anjiyotensin I’in anjiyotensin II’ye dönüşümünü azaltırken bradikinin yıkımını da azaltır. Bradikinin yıkımı azaldığı için birikir ve kuru öksürük ile anjiyoödemden sorumludur. TUS açısından ayırıcı nokta: ACE inhibitörü yan etkilerinde ana sınav bağlan"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-001-ace-inhibitorleri-ve-bradikinin::diagnosis.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-001-ace-inhibitorleri-ve-bradikinin::diagnosis.explanation",
         "text": "ACE inhibitörleri bradikinin yıkımını azalttığı için bradikinin birikimi kuru öksürük ve anjiyoödemden sorumludur. Anjiyotensin II ve aldosteron azalır; endotelin-1 ve vazopressin bu klasik yan etkinin temel mediyatörü değildir. ACE inhibitörleri anjiyotensin I’in anjiyotensin II’ye dönüşümünü azaltırken bradikinin yıkımını da azaltır. Bradikinin yıkımı azaldığı için birikir ve kuru öksürük ile anjiyoödemden sorumludur. TUS açısından ayırıcı nokta: ACE inhibitörü yan etkilerinde ana sınav bağlan"
       }
     ],
@@ -804,11 +804,11 @@ export const TUS_GLOSSARY_V402_PHARMACOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 3,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-081::optionFeedback.Dipeptidil peptidaz-4 enzimini inhibe ederek inkretin etkisini uzatması",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-081::optionFeedback.Dipeptidil peptidaz-4 enzimini inhibe ederek inkretin etkisini uzatması",
         "text": "Yanlıştır. DPP-4 inhibisyonu sitagliptin, linagliptin gibi ilaçların mekanizmasıdır. İnkretin etkisinin uzaması SGLT2 inhibitörlerinin temel etkisi değildir ve öglisemik ketoasidoz mekanizmasını açıklamaz."
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-081::diagnosis.optionComparison.Dipeptidil peptidaz-4 enzimini inhibe ederek inkretin etkisini uzatması",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-081::diagnosis.optionComparison.Dipeptidil peptidaz-4 enzimini inhibe ederek inkretin etkisini uzatması",
         "text": "Yanlıştır. DPP-4 inhibisyonu sitagliptin, linagliptin gibi ilaçların mekanizmasıdır. İnkretin etkisinin uzaması SGLT2 inhibitörlerinin temel etkisi değildir ve öglisemik ketoasidoz mekanizmasını açıklamaz."
       }
     ],
@@ -872,11 +872,11 @@ export const TUS_GLOSSARY_V402_PHARMACOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 3,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-081::optionFeedback.Mitokondriyal kompleks I inhibisyonu ile laktat birikimini artırması",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-081::optionFeedback.Mitokondriyal kompleks I inhibisyonu ile laktat birikimini artırması",
         "text": "Yanlıştır. Mitokondriyal kompleks I inhibisyonu ve laktat birikimi daha çok metformin ilişkili laktik asidoz ile ilişkilendirilir. Burada temel sorun laktat değil keton cisimlerinin artmasıdır."
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-081::diagnosis.optionComparison.Mitokondriyal kompleks I inhibisyonu ile laktat birikimini artırması",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-081::diagnosis.optionComparison.Mitokondriyal kompleks I inhibisyonu ile laktat birikimini artırması",
         "text": "Yanlıştır. Mitokondriyal kompleks I inhibisyonu ve laktat birikimi daha çok metformin ilişkili laktik asidoz ile ilişkilendirilir. Burada temel sorun laktat değil keton cisimlerinin artmasıdır."
       }
     ],
@@ -941,11 +941,11 @@ export const TUS_GLOSSARY_V402_PHARMACOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 4,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-081::explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-081::explanation",
         "text": "Doğru cevap B’dir. SGLT2 inhibitörleri proksimal tübülde glukoz geri emilimini azaltır ve glukozüri oluşturur. Glukoz düzeyi çok yükselmeden kalabildiği için klasik diyabetik ketoasidozdaki belirgin hiperglisemi görülmeyebilir; ancak relatif insülin azalması ve glukagon baskınlığı yağ asidi oksidasyonu ile keton üretimini artırır. Bu nedenle tablo “öglisemik” olabilir. “Mitokondriyal kompleks I inhibisyonu ile laktat birikimini artırması” seçeneği metforminle ilişkili laktik asidoz mantığına, “P"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-081::diagnosis.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-081::diagnosis.explanation",
         "text": "Doğru cevap B’dir. SGLT2 inhibitörleri proksimal tübülde glukoz geri emilimini azaltır ve glukozüri oluşturur. Glukoz düzeyi çok yükselmeden kalabildiği için klasik diyabetik ketoasidozdaki belirgin hiperglisemi görülmeyebilir; ancak relatif insülin azalması ve glukagon baskınlığı yağ asidi oksidasyonu ile keton üretimini artırır. Bu nedenle tablo “öglisemik” olabilir. “Mitokondriyal kompleks I inhibisyonu ile laktat birikimini artırması” seçeneği metforminle ilişkili laktik asidoz mantığına, “P"
       }
     ],
@@ -1148,11 +1148,11 @@ export const TUS_GLOSSARY_V402_PHARMACOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 17,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-092::optionFeedback.Protaminin faktör Xa’yı doğrudan irreversibl inhibe etmesi",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-092::optionFeedback.Protaminin faktör Xa’yı doğrudan irreversibl inhibe etmesi",
         "text": "Yanlıştır. Faktör Xa’nın doğrudan inhibisyonu rivaroksaban, apiksaban gibi ilaçların mekanizmasıdır. Protamin faktör Xa inhibitörü değildir."
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-092::diagnosis.optionComparison.Protaminin faktör Xa’yı doğrudan irreversibl inhibe etmesi",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-092::diagnosis.optionComparison.Protaminin faktör Xa’yı doğrudan irreversibl inhibe etmesi",
         "text": "Yanlıştır. Faktör Xa’nın doğrudan inhibisyonu rivaroksaban, apiksaban gibi ilaçların mekanizmasıdır. Protamin faktör Xa inhibitörü değildir."
       }
     ],
@@ -2486,11 +2486,11 @@ export const TUS_GLOSSARY_V402_PHARMACOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 3,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-012-linezolid-yan-etki-ve-mekanizma-ayirimi::optionFeedback.Serotonerjik ilaçlarla birlikte serotonin sendromu riski artabilir.",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-012-linezolid-yan-etki-ve-mekanizma-ayirimi::optionFeedback.Serotonerjik ilaçlarla birlikte serotonin sendromu riski artabilir.",
         "text": "Zayıf MAO inhibitörü etkisi nedeniyle serotonerjik ilaçlarla serotonin sendromu riski artabilir; ifade doğrudur."
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-012-linezolid-yan-etki-ve-mekanizma-ayirimi::diagnosis.optionComparison.Serotonerjik ilaçlarla birlikte serotonin sendromu riski artabilir.",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-012-linezolid-yan-etki-ve-mekanizma-ayirimi::diagnosis.optionComparison.Serotonerjik ilaçlarla birlikte serotonin sendromu riski artabilir.",
         "text": "Zayıf MAO inhibitörü etkisi nedeniyle serotonerjik ilaçlarla serotonin sendromu riski artabilir; ifade doğrudur."
       }
     ],
@@ -3230,11 +3230,11 @@ export const TUS_GLOSSARY_V402_PHARMACOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 7,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-061-metoklopramid-d2-antagonizmi-prokinetik-etki::explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-061-metoklopramid-d2-antagonizmi-prokinetik-etki::explanation",
         "text": "Metoklopramid antiemetik ve prokinetik etkisini temel olarak D2 antagonizması üzerinden gösterir. H1 blokajı dimenhidrinat gibi antihistaminiklerle, NK1 antagonizması aprepitantla, selektif 5-HT3 antagonizması ise ondansetron gibi ilaçlarla ilişkilidir. Metoklopramid başlıca dopamin D2 reseptör antagonisti olarak kemoreseptör tetik bölgesinde antiemetik etki gösterir; enterik düzeyde kolinerjik aktiviteyi kolaylaştırarak üst gastrointestinal motiliteyi artırır. Doğru cevaptır; metoklopramid D2 r"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-061-metoklopramid-d2-antagonizmi-prokinetik-etki::optionFeedback.5-HT3 reseptörlerini selektif antagonize ederek vagal afferent kemorefleksi baskılaması",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-061-metoklopramid-d2-antagonizmi-prokinetik-etki::optionFeedback.5-HT3 reseptörlerini selektif antagonize ederek vagal afferent kemorefleksi baskılaması",
         "text": "Yanlıştır; 5-HT3 antagonizması ondansetron, granisetron ve benzeri ilaçların temel antiemetik mekanizmasıdır."
       }
     ],
@@ -3298,11 +3298,11 @@ export const TUS_GLOSSARY_V402_PHARMACOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 25,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-061-metoklopramid-d2-antagonizmi-prokinetik-etki::id",
-        "text": "ai-spot-vakasiz-secki-061-metoklopramid-d2-antagonizmi-prokinetik-etki"
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-061-metoklopramid-d2-antagonizmi-prokinetik-etki::id",
+        "text": "tus-spot-vakasiz-secki-061-metoklopramid-d2-antagonizmi-prokinetik-etki"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-061-metoklopramid-d2-antagonizmi-prokinetik-etki::learningTarget",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-061-metoklopramid-d2-antagonizmi-prokinetik-etki::learningTarget",
         "text": "Metoklopramid başlıca dopamin D2 reseptör antagonisti olarak kemoreseptör tetik bölgesinde antiemetik etki gösterir; enterik düzeyde kolinerjik aktiviteyi kolaylaştırarak üst gastrointestinal motiliteyi artırır."
       }
     ],

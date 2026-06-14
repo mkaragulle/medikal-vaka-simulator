@@ -565,11 +565,11 @@ export const TUS_GLOSSARY_V406_OBGYN_EXPANSION_TERMS = [
     "occurrenceCount": 31,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-009-gestasyonel-trofoblastik-hastalik-izlemi.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-009-gestasyonel-trofoblastik-hastalik-izlemi.explanation",
         "text": "Gestasyonel trofoblastik hastalıkların tanı ve tedavi sonrası takibinde beta-hCG düzeyleri kullanılır. CA-125 over epitel tümörleriyle, AFP germ hücreli tümörler ve hepatoselüler karsinomla, CEA gastrointestinal malignitelerle daha çok ilişkilidir. Gestasyonel trofoblastik hastalıklar trofoblastik dokudan kaynaklandığı için izlemde seri beta-hCG ölçümü temel belirteçtir. Beta-hCG trofoblastik doku aktivitesini yansıttığı için gestasyonel trofoblastik hastalık izleminin temel belirtecidir. TUS açısından ayırıcı nokt"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-009-gestasyonel-trofoblastik-hastalik-izlemi.evidenceChain[2].text",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-009-gestasyonel-trofoblastik-hastalik-izlemi.evidenceChain[2].text",
         "text": "Mol gebelik ve gestasyonel trofoblastik neoplazi takibinde seri beta-hCG düşüş paterni kritik sınav bilgisidir."
       }
     ],
@@ -702,11 +702,11 @@ export const TUS_GLOSSARY_V406_OBGYN_EXPANSION_TERMS = [
     "occurrenceCount": 9,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-059-mullerian-agenezi-karyotip-over-fonksiyonu.options[4].text",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-059-mullerian-agenezi-karyotip-over-fonksiyonu.options[4].text",
         "text": "46,XX karyotip, adrenal androjen fazlalığına bağlı dış genital virilizasyon"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-059-mullerian-agenezi-karyotip-over-fonksiyonu.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-059-mullerian-agenezi-karyotip-over-fonksiyonu.explanation",
         "text": "45,X streak gonad Turner sendromunu, 46,XY testis ve androjen reseptör direnci komplet androjen duyarsızlığını, anosmi ile hipogonadotropik hipogonadizm Kallmann sendromunu, virilizasyon ise konjenital adrenal hiperplaziyi düşündürür. Müllerian agenezi/MRKH sendromunda karyotip 46,XX’tir, overler işlevseldir ve sekonder seks karakterleri genellikle normal gelişir; uterus ve üst vajina konjenital olarak yoktur veya hipoplaziktir. Seçilmelidir; müllerian agenezide genetik ve gonadal yapı kadın tipindedir, over fonksi"
       }
     ],
@@ -1965,11 +1965,11 @@ export const TUS_GLOSSARY_V406_OBGYN_EXPANSION_TERMS = [
     "occurrenceCount": 11,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-059-mullerian-agenezi-karyotip-over-fonksiyonu.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-059-mullerian-agenezi-karyotip-over-fonksiyonu.explanation",
         "text": "45,X streak gonad Turner sendromunu, 46,XY testis ve androjen reseptör direnci komplet androjen duyarsızlığını, anosmi ile hipogonadotropik hipogonadizm Kallmann sendromunu, virilizasyon ise konjenital adrenal hiperplaziyi düşündürür. Müllerian agenezi/MRKH sendromunda karyotip 46,XX’tir, overler işlevseldir ve sekonder seks karakterleri genellikle normal gelişir; uterus ve üst vajina konjenital olarak yoktur veya hipoplaziktir. Seçilmelidir; müllerian agenezide genetik ve gonadal yapı kadın tipindedir, over fonksi"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-059-mullerian-agenezi-karyotip-over-fonksiyonu.evidenceChain[2].text",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-059-mullerian-agenezi-karyotip-over-fonksiyonu.evidenceChain[2].text",
         "text": "Primer amenore ayırıcı tanısında Müllerian agenezide “46,XX + normal sekonder seks karakterleri + uterus yokluğu” anahtar kombinasyondur."
       }
     ],
@@ -3121,11 +3121,11 @@ export const TUS_GLOSSARY_V406_OBGYN_EXPANSION_TERMS = [
     "occurrenceCount": 4,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-164.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-164.explanation",
         "text": "Doğru cevap A’dır. Ağır özellikli preeklampside nöbet gelişme riski artar ve eklampsi maternal-fetal morbidite açısından kritik bir tablodur. Magnezyum sülfat nöromüsküler ve santral sinir sistemi üzerinden antikonvülzan etki sağlar; temel amaç eklamptik nöbeti önlemek veya tedavi etmektir. Kan basıncını kontrol etmek için labetalol, hidralazin veya nifedipin gibi antihipertansifler ayrıca düşünülür. Fetal akciğer maturasyonu antenatal kortikosteroidlerle, rh profilaksisi anti-D immünoglobulinle, postpartum atoni u"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-164.diagnosis.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-164.diagnosis.explanation",
         "text": "Doğru cevap A’dır. Ağır özellikli preeklampside nöbet gelişme riski artar ve eklampsi maternal-fetal morbidite açısından kritik bir tablodur. Magnezyum sülfat nöromüsküler ve santral sinir sistemi üzerinden antikonvülzan etki sağlar; temel amaç eklamptik nöbeti önlemek veya tedavi etmektir. Kan basıncını kontrol etmek için labetalol, hidralazin veya nifedipin gibi antihipertansifler ayrıca düşünülür. Fetal akciğer maturasyonu antenatal kortikosteroidlerle, rh profilaksisi anti-D immünoglobulinle, postpartum atoni u"
       }
     ],
@@ -3257,11 +3257,11 @@ export const TUS_GLOSSARY_V406_OBGYN_EXPANSION_TERMS = [
     "occurrenceCount": 6,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-109.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-109.explanation",
         "text": "Doğru cevap A’dır. PCOS patofizyolojisinde insülin direnci merkezi önemdedir. Hiperinsülinemi over teka hücrelerinde androjen üretimini artırır ve aynı zamanda hepatik SHBG sentezini azaltarak serbest testosteron düzeyini yükseltir. Bu süreç hirsutizm, akne, ovulatuvar disfonksiyon ve polikistik over morfolojisiyle ilişkili klinik tabloya katkıda bulunur. FSH’nin belirgin artması beklenen temel mekanizma değildir; aksine relatif FSH yetersizliği folikül gelişimini aksatabilir. Prolaktin, kortizol veya tiroid eksenl"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-109.diagnosis.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-109.diagnosis.explanation",
         "text": "Doğru cevap A’dır. PCOS patofizyolojisinde insülin direnci merkezi önemdedir. Hiperinsülinemi over teka hücrelerinde androjen üretimini artırır ve aynı zamanda hepatik SHBG sentezini azaltarak serbest testosteron düzeyini yükseltir. Bu süreç hirsutizm, akne, ovulatuvar disfonksiyon ve polikistik over morfolojisiyle ilişkili klinik tabloya katkıda bulunur. FSH’nin belirgin artması beklenen temel mekanizma değildir; aksine relatif FSH yetersizliği folikül gelişimini aksatabilir. Prolaktin, kortizol veya tiroid eksenl"
       }
     ],
@@ -3597,11 +3597,11 @@ export const TUS_GLOSSARY_V406_OBGYN_EXPANSION_TERMS = [
     "occurrenceCount": 43,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-049-endometriozis-iliskili-over-kanseri-tipleri.options[1].text",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-049-endometriozis-iliskili-over-kanseri-tipleri.options[1].text",
         "text": "Seröz borderline tümör ve disgerminom"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-049-endometriozis-iliskili-over-kanseri-tipleri.explanation",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-049-endometriozis-iliskili-over-kanseri-tipleri.explanation",
         "text": "Endometrioid ve berrak hücreli karsinom endometriozis ilişkili over kanseri alt tipleridir. Disgerminom, yolk sac tümörü ve koryokarsinom germ hücreli; granüloza hücreli tümör ve fibrom seks kord-stromal tümörlerdir. Over endometriozisi özellikle endometrioid ve berrak hücreli over karsinomu gelişimiyle ilişkilidir; bu ilişki seröz germ hücreli veya seks kord-stromal tümörler için klasik değildir. Doğru cevaptır; endometriozisle en klasik ilişkilendirilen epitelyal over kanseri alt tipleridir. TUS açısından ayırıcı"
       }
     ],
@@ -3665,11 +3665,11 @@ export const TUS_GLOSSARY_V406_OBGYN_EXPANSION_TERMS = [
     "occurrenceCount": 39,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-009-gestasyonel-trofoblastik-hastalik-izlemi.optionFeedback.Alfa-fetoprotein",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-009-gestasyonel-trofoblastik-hastalik-izlemi.optionFeedback.Alfa-fetoprotein",
         "text": "Alfa-fetoprotein yolk sac tümörü ve hepatoselüler karsinom gibi durumlarla ilişkilidir."
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-009-gestasyonel-trofoblastik-hastalik-izlemi.diagnosis.optionComparison.Alfa-fetoprotein",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-009-gestasyonel-trofoblastik-hastalik-izlemi.diagnosis.optionComparison.Alfa-fetoprotein",
         "text": "Alfa-fetoprotein yolk sac tümörü ve hepatoselüler karsinom gibi durumlarla ilişkilidir."
       }
     ],
@@ -3870,11 +3870,11 @@ export const TUS_GLOSSARY_V406_OBGYN_EXPANSION_TERMS = [
     "occurrenceCount": 3,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-116.optionFeedback.RhD-negatif, duyarlanmamış gebede invaziv prenatal işlem sonrası profilaksi",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-116.optionFeedback.RhD-negatif, duyarlanmamış gebede invaziv prenatal işlem sonrası profilaksi",
         "text": "Uygun endikasyondur. Amniyosentez veya koryon villus örneklemesi gibi invaziv prenatal işlemler fetomaternal kanama riski taşır."
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-116.diagnosis.optionComparison.RhD-negatif, duyarlanmamış gebede invaziv prenatal işlem sonrası profilaksi",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-116.diagnosis.optionComparison.RhD-negatif, duyarlanmamış gebede invaziv prenatal işlem sonrası profilaksi",
         "text": "Uygun endikasyondur. Amniyosentez veya koryon villus örneklemesi gibi invaziv prenatal işlemler fetomaternal kanama riski taşır."
       }
     ],
@@ -3939,11 +3939,11 @@ export const TUS_GLOSSARY_V406_OBGYN_EXPANSION_TERMS = [
     "occurrenceCount": 3,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-116.optionFeedback.RhD-negatif, duyarlanmamış gebede invaziv prenatal işlem sonrası profilaksi",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-116.optionFeedback.RhD-negatif, duyarlanmamış gebede invaziv prenatal işlem sonrası profilaksi",
         "text": "Uygun endikasyondur. Amniyosentez veya koryon villus örneklemesi gibi invaziv prenatal işlemler fetomaternal kanama riski taşır."
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-116.diagnosis.optionComparison.RhD-negatif, duyarlanmamış gebede invaziv prenatal işlem sonrası profilaksi",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-116.diagnosis.optionComparison.RhD-negatif, duyarlanmamış gebede invaziv prenatal işlem sonrası profilaksi",
         "text": "Uygun endikasyondur. Amniyosentez veya koryon villus örneklemesi gibi invaziv prenatal işlemler fetomaternal kanama riski taşır."
       }
     ],
@@ -4145,11 +4145,11 @@ export const TUS_GLOSSARY_V406_OBGYN_EXPANSION_TERMS = [
     "occurrenceCount": 33,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-059-mullerian-agenezi-karyotip-over-fonksiyonu.topic",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-059-mullerian-agenezi-karyotip-over-fonksiyonu.topic",
         "text": "Müllerian ageneziyi gonadal disgenezi ve androjen duyarsızlığından ayırt edebilme"
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-059-mullerian-agenezi-karyotip-over-fonksiyonu.clinicalFocus",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-059-mullerian-agenezi-karyotip-over-fonksiyonu.clinicalFocus",
         "text": "Müllerian ageneziyi gonadal disgenezi ve androjen duyarsızlığından ayırt edebilme"
       }
     ],
@@ -4555,11 +4555,11 @@ export const TUS_GLOSSARY_V406_OBGYN_EXPANSION_TERMS = [
     "occurrenceCount": 5,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-109.optionFeedback.Prolaktin azalmasına bağlı GnRH pulslarının tamamen durması",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-109.optionFeedback.Prolaktin azalmasına bağlı GnRH pulslarının tamamen durması",
         "text": "Yanlıştır. Prolaktin azalması PCOS’un tipik mekanizması değildir. Hiperprolaktinemi adet düzensizliği yapabilir ancak PCOS’tan ayrı bir ayırıcı tanıdır."
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-109.diagnosis.optionComparison.Prolaktin azalmasına bağlı GnRH pulslarının tamamen durması",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-109.diagnosis.optionComparison.Prolaktin azalmasına bağlı GnRH pulslarının tamamen durması",
         "text": "Yanlıştır. Prolaktin azalması PCOS’un tipik mekanizması değildir. Hiperprolaktinemi adet düzensizliği yapabilir ancak PCOS’tan ayrı bir ayırıcı tanıdır."
       }
     ],
@@ -4623,11 +4623,11 @@ export const TUS_GLOSSARY_V406_OBGYN_EXPANSION_TERMS = [
     "occurrenceCount": 11,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-059-mullerian-agenezi-karyotip-over-fonksiyonu.learningTarget",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-059-mullerian-agenezi-karyotip-over-fonksiyonu.learningTarget",
         "text": "Müllerian agenezi/MRKH sendromunda karyotip 46,XX’tir, overler işlevseldir ve sekonder seks karakterleri genellikle normal gelişir; uterus ve üst vajina konjenital olarak yoktur veya hipoplaziktir."
       },
       {
-        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-059-mullerian-agenezi-karyotip-over-fonksiyonu.coreKnowledge",
+        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-059-mullerian-agenezi-karyotip-over-fonksiyonu.coreKnowledge",
         "text": "Müllerian agenezi/MRKH sendromunda karyotip 46,XX’tir, overler işlevseldir ve sekonder seks karakterleri genellikle normal gelişir; uterus ve üst vajina konjenital olarak yoktur veya hipoplaziktir."
       }
     ],

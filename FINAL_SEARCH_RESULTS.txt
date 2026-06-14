@@ -1,0 +1,281 @@
+=== REFINED STRICT AI TERMS (source, reports excluded) ===
+=== BROAD TERMS (manual classification needed; source, reports excluded) ===
+./src/services/localBackend.js:7:function safeParse(raw, fallback) {
+./src/services/localBackend.js:9:    return raw ? JSON.parse(raw) : fallback;
+./src/services/localBackend.js:11:    return fallback;
+./src/services/localBackend.js:43:  read(name, fallback) {
+./src/services/localBackend.js:44:    if (!canUseStorage()) return fallback;
+./src/services/localBackend.js:48:    return safeParse(pending?.payload ?? window.localStorage.getItem(storageKey), fallback);
+./src/services/localBackend.js:124:  readSessionStats(fallback) {
+./src/services/localBackend.js:125:    return this.read('session-stats', fallback);
+./src/utils/glossary.js:10181:    genericFallbackEntryId: entry.genericFallbackEntryId || '',
+./src/data/tusGlossaryV368MajorDiseaseJargonBatch8Index.js:2910:        "text": "nı normal .webp URL’ye eşitlendi. 2. thumbnailFileName alanı da normal fileName ile eşitlendi. 3. Manifest içinde _thumb.webp referansı bırakılmadı. 4. src/components/InvestigationPanel.jsx içine görsel yüklenemezse imageUrl’ye düşen onError fallback eklendi. 5. src/components/CasePlayer.jsx içindeki fizik muayene görselleri için de aynı onError fallback eklendi. Sonuç: - Vercel Blob’dan sildiğin _t"
+./src/data/tusGlossaryExpandedIndex.js:6118:    "previewDefinition": "Tek mutant alelin hastalık fenotipi oluşturabildiği kalıtım modelidir.",
+./src/data/tusGlossaryExpandedIndex.js:6119:    "preAnswerSafeDefinition": "Tek mutant alelin hastalık fenotipi oluşturabildiği kalıtım modelidir.",
+./src/data/tusGlossaryExpandedIndex.js:6120:    "shortDefinition": "Tek mutant alelin hastalık fenotipi oluşturabildiği kalıtım modelidir.",
+./src/data/tusGlossaryExpandedIndex.js:6121:    "detailedExplanation": "Tek mutant alelin hastalık fenotipi oluşturabildiği kalıtım modelidir. Klinik bağlamla birlikte yorumlanmalıdır.",
+./src/data/tusGlossaryExpandedIndex.js:6148:    "previewDefinition": "Hastalık için iki mutant alelin gerektiği kalıtım modelidir.",
+./src/data/tusGlossaryExpandedIndex.js:6149:    "preAnswerSafeDefinition": "Hastalık için iki mutant alelin gerektiği kalıtım modelidir.",
+./src/data/tusGlossaryExpandedIndex.js:6150:    "shortDefinition": "Hastalık için iki mutant alelin gerektiği kalıtım modelidir.",
+./src/data/tusGlossaryExpandedIndex.js:6151:    "detailedExplanation": "Hastalık için iki mutant alelin gerektiği kalıtım modelidir. Klinik bağlamla birlikte yorumlanmalıdır.",
+./src/data/tusGlossaryExpandedIndex.js:6178:    "previewDefinition": "Mutasyonun X kromozomunda olduğu ve erkeklerde daha sık fenotip verdiği kalıtım modelidir.",
+./src/data/tusGlossaryExpandedIndex.js:6179:    "preAnswerSafeDefinition": "Mutasyonun X kromozomunda olduğu ve erkeklerde daha sık fenotip verdiği kalıtım modelidir.",
+./src/data/tusGlossaryExpandedIndex.js:6180:    "shortDefinition": "Mutasyonun X kromozomunda olduğu ve erkeklerde daha sık fenotip verdiği kalıtım modelidir.",
+./src/data/tusGlossaryExpandedIndex.js:6181:    "detailedExplanation": "Mutasyonun X kromozomunda olduğu ve erkeklerde daha sık fenotip verdiği kalıtım modelidir. Klinik bağlamla birlikte yorumlanmalıdır.",
+./src/utils/pearlDeckShuffle.js:32:function normalizeKey(value, fallback = 'genel') {
+./src/utils/pearlDeckShuffle.js:33:  return String(value || fallback)
+./src/utils/pearlDeckShuffle.js:36:    .replace(/\s+/g, ' ') || fallback;
+./src/services/firebaseClient.js:38:  provider.setCustomParameters({ prompt: 'select_account' });
+./src/utils/investigationOrders.js:422:const NON_CLINICAL_MECHANISM_PATTERN = /(simülasyon|simulasyon|modelleme|modellendi|fizyolojik mekanizma|patofizyolojik mekanizma|beklenen fizyolojik yön|beklenen refleks yanıt|makula densa yanıtı|tubuloglomerüler geri bildirim|bohr etkisi|haldane etkisi|frank-starling mekanizması|raas ve efferent|baroreseptör refleks yanıtı|sempatik nörotransmitter aktarımı|adh ve aquaporin|miksiyon refleksi ve sakral parasempatik çıkış)/i;
+./src/utils/pearlCardStorage.js:17:function safeParse(value, fallback) {
+./src/utils/pearlCardStorage.js:19:    return value ? JSON.parse(value) : fallback;
+./src/utils/pearlCardStorage.js:21:    return fallback;
+./src/utils/pearlCardStorage.js:29:function normalizeString(value, fallback = '') {
+./src/utils/pearlCardStorage.js:30:  return String(value || fallback).trim();
+./src/utils/displayText.js:68:export function neutralModalityTitle(modality = '', fallback = 'Tetkik materyali') {
+./src/utils/displayText.js:69:  return neutralModalityTitles[modality] || fallback;
+./src/data/tusGlossaryContextualPhraseIndex.js:5130:    "shortDefinition": "DNA mismatch repair gen bozukluklarına bağlı herediter nonpolipozis kolorektal kanser sendromudur.",
+./src/data/tusGlossaryContextualPhraseIndex.js:5131:    "previewDefinition": "DNA mismatch repair gen bozukluklarına bağlı herediter nonpolipozis kolorektal kanser sendromudur.",
+./src/data/tusGlossaryContextualPhraseIndex.js:5132:    "preAnswerSafeDefinition": "DNA mismatch repair gen bozukluklarına bağlı herediter nonpolipozis kolorektal kanser sendromudur.",
+./src/data/tusGlossaryContextualPhraseIndex.js:5137:    "clinicalContext": "DNA mismatch repair gen bozukluklarına bağlı herediter nonpolipozis kolorektal kanser sendromudur.",
+./src/data/tusGlossaryContextualPhraseIndex.js:5138:    "clinicalRelevance": "DNA mismatch repair gen bozukluklarına bağlı herediter nonpolipozis kolorektal kanser sendromudur.",
+./src/App.jsx:115:function loadStoredValue(key, fallback) {
+./src/App.jsx:116:  return localBackend.read(key, fallback);
+./src/App.jsx:492:function RouteFallback() {
+./src/App.jsx:1626:        <Suspense fallback={null}>
+./src/App.jsx:1638:        <Suspense fallback={null}>
+./src/App.jsx:1647:        <Suspense fallback={null}>
+./src/App.jsx:1668:        <Suspense fallback={null}>
+./src/App.jsx:1689:            <Suspense fallback={null}>
+./src/App.jsx:1765:              <Suspense fallback={null}>
+./src/App.jsx:1849:            <Suspense fallback={null}>
+./src/data/tusPearlMedicalPathologyFirst84Overrides.js:471:    "explanation": "Damar intimasındaki proliferasyon ve fibrozis lümeni daraltır; kronik hipoperfüzyon parankimal kayıp ve interstisyel fibrozise yol açar. Bu süreç akut trombotik hasardan çok yavaş ilerleyen iskemik remodeling şeklindedir.",
+./src/utils/clinicalValueFormatters.js:198:export const repairIncompleteLabResult = normalizeLabResultRow;
+./src/utils/clinicalValueFormatters.js:213:export function validateInvestigationLabCompleteness(investigation = {}) { const repaired = normalizeInvestigationLabResults(investigation), errors = []; (repaired.rows || []).forEach((row, index) => { const validation = validateLabResultCompleteness(row, { label: repaired.label, type: repaired.type }); if (!validation.ok) errors.push(`${repaired.label || 'Tetkik'} satır ${index + 1}: ${validation.errors.join(', ')}`); }); return { ok: errors.length === 0, errors, investigation: repaired }; }
+./src/data/pdfPediatricArrhythmiaCases.js:2257:      "Cihaz kartı yoksa üretici ve model bilgisi hızlıca bulunmalıdır."
+./src/data/pdfPediatricArrhythmiaCases.js:2545:    "id": "pdf-peds-arrhythmia-repaired-tof-pvcs-026",
+./src/data/pdfPediatricArrhythmiaCases.js:2628:    "whyCorrect": "Repaired TOF hastasında PVC basit benign bulgu gibi ele alınmaz. Cerrahi skar ve sağ ventrikül yüklenmesi ventriküler taşikardi substratı oluşturabilir.",
+./src/index.css:472:.image-fallback { display: grid; grid-template-columns: 36px minmax(0,1fr); gap: 12px; align-items: center; width: min(520px, calc(100% - 24px)); padding: 14px; border-radius: 16px; background: var(--surface-2); border: 1px solid var(--border-subtle); }
+./src/index.css:473:.image-fallback.small { width: 100%; }
+./src/index.css:474:.image-fallback span { display: block; color: var(--text-muted); font-size: 13px; line-height: 1.4; }
+./src/index.css:837:.image-fallback.small { min-height: 96px; border-style: dashed; }
+./src/index.css:13539:.image-fallback span,
+./src/index.css:14782:/* Fallback when theme attribute is momentarily unavailable */
+./src/index.css:29172:   KLINIKIQ V156 — Dark mode home dashboard contrast repair
+./src/index.css:31814:.tus-source-badge.fallback {
+./src/index.css:31874:.tus-fallback-notice {
+./src/index.css:31887:.tus-fallback-notice svg {
+./src/index.css:31926:html[data-theme="dark"] .tus-fallback-notice,
+./src/index.css:31927:.app-shell[data-theme="dark"] .tus-fallback-notice {
+./src/index.css:35043:   KLINIKIQ V181 — TUS Spot prompt below answer heading
+./src/index.css:47156:.route-fallback {
+./src/index.css:47165:.route-fallback-spinner {
+./src/index.css:47223:  .route-fallback-spinner {
+./src/index.css:49155:.formatted-question-prompt.has-roman-items {
+./src/index.css:49200:.tus-spot-bank-main .tus-spot-olgular-question-callout .formatted-question-prompt.has-roman-items {
+./src/index.css:51561:/* V353 — minimal cursor cleanup fallback
+./src/index.css:51563:   styles in PremiumCursor.jsx are authoritative; this fallback only protects
+./src/index.css:53175:.route-fallback,
+./src/index.css:53765:.route-fallback,
+./src/styles/tus-button-center-hard-fix.css:110:/* Fallback for older/direct button markup without the inner wrapper. */
+./src/components/TusSpotQuestionScreen.jsx:32:function buildTusSpotQuestionPrompt(question = {}) {
+./src/components/TusSpotQuestionScreen.jsx:33:  return compactText(question.question || question.prompt || question.clinicalFocus || 'En olası seçenek hangisidir?');
+./src/components/TusSpotQuestionScreen.jsx:286:  const questionPrompt = buildTusSpotQuestionPrompt(question);
+./src/components/TusSpotQuestionScreen.jsx:306:            questionPromptOverride={questionPrompt}
+./src/data/clinicalVisualManifest.js:5526:    "caseId": "pdf-peds-arrhythmia-repaired-tof-pvcs-026",
+./src/data/clinicalVisualManifest.js:5549:    "caseId": "pdf-peds-arrhythmia-repaired-tof-pvcs-026",
+./src/components/InvestigationPanel.jsx:339:  const repaired = normalizeLabResultRow({
+./src/components/InvestigationPanel.jsx:347:  const value = sanitizeUniqueCellText(repaired.value || '');
+./src/components/InvestigationPanel.jsx:348:  const note = sanitizeUniqueCellText(repaired.note || '');
+./src/components/InvestigationPanel.jsx:351:    parameter: sanitizeUniqueCellText(repaired.parameter || ''),
+./src/components/InvestigationPanel.jsx:353:    reference: sanitizeUniqueCellText(repaired.reference || ''),
+./src/data/tusGlossaryScientificIndex.js:2032:    "term": "Mismatch repair",
+./src/data/tusGlossaryScientificIndex.js:2034:      "Mismatch repair",
+./src/data/tusGlossaryScientificIndex.js:2039:    "TurkishName": "Mismatch repair",
+./src/data/tusGlossaryScientificIndex.js:2062:      "Mismatch repair",
+./src/data/tusGlossaryScientificIndex.js:2069:    "term": "Nucleotide excision repair",
+./src/data/tusGlossaryScientificIndex.js:2071:      "Nucleotide excision repair",
+./src/data/tusGlossaryScientificIndex.js:2076:    "TurkishName": "Nucleotide excision repair",
+./src/data/tusGlossaryScientificIndex.js:2099:      "Nucleotide excision repair",
+./src/data/tusGlossaryScientificIndex.js:2106:    "term": "Base excision repair",
+./src/data/tusGlossaryScientificIndex.js:2108:      "Base excision repair",
+./src/data/tusGlossaryScientificIndex.js:2113:    "TurkishName": "Base excision repair",
+./src/data/tusGlossaryScientificIndex.js:2136:      "Base excision repair",
+./src/data/tusGlossaryScientificIndex.js:2227:    "shortDefinition": "Enzim hızının substrat konsantrasyonuna bağlı doygunluk eğrisini açıklayan kinetik modeldir.",
+./src/data/tusGlossaryScientificIndex.js:2228:    "previewDefinition": "Enzim hızının substrat konsantrasyonuna bağlı doygunluk eğrisini açıklayan kinetik modeldir.",
+./src/data/tusGlossaryScientificIndex.js:2229:    "preAnswerSafeDefinition": "Enzim hızının substrat konsantrasyonuna bağlı doygunluk eğrisini açıklayan kinetik modeldir.",
+./src/data/tusGlossaryScientificIndex.js:2230:    "detailedExplanation": "Enzim hızının substrat konsantrasyonuna bağlı doygunluk eğrisini açıklayan kinetik modeldir. Enzim hızının substrat konsantrasyonuna bağlı doygunluk eğrisini açıklayan kinetik modeldir.",
+./src/data/tusGlossaryScientificIndex.js:2231:    "postAnswerExpandedExplanation": "Enzim hızının substrat konsantrasyonuna bağlı doygunluk eğrisini açıklayan kinetik modeldir. Enzim hızının substrat konsantrasyonuna bağlı doygunluk eğrisini açıklayan kinetik modeldir.",
+./src/data/tusGlossaryScientificIndex.js:2235:    "mechanism": "Enzim hızının substrat konsantrasyonuna bağlı doygunluk eğrisini açıklayan kinetik modeldir.",
+./src/data/tusPearlInternalMedicineThird59Overrides.js:86:    "explanation": "Sistemik sklerozda dijital ülserler yapısal vaskülopati, endotel disfonksiyonu ve Raynaud atağına bağlı iskemiyle gelişir. Bosentan endotelin aracılı vazokonstriksiyon ve vasküler remodelling etkisini azaltarak özellikle yeni dijital ülser gelişimini önlemede kullanılabilir. Akut kritik iskemide ise intravenöz prostasiklin analogları veya ileri damar yaklaşımı gerekebilir.",
+./src/components/TusQuestionGeneratorView.jsx:86:function readLocalJSON(key, fallback) {
+./src/components/TusQuestionGeneratorView.jsx:87:  if (typeof window === 'undefined' || !window.localStorage) return fallback;
+./src/components/TusQuestionGeneratorView.jsx:90:    return raw ? JSON.parse(raw) : fallback;
+./src/components/TusQuestionGeneratorView.jsx:92:    return fallback;
+./src/components/TusQuestionGeneratorView.jsx:160:  const fallbackPass = allCards
+./src/components/TusQuestionGeneratorView.jsx:164:  const selected = [...firstPass, ...fallbackPass].slice(0, count);
+./src/components/TusQuestionGeneratorView.jsx:807:        <section className="tus-fallback-notice card-surface" aria-live="polite">
+./src/components/HomeCommandCenter.jsx:3:const FALLBACK_TREND_POINTS = 8;
+./src/components/HomeCommandCenter.jsx:5:function clampNumber(value, fallback = 0) {
+./src/components/HomeCommandCenter.jsx:7:  return Number.isFinite(numeric) ? numeric : fallback;
+./src/components/HomeCommandCenter.jsx:10:function buildFallbackTrend(stats = {}, metric) {
+./src/components/HomeCommandCenter.jsx:20:    return Array.from({ length: FALLBACK_TREND_POINTS }, () => 0);
+./src/components/HomeCommandCenter.jsx:23:  return Array.from({ length: FALLBACK_TREND_POINTS }, (_, index) => {
+./src/components/HomeCommandCenter.jsx:24:    const ratio = (index + 1) / FALLBACK_TREND_POINTS;
+./src/components/HomeCommandCenter.jsx:39:    return values.some((value) => value > 0) ? values : buildFallbackTrend(stats, metric);
+./src/components/HomeCommandCenter.jsx:41:  return buildFallbackTrend(stats, metric);
+./src/data/tusPearlInternalMedicineSecond50Overrides.js:464:    "explanation": "Mismatch repair bozukluğu mikrosatellit instabilite ve yüksek neoantijen yükü oluşturabilir. Bu tümörler bağışıklık sistemi tarafından daha görünür hale geldiğinden immün kontrol noktası inhibitörlerinden fayda görebilir. Böylece biyobelirteç yalnız tanısal değil, tedavi seçimini belirleyen bir bilgiye dönüşür.",
+./src/data/tusGlossaryV403InternalMedicineExpansionIndex.js:92:    "detailedExplanation": "Temel problem ventrikülün kanı ileri pompalama gücünün azalmasıdır; nörohormonal aktivasyon başlangıçta kompansatuvar olsa da uzun dönemde remodeling ve mortaliteyi artırır. Bu nedenle RAAS blokajı, beta bloker, MRA ve SGLT2 inhibitörü gibi mortalite azaltan tedaviler ayrı önem taşır.",
+./src/data/tusGlossaryV403InternalMedicineExpansionIndex.js:93:    "postAnswerExplanation": "Temel problem ventrikülün kanı ileri pompalama gücünün azalmasıdır; nörohormonal aktivasyon başlangıçta kompansatuvar olsa da uzun dönemde remodeling ve mortaliteyi artırır. Bu nedenle RAAS blokajı, beta bloker, MRA ve SGLT2 inhibitörü gibi mortalite azaltan tedaviler ayrı önem taşır.",
+./src/data/tusGlossaryV403InternalMedicineExpansionIndex.js:94:    "postAnswerExpandedExplanation": "Temel problem ventrikülün kanı ileri pompalama gücünün azalmasıdır; nörohormonal aktivasyon başlangıçta kompansatuvar olsa da uzun dönemde remodeling ve mortaliteyi artırır. Bu nedenle RAAS blokajı, beta bloker, MRA ve SGLT2 inhibitörü gibi mortalite azaltan tedaviler ayrı önem taşır.",
+./src/data/tusGlossaryV403InternalMedicineExpansionIndex.js:98:    "clinicalRelevance": "Temel problem ventrikülün kanı ileri pompalama gücünün azalmasıdır; nörohormonal aktivasyon başlangıçta kompansatuvar olsa da uzun dönemde remodeling ve mortaliteyi artırır. Bu nedenle RAAS blokajı, beta bloker, MRA ve SGLT2 inhibitörü gibi mortalite azaltan tedaviler ayrı önem taşır.",
+./src/data/tusGlossaryV403InternalMedicineExpansionIndex.js:6448:    "previewDefinition": "Mismatch repair eksikliği veya mikrosatellit instabilitesi yüksekliği anlamına gelen tümör biyobelirteç paternidir.",
+./src/data/tusGlossaryV403InternalMedicineExpansionIndex.js:6449:    "preAnswerSafeDefinition": "Mismatch repair eksikliği veya mikrosatellit instabilitesi yüksekliği anlamına gelen tümör biyobelirteç paternidir.",
+./src/data/tusGlossaryV403InternalMedicineExpansionIndex.js:6450:    "shortDefinition": "Mismatch repair eksikliği veya mikrosatellit instabilitesi yüksekliği anlamına gelen tümör biyobelirteç paternidir.",
+./src/data/tusGlossaryV403InternalMedicineExpansionIndex.js:6451:    "definition": "Mismatch repair eksikliği veya mikrosatellit instabilitesi yüksekliği anlamına gelen tümör biyobelirteç paternidir.",
+./src/data/tusGlossaryV403InternalMedicineExpansionIndex.js:6462:      "Mismatch repair"
+./src/data/tusGlossaryV403InternalMedicineExpansionIndex.js:6467:      "Mismatch repair"
+./src/data/tusGlossaryV401PathologyExpansionIndex.js:7455:    "previewDefinition": "Tümör baskılayıcı genlerde iki alelin de işlev kaybıyla tümör gelişimini açıklayan modeldir.",
+./src/data/tusGlossaryV401PathologyExpansionIndex.js:7456:    "preAnswerSafeDefinition": "Tümör baskılayıcı genlerde iki alelin de işlev kaybıyla tümör gelişimini açıklayan modeldir.",
+./src/data/tusGlossaryV401PathologyExpansionIndex.js:7457:    "shortDefinition": "Tümör baskılayıcı genlerde iki alelin de işlev kaybıyla tümör gelişimini açıklayan modeldir.",
+./src/data/tusGlossaryV401PathologyExpansionIndex.js:7458:    "definition": "Tümör baskılayıcı genlerde iki alelin de işlev kaybıyla tümör gelişimini açıklayan modeldir.",
+./src/data/tusGlossaryV401PathologyExpansionIndex.js:7489:        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-056-lynch-sendromu-mismatch-repair-mikrosatellit::tus-spot-vakasiz-secki-056-lynch-sendromu-mismatch-repair-mikrosatellit.options[0].text",
+./src/data/tusGlossaryV401PathologyExpansionIndex.js:7493:        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-056-lynch-sendromu-mismatch-repair-mikrosatellit::tus-spot-vakasiz-secki-056-lynch-sendromu-mismatch-repair-mikrosatellit.diagnosis.options[0]",
+./src/components/DiagnosisQuiz.jsx:22:function parseRomanQuestionPrompt(text = '') {
+./src/components/DiagnosisQuiz.jsx:46:function FormattedQuestionPrompt({ text = '', glossaryEnabled = true, revealMode = 'preAnswer', maxTerms = 8 }) {
+./src/components/DiagnosisQuiz.jsx:47:  const formatted = useMemo(() => parseRomanQuestionPrompt(text), [text]);
+./src/components/DiagnosisQuiz.jsx:54:    <span className="formatted-question-prompt has-roman-items">
+./src/components/DiagnosisQuiz.jsx:168:  questionPromptOverride = '',
+./src/components/DiagnosisQuiz.jsx:200:  const questionPrompt = questionPromptOverride || clinicalCase.question || clinicalCase.diagnosis?.question || '';
+./src/components/DiagnosisQuiz.jsx:224:  const showInlineQuestionStem = Boolean(questionPrompt) && hideSpotQuestionCallout;
+./src/components/DiagnosisQuiz.jsx:242:                <FormattedQuestionPrompt text={questionSubtext} glossaryEnabled={glossaryEnabled} revealMode={glossaryRevealMode} />
+./src/components/DiagnosisQuiz.jsx:278:            <FormattedQuestionPrompt text={questionPrompt} glossaryEnabled={glossaryEnabled} revealMode={glossaryRevealMode} />
+./src/components/DiagnosisQuiz.jsx:283:      {questionPrompt && !hideSpotQuestionCallout ? (
+./src/components/DiagnosisQuiz.jsx:287:            <FormattedQuestionPrompt text={questionPrompt} glossaryEnabled={glossaryEnabled} revealMode={glossaryRevealMode} />
+./src/components/AnswerFeedbackPanel.jsx:17:  /fallback/iu,
+./src/components/AnswerFeedbackPanel.jsx:259:  // slipped through and produced only "C.", "VI.", etc., use the repaired full note.
+./src/components/AnswerFeedbackPanel.jsx:335:function refineLabel(value = '', fallback = '') {
+./src/components/AnswerFeedbackPanel.jsx:336:  const raw = trimTrailingPunctuation(stripWeakPrefix(value || fallback));
+./src/components/AnswerFeedbackPanel.jsx:338:  if (!raw) return fallback || 'Klinik ipucu';
+./src/components/AnswerFeedbackPanel.jsx:339:  if (/^kan[ıi]t\s*\d+$/iu.test(raw)) return fallback || 'Olgu kanıtı';
+./src/components/AnswerFeedbackPanel.jsx:502:function normalizeTitledItem(item, index, fallbackTitle, maxLength = 190) {
+./src/components/AnswerFeedbackPanel.jsx:515:  if (!title) title = fallbackTitle || inferEvidenceTitle(text, index);
+./src/components/AnswerFeedbackPanel.jsx:516:  const inferredFallback = fallbackTitle || inferEvidenceTitle(text, index);
+./src/components/AnswerFeedbackPanel.jsx:518:    title: normalizeText(refineLabel(title, inferredFallback)),
+./src/components/AnswerFeedbackPanel.jsx:594:      const fallbackLabel = typeof item === 'object' && item?.label ? item.label : inferPearlLabel(itemText(item), index);
+./src/components/AnswerFeedbackPanel.jsx:595:      const normalized = normalizeTitledItem(item, index, fallbackLabel, 190);
+./src/components/AnswerFeedbackPanel.jsx:791:function resolveTusSpotOptionExplanation(clinicalCase = {}, optionText = '', fallback = '') {
+./src/components/AnswerFeedbackPanel.jsx:806:    fallback,
+./src/components/CasePlayer.jsx:31:function DeferredPanelFallback({ label = 'Bölüm hazırlanıyor' }) {
+./src/components/CasePlayer.jsx:33:    <section className="card-surface deferred-panel-fallback" aria-label={label}>
+./src/components/CasePlayer.jsx:454:  const fallbackStory = buildStoryParts(clinicalCase).join(' ');
+./src/components/CasePlayer.jsx:471:  const historyParts = splitSentences(intro.historySummary || fallbackStory)
+./src/components/CasePlayer.jsx:480:    history: historyParts.length ? historyParts : [normalizePatientSummaryText(compactSentence(fallbackStory, 190))],
+./src/components/CasePlayer.jsx:1024:                              ) : <p>{row.fallback}</p>
+./src/components/CasePlayer.jsx:1142:                  <Suspense fallback={<DeferredPanelFallback label="Objektif Veri / Tetkik" />}>
+./src/components/CasePlayer.jsx:1153:                ) : <DeferredPanelFallback label="Objektif Veri / Tetkik" />}
+./src/components/CasePlayer.jsx:1160:                  <Suspense fallback={<DeferredPanelFallback label="Yönetim" />}>
+./src/components/CasePlayer.jsx:1163:                ) : <DeferredPanelFallback label="Yönetim" />}
+./src/components/tusPearlCards.css:18953:   V401 — Hap Bilgi right-panel icon/text vertical alignment repair
+./src/components/tusPearlCards.css:19376:   rows by forcing one consistent button box model for icon, label and count.
+./src/components/ManagementSequencePanel.jsx:10:function normalizeStep(step, index, fallbackRequired = true) {
+./src/components/ManagementSequencePanel.jsx:15:      correctOrder: fallbackRequired ? index + 1 : null,
+./src/components/ManagementSequencePanel.jsx:16:      required: fallbackRequired,
+./src/components/ManagementSequencePanel.jsx:17:      score: fallbackRequired ? 2 : -1,
+./src/components/ManagementSequencePanel.jsx:18:      rationale: fallbackRequired
+./src/components/ManagementSequencePanel.jsx:24:  const required = step.required !== undefined ? Boolean(step.required) : fallbackRequired;
+./src/components/TusPearlStudyScreen.jsx:399:function resolveModeLabel(filter, branchFilter, activeCatalog) {
+./src/components/TusPearlStudyScreen.jsx:816:  const modeLabel = resolveModeLabel(filter, branchFilter, activeCatalog);
+./src/components/TusPearlStudyScreen.jsx:1070:    const fallback = pearlState.customCatalogs.find((catalog) => catalog.id !== catalogId);
+./src/components/TusPearlStudyScreen.jsx:1071:    setActiveCatalogId(fallback?.id || '');
+./src/components/TusPearlStudyScreen.jsx:1072:    if (!fallback) setFilter('all');
+./src/components/KomiteModeWorkspace.jsx:428:    const fallbackFile = Array.isArray(material.files) ? material.files[index] : null;
+./src/components/KomiteModeWorkspace.jsx:429:    const fileName = String(match[2] || fallbackFile?.name || `Materyal ${index + 1}`).trim();
+./src/components/KomiteModeWorkspace.jsx:433:      fileType: fallbackFile?.type || getFileType(fileName),
+./src/components/KomiteModeWorkspace.jsx:519:  const fallback = material.course || material.committee || 'Ders Materyali';
+./src/components/KomiteModeWorkspace.jsx:521:  if (!rawName || rawName.length < 4 || meaningless.test(rawName)) return fallback;
+./src/data/tusPearlCards.js:18011:function fallbackDifferentialNote(card = {}) {
+./src/data/tusPearlCards.js:18054:    differentialNote = fallbackDifferentialNote(card);
+./src/data/tusPearlCards.js:18066:  differentialNote = removePearlSentencesAlreadyUsed(differentialNote, [answer, explanation, tusTip]) || fallbackDifferentialNote({ ...card, answer, explanation, tusTip });
+./src/data/cases.js:96686:    "demographics": "Fizyoloji laboratuvarı deney modeli",
+./src/data/cases.js:96691:      "profile": "Renal fizyoloji laboratuvarında incelenen tek nefron geri bildirim modeli.",
+./src/data/cases.js:203738:    "id": "tus-spot-vakasiz-secki-056-lynch-sendromu-mismatch-repair-mikrosatellit",
+./src/data/cases.js:203751:    "topic": "Lynch sendromunda mismatch repair bozukluğu ile mikrosatellit instabilite ilişkisi",
+./src/data/cases.js:203754:    "clinicalFocus": "Lynch sendromunda mismatch repair bozukluğu ile mikrosatellit instabilite ilişkisi",
+./src/data/cases.js:203755:    "learningTarget": "Lynch sendromu MLH1, MSH2, MSH6, PMS2 gibi DNA mismatch repair genlerinin kalıtsal bozukluğu ile ilişkilidir; tamir kusuru mikrosatellit instabiliteye ve kolorektal/endometrial kanser riskinde artışa neden olur.",
+./src/data/cases.js:203796:        "text": "DNA mismatch repair genlerinde germline bozukluk — mikrosatellit instabilite"
+./src/data/cases.js:203808:    "correctOptionText": "DNA mismatch repair genlerinde germline bozukluk — mikrosatellit instabilite",
+./src/data/cases.js:203809:    "coreKnowledge": "Lynch sendromu MLH1, MSH2, MSH6, PMS2 gibi DNA mismatch repair genlerinin kalıtsal bozukluğu ile ilişkilidir; tamir kusuru mikrosatellit instabiliteye ve kolorektal/endometrial kanser riskinde artışa neden olur.",
+./src/data/cases.js:203810:    "explanation": "APC bozukluğu FAP/Gardner spektrumu, RET aktivasyonu MEN2, PTEN kaybı Cowden sendromu, CDH1 bozukluğu herediter diffüz mide kanseri ile ilişkilidir. Bu eşleştirmeler doğru olabilir ancak lynch sendromunun moleküler karşılığı mismatch repair kusurudur. Lynch sendromu MLH1, MSH2, MSH6, PMS2 gibi DNA mismatch repair genlerinin kalıtsal bozukluğu ile ilişkilidir; tamir kusuru mikrosatellit instabiliteye ve kolorektal/endometrial kanser riskinde artışa neden olur. Seçilmelidir; lynch sendromunun ayırıcı moleküler temeli mismatch repair gen bozukluğu ve mikrosatellit instabilitedir. TUS açısından ayırıcı nokta: Lynch sendromunda polip sayısı çok fazla olmak zorunda değildir; sınav odağı çoğunlukla mismatch repair genleri ve mikrosatellit instabilitedir.",
+./src/data/cases.js:203815:      "DNA mismatch repair genlerinde germline bozukluk — mikrosatellit instabilite": "Seçilmelidir; lynch sendromunun ayırıcı moleküler temeli mismatch repair gen bozukluğu ve mikrosatellit instabilitedir.",
+./src/data/cases.js:203822:        "text": "Lynch sendromu MLH1, MSH2, MSH6, PMS2 gibi DNA mismatch repair genlerinin kalıtsal bozukluğu ile ilişkilidir; tamir kusuru mikrosatellit instabiliteye ve kolorektal/endometrial kanser riskinde artışa neden olur.",
+./src/data/cases.js:203834:        "text": "Lynch sendromunda polip sayısı çok fazla olmak zorunda değildir; sınav odağı çoğunlukla mismatch repair genleri ve mikrosatellit instabilitedir.",
+./src/data/cases.js:203840:      "Lynch sendromunda polip sayısı çok fazla olmak zorunda değildir; sınav odağı çoğunlukla mismatch repair genleri ve mikrosatellit instabilitedir."
+./src/data/cases.js:203842:    "examPearl": "Lynch sendromunda polip sayısı çok fazla olmak zorunda değildir; sınav odağı çoğunlukla mismatch repair genleri ve mikrosatellit instabilitedir.",
+./src/data/cases.js:203857:        "Lynch sendromu MLH1, MSH2, MSH6, PMS2 gibi DNA mismatch repair genlerinin kalıtsal bozukluğu ile ilişkilidir; tamir kusuru mikrosatellit instabiliteye ve kolorektal/endometrial kanser riskinde artışa neden olur.",
+./src/data/cases.js:203858:        "Lynch sendromunda polip sayısı çok fazla olmak zorunda değildir; sınav odağı çoğunlukla mismatch repair genleri ve mikrosatellit instabilitedir."
+./src/data/cases.js:203863:      "correct": "DNA mismatch repair genlerinde germline bozukluk — mikrosatellit instabilite",
+./src/data/cases.js:203867:        "DNA mismatch repair genlerinde germline bozukluk — mikrosatellit instabilite",
+./src/data/cases.js:203872:      "explanation": "APC bozukluğu FAP/Gardner spektrumu, RET aktivasyonu MEN2, PTEN kaybı Cowden sendromu, CDH1 bozukluğu herediter diffüz mide kanseri ile ilişkilidir. Bu eşleştirmeler doğru olabilir ancak lynch sendromunun moleküler karşılığı mismatch repair kusurudur. Lynch sendromu MLH1, MSH2, MSH6, PMS2 gibi DNA mismatch repair genlerinin kalıtsal bozukluğu ile ilişkilidir; tamir kusuru mikrosatellit instabiliteye ve kolorektal/endometrial kanser riskinde artışa neden olur. Seçilmelidir; lynch sendromunun ayırıcı moleküler temeli mismatch repair gen bozukluğu ve mikrosatellit instabilitedir. TUS açısından ayırıcı nokta: Lynch sendromunda polip sayısı çok fazla olmak zorunda değildir; sınav odağı çoğunlukla mismatch repair genleri ve mikrosatellit instabilitedir.",
+./src/data/cases.js:203877:          "text": "Lynch sendromunda polip sayısı çok fazla olmak zorunda değildir; sınav odağı çoğunlukla mismatch repair genleri ve mikrosatellit instabilitedir."
+./src/data/cases.js:203883:        "DNA mismatch repair genlerinde germline bozukluk — mikrosatellit instabilite": "Seçilmelidir; lynch sendromunun ayırıcı moleküler temeli mismatch repair gen bozukluğu ve mikrosatellit instabilitedir.",
+./src/data/cases.js:203890:        "DNA mismatch repair genlerinde germline bozukluk — mikrosatellit instabilite": "Seçilmelidir; lynch sendromunun ayırıcı moleküler temeli mismatch repair gen bozukluğu ve mikrosatellit instabilitedir.",
+./src/data/cases.js:203895:        "summary": "Doğru cevap “DNA mismatch repair genlerinde germline bozukluk — mikrosatellit instabilite” seçeneğidir. Lynch sendromu MLH1, MSH2, MSH6, PMS2 gibi DNA mismatch repair genlerinin kalıtsal bozukluğu ile ilişkilidir; tamir kusuru mikrosatellit instabiliteye ve kolorektal/endometrial kanser riskinde artışa neden olur.",
+./src/data/cases.js:203896:        "whyCorrect": "APC bozukluğu FAP/Gardner spektrumu, RET aktivasyonu MEN2, PTEN kaybı Cowden sendromu, CDH1 bozukluğu herediter diffüz mide kanseri ile ilişkilidir. Bu eşleştirmeler doğru olabilir ancak lynch sendromunun moleküler karşılığı mismatch repair kusurudur. Lynch sendromu MLH1, MSH2, MSH6, PMS2 gibi DNA mismatch repair genlerinin kalıtsal bozukluğu ile ilişkilidir; tamir kusuru mikrosatellit instabiliteye ve kolorektal/endometrial kanser riskinde artışa neden olur. Seçilmelidir; lynch sendromunun ayırıcı moleküler temeli mismatch repair gen bozukluğu ve mikrosatellit instabilitedir. TUS açısından ayırıcı nokta: Lynch sendromunda polip sayısı çok fazla olmak zorunda değildir; sınav odağı çoğunlukla mismatch repair genleri ve mikrosatellit instabilitedir.",
+./src/data/cases.js:203897:        "rationale": "APC bozukluğu FAP/Gardner spektrumu, RET aktivasyonu MEN2, PTEN kaybı Cowden sendromu, CDH1 bozukluğu herediter diffüz mide kanseri ile ilişkilidir. Bu eşleştirmeler doğru olabilir ancak lynch sendromunun moleküler karşılığı mismatch repair kusurudur. Lynch sendromu MLH1, MSH2, MSH6, PMS2 gibi DNA mismatch repair genlerinin kalıtsal bozukluğu ile ilişkilidir; tamir kusuru mikrosatellit instabiliteye ve kolorektal/endometrial kanser riskinde artışa neden olur. Seçilmelidir; lynch sendromunun ayırıcı moleküler temeli mismatch repair gen bozukluğu ve mikrosatellit instabilitedir. TUS açısından ayırıcı nokta: Lynch sendromunda polip sayısı çok fazla olmak zorunda değildir; sınav odağı çoğunlukla mismatch repair genleri ve mikrosatellit instabilitedir.",
+./src/data/cases.js:203898:        "correctOptionFeedback": "Seçilmelidir; lynch sendromunun ayırıcı moleküler temeli mismatch repair gen bozukluğu ve mikrosatellit instabilitedir.",
+./src/data/cases.js:203900:          "Lynch sendromu MLH1, MSH2, MSH6, PMS2 gibi DNA mismatch repair genlerinin kalıtsal bozukluğu ile ilişkilidir; tamir kusuru mikrosatellit instabiliteye ve kolorektal/endometrial kanser riskinde artışa neden olur.",
+./src/data/cases.js:203901:          "Lynch sendromunda polip sayısı çok fazla olmak zorunda değildir; sınav odağı çoğunlukla mismatch repair genleri ve mikrosatellit instabilitedir."
+./src/data/cases.js:203906:            "text": "Lynch sendromu MLH1, MSH2, MSH6, PMS2 gibi DNA mismatch repair genlerinin kalıtsal bozukluğu ile ilişkilidir; tamir kusuru mikrosatellit instabiliteye ve kolorektal/endometrial kanser riskinde artışa neden olur.",
+./src/data/cases.js:203918:            "text": "Lynch sendromunda polip sayısı çok fazla olmak zorunda değildir; sınav odağı çoğunlukla mismatch repair genleri ve mikrosatellit instabilitedir.",
+./src/data/cases.js:367303:      "explanation": "Bu bebekte anlatılan düşük yükseklikten düşme öyküsü, gelişim düzeyi ve saptanan çoklu yaralanma modeliyle uyumlu değildir. Korunaklı bölgelerde ekimozlar, farklı evrelerde subdural kanama, yaygın çok katmanlı retinal hemorajiler ve posterior kaburga kırıkları aynı klinik zincirde istismar kaynaklı kafa travmasını destekler. Normal koagülasyon testleri ve mavi sklera olmaması, kanama diyatezi veya kemik kırılganlığı açıklamalarını zayıflatır.",
+./src/data/cases.js:367321:          "explanation": "Bakteriyel menenjit ateş, irritabilite, ense bulguları, BOS inflamasyonu ve sistemik enfeksiyon verileriyle gündeme gelir. Bu çocukta ateş yoktur, BOS bulgusu verilmemiştir ve görüntüleme-iskelet bulguları enfeksiyondan çok travmatik yaralanma modelini oluşturur.",
+./src/data/cases.js:367333:        "Bakteriyel menenjite bağlı papil ödem ve sekonder bilinç değişikliği": "Bakteriyel menenjit ateş, irritabilite, ense bulguları, BOS inflamasyonu ve sistemik enfeksiyon verileriyle gündeme gelir. Bu çocukta ateş yoktur, BOS bulgusu verilmemiştir ve görüntüleme-iskelet bulguları enfeksiyondan çok travmatik yaralanma modelini oluşturur.",
+./src/data/cases.js:367337:        "summary": "Bu bebekte anlatılan düşük yükseklikten düşme öyküsü, gelişim düzeyi ve saptanan çoklu yaralanma modeliyle uyumlu değildir. Korunaklı bölgelerde ekimozlar, farklı evrelerde subdural kanama, yaygın çok katmanlı retinal hemorajiler ve posterior kaburga kırıkları aynı klinik zincirde istismar kaynaklı kafa travmasını destekler. Normal koagülasyon testleri ve mavi sklera olmaması, kanama diyatezi veya kemik kırılganlığı açıklamalarını zayıflatır.",
+./src/data/cases.js:367339:        "rationale": "Bu bebekte anlatılan düşük yükseklikten düşme öyküsü, gelişim düzeyi ve saptanan çoklu yaralanma modeliyle uyumlu değildir. Korunaklı bölgelerde ekimozlar, farklı evrelerde subdural kanama, yaygın çok katmanlı retinal hemorajiler ve posterior kaburga kırıkları aynı klinik zincirde istismar kaynaklı kafa travmasını destekler. Normal koagülasyon testleri ve mavi sklera olmaması, kanama diyatezi veya kemik kırılganlığı açıklamalarını zayıflatır.",
+./src/data/cases.js:367387:            "explanation": "Bakteriyel menenjit ateş, irritabilite, ense bulguları, BOS inflamasyonu ve sistemik enfeksiyon verileriyle gündeme gelir. Bu çocukta ateş yoktur, BOS bulgusu verilmemiştir ve görüntüleme-iskelet bulguları enfeksiyondan çok travmatik yaralanma modelini oluşturur.",
+./src/data/cases.js:367399:          "Bakteriyel menenjite bağlı papil ödem ve sekonder bilinç değişikliği": "Bakteriyel menenjit ateş, irritabilite, ense bulguları, BOS inflamasyonu ve sistemik enfeksiyon verileriyle gündeme gelir. Bu çocukta ateş yoktur, BOS bulgusu verilmemiştir ve görüntüleme-iskelet bulguları enfeksiyondan çok travmatik yaralanma modelini oluşturur.",
+./src/data/cases.js:367423:        "explanation": "Bakteriyel menenjit ateş, irritabilite, ense bulguları, BOS inflamasyonu ve sistemik enfeksiyon verileriyle gündeme gelir. Bu çocukta ateş yoktur, BOS bulgusu verilmemiştir ve görüntüleme-iskelet bulguları enfeksiyondan çok travmatik yaralanma modelini oluşturur.",
+./src/data/cases.js:367435:      "Bakteriyel menenjite bağlı papil ödem ve sekonder bilinç değişikliği": "Bakteriyel menenjit ateş, irritabilite, ense bulguları, BOS inflamasyonu ve sistemik enfeksiyon verileriyle gündeme gelir. Bu çocukta ateş yoktur, BOS bulgusu verilmemiştir ve görüntüleme-iskelet bulguları enfeksiyondan çok travmatik yaralanma modelini oluşturur.",
+./src/data/cases.js:367463:      "Bakteriyel menenjite bağlı papil ödem ve sekonder bilinç değişikliği": "Bakteriyel menenjit ateş, irritabilite, ense bulguları, BOS inflamasyonu ve sistemik enfeksiyon verileriyle gündeme gelir. Bu çocukta ateş yoktur, BOS bulgusu verilmemiştir ve görüntüleme-iskelet bulguları enfeksiyondan çok travmatik yaralanma modelini oluşturur.",
+./src/data/cases.js:410363:          "explanation": "Porin kaybı ve AmpC aşırı üretimi karbapenem direncine katkı sağlayabilir, özellikle Enterobacter cloacae kompleksi gibi bakterilerde önemlidir. Fakat burada karbapenemaz immünokromatografisi ve moleküler hedef pozitifliği enzim üretimini doğrudan desteklediği için tek başına porin-AmpC modeli yeterli değildir."
+./src/data/cases.js:410382:            "explanation": "Porin kaybı ve AmpC aşırı üretimi karbapenem direncine katkı sağlayabilir, özellikle Enterobacter cloacae kompleksi gibi bakterilerde önemlidir. Fakat burada karbapenemaz immünokromatografisi ve moleküler hedef pozitifliği enzim üretimini doğrudan desteklediği için tek başına porin-AmpC modeli yeterli değildir."
+./src/data/cases.js:410398:      "Dış membran porin kaybı ve AmpC aşırı üretimi": "Porin kaybı ve AmpC aşırı üretimi karbapenem direncine katkı sağlayabilir, özellikle Enterobacter cloacae kompleksi gibi bakterilerde önemlidir. Fakat burada karbapenemaz immünokromatografisi ve moleküler hedef pozitifliği enzim üretimini doğrudan desteklediği için tek başına porin-AmpC modeli yeterli değildir.",
+./src/data/cases.js:410426:      "Dış membran porin kaybı ve AmpC aşırı üretimi": "Porin kaybı ve AmpC aşırı üretimi karbapenem direncine katkı sağlayabilir, özellikle Enterobacter cloacae kompleksi gibi bakterilerde önemlidir. Fakat burada karbapenemaz immünokromatografisi ve moleküler hedef pozitifliği enzim üretimini doğrudan desteklediği için tek başına porin-AmpC modeli yeterli değildir.",
+./src/data/cases.js:422693:        "Mismatch repair kaybıyla mikrosatellit instabilitesinin gelişmesi",
+./src/data/cases.js:422712:        "Mismatch repair kaybıyla mikrosatellit instabilitesinin gelişmesi": {
+./src/data/cases.js:422713:          "explanation": "Mismatch repair kaybı mikrosatellit instabiliteye yol açar ve Lynch sendromu ilişkili kolorektal/endometrial tümörlerde tipik bir mekanizmadır. Bu hastada endoservikal glandüler tümör veya endometrium kökenli süreç değil, transformasyon zonunda skuamöz epitel displazisi ve p16 blok pozitifliği vardır."
+./src/data/cases.js:422765:          "Mismatch repair kaybıyla mikrosatellit instabilitesinin gelişmesi": "Mismatch repair kaybı mikrosatellit instabiliteye yol açar ve Lynch sendromu ilişkili kolorektal/endometrial tümörlerde tipik bir mekanizmadır. Bu hastada endoservikal glandüler tümör veya endometrium kökenli süreç değil, transformasyon zonunda skuamöz epitel displazisi ve p16 blok pozitifliği vardır.",
+./src/data/cases.js:422776:          "Mismatch repair kaybıyla mikrosatellit instabilitesinin gelişmesi": {
+./src/data/cases.js:422777:            "explanation": "Mismatch repair kaybı mikrosatellit instabiliteye yol açar ve Lynch sendromu ilişkili kolorektal/endometrial tümörlerde tipik bir mekanizmadır. Bu hastada endoservikal glandüler tümör veya endometrium kökenli süreç değil, transformasyon zonunda skuamöz epitel displazisi ve p16 blok pozitifliği vardır."
+./src/data/cases.js:422788:          "Mismatch repair kaybıyla mikrosatellit instabilitesinin gelişmesi": "Mismatch repair kaybı mikrosatellit instabiliteye yol açar ve Lynch sendromu ilişkili kolorektal/endometrial tümörlerde tipik bir mekanizmadır. Bu hastada endoservikal glandüler tümör veya endometrium kökenli süreç değil, transformasyon zonunda skuamöz epitel displazisi ve p16 blok pozitifliği vardır.",
+./src/data/cases.js:422807:      "Mismatch repair kaybıyla mikrosatellit instabilitesinin gelişmesi": "Mismatch repair kaybı mikrosatellit instabiliteye yol açar ve Lynch sendromu ilişkili kolorektal/endometrial tümörlerde tipik bir mekanizmadır. Bu hastada endoservikal glandüler tümör veya endometrium kökenli süreç değil, transformasyon zonunda skuamöz epitel displazisi ve p16 blok pozitifliği vardır.",
+./src/data/cases.js:422835:      "Mismatch repair kaybıyla mikrosatellit instabilitesinin gelişmesi": "Mismatch repair kaybı mikrosatellit instabiliteye yol açar ve Lynch sendromu ilişkili kolorektal/endometrial tümörlerde tipik bir mekanizmadır. Bu hastada endoservikal glandüler tümör veya endometrium kökenli süreç değil, transformasyon zonunda skuamöz epitel displazisi ve p16 blok pozitifliği vardır.",
+./src/data/cases.js:432416:    "whyCorrect": "Doğru yanıt, akut nekrozdan ziyade tekrarlayan taş irritasyonu ve kronik duvar remodelingi üzerinden seçilir.",
+./src/data/cases.js:433431:        "Astımda hava yolu yeniden yapılanması": "Astımda bazal membran kalınlaşması, goblet hücre artışı, mukus tıkaçları ve bronşiyal düz kas hipertrofisi tipiktir. Buradaki kalıcı efor dispnesi, sigara öyküsü, üst lob merkezli parankimal yıkım ve alveoler septa kaybı astmatik hava yolu remodelingiyle açıklanamaz.",
+./src/data/cases.js:433441:          "Astımda hava yolu yeniden yapılanması": "Astımda bazal membran kalınlaşması, goblet hücre artışı, mukus tıkaçları ve bronşiyal düz kas hipertrofisi tipiktir. Buradaki kalıcı efor dispnesi, sigara öyküsü, üst lob merkezli parankimal yıkım ve alveoler septa kaybı astmatik hava yolu remodelingiyle açıklanamaz.",
+./src/data/cases.js:433454:      "Astımda hava yolu yeniden yapılanması": "Astımda bazal membran kalınlaşması, goblet hücre artışı, mukus tıkaçları ve bronşiyal düz kas hipertrofisi tipiktir. Buradaki kalıcı efor dispnesi, sigara öyküsü, üst lob merkezli parankimal yıkım ve alveoler septa kaybı astmatik hava yolu remodelingiyle açıklanamaz.",
+./src/data/cases.js:433467:      "Astımda hava yolu yeniden yapılanması": "Astımda bazal membran kalınlaşması, goblet hücre artışı, mukus tıkaçları ve bronşiyal düz kas hipertrofisi tipiktir. Buradaki kalıcı efor dispnesi, sigara öyküsü, üst lob merkezli parankimal yıkım ve alveoler septa kaybı astmatik hava yolu remodelingiyle açıklanamaz.",
+./src/data/cases.js:433885:    "clinicalFocus": "Kemik ağrısı ve izole alkalen fosfataz yüksekliğinde radyolojik-biyopsi paternini kemik remodelleme bozukluklarıyla ilişkilendirme.",
+./src/data/cases.js:433893:      "presentation": "Kemik ağrısı ve izole alkalen fosfataz yüksekliğinde radyolojik-biyopsi paternini kemik remodelleme bozukluklarıyla ilişkilendirme.",
+./src/data/cases.js:433995:        "summary": "Artmış ve düzensiz kemik remodelingiyle uyumlu mozaik lamellar yapı izlenir.",
+./src/data/cases.js:433996:        "clinicalMeaning": "Artmış ve düzensiz kemik remodelingiyle uyumlu mozaik lamellar yapı izlenir.",
+./src/data/cases.js:433999:          "summary": "Artmış ve düzensiz kemik remodelingiyle uyumlu mozaik lamellar yapı izlenir.",
+./src/data/cases.js:434000:          "interpretation": "Artmış ve düzensiz kemik remodelingiyle uyumlu mozaik lamellar yapı izlenir.",
+./src/data/cases.js:434014:    "answerTarget": "kemik remodelleme bozukluğunun patolojik tanısı",
+./src/data/cases.js:434033:        "Osteoblastik metastaz": "Osteoblastik metastaz özellikle prostat karsinomunda sklerotik kemik odaklarıyla görülür; PSA yüksekliği veya primer tümör bulgusu beklenebilir. Bu vakada yaygın kafatası büyümesi, izole ALP yüksekliği, normal kalsiyum-fosfor ve mozaik kemik yapısı metastatik tümörden çok metabolik kemik remodelingi lehinedir.",
+./src/data/cases.js:434036:        "Osteopetrozis": "Osteopetrozis osteoklast fonksiyon bozukluğuna bağlı yaygın kemik yoğunluğu artışı, daralmış medüller boşluklar ve çocuklukta kırık/kraniyal sinir basısı gibi bulgularla seyreder. Bu yaşlı hastada artmış kemik döngüsü, yüksek ALP ve mozaik remodelleme osteopetrozisten farklıdır."
+./src/data/cases.js:434043:          "Osteoblastik metastaz": "Osteoblastik metastaz özellikle prostat karsinomunda sklerotik kemik odaklarıyla görülür; PSA yüksekliği veya primer tümör bulgusu beklenebilir. Bu vakada yaygın kafatası büyümesi, izole ALP yüksekliği, normal kalsiyum-fosfor ve mozaik kemik yapısı metastatik tümörden çok metabolik kemik remodelingi lehinedir.",
+./src/data/cases.js:434046:          "Osteopetrozis": "Osteopetrozis osteoklast fonksiyon bozukluğuna bağlı yaygın kemik yoğunluğu artışı, daralmış medüller boşluklar ve çocuklukta kırık/kraniyal sinir basısı gibi bulgularla seyreder. Bu yaşlı hastada artmış kemik döngüsü, yüksek ALP ve mozaik remodelleme osteopetrozisten farklıdır."
+./src/data/cases.js:434056:      "Osteoblastik metastaz": "Osteoblastik metastaz özellikle prostat karsinomunda sklerotik kemik odaklarıyla görülür; PSA yüksekliği veya primer tümör bulgusu beklenebilir. Bu vakada yaygın kafatası büyümesi, izole ALP yüksekliği, normal kalsiyum-fosfor ve mozaik kemik yapısı metastatik tümörden çok metabolik kemik remodelingi lehinedir.",
+./src/data/cases.js:434059:      "Osteopetrozis": "Osteopetrozis osteoklast fonksiyon bozukluğuna bağlı yaygın kemik yoğunluğu artışı, daralmış medüller boşluklar ve çocuklukta kırık/kraniyal sinir basısı gibi bulgularla seyreder. Bu yaşlı hastada artmış kemik döngüsü, yüksek ALP ve mozaik remodelleme osteopetrozisten farklıdır."
+./src/data/cases.js:434064:      "Pamuksu sklerotik alanlar ve kaba trabekülasyon → karma remodelleme sürecinin görüntüleme yansımasıdır.",
+./src/data/cases.js:434068:      "Osteoblastik metastaz": "Osteoblastik metastaz özellikle prostat karsinomunda sklerotik kemik odaklarıyla görülür; PSA yüksekliği veya primer tümör bulgusu beklenebilir. Bu vakada yaygın kafatası büyümesi, izole ALP yüksekliği, normal kalsiyum-fosfor ve mozaik kemik yapısı metastatik tümörden çok metabolik kemik remodelingi lehinedir.",
+./src/data/cases.js:434071:      "Osteopetrozis": "Osteopetrozis osteoklast fonksiyon bozukluğuna bağlı yaygın kemik yoğunluğu artışı, daralmış medüller boşluklar ve çocuklukta kırık/kraniyal sinir basısı gibi bulgularla seyreder. Bu yaşlı hastada artmış kemik döngüsü, yüksek ALP ve mozaik remodelleme osteopetrozisten farklıdır."
+./src/data/cases.js:434077:      "Pamuksu sklerotik alanlar ve kaba trabekülasyon → karma remodelleme sürecinin görüntüleme yansımasıdır.",
+./src/data/cases.js:489276:              "Mismatch repair IHK",
+./src/data/cases.js:489294:              "Mismatch repair IHK",
+./src/data/cases.js:489313:            "Mismatch repair IHK",
+./src/data/cases.js:493577:  "answerTarget": "prompt_incision_and_drainage_with_selective_antibiotics",
+./src/data/cases.js:494194:  "questionType": "incidental_gallbladder_cancer_t2_completion_resection",
+./src/data/cases.js:494195:  "answerTarget": "completion_radical_cholecystectomy_liver_bed_resection_portal_lymphadenectomy",

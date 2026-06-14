@@ -61,7 +61,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "sourceTextExamples": [
       "src/data/aiBranchQuestionTemplates.js içinde 'ARA' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'ARA' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
+      "src/data/cases.js içinde 'ARA' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
       "sourceBatch": "v317-deep-high-yield-batch4",
@@ -72,7 +72,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/aiSyntheticFallbackTemplates.js",
+      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": [
@@ -137,7 +137,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "sourceTextExamples": [
       "src/data/aiBranchQuestionTemplates.js içinde 'ASO' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Penisilin' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
+      "src/data/cases.js içinde 'Penisilin' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
       "sourceBatch": "v317-deep-high-yield-batch4",
@@ -148,7 +148,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/aiSyntheticFallbackTemplates.js",
+      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -721,7 +721,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "Hemoptizi"
     ],
     "sourceTextExamples": [
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Goodpasture sendromu' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
+      "src/data/cases.js içinde 'Goodpasture sendromu' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
       "ır ve kanlı ishal sonrası trombotik mikroanjiyopatiyi açıklamaz.\",\"Shiga toksininin endoteli zedeleyerek trombotik mikroanjiyopati oluşturması\":\"Shiga toksininin endotel hasarı oluşturması, bu olgudaki şistositli hemoliz, trombositopeni ve akut böbrek hasarının temel mekanizmasıdır.\",\"Immün komplekslerin mezangiumda birikerek nefrit oluşturması\":\"İmmün kompleks birikimi glomerülonefritlerde önemlidir ancak bu..."
     ],
     "sourceCandidate": {
@@ -733,7 +733,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js, src/data/cases.js",
+      "sourceFilePath": "src/data/cases.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -934,7 +934,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "sourceTextExamples": [
       "src/data/aiBranchQuestionTemplates.js içinde 'ANCA' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'ANCA' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
+      "src/data/cases.js içinde 'ANCA' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
       "sourceBatch": "v317-deep-high-yield-batch4",
@@ -945,7 +945,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addAsSafeNestedTerm",
       "existingGlossaryStatus": "partialMatch",
-      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/aiSyntheticFallbackTemplates.js",
+      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -1009,7 +1009,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "sourceTextExamples": [
       "src/data/aiBranchQuestionTemplates.js içinde 'Proteinüri' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Nefrotik sendrom' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
+      "src/data/cases.js içinde 'Nefrotik sendrom' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
       "sourceBatch": "v317-deep-high-yield-batch4",
@@ -1020,7 +1020,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/aiSyntheticFallbackTemplates.js",
+      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -1079,7 +1079,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "Podosit hasarı"
     ],
     "sourceTextExamples": [
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Nefrotik sendrom' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
+      "src/data/cases.js içinde 'Nefrotik sendrom' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
       "ulmoner emboli tanı ve tedavi', 'DKA ve HHS ayrımı', 'Hiponatremi yaklaşımı',  'Hiperkalemi EKG ve tedavi', 'Addison krizi', 'Tiroid fırtınası', 'SLE aktivite takibi',  'Nefritik ve nefrotik sendrom ayrımı', 'Pnömoni ağırlık değerlendirmesi', 'Üst gastrointestinal kanama', 'Demir eksikliği ve kronik hastalık anemisi',  'Akut pankreatit şiddet bulguları', 'Siroz komplikasyonları', 'Primer hiperaldosteronizm',..."
     ],
     "sourceCandidate": {
@@ -1091,7 +1091,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addAsSafeNestedTerm",
       "existingGlossaryStatus": "partialMatch",
-      "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js, src/data/aiTopicPools.js",
+      "sourceFilePath": "src/data/cases.js, src/data/aiTopicPools.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -1529,7 +1529,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "sourceTextExamples": [
       "src/data/aiBranchQuestionTemplates.js içinde 'Hipertansiyon' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Hipertansiyon' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
+      "src/data/cases.js içinde 'Hipertansiyon' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
       "sourceBatch": "v317-deep-high-yield-batch4",
@@ -1540,7 +1540,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P0",
       "recommendation": "addAsSafeNestedTerm",
       "existingGlossaryStatus": "partialMatch",
-      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/aiSyntheticFallbackTemplates.js",
+      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 24,
       "droppedAliases": []
@@ -1899,7 +1899,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "T4"
     ],
     "sourceTextExamples": [
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Yenidoğan taraması' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
+      "src/data/cases.js içinde 'Yenidoğan taraması' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
       "src/data/cases.js içinde 'Konjenital hipotiroidide TSH yüksekliği' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
@@ -1911,7 +1911,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addAsSafeNestedTerm",
       "existingGlossaryStatus": "partialMatch",
-      "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js, src/data/cases.js",
+      "sourceFilePath": "src/data/cases.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -1970,7 +1970,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "TSH"
     ],
     "sourceTextExamples": [
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Nörogelişim' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
+      "src/data/cases.js içinde 'Nörogelişim' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
       "src/data/cases.js içinde 'Konjenital hipotiroidi' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
@@ -1982,7 +1982,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addAsSafeNestedTerm",
       "existingGlossaryStatus": "partialMatch",
-      "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js, src/data/cases.js",
+      "sourceFilePath": "src/data/cases.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -2040,7 +2040,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "Proksimal tübül"
     ],
     "sourceTextExamples": [
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Metabolik asidoz' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
+      "src/data/cases.js içinde 'Metabolik asidoz' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
       "Lesch-Nyhan sendromu', 'Hem sentezi ve porfiriler', 'Lipoprotein metabolizması',  'DNA tamir mekanizmaları', 'Kollajen sentezi ve skorbüt', 'Oksidatif fosforilasyon inhibitörleri', 'Metabolik asidoz biyokimyası',  ],  'medical-microbiology': [  'Stenotrophomonas maltophilia', 'Pseudomonas aeruginosa', 'Anaerop enfeksiyonlar', 'Hepatit serolojileri',  'HIV fırsatçı enfeksiyonları', 'Tüberküloz tanı testleri',..."
     ],
     "sourceCandidate": {
@@ -2052,7 +2052,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addAsSafeNestedTerm",
       "existingGlossaryStatus": "partialMatch",
-      "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js, src/data/aiTopicPools.js",
+      "sourceFilePath": "src/data/cases.js, src/data/aiTopicPools.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -2111,7 +2111,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "sourceTextExamples": [
       "src/data/aiBranchQuestionTemplates.js içinde 'Bikarbonat' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Metabolik asidoz' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
+      "src/data/cases.js içinde 'Metabolik asidoz' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
       "sourceBatch": "v317-deep-high-yield-batch4",
@@ -2122,7 +2122,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addAsSafeNestedTerm",
       "existingGlossaryStatus": "partialMatch",
-      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/aiSyntheticFallbackTemplates.js",
+      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -2182,7 +2182,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "sourceTextExamples": [
       "src/data/aiBranchQuestionTemplates.js içinde 'Bikarbonat' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Metabolik asidoz' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
+      "src/data/cases.js içinde 'Metabolik asidoz' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
       "sourceBatch": "v317-deep-high-yield-batch4",
@@ -2193,7 +2193,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/aiSyntheticFallbackTemplates.js",
+      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -2396,7 +2396,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "DKA"
     ],
     "sourceTextExamples": [
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'DKA' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
+      "src/data/cases.js içinde 'DKA' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
       "eptik gebelik riskleri', 'Antikoagülan antidotları', 'Kemoterapi toksisiteleri',  ],  'internal-medicine': [  'Akut koroner sendrom ilk yaklaşımı', 'Pulmoner emboli tanı ve tedavi', 'DKA ve HHS ayrımı', 'Hiponatremi yaklaşımı',  'Hiperkalemi EKG ve tedavi', 'Addison krizi', 'Tiroid fırtınası', 'SLE aktivite takibi',  'Nefritik ve nefrotik sendrom ayrımı', 'Pnömoni ağırlık değerlendirmesi', 'Üst gastrointestinal..."
     ],
     "sourceCandidate": {
@@ -2408,7 +2408,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addAsSafeNestedTerm",
       "existingGlossaryStatus": "partialMatch",
-      "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js, src/data/aiTopicPools.js",
+      "sourceFilePath": "src/data/cases.js, src/data/aiTopicPools.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -2466,8 +2466,8 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "DKA"
     ],
     "sourceTextExamples": [
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Metabolik asidoz' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Potasyum' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
+      "src/data/cases.js içinde 'Metabolik asidoz' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
+      "src/data/cases.js içinde 'Potasyum' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
       "sourceBatch": "v317-deep-high-yield-batch4",
@@ -2478,7 +2478,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addAsSafeNestedTerm",
       "existingGlossaryStatus": "partialMatch",
-      "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js",
+      "sourceFilePath": "src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -2537,7 +2537,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "Toksikoloji"
     ],
     "sourceTextExamples": [
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Toksikoloji' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
+      "src/data/cases.js içinde 'Toksikoloji' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
       "src/data/cases.js içinde 'solunumsal alkaloz yapar, ilerleyen dönemde metabolik asidoz' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
@@ -2549,7 +2549,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addAsSafeNestedTerm",
       "existingGlossaryStatus": "partialMatch",
-      "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js, src/data/cases.js",
+      "sourceFilePath": "src/data/cases.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -2607,7 +2607,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "Şelasyon"
     ],
     "sourceTextExamples": [
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Metabolik asidoz' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
+      "src/data/cases.js içinde 'Metabolik asidoz' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
       "Lesch-Nyhan sendromu', 'Hem sentezi ve porfiriler', 'Lipoprotein metabolizması',  'DNA tamir mekanizmaları', 'Kollajen sentezi ve skorbüt', 'Oksidatif fosforilasyon inhibitörleri', 'Metabolik asidoz biyokimyası',  ],  'medical-microbiology': [  'Stenotrophomonas maltophilia', 'Pseudomonas aeruginosa', 'Anaerop enfeksiyonlar', 'Hepatit serolojileri',  'HIV fırsatçı enfeksiyonları', 'Tüberküloz tanı testleri',..."
     ],
     "sourceCandidate": {
@@ -2619,7 +2619,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addAsSafeNestedTerm",
       "existingGlossaryStatus": "partialMatch",
-      "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js, src/data/aiTopicPools.js",
+      "sourceFilePath": "src/data/cases.js, src/data/aiTopicPools.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -2890,7 +2890,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "IgG"
     ],
     "sourceTextExamples": [
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'IgG' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
+      "src/data/cases.js içinde 'IgG' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
       "src/data/cases.js içinde 'Direkt Coombs testi' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
@@ -2902,7 +2902,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js, src/data/cases.js",
+      "sourceFilePath": "src/data/cases.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -2962,7 +2962,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "sourceTextExamples": [
       "src/data/aiBranchQuestionTemplates.js içinde 'Hemoliz' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Kompleman' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
+      "src/data/cases.js içinde 'Kompleman' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
       "sourceBatch": "v317-deep-high-yield-batch4",
@@ -2973,7 +2973,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/aiSyntheticFallbackTemplates.js",
+      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -3390,7 +3390,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "Koyu idrar"
     ],
     "sourceTextExamples": [
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Koyu idrar' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
+      "src/data/cases.js içinde 'Koyu idrar' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
       "la en uyumlu yanıttır.\",\"whyCorrect\":\"Oksidatif ilaç veya bakla maruziyeti sonrası gelişen akut hemoliz, koyu idrar, indirekt bilirubin yüksekliği, Heinz cisimcikleri ve ısırık hücreleri G6PD eksikliğini düşündürür. G6PD eksikliğinde pentoz fosfat yolundan NADPH üretimi azalır; indirgenmiş glutatyon yenilenemez ve eritrositler oksidatif hasara duyarlı hale gelir.\",\"rationale\":\"Oksidatif ilaç veya bakla maruziyeti..."
     ],
     "sourceCandidate": {
@@ -3402,7 +3402,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addAsSafeNestedTerm",
       "existingGlossaryStatus": "partialMatch",
-      "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js, src/data/cases.js",
+      "sourceFilePath": "src/data/cases.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -3744,7 +3744,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "Sepsis"
     ],
     "sourceTextExamples": [
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Sepsis' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
+      "src/data/cases.js içinde 'Sepsis' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
       "aklaşımı', 'Paraziter enfeksiyonlarda eozinofili', 'Candida ve Aspergillus ayrımı',  'Beta-laktamaz ve direnç mekanizmaları', 'Kuduz temas sonrası profilaksi', 'TORCH enfeksiyonları', 'Kan kültürü kontaminasyon ayrımı',  ],  'medical-pathology': [  'Koagülasyon ve likefaksiyon nekrozu ayrımı', 'Granülomatöz inflamasyon', 'Amiloidoz boyanma özellikleri', 'Displazi-karsinoma in situ ayrımı',  'Tümör süpresör genler',..."
     ],
     "sourceCandidate": {
@@ -3756,7 +3756,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P0",
       "recommendation": "addAsSafeNestedTerm",
       "existingGlossaryStatus": "partialMatch",
-      "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js, src/data/aiTopicPools.js",
+      "sourceFilePath": "src/data/cases.js, src/data/aiTopicPools.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 24,
       "droppedAliases": []
@@ -3815,7 +3815,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "sourceTextExamples": [
       "src/data/aiBranchQuestionTemplates.js içinde 'Menenjit' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Sepsis' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
+      "src/data/cases.js içinde 'Sepsis' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
       "sourceBatch": "v317-deep-high-yield-batch4",
@@ -3826,7 +3826,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/aiSyntheticFallbackTemplates.js",
+      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -4805,7 +4805,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "BPH"
     ],
     "sourceTextExamples": [
-      "src/components/AISpotQuestionScreen.jsx içinde 'BPH' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
+      "src/components/TusSpotQuestionScreen.jsx içinde 'BPH' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
       "src/data/tusGlossarySupplementalIndex.js içinde 'BPH' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
@@ -4817,7 +4817,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/components/AISpotQuestionScreen.jsx, src/data/tusGlossarySupplementalIndex.js",
+      "sourceFilePath": "src/components/TusSpotQuestionScreen.jsx, src/data/tusGlossarySupplementalIndex.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -4877,7 +4877,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "HbA1c"
     ],
     "sourceTextExamples": [
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Hiperglisemi' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
+      "src/data/cases.js içinde 'Hiperglisemi' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
       "senli seçenekler PCOS’un temel hiperandrojenizm mekanizmasını açıklamaz. PCOS’ta insülin direnci ve hiperinsülinemi over teka hücrelerinde androjen sentezini artırabilir ve karaciğerde SHBG üretimini azaltarak serbest androjen düzeyini yükseltebilir. LH baskınlığı da teka hücresi androjen üretimini destekler. TUS açısından ayırıcı nokta: PCOS’ta insülin direnci yalnız metabolik değil, hiperandrojenizmi artıran..."
     ],
     "sourceCandidate": {
@@ -4889,7 +4889,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js, src/data/cases.js",
+      "sourceFilePath": "src/data/cases.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": [
@@ -5022,7 +5022,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "Angina"
     ],
     "sourceTextExamples": [
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Koroner arter' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
+      "src/data/cases.js içinde 'Koroner arter' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
       "olojisi yorumu', 'Antidot seçimi',  ],  anatomy: [  'Brakiyal pleksus lezyonları', 'Karpal tünel anatomisi', 'Femoral kanal ve fıtık ayrımı', 'Kafa çiftleri klinik lokalizasyonu',  'Koroner arter dominansı', 'Pelvik taban innervasyonu', 'Safra yolları anatomisi', 'Mediasten komşulukları',  'Spinal kord traktları', 'Kan-beyin bariyeri anatomik temeli', 'İnguinal kanal sınırları', 'Orbita kas ve sinir ilişkileri',  ],..."
     ],
     "sourceCandidate": {
@@ -5034,7 +5034,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js, src/data/aiTopicPools.js",
+      "sourceFilePath": "src/data/cases.js, src/data/aiTopicPools.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -5167,7 +5167,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "sourceTextExamples": [
       "src/data/aiBranchQuestionTemplates.js içinde 'Nöbet' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Aritmi' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
+      "src/data/cases.js içinde 'Aritmi' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
       "sourceBatch": "v317-deep-high-yield-batch4",
@@ -5178,7 +5178,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/aiSyntheticFallbackTemplates.js",
+      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -5237,7 +5237,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "sourceTextExamples": [
       "src/data/aiBranchQuestionTemplates.js içinde 'Asit' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Asit' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
+      "src/data/cases.js içinde 'Asit' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
       "sourceBatch": "v317-deep-high-yield-batch4",
@@ -5248,7 +5248,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/aiSyntheticFallbackTemplates.js",
+      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -5731,7 +5731,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "sourceTextExamples": [
       "src/data/aiBranchQuestionTemplates.js içinde 'BOS' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'IgG' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
+      "src/data/cases.js içinde 'IgG' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
       "sourceBatch": "v317-deep-high-yield-batch4",
@@ -5742,7 +5742,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/aiSyntheticFallbackTemplates.js",
+      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -6084,7 +6084,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "β-hCG"
     ],
     "sourceTextExamples": [
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'β-hCG' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
+      "src/data/cases.js içinde 'β-hCG' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
       "src/data/cases.js içinde 'Trofoblastik hastalık' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
@@ -6096,7 +6096,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js, src/data/cases.js",
+      "sourceFilePath": "src/data/cases.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []
@@ -6155,7 +6155,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
     ],
     "sourceTextExamples": [
       "src/data/aiBranchQuestionTemplates.js içinde 'Asit' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi.",
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Asit' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
+      "src/data/cases.js içinde 'Asit' klinik metin, seçenek, feedback, pearl veya relatedTerms bağlamında geçiyor; JS/minified kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
       "sourceBatch": "v317-deep-high-yield-batch4",
@@ -6166,7 +6166,7 @@ export const TUS_GLOSSARY_V321_DEEP_HIGH_YIELD_BATCH4_TERMS = [
       "priority": "P1",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/aiSyntheticFallbackTemplates.js",
+      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/cases.js",
       "reasonForRecommendation": "Derin V317 taramasında exact glossary entry olarak bulunmadı; vaka/hap kart/glossary relatedTerms veya TUS karar cümlelerinde öğretici değeri olan klinik pattern veya kavram olarak saptandı.",
       "qualityScoreFromAudit": 21,
       "droppedAliases": []

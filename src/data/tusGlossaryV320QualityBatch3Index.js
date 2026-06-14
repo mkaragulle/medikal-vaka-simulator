@@ -547,7 +547,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "Seri β-hCG"
     ],
     "sourceTextExamples": [
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Seri β-hCG' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi.",
+      "src/data/cases.js içinde 'Seri β-hCG' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi.",
       "src/data/cases.js içinde 'Seri β-hCG' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
@@ -559,7 +559,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "priority": "P1",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js, src/data/cases.js",
+      "sourceFilePath": "src/data/cases.js, src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
       "qualityScoreFromAudit": 21
     }
@@ -617,7 +617,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "sourceTextExamples": [
       "src/data/aiQuestionSeeds.js içinde 'Rüptüre ektopik gebelik' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi.",
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Rüptüre ektopik gebelik' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi."
+      "src/data/cases.js içinde 'Rüptüre ektopik gebelik' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
       "sourceBatch": "v317-quality-preserved-batch3",
@@ -628,7 +628,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "priority": "P0",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiQuestionSeeds.js, src/data/aiSyntheticFallbackTemplates.js",
+      "sourceFilePath": "src/data/aiQuestionSeeds.js, src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
       "qualityScoreFromAudit": 24
     }
@@ -1242,7 +1242,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "sourceTextExamples": [
       "src/data/aiBranchQuestionTemplates.js içinde 'Yüksek V/Q ve alveoler ölü boşluk artışı' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi.",
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Yüksek V/Q ve alveoler ölü boşluk artışı' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi."
+      "src/data/cases.js içinde 'Yüksek V/Q ve alveoler ölü boşluk artışı' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
       "sourceBatch": "v317-quality-preserved-batch3",
@@ -1253,7 +1253,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "priority": "P1",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/aiSyntheticFallbackTemplates.js",
+      "sourceFilePath": "src/data/aiBranchQuestionTemplates.js, src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
       "qualityScoreFromAudit": 21
     }
@@ -3435,7 +3435,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "sourceTextExamples": [
       "src/data/aiQuestionSeeds.js içinde 'Opioid toksisitesi' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi.",
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Opioid toksisitesi' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi."
+      "src/data/cases.js içinde 'Opioid toksisitesi' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
       "sourceBatch": "v317-quality-preserved-batch3",
@@ -3446,7 +3446,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "priority": "P0",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiQuestionSeeds.js, src/data/aiSyntheticFallbackTemplates.js",
+      "sourceFilePath": "src/data/aiQuestionSeeds.js, src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
       "qualityScoreFromAudit": 24
     }
@@ -3993,7 +3993,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
     ],
     "sourceTextExamples": [
       "src/data/aiQuestionSeeds.js içinde 'Hiperamonyemi + yüksek idrar orotik asit' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi.",
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Hiperamonyemi + yüksek idrar orotik asit' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi."
+      "src/data/cases.js içinde 'Hiperamonyemi + yüksek idrar orotik asit' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
       "sourceBatch": "v317-quality-preserved-batch3",
@@ -4004,7 +4004,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "priority": "P0",
       "recommendation": "addNewEntry",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiQuestionSeeds.js, src/data/aiSyntheticFallbackTemplates.js",
+      "sourceFilePath": "src/data/aiQuestionSeeds.js, src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
       "qualityScoreFromAudit": 24
     }
@@ -4682,7 +4682,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "Aspirasyon"
     ],
     "sourceTextExamples": [
-      "src/data/aiSyntheticFallbackTemplates.js içinde 'Disfaji + halitozis + regürjitasyon' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi.",
+      "src/data/cases.js içinde 'Disfaji + halitozis + regürjitasyon' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi.",
       "src/data/cases.js içinde 'Disfaji + halitozis + regürjitasyon' klinik olgu, seçenek, açıklama, seed veya evidenceChain bağlamında geçiyor; minified/JS kaynak notu raporda sadeleştirildi."
     ],
     "sourceCandidate": {
@@ -4694,7 +4694,7 @@ export const TUS_GLOSSARY_V320_QUALITY_BATCH3_TERMS = [
       "priority": "P1",
       "recommendation": "addAsSafeNestedTerm",
       "existingGlossaryStatus": "missing",
-      "sourceFilePath": "src/data/aiSyntheticFallbackTemplates.js, src/data/cases.js",
+      "sourceFilePath": "src/data/cases.js, src/data/cases.js",
       "reasonForRecommendation": "Aktif glossary exact entry olarak yok; ancak V317 içindeki nested/related term havuzu veya eğitim metinleri içinde klinik karar, mekanizma, tetkik yorumu ya da ayırıcı tanı değeri taşıyor.",
       "qualityScoreFromAudit": 21
     }

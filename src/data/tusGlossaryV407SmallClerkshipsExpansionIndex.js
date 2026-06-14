@@ -635,7 +635,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-154",
+        "id": "tus-spot-vakasiz-secki-154",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "optionFeedback.Optik sinirde demiyelinizasyon ile retinal ganglion hücre kaybı",
@@ -719,7 +719,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-154",
+        "id": "tus-spot-vakasiz-secki-154",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "optionFeedback.Optik sinirde demiyelinizasyon ile retinal ganglion hücre kaybı",
@@ -803,7 +803,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-154",
+        "id": "tus-spot-vakasiz-secki-154",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "optionFeedback.Optik sinirde demiyelinizasyon ile retinal ganglion hücre kaybı",
@@ -1221,7 +1221,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-154",
+        "id": "tus-spot-vakasiz-secki-154",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "topic",
@@ -1229,7 +1229,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
       },
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-154",
+        "id": "tus-spot-vakasiz-secki-154",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "learningTarget",
@@ -1237,7 +1237,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
       },
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-154",
+        "id": "tus-spot-vakasiz-secki-154",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "chiefComplaint",
@@ -1387,7 +1387,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-154",
+        "id": "tus-spot-vakasiz-secki-154",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "topic",
@@ -1395,7 +1395,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
       },
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-154",
+        "id": "tus-spot-vakasiz-secki-154",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "learningTarget",
@@ -1403,7 +1403,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
       },
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-154",
+        "id": "tus-spot-vakasiz-secki-154",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "chiefComplaint",
@@ -1637,7 +1637,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-154",
+        "id": "tus-spot-vakasiz-secki-154",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "topic",
@@ -1645,7 +1645,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
       },
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-154",
+        "id": "tus-spot-vakasiz-secki-154",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "learningTarget",
@@ -1653,7 +1653,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
       },
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-154",
+        "id": "tus-spot-vakasiz-secki-154",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "chiefComplaint",
@@ -3224,7 +3224,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-155",
+        "id": "tus-spot-vakasiz-secki-155",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "options[3].text",
@@ -3232,7 +3232,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
       },
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-155",
+        "id": "tus-spot-vakasiz-secki-155",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "optionFeedback.Her iki hastalıkta da temel mekanizma dermatofit hifalarının epidermisi invaze etmesidir",
@@ -3307,7 +3307,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-155",
+        "id": "tus-spot-vakasiz-secki-155",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "options[3].text",
@@ -3315,7 +3315,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
       },
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-155",
+        "id": "tus-spot-vakasiz-secki-155",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "optionFeedback.Her iki hastalıkta da temel mekanizma dermatofit hifalarının epidermisi invaze etmesidir",
@@ -3391,7 +3391,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-155",
+        "id": "tus-spot-vakasiz-secki-155",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "options[3].text",
@@ -3399,7 +3399,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
       },
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-155",
+        "id": "tus-spot-vakasiz-secki-155",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "optionFeedback.Her iki hastalıkta da temel mekanizma dermatofit hifalarının epidermisi invaze etmesidir",
@@ -3474,7 +3474,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-168",
+        "id": "tus-spot-vakasiz-secki-168",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "chiefComplaint",
@@ -3482,7 +3482,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
       },
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-168",
+        "id": "tus-spot-vakasiz-secki-168",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "options[2].text",
@@ -3490,7 +3490,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
       },
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-168",
+        "id": "tus-spot-vakasiz-secki-168",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "coreKnowledge",
@@ -3557,7 +3557,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-168",
+        "id": "tus-spot-vakasiz-secki-168",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "chiefComplaint",
@@ -3565,7 +3565,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
       },
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-168",
+        "id": "tus-spot-vakasiz-secki-168",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "options[2].text",
@@ -3573,7 +3573,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
       },
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-168",
+        "id": "tus-spot-vakasiz-secki-168",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "coreKnowledge",
@@ -3640,7 +3640,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-168",
+        "id": "tus-spot-vakasiz-secki-168",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "chiefComplaint",
@@ -3648,7 +3648,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
       },
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-168",
+        "id": "tus-spot-vakasiz-secki-168",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "options[2].text",
@@ -3656,7 +3656,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
       },
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-168",
+        "id": "tus-spot-vakasiz-secki-168",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "coreKnowledge",
@@ -3723,7 +3723,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-168",
+        "id": "tus-spot-vakasiz-secki-168",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "chiefComplaint",
@@ -3731,7 +3731,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
       },
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-168",
+        "id": "tus-spot-vakasiz-secki-168",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "explanation",
@@ -3798,7 +3798,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-168",
+        "id": "tus-spot-vakasiz-secki-168",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "chiefComplaint",
@@ -3806,7 +3806,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
       },
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-168",
+        "id": "tus-spot-vakasiz-secki-168",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "options[2].text",
@@ -3814,7 +3814,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
       },
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-168",
+        "id": "tus-spot-vakasiz-secki-168",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "coreKnowledge",
@@ -7800,7 +7800,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-153",
+        "id": "tus-spot-vakasiz-secki-153",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "learningTarget",
@@ -7808,7 +7808,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
       },
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-153",
+        "id": "tus-spot-vakasiz-secki-153",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "chiefComplaint",
@@ -7816,7 +7816,7 @@ export const TUS_GLOSSARY_V407_SMALL_CLERKSHIPS_EXPANSION_TERMS = [
       },
       {
         "source": "case",
-        "id": "ai-spot-vakasiz-secki-153",
+        "id": "tus-spot-vakasiz-secki-153",
         "title": "",
         "branch": "Küçük Stajlar",
         "field": "options[0].text",

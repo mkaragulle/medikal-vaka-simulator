@@ -1,10 +1,10 @@
 import { Icon } from './ui.jsx';
 
-function isAIWrongAnswer(item) {
+function isTusGeneratorWrongAnswer(item) {
   return Boolean(
-    item?.sourceType === 'ai-generated-question'
+    item?.sourceType === 'legacy-generated-question'
       || item?.questionSnapshot
-      || String(item?.caseId || '').startsWith('ai-spot')
+      || String(item?.caseId || '').startsWith('tus-spot')
       || item?.branchId === 'tus-spot-olgular',
   );
 }
@@ -34,14 +34,14 @@ function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClea
       {hasItems ? (
         <div className="wrong-answers-list">
           {visibleItems.map((item) => {
-            const isAI = isAIWrongAnswer(item);
+            const isAI = isTusGeneratorWrongAnswer(item);
             const displayTitle = item.title || item.questionPreview || 'Kayıtlı yanlış soru';
             return (
-              <article className={`wrong-answer-card ${isAI ? 'is-ai-generated' : ''}`.trim()} key={item.caseId}>
+              <article className={`wrong-answer-card ${isAI ? 'is-legacy-generated' : ''}`.trim()} key={item.caseId}>
                 <div className="wrong-answer-main">
-                  <span className={`wrong-answer-branch ${isAI ? 'ai-generated' : ''}`.trim()}>
+                  <span className={`wrong-answer-branch ${isAI ? 'legacy-generated' : ''}`.trim()}>
                     {isAI ? <Icon name="Sparkles" size={13} /> : null}
-                    {item.branchName || (isAI ? 'AI üretim' : 'Klinik branş')}
+                    {item.branchName || (isAI ? 'TUS soru' : 'Klinik branş')}
                   </span>
                   <h3>{displayTitle}</h3>
                   {isAI && item.questionPreview && item.questionPreview !== displayTitle ? (
@@ -75,7 +75,7 @@ function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClea
           <span className="wrong-answers-empty-icon"><Icon name="CheckCircle" /></span>
           <div>
             <strong>Şimdilik temiz.</strong>
-            <p>Gömülü olgularda ve AI tarafından üretilen TUS sorularında yaptığın yanlışlar otomatik eklenir.</p>
+            <p>Gömülü olgularda ve TUS soru kayıtlarında yaptığın yanlışlar otomatik eklenir.</p>
             <button type="button" className="btn btn-secondary compact" onClick={() => onOpenPearlStudy?.({ filter: 'all', branchFilter: 'all' })}>
               <Icon name="LayeredCards" />
               <span>Hap kartlarla tekrar başlat</span>

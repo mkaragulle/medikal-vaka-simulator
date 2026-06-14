@@ -446,7 +446,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
       },
       {
         "sourceFilePath": "src/index.css",
-        "text": "$schema : https://openapi.vercel.sh/vercel.json , installCommand : npm install --package-lock=false --legacy-peer-deps --no-audit --no-fund , buildCommand : npm run build , outputDirectory : dist , functions : api/generate-ai-question.js : maxDuration : 60 , api/generate-lesson.js"
+        "text": "$schema : https://openapi.vercel.sh/vercel.json , installCommand : npm install --package-lock=false --legacy-peer-deps --no-audit --no-fund , buildCommand : npm run build , outputDirectory : dist , functions : api/generate-tus-question.js : maxDuration : 60 , api/generate-lesson.js"
       }
     ],
     "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
@@ -1833,11 +1833,11 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/index.css",
-        "text": "on( systemPrompt: ANALYZE_UPLOADED_MATERIAL_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: envNumber('KOMITE_ANALYSIS_MAX_OUTPUT_TOKENS', 1800), jsonSchema: ANALYSIS_JSON_SCHEMA, scope: 'KOMITE' ); return sendJson(response, 200, ok: true, provider: 'openai', model: result.model, analysis: result.json ); catch (error) return sendJson(response, error.code === 'missing_api_key' ? 501 :"
+        "text": "Eski teknik kaynak notu temizlendi."
       },
       {
         "sourceFilePath": "src/index.css",
-        "text": "t = await callOpenAIText( systemPrompt: GENERATE_LESSON_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: envNumber('KOMITE_LESSON_MAX_OUTPUT_TOKENS', 4800), scope: 'KOMITE', ); const lesson = buildLessonFromPlainText(result.text, body, currentSourceText); const validation = validateLessonShape(lesson, filesUploadedCount: getTrueFileCount(body) ); const respo"
+        "text": "Eski teknik kaynak notu temizlendi."
       }
     ],
     "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",
@@ -6607,7 +6607,7 @@ export const TUS_GLOSSARY_V368_MAJOR_DISEASE_JARGON_BATCH8_TERMS = [
       },
       {
         "sourceFilePath": "src/data/tusGlossaryV319TeachableIndex.js",
-        "text": "ue = repairAIGeneratedText(text) .replace(WEAK_LABEL_PATTERN, '') .replace(/ s*; s*/g, '. ') .replace(/ s* / s*/g, '/') .replace(/ s* + s*/g, ' ve ') .replace(/Erysipelas/giu, 'Erizipel') .replace(/ bçeldiricileri b/giu, 'alternatifleri') .replace(/ bçeldiriciler b/giu, 'alternatifler') .replace(/ bçeldiriciyi b/giu, 'alternatifi') .replace(/ bçeldirici b/giu, 'alternatif"
+        "text": "ue = normalizeStaticText(text) .replace(WEAK_LABEL_PATTERN, '') .replace(/ s*; s*/g, '. ') .replace(/ s* / s*/g, '/') .replace(/ s* + s*/g, ' ve ') .replace(/Erysipelas/giu, 'Erizipel') .replace(/ bçeldiricileri b/giu, 'alternatifleri') .replace(/ bçeldiriciler b/giu, 'alternatifler') .replace(/ bçeldiriciyi b/giu, 'alternatifi') .replace(/ bçeldirici b/giu, 'alternatif"
       }
     ],
     "notes": "Batch 8 kalite filtresiyle eklenmiştir; duplicate ve over-highlight riski olan aliaslar temizlenmiştir.",

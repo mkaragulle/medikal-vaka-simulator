@@ -55,11 +55,11 @@ export const TUS_GLOSSARY_V399_BIOCHEMISTRY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlMedicalBiochemistryFirst74Overrides.js",
-        "text": "[Medical Biochemistry Case ai-spot-vakasiz-secki-104] explanation: Doğru cevap A’dır. G6PD eksikliğinde pentoz fosfat yolundan yeterli NADPH üretilemez. NADPH, okside glutatyonun tekrar indirgenmiş glutatyona çevrilmesi için gereklidir; indirgenmiş glutatyon ise peroksitleri ve reaktif oksijen türlerini detoksifiye eder. Eritrositlerde mitokondri olmadığı için alternatif antioksidan kapasite sınırlıdır. Oksidatif ilaçlar, enfeksiyonlar veya bakla gibi tetikleyiciler hemoglobin denatürasyonuna, heinz cisim…"
+        "text": "[Medical Biochemistry Case tus-spot-vakasiz-secki-104] explanation: Doğru cevap A’dır. G6PD eksikliğinde pentoz fosfat yolundan yeterli NADPH üretilemez. NADPH, okside glutatyonun tekrar indirgenmiş glutatyona çevrilmesi için gereklidir; indirgenmiş glutatyon ise peroksitleri ve reaktif oksijen türlerini detoksifiye eder. Eritrositlerde mitokondri olmadığı için alternatif antioksidan kapasite sınırlıdır. Oksidatif ilaçlar, enfeksiyonlar veya bakla gibi tetikleyiciler hemoglobin denatürasyonuna, heinz cisim…"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlMedicalBiochemistryFirst74Overrides.js",
-        "text": "[Medical Biochemistry Case ai-spot-vakasiz-secki-104] optionFeedback.Hemoglobinin beta zincir sentezinin tamamen durması: Yanlıştır. Beta globin zincir sentezinin azalması beta talasemi ile ilişkilidir. G6PD eksikliği globin sentez kusuru değil, antioksidan savunma kusurudur."
+        "text": "[Medical Biochemistry Case tus-spot-vakasiz-secki-104] optionFeedback.Hemoglobinin beta zincir sentezinin tamamen durması: Yanlıştır. Beta globin zincir sentezinin azalması beta talasemi ile ilişkilidir. G6PD eksikliği globin sentez kusuru değil, antioksidan savunma kusurudur."
       }
     ],
     "matchingPriority": 98,
@@ -616,7 +616,7 @@ export const TUS_GLOSSARY_V399_BIOCHEMISTRY_EXPANSION_TERMS = [
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlMedicalBiochemistryFirst74Overrides.js",
-        "text": "[Medical Biochemistry Case ai-spot-vakasiz-secki-071] options[1].text: Fosfofruktokinaz-1 aktivasyonu ve fruktoz-1,6-bisfosfataz inhibisyonu"
+        "text": "[Medical Biochemistry Case tus-spot-vakasiz-secki-071] options[1].text: Fosfofruktokinaz-1 aktivasyonu ve fruktoz-1,6-bisfosfataz inhibisyonu"
       }
     ],
     "matchingPriority": 98,
@@ -1302,11 +1302,11 @@ export const TUS_GLOSSARY_V399_BIOCHEMISTRY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlMedicalBiochemistryFirst74Overrides.js",
-        "text": "[Medical Biochemistry Case ai-spot-vakasiz-secki-083] explanation: Doğru cevap C’dir. Hem OTC eksikliği hem de CPS1 eksikliği hiperamonyemiye yol açabilir; bu nedenle amonyak artışı ayırıcı değildir. OTC eksikliğinde karbamoil fosfat üretimi devam eder ancak ornitinle sitrülin oluşturma basamağı aksar. Biriken karbamoil fosfat sitozolik pirimidin sentezine kaçar ve orotik asit artışına neden olur. CPS1 eksikliğinde ise karbamoil fosfat sentezinin ilk basamağı bozuk olduğu için bu substrat birikimi ve beli…"
+        "text": "[Medical Biochemistry Case tus-spot-vakasiz-secki-083] explanation: Doğru cevap C’dir. Hem OTC eksikliği hem de CPS1 eksikliği hiperamonyemiye yol açabilir; bu nedenle amonyak artışı ayırıcı değildir. OTC eksikliğinde karbamoil fosfat üretimi devam eder ancak ornitinle sitrülin oluşturma basamağı aksar. Biriken karbamoil fosfat sitozolik pirimidin sentezine kaçar ve orotik asit artışına neden olur. CPS1 eksikliğinde ise karbamoil fosfat sentezinin ilk basamağı bozuk olduğu için bu substrat birikimi ve beli…"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlMedicalBiochemistryFirst74Overrides.js",
-        "text": "[Medical Biochemistry Case ai-spot-vakasiz-secki-083] evidenceChain[2].text: Hiperamonyemi + orotik asit artışı OTC eksikliğini düşündürür; hiperamonyemi var ama orotik asit artmıyorsa CPS1 veya NAGS eksikliği akla gelmelidir."
+        "text": "[Medical Biochemistry Case tus-spot-vakasiz-secki-083] evidenceChain[2].text: Hiperamonyemi + orotik asit artışı OTC eksikliğini düşündürür; hiperamonyemi var ama orotik asit artmıyorsa CPS1 veya NAGS eksikliği akla gelmelidir."
       }
     ],
     "matchingPriority": 98,
@@ -2274,11 +2274,11 @@ export const TUS_GLOSSARY_V399_BIOCHEMISTRY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlMedicalBiochemistryFirst74Overrides.js",
-        "text": "[Medical Biochemistry Case ai-spot-vakasiz-secki-063-piruvat-dehidrogenaz-kofaktorleri] listTitle: Piruvat dehidrogenaz kofaktörleri"
+        "text": "[Medical Biochemistry Case tus-spot-vakasiz-secki-063-piruvat-dehidrogenaz-kofaktorleri] listTitle: Piruvat dehidrogenaz kofaktörleri"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlMedicalBiochemistryFirst74Overrides.js",
-        "text": "[Medical Biochemistry Case ai-spot-vakasiz-secki-063-piruvat-dehidrogenaz-kofaktorleri] cardTitle: Piruvat dehidrogenaz kofaktörleri"
+        "text": "[Medical Biochemistry Case tus-spot-vakasiz-secki-063-piruvat-dehidrogenaz-kofaktorleri] cardTitle: Piruvat dehidrogenaz kofaktörleri"
       }
     ],
     "matchingPriority": 98,
@@ -2484,11 +2484,11 @@ export const TUS_GLOSSARY_V399_BIOCHEMISTRY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlMedicalBiochemistryFirst74Overrides.js",
-        "text": "[Medical Biochemistry Case ai-spot-vakasiz-secki-193] options[0].text: Porfobilinojen deaminaz eksikliğiyle ALA ve porfobilinojen birikmesi"
+        "text": "[Medical Biochemistry Case tus-spot-vakasiz-secki-193] options[0].text: Porfobilinojen deaminaz eksikliğiyle ALA ve porfobilinojen birikmesi"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlMedicalBiochemistryFirst74Overrides.js",
-        "text": "[Medical Biochemistry Case ai-spot-vakasiz-secki-193] correctOptionText: Porfobilinojen deaminaz eksikliğiyle ALA ve porfobilinojen birikmesi"
+        "text": "[Medical Biochemistry Case tus-spot-vakasiz-secki-193] correctOptionText: Porfobilinojen deaminaz eksikliğiyle ALA ve porfobilinojen birikmesi"
       }
     ],
     "matchingPriority": 98,
@@ -2554,11 +2554,11 @@ export const TUS_GLOSSARY_V399_BIOCHEMISTRY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlMedicalBiochemistryFirst74Overrides.js",
-        "text": "[Medical Biochemistry Case ai-spot-vakasiz-secki-193] options[0].text: Porfobilinojen deaminaz eksikliğiyle ALA ve porfobilinojen birikmesi"
+        "text": "[Medical Biochemistry Case tus-spot-vakasiz-secki-193] options[0].text: Porfobilinojen deaminaz eksikliğiyle ALA ve porfobilinojen birikmesi"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlMedicalBiochemistryFirst74Overrides.js",
-        "text": "[Medical Biochemistry Case ai-spot-vakasiz-secki-193] correctOptionText: Porfobilinojen deaminaz eksikliğiyle ALA ve porfobilinojen birikmesi"
+        "text": "[Medical Biochemistry Case tus-spot-vakasiz-secki-193] correctOptionText: Porfobilinojen deaminaz eksikliğiyle ALA ve porfobilinojen birikmesi"
       }
     ],
     "matchingPriority": 98,
@@ -3034,11 +3034,11 @@ export const TUS_GLOSSARY_V399_BIOCHEMISTRY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlMedicalBiochemistryFirst74Overrides.js",
-        "text": "[Medical Biochemistry Case ai-spot-vakasiz-secki-193] options[3].text: Üroporfirinojen dekarboksilaz eksikliğiyle yalnız fotosensitivite gelişmesi"
+        "text": "[Medical Biochemistry Case tus-spot-vakasiz-secki-193] options[3].text: Üroporfirinojen dekarboksilaz eksikliğiyle yalnız fotosensitivite gelişmesi"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlMedicalBiochemistryFirst74Overrides.js",
-        "text": "[Medical Biochemistry Case ai-spot-vakasiz-secki-193] optionFeedback.Üroporfirinojen dekarboksilaz eksikliğiyle yalnız fotosensitivite gelişmesi: Yanlıştır. Üroporfirinojen dekarboksilaz eksikliği porfiria cutanea tarda ile ilişkilidir ve fotosensitivite ön plandadır. Akut intermittan porfirinin nörovisseral mekanizması değildir."
+        "text": "[Medical Biochemistry Case tus-spot-vakasiz-secki-193] optionFeedback.Üroporfirinojen dekarboksilaz eksikliğiyle yalnız fotosensitivite gelişmesi: Yanlıştır. Üroporfirinojen dekarboksilaz eksikliği porfiria cutanea tarda ile ilişkilidir ve fotosensitivite ön plandadır. Akut intermittan porfirinin nörovisseral mekanizması değildir."
       }
     ],
     "matchingPriority": 98,
@@ -4552,7 +4552,7 @@ export const TUS_GLOSSARY_V399_BIOCHEMISTRY_EXPANSION_TERMS = [
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlMedicalBiochemistryFirst74Overrides.js",
-        "text": "[Medical Biochemistry Case ai-spot-vakasiz-secki-071] options[1].text: Fosfofruktokinaz-1 aktivasyonu ve fruktoz-1,6-bisfosfataz inhibisyonu"
+        "text": "[Medical Biochemistry Case tus-spot-vakasiz-secki-071] options[1].text: Fosfofruktokinaz-1 aktivasyonu ve fruktoz-1,6-bisfosfataz inhibisyonu"
       }
     ],
     "matchingPriority": 92,
@@ -7419,11 +7419,11 @@ export const TUS_GLOSSARY_V399_BIOCHEMISTRY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlMedicalBiochemistryFirst74Overrides.js",
-        "text": "[Medical Biochemistry Case ai-spot-vakasiz-secki-083] explanation: Doğru cevap C’dir. Hem OTC eksikliği hem de CPS1 eksikliği hiperamonyemiye yol açabilir; bu nedenle amonyak artışı ayırıcı değildir. OTC eksikliğinde karbamoil fosfat üretimi devam eder ancak ornitinle sitrülin oluşturma basamağı aksar. Biriken karbamoil fosfat sitozolik pirimidin sentezine kaçar ve orotik asit artışına neden olur. CPS1 eksikliğinde ise karbamoil fosfat sentezinin ilk basamağı bozuk olduğu için bu substrat birikimi ve beli…"
+        "text": "[Medical Biochemistry Case tus-spot-vakasiz-secki-083] explanation: Doğru cevap C’dir. Hem OTC eksikliği hem de CPS1 eksikliği hiperamonyemiye yol açabilir; bu nedenle amonyak artışı ayırıcı değildir. OTC eksikliğinde karbamoil fosfat üretimi devam eder ancak ornitinle sitrülin oluşturma basamağı aksar. Biriken karbamoil fosfat sitozolik pirimidin sentezine kaçar ve orotik asit artışına neden olur. CPS1 eksikliğinde ise karbamoil fosfat sentezinin ilk basamağı bozuk olduğu için bu substrat birikimi ve beli…"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlMedicalBiochemistryFirst74Overrides.js",
-        "text": "[Medical Biochemistry Case ai-spot-vakasiz-secki-083] diagnosis.explanation: Doğru cevap C’dir. Hem OTC eksikliği hem de CPS1 eksikliği hiperamonyemiye yol açabilir; bu nedenle amonyak artışı ayırıcı değildir. OTC eksikliğinde karbamoil fosfat üretimi devam eder ancak ornitinle sitrülin oluşturma basamağı aksar. Biriken karbamoil fosfat sitozolik pirimidin sentezine kaçar ve orotik asit artışına neden olur. CPS1 eksikliğinde ise karbamoil fosfat sentezinin ilk basamağı bozuk olduğu için bu substrat biriki…"
+        "text": "[Medical Biochemistry Case tus-spot-vakasiz-secki-083] diagnosis.explanation: Doğru cevap C’dir. Hem OTC eksikliği hem de CPS1 eksikliği hiperamonyemiye yol açabilir; bu nedenle amonyak artışı ayırıcı değildir. OTC eksikliğinde karbamoil fosfat üretimi devam eder ancak ornitinle sitrülin oluşturma basamağı aksar. Biriken karbamoil fosfat sitozolik pirimidin sentezine kaçar ve orotik asit artışına neden olur. CPS1 eksikliğinde ise karbamoil fosfat sentezinin ilk basamağı bozuk olduğu için bu substrat biriki…"
       }
     ],
     "matchingPriority": 78,

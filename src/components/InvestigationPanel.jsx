@@ -75,9 +75,9 @@ function groupOrdersByCategory(orders = []) {
     const bf = flowOrderForGroup(b);
     if (af !== null || bf !== null) return (af ?? 9999) - (bf ?? 9999);
 
-    const ai = CATEGORY_ORDER.indexOf(a.id);
-    const bi = CATEGORY_ORDER.indexOf(b.id);
-    return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+    const leftIndex = CATEGORY_ORDER.indexOf(a.id);
+    const rightIndex = CATEGORY_ORDER.indexOf(b.id);
+    return (leftIndex === -1 ? 99 : leftIndex) - (rightIndex === -1 ? 99 : rightIndex);
   });
 }
 

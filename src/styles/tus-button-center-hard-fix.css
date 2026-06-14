@@ -1,0 +1,142 @@
+/* =========================================================
+   KlinikIQ V390 — TUS action button hard center lock
+   Purpose: force the icon + label content of the TUS answer
+   buttons and generation CTAs to sit in the exact visual center.
+   This file is imported last from App.jsx so earlier grid/flex rules
+   cannot pull the content left/right or up/down.
+   ========================================================= */
+
+.tus-spot-answer-flow .diagnostic-decision-panel .quiz-actions .btn.answer-evaluate-btn,
+.tus-spot-answer-flow .diagnostic-decision-panel .quiz-actions .btn.answer-next-case-btn,
+.tus-practice-actions-pro .btn.tus-spot-generate-btn,
+.tus-practice-actions-pro .btn.tus-generate-cta,
+.tus-generation-ready .btn.tus-ready-cta {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  place-items: center !important;
+  place-content: center !important;
+  grid-template-columns: none !important;
+  grid-auto-flow: row !important;
+  grid-auto-columns: auto !important;
+  column-gap: 0 !important;
+  row-gap: 0 !important;
+  gap: 0 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+  line-height: 1 !important;
+  vertical-align: middle !important;
+}
+
+.tus-spot-answer-flow .diagnostic-decision-panel .quiz-actions .btn.answer-evaluate-btn,
+.tus-spot-answer-flow .diagnostic-decision-panel .quiz-actions .btn.answer-next-case-btn {
+  min-height: 56px !important;
+  height: 56px !important;
+  padding: 0 18px !important;
+}
+
+.tus-practice-actions-pro .btn.tus-spot-generate-btn,
+.tus-practice-actions-pro .btn.tus-generate-cta,
+.tus-generation-ready .btn.tus-ready-cta {
+  min-height: 54px !important;
+  height: 54px !important;
+  padding: 0 18px !important;
+}
+
+.tus-spot-answer-flow .diagnostic-decision-panel .quiz-actions .btn.answer-evaluate-btn > .quiz-action-btn-inner,
+.tus-spot-answer-flow .diagnostic-decision-panel .quiz-actions .btn.answer-next-case-btn > .quiz-action-btn-inner,
+.tus-practice-actions-pro .btn.tus-spot-generate-btn > .tus-button-content-center,
+.tus-practice-actions-pro .btn.tus-generate-cta > .tus-button-content-center,
+.tus-generation-ready .btn.tus-ready-cta > .tus-button-content-center {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  place-items: center !important;
+  place-content: center !important;
+  gap: 9px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  transform: none !important;
+  pointer-events: none !important;
+}
+
+.tus-spot-answer-flow .diagnostic-decision-panel .quiz-actions .btn.answer-evaluate-btn > .quiz-action-btn-inner > svg,
+.tus-spot-answer-flow .diagnostic-decision-panel .quiz-actions .btn.answer-next-case-btn > .quiz-action-btn-inner > svg,
+.tus-practice-actions-pro .btn.tus-spot-generate-btn > .tus-button-content-center > svg,
+.tus-practice-actions-pro .btn.tus-generate-cta > .tus-button-content-center > svg,
+.tus-generation-ready .btn.tus-ready-cta > .tus-button-content-center > svg {
+  display: block !important;
+  width: 18px !important;
+  height: 18px !important;
+  min-width: 18px !important;
+  flex: 0 0 18px !important;
+  align-self: center !important;
+  justify-self: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  transform: none !important;
+  vertical-align: middle !important;
+}
+
+.tus-spot-answer-flow .diagnostic-decision-panel .quiz-actions .btn.answer-evaluate-btn > .quiz-action-btn-inner > span,
+.tus-spot-answer-flow .diagnostic-decision-panel .quiz-actions .btn.answer-next-case-btn > .quiz-action-btn-inner > span,
+.tus-practice-actions-pro .btn.tus-spot-generate-btn > .tus-button-content-center > span,
+.tus-practice-actions-pro .btn.tus-generate-cta > .tus-button-content-center > span,
+.tus-generation-ready .btn.tus-ready-cta > .tus-button-content-center > span {
+  display: block !important;
+  align-self: center !important;
+  justify-self: center !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: center !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  transform: none !important;
+  vertical-align: middle !important;
+}
+
+/* Fallback for older/direct button markup without the inner wrapper. */
+.tus-spot-answer-flow .diagnostic-decision-panel .quiz-actions .btn.answer-evaluate-btn > svg,
+.tus-spot-answer-flow .diagnostic-decision-panel .quiz-actions .btn.answer-next-case-btn > svg,
+.tus-practice-actions-pro .btn.tus-spot-generate-btn > svg,
+.tus-practice-actions-pro .btn.tus-generate-cta > svg,
+.tus-generation-ready .btn.tus-ready-cta > svg {
+  display: block !important;
+  width: 18px !important;
+  height: 18px !important;
+  flex: 0 0 18px !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+@media (max-width: 520px) {
+  .tus-spot-answer-flow .diagnostic-decision-panel .quiz-actions .btn.answer-evaluate-btn,
+  .tus-spot-answer-flow .diagnostic-decision-panel .quiz-actions .btn.answer-next-case-btn,
+  .tus-practice-actions-pro .btn.tus-spot-generate-btn,
+  .tus-practice-actions-pro .btn.tus-generate-cta,
+  .tus-generation-ready .btn.tus-ready-cta {
+    height: auto !important;
+    min-height: 54px !important;
+  }
+
+  .tus-spot-answer-flow .diagnostic-decision-panel .quiz-actions .btn.answer-evaluate-btn > .quiz-action-btn-inner,
+  .tus-spot-answer-flow .diagnostic-decision-panel .quiz-actions .btn.answer-next-case-btn > .quiz-action-btn-inner,
+  .tus-practice-actions-pro .btn.tus-spot-generate-btn > .tus-button-content-center,
+  .tus-practice-actions-pro .btn.tus-generate-cta > .tus-button-content-center,
+  .tus-generation-ready .btn.tus-ready-cta > .tus-button-content-center {
+    white-space: normal !important;
+    line-height: 1.15 !important;
+  }
+}

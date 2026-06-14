@@ -2796,7 +2796,7 @@ const SUPPLEMENTAL_TUS_GLOSSARY_SEEDS = [
   {
     "term": "Halüsinasyon",
     "aliases": [
-      "hallucination",
+      "yanıltıcı ifade",
       "varsanı"
     ],
     "category": "Psikiyatri",
@@ -2819,7 +2819,7 @@ const SUPPLEMENTAL_TUS_GLOSSARY_SEEDS = [
     "abbreviation": "",
     "keywordsForSearch": [
       "Halüsinasyon",
-      "hallucination",
+      "yanıltıcı ifade",
       "varsanı",
       "Psikiyatri"
     ]

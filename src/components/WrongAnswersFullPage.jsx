@@ -1,11 +1,11 @@
 import { memo, useMemo, useState } from 'react';
 import { Icon } from './ui.jsx';
 
-function isAIWrongAnswer(item) {
+function isTusGeneratorWrongAnswer(item) {
   return Boolean(
-    item?.sourceType === 'ai-generated-question'
+    item?.sourceType === 'legacy-generated-question'
       || item?.questionSnapshot
-      || String(item?.caseId || '').startsWith('ai-spot')
+      || String(item?.caseId || '').startsWith('tus-spot')
       || item?.branchId === 'tus-spot-olgular',
   );
 }
@@ -74,15 +74,15 @@ function WrongAnswersFullPage({ wrongAnswers = [], onBack, onOpenCase, onRemoveC
       <section className="wrong-full-list card-surface" aria-label="Yanlış olgu listesi">
         {filteredWrongAnswers.length ? (
           filteredWrongAnswers.map((item) => {
-            const isAI = isAIWrongAnswer(item);
+            const isAI = isTusGeneratorWrongAnswer(item);
             const displayTitle = item.title || item.questionPreview || 'Kayıtlı yanlış soru';
             const wrongDate = formatWrongDate(item.lastWrongAt || item.createdAt);
             return (
-              <article className={`wrong-full-card ${isAI ? 'is-ai-generated' : ''}`.trim()} key={item.caseId}>
+              <article className={`wrong-full-card ${isAI ? 'is-legacy-generated' : ''}`.trim()} key={item.caseId}>
                 <div className="wrong-full-card-main">
-                  <span className={`wrong-answer-branch ${isAI ? 'ai-generated' : ''}`.trim()}>
+                  <span className={`wrong-answer-branch ${isAI ? 'legacy-generated' : ''}`.trim()}>
                     {isAI ? <Icon name="Sparkles" size={13} /> : null}
-                    {item.branchName || (isAI ? 'AI üretim' : 'Klinik branş')}
+                    {item.branchName || (isAI ? 'TUS soru' : 'Klinik branş')}
                   </span>
                   <h2>{displayTitle}</h2>
                   {item.questionPreview && item.questionPreview !== displayTitle ? <p>{item.questionPreview}</p> : null}

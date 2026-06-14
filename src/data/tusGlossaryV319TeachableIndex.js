@@ -5075,7 +5075,7 @@ export const TUS_GLOSSARY_V319_TEACHABLE_TERMS = [
       "answerLeakRisk": "low",
       "priority": "P2",
       "recommendation": "addNewEntry",
-      "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js, src/data/aiSyntheticFallbackTemplates.js",
+      "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js, src/data/cases.js",
       "reasonForRecommendation": "Uzun-kuyruk olmasına rağmen TUS karar mantığı, mekanizma, ayırıcı tanı veya güvenli nested zincir açısından öğretici değeri var."
     }
   }

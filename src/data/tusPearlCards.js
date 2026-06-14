@@ -8726,7 +8726,7 @@ function isPearlCardQualityApproved(card = {}) {
 
 
 // V233 — Full high-yield rewrite for 1000 Hap Bilgi cards.
-// Goal: remove vague/meta prompts and make every card concrete, clinical/mechanistic and exam-oriented.
+// Goal: remove vague/meta wording and make every card concrete, clinical/mechanistic and exam-oriented.
 // Only text fields are overridden; ID, branch metadata, topic, card type and order remain generated from the original schema.
 const TUS_PEARL_REVISED_TEXT_OVERRIDES = Object.freeze({
   "tus-pearl-anatomy-001-spot": {
@@ -18149,112 +18149,4 @@ export const TUS_PEARL_CARD_STATS = Object.freeze({
     acc[card.branchId] = (acc[card.branchId] || 0) + 1;
     return acc;
   }, {}),
-});
-
-function normalizeOption(value = '') {
-  return String(value || '').replace(/\s+/g, ' ').trim();
-}
-
-function normalizeOptionKey(value = '') {
-  return normalizeOption(value)
-    .toLocaleLowerCase('tr')
-    .replace(/intravenöz|intravenoz/giu, 'iv')
-    .replace(/(^|\s)[ıi]v(?=\s|$)/giu, '$1iv')
-    .replace(/adrenalin|epinefrin/giu, 'adrenalin')
-    .replace(/insülin|insulin/giu, 'insulin')
-    .replace(/glukoz|dekstroz|glucose/giu, 'glukoz')
-    .replace(/k\+|k⁺/giu, 'potasyum')
-    .replace(/[.;:!?()]/g, '')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-function uniqueOptionsBySemanticKey(items = [], forbiddenKey = '') {
-  const seen = new Set([forbiddenKey].filter(Boolean));
-  const out = [];
-  items.forEach((item) => {
-    const text = normalizeOption(item);
-    const key = normalizeOptionKey(text);
-    if (!text || !key || seen.has(key)) return;
-    seen.add(key);
-    out.push(text);
-  });
-  return out;
-}
-
-function uniqueOptionEntriesBySemanticKey(entries = [], forbiddenKey = '') {
-  const seen = new Set([forbiddenKey].filter(Boolean));
-  const out = [];
-  entries.forEach((entry) => {
-    if (!entry?.text || !entry.key || seen.has(entry.key)) return;
-    seen.add(entry.key);
-    out.push(entry);
-  });
-  return out;
-}
-
-const TUS_PEARL_OPTION_ENTRIES = TUS_PEARL_CARDS.map((card) => {
-  const text = normalizeOption(card.back);
-  return { branchId: card.branchId, text, key: normalizeOptionKey(text) };
-}).filter((entry) => entry.text && entry.key);
-
-const TUS_PEARL_BRANCH_OPTION_ENTRIES = TUS_PEARL_OPTION_ENTRIES.reduce((acc, entry) => {
-  if (!acc.has(entry.branchId)) acc.set(entry.branchId, []);
-  acc.get(entry.branchId).push(entry);
-  return acc;
-}, new Map());
-
-const TUS_PEARL_OTHER_BRANCH_OPTION_CACHE = new Map();
-
-function getOtherBranchOptionEntries(branchId) {
-  if (TUS_PEARL_OTHER_BRANCH_OPTION_CACHE.has(branchId)) return TUS_PEARL_OTHER_BRANCH_OPTION_CACHE.get(branchId);
-  const entries = TUS_PEARL_OPTION_ENTRIES.filter((entry) => entry.branchId !== branchId);
-  TUS_PEARL_OTHER_BRANCH_OPTION_CACHE.set(branchId, entries);
-  return entries;
-}
-
-function buildDistractors(card, index) {
-  const correctKey = normalizeOptionKey(card.back);
-  const sameBranch = TUS_PEARL_BRANCH_OPTION_ENTRIES.get(card.branchId) || [];
-  const global = getOtherBranchOptionEntries(card.branchId);
-  const pool = uniqueOptionEntriesBySemanticKey([...sameBranch, ...global], correctKey);
-  if (!pool.length) return ['Yakın ama eksik seçenek', 'Farklı mekanizma', 'Geç dönem komplikasyon', 'Destekleyici bulgu'];
-  const start = (index * 7) % pool.length;
-  const rotated = [...pool.slice(start), ...pool.slice(0, start)];
-  return uniqueOptionEntriesBySemanticKey(rotated, correctKey).slice(0, 4).map((entry) => entry.text);
-}
-
-export const TUS_PEARL_AI_SEEDS = TUS_PEARL_CARDS.slice(0, 220).map((card, index) => {
-  const distractors = buildDistractors(card, index);
-  const optionTexts = [normalizeOption(card.back), ...distractors].filter(Boolean).slice(0, 5);
-  return {
-    seedId: `ai-pearl-seed-${card.id}`,
-    source: 'tus-pearl-card-seed',
-    title: card.topic,
-    relatedBranch: card.subject,
-    branchId: 'tus-spot-olgular',
-    originalBranchId: card.branchId,
-    spotCategory: `AI Spot • ${card.subject}`,
-    difficulty: card.difficulty || 'orta',
-    learningTarget: card.front,
-    correctConcept: normalizeOption(card.back),
-    demographics: null,
-    setting: null,
-    chiefComplaint: card.topic,
-    stem: null,
-    exam: [],
-    vitals: {},
-    investigations: [],
-    question: null,
-    questionType: 'spot',
-    options: optionTexts.map((text, optionIndex) => ({ id: ['A', 'B', 'C', 'D', 'E'][optionIndex], text })),
-    correctAnswer: 'A',
-    explanation: card.explanation,
-    wrongOptionFeedback: {},
-    evidenceChain: [card.explanation, ...card.keywords].filter(Boolean).slice(0, 4),
-    evidenceConcepts: [card.explanation, ...card.keywords].filter(Boolean).slice(0, 4),
-    examPearl: card.back,
-    managementSteps: [],
-    sourceCardId: card.id,
-  };
 });
