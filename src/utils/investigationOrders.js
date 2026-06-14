@@ -1,6 +1,12 @@
 import { neutralModalityTitle, stripDiagnosticLeakage, toSentence } from './displayText.js';
-import { sanitizePreAnswerText } from './preAnswerTextSanitizer.js';
 import { visualMatchesInvestigation } from './clinicalVisuals.js';
+
+
+function sanitizePreAnswerText(text = '') {
+  return String(text || '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
 
 export const priorityMeta = {
   essential: {

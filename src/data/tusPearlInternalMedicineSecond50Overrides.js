@@ -504,20 +504,20 @@ export const TUS_PEARL_INTERNAL_MEDICINE_SECOND50_TEXT_OVERRIDES = Object.freeze
     "back": "Otoimmün hemolitik anemi.",
     "answer": "İmmün aracılı hemoliz; otoimmün hemolitik anemi.",
     "explanation": "Hemolizde retikülositoz, LDH ve indirekt bilirubin yüksekliği, haptoglobin düşüklüğü beklenir. Direkt Coombs pozitifliği eritrosit yüzeyine bağlı antikor veya komplemanı göstererek hemolizin immün mekanizmalı olduğunu kanıtlar. Bu bulgu mikroanjiyopatik veya enzim eksikliği kaynaklı hemolizlerden ayrımda kritiktir.",
-    "tusTip": "Hemoliz paterni + direkt Coombs pozitifliği =HA düşün.",
+    "tusTip": "Hemoliz paterni + direkt Coombs pozitifliği = AIHA düşün.",
     "differentialNote": "TTP/HUS gibi mikroanjiyopatik hemolizde şistosit görülür ve direkt Coombs genellikle negatiftir."
   },
   "tus-pearl-internal-medicine-359-extra": {
     "front": "Sıcak ve soğuk otoimmün hemolitik anemiyi antikor tipi açısından nasıl ayırırsın?",
     "keywords": [
-      "sıcakHA",
+      "sıcak AIHA",
       "soğuk aglutinin",
       "IgG",
       "IgM"
     ],
-    "back": "SıcakHA çoğunlukla IgG; soğuk aglutinin hastalığı IgM/kompleman aracılıdır.",
+    "back": "Sıcak AIHA çoğunlukla IgG; soğuk aglutinin hastalığı IgM/kompleman aracılıdır.",
     "answer": "Sıcak tip IgG, soğuk tip IgM-kompleman ilişkili.",
-    "explanation": "SıcakHA’da IgG kaplı eritrositler özellikle dalakta makrofajlarca yıkılır ve ekstravasküler hemoliz gelişir. Soğuk aglutinin hastalığında IgM düşük ısıda bağlanır, komplemanı aktive eder ve akrosiyanoz gibi soğukla ilişkili bulgular görülebilir. Bu ayrım Coombs testinde hangi komponentin pozitif olduğuyla da desteklenir.",
+    "explanation": "Sıcak AIHA’da IgG kaplı eritrositler özellikle dalakta makrofajlarca yıkılır ve ekstravasküler hemoliz gelişir. Soğuk aglutinin hastalığında IgM düşük ısıda bağlanır, komplemanı aktive eder ve akrosiyanoz gibi soğukla ilişkili bulgular görülebilir. Bu ayrım Coombs testinde hangi komponentin pozitif olduğuyla da desteklenir.",
     "tusTip": "Sıcak = IgG/dalak; soğuk = IgM-kompleman/akral soğuk semptomları.",
     "differentialNote": "Herediter sferositozda sferosit görülebilir ancak Coombs negatiftir; otoimmün sıcak tipte Coombs pozitifliği ayırıcıdır."
   },

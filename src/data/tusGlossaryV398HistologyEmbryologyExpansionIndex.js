@@ -1009,11 +1009,11 @@ export const TUS_GLOSSARY_V398_HISTOLOGY_EMBRYOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 16,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-021-noral-krest-kokenli-olmayan-hucre::learningTarget",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-021-noral-krest-kokenli-olmayan-hucre::learningTarget",
         "text": "Schwann hücreleri, melanositler, adrenal medulla kromaffin hücreleri ve tiroid parafolliküler C hücreleri nöral krest kökenlidir; oligodendrosit ise nöral tüp kaynaklı merkezi sinir sistemi gliya hücresidir."
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-021-noral-krest-kokenli-olmayan-hucre::options[4].text",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-021-noral-krest-kokenli-olmayan-hucre::options[4].text",
         "text": "Parafolliküler C hücresi"
       }
     ],
@@ -1483,11 +1483,11 @@ export const TUS_GLOSSARY_V398_HISTOLOGY_EMBRYOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 30,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-157::coreKnowledge",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-157::coreKnowledge",
         "text": "Meckel divertikülü, vitellin/omfalomezenterik kanalın kalıntısıdır. İleumda gerçek divertikül olarak bulunur ve ektopik gastrik veya pankreatik doku içerebilir."
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-157::explanation",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-157::explanation",
         "text": "Doğru cevap A’dır. Vitellin kanal normalde embriyolojik gelişim sırasında kaybolur; persistan kalıntısı Meckel divertikülüne yol açabilir. Meckel divertikülü bağırsak duvarının tüm katlarını içerdiği için gerçek divertiküldür ve en sık distal ileumda bulunu..."
       }
     ],
@@ -4944,11 +4944,11 @@ export const TUS_GLOSSARY_V398_HISTOLOGY_EMBRYOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 2,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-182::options[2].text",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-182::options[2].text",
         "text": "Dorsal kanat – tonsilla palatina; ventral kanat – tiroid folikül hücresi"
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-182::diagnosis.options[2]",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-182::diagnosis.options[2]",
         "text": "Dorsal kanat – tonsilla palatina; ventral kanat – tiroid folikül hücresi"
       }
     ],

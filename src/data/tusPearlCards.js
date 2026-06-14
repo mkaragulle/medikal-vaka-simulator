@@ -13,7 +13,7 @@ import { TUS_PEARL_PEDIATRICS_FIRST63_TEXT_OVERRIDES } from './tusPearlPediatric
 import { TUS_PEARL_PEDIATRICS_SECOND63_TEXT_OVERRIDES } from './tusPearlPediatricsSecond63Overrides.js';
 import { TUS_PEARL_OBGYN_FIRST64_TEXT_OVERRIDES } from './tusPearlObgynFirst64Overrides.js';
 import { TUS_PEARL_SMALL_CLERKSHIPS_FIRST58_TEXT_OVERRIDES } from './tusPearlSmallClerkshipsFirst58Overrides.js';
-// Static high-yield TUS flashcard seed deck for KlinikIQ.
+// Auto-generated high-yield TUS flashcard seed deck for KlinikIQ.
 // Years are intentionally empty unless a source explicitly provides a year.
 
 export const TUS_PEARL_TOPICS = [
@@ -2007,11 +2007,11 @@ export const TUS_PEARL_TOPICS = [
     "branchId": "internal-medicine",
     "subject": "İç Hastalıkları",
     "topic": "Tirotoksikozis faktitisya",
-    "mainQuestion": "TSH düşük, T4 yüksek, tiroglobulin düşük ve Rtutulumu düşükse hangi tanı düşünülür?",
+    "mainQuestion": "TSH düşük, T4 yüksek, tiroglobulin düşük ve RAI tutulumu düşükse hangi tanı düşünülür?",
     "mainAnswer": "Tirotoksikozis faktitisya.",
     "explanation": "Eksojen tiroid hormonu alımında bez hormon üretmediği için tiroglobulin ve radyoaktif iyot tutulumu düşüktür.",
-    "keywords": "TSH düşük; T4 yüksek; tiroglobulin düşük; Rdüşük",
-    "trap": "Graves’te TRAb pozitifliği ve artmış Rtutulumu beklenir; faktitisyada dışarıdan hormon alımı vardır.",
+    "keywords": "TSH düşük; T4 yüksek; tiroglobulin düşük; RAI düşük",
+    "trap": "Graves’te TRAb pozitifliği ve artmış RAI tutulumu beklenir; faktitisyada dışarıdan hormon alımı vardır.",
     "extraQuestion": "Subakut tiroiditi faktitisyadan ayıran tipik klinik bulgu nedir?",
     "extraAnswer": "Ağrılı tiroid ve yüksek sedimentasyon.",
     "difficulty": "orta"
@@ -4109,7 +4109,7 @@ export const TUS_PEARL_TOPICS = [
       "menenjit"
     ],
     "trap": "Candida kan dolaşımı ve mukozal enfeksiyonlarda daha sık karşımıza çıkar.",
-    "extraQuestion": "Vaka kökünde kapsül,DS ve menenjit birlikte verilirse hangi tanı öncelikle düşünülür?",
+    "extraQuestion": "Vaka kökünde kapsül, AIDS ve menenjit birlikte verilirse hangi tanı öncelikle düşünülür?",
     "extraAnswer": "Cryptococcus neoformans.",
     "difficulty": "orta"
   },
@@ -5678,7 +5678,7 @@ export const TUS_PEARL_TOPICS = [
       "indirekt bilirubin"
     ],
     "trap": "Ozmotik frajilite herediter sferositoz için daha uygundur.",
-    "extraQuestion": "Vaka kökündeHA, retikülositoz ve indirekt bilirubin birlikte verilirse hangi tanısal test veya bulgu öncelikle düşünülür?",
+    "extraQuestion": "Vaka kökünde AIHA, retikülositoz ve indirekt bilirubin birlikte verilirse hangi tanısal test veya bulgu öncelikle düşünülür?",
     "extraAnswer": "Direkt Coombs testi.",
     "difficulty": "orta"
   },
@@ -8726,7 +8726,8 @@ function isPearlCardQualityApproved(card = {}) {
 
 
 // V233 — Full high-yield rewrite for 1000 Hap Bilgi cards.
-// Only text fields are overridden; ID, branch metadata, topic, card type and order remain derived from the original schema.
+// Goal: remove vague/meta wording and make every card concrete, clinical/mechanistic and exam-oriented.
+// Only text fields are overridden; ID, branch metadata, topic, card type and order remain generated from the original schema.
 const TUS_PEARL_REVISED_TEXT_OVERRIDES = Object.freeze({
   "tus-pearl-anatomy-001-spot": {
     "front": "El pençesi ve 4–5. parmak duyu kaybı en çok hangi sinir lezyonunu düşündürür?",
@@ -10727,15 +10728,15 @@ const TUS_PEARL_REVISED_TEXT_OVERRIDES = Object.freeze({
     ]
   },
   "tus-pearl-internal-medicine-148-spot": {
-    "front": "TSH düşük, T4 yüksek, tiroglobulin düşük ve Rtutulumu düşükse hangi tanı düşünülür?",
+    "front": "TSH düşük, T4 yüksek, tiroglobulin düşük ve RAI tutulumu düşükse hangi tanı düşünülür?",
     "keywords": [
-      "TSH düşük; T4 yüksek; tiroglobulin düşük; Rdüşük"
+      "TSH düşük; T4 yüksek; tiroglobulin düşük; RAI düşük"
     ]
   },
   "tus-pearl-internal-medicine-148-extra": {
     "front": "Subakut tiroiditi faktitisyadan ayıran tipik klinik bulgu nedir?",
     "keywords": [
-      "TSH düşük; T4 yüksek; tiroglobulin düşük; Rdüşük"
+      "TSH düşük; T4 yüksek; tiroglobulin düşük; RAI düşük"
     ]
   },
   "tus-pearl-internal-medicine-149-spot": {
@@ -12800,7 +12801,7 @@ const TUS_PEARL_REVISED_TEXT_OVERRIDES = Object.freeze({
     ]
   },
   "tus-pearl-medical-microbiology-272-extra": {
-    "front": "Vaka kökünde kapsül,DS ve menenjit birlikte verilirse hangi tanı öncelikle düşünülür?",
+    "front": "Vaka kökünde kapsül, AIDS ve menenjit birlikte verilirse hangi tanı öncelikle düşünülür?",
     "keywords": [
       "Cryptococcus",
       "kapsül",
@@ -14372,7 +14373,7 @@ const TUS_PEARL_REVISED_TEXT_OVERRIDES = Object.freeze({
     ]
   },
   "tus-pearl-internal-medicine-359-extra": {
-    "front": "Vaka kökündeHA, retikülositoz ve indirekt bilirubin birlikte verilirse hangi tanısal test veya bulgu öncelikle düşünülür?",
+    "front": "Vaka kökünde AIHA, retikülositoz ve indirekt bilirubin birlikte verilirse hangi tanısal test veya bulgu öncelikle düşünülür?",
     "keywords": [
       "AIHA",
       "Direkt Coombs",
@@ -18222,3 +18223,38 @@ function buildDistractors(card, index) {
   const rotated = [...pool.slice(start), ...pool.slice(0, start)];
   return uniqueOptionEntriesBySemanticKey(rotated, correctKey).slice(0, 4).map((entry) => entry.text);
 }
+
+export const TUS_PEARL_AI_SEEDS = TUS_PEARL_CARDS.slice(0, 220).map((card, index) => {
+  const distractors = buildDistractors(card, index);
+  const optionTexts = [normalizeOption(card.back), ...distractors].filter(Boolean).slice(0, 5);
+  return {
+    seedId: `ai-pearl-seed-${card.id}`,
+    source: 'tus-pearl-card-seed',
+    title: card.topic,
+    relatedBranch: card.subject,
+    branchId: 'tus-spot-olgular',
+    originalBranchId: card.branchId,
+    spotCategory: `AI Spot • ${card.subject}`,
+    difficulty: card.difficulty || 'orta',
+    learningTarget: card.front,
+    correctConcept: normalizeOption(card.back),
+    demographics: null,
+    setting: null,
+    chiefComplaint: card.topic,
+    stem: null,
+    exam: [],
+    vitals: {},
+    investigations: [],
+    question: null,
+    questionType: 'spot',
+    options: optionTexts.map((text, optionIndex) => ({ id: ['A', 'B', 'C', 'D', 'E'][optionIndex], text })),
+    correctAnswer: 'A',
+    explanation: card.explanation,
+    wrongOptionFeedback: {},
+    evidenceChain: [card.explanation, ...card.keywords].filter(Boolean).slice(0, 4),
+    evidenceConcepts: [card.explanation, ...card.keywords].filter(Boolean).slice(0, 4),
+    examPearl: card.back,
+    managementSteps: [],
+    sourceCardId: card.id,
+  };
+});

@@ -266,11 +266,11 @@ export const TUS_GLOSSARY_V397_PHYSIOLOGY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-174] explanation: Doğru cevap A’dır. Sekretin, özellikle duodenuma geçen asidik kimusun uyarısıyla salınır ve pankreas duktus hücrelerinden bikarbonat sekresyonunu artırır. Bikarbonat, gastrik asidi nötralize ederek pankreatik enzimlerin çalışabileceği daha uygun pH ortamını oluşturur. Mide asit sekresyonunu artıran ana hormon gastrindir; safra kesesi kontraksiyonu ve pankreatik enzim sekresyonu ise daha çok…"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-174] explanation: Doğru cevap A’dır. Sekretin, özellikle duodenuma geçen asidik kimusun uyarısıyla salınır ve pankreas duktus hücrelerinden bikarbonat sekresyonunu artırır. Bikarbonat, gastrik asidi nötralize ederek pankreatik enzimlerin çalışabileceği daha uygun pH ortamını oluşturur. Mide asit sekresyonunu artıran ana hormon gastrindir; safra kesesi kontraksiyonu ve pankreatik enzim sekresyonu ise daha çok…"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-174] answerAnalysisIntro: Bu soru gastrointestinal hormonları uyarıcı ve hedef etkilerine göre ayırmayı ölçer. Sekretin asit-bikarbonat, CCK yağ/protein-enzim/safra kesesi, gastrin asit sekresyonu ile eşleşir."
+        "text": "[Physiology Case ai-spot-vakasiz-secki-174] answerAnalysisIntro: Bu soru gastrointestinal hormonları uyarıcı ve hedef etkilerine göre ayırmayı ölçer. Sekretin asit-bikarbonat, CCK yağ/protein-enzim/safra kesesi, gastrin asit sekresyonu ile eşleşir."
       }
     ],
     "matchingPriority": 98,
@@ -408,11 +408,11 @@ export const TUS_GLOSSARY_V397_PHYSIOLOGY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-174] explanation: Doğru cevap A’dır. Sekretin, özellikle duodenuma geçen asidik kimusun uyarısıyla salınır ve pankreas duktus hücrelerinden bikarbonat sekresyonunu artırır. Bikarbonat, gastrik asidi nötralize ederek pankreatik enzimlerin çalışabileceği daha uygun pH ortamını oluşturur. Mide asit sekresyonunu artıran ana hormon gastrindir; safra kesesi kontraksiyonu ve pankreatik enzim sekresyonu ise daha çok…"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-174] explanation: Doğru cevap A’dır. Sekretin, özellikle duodenuma geçen asidik kimusun uyarısıyla salınır ve pankreas duktus hücrelerinden bikarbonat sekresyonunu artırır. Bikarbonat, gastrik asidi nötralize ederek pankreatik enzimlerin çalışabileceği daha uygun pH ortamını oluşturur. Mide asit sekresyonunu artıran ana hormon gastrindir; safra kesesi kontraksiyonu ve pankreatik enzim sekresyonu ise daha çok…"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-174] answerAnalysisIntro: Bu soru gastrointestinal hormonları uyarıcı ve hedef etkilerine göre ayırmayı ölçer. Sekretin asit-bikarbonat, CCK yağ/protein-enzim/safra kesesi, gastrin asit sekresyonu ile eşleşir."
+        "text": "[Physiology Case ai-spot-vakasiz-secki-174] answerAnalysisIntro: Bu soru gastrointestinal hormonları uyarıcı ve hedef etkilerine göre ayırmayı ölçer. Sekretin asit-bikarbonat, CCK yağ/protein-enzim/safra kesesi, gastrin asit sekresyonu ile eşleşir."
       }
     ],
     "matchingPriority": 98,
@@ -478,11 +478,11 @@ export const TUS_GLOSSARY_V397_PHYSIOLOGY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-174] topic: Sekretin fizyolojisi"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-174] topic: Sekretin fizyolojisi"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-174] clinicalFocus: Sekretin fizyolojisi"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-174] clinicalFocus: Sekretin fizyolojisi"
       }
     ],
     "matchingPriority": 98,
@@ -974,11 +974,11 @@ export const TUS_GLOSSARY_V397_PHYSIOLOGY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-064-sa-dugumu-aksiyon-potansiyeli-l-tipi-kalsiyum] topic: SA düğümü aksiyon potansiyelinin iyonik temelini ventrikül miyositinden ayırt edeb"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-064-sa-dugumu-aksiyon-potansiyeli-l-tipi-kalsiyum] topic: SA düğümü aksiyon potansiyelinin iyonik temelini ventrikül miyositinden ayırt edeb"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-064-sa-dugumu-aksiyon-potansiyeli-l-tipi-kalsiyum] clinicalFocus: SA düğümü aksiyon potansiyelinin iyonik temelini ventrikül miyositinden ayırt edeb"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-064-sa-dugumu-aksiyon-potansiyeli-l-tipi-kalsiyum] clinicalFocus: SA düğümü aksiyon potansiyelinin iyonik temelini ventrikül miyositinden ayırt edeb"
       }
     ],
     "matchingPriority": 98,
@@ -1044,11 +1044,11 @@ export const TUS_GLOSSARY_V397_PHYSIOLOGY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-064-sa-dugumu-aksiyon-potansiyeli-l-tipi-kalsiyum] topic: SA düğümü aksiyon potansiyelinin iyonik temelini ventrikül miyositinden ayırt edeb"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-064-sa-dugumu-aksiyon-potansiyeli-l-tipi-kalsiyum] topic: SA düğümü aksiyon potansiyelinin iyonik temelini ventrikül miyositinden ayırt edeb"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-064-sa-dugumu-aksiyon-potansiyeli-l-tipi-kalsiyum] clinicalFocus: SA düğümü aksiyon potansiyelinin iyonik temelini ventrikül miyositinden ayırt edeb"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-064-sa-dugumu-aksiyon-potansiyeli-l-tipi-kalsiyum] clinicalFocus: SA düğümü aksiyon potansiyelinin iyonik temelini ventrikül miyositinden ayırt edeb"
       }
     ],
     "matchingPriority": 98,
@@ -1115,11 +1115,11 @@ export const TUS_GLOSSARY_V397_PHYSIOLOGY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-204] topic: Kas iğciği ve gerilme refleksi"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-204] topic: Kas iğciği ve gerilme refleksi"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-204] clinicalFocus: Kas iğciği ve gerilme refleksi"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-204] clinicalFocus: Kas iğciği ve gerilme refleksi"
       }
     ],
     "matchingPriority": 98,
@@ -1319,11 +1319,11 @@ export const TUS_GLOSSARY_V397_PHYSIOLOGY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-158] topic: Karşı akım çoğaltıcı sistem"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-158] topic: Karşı akım çoğaltıcı sistem"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-158] clinicalFocus: Karşı akım çoğaltıcı sistem"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-158] clinicalFocus: Karşı akım çoğaltıcı sistem"
       }
     ],
     "matchingPriority": 98,
@@ -2292,11 +2292,11 @@ export const TUS_GLOSSARY_V397_PHYSIOLOGY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-025-oksihemoglobin-egrisi-sola-kayma] learningTarget: 2,3-BPG düzeyinin azalması hemoglobinin deoksi formunu daha az stabilize eder ve oksijen afinitesini artırarak oksihemoglobin eğrisini sola kaydırır."
+        "text": "[Physiology Case ai-spot-vakasiz-secki-025-oksihemoglobin-egrisi-sola-kayma] learningTarget: 2,3-BPG düzeyinin azalması hemoglobinin deoksi formunu daha az stabilize eder ve oksijen afinitesini artırarak oksihemoglobin eğrisini sola kaydırır."
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-025-oksihemoglobin-egrisi-sola-kayma] coreKnowledge: 2,3-BPG düzeyinin azalması hemoglobinin deoksi formunu daha az stabilize eder ve oksijen afinitesini artırarak oksihemoglobin eğrisini sola kaydırır."
+        "text": "[Physiology Case ai-spot-vakasiz-secki-025-oksihemoglobin-egrisi-sola-kayma] coreKnowledge: 2,3-BPG düzeyinin azalması hemoglobinin deoksi formunu daha az stabilize eder ve oksijen afinitesini artırarak oksihemoglobin eğrisini sola kaydırır."
       }
     ],
     "matchingPriority": 98,
@@ -3184,11 +3184,11 @@ export const TUS_GLOSSARY_V397_PHYSIOLOGY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-174] options[2].text: Duodenal asit yüküne yanıt olarak pankreatik bikarbonat sekresyonunu artırır"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-174] options[2].text: Duodenal asit yüküne yanıt olarak pankreatik bikarbonat sekresyonunu artırır"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-174] correctOptionText: Duodenal asit yüküne yanıt olarak pankreatik bikarbonat sekresyonunu artırır"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-174] correctOptionText: Duodenal asit yüküne yanıt olarak pankreatik bikarbonat sekresyonunu artırır"
       }
     ],
     "matchingPriority": 92,
@@ -3254,11 +3254,11 @@ export const TUS_GLOSSARY_V397_PHYSIOLOGY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-174] explanation: Doğru cevap A’dır. Sekretin, özellikle duodenuma geçen asidik kimusun uyarısıyla salınır ve pankreas duktus hücrelerinden bikarbonat sekresyonunu artırır. Bikarbonat, gastrik asidi nötralize ederek pankreatik enzimlerin çalışabileceği daha uygun pH ortamını oluşturur. Mide asit sekresyonunu artıran ana hormon gastrindir; safra kesesi kontraksiyonu ve pankreatik enzim sekresyonu ise daha çok…"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-174] explanation: Doğru cevap A’dır. Sekretin, özellikle duodenuma geçen asidik kimusun uyarısıyla salınır ve pankreas duktus hücrelerinden bikarbonat sekresyonunu artırır. Bikarbonat, gastrik asidi nötralize ederek pankreatik enzimlerin çalışabileceği daha uygun pH ortamını oluşturur. Mide asit sekresyonunu artıran ana hormon gastrindir; safra kesesi kontraksiyonu ve pankreatik enzim sekresyonu ise daha çok…"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-174] optionFeedback.Safra kesesini güçlü biçimde kasarak Oddi sfinkterini kapatır: Yanlıştır. Safra kesesi kontraksiyonu ve oddi sfinkter relaksasyonu daha çok CCK etkisiyle ilişkilidir. Sekretinin ana etkisi bikarbonat sekresyonudur."
+        "text": "[Physiology Case ai-spot-vakasiz-secki-174] optionFeedback.Safra kesesini güçlü biçimde kasarak Oddi sfinkterini kapatır: Yanlıştır. Safra kesesi kontraksiyonu ve oddi sfinkter relaksasyonu daha çok CCK etkisiyle ilişkilidir. Sekretinin ana etkisi bikarbonat sekresyonudur."
       }
     ],
     "matchingPriority": 92,
@@ -3596,11 +3596,11 @@ export const TUS_GLOSSARY_V397_PHYSIOLOGY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-144] options[2].text: If akımı ile yavaş diyastolik depolarizasyon"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-144] options[2].text: If akımı ile yavaş diyastolik depolarizasyon"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-144] explanation: Doğru cevap A’dır. Ventrikül kas hücresinde aksiyon potansiyelinin faz 0’ı hızlı depolarizasyon fazıdır ve hızlı voltaj kapılı sodyum kanallarının açılmasıyla gelişir. Bu fazın eğimi iletim hızını etkiler; sınıf I antiaritmikler bu kanalları etkileyebilir. Faz 2 plato döneminde L-tipi kalsiyum girişi ve potasyum çıkışı dengelenir. Faz 3 repolarizasyon K+ çıkışı ile gerçekleşir. If akımı ise…"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-144] explanation: Doğru cevap A’dır. Ventrikül kas hücresinde aksiyon potansiyelinin faz 0’ı hızlı depolarizasyon fazıdır ve hızlı voltaj kapılı sodyum kanallarının açılmasıyla gelişir. Bu fazın eğimi iletim hızını etkiler; sınıf I antiaritmikler bu kanalları etkileyebilir. Faz 2 plato döneminde L-tipi kalsiyum girişi ve potasyum çıkışı dengelenir. Faz 3 repolarizasyon K+ çıkışı ile gerçekleşir. If akımı ise…"
       }
     ],
     "matchingPriority": 92,
@@ -4182,11 +4182,11 @@ export const TUS_GLOSSARY_V397_PHYSIOLOGY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-204] options[0].text: Kas gerilimini tendon düzeyinde algılar ve alfa motor nöronu doğrudan uyararak kasılmayı artırır"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-204] options[0].text: Kas gerilimini tendon düzeyinde algılar ve alfa motor nöronu doğrudan uyararak kasılmayı artırır"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-204] coreKnowledge: Kas iğciği kas uzunluğu ve gerilme hızını algılayan intrafuzal liflerden oluşur. Ia afferentleri spinal korda giderek aynı kasın alfa motor nöronunu monosaptik olarak uyarır ve gerilme refleksini oluşturur."
+        "text": "[Physiology Case ai-spot-vakasiz-secki-204] coreKnowledge: Kas iğciği kas uzunluğu ve gerilme hızını algılayan intrafuzal liflerden oluşur. Ia afferentleri spinal korda giderek aynı kasın alfa motor nöronunu monosaptik olarak uyarır ve gerilme refleksini oluşturur."
       }
     ],
     "matchingPriority": 92,
@@ -4310,11 +4310,11 @@ export const TUS_GLOSSARY_V397_PHYSIOLOGY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-204] explanation: Doğru cevap A’dır. Kas iğciği, iskelet kası içinde yer alan ve kas uzunluğundaki değişiklikleri algılayan proprioseptif reseptördür. Ani gerilme Ia afferentleriyle spinal korda iletilir; aynı kasın alfa motor nöronu uyarılır ve kas kasılarak gerilmeye karşı koyar. Patellar refleks bu mekanizmanın klasik örneğidir. Golgi tendon organı ise tendon düzeyinde kas gerilimini algılar ve aşırı geri…"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-204] explanation: Doğru cevap A’dır. Kas iğciği, iskelet kası içinde yer alan ve kas uzunluğundaki değişiklikleri algılayan proprioseptif reseptördür. Ani gerilme Ia afferentleriyle spinal korda iletilir; aynı kasın alfa motor nöronu uyarılır ve kas kasılarak gerilmeye karşı koyar. Patellar refleks bu mekanizmanın klasik örneğidir. Golgi tendon organı ise tendon düzeyinde kas gerilimini algılar ve aşırı geri…"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-204] answerAnalysisIntro: Bu soru kas iğciği ile golgi tendon organını ayırmayı ölçer. Kas iğciği uzunluk, golgi tendon organı gerilim bilgisini taşır."
+        "text": "[Physiology Case ai-spot-vakasiz-secki-204] answerAnalysisIntro: Bu soru kas iğciği ile golgi tendon organını ayırmayı ölçer. Kas iğciği uzunluk, golgi tendon organı gerilim bilgisini taşır."
       }
     ],
     "matchingPriority": 92,
@@ -5198,11 +5198,11 @@ export const TUS_GLOSSARY_V397_PHYSIOLOGY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-132] learningTarget: Para-aminohippurat düşük plazma konsantrasyonlarında glomerüler filtrasyon ve güçlü proksimal tübüler sekresyon ile neredeyse tamamen plazmadan temizlenir. Bu nedenle PAH klirensi etkin renal plazma akımının tahmininde kullanılır."
+        "text": "[Physiology Case ai-spot-vakasiz-secki-132] learningTarget: Para-aminohippurat düşük plazma konsantrasyonlarında glomerüler filtrasyon ve güçlü proksimal tübüler sekresyon ile neredeyse tamamen plazmadan temizlenir. Bu nedenle PAH klirensi etkin renal plazma akımının tahmininde kullanılır."
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-132] coreKnowledge: Para-aminohippurat düşük plazma konsantrasyonlarında glomerüler filtrasyon ve güçlü proksimal tübüler sekresyon ile neredeyse tamamen plazmadan temizlenir. Bu nedenle PAH klirensi etkin renal plazma akımının tahmininde kullanılır."
+        "text": "[Physiology Case ai-spot-vakasiz-secki-132] coreKnowledge: Para-aminohippurat düşük plazma konsantrasyonlarında glomerüler filtrasyon ve güçlü proksimal tübüler sekresyon ile neredeyse tamamen plazmadan temizlenir. Bu nedenle PAH klirensi etkin renal plazma akımının tahmininde kullanılır."
       }
     ],
     "matchingPriority": 92,
@@ -5600,11 +5600,11 @@ export const TUS_GLOSSARY_V397_PHYSIOLOGY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-111] explanation: Doğru cevap D’dir. Parathormonun böbrekteki önemli etkilerinden biri proksimal tübülde fosfat geri emilimini azaltmasıdır; bu nedenle fosfatüri gelişir ve serum fosfatı düşme eğilimindedir. Buna karşılık distal tübülde kalsiyum geri emilimi artar, böbrekte 1-alfa hidroksilaz uyarılır ve aktif D vitamini sentezi artar. Kemikte ise PTH osteoblast üzerindeki RANKL ekspresyonunu artırarak osteo…"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-111] explanation: Doğru cevap D’dir. Parathormonun böbrekteki önemli etkilerinden biri proksimal tübülde fosfat geri emilimini azaltmasıdır; bu nedenle fosfatüri gelişir ve serum fosfatı düşme eğilimindedir. Buna karşılık distal tübülde kalsiyum geri emilimi artar, böbrekte 1-alfa hidroksilaz uyarılır ve aktif D vitamini sentezi artar. Kemikte ise PTH osteoblast üzerindeki RANKL ekspresyonunu artırarak osteo…"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-111] optionFeedback.Proksimal tübülde fosfat geri emiliminin artması: Doğru cevaptır. Proksimal tübülde fosfat geri emiliminin artması PTH etkisi değildir. PTH’nin renal fosfat üzerindeki net etkisi geri emilimi azaltmak ve fosfat atılımını artırmaktır."
+        "text": "[Physiology Case ai-spot-vakasiz-secki-111] optionFeedback.Proksimal tübülde fosfat geri emiliminin artması: Doğru cevaptır. Proksimal tübülde fosfat geri emiliminin artması PTH etkisi değildir. PTH’nin renal fosfat üzerindeki net etkisi geri emilimi azaltmak ve fosfat atılımını artırmaktır."
       }
     ],
     "matchingPriority": 92,
@@ -5671,11 +5671,11 @@ export const TUS_GLOSSARY_V397_PHYSIOLOGY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-111] learningTarget: Parathormon serum kalsiyumunu artırırken serum fosfatını düşürme eğilimindedir. Bunu böbrekte kalsiyum geri emilimini ve 1-alfa hidroksilaz aktivitesini artırarak, proksimal tübülde fosfat geri emilimini ise azaltarak yapar."
+        "text": "[Physiology Case ai-spot-vakasiz-secki-111] learningTarget: Parathormon serum kalsiyumunu artırırken serum fosfatını düşürme eğilimindedir. Bunu böbrekte kalsiyum geri emilimini ve 1-alfa hidroksilaz aktivitesini artırarak, proksimal tübülde fosfat geri emilimini ise azaltarak yapar."
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-111] options[1].text: Distal tübülde kalsiyum geri emiliminin artması"
+        "text": "[Physiology Case ai-spot-vakasiz-secki-111] options[1].text: Distal tübülde kalsiyum geri emiliminin artması"
       }
     ],
     "matchingPriority": 92,
@@ -6622,11 +6622,11 @@ export const TUS_GLOSSARY_V397_PHYSIOLOGY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-064-sa-dugumu-aksiyon-potansiyeli-l-tipi-kalsiyum] learningTarget: SA ve AV düğüm hücrelerinde faz 0 depolarizasyonu hızlı Na+ kanallarından çok L-tipi Ca2+ kanallarıyla oluşur. Ventrikül miyositlerinde ise hızlı yükseliş fazının ana nedeni hızlı voltaj kapılı Na+ girişidir."
+        "text": "[Physiology Case ai-spot-vakasiz-secki-064-sa-dugumu-aksiyon-potansiyeli-l-tipi-kalsiyum] learningTarget: SA ve AV düğüm hücrelerinde faz 0 depolarizasyonu hızlı Na+ kanallarından çok L-tipi Ca2+ kanallarıyla oluşur. Ventrikül miyositlerinde ise hızlı yükseliş fazının ana nedeni hızlı voltaj kapılı Na+ girişidir."
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-064-sa-dugumu-aksiyon-potansiyeli-l-tipi-kalsiyum] coreKnowledge: SA ve AV düğüm hücrelerinde faz 0 depolarizasyonu hızlı Na+ kanallarından çok L-tipi Ca2+ kanallarıyla oluşur. Ventrikül miyositlerinde ise hızlı yükseliş fazının ana nedeni hızlı voltaj kapılı Na+ girişidir."
+        "text": "[Physiology Case ai-spot-vakasiz-secki-064-sa-dugumu-aksiyon-potansiyeli-l-tipi-kalsiyum] coreKnowledge: SA ve AV düğüm hücrelerinde faz 0 depolarizasyonu hızlı Na+ kanallarından çok L-tipi Ca2+ kanallarıyla oluşur. Ventrikül miyositlerinde ise hızlı yükseliş fazının ana nedeni hızlı voltaj kapılı Na+ girişidir."
       }
     ],
     "matchingPriority": 78,
@@ -6690,11 +6690,11 @@ export const TUS_GLOSSARY_V397_PHYSIOLOGY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-064-sa-dugumu-aksiyon-potansiyeli-l-tipi-kalsiyum] optionFeedback.İçeri doğrultucu potasyum kanallarının açılmasıyla K+ tutulumu: Yanlıştır; potasyum akımları daha çok repolarizasyon ve istirahat potansiyeli kararlılığıyla ilişkilidir."
+        "text": "[Physiology Case ai-spot-vakasiz-secki-064-sa-dugumu-aksiyon-potansiyeli-l-tipi-kalsiyum] optionFeedback.İçeri doğrultucu potasyum kanallarının açılmasıyla K+ tutulumu: Yanlıştır; potasyum akımları daha çok repolarizasyon ve istirahat potansiyeli kararlılığıyla ilişkilidir."
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js / src/data/tusPearlPhysiologyFirst47Overrides.js",
-        "text": "[Physiology Case tus-spot-vakasiz-secki-064-sa-dugumu-aksiyon-potansiyeli-l-tipi-kalsiyum] diagnosis.optionComparison.İçeri doğrultucu potasyum kanallarının açılmasıyla K+ tutulumu: Yanlıştır; potasyum akımları daha çok repolarizasyon ve istirahat potansiyeli kararlılığıyla ilişkilidir."
+        "text": "[Physiology Case ai-spot-vakasiz-secki-064-sa-dugumu-aksiyon-potansiyeli-l-tipi-kalsiyum] diagnosis.optionComparison.İçeri doğrultucu potasyum kanallarının açılmasıyla K+ tutulumu: Yanlıştır; potasyum akımları daha çok repolarizasyon ve istirahat potansiyeli kararlılığıyla ilişkilidir."
       }
     ],
     "matchingPriority": 78,

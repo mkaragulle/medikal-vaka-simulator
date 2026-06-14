@@ -329,7 +329,7 @@ export const TUS_PEARL_MEDICAL_MICROBIOLOGY_SECOND52_TEXT_OVERRIDES = Object.fre
     "front": "İleri HIV hastasında bazal ganglionları tutabilen çoklu halka şeklinde kontrastlanan beyin lezyonları hangi protozoonu düşündürür?",
     "back": "Toxoplasma gondii.",
     "answer": "Toxoplasma gondii.",
-    "explanation": "Toxoplasma gondii latent doku kistlerinin reaktivasyonu ileDS hastasında ensefalit yapabilir. Çoklu ring-enhancing beyin lezyonları, fokal nörolojik bulgu ve CD4 düşüklüğü klasik bağlamdır.",
+    "explanation": "Toxoplasma gondii latent doku kistlerinin reaktivasyonu ile AIDS hastasında ensefalit yapabilir. Çoklu ring-enhancing beyin lezyonları, fokal nörolojik bulgu ve CD4 düşüklüğü klasik bağlamdır.",
     "tusTip": "AIDS + çoklu ring lezyon + bazal ganglion tutulumu Toxoplasma gondii ensefalitini düşündürür.",
     "differentialNote": "Primer CNS lenfoması EBV ile ilişkili olabilir ve daha çok tek dominant kitleyle karışır; Toxoplasma genellikle çoklu lezyon yapar.",
     "keywords": ["Toxoplasma gondii", "AIDS", "ring lezyon", "bazal ganglion"]

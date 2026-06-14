@@ -19,7 +19,7 @@ function buildOptions(options, correct, shouldShuffle = false) {
 
 const ROMAN_MARKER_PATTERN = /(?:^|\s)(I{1,3}|IV|V|VI{0,3}|IX|X)[.)]\s+/g;
 
-function parseRomanQuestionPrompt(text = '') {
+function parseRomanQuestionStem(text = '') {
   const source = String(text || '')
     .replace(/\s+/g, ' ')
     .trim();
@@ -43,8 +43,8 @@ function parseRomanQuestionPrompt(text = '') {
   return { intro, items };
 }
 
-function FormattedQuestionPrompt({ text = '', glossaryEnabled = true, revealMode = 'preAnswer', maxTerms = 8 }) {
-  const formatted = useMemo(() => parseRomanQuestionPrompt(text), [text]);
+function FormattedQuestionStem({ text = '', glossaryEnabled = true, revealMode = 'preAnswer', maxTerms = 8 }) {
+  const formatted = useMemo(() => parseRomanQuestionStem(text), [text]);
 
   if (!formatted) {
     return <GlossaryText text={text} enabled={glossaryEnabled} revealMode={revealMode} maxTerms={maxTerms} />;
@@ -165,7 +165,7 @@ function DiagnosisQuiz({
   hardMode = false,
   randomActionLabel = 'Yeni vaka çöz',
   hideSpotQuestionCallout = false,
-  questionPromptOverride = '',
+  questionStemOverride = '',
   questionHeadingOverride = '',
   questionSubtextOverride = '',
   hideQuestionScoreChip = false,
@@ -197,7 +197,7 @@ function DiagnosisQuiz({
     ? `${Math.round(((examMeta.currentIndex + 1) / examMeta.total) * 100)}%`
     : '0%';
   const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.branchId === 'tus-spot-olgular';
-  const questionPrompt = questionPromptOverride || clinicalCase.question || clinicalCase.diagnosis?.question || '';
+  const questionStem = questionStemOverride || clinicalCase.question || clinicalCase.diagnosis?.question || '';
   const normalizedQuestionType = String(clinicalCase.questionType || clinicalCase.answerTarget || '').toLocaleLowerCase('tr');
   const defaultQuestionHeading = normalizedQuestionType === 'test' || normalizedQuestionType === 'diagnostic_test'
     ? (isSpotCase ? 'TUS spot tetkik sorusu' : 'Tetkik / tanı testi')
@@ -221,7 +221,7 @@ function DiagnosisQuiz({
       : '')
     : '';
   const questionSubtext = questionSubtextOverride || defaultQuestionSubtext;
-  const showInlineQuestionStem = Boolean(questionPrompt) && hideSpotQuestionCallout;
+  const showInlineQuestionStem = Boolean(questionStem) && hideSpotQuestionCallout;
   const glossaryRevealMode = submitted && !isStrictExam ? 'postAnswer' : 'preAnswer';
   const glossaryEnabled = !hardMode;
 
@@ -239,7 +239,7 @@ function DiagnosisQuiz({
             <h2>{questionHeading}</h2>
             {questionSubtext ? (
               <p>
-                <FormattedQuestionPrompt text={questionSubtext} glossaryEnabled={glossaryEnabled} revealMode={glossaryRevealMode} />
+                <FormattedQuestionStem text={questionSubtext} glossaryEnabled={glossaryEnabled} revealMode={glossaryRevealMode} />
               </p>
             ) : null}
           </div>
@@ -272,19 +272,19 @@ function DiagnosisQuiz({
       ) : null}
 
       {showInlineQuestionStem ? (
-        <div className={`tus-spot-inline-question-stem ${hideInlineQuestionStemLabel ? 'label-hidden' : ''}`.trim()} role="note" aria-label="Soru kökü">
-          {!hideInlineQuestionStemLabel ? <span className="tus-spot-inline-question-stem-label">Soru kökü</span> : null}
+        <div className={`ai-spot-inline-question-stem ${hideInlineQuestionStemLabel ? 'label-hidden' : ''}`.trim()} role="note" aria-label="Soru kökü">
+          {!hideInlineQuestionStemLabel ? <span className="ai-spot-inline-question-stem-label">Soru kökü</span> : null}
           <strong>
-            <FormattedQuestionPrompt text={questionPrompt} glossaryEnabled={glossaryEnabled} revealMode={glossaryRevealMode} />
+            <FormattedQuestionStem text={questionStem} glossaryEnabled={glossaryEnabled} revealMode={glossaryRevealMode} />
           </strong>
         </div>
       ) : null}
 
-      {questionPrompt && !hideSpotQuestionCallout ? (
+      {questionStem && !hideSpotQuestionCallout ? (
         <div className="tus-spot-olgular-question-callout" role="note">
           <Icon name="Target" size={16} />
           <strong>
-            <FormattedQuestionPrompt text={questionPrompt} glossaryEnabled={glossaryEnabled} revealMode={glossaryRevealMode} />
+            <FormattedQuestionStem text={questionStem} glossaryEnabled={glossaryEnabled} revealMode={glossaryRevealMode} />
           </strong>
         </div>
       ) : null}

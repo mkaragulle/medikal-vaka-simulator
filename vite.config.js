@@ -12,6 +12,8 @@ export default defineConfig({
         manualChunks(id) {
           if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) return 'vendor-react';
           if (id.includes('node_modules/firebase')) return 'vendor-firebase';
+          if (id.includes('node_modules/pdfjs-dist')) return 'vendor-pdf';
+          if (id.includes('node_modules/jszip')) return 'vendor-zip';
           if (id.includes('/src/data/cases.js')) return 'case-bank';
           if (id.includes('/src/data/tusPearlCards.js')) return 'pearl-bank';
           if (id.includes('/src/components/GlossaryTooltip.full.jsx') || id.includes('/src/utils/glossary.js') || id.includes('/src/data/tusGlossary')) return 'glossary-bank';

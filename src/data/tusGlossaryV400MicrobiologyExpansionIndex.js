@@ -330,11 +330,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 629,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-032-staphylococcus-aureus-protein-a-opsonizasyon::options[4].text",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-032-staphylococcus-aureus-protein-a-opsonizasyon::options[4].text",
         "text": "Eksfolyatif toksin"
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-032-staphylococcus-aureus-protein-a-opsonizasyon::diagnosis.options[4]",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-032-staphylococcus-aureus-protein-a-opsonizasyon::diagnosis.options[4]",
         "text": "Eksfolyatif toksin"
       }
     ],
@@ -886,7 +886,7 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
         "text": "Listeria fakültatif intraselülerdir ve soğukta üreyebilmesiyle gıda kaynaklı bulaş gösterebilir."
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-042-listeria-monocytogenes-acta-hucreden-hucreye-yayilim::chiefComplaint",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-042-listeria-monocytogenes-acta-hucreden-hucreye-yayilim::chiefComplaint",
         "text": "Listeria monocytogenes’in konak hücre sitoplazmasında hareket ederek komşu hücrelere yayılmasını sağlayan temel virülans mekanizması aşağıdakilerden hangisidir?"
       }
     ],
@@ -1020,11 +1020,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 98,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-042-listeria-monocytogenes-acta-hucreden-hucreye-yayilim::optionFeedback.A-B toksin ile EF-2’nin ADP-ribozilasyonu",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-042-listeria-monocytogenes-acta-hucreden-hucreye-yayilim::optionFeedback.A-B toksin ile EF-2’nin ADP-ribozilasyonu",
         "text": "Yanlıştır; EF-2 ADP-ribozilasyonu difteri toksininin protein sentezini durdurma mekanizmasıdır."
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-042-listeria-monocytogenes-acta-hucreden-hucreye-yayilim::diagnosis.optionComparison.A-B toksin ile EF-2’nin ADP-ribozilasyonu",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-042-listeria-monocytogenes-acta-hucreden-hucreye-yayilim::diagnosis.optionComparison.A-B toksin ile EF-2’nin ADP-ribozilasyonu",
         "text": "Yanlıştır; EF-2 ADP-ribozilasyonu difteri toksininin protein sentezini durdurma mekanizmasıdır."
       }
     ],
@@ -1298,11 +1298,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 319,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-082::learningTarget",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-082::learningTarget",
         "text": "C. Difficile toksin A ve toksin B, rho ailesi küçük GTPazlarını inaktive ederek enterositlerde sitoskeletal bütünlüğü bozar, epitel bariyer hasarı ve psödomembranöz kolit gelişimine neden olur."
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-082::coreKnowledge",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-082::coreKnowledge",
         "text": "C. Difficile toksin A ve toksin B, rho ailesi küçük GTPazlarını inaktive ederek enterositlerde sitoskeletal bütünlüğü bozar, epitel bariyer hasarı ve psödomembranöz kolit gelişimine neden olur."
       }
     ],
@@ -1367,11 +1367,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 123,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-082::explanation",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-082::explanation",
         "text": "Doğru cevap A’dır. C. Difficile’nin temel patojenik ürünleri toksin A ve toksin B’dir; bu toksinler Rho, rac ve cdc42 gibi küçük GTPazları glukozile ederek aktin polimerizasyonunu ve hücre iskeleti düzenini bozar. Sonuçta epitel hücrelerinde yuvarlaklaşma, bariyer kaybı, inflamasyon ve psödomembran oluşumu gelişir. “Toksin A, adenilat siklaz aktivasyonu ile sulu ishale yol açan ısıya duyarlı enterotoksindir” seçeneği kolera ve enterotoksijenik E. Coli gibi adenilat siklaz/cAMP ilişkili patogenezleri çağrıştırır;..."
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-082::diagnosis.explanation",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-082::diagnosis.explanation",
         "text": "Doğru cevap A’dır. C. Difficile’nin temel patojenik ürünleri toksin A ve toksin B’dir; bu toksinler Rho, rac ve cdc42 gibi küçük GTPazları glukozile ederek aktin polimerizasyonunu ve hücre iskeleti düzenini bozar. Sonuçta epitel hücrelerinde yuvarlaklaşma, bariyer kaybı, inflamasyon ve psödomembran oluşumu gelişir. “Toksin A, adenilat siklaz aktivasyonu ile sulu ishale yol açan ısıya duyarlı enterotoksindir” seçeneği kolera ve enterotoksijenik E. Coli gibi adenilat siklaz/cAMP ilişkili patogenezleri çağrıştırır;..."
       }
     ],
@@ -1711,11 +1711,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 114,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-133::topic",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-133::topic",
         "text": "IgA proteaz üreten mikroorganizmalar"
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-133::clinicalFocus",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-133::clinicalFocus",
         "text": "IgA proteaz üreten mikroorganizmalar"
       }
     ],
@@ -3291,11 +3291,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 124,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-052-campylobacter-jejuni-mikroaerofilik-ureme::listTitle",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-052-campylobacter-jejuni-mikroaerofilik-ureme::listTitle",
         "text": "Campylobacter mikroaerofilik üreme"
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-052-campylobacter-jejuni-mikroaerofilik-ureme::cardTitle",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-052-campylobacter-jejuni-mikroaerofilik-ureme::cardTitle",
         "text": "Campylobacter mikroaerofilik üreme"
       }
     ],
@@ -3498,11 +3498,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 54,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-215::optionFeedback.Aside dirençli basil olup Löwenstein-Jensen besiyerinde zorunlu olarak ürer",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-215::optionFeedback.Aside dirençli basil olup Löwenstein-Jensen besiyerinde zorunlu olarak ürer",
         "text": "Yanlıştır. Aside dirençli basil ve löwenstein-Jensen besiyeri Mycobacterium tuberculosis ile ilişkilidir. Legionella için klasik kültür BCYE agardır."
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-215::diagnosis.optionComparison.Aside dirençli basil olup Löwenstein-Jensen besiyerinde zorunlu olarak ürer",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-215::diagnosis.optionComparison.Aside dirençli basil olup Löwenstein-Jensen besiyerinde zorunlu olarak ürer",
         "text": "Yanlıştır. Aside dirençli basil ve löwenstein-Jensen besiyeri Mycobacterium tuberculosis ile ilişkilidir. Legionella için klasik kültür BCYE agardır."
       }
     ],
@@ -3567,11 +3567,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 203,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-102::topic",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-102::topic",
         "text": "Mycobacterium tuberculosis virülans faktörleri"
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-102::clinicalFocus",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-102::clinicalFocus",
         "text": "Mycobacterium tuberculosis virülans faktörleri"
       }
     ],
@@ -3636,11 +3636,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 11,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-102::listTitle",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-102::listTitle",
         "text": "Tüberküloz kord faktörü"
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-102::cardTitle",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-102::cardTitle",
         "text": "Tüberküloz kord faktörü"
       }
     ],
@@ -3705,11 +3705,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 2438,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-093::optionFeedback.Anti-HBc IgM",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-093::optionFeedback.Anti-HBc IgM",
         "text": "Doğru cevaptır. Anti-HBc IgM akut HBV enfeksiyonunu gösterir ve HBsAg ile anti-HBs’nin birlikte negatif olabildiği pencere döneminde tanısal değer taşır."
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-093::diagnosis.optionComparison.Anti-HBc IgM",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-093::diagnosis.optionComparison.Anti-HBc IgM",
         "text": "Doğru cevaptır. Anti-HBc IgM akut HBV enfeksiyonunu gösterir ve HBsAg ile anti-HBs’nin birlikte negatif olabildiği pencere döneminde tanısal değer taşır."
       }
     ],
@@ -4395,11 +4395,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 188,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-205::explanation",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-205::explanation",
         "text": "Doğru cevap A’dır. Sitomegalovirüs, herpesvirüs ailesinden bir DNA virüsüdür ve enfekte hücrelerde sitomegali ile birlikte belirgin intranükleer inklüzyonlar oluşturabilir. Bu inklüzyonlar çevresindeki halo ile baykuş gözü görünümü olarak tanımlanır. Negri cisimcikleri kuduz, guarnieri cisimcikleri çiçek virüsü, cowdry tip A inklüzyonları HSV/VZV gibi herpesvirüslerde, koplik lekeleri ise kızamıkta klasik olarak bilinir. CMV için en ayırt edici histolojik ifade baykuş gözü inklüzyonudur."
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-205::diagnosis.explanation",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-205::diagnosis.explanation",
         "text": "Doğru cevap A’dır. Sitomegalovirüs, herpesvirüs ailesinden bir DNA virüsüdür ve enfekte hücrelerde sitomegali ile birlikte belirgin intranükleer inklüzyonlar oluşturabilir. Bu inklüzyonlar çevresindeki halo ile baykuş gözü görünümü olarak tanımlanır. Negri cisimcikleri kuduz, guarnieri cisimcikleri çiçek virüsü, cowdry tip A inklüzyonları HSV/VZV gibi herpesvirüslerde, koplik lekeleri ise kızamıkta klasik olarak bilinir. CMV için en ayırt edici histolojik ifade baykuş gözü inklüzyonudur."
       }
     ],
@@ -4464,11 +4464,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 161,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-112::evidenceChain[2].text",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-112::evidenceChain[2].text",
         "text": "HIV girişinde gp120 = CD4 ve koreseptör bağlanması; gp41 = füzyon. CCR5 erken/makrofaj-tropik, CXCR4 T hücre tropizmiyle düşünülür."
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-112::examPearls[0]",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-112::examPearls[0]",
         "text": "HIV girişinde gp120 = CD4 ve koreseptör bağlanması; gp41 = füzyon. CCR5 erken/makrofaj-tropik, CXCR4 T hücre tropizmiyle düşünülür."
       }
     ],
@@ -4533,11 +4533,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 161,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-112::evidenceChain[2].text",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-112::evidenceChain[2].text",
         "text": "HIV girişinde gp120 = CD4 ve koreseptör bağlanması; gp41 = füzyon. CCR5 erken/makrofaj-tropik, CXCR4 T hücre tropizmiyle düşünülür."
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-112::examPearls[0]",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-112::examPearls[0]",
         "text": "HIV girişinde gp120 = CD4 ve koreseptör bağlanması; gp41 = füzyon. CCR5 erken/makrofaj-tropik, CXCR4 T hücre tropizmiyle düşünülür."
       }
     ],
@@ -4671,11 +4671,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 107,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-232::evidenceChain[2].text",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-232::evidenceChain[2].text",
         "text": "Yüksek riskli HPV: E6 → p53 inhibisyonu/yıkımı, E7 → Rb inhibisyonu. HPV 16/18 servikal karsinom için yüksek risklidir."
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-232::examPearls[0]",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-232::examPearls[0]",
         "text": "Yüksek riskli HPV: E6 → p53 inhibisyonu/yıkımı, E7 → Rb inhibisyonu. HPV 16/18 servikal karsinom için yüksek risklidir."
       }
     ],
@@ -4740,11 +4740,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 67,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-232::topic",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-232::topic",
         "text": "HPV E6 ve E7 proteinleri"
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-232::listTitle",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-232::listTitle",
         "text": "HPV E6 ve E7 proteinleri"
       }
     ],
@@ -4809,11 +4809,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 67,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-232::topic",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-232::topic",
         "text": "HPV E6 ve E7 proteinleri"
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-232::listTitle",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-232::listTitle",
         "text": "HPV E6 ve E7 proteinleri"
       }
     ],
@@ -5153,11 +5153,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 99,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-205::evidenceChain[2].text",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-205::evidenceChain[2].text",
         "text": "CMV = sitomegali + owl’s eye intranükleer inklüzyon; kuduz = Negri; kızamık = Koplik."
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-205::examPearls[0]",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-205::examPearls[0]",
         "text": "CMV = sitomegali + owl’s eye intranükleer inklüzyon; kuduz = Negri; kızamık = Koplik."
       }
     ],
@@ -5360,11 +5360,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 235,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-124::explanation",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-124::explanation",
         "text": "Doğru cevap B’dir. C. Neoformans özellikle immünsüprese hastalarda menenjit etkeni olarak önemlidir. En karakteristik virülans faktörü antifikositik polisakkarit kapsülüdür. Çini mürekkebi boyasında kapsül boyayı dışladığı için maya çevresinde halo tarzı açıklık görülebilir; ayrıca kapsüler antijenin saptanması klinik tanıda değerlidir. Diğer seçenekler stafilokok, streptokok veya bakteriyel tanı özellikleriyle ilişkilidir; mantar olan Cryptococcus için uygun değildir. Cryptococcus neoformans kapsüllü, maya form..."
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-124::diagnosis.explanation",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-124::diagnosis.explanation",
         "text": "Doğru cevap B’dir. C. Neoformans özellikle immünsüprese hastalarda menenjit etkeni olarak önemlidir. En karakteristik virülans faktörü antifikositik polisakkarit kapsülüdür. Çini mürekkebi boyasında kapsül boyayı dışladığı için maya çevresinde halo tarzı açıklık görülebilir; ayrıca kapsüler antijenin saptanması klinik tanıda değerlidir. Diğer seçenekler stafilokok, streptokok veya bakteriyel tanı özellikleriyle ilişkilidir; mantar olan Cryptococcus için uygun değildir. Cryptococcus neoformans kapsüllü, maya form..."
       }
     ],
@@ -5429,11 +5429,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 150,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-124::evidenceChain[2].text",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-124::evidenceChain[2].text",
         "text": "Cryptococcus neoformans = kapsüllü maya + çini mürekkebi halo görünümü + kriptokok antijeni + immünsüprese hastada menenjit."
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-124::examPearls[0]",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-124::examPearls[0]",
         "text": "Cryptococcus neoformans = kapsüllü maya + çini mürekkebi halo görünümü + kriptokok antijeni + immünsüprese hastada menenjit."
       }
     ],
@@ -6325,11 +6325,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 181,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-195::options[4].text",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-195::options[4].text",
         "text": "Duodenumda Giardia trofozoitlerine bağlı yağ malabsorpsiyonu"
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-195::diagnosis.options[4]",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-195::diagnosis.options[4]",
         "text": "Duodenumda Giardia trofozoitlerine bağlı yağ malabsorpsiyonu"
       }
     ],
@@ -7085,11 +7085,11 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 216,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-159::explanation",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-159::explanation",
         "text": "Doğru cevap A’dır. H. Pylori spiral, hareketli, mikroaerofilik bir bakteridir ve mide mukusunda kolonize olur. Üreaz enzimi üreyi amonyak ve karbondioksite parçalar; amonyak çevredeki asidi tamponlayarak bakterinin asidik mide ortamında hayatta kalmasına yardım eder. Bu özellik tanıda üre nefes testi ve hızlı üreaz testi gibi yöntemlerin temelini oluşturur. Spor oluşumu, solunum epitel nöraminidazı veya laktoz metabolizması H. Pylori’nin mide kolonizasyonunun ana mekanizması değildir."
       },
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-159::diagnosis.explanation",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-159::diagnosis.explanation",
         "text": "Doğru cevap A’dır. H. Pylori spiral, hareketli, mikroaerofilik bir bakteridir ve mide mukusunda kolonize olur. Üreaz enzimi üreyi amonyak ve karbondioksite parçalar; amonyak çevredeki asidi tamponlayarak bakterinin asidik mide ortamında hayatta kalmasına yardım eder. Bu özellik tanıda üre nefes testi ve hızlı üreaz testi gibi yöntemlerin temelini oluşturur. Spor oluşumu, solunum epitel nöraminidazı veya laktoz metabolizması H. Pylori’nin mide kolonizasyonunun ana mekanizması değildir."
       }
     ],
@@ -7907,7 +7907,7 @@ export const TUS_GLOSSARY_V400_MICROBIOLOGY_EXPANSION_TERMS = [
     "occurrenceCount": 88,
     "sourceTextExamples": [
       {
-        "sourceFilePath": "src/data/cases.js::tus-spot-vakasiz-secki-082::section",
+        "sourceFilePath": "src/data/cases.js::ai-spot-vakasiz-secki-082::section",
         "text": "Anaerob Bakteriler"
       },
       {

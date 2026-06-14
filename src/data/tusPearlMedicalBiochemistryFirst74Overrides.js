@@ -904,7 +904,7 @@ export const TUS_PEARL_MEDICAL_BIOCHEMISTRY_FIRST74_TEXT_OVERRIDES = Object.free
     "answer": "Porfobilinojen deaminaz eksikliği.",
     "explanation": "Porfobilinojen deaminaz hem sentez yolunda porfobilinojeni hidroksimetilbilana dönüştürür. Eksiklikte ALA ve porfobilinojen gibi erken prekürsörler birikir; nörovisseral ataklar belirgindir, fotosensitivite tipik ön planda değildir.",
     "tusTip": "AIP’de karın ağrısı ve nöropsikiyatrik bulgu erken porfirin prekürsörlerinin nörotoksisitesiyle ilişkilidir.",
-    "differentialNote": "Porphyria cutanea tarda fotosensitivite ve büllöz lezyonlarla gider;P daha çok nörovisseral atakla sorulur.",
+    "differentialNote": "Porphyria cutanea tarda fotosensitivite ve büllöz lezyonlarla gider; AIP daha çok nörovisseral atakla sorulur.",
     "keywords": [
       "AIP",
       "porfobilinojen deaminaz",
@@ -918,7 +918,7 @@ export const TUS_PEARL_MEDICAL_BIOCHEMISTRY_FIRST74_TEXT_OVERRIDES = Object.free
     "answer": "Porfirinojenlerden önceki ALA ve PBG prekürsörlerinin birikmesi.",
     "explanation": "AIP’de blok erken basamaktadır; ALA ve porfobilinojen artar, fakat ışığa duyarlı halka yapılı porfirinler belirgin birikmez. Bu yüzden klinik daha çok karın ağrısı, otonom bulgular ve nöropsikiyatrik atak şeklindedir.",
     "tusTip": "AIP = nörovisseral; PCT = kutanöz fotosensitivite ayrımı sınavda çok değerlidir.",
-    "differentialNote": "Kurşun zehirlenmesi ALA dehidrataz ve ferroşelatazı etkileyerek ALA artışı yapabilir;P’nin klasik enzimi PBG deaminazdır.",
+    "differentialNote": "Kurşun zehirlenmesi ALA dehidrataz ve ferroşelatazı etkileyerek ALA artışı yapabilir; AIP’nin klasik enzimi PBG deaminazdır.",
     "keywords": [
       "ALA",
       "PBG",

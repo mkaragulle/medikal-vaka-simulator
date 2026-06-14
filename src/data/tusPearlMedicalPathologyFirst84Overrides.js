@@ -468,7 +468,7 @@ export const TUS_PEARL_MEDICAL_PATHOLOGY_FIRST84_TEXT_OVERRIDES = Object.freeze(
     "front": "Kronik greft rejeksiyonunda greft fonksiyonunun yavaş kaybını en iyi açıklayan vasküler değişiklik nedir?",
     "back": "Greft damarlarında obliteratif intimal kalınlaşma.",
     "answer": "Greft damarlarında obliteratif intimal kalınlaşma.",
-    "explanation": "Damar intimasındaki proliferasyon ve fibrozis lümeni daraltır; kronik hipoperfüzyon parankimal kayıp ve interstisyel fibrozise yol açar. Bu süreç akut trombotik hasardan çok yavaş ilerleyen iskemik remodeling şeklindedir.",
+    "explanation": "Damar intimasındaki proliferasyon ve fibrozis lümeni daraltır; kronik hipoperfüzyon parankimal kayıp ve interstisyel fibrozise yol açar. Bu süreç akut trombotik hasardan çok yavaş ilerleyen iskemik reproviderLabeling şeklindedir.",
     "tusTip": "Kronik rejeksiyon, greftin damar hastalığı gibi davranır: lümen daralır, parankim zamanla kaybolur.",
     "differentialNote": "Hiperakut rejeksiyonda ani tromboz ve nekroz; kronik rejeksiyonda ise aylar-yıllar içinde obliteratif damar lezyonu beklenir.",
     "keywords": [

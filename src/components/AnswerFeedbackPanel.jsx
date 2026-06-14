@@ -2,6 +2,7 @@ import { Icon, IconBadge } from './ui.jsx';
 import GlossaryText from './GlossaryTooltip.jsx';
 import { formatAppearedYears, resolveExamSignal } from '../utils/examMeta.js';
 import './tusPearlCards.css';
+import { normalizeEditorialText, isForbiddenEditorialText, isPlaceholderInvestigationText } from '../utils/editorialQuality.js';
 
 const MAX_EVIDENCE_ITEMS = Number.POSITIVE_INFINITY;
 const MAX_PEARL_ITEMS = Number.POSITIVE_INFINITY;
@@ -156,7 +157,7 @@ function normalizeMedicalAbbreviations(value = '') {
 }
 
 function normalizeText(value = '') {
-  return normalizeMedicalAbbreviations(String(value ?? ''))
+  return normalizeMedicalAbbreviations(normalizeEditorialText(String(value ?? ''), { fallback: String(value ?? '') }))
     .replace(/\bASİT\s*[-–—]?\s*baz\b/giu, 'Asit-baz')
     .replace(/\bASIT\s*[-–—]?\s*baz\b/giu, 'Asit-baz')
     .replace(/\bASİT\s*[-–—]?\s*BAZ\b/giu, 'Asit-baz')
@@ -292,7 +293,7 @@ function unique(items = []) {
   const seen = new Set();
   return items.filter((item) => {
     const text = itemText(item);
-    if (!text) return false;
+    if (!text || isForbiddenEditorialText(text) || isPlaceholderInvestigationText(text)) return false;
     const key = text.toLocaleLowerCase('tr');
     if (seen.has(key)) return false;
     seen.add(key);
@@ -390,7 +391,7 @@ function getMainClue(clinicalCase) {
 
 function deriveWhyCorrect(clinicalCase) {
   const feedback = getFeedback(clinicalCase);
-  const isSpotCase = clinicalCase.branchId === 'tus-spot-olgular';
+  const isSpotCase = clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular';
   const explicit = normalizeText(feedback.whyCorrect || '');
   if (explicit) return compactParagraph(removeMetaLanguage(explicit), isSpotCase ? 6 : 4, isSpotCase ? 900 : 620);
 
@@ -663,7 +664,7 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
     accumulator[normalizeForCompare(key)] = value;
     return accumulator;
   }, {});
-  const isSpotQuestion = clinicalCase.branchId === 'tus-spot-olgular';
+  const isTusSpot = clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular';
 
   return options.slice(0, MAX_COMPARISON_ITEMS).map((option) => {
     const isCorrectOption = option === correct;
@@ -673,7 +674,7 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
         status: 'correct',
         isSelected: selectedOption === option,
         title: 'En iyi seçenek',
-        explanation: isSpotQuestion
+        explanation: isTusSpot
           ? compactParagraph(removeMetaLanguage(deriveCorrectOptionSummary(clinicalCase, option, evidenceChain)), 3, 420)
           : singleSentence(deriveCorrectOptionSummary(clinicalCase, option, evidenceChain), 210),
         comparisonPoints: [],
@@ -682,7 +683,7 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
 
     const explicit = wrongMap[option] || normalizedWrongMap[normalizeForCompare(option)] || {};
     const rawExplanation = removeMetaLanguage(explicit.explanation || '');
-    const explanation = isSpotQuestion ? compactParagraph(rawExplanation, 3, 360) : singleSentence(rawExplanation, 190);
+    const explanation = isTusSpot ? compactParagraph(rawExplanation, 3, 360) : singleSentence(rawExplanation, 190);
     return {
       option,
       status: 'wrong',
@@ -694,6 +695,256 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
   });
 }
 
+function buildTusSpotFocusedComparisons(optionComparisons = [], selectedOption = '', isCorrect = false) {
+  if (isCorrect) return [];
+  const selectedCard = optionComparisons.find((item) => item.isSelected || item.option === selectedOption);
+  const correctCard = optionComparisons.find((item) => item.status === 'correct');
+  return [selectedCard, correctCard]
+    .filter(Boolean)
+    .filter((item, index, list) => list.findIndex((entry) => entry.option === item.option) === index)
+    .slice(0, 2);
+}
+
+
+function getTusSpotOptions(clinicalCase = {}) {
+  const diagnosisOptions = Array.isArray(clinicalCase.diagnosis?.options) ? clinicalCase.diagnosis.options : [];
+  if (diagnosisOptions.length) return diagnosisOptions.map(itemText).filter(Boolean);
+  const rawOptions = Array.isArray(clinicalCase.options) ? clinicalCase.options : [];
+  return rawOptions.map((option) => itemText(option?.text || option)).filter(Boolean);
+}
+
+function getTusSpotOptionLetter(clinicalCase = {}, optionText = '') {
+  const options = getTusSpotOptions(clinicalCase);
+  const normalized = normalizeForCompare(optionText);
+  const index = options.findIndex((option) => normalizeForCompare(option) === normalized);
+  return index >= 0 ? String.fromCharCode(65 + index) : '';
+}
+
+function resolveTusSpotOptionText(clinicalCase = {}, key = '') {
+  const options = getTusSpotOptions(clinicalCase);
+  const rawKey = normalizeText(key);
+  const letterMatch = rawKey.match(/^[A-E]$/iu);
+  if (letterMatch) return options[rawKey.toLocaleUpperCase('tr').charCodeAt(0) - 65] || rawKey;
+  const normalized = normalizeForCompare(rawKey);
+  return options.find((option) => normalizeForCompare(option) === normalized) || rawKey;
+}
+
+function pickTusSpotCorrectOption(clinicalCase = {}) {
+  return normalizeText(
+    clinicalCase.diagnosis?.correct
+    || clinicalCase.correctOptionText
+    || clinicalCase.correctAnswerText
+    || resolveTusSpotOptionText(clinicalCase, clinicalCase.correctAnswer || '')
+    || ''
+  );
+}
+
+function getTusSpotMapValue(map, optionText = '', letter = '') {
+  if (!map || typeof map !== 'object' || Array.isArray(map)) return '';
+  const direct = map[optionText] || map[letter] || map[letter?.toLocaleUpperCase?.('tr')];
+  if (direct) return itemText(direct);
+  const normalizedOption = normalizeForCompare(optionText);
+  const matched = Object.entries(map).find(([key]) => normalizeForCompare(key) === normalizedOption);
+  return matched ? itemText(matched[1]) : '';
+}
+
+function mergeUniqueSentences(parts = [], maxSentences = 7, maxLength = 1350) {
+  const seen = new Set();
+  const sentences = [];
+  parts.forEach((part) => {
+    splitIntoSentences(removeMetaLanguage(itemText(part))).forEach((sentence) => {
+      const cleaned = ensureSentence(sentence);
+      const key = normalizeForCompare(cleaned);
+      if (!key || seen.has(key)) return;
+      seen.add(key);
+      sentences.push(cleaned);
+    });
+  });
+  return sentences.join(' ');
+}
+
+function resolveTusSpotOptionExplanation(clinicalCase = {}, optionText = '', fallback = '') {
+  const feedback = getFeedback(clinicalCase);
+  const letter = getTusSpotOptionLetter(clinicalCase, optionText);
+  const sources = [
+    getTusSpotMapValue(feedback.whyWrong, optionText, letter),
+    getTusSpotMapValue(feedback.optionComparison, optionText, letter),
+    getTusSpotMapValue(feedback.optionFeedback, optionText, letter),
+    getTusSpotMapValue(feedback.feedbackByOption, optionText, letter),
+    getTusSpotMapValue(feedback.answerFeedbackByOption, optionText, letter),
+    getTusSpotMapValue(feedback.optionRationales, optionText, letter),
+    getTusSpotMapValue(clinicalCase.diagnosis?.whyWrong, optionText, letter),
+    getTusSpotMapValue(clinicalCase.diagnosis?.optionComparison, optionText, letter),
+    getTusSpotMapValue(clinicalCase.diagnosis?.optionFeedback, optionText, letter),
+    getTusSpotMapValue(clinicalCase.diagnosis?.feedbackByOption, optionText, letter),
+    getTusSpotMapValue(clinicalCase.diagnosis?.answerFeedbackByOption, optionText, letter),
+    fallback,
+  ].filter(Boolean);
+  return mergeUniqueSentences(sources, 4, 760) || 'Bu seçenek için ayrıntılı açıklama eklenemedi.';
+}
+
+function buildTusSpotDetailedRows(clinicalCase = {}, selectedOption = '') {
+  const options = getTusSpotOptions(clinicalCase);
+  const correctOption = pickTusSpotCorrectOption(clinicalCase);
+  const selectedNormalized = normalizeForCompare(resolveTusSpotOptionText(clinicalCase, selectedOption));
+  const correctNormalized = normalizeForCompare(correctOption);
+
+  return options.map((option, index) => {
+    const letter = String.fromCharCode(65 + index);
+    const isCorrectOption = normalizeForCompare(option) === correctNormalized;
+    const isSelectedOption = normalizeForCompare(option) === selectedNormalized;
+    return {
+      letter,
+      option,
+      status: isCorrectOption ? 'correct' : 'wrong',
+      isSelected: isSelectedOption,
+      explanation: resolveTusSpotOptionExplanation(clinicalCase, option),
+    };
+  });
+}
+
+function isTusSpotExceptionQuestion(clinicalCase = {}) {
+  const stem = normalizeText(clinicalCase.stem || clinicalCase.question || clinicalCase.diagnosis?.question || '');
+  return /yanl[ıi][şs]t[ıi]r|hatal[ıi]d[ıi]r|do[ğg]ru de[ğg]ildir|de[ğg]ildir|olmayan|istisna/iu.test(stem);
+}
+
+function decorateTusSpotSelectedExplanation(clinicalCase = {}, row = {}, isCorrect = false) {
+  const text = removeMetaLanguage(row?.explanation || '');
+  if (isCorrect) return text;
+  if (isTusSpotExceptionQuestion(clinicalCase) && /do[ğg]rudur|ifade do[ğg]rudur|seçenek do[ğg]ru/iu.test(text)) {
+    return mergeUniqueSentences([
+      `Seçtiğin ifade bilimsel olarak doğrudur; ancak soru kökü yanlış veya istisna olan ifadeyi sorduğu için bu yanıt elenir.`,
+      text,
+    ], 4, 760);
+  }
+  return text;
+}
+
+function decorateTusSpotCorrectExplanation(clinicalCase = {}, row = {}) {
+  const text = removeMetaLanguage(row?.explanation || '');
+  return text;
+}
+
+function buildTusSpotScienceText(clinicalCase = {}, whyCorrect = '') {
+  const feedback = getFeedback(clinicalCase);
+  const evidenceTexts = Array.isArray(clinicalCase.evidenceChain)
+    ? clinicalCase.evidenceChain.map((item) => item?.text || item)
+    : [];
+  return mergeUniqueSentences([
+    clinicalCase.coreKnowledge,
+    clinicalCase.explanation,
+    clinicalCase.diagnosis?.explanation,
+    feedback.whyCorrect,
+    feedback.rationale,
+    whyCorrect,
+    ...evidenceTexts,
+  ], 12, 2600);
+}
+
+function groupSentencesForTusSpotScience(sentences = []) {
+  const clean = sentences.map((sentence) => ensureSentence(sentence)).filter(Boolean);
+  if (clean.length <= 2) return [{ title: 'Temel mantık', text: clean.join(' ') }];
+
+  const firstBlockSize = clean.length >= 6 ? 2 : 1;
+  const secondBlockSize = clean.length >= 5 ? 2 : 1;
+  const blocks = [
+    { title: 'Temel mantık', sentences: clean.slice(0, firstBlockSize) },
+    { title: 'Klinik sonuç', sentences: clean.slice(firstBlockSize, firstBlockSize + secondBlockSize) },
+    { title: 'Ayırıcı ayrım', sentences: clean.slice(firstBlockSize + secondBlockSize) },
+  ]
+    .map((block) => ({ title: block.title, text: block.sentences.join(' ') }))
+    .filter((block) => normalizeText(block.text));
+
+  return blocks.length ? blocks : [{ title: 'Temel mantık', text: clean.join(' ') }];
+}
+
+function buildTusSpotScienceBlocks(scienceText = '') {
+  const sentences = splitIntoSentences(scienceText);
+  if (!sentences.length) return [];
+  return groupSentencesForTusSpotScience(sentences);
+}
+
+function TusSpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCorrect, whyWrong, pearl, children, glossaryEnabled = true }) {
+  const rows = buildTusSpotDetailedRows(clinicalCase, selectedOption);
+  const selectedText = resolveTusSpotOptionText(clinicalCase, selectedOption);
+  const correctText = pickTusSpotCorrectOption(clinicalCase);
+  const selectedRow = rows.find((row) => normalizeForCompare(row.option) === normalizeForCompare(selectedText));
+  const correctRow = rows.find((row) => row.status === 'correct') || rows.find((row) => normalizeForCompare(row.option) === normalizeForCompare(correctText));
+  const selectedExplanation = decorateTusSpotSelectedExplanation(clinicalCase, selectedRow, isCorrect) || whyWrong;
+  const correctExplanation = decorateTusSpotCorrectExplanation(clinicalCase, correctRow) || whyCorrect;
+  const scienceText = buildTusSpotScienceText(clinicalCase, whyCorrect);
+  const scienceBlocks = buildTusSpotScienceBlocks(scienceText);
+  return (
+    <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro ai-spot-detailed-feedback-panel ai-spot-detailed-feedback-panel-v246`} aria-live="polite">
+      <div className="ai-spot-detailed-feedback-shell ai-spot-detailed-feedback-shell-v246">
+        <div className={`ai-spot-feedback-choice-grid ai-spot-feedback-choice-grid-v246 ${isCorrect ? 'single' : ''}`.trim()}>
+          <article className={`ai-spot-feedback-choice-card ${isCorrect ? 'is-correct' : 'is-selected-wrong'}`.trim()}>
+            <span className="ai-spot-choice-kicker">Seçimin</span>
+            <strong><GlossaryText text={selectedText || 'Seçim bulunamadı'} enabled={glossaryEnabled} /></strong>
+            <p><GlossaryText text={ensureSentence(selectedExplanation || 'Seçilen seçenek için açıklama bulunamadı.')} enabled={glossaryEnabled} /></p>
+          </article>
+
+          {!isCorrect ? (
+            <article className="ai-spot-feedback-choice-card is-correct">
+              <span className="ai-spot-choice-kicker">Doğru cevap</span>
+              <strong><GlossaryText text={correctText || 'Doğru cevap bulunamadı'} enabled={glossaryEnabled} /></strong>
+              <p><GlossaryText text={ensureSentence(correctExplanation || 'Doğru seçenek için açıklama bulunamadı.')} enabled={glossaryEnabled} /></p>
+            </article>
+          ) : null}
+        </div>
+
+        {scienceBlocks.length ? (
+          <section className="ai-spot-feedback-section-card ai-spot-feedback-science-card ai-spot-feedback-science-card-v246 ai-spot-feedback-science-card-v249">
+            <header>
+              <h4>Mekanizma ve sınav mantığı</h4>
+            </header>
+            <div className="ai-spot-science-flow-v249">
+              {scienceBlocks.map((block, index) => (
+                <article className="ai-spot-science-item-v249" key={`${block.title}-${index}`}>
+                  <span className="ai-spot-science-step-v249">{block.title}</span>
+                  <p><GlossaryText text={block.text} enabled={glossaryEnabled} /></p>
+                </article>
+              ))}
+            </div>
+            {pearl ? (
+              <div className="ai-spot-feedback-pearl-card ai-spot-feedback-pearl-card-v246">
+                <div className="ai-spot-pearl-icon"><Icon name="Sparkles" size={15} /></div>
+                <div>
+                  <span>TUS ipucu</span>
+                  <p className="ai-spot-feedback-pearl-text-v402">{ensureSentence(pearl)}</p>
+                </div>
+              </div>
+            ) : null}
+          </section>
+        ) : null}
+
+        <section className="ai-spot-feedback-section-card ai-spot-feedback-options-card ai-spot-feedback-options-card-v246">
+          <header>
+            <h4>Seçenekleri nasıl elemeliydin?</h4>
+          </header>
+          <div className="ai-spot-feedback-option-list">
+            {rows.map((row) => (
+              <article
+                className={`ai-spot-feedback-option-row ${row.status === 'correct' ? 'is-correct' : 'is-wrong'} ${row.isSelected ? 'is-selected' : ''}`.trim()}
+                key={`${row.letter}-${row.option}`}
+              >
+                <div className="ai-spot-feedback-option-head">
+                  <b>{row.letter}</b>
+                  <strong><GlossaryText text={row.option} enabled={glossaryEnabled} /></strong>
+                  {row.isSelected ? <em>Seçimin</em> : null}
+                  {row.status === 'correct' ? <em className="correct">Doğru cevap</em> : null}
+                </div>
+                <p><GlossaryText text={ensureSentence(row.explanation)} enabled={glossaryEnabled} revealMode="postAnswer" maxTerms={6} /></p>
+              </article>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      {children ? <div className="answer-feedback-actions ai-spot-feedback-actions">{children}</div> : null}
+    </div>
+  );
+}
 
 function FeedbackSection({ icon, tone = 'blue', eyebrow, title, children, className = '', minimal = false }) {
   const shouldRenderHead = !minimal && (icon || eyebrow || title);
@@ -712,6 +963,7 @@ function FeedbackSection({ icon, tone = 'blue', eyebrow, title, children, classN
     </section>
   );
 }
+
 
 function ExamNoteFeedback({ signal, glossaryEnabled = true }) {
   if (!signal?.hasContent) return null;
@@ -910,10 +1162,30 @@ function AnswerFeedbackPanel({
   const rawPearls = derivePearls(clinicalCase);
   const managementSteps = deriveManagementSteps(clinicalCase);
   const glossaryEnabled = !hardMode;
-  const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.branchId === 'tus-spot-olgular';
+  const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular';
   const examSignal = resolveExamSignal(clinicalCase);
   const pearls = rawPearls;
   const shouldRenderPearls = pearls.length && (!isSpotCase || !examSignal.hasContent);
+  const isTusSpot = clinicalCase.caseType === 'ai-spot';
+  const singleLinePearl = deriveSingleLinePearl(clinicalCase, reasoningText);
+  const tusSpotFocusedComparisons = buildTusSpotFocusedComparisons(optionComparisons, selectedDiagnosis, isCorrect);
+
+  if (isTusSpot) {
+    return (
+      <TusSpotDetailedFeedback
+        clinicalCase={clinicalCase}
+        selectedOption={selectedDiagnosis}
+        isCorrect={isCorrect}
+        whyCorrect={whyCorrect}
+        whyWrong={whyWrong}
+        pearl={singleLinePearl}
+        glossaryEnabled={glossaryEnabled}
+      >
+        {children}
+      </TusSpotDetailedFeedback>
+    );
+  }
+
   return (
     <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro answer-feedback-panel-v393`} aria-live="polite">
       <div className="answer-feedback-grid answer-feedback-grid-pro">

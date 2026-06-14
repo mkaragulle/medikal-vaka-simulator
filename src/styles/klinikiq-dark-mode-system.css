@@ -183,6 +183,109 @@ html[data-theme="dark"] *::-webkit-scrollbar-thumb:hover { background: var(--scr
   color: var(--ki-text-muted) !important;
 }
 
+/* Canonical surfaces ------------------------------------------------------ */
+.app-shell[data-theme="dark"] :where(
+  .card-surface,
+  .question-panel,
+  .right-workspace-shell,
+  .answer-feedback-panel,
+  .case-hero-card,
+  .case-narrative-card,
+  .clinical-data-card,
+  .investigation-section,
+  .media-section,
+  .tools-panel,
+  .dashboard-aside-card,
+  .wrong-answers-panel,
+  .wrong-full-header,
+  .wrong-full-toolbar,
+  .wrong-full-list,
+  .tus-pearl-hub-panel,
+  .tus-pearl-study-shell,
+  .tus-pearl-deck,
+  .tus-pearl-catalog-manager,
+  .tus-pearl-catalog-sidebar,
+  .tus-pearl-catalog-detail,
+  .tus-pearl-catalog-create-card,
+  .home-hero-v8,
+  .home-hero-premium-v10,
+  .tus-hero-redesign,
+  .branch-card,
+  .case-list-item,
+  .professional-case-hero,
+  .professional-patient-summary-card,
+  .clinical-summary-card,
+  .patient-summary-card,
+  .ai-spot-unified-panel,
+  .ai-spot-narrative-card,
+  .ai-spot-support-data-panel,
+  .exam-results-card,
+  .exam-results-panel,
+  .auth-minimal-card,
+  .auth-minimal-feature,
+  .komite-workspace-shell,
+  .material-panel,
+  .lesson-output-panel
+) {
+  border-color: var(--ki-border) !important;
+  background:
+    linear-gradient(180deg, rgba(11, 34, 48, 0.92), rgba(7, 26, 33, 0.92)) !important;
+  color: var(--ki-text) !important;
+  box-shadow: var(--ki-shadow-card) !important;
+}
+
+.app-shell[data-theme="dark"] :where(
+  .stat-card,
+  .compact-stat-card,
+  .pro-stat-card,
+  .home-metric-card,
+  .ai-practice-stat-card,
+  .tool-state-card,
+  .tool-action-card,
+  .mode-card,
+  .clinical-callout,
+  .accordion-item,
+  .detail-copy,
+  .vital-card,
+  .patient-strip-item,
+  .summary-detail-card,
+  .patient-summary-story-block,
+  .feedback-card,
+  .feedback-panel,
+  .feedback-card-minimal,
+  .answer-feedback-summary,
+  .answer-flow-item,
+  .exam-progress-box,
+  .exam-signal-box,
+  .exam-note-feedback-card,
+  .wrong-answer-card,
+  .wrong-full-card,
+  .wrong-answer-more-row,
+  .tus-pearl-hub-stats > *,
+  .tus-pearl-action-grid > *,
+  .tus-pearl-library-card,
+  .tus-pearl-catalog-row,
+  .catalog-create-box,
+  .pearl-detail-panel,
+  .pearl-answer-panel,
+  .tus-pearl-focus-card,
+  .pearl-bridge-callout,
+  .ai-spot-feedback-choice-card,
+  .ai-spot-feedback-section-card,
+  .ai-spot-compact-data-group,
+  .ai-spot-compact-data-item,
+  .answer-option,
+  .investigation-option-card,
+  .smart-order-card,
+  .neutral-order-card,
+  .requested-test-card-head
+) {
+  border-color: var(--ki-border) !important;
+  background: linear-gradient(180deg, rgba(16, 42, 53, 0.82), rgba(8, 26, 33, 0.86)) !important;
+  color: var(--ki-text) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.20) !important;
+}
+
 .app-shell[data-theme="dark"] :where(
   .home-metric-card-accent,
   .tus-pearl-hub-panel,
@@ -196,6 +299,16 @@ html[data-theme="dark"] *::-webkit-scrollbar-thumb:hover { background: var(--scr
 ) {
   border-color: var(--ki-border-strong) !important;
   background: linear-gradient(180deg, rgba(20, 184, 166, 0.15), rgba(11, 34, 48, 0.90)) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.answer-option.correct, .feedback.success, .ai-spot-feedback-choice-card.is-correct, .ai-spot-feedback-option-row.is-correct) {
+  border-color: rgba(52, 211, 153, 0.38) !important;
+  background: linear-gradient(180deg, rgba(6, 78, 59, 0.34), rgba(7, 26, 33, 0.88)) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.answer-option.wrong, .feedback.danger, .ai-spot-feedback-choice-card.is-selected-wrong, .ai-spot-feedback-option-row.is-wrong) {
+  border-color: rgba(248, 113, 113, 0.38) !important;
+  background: linear-gradient(180deg, rgba(127, 29, 29, 0.34), rgba(7, 26, 33, 0.88)) !important;
 }
 
 .app-shell[data-theme="dark"] :where(.warning, .clinical-callout.warning, .exam-signal-trap) {
@@ -243,6 +356,20 @@ html[data-theme="dark"] *::-webkit-scrollbar-thumb:hover { background: var(--scr
   background: rgba(127, 29, 29, 0.26) !important;
 }
 
+/* Buttons, inputs, badges ------------------------------------------------- */
+.app-shell[data-theme="dark"] :where(.btn-primary, .primary-action, .answer-evaluate-btn, .ai-generate-cta, .wrong-answer-view-all-btn, .catalog-add-action) {
+  color: var(--ki-control-primary-text) !important;
+  border-color: rgba(94, 234, 212, 0.28) !important;
+  background: var(--ki-control-primary-bg) !important;
+  box-shadow: 0 12px 28px rgba(20, 184, 166, 0.20) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.btn-primary:hover, .primary-action:hover, .answer-evaluate-btn:hover, .ai-generate-cta:hover, .wrong-answer-view-all-btn:hover, .catalog-add-action:hover) {
+  color: var(--ki-control-primary-text) !important;
+  filter: saturate(1.04) brightness(1.02);
+  box-shadow: 0 18px 38px rgba(20, 184, 166, 0.25) !important;
+}
+
 .app-shell[data-theme="dark"] :where(.btn-secondary, .secondary-action, .btn-icon, .btn-ghost, .ghost-link, .wrong-clear-btn, .text-reset-button, .toggle-chip, .branch-back-v8, .catalog-edit-action, .catalog-remove-action, .catalog-added-action, .pearl-study-nav-button, .tus-pearl-side-nav) {
   border-color: var(--ki-border) !important;
   background: var(--ki-control-secondary-bg) !important;
@@ -281,6 +408,18 @@ html[data-theme="dark"] *::-webkit-scrollbar-thumb:hover { background: var(--scr
   box-shadow: 0 0 0 3px rgba(94, 234, 212, 0.26) !important;
 }
 
+.app-shell[data-theme="dark"] :where(.icon-badge, .review-panel-icon, .tus-pearl-hub-icon, .home-metric-top .icon-badge, .wrong-answers-empty-icon, .ai-spot-pearl-icon) {
+  border-color: rgba(94, 234, 212, 0.22) !important;
+  background: rgba(20, 184, 166, 0.14) !important;
+  color: var(--ki-accent-strong) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.wrong-answer-branch, .tus-pearl-badge, .tus-pearl-chip, .branch-card-meta span, .case-hero-meta, .case-meta-pill, .compact-meta-pill, .ai-spot-narrative-badge, .catalog-card-branch, .smart-count-chip, .feedback-badge) {
+  border-color: rgba(94, 234, 212, 0.18) !important;
+  background: rgba(20, 184, 166, 0.105) !important;
+  color: var(--ki-chip-accent-text) !important;
+}
+
 /* Hero, dashboard and branch cards --------------------------------------- */
 .app-shell[data-theme="dark"] .home-hero-v8,
 .app-shell[data-theme="dark"] .home-hero-premium-v10,
@@ -290,6 +429,12 @@ html[data-theme="dark"] *::-webkit-scrollbar-thumb:hover { background: var(--scr
     radial-gradient(circle at 78% 14%, rgba(20, 184, 166, 0.17), transparent 35%),
     radial-gradient(circle at 8% 18%, rgba(56, 189, 248, 0.10), transparent 32%),
     linear-gradient(145deg, rgba(11, 34, 48, 0.96), rgba(5, 18, 23, 0.98)) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.home-action-panel-v10, .home-mode-v10, .home-mode-v8, .tus-action-panel-redesign, .tus-actions-redesign, .tus-ai-action-redesign) {
+  border-color: var(--ki-border) !important;
+  background: rgba(7, 26, 33, 0.66) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
 }
 
 .app-shell[data-theme="dark"] :where(.home-metric-card, .tus-stat-card-redesign, .compact-stat-card, .stat-card, .pro-stat-card) strong {
@@ -369,6 +514,19 @@ html[data-theme="dark"] *::-webkit-scrollbar-thumb:hover { background: var(--scr
   border-color: rgba(52, 211, 153, 0.20) !important;
   background: rgba(6, 78, 59, 0.22) !important;
   color: var(--ki-success-contrast) !important;
+}
+
+/* TUS Spot / TUS generated question screens -------------------------------- */
+.app-shell[data-theme="dark"] :where(.tus-spot-olgular-feature-row, .tus-spot-olgular-card, .tus-spot-bank-shell, .tus-spot-bank-main, .ai-spot-player-shell, .ai-spot-answer-flow, .tus-spot-olgular-question-callout) {
+  border-color: var(--ki-border) !important;
+  background: linear-gradient(180deg, rgba(11, 34, 48, 0.88), rgba(7, 26, 33, 0.92)) !important;
+  color: var(--ki-text) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.ai-spot-narrative-reading-panel, .ai-spot-feedback-choice-grid, .ai-spot-science-flow-v249, .ai-spot-feedback-option-row) {
+  border-color: rgba(148, 163, 184, 0.16) !important;
+  background: var(--ki-control-secondary-bg) !important;
+  color: var(--ki-text) !important;
 }
 
 /* Clinical case / answer / feedback surfaces ----------------------------- */
@@ -460,7 +618,11 @@ html[data-theme="dark"] :where(.smart-glossary-category, .smart-glossary-difficu
   }
 }
 
-
+/* ========================================================================== 
+   V301 — Global dark-mode visual hardening
+   Scope: topbar, hero CTA, dashboard metrics, personal repeat, TUS/TUS feedback
+   and glossary overlays. Keeps all rules inside dark theme to protect light mode.
+   ========================================================================== */
 .app-shell[data-theme="dark"] {
   --ki-dark-bg: var(--ki-bg);
   --ki-dark-surface: var(--ki-surface);
@@ -577,11 +739,30 @@ html[data-theme="dark"] :where(.smart-glossary-category, .smart-glossary-difficu
   background: linear-gradient(180deg, rgba(7, 26, 33, 0.72), rgba(3, 17, 15, 0.52)) !important;
 }
 
+.app-shell[data-theme="dark"] :where(.tus-primary-action-redesign, .tus-secondary-action-redesign, .tus-ai-action-redesign) {
+  border-color: var(--ki-dark-border) !important;
+  color: var(--ki-dark-text) !important;
+  background: linear-gradient(180deg, rgba(16, 42, 53, 0.86), rgba(8, 26, 33, 0.92)) !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.04) !important;
+}
+
 .app-shell[data-theme="dark"] .tus-primary-action-redesign {
   color: #021715 !important;
   border-color: rgba(94, 234, 212, 0.30) !important;
   background: var(--ki-control-primary-bg) !important;
   box-shadow: 0 18px 42px rgba(20, 184, 166, 0.24) !important;
+}
+
+.app-shell[data-theme="dark"] .tus-ai-action-redesign {
+  border-color: rgba(94, 234, 212, 0.24) !important;
+  background: linear-gradient(180deg, rgba(20, 184, 166, 0.16), rgba(16, 42, 53, 0.86)) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.tus-action-icon, .tus-secondary-action-redesign .tus-action-icon, .tus-ai-action-redesign .tus-action-icon) {
+  border: 1px solid var(--ki-icon-soft-border) !important;
+  background: rgba(7, 26, 33, 0.56) !important;
+  color: var(--ki-accent-strong) !important;
+  box-shadow: none !important;
 }
 
 .app-shell[data-theme="dark"] .tus-primary-action-redesign .tus-action-icon {
@@ -679,6 +860,26 @@ html[data-theme="dark"] :where(.smart-glossary-category, .smart-glossary-difficu
   border-color: rgba(148, 163, 184, 0.12) !important;
 }
 
+/* 5) Feedback labels: Seçimin / Doğru cevap ------------------------------ */
+.app-shell[data-theme="dark"] :where(.ai-spot-choice-kicker, .option-comparison-kicker, .option-comparison-status, .ai-spot-feedback-option-head em) {
+  border: 1px solid rgba(96, 165, 250, 0.22) !important;
+  background: rgba(30, 64, 175, 0.22) !important;
+  color: #bfdbfe !important;
+  box-shadow: none !important;
+}
+
+.app-shell[data-theme="dark"] :where(.ai-spot-feedback-choice-card.is-correct .ai-spot-choice-kicker, .option-comparison-status.correct, .ai-spot-feedback-option-head em.correct) {
+  border-color: rgba(52, 211, 153, 0.24) !important;
+  background: rgba(6, 78, 59, 0.28) !important;
+  color: #a7f3d0 !important;
+}
+
+.app-shell[data-theme="dark"] :where(.ai-spot-feedback-choice-card.is-selected-wrong .ai-spot-choice-kicker, .option-comparison-status.wrong, .option-comparison-status.incorrect) {
+  border-color: rgba(248, 113, 113, 0.24) !important;
+  background: rgba(127, 29, 29, 0.28) !important;
+  color: #fecaca !important;
+}
+
 /* 6) Glossary and overlay cleanup ---------------------------------------- */
 .app-shell[data-theme="dark"] :where(.glossary-term, .smart-glossary-term) {
   color: color-mix(in srgb, var(--ki-accent-strong) 62%, var(--ki-dark-text) 38%) !important;
@@ -703,6 +904,34 @@ html[data-theme="dark"] :where(#klinikiq-tooltip-layer .floating-glossary-toolti
   background: linear-gradient(180deg, rgba(11,34,48,0.985), rgba(5,18,23,0.985)) !important;
   color: var(--ki-dark-text-secondary) !important;
   box-shadow: 0 26px 74px rgba(0,0,0,0.46), inset 0 1px 0 rgba(255,255,255,0.04) !important;
+}
+
+/* --------------------------------------------------------------------------
+   V302 — Targeted dark-mode polish for CTA icon, difficulty filters, points
+   badges, and glossary popover readability. Scoped to dark mode only.
+   -------------------------------------------------------------------------- */
+
+/* TUS CTA icon: remove remaining light/dirty icon-box look while keeping the
+   TUS action visually distinct from the primary and timed-exam CTAs. */
+.app-shell[data-theme="dark"] .tus-ai-action-redesign.tus-ai-action-redesign .tus-action-icon,
+html[data-theme="dark"] .tus-ai-action-redesign.tus-ai-action-redesign .tus-action-icon {
+  border-color: rgba(94, 234, 212, 0.24) !important;
+  background:
+    radial-gradient(circle at 32% 18%, rgba(94, 234, 212, 0.20), transparent 42%),
+    linear-gradient(145deg, rgba(11, 34, 48, 0.96), rgba(5, 18, 23, 0.96)) !important;
+  color: #99f6e4 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.055),
+    0 10px 24px rgba(0, 0, 0, 0.22) !important;
+}
+
+.app-shell[data-theme="dark"] .tus-ai-action-redesign.tus-ai-action-redesign:hover .tus-action-icon,
+html[data-theme="dark"] .tus-ai-action-redesign.tus-ai-action-redesign:hover .tus-action-icon {
+  border-color: rgba(94, 234, 212, 0.34) !important;
+  background:
+    radial-gradient(circle at 32% 18%, rgba(94, 234, 212, 0.24), transparent 44%),
+    linear-gradient(145deg, rgba(13, 45, 54, 0.98), rgba(7, 26, 33, 0.98)) !important;
+  color: #ccfbf1 !important;
 }
 
 /* Difficulty filter: the legacy V191 layer used pastel light variables and
@@ -787,6 +1016,24 @@ html[data-theme="dark"] :where(.difficulty-acil, .difficulty-badge.urgent, .diff
   --diff-text: #fecaca;
   --diff-dot: #fb7185;
   --diff-border: rgba(251, 113, 133, 0.25);
+}
+
+/* Points / difficulty metadata badge: make the amber "15 Puan" style dark,
+   readable, and less yellow/neon. */
+html[data-theme="dark"] .ai-spot-narrative-badge.amber,
+.app-shell[data-theme="dark"] .ai-spot-narrative-badge.amber {
+  color: #fde68a !important;
+  background:
+    radial-gradient(circle at 18% 20%, rgba(251, 191, 36, 0.16), transparent 52%),
+    linear-gradient(180deg, rgba(69, 43, 10, 0.36), rgba(16, 42, 53, 0.62)) !important;
+  border-color: rgba(251, 191, 36, 0.24) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
+}
+
+html[data-theme="dark"] .ai-spot-narrative-badge.amber svg,
+.app-shell[data-theme="dark"] .ai-spot-narrative-badge.amber svg {
+  color: #fbbf24 !important;
+  stroke: currentColor !important;
 }
 
 /* Global glossary term consistency: terms inside popovers should not use a
@@ -912,6 +1159,31 @@ html[data-theme="dark"] body,
   --ki-glossary-dark-hover: #c7fff4;
   --ki-glossary-dark-focus: rgba(178, 246, 234, 0.28);
   --ki-glossary-hover-text: var(--ki-glossary-dark-hover);
+}
+
+html[data-theme="dark"] :where(.glossary-term, .smart-glossary-term, .glossary-word, .nested-glossary-term, .smart-glossary-term--drilldown),
+.app-shell[data-theme="dark"] :where(.glossary-term, .smart-glossary-term, .glossary-word, .nested-glossary-term, .smart-glossary-term--drilldown),
+html[data-theme="dark"] #klinikiq-tooltip-layer :where(.glossary-term, .smart-glossary-term, .glossary-word, .nested-glossary-term, .smart-glossary-term--drilldown),
+html[data-theme="dark"] :where(.smart-glossary-card, .glossary-tooltip, .floating-glossary-tooltip, .tooltip-body, .toolbox, .toolbox-card, .answer-feedback-panel, .clinical-case, .tus-pearl-study-shell, .tus-pearl-hub-panel, .tus-spot-olgular-panel, .ai-spot-answer-flow) :where(.glossary-term, .smart-glossary-term, .glossary-word, .nested-glossary-term, .smart-glossary-term--drilldown) {
+  color: var(--ki-glossary-dark-text) !important;
+  -webkit-text-fill-color: var(--ki-glossary-dark-text) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-bottom: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: 0 !important;
+  text-decoration-line: underline !important;
+  text-decoration-style: dotted !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 0.18em !important;
+  text-decoration-color: var(--ki-glossary-dark-underline) !important;
+  text-shadow: none !important;
+  cursor: help;
 }
 
 html[data-theme="dark"] :where(.glossary-term:hover, .smart-glossary-term:hover, .glossary-word:hover, .nested-glossary-term:hover, .smart-glossary-term--drilldown:hover),

@@ -83,7 +83,7 @@ export const TUS_PEARL_INTERNAL_MEDICINE_THIRD59_TEXT_OVERRIDES = Object.freeze(
     ],
     "back": "Bosentan gibi endotelin reseptör antagonisti.",
     "answer": "Bosentan.",
-    "explanation": "Sistemik sklerozda dijital ülserler yapısal vaskülopati, endotel disfonksiyonu ve Raynaud atağına bağlı iskemiyle gelişir. Bosentan endotelin aracılı vazokonstriksiyon ve vasküler remodelling etkisini azaltarak özellikle yeni dijital ülser gelişimini önlemede kullanılabilir. Akut kritik iskemide ise intravenöz prostasiklin analogları veya ileri damar yaklaşımı gerekebilir.",
+    "explanation": "Sistemik sklerozda dijital ülserler yapısal vaskülopati, endotel disfonksiyonu ve Raynaud atağına bağlı iskemiyle gelişir. Bosentan endotelin aracılı vazokonstriksiyon ve vasküler reproviderLabelling etkisini azaltarak özellikle yeni dijital ülser gelişimini önlemede kullanılabilir. Akut kritik iskemide ise intravenöz prostasiklin analogları veya ileri damar yaklaşımı gerekebilir.",
     "tusTip": "Sistemik skleroz + tekrarlayan dijital ülser sorusunda bosentan, endotelin aracılı vaskülopatiyi hedefleyen ipucudur.",
     "differentialNote": "Kalsiyum kanal blokerleri Raynaud semptomlarında ilk basamak olabilir; bosentan daha çok tekrarlayan ülser önleme bağlamında öne çıkar."
   },

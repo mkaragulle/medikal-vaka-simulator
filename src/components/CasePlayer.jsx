@@ -963,7 +963,7 @@ function CasePlayer({
     return (
       <article className="clinical-case qbank-case tus-spot-bank-case" data-branch={branch.id} data-case-type="spot" data-mode={mode} data-hard-mode={hardMode ? 'true' : 'false'}>
         <section className="qbank-shell professional-qbank-shell tus-spot-bank-shell" aria-label="TUS spot soru bankası">
-          <div className="tus-spot-bank-main tus-spot-answer-flow">
+          <div className="tus-spot-bank-main ai-spot-answer-flow">
             <DiagnosisQuiz
               clinicalCase={clinicalCase}
               onRandomCase={onRandomCase}

@@ -3266,11 +3266,11 @@ export const TUS_GLOSSARY_V396_ANATOMY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js",
-        "text": "[CASE tus-spot-vakasiz-secki-045-rekurren-laringeal-sinir-innervasyonu-krikotiroid] optionFeedback.M. posterior cricoarytenoideus: Yanlıştır; vokal kord abdüksiyonunu sağlayan tek kastır ve n. Laryngeus recurrens tarafından innerve edilir."
+        "text": "[CASE ai-spot-vakasiz-secki-045-rekurren-laringeal-sinir-innervasyonu-krikotiroid] optionFeedback.M. posterior cricoarytenoideus: Yanlıştır; vokal kord abdüksiyonunu sağlayan tek kastır ve n. Laryngeus recurrens tarafından innerve edilir."
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js",
-        "text": "[CASE tus-spot-vakasiz-secki-045-rekurren-laringeal-sinir-innervasyonu-krikotiroid] diagnosis.optionComparison.M. posterior cricoarytenoideus: Yanlıştır; vokal kord abdüksiyonunu sağlayan tek kastır ve n. Laryngeus recurrens tarafından innerve edilir."
+        "text": "[CASE ai-spot-vakasiz-secki-045-rekurren-laringeal-sinir-innervasyonu-krikotiroid] diagnosis.optionComparison.M. posterior cricoarytenoideus: Yanlıştır; vokal kord abdüksiyonunu sağlayan tek kastır ve n. Laryngeus recurrens tarafından innerve edilir."
       }
     ],
     "matchingPriority": 92,
@@ -3675,7 +3675,7 @@ export const TUS_GLOSSARY_V396_ANATOMY_EXPANSION_TERMS = [
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js",
-        "text": "[CASE tus-spot-vakasiz-secki-107] listTitle: Kavernöz sinüs içeriği"
+        "text": "[CASE ai-spot-vakasiz-secki-107] listTitle: Kavernöz sinüs içeriği"
       }
     ],
     "matchingPriority": 92,
@@ -3740,11 +3740,11 @@ export const TUS_GLOSSARY_V396_ANATOMY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js",
-        "text": "[CASE tus-spot-vakasiz-secki-107] learningTarget: Sinus cavernosus lateral duvarında CN III, IV, V1 ve V2; sinüs içinde ise arteria carotis interna ve CN VI bulunur. Nervus facialis bu anatomik bölgenin klasik içeriği değildir."
+        "text": "[CASE ai-spot-vakasiz-secki-107] learningTarget: Sinus cavernosus lateral duvarında CN III, IV, V1 ve V2; sinüs içinde ise arteria carotis interna ve CN VI bulunur. Nervus facialis bu anatomik bölgenin klasik içeriği değildir."
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js",
-        "text": "[CASE tus-spot-vakasiz-secki-107] coreKnowledge: Sinus cavernosus lateral duvarında CN III, IV, V1 ve V2; sinüs içinde ise arteria carotis interna ve CN VI bulunur. Nervus facialis bu anatomik bölgenin klasik içeriği değildir."
+        "text": "[CASE ai-spot-vakasiz-secki-107] coreKnowledge: Sinus cavernosus lateral duvarında CN III, IV, V1 ve V2; sinüs içinde ise arteria carotis interna ve CN VI bulunur. Nervus facialis bu anatomik bölgenin klasik içeriği değildir."
       }
     ],
     "matchingPriority": 92,
@@ -3878,11 +3878,11 @@ export const TUS_GLOSSARY_V396_ANATOMY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js",
-        "text": "[CASE tus-spot-vakasiz-secki-078] options[3].text: Nervus ophthalmicus"
+        "text": "[CASE ai-spot-vakasiz-secki-078] options[3].text: Nervus ophthalmicus"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js",
-        "text": "[CASE tus-spot-vakasiz-secki-078] optionFeedback.Nervus ophthalmicus: Yanlış. N. Ophthalmicus lateral duvarda bulunan trigeminal dalıdır."
+        "text": "[CASE ai-spot-vakasiz-secki-078] optionFeedback.Nervus ophthalmicus: Yanlış. N. Ophthalmicus lateral duvarda bulunan trigeminal dalıdır."
       }
     ],
     "matchingPriority": 92,
@@ -3947,11 +3947,11 @@ export const TUS_GLOSSARY_V396_ANATOMY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js",
-        "text": "[CASE tus-spot-vakasiz-secki-078] options[4].text: Nervus maxillaris"
+        "text": "[CASE ai-spot-vakasiz-secki-078] options[4].text: Nervus maxillaris"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js",
-        "text": "[CASE tus-spot-vakasiz-secki-078] optionFeedback.Nervus maxillaris: Yanlış. N. Maxillaris lateral duvarla ilişkilidir, sinüs lümeninde arterle birlikte seyreden sinir değildir."
+        "text": "[CASE ai-spot-vakasiz-secki-078] optionFeedback.Nervus maxillaris: Yanlış. N. Maxillaris lateral duvarla ilişkilidir, sinüs lümeninde arterle birlikte seyreden sinir değildir."
       }
     ],
     "matchingPriority": 92,
@@ -4016,11 +4016,11 @@ export const TUS_GLOSSARY_V396_ANATOMY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js",
-        "text": "[CASE tus-spot-vakasiz-secki-125] explanation: Doğru cevap A’dır. Recurrent laryngeal sinir tiroid cerrahisi ve boyun cerrahisi açısından kritik anatomik yapıdır. Bu sinir larenksin intrinsik kaslarının çoğunu innerve eder; istisna m. Cricothyroideus olup external laryngeal sinir tarafından innerve edilir. Recurrent laryngeal sinir hasarında vokal kord abdüksiyon/adduksiyon fonksiyonları etkilenir ve ses kıs…"
+        "text": "[CASE ai-spot-vakasiz-secki-125] explanation: Doğru cevap A’dır. Recurrent laryngeal sinir tiroid cerrahisi ve boyun cerrahisi açısından kritik anatomik yapıdır. Bu sinir larenksin intrinsik kaslarının çoğunu innerve eder; istisna m. Cricothyroideus olup external laryngeal sinir tarafından innerve edilir. Recurrent laryngeal sinir hasarında vokal kord abdüksiyon/adduksiyon fonksiyonları etkilenir ve ses kıs…"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js",
-        "text": "[CASE tus-spot-vakasiz-secki-125] diagnosis.explanation: Doğru cevap A’dır. Recurrent laryngeal sinir tiroid cerrahisi ve boyun cerrahisi açısından kritik anatomik yapıdır. Bu sinir larenksin intrinsik kaslarının çoğunu innerve eder; istisna m. Cricothyroideus olup external laryngeal sinir tarafından innerve edilir. Recurrent laryngeal sinir hasarında vokal kord abdüksiyon/adduksiyon fonksiyonları etkilenir …"
+        "text": "[CASE ai-spot-vakasiz-secki-125] diagnosis.explanation: Doğru cevap A’dır. Recurrent laryngeal sinir tiroid cerrahisi ve boyun cerrahisi açısından kritik anatomik yapıdır. Bu sinir larenksin intrinsik kaslarının çoğunu innerve eder; istisna m. Cricothyroideus olup external laryngeal sinir tarafından innerve edilir. Recurrent laryngeal sinir hasarında vokal kord abdüksiyon/adduksiyon fonksiyonları etkilenir …"
       }
     ],
     "matchingPriority": 92,
@@ -4201,11 +4201,11 @@ export const TUS_GLOSSARY_V396_ANATOMY_EXPANSION_TERMS = [
     "sourceTextExamples": [
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js",
-        "text": "[CASE tus-spot-vakasiz-secki-005-kafa-tabani-foramenleri] options[0].text: Foramen rotundum — n. Maxillaris"
+        "text": "[CASE ai-spot-vakasiz-secki-005-kafa-tabani-foramenleri] options[0].text: Foramen rotundum — n. Maxillaris"
       },
       {
         "sourceFilePath": "src/data/cases.js / src/data/tusPearlCards.js",
-        "text": "[CASE tus-spot-vakasiz-secki-005-kafa-tabani-foramenleri] explanation: Foramen rotundumdan n. Maxillaris, foramen ovaleden n. Mandibularis, foramen spinosumdan a. Meningea media ve canalis hypoglossiden n. Hypoglossus geçer. N. Facialis foramen lacerumdan değil foramen stylomastoideumdan çıkar. Facialis iç kulak yolu ve canalis facialis üzerinden ilerleyip foramen stylomastoideumdan çıkar; foramen lacerumdan…"
+        "text": "[CASE ai-spot-vakasiz-secki-005-kafa-tabani-foramenleri] explanation: Foramen rotundumdan n. Maxillaris, foramen ovaleden n. Mandibularis, foramen spinosumdan a. Meningea media ve canalis hypoglossiden n. Hypoglossus geçer. N. Facialis foramen lacerumdan değil foramen stylomastoideumdan çıkar. Facialis iç kulak yolu ve canalis facialis üzerinden ilerleyip foramen stylomastoideumdan çıkar; foramen lacerumdan…"
       }
     ],
     "matchingPriority": 92,

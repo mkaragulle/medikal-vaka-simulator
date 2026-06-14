@@ -3,6 +3,7 @@ import './index.css';
 import './styles/klinikiq-system.css';
 import './styles/klinikiq-refine.css';
 import './styles/klinikiq-dark-mode-system.css';
+import './styles/ai-tus-button-center-hard-fix.css';
 import BranchSelector from './components/BranchSelector.jsx';
 import CaseList from './components/CaseList.jsx';
 import WrongAnswersFullPage from './components/WrongAnswersFullPage.jsx';
@@ -26,18 +27,21 @@ const loadKomiteModeWorkspace = () => import('./components/KomiteModeWorkspace.j
 const loadStudyReviewHub = () => import('./components/StudyReviewHub.jsx');
 const loadTusPearlStudyScreen = () => import('./components/TusPearlStudyScreen.jsx');
 const loadExamResults = () => import('./components/ExamResults.jsx');
-const loadTusQuestionModuleInactive = () => import('./components/TusQuestionModuleInactive.jsx');
+const loadDisabledTusQuestionView = () => import('./components/DisabledTusQuestionView.jsx');
 
 const CasePlayer = lazy(loadCasePlayer);
 const KomiteModeWorkspace = lazy(loadKomiteModeWorkspace);
 const StudyReviewHub = lazy(loadStudyReviewHub);
 const TusPearlStudyScreen = lazy(loadTusPearlStudyScreen);
 const ExamResults = lazy(loadExamResults);
-const TusQuestionModuleInactive = lazy(loadTusQuestionModuleInactive);
+const DisabledTusQuestionView = lazy(loadDisabledTusQuestionView);
 
 const STATS_STORAGE_KEY = 'klinikiq-session-stats-v2';
 const EXAM_HISTORY_STORAGE_KEY = 'klinikiq-exam-history-v2';
 const THEME_STORAGE_KEY = 'klinikiq-theme-v1';
+const TUS_INACTIVE_STATS_STORAGE_KEY = 'klinikiq-disabled-tus-practice-stats-v1';
+const TUS_INACTIVE_BRANCH_FILTER_STORAGE_KEY = 'klinikiq-disabled-tus-branch-filter-v1';
+const TUS_INACTIVE_DIFFICULTY_STORAGE_KEY = 'klinikiq-disabled-tus-difficulty-v1';
 const USERS_STORAGE_KEY = 'klinikiq-auth-users-v1';
 const CURRENT_USER_STORAGE_KEY = 'klinikiq-auth-current-user-v1';
 const PRODUCT_MODE_STORAGE_KEY = 'klinikiq-product-mode-v1';
@@ -74,6 +78,25 @@ const defaultStats = {
   bestStreak: 0,
   accuracy: 0,
   trend: [],
+};
+
+const defaultTusInactiveStats = {
+  attempts: 0,
+  correct: 0,
+  score: 0,
+  streak: 0,
+  bestStreak: 0,
+};
+
+const defaultTusInactiveState = {
+  active: false,
+  question: null,
+  loading: false,
+  error: null,
+  generationSource: null,
+  usedRemoteGeneration: false,
+  fallback: false,
+  fallbackNotice: false,
 };
 
 function loadStoredValue(key, fallback) {
@@ -255,6 +278,25 @@ function buildAccessibleCaseIndex(accessibleCases = []) {
   return { byId, byBranchId, ids: new Set(byId.keys()) };
 }
 
+const TUS_DISABLED_WRONG_ANSWER_SOURCE = 'ai-generated-question';
+
+function isDisabledTusWrongAnswerEntry(entry) {
+  return Boolean(
+    entry?.sourceType === TUS_DISABLED_WRONG_ANSWER_SOURCE
+      || entry?.questionSnapshot
+      || String(entry?.caseId || '').startsWith('ai-spot')
+      || entry?.branchId === 'tus-spot-olgular',
+  );
+}
+
+function toPlainStoredQuestion(clinicalCase) {
+  try {
+    return JSON.parse(JSON.stringify(clinicalCase));
+  } catch {
+    return null;
+  }
+}
+
 function compactText(value = '', limit = 150) {
   const text = String(value || '').replace(/\s+/g, ' ').trim();
   if (!text) return '';
@@ -415,6 +457,26 @@ function sortCasesBySolvedStatus(caseItems = [], solvedSet = new Set()) {
     .map(({ clinicalCase }) => clinicalCase);
 }
 
+function buildDisabledTusWrongQuestionPreview(clinicalCase = {}) {
+  return compactText(
+    clinicalCase.question
+      || clinicalCase.clinicalFocus
+      || clinicalCase.stem
+      || clinicalCase.narrativeStem
+      || clinicalCase.patientIntro?.historySummary
+      || 'TUS soru üretim alanından kaydedilmiş soru.',
+    160,
+  );
+}
+
+function buildDisabledTusWrongTitle(clinicalCase = {}) {
+  const branch = clinicalCase.relatedBranch || clinicalCase.branchName || 'TUS';
+  const target = compactText(clinicalCase.learningTarget || clinicalCase.clinicalFocus || clinicalCase.question || '', 86);
+  return target || `${branch} · TUS soru üretim alanı`;
+}
+
+
+
 function RouteFallback() {
   return null;
 }
@@ -452,14 +514,19 @@ function App() {
   const [wrongAnswers, setWrongAnswers] = useState(() => currentUser?.wrongAnswers ?? []);
   const [wrongAnswersPageOpen, setWrongAnswersPageOpen] = useState(false);
   const [solvedCaseIds, setSolvedCaseIds] = useState(() => currentUser?.solvedCaseIds ?? loadStoredValue(SOLVED_CASES_STORAGE_KEY, []));
-  const [questionModuleOpen, setQuestionModuleOpen] = useState(false);
+  const [tusInactiveStats, setTusInactiveStats] = useState(() => loadStoredValue(TUS_INACTIVE_STATS_STORAGE_KEY, defaultTusInactiveStats));
+  const [tusInactiveState, setTusInactiveState] = useState(defaultTusInactiveState);
   const [pearlStudyState, setPearlStudyState] = useState({ active: false, filter: 'all', branchFilter: 'all', catalogId: '' });
+  const [tusBranchFilter, setTusBranchFilter] = useState(() => loadStoredValue(TUS_INACTIVE_BRANCH_FILTER_STORAGE_KEY, 'random'));
+  const [tusDifficulty, setTusDifficulty] = useState(() => loadStoredValue(TUS_INACTIVE_DIFFICULTY_STORAGE_KEY, 'Orta'));
   const [examState, setExamState] = useState(null);
   const [productMode, setProductMode] = useState(() => loadStoredValue(PRODUCT_MODE_STORAGE_KEY, 'tus'));
   const [clockTick, setClockTick] = useState(Date.now());
   const [isCaseSidebarOpen, setIsCaseSidebarOpen] = useState(true);
   const [branchRouteTransition, setBranchRouteTransition] = useState(null);
   const branchRouteTimers = useRef([]);
+  const aiQuestionTimer = useRef(null);
+  const latestInactiveQuestionRequestId = useRef(0);
   const isDemoUser = isDemoAccount(currentUser);
 
   useEffect(() => {
@@ -472,7 +539,7 @@ function App() {
 
     const cancelStudyHubWarmup = scheduleIdleWork(() => {
       loadStudyReviewHub();
-      loadTusQuestionModuleInactive();
+      loadDisabledTusQuestionView();
     }, 420);
 
     const cancelCasePanelWarmup = scheduleIdleWork(() => {
@@ -492,6 +559,14 @@ function App() {
       cancelKomiteWarmup?.();
     };
   }, [currentUser]);
+
+  function clearTusQuestionTimer() {
+    latestInactiveQuestionRequestId.current += 1;
+    if (aiQuestionTimer.current) {
+      window.clearTimeout(aiQuestionTimer.current);
+      aiQuestionTimer.current = null;
+    }
+  }
 
   const demoCases = useMemo(() => resolveDemoCases(), []);
   const accessibleCases = useMemo(() => (isDemoUser ? demoCases : cases), [isDemoUser, demoCases]);
@@ -591,6 +666,18 @@ function App() {
   }, [solvedCaseIds, currentUser?.id]);
 
   useEffect(() => {
+    localBackend.writeDeferred(TUS_INACTIVE_STATS_STORAGE_KEY, tusInactiveStats);
+  }, [tusInactiveStats]);
+
+  useEffect(() => {
+    localBackend.writeDeferred(TUS_INACTIVE_BRANCH_FILTER_STORAGE_KEY, tusBranchFilter);
+  }, [tusBranchFilter]);
+
+  useEffect(() => {
+    localBackend.writeDeferred(TUS_INACTIVE_DIFFICULTY_STORAGE_KEY, tusDifficulty);
+  }, [tusDifficulty]);
+
+  useEffect(() => {
     localBackend.writeDeferred(PRODUCT_MODE_STORAGE_KEY, productMode);
   }, [productMode]);
 
@@ -625,7 +712,7 @@ function App() {
     setExamHistory([]);
     setWrongAnswers([]);
     setSolvedCaseIds([]);
-    setQuestionModuleOpen(false);
+    setTusInactiveState(defaultTusInactiveState);
     closePearlStudy();
     setWrongAnswersPageOpen(false);
     setSelectedBranchId(null);
@@ -648,7 +735,7 @@ function App() {
     setExamHistory(user.examHistory ?? []);
     setWrongAnswers(user.wrongAnswers ?? []);
     setSolvedCaseIds(user.solvedCaseIds ?? []);
-    setQuestionModuleOpen(false);
+    setTusInactiveState(defaultTusInactiveState);
     closePearlStudy();
     setSelectedBranchId(null);
     setSelectedCaseId(null);
@@ -665,7 +752,7 @@ function App() {
     setExamHistory(user.examHistory ?? []);
     setWrongAnswers(user.wrongAnswers ?? []);
     setSolvedCaseIds(user.solvedCaseIds ?? []);
-    setQuestionModuleOpen(false);
+    setTusInactiveState(defaultTusInactiveState);
     closePearlStudy();
     setSelectedBranchId(null);
     setSelectedCaseId(null);
@@ -753,7 +840,7 @@ function App() {
     });
     setSelectedBranchId(null);
     setSelectedCaseId(null);
-    setQuestionModuleOpen(false);
+    setTusInactiveState(defaultTusInactiveState);
     scrollToTopSmart({ smooth: false });
 
     return { ok: true, message: '5 vakalık demo başlatıldı.' };
@@ -766,7 +853,7 @@ function App() {
     setExamHistory([]);
     setWrongAnswers([]);
     setSolvedCaseIds([]);
-    setQuestionModuleOpen(false);
+    setTusInactiveState(defaultTusInactiveState);
     closePearlStudy();
     setSelectedBranchId(null);
     setSelectedCaseId(null);
@@ -776,17 +863,27 @@ function App() {
 
   const addWrongAnswer = useCallback((clinicalCase, selected) => {
     if (!clinicalCase?.id) return;
-    const branch = resolveBranchById(clinicalCase.branchId);
+    const isDisabledTusQuestion = clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular';
+    const branch = isDisabledTusQuestion ? null : resolveBranchById(clinicalCase.branchId);
+    const questionSnapshot = isDisabledTusQuestion ? toPlainStoredQuestion(clinicalCase) : null;
     const item = {
       caseId: clinicalCase.id,
-      title: clinicalCase.title,
+      title: isDisabledTusQuestion ? buildDisabledTusWrongTitle(clinicalCase) : clinicalCase.title,
       branchId: clinicalCase.branchId,
-      branchName: branch?.name ?? 'Klinik branş',
-      sourceType: 'embedded-case',
+      branchName: isDisabledTusQuestion
+        ? `TUS üretim alanı · ${clinicalCase.relatedBranch || clinicalCase.branchName || 'TUS'}`
+        : branch?.name ?? 'Klinik branş',
+      sourceType: isDisabledTusQuestion ? TUS_DISABLED_WRONG_ANSWER_SOURCE : 'embedded-case',
       selected,
       correctAnswer: clinicalCase.diagnosis?.correct,
       difficulty: clinicalCase.difficulty,
       lastWrongAt: Date.now(),
+      ...(isDisabledTusQuestion ? {
+        questionSnapshot,
+        questionPreview: buildDisabledTusWrongQuestionPreview(clinicalCase),
+        optionCount: Array.isArray(clinicalCase.diagnosis?.options) ? clinicalCase.diagnosis.options.length : 0,
+        feedbackPreserved: Boolean(clinicalCase.diagnosis?.answerFeedback || clinicalCase.answerFeedback || clinicalCase.diagnosis?.explanation),
+      } : {}),
     };
 
     setWrongAnswers((current) => {
@@ -807,6 +904,52 @@ function App() {
   };
 
   const clearWrongAnswers = () => setWrongAnswers([]);
+
+  const openWrongCase = (caseIdOrEntry) => {
+    const wrongAnswerEntry = typeof caseIdOrEntry === 'object'
+      ? caseIdOrEntry
+      : wrongAnswers.find((entry) => entry.caseId === caseIdOrEntry);
+
+    setWrongAnswersPageOpen(false);
+
+    if (isDisabledTusWrongAnswerEntry(wrongAnswerEntry)) {
+      const restoredQuestion = wrongAnswerEntry?.questionSnapshot;
+      if (!restoredQuestion?.diagnosis?.options?.length || !restoredQuestion?.diagnosis?.correct) return;
+      clearTusQuestionTimer();
+      closePearlStudy();
+      setMode('study');
+      setExamState(null);
+      setSelectedBranchId(null);
+      setSelectedCaseId(null);
+      setIsCaseSidebarOpen(true);
+      setTusInactiveState({
+        active: true,
+        question: { ...restoredQuestion, id: restoredQuestion.id || wrongAnswerEntry.caseId },
+        loading: false,
+        error: null,
+        generationSource: 'Kişisel tekrar arşivi',
+        usedRemoteGeneration: false,
+        fallback: false,
+        fallbackNotice: false,
+      });
+      scrollToTopSmart({ smooth: false });
+      return;
+    }
+
+    const caseId = typeof caseIdOrEntry === 'object' ? caseIdOrEntry?.caseId : caseIdOrEntry;
+    const clinicalCase = getCaseById(caseId);
+    if (!clinicalCase || !accessibleCaseIds.has(clinicalCase.id)) return;
+    clearTusQuestionTimer();
+    setTusInactiveState(defaultTusInactiveState);
+    closePearlStudy();
+    setWrongAnswersPageOpen(false);
+    setMode('study');
+    setExamState(null);
+    setSelectedBranchId(clinicalCase.branchId);
+    setSelectedCaseId(clinicalCase.id);
+    setIsCaseSidebarOpen(true);
+    scrollToTopSmart({ smooth: false });
+  };
 
   useEffect(() => {
     if (currentUser?.id) return;
@@ -880,6 +1023,7 @@ function App() {
 
   useEffect(() => () => {
     branchRouteTimers.current.forEach((timerId) => window.clearTimeout(timerId));
+    if (aiQuestionTimer.current) window.clearTimeout(aiQuestionTimer.current);
   }, []);
 
   const remainingSeconds = useMemo(() => {
@@ -920,9 +1064,18 @@ function App() {
 
   const visibleWrongAnswers = useMemo(() => (
     isDemoUser
-      ? wrongAnswers.filter((entry) => accessibleCaseIds.has(entry.caseId))
+      ? wrongAnswers.filter((entry) => isDisabledTusWrongAnswerEntry(entry) || accessibleCaseIds.has(entry.caseId))
       : wrongAnswers
   ), [wrongAnswers, isDemoUser, accessibleCaseIds]);
+
+  const aiQuestionBranches = useMemo(() => [
+    { id: 'random', name: 'Rastgele branş', shortName: 'Rastgele' },
+    ...(branches || []).map((branch) => ({
+      id: branch.id,
+      name: branch.name || branch.shortName || branch.id,
+      shortName: branch.shortName || branch.name || branch.id,
+    })),
+  ], []);
 
   const activeExamCaseMeta = useMemo(() => (examState?.active ? {
     active: true,
@@ -933,22 +1086,6 @@ function App() {
   } : null), [examState?.active, examState?.title, examState?.currentIndex, examState?.caseIds, examState?.answers]);
 
   const noopRandomCase = useCallback(() => {}, []);
-
-  const openWrongCase = (caseIdOrEntry) => {
-    const caseId = typeof caseIdOrEntry === 'object' ? caseIdOrEntry?.caseId : caseIdOrEntry;
-    const clinicalCase = getCaseById(caseId);
-    if (!clinicalCase || !accessibleCaseIds.has(clinicalCase.id)) return;
-    setQuestionModuleOpen(false);
-    closePearlStudy();
-    setWrongAnswersPageOpen(false);
-    setMode('study');
-    setExamState(null);
-    setSelectedBranchId(clinicalCase.branchId);
-    setSelectedCaseId(clinicalCase.id);
-    setIsCaseSidebarOpen(false);
-    scrollToTopSmart({ smooth: false });
-  };
-
   const handleToggleTutorMode = useCallback(() => setTutorMode((current) => !current), []);
 
   const closePearlStudy = useCallback(() => {
@@ -956,9 +1093,9 @@ function App() {
   }, []);
 
   const openPearlStudy = useCallback(({ filter = 'all', branchFilter = 'all', catalogId = '' } = {}) => {
-    setQuestionModuleOpen(false);
+    clearTusQuestionTimer();
     setExamState(null);
-    setQuestionModuleOpen(false);
+    setTusInactiveState(defaultTusInactiveState);
     setSelectedBranchId(null);
     setSelectedCaseId(null);
     setWrongAnswersPageOpen(false);
@@ -968,10 +1105,10 @@ function App() {
   }, []);
 
   const openAllWrongAnswers = useCallback(() => {
-    setQuestionModuleOpen(false);
+    clearTusQuestionTimer();
     closePearlStudy();
     setExamState(null);
-    setQuestionModuleOpen(false);
+    setTusInactiveState(defaultTusInactiveState);
     setSelectedBranchId(null);
     setSelectedCaseId(null);
     setMode('study');
@@ -993,8 +1130,8 @@ function App() {
   }, []);
 
   const handleSelectBranch = useCallback((branchId) => {
-    setQuestionModuleOpen(false);
-    setQuestionModuleOpen(false);
+    clearTusQuestionTimer();
+    setTusInactiveState(defaultTusInactiveState);
     closePearlStudy();
     setWrongAnswersPageOpen(false);
     if (isDemoUser && !visibleBranches.some((branch) => branch.id === branchId)) return;
@@ -1111,7 +1248,25 @@ function App() {
   }, [addWrongAnswer, examState, markCaseSolved, sessionStats.streak]);
 
 
-  const handleOpenTusQuestionModule = useCallback(() => {
+  const showTusInactiveMessage = useCallback(() => {
+    clearTusQuestionTimer();
+    latestInactiveQuestionRequestId.current += 1;
+    setTusInactiveState((current) => ({
+      ...current,
+      active: true,
+      question: null,
+      loading: false,
+      error: null,
+      generationSource: 'inactive',
+      usedRemoteGeneration: false,
+      fallback: false,
+      fallbackNotice: false,
+    }));
+  }, []);
+
+  const handleStartTusInactivePractice = useCallback(() => {
+    clearTusQuestionTimer();
+    latestInactiveQuestionRequestId.current += 1;
     setMode('study');
     setExamState(null);
     setSelectedBranchId(null);
@@ -1119,10 +1274,80 @@ function App() {
     setIsCaseSidebarOpen(true);
     closePearlStudy();
     setWrongAnswersPageOpen(false);
-    setQuestionModuleOpen(true);
+    setTusInactiveState({
+      ...defaultTusInactiveState,
+      active: true,
+      generationSource: 'inactive',
+    });
     scrollToTopSmart({ smooth: false });
   }, [closePearlStudy]);
 
+  const handleTusInactiveButton = useCallback(() => {
+    showTusInactiveMessage();
+  }, [showTusInactiveMessage]);
+
+  const handleTusBranchFilterChange = useCallback((nextFilter) => {
+    setTusBranchFilter(nextFilter);
+    localBackend.write(TUS_INACTIVE_BRANCH_FILTER_STORAGE_KEY, nextFilter);
+    clearTusQuestionTimer();
+    latestInactiveQuestionRequestId.current += 1;
+    setTusInactiveState((current) => ({
+      ...current,
+      active: true,
+      question: null,
+      loading: false,
+      error: null,
+      generationSource: 'inactive',
+      usedRemoteGeneration: false,
+      fallback: false,
+      fallbackNotice: false,
+    }));
+  }, []);
+
+
+  const handleTusDifficultyChange = useCallback((nextDifficulty) => {
+    const normalizedDifficulty = ['Kolay', 'Orta', 'Zor'].includes(nextDifficulty) ? nextDifficulty : 'Orta';
+    setTusDifficulty(normalizedDifficulty);
+    localBackend.write(TUS_INACTIVE_DIFFICULTY_STORAGE_KEY, normalizedDifficulty);
+    clearTusQuestionTimer();
+    latestInactiveQuestionRequestId.current += 1;
+    setTusInactiveState((current) => ({
+      ...current,
+      active: true,
+      question: null,
+      loading: false,
+      error: null,
+      generationSource: 'inactive',
+      usedRemoteGeneration: false,
+      fallback: false,
+      fallbackNotice: false,
+    }));
+  }, []);
+
+  const handleSubmitTusDisabledAnswer = useCallback(({ clinicalCase, selected, isCorrect }) => {
+    const scored = scoreAttempt(clinicalCase.difficulty, isCorrect, tusInactiveStats.streak);
+    const earnedPoints = isCorrect ? 5 : 0;
+
+    if (!isCorrect) {
+      addWrongAnswer(clinicalCase, selected);
+    }
+
+    setTusInactiveStats((current) => {
+      const attempts = current.attempts + 1;
+      const correct = current.correct + (isCorrect ? 1 : 0);
+      const streak = isCorrect ? current.streak + 1 : 0;
+      const bestStreak = Math.max(current.bestStreak || 0, streak);
+      return {
+        attempts,
+        correct,
+        streak,
+        bestStreak,
+        score: current.score + earnedPoints,
+      };
+    });
+
+    return { ...scored, earnedPoints, nextStreak: isCorrect ? tusInactiveStats.streak + 1 : 0 };
+  }, [addWrongAnswer, tusInactiveStats.streak]);
 
   function startBlockExam(sourceCases = accessibleCases, title = isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı') {
     const safeSourceCases = (Array.isArray(sourceCases) ? sourceCases : accessibleCases)
@@ -1130,9 +1355,9 @@ function App() {
     const examSourceCases = safeSourceCases.length ? safeSourceCases : accessibleCases;
     const pool = buildTimedExamPool(examSourceCases, solvedCaseMap, 10);
     if (!pool.length) return;
-    setQuestionModuleOpen(false);
+    clearTusQuestionTimer();
     setMode('exam');
-    setQuestionModuleOpen(false);
+    setTusInactiveState(defaultTusInactiveState);
     closePearlStudy();
     setIsCaseSidebarOpen(true);
     setExamState({
@@ -1239,9 +1464,9 @@ function App() {
 
   const resetExamToHome = () => {
     setProductMode('tus');
-    setQuestionModuleOpen(false);
+    clearTusQuestionTimer();
     setExamState(null);
-    setQuestionModuleOpen(false);
+    setTusInactiveState(defaultTusInactiveState);
     closePearlStudy();
     setWrongAnswersPageOpen(false);
     setMode('study');
@@ -1253,9 +1478,9 @@ function App() {
 
   const switchProductMode = (nextMode) => {
     if (nextMode === productMode) return;
-    setQuestionModuleOpen(false);
+    clearTusQuestionTimer();
     setProductMode(nextMode);
-    setQuestionModuleOpen(false);
+    setTusInactiveState(defaultTusInactiveState);
     setExamState(null);
     closePearlStudy();
     setWrongAnswersPageOpen(false);
@@ -1360,11 +1585,11 @@ function App() {
             type="button"
             className="nav-wrong-chip nav-stat-chip"
             onClick={() => {
-              setQuestionModuleOpen(false);
+              clearTusQuestionTimer();
               setSelectedBranchId(null);
               setSelectedCaseId(null);
               setExamState(null);
-              setQuestionModuleOpen(false);
+              setTusInactiveState(defaultTusInactiveState);
               closePearlStudy();
               setWrongAnswersPageOpen(false);
               setMode('study');
@@ -1426,9 +1651,29 @@ function App() {
             onBack={resetExamToHome}
           />
         </Suspense>
-      ) : questionModuleOpen ? (
+      ) : tusInactiveState.active ? (
         <Suspense fallback={null}>
-          <TusQuestionModuleInactive onBackHome={resetExamToHome} />
+          <DisabledTusQuestionView
+          question={tusInactiveState.question}
+          loading={tusInactiveState.loading}
+          error={tusInactiveState.error}
+          aiStats={tusInactiveStats}
+          generationSource={tusInactiveState.generationSource}
+          usedRemoteGeneration={tusInactiveState.usedRemoteGeneration}
+          fallback={tusInactiveState.fallback}
+          fallbackNotice={tusInactiveState.fallbackNotice}
+          branchFilter={tusBranchFilter}
+          branchOptions={aiQuestionBranches}
+          difficulty={tusDifficulty}
+          onChangeDifficulty={handleTusDifficultyChange}
+          onChangeBranchFilter={handleTusBranchFilterChange}
+          onGenerateQuestion={handleTusInactiveButton}
+          onSubmitAnswer={handleSubmitTusDisabledAnswer}
+          onBackHome={resetExamToHome}
+          tutorMode={tutorMode}
+          onToggleTutorMode={handleToggleTutorMode}
+          hardMode={hardMode}
+          />
         </Suspense>
       ) : examState?.result ? (
         <Suspense fallback={null}>
@@ -1601,7 +1846,7 @@ function App() {
             leaderboardEntries={leaderboardEntries}
             wrongAnswers={visibleWrongAnswers}
             onStartExam={() => startBlockExam(accessibleCases, isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı')}
-            onOpenTusQuestionModule={handleOpenTusQuestionModule}
+            onStartTusQuestion={handleStartTusInactivePractice}
             totalCases={accessibleCases.length}
             totalBranches={visibleBranches.length}
             examCount={examHistory.length}

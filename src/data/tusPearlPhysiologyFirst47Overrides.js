@@ -1,4 +1,4 @@
-// Static scoped text overrides for KlinikIQ physiology Hap Bilgi cards.
+// Auto-generated scoped text overrides for KlinikIQ physiology Hap Bilgi cards.
 // Only runtime-confirmed first 47 physiology card IDs are listed here.
 
 export const TUS_PEARL_PHYSIOLOGY_FIRST47_TEXT_OVERRIDES = Object.freeze({

@@ -490,7 +490,7 @@ export const TUS_GLOSSARY_V319_TEACHABLE_TERMS = [
       "answerLeakRisk": "medium",
       "priority": "P1",
       "recommendation": "addNewEntry",
-      "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js, removed-question-source",
+      "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js, removed-static-seed-source",
       "reasonForRecommendation": "HBV seroloji yorumunda HBsAg/anti-HBs’den farklı olarak geçirilmiş veya akut enfeksiyon ayrımını öğretir."
     }
   },
@@ -1802,7 +1802,7 @@ export const TUS_GLOSSARY_V319_TEACHABLE_TERMS = [
       "Kapsüllü bakteriler"
     ],
     "sourceTextExamples": [
-      "Doğru eşleştirme BTK mutasyonu ile pre-B hücre maturasyon bloğudur. IL2RG ağır kombine immün yetmezlik, WAS küçük trombositli ekzema-immün yetmezlik tablosu,RE otoimmün poliendokrinopati, CYBB ise kronik granülomat...",
+      "Doğru eşleştirme BTK mutasyonu ile pre-B hücre maturasyon bloğudur. IL2RG ağır kombine immün yetmezlik, WAS küçük trombositli ekzema-immün yetmezlik tablosu, AIRE otoimmün poliendokrinopati, CYBB ise kronik granülomat...",
       "Doğru cevaptır; BTK eksikliği pre-B hücreden olgun B hücresine geçişi bozar ve pan-hipogammaglobulinemi oluşturur."
     ],
     "sourceCandidate": {
@@ -2756,11 +2756,11 @@ export const TUS_GLOSSARY_V319_TEACHABLE_TERMS = [
     "preAnswerSafeDefinition": "Porfiri, nörovisseral atak ve heme senteziyle ilişkili enzim eksikliğidir.",
     "shortDefinition": "Heme sentez yolunda akut intermitan porfiriye yol açan enzim eksikliğidir.",
     "definition": "Heme sentez yolunda akut intermitan porfiriye yol açan enzim eksikliğidir.",
-    "detailedExplanation": "Porfobilinojen deaminaz eksikliğiP ile ilişkilidir; karın ağrısı, psikiyatrik/nörolojik bulgular ve koyulaşan idrar görülebilir. Fotosensitivite genellikle ön planda değildir.",
-    "postAnswerExplanation": "Porfobilinojen deaminaz eksikliğiP ile ilişkilidir; karın ağrısı, psikiyatrik/nörolojik bulgular ve koyulaşan idrar görülebilir. Fotosensitivite genellikle ön planda değildir.",
-    "postAnswerExpandedExplanation": "Porfobilinojen deaminaz eksikliğiP ile ilişkilidir; karın ağrısı, psikiyatrik/nörolojik bulgular ve koyulaşan idrar görülebilir. Fotosensitivite genellikle ön planda değildir.",
+    "detailedExplanation": "Porfobilinojen deaminaz eksikliği AIP ile ilişkilidir; karın ağrısı, psikiyatrik/nörolojik bulgular ve koyulaşan idrar görülebilir. Fotosensitivite genellikle ön planda değildir.",
+    "postAnswerExplanation": "Porfobilinojen deaminaz eksikliği AIP ile ilişkilidir; karın ağrısı, psikiyatrik/nörolojik bulgular ve koyulaşan idrar görülebilir. Fotosensitivite genellikle ön planda değildir.",
+    "postAnswerExpandedExplanation": "Porfobilinojen deaminaz eksikliği AIP ile ilişkilidir; karın ağrısı, psikiyatrik/nörolojik bulgular ve koyulaşan idrar görülebilir. Fotosensitivite genellikle ön planda değildir.",
     "tusPearl": "Karın ağrısı + nöropsikiyatrik bulgu + ilaç/alkol tetiklenmesi = akut intermitan porfiri.",
-    "differentialPoint": "Porfiria cutanea tarda fotosensitiviteyle;P nörovisseral ataklarla daha çok sorulur.",
+    "differentialPoint": "Porfiria cutanea tarda fotosensitiviteyle; AIP nörovisseral ataklarla daha çok sorulur.",
     "clinicalRelevance": "Karın ağrısı + nöropsikiyatrik bulgu + ilaç/alkol tetiklenmesi = akut intermitan porfiri.",
     "mechanism": "",
     "relatedBranches": [
@@ -3371,7 +3371,7 @@ export const TUS_GLOSSARY_V319_TEACHABLE_TERMS = [
       "answerLeakRisk": "medium",
       "priority": "P1",
       "recommendation": "addNewEntry",
-      "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js, removed-question-source",
+      "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js, removed-static-seed-source",
       "reasonForRecommendation": "Uzun-kuyruk olmasına rağmen TUS karar mantığı, mekanizma, ayırıcı tanı veya güvenli nested zincir açısından öğretici değeri var."
     }
   },
@@ -5075,7 +5075,7 @@ export const TUS_GLOSSARY_V319_TEACHABLE_TERMS = [
       "answerLeakRisk": "low",
       "priority": "P2",
       "recommendation": "addNewEntry",
-      "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js, removed-static-template-source",
+      "sourceFilePath": "src/data/cases.js, src/data/tusPearlCards.js, removed-safe-bank-source",
       "reasonForRecommendation": "Uzun-kuyruk olmasına rağmen TUS karar mantığı, mekanizma, ayırıcı tanı veya güvenli nested zincir açısından öğretici değeri var."
     }
   }
