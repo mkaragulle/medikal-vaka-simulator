@@ -73,6 +73,14 @@ function classifyTusValidationError(message = '') {
     stage = 'tus_language';
     severity = 'repairable';
     action = 'repair';
+  } else if (/answer-support|correct-option-missing|humoral-antibody-response|mody-needs/.test(text)) {
+    stage = 'answer_stem_support';
+    severity = /correct-option-missing/.test(text) ? 'blocking' : 'repairable';
+    action = severity === 'blocking' ? 'regenerate' : 'repair_stem_or_answer_alignment';
+  } else if (/feedback-authenticity|stem-copy|template-feedback|option-name-repeat/.test(text)) {
+    stage = 'feedback_authenticity';
+    severity = 'repairable';
+    action = 'rewrite_feedback_only';
   } else if (/feedback|explanation|exampearl|jenerik|yasak|placeholder|surface/.test(text)) {
     stage = 'feedback_quality';
     severity = 'repairable';
@@ -1458,6 +1466,342 @@ function buildGroundedFeedback({ option, correctId, correctText, evidenceSummary
   ].join(' ');
 }
 
+const FINAL_ARTIFICIAL_FEEDBACK_PATTERNS = [
+  /kendi\s+(?:ozgun|Ã¶zgÃ¼n|özgün)\s+klinik\s+patern/iu,
+  /bulgu\s+b[uÃ¼]t[uÃ¼]nl[uÃ¼][gÄŸ]/iu,
+  /yaln[iÄ±]zca\s+isim\s+olarak/iu,
+  /g[oÃ¶]r[uÃ¼]n[uÃ¼]r\s+veri/iu,
+  /klinik\s+karar\s+noktas/i,
+  /kendi\s+tan[ıi]sal.*mekanistik\s+ba[gÄğ]lam/iu,
+  /do[gÄŸ]ru\s+cevap\s+k[oÃ¶]kteki\s+bulgular[ıi]n\s+b[uÃ¼]t[uÃ¼]nl[uÃ¼][gÄŸ][uÃ¼]yle\s+uyumludur/iu,
+  /temel\s+ayr[iÄ±]m\s+g[oÃ¶]r[uÃ¼]n[uÃ¼]r\s+verilerin/iu,
+];
+
+function finalOptionTextById(question = {}, id = '') {
+  return normalizeOptions(question.options).find((option) => option.id === String(id || '').toUpperCase())?.text || '';
+}
+
+function isSpecificAntibodyResponseAnswer(text = '') {
+  return /spesifik.*antikor|antikor.*yan[ıi]t|antikor.*ol[cÃç][uÃü]m|a[sş][ıi].*antikor|pn[oÃö]mokok.*antikor|tetanoz.*antikor|humoral.*fonksiyon/iu.test(text);
+}
+
+function isModyAnswer(text = '') {
+  return /\bmody\b|monojenik|monogenic|maturity\s+onset|glukokinaz|hnf1a|hnf4a/iu.test(text);
+}
+
+function finalStemBundle(question = {}) {
+  return cleanText([
+    question.demographics,
+    question.setting,
+    question.chiefComplaint,
+    question.stem,
+    question.questionStem,
+    ...compactItems(question.compactVitals || question.vitals || [], 6).map((item) => `${item.label}: ${item.value}`),
+    ...compactItems(question.compactObjectiveData || question.objectiveData || [], 10).map((item) => `${item.label}: ${item.value}`),
+  ].filter(Boolean).join(' | '));
+}
+
+function humoralSupportScore(text = '') {
+  const value = normalize(text);
+  return [
+    /tekrarlayan.*(?:sinopulmoner|otit|sin[uÃ¼]zit|pn[oÃö]moni|bakteri)/u,
+    /sinopulmoner|otit|sin[uÃ¼]zit|pn[oÃö]moni/u,
+    /d[uÃ¼][sş][uÃ¼]k.*igg|igg.*d[uÃ¼][sş][uÃ¼]k/u,
+    /d[uÃ¼][sş][uÃ¼]k.*iga|iga.*d[uÃ¼][sş][uÃ¼]k/u,
+    /antikor.*yan[ıi]t|a[sş][ıi].*yan[ıi]t/u,
+    /lenfosit.*normal|t.*h[uÃü]cre.*normal/u,
+  ].reduce((score, pattern) => score + (pattern.test(value) ? 1 : 0), 0);
+}
+
+function tCellOrCombinedDominantScore(text = '') {
+  const value = normalize(text);
+  return [
+    /lenfopeni|lenfosit.*d[uÃ¼][sş][uÃ¼]k/u,
+    /f[ıi]rsat[cÃç][ıi]|opportunistic/u,
+    /kandida|candida|pamuk[cÃç]uk/u,
+    /a[gÄğ][ıi]r.*viral|viral.*a[gÄğ][ıi]r/u,
+    /kronik.*ishal/u,
+    /timus.*yok|timik.*aplazi|di?george/u,
+    /pneumocystis|cmv|ebv/u,
+  ].reduce((score, pattern) => score + (pattern.test(value) ? 1 : 0), 0);
+}
+
+function modySupportScore(text = '') {
+  const value = normalize(text);
+  return [
+    /hafif|orta.*hiperglisemi|tesad[uÃü]fen.*glukoz/u,
+    /keton.*negatif|ketoz.*yok|ketoasidoz.*yok/u,
+    /c[-\s]?peptid.*korun|c[-\s]?peptid.*normal/u,
+    /otoantikor.*negatif|anti[-\s]?gad.*negatif|ia[-\s]?2.*negatif/u,
+    /obez.*de[gÄğ]il|ins[uÃü]lin\s+direnci.*yok|akantozis.*yok/u,
+    /aile.*[oÃö]yk[uÃü]|ku[sş]ak|gen[cÃç].*diyabet/u,
+  ].reduce((score, pattern) => score + (pattern.test(value) ? 1 : 0), 0);
+}
+
+function type1DiabetesDominantScore(text = '') {
+  const value = normalize(text);
+  return [
+    /ketoasidoz|dka|keton.*pozitif|ketoz/u,
+    /kilo\s+kayb/u,
+    /akut.*poli[uÃü]ri|akut.*polidipsi|belirgin.*poli[uÃü]ri/u,
+    /hba1c.*(?:1[0-9]|[2-9][0-9])|glukoz.*(?:3[0-9]{2}|4[0-9]{2}|5[0-9]{2})/u,
+    /otoantikor.*pozitif|anti[-\s]?gad.*pozitif/u,
+    /c[-\s]?peptid.*d[uÃ¼][sş][uÃ¼]k/u,
+  ].reduce((score, pattern) => score + (pattern.test(value) ? 1 : 0), 0);
+}
+
+function assessFinalAnswerStemSupport(question = {}) {
+  const correctText = finalOptionTextById(question, question.correctAnswer);
+  const stemText = finalStemBundle(question);
+  const repairable = [];
+  const blocking = [];
+  if (!correctText) blocking.push('answer-support:correct-option-missing');
+  if (isSpecificAntibodyResponseAnswer(correctText)) {
+    const humoral = humoralSupportScore(stemText);
+    const tCell = tCellOrCombinedDominantScore(stemText);
+    if (humoral < 3 || tCell >= 2) repairable.push('answer-support:humoral-antibody-response-needs-humoral-stem');
+  }
+  if (isModyAnswer(correctText)) {
+    const mody = modySupportScore(stemText);
+    const type1 = type1DiabetesDominantScore(stemText);
+    if (mody < 4 || type1 >= 2) repairable.push('answer-support:mody-needs-monogenic-diabetes-stem');
+  }
+  return { repairable, blocking };
+}
+
+function finalFeedbackCopiesStem(text = '', question = {}) {
+  const feedback = normalize(text);
+  const stem = normalize(finalStemBundle(question));
+  if (!feedback || !stem || feedback.length < 80) return false;
+  const stemSentences = splitSentencesSafe(finalStemBundle(question)).map(normalize).filter((item) => item.length >= 70);
+  if (stemSentences.some((sentence) => feedback.includes(sentence.slice(0, 70)))) return true;
+  return false;
+}
+
+function finalFeedbackRepeatsOptionName(text = '', optionText = '') {
+  const feedback = normalize(text);
+  const option = normalize(optionText);
+  if (!feedback || !option || option.length < 8) return false;
+  const firstSentence = normalize(splitSentencesSafe(text)[0] || '');
+  const startsWithOption = firstSentence.startsWith(option);
+  const count = feedback.split(option).length - 1;
+  return startsWithOption || count >= 2;
+}
+
+function finalFeedbackLooksArtificial(text = '', question = {}, option = {}) {
+  const value = cleanText(text);
+  if (!value) return true;
+  if (splitSentencesSafe(value).length < 2) return true;
+  if (FINAL_ARTIFICIAL_FEEDBACK_PATTERNS.some((pattern) => pattern.test(value))) return true;
+  if (finalFeedbackCopiesStem(value, question)) return true;
+  if (finalFeedbackRepeatsOptionName(value, option.text)) return true;
+  return false;
+}
+
+export function runFinalAnswerFeedbackSanityGate(rawQuestion = {}) {
+  const question = sanitizeQuestion(rawQuestion, rawQuestion.relatedBranch || rawQuestion.branch || '', rawQuestion.difficulty || '');
+  const support = assessFinalAnswerStemSupport(question);
+  const repairable = [...support.repairable];
+  const blocking = [...support.blocking];
+  const options = normalizeOptions(question.options);
+  const feedback = question.optionFeedback || question.wrongOptionFeedback || {};
+  const seen = new Map();
+  options.forEach((option) => {
+    const text = cleanText(feedback[option.id] || '');
+    if (finalFeedbackLooksArtificial(text, question, option)) repairable.push(`feedback-authenticity:rewrite:${option.id}`);
+    const key = normalize(text);
+    if (key && seen.has(key)) repairable.push(`feedback-authenticity:duplicate:${seen.get(key)}-${option.id}`);
+    else if (key) seen.set(key, option.id);
+  });
+  return {
+    ok: blocking.length === 0 && repairable.length === 0,
+    blockingErrors: Array.from(new Set(blocking)),
+    repairableErrors: Array.from(new Set(repairable)),
+  };
+}
+
+function applyFocusedDomainStemRepair(question = {}, correctText = '') {
+  const repaired = { ...question };
+  const applied = [];
+  if (isSpecificAntibodyResponseAnswer(correctText)) {
+    repaired.stem = '8 yaşındaki çocuk son iki yılda tekrarlayan otitis media, sinüzit ve pnömoni atakları nedeniyle değerlendiriliyor. Büyüme gelişmesi normaldir ve enfeksiyon öyküsü bakteriyel solunum yolu ataklarıyla sınırlıdır. Laboratuvarda toplam lenfosit sayısı ve T hücre alt grupları normal, IgG ve IgA düzeyleri düşüktür. Aşılanmasına rağmen pnömokok ve tetanoz antijenlerine karşı koruyucu antikor yanıtı gelişmediği düşünülüyor.';
+    repaired.compactObjectiveData = [
+      { label: 'İmmünoglobulinler', value: 'IgG ve IgA düşük' },
+      { label: 'Lenfosit alt grupları', value: 'T hücre sayıları normal' },
+      { label: 'Aşı yanıtı', value: 'Protein ve polisakkarit antijenlere antikor yanıtı yetersiz şüphesi' },
+    ];
+    repaired.learningTarget = repaired.learningTarget || 'Humoral immün yetmezlikte antikor fonksiyonunun değerlendirilmesi';
+    applied.push('humoral-antibody-response-stem-rebuilt');
+  } else if (isModyAnswer(correctText)) {
+    repaired.stem = '16 yaşındaki genç rutin kontrolde saptanan hafif-orta hiperglisemi nedeniyle değerlendiriliyor. Akut katabolik yakınma yoktur; idrar ketonu negatiftir ve asidoz bulgusu saptanmıyor. Obezite ve insülin direnci bulguları izlenmiyor. Açlık glukozu 135 mg/dL, HbA1c %6,7, C-peptid düzeyi korunmuş ve pankreas otoantikorları negatiftir. Aile öyküsünde üç kuşakta genç yaşta başlayan diyabet bulunmaktadır.';
+    repaired.compactObjectiveData = [
+      { label: 'Glisemik patern', value: 'Hafif-orta hiperglisemi, keton negatif' },
+      { label: 'Beta hücre rezervi', value: 'C-peptid korunmuş' },
+      { label: 'Otoimmünite', value: 'Pankreas otoantikorları negatif' },
+      { label: 'Aile öyküsü', value: 'Birkaç kuşakta genç yaşta diyabet' },
+    ];
+    repaired.learningTarget = repaired.learningTarget || 'MODY/monojenik diyabet paterninin tip 1 ve tip 2 diyabetten ayrılması';
+    applied.push('mody-stem-rebuilt');
+  }
+  return { question: repaired, applied };
+}
+
+function finalSemanticStemSummary(question = {}) {
+  const source = normalize(finalStemBundle(question));
+  const parts = [];
+  if (/yas|yil|aylik|cocuk|gebe|erkek|kadin|ergen/.test(source)) parts.push('hasta profili');
+  if (/akut|kronik|tekrarlayan|saat|gun|hafta|ay|yil/.test(source)) parts.push('zamanlama');
+  if (/ates|agri|dispne|kusma|ishal|nobet|kilo|poliuri|polidipsi/.test(source)) parts.push('semptom paterni');
+  if (/muayene|hipotansiyon|hipoksi|tansiyon|nabiz|solunum|lenfosit|ig|glukoz|hba1c|keton|c[-\s]?peptid|antikor|crp|trombosit|grafi|bt|mr|usg/.test(source)) parts.push('muayene ve tetkik verileri');
+  if (/aile|oyku|asi|ilac|maruziyet/.test(source)) parts.push('öykü bilgisi');
+  return parts.length ? parts.join(', ') : 'klinik bağlam ve karar verdirici ipuçları';
+}
+
+function focusedOptionDifferentialProfile(optionText = '') {
+  const value = normalize(optionText);
+  if (/hipotonik.*hiponatremi/.test(value)) {
+    return {
+      usual: 'Hipotonik hiponatremi, ölçülen düşüklüğün gerçek plazma hipotonisitesiyle birlikte olduğu tablodur',
+      mismatch: 'olguda sınıflandırmayı belirleyen eksen, ölçüm artefaktından çok gerçek tonisite azalmasıdır',
+      distinction: 'hipertonik ve izotonik nedenlerden farkı, plazma tonisitesinin gerçekten azalmış olmasıdır',
+    };
+  }
+  if (/hipertonik.*hiponatremi/.test(value)) {
+    return {
+      usual: 'Hipertonik hiponatremi genellikle ağır hiperglisemi veya mannitol gibi efektif osmollerin suyu ekstrasellüler alana çekmesiyle oluşur',
+      mismatch: 'olguda tonisite azalması ekseni kurulduğu için hipertonik mekanizma geri planda kalır',
+      distinction: 'hipotonik hiponatremide tonisite azalırken hipertonik tabloda efektif osmoller artmış olur',
+    };
+  }
+  if (/izotonik.*hiponatremi|ps[oÃö]dohiponatremi/.test(value)) {
+    return {
+      usual: 'İzotonik hiponatremi veya psödohiponatremi ağır hiperlipidemi ya da paraproteinemi gibi ölçüm artefaktlarında düşünülür',
+      mismatch: 'olguda gerçek tonisite azalması ekseni kurulduğu için ölçüm artefaktı açıklaması zayıflar',
+      distinction: 'psödohiponatremide plazma tonisitesi genellikle korunur',
+    };
+  }
+  if (/hipernatremik.*dehidratasyon|hipernatremi/.test(value)) {
+    return {
+      usual: 'Hipernatremik dehidratasyon ölçülen ana elektrolit değerinin yüksek olduğu ve çoğunlukla su kaybı ya da hipertonik yükle gelişen tablodur',
+      mismatch: 'olguda yüksek değer ekseni değil düşüklüğün tonisiteye göre sınıflanması hedeflenir',
+      distinction: 'bu soruda temel ayrım yüksek değer tanısı değil hipotonik sınıflamanın tanınmasıdır',
+    };
+  }
+  if (/hiperkalemi|potasyum/.test(value)) {
+    return {
+      usual: 'Hiperkalemi kardiyak iletim riski ve elektrolit yönetimi gerektiren ayrı bir tablodur',
+      mismatch: 'primer hiperkalemi ekseni sorunun hedeflediği hiponatremi sınıflamasını açıklamaz',
+      distinction: 'buradaki ayrım hiperkalemi değil düşük değer tablosunun tonisiteye göre yorumlanmasıdır',
+    };
+  }
+  if (/(?:t\s*)?h(?:ucre|ücre|Ã¼cre)|akim|ak[ıi]m|sitometri|flow|cd3|cd4|cd8|lenfosit\s+alt/.test(value)) {
+    return {
+      usual: 'T hücre veya kombine immün yetmezlik kuşkusunda lenfosit alt grupları ve T hücre fonksiyonu ön plana çıkar',
+      mismatch: 'ağır viral/fırsatçı enfeksiyon, kronik kandidiyazis, lenfopeni veya timus yokluğu gibi T hücre ekseni bulguları baskın değildir',
+      distinction: 'humoral yetmezlikte ayırıcı nokta tekrarlayan bakteriyel sinopulmoner enfeksiyonlar ve antikor yanıtının bozulmasıdır',
+    };
+  }
+  if (/spesifik.*antikor|antikor.*yan[ıi]t|a[sş][ıi].*antikor/.test(value)) {
+    return {
+      usual: 'Humoral immün yetmezlikte yalnız immünoglobulin miktarı değil, aşı antijenlerine karşı fonksiyonel antikor üretimi de değerlendirilir',
+      mismatch: 'kök humoral eksene oturduğunda bu test doğrudan antikor fonksiyonunu gösterir',
+      distinction: 'T hücre testlerinden farkı hücresel bağışıklığı değil B hücre-antikor yanıtının etkinliğini ölçmesidir',
+    };
+  }
+  if (/imm[uÃ¼]noglobulin|igg|iga|igm/.test(value)) {
+    return {
+      usual: 'Serum immünoglobulin düzeyleri humoral yetmezlik taramasında nicel eksikliği gösterir',
+      mismatch: 'fonksiyonel aşı yanıtı sorulduğunda yalnız düzey bakmak antikor işlevini tam olarak kanıtlamaz',
+      distinction: 'spesifik antikor yanıtı, immünoglobulin varlığının işlevsel koruyuculuğa dönüşüp dönüşmediğini ayırır',
+    };
+  }
+  if (/dhr|nitroblue|nbt|oksidatif|fagositoz|n[oÃö]trofil/.test(value)) {
+    return {
+      usual: 'DHR veya NBT testi nötrofil oksidatif patlama kusurlarında, özellikle kronik granülomatöz hastalık şüphesinde kullanılır',
+      mismatch: 'bu eksende katalaz pozitif mikroorganizmalarla derin apse veya invaziv fungal enfeksiyon paterni beklenir',
+      distinction: 'humoral tabloda temel sorun nötrofil öldürme fonksiyonu değil antikor aracılı opsonizasyon ve aşı yanıtıdır',
+    };
+  }
+  if (/kompleman|ch50|ah50/.test(value)) {
+    return {
+      usual: 'Kompleman incelemesi tekrarlayan Neisseria enfeksiyonları veya kompleman tüketimi düşündüren tabloda öne çıkar',
+      mismatch: 'kökte kompleman eksikliğini düşündüren meningokok enfeksiyonu veya klasik kompleman tüketimi paterni baskın değildir',
+      distinction: 'buradaki ayrım kompleman lizisi değil antikor yanıtının yetersizliğidir',
+    };
+  }
+  if (/triptaz|anafilaksi|mast/.test(value)) {
+    return {
+      usual: 'Serum triptaz mast hücre aktivasyonu ve anafilaksi değerlendirmesinde yardımcı bir biyobelirteçtir',
+      mismatch: 'tekrarlayan bakteriyel solunum yolu enfeksiyonları ve düşük immünoglobulin paterni mast hücre aktivasyonu eksenini desteklemez',
+      distinction: 'humoral yetmezlikte temel ayrım alerjik mediyatör salınımı değil antikor üretim ve yanıt kapasitesidir',
+    };
+  }
+  if (isModyAnswer(optionText)) {
+    return {
+      usual: 'MODY, otoimmün olmayan, ketozis beklenmeyen ve ailede genç yaşta diyabet kümelenmesiyle giden monojenik diyabet formudur',
+      mismatch: 'keton negatifliği, korunmuş C-peptid, otoantikor negatifliği ve çok kuşaklı aile öyküsü bu tanıyı güçlendirir',
+      distinction: 'tip 1 diyabetten farkı akut insülin eksikliği-ketozis yerine korunmuş beta hücre rezervi göstermesidir',
+    };
+  }
+  if (/tip\s*1|otoimm[uÃü]n.*diyabet|ins[uÃü]lin.*eksikli/.test(value)) {
+    return {
+      usual: 'Tip 1 diyabet akut poliüri-polidipsi, kilo kaybı, ketozis/ketoasidoz ve pozitif pankreas otoantikorlarıyla düşünülür',
+      mismatch: 'keton negatifliği, korunmuş C-peptid ve otoantikor negatifliği akut otoimmün insülin eksikliği eksenini zayıflatır',
+      distinction: 'MODY’de ailevi-monojenik patern ve beta hücre rezervinin korunması ayırt ettiricidir',
+    };
+  }
+  if (/tip\s*2|ins[uÃü]lin\s+direnci|obez|metabolik/.test(value)) {
+    return {
+      usual: 'Tip 2 diyabet genellikle obezite, insülin direnci, akantozis nigrikans ve metabolik risklerle desteklenir',
+      mismatch: 'obezite veya belirgin insülin direnci yoksa genç yaşta ailevi hafif hiperglisemi MODY lehine kayar',
+      distinction: 'MODY’de temel ayrım metabolik sendromdan çok otozomal dominant ailevi diyabet paternidir',
+    };
+  }
+  if (/ketoasidoz|dka|keton/.test(value)) {
+    return {
+      usual: 'Diyabetik ketoasidoz belirgin insülin eksikliği, hiperglisemi, keton pozitifliği ve metabolik asidozla acil tablo oluşturur',
+      mismatch: 'keton negatif ve klinik olarak stabil hafif hiperglisemi varlığında DKA doğru eksen olmaz',
+      distinction: 'MODY kronik, ketozisiz ve ailevi hiperglisemi paterniyle ayrılır',
+    };
+  }
+  return {
+    usual: 'Bu yanıt belirli bir tanı, test, tedavi veya mekanizma eksenini temsil eder',
+    mismatch: 'kökte bu ekseni doğrudan güçlendiren özgül bulgu dizisi baskın değildir',
+    distinction: 'doğru yanıtla ayrım, sorunun hedeflediği klinik karar için hangi veri kümesinin daha seçici olduğudur',
+  };
+}
+
+function buildFocusedDifferentialExplanation(question = {}, correctText = '') {
+  if (isSpecificAntibodyResponseAnswer(correctText)) {
+    return 'Tekrarlayan bakteriyel sinopulmoner enfeksiyonlar, düşük IgG/IgA ve normal T hücre ekseni humoral immün yetmezliği düşündürür. Bu durumda en öğretici karar noktası, hastanın aşı antijenlerine karşı koruyucu ve spesifik antikor yanıtı oluşturup oluşturamadığını ölçmektir.';
+  }
+  if (isModyAnswer(correctText)) {
+    return 'Ketozis olmadan seyreden hafif-orta hiperglisemi, korunmuş C-peptid, negatif pankreas otoantikorları ve birkaç kuşakta genç yaşta diyabet öyküsü MODY lehinedir. Bu patern akut tip 1 diyabetten keton/asidoz olmamasıyla, tip 2 diyabetten ise obezite ve belirgin insülin direnci olmamasıyla ayrılır.';
+  }
+  return `Doğru yanıt, kökteki ${finalSemanticStemSummary(question)} birlikte yorumlandığında en tutarlı klinik karar eksenini oluşturur. Yanlış seçenekler ise kendi tipik tanı, test veya mekanizma bağlamları için gerekli ayırt ettirici veriler kökte baskın olmadığı için geri planda kalır.`;
+}
+
+function joinCompleteSentences(parts = []) {
+  return parts.map((part) => ensureSentence(part)).filter(Boolean).join(' ');
+}
+
+function buildFocusedDifferentialFeedback({ option, correctId, correctText }) {
+  const optionText = cleanText(option?.text || '');
+  const profile = focusedOptionDifferentialProfile(optionText);
+  if (option?.id === correctId) {
+    return joinCompleteSentences([
+      `Doğru yanıtı destekleyen ana ayrım şudur: ${profile.mismatch}`,
+      profile.usual,
+      profile.distinction,
+    ]);
+  }
+  return joinCompleteSentences([
+    `Bu yanlış şık normalde şu durumda düşünülür: ${profile.usual}.`,
+    `Bu soruda ${profile.mismatch}.`,
+    `Kritik ayrım: ${profile.distinction}; bu nedenle ${correctText} daha güçlü kalır.`,
+  ]);
+}
+
 export function repairTusQuestionForPublish(rawQuestion = {}, repairReasons = []) {
   const question = { ...rawQuestion };
   const options = normalizeOptions(question.options);
@@ -1468,6 +1812,12 @@ export function repairTusQuestionForPublish(rawQuestion = {}, repairReasons = []
     return { question, applied, blocked: true };
   }
 
+  const domainRepair = applyFocusedDomainStemRepair(question, correctText);
+  if (domainRepair.applied.length) {
+    Object.assign(question, domainRepair.question);
+    applied.push(...domainRepair.applied);
+  }
+
   question.stem = integrateCompactDataIntoStem(
     stripQuestionLikeTailFromStem(question.stem || question.questionStem || '', question.question || ''),
     question.compactVitals || question.vitals || [],
@@ -1475,23 +1825,23 @@ export function repairTusQuestionForPublish(rawQuestion = {}, repairReasons = []
   );
   question.question = ensureQuestion(question.question || 'Bu olguda en uygun seçenek hangisidir?');
 
-  const { evidence, summary } = visibleRepairEvidence(question);
-  const evidenceSummary = cleanText(summary);
-  question.explanation = [
-    `${correctText}, kökte verilen ${evidenceSummary} bulgu bütünlüğünü en iyi açıklayan seçenektir.`,
-    `Açıklama yalnızca kökte görünen verilere dayanır; seçenekler arasındaki temel ayrım bu görünür klinik eksenin ${correctText} lehine kurulmasıdır.`,
-  ].join(' ');
+  const { evidence } = visibleRepairEvidence(question);
+  question.explanation = buildFocusedDifferentialExplanation(question, correctText);
 
   const feedback = {};
   options.forEach((option) => {
-    feedback[option.id] = buildGroundedFeedback({ option, correctId, correctText, evidenceSummary });
+    feedback[option.id] = buildFocusedDifferentialFeedback({ option, correctId, correctText, question });
   });
   question.optionFeedback = feedback;
   question.wrongOptionFeedback = feedback;
   question.evidenceChain = evidence.length
     ? evidence.map((item) => ensureSentence(item))
     : [`Kök, ${correctText} lehine yorumlanacak görünür klinik bağlam içerir.`];
-  question.examPearl = `${correctText} sorularında doğru yanıt, kökteki görünür bulguların birlikte kurduğu karar ekseniyle seçilmelidir; açıklamada kök dışı hasta verisi kullanılmamalıdır.`;
+  question.examPearl = isSpecificAntibodyResponseAnswer(correctText)
+    ? 'Tekrarlayan bakteriyel sinopulmoner enfeksiyon ve düşük immünoglobulin düzeyleri humoral ekseni güçlendirir; fonksiyonel değerlendirme için aşı antijenlerine özgül antikor yanıtı aranır.'
+    : (isModyAnswer(correctText)
+      ? 'Genç yaşta ketozisiz hafif hiperglisemi, korunmuş C-peptid, negatif otoantikor ve otozomal dominant aile öyküsü MODY için yüksek değerli ipuçlarıdır.'
+      : `${correctText} ancak kökteki ayırt ettirici klinik veriler rakip seçenekleri dışlayacak kadar güçlü olduğunda doğru kabul edilmelidir.`);
   question.semanticFingerprint = makeSignature(question);
   question.aiMeta = {
     ...(question.aiMeta || {}),
@@ -2028,6 +2378,40 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
       ...(legacyReview.summary || []),
     ]));
   }
+  let finalSanity = runFinalAnswerFeedbackSanityGate(sanitized);
+  if (!finalSanity.ok && finalSanity.repairableErrors.length && !finalSanity.blockingErrors.length) {
+    const finalRepairReasons = finalSanity.repairableErrors;
+    const repaired = repairTusQuestionForPublish(sanitized, finalRepairReasons);
+    if (!repaired.blocked && (repaired.applied || []).length) {
+      Object.assign(sanitized, repaired.question);
+      Object.assign(sanitized, normalizeQuestionQualityFields(sanitized));
+      attachGlobalQualityReview(sanitized);
+      finalSanity = runFinalAnswerFeedbackSanityGate(sanitized);
+      sanitized.aiMeta = {
+        ...(sanitized.aiMeta || {}),
+        finalAnswerFeedbackSanityGate: {
+          repaired: true,
+          repairReasons: finalRepairReasons,
+          applied: repaired.applied,
+        },
+      };
+    }
+  }
+  if (finalSanity.blockingErrors.length || finalSanity.repairableErrors.length) {
+    const finalErrors = [...finalSanity.blockingErrors, ...finalSanity.repairableErrors];
+    const error = new Error(finalErrors.join('; ') || 'Final answer/feedback sanity gate failed.');
+    error.validationErrors = finalErrors;
+    error.qualitySeverity = finalSanity.blockingErrors.length ? 'blocking' : 'repairable';
+    error.question = sanitized;
+    throw error;
+  }
+  sanitized.aiMeta = {
+    ...(sanitized.aiMeta || {}),
+    finalAnswerFeedbackSanityGate: {
+      ...(sanitized.aiMeta?.finalAnswerFeedbackSanityGate || {}),
+      ok: true,
+    },
+  };
   sanitized.qualityGate = sanitized.qualityNotes?.length ? 'passed-with-editorial-notes' : 'strict-passed';
   return sanitized;
 }
@@ -2066,7 +2450,8 @@ async function getReusableBankQuestion({ branch, target, difficulty, recentQuest
     const candidate = sanitizeQuestion({ ...item, id: `ai-spot-bank-check-${Date.now()}` }, branch, difficulty);
     const validation = validateQuestion(candidate, recentQuestionSummaries);
     const validationBlocking = legacyHardBlockingValidationErrors(validation.errors || []);
-    return !validationBlocking.length && !legacyBlockingReviewIssues(candidate).length;
+    const finalSanity = runFinalAnswerFeedbackSanityGate(candidate);
+    return !validationBlocking.length && !legacyBlockingReviewIssues(candidate).length && finalSanity.ok;
   });
   if (!reusable) return null;
   const cloned = sanitizeQuestion({ ...reusable, id: `ai-spot-bank-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, branch, difficulty);
@@ -2084,6 +2469,7 @@ async function storeReusableQuestion({ branch, target, difficulty, question }) {
   if (legacyBlockingReviewIssues(question).length) return false;
   const validation = validateQuestion(question, []);
   if (legacyHardBlockingValidationErrors(validation.errors || []).length) return false;
+  if (!runFinalAnswerFeedbackSanityGate(question).ok) return false;
   const model = question.openAIModel || currentTusModel();
   const bankKey = buildQuestionBankKey({ scope: 'TUS', branch, difficulty, target, promptVersion: PROMPT_VERSION, model });
   return addQuestionToBank(bankKey, question);
@@ -2128,7 +2514,8 @@ export default async function handler(request, response) {
     const cachedPayload = await getDurableCachedOutput(oneShotCacheKey);
     if (cachedPayload?.question && !cachedPayload.question.fallback && !questionMatchesRecent(cachedPayload.question, recentQuestionSummaries)) {
       const cachedValidation = validateQuestion(cachedPayload.question, recentQuestionSummaries);
-      if (!legacyHardBlockingValidationErrors(cachedValidation.errors || []).length && !legacyBlockingReviewIssues(cachedPayload.question).length) {
+      const cachedFinalSanity = runFinalAnswerFeedbackSanityGate(cachedPayload.question);
+      if (!legacyHardBlockingValidationErrors(cachedValidation.errors || []).length && !legacyBlockingReviewIssues(cachedPayload.question).length && cachedFinalSanity.ok) {
         logAIUsage({ task: `${TASK_NAME}:outputCache`, model: cachedPayload.question.openAIModel || model, cached: true, apiStyle: 'output_cache', promptVersion: PROMPT_VERSION, sourceFingerprint: oneShotCacheKey, finalOutput: true, validator: { legacyValidation: cachedValidation.stages } });
         return sendJson(response, 200, { ok: true, cached: true, fallback: false, provider: cachedPayload.provider || 'openai-output-cache', question: cachedPayload.question });
       }
@@ -2136,6 +2523,23 @@ export default async function handler(request, response) {
 
     if (!envFlag('KLINIKIQ_LIVE_TUS_AI', true)) {
       const question = fallbackQuestion({ branchFilter: branch, difficulty: requestedDifficulty, recentQuestionSummaries: [] });
+      let disabledFinalSanity = runFinalAnswerFeedbackSanityGate(question);
+      if (!disabledFinalSanity.ok && disabledFinalSanity.repairableErrors.length && !disabledFinalSanity.blockingErrors.length) {
+        const repaired = repairTusQuestionForPublish(question, disabledFinalSanity.repairableErrors);
+        if (!repaired.blocked && (repaired.applied || []).length) Object.assign(question, repaired.question);
+        disabledFinalSanity = runFinalAnswerFeedbackSanityGate(question);
+      }
+      if (!disabledFinalSanity.ok) {
+        return sendJson(response, 422, {
+          ok: false,
+          provider: 'local-curated-question',
+          fallback: false,
+          safeFallback: false,
+          manualReviewRequired: true,
+          error: 'Yerel soru bankası final cevap/feedback kontrolünden geçemedi.',
+          finalAnswerFeedbackSanityGate: disabledFinalSanity,
+        });
+      }
       question.provider = 'local-curated-question';
       question.fallback = true;
       question.aiMeta = {
@@ -2200,14 +2604,20 @@ export default async function handler(request, response) {
       safeFallbackPolicy: 'last-resort-after-normal-ai-attempt',
     });
     const question = fallbackQuestion({ branchFilter: branch, difficulty: requestedDifficulty, recentQuestionSummaries: [] });
+    let fallbackFinalSanity = runFinalAnswerFeedbackSanityGate(question);
+    if (!fallbackFinalSanity.ok && fallbackFinalSanity.repairableErrors.length && !fallbackFinalSanity.blockingErrors.length) {
+      const repaired = repairTusQuestionForPublish(question, fallbackFinalSanity.repairableErrors);
+      if (!repaired.blocked && (repaired.applied || []).length) Object.assign(question, repaired.question);
+      fallbackFinalSanity = runFinalAnswerFeedbackSanityGate(question);
+    }
     const fallbackValidation = validateQuestion(question, []);
     const fallbackHardErrors = legacyHardBlockingValidationErrors(fallbackValidation.errors || []);
-    if (fallbackHardErrors.length || legacyBlockingReviewIssues(question).length) {
+    if (fallbackHardErrors.length || legacyBlockingReviewIssues(question).length || !fallbackFinalSanity.ok) {
       logFallbackTrigger({
         branch,
         difficulty: requestedDifficulty,
         reason: 'local-safe-fallback-suppressed-by-quality-gate',
-        failures: [...fallbackHardErrors, ...(fallbackValidation.errors || [])],
+        failures: [...fallbackHardErrors, ...(fallbackValidation.errors || []), ...fallbackFinalSanity.blockingErrors, ...fallbackFinalSanity.repairableErrors],
         normalAttempts: remoteAttempts,
         safeFallbackPolicy: 'last-resort-after-normal-ai-attempt',
       });
@@ -2222,7 +2632,7 @@ export default async function handler(request, response) {
         attemptDetails: failureDetails.slice(0, 3),
         fallbackValidationGate: {
           stages: fallbackValidation.stages,
-          errors: fallbackHardErrors,
+          errors: [...fallbackHardErrors, ...fallbackFinalSanity.blockingErrors, ...fallbackFinalSanity.repairableErrors],
         },
       });
     }
