@@ -476,6 +476,26 @@ export async function getDurableCachedOutput(cacheKey) {
   }
 }
 
+
+export async function invalidateDurableCachedOutput(cacheKey, reason = {}) {
+  if (!cacheKey) return false;
+  durableCacheMemory.delete(cacheKey);
+  outputCache.delete(cacheKey);
+  void kvCommand('DEL', cacheKey);
+  try {
+    await fs.unlink(durableCacheFilePath(cacheKey));
+  } catch {
+    // Already absent or filesystem unavailable; invalidation is best-effort.
+  }
+  if (reason && Object.keys(reason).length) {
+    console.warn('[KlinikIQ AI Cache] invalidated stale AI output cache.', JSON.stringify({
+      cacheKey: safeString(cacheKey).slice(0, 24),
+      ...reason,
+    }));
+  }
+  return true;
+}
+
 export async function setDurableCachedOutput(cacheKey, value, ttlMs = envNumber('KLINIKIQ_AI_OUTPUT_CACHE_TTL_MS', DEFAULT_DURABLE_CACHE_TTL_MS)) {
   if (!shouldUseOutputCache() || !cacheKey || value === undefined || value === null) return false;
   const expiresAt = nowMs() + Number(ttlMs || DEFAULT_DURABLE_CACHE_TTL_MS);

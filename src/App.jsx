@@ -1263,10 +1263,10 @@ function App() {
       try {
         const result = await createAIQuestion({ previousQuestionId, branchFilter: branchFilterOverride, difficulty: difficultyOverride });
         if (latestAIQuestionRequestId.current !== requestId) return;
-        const hasUsableQuestion = Boolean(result.question) && (result.ok || result.fallback);
+        const hasUsableQuestion = Boolean(result.question) && (result.ok || result.fallback || result.manualReviewRequired !== true);
         setAIPracticeState({
           active: true,
-          question: result.question,
+          question: hasUsableQuestion ? result.question : null,
           loading: false,
           error: hasUsableQuestion ? null : (result.error || new Error('AI question generation failed')),
           generationSource: result.source || result.question?.source || null,

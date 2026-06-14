@@ -105,6 +105,38 @@ function getPayloadError(payload, status) {
   return payload.error || payload.message || payload.attempts?.join(' | ') || `AI endpoint failed with ${status}`;
 }
 
+function normalizeEndpointQuestionPayload(payload = {}, { branchFilter, attempt } = {}) {
+  const rawQuestion = payload.question || payload;
+  const isFallback = Boolean(payload.fallback || payload.safeFallback || rawQuestion.fallback || String(payload.provider || rawQuestion.provider || '').toLowerCase().includes('fallback'));
+  const normalized = normalizeSimpleAIQuestion(rawQuestion, {
+    provider: payload.provider || rawQuestion.provider || 'openai',
+    model: rawQuestion.openAIModel || payload.model || null,
+    remote: !isFallback,
+    fallback: isFallback,
+    branchFilter,
+  });
+
+  normalized.aiMeta = {
+    ...(normalized.aiMeta || {}),
+    provider: payload.provider || rawQuestion.provider || normalized.aiMeta?.provider || 'openai',
+    remote: !isFallback,
+    fallback: isFallback,
+    fallbackNotice: Boolean(isFallback && SHOW_FALLBACK_NOTICE),
+    remoteAttempt: attempt,
+    serverError: payload.error || null,
+    serverQualityGate: payload.fallbackValidationGate || payload.qualityGate || null,
+  };
+
+  return {
+    ok: true,
+    question: normalized,
+    source: normalized.aiMeta.provider,
+    usedRemoteAI: !isFallback,
+    fallback: isFallback,
+    showFallbackNotice: Boolean(isFallback && SHOW_FALLBACK_NOTICE),
+  };
+}
+
 function buildRequestContext(context = {}) {
   return {
     recentIds: Array.isArray(context.recentIds) ? context.recentIds.slice(0, 20) : [],
@@ -137,44 +169,28 @@ async function fetchOneRemoteQuestion({ previousQuestionId, branchFilter, diffic
     let payload = null;
     try { payload = await response.json(); } catch { payload = null; }
     if (!response.ok || !payload?.ok) {
+      if (payload?.question && payload?.manualReviewRequired !== true) {
+        const salvaged = normalizeEndpointQuestionPayload(payload, { branchFilter, attempt });
+        salvaged.source = salvaged.source || 'server-recovered-question';
+        salvaged.question.aiMeta = {
+          ...(salvaged.question.aiMeta || {}),
+          recoveredFromNonOkEndpointState: true,
+          serverStatus: response.status,
+        };
+        return salvaged;
+      }
       const error = new Error(getPayloadError(payload, response.status));
       error.status = response.status;
       error.payload = payload;
       throw error;
     }
 
-    const rawQuestion = payload.question || payload;
-    const isFallback = Boolean(payload.fallback || payload.safeFallback || rawQuestion.fallback || String(payload.provider || rawQuestion.provider || '').toLowerCase().includes('fallback'));
-    const normalized = normalizeSimpleAIQuestion(rawQuestion, {
-      provider: payload.provider || rawQuestion.provider || 'openai',
-      model: rawQuestion.openAIModel || payload.model || null,
-      remote: !isFallback,
-      fallback: isFallback,
-      branchFilter,
-    });
-
-    normalized.aiMeta = {
-      ...(normalized.aiMeta || {}),
-      provider: payload.provider || rawQuestion.provider || normalized.aiMeta?.provider || 'openai',
-      remote: !isFallback,
-      fallback: isFallback,
-      fallbackNotice: Boolean(isFallback && SHOW_FALLBACK_NOTICE),
-      remoteAttempt: attempt,
-      serverError: payload.error || null,
-    };
-
-    if (!isFallback && isTooSimilarToRecent(normalized, context.recentQuestionSummaries || [])) {
+    const result = normalizeEndpointQuestionPayload(payload, { branchFilter, attempt });
+    if (!result.fallback && isTooSimilarToRecent(result.question, context.recentQuestionSummaries || [])) {
       throw new Error('Yakın geçmişteki sorulara çok benzer üretim reddedildi.');
     }
 
-    return {
-      ok: true,
-      question: normalized,
-      source: normalized.aiMeta.provider,
-      usedRemoteAI: !isFallback,
-      fallback: isFallback,
-      showFallbackNotice: Boolean(isFallback && SHOW_FALLBACK_NOTICE),
-    };
+    return result;
   } finally {
     window.clearTimeout(timeoutId);
   }

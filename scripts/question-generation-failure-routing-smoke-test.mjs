@@ -45,6 +45,22 @@ assert.equal(grounding.blockingErrors.length, 0, 'grounding mismatch should be r
 assert.equal(grounding.repairableErrors.length, 1, 'grounding mismatch should be repairable');
 assert.ok(grounding.issues.some((issue) => issue.stage === 'medical_grounding'), 'grounding stage should be logged');
 
+const legacyGlobalRepairable = classifyTusValidationErrors([
+  'global-quality:reject:unsupported_post_answer_data:Açıklama kökte görünmeyen veriye dayanıyor.',
+  'global-quality:reject:truncated_or_broken_text:Kesik metin var.',
+  'soru kökü/veri paneli doğru cevabı ele veriyor',
+]);
+assert.equal(legacyGlobalRepairable.blockingErrors.length, 0, 'legacy reject labels for grounding/language/leakage should be repaired, not hard-blocked');
+assert.equal(legacyGlobalRepairable.repairableErrors.length, 3, 'legacy repairable rejects should be visible as repairable');
+assert.ok(legacyGlobalRepairable.issues.some((issue) => issue.stage === 'medical_grounding'), 'global grounding reject should be logged as grounding repair');
+assert.ok(legacyGlobalRepairable.issues.some((issue) => issue.stage === 'answer_leak'), 'answer leak should be logged as repairable/regenerate stage');
+
+const trueBlockingGlobal = classifyTusValidationErrors([
+  'global-quality:reject:stem_correct_answer_conflict:Kök ile doğru cevap çelişiyor.',
+]);
+assert.equal(trueBlockingGlobal.blockingErrors.length, 1, 'scientific/stem-answer conflict remains blocking');
+assert.ok(trueBlockingGlobal.issues.some((issue) => issue.stage === 'scientific_accuracy'), 'true blocker should keep scientific stage');
+
 const baseQuestion = {
   id: 'new-question',
   relatedBranch: 'İç Hastalıkları',
