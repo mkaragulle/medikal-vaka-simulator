@@ -6,6 +6,35 @@ function compactText(value = '') {
   return String(value || '').replace(/\s+/g, ' ').trim();
 }
 
+function normalizeForCompare(value = '') {
+  return compactText(value)
+    .toLocaleLowerCase('tr')
+    .replace(/[ıİ]/g, 'i')
+    .replace(/[ğĞ]/g, 'g')
+    .replace(/[üÜ]/g, 'u')
+    .replace(/[şŞ]/g, 's')
+    .replace(/[öÖ]/g, 'o')
+    .replace(/[çÇ]/g, 'c')
+    .replace(/[^a-z0-9+\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function visibleStemIncludesPrompt(stem = '', prompt = '') {
+  const normalizedStem = normalizeForCompare(stem);
+  const normalizedPrompt = normalizeForCompare(prompt);
+  return Boolean(normalizedStem && normalizedPrompt && normalizedStem.includes(normalizedPrompt));
+}
+
+function buildVisibleStem(stem = '', prompt = '') {
+  const cleanStem = compactText(stem);
+  const cleanPrompt = compactText(prompt);
+  if (!cleanPrompt || visibleStemIncludesPrompt(cleanStem, cleanPrompt) || cleanStem.includes('?')) {
+    return cleanStem;
+  }
+  return compactText(`${cleanStem} ${cleanPrompt}`);
+}
+
 function normalizeDifficulty(value = 'Orta') {
   return ['Kolay', 'Orta', 'Zor'].includes(value) ? value : 'Orta';
 }
@@ -30,8 +59,8 @@ function normalizeGeneratedTusQuestion(payload) {
   const correctAnswer = letterMatch ? uniqueOptions[rawCorrect.toLocaleUpperCase('tr').charCodeAt(0) - 65] : rawCorrect;
   const exactCorrect = uniqueOptions.find((option) => option === correctAnswer)
     || uniqueOptions.find((option) => option.toLocaleLowerCase('tr') === correctAnswer.toLocaleLowerCase('tr'));
-  const narrativeStem = compactText(source?.stem || source?.narrativeStem || source?.case);
   const questionStem = compactText(source?.prompt || source?.questionText || source?.questionStem);
+  const narrativeStem = buildVisibleStem(source?.stem || source?.narrativeStem || source?.case, questionStem);
   const explanation = compactText(source?.explanation || source?.mainExplanation || source?.rationale);
   const rawOptionFeedback = source?.optionFeedback || source?.feedback || source?.optionExplanations || {};
 

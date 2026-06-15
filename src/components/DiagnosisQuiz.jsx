@@ -171,6 +171,7 @@ function DiagnosisQuiz({
   hideQuestionScoreChip = false,
   hideQuestionHeader = false,
   hideInlineQuestionStemLabel = false,
+  hideQuestionStem = false,
 }) {
   const [selected, setSelected] = useState(existingAnswer?.selected ?? null);
   const [submitted, setSubmitted] = useState(Boolean(existingAnswer));
@@ -197,7 +198,7 @@ function DiagnosisQuiz({
     ? `${Math.round(((examMeta.currentIndex + 1) / examMeta.total) * 100)}%`
     : '0%';
   const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.branchId === 'tus-spot-olgular';
-  const questionStem = questionStemOverride || clinicalCase.question || clinicalCase.diagnosis?.question || '';
+  const questionStem = hideQuestionStem ? '' : (questionStemOverride || clinicalCase.question || clinicalCase.diagnosis?.question || '');
   const normalizedQuestionType = String(clinicalCase.questionType || clinicalCase.answerTarget || '').toLocaleLowerCase('tr');
   const defaultQuestionHeading = normalizedQuestionType === 'test' || normalizedQuestionType === 'diagnostic_test'
     ? (isSpotCase ? 'TUS spot tetkik sorusu' : 'Tetkik / tanı testi')

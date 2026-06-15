@@ -283,6 +283,7 @@ function TusSpotQuestionScreen({
   hardMode = false,
   randomActionLabel = 'Yeni TUS sorusu üret',
 }) {
+  const isAiGeneratedQuestion = question.sourceType === 'ai-generated-tus-question';
   const questionStem = buildTusSpotQuestionStem(question);
 
   return (
@@ -309,6 +310,7 @@ function TusSpotQuestionScreen({
             hideQuestionScoreChip
             hideQuestionHeader
             hideInlineQuestionStemLabel
+            hideQuestionStem={isAiGeneratedQuestion}
           />
         </div>
       </section>
