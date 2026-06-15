@@ -117,6 +117,30 @@ function normalizeOptionFeedback(rawFeedback, options) {
   }, {});
 }
 
+function shuffleItems(items = []) {
+  const shuffled = [...items];
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const target = Math.floor(Math.random() * (index + 1));
+    [shuffled[index], shuffled[target]] = [shuffled[target], shuffled[index]];
+  }
+  return shuffled;
+}
+
+function distributeCorrectAnswer(options, correctAnswer, optionFeedback) {
+  const correctOption = options.find((option) => option === correctAnswer);
+  const distractors = shuffleItems(options.filter((option) => option !== correctAnswer));
+  const correctIndex = Math.floor(Math.random() * options.length);
+  const orderedOptions = Array.from({ length: options.length }, (_, index) => {
+    if (index === correctIndex) return correctOption;
+    return distractors.shift();
+  });
+  const orderedFeedback = orderedOptions.reduce((feedback, option) => {
+    feedback[option] = optionFeedback[option];
+    return feedback;
+  }, {});
+  return { orderedOptions, orderedFeedback };
+}
+
 function normalizeGeneratedQuestion(rawQuestion, branch, difficulty) {
   const question = rawQuestion?.question && typeof rawQuestion.question === 'object' ? rawQuestion.question : rawQuestion;
   const options = Array.isArray(question?.options)
@@ -144,16 +168,18 @@ function normalizeGeneratedQuestion(rawQuestion, branch, difficulty) {
     throw new Error('AI response has missing option feedback.');
   }
 
+  const { orderedOptions, orderedFeedback } = distributeCorrectAnswer(uniqueOptions, exactCorrectAnswer, optionFeedback);
+
   return {
     branch,
     difficulty,
     questionType: normalizeText(question?.questionType || question?.type || 'TUS sorusu'),
     stem,
     prompt,
-    options: uniqueOptions,
+    options: orderedOptions,
     correctAnswer: exactCorrectAnswer,
     explanation,
-    optionFeedback,
+    optionFeedback: orderedFeedback,
     tusTip: normalizeText(question?.tusTip || question?.examTip || question?.tip),
     scientificBasis: normalizeText(question?.scientificBasis || question?.evidence || question?.sourceLogic),
   };
@@ -173,6 +199,7 @@ function buildPrompt({ branch, difficulty }) {
     'Tek bir güçlü ipucuna aşırı bağlanma; doğru cevap kökteki verilerin tamamının birlikte yorumlanmasıyla seçilsin. Ayırt ettirici ama doğal iki-üç veriyi birlikte kullandır, gereksiz ipucu yığma.',
     'Köke doğru cevabı desteklemeyen, başka tanıyı gereksiz güçlendiren veya klinik bağlamı kirleten veri ekleme.',
     'Seçeneklerin beşi de aynı mantık düzleminde olsun: tanıysa tanı, etkense etken, ilaçsa ilaç, mekanizmaysa mekanizma, anatomik yapıysa anatomik yapı, yönetimse yönetim.',
+    'Doğru cevabı varsayılan olarak ilk seçenek yapma; seçenek sırası sınavdaki gibi doğal ve dengeli görünsün.',
     'Aynı anlama gelen, eş anlamlı kullanılan, terminolojik varyant olan veya sadece kelime tercihiyle ayrılan iki seçeneği aynı soruda birlikte kullanma. Öğrenciyi Latin/Türkçe ad, eski/yeni ad veya yakın eş ad seçmeye zorlama.',
     'Seçenekler karşılıklı dışlayıcı ve sınav seçeneği gibi doğal olmalı; uydurma birleşik tanı, bozuk terminoloji, bariz alakasız kategori veya yapay seçenek kullanma.',
     'Yanlış seçenekler bariz alakasız değil, gerçekçi çeldirici olsun; ancak kökteki verilerle bilimsel olarak elenebilsin. Alakasız sistem, kategori veya komplikasyonla kolay eleme yaptırma. Birden fazla seçenek savunulabiliyorsa kökü ve seçenekleri baştan yapılandır.',
