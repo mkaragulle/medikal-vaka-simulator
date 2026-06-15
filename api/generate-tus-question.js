@@ -15,6 +15,87 @@ const BRANCH_OPTIONS = [
 
 const DIFFICULTY_OPTIONS = ['Kolay', 'Orta', 'Zor'];
 const ERROR_MESSAGE = 'Soru üretimi şu anda tamamlanamadı. Lütfen tekrar deneyin.';
+const DEFAULT_MODEL = 'gpt-5.4-nano';
+const DEFAULT_BATCH_SIZE = 4;
+const MAX_BATCH_SIZE = 5;
+const QUESTION_POOL = new Map();
+
+const TUS_EDITOR_SYSTEM_PROMPT = [
+  'Sen TUS kalitesinde, bilimsel doğruluğu yüksek, öğretici ve anlaşılır Türkçe tıp soruları yazan kıdemli bir medikal eğitim editörüsün. Sadece geçerli JSON döndür.',
+  'Hedef: seçilen branş ve zorlukta tek doğru cevabı bilimsel olarak kilitlenen, klinik akıl yürütme gerektiren özgün soru üretmek.',
+  'stem kullanıcıya görünen tek vaka metnidir; doğal klinik paragraf gibi ilerlesin ve sonda tek soru cümlesi olsun. prompt yalnızca o son soru cümlesidir.',
+  'Soru tipi ile seçenek düzlemi aynı kalmalı: tanıysa tanılar, etkense etkenler, komplikasyonsa komplikasyonlar, mekanizmaysa mekanizmalar, tedaviyse tedaviler, anatomik yapıysa aynı düzeyde anatomik yapılar.',
+  'Doğru cevap kökte verilen yaş, bağlam, muayene, laboratuvar, görüntüleme, mikrobiyoloji, risk faktörü veya mekanizma verilerinin birlikte yorumuyla seçilmeli. Kök dışı bilgiyi ana gerekçe yapma.',
+  'Ortak bulgular tek başına yetmez; ateş, halsizlik, karın ağrısı, inflamasyon yüksekliği, lenfadenopati veya kilo kaybı kullanılıyorsa bunları benzer seçeneklerden ayıran seçici veriyle destekle.',
+  'Tüm bulgular aynı tanısal eksene hizmet etsin. Gereksiz seyahat, aile öyküsü yokluğu, meslek, maruziyet veya ilaç bilgisi ekleme; her ayrıntı doğru cevabı desteklemeli ya da gerçekçi çeldiriciyi elemeye yaramalı.',
+  'Tıbbi terminoloji temiz olsun: BT, MRG, USG, patoloji, mikrobiyoloji, anatomi ve embriyoloji terimlerini modaliteye ve alana uygun kullan. Lokalizasyon, köken ve mekanizma çelişmesin.',
+  'Çeldiriciler gerçek klinikte karşılığı olan, sınav seçeneği gibi doğal ve elenebilir seçenekler olsun. Eş anlamlı, terminolojik varyant veya sadece kelime tercihiyle ayrılan seçenekleri birlikte kullanma.',
+  'Metinler kısa ama öğretici olsun: stem 65-110 kelime; explanation 35-55 kelime; scientificBasis 25-45 kelime; her optionFeedback 22-38 kelime; tusTip en fazla 18 kelime.',
+  'explanation ana karar paternini anlatsın, seçenekleri tek tek listelemesin. scientificBasis biyolojik/klinik mekanizmayı açıklasın; explanation veya optionFeedback kopyası olmasın.',
+  'optionFeedback en öğretici alandır. Doğru seçenek feedbacki hangi veri kombinasyonu ve karar noktasıyla öne çıktığını söylesin. Yanlış seçenek feedbacki, o seçeneğin hangi durumda doğru olabileceğini ve bu kökte hangi kritik veriyle geride kaldığını açıklasın.',
+  '“Doğru cevaptır”, “uymaz”, “tipik değildir”, “daha az olasıdır” gibi genel ifadeler ancak hemen yanında somut kök verisi ve bilimsel gerekçe varsa kullanılabilir.',
+  'Kesinlik dilini dengeli kullan; asla/her zaman/olmaz/görülmez/kesin dışlanır gibi ifadeleri yalnız gerçekten mutlaksa yaz.',
+  'JSON oluşturmadan önce sessizce denetle: hedef tek mi, seçenekler aynı düzlemde mi, doğru cevap tüm verilerle destekleniyor mu, ayırıcı veri yeterli mi, gereksiz/çelişkili bilgi var mı, başka seçenek daha güçlü mü, terminoloji doğru mu, kök cevabı fazla açık mı, feedbackler seçenek özelinde mi. Sorun varsa kök, seçenek ve feedbackleri birlikte yeniden kur.',
+].join('\n');
+
+const TUS_QUESTION_RESPONSE_SCHEMA = {
+  type: 'object',
+  additionalProperties: false,
+  required: ['questions'],
+  properties: {
+    questions: {
+      type: 'array',
+      minItems: 1,
+      maxItems: MAX_BATCH_SIZE,
+      items: {
+        type: 'object',
+        additionalProperties: false,
+        required: [
+          'branch',
+          'difficulty',
+          'questionType',
+          'stem',
+          'prompt',
+          'options',
+          'correctAnswer',
+          'explanation',
+          'optionFeedback',
+          'tusTip',
+          'scientificBasis',
+        ],
+        properties: {
+          branch: { type: 'string' },
+          difficulty: { type: 'string' },
+          questionType: { type: 'string' },
+          stem: { type: 'string' },
+          prompt: { type: 'string' },
+          options: {
+            type: 'array',
+            minItems: 5,
+            maxItems: 5,
+            items: { type: 'string' },
+          },
+          correctAnswer: { type: 'string' },
+          explanation: { type: 'string' },
+          optionFeedback: {
+            type: 'object',
+            additionalProperties: false,
+            required: ['A', 'B', 'C', 'D', 'E'],
+            properties: {
+              A: { type: 'string' },
+              B: { type: 'string' },
+              C: { type: 'string' },
+              D: { type: 'string' },
+              E: { type: 'string' },
+            },
+          },
+          tusTip: { type: 'string' },
+          scientificBasis: { type: 'string' },
+        },
+      },
+    },
+  },
+};
 
 function normalizeText(value = '') {
   return String(value || '').replace(/\s+/g, ' ').trim();
@@ -185,61 +266,114 @@ function normalizeGeneratedQuestion(rawQuestion, branch, difficulty) {
   };
 }
 
-function buildPrompt({ branch, difficulty }) {
+function normalizeGeneratedQuestions(rawQuestion, branch, difficulty) {
+  const source = rawQuestion?.questions || rawQuestion?.items || rawQuestion?.questionBatch;
+  const rawQuestions = Array.isArray(source) ? source : [rawQuestion?.question || rawQuestion];
+  const normalizedQuestions = [];
+
+  rawQuestions.forEach((item) => {
+    try {
+      normalizedQuestions.push(normalizeGeneratedQuestion(item, branch, difficulty));
+    } catch (error) {
+      if (rawQuestions.length === 1) throw error;
+    }
+  });
+
+  if (!normalizedQuestions.length) {
+    throw new Error('AI response did not contain a valid question.');
+  }
+
+  return normalizedQuestions;
+}
+
+function parseBoundedInteger(value, defaultValue, min, max) {
+  const parsed = Number.parseInt(value, 10);
+  if (!Number.isFinite(parsed)) return defaultValue;
+  return Math.min(max, Math.max(min, parsed));
+}
+
+function getQuestionBatchSize() {
+  return parseBoundedInteger(process.env.OPENAI_QUESTION_BATCH_SIZE, DEFAULT_BATCH_SIZE, 1, MAX_BATCH_SIZE);
+}
+
+function getMaxTokens(questionCount) {
+  const defaultValue = Math.min(5000, Math.max(1200, questionCount * 950));
+  return parseBoundedInteger(process.env.OPENAI_MAX_TOKENS, defaultValue, 900, 6000);
+}
+
+function getTemperature() {
+  const parsed = Number.parseFloat(process.env.OPENAI_TEMPERATURE);
+  if (!Number.isFinite(parsed)) return 0.55;
+  return Math.min(1, Math.max(0.1, parsed));
+}
+
+function getResponseFormat() {
+  if (process.env.OPENAI_RESPONSE_FORMAT === 'json_object') {
+    return { type: 'json_object' };
+  }
+  return {
+    type: 'json_schema',
+    json_schema: {
+      name: 'tus_question_batch',
+      strict: true,
+      schema: TUS_QUESTION_RESPONSE_SCHEMA,
+    },
+  };
+}
+
+function getPoolKey({ model, branch, difficulty }) {
+  return `${model}::${branch}::${difficulty}`;
+}
+
+function takePooledQuestion(poolKey) {
+  const pooledQuestions = QUESTION_POOL.get(poolKey);
+  if (!pooledQuestions?.length) return null;
+  const question = pooledQuestions.shift();
+  if (!pooledQuestions.length) QUESTION_POOL.delete(poolKey);
+  return question;
+}
+
+function storePooledQuestions(poolKey, questions = []) {
+  if (!questions.length) return;
+  const existing = QUESTION_POOL.get(poolKey) || [];
+  QUESTION_POOL.set(poolKey, existing.concat(questions).slice(0, MAX_BATCH_SIZE * 2));
+}
+
+function buildPrompt({ branch, difficulty, questionCount }) {
   return [
     `Branş: ${branch}`,
     `Zorluk: ${difficulty}`,
-    '',
-    'TUS (Tıpta Uzmanlık Sınavı) kalitesinde seçilen branş ve zorluk çerçevesinde öğretici bir Türkçe soru üret.',
-    'stem kullanıcıya görünecek tek soru metnidir: akıcı, anlaşılır, doğal bir klinik paragraf gibi yaz. Muayene, laboratuvar ve görüntüleme bilgileri okunabilir kalsın ama vaka gerçek klinik hikaye gibi ilerlesin. Sonda soru cümlesi olsun.',
-    'Soru hedefi net ve öğretici olsun: tanı soruyorsan seçenekler tanı, komplikasyon soruyorsan komplikasyon, mekanizma soruyorsan mekanizma, etken soruyorsan etken, tedavi soruyorsan tedavi olsun. Tanı, mekanizma, neden, sonuç ve komplikasyonu aynı seçenek setinde karıştırma.',
-    'Soru cümlesinde “en olası neden/etiyoloji/komplikasyon/mekanizma” soruluyorsa seçenekler gerçekten neden/etiyoloji/komplikasyon/mekanizma olmalı.',
-    'Doğru cevap kökteki yaş, bağlam, muayene, laboratuvar, görüntüleme, risk faktörü veya mekanizma verilerinden çözülebilmeli. Soru metninde verilmeyen ayrıntıyı ana gerekçe olarak verme.',
-    'Ateş, halsizlik, karın ağrısı, inflamasyon yüksekliği, lenfadenopati, kilo kaybı gibi ortak bulgular tek başına yeterli değildir; bunları mutlaka doğru cevabı benzer seçeneklerden ayıran seçici klinik, laboratuvar, görüntüleme veya mikrobiyolojik veriyle destekle.',
-    'Yaş, hasta grubu, risk faktörü, hastalık süresi ve klinik bağlam doğru cevapla uyumlu olmalı.',
-    'Doğru cevap kökteki verilerin tamamının birlikte yorumlanmasıyla seçilebilsin. Ayırt ettirici ama doğal iki-üç veriyi birlikte kullandır.',
-    'Epidemiyolojik öykü, risk faktörü, görüntüleme veya laboratuvar sonucu klinik paternle birlikte anlam kazansın.',
-    'Klinik bulgular, laboratuvar ve görüntüleme aynı tanısal eksene hizmet etsin.',
-    'Gereksiz risk faktörü, aile öyküsü yokluğu, meslek/maruziyet veya ilaç bilgisi ekleme; her ayrıntı doğru tanısal eksene ya da gerçekçi bir çeldiriciyi eleme amacına hizmet etsin.',
-    'Laboratuvar, ultrasonografi, BT, MRG, patoloji ve mikrobiyoloji ve diğer tüm bilimsel terimleri kendi alanına uygun, bilimsel, doğal ve TUS diline uygun kullan.',
-    'Görüntüleme dili modaliteye özgü olsun: BT için dansite/kontrastlanma, MRG için sinyal ve kontrast tutulumu, USG için ekojenite ve Doppler akımı gibi doğal terimleri kullan.',
-    'Seçeneklerin beşi de aynı mantık düzleminde olsun: tanıysa tanı, etkense etken, ilaçsa ilaç, mekanizmaysa mekanizma, anatomik yapıysa anatomik yapı, yönetimse yönetim.',
-    'Doğru cevabı varsayılan olarak ilk seçenek yapma; seçenek sırası sınavdaki gibi doğal ve dengeli görünsün.',
-    'Aynı anlama gelen, eş anlamlı kullanılan, terminolojik varyant olan veya sadece kelime tercihiyle ayrılan iki seçeneği aynı soruda birlikte kullanma. Öğrenciyi Latin/Türkçe ad, eski/yeni ad veya yakın eş ad seçmeye zorlama.',
-    'Seçenekler çeldirici ve sınav seçeneği gibi doğal, bilimsel ve kaliteli olmalı.',
-    'explanation ana gerekçeyi ve karar paternini güzelce ve anlaşılır bir şekilde anlatsın; seçenekleri tek tek listeleyen veya optionFeedback metinlerini tekrar eden bir paragraf olmasın.',
-    'scientificBasis biyolojik/klinik mekanizmayı bilimsel kaynakları kullanarak açıklasın; optionFeedback veya explanation cümlelerini kopyalamasın.',
-    'optionFeedback alanı Seçenekleri nasıl elemeliydin bölümünü besler ve en öğretici alan kabul edilir.',
-    'Her optionFeedback anlaşılır, bilimsel ve öğretici olsun: doğruysa kökteki hangi veri kombinasyonuyla öne çıktığını, hangi karar noktasıyla ayrıldığını ve bu kararın arkasındaki mekanizmayı açıkla; yanlışsa o seçeneğin hangi durumda doğru olabileceğini, mevcut kökte hangi veriyle desteklenmediğini veya geride kaldığını, doğru seçenekten temel farkını ve öğrencinin tekrar kullanacağı bilgiyi söyle.',
-    'optionFeedback içinde yalnızca “doğru cevaptır”, “uymaz”, “tipik değildir”, “daha az olasıdır”, “ön planda değildir”, “bu tabloyu açıklamaz” gibi genel ifadeler kullanma; bu ifadeler varsa hemen yanında somut bilimsel gerekçe ve kök verisi bağlantısı bulunmalı.',
-    'Her seçenek feedbacki ayrı bir klinik, laboratuvar, mekanizma, anatomik düzey, epidemiyolojik bağlam, tanısal yöntem veya patofizyolojik fark kazandırsın; aynı genel cümle küçük değişikliklerle tekrar edilmesin.',
-    'Doğru seçenek feedbacki explanation metninin kopyası olmamalı; seçenek eleme mantığına özel, tekrar kullanılabilir bir çözüm kuralı vermeli.',
-    'Doğru cevap açıklaması, mekanizma, ayırıcı ayrım ve optionFeedback aynı fikri farklı başlıklar altında tekrar etmesin; her alan yeni bir öğretici katkı versin.',
-    'Feedbackler ansiklopedik paragrafa dönüşmeden, öğrencinin benzer soruda tekrar kullanabileceği ayırıcı tanı/eleme bilgisini vermelidir.',
-    'Kesinlik dilini güncel ve güvenilir bilimsel kaynak mantığıyla dengeli kullan: asla/her zaman/olmaz/görülmez/kesin dışlanır gibi ifadeleri ancak gerçekten mutlaksa kullan; çoğu yanlış seçenekte mevcut kökte hangi veri eksik veya daha zayıf onu açıkla.',
-    'Klasik sınav bilgisi ile güncel klinik pratiği karıştırma; hangi bağlam gerekiyorsa kökte açıkça ver.',
-    'TUS ipucu kategori etiketi değil, benzer soruda kullanılabilecek öğretici ve anlaşılır çözüm anahtarı olmalı; hangi bulgu kombinasyonuna dikkat edileceğini güzelce söylesin.',
-    'JSON yazmadan önce iç editör kontrolü yap: soru hedefi tek mi, soru cümlesi ile seçenek tipi aynı mı, seçenekler hedefle aynı düzlemde mi, alt tip/etiyoloji ayrımı için gerekli seçici veri kökte var mı, kök tüm verileriyle doğru cevabı destekliyor mu, ortak bulgular seçici veriyle desteklenmiş mi, tek ipucuna aşırı bağımlılık var mı, gereksiz/çelişkili veri var mı, yanlış seçeneklerden biri doğruyu gölgeliyor mu, tıbbi terminoloji doğal ve doğru mu, görüntüleme dili modaliteye uygun mu, kök cevabı ifşa ediyor mu, metin doğal paragraf mı, aynı soru cümlesi tekrarlanıyor mu, eş anlamlı seçenek var mı, birden fazla cevap savunulabilir mi, yanlış seçenekler gerçekçi ama elenebilir mi, feedbackler seçenek özelinde öğretici mi, mekanizma doğru bağlanmış mı, kesinlik dili dengeli mi, tekrar var mı. Herhangi biri başarısızsa aynı çıktıyı düzeltmeye çalışma; kök, seçenekler ve feedbackleri birlikte yeniden kur. Bu kontrolü JSON içinde ayrı alan olarak yazma.',
-    'JSON yazmadan önce iç editör kontrolü yap: soru hedefi tek mi, soru cümlesi ile seçenek tipi aynı mı, seçenekler hedefle aynı düzlemde mi, anatomi/embriyoloji köken ve lokalizasyonu doğru mu, mekanizma klasik ve güvenli mi, alt tip/etiyoloji ayrımı için gerekli seçici veri kökte var mı, kök tüm verileriyle doğru cevabı destekliyor mu, ortak bulgular seçici veriyle desteklenmiş mi, tek ipucuna aşırı bağımlılık var mı, gereksiz/çelişkili veri var mı, yanlış seçeneklerden biri doğruyu gölgeliyor mu, tıbbi terminoloji doğal ve doğru mu, görüntüleme dili modaliteye uygun mu, mikrobiyoloji terimleri yerleşik mi, kök cevabı ifşa ediyor mu, metin doğal paragraf mı, aynı soru cümlesi tekrarlanıyor mu, eş anlamlı seçenek var mı, birden fazla cevap savunulabilir mi, yanlış seçenekler gerçekçi ama elenebilir mi, feedbackler seçenek özelinde öğretici mi, mekanizma doğru bağlanmış mı, kesinlik dili dengeli mi, tekrar var mı. Herhangi biri başarısızsa aynı çıktıyı düzeltmeye çalışma; kök, seçenekler ve feedbackleri birlikte yeniden kur. Bu kontrolü JSON içinde ayrı alan olarak yazma.',
-    '',
-    'optionFeedback her seçenek için dolu olmalı; anahtar olarak A-E harflerinden veya seçenek metinlerinden faydalanabilirsin.',
-    '',
-    'Yalnızca şu JSON nesnesini döndür:',
-    '{"branch":"...","difficulty":"...","questionType":"...","stem":"...","prompt":"...","options":["...","...","...","...","..."],"correctAnswer":"seçenek metninin aynısı","explanation":"...","optionFeedback":{"A veya seçenek metni":"..."},"tusTip":"...","scientificBasis":"..."}',
+    `Soru sayısı: ${questionCount}`,
+    'Aynı JSON içinde questions dizisi döndür. Her question nesnesinde branch, difficulty, questionType, stem, prompt, options, correctAnswer, explanation, optionFeedback, tusTip ve scientificBasis alanları dolu olsun.',
+    'optionFeedback anahtarları A, B, C, D, E olsun ve options sırasıyla eşleşsin. correctAnswer, options içindeki metnin aynısı olsun.',
   ].join('\n');
 }
 
-async function requestAiQuestion({ apiKey, model, branch, difficulty }) {
+async function requestAiQuestions({ apiKey, model, branch, difficulty, questionCount }) {
   const messages = [
     {
       role: 'system',
-      content: 'Sen TUS düzeyinde özgün, bilimsel doğruluğu yüksek Türkçe tıp soruları yazan kıdemli bir medikal eğitim editörüsün. Sadece geçerli JSON döndür.',
+      content: TUS_EDITOR_SYSTEM_PROMPT,
     },
     {
       role: 'user',
-      content: buildPrompt({ branch, difficulty }),
+      content: buildPrompt({ branch, difficulty, questionCount }),
     },
   ];
+  const requestPayload = {
+    model,
+    temperature: getTemperature(),
+    max_completion_tokens: getMaxTokens(questionCount),
+    response_format: getResponseFormat(),
+    prompt_cache_key: process.env.OPENAI_PROMPT_CACHE_KEY || 'klinikiq-tus-question-v3',
+    messages,
+  };
+  if (process.env.OPENAI_PROMPT_CACHE_RETENTION) {
+    requestPayload.prompt_cache_retention = process.env.OPENAI_PROMPT_CACHE_RETENTION;
+  }
+  if (process.env.OPENAI_SERVICE_TIER) {
+    requestPayload.service_tier = process.env.OPENAI_SERVICE_TIER;
+  }
 
   const aiResponse = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
@@ -247,13 +381,7 @@ async function requestAiQuestion({ apiKey, model, branch, difficulty }) {
       Authorization: `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      model,
-      temperature: 0.68,
-      max_tokens: 2100,
-      response_format: { type: 'json_object' },
-      messages,
-    }),
+    body: JSON.stringify(requestPayload),
   });
 
   if (!aiResponse.ok) {
@@ -277,15 +405,25 @@ export default async function handler(req, res) {
     const requestBody = readRequestBody(req);
     const selectedBranch = resolveBranch(requestBody?.branch);
     const selectedDifficulty = normalizeDifficulty(requestBody?.difficulty);
-    const model = process.env.OPENAI_MODEL || 'gpt-4.1-mini';
-    const content = await requestAiQuestion({
+    const model = process.env.OPENAI_MODEL || DEFAULT_MODEL;
+    const poolKey = getPoolKey({ model, branch: selectedBranch, difficulty: selectedDifficulty });
+    const pooledQuestion = takePooledQuestion(poolKey);
+    if (pooledQuestion) {
+      return res.status(200).json({ question: pooledQuestion });
+    }
+
+    const questionCount = getQuestionBatchSize();
+    const content = await requestAiQuestions({
       apiKey,
       model,
       branch: selectedBranch,
       difficulty: selectedDifficulty,
+      questionCount,
     });
     const parsed = parseJsonObject(content);
-    const question = normalizeGeneratedQuestion(parsed, selectedBranch, selectedDifficulty);
+    const questions = normalizeGeneratedQuestions(parsed, selectedBranch, selectedDifficulty);
+    const [question, ...remainingQuestions] = questions;
+    storePooledQuestions(poolKey, remainingQuestions);
 
     return res.status(200).json({ question });
   } catch (error) {

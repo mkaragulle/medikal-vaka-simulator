@@ -59,6 +59,21 @@ Build Command: npm run build
 Output Directory: dist
 ```
 
+## AI TUS soru üretimi
+
+Vercel ortam değişkenlerinde `OPENAI_API_KEY` zorunludur. Varsayılan model `gpt-5.4-nano` olarak ayarlanmıştır; farklı bir model kullanmak için `OPENAI_MODEL` eklenebilir.
+
+Maliyet ayarları:
+
+```text
+OPENAI_QUESTION_BATCH_SIZE=4
+OPENAI_PROMPT_CACHE_KEY=klinikiq-tus-question-v3
+OPENAI_SERVICE_TIER=flex
+OPENAI_RESPONSE_FORMAT=json_schema
+```
+
+`OPENAI_QUESTION_BATCH_SIZE` tek API çağrısında kaç soru üretileceğini belirler; kullanıcı arayüzü yine tek soru gösterir, kalan sorular sıcak sunucu hafızasında sıraya alınır. `OPENAI_SERVICE_TIER=flex` daha düşük maliyet sağlayabilir fakat yanıt süresi daha değişken olabilir; canlı kullanımda gerekirse bu değişken boş bırakılabilir.
+
 ## Firebase / Google giriş ayarları
 
 Google giriş özelliği Firebase Authentication üzerinden çalışır. Lokal kullanım için `.env.example` dosyasını `.env.local` olarak kopyala ve Firebase değerlerini doldur:
