@@ -83,8 +83,8 @@ function normalizeGeneratedTusQuestion(payload) {
   const id = `ai-tus-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
   const answerFeedback = {
     summary: explanation,
-    whyCorrect: optionComparison[exactCorrect] || explanation,
-    rationale: explanation,
+    whyCorrect: explanation,
+    rationale: '',
     correctOptionFeedback: optionComparison[exactCorrect] || explanation,
     optionComparison,
     optionFeedback: optionComparison,
