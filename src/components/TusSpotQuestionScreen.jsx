@@ -26,6 +26,7 @@ function buildTusSpotNarrativeStem(question = {}) {
     question.question,
   ].map(compactText).filter(Boolean);
   const text = candidates[0] || 'Bu soru metni statik kayıt üzerinden görüntüleniyor.';
+  if (question.sourceType === 'ai-generated-tus-question') return [text];
   return text.split(/(?<=[.!?])\s+(?=[A-ZÇĞİÖŞÜ0-9])/u).map(compactText).filter(Boolean);
 }
 
