@@ -16,7 +16,7 @@ const BRANCH_OPTIONS = [
 const DIFFICULTY_OPTIONS = ['Kolay', 'Orta', 'Zor'];
 const ERROR_MESSAGE = 'Soru üretimi şu anda tamamlanamadı. Lütfen tekrar deneyin.';
 const DEFAULT_MODEL = 'gpt-5.4-nano';
-const DEFAULT_BATCH_SIZE = 1;
+const DEFAULT_BATCH_SIZE = 4;
 const MAX_BATCH_SIZE = 5;
 const QUESTION_POOL = new Map();
 
@@ -300,22 +300,14 @@ function getQuestionBatchSize() {
 }
 
 function getMaxTokens(questionCount) {
-  const defaultValue = questionCount <= 1
-    ? 3000
-    : Math.min(6000, Math.max(3000, questionCount * 1600));
-  return parseBoundedInteger(process.env.OPENAI_MAX_TOKENS, defaultValue, 1500, 6000);
+  const defaultValue = Math.min(5000, Math.max(1200, questionCount * 950));
+  return parseBoundedInteger(process.env.OPENAI_MAX_TOKENS, defaultValue, 900, 6000);
 }
 
 function getTemperature() {
   const parsed = Number.parseFloat(process.env.OPENAI_TEMPERATURE);
-  if (!Number.isFinite(parsed)) return 0.35;
+  if (!Number.isFinite(parsed)) return 0.45;
   return Math.min(1, Math.max(0.1, parsed));
-}
-
-function getServiceTier() {
-  const rawTier = normalizeText(process.env.OPENAI_SERVICE_TIER).toLowerCase();
-  if (!rawTier || rawTier === 'flex') return null;
-  return rawTier;
 }
 
 function getResponseFormat() {
@@ -382,9 +374,8 @@ async function requestAiQuestions({ apiKey, model, branch, difficulty, questionC
   if (process.env.OPENAI_PROMPT_CACHE_RETENTION) {
     requestPayload.prompt_cache_retention = process.env.OPENAI_PROMPT_CACHE_RETENTION;
   }
-  const serviceTier = getServiceTier();
-  if (serviceTier) {
-    requestPayload.service_tier = serviceTier;
+  if (process.env.OPENAI_SERVICE_TIER) {
+    requestPayload.service_tier = process.env.OPENAI_SERVICE_TIER;
   }
 
   const aiResponse = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -397,21 +388,11 @@ async function requestAiQuestions({ apiKey, model, branch, difficulty, questionC
   });
 
   if (!aiResponse.ok) {
-    let errorText = '';
-    try {
-      errorText = await aiResponse.text();
-    } catch {
-      errorText = '';
-    }
-    throw new Error(`OpenAI request failed: ${aiResponse.status}${errorText ? ` - ${errorText.slice(0, 500)}` : ''}`);
+    throw new Error(`OpenAI request failed: ${aiResponse.status}`);
   }
 
   const payload = await aiResponse.json();
-  const content = payload?.choices?.[0]?.message?.content;
-  if (Array.isArray(content)) {
-    return content.map((part) => part?.text || part?.content || '').join('');
-  }
-  return content;
+  return payload?.choices?.[0]?.message?.content;
 }
 
 export default async function handler(req, res) {
