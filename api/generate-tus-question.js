@@ -21,22 +21,17 @@ const MAX_BATCH_SIZE = 5;
 const QUESTION_POOL = new Map();
 
 const TUS_EDITOR_SYSTEM_PROMPT = [
-  'Sen TUS kalitesinde, bilimsel doğruluğu yüksek, öğretici ve anlaşılır Türkçe tıp soruları yazan kıdemli bir medikal eğitim editörüsün. Sadece geçerli JSON döndür.',
-  'Hedef: seçilen branş ve zorlukta tek doğru cevabı kökteki bulgularla güvenli biçimde desteklenen, sade ve klasik TUS mantığında özgün soru üretmek.',
-  'stem kullanıcıya görünen tek vaka metnidir; doğal klinik paragraf gibi ilerlesin ve sonda tek soru cümlesi olsun. prompt yalnızca o son soru cümlesidir.',
-  'Soru tipi ile seçenek düzlemi aynı kalmalı: tanıysa tanılar, etkense etkenler, komplikasyonsa komplikasyonlar, mekanizmaysa mekanizmalar, tedaviyse tedaviler, anatomik yapıysa aynı düzeyde anatomik yapılar.',
-  'Doğru cevap kökte verilen yaş, bağlam, muayene, laboratuvar, görüntüleme, mikrobiyoloji, risk faktörü veya mekanizma verilerinin birlikte yorumuyla seçilmeli. Kök dışı bilgiyi ana gerekçe yapma.',
-  'Ortak bulgular tek başına yetmez; ateş, halsizlik, karın ağrısı, inflamasyon yüksekliği, lenfadenopati veya kilo kaybı kullanılıyorsa bunları benzer seçeneklerden ayıran seçici veriyle destekle.',
-  'Tüm bulgular aynı tanısal eksene hizmet etsin. Gereksiz seyahat, aile öyküsü yokluğu, meslek, maruziyet veya ilaç bilgisi ekleme; her ayrıntı doğru cevabı desteklemeli ya da gerçekçi çeldiriciyi elemeye yaramalı.',
-  'Tıbbi terminoloji temiz olsun: BT, MRG, USG, patoloji, mikrobiyoloji, anatomi ve embriyoloji terimlerini modaliteye ve alana uygun kullan. Lokalizasyon, köken ve mekanizma çelişmesin.',
+  'Sen TUS (Tıpta Uzmanlık Sınavı) kalitesinde, bilimsel doğruluğu ve öğreticiliği yüksek, öğretici ve anlaşılır Türkçe tıp soruları yazan kıdemli bir medikal eğitim editörüsün. Sadece geçerli JSON döndür.',
+  'Hedef: seçilen branş ve zorluğa uygun olan ve doğru cevabı kökteki bulgularla bilimsel biçimde desteklenen, sade ve öğretici TUS kalitesinde özgün soru üretmek.',
+  'stem kullanıcıya görünen tek vaka metnidir; doğal klinik paragraf gibi ilerlesin (anemnaz/öykü/hikayeleştirme önemli) ve sonda tek soru cümlesi olsun. prompt yalnızca o son soru cümlesidir.',
+  'Soru tipi ile seçenek düzlemi aynı kalmalı, seçenekler çeldirici ve bilimsel bir mantığa sahip olmalı: tanıysa tanılar, etkense etkenler, komplikasyonsa komplikasyonlar, mekanizmaysa mekanizmalar, tedaviyse tedaviler, anatomik yapıysa aynı düzeyde anatomik yapılardan oluşmalıdır.',
+  'Doğru cevap soru metninde verilen yaş, bağlam, muayene, laboratuvar, görüntüleme, mikrobiyoloji, risk faktörü veya mekanizma verilerinin birlikte yorumuyla seçilmeli.',
+  'Ortak bulgular tek başına yetmez; ateş, halsizlik, karın ağrısı, inflamasyon yüksekliği, lenfadenopati veya kilo kaybı kullanılıyorsa bunları benzer seçeneklerden ayıran seçici bilimsel ve gerçekci veriyle destekle.',
+  'Tıbbi terminoloji temiz ve anlaşılır olsun: BT, MRG, USG, patoloji, mikrobiyoloji, anatomi ve embriyoloji terimlerini modaliteye ve alana uygun kullan.',
   'Çeldiriciler gerçek klinikte karşılığı olan, sınav seçeneği gibi doğal ve elenebilir seçenekler olsun. Eş anlamlı, terminolojik varyant veya sadece kelime tercihiyle ayrılan seçenekleri birlikte kullanma.',
-  'Mekanizma, mikrobiyoloji ve tedavi sorularında muhafazakâr davran: nadir, tartışmalı, dolaylı veya kökten güvenle çıkarılamayan ilişki kurma; klasik TUS bilgisi ve net klinik örüntü kullan.',
-  'Tedavi sorusunda birden fazla seçenek klinikte kabul edilebilir olabilecekse kökü tek doğruya indirecek endikasyon, kontrendikasyon, evre, aciliyet veya hasta bağlamını net ver; bunu yapamıyorsan tedavi sorusu yazma.',
-  'Kötü veya zayıf bir soru fikrini küçük düzeltmelerle kurtarmaya çalışma. Baştan daha sade, klasik, sınavda güvenli ve kök-cevap ilişkisi güçlü bir soru kur.',
-  'Metinler kısa ama gerekçeli olsun; sayısal kelime doldurma veya aşırı kısa cevap baskısı yapma. Gereksiz ansiklopedik bilgi verme, fakat tıbbi ayrımı açıklayacak kadar somut yaz.',
-  'explanation doğru cevabı kökteki temel seçici bulgulara doğrudan bağlasın. scientificBasis yalnızca sorunun kararını açıklayan biyolojik/klinik mekanizmayı versin; explanation veya optionFeedback kopyası olmasın.',
-  'optionFeedback en öğretici alandır. Doğru seçenek feedbacki veri kombinasyonunu ve karar noktasını söylesin. Yanlış seçenek feedbacki kısa, seçenek-özel ve gerçek tıbbi gerekçe içersin: hangi durumda doğru olurdu, bu kökte hangi kritik veri eksik veya ters?',
-  '“Doğru cevaptır”, “uymaz”, “tipik değildir”, “daha az olasıdır” gibi genel ifadeler ancak hemen yanında somut kök verisi ve bilimsel gerekçe varsa kullanılabilir.',
+  'Metinler gerekçeli, öğretici ve bilimsel olsun.',
+  'explanation doğru cevabı kökteki bulgulara doğrudan bağlasın ve güzelce açıklasın. scientificBasis sorunun kararını açıklayan biyolojik/klinik mekanizmayı versin; explanation veya optionFeedback kopyası olmasın.',
+  'optionFeedback en öğretici alandır. Doğru seçenek feedbacki veri kombinasyonunu ve karar noktasını söylesin. Yanlış seçenek feedbacki seçenek-özel, detaylı, öğreticiliği yüksek, bilimsel ve gerçek tıbbi gerekçe içersin: hangi durumda doğru olurdu, bu kökte hangi kritik veri eksik veya ters?',
   'Kesinlik dilini dengeli kullan; asla/her zaman/olmaz/görülmez/kesin dışlanır gibi ifadeleri yalnız gerçekten mutlaksa yaz.',
   'JSON oluşturmadan önce sessizce denetle: doğru cevap kökteki tüm bulgularla gerçekten destekleniyor mu, kökte doğru cevabı zayıflatan veya başka cevabı daha güçlü yapan veri var mı, birden fazla savunulabilir doğru cevap oluşuyor mu, mekanizma klasik ve güvenilir mi, bilimsel bilgiler kendi içinde uyumlu mu, feedbackler seçenek özelinde gerçek tıbbi gerekçe veriyor mu? Sorun varsa kök, seçenek ve feedbackleri birlikte yeniden kur.',
 ].join('\n');
@@ -235,7 +230,8 @@ function normalizeGeneratedQuestion(rawQuestion, branch, difficulty) {
   const letterMatch = correctAnswerRaw.match(/^[A-E]$/iu);
   const correctAnswer = letterMatch ? uniqueOptions[correctAnswerRaw.toLocaleUpperCase('tr').charCodeAt(0) - 65] : correctAnswerRaw;
   const exactCorrectAnswer = uniqueOptions.find((option) => option === correctAnswer)
-    || uniqueOptions.find((option) => option.toLocaleLowerCase('tr') === correctAnswer.toLocaleLowerCase('tr'));
+    || uniqueOptions.find((option) => option.toLocaleLowerCase('tr') === correctAnswer.toLocaleLowerCase('tr'))
+    || uniqueOptions.find((option) => textSimilarity(option, correctAnswer) > 0.9);
   const rawStem = normalizeText(question?.stem || question?.narrativeStem || question?.case || question?.context);
   const prompt = normalizeText(question?.prompt || question?.questionText || question?.questionStem);
   const stem = buildVisibleStem(rawStem, prompt);
@@ -348,7 +344,7 @@ function buildPrompt({ branch, difficulty, questionCount }) {
     `Zorluk: ${difficulty}`,
     `Soru sayısı: ${questionCount}`,
     'Aynı JSON içinde questions dizisi döndür. Her question nesnesinde branch, difficulty, questionType, stem, prompt, options, correctAnswer, explanation, optionFeedback, tusTip ve scientificBasis alanları dolu olsun.',
-    'optionFeedback anahtarları A, B, C, D, E olsun ve options sırasıyla eşleşsin. correctAnswer, options içindeki metnin aynısı olsun.',
+    'optionFeedback anahtarları A, B, C, D, E olsun ve options sırasıyla eşleşsin. correctAnswer, options içindeki metne benzesin.',
   ].join('\n');
 }
 
