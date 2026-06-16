@@ -344,7 +344,7 @@ function buildPrompt({ branch, difficulty, questionCount }) {
     `Zorluk: ${difficulty}`,
     `Soru sayısı: ${questionCount}`,
     'Aynı JSON içinde questions dizisi döndür. Her question nesnesinde branch, difficulty, questionType, stem, prompt, options, correctAnswer, explanation, optionFeedback, tusTip ve scientificBasis alanları dolu olsun.',
-    'optionFeedback anahtarları A, B, C, D, E olsun ve options sırasıyla eşleşsin. correctAnswer, options içindeki metne benzesin.',
+    'optionFeedback anahtarları A, B, C, D, E olsun ve options sırasıyla eşleşsin. correctAnswer, options içindeki metnin aynısı olsun..',
   ].join('\n');
 }
 
