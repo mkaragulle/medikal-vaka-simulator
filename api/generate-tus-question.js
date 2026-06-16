@@ -16,8 +16,8 @@ const BRANCH_OPTIONS = [
 const DIFFICULTY_OPTIONS = ['Kolay', 'Orta', 'Zor'];
 const ERROR_MESSAGE = 'Soru üretimi şu anda tamamlanamadı. Lütfen tekrar deneyin.';
 const DEFAULT_MODEL = 'gpt-5.4-nano';
-const DEFAULT_BATCH_SIZE = 4;
-const MAX_BATCH_SIZE = 5;
+const DEFAULT_BATCH_SIZE = 2;
+const MAX_BATCH_SIZE = 4;
 const QUESTION_POOL = new Map();
 
 const TUS_EDITOR_SYSTEM_PROMPT = [
@@ -300,14 +300,14 @@ function getQuestionBatchSize() {
 }
 
 function getMaxTokens(questionCount) {
-  const defaultValue = Math.min(5000, Math.max(1200, questionCount * 950));
-  return parseBoundedInteger(process.env.OPENAI_MAX_TOKENS, defaultValue, 900, 6000);
+  const defaultValue = Math.min(6000, Math.max(3000, questionCount * 1600));
+  return parseBoundedInteger(process.env.OPENAI_MAX_TOKENS, defaultValue, 2000, 8000);
 }
 
 function getTemperature() {
   const parsed = Number.parseFloat(process.env.OPENAI_TEMPERATURE);
-  if (!Number.isFinite(parsed)) return 0.45;
-  return Math.min(1, Math.max(0.1, parsed));
+  if (!Number.isFinite(parsed)) return 0.35;
+  return Math.min(0.8, Math.max(0.1, parsed));
 }
 
 function getResponseFormat() {
@@ -322,6 +322,12 @@ function getResponseFormat() {
       schema: TUS_QUESTION_RESPONSE_SCHEMA,
     },
   };
+}
+
+function getServiceTier() {
+  const tier = normalizeText(process.env.OPENAI_SERVICE_TIER).toLowerCase();
+  if (!tier || tier === 'flex') return null;
+  return ['auto', 'default', 'priority', 'scale'].includes(tier) ? tier : null;
 }
 
 function getPoolKey({ model, branch, difficulty }) {
@@ -374,8 +380,9 @@ async function requestAiQuestions({ apiKey, model, branch, difficulty, questionC
   if (process.env.OPENAI_PROMPT_CACHE_RETENTION) {
     requestPayload.prompt_cache_retention = process.env.OPENAI_PROMPT_CACHE_RETENTION;
   }
-  if (process.env.OPENAI_SERVICE_TIER) {
-    requestPayload.service_tier = process.env.OPENAI_SERVICE_TIER;
+  const serviceTier = getServiceTier();
+  if (serviceTier) {
+    requestPayload.service_tier = serviceTier;
   }
 
   const aiResponse = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -388,11 +395,48 @@ async function requestAiQuestions({ apiKey, model, branch, difficulty, questionC
   });
 
   if (!aiResponse.ok) {
-    throw new Error(`OpenAI request failed: ${aiResponse.status}`);
+    let detail = '';
+    try {
+      detail = await aiResponse.text();
+    } catch {
+      detail = '';
+    }
+    throw new Error(`OpenAI request failed: ${aiResponse.status}${detail ? ` - ${detail.slice(0, 500)}` : ''}`);
   }
 
   const payload = await aiResponse.json();
   return payload?.choices?.[0]?.message?.content;
+}
+
+async function generateQuestionsWithFallback({ apiKey, model, branch, difficulty, questionCount }) {
+  try {
+    const content = await requestAiQuestions({
+      apiKey,
+      model,
+      branch,
+      difficulty,
+      questionCount,
+    });
+    return normalizeGeneratedQuestions(parseJsonObject(content), branch, difficulty);
+  } catch (error) {
+    console.warn('[generate-tus-question] primary generation failed', {
+      message: error?.message,
+      branch,
+      difficulty,
+      questionCount,
+    });
+
+    if (questionCount <= 1) throw error;
+
+    const fallbackContent = await requestAiQuestions({
+      apiKey,
+      model,
+      branch,
+      difficulty,
+      questionCount: 1,
+    });
+    return normalizeGeneratedQuestions(parseJsonObject(fallbackContent), branch, difficulty);
+  }
 }
 
 export default async function handler(req, res) {
@@ -416,15 +460,13 @@ export default async function handler(req, res) {
     }
 
     const questionCount = getQuestionBatchSize();
-    const content = await requestAiQuestions({
+    const questions = await generateQuestionsWithFallback({
       apiKey,
       model,
       branch: selectedBranch,
       difficulty: selectedDifficulty,
       questionCount,
     });
-    const parsed = parseJsonObject(content);
-    const questions = normalizeGeneratedQuestions(parsed, selectedBranch, selectedDifficulty);
     const [question, ...remainingQuestions] = questions;
     storePooledQuestions(poolKey, remainingQuestions);
 
