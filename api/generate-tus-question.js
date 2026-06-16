@@ -18,6 +18,8 @@ const ERROR_MESSAGE = 'Soru üretimi şu anda tamamlanamadı. Lütfen tekrar den
 const DEFAULT_MODEL = 'gpt-5.4-nano';
 const DEFAULT_BATCH_SIZE = 4;
 const MAX_BATCH_SIZE = 5;
+const OPTION_MATCH_MIN_SCORE = 0.72;
+const OPTION_MATCH_MIN_MARGIN = 0.14;
 const QUESTION_POOL = new Map();
 
 const TUS_EDITOR_SYSTEM_PROMPT = [
@@ -113,6 +115,10 @@ function normalizeForCompare(value = '') {
     .trim();
 }
 
+function stripOptionMarker(value = '') {
+  return normalizeText(value).replace(/^[A-Ea-e][\s).:;-]+/u, '').trim();
+}
+
 function tokenize(value = '') {
   const stopWords = new Set(['olan', 'icin', 'veya', 'daha', 'gore', 'hangi', 'hangisi', 'nedir', 'degildir', 'bir', 'bu']);
   return normalizeForCompare(value)
@@ -129,6 +135,33 @@ function textSimilarity(left = '', right = '') {
     if (rightTokens.has(word)) overlap += 1;
   });
   return overlap / Math.min(leftTokens.size, rightTokens.size);
+}
+
+function scoreOptionMatch(option = '', candidate = '') {
+  const cleanOption = stripOptionMarker(option);
+  const cleanCandidate = stripOptionMarker(candidate);
+  const normalizedOption = normalizeForCompare(cleanOption);
+  const normalizedCandidate = normalizeForCompare(cleanCandidate);
+  if (!normalizedOption || !normalizedCandidate) return 0;
+  if (normalizedOption === normalizedCandidate) return 1;
+  if (normalizedOption.includes(normalizedCandidate) || normalizedCandidate.includes(normalizedOption)) {
+    return Math.min(normalizedOption.length, normalizedCandidate.length) / Math.max(normalizedOption.length, normalizedCandidate.length);
+  }
+  return textSimilarity(cleanOption, cleanCandidate);
+}
+
+function findMatchingOption(options = [], candidate = '') {
+  const ranked = options
+    .map((option) => ({ option, score: scoreOptionMatch(option, candidate) }))
+    .sort((left, right) => right.score - left.score);
+  const best = ranked[0];
+  const runnerUp = ranked[1];
+  if (!best) return '';
+  if (best.score >= 0.96) return best.option;
+  if (best.score >= OPTION_MATCH_MIN_SCORE && best.score - (runnerUp?.score || 0) >= OPTION_MATCH_MIN_MARGIN) {
+    return best.option;
+  }
+  return '';
 }
 
 function countQuestionMarks(value = '') {
@@ -186,12 +219,29 @@ function parseJsonObject(text = '') {
   }
 }
 
+function readFeedbackText(value) {
+  if (typeof value === 'string') return normalizeText(value);
+  return normalizeText(value?.explanation || value?.text || value?.summary || '');
+}
+
+function getFeedbackValue(rawFeedback, option, index) {
+  if (Array.isArray(rawFeedback)) return rawFeedback[index];
+  if (!rawFeedback || typeof rawFeedback !== 'object') return '';
+  const letter = String.fromCharCode(65 + index);
+  const direct = rawFeedback[option]
+    || rawFeedback[stripOptionMarker(option)]
+    || rawFeedback[letter]
+    || rawFeedback[letter.toLowerCase()];
+  if (direct) return direct;
+
+  const normalizedOption = normalizeForCompare(stripOptionMarker(option));
+  const matchingKey = Object.keys(rawFeedback).find((key) => normalizeForCompare(stripOptionMarker(key)) === normalizedOption);
+  return matchingKey ? rawFeedback[matchingKey] : '';
+}
+
 function normalizeOptionFeedback(rawFeedback, options) {
-  if (!rawFeedback || typeof rawFeedback !== 'object' || Array.isArray(rawFeedback)) return {};
   return options.reduce((feedback, option, index) => {
-    const letter = String.fromCharCode(65 + index);
-    const value = rawFeedback[option] || rawFeedback[letter] || rawFeedback[letter.toLowerCase()];
-    feedback[option] = normalizeText(typeof value === 'string' ? value : value?.explanation || value?.text || '');
+    feedback[option] = readFeedbackText(getFeedbackValue(rawFeedback, option, index));
     return feedback;
   }, {});
 }
@@ -207,6 +257,15 @@ function shuffleItems(items = []) {
 
 function distributeCorrectAnswer(options, correctAnswer, optionFeedback) {
   const correctOption = options.find((option) => option === correctAnswer);
+  if (!correctOption) {
+    return {
+      orderedOptions: options,
+      orderedFeedback: options.reduce((feedback, option) => {
+        feedback[option] = optionFeedback[option];
+        return feedback;
+      }, {}),
+    };
+  }
   const distractors = shuffleItems(options.filter((option) => option !== correctAnswer));
   const correctIndex = Math.floor(Math.random() * options.length);
   const orderedOptions = Array.from({ length: options.length }, (_, index) => {
@@ -229,9 +288,7 @@ function normalizeGeneratedQuestion(rawQuestion, branch, difficulty) {
   const correctAnswerRaw = normalizeText(question?.correctAnswer || question?.correct || question?.answer);
   const letterMatch = correctAnswerRaw.match(/^[A-E]$/iu);
   const correctAnswer = letterMatch ? uniqueOptions[correctAnswerRaw.toLocaleUpperCase('tr').charCodeAt(0) - 65] : correctAnswerRaw;
-  const exactCorrectAnswer = uniqueOptions.find((option) => option === correctAnswer)
-    || uniqueOptions.find((option) => option.toLocaleLowerCase('tr') === correctAnswer.toLocaleLowerCase('tr'))
-    || uniqueOptions.find((option) => textSimilarity(option, correctAnswer) > 0.9);
+  const exactCorrectAnswer = findMatchingOption(uniqueOptions, correctAnswer);
   const rawStem = normalizeText(question?.stem || question?.narrativeStem || question?.case || question?.context);
   const prompt = normalizeText(question?.prompt || question?.questionText || question?.questionStem);
   const stem = buildVisibleStem(rawStem, prompt);
@@ -296,8 +353,8 @@ function getQuestionBatchSize() {
 }
 
 function getMaxTokens(questionCount) {
-  const defaultValue = Math.min(5000, Math.max(1200, questionCount * 950));
-  return parseBoundedInteger(process.env.OPENAI_MAX_TOKENS, defaultValue, 900, 6000);
+  const defaultValue = Math.min(10000, Math.max(1800, questionCount * 1800));
+  return parseBoundedInteger(process.env.OPENAI_MAX_TOKENS, defaultValue, 1200, 12000);
 }
 
 function getTemperature() {
@@ -344,12 +401,14 @@ function buildPrompt({ branch, difficulty, questionCount }) {
     `Zorluk: ${difficulty}`,
     `Soru sayısı: ${questionCount}`,
     'Aynı JSON içinde questions dizisi döndür. Her question nesnesinde branch, difficulty, questionType, stem, prompt, options, correctAnswer, explanation, optionFeedback, tusTip ve scientificBasis alanları dolu olsun.',
-    'optionFeedback anahtarları A, B, C, D, E olsun ve options sırasıyla eşleşsin. correctAnswer, options içindeki metnin aynısı olsun..',
+    'options dizisindeki metinlerin başına A), B) gibi seçenek harfi ekleme.',
+    'optionFeedback anahtarları A, B, C, D, E olsun ve A=options[0], B=options[1], C=options[2], D=options[3], E=options[4] sırasıyla eşleşsin.',
+    'correctAnswer, options dizisindeki doğru seçenek metninin bire bir aynısı olsun; harf (A-E), seçenek ön eki veya benzer/parafraz metin yazma.',
   ].join('\n');
 }
 
-async function requestAiQuestions({ apiKey, model, branch, difficulty, questionCount }) {
-  const messages = [
+function buildMessages({ branch, difficulty, questionCount }) {
+  return [
     {
       role: 'system',
       content: TUS_EDITOR_SYSTEM_PROMPT,
@@ -359,21 +418,33 @@ async function requestAiQuestions({ apiKey, model, branch, difficulty, questionC
       content: buildPrompt({ branch, difficulty, questionCount }),
     },
   ];
+}
+
+function buildOpenAiPayload({ model, messages, questionCount, responseFormat, includeOptionalFields = true }) {
   const requestPayload = {
     model,
-    temperature: getTemperature(),
     max_completion_tokens: getMaxTokens(questionCount),
-    response_format: getResponseFormat(),
-    prompt_cache_key: process.env.OPENAI_PROMPT_CACHE_KEY || 'klinikiq-tus-question-v3',
     messages,
   };
-  if (process.env.OPENAI_PROMPT_CACHE_RETENTION) {
-    requestPayload.prompt_cache_retention = process.env.OPENAI_PROMPT_CACHE_RETENTION;
+  if (includeOptionalFields) {
+    requestPayload.temperature = getTemperature();
   }
-  if (process.env.OPENAI_SERVICE_TIER) {
-    requestPayload.service_tier = process.env.OPENAI_SERVICE_TIER;
+  if (responseFormat) {
+    requestPayload.response_format = responseFormat;
   }
+  if (includeOptionalFields) {
+    requestPayload.prompt_cache_key = process.env.OPENAI_PROMPT_CACHE_KEY || 'klinikiq-tus-question-v3';
+    if (process.env.OPENAI_PROMPT_CACHE_RETENTION) {
+      requestPayload.prompt_cache_retention = process.env.OPENAI_PROMPT_CACHE_RETENTION;
+    }
+    if (process.env.OPENAI_SERVICE_TIER) {
+      requestPayload.service_tier = process.env.OPENAI_SERVICE_TIER;
+    }
+  }
+  return requestPayload;
+}
 
+async function postOpenAiCompletion({ apiKey, requestPayload }) {
   const aiResponse = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: {
@@ -383,12 +454,103 @@ async function requestAiQuestions({ apiKey, model, branch, difficulty, questionC
     body: JSON.stringify(requestPayload),
   });
 
-  if (!aiResponse.ok) {
-    throw new Error(`OpenAI request failed: ${aiResponse.status}`);
+  const responseText = await aiResponse.text();
+  let payload = null;
+  try {
+    payload = responseText ? JSON.parse(responseText) : null;
+  } catch {
+    payload = null;
   }
 
-  const payload = await aiResponse.json();
-  return payload?.choices?.[0]?.message?.content;
+  if (!aiResponse.ok) {
+    const detail = payload?.error?.message || responseText || `HTTP ${aiResponse.status}`;
+    const error = new Error(`OpenAI request failed: ${aiResponse.status} ${detail}`);
+    error.status = aiResponse.status;
+    throw error;
+  }
+
+  const choice = payload?.choices?.[0];
+  if (choice?.finish_reason === 'length') {
+    const error = new Error('OpenAI response was truncated.');
+    error.retryWithSingleQuestion = true;
+    throw error;
+  }
+
+  const content = choice?.message?.content;
+  if (!normalizeText(content)) {
+    throw new Error('OpenAI response did not include content.');
+  }
+  return content;
+}
+
+async function requestAiQuestions({ apiKey, model, branch, difficulty, questionCount }) {
+  const messages = buildMessages({ branch, difficulty, questionCount });
+  const responseFormat = getResponseFormat();
+  const attempts = [
+    { responseFormat, includeOptionalFields: true },
+    { responseFormat, includeOptionalFields: false },
+  ];
+  if (responseFormat?.type !== 'json_object') {
+    attempts.push({ responseFormat: { type: 'json_object' }, includeOptionalFields: false });
+  }
+  attempts.push({ responseFormat: null, includeOptionalFields: false });
+
+  let lastError = null;
+  for (let index = 0; index < attempts.length; index += 1) {
+    const attempt = attempts[index];
+    const requestPayload = buildOpenAiPayload({
+      model,
+      messages,
+      questionCount,
+      responseFormat: attempt.responseFormat,
+      includeOptionalFields: attempt.includeOptionalFields,
+    });
+
+    try {
+      return await postOpenAiCompletion({ apiKey, requestPayload });
+    } catch (error) {
+      lastError = error;
+      const canRetryCompatibility = error?.status === 400 && index < attempts.length - 1;
+      if (!canRetryCompatibility) throw error;
+    }
+  }
+  throw lastError || new Error('OpenAI request failed.');
+}
+
+function parseAndNormalizeQuestions(content, branch, difficulty) {
+  const parsed = parseJsonObject(content);
+  return normalizeGeneratedQuestions(parsed, branch, difficulty);
+}
+
+function shouldRetryAsSingleQuestion(error, questionCount) {
+  if (questionCount <= 1) return false;
+  if (error?.retryWithSingleQuestion) return true;
+  if (error?.status && error.status !== 400) return false;
+  return /JSON|validation|feedback|valid question|content/i.test(error?.message || '');
+}
+
+async function generateNormalizedQuestions({ apiKey, model, branch, difficulty, questionCount }) {
+  try {
+    const content = await requestAiQuestions({
+      apiKey,
+      model,
+      branch,
+      difficulty,
+      questionCount,
+    });
+    return parseAndNormalizeQuestions(content, branch, difficulty);
+  } catch (error) {
+    if (!shouldRetryAsSingleQuestion(error, questionCount)) throw error;
+    console.warn('[generate-tus-question] Batch generation failed; retrying a single question.', error);
+    const content = await requestAiQuestions({
+      apiKey,
+      model,
+      branch,
+      difficulty,
+      questionCount: 1,
+    });
+    return parseAndNormalizeQuestions(content, branch, difficulty);
+  }
 }
 
 export default async function handler(req, res) {
@@ -412,15 +574,13 @@ export default async function handler(req, res) {
     }
 
     const questionCount = getQuestionBatchSize();
-    const content = await requestAiQuestions({
+    const questions = await generateNormalizedQuestions({
       apiKey,
       model,
       branch: selectedBranch,
       difficulty: selectedDifficulty,
       questionCount,
     });
-    const parsed = parseJsonObject(content);
-    const questions = normalizeGeneratedQuestions(parsed, selectedBranch, selectedDifficulty);
     const [question, ...remainingQuestions] = questions;
     storePooledQuestions(poolKey, remainingQuestions);
 
