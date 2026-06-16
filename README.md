@@ -63,19 +63,16 @@ Output Directory: dist
 
 Vercel ortam değişkenlerinde `OPENAI_API_KEY` zorunludur. Varsayılan model `gpt-5.4-nano` olarak ayarlanmıştır; farklı bir model kullanmak için `OPENAI_MODEL` eklenebilir.
 
-Önerilen stabil canlı ayarlar:
+Maliyet ayarları:
 
 ```text
-OPENAI_API_KEY=sk-...
-OPENAI_MODEL=gpt-5.4-nano
-OPENAI_RESPONSE_FORMAT=json_schema
-OPENAI_QUESTION_BATCH_SIZE=2
-OPENAI_MAX_TOKENS=4000
-OPENAI_TEMPERATURE=0.35
+OPENAI_QUESTION_BATCH_SIZE=4
 OPENAI_PROMPT_CACHE_KEY=klinikiq-tus-question-v3
+OPENAI_SERVICE_TIER=flex
+OPENAI_RESPONSE_FORMAT=json_schema
 ```
 
-`OPENAI_QUESTION_BATCH_SIZE` tek API çağrısında kaç soru üretileceğini belirler; kullanıcı arayüzü yine tek soru gösterir, kalan sorular sıcak sunucu hafızasında sıraya alınır. Stabilite için canlı ortamda `2` önerilir. `OPENAI_SERVICE_TIER=flex` kullanılmamalıdır; kod bu değeri görse bile OpenAI isteğine göndermeden yok sayar.
+`OPENAI_QUESTION_BATCH_SIZE` tek API çağrısında kaç soru üretileceğini belirler; kullanıcı arayüzü yine tek soru gösterir, kalan sorular sıcak sunucu hafızasında sıraya alınır. `OPENAI_SERVICE_TIER=flex` daha düşük maliyet sağlayabilir fakat yanıt süresi daha değişken olabilir; canlı kullanımda gerekirse bu değişken boş bırakılabilir.
 
 ## Firebase / Google giriş ayarları
 

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Icon } from './ui.jsx';
 import GlossaryText from './GlossaryTooltip.jsx';
 import { localBackend } from '../services/localBackend.js';
+import { generateKomiteStudyContent, KOMITE_GENERATION_ERROR_MESSAGE } from '../services/komiteStudyApi.js';
 import { extractKomiteFile, getKomiteFileExtension } from '../utils/komiteFileExtraction.js';
 
 const KOMITE_MATERIALS_STORAGE_KEY = 'komite-materials-v1';
@@ -440,16 +441,28 @@ function buildCombinedMaterialPacket(material = {}) {
       fileName: file.fileName || file.name || 'Materyal',
       fileType: file.fileType || file.type || getFileType(file.fileName || file.name || ''),
       cleanedExtractedText: cleaned,
-      detectedTopics: [],
+      detectedTopics: Array.isArray(file.detectedTopics) ? file.detectedTopics : [],
+      detectedStructure: Array.isArray(file.detectedStructure) ? file.detectedStructure : [],
+      figures: Array.isArray(file.figures) ? file.figures : [],
+      emphasisNotes: Array.isArray(file.emphasisNotes) ? file.emphasisNotes : [],
+      charCount: Number(file.charCount || cleaned.length || 0),
+      extractionOk: Boolean(file.extractionOk || cleaned),
     };
   });
   const pasted = cleanExtractedTextForMaterial(material.pastedText || '');
-  // For uploaded-material workspaces, the material source must be only the current
-  // upload batch filePackets. Pasted text is accepted only for text-only
-  // materials with no uploaded files/filePackets, preventing stale notes from
-  // previous sessions from entering this workspace.
-  if (pasted && !hasCurrentFiles && !hasCurrentFilePackets) {
-    normalizedFiles.push({ fileName: 'Ek ders notu', fileType: 'text', cleanedExtractedText: pasted, detectedTopics: [] });
+  if (pasted) {
+    normalizedFiles.unshift({
+      fileName: 'Ek ders notu',
+      fileType: 'text',
+      cleanedExtractedText: pasted,
+      detectedTopics: [],
+      detectedStructure: [{ type: 'user-note', label: 'Ek ders notu', charCount: pasted.length, preview: pasted.slice(0, 180) }],
+      figures: [],
+      emphasisNotes: [{ source: 'Ek ders notu', text: pasted.slice(0, 900), importance: 'high' }],
+      charCount: pasted.length,
+      extractionOk: true,
+      isUserNote: true,
+    });
   }
   return {
     workspaceId: material.id || '',
@@ -457,6 +470,9 @@ function buildCombinedMaterialPacket(material = {}) {
     committeeName: material.committee || '',
     courseName: material.course || '',
     studyGoal: material.learningTarget || '',
+    university: material.university || '',
+    figures: Array.isArray(material.extractedFigures) ? material.extractedFigures : [],
+    detectedStructure: Array.isArray(material.detectedStructure) ? material.detectedStructure : [],
     files: normalizedFiles,
   };
 }
@@ -488,6 +504,92 @@ function getMaterialFileCount(material = {}, packet = null) {
   const storedFileCount = Array.isArray(material.files) ? material.files.length : 0;
   const storedPacketCount = Array.isArray(material.filePackets) ? material.filePackets.length : 0;
   return Math.max(packetCount, storedFileCount, storedPacketCount, 1);
+}
+
+function clipTextForGeneration(text = '', maxChars = 8000) {
+  const clean = String(text || '').replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim();
+  if (clean.length <= maxChars) return clean;
+  return `${clean.slice(0, maxChars).trim()}\n\n[Not: Bu kaynak parçası token tasarrufu için kısaltıldı.]`;
+}
+
+function compactArrayForGeneration(items = [], maxItems = 12) {
+  return Array.isArray(items) ? items.slice(0, maxItems) : [];
+}
+
+function compactMaterialPacketForGeneration(packet = {}, kind = 'lesson') {
+  const sourceFiles = Array.isArray(packet.files)
+    ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
+    : [];
+  const maxTotalChars = kind === 'lesson' ? 58_000 : 44_000;
+  const noteFiles = sourceFiles.filter((file) => file.isUserNote);
+  const regularFiles = sourceFiles.filter((file) => !file.isUserNote);
+  const noteBudget = Math.min(10_000, Math.max(5000, Math.floor(maxTotalChars * 0.2)));
+  const usedByNotes = noteFiles.reduce((sum, file) => sum + Math.min(noteBudget, String(file.cleanedExtractedText || file.text || '').length), 0);
+  const remainingBudget = Math.max(16_000, maxTotalChars - usedByNotes);
+  const perRegularFile = regularFiles.length ? Math.max(5000, Math.floor(remainingBudget / regularFiles.length)) : remainingBudget;
+
+  const files = [
+    ...noteFiles.map((file) => ({ ...file, cleanedExtractedText: clipTextForGeneration(file.cleanedExtractedText || file.text || '', noteBudget) })),
+    ...regularFiles.map((file) => ({ ...file, cleanedExtractedText: clipTextForGeneration(file.cleanedExtractedText || file.text || '', perRegularFile) })),
+  ].map((file) => ({
+    fileName: file.fileName || file.name || 'Materyal',
+    fileType: file.fileType || file.type || 'file',
+    cleanedExtractedText: file.cleanedExtractedText || '',
+    detectedTopics: compactArrayForGeneration(file.detectedTopics, 8),
+    detectedStructure: compactArrayForGeneration(file.detectedStructure, 18),
+    figures: compactArrayForGeneration(file.figures, 12),
+    emphasisNotes: compactArrayForGeneration(file.emphasisNotes, 14),
+    charCount: Number(file.charCount || String(file.cleanedExtractedText || '').length || 0),
+    extractionOk: Boolean(file.extractionOk || file.cleanedExtractedText),
+    isUserNote: Boolean(file.isUserNote),
+  }));
+
+  return {
+    workspaceId: packet.workspaceId || '',
+    classYear: packet.classYear || '',
+    committeeName: packet.committeeName || '',
+    courseName: packet.courseName || '',
+    studyGoal: packet.studyGoal || '',
+    university: packet.university || '',
+    figures: compactArrayForGeneration(packet.figures, 16),
+    detectedStructure: compactArrayForGeneration(packet.detectedStructure, 20),
+    files,
+  };
+}
+
+function summarizeLessonForGeneration(lesson = null) {
+  if (!lesson) return null;
+  return {
+    title: lesson.title || lesson.inferredTitle || '',
+    overview: lesson.overview || lesson.shortIntro || lesson.bigPicture || '',
+    learningObjectives: Array.isArray(lesson.learningObjectives) ? lesson.learningObjectives.slice(0, 8) : [],
+    sections: Array.isArray(lesson.sections)
+      ? lesson.sections.map((section) => ({
+        heading: section.heading || '',
+        examAngle: section.examAngle || '',
+        commonTrap: section.commonTrap || '',
+        clinicalConnection: section.clinicalConnection || '',
+      })).slice(0, 10)
+      : [],
+    highYieldPoints: Array.isArray(lesson.highYieldPoints) ? lesson.highYieldPoints.slice(0, 12) : [],
+    commonConfusions: Array.isArray(lesson.commonConfusions) ? lesson.commonConfusions.slice(0, 8) : [],
+  };
+}
+
+function buildKomiteGenerationPayload(material = {}, kind = 'lesson') {
+  const packet = buildCombinedMaterialPacket(material);
+  return {
+    sourceFingerprint: buildSourceFingerprint(material, packet),
+    metadata: {
+      classYear: material.classYear || '',
+      committee: material.committee || '',
+      course: material.course || '',
+      learningTarget: material.learningTarget || '',
+      university: material.university || '',
+    },
+    materialPacket: compactMaterialPacketForGeneration(packet, kind),
+    existingLesson: kind === 'questions' || kind === 'cards' ? summarizeLessonForGeneration(material.lesson) : null,
+  };
 }
 
 
@@ -894,7 +996,7 @@ function KomiteDashboard({ onStart, onOpenMyMaterials, onOpenCards, onOpenReview
   const cards = [
     {
       title: 'Çalışmaya Başla',
-      description: 'Slayt veya not yükle; KlinikIQ materyallerini aynı çalışma alanında düzenlesin; otomatik içerik üretimi bu sürümde kapalıdır.',
+      description: 'Slayt veya not yükle; KlinikIQ materyallerinden ders anlatımı, soru, hap kart ve tekrar akışını gerektiğinde oluştursun.',
       action: 'Materyal Yükle',
       icon: 'Sparkles',
       onClick: onStart,
@@ -976,7 +1078,10 @@ function StartFlow({ onCreate, onCancel }) {
           fileName: file.name,
           fileType: getFileType(file.name),
           cleanedExtractedText,
-          detectedTopics: [],
+          detectedTopics: extraction.detectedTopics || [],
+          detectedStructure: extraction.detectedStructure || [],
+          figures: extraction.figures || [],
+          emphasisNotes: extraction.emphasisNotes || [],
           charCount: cleanedExtractedText.length,
           extractionOk: Boolean(extraction.ok && cleanedExtractedText),
         };
@@ -984,6 +1089,7 @@ function StartFlow({ onCreate, onCancel }) {
       const mergedText = filePackets.map((item) => item.cleanedExtractedText || '').filter(Boolean).join('\n\n').trim();
       const detectedStructure = extractions.flatMap(({ extraction }) => extraction.detectedStructure || []);
       const limitations = extractions.flatMap(({ extraction }) => extraction.limitations || []);
+      const figures = extractions.flatMap(({ file, extraction }) => (extraction.figures || []).map((figure) => ({ sourceFile: file.name, ...figure })));
       if (import.meta.env.DEV) {
         console.debug('[KOMITE upload]', {
           uploadedFiles: unique.length,
@@ -999,7 +1105,7 @@ function StartFlow({ onCreate, onCancel }) {
         text: mergedText,
         files: filePackets,
         detectedStructure,
-        figures: extractions.flatMap(({ extraction }) => extraction.figures || []),
+        figures,
         notice: mergedText ? `${unique.length} dosya çalışma alanına eklendi.` : 'Dosyalar otomatik okunamadı; ek ders notu alanına metin ekleyebilirsin.',
         limitations,
       });
@@ -1038,7 +1144,7 @@ function StartFlow({ onCreate, onCancel }) {
       <div className="komite-upload-hero">
         <div className="komite-upload-hero-copy">
           <h2>Materyal yükle</h2>
-          <p>Komite materyallerini ekle; bu sürümde dosyalar saklanır ve çalışma alanı açılır, otomatik içerik üretimi yapılmaz.</p>
+          <p>Komite materyallerini ekle; çalışma alanı açıldıktan sonra ders anlatımı, soru ve hap kartları ilgili sekmelerden AI ile oluşturabilirsin.</p>
         </div>
         <button type="button" className="btn btn-secondary komite-upload-cancel-top" onClick={onCancel}>Vazgeç</button>
       </div>
@@ -1132,15 +1238,36 @@ function StartFlow({ onCreate, onCancel }) {
 
 function LessonView({ material, onGenerate, status = 'idle' }) {
   const lesson = material.lesson;
+  const sections = Array.isArray(lesson?.sections) ? lesson.sections : [];
+  const sectionAnchors = sections
+    .map((section, index) => ({ id: createLessonAnchorId(section.heading, index), title: section.heading || `Bölüm ${index + 1}` }));
+  const navigationItems = [
+    { id: 'komite-objectives', title: 'Öğrenme hedefleri' },
+    ...(lesson?.bigPicture || lesson?.overview ? [{ id: 'komite-big-picture', title: 'Büyük resim' }] : []),
+    ...sectionAnchors.filter((item) => item.title && !/^(öğrenme hedefleri|büyük resim|can alıcı noktalar|mutlaka hatırla)$/iu.test(item.title)),
+    { id: 'komite-high-yield', title: 'En yüksek verim' },
+  ].filter((item) => item.id && item.title);
+  const [activeAnchorId, setActiveAnchorId] = useState(navigationItems[0]?.id || '');
+
+  useEffect(() => {
+    if (!lesson || !navigationItems.length || typeof IntersectionObserver === 'undefined') return undefined;
+    const nodes = navigationItems.map((item) => document.getElementById(item.id)).filter(Boolean);
+    if (!nodes.length) return undefined;
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => Math.abs(a.boundingClientRect.top) - Math.abs(b.boundingClientRect.top))[0];
+      if (visible?.target?.id) setActiveAnchorId(visible.target.id);
+    }, { rootMargin: '-18% 0px -68% 0px', threshold: [0, 0.15, 0.35] });
+    nodes.forEach((node) => observer.observe(node));
+    return () => observer.disconnect();
+  }, [lesson, navigationItems.map((item) => item.id).join('|')]);
+
   if (!lesson) {
     const hasExtractedText = combinedPacketToSourceText(buildCombinedMaterialPacket(material)).length > 120;
-    return <EmptyState title="Ders anlatımı henüz hazır değil" text={hasExtractedText ? "Dosya metni ayrıştırıldı. Bu sürümde otomatik ders anlatımı oluşturma aktif değildir." : "Bu dosyadan yeterli metin çıkarılamadı. Daha okunabilir dosya yükleyebilir veya metni ek not alanına yapıştırabilirsin."} action={<LoadingPrimaryButton status={status} idleLabel="Ders Anlatımı oluştur" loadingLabel="Ders Anlatımı oluşturuyor…" onClick={onGenerate} />} />;
+    return <EmptyState title="Ders anlatımı henüz hazır değil" text={hasExtractedText ? "Dosya metni ayrıştırıldı. Ders anlatımını AI ile oluşturmak için butona basabilirsin." : "Bu dosyadan yeterli metin çıkarılamadı. Daha okunabilir dosya yükleyebilir veya metni ek not alanına yapıştırabilirsin."} action={<LoadingPrimaryButton status={status} idleLabel="Ders Anlatımı oluştur" loadingLabel="Ders Anlatımı oluşturuyor…" onClick={onGenerate} />} />;
   }
 
-  const sections = Array.isArray(lesson.sections) ? lesson.sections : [];
-  const sectionAnchors = sections
-    .map((section, index) => ({ id: createLessonAnchorId(section.heading, index), title: section.heading || `Bölüm ${index + 1}` }))
-    .filter((item) => item.title && !/^(öğrenme hedefleri|büyük resim|can alıcı noktalar|mutlaka hatırla)$/iu.test(item.title));
   const rawObjectives = Array.isArray(lesson.learningObjectives) ? lesson.learningObjectives : [];
   const objectiveIntro = rawObjectives.length && /(:|：)$|^Bu konunun sonunda\b/iu.test(String(rawObjectives[0] || '').trim())
     ? sanitizeTeachingTextForDisplay(rawObjectives[0])
@@ -1165,7 +1292,7 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
         <aside className="komite-lesson-sidebar" aria-label="Ders navigasyonu">
           <div className="komite-sidebar-card">
             <strong>Hızlı erişim</strong>
-            {sectionAnchors.slice(0, 8).map((item) => <a href={`#${item.id}`} key={item.id}>{item.title}</a>)}
+            {navigationItems.slice(0, 12).map((item) => <a className={activeAnchorId === item.id ? 'active' : ''} href={`#${item.id}`} key={item.id}>{item.title}</a>)}
           </div>
         </aside>
 
@@ -1208,6 +1335,16 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
                 <div className="komite-section-body">
                   <h3>{section.heading}</h3>
                   <LessonText text={teachingText} />
+                  {Array.isArray(section.keyBoxes) && section.keyBoxes.length ? (
+                    <div className="komite-key-box-grid">
+                      {section.keyBoxes.slice(0, 4).map((box, boxIndex) => (
+                        <div className="komite-key-box" key={`${box.label || 'not'}-${boxIndex}`}>
+                          <strong>{box.label || 'Akılda tut'}</strong>
+                          <p><GlossaryText text={sanitizeTeachingTextForDisplay(box.text)} enabled revealMode="postAnswer" maxTerms={3} /></p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : null}
                   {(formatMechanismSteps(section.mechanismFlow).length || section.examAngle || section.commonTrap || section.clinicalConnection || section.examConnection) ? (
                     <div className="komite-note-lines">
                       {formatMechanismSteps(section.mechanismFlow).length ? (
@@ -1242,19 +1379,28 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
 }
 
 function FiguresView({ material }) {
-  const rawFigures = material.lesson?.figureExplanations || [];
-  const figures = rawFigures.length ? rawFigures : [{
-    sourcePageOrSlide: 'Materyal geneli',
-    analysisStatus: combinedPacketToSourceText(buildCombinedMaterialPacket(material)).length > 120 ? 'partial' : 'unavailable',
-    type: 'unknown',
-    visibleTextAroundFigure: '',
-    whatCanBeSaidSafely: combinedPacketToSourceText(buildCombinedMaterialPacket(material)).length > 120
-      ? 'Bu sürümde görselin kendisi yorumlanmaz; yalnızca slayt/PDF içindeki okunabilir metin gösterilir.'
-      : 'Dosyadan yeterli metin çıkarılamadığı için görsel hakkında güvenilir yorum yapılamaz.',
-    limitations: 'OCR/vision desteği olmadan şekil, tablo veya diyagram piksel içeriği yorumlanmaz.',
-    examRelevance: 'Görsel sorusu üretimi bu sürümde aktif değildir.',
-  }];
+  const packet = buildCombinedMaterialPacket(material);
+  const lessonFigures = Array.isArray(material.lesson?.figureExplanations) ? material.lesson.figureExplanations : [];
+  const extractedFigures = [
+    ...(Array.isArray(material.extractedFigures) ? material.extractedFigures : []),
+    ...(Array.isArray(packet.files) ? packet.files.flatMap((file) => (file.figures || []).map((figure) => ({ sourceFile: file.fileName, ...figure }))) : []),
+  ];
+  const rawFigures = lessonFigures.length ? lessonFigures : extractedFigures;
+  const figures = rawFigures.map((figure, index) => ({
+    sourcePageOrSlide: figure.sourcePageOrSlide || [figure.sourceFile, figure.pageOrSlide].filter(Boolean).join(' · ') || 'Materyal geneli',
+    analysisStatus: figure.analysisStatus || (lessonFigures.length ? 'partial' : 'unavailable'),
+    type: figure.type || 'görsel / tablo ipucu',
+    title: figure.title || figure.caption || 'Görsel / tablo notu',
+    visibleTextAroundFigure: figure.visibleTextAroundFigure || figure.visibleText || figure.preview || '',
+    whatCanBeSaidSafely: figure.whatCanBeSaidSafely || figure.description || figure.interpretation || 'Bu öğe için okunabilen başlık, çevre metni veya tablo izi bulundu; ayrıntılı AI yorumu için Ders Anlatımı oluşturabilirsin.',
+    limitations: figure.limitations || 'Görselin piksel içeriği uydurulmadı; yalnızca okunabilen metin ve dosya bağlamı kullanıldı.',
+    examRelevance: figure.examRelevance || 'Bu öğe, ilişkili konu anlatımı içinde tablo/görsel sorusu veya ayırıcı bilgiye dönüşebilir.',
+  }));
   const statusLabel = { analyzed: 'Analiz edildi', partial: 'Kısmen analiz edildi', unavailable: 'Analiz edilemedi' };
+  if (!figures.length) {
+    const hasExtractedText = combinedPacketToSourceText(packet).length > 120;
+    return <EmptyState title="Görsel yorumu yok" text={hasExtractedText ? "Bu materyalde okunabilir tablo, şekil başlığı veya görsel açıklaması yakalanmadı. Ders anlatımı oluşturulduğunda metinden güvenli görsel bağlantıları varsa burada gösterilir." : "Dosyadan yeterli metin ya da görsel ipucu çıkarılamadı. OCR gerektiren taranmış görseller için metni ek not alanına ekleyebilirsin."} />;
+  }
   return (
     <div className="komite-figure-grid">
       {figures.map((figure, index) => {
@@ -1276,7 +1422,7 @@ function FiguresView({ material }) {
   );
 }
 
-function QuestionsView({ material, onGenerate, onAnswer, onToggleQuestionFlag }) {
+function QuestionsView({ material, onGenerate, onAnswer, onToggleQuestionFlag, status = 'idle' }) {
   const questions = material.questions || [];
   const [index, setIndex] = useState(0);
   const active = normalizeQuestionForDisplay(questions[index]);
@@ -1284,7 +1430,7 @@ function QuestionsView({ material, onGenerate, onAnswer, onToggleQuestionFlag })
   useEffect(() => { if (index > questions.length - 1) setIndex(0); }, [questions.length, index]);
 
   if (!questions.length) {
-    return <EmptyState title="Sorular henüz hazır değil" text="Bu sürümde otomatik soru seti oluşturma aktif değildir." action={<button type="button" className="btn btn-primary" onClick={onGenerate}>10 soru oluştur</button>} />;
+    return <EmptyState title="Sorular henüz hazır değil" text="Yüklenen materyal ve varsa ders anlatımı temelinde 10 öğretici komite sorusu oluşturabilirsin." action={<LoadingPrimaryButton status={status} idleLabel="10 soru oluştur" loadingLabel="Sorular oluşturuluyor…" onClick={onGenerate} icon="ClipboardList" />} />;
   }
 
   const selected = active?.userAnswer;
@@ -1348,7 +1494,7 @@ function QuestionsView({ material, onGenerate, onAnswer, onToggleQuestionFlag })
   );
 }
 
-function FlashcardsView({ material, onGenerate, onUpdateCard }) {
+function FlashcardsView({ material, onGenerate, onUpdateCard, status = 'idle' }) {
   const deck = material.flashcardDeck;
   const cards = deck?.cards || [];
   const [index, setIndex] = useState(0);
@@ -1358,7 +1504,7 @@ function FlashcardsView({ material, onGenerate, onUpdateCard }) {
   useEffect(() => { setFlipped(false); }, [index]);
 
   if (!cards.length) {
-    return <EmptyState title="Hap kart destesi yok" text="Bu materyalden aktif geri çağırma kartları oluşturabilirsin." action={<button type="button" className="btn btn-primary" onClick={onGenerate}>Hap kartları oluştur</button>} />;
+    return <EmptyState title="Hap kart destesi yok" text="Bu materyalden aktif geri çağırma kartları oluşturabilirsin." action={<LoadingPrimaryButton status={status} idleLabel="Hap kartları oluştur" loadingLabel="Hap kartlar oluşturuluyor…" onClick={onGenerate} icon="LayeredCards" />} />;
   }
 
   return (
@@ -1510,10 +1656,40 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
     setActionMessage((current) => ({ ...current, [kind]: message }));
   };
 
-  const showInactiveModuleMessage = (kind) => {
+  const generateContent = async (kind) => {
     if (actionStatus[kind] === 'loading') return;
-    setModuleActionStatus(kind, 'idle', 'Bu modül bu sürümde aktif değildir.');
-    window.setTimeout(() => setModuleActionStatus(kind, 'idle', ''), 2400);
+    const alreadyReady = (kind === 'lesson' && material.lesson)
+      || (kind === 'questions' && material.questions?.length)
+      || (kind === 'cards' && material.flashcardDeck?.cards?.length);
+    if (alreadyReady) {
+      setModuleActionStatus(kind, 'success', 'Bu içerik zaten hazır.');
+      window.setTimeout(() => setModuleActionStatus(kind, 'idle', ''), 2200);
+      return;
+    }
+
+    const packet = buildCombinedMaterialPacket(material);
+    if (combinedPacketToSourceText(packet).length < 80) {
+      setModuleActionStatus(kind, 'error', 'Bu çalışma alanında AI içeriği oluşturmak için yeterli okunabilir metin yok.');
+      return;
+    }
+
+    setModuleActionStatus(kind, 'loading', kind === 'lesson' ? 'Ders anlatımı oluşturuluyor…' : kind === 'questions' ? 'Sorular oluşturuluyor…' : 'Hap kartlar oluşturuluyor…');
+    try {
+      const payload = buildKomiteGenerationPayload(material, kind);
+      const result = await generateKomiteStudyContent({ kind, payload });
+      if (kind === 'lesson') {
+        onPatchMaterial(material.id, { lesson: result.lesson });
+      } else if (kind === 'questions') {
+        onPatchMaterial(material.id, { questions: result.questions });
+      } else if (kind === 'cards') {
+        onPatchMaterial(material.id, { flashcardDeck: result.flashcardDeck });
+      }
+      setModuleActionStatus(kind, 'success', 'İçerik hazır.');
+      window.setTimeout(() => setModuleActionStatus(kind, 'idle', ''), 1800);
+    } catch (error) {
+      console.error('[komite-generate]', error);
+      setModuleActionStatus(kind, 'error', error?.message || KOMITE_GENERATION_ERROR_MESSAGE);
+    }
   };
 
   const answerQuestion = (questionId, selectedId) => {
@@ -1558,10 +1734,10 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
         {STUDY_TABS.map((item) => <button key={item.id} type="button" className={tab === item.id ? 'active' : ''} onClick={() => setTab(item.id)}><Icon name={item.icon} /> {item.label}</button>)}
       </div>
       <div className="komite-tab-panel">
-        {tab === 'lesson' ? <LessonView material={material} status={actionStatus.lesson} onGenerate={() => showInactiveModuleMessage('lesson')} /> : null}
+        {tab === 'lesson' ? <LessonView material={material} status={actionStatus.lesson} onGenerate={() => generateContent('lesson')} /> : null}
         {tab === 'figures' ? <FiguresView material={material} /> : null}
-        {tab === 'questions' ? <QuestionsView material={material} onGenerate={() => showInactiveModuleMessage('questions')} onAnswer={answerQuestion} onToggleQuestionFlag={toggleQuestionFlag} /> : null}
-        {tab === 'cards' ? <FlashcardsView material={material} onGenerate={() => showInactiveModuleMessage('cards')} onUpdateCard={updateCard} /> : null}
+        {tab === 'questions' ? <QuestionsView material={material} status={actionStatus.questions} onGenerate={() => generateContent('questions')} onAnswer={answerQuestion} onToggleQuestionFlag={toggleQuestionFlag} /> : null}
+        {tab === 'cards' ? <FlashcardsView material={material} status={actionStatus.cards} onGenerate={() => generateContent('cards')} onUpdateCard={updateCard} /> : null}
         {tab === 'review' ? <ReviewCenter materials={materials} activeMaterial={material} onOpenMaterial={onOpenMaterial} /> : null}
       </div>
     </section>

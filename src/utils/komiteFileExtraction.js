@@ -6,6 +6,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
 
 const MAX_EXTRACTED_CHARS = 80_000;
 const MAX_PDF_PAGES = 90;
+const FIGURE_CONTEXT_CHARS = 900;
 
 export function getKomiteFileExtension(fileName = '') {
   const ext = String(fileName || '').split('.').pop()?.toLowerCase() || '';
@@ -24,6 +25,78 @@ function capText(text = '', max = MAX_EXTRACTED_CHARS) {
   const value = normalizeWhitespace(text);
   if (value.length <= max) return value;
   return `${value.slice(0, max).trim()}\n\n[Not: Metin ${max} karakterle sınırlandı; materyalin devamı güvenlik ve performans için kesildi.]`;
+}
+
+function compactLine(value = '') {
+  return String(value || '').replace(/\s+/g, ' ').trim();
+}
+
+function detectEducationalStructure(text = '', source = {}) {
+  const lines = String(text || '').split(/\n+/u).map(compactLine).filter(Boolean);
+  const detectedStructure = [];
+  const figures = [];
+  const emphasisNotes = [];
+  const tableLines = [];
+
+  lines.forEach((line, index) => {
+    const lower = line.toLocaleLowerCase('tr');
+    const locationLabel = source.page ? `Sayfa ${source.page}` : source.slide ? `Slayt ${source.slide}` : source.label || '';
+    const common = {
+      sourcePageOrSlide: locationLabel,
+      pageOrSlide: locationLabel,
+      visibleTextAroundFigure: lines.slice(Math.max(0, index - 2), Math.min(lines.length, index + 4)).join(' ').slice(0, FIGURE_CONTEXT_CHARS),
+    };
+
+    if (/^(şekil|figür|figure|resim|görsel|diagram|algoritma|akış şeması)\s*[:.\d-]/iu.test(line)) {
+      figures.push({
+        ...common,
+        type: /algoritma|akış/iu.test(lower) ? 'akış şeması / algoritma' : 'şekil / görsel',
+        title: line.slice(0, 160),
+        description: common.visibleTextAroundFigure,
+        limitations: 'Dosya metin katmanından yakalanan görsel başlığı/çevre metni; piksel içeriği doğrudan yorumlanmadı.',
+        analysisStatus: 'partial',
+      });
+    }
+
+    if (/^(tablo|table)\s*[:.\d-]/iu.test(line) || /\s[|]\s/u.test(line) || (line.match(/\t/g) || []).length >= 2) {
+      tableLines.push(line);
+      figures.push({
+        ...common,
+        type: 'tablo',
+        title: line.slice(0, 160),
+        description: common.visibleTextAroundFigure,
+        limitations: 'Tablo metin izleri düz metne çevrildi; hücre hizalaması kaynak dosyaya göre sınırlı olabilir.',
+        analysisStatus: 'partial',
+      });
+    }
+
+    if (/^(önemli|not|dikkat|klinik not|sınav|hocanın notu|highlight|vurg[uu])\s*[:!-]/iu.test(line) || /(\*\*|!!|>>>)/u.test(line)) {
+      emphasisNotes.push({
+        source: locationLabel || source.label || 'Materyal',
+        text: line.replace(/[*_>!]+/gu, '').trim(),
+        importance: 'high',
+      });
+    }
+
+    if (/^[A-ZÇĞİÖŞÜ0-9][A-ZÇĞİÖŞÜ0-9\s:,-]{7,90}$/u.test(line) && line.length <= 100) {
+      detectedStructure.push({
+        type: 'heading',
+        label: locationLabel || source.label || 'Başlık',
+        preview: line,
+      });
+    }
+  });
+
+  if (tableLines.length) {
+    detectedStructure.push({
+      type: 'table-text',
+      label: source.page ? `Sayfa ${source.page} tablo izleri` : source.slide ? `Slayt ${source.slide} tablo izleri` : 'Tablo izleri',
+      charCount: tableLines.join('\n').length,
+      preview: tableLines.slice(0, 8).join(' | ').slice(0, 220),
+    });
+  }
+
+  return { detectedStructure, figures, emphasisNotes };
 }
 
 function sortSlideFiles(a, b) {
@@ -55,11 +128,13 @@ function textFromXml(xml = '', { paragraphTag = null, textTag = 't' } = {}) {
 async function extractTxt(file) {
   const raw = await file.text();
   const text = capText(raw);
+  const hints = detectEducationalStructure(text, { label: file.name });
   return {
     ok: text.length > 0,
     text,
-    detectedStructure: text ? [{ type: 'text', label: file.name, charCount: text.length }] : [],
-    figures: [],
+    detectedStructure: text ? [{ type: 'text', label: file.name, charCount: text.length }, ...hints.detectedStructure] : [],
+    figures: hints.figures,
+    emphasisNotes: hints.emphasisNotes,
     limitations: [],
     notice: text ? 'Metin dosyası başarıyla okundu.' : 'Metin dosyası boş görünüyor.',
   };
@@ -72,6 +147,7 @@ async function extractPdf(file) {
   const pageCount = Math.min(totalPages, MAX_PDF_PAGES);
   const pageTexts = [];
   const detectedStructure = [];
+  let readablePageCount = 0;
 
   for (let pageNo = 1; pageNo <= pageCount; pageNo += 1) {
     const page = await pdf.getPage(pageNo);
@@ -94,8 +170,13 @@ async function extractPdf(file) {
     if (currentLine.length) lines.push(currentLine.join(' ').replace(/\s+/g, ' ').trim());
     const pageText = normalizeWhitespace(lines.join('\n'));
     if (pageText) {
+      readablePageCount += 1;
       pageTexts.push(`[Sayfa ${pageNo}]\n${pageText}`);
       detectedStructure.push({ type: 'page', page: pageNo, charCount: pageText.length, preview: pageText.slice(0, 180) });
+      const hints = detectEducationalStructure(pageText, { page: pageNo });
+      detectedStructure.push(...hints.detectedStructure);
+      if (hints.emphasisNotes.length) pageTexts.push(`[Sayfa ${pageNo} vurgu notları]\n${hints.emphasisNotes.map((item) => item.text).join('\n')}`);
+      if (hints.figures.length) pageTexts.push(`[Sayfa ${pageNo} görsel/tablo ipuçları]\n${hints.figures.map((item) => `${item.type}: ${item.title}\n${item.visibleTextAroundFigure}`).join('\n\n')}`);
     }
   }
 
@@ -104,13 +185,15 @@ async function extractPdf(file) {
   if (!pageTexts.length) limitations.push('PDF içinde okunabilir metin katmanı bulunamadı; taranmış görsel PDF olabilir.');
 
   const text = capText(pageTexts.join('\n\n'));
+  const mergedHints = detectEducationalStructure(text, { label: file.name });
   return {
     ok: text.length > 120,
     text,
     detectedStructure,
-    figures: [],
+    figures: mergedHints.figures,
+    emphasisNotes: mergedHints.emphasisNotes,
     limitations,
-    notice: text.length > 120 ? `${pageTexts.length} PDF sayfasından okunabilir metin çıkarıldı.` : 'PDF metni okunamadı veya çok kısa çıktı.',
+    notice: text.length > 120 ? `${readablePageCount} PDF sayfasından okunabilir metin çıkarıldı.` : 'PDF metni okunamadı veya çok kısa çıktı.',
   };
 }
 
@@ -130,16 +213,20 @@ async function extractDocx(file) {
       const label = name === 'word/document.xml' ? 'Ana belge' : name.replace(/^word\//, '').replace(/\.xml$/i, '');
       parts.push(`[${label}]\n${partText}`);
       detectedStructure.push({ type: 'docx-part', label, charCount: partText.length, preview: partText.slice(0, 180) });
+      const hints = detectEducationalStructure(partText, { label });
+      detectedStructure.push(...hints.detectedStructure);
     }
   }
 
   const text = capText(parts.join('\n\n'));
+  const hints = detectEducationalStructure(text, { label: file.name });
   const limitations = text ? [] : ['DOCX içinde okunabilir paragraf metni bulunamadı.'];
   return {
     ok: text.length > 120,
     text,
     detectedStructure,
-    figures: [],
+    figures: hints.figures,
+    emphasisNotes: hints.emphasisNotes,
     limitations,
     notice: text.length > 120 ? 'DOCX metni başarıyla ayrıştırıldı.' : 'DOCX metni okunamadı veya çok kısa çıktı.',
   };
@@ -160,6 +247,14 @@ async function extractPptx(file) {
     if (slideText) {
       parts.push(`[Slayt ${slideNo}]\n${slideText}`);
       detectedStructure.push({ type: 'slide', slide: slideNo, charCount: slideText.length, preview: slideText.slice(0, 180) });
+      const hints = detectEducationalStructure(slideText, { slide: slideNo });
+      detectedStructure.push(...hints.detectedStructure);
+      if (hints.figures.length) {
+        parts.push(`[Slayt ${slideNo} görsel/tablo ipuçları]\n${hints.figures.map((item) => `${item.type}: ${item.title}\n${item.visibleTextAroundFigure}`).join('\n\n')}`);
+      }
+      if (hints.emphasisNotes.length) {
+        parts.push(`[Slayt ${slideNo} vurgu notları]\n${hints.emphasisNotes.map((item) => item.text).join('\n')}`);
+      }
     }
   }
 
@@ -174,16 +269,18 @@ async function extractPptx(file) {
   }
 
   const text = capText(parts.join('\n\n'));
+  const hints = detectEducationalStructure(text, { label: file.name });
   const limitations = [];
   if (!slideNames.length) limitations.push('PPTX içinde slayt XML yapısı bulunamadı.');
   if (!text) limitations.push('PPTX slaytlarından okunabilir metin çıkarılamadı.');
-  limitations.push('Bu sürüm metin katmanını okur; slayt görsellerini/piksel içeriğini yorumlamaz.');
+  limitations.push('Metin katmanı, slayt notları ve okunabilen şekil/tablo başlıkları kullanılır; piksel içeriği güvenilir biçimde okunamazsa uydurulmaz.');
 
   return {
     ok: text.length > 120,
     text,
     detectedStructure,
-    figures: [],
+    figures: hints.figures,
+    emphasisNotes: hints.emphasisNotes,
     limitations,
     notice: text.length > 120 ? `${detectedStructure.length} slayttan okunabilir metin çıkarıldı.` : 'PPTX metni okunamadı veya çok kısa çıktı.',
   };

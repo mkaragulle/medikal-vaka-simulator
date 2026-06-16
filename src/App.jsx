@@ -476,21 +476,15 @@ function buildGeneratedWrongQuestionPreview(clinicalCase = {}) {
       || clinicalCase.stem
       || clinicalCase.narrativeStem
       || clinicalCase.patientIntro?.historySummary
-      || 'TUS spot sorusu.',
+      || 'TUS spot soru kaydı.',
     160,
   );
 }
 
-function isGenericGeneratedQuestionTitle(value = '') {
-  const normalized = String(value || '').trim().toLocaleLowerCase('tr');
-  return ['tanı', 'tedavi', 'mekanizma', 'evre', 'evreleme', 'etken', 'test', 'tetkik', 'yaklaşım', 'tus sorusu'].includes(normalized);
-}
-
 function buildGeneratedWrongTitle(clinicalCase = {}) {
   const branch = clinicalCase.relatedBranch || clinicalCase.branchName || 'TUS';
-  const target = compactText(clinicalCase.learningTarget || clinicalCase.clinicalFocus || '', 86);
-  if (target && !isGenericGeneratedQuestionTitle(target)) return target;
-  return compactText(clinicalCase.title || `${branch} TUS sorusu`, 86);
+  const target = compactText(clinicalCase.learningTarget || clinicalCase.clinicalFocus || clinicalCase.question || '', 86);
+  return target || `${branch} · TUS spot soru kaydı`;
 }
 
 
@@ -894,7 +888,7 @@ function App() {
       title: isGeneratedTusQuestion ? buildGeneratedWrongTitle(clinicalCase) : clinicalCase.title,
       branchId: clinicalCase.branchId,
       branchName: isGeneratedTusQuestion
-        ? `${clinicalCase.relatedBranch || clinicalCase.branchName || 'TUS'}`
+        ? `${clinicalCase.relatedBranch || clinicalCase.branchName || 'TUS'} · soru kaydı`
         : branch?.name ?? 'Klinik branş',
       sourceType: isGeneratedTusQuestion ? LEGACY_TUS_GENERATOR_WRONG_SOURCE : 'embedded-case',
       selected,
@@ -1278,7 +1272,7 @@ function App() {
     scrollToTopSmart({ smooth: false });
   }, [closePearlStudy]);
 
-  const handleGenerateTusQuestion = useCallback(async (topicKeywords = '') => {
+  const handleGenerateTusQuestion = useCallback(async () => {
     if (tusPracticeState.loading) return;
 
     clearTusQuestionTimer();
@@ -1299,7 +1293,6 @@ function App() {
       const question = await generateTusQuestion({
         branch: tusBranchFilter,
         difficulty: tusDifficulty,
-        topicKeywords,
         signal: controller.signal,
       });
       if (latestTusQuestionRequestId.current !== requestId) return;

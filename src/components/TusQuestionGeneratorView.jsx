@@ -62,11 +62,6 @@ const TUS_MODULE_STAGES = [
 const TUS_WAITING_FLASHCARD_STATUS_KEY = 'klinikiq.tusQuestion.waitingFlashcards.status.v1';
 const TUS_WAITING_FLASHCARD_SHOWN_KEY = 'klinikiq.tusQuestion.waitingFlashcards.shown.v1';
 const TUS_WAITING_FLASHCARD_COUNT = 10;
-const TUS_TOPIC_KEYWORD_MAX_LENGTH = 140;
-
-function normalizeTopicKeywordInput(value = '') {
-  return String(value || '').replace(/\s+/g, ' ').trimStart().slice(0, TUS_TOPIC_KEYWORD_MAX_LENGTH);
-}
 
 const BRANCH_NAME_LOOKUP = new Map((branches || []).flatMap((branch) => [
   [branch.id, branch.id],
@@ -283,7 +278,7 @@ function ModuleStatusBadge() {
   return (
     <span className="tus-source-badge local" title="AI üretimi Vercel API route üzerinden çalışır">
       <Icon name="Info" />
-      KlinikIQ AI
+      Güvenli AI üretim
     </span>
   );
 }
@@ -487,33 +482,6 @@ function TusDifficultyFilter({ difficulty = 'Orta', onChangeDifficulty, disabled
   );
 }
 
-function TusTopicKeywordInput({ value = '', onChange, disabled = false }) {
-  const handleChange = useCallback((event) => {
-    onChange?.(normalizeTopicKeywordInput(event.target.value));
-  }, [onChange]);
-
-  return (
-    <label className="tus-topic-keyword-control">
-      <span className="tus-compact-dropdown-label">KONU ODAĞI</span>
-      <span className={`tus-topic-keyword-shell ${disabled ? 'disabled' : ''}`.trim()}>
-        <span className="tus-topic-keyword-icon" aria-hidden="true">
-          <Icon name="Search" size={16} />
-        </span>
-        <input
-          type="text"
-          value={value}
-          onChange={handleChange}
-          placeholder="Opsiyonel: konu, hastalık veya terim yaz"
-          maxLength={TUS_TOPIC_KEYWORD_MAX_LENGTH}
-          disabled={disabled}
-          autoComplete="off"
-          aria-label="Opsiyonel konu, hastalık veya terim odağı"
-        />
-      </span>
-    </label>
-  );
-}
-
 function WaitingPearlCard({ card, rating, onRate }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const answer = getPearlCardAnswer(card);
@@ -658,7 +626,7 @@ function TusReadyState({ branchFilter, difficulty, onGenerateQuestion }) {
     <section className="tus-generation-state tus-generation-ready card-surface" aria-live="polite">
       <span className="tus-generation-orb" aria-hidden="true"><Icon name="Sparkles" /></span>
       <div className="tus-ready-copy">
-        <h2>Seçtiğin branş ve zorluğa uygun yeni bir TUS sorusu üret.</h2>
+        <h2>Branş ve zorluğu seç; tek doğru cevaplı yeni bir TUS sorusu üret.</h2>
         <p className="tus-ready-selection"><strong>{branchLabel}</strong><span aria-hidden="true">·</span><strong>{difficulty}</strong></p>
       </div>
       <button type="button" className="btn btn-primary tus-ready-cta" onClick={onGenerateQuestion}>
@@ -714,7 +682,6 @@ function TusQuestionGeneratorView({
   const [waitingFlashcards, setWaitingFlashcards] = useState([]);
   const [waitingFlashcardRatings, setWaitingFlashcardRatings] = useState({});
   const [questionRevealPending, setQuestionRevealPending] = useState(false);
-  const [topicKeywords, setTopicKeywords] = useState('');
   const waitingReviewRef = useRef(null);
   const generatedQuestionRef = useRef(null);
 
@@ -795,10 +762,6 @@ function TusQuestionGeneratorView({
     return () => window.clearInterval(timer);
   }, [loading, branchFilter, difficulty]);
 
-  const handleGenerateWithTopic = useCallback(() => {
-    onGenerateQuestion?.(topicKeywords.trim());
-  }, [onGenerateQuestion, topicKeywords]);
-
   const showWaitingReview = loading || (!loading && !error && question && questionRevealPending && waitingFlashcards.length > 0);
   const showGeneratedQuestion = !loading && !error && question && (!questionRevealPending || waitingFlashcards.length === 0);
 
@@ -807,11 +770,11 @@ function TusQuestionGeneratorView({
       <section className="tus-practice-hero card-surface">
         <div className="tus-practice-title-block">
           <h1>Yeni TUS Sorusu Üret</h1>
-          <p>Branş ve zorluğu seç; KlinikIQ senin için özgün, öğretici bir TUS sorusu üretsin.</p>
+          <p>Branş ve zorluğu seç; Vercel API üzerinden güvenli şekilde özgün, öğretici bir TUS sorusu üret.</p>
           <div className="tus-practice-meta-row">
             <ModuleStatusBadge />
             <span className="tus-demo-notice-badge" title="API anahtarı frontend paketine eklenmez.">
-              <Icon name="ShieldCheck" /> Demo Süresinde
+              <Icon name="ShieldCheck" /> Backend API route
             </span>
           </div>
         </div>
@@ -830,16 +793,11 @@ function TusQuestionGeneratorView({
               disabled={loading}
             />
           </div>
-          <TusTopicKeywordInput
-            value={topicKeywords}
-            onChange={setTopicKeywords}
-            disabled={loading}
-          />
           <div className="tus-practice-button-row">
             <button type="button" className="btn btn-secondary tus-spot-dashboard-btn" onClick={onBackHome}>
               <span aria-hidden="true">←</span> Dashboard’a dön
             </button>
-            <button type="button" className="btn btn-primary tus-generate-cta tus-spot-generate-btn" onClick={handleGenerateWithTopic} disabled={loading}>
+            <button type="button" className="btn btn-primary tus-generate-cta tus-spot-generate-btn" onClick={onGenerateQuestion} disabled={loading}>
               <span className="tus-button-content-center">
                 <Icon name="Sparkles" />
                 <span>{loading ? 'Soru Üretiliyor...' : 'Yeni TUS Sorusu Üret'}</span>
@@ -868,15 +826,15 @@ function TusQuestionGeneratorView({
           />
         </div>
       ) : null}
-      {!loading && error ? <TusInactiveState onGenerateQuestion={handleGenerateWithTopic} message={error} /> : null}
+      {!loading && error ? <TusInactiveState onGenerateQuestion={onGenerateQuestion} message={error} /> : null}
       {!loading && !error && !question ? (
-        <TusReadyState branchFilter={branchFilter} difficulty={difficulty} onGenerateQuestion={handleGenerateWithTopic} />
+        <TusReadyState branchFilter={branchFilter} difficulty={difficulty} onGenerateQuestion={onGenerateQuestion} />
       ) : null}
       {showGeneratedQuestion ? (
         <div ref={generatedQuestionRef} key={question.id} className="tus-case-shell case-route-transition tus-practice-scroll-anchor" data-case-id={question.id}>
           <TusSpotQuestionScreen
             question={question}
-            onGenerateQuestion={handleGenerateWithTopic}
+            onGenerateQuestion={onGenerateQuestion}
             onSubmitAnswer={onSubmitAnswer}
             tutorMode={tutorMode}
             onToggleTutorMode={onToggleTutorMode}

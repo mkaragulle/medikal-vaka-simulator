@@ -1,14 +1,9 @@
 export const TUS_GENERATION_ERROR_MESSAGE = 'Soru üretimi şu anda tamamlanamadı. Lütfen tekrar deneyin.';
 
 const OPTION_LETTERS = ['A', 'B', 'C', 'D', 'E'];
-const TOPIC_KEYWORD_MAX_LENGTH = 140;
 
 function compactText(value = '') {
   return String(value || '').replace(/\s+/g, ' ').trim();
-}
-
-function sanitizeTopicKeywords(value = '') {
-  return compactText(value).slice(0, TOPIC_KEYWORD_MAX_LENGTH);
 }
 
 function normalizeForCompare(value = '') {
@@ -23,6 +18,22 @@ function normalizeForCompare(value = '') {
     .replace(/[^a-z0-9+\s]/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+function tokenSimilarity(left = '', right = '') {
+  const toTokens = (value) => new Set(
+    normalizeForCompare(value)
+      .split(/\s+/u)
+      .filter((word) => word.length > 3),
+  );
+  const leftTokens = toTokens(left);
+  const rightTokens = toTokens(right);
+  if (!leftTokens.size || !rightTokens.size) return 0;
+  let overlap = 0;
+  leftTokens.forEach((word) => {
+    if (rightTokens.has(word)) overlap += 1;
+  });
+  return overlap / Math.min(leftTokens.size, rightTokens.size);
 }
 
 function visibleStemIncludesPrompt(stem = '', prompt = '') {
@@ -63,7 +74,9 @@ function normalizeGeneratedTusQuestion(payload) {
   const letterMatch = rawCorrect.match(/^[A-E]$/iu);
   const correctAnswer = letterMatch ? uniqueOptions[rawCorrect.toLocaleUpperCase('tr').charCodeAt(0) - 65] : rawCorrect;
   const exactCorrect = uniqueOptions.find((option) => option === correctAnswer)
-    || uniqueOptions.find((option) => option.toLocaleLowerCase('tr') === correctAnswer.toLocaleLowerCase('tr'));
+    || uniqueOptions.find((option) => option.toLocaleLowerCase('tr') === correctAnswer.toLocaleLowerCase('tr'))
+    || uniqueOptions.find((option) => normalizeForCompare(option) === normalizeForCompare(correctAnswer))
+    || uniqueOptions.find((option) => tokenSimilarity(option, correctAnswer) > 0.9);
   const questionStem = compactText(source?.prompt || source?.questionText || source?.questionStem);
   const narrativeStem = buildVisibleStem(source?.stem || source?.narrativeStem || source?.case, questionStem);
   const explanation = compactText(source?.explanation || source?.mainExplanation || source?.rationale);
@@ -145,12 +158,11 @@ function normalizeGeneratedTusQuestion(payload) {
   };
 }
 
-export async function generateTusQuestion({ branch, difficulty, topicKeywords, signal } = {}) {
-  const sanitizedTopicKeywords = sanitizeTopicKeywords(topicKeywords);
+export async function generateTusQuestion({ branch, difficulty, signal } = {}) {
   const response = await fetch('/api/generate-tus-question', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ branch, difficulty, ...(sanitizedTopicKeywords ? { topicKeywords: sanitizedTopicKeywords } : {}) }),
+    body: JSON.stringify({ branch, difficulty }),
     signal,
   });
 

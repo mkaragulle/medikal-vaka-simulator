@@ -6,6 +6,9 @@
   "functions": {
     "api/generate-tus-question.js": {
       "maxDuration": 60
+    },
+    "api/generate-komite-study.js": {
+      "maxDuration": 60
     }
   }
 }
