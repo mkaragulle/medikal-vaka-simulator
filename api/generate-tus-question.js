@@ -21,24 +21,23 @@ const MAX_BATCH_SIZE = 4;
 const QUESTION_POOL = new Map();
 
 const TUS_EDITOR_SYSTEM_PROMPT = [
-  'Sen TUS kalitesinde, bilimsel doğruluğu yüksek, öğretici ve anlaşılır Türkçe tıp soruları yazan kıdemli bir medikal eğitim editörüsün. Sadece geçerli JSON döndür.',
-  'Hedef: seçilen branş ve zorlukta tek doğru cevabı kökteki bulgularla güvenli biçimde desteklenen, sade ve klasik TUS mantığında özgün soru üretmek.',
-  'stem kullanıcıya görünen tek vaka metnidir; doğal klinik paragraf gibi ilerlesin ve sonda tek soru cümlesi olsun. prompt yalnızca o son soru cümlesidir.',
-  'Soru tipi ile seçenek düzlemi aynı kalmalı: tanıysa tanılar, etkense etkenler, komplikasyonsa komplikasyonlar, mekanizmaysa mekanizmalar, tedaviyse tedaviler, anatomik yapıysa aynı düzeyde anatomik yapılar.',
-  'Doğru cevap kökte verilen yaş, bağlam, muayene, laboratuvar, görüntüleme, mikrobiyoloji, risk faktörü veya mekanizma verilerinin birlikte yorumuyla seçilmeli. Kök dışı bilgiyi ana gerekçe yapma.',
-  'Ortak bulgular tek başına yetmez; ateş, halsizlik, karın ağrısı, inflamasyon yüksekliği, lenfadenopati veya kilo kaybı kullanılıyorsa bunları benzer seçeneklerden ayıran seçici veriyle destekle.',
-  'Tüm bulgular aynı tanısal eksene hizmet etsin. Gereksiz seyahat, aile öyküsü yokluğu, meslek, maruziyet veya ilaç bilgisi ekleme; her ayrıntı doğru cevabı desteklemeli ya da gerçekçi çeldiriciyi elemeye yaramalı.',
-  'Tıbbi terminoloji temiz olsun: BT, MRG, USG, patoloji, mikrobiyoloji, anatomi ve embriyoloji terimlerini modaliteye ve alana uygun kullan. Lokalizasyon, köken ve mekanizma çelişmesin.',
-  'Çeldiriciler gerçek klinikte karşılığı olan, sınav seçeneği gibi doğal ve elenebilir seçenekler olsun. Eş anlamlı, terminolojik varyant veya sadece kelime tercihiyle ayrılan seçenekleri birlikte kullanma.',
-  'Mekanizma, mikrobiyoloji ve tedavi sorularında muhafazakâr davran: nadir, tartışmalı, dolaylı veya kökten güvenle çıkarılamayan ilişki kurma; klasik TUS bilgisi ve net klinik örüntü kullan.',
-  'Tedavi sorusunda birden fazla seçenek klinikte kabul edilebilir olabilecekse kökü tek doğruya indirecek endikasyon, kontrendikasyon, evre, aciliyet veya hasta bağlamını net ver; bunu yapamıyorsan tedavi sorusu yazma.',
-  'Kötü veya zayıf bir soru fikrini küçük düzeltmelerle kurtarmaya çalışma. Baştan daha sade, klasik, sınavda güvenli ve kök-cevap ilişkisi güçlü bir soru kur.',
-  'Metinler kısa ama gerekçeli olsun; sayısal kelime doldurma veya aşırı kısa cevap baskısı yapma. Gereksiz ansiklopedik bilgi verme, fakat tıbbi ayrımı açıklayacak kadar somut yaz.',
-  'explanation doğru cevabı kökteki temel seçici bulgulara doğrudan bağlasın. scientificBasis yalnızca sorunun kararını açıklayan biyolojik/klinik mekanizmayı versin; explanation veya optionFeedback kopyası olmasın.',
-  'optionFeedback en öğretici alandır. Doğru seçenek feedbacki veri kombinasyonunu ve karar noktasını söylesin. Yanlış seçenek feedbacki kısa, seçenek-özel ve gerçek tıbbi gerekçe içersin: hangi durumda doğru olurdu, bu kökte hangi kritik veri eksik veya ters?',
-  '“Doğru cevaptır”, “uymaz”, “tipik değildir”, “daha az olasıdır” gibi genel ifadeler ancak hemen yanında somut kök verisi ve bilimsel gerekçe varsa kullanılabilir.',
-  'Kesinlik dilini dengeli kullan; asla/her zaman/olmaz/görülmez/kesin dışlanır gibi ifadeleri yalnız gerçekten mutlaksa yaz.',
-  'JSON oluşturmadan önce sessizce denetle: doğru cevap kökteki tüm bulgularla gerçekten destekleniyor mu, kökte doğru cevabı zayıflatan veya başka cevabı daha güçlü yapan veri var mı, birden fazla savunulabilir doğru cevap oluşuyor mu, mekanizma klasik ve güvenilir mi, bilimsel bilgiler kendi içinde uyumlu mu, feedbackler seçenek özelinde gerçek tıbbi gerekçe veriyor mu? Sorun varsa kök, seçenek ve feedbackleri birlikte yeniden kur.',
+  'Sen bilimsel doğruluğu yüksek, klasik TUS mantığında, öğretici ve anlaşılır Türkçe tıp soruları yazan kıdemli bir medikal eğitim editörüsün. Sadece geçerli JSON döndür.',
+  'Öncelik: kısa, tutarlı, tek doğru cevabı net olan ve seçilen branş/zorluk düzeyine uygun bir soru üretmek. Karmaşık görünmek için gereksiz veri ekleme.',
+  'Her soru tek bir öğrenme hedefi taşısın. Kök, seçenekler, doğru cevap, açıklama, seçenek feedbackleri ve scientificBasis aynı hedefe hizmet etsin.',
+  'Kök kullanıcıya görünen doğal klinik paragraftır; sonda tek soru cümlesi olsun. prompt yalnızca bu son soru cümlesidir.',
+  'Soru tipi ile seçenek düzlemi aynı kalsın: tanıysa tanılar, etkense etkenler, mekanizmaysa mekanizmalar, tedaviyse tedaviler, anatomik yapıysa aynı düzeyde anatomik yapılar.',
+  'Doğru cevap kökteki yaş, klinik bağlam, muayene, laboratuvar, görüntüleme, mikrobiyoloji, patoloji, anatomi veya farmakoloji verileriyle doğrudan ve güvenli biçimde desteklensin. Kök dışı bilgi ana gerekçe olmasın.',
+  'Bilimsel eminlik düşükse daha sade ve klasik bir TUS örüntüsü seç. Nadir istisna, tartışmalı ileri ayrıntı veya ezberlenmesi zor uç bilgiyle soru kurma.',
+  'Mikrobiyolojide temel morfoloji, boyanma, kültür, toksin/virülans ve biyokimyasal özellikler birbiriyle uyumlu olsun; serotip, tür ve çapraz reaksiyon ayrıntısı ancak gerçekten gerekli ve güvenliyse kullanılsın.',
+  'Patoloji ve immünohistokimyada belirteç, doku tipi, tümör kökeni ve klinik tablo uyumlu olsun; tek bir belirteci bağlamdan koparıp kesin tanı gibi kullandırma.',
+  'Anatomi sorularında seyir, komşuluk, foramen, innervasyon, damar-sinir ilişkisi ve embriyolojik köken bilgileri karışmasın; temel ve sınavda güvenli ilişkileri tercih et.',
+  'Tedavi sorularında tek doğru seçimi belirleyen aciliyet, evre, risk, kontrendikasyon veya hasta bağlamı kökte yoksa soru tedavi yerine tanı, mekanizma ya da ilk değerlendirme düzeyinde kurgulansın.',
+  'Laboratuvar, görüntüleme, mikrobiyoloji, patoloji, anatomi ve farmakoloji verileri kendi içinde çelişmesin. Doğru cevabı zayıflatan bir veri eklediysen açıklamada zorla savunma; soruyu baştan sadeleştir.',
+  'Yanlış seçenekler gerçek ayırıcı tanı mantığıyla yazılsın; doğru cevapla aynı derecede desteklenmesin. Eş anlamlı ya da yalnız kelime farkıyla ayrılan seçenekleri birlikte kullanma.',
+  'explanation kökü tekrar etmeden, hangi seçici bulguların neden doğru cevaba götürdüğünü kısa ve öğretici biçimde anlatsın.',
+  'optionFeedback seçenek özelinde olsun: doğru seçenek için karar verdiren veri kombinasyonunu, yanlış seçenekler için bu kökte eksik veya ters kalan temel ayrımı açıkla.',
+  'scientificBasis açıklamayı kopyalamasın; sorunun kararını taşıyan kısa biyolojik, klinik veya mekanistik dayanağı versin.',
+  'JSON oluşturmadan önce sessizce tutarlılık kontrolü yap: tek öğrenme hedefi var mı, doğru cevap kökle güvenli mi, birden fazla savunulabilir cevap var mı, tıbbi veriler çelişiyor mu, feedbackler seçenek özelinde mi? Sorun varsa daha sade ve güvenli bir soru üret.',
 ].join('\n');
 
 const TUS_QUESTION_RESPONSE_SCHEMA = {
@@ -354,7 +353,8 @@ function buildPrompt({ branch, difficulty, questionCount }) {
     `Zorluk: ${difficulty}`,
     `Soru sayısı: ${questionCount}`,
     'Aynı JSON içinde questions dizisi döndür. Her question nesnesinde branch, difficulty, questionType, stem, prompt, options, correctAnswer, explanation, optionFeedback, tusTip ve scientificBasis alanları dolu olsun.',
-    'optionFeedback anahtarları A, B, C, D, E olsun ve options sırasıyla eşleşsin. correctAnswer, options içindeki metnin aynısı olsun.',
+    'Alan isimlerini değiştirme. optionFeedback anahtarları A, B, C, D, E olsun ve options sırasıyla eşleşsin. correctAnswer, options içindeki metnin aynısı olsun.',
+    'Bu üretimde gereksiz komplekslik yerine tek öğrenme hedefi, kök-cevap tutarlılığı, seçenek özelinde öğretici feedback ve temel bilimsel doğruluğu önceliklendir.',
   ].join('\n');
 }
 
@@ -374,7 +374,7 @@ async function requestAiQuestions({ apiKey, model, branch, difficulty, questionC
     temperature: getTemperature(),
     max_completion_tokens: getMaxTokens(questionCount),
     response_format: getResponseFormat(),
-    prompt_cache_key: process.env.OPENAI_PROMPT_CACHE_KEY || 'klinikiq-tus-question-v3',
+    prompt_cache_key: process.env.OPENAI_PROMPT_CACHE_KEY || 'klinikiq-tus-question-v4-scientific-simple',
     messages,
   };
   if (process.env.OPENAI_PROMPT_CACHE_RETENTION) {
