@@ -476,15 +476,21 @@ function buildGeneratedWrongQuestionPreview(clinicalCase = {}) {
       || clinicalCase.stem
       || clinicalCase.narrativeStem
       || clinicalCase.patientIntro?.historySummary
-      || 'TUS spot soru kaydı.',
+      || 'TUS spot sorusu.',
     160,
   );
 }
 
+function isGenericGeneratedQuestionTitle(value = '') {
+  const normalized = String(value || '').trim().toLocaleLowerCase('tr');
+  return ['tanı', 'tedavi', 'mekanizma', 'evre', 'evreleme', 'etken', 'test', 'tetkik', 'yaklaşım', 'tus sorusu'].includes(normalized);
+}
+
 function buildGeneratedWrongTitle(clinicalCase = {}) {
   const branch = clinicalCase.relatedBranch || clinicalCase.branchName || 'TUS';
-  const target = compactText(clinicalCase.learningTarget || clinicalCase.clinicalFocus || clinicalCase.question || '', 86);
-  return target || `${branch} · TUS spot soru kaydı`;
+  const target = compactText(clinicalCase.learningTarget || clinicalCase.clinicalFocus || '', 86);
+  if (target && !isGenericGeneratedQuestionTitle(target)) return target;
+  return compactText(clinicalCase.title || `${branch} TUS sorusu`, 86);
 }
 
 
@@ -888,7 +894,7 @@ function App() {
       title: isGeneratedTusQuestion ? buildGeneratedWrongTitle(clinicalCase) : clinicalCase.title,
       branchId: clinicalCase.branchId,
       branchName: isGeneratedTusQuestion
-        ? `${clinicalCase.relatedBranch || clinicalCase.branchName || 'TUS'} · soru kaydı`
+        ? `${clinicalCase.relatedBranch || clinicalCase.branchName || 'TUS'}`
         : branch?.name ?? 'Klinik branş',
       sourceType: isGeneratedTusQuestion ? LEGACY_TUS_GENERATOR_WRONG_SOURCE : 'embedded-case',
       selected,

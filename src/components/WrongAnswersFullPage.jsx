@@ -19,6 +19,23 @@ function formatWrongDate(timestamp) {
   }
 }
 
+function cleanGeneratedBranchLabel(value = '') {
+  return String(value || '').replace(/\s*·\s*soru kaydı\s*$/iu, '').trim();
+}
+
+function isGenericGeneratedTitle(value = '') {
+  const normalized = String(value || '').trim().toLocaleLowerCase('tr');
+  return ['tanı', 'tedavi', 'mekanizma', 'evre', 'evreleme', 'etken', 'test', 'tetkik', 'yaklaşım', 'tus sorusu'].includes(normalized);
+}
+
+function buildWrongDisplayTitle(item = {}, isLegacyTusQuestion = false) {
+  const rawTitle = String(item.title || '').trim();
+  if (isLegacyTusQuestion && isGenericGeneratedTitle(rawTitle) && item.questionPreview) {
+    return item.questionPreview;
+  }
+  return rawTitle || item.questionPreview || 'Kayıtlı yanlış soru';
+}
+
 function WrongAnswersFullPage({ wrongAnswers = [], onBack, onOpenCase, onRemoveCase, onClearAll }) {
   const [query, setQuery] = useState('');
   const normalizedQuery = query.trim().toLocaleLowerCase('tr');
@@ -36,20 +53,19 @@ function WrongAnswersFullPage({ wrongAnswers = [], onBack, onOpenCase, onRemoveC
   }, [wrongAnswers, normalizedQuery]);
 
   return (
-    <section className="page-shell wrong-answers-full-page" aria-label="Tüm yanlış çözülenler">
+    <section className="page-shell wrong-answers-full-page" aria-label="Tüm Yanlış Çözülenler">
       <section className="wrong-full-header card-surface">
         <button type="button" className="btn btn-secondary wrong-full-back-btn" onClick={onBack}>
           <Icon name="ArrowLeft" />
           <span>Kişisel tekrara dön</span>
         </button>
         <div className="wrong-full-title-block">
-          <h1>Tüm yanlış çözülenler</h1>
-          <p>Kaçırdığın klinik olguları tek ekranda gör, ara ve yeniden çöz.</p>
+          <h1>Tüm Yanlış Çözülenler</h1>
         </div>
         <div className="wrong-full-summary" aria-label="Toplam tekrar hedefi">
           <Icon name="Target" size={18} />
           <strong>{wrongAnswers.length}</strong>
-          <span>tekrar hedefi</span>
+          <span>Tekrar Hedefi</span>
         </div>
       </section>
 
@@ -75,14 +91,14 @@ function WrongAnswersFullPage({ wrongAnswers = [], onBack, onOpenCase, onRemoveC
         {filteredWrongAnswers.length ? (
           filteredWrongAnswers.map((item) => {
             const isLegacyTusQuestion = isTusGeneratorWrongAnswer(item);
-            const displayTitle = item.title || item.questionPreview || 'Kayıtlı yanlış soru';
+            const displayTitle = buildWrongDisplayTitle(item, isLegacyTusQuestion);
             const wrongDate = formatWrongDate(item.lastWrongAt || item.createdAt);
             return (
               <article className={`wrong-full-card ${isLegacyTusQuestion ? 'is-legacy-generated' : ''}`.trim()} key={item.caseId}>
                 <div className="wrong-full-card-main">
                   <span className={`wrong-answer-branch ${isLegacyTusQuestion ? 'legacy-generated' : ''}`.trim()}>
                     {isLegacyTusQuestion ? <Icon name="Sparkles" size={13} /> : null}
-                    {item.branchName || (isLegacyTusQuestion ? 'TUS soru' : 'Klinik branş')}
+                    {cleanGeneratedBranchLabel(item.branchName) || (isLegacyTusQuestion ? 'TUS soru' : 'Klinik branş')}
                   </span>
                   <h2>{displayTitle}</h2>
                   {item.questionPreview && item.questionPreview !== displayTitle ? <p>{item.questionPreview}</p> : null}
