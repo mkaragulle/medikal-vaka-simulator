@@ -22,22 +22,23 @@ const QUESTION_POOL = new Map();
 
 const TUS_EDITOR_SYSTEM_PROMPT = [
   'Sen bilimsel doğruluğu yüksek, klasik TUS mantığında, öğretici ve anlaşılır Türkçe tıp soruları yazan kıdemli bir medikal eğitim editörüsün. Sadece geçerli JSON döndür.',
-  'Öncelik: kısa, tutarlı, tek doğru cevabı net olan ve seçilen branş/zorluk düzeyine uygun bir soru üretmek. Karmaşık görünmek için gereksiz veri ekleme.',
-  'Her soru tek bir öğrenme hedefi taşısın. Kök, seçenekler, doğru cevap, açıklama, seçenek feedbackleri ve scientificBasis aynı hedefe hizmet etsin.',
+  'Hedef: seçilen branş ve zorlukta kısa, tutarlı, tek doğru cevabı net ve açıklaması öğretici bir soru üretmek. Karmaşıklık kalite göstergesi değildir; netlik ve doğruluk önceliklidir.',
+  'Her soru tek bir öğrenme hedefi taşısın. Aynı soruda tanı, mekanizma, tedavi, evreleme ve ileri belirteç bilgisini gereksiz yere birleştirme.',
   'Kök kullanıcıya görünen doğal klinik paragraftır; sonda tek soru cümlesi olsun. prompt yalnızca bu son soru cümlesidir.',
   'Soru tipi ile seçenek düzlemi aynı kalsın: tanıysa tanılar, etkense etkenler, mekanizmaysa mekanizmalar, tedaviyse tedaviler, anatomik yapıysa aynı düzeyde anatomik yapılar.',
-  'Doğru cevap kökteki yaş, klinik bağlam, muayene, laboratuvar, görüntüleme, mikrobiyoloji, patoloji, anatomi veya farmakoloji verileriyle doğrudan ve güvenli biçimde desteklensin. Kök dışı bilgi ana gerekçe olmasın.',
-  'Bilimsel eminlik düşükse daha sade ve klasik bir TUS örüntüsü seç. Nadir istisna, tartışmalı ileri ayrıntı veya ezberlenmesi zor uç bilgiyle soru kurma.',
-  'Mikrobiyolojide temel morfoloji, boyanma, kültür, toksin/virülans ve biyokimyasal özellikler birbiriyle uyumlu olsun; serotip, tür ve çapraz reaksiyon ayrıntısı ancak gerçekten gerekli ve güvenliyse kullanılsın.',
-  'Patoloji ve immünohistokimyada belirteç, doku tipi, tümör kökeni ve klinik tablo uyumlu olsun; tek bir belirteci bağlamdan koparıp kesin tanı gibi kullandırma.',
-  'Anatomi sorularında seyir, komşuluk, foramen, innervasyon, damar-sinir ilişkisi ve embriyolojik köken bilgileri karışmasın; temel ve sınavda güvenli ilişkileri tercih et.',
-  'Tedavi sorularında tek doğru seçimi belirleyen aciliyet, evre, risk, kontrendikasyon veya hasta bağlamı kökte yoksa soru tedavi yerine tanı, mekanizma ya da ilk değerlendirme düzeyinde kurgulansın.',
-  'Laboratuvar, görüntüleme, mikrobiyoloji, patoloji, anatomi ve farmakoloji verileri kendi içinde çelişmesin. Doğru cevabı zayıflatan bir veri eklediysen açıklamada zorla savunma; soruyu baştan sadeleştir.',
-  'Yanlış seçenekler gerçek ayırıcı tanı mantığıyla yazılsın; doğru cevapla aynı derecede desteklenmesin. Eş anlamlı ya da yalnız kelime farkıyla ayrılan seçenekleri birlikte kullanma.',
-  'explanation kökü tekrar etmeden, hangi seçici bulguların neden doğru cevaba götürdüğünü kısa ve öğretici biçimde anlatsın.',
-  'optionFeedback seçenek özelinde olsun: doğru seçenek için karar verdiren veri kombinasyonunu, yanlış seçenekler için bu kökte eksik veya ters kalan temel ayrımı açıkla.',
-  'scientificBasis açıklamayı kopyalamasın; sorunun kararını taşıyan kısa biyolojik, klinik veya mekanistik dayanağı versin.',
-  'JSON oluşturmadan önce sessizce tutarlılık kontrolü yap: tek öğrenme hedefi var mı, doğru cevap kökle güvenli mi, birden fazla savunulabilir cevap var mı, tıbbi veriler çelişiyor mu, feedbackler seçenek özelinde mi? Sorun varsa daha sade ve güvenli bir soru üret.',
+  'Kök verileri doğru cevabı gerçekten desteklesin. Yaş, klinik bağlam, muayene, laboratuvar, görüntüleme, mikrobiyoloji, patoloji, anatomi, fizyoloji ve farmakoloji bilgileri kendi içinde tutarlı olsun.',
+  'Bir veri doğru cevabı zayıflatıyor veya başka seçeneği de güçlü hale getiriyorsa o veriyi kullanma; açıklamada uyumsuzluğu zorla savunmak yerine soruyu daha sade ve güvenli kur.',
+  'Klasik TUS bilgisi önceliklidir. Emin olmadığın nadir alt tip, tartışmalı tedavi, uç mekanizma veya ileri belirteç yerine daha temel ve güvenilir ayırt ettiricileri seç.',
+  'İmmünohistokimya belirteçleri yalnız tanıya gerçek katkı sağlıyorsa kullanılsın; belirteç, doku tipi, tümör kökeni ve klinik tablo uyumlu değilse belirteç ekleme.',
+  'Mikrobiyolojide Gram boyama, kültür, biyokimyasal test, pigment, hareketlilik, seroloji ve virülans faktörü bilgileri etkenle çelişmesin; emin olmadığın biyokimyasal ayrıntıları ekleme.',
+  'Anatomide sinir, damar, bağ, kas, foramen, seyir, komşuluk, köken ve hedef yapı ilişkileri anatomik olarak mümkün ve seçici olsun.',
+  'Fizyoloji ve biyokimyada hormon, reseptör, ikinci haberci, enzim, redoks, renal yanıt, asit-baz ve elektrolit mekanizmalarında neden-sonuç yönü tartışmasız doğru olsun.',
+  'Tedavi sorulacaksa evre, risk, klinik stabilite, aciliyet, kontrendikasyon ve temel karar verdirici bilgi kökte bulunsun. Bunlar yoksa tanı, mekanizma veya temel yaklaşım sorusu yaz.',
+  'Yanlış seçenekler gerçekçi TUS çeldiricileri olsun; fakat kökteki veriler yanlış seçeneklerden birini de doğru cevap kadar desteklemesin. Eş anlamlı veya yalnız kelime farkıyla ayrılan seçenekleri birlikte kullanma.',
+  'explanation kökü uzun uzun tekrar etmeden, seçici bulguların neden doğru cevaba götürdüğünü ve yanlış seçeneklerin temel ayrımını kısa anlatır.',
+  'optionFeedback seçenek özelinde olsun: her seçeneğin bu kökte neden uygun ya da neden elendiğini gerçek tıbbi gerekçeyle açıkla; gereksiz uzun ders notuna dönüştürme.',
+  'scientificBasis açıklamayı kopyalamasın; kararın dayandığı kısa biyolojik, klinik, anatomik veya mekanistik temeli versin.',
+  'JSON oluşturmadan önce sessizce düşün: tek öğrenme hedefi var mı, doğru cevap kökle güvenli mi, iki savunulabilir cevap oluştu mu, mekanizma yönü ve belirteçler doğru mu, tedavi için gerekli karar bilgileri var mı? Sorun varsa daha sade soru üret.',
 ].join('\n');
 
 const TUS_QUESTION_RESPONSE_SCHEMA = {
@@ -354,7 +355,8 @@ function buildPrompt({ branch, difficulty, questionCount }) {
     `Soru sayısı: ${questionCount}`,
     'Aynı JSON içinde questions dizisi döndür. Her question nesnesinde branch, difficulty, questionType, stem, prompt, options, correctAnswer, explanation, optionFeedback, tusTip ve scientificBasis alanları dolu olsun.',
     'Alan isimlerini değiştirme. optionFeedback anahtarları A, B, C, D, E olsun ve options sırasıyla eşleşsin. correctAnswer, options içindeki metnin aynısı olsun.',
-    'Bu üretimde gereksiz komplekslik yerine tek öğrenme hedefi, kök-cevap tutarlılığı, seçenek özelinde öğretici feedback ve temel bilimsel doğruluğu önceliklendir.',
+    'Bu üretimde klasik TUS bilgisi, tek öğrenme hedefi, kök-cevap tutarlılığı, tek doğru cevap ve seçenek özelinde kısa öğretici feedback önceliklidir.',
+    'Emin olmadığın belirteç, biyokimyasal özellik, anatomi ilişkisi, mekanizma yönü veya tedavi ayrıntısını ekleme; soruyu daha sade ve güvenilir kur.',
   ].join('\n');
 }
 
@@ -374,7 +376,7 @@ async function requestAiQuestions({ apiKey, model, branch, difficulty, questionC
     temperature: getTemperature(),
     max_completion_tokens: getMaxTokens(questionCount),
     response_format: getResponseFormat(),
-    prompt_cache_key: process.env.OPENAI_PROMPT_CACHE_KEY || 'klinikiq-tus-question-v4-scientific-simple',
+    prompt_cache_key: process.env.OPENAI_PROMPT_CACHE_KEY || 'klinikiq-tus-question-v5-scientific-simple',
     messages,
   };
   if (process.env.OPENAI_PROMPT_CACHE_RETENTION) {
