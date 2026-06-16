@@ -302,19 +302,21 @@ function getMaxTokens(questionCount) {
 
 function getTemperature() {
   const parsed = Number.parseFloat(process.env.OPENAI_TEMPERATURE);
-  if (!Number.isFinite(parsed)) return null;
+  if (!Number.isFinite(parsed)) return 0.45;
   return Math.min(1, Math.max(0.1, parsed));
 }
 
-function getTextFormat() {
+function getResponseFormat() {
   if (process.env.OPENAI_RESPONSE_FORMAT === 'json_object') {
     return { type: 'json_object' };
   }
   return {
     type: 'json_schema',
-    name: 'tus_question_batch',
-    strict: true,
-    schema: TUS_QUESTION_RESPONSE_SCHEMA,
+    json_schema: {
+      name: 'tus_question_batch',
+      strict: true,
+      schema: TUS_QUESTION_RESPONSE_SCHEMA,
+    },
   };
 }
 
@@ -347,19 +349,24 @@ function buildPrompt({ branch, difficulty, questionCount }) {
 }
 
 async function requestAiQuestions({ apiKey, model, branch, difficulty, questionCount }) {
-  const input = [
-    { role: 'system', content: TUS_EDITOR_SYSTEM_PROMPT },
-    { role: 'user', content: buildPrompt({ branch, difficulty, questionCount }) },
+  const messages = [
+    {
+      role: 'system',
+      content: TUS_EDITOR_SYSTEM_PROMPT,
+    },
+    {
+      role: 'user',
+      content: buildPrompt({ branch, difficulty, questionCount }),
+    },
   ];
   const requestPayload = {
     model,
-    input,
-    max_output_tokens: getMaxTokens(questionCount),
-    text: { format: getTextFormat() },
+    temperature: getTemperature(),
+    max_completion_tokens: getMaxTokens(questionCount),
+    response_format: getResponseFormat(),
     prompt_cache_key: process.env.OPENAI_PROMPT_CACHE_KEY || 'klinikiq-tus-question-v3',
+    messages,
   };
-  const temperature = getTemperature();
-  if (temperature !== null) requestPayload.temperature = temperature;
   if (process.env.OPENAI_PROMPT_CACHE_RETENTION) {
     requestPayload.prompt_cache_retention = process.env.OPENAI_PROMPT_CACHE_RETENTION;
   }
@@ -367,7 +374,7 @@ async function requestAiQuestions({ apiKey, model, branch, difficulty, questionC
     requestPayload.service_tier = process.env.OPENAI_SERVICE_TIER;
   }
 
-  const aiResponse = await fetch('https://api.openai.com/v1/responses', {
+  const aiResponse = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${apiKey}`,
@@ -376,16 +383,12 @@ async function requestAiQuestions({ apiKey, model, branch, difficulty, questionC
     body: JSON.stringify(requestPayload),
   });
 
-  const payload = await aiResponse.json();
   if (!aiResponse.ok) {
-    const message = payload?.error?.message || payload?.error || `OpenAI request failed: ${aiResponse.status}`;
-    throw new Error(`OpenAI request failed: ${aiResponse.status} ${message}`);
+    throw new Error(`OpenAI request failed: ${aiResponse.status}`);
   }
 
-  return payload?.output_text
-    || payload?.output?.flatMap((item) => item?.content || [])
-      .find((content) => content?.type === 'output_text')?.text
-    || payload?.choices?.[0]?.message?.content;
+  const payload = await aiResponse.json();
+  return payload?.choices?.[0]?.message?.content;
 }
 
 export default async function handler(req, res) {
