@@ -6,6 +6,10 @@ function compactText(value = '') {
   return String(value || '').replace(/\s+/g, ' ').trim();
 }
 
+function stripOptionPrefix(value = '') {
+  return compactText(value).replace(/^[A-E]\s*[)\].:;\-–—]\s*/iu, '').trim();
+}
+
 function normalizeForCompare(value = '') {
   return compactText(value)
     .toLocaleLowerCase('tr')
@@ -51,12 +55,13 @@ function normalizeGeneratedTusQuestion(payload) {
   const branch = compactText(source?.branch) || 'TUS';
   const difficulty = normalizeDifficulty(source?.difficulty);
   const options = Array.isArray(source?.options)
-    ? source.options.map((option) => compactText(typeof option === 'string' ? option : option?.text)).filter(Boolean)
+    ? source.options.map((option) => stripOptionPrefix(typeof option === 'string' ? option : option?.text)).filter(Boolean)
     : [];
   const uniqueOptions = Array.from(new Set(options));
   const rawCorrect = compactText(source?.correctAnswer || source?.correct || source?.answer);
   const letterMatch = rawCorrect.match(/^[A-E]$/iu);
-  const correctAnswer = letterMatch ? uniqueOptions[rawCorrect.toLocaleUpperCase('tr').charCodeAt(0) - 65] : rawCorrect;
+  const prefixedLetterMatch = rawCorrect.match(/^([A-E])\s*[)\].:;\-–—]\s*(.+)$/iu);
+  const correctAnswer = letterMatch ? uniqueOptions[rawCorrect.toLocaleUpperCase('tr').charCodeAt(0) - 65] : stripOptionPrefix(prefixedLetterMatch?.[2] || rawCorrect);
   const exactCorrect = uniqueOptions.find((option) => option === correctAnswer)
     || uniqueOptions.find((option) => option.toLocaleLowerCase('tr') === correctAnswer.toLocaleLowerCase('tr'));
   const questionStem = compactText(source?.prompt || source?.questionText || source?.questionStem);
