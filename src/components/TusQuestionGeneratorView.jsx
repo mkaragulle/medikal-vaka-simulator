@@ -493,7 +493,7 @@ function TusTopicKeywordInput({ value = '', onChange, disabled = false }) {
   }, [onChange]);
 
   return (
-    <label className="tus-branch-filter-control tus-topic-keyword-control">
+    <label className="tus-topic-keyword-control">
       <span className="tus-compact-dropdown-label">KONU ODAĞI</span>
       <span className={`tus-topic-keyword-shell ${disabled ? 'disabled' : ''}`.trim()}>
         <span className="tus-topic-keyword-icon" aria-hidden="true">
