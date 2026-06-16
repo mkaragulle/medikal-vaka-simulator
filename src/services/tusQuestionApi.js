@@ -1,9 +1,14 @@
 export const TUS_GENERATION_ERROR_MESSAGE = 'Soru üretimi şu anda tamamlanamadı. Lütfen tekrar deneyin.';
 
 const OPTION_LETTERS = ['A', 'B', 'C', 'D', 'E'];
+const TOPIC_KEYWORD_MAX_LENGTH = 140;
 
 function compactText(value = '') {
   return String(value || '').replace(/\s+/g, ' ').trim();
+}
+
+function sanitizeTopicKeywords(value = '') {
+  return compactText(value).slice(0, TOPIC_KEYWORD_MAX_LENGTH);
 }
 
 function normalizeForCompare(value = '') {
@@ -140,11 +145,12 @@ function normalizeGeneratedTusQuestion(payload) {
   };
 }
 
-export async function generateTusQuestion({ branch, difficulty, signal } = {}) {
+export async function generateTusQuestion({ branch, difficulty, topicKeywords, signal } = {}) {
+  const sanitizedTopicKeywords = sanitizeTopicKeywords(topicKeywords);
   const response = await fetch('/api/generate-tus-question', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ branch, difficulty }),
+    body: JSON.stringify({ branch, difficulty, ...(sanitizedTopicKeywords ? { topicKeywords: sanitizedTopicKeywords } : {}) }),
     signal,
   });
 

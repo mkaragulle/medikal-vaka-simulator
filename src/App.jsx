@@ -1272,7 +1272,7 @@ function App() {
     scrollToTopSmart({ smooth: false });
   }, [closePearlStudy]);
 
-  const handleGenerateTusQuestion = useCallback(async () => {
+  const handleGenerateTusQuestion = useCallback(async (topicKeywords = '') => {
     if (tusPracticeState.loading) return;
 
     clearTusQuestionTimer();
@@ -1293,6 +1293,7 @@ function App() {
       const question = await generateTusQuestion({
         branch: tusBranchFilter,
         difficulty: tusDifficulty,
+        topicKeywords,
         signal: controller.signal,
       });
       if (latestTusQuestionRequestId.current !== requestId) return;
