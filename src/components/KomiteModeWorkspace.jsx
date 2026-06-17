@@ -342,6 +342,62 @@ function formatMechanismSteps(flow = []) {
   return flow.map(sentenceFromFlowStep).filter(Boolean);
 }
 
+const LESSON_SECTION_ACCENTS = [
+  { accent: '#14b8a6', soft: 'rgba(20, 184, 166, 0.12)' },
+  { accent: '#38bdf8', soft: 'rgba(56, 189, 248, 0.12)' },
+  { accent: '#a78bfa', soft: 'rgba(167, 139, 250, 0.13)' },
+  { accent: '#f59e0b', soft: 'rgba(245, 158, 11, 0.12)' },
+  { accent: '#22c55e', soft: 'rgba(34, 197, 94, 0.12)' },
+  { accent: '#f472b6', soft: 'rgba(244, 114, 182, 0.12)' },
+];
+
+function lessonAccentStyle(index = 0) {
+  const accent = LESSON_SECTION_ACCENTS[index % LESSON_SECTION_ACCENTS.length];
+  return {
+    '--komite-section-accent': accent.accent,
+    '--komite-section-accent-soft': accent.soft,
+  };
+}
+
+function displayList(value = [], maxItems = 8) {
+  const items = Array.isArray(value) ? value : value ? [value] : [];
+  const seen = new Set();
+  const output = [];
+  items.forEach((item) => {
+    const text = sanitizeTeachingTextForDisplay(typeof item === 'string' ? item : item?.text || item?.content || item?.summary || Object.values(item || {}).filter(Boolean).join(' '));
+    const key = text.toLocaleLowerCase('tr').replace(/[^\p{L}\p{N}\s]/gu, '').replace(/\s+/g, ' ').trim();
+    if (!text || text.split(/\s+/u).length < 3 || seen.has(key)) return;
+    seen.add(key);
+    output.push(text);
+  });
+  return output.slice(0, maxItems);
+}
+
+function keyBoxTone(label = '') {
+  const clean = String(label || '').toLocaleLowerCase('tr');
+  if (/güvenlik|acil|kontrendike|risk|hayati/iu.test(clean)) return 'safety';
+  if (/hata|dikkat|karış|tuzak|yanlış/iu.test(clean)) return 'warning';
+  if (/sınav|ayırt|ipucu|puan/iu.test(clean)) return 'exam';
+  return 'info';
+}
+
+function SectionInsightBlock({ title, items = [], icon = 'Lightbulb', tone = 'info', ordered = false }) {
+  const cleanItems = displayList(items, 7);
+  if (!cleanItems.length) return null;
+  const ListTag = ordered ? 'ol' : 'ul';
+  return (
+    <div className={`komite-learning-block ${tone}`.trim()}>
+      <div className="komite-learning-block-head">
+        <Icon name={icon} size={17} />
+        <strong>{title}</strong>
+      </div>
+      <ListTag>
+        {cleanItems.map((item, index) => <li key={`${title}-${item}-${index}`}><InlineLessonText text={item} maxTerms={3} /></li>)}
+      </ListTag>
+    </div>
+  );
+}
+
 function improveLessonIntro(text = '', title = '') {
   const clean = String(text || '')
     .replace(/yüklenen komite materyallerindeki/giu, 'bu çalışma alanındaki')
@@ -1338,11 +1394,21 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
   const sections = Array.isArray(lesson?.sections) ? lesson.sections : [];
   const sectionAnchors = sections
     .map((section, index) => ({ id: createLessonAnchorId(section.heading, index), title: section.heading || `Bölüm ${index + 1}` }));
+  const sectionNavigationItems = sections.map((section, index) => {
+    const subItems = [
+      displayList([...(section.algorithmSteps || []), ...(section.mechanismFlow || [])], 1).length ? 'Akış' : '',
+      displayList(section.tableInsights, 1).length ? 'Tablo' : '',
+      displayList(section.comparisonPoints, 1).length ? 'Ayrım' : '',
+      displayList(section.visualNotes, 1).length ? 'Görsel' : '',
+      displayList(section.miniReview, 1).length ? 'Mini tekrar' : '',
+    ].filter(Boolean);
+    return { id: sectionAnchors[index]?.id, title: section.heading || `Bölüm ${index + 1}`, subItems, sectionIndex: index };
+  });
   const navigationItems = [
     { id: 'komite-objectives', title: 'Öğrenme hedefleri' },
     ...(lesson?.bigPicture || lesson?.overview ? [{ id: 'komite-big-picture', title: 'Büyük resim' }] : []),
-    ...sectionAnchors.filter((item) => item.title && !/^(öğrenme hedefleri|büyük resim|can alıcı noktalar|mutlaka hatırla)$/iu.test(item.title)),
-    { id: 'komite-high-yield', title: 'En yüksek verim' },
+    ...sectionNavigationItems.filter((item) => item.title && !/^(öğrenme hedefleri|büyük resim|can alıcı noktalar|mutlaka hatırla)$/iu.test(item.title)),
+    { id: 'komite-high-yield', title: 'Final pekiştirme' },
   ].filter((item) => item.id && item.title);
   const [activeAnchorId, setActiveAnchorId] = useState(navigationItems[0]?.id || '');
 
@@ -1373,8 +1439,14 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
   const concepts = Array.isArray(lesson.mainConcepts)
     ? lesson.mainConcepts.filter((item) => !/materyaldeki ilişkili kavram|slayt|sayfa|dosya|pptx/iu.test(String(item)))
     : [];
-  const highYield = lesson.highYieldPoints || lesson.highYieldSummary || [];
-  const mustKnow = lesson.mustKnow || lesson.mustRemember || [];
+  const highYield = displayList(lesson.highYieldPoints || lesson.highYieldSummary, 12);
+  const mustKnow = displayList(lesson.mustKnow || lesson.mustRemember, 10);
+  const finalReview = displayList(lesson.finalReview, 10);
+  const commonReview = displayList([
+    ...(Array.isArray(lesson.commonConfusions) ? lesson.commonConfusions : []),
+    ...sections.map((section) => section.commonTrap),
+  ], 8);
+  const examScenarios = displayList(sections.map((section) => section.examAngle || section.clinicalConnection), 8);
   const materialCoverage = Array.isArray(lesson.materialCoverage) ? lesson.materialCoverage : [];
   const coverageSummary = sanitizeTeachingTextForDisplay(lesson.coverageSummary || '');
 
@@ -1391,7 +1463,19 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
         <aside className="komite-lesson-sidebar" aria-label="Ders navigasyonu">
           <div className="komite-sidebar-card">
             <strong>Hızlı erişim</strong>
-            {navigationItems.slice(0, 12).map((item) => <a className={activeAnchorId === item.id ? 'active' : ''} href={`#${item.id}`} key={item.id}>{item.title}</a>)}
+            {navigationItems.slice(0, 14).map((item) => (
+              <div className="komite-sidebar-nav-item" key={item.id} style={Number.isFinite(item.sectionIndex) ? lessonAccentStyle(item.sectionIndex) : undefined}>
+                <a className={activeAnchorId === item.id ? 'active' : ''} href={`#${item.id}`}>
+                  {Number.isFinite(item.sectionIndex) ? <span className="komite-sidebar-section-dot" aria-hidden="true" /> : null}
+                  <span>{item.title}</span>
+                </a>
+                {Array.isArray(item.subItems) && item.subItems.length ? (
+                  <div className="komite-sidebar-subitems" aria-hidden="true">
+                    {item.subItems.slice(0, 5).map((subItem) => <span key={`${item.id}-${subItem}`}>{subItem}</span>)}
+                  </div>
+                ) : null}
+              </div>
+            ))}
           </div>
         </aside>
 
@@ -1428,8 +1512,16 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
 
           {sections.map((section, index) => {
             const teachingText = sanitizeTeachingTextForDisplay(section.teachingText || section.content);
+            const flowSteps = formatMechanismSteps([
+              ...(Array.isArray(section.algorithmSteps) ? section.algorithmSteps : []),
+              ...(Array.isArray(section.mechanismFlow) ? section.mechanismFlow : []),
+            ]);
+            const tableInsights = displayList(section.tableInsights, 5);
+            const comparisonPoints = displayList(section.comparisonPoints, 5);
+            const visualNotes = displayList(section.visualNotes, 5);
+            const miniReview = displayList(section.miniReview, 5);
             return (
-              <article id={sectionAnchors[index]?.id} className="komite-lesson-section komite-lesson-section-pro" key={`${section.heading}-${index}`}>
+              <article id={sectionAnchors[index]?.id} className="komite-lesson-section komite-lesson-section-pro" key={`${section.heading}-${index}`} style={lessonAccentStyle(index)}>
                 <div className="komite-section-index">{String(index + 1).padStart(2, '0')}</div>
                 <div className="komite-section-body">
                   <h3>{section.heading}</h3>
@@ -1442,19 +1534,27 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
                   {Array.isArray(section.keyBoxes) && section.keyBoxes.length ? (
                     <div className="komite-key-box-grid">
                       {section.keyBoxes.slice(0, 4).map((box, boxIndex) => (
-                        <div className="komite-key-box" key={`${box.label || 'not'}-${boxIndex}`}>
+                        <div className={`komite-key-box ${keyBoxTone(box.label)}`} key={`${box.label || 'not'}-${boxIndex}`}>
                           <strong>{box.label || 'Akılda tut'}</strong>
                           <p><GlossaryText text={sanitizeTeachingTextForDisplay(box.text)} enabled revealMode="postAnswer" maxTerms={3} /></p>
                         </div>
                       ))}
                     </div>
                   ) : null}
-                  {(formatMechanismSteps(section.mechanismFlow).length || section.examAngle || section.commonTrap || section.clinicalConnection || section.examConnection) ? (
+                  {(tableInsights.length || comparisonPoints.length || visualNotes.length || miniReview.length) ? (
+                    <div className="komite-learning-block-grid">
+                      <SectionInsightBlock title="Tablonun ana mesajı" items={tableInsights} icon="MinorGrid" tone="table" />
+                      <SectionInsightBlock title="Karşılaştırmalı ayrım" items={comparisonPoints} icon="Target" tone="compare" />
+                      <SectionInsightBlock title="Görsel / şema yorumu" items={visualNotes} icon="Eye" tone="visual" />
+                      <SectionInsightBlock title="Bölüm sonu mini tekrar" items={miniReview} icon="CheckCircle" tone="review" />
+                    </div>
+                  ) : null}
+                  {(flowSteps.length || section.examAngle || section.commonTrap || section.clinicalConnection || section.examConnection) ? (
                     <div className="komite-note-lines">
-                      {formatMechanismSteps(section.mechanismFlow).length ? (
+                      {flowSteps.length ? (
                         <div className="komite-note-line komite-flow-line">
-                          <strong>Süreç mantığı</strong>
-                          <ol>{formatMechanismSteps(section.mechanismFlow).map((step, stepIndex) => <li key={`${step}-${stepIndex}`}><GlossaryText text={step} enabled revealMode="postAnswer" maxTerms={3} /></li>)}</ol>
+                          <strong>Akış / algoritma</strong>
+                          <ol>{flowSteps.map((step, stepIndex) => <li key={`${step}-${stepIndex}`}><GlossaryText text={step} enabled revealMode="postAnswer" maxTerms={3} /></li>)}</ol>
                         </div>
                       ) : null}
                       {(section.examAngle || section.clinicalConnection) ? <div className="komite-note-line"><strong>Sınavda nasıl sorulur?</strong><p><GlossaryText text={sanitizeTeachingTextForDisplay(section.examAngle || section.clinicalConnection)} enabled revealMode="postAnswer" maxTerms={3} /></p></div> : null}
@@ -1468,13 +1568,31 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
 
           <div id="komite-high-yield" className="komite-summary-lines komite-summary-grid-pro">
             <div>
-              <strong>Can alıcı noktalar</strong>
+              <strong>Yüksek verimli tekrar</strong>
               <ul>{highYield.map((item, index) => <li key={`${item}-${index}`}><InlineLessonText text={sanitizeTeachingTextForDisplay(item)} /></li>)}</ul>
             </div>
             <div>
               <strong>Mutlaka hatırla</strong>
               <ul>{mustKnow.map((item, index) => <li key={`${item}-${index}`}><InlineLessonText text={sanitizeTeachingTextForDisplay(item)} /></li>)}</ul>
             </div>
+            {commonReview.length ? (
+              <div>
+                <strong>Sık karışanlar</strong>
+                <ul>{commonReview.map((item, index) => <li key={`${item}-${index}`}><InlineLessonText text={item} /></li>)}</ul>
+              </div>
+            ) : null}
+            {examScenarios.length ? (
+              <div>
+                <strong>Sınavda nasıl sorulur?</strong>
+                <ul>{examScenarios.map((item, index) => <li key={`${item}-${index}`}><InlineLessonText text={item} /></li>)}</ul>
+              </div>
+            ) : null}
+            {finalReview.length ? (
+              <div>
+                <strong>Son kontrol</strong>
+                <ul>{finalReview.map((item, index) => <li key={`${item}-${index}`}><InlineLessonText text={item} /></li>)}</ul>
+              </div>
+            ) : null}
           </div>
           {(coverageSummary || materialCoverage.length) ? (
             <section className="komite-coverage-summary" aria-label="Materyal kapsam özeti">
@@ -1485,7 +1603,7 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
                   {materialCoverage.map((item, index) => (
                     <div className="komite-coverage-item" key={`${item.fileName || 'materyal'}-${index}`}>
                       <span>{item.fileName || `Materyal ${index + 1}`}</span>
-                      <em>{item.detectedMainTopic || 'Ana konu belirtilmedi'}</em>
+                      <em>{item.detectedMainTopic || 'Komite materyali'}</em>
                       <small>{item.representedIn ? `${item.representedIn}: ` : ''}{item.coverageNote || 'Bu materyal ders anlatımında temsil edildi.'}</small>
                     </div>
                   ))}
