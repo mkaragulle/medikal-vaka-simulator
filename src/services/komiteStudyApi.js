@@ -34,38 +34,48 @@ function normalizeFigure(figure = {}, index = 0) {
 
 function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
   const sections = Array.isArray(rawLesson.sections) ? rawLesson.sections : [];
+  const normalizedSections = sections.map((section, index) => ({
+    id: section.id || `komite-section-${index + 1}`,
+    heading: compactText(section.heading || section.title) || `Bölüm ${index + 1}`,
+    level: Number(section.level) || 2,
+    teachingText: compactText(section.teachingText || section.content),
+    content: compactText(section.content || section.teachingText),
+    mechanismFlow: Array.isArray(section.mechanismFlow) ? section.mechanismFlow.map(compactText).filter(Boolean) : [],
+    clinicalConnection: compactText(section.clinicalConnection),
+    examAngle: compactText(section.examAngle || section.examConnection),
+    commonTrap: compactText(section.commonTrap),
+    keyBoxes: Array.isArray(section.keyBoxes) ? section.keyBoxes : [],
+    sourceRefs: Array.isArray(section.sourceRefs) ? section.sourceRefs.map(compactText).filter(Boolean) : [],
+  })).filter((section) => section.heading && section.teachingText);
+  const derivedHighYield = [
+    ...(Array.isArray(rawLesson.highYieldPoints) ? rawLesson.highYieldPoints : []),
+    ...(Array.isArray(rawLesson.mustKnow) ? rawLesson.mustKnow : []),
+    ...(Array.isArray(rawLesson.finalReview) ? rawLesson.finalReview : []),
+    ...normalizedSections.flatMap((section) => [section.examAngle, section.commonTrap, section.clinicalConnection]),
+  ].map(compactText).filter(Boolean);
+  const derivedObjectives = Array.isArray(rawLesson.learningObjectives) && rawLesson.learningObjectives.length
+    ? rawLesson.learningObjectives.map(compactText).filter(Boolean)
+    : normalizedSections.slice(0, 4).map((section) => `${section.heading} başlığının mekanizma ve sınav bağlantısını açıklayabilmek.`);
   const lesson = {
     title: compactText(rawLesson.title || rawLesson.inferredTitle) || 'Komite ders anlatımı',
     inferredTitle: compactText(rawLesson.inferredTitle || rawLesson.title) || 'Komite ders anlatımı',
     shortIntro: compactText(rawLesson.shortIntro || rawLesson.summary || rawLesson.overview),
     overview: compactText(rawLesson.overview || rawLesson.shortIntro),
     bigPicture: compactText(rawLesson.bigPicture || rawLesson.overview),
-    learningObjectives: Array.isArray(rawLesson.learningObjectives) ? rawLesson.learningObjectives.map(compactText).filter(Boolean) : [],
+    learningObjectives: derivedObjectives,
     mainConcepts: Array.isArray(rawLesson.mainConcepts) ? rawLesson.mainConcepts.map(compactText).filter(Boolean) : [],
     clinicalExamRelevance: compactText(rawLesson.clinicalExamRelevance),
     commonConfusions: Array.isArray(rawLesson.commonConfusions) ? rawLesson.commonConfusions.map(compactText).filter(Boolean) : [],
-    sections: sections.map((section, index) => ({
-      id: section.id || `komite-section-${index + 1}`,
-      heading: compactText(section.heading || section.title) || `Bölüm ${index + 1}`,
-      level: Number(section.level) || 2,
-      teachingText: compactText(section.teachingText || section.content),
-      content: compactText(section.content || section.teachingText),
-      mechanismFlow: Array.isArray(section.mechanismFlow) ? section.mechanismFlow.map(compactText).filter(Boolean) : [],
-      clinicalConnection: compactText(section.clinicalConnection),
-      examAngle: compactText(section.examAngle || section.examConnection),
-      commonTrap: compactText(section.commonTrap),
-      keyBoxes: Array.isArray(section.keyBoxes) ? section.keyBoxes : [],
-      sourceRefs: Array.isArray(section.sourceRefs) ? section.sourceRefs.map(compactText).filter(Boolean) : [],
-    })).filter((section) => section.heading && section.teachingText),
-    highYieldPoints: Array.isArray(rawLesson.highYieldPoints) ? rawLesson.highYieldPoints.map(compactText).filter(Boolean) : [],
-    mustKnow: Array.isArray(rawLesson.mustKnow) ? rawLesson.mustKnow.map(compactText).filter(Boolean) : [],
-    finalReview: Array.isArray(rawLesson.finalReview) ? rawLesson.finalReview.map(compactText).filter(Boolean) : [],
+    sections: normalizedSections,
+    highYieldPoints: derivedHighYield.slice(0, 9),
+    mustKnow: (Array.isArray(rawLesson.mustKnow) ? rawLesson.mustKnow.map(compactText).filter(Boolean) : derivedHighYield).slice(0, 8),
+    finalReview: (Array.isArray(rawLesson.finalReview) ? rawLesson.finalReview.map(compactText).filter(Boolean) : derivedHighYield).slice(0, 8),
     figureExplanations: Array.isArray(rawLesson.figureExplanations) ? rawLesson.figureExplanations.map(normalizeFigure) : [],
     sourceFingerprint,
     generatedAt: Date.now(),
   };
 
-  if (!lesson.sections.length || !lesson.learningObjectives.length || !lesson.highYieldPoints.length) {
+  if (!lesson.sections.length || !lesson.learningObjectives.length) {
     throw new Error('Invalid komite lesson payload.');
   }
   return lesson;

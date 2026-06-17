@@ -2,9 +2,9 @@ const ERROR_MESSAGE = 'Komite çalışma içeriği şu anda oluşturulamadı. L�
 const DEFAULT_MODEL = 'gpt-5.4-nano';
 
 const KIND_LIMITS = {
-  lesson: { maxSourceChars: 56_000, maxTokens: 7600 },
-  questions: { maxSourceChars: 42_000, maxTokens: 6800 },
-  cards: { maxSourceChars: 42_000, maxTokens: 5600 },
+  lesson: { maxSourceChars: 34_000, maxTokens: 6200 },
+  questions: { maxSourceChars: 34_000, maxTokens: 6200 },
+  cards: { maxSourceChars: 30_000, maxTokens: 5200 },
 };
 
 const OPTION_LETTERS = ['A', 'B', 'C', 'D', 'E'];
@@ -80,14 +80,14 @@ const LESSON_RESPONSE_SCHEMA = {
         shortIntro: { type: 'string' },
         overview: { type: 'string' },
         bigPicture: { type: 'string' },
-        learningObjectives: { type: 'array', minItems: 4, maxItems: 8, items: { type: 'string' } },
-        mainConcepts: { type: 'array', minItems: 3, maxItems: 10, items: { type: 'string' } },
+        learningObjectives: { type: 'array', minItems: 3, maxItems: 6, items: { type: 'string' } },
+        mainConcepts: { type: 'array', minItems: 3, maxItems: 8, items: { type: 'string' } },
         clinicalExamRelevance: { type: 'string' },
-        commonConfusions: { type: 'array', minItems: 2, maxItems: 8, items: { type: 'string' } },
+        commonConfusions: { type: 'array', minItems: 1, maxItems: 6, items: { type: 'string' } },
         sections: {
           type: 'array',
-          minItems: 4,
-          maxItems: 9,
+          minItems: 3,
+          maxItems: 6,
           items: {
             type: 'object',
             additionalProperties: false,
@@ -106,14 +106,14 @@ const LESSON_RESPONSE_SCHEMA = {
               heading: { type: 'string' },
               level: { type: 'integer' },
               teachingText: { type: 'string' },
-              mechanismFlow: { type: 'array', minItems: 0, maxItems: 6, items: { type: 'string' } },
+              mechanismFlow: { type: 'array', minItems: 0, maxItems: 4, items: { type: 'string' } },
               clinicalConnection: { type: 'string' },
               examAngle: { type: 'string' },
               commonTrap: { type: 'string' },
               keyBoxes: {
                 type: 'array',
                 minItems: 0,
-                maxItems: 4,
+                maxItems: 2,
                 items: {
                   type: 'object',
                   additionalProperties: false,
@@ -124,14 +124,14 @@ const LESSON_RESPONSE_SCHEMA = {
                   },
                 },
               },
-              sourceRefs: { type: 'array', minItems: 0, maxItems: 5, items: { type: 'string' } },
+              sourceRefs: { type: 'array', minItems: 0, maxItems: 3, items: { type: 'string' } },
             },
           },
         },
-        highYieldPoints: { type: 'array', minItems: 6, maxItems: 12, items: { type: 'string' } },
-        mustKnow: { type: 'array', minItems: 5, maxItems: 10, items: { type: 'string' } },
-        finalReview: { type: 'array', minItems: 5, maxItems: 10, items: { type: 'string' } },
-        figureExplanations: { type: 'array', minItems: 0, maxItems: 8, items: figureSchema },
+        highYieldPoints: { type: 'array', minItems: 5, maxItems: 9, items: { type: 'string' } },
+        mustKnow: { type: 'array', minItems: 4, maxItems: 8, items: { type: 'string' } },
+        finalReview: { type: 'array', minItems: 4, maxItems: 8, items: { type: 'string' } },
+        figureExplanations: { type: 'array', minItems: 0, maxItems: 5, items: figureSchema },
       },
     },
   },
@@ -381,30 +381,45 @@ function buildMaterialContext({ kind, metadata = {}, materialPacket = {} }) {
   const chunks = [];
 
   highPriorityFiles.forEach((file, fileIndex) => {
-    splitSourceIntoChunks(file.cleanedExtractedText || file.text || '', 2200).forEach((text, chunkIndex) => {
+    splitSourceIntoChunks(file.cleanedExtractedText || file.text || '', kind === 'lesson' ? 1800 : 2200).forEach((text, chunkIndex) => {
       chunks.push({
         source: `${file.fileName || 'Ek ders notu'} · ${chunkIndex + 1}`,
         text,
         score: 100 - fileIndex,
         priority: 'high',
+        fileIndex,
       });
     });
   });
 
   regularFiles.forEach((file, fileIndex) => {
-    splitSourceIntoChunks(file.cleanedExtractedText || file.text || '', 2600).forEach((text, chunkIndex) => {
+    splitSourceIntoChunks(file.cleanedExtractedText || file.text || '', kind === 'lesson' ? 1900 : 2400).forEach((text, chunkIndex) => {
       chunks.push({
         source: `${file.fileName || `Materyal ${fileIndex + 1}`} · bölüm ${chunkIndex + 1}`,
         text,
         score: scoreChunk(text, keywordSet) + Math.max(0, 2 - chunkIndex),
         priority: 'normal',
+        fileIndex,
+        chunkIndex,
       });
     });
   });
 
+  const normalChunks = chunks.filter((chunk) => chunk.priority !== 'high');
+  const firstUsefulByFile = [];
+  regularFiles.forEach((_, fileIndex) => {
+    const best = normalChunks
+      .filter((chunk) => chunk.fileIndex === fileIndex)
+      .sort((a, b) => b.score - a.score)[0];
+    if (best) firstUsefulByFile.push(best);
+  });
+  const firstKeys = new Set(firstUsefulByFile.map((chunk) => `${chunk.fileIndex}:${chunk.chunkIndex}`));
   const selected = [
     ...chunks.filter((chunk) => chunk.priority === 'high'),
-    ...chunks.filter((chunk) => chunk.priority !== 'high').sort((a, b) => b.score - a.score),
+    ...firstUsefulByFile,
+    ...normalChunks
+      .filter((chunk) => !firstKeys.has(`${chunk.fileIndex}:${chunk.chunkIndex}`))
+      .sort((a, b) => b.score - a.score),
   ];
 
   let usedChars = 0;
@@ -466,6 +481,8 @@ function buildLessonPrompt({ metadata, context }) {
     '- Hoca/materyal vurguları varsa görünür biçimde işlenmeli.',
     '- Şekil, tablo, algoritma veya akış ipuçları varsa güvenli yorumla; piksel içeriğini uydurma.',
     '- Bölümler uzun düz özet olmasın; mekanizma, klinik bağlantı, ayırıcı bilgi ve sık hata ayrı düşünülmeli.',
+    '- 3-6 ana bölüm yaz. Her bölüm yoğun ama kompakt olsun; gereksiz kaynak tekrarı, dosya adı tekrarı ve uzun ansiklopedik paragraflardan kaçın.',
+    '- Çok PDF yüklendiyse tüm dosyaları tek tek raporlamaya çalışma; ortak konu omurgasını kur, en sınavlık ve öğretici bilgiyi seç.',
     '',
     'Meta bilgi:',
     buildMetadataBlock(metadata),
