@@ -10,6 +10,40 @@ function compactText(value = '') {
   return String(value || '').replace(/\s+/g, ' ').trim();
 }
 
+function compareText(value = '') {
+  return compactText(value).toLocaleLowerCase('tr').replace(/[^\p{L}\p{N}\s]/gu, '').replace(/\s+/g, ' ').trim();
+}
+
+function uniqueTexts(items = [], maxItems = 12, exclude = new Set()) {
+  const seen = new Set(exclude);
+  const output = [];
+  (Array.isArray(items) ? items : []).forEach((item) => {
+    const text = compactText(item);
+    const key = compareText(text);
+    if (!text || !key || seen.has(key)) return;
+    seen.add(key);
+    output.push(text);
+  });
+  return output.slice(0, maxItems);
+}
+
+function cleanTopic(value = '', fallback = '') {
+  const text = compactText(value);
+  if (text && !/ana konu|belirtilmedi|net çıkarılamadı|unknown topic/iu.test(text)) return text;
+  const fromFile = compactText(fallback).replace(/\.[a-z0-9]+$/iu, '').replace(/[_-]+/g, ' ');
+  return fromFile || 'Komite materyali';
+}
+
+function normalizeKeyBoxes(boxes = []) {
+  return (Array.isArray(boxes) ? boxes : [])
+    .map((box) => ({
+      label: compactText(box?.label || box?.title || 'Komite için kritik'),
+      text: compactText(box?.text || box?.content || box?.body || box?.description),
+    }))
+    .filter((box) => box.text.length >= 12)
+    .slice(0, 2);
+}
+
 function normalizeDifficulty(value = 'medium') {
   const clean = compactText(value).toLocaleLowerCase('tr');
   if (['hard', 'zor'].includes(clean)) return 'hard';
@@ -44,7 +78,7 @@ function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
       : [];
   const normalizedSections = sections.map((section, index) => ({
     id: section.id || `komite-section-${index + 1}`,
-    heading: compactText(section.heading || section.title) || `Bölüm ${index + 1}`,
+    heading: cleanTopic(section.heading || section.title, section.sourceRefs?.[0] || `Bölüm ${index + 1}`),
     level: Number(section.level) || 2,
     teachingText: compactText(section.teachingText || section.content || section.coreExplanation || section.bigPicture || section.summary),
     content: compactText(section.content || section.teachingText || section.coreExplanation || section.bigPicture || section.summary),
@@ -52,7 +86,7 @@ function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
     clinicalConnection: compactText(section.clinicalConnection || section.clinicalOrPracticalConnection),
     examAngle: compactText(section.examAngle || section.examConnection || section.examFocus),
     commonTrap: compactText(section.commonTrap || section.commonConfusions),
-    keyBoxes: Array.isArray(section.keyBoxes) ? section.keyBoxes : [],
+    keyBoxes: normalizeKeyBoxes(section.keyBoxes),
     sourceRefs: Array.isArray(section.sourceRefs || section.relatedSourceFiles)
       ? (section.sourceRefs || section.relatedSourceFiles).map(compactText).filter(Boolean)
       : [],
@@ -87,16 +121,21 @@ function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
       : [];
   const derivedHighYield = [
     ...(Array.isArray(rawLesson.highYieldPoints) ? rawLesson.highYieldPoints : []),
-    ...(Array.isArray(rawLesson.mustKnow) ? rawLesson.mustKnow : []),
-    ...(Array.isArray(rawLesson.finalReview) ? rawLesson.finalReview : []),
     ...lessonSections.flatMap((section) => [section.examAngle, section.commonTrap, section.clinicalConnection]),
   ].map(compactText).filter(Boolean);
+  const highYieldPoints = uniqueTexts(derivedHighYield, 9);
+  const highYieldKeys = new Set(highYieldPoints.map(compareText));
+  const mustKnow = uniqueTexts(Array.isArray(rawLesson.mustKnow) ? rawLesson.mustKnow : [], 8, highYieldKeys);
+  const fallbackMustKnow = uniqueTexts(lessonSections.flatMap((section) => [section.clinicalConnection, section.examAngle, section.commonTrap]), 6, highYieldKeys);
+  const outputMustKnow = mustKnow.length ? mustKnow : fallbackMustKnow;
+  const usedAfterMustKnow = new Set([...highYieldKeys, ...outputMustKnow.map(compareText)]);
+  const finalReview = uniqueTexts(Array.isArray(rawLesson.finalReview) ? rawLesson.finalReview : [], 8, usedAfterMustKnow);
   const derivedObjectives = Array.isArray(rawLesson.learningObjectives) && rawLesson.learningObjectives.length
     ? rawLesson.learningObjectives.map(compactText).filter(Boolean)
     : lessonSections.slice(0, 4).map((section) => `${section.heading} başlığının mekanizma ve sınav bağlantısını açıklayabilmek.`);
   const lesson = {
-    title: compactText(rawLesson.title || rawLesson.inferredTitle) || 'Komite ders anlatımı',
-    inferredTitle: compactText(rawLesson.inferredTitle || rawLesson.title) || 'Komite ders anlatımı',
+    title: cleanTopic(rawLesson.title || rawLesson.inferredTitle, 'Komite ders anlatımı'),
+    inferredTitle: cleanTopic(rawLesson.inferredTitle || rawLesson.title, 'Komite ders anlatımı'),
     shortIntro: compactText(rawLesson.shortIntro || rawLesson.summary || rawLesson.overview),
     overview: compactText(rawLesson.overview || rawLesson.shortIntro),
     bigPicture: compactText(rawLesson.bigPicture || rawLesson.overview),
@@ -105,14 +144,14 @@ function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
     clinicalExamRelevance: compactText(rawLesson.clinicalExamRelevance),
     commonConfusions: Array.isArray(rawLesson.commonConfusions) ? rawLesson.commonConfusions.map(compactText).filter(Boolean) : [],
     sections: lessonSections,
-    highYieldPoints: derivedHighYield.slice(0, 9),
-    mustKnow: (Array.isArray(rawLesson.mustKnow) ? rawLesson.mustKnow.map(compactText).filter(Boolean) : derivedHighYield).slice(0, 8),
-    finalReview: (Array.isArray(rawLesson.finalReview) ? rawLesson.finalReview.map(compactText).filter(Boolean) : derivedHighYield).slice(0, 8),
+    highYieldPoints,
+    mustKnow: outputMustKnow,
+    finalReview: finalReview.length ? finalReview : uniqueTexts(lessonSections.map((section) => section.heading), 6, usedAfterMustKnow),
     figureExplanations: Array.isArray(rawLesson.figureExplanations) ? rawLesson.figureExplanations.map(normalizeFigure) : [],
     materialCoverage: Array.isArray(rawLesson.materialCoverage)
       ? rawLesson.materialCoverage.map((item, index) => ({
         fileName: compactText(item.fileName) || `Materyal ${index + 1}`,
-        detectedMainTopic: compactText(item.detectedMainTopic),
+        detectedMainTopic: cleanTopic(item.detectedTopic || item.detectedMainTopic || item.topic, item.fileName || `Materyal ${index + 1}`),
         representedIn: compactText(item.representedIn),
         coverageNote: compactText(item.coverageNote),
       })).filter((item) => item.fileName)

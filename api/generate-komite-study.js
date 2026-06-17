@@ -3,7 +3,7 @@ const DEFAULT_MODEL = 'gpt-5.4-mini';
 const FALLBACK_MODEL = 'gpt-5.4-nano';
 
 const KIND_LIMITS = {
-  lesson: { maxSourceChars: 7_000, maxTokens: 5600 },
+  lesson: { maxSourceChars: 10_500, maxTokens: 6800 },
   questions: { maxSourceChars: 26_000, maxTokens: 6200 },
   cards: { maxSourceChars: 22_000, maxTokens: 5200 },
 };
@@ -11,13 +11,12 @@ const KIND_LIMITS = {
 const OPTION_LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
 const KOMITE_SYSTEM_PROMPT = [
-  'Sen tıp fakültesi komite materyallerini Türkçe, bilimsel, öğretici ve sınav odaklı ders anlatımına dönüştüren kıdemli bir medikal eğitim editörüsün. Sadece geçerli JSON döndür.',
-  'Yüklenen tüm materyalleri konu-bağımsız şekilde analiz eder, her ana dosyayı temsil eder, hiçbir materyali sessizce atlamazsın.',
-  'Çıktın kuru özet değil; öğrencinin konuyu anlamasını sağlayan yapılandırılmış ders anlatımıdır. Gereksiz tekrar yapmaz, tokeni verimli kullanır, ama kapsam ve doğruluktan ödün vermezsin.',
-  'Bilimsel doğruluğu temel tıbbi bilgiyle kalibre et. Resmi kılavuzlar, NCBI Bookshelf, PubMed derleme/özetleri, MSD/Merck Manual, CDC/WHO ve akademik kaynak mantığıyla uyumlu düşün; fakat uydurma kaynak, çalışma veya guideline adı verme.',
-  'Materyalde net olmayan veya görsel olarak okunamayan bir noktayı kesin bilgi gibi yazma. Görsel piksel içeriği verilmediyse yalnızca okunabilen çevre metni, tablo metni, başlık, alt yazı ve slayt bağlamından çıkarım yap.',
-  'Dil profesyonel, öğrenci dostu, açık ve sınav odaklı olsun. Şablon kokan tekrar, bağlam dışı ipucu, aşırı uzun paragraf ve tartışmalı kesinlikten kaçın.',
-  'Komite/TUS ayrımı önemlidir: bu çıktı Komite çalışma alanı içindir, TUS soru üretim üslubuna veya TUS veri akışına bağlı değildir.',
+  'Sen tıp fakültesi komite materyallerini Türkçe, bilimsel, öğretici ve sınav odaklı konu anlatımına dönüştüren kıdemli bir medikal eğitim editörüsün. Sadece geçerli JSON döndür.',
+  'Yüklenen materyalleri konu-bağımsız analiz eder, her ana dosyayı adil biçimde temsil eder, farklı konuları gereksiz birleştirmezsin.',
+  'Slaytlardaki tanım, sınıflama, algoritma, tablo, görsel, tanı, tedavi ve sınavlık ayrımları öğretici ders anlatımına çevirirsin.',
+  'Kuru özet yapmaz, gereksiz tekrar oluşturmaz, boş kutu üretmez ve tokeni verimli kullanırsın.',
+  'Materyalde net olmayan veya görsel olarak okunamayan bir noktayı kesin bilgi gibi yazma; uydurma kaynak, çalışma veya guideline adı verme.',
+  'Komite/TUS ayrımı önemlidir: bu çıktı yalnızca Komite çalışma alanı içindir, TUS soru üretim üslubuna veya TUS veri akışına bağlı değildir.',
 ].join('\n');
 
 const figureSchema = {
@@ -481,7 +480,29 @@ function inferMainTopic(file = {}, headings = [], text = '') {
   const candidate = headings.find((heading) => heading.length >= 6 && !/^(sayfa|slayt|tablo|not|vurgu)\b/iu.test(heading))
     || fileTitle
     || compactLine(text).slice(0, 90);
-  return candidate || 'Ana konu net çıkarılamadı';
+  const clean = compactLine(candidate)
+    .replace(/^(?:sayfa|slayt|tablo|not|vurgu)\s*[:.-]?\s*/iu, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (clean && !/ana konu|belirtilmedi|net çıkarılamadı/iu.test(clean)) return clean;
+  return fileTitle || `Materyal ${Number(file.index || 0) + 1}`;
+}
+
+function filterLines(sentences = [], pattern, maxItems = 5) {
+  return unique(sentences.filter((line) => pattern.test(line))).slice(0, maxItems);
+}
+
+function buildMustRepresentItems({ headings = [], definitions = [], classifications = [], diagnostics = [], treatments = [], visuals = [], highYield = [], scored = [] }) {
+  return unique([
+    ...headings.slice(0, 2),
+    ...definitions.slice(0, 2),
+    ...classifications.slice(0, 2),
+    ...diagnostics.slice(0, 2),
+    ...treatments.slice(0, 2),
+    ...visuals.slice(0, 2),
+    ...highYield.slice(0, 3),
+    ...scored.slice(0, 3),
+  ]).slice(0, 10);
 }
 
 function buildFileDigest(file = {}, fileIndex = 0) {
@@ -504,22 +525,48 @@ function buildFileDigest(file = {}, fileIndex = 0) {
       .map((item) => compactLine(`${item.label || 'Tablo'}: ${item.preview || ''}`))
       .filter(Boolean)
     : [];
-  const examLines = sentences.filter((line) => /\b(?:sınav|komite|önemli|dikkat|ayırt|fark|karşılaştır|tipik|en sık|ilk|tanı|tedavi|mekanizma)\b/iu.test(line));
-  const confusionLines = sentences.filter((line) => /\b(?:karış|ayırıcı|fark|versus|vs\.?|benzer|ayırt)\b/iu.test(line));
-  const definitionLines = sentences.filter((line) => /\b(?:tanım|olarak adlandırılır|denir|ifade eder|kavram)\b/iu.test(line));
+  const classificationLines = filterLines(sentences, /\b(?:sınıflandır|sınıflama|evre|grade|stage|skor|risk|algoritma|akış|karar|yaklaşım|kriter|ölçüt|tip|type|grup|kategori)\b/iu, 6);
+  const diagnosticLines = filterLines(sentences, /\b(?:tanı|test|laboratuvar|lab|görüntüleme|grafi|ultrason|usg|bt|mr|mri|tomografi|biyopsi|kültür|seroloji|pcr|marker|belirteç|duyarlılık|özgüllük|bulgu)\b/iu, 6);
+  const treatmentLines = filterLines(sentences, /\b(?:tedavi|yönetim|yaklaşım|izlem|ilaç|antibiyotik|cerrahi|operasyon|profilaksi|rehabilitasyon|management|therapy|treat)\b/iu, 6);
+  const examLines = filterLines(sentences, /\b(?:sınav|komite|önemli|dikkat|ayırt|fark|karşılaştır|tipik|en sık|ilk|tanı|tedavi|mekanizma|algoritma|sınıflama)\b/iu, 6);
+  const confusionLines = filterLines(sentences, /\b(?:karış|ayırıcı|fark|versus|vs\.?|benzer|ayırt|karşılaştır)\b/iu, 4);
+  const definitionLines = filterLines(sentences, /\b(?:tanım|olarak adlandırılır|denir|ifade eder|kavram|nedir|oluşur)\b/iu, 5);
   const textQuality = text.length > 2500 ? 'iyi' : text.length > 500 ? 'kısmi' : text.length > 80 ? 'zayıf' : 'çok zayıf';
+  const detectedTopic = inferMainTopic(file, headings, text);
+  const tablesAndVisualNotes = unique([...visuals, ...tableStructures]).slice(0, 5);
+  const highYieldExamPoints = unique([...examLines, ...emphasis, ...classificationLines.slice(0, 2), ...diagnosticLines.slice(0, 2), ...treatmentLines.slice(0, 2)]).slice(0, 7);
+  const mustRepresent = buildMustRepresentItems({
+    headings,
+    definitions: definitionLines,
+    classifications: classificationLines,
+    diagnostics: diagnosticLines,
+    treatments: treatmentLines,
+    visuals: tablesAndVisualNotes,
+    highYield: highYieldExamPoints,
+    scored,
+  });
 
   return {
     fileName: file.fileName || file.name || `Materyal ${fileIndex + 1}`,
-    detectedMainTopic: inferMainTopic(file, headings, text),
-    keyHeadings: headings.slice(0, 6),
-    coreFacts: unique(scored).slice(0, 6),
-    importantDefinitions: unique(definitionLines).slice(0, 3),
-    tablesAndVisuals: unique([...visuals, ...tableStructures]).slice(0, 4),
-    highlightedOrEmphasizedPoints: unique(emphasis).slice(0, 4),
-    examRelevantPoints: unique(examLines).slice(0, 4),
-    commonConfusions: unique(confusionLines).slice(0, 3),
+    detectedTopic,
+    detectedMainTopic: detectedTopic,
+    sourceQuality: textQuality,
     extractedTextQuality: textQuality,
+    mainHeadings: headings.slice(0, 7),
+    keyHeadings: headings.slice(0, 7),
+    coreFacts: unique(scored).slice(0, 6),
+    coreDefinitions: unique(definitionLines).slice(0, 4),
+    importantDefinitions: unique(definitionLines).slice(0, 4),
+    classificationOrAlgorithm: unique(classificationLines).slice(0, 5),
+    diagnosticOrLabPoints: unique(diagnosticLines).slice(0, 5),
+    treatmentOrManagementPoints: unique(treatmentLines).slice(0, 5),
+    tablesAndVisualNotes,
+    tablesAndVisuals: tablesAndVisualNotes,
+    highlightedOrEmphasizedPoints: unique(emphasis).slice(0, 4),
+    highYieldExamPoints,
+    examRelevantPoints: highYieldExamPoints,
+    commonConfusions: unique(confusionLines).slice(0, 3),
+    mustRepresent,
     charCount: Number(file.charCount || text.length || 0),
   };
 }
@@ -527,15 +574,17 @@ function buildFileDigest(file = {}, fileIndex = 0) {
 function formatFileDigest(digest = {}) {
   return [
     `fileName: ${digest.fileName}`,
-    `detectedMainTopic: ${digest.detectedMainTopic}`,
-    `extractedTextQuality: ${digest.extractedTextQuality}; charCount: ${digest.charCount}`,
-    digest.keyHeadings?.length ? `keyHeadings:\n${safeStringifyList(digest.keyHeadings, 6, 110)}` : '',
-    digest.coreFacts?.length ? `coreFacts:\n${safeStringifyList(digest.coreFacts, 6, 180)}` : '',
-    digest.importantDefinitions?.length ? `importantDefinitions:\n${safeStringifyList(digest.importantDefinitions, 3, 180)}` : '',
-    digest.tablesAndVisuals?.length ? `tablesAndVisuals:\n${safeStringifyList(digest.tablesAndVisuals, 4, 180)}` : '',
-    digest.highlightedOrEmphasizedPoints?.length ? `highlightedOrEmphasizedPoints:\n${safeStringifyList(digest.highlightedOrEmphasizedPoints, 4, 180)}` : '',
-    digest.examRelevantPoints?.length ? `examRelevantPoints:\n${safeStringifyList(digest.examRelevantPoints, 4, 180)}` : '',
-    digest.commonConfusions?.length ? `commonConfusions:\n${safeStringifyList(digest.commonConfusions, 3, 180)}` : '',
+    `detectedTopic: ${digest.detectedTopic}`,
+    `sourceQuality: ${digest.sourceQuality}; charCount: ${digest.charCount}`,
+    digest.mainHeadings?.length ? `mainHeadings:\n${safeStringifyList(digest.mainHeadings, 7, 120)}` : '',
+    digest.coreDefinitions?.length ? `coreDefinitions:\n${safeStringifyList(digest.coreDefinitions, 4, 190)}` : '',
+    digest.classificationOrAlgorithm?.length ? `classificationOrAlgorithm:\n${safeStringifyList(digest.classificationOrAlgorithm, 5, 190)}` : '',
+    digest.diagnosticOrLabPoints?.length ? `diagnosticOrLabPoints:\n${safeStringifyList(digest.diagnosticOrLabPoints, 5, 190)}` : '',
+    digest.treatmentOrManagementPoints?.length ? `treatmentOrManagementPoints:\n${safeStringifyList(digest.treatmentOrManagementPoints, 5, 190)}` : '',
+    digest.tablesAndVisualNotes?.length ? `tablesAndVisualNotes:\n${safeStringifyList(digest.tablesAndVisualNotes, 5, 190)}` : '',
+    digest.highYieldExamPoints?.length ? `highYieldExamPoints:\n${safeStringifyList(digest.highYieldExamPoints, 7, 190)}` : '',
+    digest.commonConfusions?.length ? `commonConfusions:\n${safeStringifyList(digest.commonConfusions, 4, 180)}` : '',
+    digest.mustRepresent?.length ? `mustRepresent:\n${safeStringifyList(digest.mustRepresent, 10, 170)}` : '',
   ].filter(Boolean).join('\n');
 }
 
@@ -635,7 +684,7 @@ function buildMaterialContext({ kind, metadata = {}, materialPacket = {} }) {
     ].filter(Boolean).join('\n')).join('\n\n'),
     emphasisContext: safeStringifyList(emphasisNotes, kind === 'lesson' ? 8 : 14, kind === 'lesson' ? 260 : 420),
     structureContext: safeStringifyList(structures, kind === 'lesson' ? 6 : 12, kind === 'lesson' ? 220 : 320),
-    sourceManifest: safeStringifyList(fileDigests.map((digest) => `${digest.fileName} | ${digest.detectedMainTopic} | metin kalitesi: ${digest.extractedTextQuality} | ${digest.charCount} karakter`), 12, 260),
+    sourceManifest: safeStringifyList(fileDigests.map((digest) => `${digest.fileName} | ${digest.detectedTopic} | kaynak kalitesi: ${digest.sourceQuality} | ${digest.charCount} karakter`), 12, 260),
     fileDigests,
   };
 }
@@ -652,27 +701,29 @@ function buildMetadataBlock(metadata = {}) {
 
 function buildLessonPrompt({ metadata, context }) {
   return [
-    'Görev: Kullanıcının yüklediği materyallerden kısa, tamamlanabilir ve öğretici bir komite ders anlatımı oluştur.',
+    'Görev: Aşağıdaki materyal digestlerini kullanarak komite sınavına yönelik çalışılabilir bir ders anlatımı oluştur.',
     'Çıktı yalnızca geçerli JSON olsun. Markdown, açıklama, kod bloğu veya JSON dışı metin yazma.',
-    'Yanıtı bilinçli olarak kompakt tut: 3-4 ana bölüm, her bölümde 1 yoğun öğretici paragraf ve kısa sınav notları yeterlidir.',
-    'Yanıt yarıda kalmasın diye gereksiz uzun giriş, tekrar eden başlık ve ansiklopedik detay yazma.',
+    'Yanıtı token-verimli ama yüzeysel olmayan bir düzeyde tut. Gereksiz ansiklopedi yazma; fakat dosyalardaki ana sınavlık bilgileri ezme.',
+    'Dosya sayısı ve konu dağılımına göre 4-6 ana bölüm üret. Farklı ana konuları sırf kısaltmak için aynı başlıkta birleştirme.',
     '',
     'Zorunlu JSON şekli:',
     '{"lesson":{"title":"","shortIntro":"","overview":"","learningObjectives":[],"sections":[{"heading":"","level":2,"teachingText":"","mechanismFlow":[],"clinicalConnection":"","examAngle":"","commonTrap":"","keyBoxes":[],"sourceRefs":[]}],"highYieldPoints":[],"mustKnow":[],"finalReview":[],"figureExplanations":[],"materialCoverage":[],"coverageSummary":""}}',
     '',
     'Kapsam kuralları:',
-    '- Önce her MATERIAL_DIGEST kartındaki dosyanın ana konusunu ve eğitim değerini dikkate al.',
+    '- Her MATERIAL_DIGEST için detectedTopic ve mustRepresent alanlarını özellikle dikkate al.',
     '- Hiçbir ana dosyayı sessizce yok sayma; her dosyayı ya uygun bölümün sourceRefs alanında ya da materialCoverage içinde temsil et.',
-    '- Aynı konuya ait dosyaları birleştir; farklı konuları ayrı ana bölümlere ayır.',
+    '- Sadece gerçekten aynı konuya ait dosyaları birleştir; ilişkisiz dosyaları ayrı ana bölüm yap.',
     '- Bir dosya metin kalitesi çok zayıfsa bunu coverageSummary içinde kısa ve dürüstçe belirt.',
     '- Bir dosyadan yakalanan tek bilgiyi ait olmadığı bölüme taşıma; bağlamı belirsiz bilgiyi kesin hüküm gibi kullanma.',
+    '- detectedTopic boş/placeholder olmasın; gerekirse dosya adından temiz konu adı üret.',
     '',
     'Ders anlatımı kalite hedefi:',
-    '- Sadece özetleme yapma; mantığı kur, bağlantıları açıkla, sınavda ayırt ettiren bilgileri göster, sık karıştırılan noktaları netleştir.',
-    '- Tanım, mekanizma/mantık, klinik veya pratik bağlantı ve sınav odağı uygun yerlerde kurulsun.',
-    '- Tablo varsa düz metne gömmek yerine karşılaştırma mantığını açıkla. Görsel/şema varsa sadece okunabilen bağlamdan eğitim yorumu yap.',
-    '- Vurgulu/not olarak yakalanan içerikleri yüksek öncelikli kabul et.',
-    '- highYieldPoints 5-7 madde, mustKnow 4-6 madde, finalReview 4-6 madde olsun.',
+    '- Her bölümde mümkünse büyük resim, temel kavram, sınıflama/mekanizma, klinik-pratik bağlantı, tanı/test/lab veya yönetim bilgisi ve sınav ayırt ettiricisi işlensin; materyalde yoksa uydurma.',
+    '- classificationOrAlgorithm, diagnosticOrLabPoints, treatmentOrManagementPoints ve tablesAndVisualNotes alanları varsa bunları teachingText içinde ayrı küçük açıklama olarak derse dönüştür.',
+    '- Tablo/görsel/şema bilgisi sadece “var” diye geçilmesin; ne öğrettiği ve sınavda nasıl sorulabileceği açıklansın.',
+    '- keyBoxes yalnızca gerçekten dolu ve anlamlıysa üret. Boş "Akılda tut", boş "Sınav notu" veya sadece başlık içeren kutu üretme.',
+    '- highYieldPoints ayırt ettirici sınav bilgisini, mustKnow son gün hatırlanacak çekirdek bilgiyi, finalReview ise kısa kontrol listesini taşısın; aynı cümleyi listelerde tekrarlama.',
+    '- commonTrap alanını yalnızca gerçekten sık karışan nokta varsa doldur; yoksa boş string bırak.',
     '- materialCoverage kısa olsun: dosya adı, ana konu, hangi bölümde temsil edildiği ve kısa not.',
     '',
     'Meta bilgi:',
@@ -681,6 +732,7 @@ function buildLessonPrompt({ metadata, context }) {
     context.sourceManifest ? `Kaynak listesi:\n${context.sourceManifest}` : '',
     context.materialDigestContext ? `Dosya başına yoğun materyal özetleri:\n${context.materialDigestContext}` : '',
     context.emphasisContext ? `Okunabilen vurgu/notlar:\n${context.emphasisContext}` : '',
+    context.structureContext ? `Algılanan yapı/tablo/slayt izleri:\n${context.structureContext}` : '',
     context.visualContext ? `Görsel/tablo ipuçları:\n${context.visualContext}` : '',
     '',
     `Seçilmiş temiz materyal metni:\n${context.sourceText}`,
@@ -762,7 +814,7 @@ function getMaxTokens(kind) {
   const fallback = KIND_LIMITS[kind]?.maxTokens || 6500;
   const parsed = Number.parseInt(process.env.OPENAI_KOMITE_MAX_TOKENS || '', 10);
   if (!Number.isFinite(parsed)) return fallback;
-  const minimumByKind = kind === 'lesson' ? 5200 : kind === 'questions' ? 5000 : 4200;
+  const minimumByKind = kind === 'lesson' ? 6200 : kind === 'questions' ? 5000 : 4200;
   return Math.min(9000, Math.max(minimumByKind, parsed));
 }
 

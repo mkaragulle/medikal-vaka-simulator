@@ -519,7 +519,7 @@ function compactMaterialPacketForGeneration(packet = {}, kind = 'lesson') {
   const sourceFiles = Array.isArray(packet.files)
     ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
     : [];
-  const maxTotalChars = kind === 'lesson' ? 14_000 : kind === 'questions' ? 26_000 : 24_000;
+  const maxTotalChars = kind === 'lesson' ? 18_000 : kind === 'questions' ? 26_000 : 24_000;
   const noteFiles = sourceFiles.filter((file) => file.isUserNote);
   const regularFiles = sourceFiles.filter((file) => !file.isUserNote);
   const noteBudget = Math.min(6000, Math.max(2500, Math.floor(maxTotalChars * 0.18)));
