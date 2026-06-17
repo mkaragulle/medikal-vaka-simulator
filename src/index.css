@@ -37595,6 +37595,22 @@ html[data-theme='dark'] .komite-note-grid-pro strong { color: #f8fafc; }
   gap: 0.65rem;
   margin-top: 1rem;
 }
+.komite-section-source-refs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: -0.25rem 0 0.75rem;
+}
+.komite-section-source-refs span {
+  max-width: 100%;
+  padding: 0.34rem 0.52rem;
+  border-radius: 999px;
+  background: rgba(241, 245, 249, 0.9);
+  color: #64748b;
+  font-size: 0.76rem;
+  font-weight: 780;
+  overflow-wrap: anywhere;
+}
 .komite-key-box {
   display: grid;
   gap: 0.35rem;
@@ -37613,6 +37629,51 @@ html[data-theme='dark'] .komite-note-grid-pro strong { color: #f8fafc; }
   color: #334155 !important;
   font-size: 0.92rem !important;
   line-height: 1.56 !important;
+}
+.komite-coverage-summary {
+  display: grid;
+  gap: 0.75rem;
+  padding: clamp(1.05rem, 2vw, 1.35rem) clamp(1.1rem, 2.3vw, 1.55rem);
+  border-radius: 1.35rem;
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.04);
+}
+.komite-coverage-summary > strong {
+  color: #0f172a;
+  font-size: 1.02rem;
+  font-weight: 900;
+}
+.komite-coverage-summary p {
+  margin: 0 !important;
+  color: #334155;
+  line-height: 1.62;
+}
+.komite-coverage-list {
+  display: grid;
+  gap: 0.5rem;
+}
+.komite-coverage-item {
+  display: grid;
+  gap: 0.16rem;
+  padding: 0.72rem 0.8rem;
+  border-radius: 0.95rem;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  background: rgba(248, 250, 252, 0.82);
+}
+.komite-coverage-item span {
+  color: #0f766e;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+.komite-coverage-item em {
+  color: #0f172a;
+  font-style: normal;
+  font-weight: 850;
+}
+.komite-coverage-item small {
+  color: #64748b;
+  line-height: 1.45;
 }
 .komite-note-lines {
   margin-top: 1.15rem;
@@ -37715,7 +37776,20 @@ html[data-theme='dark'] .komite-key-box {
   background: rgba(20, 184, 166, 0.14);
   border-color: rgba(45, 212, 191, 0.22);
 }
+html[data-theme='dark'] .komite-section-source-refs span {
+  background: rgba(30, 41, 59, 0.86);
+  color: #cbd5e1;
+}
 html[data-theme='dark'] .komite-key-box p { color: #cbd5e1 !important; }
+html[data-theme='dark'] .komite-coverage-summary,
+html[data-theme='dark'] .komite-coverage-item {
+  background: rgba(15, 23, 42, 0.74);
+  border-color: rgba(148, 163, 184, 0.16);
+}
+html[data-theme='dark'] .komite-coverage-summary > strong,
+html[data-theme='dark'] .komite-coverage-item em { color: #f8fafc; }
+html[data-theme='dark'] .komite-coverage-summary p,
+html[data-theme='dark'] .komite-coverage-item small { color: #cbd5e1; }
 
 /* KOMITE workspace simplification + reliable quick navigation offset */
 .komite-workspace-header-clean {

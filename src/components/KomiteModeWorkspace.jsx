@@ -333,9 +333,8 @@ function sentenceFromFlowStep(step = '') {
   if (!raw) return '';
   if (!/[→>]/u.test(raw)) return raw.replace(/\s+/g, ' ');
   const parts = raw.split(/\s*(?:→|>)\s*/u).map((part) => part.trim()).filter(Boolean);
-  if (parts.length <= 1) return raw.replace(/[→>]/gu, ' ardından ').replace(/\s+/g, ' ');
-  if (parts.length === 2) return `${parts[0]} sonucunda ${parts[1]} öne çıkar.`;
-  return `${parts[0]} durumunda ${parts.slice(1, -1).join(', ')} gelişir; sonuçta ${parts[parts.length - 1]} öne çıkar.`;
+  if (parts.length <= 1) return raw.replace(/[→>]/gu, ' → ').replace(/\s+/g, ' ');
+  return parts.join(' → ');
 }
 
 function formatMechanismSteps(flow = []) {
@@ -1278,6 +1277,8 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
     : [];
   const highYield = lesson.highYieldPoints || lesson.highYieldSummary || [];
   const mustKnow = lesson.mustKnow || lesson.mustRemember || [];
+  const materialCoverage = Array.isArray(lesson.materialCoverage) ? lesson.materialCoverage : [];
+  const coverageSummary = sanitizeTeachingTextForDisplay(lesson.coverageSummary || '');
 
   return (
     <div className="komite-lesson-view komite-lesson-view-pro">
@@ -1334,6 +1335,11 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
                 <div className="komite-section-index">{String(index + 1).padStart(2, '0')}</div>
                 <div className="komite-section-body">
                   <h3>{section.heading}</h3>
+                  {Array.isArray(section.sourceRefs) && section.sourceRefs.length ? (
+                    <div className="komite-section-source-refs" aria-label="Bu bölümün kaynak materyalleri">
+                      {section.sourceRefs.slice(0, 6).map((sourceRef, sourceIndex) => <span key={`${sourceRef}-${sourceIndex}`}>{sourceRef}</span>)}
+                    </div>
+                  ) : null}
                   <LessonText text={teachingText} />
                   {Array.isArray(section.keyBoxes) && section.keyBoxes.length ? (
                     <div className="komite-key-box-grid">
@@ -1372,6 +1378,23 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
               <ul>{mustKnow.map((item, index) => <li key={`${item}-${index}`}><InlineLessonText text={sanitizeTeachingTextForDisplay(item)} /></li>)}</ul>
             </div>
           </div>
+          {(coverageSummary || materialCoverage.length) ? (
+            <section className="komite-coverage-summary" aria-label="Materyal kapsam özeti">
+              <strong>Materyal kapsam özeti</strong>
+              {coverageSummary ? <p><GlossaryText text={coverageSummary} enabled revealMode="postAnswer" maxTerms={3} /></p> : null}
+              {materialCoverage.length ? (
+                <div className="komite-coverage-list">
+                  {materialCoverage.map((item, index) => (
+                    <div className="komite-coverage-item" key={`${item.fileName || 'materyal'}-${index}`}>
+                      <span>{item.fileName || `Materyal ${index + 1}`}</span>
+                      <em>{item.detectedMainTopic || 'Ana konu belirtilmedi'}</em>
+                      <small>{item.representedIn ? `${item.representedIn}: ` : ''}{item.coverageNote || 'Bu materyal ders anlatımında temsil edildi.'}</small>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+            </section>
+          ) : null}
         </main>
       </div>
     </div>
@@ -1574,6 +1597,11 @@ function ReviewCenter({ materials, activeMaterial, onOpenMaterial }) {
     ...difficultCards.map((card) => card.tags?.[0] || card.type || card.material.course || card.material.committee || inferAcademicTitle(card.material)),
   ].filter(Boolean);
   const weakFocus = [...new Set(weakFocusItems.map((item) => String(item).replace(/\s+/g, ' ').trim()).filter(Boolean))].slice(0, 4);
+  const lessonReviewItems = scopeMaterials.flatMap((material) => [
+    ...(material.lesson?.finalReview || []).map((item) => ({ text: item, kind: 'Son gün', material })),
+    ...(material.lesson?.highYieldPoints || []).slice(0, 4).map((item) => ({ text: item, kind: 'Yüksek verim', material })),
+    ...(material.lesson?.commonConfusions || []).slice(0, 3).map((item) => ({ text: formatLessonListItem(item), kind: 'Sık karışır', material })),
+  ]).filter((item) => item.text);
   return (
     <div className="komite-review-center komite-review-center-v141">
       <div className="komite-review-hero komite-review-hero-clean">
@@ -1587,6 +1615,19 @@ function ReviewCenter({ materials, activeMaterial, onOpenMaterial }) {
       </div>
 
       <div className="komite-review-grid komite-review-grid-v141">
+        <ReviewPanel icon="BookOpen" title="Son Gün Tekrarı" description="Ders anlatımından gelen yüksek verimli tekrar notları." count={lessonReviewItems.length} emptyText="Ders anlatımı oluşturulunca son gün tekrar notları burada görünür.">
+          {lessonReviewItems.slice(0, 5).map((item, index) => (
+            <ReviewItemButton
+              key={`${item.text}-${index}`}
+              icon="BookOpen"
+              eyebrow={`${item.kind} · ${inferAcademicTitle(item.material)}`}
+              title={item.text}
+              meta="AI ders anlatımı"
+              onClick={() => onOpenMaterial(item.material.id)}
+            />
+          ))}
+        </ReviewPanel>
+
         <ReviewPanel icon="AlertTriangle" title="Yanlış Sorular" description="Kaçırdığın soruları hedefli tekrar et." count={wrongQuestions.length} emptyText="Bu kapsamda yanlış soru yok.">
           {wrongQuestions.slice(0, 4).map((question) => (
             <ReviewItemButton

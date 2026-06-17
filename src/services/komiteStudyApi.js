@@ -71,6 +71,16 @@ function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
     mustKnow: (Array.isArray(rawLesson.mustKnow) ? rawLesson.mustKnow.map(compactText).filter(Boolean) : derivedHighYield).slice(0, 8),
     finalReview: (Array.isArray(rawLesson.finalReview) ? rawLesson.finalReview.map(compactText).filter(Boolean) : derivedHighYield).slice(0, 8),
     figureExplanations: Array.isArray(rawLesson.figureExplanations) ? rawLesson.figureExplanations.map(normalizeFigure) : [],
+    materialCoverage: Array.isArray(rawLesson.materialCoverage)
+      ? rawLesson.materialCoverage.map((item, index) => ({
+        fileName: compactText(item.fileName) || `Materyal ${index + 1}`,
+        detectedMainTopic: compactText(item.detectedMainTopic),
+        representedIn: compactText(item.representedIn),
+        coverageNote: compactText(item.coverageNote),
+      })).filter((item) => item.fileName)
+      : [],
+    coverageSummary: compactText(rawLesson.coverageSummary),
+    tableOfContents: normalizedSections.map((section) => section.heading),
     sourceFingerprint,
     generatedAt: Date.now(),
   };
