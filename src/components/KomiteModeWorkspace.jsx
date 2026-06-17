@@ -519,6 +519,32 @@ function compactMaterialPacketForGeneration(packet = {}, kind = 'lesson') {
   const sourceFiles = Array.isArray(packet.files)
     ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
     : [];
+  if (kind === 'lesson') {
+    const files = sourceFiles.slice(0, 10).map((file) => ({
+      fileName: file.fileName || file.name || 'Materyal',
+      fileType: file.fileType || file.type || 'file',
+      cleanedExtractedText: String(file.cleanedExtractedText || file.text || '').trim(),
+      detectedTopics: compactArrayForGeneration(file.detectedTopics, 14),
+      detectedStructure: compactArrayForGeneration(file.detectedStructure, 30),
+      figures: compactArrayForGeneration(file.figures, 18),
+      emphasisNotes: compactArrayForGeneration(file.emphasisNotes, 18),
+      charCount: Number(file.charCount || String(file.cleanedExtractedText || file.text || '').length || 0),
+      extractionOk: Boolean(file.extractionOk || file.cleanedExtractedText),
+      isUserNote: Boolean(file.isUserNote),
+    }));
+
+    return {
+      workspaceId: packet.workspaceId || '',
+      classYear: packet.classYear || '',
+      committeeName: packet.committeeName || '',
+      courseName: packet.courseName || '',
+      studyGoal: packet.studyGoal || '',
+      university: packet.university || '',
+      figures: compactArrayForGeneration(packet.figures, 30),
+      detectedStructure: compactArrayForGeneration(packet.detectedStructure, 40),
+      files,
+    };
+  }
   const maxTotalChars = kind === 'lesson' ? 18_000 : kind === 'questions' ? 26_000 : 24_000;
   const noteFiles = sourceFiles.filter((file) => file.isUserNote);
   const regularFiles = sourceFiles.filter((file) => !file.isUserNote);

@@ -3,7 +3,7 @@ const DEFAULT_MODEL = 'gpt-5.4-mini';
 const FALLBACK_MODEL = 'gpt-5.4-nano';
 
 const KIND_LIMITS = {
-  lesson: { maxSourceChars: 10_500, maxTokens: 6800 },
+  lesson: { maxSourceChars: 18_000, maxTokens: 6800 },
   questions: { maxSourceChars: 26_000, maxTokens: 6200 },
   cards: { maxSourceChars: 22_000, maxTokens: 5200 },
 };
@@ -783,6 +783,36 @@ function buildCardsPrompt({ metadata, context, existingLesson }) {
   ].filter(Boolean).join('\n\n');
 }
 
+function buildLessonBatchPrompt({ metadata, context, batchIndex = 0, totalBatches = 1 }) {
+  return [
+    `Görev: Komite ders anlatımının ${batchIndex + 1}/${totalBatches} numaralı materyal bölümünü üret.`,
+    'Çıktı yalnızca geçerli JSON olsun. Markdown, açıklama veya kod bloğu yazma.',
+    'Bu çağrı yalnızca aşağıdaki MATERIAL_DIGEST dosyalarını anlatır; başka dosyaların konusunu uydurma.',
+    '',
+    'Zorunlu JSON şekli:',
+    '{"lesson":{"sections":[{"heading":"","level":2,"teachingText":"","mechanismFlow":[],"clinicalConnection":"","examAngle":"","commonTrap":"","keyBoxes":[],"sourceRefs":[]}],"highYieldPoints":[],"mustKnow":[],"finalReview":[],"figureExplanations":[],"materialCoverage":[],"coverageSummary":""}}',
+    '',
+    'Kalite kuralları:',
+    '- Her dosyanın detectedTopic ve mustRepresent maddeleri anlatımda görünür biçimde temsil edilsin.',
+    '- Farklı ana konuları aynı heading altında ezme; gerekirse aynı dosya için birden fazla section yaz.',
+    '- classificationOrAlgorithm, diagnosticOrLabPoints, treatmentOrManagementPoints ve tablesAndVisualNotes alanları varsa teachingText içinde açıkça derse dönüştür.',
+    '- teachingText kuru özet olmasın: büyük resmi kur, kavramı açıkla, sınıflama/algoritma mantığını anlat, tanı-lab-yönetim bağlantısını materyalde varsa işle.',
+    '- keyBoxes yalnızca gerçekten dolu ve anlamlıysa üret; boş "Akılda tut" veya sadece başlık içeren kutu üretme.',
+    '- highYieldPoints sınavda ayırt ettiren bilgileri, mustKnow çekirdek hatırlatma bilgisini, finalReview kısa kontrol maddelerini taşısın; aynı cümleyi tekrar etme.',
+    '',
+    'Meta bilgi:',
+    buildMetadataBlock(metadata),
+    '',
+    context.sourceManifest ? `Bu çağrıdaki kaynaklar:\n${context.sourceManifest}` : '',
+    context.materialDigestContext ? `Materyal digestleri:\n${context.materialDigestContext}` : '',
+    context.emphasisContext ? `Okunabilen vurgu/notlar:\n${context.emphasisContext}` : '',
+    context.structureContext ? `Algılanan yapı/tablo/slayt izleri:\n${context.structureContext}` : '',
+    context.visualContext ? `Görsel/tablo ipuçları:\n${context.visualContext}` : '',
+    '',
+    `Seçilmiş temiz materyal metni:\n${context.sourceText}`,
+  ].filter(Boolean).join('\n\n');
+}
+
 function summarizeExistingLesson(lesson = null) {
   if (!lesson) return null;
   return {
@@ -800,6 +830,160 @@ function summarizeExistingLesson(lesson = null) {
   };
 }
 
+function dedupeStrings(items = [], maxItems = 60) {
+  const seen = new Set();
+  const result = [];
+  (Array.isArray(items) ? items : []).forEach((item) => {
+    const text = compactLine(item);
+    const key = text.toLocaleLowerCase('tr').replace(/[^\p{L}\p{N}\s]/gu, '').replace(/\s+/g, ' ');
+    if (!text || seen.has(key)) return;
+    seen.add(key);
+    result.push(text);
+  });
+  return result.slice(0, maxItems);
+}
+
+function lessonFromParsedPayload(parsed = {}) {
+  if (parsed?.lesson && typeof parsed.lesson === 'object') return parsed.lesson;
+  if (parsed?.data && typeof parsed.data === 'object') return parsed.data;
+  if (parsed?.result && typeof parsed.result === 'object') return parsed.result;
+  return parsed && typeof parsed === 'object' ? parsed : {};
+}
+
+function normalizeGeneratedSection(section = {}, fallbackIndex = 0) {
+  const heading = compactLine(section.heading || section.title) || `Konu bölümü ${fallbackIndex + 1}`;
+  const teachingText = compactLine(section.teachingText || section.content || section.summary || section.coreExplanation);
+  if (!teachingText) return null;
+  return {
+    heading,
+    level: Number(section.level) || 2,
+    teachingText,
+    content: teachingText,
+    mechanismFlow: Array.isArray(section.mechanismFlow) ? dedupeStrings(section.mechanismFlow, 5) : [],
+    clinicalConnection: compactLine(section.clinicalConnection || section.clinicalOrPracticalConnection),
+    examAngle: compactLine(section.examAngle || section.examFocus || section.examConnection),
+    commonTrap: compactLine(section.commonTrap || section.commonConfusions),
+    keyBoxes: Array.isArray(section.keyBoxes)
+      ? section.keyBoxes
+        .map((box) => ({ label: compactLine(box?.label || box?.title), text: compactLine(box?.text || box?.content || box?.body) }))
+        .filter((box) => box.text.length >= 12)
+        .slice(0, 2)
+      : [],
+    sourceRefs: Array.isArray(section.sourceRefs || section.relatedSourceFiles)
+      ? dedupeStrings(section.sourceRefs || section.relatedSourceFiles, 8)
+      : [],
+  };
+}
+
+function buildLessonBatches(files = []) {
+  const sourceFiles = (Array.isArray(files) ? files : []).filter((file) => compactLine(file.cleanedExtractedText || file.text));
+  const noteFiles = sourceFiles.filter((file) => file.isUserNote);
+  const regularFiles = sourceFiles.filter((file) => !file.isUserNote).slice(0, 10);
+  const batchSize = regularFiles.length > 6 ? 2 : 1;
+  const batches = [];
+  for (let index = 0; index < regularFiles.length; index += batchSize) {
+    batches.push([...noteFiles.slice(0, 1), ...regularFiles.slice(index, index + batchSize)]);
+  }
+  if (!batches.length && noteFiles.length) batches.push(noteFiles.slice(0, 1));
+  return batches;
+}
+
+function mergeLessonFragments({ fragments = [], metadata = {}, allDigests = [] }) {
+  const sections = [];
+  const highYieldPoints = [];
+  const mustKnow = [];
+  const finalReview = [];
+  const figureExplanations = [];
+  const materialCoverage = [];
+  const coverageSummaryParts = [];
+
+  fragments.forEach((fragment) => {
+    const lesson = lessonFromParsedPayload(fragment);
+    (Array.isArray(lesson.sections) ? lesson.sections : []).forEach((section) => {
+      const normalized = normalizeGeneratedSection(section, sections.length);
+      if (normalized) sections.push(normalized);
+    });
+    highYieldPoints.push(...(Array.isArray(lesson.highYieldPoints) ? lesson.highYieldPoints : []));
+    mustKnow.push(...(Array.isArray(lesson.mustKnow) ? lesson.mustKnow : []));
+    finalReview.push(...(Array.isArray(lesson.finalReview) ? lesson.finalReview : []));
+    figureExplanations.push(...(Array.isArray(lesson.figureExplanations) ? lesson.figureExplanations : []));
+    materialCoverage.push(...(Array.isArray(lesson.materialCoverage) ? lesson.materialCoverage : []));
+    if (lesson.coverageSummary) coverageSummaryParts.push(lesson.coverageSummary);
+  });
+
+  const coveredFiles = new Set(materialCoverage.map((item) => compactLine(item.fileName).toLocaleLowerCase('tr')).filter(Boolean));
+  allDigests.forEach((digest) => {
+    const fileName = compactLine(digest.fileName);
+    if (!fileName || coveredFiles.has(fileName.toLocaleLowerCase('tr'))) return;
+    materialCoverage.push({
+      fileName,
+      detectedTopic: digest.detectedTopic || digest.detectedMainTopic || fileName,
+      detectedMainTopic: digest.detectedTopic || digest.detectedMainTopic || fileName,
+      representedIn: sections.find((section) => section.sourceRefs?.includes(fileName))?.heading || '',
+      coverageNote: digest.mustRepresent?.length ? digest.mustRepresent.slice(0, 2).join(' ') : 'Bu materyal digest düzeyinde işlendi.',
+    });
+  });
+
+  const courseTitle = compactLine(metadata.course || metadata.committee || 'Komite ders anlatımı');
+  return {
+    lesson: {
+      title: courseTitle,
+      inferredTitle: courseTitle,
+      shortIntro: `${courseTitle} materyallerinden dosya bazlı çıkarılan ana konular, sınav ayırt ettiricileri ve çalışma notları aşağıda yapılandırıldı.`,
+      overview: 'Ders anlatımı her materyalin ana konusunu ayrı veya ilişkili bölümlerde temsil edecek şekilde oluşturuldu; tanım, sınıflama, algoritma, tablo/görsel, tanı ve yönetim bilgileri materyalde bulunduğu ölçüde işlendi.',
+      bigPicture: 'Önce her dosyanın ana konusu ayrıldı, ardından ilişkili başlıklar birleştirildi; farklı konular tek başlıkta ezilmedi.',
+      learningObjectives: dedupeStrings(sections.map((section) => `${section.heading} başlığındaki temel mantığı, sınav ayırt ettiricilerini ve klinik-pratik bağlantıları açıklayabilmek.`), 10),
+      sections,
+      highYieldPoints: dedupeStrings(highYieldPoints, 18),
+      mustKnow: dedupeStrings(mustKnow, 14),
+      finalReview: dedupeStrings(finalReview, 14),
+      figureExplanations: figureExplanations.slice(0, 18),
+      materialCoverage,
+      coverageSummary: dedupeStrings(coverageSummaryParts, 8).join(' '),
+      commonConfusions: dedupeStrings(sections.map((section) => section.commonTrap), 10),
+      mainConcepts: dedupeStrings(allDigests.map((digest) => digest.detectedTopic || digest.detectedMainTopic), 12),
+      clinicalExamRelevance: 'Komite sınavı açısından ayırt ettirici tanım, sınıflama, algoritma, tanı-laboratuvar ve yönetim noktaları bölümlerin sınav odağı içinde vurgulandı.',
+    },
+  };
+}
+
+async function requestKomiteLessonContent({ apiKey, model, metadata, materialPacket }) {
+  const files = Array.isArray(materialPacket.files) ? materialPacket.files : [];
+  const batches = buildLessonBatches(files);
+  if (!batches.length) throw new Error('No usable source text.');
+  const allDigests = files.map((file, index) => buildFileDigest(file, index));
+
+  const settled = await Promise.allSettled(batches.map(async (batchFiles, batchIndex) => {
+    const batchPacket = {
+      ...materialPacket,
+      files: batchFiles,
+      figures: materialPacket.figures,
+      detectedStructure: materialPacket.detectedStructure,
+    };
+    const context = buildMaterialContext({ kind: 'lesson', metadata, materialPacket: batchPacket });
+    const prompt = buildLessonBatchPrompt({ metadata, context, batchIndex, totalBatches: batches.length });
+    const content = await requestKomiteContent({ apiKey, model, kind: 'lesson', prompt, maxTokens: 5200 });
+    return parseJsonObject(content);
+  }));
+
+  const fragments = [];
+  const failed = [];
+  settled.forEach((result, index) => {
+    if (result.status === 'fulfilled') fragments.push(result.value);
+    else failed.push({ index: index + 1, reason: result.reason?.message || 'unknown' });
+  });
+  if (!fragments.length) {
+    const error = new Error(`OpenAI response incomplete: lesson batches failed (${failed.map((item) => item.reason).join('; ')})`);
+    error.status = 'incomplete';
+    throw error;
+  }
+  const merged = mergeLessonFragments({ fragments, metadata, allDigests });
+  if (failed.length) {
+    merged.lesson.coverageSummary = `${merged.lesson.coverageSummary} Bazı materyal grupları teknik nedenle tam üretilemedi: ${failed.map((item) => `grup ${item.index}`).join(', ')}.`.trim();
+  }
+  return merged;
+}
+
 function buildPrompt({ kind, metadata, materialPacket, existingLesson }) {
   const context = buildMaterialContext({ kind, metadata, materialPacket });
   if (!context.sourceText || context.sourceText.length < 80) {
@@ -810,7 +994,9 @@ function buildPrompt({ kind, metadata, materialPacket, existingLesson }) {
   return buildLessonPrompt({ metadata, context });
 }
 
-function getMaxTokens(kind) {
+function getMaxTokens(kind, override = null) {
+  const overrideNumber = Number.parseInt(override, 10);
+  if (Number.isFinite(overrideNumber)) return Math.min(9000, Math.max(1600, overrideNumber));
   const fallback = KIND_LIMITS[kind]?.maxTokens || 6500;
   const parsed = Number.parseInt(process.env.OPENAI_KOMITE_MAX_TOKENS || '', 10);
   if (!Number.isFinite(parsed)) return fallback;
@@ -836,14 +1022,14 @@ function getTextFormat(kind) {
   };
 }
 
-function buildOpenAiRequestPayload({ model, kind, prompt, simplified = false }) {
+function buildOpenAiRequestPayload({ model, kind, prompt, simplified = false, maxTokens = null }) {
   const requestPayload = {
     model,
     input: [
       { role: 'system', content: KOMITE_SYSTEM_PROMPT },
       { role: 'user', content: prompt },
     ],
-    max_output_tokens: getMaxTokens(kind),
+    max_output_tokens: getMaxTokens(kind, maxTokens),
   };
   if (!simplified) requestPayload.text = { format: getTextFormat(kind) };
   if (!simplified && kind === 'lesson') requestPayload.reasoning = { effort: 'minimal' };
@@ -925,7 +1111,7 @@ async function sendOpenAiRequest({ apiKey, requestPayload }) {
   return content;
 }
 
-async function requestKomiteContent({ apiKey, model, kind, prompt }) {
+async function requestKomiteContent({ apiKey, model, kind, prompt, maxTokens = null }) {
   const attempts = [];
   const modelCandidates = getModelCandidates(model);
 
@@ -935,7 +1121,7 @@ async function requestKomiteContent({ apiKey, model, kind, prompt }) {
         attempts.push(`${candidateModel}${simplified ? ':simplified' : ''}`);
         return await sendOpenAiRequest({
           apiKey,
-          requestPayload: buildOpenAiRequestPayload({ model: candidateModel, kind, prompt, simplified }),
+          requestPayload: buildOpenAiRequestPayload({ model: candidateModel, kind, prompt, simplified, maxTokens }),
         });
       } catch (error) {
         error.attempts = attempts.slice();
@@ -988,6 +1174,18 @@ export default async function handler(req, res) {
 
     const metadata = requestBody.metadata || {};
     const materialPacket = requestBody.materialPacket || {};
+    const model = process.env.OPENAI_KOMITE_MODEL || process.env.OPENAI_MODEL || DEFAULT_MODEL;
+    debugContext.model = model;
+
+    if (kind === 'lesson') {
+      const responsePayload = await requestKomiteLessonContent({ apiKey, model, metadata, materialPacket });
+      return res.status(200).json({
+        kind,
+        sourceFingerprint: requestBody.sourceFingerprint || '',
+        ...responsePayload,
+      });
+    }
+
     const prompt = buildPrompt({
       kind,
       metadata,
@@ -996,8 +1194,6 @@ export default async function handler(req, res) {
     });
     debugContext.promptChars = prompt.length;
 
-    const model = process.env.OPENAI_KOMITE_MODEL || process.env.OPENAI_MODEL || DEFAULT_MODEL;
-    debugContext.model = model;
     const content = await requestKomiteContent({ apiKey, model, kind, prompt });
     const parsed = parseJsonObject(content);
     const responsePayload = kind === 'lesson' ? wrapLessonPayload(parsed) : parsed;

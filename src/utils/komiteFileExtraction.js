@@ -4,8 +4,8 @@ import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.mjs?url';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
 
-const MAX_EXTRACTED_CHARS = 80_000;
-const MAX_PDF_PAGES = 90;
+const MAX_EXTRACTED_CHARS = Number.POSITIVE_INFINITY;
+const MAX_PDF_PAGES = Number.POSITIVE_INFINITY;
 const FIGURE_CONTEXT_CHARS = 900;
 
 export function getKomiteFileExtension(fileName = '') {
