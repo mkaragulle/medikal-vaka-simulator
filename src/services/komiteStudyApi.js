@@ -228,7 +228,9 @@ export async function generateKomiteStudyContent({ kind, payload, signal } = {})
     if (data?.debugReason) {
       console.error('[komite-study-api]', data.debugReason);
     }
-    throw new Error(data?.error || KOMITE_GENERATION_ERROR_MESSAGE);
+    const error = new Error(data?.error || KOMITE_GENERATION_ERROR_MESSAGE);
+    error.code = data?.errorCode || '';
+    throw error;
   }
 
   try {

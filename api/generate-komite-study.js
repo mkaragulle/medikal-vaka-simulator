@@ -3,7 +3,7 @@ const DEFAULT_MODEL = 'gpt-5.4-mini';
 const FALLBACK_MODEL = 'gpt-5.4-nano';
 
 const KIND_LIMITS = {
-  lesson: { maxSourceChars: 14_000, maxTokens: 5200 },
+  lesson: { maxSourceChars: 9_000, maxTokens: 3800 },
   questions: { maxSourceChars: 26_000, maxTokens: 6200 },
   cards: { maxSourceChars: 22_000, maxTokens: 5200 },
 };
@@ -304,6 +304,17 @@ function serializeError(error = {}) {
     attempts: Array.isArray(error?.attempts) ? error.attempts.join(', ') : '',
     stack: error?.stack || '',
   };
+}
+
+function classifyError(error = {}) {
+  const message = String(error?.message || '').toLowerCase();
+  if (error?.status === 'incomplete' || message.includes('incomplete')) return 'AI_INCOMPLETE';
+  if (error?.status === 401 || error?.status === 403 || message.includes('api key')) return 'OPENAI_AUTH';
+  if (isModelAccessError(error)) return 'OPENAI_MODEL';
+  if (isRecoverableOpenAiConfigError(error)) return 'OPENAI_PARAM';
+  if (message.includes('no usable source text')) return 'NO_SOURCE_TEXT';
+  if (message.includes('json')) return 'AI_JSON';
+  return 'KOMITE_AI';
 }
 
 function safePromptCacheKey(value = '', fallback = '') {
@@ -777,10 +788,10 @@ function buildOpenAiRequestPayload({ model, kind, prompt, simplified = false }) 
       { role: 'user', content: prompt },
     ],
     max_output_tokens: getMaxTokens(kind),
-    text: { format: getTextFormat(kind) },
   };
+  if (!simplified) requestPayload.text = { format: getTextFormat(kind) };
 
-  if (!simplified) {
+  if (!simplified && process.env.OPENAI_KOMITE_ENABLE_ADVANCED_PARAMS === '1') {
     const temperature = getTemperature();
     if (temperature !== null) requestPayload.temperature = temperature;
     const cacheKey = safePromptCacheKey(process.env.OPENAI_KOMITE_PROMPT_CACHE_KEY, `klinikiq-komite-${kind}-v2`);
@@ -927,9 +938,11 @@ export default async function handler(req, res) {
     });
   } catch (error) {
     const serialized = serializeError(error);
-    console.error('[generate-komite-study]', { ...debugContext, error: serialized });
+    const errorCode = classifyError(error);
+    console.error('[generate-komite-study]', { ...debugContext, errorCode, error: serialized });
     return res.status(500).json({
       error: ERROR_MESSAGE,
+      errorCode,
       ...(!isProduction() ? { debugReason: serialized.message, debugType: serialized.name } : {}),
     });
   }
