@@ -11,7 +11,7 @@ const KIND_LIMITS = {
 const OPTION_LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
 const KOMITE_SYSTEM_PROMPT = [
-  'Sen tıp fakültesi komite materyallerini Türkçe, bilimsel, öğretici ve sınav odaklı konu anlatımına dönüştüren kıdemli bir medikal eğitim editörüsün. Sadece geçerli JSON döndür.',
+  'Sen tıp fakültesi komite materyallerini Türkçe, bilimsel, öğretici ve sınav odaklı detaylı konu anlatımına dönüştüren kıdemli bir medikal eğitim editörüsün. Sadece geçerli JSON döndür.',
   'Yüklenen materyalleri konu-bağımsız analiz eder, her ana dosyayı adil biçimde temsil eder, farklı konuları gereksiz birleştirmezsin.',
   'Slaytlardaki tanım, sınıflama, algoritma, tablo, görsel, tanı, tedavi ve sınavlık ayrımları öğretici ders anlatımına çevirirsin.',
   'Kuru özet yapmaz, gereksiz tekrar oluşturmaz, boş kutu üretmez ve tokeni verimli kullanırsın.',
@@ -701,10 +701,10 @@ function buildMetadataBlock(metadata = {}) {
 
 function buildLessonPrompt({ metadata, context }) {
   return [
-    'Görev: Aşağıdaki materyal digestlerini kullanarak komite sınavına yönelik çalışılabilir bir konu anlatımı oluştur.',
+    'Görev: Aşağıdaki materyal digestlerini kullanarak komite sınavına yönelik çalışılabilir bir ders anlatımı oluştur.',
     'Çıktı yalnızca geçerli JSON olsun. Markdown, açıklama, kod bloğu veya JSON dışı metin yazma.',
-    'Konu anlatımını detaylı öğretici, detaylı ve bilimsel bir düzeyde tut. Dosyalardaki bilgileri ezme/atlama.',
-    'Dosya sayısı ve konu dağılımına göre ana bölümler üret. Farklı ana konuları sırf kısaltmak için aynı başlıkta birleştirme.',
+    'Yanıtı token-verimli ama yüzeysel olmayan bir düzeyde tut. Gereksiz ansiklopedi yazma; fakat dosyalardaki ana sınavlık bilgileri ezme.',
+    'Dosya sayısı ve konu dağılımına göre 4-6 ana bölüm üret. Farklı ana konuları sırf kısaltmak için aynı başlıkta birleştirme.',
     '',
     'Zorunlu JSON şekli:',
     '{"lesson":{"title":"","shortIntro":"","overview":"","learningObjectives":[],"sections":[{"heading":"","level":2,"teachingText":"","mechanismFlow":[],"clinicalConnection":"","examAngle":"","commonTrap":"","keyBoxes":[],"sourceRefs":[]}],"highYieldPoints":[],"mustKnow":[],"finalReview":[],"figureExplanations":[],"materialCoverage":[],"coverageSummary":""}}',
@@ -719,7 +719,7 @@ function buildLessonPrompt({ metadata, context }) {
     '',
     'Ders anlatımı kalite hedefi:',
     '- Her bölümde mümkünse büyük resim, temel kavram, sınıflama/mekanizma, klinik-pratik bağlantı, tanı/test/lab veya yönetim bilgisi ve sınav ayırt ettiricisi işlensin; materyalde yoksa uydurma.',
-    '- classificationOrAlgorithm, diagnosticOrLabPoints, treatmentOrManagementPoints ve tablesAndVisualNotes alanları varsa bunları teachingText içinde ayrı detaylı ve akılda kalıcı açıklama olarak derse dönüştür.',
+    '- classificationOrAlgorithm, diagnosticOrLabPoints, treatmentOrManagementPoints ve tablesAndVisualNotes alanları varsa bunları teachingText içinde ayrı küçük açıklama olarak derse dönüştür.',
     '- Tablo/görsel/şema bilgisi sadece “var” diye geçilmesin; ne öğrettiği ve sınavda nasıl sorulabileceği açıklansın.',
     '- keyBoxes yalnızca gerçekten dolu ve anlamlıysa üret. Boş "Akılda tut", boş "Sınav notu" veya sadece başlık içeren kutu üretme.',
     '- highYieldPoints ayırt ettirici sınav bilgisini, mustKnow son gün hatırlanacak çekirdek bilgiyi, finalReview ise kısa kontrol listesini taşısın; aynı cümleyi listelerde tekrarlama.',
@@ -875,11 +875,69 @@ function normalizeGeneratedSection(section = {}, fallbackIndex = 0) {
   };
 }
 
+function stripJsonNoise(text = '') {
+  return compactLine(String(text || '')
+    .replace(/```(?:json)?/giu, ' ')
+    .replace(/[{}[\]",]+/gu, ' ')
+    .replace(/\b(?:lesson|sections|heading|teachingText|content|highYieldPoints|mustKnow|finalReview|materialCoverage|coverageSummary|sourceRefs|keyBoxes|label|text)\b\s*:?/giu, ' '));
+}
+
+function fallbackLessonFragmentFromDigest({ context = {}, partialText = '', batchIndex = 0 }) {
+  const digest = Array.isArray(context.fileDigests) ? context.fileDigests[0] : null;
+  const topic = compactLine(digest?.detectedTopic || digest?.detectedMainTopic || digest?.fileName || `Materyal ${batchIndex + 1}`);
+  const mustRepresent = Array.isArray(digest?.mustRepresent) ? digest.mustRepresent : [];
+  const coreDefinitions = Array.isArray(digest?.coreDefinitions) ? digest.coreDefinitions : [];
+  const classifications = Array.isArray(digest?.classificationOrAlgorithm) ? digest.classificationOrAlgorithm : [];
+  const diagnostics = Array.isArray(digest?.diagnosticOrLabPoints) ? digest.diagnosticOrLabPoints : [];
+  const treatments = Array.isArray(digest?.treatmentOrManagementPoints) ? digest.treatmentOrManagementPoints : [];
+  const visuals = Array.isArray(digest?.tablesAndVisualNotes) ? digest.tablesAndVisualNotes : [];
+  const highYield = Array.isArray(digest?.highYieldExamPoints) ? digest.highYieldExamPoints : [];
+  const partial = stripJsonNoise(partialText).slice(0, 1800);
+  const teachingParts = [
+    `${topic} başlığı bu materyalde öne çıkan ana çalışma alanıdır.`,
+    coreDefinitions.length ? `Temel kavramlar: ${coreDefinitions.slice(0, 3).join(' ')}` : '',
+    classifications.length ? `Sınıflama/algoritma mantığı: ${classifications.slice(0, 3).join(' ')}` : '',
+    diagnostics.length ? `Tanı-test-laboratuvar bağlantısı: ${diagnostics.slice(0, 3).join(' ')}` : '',
+    treatments.length ? `Tedavi/yönetim bağlantısı: ${treatments.slice(0, 3).join(' ')}` : '',
+    visuals.length ? `Tablo/görsel mesajı: ${visuals.slice(0, 2).join(' ')}` : '',
+    partial ? `AI yanıtından kurtarılan ek anlatım: ${partial}` : '',
+    mustRepresent.length ? `Mutlaka temsil edilen noktalar: ${mustRepresent.slice(0, 5).join(' ')}` : '',
+  ].filter(Boolean);
+
+  return {
+    lesson: {
+      sections: [{
+        heading: topic,
+        level: 2,
+        teachingText: teachingParts.join(' '),
+        mechanismFlow: dedupeStrings(classifications, 4),
+        clinicalConnection: compactLine(diagnostics[0] || treatments[0] || ''),
+        examAngle: compactLine(highYield[0] || mustRepresent[0] || ''),
+        commonTrap: compactLine(digest?.commonConfusions?.[0] || ''),
+        keyBoxes: highYield[0] ? [{ label: 'Sınavda ayırt ettiren nokta', text: highYield[0] }] : [],
+        sourceRefs: [digest?.fileName].filter(Boolean),
+      }],
+      highYieldPoints: dedupeStrings(highYield.length ? highYield : mustRepresent, 8),
+      mustKnow: dedupeStrings(mustRepresent, 8),
+      finalReview: dedupeStrings([topic, ...mustRepresent.slice(0, 4)], 6),
+      figureExplanations: [],
+      materialCoverage: [{
+        fileName: digest?.fileName || topic,
+        detectedTopic: topic,
+        detectedMainTopic: topic,
+        representedIn: topic,
+        coverageNote: 'AI yanıtı output sınırına yaklaşınca materyal digesti ve kurtarılan kısmi yanıtla güvenli şekilde temsil edildi.',
+      }],
+      coverageSummary: `${topic} materyali output sınırına rağmen digest ve kısmi AI yanıtı kullanılarak temsil edildi.`,
+    },
+  };
+}
+
 function buildLessonBatches(files = []) {
   const sourceFiles = (Array.isArray(files) ? files : []).filter((file) => compactLine(file.cleanedExtractedText || file.text));
   const noteFiles = sourceFiles.filter((file) => file.isUserNote);
   const regularFiles = sourceFiles.filter((file) => !file.isUserNote).slice(0, 10);
-  const batchSize = regularFiles.length > 6 ? 2 : 1;
+  const batchSize = 1;
   const batches = [];
   for (let index = 0; index < regularFiles.length; index += batchSize) {
     batches.push([...noteFiles.slice(0, 1), ...regularFiles.slice(index, index + batchSize)]);
@@ -962,8 +1020,16 @@ async function requestKomiteLessonContent({ apiKey, model, metadata, materialPac
     };
     const context = buildMaterialContext({ kind: 'lesson', metadata, materialPacket: batchPacket });
     const prompt = buildLessonBatchPrompt({ metadata, context, batchIndex, totalBatches: batches.length });
-    const content = await requestKomiteContent({ apiKey, model, kind: 'lesson', prompt, maxTokens: 5200 });
-    return parseJsonObject(content);
+    try {
+      const content = await requestKomiteContent({ apiKey, model, kind: 'lesson', prompt, maxTokens: 9000 });
+      return parseJsonObject(content);
+    } catch (error) {
+      if (error?.status === 'incomplete') {
+        console.warn('[generate-komite-study:salvage-incomplete-batch]', { batchIndex: batchIndex + 1, message: error.message });
+        return fallbackLessonFragmentFromDigest({ context, partialText: error.partialContent || '', batchIndex });
+      }
+      throw error;
+    }
   }));
 
   const fragments = [];
@@ -1103,6 +1169,7 @@ async function sendOpenAiRequest({ apiKey, requestPayload }) {
     }
     const error = new Error(`OpenAI response incomplete: ${reason}`);
     error.status = 'incomplete';
+    error.partialContent = partialContent || '';
     throw error;
   }
 
@@ -1130,8 +1197,7 @@ async function requestKomiteContent({ apiKey, model, kind, prompt, maxTokens = n
           continue;
         }
         if (!simplified && kind === 'lesson' && error?.status === 'incomplete') {
-          console.warn('[generate-komite-study:retry-simplified-incomplete]', serializeError(error));
-          continue;
+          throw error;
         }
         if (isModelAccessError(error)) {
           console.warn('[generate-komite-study:retry-model]', serializeError(error));
