@@ -3,7 +3,7 @@ const DEFAULT_MODEL = 'gpt-5.4-mini';
 const FALLBACK_MODEL = 'gpt-5.4-nano';
 
 const KIND_LIMITS = {
-  lesson: { maxSourceChars: 9_000, maxTokens: 3800 },
+  lesson: { maxSourceChars: 7_000, maxTokens: 5600 },
   questions: { maxSourceChars: 26_000, maxTokens: 6200 },
   cards: { maxSourceChars: 22_000, maxTokens: 5200 },
 };
@@ -652,24 +652,28 @@ function buildMetadataBlock(metadata = {}) {
 
 function buildLessonPrompt({ metadata, context }) {
   return [
-    'Görev: Kullanıcının yüklediği materyallerden kapsamlı ama token-verimli bir komite ders anlatımı oluştur.',
-    'Çıktı yalnızca schema ile uyumlu JSON olsun.',
+    'Görev: Kullanıcının yüklediği materyallerden kısa, tamamlanabilir ve öğretici bir komite ders anlatımı oluştur.',
+    'Çıktı yalnızca geçerli JSON olsun. Markdown, açıklama, kod bloğu veya JSON dışı metin yazma.',
+    'Yanıtı bilinçli olarak kompakt tut: 3-4 ana bölüm, her bölümde 1 yoğun öğretici paragraf ve kısa sınav notları yeterlidir.',
+    'Yanıt yarıda kalmasın diye gereksiz uzun giriş, tekrar eden başlık ve ansiklopedik detay yazma.',
+    '',
+    'Zorunlu JSON şekli:',
+    '{"lesson":{"title":"","shortIntro":"","overview":"","learningObjectives":[],"sections":[{"heading":"","level":2,"teachingText":"","mechanismFlow":[],"clinicalConnection":"","examAngle":"","commonTrap":"","keyBoxes":[],"sourceRefs":[]}],"highYieldPoints":[],"mustKnow":[],"finalReview":[],"figureExplanations":[],"materialCoverage":[],"coverageSummary":""}}',
     '',
     'Kapsam kuralları:',
     '- Önce her MATERIAL_DIGEST kartındaki dosyanın ana konusunu ve eğitim değerini dikkate al.',
-    '- Hiçbir ana dosyayı sessizce yok sayma. Her dosya sections içindeki uygun bir bölümde sourceRefs ile temsil edilsin.',
+    '- Hiçbir ana dosyayı sessizce yok sayma; her dosyayı ya uygun bölümün sourceRefs alanında ya da materialCoverage içinde temsil et.',
     '- Aynı konuya ait dosyaları birleştir; farklı konuları ayrı ana bölümlere ayır.',
-    '- Bir dosya metin kalitesi çok zayıf olduğu için temsil edilemiyorsa bunu materialCoverage.coverageNote ve coverageSummary içinde kısa ve dürüstçe belirt.',
+    '- Bir dosya metin kalitesi çok zayıfsa bunu coverageSummary içinde kısa ve dürüstçe belirt.',
     '- Bir dosyadan yakalanan tek bilgiyi ait olmadığı bölüme taşıma; bağlamı belirsiz bilgiyi kesin hüküm gibi kullanma.',
     '',
     'Ders anlatımı kalite hedefi:',
     '- Sadece özetleme yapma; mantığı kur, bağlantıları açıkla, sınavda ayırt ettiren bilgileri göster, sık karıştırılan noktaları netleştir.',
-    '- Tanım, mekanizma/mantık, klinik veya pratik bağlantı, laboratuvar/görüntüleme/test bağlantısı ve sınav odağı uygun yerlerde kurulsun.',
+    '- Tanım, mekanizma/mantık, klinik veya pratik bağlantı ve sınav odağı uygun yerlerde kurulsun.',
     '- Tablo varsa düz metne gömmek yerine karşılaştırma mantığını açıkla. Görsel/şema varsa sadece okunabilen bağlamdan eğitim yorumu yap.',
-    '- Vurgulu/not olarak yakalanan içerikleri yüksek öncelikli kabul et; fakat her paragrafı kutuya dönüştürme.',
-    '- 3-6 ana bölüm yaz. Bölümler yoğun ama akıcı olsun; uzun ansiklopedik paragraf, mekanik kalıp tekrarları ve dosya adı tekrarından kaçın.',
-    '- mechanismFlow alanını yalnızca gerçekten süreç/mekanizma varsa doldur; her bölümde aynı kalıbı kullanma.',
-    '- highYieldPoints ve mustKnow aynı cümleleri tekrar etmesin; biri ayırt ettirici sınav bilgisi, diğeri son tekrar hafızası gibi çalışsın.',
+    '- Vurgulu/not olarak yakalanan içerikleri yüksek öncelikli kabul et.',
+    '- highYieldPoints 5-7 madde, mustKnow 4-6 madde, finalReview 4-6 madde olsun.',
+    '- materialCoverage kısa olsun: dosya adı, ana konu, hangi bölümde temsil edildiği ve kısa not.',
     '',
     'Meta bilgi:',
     buildMetadataBlock(metadata),
@@ -677,7 +681,6 @@ function buildLessonPrompt({ metadata, context }) {
     context.sourceManifest ? `Kaynak listesi:\n${context.sourceManifest}` : '',
     context.materialDigestContext ? `Dosya başına yoğun materyal özetleri:\n${context.materialDigestContext}` : '',
     context.emphasisContext ? `Okunabilen vurgu/notlar:\n${context.emphasisContext}` : '',
-    context.structureContext ? `Algılanan yapı/tablo/slayt izleri:\n${context.structureContext}` : '',
     context.visualContext ? `Görsel/tablo ipuçları:\n${context.visualContext}` : '',
     '',
     `Seçilmiş temiz materyal metni:\n${context.sourceText}`,
@@ -759,7 +762,8 @@ function getMaxTokens(kind) {
   const fallback = KIND_LIMITS[kind]?.maxTokens || 6500;
   const parsed = Number.parseInt(process.env.OPENAI_KOMITE_MAX_TOKENS || '', 10);
   if (!Number.isFinite(parsed)) return fallback;
-  return Math.min(9000, Math.max(1600, parsed));
+  const minimumByKind = kind === 'lesson' ? 5200 : kind === 'questions' ? 5000 : 4200;
+  return Math.min(9000, Math.max(minimumByKind, parsed));
 }
 
 function getTemperature() {
@@ -790,6 +794,7 @@ function buildOpenAiRequestPayload({ model, kind, prompt, simplified = false }) 
     max_output_tokens: getMaxTokens(kind),
   };
   if (!simplified) requestPayload.text = { format: getTextFormat(kind) };
+  if (!simplified && kind === 'lesson') requestPayload.reasoning = { effort: 'minimal' };
 
   if (!simplified && process.env.OPENAI_KOMITE_ENABLE_ADVANCED_PARAMS === '1') {
     const temperature = getTemperature();
@@ -848,6 +853,16 @@ async function sendOpenAiRequest({ apiKey, requestPayload }) {
   }
   if (payload?.status === 'incomplete') {
     const reason = payload?.incomplete_details?.reason || payload?.incomplete_details || 'unknown';
+    const partialContent = extractResponseText(payload);
+    if (partialContent) {
+      try {
+        parseJsonObject(partialContent);
+        console.warn('[generate-komite-study:using-parseable-incomplete]', { reason });
+        return partialContent;
+      } catch {
+        // A partial non-JSON response cannot be safely shown as a lesson.
+      }
+    }
     const error = new Error(`OpenAI response incomplete: ${reason}`);
     error.status = 'incomplete';
     throw error;
@@ -874,6 +889,10 @@ async function requestKomiteContent({ apiKey, model, kind, prompt }) {
         error.attempts = attempts.slice();
         if (!simplified && isRecoverableOpenAiConfigError(error)) {
           console.warn('[generate-komite-study:retry-simplified]', serializeError(error));
+          continue;
+        }
+        if (!simplified && kind === 'lesson' && error?.status === 'incomplete') {
+          console.warn('[generate-komite-study:retry-simplified-incomplete]', serializeError(error));
           continue;
         }
         if (isModelAccessError(error)) {
