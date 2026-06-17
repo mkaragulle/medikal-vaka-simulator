@@ -519,13 +519,13 @@ function compactMaterialPacketForGeneration(packet = {}, kind = 'lesson') {
   const sourceFiles = Array.isArray(packet.files)
     ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
     : [];
-  const maxTotalChars = kind === 'lesson' ? 36_000 : kind === 'questions' ? 34_000 : 30_000;
+  const maxTotalChars = kind === 'lesson' ? 20_000 : kind === 'questions' ? 26_000 : 24_000;
   const noteFiles = sourceFiles.filter((file) => file.isUserNote);
   const regularFiles = sourceFiles.filter((file) => !file.isUserNote);
-  const noteBudget = Math.min(10_000, Math.max(5000, Math.floor(maxTotalChars * 0.2)));
+  const noteBudget = Math.min(6000, Math.max(2500, Math.floor(maxTotalChars * 0.18)));
   const usedByNotes = noteFiles.reduce((sum, file) => sum + Math.min(noteBudget, String(file.cleanedExtractedText || file.text || '').length), 0);
-  const remainingBudget = Math.max(16_000, maxTotalChars - usedByNotes);
-  const perRegularFile = regularFiles.length ? Math.max(5000, Math.floor(remainingBudget / regularFiles.length)) : remainingBudget;
+  const remainingBudget = Math.max(8000, maxTotalChars - usedByNotes);
+  const perRegularFile = regularFiles.length ? Math.max(1200, Math.floor(remainingBudget / regularFiles.length)) : remainingBudget;
 
   const files = [
     ...noteFiles.map((file) => ({ ...file, cleanedExtractedText: clipTextForGeneration(file.cleanedExtractedText || file.text || '', noteBudget) })),
@@ -535,9 +535,9 @@ function compactMaterialPacketForGeneration(packet = {}, kind = 'lesson') {
     fileType: file.fileType || file.type || 'file',
     cleanedExtractedText: file.cleanedExtractedText || '',
     detectedTopics: compactArrayForGeneration(file.detectedTopics, 8),
-    detectedStructure: compactArrayForGeneration(file.detectedStructure, 18),
-    figures: compactArrayForGeneration(file.figures, 12),
-    emphasisNotes: compactArrayForGeneration(file.emphasisNotes, 14),
+    detectedStructure: compactArrayForGeneration(file.detectedStructure, 8),
+    figures: compactArrayForGeneration(file.figures, 6),
+    emphasisNotes: compactArrayForGeneration(file.emphasisNotes, 6),
     charCount: Number(file.charCount || String(file.cleanedExtractedText || '').length || 0),
     extractionOk: Boolean(file.extractionOk || file.cleanedExtractedText),
     isUserNote: Boolean(file.isUserNote),
@@ -550,8 +550,8 @@ function compactMaterialPacketForGeneration(packet = {}, kind = 'lesson') {
     courseName: packet.courseName || '',
     studyGoal: packet.studyGoal || '',
     university: packet.university || '',
-    figures: compactArrayForGeneration(packet.figures, 16),
-    detectedStructure: compactArrayForGeneration(packet.detectedStructure, 20),
+    figures: compactArrayForGeneration(packet.figures, 10),
+    detectedStructure: compactArrayForGeneration(packet.detectedStructure, 10),
     files,
   };
 }
@@ -577,6 +577,10 @@ function summarizeLessonForGeneration(lesson = null) {
 
 function buildKomiteGenerationPayload(material = {}, kind = 'lesson') {
   const packet = buildCombinedMaterialPacket(material);
+  const materialPacket = compactMaterialPacketForGeneration(packet, kind);
+  const approximateSourceChars = Array.isArray(materialPacket.files)
+    ? materialPacket.files.reduce((sum, file) => sum + String(file.cleanedExtractedText || '').length, 0)
+    : 0;
   return {
     sourceFingerprint: buildSourceFingerprint(material, packet),
     metadata: {
@@ -586,7 +590,12 @@ function buildKomiteGenerationPayload(material = {}, kind = 'lesson') {
       learningTarget: material.learningTarget || '',
       university: material.university || '',
     },
-    materialPacket: compactMaterialPacketForGeneration(packet, kind),
+    materialPacket,
+    debugMeta: {
+      fileCount: Array.isArray(materialPacket.files) ? materialPacket.files.length : 0,
+      approximateSourceChars,
+      kind,
+    },
     existingLesson: kind === 'questions' || kind === 'cards' ? summarizeLessonForGeneration(material.lesson) : null,
   };
 }

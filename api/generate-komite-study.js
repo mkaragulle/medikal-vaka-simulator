@@ -2,9 +2,9 @@ const ERROR_MESSAGE = 'Komite çalışma içeriği şu anda oluşturulamadı. L�
 const DEFAULT_MODEL = 'gpt-5.4-nano';
 
 const KIND_LIMITS = {
-  lesson: { maxSourceChars: 34_000, maxTokens: 6200 },
-  questions: { maxSourceChars: 34_000, maxTokens: 6200 },
-  cards: { maxSourceChars: 30_000, maxTokens: 5200 },
+  lesson: { maxSourceChars: 14_000, maxTokens: 5200 },
+  questions: { maxSourceChars: 26_000, maxTokens: 6200 },
+  cards: { maxSourceChars: 22_000, maxTokens: 5200 },
 };
 
 const OPTION_LETTERS = ['A', 'B', 'C', 'D', 'E'];
@@ -289,6 +289,19 @@ function readRequestBody(req) {
   return req.body;
 }
 
+function isProduction() {
+  return process.env.NODE_ENV === 'production' || process.env.VERCEL_ENV === 'production';
+}
+
+function serializeError(error = {}) {
+  return {
+    name: error?.name || 'Error',
+    message: error?.message || String(error || 'Unknown error'),
+    status: error?.status || error?.code || '',
+    stack: error?.stack || '',
+  };
+}
+
 function parseJsonObject(text = '') {
   const source = String(text || '').trim();
   try {
@@ -456,13 +469,13 @@ function buildFileDigest(file = {}, fileIndex = 0) {
   return {
     fileName: file.fileName || file.name || `Materyal ${fileIndex + 1}`,
     detectedMainTopic: inferMainTopic(file, headings, text),
-    keyHeadings: headings.slice(0, 8),
-    coreFacts: unique(scored).slice(0, 8),
-    importantDefinitions: unique(definitionLines).slice(0, 4),
-    tablesAndVisuals: unique([...visuals, ...tableStructures]).slice(0, 6),
-    highlightedOrEmphasizedPoints: unique(emphasis).slice(0, 6),
-    examRelevantPoints: unique(examLines).slice(0, 6),
-    commonConfusions: unique(confusionLines).slice(0, 4),
+    keyHeadings: headings.slice(0, 6),
+    coreFacts: unique(scored).slice(0, 6),
+    importantDefinitions: unique(definitionLines).slice(0, 3),
+    tablesAndVisuals: unique([...visuals, ...tableStructures]).slice(0, 4),
+    highlightedOrEmphasizedPoints: unique(emphasis).slice(0, 4),
+    examRelevantPoints: unique(examLines).slice(0, 4),
+    commonConfusions: unique(confusionLines).slice(0, 3),
     extractedTextQuality: textQuality,
     charCount: Number(file.charCount || text.length || 0),
   };
@@ -473,13 +486,13 @@ function formatFileDigest(digest = {}) {
     `fileName: ${digest.fileName}`,
     `detectedMainTopic: ${digest.detectedMainTopic}`,
     `extractedTextQuality: ${digest.extractedTextQuality}; charCount: ${digest.charCount}`,
-    digest.keyHeadings?.length ? `keyHeadings:\n${safeStringifyList(digest.keyHeadings, 8, 120)}` : '',
-    digest.coreFacts?.length ? `coreFacts:\n${safeStringifyList(digest.coreFacts, 8, 220)}` : '',
-    digest.importantDefinitions?.length ? `importantDefinitions:\n${safeStringifyList(digest.importantDefinitions, 4, 220)}` : '',
-    digest.tablesAndVisuals?.length ? `tablesAndVisuals:\n${safeStringifyList(digest.tablesAndVisuals, 6, 220)}` : '',
-    digest.highlightedOrEmphasizedPoints?.length ? `highlightedOrEmphasizedPoints:\n${safeStringifyList(digest.highlightedOrEmphasizedPoints, 6, 220)}` : '',
-    digest.examRelevantPoints?.length ? `examRelevantPoints:\n${safeStringifyList(digest.examRelevantPoints, 6, 220)}` : '',
-    digest.commonConfusions?.length ? `commonConfusions:\n${safeStringifyList(digest.commonConfusions, 4, 220)}` : '',
+    digest.keyHeadings?.length ? `keyHeadings:\n${safeStringifyList(digest.keyHeadings, 6, 110)}` : '',
+    digest.coreFacts?.length ? `coreFacts:\n${safeStringifyList(digest.coreFacts, 6, 180)}` : '',
+    digest.importantDefinitions?.length ? `importantDefinitions:\n${safeStringifyList(digest.importantDefinitions, 3, 180)}` : '',
+    digest.tablesAndVisuals?.length ? `tablesAndVisuals:\n${safeStringifyList(digest.tablesAndVisuals, 4, 180)}` : '',
+    digest.highlightedOrEmphasizedPoints?.length ? `highlightedOrEmphasizedPoints:\n${safeStringifyList(digest.highlightedOrEmphasizedPoints, 4, 180)}` : '',
+    digest.examRelevantPoints?.length ? `examRelevantPoints:\n${safeStringifyList(digest.examRelevantPoints, 4, 180)}` : '',
+    digest.commonConfusions?.length ? `commonConfusions:\n${safeStringifyList(digest.commonConfusions, 3, 180)}` : '',
   ].filter(Boolean).join('\n');
 }
 
@@ -490,7 +503,7 @@ function extractVisualHints(packet = {}) {
       ? file.figures.map((figure) => ({ sourceFile: file.fileName || figure.sourceFile || '', ...figure }))
       : []
   ));
-  return [...packetFigures, ...fileFigures].slice(0, 16);
+  return [...packetFigures, ...fileFigures].slice(0, 8);
 }
 
 function buildMaterialContext({ kind, metadata = {}, materialPacket = {} }) {
@@ -503,7 +516,7 @@ function buildMaterialContext({ kind, metadata = {}, materialPacket = {} }) {
   const chunks = [];
 
   highPriorityFiles.forEach((file, fileIndex) => {
-    splitSourceIntoChunks(file.cleanedExtractedText || file.text || '', kind === 'lesson' ? 1800 : 2200).forEach((text, chunkIndex) => {
+    splitSourceIntoChunks(file.cleanedExtractedText || file.text || '', kind === 'lesson' ? 1200 : 2200).forEach((text, chunkIndex) => {
       chunks.push({
         source: `${file.fileName || 'Ek ders notu'} · ${chunkIndex + 1}`,
         text,
@@ -515,7 +528,7 @@ function buildMaterialContext({ kind, metadata = {}, materialPacket = {} }) {
   });
 
   regularFiles.forEach((file, fileIndex) => {
-    splitSourceIntoChunks(file.cleanedExtractedText || file.text || '', kind === 'lesson' ? 1900 : 2400).forEach((text, chunkIndex) => {
+    splitSourceIntoChunks(file.cleanedExtractedText || file.text || '', kind === 'lesson' ? 1200 : 2400).forEach((text, chunkIndex) => {
       chunks.push({
         source: `${file.fileName || `Materyal ${fileIndex + 1}`} · bölüm ${chunkIndex + 1}`,
         text,
@@ -577,8 +590,8 @@ function buildMaterialContext({ kind, metadata = {}, materialPacket = {} }) {
       `Okunabilen metin: ${compactLine(figure.visibleTextAroundFigure || figure.description || figure.preview || '').slice(0, 520)}`,
       figure.limitations ? `Sınır: ${figure.limitations}` : '',
     ].filter(Boolean).join('\n')).join('\n\n'),
-    emphasisContext: safeStringifyList(emphasisNotes, 14, 420),
-    structureContext: safeStringifyList(structures, 12, 320),
+    emphasisContext: safeStringifyList(emphasisNotes, kind === 'lesson' ? 8 : 14, kind === 'lesson' ? 260 : 420),
+    structureContext: safeStringifyList(structures, kind === 'lesson' ? 6 : 12, kind === 'lesson' ? 220 : 320),
     sourceManifest: safeStringifyList(fileDigests.map((digest) => `${digest.fileName} | ${digest.detectedMainTopic} | metin kalitesi: ${digest.extractedTextQuality} | ${digest.charCount} karakter`), 12, 260),
     fileDigests,
   };
@@ -713,7 +726,7 @@ function getTemperature() {
 }
 
 function getTextFormat(kind) {
-  if (process.env.OPENAI_KOMITE_RESPONSE_FORMAT === 'json_object') {
+  if (kind === 'lesson' || process.env.OPENAI_KOMITE_RESPONSE_FORMAT === 'json_object') {
     return { type: 'json_object' };
   }
   return {
@@ -753,14 +766,23 @@ async function requestKomiteContent({ apiKey, model, kind, prompt }) {
     body: JSON.stringify(requestPayload),
   });
 
-  const payload = await aiResponse.json();
+  let payload = null;
+  try {
+    payload = await aiResponse.json();
+  } catch {
+    payload = null;
+  }
   if (!aiResponse.ok) {
     const message = payload?.error?.message || payload?.error || `OpenAI request failed: ${aiResponse.status}`;
-    throw new Error(`OpenAI request failed: ${aiResponse.status} ${message}`);
+    const error = new Error(`OpenAI request failed: ${aiResponse.status} ${message}`);
+    error.status = aiResponse.status;
+    throw error;
   }
   if (payload?.status === 'incomplete') {
     const reason = payload?.incomplete_details?.reason || payload?.incomplete_details || 'unknown';
-    throw new Error(`OpenAI response incomplete: ${reason}`);
+    const error = new Error(`OpenAI response incomplete: ${reason}`);
+    error.status = 'incomplete';
+    throw error;
   }
 
   const content = extractResponseText(payload);
@@ -774,6 +796,14 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: ERROR_MESSAGE });
   }
 
+  const debugContext = {
+    kind: '',
+    model: '',
+    fileCount: 0,
+    approximateSourceChars: 0,
+    promptChars: 0,
+  };
+
   try {
     const apiKey = process.env.OPENAI_API_KEY;
     if (!apiKey) throw new Error('OPENAI_API_KEY is missing.');
@@ -781,6 +811,9 @@ export default async function handler(req, res) {
     const requestBody = readRequestBody(req);
     const kind = ['lesson', 'questions', 'cards'].includes(requestBody?.kind) ? requestBody.kind : '';
     if (!kind) throw new Error('Invalid komite generation kind.');
+    debugContext.kind = kind;
+    debugContext.fileCount = Number(requestBody?.debugMeta?.fileCount || requestBody?.materialPacket?.files?.length || 0);
+    debugContext.approximateSourceChars = Number(requestBody?.debugMeta?.approximateSourceChars || 0);
 
     const metadata = requestBody.metadata || {};
     const materialPacket = requestBody.materialPacket || {};
@@ -790,18 +823,25 @@ export default async function handler(req, res) {
       materialPacket,
       existingLesson: requestBody.existingLesson || null,
     });
+    debugContext.promptChars = prompt.length;
 
     const model = process.env.OPENAI_KOMITE_MODEL || process.env.OPENAI_MODEL || DEFAULT_MODEL;
+    debugContext.model = model;
     const content = await requestKomiteContent({ apiKey, model, kind, prompt });
     const parsed = parseJsonObject(content);
+    const responsePayload = kind === 'lesson' && parsed && !parsed.lesson ? { lesson: parsed } : parsed;
 
     return res.status(200).json({
       kind,
       sourceFingerprint: requestBody.sourceFingerprint || '',
-      ...parsed,
+      ...responsePayload,
     });
   } catch (error) {
-    console.error('[generate-komite-study]', error);
-    return res.status(500).json({ error: ERROR_MESSAGE });
+    const serialized = serializeError(error);
+    console.error('[generate-komite-study]', { ...debugContext, error: serialized });
+    return res.status(500).json({
+      error: ERROR_MESSAGE,
+      ...(!isProduction() ? { debugReason: serialized.message, debugType: serialized.name } : {}),
+    });
   }
 }
