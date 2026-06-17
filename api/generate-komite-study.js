@@ -11,7 +11,7 @@ const KIND_LIMITS = {
 const OPTION_LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
 const KOMITE_SYSTEM_PROMPT = [
-  'Sen tıp fakültesi komite materyallerini Türkçe, bilimsel, öğretici ve sınav odaklı detaylı konu anlatımına dönüştüren kıdemli bir medikal eğitim editörüsün. Sadece geçerli JSON döndür.',
+  'Sen tıp fakültesi komite materyallerini Türkçe, bilimsel, öğretici ve sınav odaklı konu anlatımına dönüştüren kıdemli bir medikal eğitim editörüsün. Sadece geçerli JSON döndür.',
   'Yüklenen materyalleri konu-bağımsız analiz eder, her ana dosyayı adil biçimde temsil eder, farklı konuları gereksiz birleştirmezsin.',
   'Slaytlardaki tanım, sınıflama, algoritma, tablo, görsel, tanı, tedavi ve sınavlık ayrımları öğretici ders anlatımına çevirirsin.',
   'Kuru özet yapmaz, gereksiz tekrar oluşturmaz, boş kutu üretmez ve tokeni verimli kullanırsın.',
@@ -507,6 +507,7 @@ function buildMustRepresentItems({ headings = [], definitions = [], classificati
 
 function buildFileDigest(file = {}, fileIndex = 0) {
   const text = normalizeText(file.cleanedExtractedText || file.text || '');
+  const fullCharCount = Number(file.fullCharCount || file.charCount || text.length || 0);
   const headings = extractHeadingCandidates(file, text);
   const sentences = sentenceCandidates(text);
   const scored = sentences
@@ -567,7 +568,12 @@ function buildFileDigest(file = {}, fileIndex = 0) {
     examRelevantPoints: highYieldExamPoints,
     commonConfusions: unique(confusionLines).slice(0, 3),
     mustRepresent,
+    extractedTextLength: text.length,
     charCount: Number(file.charCount || text.length || 0),
+    fullCharCount,
+    extractionWarnings: fullCharCount > text.length + 500
+      ? [`Materyal çok uzun olduğu için API bağlamına öğretici excerpt taşındı; özgün metin uzunluğu yaklaşık ${fullCharCount} karakter, gönderilen öğretici excerpt ${text.length} karakter.`]
+      : [],
   };
 }
 
@@ -575,7 +581,8 @@ function formatFileDigest(digest = {}) {
   return [
     `fileName: ${digest.fileName}`,
     `detectedTopic: ${digest.detectedTopic}`,
-    `sourceQuality: ${digest.sourceQuality}; charCount: ${digest.charCount}`,
+    `sourceQuality: ${digest.sourceQuality}; extractedTextLength: ${digest.extractedTextLength}; originalTextLength: ${digest.fullCharCount || digest.charCount}`,
+    digest.extractionWarnings?.length ? `extractionWarnings:\n${safeStringifyList(digest.extractionWarnings, 2, 180)}` : '',
     digest.mainHeadings?.length ? `mainHeadings:\n${safeStringifyList(digest.mainHeadings, 7, 120)}` : '',
     digest.coreDefinitions?.length ? `coreDefinitions:\n${safeStringifyList(digest.coreDefinitions, 4, 190)}` : '',
     digest.classificationOrAlgorithm?.length ? `classificationOrAlgorithm:\n${safeStringifyList(digest.classificationOrAlgorithm, 5, 190)}` : '',
@@ -794,6 +801,7 @@ function buildLessonBatchPrompt({ metadata, context, batchIndex = 0, totalBatche
     '',
     'Kalite kuralları:',
     '- Her dosyanın detectedTopic ve mustRepresent maddeleri anlatımda görünür biçimde temsil edilsin.',
+    '- Tek materyalde birden fazla ana başlık varsa 2-4 ayrı section yaz; tek dosyayı yüzeysel tek paragrafta bırakma.',
     '- Farklı ana konuları aynı heading altında ezme; gerekirse aynı dosya için birden fazla section yaz.',
     '- classificationOrAlgorithm, diagnosticOrLabPoints, treatmentOrManagementPoints ve tablesAndVisualNotes alanları varsa teachingText içinde açıkça derse dönüştür.',
     '- teachingText kuru özet olmasın: büyük resmi kur, kavramı açıkla, sınıflama/algoritma mantığını anlat, tanı-lab-yönetim bağlantısını materyalde varsa işle.',
@@ -926,9 +934,9 @@ function fallbackLessonFragmentFromDigest({ context = {}, partialText = '', batc
         detectedTopic: topic,
         detectedMainTopic: topic,
         representedIn: topic,
-        coverageNote: 'AI yanıtı output sınırına yaklaşınca materyal digesti ve kurtarılan kısmi yanıtla güvenli şekilde temsil edildi.',
+        coverageNote: 'Bu materyalden ayrıştırılan ana başlıklar, vurgular ve okunabilen açıklamalar ders bölümüne dönüştürüldü; bazı ayrıntılar teknik nedenle sınırlı temsil edilmiş olabilir.',
       }],
-      coverageSummary: `${topic} materyali output sınırına rağmen digest ve kısmi AI yanıtı kullanılarak temsil edildi.`,
+      coverageSummary: `${topic} materyali ayrıştırılan ana başlıklar ve okunabilen içerik üzerinden temsil edildi.`,
     },
   };
 }
@@ -983,6 +991,12 @@ function mergeLessonFragments({ fragments = [], metadata = {}, allDigests = [] }
   });
 
   const courseTitle = compactLine(metadata.course || metadata.committee || 'Komite ders anlatımı');
+  const learningObjectives = dedupeStrings(sections.map((section) => {
+    const focus = section.examAngle || section.clinicalConnection || section.commonTrap || section.teachingText;
+    const focusText = compactLine(focus).replace(/[.!?]+$/u, '').slice(0, 150);
+    if (focusText) return `${section.heading}: ${focusText} bilgisini açıklamak ve soruda ayırt etmek.`;
+    return `${section.heading} konusunun temel kavramlarını ve materyalde vurgulanan ayırt edici noktalarını açıklamak.`;
+  }), 10);
   return {
     lesson: {
       title: courseTitle,
@@ -990,7 +1004,7 @@ function mergeLessonFragments({ fragments = [], metadata = {}, allDigests = [] }
       shortIntro: `${courseTitle} materyallerinden dosya bazlı çıkarılan ana konular, sınav ayırt ettiricileri ve çalışma notları aşağıda yapılandırıldı.`,
       overview: 'Ders anlatımı her materyalin ana konusunu ayrı veya ilişkili bölümlerde temsil edecek şekilde oluşturuldu; tanım, sınıflama, algoritma, tablo/görsel, tanı ve yönetim bilgileri materyalde bulunduğu ölçüde işlendi.',
       bigPicture: 'Önce her dosyanın ana konusu ayrıldı, ardından ilişkili başlıklar birleştirildi; farklı konular tek başlıkta ezilmedi.',
-      learningObjectives: dedupeStrings(sections.map((section) => `${section.heading} başlığındaki temel mantığı, sınav ayırt ettiricilerini ve klinik-pratik bağlantıları açıklayabilmek.`), 10),
+      learningObjectives,
       sections,
       highYieldPoints: dedupeStrings(highYieldPoints, 18),
       mustKnow: dedupeStrings(mustKnow, 14),
@@ -1010,6 +1024,10 @@ async function requestKomiteLessonContent({ apiKey, model, metadata, materialPac
   const batches = buildLessonBatches(files);
   if (!batches.length) throw new Error('No usable source text.');
   const allDigests = files.map((file, index) => buildFileDigest(file, index));
+  const batchNames = batches.map((batchFiles, index) => {
+    const regular = batchFiles.find((file) => !file.isUserNote) || batchFiles[0];
+    return regular?.fileName || regular?.name || `Materyal ${index + 1}`;
+  });
 
   const settled = await Promise.allSettled(batches.map(async (batchFiles, batchIndex) => {
     const batchPacket = {
@@ -1036,16 +1054,16 @@ async function requestKomiteLessonContent({ apiKey, model, metadata, materialPac
   const failed = [];
   settled.forEach((result, index) => {
     if (result.status === 'fulfilled') fragments.push(result.value);
-    else failed.push({ index: index + 1, reason: result.reason?.message || 'unknown' });
+    else failed.push({ fileName: batchNames[index], reason: result.reason?.message || 'unknown' });
   });
   if (!fragments.length) {
-    const error = new Error(`OpenAI response incomplete: lesson batches failed (${failed.map((item) => item.reason).join('; ')})`);
+    const error = new Error(`OpenAI response incomplete: lesson files failed (${failed.map((item) => item.fileName).join(', ')})`);
     error.status = 'incomplete';
     throw error;
   }
   const merged = mergeLessonFragments({ fragments, metadata, allDigests });
   if (failed.length) {
-    merged.lesson.coverageSummary = `${merged.lesson.coverageSummary} Bazı materyal grupları teknik nedenle tam üretilemedi: ${failed.map((item) => `grup ${item.index}`).join(', ')}.`.trim();
+    merged.lesson.coverageSummary = `${merged.lesson.coverageSummary} Şu materyallerden yeterli ders bölümü üretilemedi: ${failed.map((item) => item.fileName).join(', ')}. Ayrıştırılan metin yetersiz olabilir veya içerik üretimi tamamlanamamış olabilir.`.trim();
   }
   return merged;
 }

@@ -132,7 +132,12 @@ function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
   const finalReview = uniqueTexts(Array.isArray(rawLesson.finalReview) ? rawLesson.finalReview : [], 8, usedAfterMustKnow);
   const derivedObjectives = Array.isArray(rawLesson.learningObjectives) && rawLesson.learningObjectives.length
     ? rawLesson.learningObjectives.map(compactText).filter(Boolean)
-    : lessonSections.slice(0, 4).map((section) => `${section.heading} başlığının mekanizma ve sınav bağlantısını açıklayabilmek.`);
+    : lessonSections.slice(0, 6).map((section) => {
+      const focus = compactText(section.examAngle || section.clinicalConnection || section.commonTrap || section.teachingText).replace(/[.!?]+$/u, '').slice(0, 150);
+      return focus
+        ? `${section.heading}: ${focus} bilgisini açıklamak ve soruda ayırt etmek.`
+        : `${section.heading} konusundaki temel kavramları ve materyalde vurgulanan ayırt edici noktaları açıklamak.`;
+    });
   const lesson = {
     title: cleanTopic(rawLesson.title || rawLesson.inferredTitle, 'Komite ders anlatımı'),
     inferredTitle: cleanTopic(rawLesson.inferredTitle || rawLesson.title, 'Komite ders anlatımı'),

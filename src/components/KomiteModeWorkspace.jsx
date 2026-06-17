@@ -511,6 +511,55 @@ function clipTextForGeneration(text = '', maxChars = 8000) {
   return `${clean.slice(0, maxChars).trim()}\n\n[Not: Bu kaynak parçası token tasarrufu için kısaltıldı.]`;
 }
 
+function scoreKomiteTeachingLine(line = '') {
+  let score = 0;
+  if (/^\[(?:Sayfa|Slayt|Başlık|Baslik|Tablo|Vurgu|Not)\b/iu.test(line)) score += 6;
+  if (/\b(?:tanım|tanı|test|laboratuvar|görüntüleme|tedavi|yönetim|sınıflama|sınıflandır|algoritma|akış|tablo|şekil|klinik|mekanizma|patofizyoloji|ayırıcı|komplikasyon|önemli|dikkat|sınav|vurg)\b/iu.test(line)) score += 5;
+  if (/[|]\s|:\s+\S/u.test(line)) score += 2;
+  if (line.length >= 45 && line.length <= 260) score += 1;
+  return score;
+}
+
+function buildTeachingExcerptForGeneration(text = '', maxChars = 220_000) {
+  const clean = String(text || '').replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim();
+  if (clean.length <= maxChars) return clean;
+
+  const lines = clean.split(/\n+/u).map((line) => line.trim()).filter(Boolean);
+  const headBudget = Math.floor(maxChars * 0.24);
+  const tailBudget = Math.floor(maxChars * 0.08);
+  const scoredBudget = maxChars - headBudget - tailBudget - 800;
+  const head = clean.slice(0, headBudget).trim();
+  const tail = clean.slice(Math.max(0, clean.length - tailBudget)).trim();
+  const selected = lines
+    .map((line, index) => ({ line, index, score: scoreKomiteTeachingLine(line) + Math.max(0, 12 - index) * 0.05 }))
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score || a.index - b.index);
+
+  const kept = [];
+  const seen = new Set();
+  let used = 0;
+  selected.forEach((item) => {
+    const normalized = item.line.toLocaleLowerCase('tr').replace(/\s+/g, ' ').slice(0, 180);
+    if (seen.has(normalized)) return;
+    if (used + item.line.length > scoredBudget) return;
+    seen.add(normalized);
+    kept.push(item);
+    used += item.line.length + 1;
+  });
+
+  const middle = kept
+    .sort((a, b) => a.index - b.index)
+    .map((item) => item.line)
+    .join('\n');
+
+  return [
+    head,
+    '[Not: Materyal çok uzun olduğu için başlık, tablo, algoritma, tanı, tedavi, vurgu ve sınavlık satırlar öncelikli korunmuştur.]',
+    middle,
+    tail ? `[Son kısım]\n${tail}` : '',
+  ].filter(Boolean).join('\n\n').slice(0, maxChars).trim();
+}
+
 function compactArrayForGeneration(items = [], maxItems = 12) {
   return Array.isArray(items) ? items.slice(0, maxItems) : [];
 }
@@ -520,18 +569,32 @@ function compactMaterialPacketForGeneration(packet = {}, kind = 'lesson') {
     ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
     : [];
   if (kind === 'lesson') {
-    const files = sourceFiles.slice(0, 10).map((file) => ({
-      fileName: file.fileName || file.name || 'Materyal',
-      fileType: file.fileType || file.type || 'file',
-      cleanedExtractedText: String(file.cleanedExtractedText || file.text || '').trim(),
-      detectedTopics: compactArrayForGeneration(file.detectedTopics, 14),
-      detectedStructure: compactArrayForGeneration(file.detectedStructure, 30),
-      figures: compactArrayForGeneration(file.figures, 18),
-      emphasisNotes: compactArrayForGeneration(file.emphasisNotes, 18),
-      charCount: Number(file.charCount || String(file.cleanedExtractedText || file.text || '').length || 0),
-      extractionOk: Boolean(file.extractionOk || file.cleanedExtractedText),
-      isUserNote: Boolean(file.isUserNote),
-    }));
+    const lessonFiles = sourceFiles.slice(0, 10);
+    const noteFiles = lessonFiles.filter((file) => file.isUserNote);
+    const regularFiles = lessonFiles.filter((file) => !file.isUserNote);
+    const maxLessonPayloadChars = 2_600_000;
+    const noteBudget = noteFiles.length ? Math.min(260_000, Math.floor(maxLessonPayloadChars * 0.14 / noteFiles.length)) : 0;
+    const remainingBudget = maxLessonPayloadChars - (noteBudget * noteFiles.length);
+    const regularBudget = regularFiles.length ? Math.max(90_000, Math.floor(remainingBudget / regularFiles.length)) : remainingBudget;
+    const files = [
+      ...noteFiles.map((file) => ({ file, budget: Math.max(40_000, noteBudget) })),
+      ...regularFiles.map((file) => ({ file, budget: regularBudget })),
+    ].map(({ file, budget }) => {
+      const rawText = String(file.cleanedExtractedText || file.text || '').trim();
+      return {
+        fileName: file.fileName || file.name || 'Materyal',
+        fileType: file.fileType || file.type || 'file',
+        cleanedExtractedText: buildTeachingExcerptForGeneration(rawText, budget),
+        fullCharCount: rawText.length,
+        detectedTopics: compactArrayForGeneration(file.detectedTopics, 14),
+        detectedStructure: compactArrayForGeneration(file.detectedStructure, 30),
+        figures: compactArrayForGeneration(file.figures, 18),
+        emphasisNotes: compactArrayForGeneration(file.emphasisNotes, 18),
+        charCount: Number(file.charCount || rawText.length || 0),
+        extractionOk: Boolean(file.extractionOk || file.cleanedExtractedText),
+        isUserNote: Boolean(file.isUserNote),
+      };
+    });
 
     return {
       workspaceId: packet.workspaceId || '',
