@@ -1,5 +1,6 @@
 const ERROR_MESSAGE = 'Komite çalışma içeriği şu anda oluşturulamadı. Lütfen tekrar deneyin.';
-const DEFAULT_MODEL = 'gpt-5.4-nano';
+const DEFAULT_MODEL = 'gpt-5.4-mini';
+const FALLBACK_MODEL = 'gpt-5.4-nano';
 
 const KIND_LIMITS = {
   lesson: { maxSourceChars: 14_000, maxTokens: 5200 },
@@ -298,8 +299,30 @@ function serializeError(error = {}) {
     name: error?.name || 'Error',
     message: error?.message || String(error || 'Unknown error'),
     status: error?.status || error?.code || '',
+    param: error?.param || '',
+    type: error?.type || '',
+    attempts: Array.isArray(error?.attempts) ? error.attempts.join(', ') : '',
     stack: error?.stack || '',
   };
+}
+
+function safePromptCacheKey(value = '', fallback = '') {
+  const clean = String(value || fallback || '')
+    .replace(/[^a-zA-Z0-9:_-]+/g, '-')
+    .replace(/-+/g, '-')
+    .slice(0, 80)
+    .replace(/^-|-$/g, '');
+  return clean || fallback;
+}
+
+function getReasoningEffort() {
+  const raw = String(process.env.OPENAI_KOMITE_REASONING_EFFORT || 'low').trim().toLowerCase();
+  return ['none', 'minimal', 'low', 'medium', 'high', 'xhigh'].includes(raw) ? raw : 'low';
+}
+
+function getModelCandidates(primaryModel = '') {
+  const configuredFallback = process.env.OPENAI_KOMITE_FALLBACK_MODEL || FALLBACK_MODEL;
+  return unique([primaryModel, configuredFallback, FALLBACK_MODEL].filter(Boolean));
 }
 
 function parseJsonObject(text = '') {
@@ -311,6 +334,15 @@ function parseJsonObject(text = '') {
     if (!match) throw new Error('AI response is not JSON.');
     return JSON.parse(match[0]);
   }
+}
+
+function wrapLessonPayload(parsed = {}) {
+  if (!parsed || typeof parsed !== 'object') return parsed;
+  if (parsed.lesson) return parsed;
+  if (parsed.data && typeof parsed.data === 'object') return { lesson: parsed.data };
+  if (parsed.result && typeof parsed.result === 'object') return { lesson: parsed.result };
+  if (parsed.content && typeof parsed.content === 'object') return { lesson: parsed.content };
+  return { lesson: parsed };
 }
 
 function extractResponseText(payload) {
@@ -737,7 +769,7 @@ function getTextFormat(kind) {
   };
 }
 
-async function requestKomiteContent({ apiKey, model, kind, prompt }) {
+function buildOpenAiRequestPayload({ model, kind, prompt, simplified = false }) {
   const requestPayload = {
     model,
     input: [
@@ -746,17 +778,40 @@ async function requestKomiteContent({ apiKey, model, kind, prompt }) {
     ],
     max_output_tokens: getMaxTokens(kind),
     text: { format: getTextFormat(kind) },
-    prompt_cache_key: process.env.OPENAI_KOMITE_PROMPT_CACHE_KEY || `klinikiq-komite-${kind}-v1`,
   };
-  const temperature = getTemperature();
-  if (temperature !== null) requestPayload.temperature = temperature;
-  if (process.env.OPENAI_PROMPT_CACHE_RETENTION) {
-    requestPayload.prompt_cache_retention = process.env.OPENAI_PROMPT_CACHE_RETENTION;
-  }
-  if (process.env.OPENAI_SERVICE_TIER) {
-    requestPayload.service_tier = process.env.OPENAI_SERVICE_TIER;
-  }
 
+  if (!simplified) {
+    const temperature = getTemperature();
+    if (temperature !== null) requestPayload.temperature = temperature;
+    const cacheKey = safePromptCacheKey(process.env.OPENAI_KOMITE_PROMPT_CACHE_KEY, `klinikiq-komite-${kind}-v2`);
+    if (cacheKey) requestPayload.prompt_cache_key = cacheKey;
+    if (process.env.OPENAI_PROMPT_CACHE_RETENTION) {
+      requestPayload.prompt_cache_retention = process.env.OPENAI_PROMPT_CACHE_RETENTION;
+    }
+    if (process.env.OPENAI_SERVICE_TIER) {
+      requestPayload.service_tier = process.env.OPENAI_SERVICE_TIER;
+    }
+    requestPayload.reasoning = { effort: getReasoningEffort() };
+  }
+  return requestPayload;
+}
+
+function isModelAccessError(error = {}) {
+  const message = String(error?.message || '').toLowerCase();
+  return error?.status === 404
+    || error?.type === 'model_not_found'
+    || /model.*(not found|does not exist|do not have access|not have access|unsupported)/i.test(message);
+}
+
+function isRecoverableOpenAiConfigError(error = {}) {
+  const message = String(error?.message || '').toLowerCase();
+  return error?.status === 400 && (
+    /unsupported parameter|unknown parameter|not supported|invalid.*temperature|prompt_cache|service_tier|reasoning|text\.format|response_format/i.test(message)
+    || ['temperature', 'prompt_cache_key', 'prompt_cache_retention', 'service_tier', 'reasoning', 'text.format'].includes(String(error?.param || ''))
+  );
+}
+
+async function sendOpenAiRequest({ apiKey, requestPayload }) {
   const aiResponse = await fetch('https://api.openai.com/v1/responses', {
     method: 'POST',
     headers: {
@@ -776,6 +831,8 @@ async function requestKomiteContent({ apiKey, model, kind, prompt }) {
     const message = payload?.error?.message || payload?.error || `OpenAI request failed: ${aiResponse.status}`;
     const error = new Error(`OpenAI request failed: ${aiResponse.status} ${message}`);
     error.status = aiResponse.status;
+    error.type = payload?.error?.type || '';
+    error.param = payload?.error?.param || '';
     throw error;
   }
   if (payload?.status === 'incomplete') {
@@ -788,6 +845,38 @@ async function requestKomiteContent({ apiKey, model, kind, prompt }) {
   const content = extractResponseText(payload);
   if (!content) throw new Error('OpenAI response did not include text output.');
   return content;
+}
+
+async function requestKomiteContent({ apiKey, model, kind, prompt }) {
+  const attempts = [];
+  const modelCandidates = getModelCandidates(model);
+
+  for (const candidateModel of modelCandidates) {
+    for (const simplified of [false, true]) {
+      try {
+        attempts.push(`${candidateModel}${simplified ? ':simplified' : ''}`);
+        return await sendOpenAiRequest({
+          apiKey,
+          requestPayload: buildOpenAiRequestPayload({ model: candidateModel, kind, prompt, simplified }),
+        });
+      } catch (error) {
+        error.attempts = attempts.slice();
+        if (!simplified && isRecoverableOpenAiConfigError(error)) {
+          console.warn('[generate-komite-study:retry-simplified]', serializeError(error));
+          continue;
+        }
+        if (isModelAccessError(error)) {
+          console.warn('[generate-komite-study:retry-model]', serializeError(error));
+          break;
+        }
+        throw error;
+      }
+    }
+  }
+
+  const error = new Error(`OpenAI request failed for all configured Komite models: ${attempts.join(', ')}`);
+  error.status = 'model_fallback_failed';
+  throw error;
 }
 
 export default async function handler(req, res) {
@@ -829,7 +918,7 @@ export default async function handler(req, res) {
     debugContext.model = model;
     const content = await requestKomiteContent({ apiKey, model, kind, prompt });
     const parsed = parseJsonObject(content);
-    const responsePayload = kind === 'lesson' && parsed && !parsed.lesson ? { lesson: parsed } : parsed;
+    const responsePayload = kind === 'lesson' ? wrapLessonPayload(parsed) : parsed;
 
     return res.status(200).json({
       kind,

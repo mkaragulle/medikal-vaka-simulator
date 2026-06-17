@@ -3,6 +3,10 @@ export const KOMITE_GENERATION_ERROR_MESSAGE = 'Komite çalışma içeriği şu 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 
 function compactText(value = '') {
+  if (Array.isArray(value)) return value.map(compactText).filter(Boolean).join(' ');
+  if (value && typeof value === 'object') {
+    return compactText(value.text || value.content || value.explanation || value.summary || value.value || '');
+  }
   return String(value || '').replace(/\s+/g, ' ').trim();
 }
 
@@ -33,29 +37,63 @@ function normalizeFigure(figure = {}, index = 0) {
 }
 
 function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
-  const sections = Array.isArray(rawLesson.sections) ? rawLesson.sections : [];
+  const sections = Array.isArray(rawLesson.sections)
+    ? rawLesson.sections
+    : rawLesson.sections && typeof rawLesson.sections === 'object'
+      ? Object.entries(rawLesson.sections).map(([heading, value]) => ({ heading, content: value }))
+      : [];
   const normalizedSections = sections.map((section, index) => ({
     id: section.id || `komite-section-${index + 1}`,
     heading: compactText(section.heading || section.title) || `Bölüm ${index + 1}`,
     level: Number(section.level) || 2,
-    teachingText: compactText(section.teachingText || section.content),
-    content: compactText(section.content || section.teachingText),
+    teachingText: compactText(section.teachingText || section.content || section.coreExplanation || section.bigPicture || section.summary),
+    content: compactText(section.content || section.teachingText || section.coreExplanation || section.bigPicture || section.summary),
     mechanismFlow: Array.isArray(section.mechanismFlow) ? section.mechanismFlow.map(compactText).filter(Boolean) : [],
-    clinicalConnection: compactText(section.clinicalConnection),
-    examAngle: compactText(section.examAngle || section.examConnection),
-    commonTrap: compactText(section.commonTrap),
+    clinicalConnection: compactText(section.clinicalConnection || section.clinicalOrPracticalConnection),
+    examAngle: compactText(section.examAngle || section.examConnection || section.examFocus),
+    commonTrap: compactText(section.commonTrap || section.commonConfusions),
     keyBoxes: Array.isArray(section.keyBoxes) ? section.keyBoxes : [],
-    sourceRefs: Array.isArray(section.sourceRefs) ? section.sourceRefs.map(compactText).filter(Boolean) : [],
+    sourceRefs: Array.isArray(section.sourceRefs || section.relatedSourceFiles)
+      ? (section.sourceRefs || section.relatedSourceFiles).map(compactText).filter(Boolean)
+      : [],
   })).filter((section) => section.heading && section.teachingText);
+  const fallbackText = compactText(
+    rawLesson.teachingText
+    || rawLesson.content
+    || rawLesson.body
+    || rawLesson.lessonText
+    || rawLesson.coreExplanation
+    || rawLesson.overview
+    || rawLesson.shortIntro
+    || rawLesson.bigPicture
+    || rawLesson.summary,
+  );
+  const lessonSections = normalizedSections.length
+    ? normalizedSections
+    : fallbackText
+      ? [{
+        id: 'komite-section-1',
+        heading: compactText(rawLesson.title || rawLesson.inferredTitle) || 'Konu anlatımı',
+        level: 2,
+        teachingText: fallbackText,
+        content: fallbackText,
+        mechanismFlow: [],
+        clinicalConnection: compactText(rawLesson.clinicalExamRelevance),
+        examAngle: compactText(rawLesson.examFocus),
+        commonTrap: '',
+        keyBoxes: [],
+        sourceRefs: [],
+      }]
+      : [];
   const derivedHighYield = [
     ...(Array.isArray(rawLesson.highYieldPoints) ? rawLesson.highYieldPoints : []),
     ...(Array.isArray(rawLesson.mustKnow) ? rawLesson.mustKnow : []),
     ...(Array.isArray(rawLesson.finalReview) ? rawLesson.finalReview : []),
-    ...normalizedSections.flatMap((section) => [section.examAngle, section.commonTrap, section.clinicalConnection]),
+    ...lessonSections.flatMap((section) => [section.examAngle, section.commonTrap, section.clinicalConnection]),
   ].map(compactText).filter(Boolean);
   const derivedObjectives = Array.isArray(rawLesson.learningObjectives) && rawLesson.learningObjectives.length
     ? rawLesson.learningObjectives.map(compactText).filter(Boolean)
-    : normalizedSections.slice(0, 4).map((section) => `${section.heading} başlığının mekanizma ve sınav bağlantısını açıklayabilmek.`);
+    : lessonSections.slice(0, 4).map((section) => `${section.heading} başlığının mekanizma ve sınav bağlantısını açıklayabilmek.`);
   const lesson = {
     title: compactText(rawLesson.title || rawLesson.inferredTitle) || 'Komite ders anlatımı',
     inferredTitle: compactText(rawLesson.inferredTitle || rawLesson.title) || 'Komite ders anlatımı',
@@ -66,7 +104,7 @@ function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
     mainConcepts: Array.isArray(rawLesson.mainConcepts) ? rawLesson.mainConcepts.map(compactText).filter(Boolean) : [],
     clinicalExamRelevance: compactText(rawLesson.clinicalExamRelevance),
     commonConfusions: Array.isArray(rawLesson.commonConfusions) ? rawLesson.commonConfusions.map(compactText).filter(Boolean) : [],
-    sections: normalizedSections,
+    sections: lessonSections,
     highYieldPoints: derivedHighYield.slice(0, 9),
     mustKnow: (Array.isArray(rawLesson.mustKnow) ? rawLesson.mustKnow.map(compactText).filter(Boolean) : derivedHighYield).slice(0, 8),
     finalReview: (Array.isArray(rawLesson.finalReview) ? rawLesson.finalReview.map(compactText).filter(Boolean) : derivedHighYield).slice(0, 8),
@@ -80,7 +118,7 @@ function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
       })).filter((item) => item.fileName)
       : [],
     coverageSummary: compactText(rawLesson.coverageSummary),
-    tableOfContents: normalizedSections.map((section) => section.heading),
+    tableOfContents: lessonSections.map((section) => section.heading),
     sourceFingerprint,
     generatedAt: Date.now(),
   };
