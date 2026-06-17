@@ -12,7 +12,6 @@ const LEARNING_TARGETS = ['Komite sınavı', 'Final sınavı', 'Klinik staj', 'G
 const REVIEW_FILTERS = ['Bu materyal', 'Tüm materyaller'];
 const STUDY_TABS = [
   { id: 'lesson', label: 'Ders Anlatımı', icon: 'BookOpen' },
-  { id: 'figures', label: 'Görseller', icon: 'Image' },
   { id: 'questions', label: 'Sorular', icon: 'ClipboardList' },
   { id: 'cards', label: 'Hap Kartlar', icon: 'LayeredCards' },
   { id: 'review', label: 'Tekrar', icon: 'RotateCcw' },
@@ -359,14 +358,19 @@ function lessonAccentStyle(index = 0) {
   };
 }
 
-function displayList(value = [], maxItems = 8) {
+function displayList(value = [], maxItems = 8, exclude = []) {
   const items = Array.isArray(value) ? value : value ? [value] : [];
   const seen = new Set();
+  const excludedKeys = (Array.isArray(exclude) ? exclude : [exclude])
+    .map((item) => sanitizeTeachingTextForDisplay(item).toLocaleLowerCase('tr').replace(/[^\p{L}\p{N}\s]/gu, '').replace(/\s+/g, ' ').trim())
+    .filter(Boolean);
   const output = [];
   items.forEach((item) => {
     const text = sanitizeTeachingTextForDisplay(typeof item === 'string' ? item : item?.text || item?.content || item?.summary || Object.values(item || {}).filter(Boolean).join(' '));
     const key = text.toLocaleLowerCase('tr').replace(/[^\p{L}\p{N}\s]/gu, '').replace(/\s+/g, ' ').trim();
-    if (!text || text.split(/\s+/u).length < 3 || seen.has(key)) return;
+    const duplicatesExcluded = excludedKeys.some((excludedKey) => key.length > 42 && excludedKey.length > 42 && (key.includes(excludedKey) || excludedKey.includes(key)));
+    const duplicatesSeen = [...seen].some((seenKey) => key.length > 42 && seenKey.length > 42 && (key.includes(seenKey) || seenKey.includes(key)));
+    if (!text || text.split(/\s+/u).length < 3 || seen.has(key) || duplicatesSeen || duplicatesExcluded) return;
     seen.add(key);
     output.push(text);
   });
@@ -379,6 +383,26 @@ function keyBoxTone(label = '') {
   if (/hata|dikkat|karış|tuzak|yanlış/iu.test(clean)) return 'warning';
   if (/sınav|ayırt|ipucu|puan/iu.test(clean)) return 'exam';
   return 'info';
+}
+
+function displayKeyBoxes(boxes = [], exclude = []) {
+  const excludedKeys = (Array.isArray(exclude) ? exclude : [exclude])
+    .map((item) => sanitizeTeachingTextForDisplay(item).toLocaleLowerCase('tr').replace(/[^\p{L}\p{N}\s]/gu, '').replace(/\s+/g, ' ').trim())
+    .filter(Boolean);
+  const seen = new Set();
+  return (Array.isArray(boxes) ? boxes : [])
+    .map((box) => ({
+      label: sanitizeTeachingTextForDisplay(box?.label || box?.title || 'Komite için kritik'),
+      text: sanitizeTeachingTextForDisplay(box?.text || box?.content || box?.body || box?.description),
+    }))
+    .filter((box) => {
+      const key = box.text.toLocaleLowerCase('tr').replace(/[^\p{L}\p{N}\s]/gu, '').replace(/\s+/g, ' ').trim();
+      const duplicatesExcluded = excludedKeys.some((excludedKey) => key.length > 42 && excludedKey.length > 42 && (key.includes(excludedKey) || excludedKey.includes(key)));
+      if (!box.text || box.text.split(/\s+/u).length < 5 || seen.has(key) || duplicatesExcluded) return false;
+      seen.add(key);
+      return true;
+    })
+    .slice(0, 3);
 }
 
 function SectionInsightBlock({ title, items = [], icon = 'Lightbulb', tone = 'info', ordered = false }) {
@@ -498,7 +522,6 @@ function buildCombinedMaterialPacket(material = {}) {
       cleanedExtractedText: cleaned,
       detectedTopics: Array.isArray(file.detectedTopics) ? file.detectedTopics : [],
       detectedStructure: Array.isArray(file.detectedStructure) ? file.detectedStructure : [],
-      figures: Array.isArray(file.figures) ? file.figures : [],
       emphasisNotes: Array.isArray(file.emphasisNotes) ? file.emphasisNotes : [],
       charCount: Number(file.charCount || cleaned.length || 0),
       extractionOk: Boolean(file.extractionOk || cleaned),
@@ -512,7 +535,6 @@ function buildCombinedMaterialPacket(material = {}) {
       cleanedExtractedText: pasted,
       detectedTopics: [],
       detectedStructure: [{ type: 'user-note', label: 'Ek ders notu', charCount: pasted.length, preview: pasted.slice(0, 180) }],
-      figures: [],
       emphasisNotes: [{ source: 'Ek ders notu', text: pasted.slice(0, 900), importance: 'high' }],
       charCount: pasted.length,
       extractionOk: true,
@@ -526,7 +548,6 @@ function buildCombinedMaterialPacket(material = {}) {
     courseName: material.course || '',
     studyGoal: material.learningTarget || '',
     university: material.university || '',
-    figures: Array.isArray(material.extractedFigures) ? material.extractedFigures : [],
     detectedStructure: Array.isArray(material.detectedStructure) ? material.detectedStructure : [],
     files: normalizedFiles,
   };
@@ -644,7 +665,6 @@ function compactMaterialPacketForGeneration(packet = {}, kind = 'lesson') {
         fullCharCount: rawText.length,
         detectedTopics: compactArrayForGeneration(file.detectedTopics, 14),
         detectedStructure: compactArrayForGeneration(file.detectedStructure, 30),
-        figures: compactArrayForGeneration(file.figures, 18),
         emphasisNotes: compactArrayForGeneration(file.emphasisNotes, 18),
         charCount: Number(file.charCount || rawText.length || 0),
         extractionOk: Boolean(file.extractionOk || file.cleanedExtractedText),
@@ -659,7 +679,6 @@ function compactMaterialPacketForGeneration(packet = {}, kind = 'lesson') {
       courseName: packet.courseName || '',
       studyGoal: packet.studyGoal || '',
       university: packet.university || '',
-      figures: compactArrayForGeneration(packet.figures, 30),
       detectedStructure: compactArrayForGeneration(packet.detectedStructure, 40),
       files,
     };
@@ -681,7 +700,6 @@ function compactMaterialPacketForGeneration(packet = {}, kind = 'lesson') {
     cleanedExtractedText: file.cleanedExtractedText || '',
     detectedTopics: compactArrayForGeneration(file.detectedTopics, 8),
     detectedStructure: compactArrayForGeneration(file.detectedStructure, 8),
-    figures: compactArrayForGeneration(file.figures, 6),
     emphasisNotes: compactArrayForGeneration(file.emphasisNotes, 6),
     charCount: Number(file.charCount || String(file.cleanedExtractedText || '').length || 0),
     extractionOk: Boolean(file.extractionOk || file.cleanedExtractedText),
@@ -695,7 +713,6 @@ function compactMaterialPacketForGeneration(packet = {}, kind = 'lesson') {
     courseName: packet.courseName || '',
     studyGoal: packet.studyGoal || '',
     university: packet.university || '',
-    figures: compactArrayForGeneration(packet.figures, 10),
     detectedStructure: compactArrayForGeneration(packet.detectedStructure, 10),
     files,
   };
@@ -1233,7 +1250,6 @@ function StartFlow({ onCreate, onCancel }) {
           cleanedExtractedText,
           detectedTopics: extraction.detectedTopics || [],
           detectedStructure: extraction.detectedStructure || [],
-          figures: extraction.figures || [],
           emphasisNotes: extraction.emphasisNotes || [],
           charCount: cleanedExtractedText.length,
           extractionOk: Boolean(extraction.ok && cleanedExtractedText),
@@ -1242,7 +1258,6 @@ function StartFlow({ onCreate, onCancel }) {
       const mergedText = filePackets.map((item) => item.cleanedExtractedText || '').filter(Boolean).join('\n\n').trim();
       const detectedStructure = extractions.flatMap(({ extraction }) => extraction.detectedStructure || []);
       const limitations = extractions.flatMap(({ extraction }) => extraction.limitations || []);
-      const figures = extractions.flatMap(({ file, extraction }) => (extraction.figures || []).map((figure) => ({ sourceFile: file.name, ...figure })));
       if (import.meta.env.DEV) {
         console.debug('[KOMITE upload]', {
           uploadedFiles: unique.length,
@@ -1258,7 +1273,6 @@ function StartFlow({ onCreate, onCancel }) {
         text: mergedText,
         files: filePackets,
         detectedStructure,
-        figures,
         notice: mergedText ? `${unique.length} dosya çalışma alanına eklendi.` : 'Dosyalar otomatik okunamadı; ek ders notu alanına metin ekleyebilirsin.',
         limitations,
       });
@@ -1399,8 +1413,7 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
       displayList([...(section.algorithmSteps || []), ...(section.mechanismFlow || [])], 1).length ? 'Akış' : '',
       displayList(section.tableInsights, 1).length ? 'Tablo' : '',
       displayList(section.comparisonPoints, 1).length ? 'Ayrım' : '',
-      displayList(section.visualNotes, 1).length ? 'Görsel' : '',
-      displayList(section.miniReview, 1).length ? 'Mini tekrar' : '',
+      displayList(section.visualNotes, 1).length ? 'Şema' : '',
     ].filter(Boolean);
     return { id: sectionAnchors[index]?.id, title: section.heading || `Bölüm ${index + 1}`, subItems, sectionIndex: index };
   });
@@ -1439,16 +1452,19 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
   const concepts = Array.isArray(lesson.mainConcepts)
     ? lesson.mainConcepts.filter((item) => !/materyaldeki ilişkili kavram|slayt|sayfa|dosya|pptx/iu.test(String(item)))
     : [];
-  const highYield = displayList(lesson.highYieldPoints || lesson.highYieldSummary, 12);
-  const mustKnow = displayList(lesson.mustKnow || lesson.mustRemember, 10);
-  const finalReview = displayList(lesson.finalReview, 10);
+  const sectionReviewItems = sections.flatMap((section) => Array.isArray(section.miniReview) ? section.miniReview : []);
+  const highYield = displayList([
+    ...(Array.isArray(lesson.highYieldPoints || lesson.highYieldSummary) ? (lesson.highYieldPoints || lesson.highYieldSummary) : []),
+    ...(Array.isArray(lesson.mustKnow || lesson.mustRemember) ? (lesson.mustKnow || lesson.mustRemember) : []),
+    ...(Array.isArray(lesson.finalReview) ? lesson.finalReview : []),
+    ...sectionReviewItems,
+  ], 16);
   const commonReview = displayList([
     ...(Array.isArray(lesson.commonConfusions) ? lesson.commonConfusions : []),
     ...sections.map((section) => section.commonTrap),
-  ], 8);
-  const examScenarios = displayList(sections.map((section) => section.examAngle || section.clinicalConnection), 8);
-  const materialCoverage = Array.isArray(lesson.materialCoverage) ? lesson.materialCoverage : [];
-  const coverageSummary = sanitizeTeachingTextForDisplay(lesson.coverageSummary || '');
+  ], 8, highYield);
+  const examScenarios = displayList(sections.map((section) => section.examAngle || section.clinicalConnection), 8, [...highYield, ...commonReview]);
+  const hasFinalPrep = highYield.length || commonReview.length || examScenarios.length;
 
   return (
     <div className="komite-lesson-view komite-lesson-view-pro">
@@ -1493,20 +1509,12 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
             </article>
           ) : null}
 
-          {(lesson.clinicalExamRelevance || (Array.isArray(lesson.commonConfusions) && lesson.commonConfusions.length)) ? (
+          {lesson.clinicalExamRelevance ? (
             <div className="komite-context-lines" aria-label="Klinik ve sınav bağlantıları">
-              {lesson.clinicalExamRelevance ? (
-                <div className="komite-context-line">
-                  <strong>Klinik / sınav bağlantısı</strong>
-                  <p><GlossaryText text={sanitizeTeachingTextForDisplay(lesson.clinicalExamRelevance)} enabled revealMode="postAnswer" maxTerms={4} /></p>
-                </div>
-              ) : null}
-              {Array.isArray(lesson.commonConfusions) && lesson.commonConfusions.length ? (
-                <div className="komite-context-line">
-                  <strong>Sık karıştırılan noktalar</strong>
-                  <ul>{lesson.commonConfusions.map((item, index) => <li key={`${formatLessonListItem(item)}-${index}`}><GlossaryText text={formatLessonListItem(item)} enabled revealMode="postAnswer" maxTerms={3} /></li>)}</ul>
-                </div>
-              ) : null}
+              <div className="komite-context-line">
+                <strong>Klinik / sınav bağlantısı</strong>
+                <p><GlossaryText text={sanitizeTeachingTextForDisplay(lesson.clinicalExamRelevance)} enabled revealMode="postAnswer" maxTerms={4} /></p>
+              </div>
             </div>
           ) : null}
 
@@ -1516,10 +1524,10 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
               ...(Array.isArray(section.algorithmSteps) ? section.algorithmSteps : []),
               ...(Array.isArray(section.mechanismFlow) ? section.mechanismFlow : []),
             ]);
-            const tableInsights = displayList(section.tableInsights, 5);
-            const comparisonPoints = displayList(section.comparisonPoints, 5);
-            const visualNotes = displayList(section.visualNotes, 5);
-            const miniReview = displayList(section.miniReview, 5);
+            const tableInsights = displayList(section.tableInsights, 4, [teachingText, section.examAngle, section.clinicalConnection]);
+            const comparisonPoints = displayList(section.comparisonPoints, 4, [teachingText, section.commonTrap]);
+            const visualNotes = displayList(section.visualNotes, 4, [teachingText, ...tableInsights]);
+            const keyBoxes = displayKeyBoxes(section.keyBoxes, [teachingText, section.examAngle, section.commonTrap, section.clinicalConnection]);
             return (
               <article id={sectionAnchors[index]?.id} className="komite-lesson-section komite-lesson-section-pro" key={`${section.heading}-${index}`} style={lessonAccentStyle(index)}>
                 <div className="komite-section-index">{String(index + 1).padStart(2, '0')}</div>
@@ -1531,9 +1539,9 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
                     </div>
                   ) : null}
                   <LessonText text={teachingText} />
-                  {Array.isArray(section.keyBoxes) && section.keyBoxes.length ? (
+                  {keyBoxes.length ? (
                     <div className="komite-key-box-grid">
-                      {section.keyBoxes.slice(0, 4).map((box, boxIndex) => (
+                      {keyBoxes.map((box, boxIndex) => (
                         <div className={`komite-key-box ${keyBoxTone(box.label)}`} key={`${box.label || 'not'}-${boxIndex}`}>
                           <strong>{box.label || 'Akılda tut'}</strong>
                           <p><GlossaryText text={sanitizeTeachingTextForDisplay(box.text)} enabled revealMode="postAnswer" maxTerms={3} /></p>
@@ -1541,12 +1549,11 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
                       ))}
                     </div>
                   ) : null}
-                  {(tableInsights.length || comparisonPoints.length || visualNotes.length || miniReview.length) ? (
+                  {(tableInsights.length || comparisonPoints.length || visualNotes.length) ? (
                     <div className="komite-learning-block-grid">
                       <SectionInsightBlock title="Tablonun ana mesajı" items={tableInsights} icon="MinorGrid" tone="table" />
                       <SectionInsightBlock title="Karşılaştırmalı ayrım" items={comparisonPoints} icon="Target" tone="compare" />
-                      <SectionInsightBlock title="Görsel / şema yorumu" items={visualNotes} icon="Eye" tone="visual" />
-                      <SectionInsightBlock title="Bölüm sonu mini tekrar" items={miniReview} icon="CheckCircle" tone="review" />
+                      <SectionInsightBlock title="Şema / açıklama notu" items={visualNotes} icon="Eye" tone="visual" />
                     </div>
                   ) : null}
                   {(flowSteps.length || section.examAngle || section.commonTrap || section.clinicalConnection || section.examConnection) ? (
@@ -1566,15 +1573,14 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
             );
           })}
 
+          {hasFinalPrep ? (
           <div id="komite-high-yield" className="komite-summary-lines komite-summary-grid-pro">
-            <div>
-              <strong>Yüksek verimli tekrar</strong>
-              <ul>{highYield.map((item, index) => <li key={`${item}-${index}`}><InlineLessonText text={sanitizeTeachingTextForDisplay(item)} /></li>)}</ul>
-            </div>
-            <div>
-              <strong>Mutlaka hatırla</strong>
-              <ul>{mustKnow.map((item, index) => <li key={`${item}-${index}`}><InlineLessonText text={sanitizeTeachingTextForDisplay(item)} /></li>)}</ul>
-            </div>
+            {highYield.length ? (
+              <div>
+                <strong>Yüksek verimli tekrar</strong>
+                <ul>{highYield.map((item, index) => <li key={`${item}-${index}`}><InlineLessonText text={sanitizeTeachingTextForDisplay(item)} /></li>)}</ul>
+              </div>
+            ) : null}
             {commonReview.length ? (
               <div>
                 <strong>Sık karışanlar</strong>
@@ -1587,76 +1593,10 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
                 <ul>{examScenarios.map((item, index) => <li key={`${item}-${index}`}><InlineLessonText text={item} /></li>)}</ul>
               </div>
             ) : null}
-            {finalReview.length ? (
-              <div>
-                <strong>Son kontrol</strong>
-                <ul>{finalReview.map((item, index) => <li key={`${item}-${index}`}><InlineLessonText text={item} /></li>)}</ul>
-              </div>
-            ) : null}
           </div>
-          {(coverageSummary || materialCoverage.length) ? (
-            <section className="komite-coverage-summary" aria-label="Materyal kapsam özeti">
-              <strong>Materyal kapsam özeti</strong>
-              {coverageSummary ? <p><GlossaryText text={coverageSummary} enabled revealMode="postAnswer" maxTerms={3} /></p> : null}
-              {materialCoverage.length ? (
-                <div className="komite-coverage-list">
-                  {materialCoverage.map((item, index) => (
-                    <div className="komite-coverage-item" key={`${item.fileName || 'materyal'}-${index}`}>
-                      <span>{item.fileName || `Materyal ${index + 1}`}</span>
-                      <em>{item.detectedMainTopic || 'Komite materyali'}</em>
-                      <small>{item.representedIn ? `${item.representedIn}: ` : ''}{item.coverageNote || 'Bu materyal ders anlatımında temsil edildi.'}</small>
-                    </div>
-                  ))}
-                </div>
-              ) : null}
-            </section>
           ) : null}
         </main>
       </div>
-    </div>
-  );
-}
-
-function FiguresView({ material }) {
-  const packet = buildCombinedMaterialPacket(material);
-  const lessonFigures = Array.isArray(material.lesson?.figureExplanations) ? material.lesson.figureExplanations : [];
-  const extractedFigures = [
-    ...(Array.isArray(material.extractedFigures) ? material.extractedFigures : []),
-    ...(Array.isArray(packet.files) ? packet.files.flatMap((file) => (file.figures || []).map((figure) => ({ sourceFile: file.fileName, ...figure }))) : []),
-  ];
-  const rawFigures = lessonFigures.length ? lessonFigures : extractedFigures;
-  const figures = rawFigures.map((figure, index) => ({
-    sourcePageOrSlide: figure.sourcePageOrSlide || [figure.sourceFile, figure.pageOrSlide].filter(Boolean).join(' · ') || 'Materyal geneli',
-    analysisStatus: figure.analysisStatus || (lessonFigures.length ? 'partial' : 'unavailable'),
-    type: figure.type || 'görsel / tablo ipucu',
-    title: figure.title || figure.caption || 'Görsel / tablo notu',
-    visibleTextAroundFigure: figure.visibleTextAroundFigure || figure.visibleText || figure.preview || '',
-    whatCanBeSaidSafely: figure.whatCanBeSaidSafely || figure.description || figure.interpretation || 'Bu öğe için okunabilen başlık, çevre metni veya tablo izi bulundu; ayrıntılı AI yorumu için Ders Anlatımı oluşturabilirsin.',
-    limitations: figure.limitations || 'Görselin piksel içeriği uydurulmadı; yalnızca okunabilen metin ve dosya bağlamı kullanıldı.',
-    examRelevance: figure.examRelevance || 'Bu öğe, ilişkili konu anlatımı içinde tablo/görsel sorusu veya ayırıcı bilgiye dönüşebilir.',
-  }));
-  const statusLabel = { analyzed: 'Analiz edildi', partial: 'Kısmen analiz edildi', unavailable: 'Analiz edilemedi' };
-  if (!figures.length) {
-    const hasExtractedText = combinedPacketToSourceText(packet).length > 120;
-    return <EmptyState title="Görsel yorumu yok" text={hasExtractedText ? "Bu materyalde okunabilir tablo, şekil başlığı veya görsel açıklaması yakalanmadı. Ders anlatımı oluşturulduğunda metinden güvenli görsel bağlantıları varsa burada gösterilir." : "Dosyadan yeterli metin ya da görsel ipucu çıkarılamadı. OCR gerektiren taranmış görseller için metni ek not alanına ekleyebilirsin."} />;
-  }
-  return (
-    <div className="komite-figure-grid">
-      {figures.map((figure, index) => {
-        const status = figure.analysisStatus || (figure.whatItShows || figure.interpretation ? 'partial' : 'unavailable');
-        return (
-          <article className="komite-figure-card" key={`${figure.title || figure.type}-${index}`}>
-            <div className="komite-figure-card-head"><span>{figure.sourcePageOrSlide || 'Kaynak belirtilmedi'}</span><StatusPill tone={status === 'analyzed' ? 'success' : status === 'partial' ? 'warning' : 'neutral'}>{statusLabel[status] || statusLabel.partial}</StatusPill></div>
-            <h3>{figure.title || figure.type || 'Görsel / şekil notu'}</h3>
-            <p><GlossaryText text={figure.whatCanBeSaidSafely || figure.whatItShows || figure.interpretation || 'Bu görsel güvenilir biçimde analiz edilemedi.'} enabled revealMode="postAnswer" maxTerms={3} /></p>
-            <dl>
-              {figure.visibleTextAroundFigure ? <><dt>Okunabilen çevre metni</dt><dd>{figure.visibleTextAroundFigure}</dd></> : null}
-              <dt>Sınır</dt><dd><GlossaryText text={figure.limitations || figure.commonMistake || 'Görsel içeriği uydurulmaz; yalnızca okunabilir metin kullanılabilir.'} enabled revealMode="postAnswer" maxTerms={2} /></dd>
-              <dt>Sınav değeri</dt><dd><GlossaryText text={figure.examRelevance || 'Görsel tabanlı soru için ek OCR/görsel analiz gerekir.'} enabled revealMode="postAnswer" maxTerms={2} /></dd>
-            </dl>
-          </article>
-        );
-      })}
     </div>
   );
 }
@@ -1908,6 +1848,11 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
   const [tab, setTab] = useState('lesson');
   const [actionStatus, setActionStatus] = useState({ lesson: 'idle', questions: 'idle', cards: 'idle' });
   const [actionMessage, setActionMessage] = useState({});
+
+  useEffect(() => {
+    if (!STUDY_TABS.some((item) => item.id === tab)) setTab('lesson');
+  }, [tab]);
+
     const setModuleActionStatus = (kind, status, message = '') => {
     setActionStatus((current) => ({ ...current, [kind]: status }));
     setActionMessage((current) => ({ ...current, [kind]: message }));
@@ -1993,7 +1938,6 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
       </div>
       <div className="komite-tab-panel">
         {tab === 'lesson' ? <LessonView material={material} status={actionStatus.lesson} onGenerate={() => generateContent('lesson')} /> : null}
-        {tab === 'figures' ? <FiguresView material={material} /> : null}
         {tab === 'questions' ? <QuestionsView material={material} status={actionStatus.questions} onGenerate={() => generateContent('questions')} onAnswer={answerQuestion} onToggleQuestionFlag={toggleQuestionFlag} /> : null}
         {tab === 'cards' ? <FlashcardsView material={material} status={actionStatus.cards} onGenerate={() => generateContent('cards')} onUpdateCard={updateCard} /> : null}
         {tab === 'review' ? <ReviewCenter materials={materials} activeMaterial={material} onOpenMaterial={onOpenMaterial} /> : null}
@@ -2075,7 +2019,6 @@ export default function KomiteModeWorkspace({ currentUser }) {
       learningTarget: form.learningTarget,
       processingStatus: extractedText ? 'text-extracted' : 'metadata-ready',
       extractedText: extractedText || '',
-      extractedFigures: extraction?.figures || [],
       detectedStructure: extraction?.detectedStructure || [],
       extractionNotice: extraction?.notice || '',
       extractionLimitations: extraction?.limitations || [],

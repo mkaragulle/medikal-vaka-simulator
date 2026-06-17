@@ -6,7 +6,7 @@ pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
 
 const MAX_EXTRACTED_CHARS = Number.POSITIVE_INFINITY;
 const MAX_PDF_PAGES = Number.POSITIVE_INFINITY;
-const FIGURE_CONTEXT_CHARS = 900;
+const STRUCTURE_CONTEXT_CHARS = 900;
 
 export function getKomiteFileExtension(fileName = '') {
   const ext = String(fileName || '').split('.').pop()?.toLowerCase() || '';
@@ -34,7 +34,7 @@ function compactLine(value = '') {
 function detectEducationalStructure(text = '', source = {}) {
   const lines = String(text || '').split(/\n+/u).map(compactLine).filter(Boolean);
   const detectedStructure = [];
-  const figures = [];
+  const schemaNotes = [];
   const emphasisNotes = [];
   const tableLines = [];
 
@@ -44,29 +44,25 @@ function detectEducationalStructure(text = '', source = {}) {
     const common = {
       sourcePageOrSlide: locationLabel,
       pageOrSlide: locationLabel,
-      visibleTextAroundFigure: lines.slice(Math.max(0, index - 2), Math.min(lines.length, index + 4)).join(' ').slice(0, FIGURE_CONTEXT_CHARS),
+      contextText: lines.slice(Math.max(0, index - 2), Math.min(lines.length, index + 4)).join(' ').slice(0, STRUCTURE_CONTEXT_CHARS),
     };
 
     if (/^(şekil|figür|figure|resim|görsel|diagram|algoritma|akış şeması)\s*[:.\d-]/iu.test(line)) {
-      figures.push({
+      schemaNotes.push({
         ...common,
-        type: /algoritma|akış/iu.test(lower) ? 'akış şeması / algoritma' : 'şekil / görsel',
+        type: /algoritma|akış/iu.test(lower) ? 'akış şeması / algoritma' : 'şema/metinsel açıklama',
         title: line.slice(0, 160),
-        description: common.visibleTextAroundFigure,
-        limitations: 'Dosya metin katmanından yakalanan görsel başlığı/çevre metni; piksel içeriği doğrudan yorumlanmadı.',
-        analysisStatus: 'partial',
+        description: common.contextText,
       });
     }
 
     if (/^(tablo|table)\s*[:.\d-]/iu.test(line) || /\s[|]\s/u.test(line) || (line.match(/\t/g) || []).length >= 2) {
       tableLines.push(line);
-      figures.push({
+      schemaNotes.push({
         ...common,
         type: 'tablo',
         title: line.slice(0, 160),
-        description: common.visibleTextAroundFigure,
-        limitations: 'Tablo metin izleri düz metne çevrildi; hücre hizalaması kaynak dosyaya göre sınırlı olabilir.',
-        analysisStatus: 'partial',
+        description: common.contextText,
       });
     }
 
@@ -96,7 +92,7 @@ function detectEducationalStructure(text = '', source = {}) {
     });
   }
 
-  return { detectedStructure, figures, emphasisNotes };
+  return { detectedStructure, schemaNotes, emphasisNotes };
 }
 
 function sortSlideFiles(a, b) {
@@ -133,7 +129,6 @@ async function extractTxt(file) {
     ok: text.length > 0,
     text,
     detectedStructure: text ? [{ type: 'text', label: file.name, charCount: text.length }, ...hints.detectedStructure] : [],
-    figures: hints.figures,
     emphasisNotes: hints.emphasisNotes,
     limitations: [],
     notice: text ? 'Metin dosyası başarıyla okundu.' : 'Metin dosyası boş görünüyor.',
@@ -176,7 +171,7 @@ async function extractPdf(file) {
       const hints = detectEducationalStructure(pageText, { page: pageNo });
       detectedStructure.push(...hints.detectedStructure);
       if (hints.emphasisNotes.length) pageTexts.push(`[Sayfa ${pageNo} vurgu notları]\n${hints.emphasisNotes.map((item) => item.text).join('\n')}`);
-      if (hints.figures.length) pageTexts.push(`[Sayfa ${pageNo} görsel/tablo ipuçları]\n${hints.figures.map((item) => `${item.type}: ${item.title}\n${item.visibleTextAroundFigure}`).join('\n\n')}`);
+      if (hints.schemaNotes.length) pageTexts.push(`[Sayfa ${pageNo} tablo/şema metin izleri]\n${hints.schemaNotes.map((item) => `${item.type}: ${item.title}\n${item.contextText}`).join('\n\n')}`);
     }
   }
 
@@ -190,7 +185,6 @@ async function extractPdf(file) {
     ok: text.length > 120,
     text,
     detectedStructure,
-    figures: mergedHints.figures,
     emphasisNotes: mergedHints.emphasisNotes,
     limitations,
     notice: text.length > 120 ? `${readablePageCount} PDF sayfasından okunabilir metin çıkarıldı.` : 'PDF metni okunamadı veya çok kısa çıktı.',
@@ -225,7 +219,6 @@ async function extractDocx(file) {
     ok: text.length > 120,
     text,
     detectedStructure,
-    figures: hints.figures,
     emphasisNotes: hints.emphasisNotes,
     limitations,
     notice: text.length > 120 ? 'DOCX metni başarıyla ayrıştırıldı.' : 'DOCX metni okunamadı veya çok kısa çıktı.',
@@ -249,8 +242,8 @@ async function extractPptx(file) {
       detectedStructure.push({ type: 'slide', slide: slideNo, charCount: slideText.length, preview: slideText.slice(0, 180) });
       const hints = detectEducationalStructure(slideText, { slide: slideNo });
       detectedStructure.push(...hints.detectedStructure);
-      if (hints.figures.length) {
-        parts.push(`[Slayt ${slideNo} görsel/tablo ipuçları]\n${hints.figures.map((item) => `${item.type}: ${item.title}\n${item.visibleTextAroundFigure}`).join('\n\n')}`);
+      if (hints.schemaNotes.length) {
+        parts.push(`[Slayt ${slideNo} tablo/şema metin izleri]\n${hints.schemaNotes.map((item) => `${item.type}: ${item.title}\n${item.contextText}`).join('\n\n')}`);
       }
       if (hints.emphasisNotes.length) {
         parts.push(`[Slayt ${slideNo} vurgu notları]\n${hints.emphasisNotes.map((item) => item.text).join('\n')}`);
@@ -279,7 +272,6 @@ async function extractPptx(file) {
     ok: text.length > 120,
     text,
     detectedStructure,
-    figures: hints.figures,
     emphasisNotes: hints.emphasisNotes,
     limitations,
     notice: text.length > 120 ? `${detectedStructure.length} slayttan okunabilir metin çıkarıldı.` : 'PPTX metni okunamadı veya çok kısa çıktı.',
@@ -288,7 +280,7 @@ async function extractPptx(file) {
 
 export async function extractKomiteFile(file) {
   if (!file) {
-    return { ok: false, text: '', detectedStructure: [], figures: [], limitations: ['Dosya seçilmedi.'], notice: '' };
+    return { ok: false, text: '', detectedStructure: [], limitations: ['Dosya seçilmedi.'], notice: '' };
   }
   const ext = getKomiteFileExtension(file.name);
   try {
@@ -300,7 +292,6 @@ export async function extractKomiteFile(file) {
       ok: false,
       text: '',
       detectedStructure: [],
-      figures: [],
       limitations: [`${ext || 'Bu'} dosya türü için otomatik metin ayrıştırma desteklenmiyor.`],
       notice: 'Desteklenmeyen dosya türü; metni elle yapıştırabilirsin.',
     };
@@ -309,7 +300,6 @@ export async function extractKomiteFile(file) {
       ok: false,
       text: '',
       detectedStructure: [],
-      figures: [],
       limitations: [error?.message || 'Dosya ayrıştırma sırasında hata oluştu.'],
       notice: 'Dosya otomatik okunamadı; metni elle yapıştırabilirsin.',
     };

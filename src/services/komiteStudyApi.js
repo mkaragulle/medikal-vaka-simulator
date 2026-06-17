@@ -88,25 +88,6 @@ function normalizeDifficulty(value = 'medium') {
   return 'medium';
 }
 
-function normalizeFigure(figure = {}, index = 0) {
-  const sourceFile = cleanGeneratedText(figure.sourceFile, { allowShort: true });
-  const pageOrSlide = cleanGeneratedText(figure.pageOrSlide || figure.sourcePageOrSlide, { allowShort: true });
-  return {
-    id: figure.id || `komite-figure-${Date.now()}-${index}`,
-    sourceFile,
-    pageOrSlide,
-    sourcePageOrSlide: cleanGeneratedText(figure.sourcePageOrSlide, { allowShort: true }) || [sourceFile, pageOrSlide].filter(Boolean).join(' · ') || 'Materyal geneli',
-    type: cleanGeneratedText(figure.type, { allowShort: true }) || 'görsel / tablo',
-    title: cleanTopic(figure.title, 'Görsel / tablo notu'),
-    whatCanBeSaidSafely: cleanGeneratedText(figure.whatCanBeSaidSafely || figure.description || figure.interpretation),
-    visibleTextAroundFigure: cleanGeneratedText(figure.visibleTextAroundFigure || figure.visibleText || figure.preview),
-    limitations: cleanGeneratedText(figure.limitations) || 'Yalnızca okunabilen metin ve bağlam yorumlandı; görünmeyen piksel içeriği uydurulmadı.',
-    examRelevance: cleanGeneratedText(figure.examRelevance),
-    relatedTopic: cleanTopic(figure.relatedTopic || figure.sourceTopic, figure.title),
-    analysisStatus: ['analyzed', 'partial', 'unavailable'].includes(figure.analysisStatus) ? figure.analysisStatus : 'partial',
-  };
-}
-
 function objectiveFocusFromSection(section = {}) {
   const source = cleanGeneratedText(section.examAngle || section.clinicalConnection || section.commonTrap || section.teachingText);
   const firstSentence = source.split(/(?<=[.!?])\s+/u).find((item) => cleanGeneratedText(item));
@@ -138,7 +119,7 @@ function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
     algorithmSteps: normalizeTextList(section.algorithmSteps || section.algorithmFlow || section.decisionSteps || section.decisionFlow, 7),
     tableInsights: normalizeTextList(section.tableInsights || section.tableNotes || section.tablesAndVisualNotes || section.classificationTable, 5),
     comparisonPoints: normalizeTextList(section.comparisonPoints || section.comparisons || section.differentials || section.commonConfusions, 5),
-    visualNotes: normalizeTextList(section.visualNotes || section.figureNotes || section.schemaNotes || section.visualInsights, 5),
+    visualNotes: normalizeTextList(section.visualNotes || section.schemaNotes, 5),
     miniReview: normalizeTextList(section.miniReview || section.sectionReview || section.takeHomeMessages || section.keyTakeaways, 5),
     clinicalConnection: cleanGeneratedText(section.clinicalConnection || section.clinicalOrPracticalConnection),
     examAngle: cleanGeneratedText(section.examAngle || section.examConnection || section.examFocus),
@@ -213,7 +194,6 @@ function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
     highYieldPoints,
     mustKnow: outputMustKnow,
     finalReview: finalReview.length ? finalReview : uniqueTexts(lessonSections.map((section) => section.heading), 6, usedAfterMustKnow),
-    figureExplanations: Array.isArray(rawLesson.figureExplanations) ? rawLesson.figureExplanations.map(normalizeFigure) : [],
     materialCoverage: Array.isArray(rawLesson.materialCoverage)
       ? rawLesson.materialCoverage.map((item, index) => ({
         fileName: cleanGeneratedText(item.fileName, { allowShort: true }) || `Materyal ${index + 1}`,
