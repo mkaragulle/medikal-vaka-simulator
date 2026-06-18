@@ -1136,7 +1136,12 @@ async function requestKomiteLessonContent({ apiKey, model, metadata, materialPac
     const prompt = buildLessonBatchPrompt({ metadata, context, batchIndex, totalBatches: batches.length });
     try {
       const content = await requestKomiteContent({ apiKey, model, kind: 'lesson', prompt, maxTokens: 9000 });
-      return parseJsonObject(content);
+      try {
+        return parseJsonObject(content);
+      } catch (parseError) {
+        console.warn('[generate-komite-study:salvage-unparseable-batch]', { batchIndex: batchIndex + 1, message: parseError.message });
+        return fallbackLessonFragmentFromDigest({ context, partialText: content || '', batchIndex });
+      }
     } catch (error) {
       if (error?.status === 'incomplete') {
         console.warn('[generate-komite-study:salvage-incomplete-batch]', { batchIndex: batchIndex + 1, message: error.message });
