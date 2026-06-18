@@ -216,24 +216,8 @@ function splitReadableParagraphs(text = '') {
   return paragraphs;
 }
 
-const TECHNICAL_LESSON_NOTE_PATTERN = /\b(?:dosya bazl[ıi]|materyal(?:ler)?(?:inden|in)?\s+(?:ana konusu|çıkarılan|temsil)|aşağıda yapılandırıldı|temsil edildi|materyal kapsam|coverageSummary|materialCoverage|sourceManifest|sourceFingerprint|MATERIAL_DIGEST|chunk|grup\s*\d+|üretim süreci|teknik nedenle|extraction warning|ayrıştırılan metin|API bağlamı|öğretici excerpt|her dosyanın ana konusu|ilişkili başlıklar birleştirildi|farklı konular tek başlıkta ezilmedi)\b/iu;
-const RAW_SOURCE_LINE_PATTERN = /^(?:[A-ZÇĞİÖŞÜ0-9][A-ZÇĞİÖŞÜ0-9\s/():,._-]{10,}|(?:prof\.?|doç\.?|dr\.?|öğr\.?\s*gör\.?)\b|.*\.(?:pdf|pptx|ppt|docx|txt)\b)/iu;
-const GENERIC_COMPONENT_TITLE_PATTERN = /^(?:akış|tablo|ayrım|şema|bilgi|özet|görsel yorumu|şema açıklaması|tablonun ana mesajı|süreç mantığı|son kontrol|mini tekrar|sık hata|sınav ipucu)$/iu;
-
-function stripTechnicalLessonSentences(text = '') {
-  return String(text || '')
-    .split(/(?<=[.!?])\s+|\n+/u)
-    .map((part) => part.trim())
-    .filter(Boolean)
-    .filter((part) => !TECHNICAL_LESSON_NOTE_PATTERN.test(part))
-    .filter((part) => !RAW_SOURCE_LINE_PATTERN.test(part))
-    .join(' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
 function sanitizeTeachingTextForDisplay(text = '') {
-  const clean = String(text || '')
+  return String(text || '')
     .replace(/\[\[?FILE\s*\d+[^\]\n]*\]?\]?/giu, ' ')
     .replace(/\[\s*FILE\s*\d+\s*\]/giu, ' ')
     .replace(/===\s*DOSYA\s*\d+\s*METN[İI]\s*===/giu, ' ')
@@ -243,7 +227,6 @@ function sanitizeTeachingTextForDisplay(text = '') {
     .replace(/[ \t]+/g, ' ')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
-  return stripTechnicalLessonSentences(clean);
 }
 
 function splitInlineListMarkers(text = '') {
@@ -347,8 +330,6 @@ function LessonText({ text, revealMode = 'postAnswer', maxTerms = 4 }) {
 function sentenceFromFlowStep(step = '') {
   const raw = String(step || '').replace(/^[\s→\-–—>]+|[\s→\-–—>]+$/g, '').trim();
   if (!raw) return '';
-  if (raw.split(/\s+/u).length < 5 && !/[.:;→>]/u.test(raw)) return '';
-  if (GENERIC_COMPONENT_TITLE_PATTERN.test(raw)) return '';
   if (!/[→>]/u.test(raw)) return raw.replace(/\s+/g, ' ');
   const parts = raw.split(/\s*(?:→|>)\s*/u).map((part) => part.trim()).filter(Boolean);
   if (parts.length <= 1) return raw.replace(/[→>]/gu, ' → ').replace(/\s+/g, ' ');
@@ -357,7 +338,7 @@ function sentenceFromFlowStep(step = '') {
 
 function formatMechanismSteps(flow = []) {
   if (!Array.isArray(flow)) return [];
-  return displayList(flow.map(sentenceFromFlowStep).filter(Boolean), 6);
+  return flow.map(sentenceFromFlowStep).filter(Boolean);
 }
 
 const LESSON_SECTION_ACCENTS = [
@@ -387,7 +368,6 @@ function displayList(value = [], maxItems = 8, exclude = []) {
   items.forEach((item) => {
     const text = sanitizeTeachingTextForDisplay(typeof item === 'string' ? item : item?.text || item?.content || item?.summary || Object.values(item || {}).filter(Boolean).join(' '));
     const key = text.toLocaleLowerCase('tr').replace(/[^\p{L}\p{N}\s]/gu, '').replace(/\s+/g, ' ').trim();
-    if (TECHNICAL_LESSON_NOTE_PATTERN.test(text) || RAW_SOURCE_LINE_PATTERN.test(text) || GENERIC_COMPONENT_TITLE_PATTERN.test(text)) return;
     const duplicatesExcluded = excludedKeys.some((excludedKey) => key.length > 42 && excludedKey.length > 42 && (key.includes(excludedKey) || excludedKey.includes(key)));
     const duplicatesSeen = [...seen].some((seenKey) => key.length > 42 && seenKey.length > 42 && (key.includes(seenKey) || seenKey.includes(key)));
     if (!text || text.split(/\s+/u).length < 3 || seen.has(key) || duplicatesSeen || duplicatesExcluded) return;
@@ -418,8 +398,7 @@ function displayKeyBoxes(boxes = [], exclude = []) {
     .filter((box) => {
       const key = box.text.toLocaleLowerCase('tr').replace(/[^\p{L}\p{N}\s]/gu, '').replace(/\s+/g, ' ').trim();
       const duplicatesExcluded = excludedKeys.some((excludedKey) => key.length > 42 && excludedKey.length > 42 && (key.includes(excludedKey) || excludedKey.includes(key)));
-      if (!box.text || box.text.split(/\s+/u).length < 5 || TECHNICAL_LESSON_NOTE_PATTERN.test(box.text) || seen.has(key) || duplicatesExcluded) return false;
-      if (/kritik güvenlik/iu.test(box.label) && !/\b(?:acil|hayati|kontrendike|risk|şok|kanama|hava yolu|resüsitasyon|mortalite|toksisite|doz|hasta güvenliği|öncelik)\b/iu.test(box.text)) return false;
+      if (!box.text || box.text.split(/\s+/u).length < 5 || seen.has(key) || duplicatesExcluded) return false;
       seen.add(key);
       return true;
     })
@@ -444,13 +423,13 @@ function SectionInsightBlock({ title, items = [], icon = 'Lightbulb', tone = 'in
 }
 
 function improveLessonIntro(text = '', title = '') {
-  const clean = sanitizeTeachingTextForDisplay(text)
+  const clean = String(text || '')
     .replace(/yüklenen komite materyallerindeki/giu, 'bu çalışma alanındaki')
     .replace(/tek tek ezberlenecek başlıklar olarak değil,?/giu, '')
     .replace(/\s+/g, ' ')
     .trim();
-  if (clean && clean.length >= 80 && !TECHNICAL_LESSON_NOTE_PATTERN.test(clean)) return clean;
-  return '';
+  if (clean && clean.length >= 80) return clean;
+  return `${title || 'Bu ders'}, konuyu anlaşılır bir sıraya yerleştirir; temel kavramları, ilişkileri ve öğrenme açısından önemli noktaları açık bir anlatımla özetler.`;
 }
 
 function normalizeSourceText(material = {}) {
@@ -1430,15 +1409,17 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
   const sectionAnchors = sections
     .map((section, index) => ({ id: createLessonAnchorId(section.heading, index), title: section.heading || `Bölüm ${index + 1}` }));
   const sectionNavigationItems = sections.map((section, index) => {
-    const subItems = displayList(section.subHeadings || section.keySubtopics || [], 4)
-      .filter((item) => !GENERIC_COMPONENT_TITLE_PATTERN.test(item));
+    const subItems = [
+      displayList([...(section.algorithmSteps || []), ...(section.mechanismFlow || [])], 1).length ? 'Akış' : '',
+      displayList(section.tableInsights, 1).length ? 'Tablo' : '',
+      displayList(section.comparisonPoints, 1).length ? 'Ayrım' : '',
+      displayList(section.visualNotes, 1).length ? 'Şema' : '',
+    ].filter(Boolean);
     return { id: sectionAnchors[index]?.id, title: section.heading || `Bölüm ${index + 1}`, subItems, sectionIndex: index };
   });
-  const bigPictureText = sanitizeTeachingTextForDisplay(lesson?.bigPicture || lesson?.overview || '');
-  const clinicalExamText = sanitizeTeachingTextForDisplay(lesson?.clinicalExamRelevance || '');
   const navigationItems = [
     { id: 'komite-objectives', title: 'Öğrenme hedefleri' },
-    ...(bigPictureText && bigPictureText.length >= 80 ? [{ id: 'komite-big-picture', title: 'Büyük resim' }] : []),
+    ...(lesson?.bigPicture || lesson?.overview ? [{ id: 'komite-big-picture', title: 'Büyük resim' }] : []),
     ...sectionNavigationItems.filter((item) => item.title && !/^(öğrenme hedefleri|büyük resim|can alıcı noktalar|mutlaka hatırla)$/iu.test(item.title)),
     { id: 'komite-high-yield', title: 'Final pekiştirme' },
   ].filter((item) => item.id && item.title);
@@ -1468,11 +1449,6 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
     ? sanitizeTeachingTextForDisplay(rawObjectives[0])
     : '';
   const objectives = objectiveIntro ? rawObjectives.slice(1) : rawObjectives;
-  const cleanObjectivesRaw = displayList(objectives, 5)
-    .filter((item) => !/\bodağında klinik, mekanistik ve sınav bağlamıyla yorumlayabilmek\b/iu.test(item));
-  const cleanObjectives = cleanObjectivesRaw.length
-    ? cleanObjectivesRaw
-    : sections.slice(0, 4).map((section) => `${sanitizeTeachingTextForDisplay(section.heading || 'Bu konu')} başlığındaki temel kavramları, ilişkileri ve sınav açısından ayırt ettiren noktaları açıklayabilmek.`);
   const concepts = Array.isArray(lesson.mainConcepts)
     ? lesson.mainConcepts.filter((item) => !/materyaldeki ilişkili kavram|slayt|sayfa|dosya|pptx/iu.test(String(item)))
     : [];
@@ -1492,14 +1468,12 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
 
   return (
     <div className="komite-lesson-view komite-lesson-view-pro">
-      {improveLessonIntro(lesson.shortSubtitle || lesson.shortIntro || lesson.overview, lesson.title) ? (
-        <div className="komite-lesson-hero komite-lesson-hero-pro komite-lesson-brief-card">
-          <div className="komite-lesson-brief">
-            <span className="komite-kicker"><Icon name="BookOpen" size={16} /> Ders Anlatımı</span>
-            <p><GlossaryText text={improveLessonIntro(lesson.shortSubtitle || lesson.shortIntro || lesson.overview, lesson.title)} enabled revealMode="postAnswer" maxTerms={4} /></p>
-          </div>
+      <div className="komite-lesson-hero komite-lesson-hero-pro komite-lesson-brief-card">
+        <div className="komite-lesson-brief">
+          <span className="komite-kicker"><Icon name="BookOpen" size={16} /> Ders Anlatımı</span>
+          <p><GlossaryText text={improveLessonIntro(lesson.shortSubtitle || lesson.shortIntro || lesson.overview, lesson.title)} enabled revealMode="postAnswer" maxTerms={4} /></p>
         </div>
-      ) : null}
+      </div>
 
       <div className="komite-lesson-pro-layout">
         <aside className="komite-lesson-sidebar" aria-label="Ders navigasyonu">
@@ -1525,48 +1499,43 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
           <section id="komite-objectives" className="komite-objectives komite-objectives-pro">
             <strong>Öğrenme hedefleri</strong>
             {objectiveIntro ? <p className="komite-objective-intro"><InlineLessonText text={objectiveIntro} /></p> : null}
-            <ul>{cleanObjectives.map((item, index) => <li key={`${item}-${index}`}><InlineLessonText text={item} /></li>)}</ul>
+            <ul>{objectives.map((item, index) => <li key={`${item}-${index}`}><InlineLessonText text={sanitizeTeachingTextForDisplay(item)} /></li>)}</ul>
           </section>
 
-          {bigPictureText && bigPictureText.length >= 80 ? (
+          {(lesson.bigPicture || lesson.overview) ? (
             <article id="komite-big-picture" className="komite-lesson-section komite-big-picture-section">
               <h3>Büyük resim</h3>
-              <LessonText text={bigPictureText} />
+              <LessonText text={lesson.bigPicture || lesson.overview} />
             </article>
           ) : null}
 
-          {clinicalExamText && clinicalExamText.length >= 60 ? (
+          {lesson.clinicalExamRelevance ? (
             <div className="komite-context-lines" aria-label="Klinik ve sınav bağlantıları">
               <div className="komite-context-line">
                 <strong>Klinik / sınav bağlantısı</strong>
-                <p><GlossaryText text={clinicalExamText} enabled revealMode="postAnswer" maxTerms={4} /></p>
+                <p><GlossaryText text={sanitizeTeachingTextForDisplay(lesson.clinicalExamRelevance)} enabled revealMode="postAnswer" maxTerms={4} /></p>
               </div>
             </div>
           ) : null}
 
           {sections.map((section, index) => {
             const teachingText = sanitizeTeachingTextForDisplay(section.teachingText || section.content);
-            const rawFlowSteps = formatMechanismSteps([
+            const flowSteps = formatMechanismSteps([
               ...(Array.isArray(section.algorithmSteps) ? section.algorithmSteps : []),
               ...(Array.isArray(section.mechanismFlow) ? section.mechanismFlow : []),
-            ]).filter((item) => !displayList([teachingText], 1).some((main) => item.length > 42 && main.includes(item)));
-            const flowSteps = rawFlowSteps.length >= 2 ? rawFlowSteps : [];
-            const tableInsights = displayList(section.tableInsights, 4, [teachingText, section.examAngle, section.clinicalConnection])
-              .filter((item) => /\b(?:tablo|sınıflama|karşılaştır|fark|ayır|patern|grup|tip|evre|skor|kriter)\b/iu.test(item));
+            ]);
+            const tableInsights = displayList(section.tableInsights, 4, [teachingText, section.examAngle, section.clinicalConnection]);
             const comparisonPoints = displayList(section.comparisonPoints, 4, [teachingText, section.commonTrap]);
-            const visualNotes = displayList(section.visualNotes, 4, [teachingText, ...tableInsights])
-              .filter((item) => /\b(?:şema|algoritma|akış|caption|başlık|okunabilen|karar|süreç)\b/iu.test(item));
-            const subHeadings = displayList(section.subHeadings || section.subtopics || [], 5)
-              .filter((item) => !GENERIC_COMPONENT_TITLE_PATTERN.test(item));
+            const visualNotes = displayList(section.visualNotes, 4, [teachingText, ...tableInsights]);
             const keyBoxes = displayKeyBoxes(section.keyBoxes, [teachingText, section.examAngle, section.commonTrap, section.clinicalConnection]);
             return (
               <article id={sectionAnchors[index]?.id} className="komite-lesson-section komite-lesson-section-pro" key={`${section.heading}-${index}`} style={lessonAccentStyle(index)}>
                 <div className="komite-section-index">{String(index + 1).padStart(2, '0')}</div>
                 <div className="komite-section-body">
                   <h3>{section.heading}</h3>
-                  {subHeadings.length ? (
-                    <div className="komite-section-subtopic-list" aria-label="Bölüm alt başlıkları">
-                      {subHeadings.map((subHeading, subIndex) => <span key={`${subHeading}-${subIndex}`}>{`${index + 1}.${subIndex + 1} ${subHeading}`}</span>)}
+                  {Array.isArray(section.sourceRefs) && section.sourceRefs.length ? (
+                    <div className="komite-section-source-refs" aria-label="Bu bölümün kaynak materyalleri">
+                      {section.sourceRefs.slice(0, 6).map((sourceRef, sourceIndex) => <span key={`${sourceRef}-${sourceIndex}`}>{sourceRef}</span>)}
                     </div>
                   ) : null}
                   <LessonText text={teachingText} />
