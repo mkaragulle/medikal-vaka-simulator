@@ -3,7 +3,7 @@ const DEFAULT_MODEL = 'gpt-5.4-mini';
 const FALLBACK_MODEL = 'gpt-5.4-nano';
 
 const KIND_LIMITS = {
-  lesson: { maxSourceChars: 18_000, maxTokens: 6800 },
+  lesson: { maxSourceChars: 28_000, maxTokens: 9000 },
   questions: { maxSourceChars: 26_000, maxTokens: 6200 },
   cards: { maxSourceChars: 22_000, maxTokens: 5200 },
 };
@@ -16,7 +16,8 @@ const KOMITE_SYSTEM_PROMPT = [
   'Slaytlardaki tanım, sınıflama, algoritma, tablo, okunabilir şema/caption metni, tanı, tedavi ve sınavlık ayrımları öğretici ders anlatımına çevirirsin.',
   'Kuru özet yapmaz, gereksiz tekrar oluşturmaz, boş kutu üretmez ve tokeni verimli kullanırsın.',
   'Öğrenme hedeflerini başlık tekrarına dönüştürme; her hedef materyalin gerçek içeriğine göre özgün, tamamlanmış, akıcı ve ölçülebilir olsun.',
-  'Boş kutu, placeholder, yarım cümle, OCR kalıntısı, grup/chunk ifadesi veya mekanik tekrar üretme.',
+  'Boş kutu, placeholder, yarım cümle, OCR kalıntısı, grup/chunk ifadesi, dosya işleme raporu veya mekanik tekrar üretme.',
+  'Ders anlatımına “dosya bazlı çıkarıldı”, “materyal temsil edildi”, “aşağıda yapılandırıldı” gibi teknik giriş cümleleriyle başlama; doğrudan konuya gir.',
   'Tablo ve algoritma içeren materyallerde bunların ana mesajını ders anlatımına çevir; ayrıştırılamayan piksel içeriğini yorumlama.',
   'Metin olarak ayrıştırılamayan görsel içeriğini yorumlama; materyalde net olmayan noktayı kesin bilgi gibi yazma, uydurma kaynak, çalışma veya guideline adı verme.',
   'Komite/TUS ayrımı önemlidir: bu çıktı yalnızca Komite çalışma alanı içindir, TUS soru üretim üslubuna veya TUS veri akışına bağlı değildir.',
@@ -44,8 +45,6 @@ const LESSON_RESPONSE_SCHEMA = {
         'highYieldPoints',
         'mustKnow',
         'finalReview',
-        'materialCoverage',
-        'coverageSummary',
       ],
       properties: {
         title: { type: 'string' },
@@ -56,7 +55,7 @@ const LESSON_RESPONSE_SCHEMA = {
         learningObjectives: { type: 'array', minItems: 3, maxItems: 6, items: { type: 'string' } },
         mainConcepts: { type: 'array', minItems: 3, maxItems: 8, items: { type: 'string' } },
         clinicalExamRelevance: { type: 'string' },
-        commonConfusions: { type: 'array', minItems: 1, maxItems: 6, items: { type: 'string' } },
+        commonConfusions: { type: 'array', minItems: 0, maxItems: 6, items: { type: 'string' } },
         sections: {
           type: 'array',
           minItems: 3,
@@ -73,7 +72,6 @@ const LESSON_RESPONSE_SCHEMA = {
               'examAngle',
               'commonTrap',
               'keyBoxes',
-              'sourceRefs',
             ],
             properties: {
               heading: { type: 'string' },
@@ -97,30 +95,12 @@ const LESSON_RESPONSE_SCHEMA = {
                   },
                 },
               },
-              sourceRefs: { type: 'array', minItems: 0, maxItems: 6, items: { type: 'string' } },
             },
           },
         },
         highYieldPoints: { type: 'array', minItems: 5, maxItems: 9, items: { type: 'string' } },
         mustKnow: { type: 'array', minItems: 4, maxItems: 8, items: { type: 'string' } },
         finalReview: { type: 'array', minItems: 4, maxItems: 8, items: { type: 'string' } },
-        materialCoverage: {
-          type: 'array',
-          minItems: 0,
-          maxItems: 12,
-          items: {
-            type: 'object',
-            additionalProperties: false,
-            required: ['fileName', 'detectedMainTopic', 'representedIn', 'coverageNote'],
-            properties: {
-              fileName: { type: 'string' },
-              detectedMainTopic: { type: 'string' },
-              representedIn: { type: 'string' },
-              coverageNote: { type: 'string' },
-            },
-          },
-        },
-        coverageSummary: { type: 'string' },
       },
     },
   },
@@ -247,8 +227,26 @@ function compactLine(value = '') {
   return normalizeText(value).replace(/\s+/g, ' ').trim();
 }
 
+const TECHNICAL_LESSON_NOTE_PATTERN = /\b(?:dosya bazl[ıi]|dosya işleme|materyal(?:ler)?(?:inden|in)?\s+(?:ana konusu|çıkarılan|temsil)|materyaller temsil edildi|çalışma notları yapılandırıldı|ana konular aşağıda yapılandırıldı|aşağıda yapılandırıldı|temsil edildi|materyal kapsam|coverageSummary|materialCoverage|sourceManifest|sourceFingerprint|source coverage|output structure|MATERIAL_DIGEST|chunk|grup\s*\d+|üretim süreci|teknik nedenle|extraction warning|extraction|ayrıştırılan metin|API bağlamı|öğretici excerpt|görsel sekmesi için|ana konu belirtildi|her dosyanın ana konusu|ilişkili başlıklar birleştirildi|farklı konular tek başlıkta ezilmedi)\b/iu;
+const RAW_SOURCE_LINE_PATTERN = /^(?:[A-ZÇĞİÖŞÜ0-9][A-ZÇĞİÖŞÜ0-9\s/():,._-]{10,}|(?:prof\.?|doç\.?|dr\.?|öğr\.?\s*gör\.?)\b|.*\.(?:pdf|pptx|ppt|docx|txt)\b)/iu;
+const BAD_OBJECTIVE_PATTERN = /\b(?:odağında klinik, mekanistik ve sınav bağlamıyla yorumlayabilmek|temel öğrenme mantığını açıklayabilmek|bilgisini açıklamak ve soruda ayırt etmek|dosya bazlı|materyal(?:ler)?inden|sınavda .* sorulabilir odağında)\b/iu;
+const GENERIC_HEADING_PATTERN = /^(?:bölüm|konu bölümü|section|part)\s*\d+$/iu;
+const GENERIC_SUBHEADING_PATTERN = /^(?:akış|tablo|ayrım|şema|bilgi|özet|klinik|tedavi|sınav ipucu|kritik güvenlik|sık hata|bilgi kutusu|akılda tut|son kontrol|mini tekrar|görsel yorumu|tablonun ana mesajı|şema açıklaması|süreç mantığı)$/iu;
+
+function stripTechnicalLessonSentences(text = '') {
+  return String(text || '')
+    .split(/(?<=[.!?])\s+|\n+/u)
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .filter((part) => !TECHNICAL_LESSON_NOTE_PATTERN.test(part))
+    .filter((part) => !RAW_SOURCE_LINE_PATTERN.test(part))
+    .join(' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function cleanOutputText(value = '', { allowShort = false } = {}) {
-  const text = compactLine(value)
+  let text = compactLine(value)
     .replace(/[“”]/g, '"')
     .replace(/[‘’]/g, "'")
     .replace(/\beksiklikt\b/giu, 'eksikliği')
@@ -259,6 +257,7 @@ function cleanOutputText(value = '', { allowShort = false } = {}) {
     .replace(/\b(?:Ana konu belirtilmedi|Konu belirtilmedi|Unknown topic|Grup\s*\d+|Chunk\s*\d+)\b/giu, '')
     .replace(/\s+/g, ' ')
     .trim();
+  text = stripTechnicalLessonSentences(text);
   if (!text) return '';
   if (/^[,.;:!?'"`-]+$/u.test(text)) return '';
   if (!allowShort && text.split(/\s+/u).length < 3) return '';
@@ -579,6 +578,21 @@ function formatFileDigest(digest = {}) {
   ].filter(Boolean).join('\n');
 }
 
+function formatLessonTopicCard(digest = {}) {
+  return [
+    `Konu: ${digest.detectedTopic}`,
+    digest.mainHeadings?.length ? `Doğal alt başlık adayları:\n${safeStringifyList(digest.mainHeadings, 6, 120)}` : '',
+    digest.coreDefinitions?.length ? `Temel kavramlar:\n${safeStringifyList(digest.coreDefinitions, 4, 190)}` : '',
+    digest.classificationOrAlgorithm?.length ? `Sınıflama, süreç veya algoritma bilgisi:\n${safeStringifyList(digest.classificationOrAlgorithm, 5, 190)}` : '',
+    digest.diagnosticOrLabPoints?.length ? `Tanı, test veya laboratuvar bağlantıları:\n${safeStringifyList(digest.diagnosticOrLabPoints, 5, 190)}` : '',
+    digest.treatmentOrManagementPoints?.length ? `Tedavi veya yönetim bağlantıları:\n${safeStringifyList(digest.treatmentOrManagementPoints, 5, 190)}` : '',
+    digest.tablesAndVisualNotes?.length ? `Okunabilen tablo, algoritma veya şema bilgisi:\n${safeStringifyList(digest.tablesAndVisualNotes, 5, 190)}` : '',
+    digest.highYieldExamPoints?.length ? `Sınavda ayırt ettiren noktalar:\n${safeStringifyList(digest.highYieldExamPoints, 7, 190)}` : '',
+    digest.commonConfusions?.length ? `Sık karışabilecek ayrımlar:\n${safeStringifyList(digest.commonConfusions, 4, 180)}` : '',
+    digest.mustRepresent?.length ? `Mutlaka işlenecek bilgiler:\n${safeStringifyList(digest.mustRepresent, 10, 170)}` : '',
+  ].filter(Boolean).join('\n');
+}
+
 function buildMaterialContext({ kind, metadata = {}, materialPacket = {} }) {
   const limits = KIND_LIMITS[kind] || KIND_LIMITS.lesson;
   const files = Array.isArray(materialPacket.files) ? materialPacket.files : [];
@@ -637,27 +651,31 @@ function buildMaterialContext({ kind, metadata = {}, materialPacket = {} }) {
     const remaining = limits.maxSourceChars - usedChars;
     const clippedText = chunk.text.length > remaining ? chunk.text.slice(0, remaining).trim() : chunk.text;
     if (!clippedText) return;
-    sourceParts.push(`[Kaynak: ${chunk.source}]\n${clippedText}`);
+    sourceParts.push(kind === 'lesson' ? clippedText : `[Kaynak: ${chunk.source}]\n${clippedText}`);
     usedChars += clippedText.length;
   });
 
   const emphasisNotes = files.flatMap((file) => (
     Array.isArray(file.emphasisNotes)
-      ? file.emphasisNotes.map((note) => `${file.fileName || 'Materyal'}: ${note.text || note}`)
+      ? file.emphasisNotes.map((note) => (kind === 'lesson' ? `${note.text || note}` : `${file.fileName || 'Materyal'}: ${note.text || note}`))
       : []
   ));
   const structures = files.flatMap((file) => (
     Array.isArray(file.detectedStructure)
-      ? file.detectedStructure.map((item) => `${file.fileName || 'Materyal'}: ${item.label || item.type || ''} ${item.preview || ''}`)
+      ? file.detectedStructure.map((item) => (kind === 'lesson' ? `${item.label || item.type || ''} ${item.preview || ''}` : `${file.fileName || 'Materyal'}: ${item.label || item.type || ''} ${item.preview || ''}`))
       : []
   ));
 
   return {
     sourceText: sourceParts.join('\n\n'),
-    materialDigestContext: fileDigests.map((digest, index) => `[[MATERIAL_DIGEST_${index + 1}]]\n${formatFileDigest(digest)}`).join('\n\n'),
+    materialDigestContext: fileDigests
+      .map((digest, index) => kind === 'lesson'
+        ? `[[KONU_KARTI_${index + 1}]]\n${formatLessonTopicCard(digest)}`
+        : `[[MATERIAL_DIGEST_${index + 1}]]\n${formatFileDigest(digest)}`)
+      .join('\n\n'),
     emphasisContext: safeStringifyList(emphasisNotes, kind === 'lesson' ? 8 : 14, kind === 'lesson' ? 260 : 420),
     structureContext: safeStringifyList(structures, kind === 'lesson' ? 6 : 12, kind === 'lesson' ? 220 : 320),
-    sourceManifest: safeStringifyList(fileDigests.map((digest) => `${digest.fileName} | ${digest.detectedTopic} | kaynak kalitesi: ${digest.sourceQuality} | ${digest.charCount} karakter`), 12, 260),
+    sourceManifest: kind === 'lesson' ? '' : safeStringifyList(fileDigests.map((digest) => `${digest.fileName} | ${digest.detectedTopic} | kaynak kalitesi: ${digest.sourceQuality} | ${digest.charCount} karakter`), 12, 260),
     fileDigests,
   };
 }
@@ -673,46 +691,55 @@ function buildMetadataBlock(metadata = {}) {
 }
 
 function buildLessonPrompt({ metadata, context }) {
+  const lessonDigestContext = String(context.materialDigestContext || '').replace(/\[\[MATERIAL_DIGEST_(\d+)\]\]/gu, '[[KONU_KARTI_$1]]');
   return [
-    'Görev: Aşağıdaki materyal digestlerini kullanarak komite sınavına yönelik çalışılabilir bir ders anlatımı oluştur.',
+    'Görev: Aşağıdaki konu kartlarını ve temiz kaynak metnini kullanarak komite sınavına yönelik çalışılabilir bir ders anlatımı oluştur.',
     'Çıktı yalnızca geçerli JSON olsun. Markdown, açıklama, kod bloğu veya JSON dışı metin yazma.',
     'Yanıtı token-verimli ama yüzeysel olmayan bir düzeyde tut. Gereksiz ansiklopedi yazma; fakat dosyalardaki ana sınavlık bilgileri ezme.',
-    'Dosya sayısı ve konu dağılımına göre 4-6 ana bölüm üret. Farklı ana konuları sırf kısaltmak için aynı başlıkta birleştirme.',
+    'Konu dağılımına göre 4-6 ana bölüm üret. Farklı ana konuları sırf kısaltmak için aynı başlıkta birleştirme.',
     '',
     'Zorunlu JSON şekli:',
-    '{"lesson":{"title":"","shortIntro":"","overview":"","learningObjectives":[],"sections":[{"heading":"","level":2,"teachingText":"","mechanismFlow":[],"algorithmSteps":[],"tableInsights":[],"comparisonPoints":[],"visualNotes":[],"clinicalConnection":"","examAngle":"","commonTrap":"","keyBoxes":[],"sourceRefs":[]}],"highYieldPoints":[],"mustKnow":[],"finalReview":[],"materialCoverage":[],"coverageSummary":""}}',
+    '{"lesson":{"title":"","shortIntro":"","overview":"","learningObjectives":[],"sections":[{"heading":"","level":2,"subHeadings":[],"teachingText":"","mechanismFlow":[],"algorithmSteps":[],"tableInsights":[],"comparisonPoints":[],"visualNotes":[],"clinicalConnection":"","examAngle":"","commonTrap":"","keyBoxes":[]}],"highYieldPoints":[],"mustKnow":[],"finalReview":[],"commonConfusions":[],"mainConcepts":[],"clinicalExamRelevance":""}}',
     '',
     'Kapsam kuralları:',
-    '- Her MATERIAL_DIGEST için detectedTopic ve mustRepresent alanlarını özellikle dikkate al.',
-    '- Hiçbir ana dosyayı sessizce yok sayma; her dosyayı ya uygun bölümün sourceRefs alanında ya da materialCoverage içinde temsil et.',
+    '- Her konu kartındaki konu adını ve mutlaka işlenecek bilgileri özellikle dikkate al.',
+    '- Hiçbir ana konuyu sessizce yok sayma; her konuyu uygun ana bölüm veya alt başlık içinde öğretici biçimde işle.',
     '- Sadece gerçekten aynı konuya ait dosyaları birleştir; ilişkisiz dosyaları ayrı ana bölüm yap.',
-    '- Bir dosya metin kalitesi çok zayıfsa bunu coverageSummary içinde kısa ve dürüstçe belirt.',
-    '- Bir dosyadan yakalanan tek bilgiyi ait olmadığı bölüme taşıma; bağlamı belirsiz bilgiyi kesin hüküm gibi kullanma.',
-    '- detectedTopic boş/placeholder olmasın; gerekirse dosya adından temiz konu adı üret.',
+    '- Kaynak metin kalitesi zayıfsa kesin olmayan ayrıntıyı uydurma; üretim veya kapsam raporu yazma.',
+    '- Bir kaynak bölümünden yakalanan tek bilgiyi ait olmadığı bölüme taşıma; bağlamı belirsiz bilgiyi kesin hüküm gibi kullanma.',
+    '- Konu adı boş veya placeholder olmasın; gerekirse kaynak başlığını doğal Türkçe konu adına dönüştür.',
     '',
     'Ders anlatımı kalite hedefi:',
+    '- Ders anlatımı teknik girişle başlamasın. "Dosya bazlı çıkarıldı", "materyal temsil edildi", "aşağıda yapılandırıldı" veya üretim sürecini anlatan cümle yazma.',
+    '- shortIntro ve bigPicture yalnızca konuya özgü öğrenme çerçevesi içersin; sistemin dosyaları nasıl işlediğini anlatmasın.',
     '- Her bölümde mümkünse büyük resim, temel kavram, sınıflama/mekanizma, klinik-pratik bağlantı, tanı/test/lab veya yönetim bilgisi ve sınav ayırt ettiricisi işlensin; materyalde yoksa uydurma.',
+    '- Her ana section tek paragrafla geçiştirilmesin. Geniş bir konuysa teachingText en az birkaç açıklayıcı paragraf içersin; tanım, mekanizma, klinik/pratik yansıma ve sınav ayrımı arasında bağ kur.',
+    '- subHeadings alanına yalnızca gerçek öğrenme alt başlıklarını yaz. "Akış", "Tablo", "Ayrım", "Şema", "Bilgi", "Özet", "Klinik", "Tedavi" gibi tek kelimelik bileşen adı yazma.',
+    '- Geniş bir bölümde subHeadings, öğrencinin bölüm içinde hangi basamakları okuyacağını göstermeli: temel mantık, mekanizma, tanı/ayırıcı düşünme, yönetim veya sınav ayrımı gibi konuya özgü başlıklar.',
     '- classificationOrAlgorithm, diagnosticOrLabPoints, treatmentOrManagementPoints ve tablesAndVisualNotes alanları varsa bunları teachingText içinde ayrı küçük açıklama olarak derse dönüştür.',
     '- Metin olarak ayrıştırılmış tablo, algoritma veya şema/caption bilgisi sadece “var” diye geçilmesin; ne öğrettiği ve sınavda nasıl sorulabileceği açıklansın.',
+    '- tableInsights, algorithmSteps, comparisonPoints, visualNotes ve keyBoxes alanlarını her bölümde zorunlu doldurma; yalnızca gerçekten öğrenme değeri varsa kullan.',
     '- tableInsights alanını yalnızca tablo/sınıflama/karşılaştırma varsa doldur; tablonun ana mesajını ve ayırt ettirdiği farkı açıkla.',
-    '- algorithmSteps alanını yalnızca karar akışı, tanısal yaklaşım, tedavi basamağı veya patofizyolojik süreç varsa adım adım doldur.',
+    '- algorithmSteps alanını yalnızca gerçek karar akışı, tanısal yaklaşım, tedavi basamağı veya patofizyolojik süreç varsa adım adım doldur; tek kelimelik keyword dizisi yazma.',
     '- comparisonPoints alanını yalnızca karıştırılabilecek iki veya daha fazla kavram varsa doldur; her maddede doğru ayrımı net yaz.',
     '- visualNotes alanını yalnızca metinleşmiş şema, algoritma veya caption notu varsa doldur; görüntünün kendisini yorumlama ve görünmeyen piksel içeriğini uydurma.',
     '- keyBoxes yalnızca gerçekten dolu ve anlamlıysa üret. Boş "Akılda tut", boş "Sınav notu" veya sadece başlık içeren kutu üretme.',
     '- Bölüm içi ayrı mini tekrar üretme; tekrar bilgilerini yalnızca finalReview, highYieldPoints ve mustKnow alanlarında tek merkezde topla.',
-    '- highYieldPoints ayırt ettirici sınav bilgisini, mustKnow son gün hatırlanacak çekirdek bilgiyi, finalReview ise kısa kontrol listesini taşısın; aynı cümleyi listelerde tekrarlama.',
+    '- highYieldPoints ana konulara göre yüksek verimli tekrar bilgisini, mustKnow son gün hatırlanacak çekirdek bilgiyi, finalReview ise kısa kontrol listesini taşısın; aynı cümleyi listelerde tekrarlama.',
+    '- commonConfusions içindeki her madde "Karışan nokta: ... Doğru ayrım: ... Akılda kalacak mesaj: ..." yapısına yakın, akıcı tek metin olsun.',
     '- Öğrenme hedefleri başlıkların mekanik tekrarı olmasın; her hedef özgün, tamamlanmış, ölçülebilir ve akıcı Türkçe ile yazılsın.',
+    '- Öğrenme hedeflerinde "... odağında klinik, mekanistik ve sınav bağlamıyla yorumlayabilmek" gibi yapay kalıp kullanma.',
+    '- Ham slayt başlığı, dosya adı, öğretim üyesi adı, büyük harfli kaynak satırı veya bozuk OCR başlığını heading olarak kullanma; bunları doğal ders başlığına dönüştür.',
     '- Çıktıyı göndermeden önce yarım cümleleri, OCR kalıntılarını, placeholder ifadeleri, boş kutuları ve tekrar eden final maddelerini temizle.',
     '- commonTrap alanını yalnızca gerçekten sık karışan nokta varsa doldur; yoksa boş string bırak.',
-    '- materialCoverage kısa olsun: dosya adı, ana konu, hangi bölümde temsil edildiği ve kısa not.',
+    '- Kaynak işleme, kapsam raporu, dosya temsil raporu veya üretim raporu alanı yazma.',
     '',
     'Meta bilgi:',
     buildMetadataBlock(metadata),
     '',
-    context.sourceManifest ? `Kaynak listesi:\n${context.sourceManifest}` : '',
-    context.materialDigestContext ? `Dosya başına yoğun materyal özetleri:\n${context.materialDigestContext}` : '',
+    lessonDigestContext ? `Konu kartları:\n${lessonDigestContext}` : '',
     context.emphasisContext ? `Okunabilen vurgu/notlar:\n${context.emphasisContext}` : '',
-    context.structureContext ? `Algılanan yapı/tablo/slayt izleri:\n${context.structureContext}` : '',
+    context.structureContext ? `Okunabilen tablo/algoritma/şema metinleri:\n${context.structureContext}` : '',
     '',
     `Seçilmiş temiz materyal metni:\n${context.sourceText}`,
   ].filter(Boolean).join('\n\n');
@@ -761,21 +788,27 @@ function buildCardsPrompt({ metadata, context, existingLesson }) {
 }
 
 function buildLessonBatchPrompt({ metadata, context, batchIndex = 0, totalBatches = 1 }) {
+  const lessonDigestContext = String(context.materialDigestContext || '').replace(/\[\[MATERIAL_DIGEST_(\d+)\]\]/gu, '[[KONU_KARTI_$1]]');
   return [
     `Görev: Komite ders anlatımının ${batchIndex + 1}/${totalBatches} numaralı materyal bölümünü üret.`,
     'Çıktı yalnızca geçerli JSON olsun. Markdown, açıklama veya kod bloğu yazma.',
-    'Bu çağrı yalnızca aşağıdaki MATERIAL_DIGEST dosyalarını anlatır; başka dosyaların konusunu uydurma.',
+    'Bu çağrı yalnızca aşağıdaki konu kartlarını anlatır; başka dosyaların konusunu uydurma.',
     '',
     'Zorunlu JSON şekli:',
-    '{"lesson":{"sections":[{"heading":"","level":2,"teachingText":"","mechanismFlow":[],"algorithmSteps":[],"tableInsights":[],"comparisonPoints":[],"visualNotes":[],"clinicalConnection":"","examAngle":"","commonTrap":"","keyBoxes":[],"sourceRefs":[]}],"highYieldPoints":[],"mustKnow":[],"finalReview":[],"materialCoverage":[],"coverageSummary":""}}',
+    '{"lesson":{"sections":[{"heading":"","level":2,"subHeadings":[],"teachingText":"","mechanismFlow":[],"algorithmSteps":[],"tableInsights":[],"comparisonPoints":[],"visualNotes":[],"clinicalConnection":"","examAngle":"","commonTrap":"","keyBoxes":[]}],"highYieldPoints":[],"mustKnow":[],"finalReview":[],"commonConfusions":[]}}',
     '',
     'Kalite kuralları:',
+    '- Teknik üretim raporu yazma. "Bu materyal temsil edildi", "dosya bazlı çıkarıldı", "aşağıda yapılandırıldı" gibi cümleler yasaktır.',
     '- Her dosyanın detectedTopic ve mustRepresent maddeleri anlatımda görünür biçimde temsil edilsin.',
     '- Tek materyalde birden fazla ana başlık varsa 2-4 ayrı section yaz; tek dosyayı yüzeysel tek paragrafta bırakma.',
     '- Farklı ana konuları aynı heading altında ezme; gerekirse aynı dosya için birden fazla section yaz.',
+    '- Her section öğretici derinlik taşısın: teachingText genellikle 2-4 açıklayıcı paragraf düzeyinde olsun; yalnızca 2-3 cümlelik özetle yetinme.',
+    '- Her section için subHeadings alanına 2-5 gerçek alt konu başlığı yaz; bunlar bölüm içi öğrenme basamakları olsun, bileşen/tag adı olmasın.',
+    '- teachingText içinde subHeadings ile uyumlu akış kur: önce kavramı açıkla, sonra mekanizma veya sınıflamayı anlat, ardından klinik/tanı/yönetim ve sınav ayrımına bağla.',
     '- classificationOrAlgorithm, diagnosticOrLabPoints, treatmentOrManagementPoints ve tablesAndVisualNotes alanları varsa teachingText içinde açıkça derse dönüştür.',
-    '- Tablo varsa karşılaştırma mantığını "Tablonun ana mesajı" gibi doğal bir cümleyle açıkla; algoritma varsa karar basamaklarını sırayla anlat; metinleşmiş şema/caption varsa yalnızca okunabilen mesajını işle.',
-    '- tableInsights alanını tablo/sınıflama/karşılaştırma mesajı varsa doldur; algorithmSteps alanını karar akışı veya süreç varsa adım adım doldur.',
+    '- Tablo varsa karşılaştırma mantığını doğal bir cümleyle açıkla; algoritma varsa karar basamaklarını sırayla anlat; metinleşmiş şema/caption varsa yalnızca okunabilen mesajını işle.',
+    '- tableInsights, algorithmSteps, comparisonPoints ve visualNotes alanlarını yalnızca gerçekten gerekli olduğunda doldur; her bölümde zorunlu bileşen üretme.',
+    '- algorithmSteps tek kelimelik keyword dizisi olmasın; her adım ne olduğunu ve neden önemli olduğunu açıklasın.',
     '- comparisonPoints alanında sık karışan kavramları yan yana ayır; visualNotes alanında yalnızca metin olarak ayrıştırılmış şema/algoritma/caption mesajını yaz.',
     '- teachingText kuru özet olmasın: büyük resmi kur, kavramı açıkla, sınıflama/algoritma mantığını anlat, tanı-lab-yönetim bağlantısını materyalde varsa işle.',
     '- keyBoxes yalnızca gerçekten dolu ve anlamlıysa üret; etiketleri mümkünse "Kritik güvenlik", "Dikkat / sık hata", "Sınav ipucu" veya "Bilgi / bağlam" işlevlerinden biri olsun. Boş "Akılda tut" veya sadece başlık içeren kutu üretme.',
@@ -783,14 +816,15 @@ function buildLessonBatchPrompt({ metadata, context, batchIndex = 0, totalBatche
     '- highYieldPoints sınavda ayırt ettiren bilgileri, mustKnow çekirdek hatırlatma bilgisini, finalReview kısa kontrol maddelerini taşısın; aynı cümleyi tekrar etme.',
     '- Çıktıyı göndermeden önce metin düzeyinde temizle: yarım cümleleri, bozuk OCR parçalarını, placeholder ifadeleri ve tekrar eden final maddelerini kaldır.',
     '- Öğrenme hedefi üretmen gerekirse başlığı tekrar eden kalıp cümle yazma; materyalin gerçek içeriğine dayanan tamamlanmış ve ölçülebilir hedef yaz.',
+    '- Ham dosya adı, öğretim üyesi adı, sunum başlığı veya büyük harfli kaynak satırını heading olarak kullanma.',
+    '- Kaynak işleme, kapsam raporu, dosya temsil raporu veya üretim raporu yazma.',
     '',
     'Meta bilgi:',
     buildMetadataBlock(metadata),
     '',
-    context.sourceManifest ? `Bu çağrıdaki kaynaklar:\n${context.sourceManifest}` : '',
-    context.materialDigestContext ? `Materyal digestleri:\n${context.materialDigestContext}` : '',
+    lessonDigestContext ? `Konu kartları:\n${lessonDigestContext}` : '',
     context.emphasisContext ? `Okunabilen vurgu/notlar:\n${context.emphasisContext}` : '',
-    context.structureContext ? `Algılanan yapı/tablo/slayt izleri:\n${context.structureContext}` : '',
+    context.structureContext ? `Okunabilen tablo/algoritma/şema metinleri:\n${context.structureContext}` : '',
     '',
     `Seçilmiş temiz materyal metni:\n${context.sourceText}`,
   ].filter(Boolean).join('\n\n');
@@ -835,6 +869,63 @@ function normalizeOutputList(value = [], maxItems = 6) {
   }), maxItems);
 }
 
+function lessonCompareKey(value = '') {
+  return cleanOutputText(value, { allowShort: true })
+    .toLocaleLowerCase('tr')
+    .replace(/[^\p{L}\p{N}\s]/gu, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function naturalizeRawLessonHeading(value = '', fallback = '') {
+  const raw = cleanOutputText(value, { allowShort: true });
+  const fallbackClean = cleanOutputText(fallback, { allowShort: true });
+  if (!raw) return fallbackClean || '';
+  const withoutPresenter = raw
+    .replace(/\b(?:prof\.?|doç\.?|dr\.?|öğr\.?\s*gör\.?)\s+[A-ZÇĞİÖŞÜa-zçğıöşü .-]{2,80}$/u, '')
+    .replace(/\b\S+\.(?:pdf|pptx|ppt|docx|txt)\b/giu, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const sourceLike = RAW_SOURCE_LINE_PATTERN.test(raw) || /[/|_]{1,}/u.test(raw);
+  if (!sourceLike && !GENERIC_HEADING_PATTERN.test(withoutPresenter) && !TECHNICAL_LESSON_NOTE_PATTERN.test(withoutPresenter)) return withoutPresenter;
+  const parts = withoutPresenter
+    .split(/\s*(?:\/|\||-|–|—|:)\s*/u)
+    .map((part) => cleanOutputText(part, { allowShort: true }))
+    .filter((part) => part && !/^(?:sunum|lecture|slide|slayt|başlık|title)$/iu.test(part))
+    .slice(0, 3);
+  const joined = parts.join(' ');
+  const normalized = joined
+    .replace(/\bPHYSIOPATHOLOGY\b/giu, 'Patofizyoloji')
+    .replace(/\bPATHOPHYSIOLOGY\b/giu, 'Patofizyoloji')
+    .replace(/\bTREATMENT\b/giu, 'Tedavi yaklaşımı')
+    .replace(/\bMANAGEMENT\b/giu, 'Yönetim yaklaşımı')
+    .replace(/\bDIAGNOSIS\b/giu, 'Tanı yaklaşımı')
+    .replace(/\bCLASSIFICATION\b/giu, 'Sınıflama mantığı')
+    .replace(/\bCRITERIA\b/giu, 'Tanı ölçütleri')
+    .replace(/\bSIGNS?\s+AND\s+SYMPTOMS\b/giu, 'Klinik bulgular')
+    .replace(/\bTYPE\b/giu, 'Tip')
+    .replace(/\bDM\b/gu, 'DM')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!normalized || GENERIC_HEADING_PATTERN.test(normalized) || TECHNICAL_LESSON_NOTE_PATTERN.test(normalized)) return fallbackClean || '';
+  if (/^[A-ZÇĞİÖŞÜ0-9\s/():,._-]{10,}$/u.test(normalized)) {
+    return normalized.toLocaleLowerCase('tr').replace(/(^|\s)(\p{L})/gu, (_, space, letter) => `${space}${letter.toLocaleUpperCase('tr')}`);
+  }
+  return normalized;
+}
+
+function isUsefulProcessStep(item = '') {
+  const text = cleanOutputText(item);
+  if (!text || GENERIC_SUBHEADING_PATTERN.test(text)) return false;
+  const wordCount = text.split(/\s+/u).length;
+  if (wordCount < 7) return false;
+  return /(?:çünkü|bu nedenle|sonuçta|böylece|ardından|sonrasında|neden|yol aç|geliş|oluş|artar|azalır|yansır|klinik|laboratuvar|tanı|tedavi|yönetim|karar|mekanizma|bulgu|risk|komplikasyon|→|>)/iu.test(text);
+}
+
+function normalizeProcessList(value = [], maxItems = 6) {
+  return normalizeOutputList(value, maxItems).filter(isUsefulProcessStep);
+}
+
 function lessonFromParsedPayload(parsed = {}) {
   if (parsed?.lesson && typeof parsed.lesson === 'object') return parsed.lesson;
   if (parsed?.data && typeof parsed.data === 'object') return parsed.data;
@@ -843,33 +934,67 @@ function lessonFromParsedPayload(parsed = {}) {
 }
 
 function normalizeGeneratedSection(section = {}, fallbackIndex = 0) {
-  const heading = cleanOutputText(section.heading || section.title, { allowShort: true }) || `Konu bölümü ${fallbackIndex + 1}`;
+  const rawHeading = naturalizeRawLessonHeading(section.heading || section.title, '');
+  const heading = rawHeading && !GENERIC_HEADING_PATTERN.test(rawHeading)
+    ? rawHeading
+    : `Komite konusu ${fallbackIndex + 1}`;
   const teachingText = cleanOutputText(section.teachingText || section.content || section.summary || section.coreExplanation);
   if (!teachingText) return null;
   return {
     heading,
     level: Number(section.level) || 2,
+    subHeadings: normalizeOutputList(section.subHeadings || section.subtopics || section.learningSubtopics || section.outline, 5)
+      .filter((item) => !GENERIC_SUBHEADING_PATTERN.test(item))
+      .filter((item) => !GENERIC_HEADING_PATTERN.test(item)),
     teachingText,
     content: teachingText,
-    mechanismFlow: Array.isArray(section.mechanismFlow) ? dedupeStrings(section.mechanismFlow, 5) : [],
-    algorithmSteps: normalizeOutputList(section.algorithmSteps || section.algorithmFlow || section.decisionSteps || section.decisionFlow, 7),
+    mechanismFlow: normalizeProcessList(section.mechanismFlow, 5),
+    algorithmSteps: normalizeProcessList(section.algorithmSteps || section.algorithmFlow || section.decisionSteps || section.decisionFlow, 7),
     tableInsights: normalizeOutputList(section.tableInsights || section.tableNotes || section.tablesAndVisualNotes || section.classificationTable, 5),
     comparisonPoints: normalizeOutputList(section.comparisonPoints || section.comparisons || section.differentials || section.commonConfusions, 5),
-    visualNotes: normalizeOutputList(section.visualNotes || section.schemaNotes, 5),
-    miniReview: normalizeOutputList(section.miniReview || section.sectionReview || section.takeHomeMessages || section.keyTakeaways, 5),
+    visualNotes: normalizeOutputList(section.visualNotes || section.schemaNotes, 4),
+    miniReview: [],
     clinicalConnection: cleanOutputText(section.clinicalConnection || section.clinicalOrPracticalConnection),
     examAngle: cleanOutputText(section.examAngle || section.examFocus || section.examConnection),
     commonTrap: cleanOutputText(section.commonTrap || section.commonConfusions),
     keyBoxes: Array.isArray(section.keyBoxes)
       ? section.keyBoxes
         .map((box) => ({ label: cleanOutputText(box?.label || box?.title, { allowShort: true }), text: cleanOutputText(box?.text || box?.content || box?.body) }))
-        .filter((box, index, all) => box.text.length >= 18 && box.text.split(/\s+/u).length >= 4 && all.findIndex((candidate) => candidate.text === box.text) === index)
+        .filter((box, index, all) => {
+          if (box.text.length < 18 || box.text.split(/\s+/u).length < 4) return false;
+          if (/kritik güvenlik/iu.test(box.label) && !/\b(?:acil|hayati|kontrendike|risk|şok|kanama|hava yolu|resüsitasyon|mortalite|toksisite|doz|hasta güvenliği|öncelik)\b/iu.test(box.text)) return false;
+          return all.findIndex((candidate) => candidate.text === box.text) === index;
+        })
         .slice(0, 2)
       : [],
-    sourceRefs: Array.isArray(section.sourceRefs || section.relatedSourceFiles)
-      ? dedupeStrings(section.sourceRefs || section.relatedSourceFiles, 8)
-      : [],
   };
+}
+
+function buildServerLearningObjective(section = {}) {
+  const heading = cleanOutputText(section.heading, { allowShort: true }) || 'Bu konu';
+  const subtopics = Array.isArray(section.subHeadings)
+    ? section.subHeadings.slice(0, 2).map((item) => cleanOutputText(item, { allowShort: true })).filter(Boolean).join(' ve ')
+    : '';
+  if (subtopics) {
+    return `${heading} bölümünde ${subtopics} başlıklarının aynı klinik veya mekanistik çerçevede nasıl bağlandığını açıklayabilmek.`;
+  }
+  if (section.algorithmSteps?.length || section.mechanismFlow?.length) {
+    return `${heading} mekanizmasının bulgu, laboratuvar sonucu, tanı basamağı veya yönetim kararına nasıl yansıdığını neden-sonuç ilişkisiyle kurabilmek.`;
+  }
+  if (section.comparisonPoints?.length || section.commonTrap) {
+    return `${heading} ile karışabilecek durumları ayırt ettiren klinik, laboratuvar veya kavramsal ipuçlarını kullanabilmek.`;
+  }
+  if (section.clinicalConnection || section.examAngle) {
+    return `${heading} bilgisini vaka kurgusunda tanı, ayırıcı tanı, yönetim veya sınav sorusu mantığına bağlayabilmek.`;
+  }
+  return `${heading} konusunun temel kavramlarını ve sınavda ayırt ettiren bağlantılarını gerekçesiyle açıklayabilmek.`;
+}
+
+function isUsableLearningObjective(item = '') {
+  const text = cleanOutputText(item);
+  if (!text || text.split(/\s+/u).length < 5) return false;
+  if (BAD_OBJECTIVE_PATTERN.test(text) || TECHNICAL_LESSON_NOTE_PATTERN.test(text) || RAW_SOURCE_LINE_PATTERN.test(text)) return false;
+  return !/[,:;(-]\s*$/u.test(text);
 }
 
 function stripJsonNoise(text = '') {
@@ -891,14 +1016,14 @@ function fallbackLessonFragmentFromDigest({ context = {}, partialText = '', batc
   const highYield = Array.isArray(digest?.highYieldExamPoints) ? digest.highYieldExamPoints : [];
   const partial = stripJsonNoise(partialText).slice(0, 1800);
   const teachingParts = [
-    `${topic} başlığı bu materyalde öne çıkan ana çalışma alanıdır.`,
+    `${topic} başlığında önce temel kavramlar kurulur; ardından sınıflama, tanı, yönetim ve sınav ayırt ettiricileri neden-sonuç ilişkisiyle öğrenme sırasına yerleştirilir.`,
     coreDefinitions.length ? `Temel kavramlar: ${coreDefinitions.slice(0, 3).join(' ')}` : '',
     classifications.length ? `Sınıflama/algoritma mantığı: ${classifications.slice(0, 3).join(' ')}` : '',
     diagnostics.length ? `Tanı-test-laboratuvar bağlantısı: ${diagnostics.slice(0, 3).join(' ')}` : '',
     treatments.length ? `Tedavi/yönetim bağlantısı: ${treatments.slice(0, 3).join(' ')}` : '',
-    schemaNotes.length ? `Tablo/şema mesajı: ${schemaNotes.slice(0, 2).join(' ')}` : '',
-    partial ? `AI yanıtından kurtarılan ek anlatım: ${partial}` : '',
-    mustRepresent.length ? `Mutlaka temsil edilen noktalar: ${mustRepresent.slice(0, 5).join(' ')}` : '',
+    schemaNotes.length ? `Okunabilen sınıflama, tablo veya algoritma bilgisi: ${schemaNotes.slice(0, 2).join(' ')}` : '',
+    partial ? partial : '',
+    mustRepresent.length ? `Öğrencinin bu bölümden özellikle çıkarması gereken noktalar: ${mustRepresent.slice(0, 5).join(' ')}` : '',
   ].filter(Boolean);
 
   return {
@@ -906,30 +1031,29 @@ function fallbackLessonFragmentFromDigest({ context = {}, partialText = '', batc
       sections: [{
         heading: topic,
         level: 2,
+        subHeadings: dedupeStrings([
+          coreDefinitions.length ? 'Temel kavram ve ana çerçeve' : '',
+          classifications.length ? 'Mekanizma, sınıflama veya süreç mantığı' : '',
+          diagnostics.length ? 'Tanı ve ayırıcı düşünme' : '',
+          treatments.length ? 'Yönetim veya yaklaşım bağlantısı' : '',
+          highYield.length ? 'Sınavda ayırt ettiren bilgi' : '',
+        ], 5),
         teachingText: teachingParts.join(' '),
-        mechanismFlow: dedupeStrings(classifications, 4),
-        algorithmSteps: dedupeStrings([...classifications, ...diagnostics, ...treatments], 6),
+        mechanismFlow: normalizeProcessList(classifications, 4),
+        algorithmSteps: normalizeProcessList([...classifications, ...diagnostics, ...treatments], 6),
         tableInsights: dedupeStrings(schemaNotes, 4),
         comparisonPoints: dedupeStrings(digest?.commonConfusions || [], 4),
         visualNotes: dedupeStrings(schemaNotes, 4),
-        miniReview: dedupeStrings(mustRepresent.length ? mustRepresent : highYield, 5),
+        miniReview: [],
         clinicalConnection: compactLine(diagnostics[0] || treatments[0] || ''),
         examAngle: compactLine(highYield[0] || mustRepresent[0] || ''),
         commonTrap: compactLine(digest?.commonConfusions?.[0] || ''),
         keyBoxes: highYield[0] ? [{ label: 'Sınavda ayırt ettiren nokta', text: highYield[0] }] : [],
-        sourceRefs: [digest?.fileName].filter(Boolean),
       }],
       highYieldPoints: dedupeStrings(highYield.length ? highYield : mustRepresent, 8),
       mustKnow: dedupeStrings(mustRepresent, 8),
       finalReview: dedupeStrings([topic, ...mustRepresent.slice(0, 4)], 6),
-      materialCoverage: [{
-        fileName: digest?.fileName || topic,
-        detectedTopic: topic,
-        detectedMainTopic: topic,
-        representedIn: topic,
-        coverageNote: 'Bu materyalden ayrıştırılan ana başlıklar, vurgular ve okunabilen açıklamalar ders bölümüne dönüştürüldü; bazı ayrıntılar teknik nedenle sınırlı temsil edilmiş olabilir.',
-      }],
-      coverageSummary: `${topic} materyali ayrıştırılan ana başlıklar ve okunabilen içerik üzerinden temsil edildi.`,
+      commonConfusions: dedupeStrings(digest?.commonConfusions || [], 4),
     },
   };
 }
@@ -952,8 +1076,7 @@ function mergeLessonFragments({ fragments = [], metadata = {}, allDigests = [] }
   const highYieldPoints = [];
   const mustKnow = [];
   const finalReview = [];
-  const materialCoverage = [];
-  const coverageSummaryParts = [];
+  const commonConfusions = [];
 
   fragments.forEach((fragment) => {
     const lesson = lessonFromParsedPayload(fragment);
@@ -964,34 +1087,12 @@ function mergeLessonFragments({ fragments = [], metadata = {}, allDigests = [] }
     highYieldPoints.push(...(Array.isArray(lesson.highYieldPoints) ? lesson.highYieldPoints : []));
     mustKnow.push(...(Array.isArray(lesson.mustKnow) ? lesson.mustKnow : []));
     finalReview.push(...(Array.isArray(lesson.finalReview) ? lesson.finalReview : []));
-    materialCoverage.push(...(Array.isArray(lesson.materialCoverage) ? lesson.materialCoverage : []));
-    if (lesson.coverageSummary) coverageSummaryParts.push(lesson.coverageSummary);
-  });
-
-  const coveredFiles = new Set(materialCoverage.map((item) => cleanOutputText(item.fileName, { allowShort: true }).toLocaleLowerCase('tr')).filter(Boolean));
-  allDigests.forEach((digest) => {
-    const fileName = cleanOutputText(digest.fileName, { allowShort: true });
-    if (!fileName || coveredFiles.has(fileName.toLocaleLowerCase('tr'))) return;
-    materialCoverage.push({
-      fileName,
-      detectedTopic: cleanOutputText(digest.detectedTopic || digest.detectedMainTopic || fileName, { allowShort: true }),
-      detectedMainTopic: cleanOutputText(digest.detectedTopic || digest.detectedMainTopic || fileName, { allowShort: true }),
-      representedIn: sections.find((section) => section.sourceRefs?.includes(fileName))?.heading || '',
-      coverageNote: digest.mustRepresent?.length ? dedupeStrings(digest.mustRepresent, 2).join(' ') : 'Bu materyal özet düzeyinde işlendi.',
-    });
+    commonConfusions.push(...(Array.isArray(lesson.commonConfusions) ? lesson.commonConfusions : []));
   });
 
   const courseTitle = compactLine(metadata.course || metadata.committee || 'Komite ders anlatımı');
-  const objectiveCandidates = sections.map((section) => {
-    const focus = section.examAngle || section.clinicalConnection || section.commonTrap || section.teachingText;
-    const focusText = cleanOutputText(focus).split(/(?<=[.!?])\s+/u).find((item) => cleanOutputText(item)) || cleanOutputText(focus);
-    const shortFocus = cleanOutputText(focusText).replace(/[.!?]+$/u, '').slice(0, 130);
-    if (shortFocus && shortFocus.toLocaleLowerCase('tr') !== section.heading.toLocaleLowerCase('tr')) {
-      return `${section.heading} konusunu ${shortFocus} odağında klinik, mekanistik ve sınav bağlamıyla yorumlayabilmek.`;
-    }
-    return `${section.heading} konusundaki temel kavramları, ayırt ettirici noktaları ve materyalde vurgulanan sınav bağlantılarını açıklayabilmek.`;
-  });
-  const learningObjectives = dedupeStrings(objectiveCandidates, 10);
+  const objectiveCandidates = sections.map(buildServerLearningObjective).filter(isUsableLearningObjective);
+  const learningObjectives = dedupeStrings(objectiveCandidates, 5);
   const highYieldClean = dedupeStrings(highYieldPoints, 18);
   const mustKnowClean = dedupeStrings(mustKnow, 14).filter((item) => !new Set(highYieldClean.map((point) => point.toLocaleLowerCase('tr'))).has(item.toLocaleLowerCase('tr')));
   const reviewExclude = new Set([...highYieldClean, ...mustKnowClean].map((item) => item.toLocaleLowerCase('tr')));
@@ -1000,19 +1101,17 @@ function mergeLessonFragments({ fragments = [], metadata = {}, allDigests = [] }
     lesson: {
       title: courseTitle,
       inferredTitle: courseTitle,
-      shortIntro: `${courseTitle} materyallerinden dosya bazlı çıkarılan ana konular, sınav ayırt ettiricileri ve çalışma notları aşağıda yapılandırıldı.`,
-      overview: 'Ders anlatımı her materyalin ana konusunu ayrı veya ilişkili bölümlerde temsil edecek şekilde oluşturuldu; tanım, sınıflama, algoritma, tablo/görsel, tanı ve yönetim bilgileri materyalde bulunduğu ölçüde işlendi.',
-      bigPicture: 'Önce her dosyanın ana konusu ayrıldı, ardından ilişkili başlıklar birleştirildi; farklı konular tek başlıkta ezilmedi.',
+      shortIntro: '',
+      overview: '',
+      bigPicture: '',
       learningObjectives,
       sections,
       highYieldPoints: highYieldClean,
       mustKnow: mustKnowClean,
       finalReview: finalReviewClean,
-      materialCoverage,
-      coverageSummary: dedupeStrings(coverageSummaryParts, 8).join(' '),
-      commonConfusions: dedupeStrings(sections.map((section) => section.commonTrap), 10),
+      commonConfusions: dedupeStrings([...commonConfusions, ...sections.map((section) => section.commonTrap)], 10),
       mainConcepts: dedupeStrings(allDigests.map((digest) => digest.detectedTopic || digest.detectedMainTopic), 12),
-      clinicalExamRelevance: 'Komite sınavı açısından ayırt ettirici tanım, sınıflama, algoritma, tanı-laboratuvar ve yönetim noktaları bölümlerin sınav odağı içinde vurgulandı.',
+      clinicalExamRelevance: '',
     },
   };
 }
@@ -1059,9 +1158,6 @@ async function requestKomiteLessonContent({ apiKey, model, metadata, materialPac
     throw error;
   }
   const merged = mergeLessonFragments({ fragments, metadata, allDigests });
-  if (failed.length) {
-    merged.lesson.coverageSummary = `${merged.lesson.coverageSummary} Şu materyallerden yeterli ders bölümü üretilemedi: ${failed.map((item) => item.fileName).join(', ')}. Ayrıştırılan metin yetersiz olabilir veya içerik üretimi tamamlanamamış olabilir.`.trim();
-  }
   return merged;
 }
 

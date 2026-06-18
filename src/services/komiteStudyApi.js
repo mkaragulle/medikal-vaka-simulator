@@ -10,6 +10,24 @@ function compactText(value = '') {
   return String(value || '').replace(/\s+/g, ' ').trim();
 }
 
+const TECHNICAL_LESSON_NOTE_PATTERN = /\b(?:dosya bazl[ıi]|dosya işleme|materyal(?:ler)?(?:inden|in)?\s+(?:ana konusu|çıkarılan|temsil)|materyaller temsil edildi|çalışma notları yapılandırıldı|ana konular aşağıda yapılandırıldı|aşağıda yapılandırıldı|temsil edildi|materyal kapsam|coverageSummary|materialCoverage|sourceManifest|sourceFingerprint|source coverage|output structure|MATERIAL_DIGEST|chunk|grup\s*\d+|üretim süreci|teknik nedenle|extraction warning|extraction|ayrıştırılan metin|API bağlamı|öğretici excerpt|görsel sekmesi için|ana konu belirtildi|her dosyanın ana konusu|ilişkili başlıklar birleştirildi|farklı konular tek başlıkta ezilmedi)\b/iu;
+const RAW_SOURCE_LINE_PATTERN = /^(?:[A-ZÇĞİÖŞÜ0-9][A-ZÇĞİÖŞÜ0-9\s/():,._-]{10,}|(?:prof\.?|doç\.?|dr\.?|öğr\.?\s*gör\.?)\b|.*\.(?:pdf|pptx|ppt|docx|txt)\b)/iu;
+const BAD_OBJECTIVE_PATTERN = /\b(?:odağında klinik, mekanistik ve sınav bağlamıyla yorumlayabilmek|temel öğrenme mantığını açıklayabilmek|bilgisini açıklamak ve soruda ayırt etmek|dosya bazlı|materyal(?:ler)?inden|sınavda .* sorulabilir odağında)\b/iu;
+const GENERIC_HEADING_PATTERN = /^(?:bölüm|konu bölümü|section|part)\s*\d+$/iu;
+const GENERIC_SUBHEADING_PATTERN = /^(?:akış|tablo|ayrım|şema|bilgi|özet|klinik|tedavi|sınav ipucu|kritik güvenlik|sık hata|bilgi kutusu|akılda tut|son kontrol|mini tekrar|görsel yorumu|tablonun ana mesajı|şema açıklaması|süreç mantığı)$/iu;
+
+function stripTechnicalLessonSentences(text = '') {
+  return String(text || '')
+    .split(/(?<=[.!?])\s+|\n+/u)
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .filter((part) => !TECHNICAL_LESSON_NOTE_PATTERN.test(part))
+    .filter((part) => !RAW_SOURCE_LINE_PATTERN.test(part))
+    .join(' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function cleanGeneratedText(value = '', { allowShort = false } = {}) {
   let text = compactText(value)
     .replace(/[“”]/g, '"')
@@ -24,6 +42,7 @@ function cleanGeneratedText(value = '', { allowShort = false } = {}) {
     .replace(/\b(?:Ana konu belirtilmedi|Konu belirtilmedi|Unknown topic|Grup\s*\d+|Chunk\s*\d+)\b/giu, '')
     .replace(/\s+/g, ' ')
     .trim();
+  text = stripTechnicalLessonSentences(text);
   if (!text) return '';
   if (/^[,.;:!?'"`-]+$/u.test(text)) return '';
   if (!allowShort && text.split(/\s+/u).length < 3) return '';
@@ -51,10 +70,44 @@ function uniqueTexts(items = [], maxItems = 12, exclude = new Set()) {
 }
 
 function cleanTopic(value = '', fallback = '') {
-  const text = cleanGeneratedText(value, { allowShort: true });
-  if (text && !/ana konu|belirtilmedi|net çıkarılamadı|unknown topic/iu.test(text)) return text;
+  const text = naturalizeLessonHeading(value);
+  if (text && !/ana konu|belirtilmedi|net çıkarılamadı|unknown topic/iu.test(text) && !GENERIC_HEADING_PATTERN.test(text) && !TECHNICAL_LESSON_NOTE_PATTERN.test(text) && !RAW_SOURCE_LINE_PATTERN.test(text)) return text;
   const fromFile = cleanGeneratedText(fallback, { allowShort: true }).replace(/\.[a-z0-9]+$/iu, '').replace(/[_-]+/g, ' ');
   return fromFile || 'Komite materyali';
+}
+
+function naturalizeLessonHeading(value = '') {
+  const raw = cleanGeneratedText(value, { allowShort: true });
+  if (!raw) return '';
+  const withoutPresenter = raw
+    .replace(/\b(?:prof\.?|doç\.?|dr\.?|öğr\.?\s*gör\.?)\s+[A-ZÇĞİÖŞÜa-zçğıöşü .-]{2,80}$/u, '')
+    .replace(/\b\S+\.(?:pdf|pptx|ppt|docx|txt)\b/giu, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const sourceLike = RAW_SOURCE_LINE_PATTERN.test(raw) || /[/|_]{1,}/u.test(raw);
+  if (!sourceLike && !GENERIC_HEADING_PATTERN.test(withoutPresenter) && !TECHNICAL_LESSON_NOTE_PATTERN.test(withoutPresenter)) return withoutPresenter;
+  const normalized = withoutPresenter
+    .split(/\s*(?:\/|\||-|–|—|:)\s*/u)
+    .map((part) => cleanGeneratedText(part, { allowShort: true }))
+    .filter((part) => part && !/^(?:sunum|lecture|slide|slayt|başlık|title)$/iu.test(part))
+    .slice(0, 3)
+    .join(' ')
+    .replace(/\bPHYSIOPATHOLOGY\b/giu, 'Patofizyoloji')
+    .replace(/\bPATHOPHYSIOLOGY\b/giu, 'Patofizyoloji')
+    .replace(/\bTREATMENT\b/giu, 'Tedavi yaklaşımı')
+    .replace(/\bMANAGEMENT\b/giu, 'Yönetim yaklaşımı')
+    .replace(/\bDIAGNOSIS\b/giu, 'Tanı yaklaşımı')
+    .replace(/\bCLASSIFICATION\b/giu, 'Sınıflama mantığı')
+    .replace(/\bCRITERIA\b/giu, 'Tanı ölçütleri')
+    .replace(/\bSIGNS?\s+AND\s+SYMPTOMS\b/giu, 'Klinik bulgular')
+    .replace(/\bTYPE\b/giu, 'Tip')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!normalized || GENERIC_HEADING_PATTERN.test(normalized) || TECHNICAL_LESSON_NOTE_PATTERN.test(normalized)) return '';
+  if (/^[A-ZÇĞİÖŞÜ0-9\s/():,._-]{10,}$/u.test(normalized)) {
+    return normalized.toLocaleLowerCase('tr').replace(/(^|\s)(\p{L})/gu, (_, space, letter) => `${space}${letter.toLocaleUpperCase('tr')}`);
+  }
+  return normalized;
 }
 
 function normalizeKeyBoxes(boxes = []) {
@@ -67,6 +120,7 @@ function normalizeKeyBoxes(boxes = []) {
     .filter((box) => {
       const key = compareText(box.text);
       if (!box.text || box.text.length < 18 || box.text.split(/\s+/u).length < 4 || seen.has(key)) return false;
+      if (/kritik güvenlik/iu.test(box.label) && !/\b(?:acil|hayati|kontrendike|risk|şok|kanama|hava yolu|resüsitasyon|mortalite|toksisite|doz|hasta güvenliği|öncelik)\b/iu.test(box.text)) return false;
       seen.add(key);
       return true;
     })
@@ -79,6 +133,18 @@ function normalizeTextList(value = [], maxItems = 6) {
     if (!item || typeof item !== 'object') return item;
     return item.text || item.content || item.message || item.point || item.summary || item.description || Object.values(item).filter(Boolean).join(' ');
   }), maxItems);
+}
+
+function isUsefulProcessStep(item = '') {
+  const text = cleanGeneratedText(item);
+  if (!text || GENERIC_SUBHEADING_PATTERN.test(text)) return false;
+  const wordCount = text.split(/\s+/u).length;
+  if (wordCount < 7) return false;
+  return /(?:çünkü|bu nedenle|sonuçta|böylece|ardından|sonrasında|neden|yol aç|geliş|oluş|artar|azalır|yansır|klinik|laboratuvar|tanı|tedavi|yönetim|karar|mekanizma|bulgu|risk|komplikasyon|→|>)/iu.test(text);
+}
+
+function normalizeProcessList(value = [], maxItems = 6) {
+  return normalizeTextList(value, maxItems).filter(isUsefulProcessStep);
 }
 
 function normalizeDifficulty(value = 'medium') {
@@ -96,11 +162,44 @@ function objectiveFocusFromSection(section = {}) {
 
 function buildLearningObjective(section = {}) {
   const heading = cleanTopic(section.heading || section.title, 'Komite materyali');
-  const focus = objectiveFocusFromSection(section);
-  if (focus && compareText(focus) !== compareText(heading)) {
-    return `${heading} konusunu ${focus} odağında klinik, mekanistik ve sınav bağlamıyla yorumlayabilmek.`;
+  const subtopics = Array.isArray(section.subHeadings)
+    ? section.subHeadings.slice(0, 2).map((item) => cleanGeneratedText(item, { allowShort: true })).filter(Boolean).join(' ve ')
+    : '';
+  if (subtopics) {
+    return `${heading} bölümünde ${subtopics} başlıklarının aynı klinik veya mekanistik çerçevede nasıl bağlandığını açıklayabilmek.`;
   }
-  return `${heading} konusundaki temel kavramları, ayırt ettirici noktaları ve materyalde vurgulanan sınav bağlantılarını açıklayabilmek.`;
+  if (section.algorithmSteps?.length || section.mechanismFlow?.length) {
+    return `${heading} mekanizmasının bulgu, laboratuvar sonucu, tanı basamağı veya yönetim kararına nasıl yansıdığını neden-sonuç ilişkisiyle kurabilmek.`;
+  }
+  if (section.comparisonPoints?.length || section.commonTrap) {
+    return `${heading} ile karışabilecek durumları ayırt ettiren klinik, laboratuvar veya kavramsal ipuçlarını kullanabilmek.`;
+  }
+  if (section.clinicalConnection || section.examAngle) {
+    return `${heading} bilgisini vaka kurgusunda tanı, ayırıcı tanı, yönetim veya sınav sorusu mantığına bağlayabilmek.`;
+  }
+  return `${heading} konusunun temel kavramlarını ve sınavda ayırt ettiren bağlantılarını gerekçesiyle açıklayabilmek.`;
+}
+
+function isUsableLearningObjective(item = '') {
+  const text = cleanGeneratedText(item);
+  if (!text || text.split(/\s+/u).length < 5) return false;
+  if (BAD_OBJECTIVE_PATTERN.test(text) || TECHNICAL_LESSON_NOTE_PATTERN.test(text) || RAW_SOURCE_LINE_PATTERN.test(text)) return false;
+  if (/[,:;(-]\s*$/u.test(text)) return false;
+  return true;
+}
+
+function enrichTeachingText(base = '', section = {}) {
+  const cleanBase = cleanGeneratedText(base);
+  if (cleanBase.split(/\s+/u).length >= 90) return cleanBase;
+  const extras = [
+    cleanGeneratedText(section.clinicalConnection || section.clinicalOrPracticalConnection),
+    cleanGeneratedText(section.examAngle || section.examConnection || section.examFocus),
+    cleanGeneratedText(section.commonTrap || section.commonConfusions),
+    ...normalizeTextList(section.algorithmSteps || section.algorithmFlow || section.decisionSteps || section.decisionFlow, 3),
+    ...normalizeTextList(section.tableInsights || section.tableNotes || section.tablesAndVisualNotes || section.classificationTable, 2),
+    ...normalizeTextList(section.comparisonPoints || section.comparisons || section.differentials, 2),
+  ].filter(Boolean);
+  return uniqueTexts([cleanBase, ...extras], 8).join(' ');
 }
 
 function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
@@ -111,23 +210,23 @@ function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
       : [];
   const normalizedSections = sections.map((section, index) => ({
     id: section.id || `komite-section-${index + 1}`,
-    heading: cleanTopic(section.heading || section.title, section.sourceRefs?.[0] || `Bölüm ${index + 1}`),
+    heading: cleanTopic(section.heading || section.title, `Bölüm ${index + 1}`),
     level: Number(section.level) || 2,
-    teachingText: cleanGeneratedText(section.teachingText || section.content || section.coreExplanation || section.bigPicture || section.summary),
-    content: cleanGeneratedText(section.content || section.teachingText || section.coreExplanation || section.bigPicture || section.summary),
-    mechanismFlow: Array.isArray(section.mechanismFlow) ? uniqueTexts(section.mechanismFlow, 5) : [],
-    algorithmSteps: normalizeTextList(section.algorithmSteps || section.algorithmFlow || section.decisionSteps || section.decisionFlow, 7),
+    subHeadings: normalizeTextList(section.subHeadings || section.subtopics || section.learningSubtopics || section.outline, 5)
+      .filter((item) => !GENERIC_SUBHEADING_PATTERN.test(item))
+      .filter((item) => !GENERIC_HEADING_PATTERN.test(item)),
+    teachingText: enrichTeachingText(section.teachingText || section.content || section.coreExplanation || section.bigPicture || section.summary, section),
+    content: enrichTeachingText(section.content || section.teachingText || section.coreExplanation || section.bigPicture || section.summary, section),
+    mechanismFlow: normalizeProcessList(section.mechanismFlow, 5),
+    algorithmSteps: normalizeProcessList(section.algorithmSteps || section.algorithmFlow || section.decisionSteps || section.decisionFlow, 7),
     tableInsights: normalizeTextList(section.tableInsights || section.tableNotes || section.tablesAndVisualNotes || section.classificationTable, 5),
     comparisonPoints: normalizeTextList(section.comparisonPoints || section.comparisons || section.differentials || section.commonConfusions, 5),
-    visualNotes: normalizeTextList(section.visualNotes || section.schemaNotes, 5),
-    miniReview: normalizeTextList(section.miniReview || section.sectionReview || section.takeHomeMessages || section.keyTakeaways, 5),
+    visualNotes: normalizeTextList(section.visualNotes || section.schemaNotes, 4),
+    miniReview: [],
     clinicalConnection: cleanGeneratedText(section.clinicalConnection || section.clinicalOrPracticalConnection),
     examAngle: cleanGeneratedText(section.examAngle || section.examConnection || section.examFocus),
     commonTrap: cleanGeneratedText(section.commonTrap || section.commonConfusions),
     keyBoxes: normalizeKeyBoxes(section.keyBoxes),
-    sourceRefs: Array.isArray(section.sourceRefs || section.relatedSourceFiles)
-      ? (section.sourceRefs || section.relatedSourceFiles).map((item) => cleanGeneratedText(item, { allowShort: true })).filter(Boolean)
-      : [],
   })).filter((section) => section.heading && section.teachingText);
   const fallbackText = cleanGeneratedText(
     rawLesson.teachingText
@@ -147,6 +246,7 @@ function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
         id: 'komite-section-1',
         heading: cleanTopic(rawLesson.title || rawLesson.inferredTitle, 'Konu anlatımı'),
         level: 2,
+        subHeadings: [],
         teachingText: fallbackText,
         content: fallbackText,
         mechanismFlow: [],
@@ -159,7 +259,6 @@ function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
         examAngle: cleanGeneratedText(rawLesson.examFocus),
         commonTrap: '',
         keyBoxes: [],
-        sourceRefs: [],
       }]
       : [];
   const derivedHighYield = [
@@ -174,35 +273,30 @@ function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
   const usedAfterMustKnow = new Set([...highYieldKeys, ...outputMustKnow.map(compareText)]);
   const finalReview = uniqueTexts(Array.isArray(rawLesson.finalReview) ? rawLesson.finalReview : [], 8, usedAfterMustKnow);
   const derivedObjectives = Array.isArray(rawLesson.learningObjectives) && rawLesson.learningObjectives.length
-    ? rawLesson.learningObjectives.map((item) => cleanGeneratedText(item)).filter((item) => item && !/\bbilgisini açıklamak ve soruda ayırt etmek\b/iu.test(item))
+    ? rawLesson.learningObjectives.map((item) => cleanGeneratedText(item)).filter(isUsableLearningObjective)
     : [];
   const learningObjectives = uniqueTexts(
-    derivedObjectives.length >= 3 ? derivedObjectives : lessonSections.slice(0, 6).map(buildLearningObjective),
-    8,
+    derivedObjectives.length >= 3 ? derivedObjectives : lessonSections.slice(0, 5).map(buildLearningObjective),
+    5,
   );
+  const cleanShortIntro = cleanGeneratedText(rawLesson.shortIntro || rawLesson.summary || rawLesson.overview);
+  const cleanOverview = cleanGeneratedText(rawLesson.overview || rawLesson.shortIntro);
+  const cleanBigPicture = cleanGeneratedText(rawLesson.bigPicture || rawLesson.overview);
+  const cleanClinicalRelevance = cleanGeneratedText(rawLesson.clinicalExamRelevance);
   const lesson = {
     title: cleanTopic(rawLesson.title || rawLesson.inferredTitle, 'Komite ders anlatımı'),
     inferredTitle: cleanTopic(rawLesson.inferredTitle || rawLesson.title, 'Komite ders anlatımı'),
-    shortIntro: cleanGeneratedText(rawLesson.shortIntro || rawLesson.summary || rawLesson.overview),
-    overview: cleanGeneratedText(rawLesson.overview || rawLesson.shortIntro),
-    bigPicture: cleanGeneratedText(rawLesson.bigPicture || rawLesson.overview),
+    shortIntro: cleanShortIntro,
+    overview: cleanOverview,
+    bigPicture: cleanBigPicture,
     learningObjectives,
     mainConcepts: Array.isArray(rawLesson.mainConcepts) ? uniqueTexts(rawLesson.mainConcepts, 10) : [],
-    clinicalExamRelevance: cleanGeneratedText(rawLesson.clinicalExamRelevance),
+    clinicalExamRelevance: cleanClinicalRelevance,
     commonConfusions: Array.isArray(rawLesson.commonConfusions) ? uniqueTexts(rawLesson.commonConfusions, 8) : [],
     sections: lessonSections,
     highYieldPoints,
     mustKnow: outputMustKnow,
     finalReview: finalReview.length ? finalReview : uniqueTexts(lessonSections.map((section) => section.heading), 6, usedAfterMustKnow),
-    materialCoverage: Array.isArray(rawLesson.materialCoverage)
-      ? rawLesson.materialCoverage.map((item, index) => ({
-        fileName: cleanGeneratedText(item.fileName, { allowShort: true }) || `Materyal ${index + 1}`,
-        detectedMainTopic: cleanTopic(item.detectedTopic || item.detectedMainTopic || item.topic, item.fileName || `Materyal ${index + 1}`),
-        representedIn: cleanGeneratedText(item.representedIn, { allowShort: true }),
-        coverageNote: cleanGeneratedText(item.coverageNote),
-      })).filter((item) => item.fileName)
-      : [],
-    coverageSummary: cleanGeneratedText(rawLesson.coverageSummary),
     tableOfContents: lessonSections.map((section) => section.heading),
     sourceFingerprint,
     generatedAt: Date.now(),
