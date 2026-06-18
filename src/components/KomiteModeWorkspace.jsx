@@ -1885,6 +1885,87 @@ function lessonPrintTitle(title = '') {
     .replace(/^-+|-+$/g, '') || 'komite-konu-anlatimi';
 }
 
+function escapePrintHtml(value = '') {
+  return String(value || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function openScrollableLessonPrintWindow(title = '') {
+  const sourceNode = window.document?.querySelector?.('.komite-scroll-document');
+  if (!sourceNode) {
+    window.print();
+    return;
+  }
+  const printableWindow = window.open('', '_blank', 'width=1100,height=900');
+  if (!printableWindow) {
+    window.print();
+    return;
+  }
+  const clone = sourceNode.cloneNode(true);
+  clone.querySelectorAll('button').forEach((button) => {
+    const replacement = window.document.createElement('span');
+    replacement.className = button.className || 'komite-print-roadmap-item';
+    replacement.innerHTML = button.innerHTML;
+    button.replaceWith(replacement);
+  });
+  const safeTitle = escapePrintHtml(title || 'Komite konu anlatımı');
+  printableWindow.document.open();
+  printableWindow.document.write(`<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <title>${safeTitle}</title>
+  <style>
+    @page { size: A4; margin: 13mm; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #fff; color: #172033; font-family: Inter, Arial, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    main { max-width: 190mm; margin: 0 auto; }
+    .komite-scroll-document { display: block; }
+    .komite-scroll-intro-card, .komite-scroll-section { border: 1px solid #dbe3ea; border-radius: 18px; padding: 18px 20px; margin: 0 0 12mm; background: #fff; break-inside: avoid; box-shadow: none; }
+    .komite-scroll-intro-card { background: linear-gradient(180deg, #ffffff, #f8fbfd); }
+    .komite-scroll-intro-card > span { display: none; }
+    h2 { margin: 0 0 6px; font-size: 24pt; line-height: 1.12; color: #0f172a; }
+    h3 { margin: 0 0 12px; font-size: 17pt; line-height: 1.18; color: #0f172a; }
+    h4 { margin: 14px 0 8px; color: #075985; font-size: 11.5pt; }
+    p, li, td { font-size: 10.4pt; line-height: 1.58; color: #243247; }
+    p { margin: 8px 0 0; }
+    ul, ol { margin: 7px 0 0; padding-left: 18px; }
+    .komite-scroll-section-kicker { display: inline-flex; min-width: 26px; height: 23px; border-radius: 999px; background: #e0f2fe; color: #0369a1; align-items: center; justify-content: center; font-weight: 800; font-size: 9pt; margin-bottom: 8px; }
+    .komite-scroll-callout, .komite-scroll-card-block, .komite-scroll-quality-note { border: 1px solid #bfdbfe; border-left: 4px solid #0ea5e9; border-radius: 12px; padding: 10px 12px; margin: 10px 0; background: #eff6ff; break-inside: avoid; }
+    .komite-scroll-callout.exam_tip { background: #fffbeb; border-color: #fbbf24; }
+    .komite-scroll-callout.dont_confuse, .komite-scroll-section.do-not-confuse .komite-scroll-callout { background: #fff1f2; border-color: #fb7185; }
+    .komite-scroll-callout.warning { background: #fff7ed; border-color: #fb923c; }
+    .komite-scroll-callout.clinical_logic { background: #f5f3ff; border-color: #a78bfa; }
+    .komite-scroll-callout.final_review { background: #ecfdf5; border-color: #34d399; }
+    .komite-scroll-callout strong, .komite-scroll-card-block strong, .komite-scroll-quality-note b { display: block; margin-bottom: 4px; color: #0f4776; }
+    .komite-scroll-flow { border: 1px solid #dbeafe; border-radius: 14px; padding: 10px; margin: 12px 0; background: #f8fdff; break-inside: avoid; }
+    .komite-scroll-flow-step { display: grid; grid-template-columns: 28px 1fr; gap: 8px; margin-top: 7px; align-items: start; }
+    .komite-scroll-flow-step span { display: inline-grid; place-items: center; height: 25px; border-radius: 8px; background: #e0f2fe; color: #0369a1; font-weight: 800; }
+    .komite-scroll-flow-step p { margin: 0; padding: 7px 9px; border: 1px solid #e2e8f0; border-radius: 9px; background: #fff; }
+    .komite-scroll-table-wrap { overflow: visible; border: 1px solid #cbd5e1; border-radius: 10px; margin-top: 6px; break-inside: avoid; }
+    table { width: 100%; border-collapse: collapse; font-size: 9.2pt; }
+    th { background: #0f6c9b; color: #fff; text-align: left; padding: 8px 9px; }
+    td { border-top: 1px solid #dbe3ea; padding: 8px 9px; vertical-align: top; }
+    tr:nth-child(even) td { background: #f8fbfd; }
+    .komite-scroll-confusion-grid { display: grid; gap: 9px; margin-top: 10px; }
+    .komite-scroll-confusion-card { border: 1px solid #fecdd3; border-radius: 12px; padding: 10px 12px; background: #fff7f7; break-inside: avoid; }
+    .komite-scroll-confusion-card p { display: grid; grid-template-columns: 38mm 1fr; gap: 8px; margin: 0; }
+    .komite-scroll-confusion-card p + p { margin-top: 7px; }
+    .komite-scroll-confusion-card b { color: #be123c; }
+    .komite-scroll-roadmap > div { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 6px; }
+    .komite-print-roadmap-item, .komite-scroll-roadmap span { display: block; border: 1px solid #ccfbf1; border-radius: 10px; padding: 6px 8px; background: #f0fdfa; }
+    .komite-scroll-roadmap em { display: inline-grid; place-items: center; min-width: 22px; height: 22px; margin-right: 6px; border-radius: 7px; background: #0f766e; color: #fff; font-style: normal; font-weight: 800; font-size: 8pt; }
+  </style>
+</head>
+<body><main>${clone.outerHTML}</main><script>window.addEventListener('load', () => { setTimeout(() => { window.focus(); window.print(); }, 250); });</script></body>
+</html>`);
+  printableWindow.document.close();
+}
+
 function ScrollLessonBlock({ block = {} }) {
   if (block.type === 'paragraph') {
     return <p className="komite-scroll-paragraph"><GlossaryText text={block.content || ''} enabled revealMode="postAnswer" maxTerms={5} /></p>;
@@ -2034,10 +2115,7 @@ function CommitteeScrollableLessonView({ lesson = {} }) {
     .slice(0, 10);
 
   const exportToPdf = () => {
-    const previousTitle = window.document?.title;
-    if (window.document) window.document.title = `${lessonPrintTitle(lessonDoc.title)}.pdf`;
-    window.print();
-    setTimeout(() => { if (window.document && previousTitle) window.document.title = previousTitle; }, 300);
+    openScrollableLessonPrintWindow(lessonDoc.title || lesson.title || 'Komite konu anlatımı');
   };
 
   return (
@@ -2047,8 +2125,9 @@ function CommitteeScrollableLessonView({ lesson = {} }) {
           <strong>Hızlı erişim</strong>
           {lessonDoc.estimatedStudyTime ? <small>{lessonDoc.estimatedStudyTime}</small> : null}
           <nav>
-            {navItems.slice(0, 18).map((item) => (
+            {navItems.slice(0, 14).map((item, index) => (
               <button type="button" key={item.id} className={activeId === item.id ? 'active' : ''} onClick={() => scrollToId(item.id)}>
+                <em>{String(index + 1).padStart(2, '0')}</em>
                 <span>{item.title}</span>
               </button>
             ))}
@@ -2056,10 +2135,10 @@ function CommitteeScrollableLessonView({ lesson = {} }) {
         </div>
       </aside>
       <main className="komite-scroll-main">
-        <header className="komite-scroll-toolbar">
-          <div>
-            <strong>{lessonDoc.title}</strong>
-            <small>{lessonDoc.subtitle}</small>
+        <header className="komite-scroll-toolbar komite-scroll-toolbar-compact">
+          <div className="komite-scroll-toolbar-label" aria-hidden="true">
+            <strong>Ders içinde ara</strong>
+            <small>Başlık, tablo ve tekrar bölümlerinde hızlı geçiş</small>
           </div>
           <div className="komite-scroll-toolbar-actions">
             <div className="komite-scroll-search">
@@ -2072,13 +2151,11 @@ function CommitteeScrollableLessonView({ lesson = {} }) {
 
         <article className="komite-scroll-document">
           <section className="komite-scroll-intro-card">
-            <span>Ders Anlatımı</span>
             <h2>{lessonDoc.title}</h2>
             <p>{lessonDoc.subtitle}</p>
             <div className="komite-scroll-meta-row" aria-label="Ders bilgileri">
               {lessonDoc.level ? <span>{lessonDoc.level}</span> : null}
               {lessonDoc.estimatedStudyTime ? <span>{lessonDoc.estimatedStudyTime}</span> : null}
-              {Array.isArray(lessonDoc.sourceFiles) && lessonDoc.sourceFiles.length ? <span>{lessonDoc.sourceFiles.length} kaynak</span> : null}
             </div>
             {learningObjectives.length ? (
               <div className="komite-scroll-objectives">

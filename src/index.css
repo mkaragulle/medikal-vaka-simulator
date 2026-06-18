@@ -59616,3 +59616,63 @@ html[data-theme='dark'] .komite-scroll-section.final-review .komite-scroll-list-
     margin: 12mm;
   }
 }
+
+/* KOMITE v42: remove duplicate lesson chrome, compact anchor nav, robust print export */
+.komite-scroll-toolbar-compact {
+  justify-content: flex-end !important;
+}
+.komite-scroll-toolbar-label {
+  margin-right: auto;
+  min-width: 0 !important;
+}
+.komite-scroll-toolbar-label strong {
+  font-size: 0.94rem !important;
+}
+.komite-scroll-toolbar-label small {
+  font-size: 0.78rem !important;
+}
+.komite-scroll-intro-card > span {
+  display: none !important;
+}
+.komite-scroll-sidebar-card button {
+  display: grid !important;
+  grid-template-columns: 34px minmax(0, 1fr) !important;
+  align-items: start !important;
+  gap: 9px !important;
+}
+.komite-scroll-sidebar-card button em {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  background: rgba(20, 184, 166, 0.12);
+  color: #0f766e;
+  font-size: 0.74rem;
+  font-style: normal;
+  font-weight: 950;
+  line-height: 1;
+}
+.komite-scroll-sidebar-card button.active em,
+.komite-scroll-sidebar-card button:hover em {
+  background: #0f766e;
+  color: #fff;
+}
+.komite-scroll-sidebar-card button > span {
+  min-width: 0;
+}
+.komite-scroll-meta-row span:last-child:first-child,
+.komite-scroll-meta-row span:nth-child(2):last-child {
+  margin-right: 0;
+}
+@media (max-width: 980px) {
+  .komite-scroll-toolbar-label {
+    display: none;
+  }
+  .komite-scroll-toolbar-compact {
+    justify-content: stretch !important;
+  }
+}
+@media print {
+  .komite-scroll-sidebar-card button em { color: #0f766e !important; }
+}

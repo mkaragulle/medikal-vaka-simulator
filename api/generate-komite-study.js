@@ -176,13 +176,17 @@ function buildPrompt(payload = {}) {
     '- title kısa ve temiz olmalı; ilk paragrafı, dosya adını veya uzun otomatik başlığı title yapma.',
     '- Ayrı kapak, A4 sayfa mantığı veya PDF viewer varsayımı üretme; içerik tek parça scroll edilen web dokümanı gibi çalışılabilir olmalı.',
     '- Kaynak formatını hatırlatan "slayt", "sunum", "bu sayfada", "dokümanda", "PDF’de", "yüklü dosyada" gibi ifadeler kullanma.',
-    '- Dosya sırasını körü körüne takip etme; öğrenme akışına göre 6-8 güçlü ana konu bölümü oluştur.',
+    '- Dosya sırasını körü körüne takip etme; öğrenme akışına göre mümkünse TAM 7, en fazla 8 güçlü ana konu bölümü oluştur. Konuyu küçük küçük parçalama; yakın konuları aynı bölümde birleştir.',
     '- sections alanına sadece ana konu anlatımı bölümlerini koy. En Yüksek Getirili Sınav Bilgileri, Karıştırılmaması Gerekenler ve Tek Sayfalık Final Tekrar bölümlerini sections içine koyma; bunları yalnız examFocus, doNotConfuse ve finalReview alanlarında ver.',
-    '- İlk ana bölüm mutlaka temel tanım, büyük resim ve normal fizyolojiyi kurmalı. Konuya doğrudan komplikasyon, sınıflama veya ileri mekanizma ile başlama.',
+    '- İlk ana bölüm mutlaka temel tanım, büyük resim ve normal fizyolojiyi kurmalı. Konuya doğrudan komplikasyon, sınıflama veya ileri mekanizma ile başlama. İlk bölümde öğrencinin neden bu konuyu öğrendiğini anlayacağı klinik çerçeveyi kur.',
     '- Her ana bölümde konuya uygunsa tanım, normal işleyiş, mekanizma/patofizyoloji, klinik bağlantı, tanı/laboratuvar, ayırıcı düşünme, yönetim ve sınav odağını derinlikli işle.',
     '- Her ana bölüm en az 2 öğretici paragraf veya 1 öğretici paragraf + 1 destekleyici blok içersin. Kısa kart özeti gibi kalma.',
     '- Klinik bulgu yazdığında mümkünse nedenini açıkla; tedavi yazdığında neden o tedavinin verildiğini açıkla; tanı eşiği yazdığında nasıl yorumlanacağını açıkla.',
-    '- Komite düzeyi için temel bilgileri korurken sınavda ayırt ettiren klinik mantığı da ekle. Örneğin diyabet gibi bir konuda DKA için sadece bulguları değil; tanı üçlüsü, potasyum/sıvı mantığı, insülinin neden gerekli olduğu ve serebral ödem gibi kritik güvenlik noktalarını da işle.',
+    '- Tanı eşiklerinde sınav dostu sembol kullan: ≥126 mg/dL, ≥200 mg/dL, ≥%6,5 gibi. Asemptomatik hastada tanının genellikle tekrar/ikinci testle doğrulanacağını belirt.',
+    '- Türkçe tıbbi terimi önce yaz, İngilizce karşılığı gerekiyorsa parantez içinde ver: bazal-bolus insülin rejimi, balayı dönemi (honeymoon period), akantozis nigrikans (acanthosis nigricans).',
+    '- Tedavi bölümlerinde klinik güvenlik kararlarını ekle: tip belirsizliği, ketozis veya ciddi hiperglisemi varsa insülin gereksinimi olabileceğini açıkla.',
+    '- Başlıkları fazla detaylandırma: “Tip 2 diyabet: insülin direnci ve klinik yaklaşım” gibi kapsayıcı başlıklar kullan; tip 2 patofizyoloji, klinik, tarama ve tedaviyi gereksiz yere üç ayrı bölüme bölme.',
+    '- Komite düzeyi için temel bilgileri korurken sınavda ayırt ettiren klinik mantığı da ekle. Örneğin diyabet gibi bir konuda DKA için sadece bulguları değil; hiperglisemi + ketonemi/ketonüri + metabolik asidoz üçlüsünü, pH/bikarbonat mantığını, sıvı-potasyum-insülin sırasını, potasyum düşükse insülinin tehlikeli olabileceğini ve serebral ödem güvenlik uyarılarını işle.',
     '- Tekrar eden bilgileri birleştir; fakat bilimsel detay, sayısal eşik, tanı kriteri, sınıflama ve tedavi prensibini azaltma.',
     '- Eski veya tartışmalı bilgi fark edersen kısa bir update_note callout olarak belirt.',
     '- Ana anlatım paragraf formunda ilerlesin; tüm metni listeye çevirme.',
@@ -190,8 +194,8 @@ function buildPrompt(payload = {}) {
     '- Tablolar yalnız tanı kriteri, ayırıcı tanı, sınıflama, tedavi karşılaştırması veya laboratuvar yorumu gerçekten kolaylaştırıyorsa kullanılsın.',
     '- Her table block için rows içindeki her satır columns ile aynı sayıda hücre taşısın.',
     '- Mekanizma akışlarını sadece mechanism_flow block olarak ver; steps içine ok, tire, yıldız veya soru işareti koyma.',
-    '- learningObjectives alanını 3-5 net hedefle doldur.',
-    '- Konu anlatımı sonunda examFocus, doNotConfuse ve finalReview alanlarını mutlaka doldur.',
+    '- learningObjectives alanını 3-5 net hedefle doldur. Gereksiz uzun hedef yazma.',
+    '- Konu anlatımı sonunda examFocus, doNotConfuse ve finalReview alanlarını mutlaka doldur. Bu üç alan sections içine tekrar eklenmemelidir; sistem bunları ayrı bölüm olarak render edecektir.',
     '',
     'Callout variant seçenekleri:',
     'main_idea, clinical_logic, exam_tip, dont_confuse, warning, update_note, final_review',
@@ -525,6 +529,60 @@ function normalizeBlock(block = {}) {
   return fallback ? [{ type: 'paragraph', content: fallback }] : [];
 }
 
+
+function mergeLessonSectionPair(left = {}, right = {}) {
+  const titleA = stripMarkdownArtifacts(left.title || '');
+  const titleB = stripMarkdownArtifacts(right.title || '');
+  let title = titleA;
+  const combinedTitleText = `${titleA} ${titleB}`.toLocaleLowerCase('tr');
+  if (/tip\s*2/iu.test(combinedTitleText)) title = 'Tip 2 diyabet: insülin direnci, klinik yaklaşım ve tedavi';
+  else if (/tip\s*1/iu.test(combinedTitleText) && /tedavi|insülin|insulin/iu.test(combinedTitleText)) title = 'Tip 1 diyabet: klinik yaklaşım ve insülin tedavisi';
+  else if (/tanı|laboratuvar|ayırıcı|ayirici|sınıflama|siniflama/iu.test(combinedTitleText)) title = 'Tanı, tip ayrımı ve ayırıcı düşünme';
+  else if (titleB && titleA.length + titleB.length < 88) title = `${titleA} ve ${titleB.charAt(0).toLocaleLowerCase('tr')}${titleB.slice(1)}`;
+
+  const mainIdeaParts = [left.mainIdea, right.mainIdea]
+    .map((item) => stripMarkdownArtifacts(item || ''))
+    .filter(Boolean);
+  const mainIdea = mainIdeaParts.length > 1 ? mainIdeaParts.join(' ') : (mainIdeaParts[0] || '');
+  const blocks = [
+    ...(Array.isArray(left.blocks) ? left.blocks : []),
+    ...(Array.isArray(right.blocks) ? right.blocks : []),
+  ].filter((block) => !(block?.type === 'callout' && block?.variant === 'main_idea'));
+  return { ...left, title, id: slugify(title), mainIdea, blocks };
+}
+
+function chooseLessonMergeIndex(sections = []) {
+  const titles = sections.map((section) => String(section?.title || '').toLocaleLowerCase('tr'));
+  for (let i = 0; i < titles.length - 1; i += 1) {
+    if (/tip\s*2/iu.test(titles[i]) && /tip\s*2|insülin direnci|tedavi|tarama|klinik/iu.test(titles[i + 1])) return i;
+  }
+  for (let i = 0; i < titles.length - 1; i += 1) {
+    if (/tip\s*1/iu.test(titles[i]) && /tip\s*1|insülin|tedavi|klinik|tanı/iu.test(titles[i + 1]) && !/ketoasidoz|dka/iu.test(titles[i + 1])) return i;
+  }
+  for (let i = 0; i < titles.length - 1; i += 1) {
+    if (/ayırıcı|ayirici|özel|ozel|karıştır|karistir/iu.test(`${titles[i]} ${titles[i + 1]}`)) return i;
+  }
+  let bestIndex = Math.max(0, sections.length - 2);
+  let bestScore = Number.POSITIVE_INFINITY;
+  for (let i = 0; i < sections.length - 1; i += 1) {
+    const score = String(sections[i]?.title || '').length + String(sections[i + 1]?.title || '').length;
+    if (score < bestScore) {
+      bestScore = score;
+      bestIndex = i;
+    }
+  }
+  return bestIndex;
+}
+
+function compressCoreLessonSections(sections = [], maxSections = 8) {
+  const next = [...sections];
+  while (next.length > maxSections) {
+    const index = chooseLessonMergeIndex(next);
+    next.splice(index, 2, mergeLessonSectionPair(next[index], next[index + 1]));
+  }
+  return next.map((section, index) => ({ ...section, id: section.id || slugify(section.title || `bolum-${index + 1}`) }));
+}
+
 function normalizeLessonDocument(raw = {}, payload = {}) {
   const metadata = payload.metadata || {};
   const titleFallback = metadata.course || metadata.committee || 'Komite konu anlatımı';
@@ -533,7 +591,7 @@ function normalizeLessonDocument(raw = {}, payload = {}) {
   const rawSections = Array.isArray(raw.sections) ? raw.sections : [];
   const specialSections = rawSections.filter((section) => specialSectionKind(section?.title));
   const coreSections = rawSections.filter((section) => !specialSectionKind(section?.title));
-  const sections = coreSections
+  const coreSectionBlocks = coreSections
     .map((section, index) => {
       const sectionTitle = sanitizeSectionTitle(section?.title || '', section || {}, index, title);
       const mainIdea = stripMarkdownArtifacts(section?.mainIdea || section?.main_idea || '');
@@ -551,8 +609,8 @@ function normalizeLessonDocument(raw = {}, payload = {}) {
       });
       return blocks.length ? { id: slugify(sectionTitle), title: sectionTitle, mainIdea, blocks } : null;
     })
-    .filter(Boolean)
-    .slice(0, 10);
+    .filter(Boolean);
+  const sections = compressCoreLessonSections(coreSectionBlocks, 8);
 
   const learningObjectives = coerceItemsArray(raw.learningObjectives || raw.learning_objectives || raw.objectives, ['items', 'content'])
     .map(stripMarkdownArtifacts)
@@ -571,18 +629,21 @@ function normalizeLessonDocument(raw = {}, payload = {}) {
 
   if (examFocus.length) {
     sections.push({
+      id: 'en-yuksek-getirili-sinav-bilgileri',
       title: 'En Yüksek Getirili Sınav Bilgileri',
       blocks: [{ type: 'bullet_list', title: '', items: examFocus }],
     });
   }
   if (doNotConfuse.length) {
     sections.push({
+      id: 'karistirilmamasi-gerekenler',
       title: 'Karıştırılmaması Gerekenler',
       blocks: [{ type: 'confusion_cards', cards: doNotConfuse }],
     });
   }
   if (finalReview.length) {
     sections.push({
+      id: 'tek-sayfalik-final-tekrar',
       title: 'Tek Sayfalık Final Tekrar',
       blocks: [
         {
