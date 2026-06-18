@@ -2,6 +2,18 @@ export const KOMITE_GENERATION_ERROR_MESSAGE = 'Komite çalışma içeriği şu 
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 
+function getKomiteGenerationErrorMessage(code = '', fallback = '', status = '') {
+  const cleanCode = String(code || '').trim();
+  if (cleanCode === 'OPENAI_AUTH') return 'Komite yapay zeka ayari eksik veya gecersiz. OpenAI API anahtarini kontrol edip tekrar deneyin.';
+  if (cleanCode === 'OPENAI_MODEL') return 'Komite ders anlatimi modeli erisilebilir degil. OPENAI_KOMITE_MODEL ayarini veya model erisimini kontrol edip tekrar deneyin.';
+  if (cleanCode === 'OPENAI_PARAM') return 'Komite ders anlatimi icin gonderilen yapay zeka parametrelerinden biri uyumsuz. Model ve reasoning ayarlarini kontrol edip tekrar deneyin.';
+  if (cleanCode === 'AI_INCOMPLETE') return 'Komite ders anlatimi yaniti yarim kaldi. Sistem materyalden toparlanmis ders notu uretmeye calisacak; devam ederse tekrar deneyin.';
+  if (cleanCode === 'AI_JSON') return 'Komite ders anlatimi yaniti okunabilir formata donusmedi. Lutfen yeniden olusturmayi deneyin.';
+  if (cleanCode === 'NO_SOURCE_TEXT') return 'Yuklenen materyalde ders anlatimi olusturmaya yetecek okunabilir metin bulunamadi.';
+  const base = compactText(fallback) || KOMITE_GENERATION_ERROR_MESSAGE;
+  return status ? `${base} (Kod: ${status})` : base;
+}
+
 function compactText(value = '') {
   if (Array.isArray(value)) return value.map(compactText).filter(Boolean).join(' ');
   if (value && typeof value === 'object') {
@@ -407,8 +419,8 @@ export async function generateKomiteStudyContent({ kind, payload, signal } = {})
     if (data?.debugReason) {
       console.error('[komite-study-api]', data.debugReason);
     }
-    const error = new Error(data?.error || KOMITE_GENERATION_ERROR_MESSAGE);
-    error.code = data?.errorCode || '';
+    const error = new Error(getKomiteGenerationErrorMessage(data?.errorCode, data?.error, response.status));
+    error.code = data?.errorCode || response.status || '';
     throw error;
   }
 

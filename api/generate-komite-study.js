@@ -316,12 +316,13 @@ function safePromptCacheKey(value = '', fallback = '') {
 
 function getReasoningEffort() {
   const raw = String(process.env.OPENAI_KOMITE_REASONING_EFFORT || 'low').trim().toLowerCase();
-  return ['none', 'minimal', 'low', 'medium', 'high', 'xhigh'].includes(raw) ? raw : 'low';
+  if (raw === 'minimal') return 'low';
+  return ['none', 'low', 'medium', 'high', 'xhigh'].includes(raw) ? raw : 'low';
 }
 
 function getModelCandidates(primaryModel = '') {
   const configuredFallback = process.env.OPENAI_KOMITE_FALLBACK_MODEL || FALLBACK_MODEL;
-  return unique([primaryModel, configuredFallback, FALLBACK_MODEL].filter(Boolean));
+  return unique([primaryModel, configuredFallback, FALLBACK_MODEL, DEFAULT_MODEL, 'gpt-5.4'].filter(Boolean));
 }
 
 function parseJsonObject(text = '') {
@@ -1006,7 +1007,8 @@ function stripJsonNoise(text = '') {
 
 function fallbackLessonFragmentFromDigest({ context = {}, partialText = '', batchIndex = 0 }) {
   const digest = Array.isArray(context.fileDigests) ? context.fileDigests[0] : null;
-  const topic = compactLine(digest?.detectedTopic || digest?.detectedMainTopic || digest?.fileName || `Materyal ${batchIndex + 1}`);
+  const topicSource = compactLine(digest?.detectedTopic || digest?.detectedMainTopic || digest?.fileName || `Materyal ${batchIndex + 1}`);
+  const topic = naturalizeRawLessonHeading(topicSource, `Komite konusu ${batchIndex + 1}`) || `Komite konusu ${batchIndex + 1}`;
   const mustRepresent = Array.isArray(digest?.mustRepresent) ? digest.mustRepresent : [];
   const coreDefinitions = Array.isArray(digest?.coreDefinitions) ? digest.coreDefinitions : [];
   const classifications = Array.isArray(digest?.classificationOrAlgorithm) ? digest.classificationOrAlgorithm : [];
@@ -1116,6 +1118,51 @@ function mergeLessonFragments({ fragments = [], metadata = {}, allDigests = [] }
   };
 }
 
+function lessonHasSections(payload = {}) {
+  const lesson = lessonFromParsedPayload(payload);
+  return Array.isArray(lesson.sections) && lesson.sections.length > 0;
+}
+
+function isDigestFallbackEligibleFailure(errorOrReason = '') {
+  const message = String(errorOrReason?.message || errorOrReason || '').toLowerCase();
+  if (!message) return true;
+  if (/api key|401|403|model.*not found|does not exist|do not have access|not have access|unsupported model/i.test(message)) return false;
+  if (/unsupported parameter|unknown parameter|invalid.*parameter|invalid.*reasoning|bad request/i.test(message)) return false;
+  return /incomplete|json|parse|did not include text output|empty|timeout|429|rate limit|overload|temporar|network|fetch failed|aborted|socket|econnreset/i.test(message);
+}
+
+function buildEmergencyLessonFromDigests({ metadata = {}, allDigests = [], partialText = '' }) {
+  const fragments = (Array.isArray(allDigests) ? allDigests : [])
+    .filter((digest) => digest && (
+      compactLine(digest.detectedTopic || digest.detectedMainTopic || digest.fileName)
+      || (Array.isArray(digest.mustRepresent) && digest.mustRepresent.length)
+      || (Array.isArray(digest.coreDefinitions) && digest.coreDefinitions.length)
+    ))
+    .map((digest, index) => fallbackLessonFragmentFromDigest({
+      context: { fileDigests: [digest] },
+      partialText: index === 0 ? partialText : '',
+      batchIndex: index,
+    }));
+
+  if (!fragments.length) throw new Error('No usable source text.');
+  const merged = mergeLessonFragments({ fragments, metadata, allDigests });
+  if (!lessonHasSections(merged)) throw new Error('Invalid komite lesson payload.');
+  return merged;
+}
+
+async function requestCombinedLessonFallback({ apiKey, model, metadata, materialPacket, allDigests = [] }) {
+  const context = buildMaterialContext({ kind: 'lesson', metadata, materialPacket });
+  const prompt = buildLessonPrompt({ metadata, context });
+  const content = await requestKomiteContent({ apiKey, model, kind: 'lesson', prompt, maxTokens: 9000 });
+  try {
+    const parsed = wrapLessonPayload(parseJsonObject(content));
+    if (lessonHasSections(parsed)) return parsed;
+  } catch (parseError) {
+    console.warn('[generate-komite-study:combined-lesson-parse]', { message: parseError.message });
+  }
+  return buildEmergencyLessonFromDigests({ metadata, allDigests, partialText: content || '' });
+}
+
 async function requestKomiteLessonContent({ apiKey, model, metadata, materialPacket }) {
   const files = Array.isArray(materialPacket.files) ? materialPacket.files : [];
   const batches = buildLessonBatches(files);
@@ -1155,14 +1202,34 @@ async function requestKomiteLessonContent({ apiKey, model, metadata, materialPac
   const failed = [];
   settled.forEach((result, index) => {
     if (result.status === 'fulfilled') fragments.push(result.value);
-    else failed.push({ fileName: batchNames[index], reason: result.reason?.message || 'unknown' });
+    else failed.push({ fileName: batchNames[index], reason: result.reason?.message || 'unknown', error: result.reason });
   });
   if (!fragments.length) {
-    const error = new Error(`OpenAI response incomplete: lesson files failed (${failed.map((item) => item.fileName).join(', ')})`);
-    error.status = 'incomplete';
+    const failureSummary = failed.map((item) => `${item.fileName}: ${item.reason}`).join(' | ');
+    const canUseDigestFallback = failed.length > 0 && failed.every((item) => isDigestFallbackEligibleFailure(item.error || item.reason));
+    if (canUseDigestFallback) {
+      console.warn('[generate-komite-study:lesson-all-batches-fallback]', { failed: failureSummary });
+      try {
+        return await requestCombinedLessonFallback({ apiKey, model, metadata, materialPacket, allDigests });
+      } catch (combinedError) {
+        if (!isDigestFallbackEligibleFailure(combinedError)) throw combinedError;
+        console.warn('[generate-komite-study:lesson-digest-emergency]', { message: combinedError.message });
+        return buildEmergencyLessonFromDigests({ metadata, allDigests, partialText: combinedError.partialContent || '' });
+      }
+    }
+    const firstError = failed.find((item) => item.error)?.error || {};
+    const error = new Error(`OpenAI lesson generation failed: ${failureSummary || 'unknown error'}`);
+    error.status = firstError.status || 'lesson_failed';
+    error.param = firstError.param || '';
+    error.type = firstError.type || '';
+    error.attempts = firstError.attempts || [];
     throw error;
   }
   const merged = mergeLessonFragments({ fragments, metadata, allDigests });
+  if (!lessonHasSections(merged)) {
+    console.warn('[generate-komite-study:lesson-merged-empty-fallback]', { fragmentCount: fragments.length });
+    return buildEmergencyLessonFromDigests({ metadata, allDigests });
+  }
   return merged;
 }
 
@@ -1214,7 +1281,7 @@ function buildOpenAiRequestPayload({ model, kind, prompt, simplified = false, ma
     max_output_tokens: getMaxTokens(kind, maxTokens),
   };
   if (!simplified) requestPayload.text = { format: getTextFormat(kind) };
-  if (!simplified && kind === 'lesson') requestPayload.reasoning = { effort: 'minimal' };
+  if (!simplified && kind === 'lesson') requestPayload.reasoning = { effort: getReasoningEffort() };
 
   if (!simplified && process.env.OPENAI_KOMITE_ENABLE_ADVANCED_PARAMS === '1') {
     const temperature = getTemperature();
