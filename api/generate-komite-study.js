@@ -1,8 +1,56 @@
 const DEFAULT_MODEL = 'gpt-5.1';
 const ERROR_MESSAGE = 'Sistem şu anda konu anlatımını oluşturamadı. Lütfen tekrar deneyin.';
 const A4 = { width: 595.28, height: 841.89 };
-const MARGIN = { top: 58, right: 52, bottom: 58, left: 52 };
+const MARGIN = { top: 44, right: 46, bottom: 46, left: 46 };
 const CONTENT_WIDTH = A4.width - MARGIN.left - MARGIN.right;
+const MAX_TITLE_LENGTH = 60;
+
+const CALLOUT_META = {
+  main_idea: {
+    title: 'Ana fikir',
+    fill: [0.9, 0.96, 1],
+    stroke: [0.04, 0.32, 0.58],
+    titleColor: [0.03, 0.22, 0.45],
+  },
+  clinical_logic: {
+    title: 'Klinik mantık',
+    fill: [0.94, 0.93, 1],
+    stroke: [0.36, 0.28, 0.85],
+    titleColor: [0.25, 0.2, 0.65],
+  },
+  exam_tip: {
+    title: 'Sınav ipucu',
+    fill: [1, 0.97, 0.86],
+    stroke: [0.86, 0.5, 0.05],
+    titleColor: [0.55, 0.3, 0.02],
+  },
+  dont_confuse: {
+    title: 'Karıştırma',
+    fill: [1, 0.93, 0.92],
+    stroke: [0.8, 0.18, 0.22],
+    titleColor: [0.62, 0.08, 0.12],
+  },
+  warning: {
+    title: 'Dikkat',
+    fill: [1, 0.95, 0.88],
+    stroke: [0.86, 0.35, 0.05],
+    titleColor: [0.62, 0.22, 0.02],
+  },
+  update_note: {
+    title: 'Güncellik notu',
+    fill: [0.95, 0.97, 0.99],
+    stroke: [0.38, 0.45, 0.55],
+    titleColor: [0.2, 0.25, 0.32],
+  },
+  final_review: {
+    title: 'Final tekrar',
+    fill: [0.9, 0.98, 0.94],
+    stroke: [0.05, 0.6, 0.35],
+    titleColor: [0.02, 0.45, 0.25],
+  },
+};
+
+const FORBIDDEN_SOURCE_LANGUAGE = /\b(?:slayt|sunum|bu sayfada|hocanın slaytında|yüklenen dosyada|pdf'?de|pdf’de|dokümanda|dokumanda|dosyada belirtildiği gibi|kaynak metinde|kaynakta)\b/giu;
 
 function compactText(value = '') {
   return String(value || '').replace(/\r/g, '\n').replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim();
@@ -10,8 +58,25 @@ function compactText(value = '') {
 
 function stripForbiddenSourceLanguage(value = '') {
   return compactText(value)
-    .replace(/\b(?:slayt|sunum|bu sayfada|hocanın slaytında|yüklenen dosyada|pdf'de yazdığına göre|dokümanda belirtildiği gibi)\b/giu, '')
+    .replace(FORBIDDEN_SOURCE_LANGUAGE, '')
     .replace(/\s+([.,;:!?])/g, '$1')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
+function stripMarkdownArtifacts(value = '') {
+  return stripForbiddenSourceLanguage(value)
+    .replace(/^```(?:json|html|markdown)?/iu, '')
+    .replace(/```$/u, '')
+    .replace(/`([^`]+)`/gu, '$1')
+    .replace(/^#{1,6}\s*/gmu, '')
+    .replace(/>\s*\[![^\]]+\]\s*/giu, '')
+    .replace(/\[![^\]]+\]/gu, '')
+    .replace(/^\s*[-*+]\s+/gmu, '')
+    .replace(/^\s*\?\s+/gmu, '')
+    .replace(/\*\*([^*]+)\*\*/gu, '$1')
+    .replace(/\*([^*]+)\*/gu, '$1')
+    .replace(/\s*\|\s*/gu, ' / ')
     .replace(/\s{2,}/g, ' ')
     .trim();
 }
@@ -72,27 +137,57 @@ function buildPrompt(payload = {}) {
   return [
     'Sen KlinikIQ Komite modülü için çalışan kıdemli bir tıp eğitimi editörü, klinik akıl yürütme anlatıcısı ve öğretici içerik mimarısın.',
     'Kullanıcının yüklediği materyalleri bağımsız, Türkçe, bilimsel, sınav odaklı ve PDF kalitesinde bir konu anlatımına dönüştür.',
-    'ÇIKTI YALNIZCA MARKDOWN OLSUN. JSON, kod bloğu, üretim raporu veya açıklama yazma.',
+    'Amacın özet çıkarmak değildir; öğrencinin konuyu gerçekten anlamasını sağlayan detaylı, klinik mantığı güçlü ve çalışılabilir ders notu üretmelisin.',
     '',
-    'Temel kurallar:',
-    '- Özet çıkarma; öğrencinin konuyu gerçekten anlayacağı detaylı konu anlatımı yaz.',
-    '- Kaynak formatını hatırlatan "slayt", "sunum", "bu sayfada", "dokümanda", "yüklenen dosyada" gibi ifadeler kullanma.',
+    'ÇIKTI YALNIZCA GEÇERLİ JSON NESNESİ OLSUN. Markdown, HTML, kod bloğu, üretim raporu veya açıklama yazma.',
+    'Ham Markdown kesinlikle kullanma: ##, ###, ####, > [!Ana fikir], > [!Sınav ipucu], Markdown tablo çizgileri, ham tire listesi veya ok karakteriyle yazılmış düz akış üretme.',
+    '',
+    'JSON şeması:',
+    safeJson({
+      title: 'Kısa konu adı, en fazla 60 karakter',
+      subtitle: 'Konu anlatımı, klinik mantık ve sınav odaklı tekrar',
+      sections: [
+        {
+          title: 'Ana bölüm başlığı',
+          mainIdea: 'Bu bölümün kısa ana fikri',
+          blocks: [
+            { type: 'paragraph', content: 'Akıcı ve bilimsel paragraf metni' },
+            { type: 'callout', variant: 'clinical_logic', content: 'Kısa kutu metni' },
+            { type: 'mechanism_flow', title: 'Mekanizma özeti', steps: ['İlk olay', 'Ara süreç', 'Klinik sonuç'] },
+            { type: 'table', title: 'Tablo başlığı', columns: ['Özellik', 'Durum A', 'Durum B'], rows: [['Mekanizma', 'Açıklama', 'Açıklama']] },
+            { type: 'list', title: 'Kısa liste başlığı', items: ['Liste maddesi'] },
+          ],
+        },
+      ],
+      examFocus: ['Somut sınav odaklı bilgi'],
+      doNotConfuse: [
+        {
+          confusingPoint: 'Karışan nokta',
+          correctDistinction: 'Doğru ayrım',
+          memoryMessage: 'Akılda kalacak mesaj',
+        },
+      ],
+      finalReview: ['Tek sayfalık final tekrar maddesi'],
+      qualityNote: '',
+    }),
+    '',
+    'İçerik kuralları:',
+    '- title kısa ve temiz olmalı; ilk paragrafı, dosya adını veya uzun otomatik başlığı title yapma.',
+    '- İlk sayfa için ayrı kapak üretilecekmiş gibi dev başlık yazma; içerik doğrudan çalışılabilir olmalı.',
+    '- Kaynak formatını hatırlatan "slayt", "sunum", "bu sayfada", "dokümanda", "PDF’de", "yüklü dosyada" gibi ifadeler kullanma.',
     '- Dosya sırasını körü körüne takip etme; öğrenme akışına göre 5-8 güçlü ana bölüm oluştur.',
-    '- Tekrar eden bilgileri birleştir; sayısal değerleri, tanı kriterlerini, tedavi sürelerini ve klinik ayrımları koru.',
-    '- Eski veya tartışmalı bilgi fark edersen ana anlatımı bozmadan kısa "Güncellik notu" ekle.',
-    '- Ana anlatım paragraf formunda ilerlesin; gerekli yerlerde kısa maddeleme, sade tablo ve kısa mekanizma zinciri kullan.',
-    '- Her ana bölüm kısa bir "Ana fikir:" paragrafıyla başlasın.',
+    '- Her ana bölümde tanım, mekanizma/patofizyoloji, klinik bağlantı, tanı/laboratuvar, ayırıcı düşünme, yönetim ve sınav odağından konuya uygun olanları derinlikli işle.',
+    '- Tekrar eden bilgileri birleştir; fakat bilimsel detay, sayısal eşik, tanı kriteri, sınıflama ve tedavi prensibini azaltma.',
+    '- Eski veya tartışmalı bilgi fark edersen kısa bir update_note callout olarak belirt.',
+    '- Ana anlatım paragraf formunda ilerlesin; tüm metni listeye çevirme.',
+    '- Bilgi kutuları kısa ve amacına uygun olsun. Kutu içine yeni bölüm, tablo veya uzun liste koyma.',
     '- Tablolar yalnız tanı kriteri, ayırıcı tanı, sınıflama, tedavi karşılaştırması veya laboratuvar yorumu gerçekten kolaylaştırıyorsa kullanılsın.',
-    '- Mekanizma şemalarını kısa neden-sonuç zinciri olarak yaz; metnin yerini almasın.',
-    '- PDF sonunda mutlaka şu üç bölüm olsun: "En yüksek getirili sınav bilgileri", "Karıştırılmaması gerekenler", "Tek sayfalık final tekrar".',
+    '- Her table block için rows içindeki her satır columns ile aynı sayıda hücre taşısın.',
+    '- Mekanizma akışlarını sadece mechanism_flow block olarak ver; steps içine ok, tire, yıldız veya soru işareti koyma.',
+    '- PDF sonunda examFocus, doNotConfuse ve finalReview alanlarını mutlaka doldur.',
     '',
-    'Markdown biçimi:',
-    '- İlk satır "# Konu başlığı" olsun.',
-    '- Ardından kısa bir giriş paragrafı yaz.',
-    '- Ana bölümler "##" ile, önemli alt başlıklar "###" ile başlasın.',
-    '- Bilgi kutuları için satıra şu biçimde başla: "> [!Ana fikir]", "> [!Klinik mantık]", "> [!Sınav ipucu]", "> [!Karıştırma]", "> [!Dikkat]", "> [!Güncellik notu]" veya "> [!Final tekrar]".',
-    '- Tabloları sade Markdown tablo olarak yaz.',
-    '- Kaynak adı, dosya adı, sayfa numarası veya üretim açıklaması ekleme.',
+    'Callout variant seçenekleri:',
+    'main_idea, clinical_logic, exam_tip, dont_confuse, warning, update_note, final_review',
     '',
     'İyi anlatım standardı:',
     'İnsülin eksikliğinde glukoz hücre içine yeterince giremez ve karaciğer glukoz üretimi artar. Kan glukozu böbreğin geri emilim kapasitesini aştığında glukoz idrara geçer. Glukoz idrarda osmotik etki oluşturur ve suyu beraberinde sürükler. Bu süreç poliüriye, sıvı kaybına ve polidipsiye yol açar.',
@@ -106,7 +201,7 @@ function buildPrompt(payload = {}) {
 }
 
 function parseJsonObject(text = '') {
-  const source = String(text || '').trim();
+  const source = String(text || '').trim().replace(/^```(?:json)?/iu, '').replace(/```$/u, '').trim();
   try {
     return JSON.parse(source);
   } catch {
@@ -123,7 +218,7 @@ function extractResponseText(payload = {}) {
   return contentItems.map((content) => content?.text || content?.output_text || '').filter(Boolean).join('\n');
 }
 
-async function requestMarkdown({ apiKey, model, prompt }) {
+async function requestLessonDocument({ apiKey, model, prompt, sourcePayload }) {
   const response = await fetch('https://api.openai.com/v1/responses', {
     method: 'POST',
     headers: {
@@ -133,11 +228,11 @@ async function requestMarkdown({ apiKey, model, prompt }) {
     body: JSON.stringify({
       model,
       input: [
-        { role: 'system', content: 'Yalnızca istenen Markdown ders metnini üret. JSON, kod bloğu veya kaynak işleme açıklaması yazma.' },
+        { role: 'system', content: 'Yalnızca geçerli JSON üret. Markdown, HTML, kod bloğu veya kaynak işleme açıklaması yazma.' },
         { role: 'user', content: prompt },
       ],
-      max_output_tokens: Number.parseInt(process.env.OPENAI_KOMITE_PDF_MAX_TOKENS || '', 10) || 12000,
-      temperature: Number.parseFloat(process.env.OPENAI_KOMITE_TEMPERATURE || process.env.OPENAI_TEMPERATURE || '0.25'),
+      max_output_tokens: Number.parseInt(process.env.OPENAI_KOMITE_PDF_MAX_TOKENS || '', 10) || 14000,
+      temperature: Number.parseFloat(process.env.OPENAI_KOMITE_TEMPERATURE || process.env.OPENAI_TEMPERATURE || '0.2'),
     }),
   });
 
@@ -151,7 +246,7 @@ async function requestMarkdown({ apiKey, model, prompt }) {
   }
   const text = extractResponseText(payload);
   if (!text) throw new Error('OpenAI response did not include text output.');
-  return stripForbiddenSourceLanguage(text.replace(/^```(?:markdown)?/iu, '').replace(/```$/u, '').trim());
+  return normalizeLessonDocument(parseJsonObject(text), sourcePayload);
 }
 
 function slugify(value = '') {
@@ -168,89 +263,296 @@ function slugify(value = '') {
     .slice(0, 70) || 'bolum';
 }
 
-function parseMarkdown(markdown = '') {
-  const lines = String(markdown || '').replace(/\r/g, '\n').split('\n');
-  const blocks = [];
-  let paragraph = [];
-  let table = [];
-  let list = [];
-  let quote = [];
-
-  const flushParagraph = () => {
-    const text = compactText(paragraph.join(' '));
-    if (text) blocks.push({ type: 'p', text });
-    paragraph = [];
-  };
-  const flushList = () => {
-    if (list.length) blocks.push({ type: 'list', items: list });
-    list = [];
-  };
-  const flushTable = () => {
-    if (table.length >= 2) {
-      const rows = table.map((line) => line.trim().replace(/^\||\|$/g, '').split('|').map((cell) => compactText(cell)));
-      blocks.push({ type: 'table', rows: rows.filter((row) => !row.every((cell) => /^:?-{3,}:?$/u.test(cell))) });
+function removeRepeatedLead(value = '') {
+  const words = compactText(value).split(/\s+/u);
+  for (let size = 1; size <= 5; size += 1) {
+    if (words.length >= size * 2) {
+      const first = words.slice(0, size).join(' ').toLocaleLowerCase('tr');
+      const second = words.slice(size, size * 2).join(' ').toLocaleLowerCase('tr');
+      if (first === second) return words.slice(0, size).concat(words.slice(size * 2)).join(' ');
     }
-    table = [];
-  };
-  const flushQuote = () => {
-    if (!quote.length) return;
-    const first = quote[0] || '';
-    const labelMatch = first.match(/^\[!(.+?)\]\s*(.*)$/u);
-    blocks.push({
-      type: 'box',
-      label: labelMatch?.[1] || 'Not',
-      text: compactText([labelMatch?.[2] || first, ...quote.slice(1)].join(' ')),
+  }
+  return value;
+}
+
+function limitAtWord(value = '', max = MAX_TITLE_LENGTH) {
+  const clean = compactText(value).replace(/[.,;:!?-]+$/u, '').trim();
+  if (clean.length <= max) return clean;
+  const cut = clean.slice(0, max + 1);
+  const boundary = Math.max(cut.lastIndexOf(' '), cut.lastIndexOf('/'));
+  return (boundary > 18 ? cut.slice(0, boundary) : clean.slice(0, max)).replace(/[.,;:!?-]+$/u, '').trim();
+}
+
+function cleanTitleCandidate(value = '') {
+  const noRepeat = removeRepeatedLead(stripMarkdownArtifacts(value))
+    .replace(/\s+[A-ZÇĞİÖŞÜa-zçğıöşü].{80,}$/u, (match) => (match.length > 90 ? '' : match))
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+  const firstClause = noRepeat.split(/[.!?]\s/u)[0] || noRepeat;
+  return limitAtWord(firstClause, MAX_TITLE_LENGTH);
+}
+
+function sanitizeTitle(value = '', fallback = 'Komite konu anlatımı') {
+  const fallbackTitle = cleanTitleCandidate(fallback);
+  const rawTitle = stripMarkdownArtifacts(value);
+  const comparableRaw = rawTitle.toLocaleLowerCase('tr').normalize('NFD').replace(/\p{Diacritic}/gu, '').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+  const comparableFallback = fallbackTitle.toLocaleLowerCase('tr').normalize('NFD').replace(/\p{Diacritic}/gu, '').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+  if (fallbackTitle && comparableFallback && comparableRaw.startsWith(comparableFallback)) return fallbackTitle;
+  const candidates = [value, fallback].map(cleanTitleCandidate).filter(Boolean);
+  const chosen = candidates.find((candidate) => candidate.length >= 3 && candidate.length <= MAX_TITLE_LENGTH) || 'Komite konu anlatımı';
+  return limitAtWord(chosen, MAX_TITLE_LENGTH);
+}
+
+function isGenericSectionTitle(value = '') {
+  const clean = stripMarkdownArtifacts(value).toLocaleLowerCase('tr');
+  return !clean
+    || /^bölüm\s*\d+$/iu.test(clean)
+    || /^b.?l.?m\s*\d+$/iu.test(clean)
+    || /^section\s*\d+$/iu.test(clean)
+    || /^(temel açıklama|klinik tablo|mekanizma|mekanizma \/ patofizyoloji|patofizyoloji|tanı \/ laboratuvar)$/iu.test(clean);
+}
+
+function sanitizeSectionTitle(value = '', section = {}, index = 0, documentTitle = '') {
+  if (!isGenericSectionTitle(value)) return limitAtWord(stripMarkdownArtifacts(value), 86);
+  const firstBlockTitle = Array.isArray(section.blocks)
+    ? section.blocks.map((block) => block?.title || block?.heading || '').find((title) => !isGenericSectionTitle(title))
+    : '';
+  if (firstBlockTitle) return limitAtWord(stripMarkdownArtifacts(firstBlockTitle), 86);
+  const idea = stripMarkdownArtifacts(section.mainIdea || '');
+  if (idea) return limitAtWord(idea, 74);
+  const stems = [
+    'Temel kavram ve klinik çerçeve',
+    'Mekanizma ve patofizyolojik mantık',
+    'Klinik bulguların yorumlanması',
+    'Tanı, laboratuvar ve ayırıcı düşünme',
+    'Yönetim, tedavi ve sınav odağı',
+  ];
+  return stems[index] || `${documentTitle || 'Konu'}: çalışma odağı`;
+}
+
+function normalizeVariant(value = '') {
+  const clean = stripMarkdownArtifacts(value).toLocaleLowerCase('tr').replace(/[\s-]+/gu, '_');
+  if (CALLOUT_META[clean]) return clean;
+  if (/ana|main/iu.test(clean)) return 'main_idea';
+  if (/klinik|clinical/iu.test(clean)) return 'clinical_logic';
+  if (/sınav|sinav|exam|ipucu/iu.test(clean)) return 'exam_tip';
+  if (/karıştır|karistir|confuse/iu.test(clean)) return 'dont_confuse';
+  if (/dikkat|uyarı|uyari|warning|güvenlik|guvenlik/iu.test(clean)) return 'warning';
+  if (/güncellik|guncellik|update/iu.test(clean)) return 'update_note';
+  if (/final|tekrar|review/iu.test(clean)) return 'final_review';
+  return 'main_idea';
+}
+
+function splitLongCallout(block) {
+  const content = stripMarkdownArtifacts(block.content || block.text || '');
+  if (content.length <= 520) return [{ ...block, content }];
+  const sentences = content.split(/(?<=[.!?])\s+/u);
+  const lead = limitAtWord(sentences.shift() || content, 260);
+  const rest = compactText([content.slice(lead.length), ...sentences].join(' '));
+  return [
+    { ...block, content: lead },
+    rest ? { type: 'paragraph', content: rest } : null,
+  ].filter(Boolean);
+}
+
+function stripStep(value = '') {
+  return stripMarkdownArtifacts(value)
+    .replace(/^(?:\d+[.)]\s*)/u, '')
+    .replace(/^(?:->|=>|→|⇒|>|-|\?)+\s*/u, '')
+    .replace(/\s*(?:->|=>|→|⇒|>)\s*$/u, '')
+    .trim();
+}
+
+function normalizeTableBlock(block = {}) {
+  let columns = Array.isArray(block.columns) ? block.columns.map(stripMarkdownArtifacts).filter(Boolean) : [];
+  let rows = Array.isArray(block.rows) ? block.rows : [];
+  if (!columns.length && rows.length && Array.isArray(rows[0])) {
+    columns = rows[0].map(stripMarkdownArtifacts).filter(Boolean);
+    rows = rows.slice(1);
+  }
+  if (!columns.length || !rows.length) return [];
+  const maxColumns = Math.min(5, Math.max(1, columns.length));
+  columns = columns.slice(0, maxColumns);
+  rows = rows
+    .filter((row) => Array.isArray(row) || typeof row === 'string')
+    .map((row) => {
+      const cells = Array.isArray(row) ? row.map(stripMarkdownArtifacts) : String(row).split('|').map(stripMarkdownArtifacts);
+      const normalized = cells.length > maxColumns
+        ? cells.slice(0, maxColumns - 1).concat(cells.slice(maxColumns - 1).join(' / '))
+        : cells.slice(0, maxColumns);
+      while (normalized.length < maxColumns) normalized.push('');
+      return normalized;
+    })
+    .filter((row) => row.some(Boolean))
+    .slice(0, 36);
+  if (!rows.length) return [];
+  return [{
+    type: 'table',
+    title: stripMarkdownArtifacts(block.title || ''),
+    columns,
+    rows,
+  }];
+}
+
+function normalizeConfusionItems(items = []) {
+  return (Array.isArray(items) ? items : [])
+    .map((item) => {
+      if (typeof item === 'string') {
+        const clean = stripMarkdownArtifacts(item);
+        return clean ? {
+          confusingPoint: clean,
+          correctDistinction: '',
+          memoryMessage: '',
+        } : null;
+      }
+      const confusingPoint = stripMarkdownArtifacts(item?.confusingPoint || item?.karisanNokta || item?.title || '');
+      const correctDistinction = stripMarkdownArtifacts(item?.correctDistinction || item?.dogruAyrim || item?.distinction || '');
+      const memoryMessage = stripMarkdownArtifacts(item?.memoryMessage || item?.akildaKalacakMesaj || item?.message || '');
+      if (!confusingPoint && !correctDistinction && !memoryMessage) return null;
+      const unique = new Set([confusingPoint, correctDistinction, memoryMessage].filter(Boolean).map((text) => text.toLocaleLowerCase('tr')));
+      if (unique.size < 2 && [confusingPoint, correctDistinction, memoryMessage].filter(Boolean).length >= 2) return null;
+      return { confusingPoint, correctDistinction, memoryMessage };
+    })
+    .filter(Boolean)
+    .slice(0, 8);
+}
+
+function normalizeBlock(block = {}) {
+  const type = stripMarkdownArtifacts(block.type || '').toLocaleLowerCase('tr');
+  if (type === 'paragraph' || type === 'p' || !type) {
+    const content = stripMarkdownArtifacts(block.content || block.text || '');
+    return content ? [{ type: 'paragraph', content }] : [];
+  }
+  if (type === 'callout' || type === 'box') {
+    const variant = normalizeVariant(block.variant || block.title || block.label || '');
+    return splitLongCallout({
+      type: 'callout',
+      variant,
+      title: CALLOUT_META[variant].title,
+      content: block.content || block.text || '',
+    }).flatMap((item) => (item.type === 'paragraph' ? normalizeBlock(item) : [item]));
+  }
+  if (type === 'list' || type === 'bullets') {
+    const title = stripMarkdownArtifacts(block.title || '');
+    const items = (Array.isArray(block.items) ? block.items : [])
+      .map(stripMarkdownArtifacts)
+      .filter(Boolean)
+      .slice(0, 24);
+    return items.length ? [{ type: 'list', title, items }] : [];
+  }
+  if (type === 'mechanism_flow' || type === 'flow' || type === 'mechanism') {
+    const rawSteps = Array.isArray(block.steps)
+      ? block.steps
+      : String(block.content || block.text || '').split(/(?:->|=>|→|⇒|\?)/u);
+    const steps = rawSteps.map(stripStep).filter(Boolean).slice(0, 12);
+    if (steps.length >= 2) {
+      return [{ type: 'mechanism_flow', title: stripMarkdownArtifacts(block.title || 'Mekanizma özeti'), steps }];
+    }
+    const content = stripMarkdownArtifacts(block.content || block.text || steps.join(' '));
+    return content ? [{ type: 'paragraph', content }] : [];
+  }
+  if (type === 'table') return normalizeTableBlock(block);
+  if (type === 'confusion_cards') {
+    const cards = normalizeConfusionItems(block.items || block.cards || []);
+    return cards.length ? [{ type: 'confusion_cards', cards }] : [];
+  }
+  const fallback = stripMarkdownArtifacts(block.content || block.text || block.title || '');
+  return fallback ? [{ type: 'paragraph', content: fallback }] : [];
+}
+
+function normalizeLessonDocument(raw = {}, payload = {}) {
+  const metadata = payload.metadata || {};
+  const titleFallback = metadata.course || metadata.committee || 'Komite konu anlatımı';
+  const title = sanitizeTitle(raw.title, titleFallback);
+  const subtitle = stripMarkdownArtifacts(raw.subtitle || 'Konu anlatımı, klinik mantık ve sınav odaklı tekrar');
+  const rawSections = Array.isArray(raw.sections) ? raw.sections : [];
+  const sections = rawSections
+    .map((section, index) => {
+      const sectionTitle = sanitizeSectionTitle(section?.title || '', section || {}, index, title);
+      const mainIdea = stripMarkdownArtifacts(section?.mainIdea || section?.main_idea || '');
+      const blocks = [];
+      if (mainIdea) {
+        blocks.push({
+          type: 'callout',
+          variant: 'main_idea',
+          title: CALLOUT_META.main_idea.title,
+          content: mainIdea,
+        });
+      }
+      (Array.isArray(section?.blocks) ? section.blocks : []).forEach((block) => {
+        blocks.push(...normalizeBlock(block));
+      });
+      return blocks.length ? { title: sectionTitle, blocks } : null;
+    })
+    .filter(Boolean)
+    .slice(0, 10);
+
+  const examFocus = (Array.isArray(raw.examFocus) ? raw.examFocus : []).map(stripMarkdownArtifacts).filter(Boolean).slice(0, 18);
+  const doNotConfuse = normalizeConfusionItems(raw.doNotConfuse || raw.dontConfuse || []);
+  const finalReview = (Array.isArray(raw.finalReview) ? raw.finalReview : []).map(stripMarkdownArtifacts).filter(Boolean).slice(0, 24);
+
+  if (examFocus.length) {
+    sections.push({
+      title: 'En Yüksek Getirili Sınav Bilgileri',
+      blocks: [{ type: 'list', title: '', items: examFocus }],
     });
-    quote = [];
-  };
-  const flushAll = () => {
-    flushParagraph();
-    flushList();
-    flushTable();
-    flushQuote();
-  };
+  }
+  if (doNotConfuse.length) {
+    sections.push({
+      title: 'Karıştırılmaması Gerekenler',
+      blocks: [{ type: 'confusion_cards', cards: doNotConfuse }],
+    });
+  }
+  if (finalReview.length) {
+    sections.push({
+      title: 'Tek Sayfalık Final Tekrar',
+      blocks: [
+        {
+          type: 'callout',
+          variant: 'final_review',
+          title: CALLOUT_META.final_review.title,
+          content: 'Bu bölüm, sınav öncesi son tekrar için en yüksek getirili bilgileri tek yerde toplar.',
+        },
+        { type: 'list', title: '', items: finalReview },
+      ],
+    });
+  }
 
-  lines.forEach((rawLine) => {
-    const line = rawLine.trim();
-    if (!line) {
-      flushAll();
-      return;
-    }
-    const heading = line.match(/^(#{1,3})\s+(.+)$/u);
-    if (heading) {
-      flushAll();
-      blocks.push({ type: 'heading', level: heading[1].length, text: stripForbiddenSourceLanguage(heading[2].replace(/\*\*/g, '')) });
-      return;
-    }
-    if (/^\|.+\|$/u.test(line)) {
-      flushParagraph();
-      flushList();
-      flushQuote();
-      table.push(line);
-      return;
-    }
-    if (/^>\s?/u.test(line)) {
-      flushParagraph();
-      flushList();
-      flushTable();
-      quote.push(line.replace(/^>\s?/u, ''));
-      return;
-    }
-    const bullet = line.match(/^[-*]\s+(.+)$/u) || line.match(/^\d+[.)]\s+(.+)$/u);
-    if (bullet) {
-      flushParagraph();
-      flushTable();
-      flushQuote();
-      list.push(stripForbiddenSourceLanguage(bullet[1]));
-      return;
-    }
-    flushList();
-    flushTable();
-    flushQuote();
-    paragraph.push(stripForbiddenSourceLanguage(line.replace(/\*\*/g, '')));
+  const normalized = {
+    title,
+    subtitle,
+    sections,
+    qualityNote: stripMarkdownArtifacts(raw.qualityNote || ''),
+  };
+  validateLessonDocument(normalized);
+  return normalized;
+}
+
+function collectDocumentText(document = {}) {
+  const chunks = [document.title, document.subtitle, document.qualityNote];
+  (document.sections || []).forEach((section) => {
+    chunks.push(section.title);
+    (section.blocks || []).forEach((block) => {
+      chunks.push(block.title, block.content);
+      if (Array.isArray(block.items)) chunks.push(...block.items);
+      if (Array.isArray(block.steps)) chunks.push(...block.steps);
+      if (Array.isArray(block.columns)) chunks.push(...block.columns);
+      if (Array.isArray(block.rows)) block.rows.forEach((row) => chunks.push(...row));
+      if (Array.isArray(block.cards)) {
+        block.cards.forEach((card) => chunks.push(card.confusingPoint, card.correctDistinction, card.memoryMessage));
+      }
+    });
   });
-  flushAll();
-  return blocks.filter((block) => block.type !== 'p' || block.text);
+  return chunks.filter(Boolean).join('\n');
+}
+
+function validateLessonDocument(document = {}) {
+  if (!document.title || document.title.length > MAX_TITLE_LENGTH) throw new Error('Invalid title for PDF lesson.');
+  if (!Array.isArray(document.sections) || !document.sections.length) throw new Error('PDF lesson has no sections.');
+  const text = collectDocumentText(document);
+  const forbidden = /(^|\n)\s*#{2,6}\s|>\s*\[!|```|\|[^|\n]{2,}\|/u;
+  if (forbidden.test(text)) throw new Error('PDF lesson still contains raw Markdown markers.');
+  if (/^\s*Bölüm\s+\d+\s*$/imu.test(text)) throw new Error('PDF lesson contains generic section titles.');
 }
 
 const TURKISH_BYTE_MAP = new Map([
@@ -265,6 +567,7 @@ function textToPdfHex(value = '') {
     .replace(/…/g, '...')
     .replace(/≤/g, '<=')
     .replace(/≥/g, '>=')
+    .replace(/[→⇒➜]/g, '->')
     .replace(/β/g, 'beta')
     .replace(/α/g, 'alfa');
   const bytes = [];
@@ -275,7 +578,7 @@ function textToPdfHex(value = '') {
     }
     const code = char.charCodeAt(0);
     if (code <= 255) bytes.push(code);
-    else bytes.push('?'.charCodeAt(0));
+    else bytes.push(32);
   }
   return bytes.map((byte) => byte.toString(16).padStart(2, '0')).join('');
 }
@@ -306,45 +609,21 @@ function wrapText(text = '', fontSize = 10, maxWidth = CONTENT_WIDTH) {
   return lines;
 }
 
-function colorForBox(label = '') {
-  const lower = label.toLocaleLowerCase('tr');
-  if (/sınav|ipucu/iu.test(lower)) return { fill: [1, 0.97, 0.86], stroke: [0.86, 0.5, 0.05], title: [0.55, 0.3, 0.02] };
-  if (/karıştır|dikkat/iu.test(lower)) return { fill: [1, 0.92, 0.9], stroke: [0.82, 0.19, 0.23], title: [0.65, 0.08, 0.13] };
-  if (/klinik/iu.test(lower)) return { fill: [0.94, 0.93, 1], stroke: [0.36, 0.28, 0.85], title: [0.25, 0.2, 0.65] };
-  if (/final/iu.test(lower)) return { fill: [0.9, 0.98, 0.94], stroke: [0.05, 0.6, 0.35], title: [0.02, 0.45, 0.25] };
-  if (/güncellik/iu.test(lower)) return { fill: [0.95, 0.97, 0.99], stroke: [0.38, 0.45, 0.55], title: [0.2, 0.25, 0.32] };
-  return { fill: [0.9, 0.97, 1], stroke: [0.04, 0.42, 0.75], title: [0.02, 0.25, 0.52] };
-}
-
 function rgb(values = [0, 0, 0], op = 'rg') {
   return `${values.map((item) => Number(item).toFixed(3)).join(' ')} ${op}`;
 }
 
-function buildPdfFromMarkdown(markdown = '', payload = {}) {
-  const blocks = parseMarkdown(markdown);
+function buildPdfFromDocument(document = {}, payload = {}) {
   const metadata = payload.metadata || {};
   const sourceFiles = getSourceFiles(payload.materialPacket || {}).map((file) => ({ fileName: file.fileName, fileType: file.fileType }));
   const lessonId = `komite-pdf-${Date.now().toString(36)}`;
-  const titleBlock = blocks.find((block) => block.type === 'heading' && block.level === 1);
-  const title = titleBlock?.text || metadata.course || metadata.committee || 'Komite konu anlatımı';
-  const subtitle = 'Konu anlatımı, klinik mantık ve sınav odaklı tekrar';
   const outline = [];
   const highYieldAnchors = [];
   const pages = [];
   let current = [];
-  let y = A4.height - MARGIN.top;
   let pageNo = 1;
+  let y = A4.height - MARGIN.top;
 
-  const addPage = () => {
-    current.push(`0.45 0.50 0.58 rg BT /F1 8 Tf 278 28 Td <${textToPdfHex(String(pageNo))}> Tj ET`);
-    pages.push(current.join('\n'));
-    current = [];
-    pageNo += 1;
-    y = A4.height - MARGIN.top;
-  };
-  const ensure = (height = 24) => {
-    if (y - height < MARGIN.bottom) addPage();
-  };
   const rect = (x, top, w, h, fill, stroke = null) => {
     if (fill) current.push(rgb(fill, 'rg'));
     if (stroke) current.push(rgb(stroke, 'RG'));
@@ -353,7 +632,23 @@ function buildPdfFromMarkdown(markdown = '', payload = {}) {
   const textLine = (text, x, baseline, size = 10, font = 'F1', color = [0.12, 0.16, 0.22]) => {
     current.push(`${rgb(color, 'rg')} BT /${font} ${size} Tf ${x.toFixed(2)} ${baseline.toFixed(2)} Td <${textToPdfHex(text)}> Tj ET`);
   };
-  const paragraph = (text, { size = 10.5, leading = 15, x = MARGIN.left, width = CONTENT_WIDTH, color = [0.12, 0.16, 0.22] } = {}) => {
+  const startPage = () => {
+    current = [];
+    y = A4.height - MARGIN.top;
+    rect(0, A4.height, A4.width, A4.height, [1, 1, 1]);
+  };
+  const finishPage = () => {
+    current.push(`0.45 0.50 0.58 rg BT /F1 8 Tf 286 26 Td <${textToPdfHex(String(pageNo))}> Tj ET`);
+    pages.push(current.join('\n'));
+    pageNo += 1;
+  };
+  const ensure = (height = 24) => {
+    if (y - height < MARGIN.bottom) {
+      finishPage();
+      startPage();
+    }
+  };
+  const paragraph = (text, { size = 10.6, leading = 15.2, x = MARGIN.left, width = CONTENT_WIDTH, color = [0.12, 0.16, 0.22] } = {}) => {
     const lines = wrapText(text, size, width);
     ensure(lines.length * leading + 8);
     lines.forEach((line) => {
@@ -362,108 +657,171 @@ function buildPdfFromMarkdown(markdown = '', payload = {}) {
     });
     y -= 5;
   };
-
-  rect(0, A4.height, A4.width, A4.height, [0.97, 0.98, 1]);
-  textLine('KlinikIQ Komite', MARGIN.left, A4.height - 95, 12, 'F2', [0.04, 0.28, 0.52]);
-  wrapText(title, 24, CONTENT_WIDTH).slice(0, 3).forEach((line) => {
-    textLine(line, MARGIN.left, y - 105, 24, 'F2', [0.04, 0.11, 0.23]);
-    y -= 31;
-  });
-  y = Math.min(y - 95, A4.height - 230);
-  paragraph(subtitle, { size: 13, leading: 18, color: [0.28, 0.34, 0.43] });
-  const metaLine = [metadata.classYear ? `${metadata.classYear}. sınıf` : '', metadata.committee, metadata.learningTarget].filter(Boolean).join(' · ');
-  if (metaLine) paragraph(metaLine, { size: 10.5, leading: 15, color: [0.32, 0.38, 0.48] });
-  addPage();
-
-  blocks.forEach((block) => {
-    if (block.type === 'heading') {
-      const isTitle = block.level === 1;
-      if (isTitle && pageNo > 2) return;
-      const fontSize = block.level === 1 ? 20 : block.level === 2 ? 16 : 12.5;
-      const height = block.level === 1 ? 42 : block.level === 2 ? 34 : 25;
-      ensure(height);
-      if (block.level === 2 || block.level === 3) {
-        const item = {
-          id: slugify(block.text),
-          title: block.text,
-          level: block.level - 1,
-          pageNumber: pageNo,
-        };
-        if (/en yüksek getirili|sınavda dikkat|karıştırılmaması|tek sayfalık final/iu.test(block.text)) highYieldAnchors.push(item);
-        else outline.push(item);
-      }
-      if (block.level === 2) {
-        rect(MARGIN.left - 7, y + 14, 4, 23, [0.05, 0.45, 0.72]);
-      }
-      wrapText(block.text, fontSize, CONTENT_WIDTH).forEach((line) => {
-        textLine(line, MARGIN.left, y, fontSize, 'F2', block.level === 3 ? [0.05, 0.32, 0.52] : [0.04, 0.11, 0.23]);
-        y -= fontSize + 7;
+  const smallHeading = (text, x = MARGIN.left, width = CONTENT_WIDTH) => {
+    const lines = wrapText(text, 11.5, width);
+    ensure(lines.length * 15 + 8);
+    lines.forEach((line) => {
+      textLine(line, x, y, 11.5, 'F2', [0.04, 0.28, 0.52]);
+      y -= 15;
+    });
+    y -= 2;
+  };
+  const renderList = (items = [], title = '') => {
+    if (title) smallHeading(title);
+    items.forEach((item) => {
+      const lines = wrapText(item, 10.1, CONTENT_WIDTH - 18);
+      ensure(lines.length * 14 + 6);
+      rect(MARGIN.left + 2, y + 4, 3, 3, [0.05, 0.45, 0.72]);
+      lines.forEach((line, index) => {
+        textLine(line, MARGIN.left + 16, y, 10.1, 'F1', [0.12, 0.16, 0.22]);
+        y -= index === lines.length - 1 ? 14.5 : 13.2;
       });
-      y -= block.level === 2 ? 8 : 4;
-      return;
-    }
-    if (block.type === 'p') {
-      paragraph(block.text);
-      return;
-    }
-    if (block.type === 'list') {
-      const lines = block.items.flatMap((item) => wrapText(item, 10.2, CONTENT_WIDTH - 18).map((line, index) => ({ line, index })));
-      ensure(lines.length * 14 + 10);
-      block.items.forEach((item) => {
-        const itemLines = wrapText(item, 10.2, CONTENT_WIDTH - 18);
-        itemLines.forEach((line, index) => {
-          textLine(index === 0 ? '•' : '', MARGIN.left, y, 10.2, 'F2', [0.05, 0.45, 0.72]);
-          textLine(line, MARGIN.left + 16, y, 10.2, 'F1', [0.12, 0.16, 0.22]);
-          y -= 14;
+    });
+    y -= 4;
+  };
+  const renderCallout = (block = {}) => {
+    const variant = normalizeVariant(block.variant || block.title);
+    const meta = CALLOUT_META[variant] || CALLOUT_META.main_idea;
+    const label = meta.title;
+    const bodyLines = wrapText(block.content, 9.8, CONTENT_WIDTH - 24);
+    const height = 28 + bodyLines.length * 13.5;
+    ensure(height + 8);
+    rect(MARGIN.left, y + 7, CONTENT_WIDTH, height, meta.fill, meta.stroke);
+    textLine(label, MARGIN.left + 12, y - 9, 10.3, 'F2', meta.titleColor);
+    let boxY = y - 25;
+    bodyLines.forEach((line) => {
+      textLine(line, MARGIN.left + 12, boxY, 9.8, 'F1', [0.14, 0.18, 0.25]);
+      boxY -= 13.5;
+    });
+    y -= height + 11;
+  };
+  const renderFlow = (block = {}) => {
+    smallHeading(block.title || 'Mekanizma özeti');
+    block.steps.forEach((step, index) => {
+      const lines = wrapText(step, 9.8, CONTENT_WIDTH - 52);
+      const rowHeight = Math.max(28, lines.length * 12.5 + 12);
+      ensure(rowHeight + 8);
+      if (index > 0) rect(MARGIN.left + 13, y + 10, 2, 9, [0.68, 0.78, 0.9]);
+      rect(MARGIN.left, y + 5, 30, rowHeight, [0.9, 0.97, 1], [0.08, 0.46, 0.72]);
+      textLine(String(index + 1), MARGIN.left + 10, y - 12, 10, 'F2', [0.04, 0.28, 0.52]);
+      rect(MARGIN.left + 38, y + 5, CONTENT_WIDTH - 38, rowHeight, [0.98, 1, 1], [0.82, 0.88, 0.94]);
+      let rowY = y - 12;
+      lines.forEach((line) => {
+        textLine(line, MARGIN.left + 48, rowY, 9.8, 'F1', [0.12, 0.16, 0.22]);
+        rowY -= 12.5;
+      });
+      y -= rowHeight + 7;
+    });
+    y -= 3;
+  };
+  const renderTable = (block = {}) => {
+    if (block.title) smallHeading(block.title);
+    const colCount = Math.max(1, block.columns.length);
+    const colWidth = CONTENT_WIDTH / colCount;
+    const rows = [block.columns, ...block.rows];
+    rows.forEach((row, rowIndex) => {
+      const cellLines = row.map((cell) => wrapText(cell, rowIndex === 0 ? 7.9 : 7.7, colWidth - 8));
+      const rowHeight = Math.max(23, Math.max(...cellLines.map((lines) => lines.length)) * 10.5 + 10);
+      ensure(rowHeight + 5);
+      row.forEach((cell, colIndex) => {
+        const x = MARGIN.left + colIndex * colWidth;
+        const isHeader = rowIndex === 0;
+        rect(x, y + 4, colWidth, rowHeight, isHeader ? [0.05, 0.45, 0.72] : rowIndex % 2 ? [0.97, 0.99, 1] : [1, 1, 1], [0.77, 0.84, 0.9]);
+        let cellY = y - 9;
+        cellLines[colIndex].forEach((line) => {
+          textLine(line, x + 4, cellY, isHeader ? 7.9 : 7.7, isHeader ? 'F2' : 'F1', isHeader ? [1, 1, 1] : [0.12, 0.16, 0.22]);
+          cellY -= 10.5;
         });
       });
-      y -= 6;
-      return;
-    }
-    if (block.type === 'box') {
-      const colors = colorForBox(block.label);
-      const titleLines = wrapText(block.label, 10.5, CONTENT_WIDTH - 24);
-      const bodyLines = wrapText(block.text, 10, CONTENT_WIDTH - 24);
-      const h = 18 + (titleLines.length * 13) + (bodyLines.length * 14) + 12;
-      ensure(h + 8);
-      rect(MARGIN.left, y + 8, CONTENT_WIDTH, h, colors.fill, colors.stroke);
-      let boxY = y - 9;
-      titleLines.forEach((line) => {
-        textLine(line, MARGIN.left + 12, boxY, 10.5, 'F2', colors.title);
-        boxY -= 13;
-      });
-      bodyLines.forEach((line) => {
-        textLine(line, MARGIN.left + 12, boxY - 2, 10, 'F1', [0.14, 0.18, 0.25]);
-        boxY -= 14;
-      });
-      y -= h + 12;
-      return;
-    }
-    if (block.type === 'table' && block.rows.length) {
-      const colCount = Math.max(...block.rows.map((row) => row.length));
-      const colWidth = CONTENT_WIDTH / Math.max(1, colCount);
-      block.rows.forEach((row, rowIndex) => {
-        const cellLines = row.map((cell) => wrapText(cell, 8.2, colWidth - 10));
-        const rowHeight = Math.max(24, Math.max(...cellLines.map((lines) => lines.length)) * 11 + 10);
-        ensure(rowHeight + 4);
-        row.forEach((cell, colIndex) => {
-          const x = MARGIN.left + colIndex * colWidth;
-          rect(x, y + 4, colWidth, rowHeight, rowIndex === 0 ? [0.05, 0.45, 0.72] : rowIndex % 2 ? [0.97, 0.98, 1] : [1, 1, 1], [0.78, 0.84, 0.9]);
-          cellLines[colIndex].slice(0, 4).forEach((line, lineIndex) => {
-            textLine(line, x + 5, y - 10 - lineIndex * 11, 8.2, rowIndex === 0 ? 'F2' : 'F1', rowIndex === 0 ? [1, 1, 1] : [0.12, 0.16, 0.22]);
-          });
+      y -= rowHeight;
+    });
+    y -= 12;
+  };
+  const renderConfusionCards = (cards = []) => {
+    cards.forEach((card) => {
+      const rows = [
+        ['Karışan nokta', card.confusingPoint],
+        ['Doğru ayrım', card.correctDistinction],
+        ['Akılda kalacak mesaj', card.memoryMessage],
+      ].filter((row) => row[1]);
+      const lineGroups = rows.map(([label, value]) => ({
+        label,
+        lines: wrapText(value, 9.5, CONTENT_WIDTH - 120),
+      }));
+      const height = 18 + lineGroups.reduce((sum, group) => sum + Math.max(18, group.lines.length * 12.5), 0);
+      ensure(height + 8);
+      rect(MARGIN.left, y + 7, CONTENT_WIDTH, height, [1, 0.97, 0.96], [0.8, 0.18, 0.22]);
+      let cardY = y - 12;
+      lineGroups.forEach((group) => {
+        textLine(group.label, MARGIN.left + 12, cardY, 9.2, 'F2', [0.62, 0.08, 0.12]);
+        let valueY = cardY;
+        group.lines.forEach((line) => {
+          textLine(line, MARGIN.left + 116, valueY, 9.5, 'F1', [0.14, 0.18, 0.25]);
+          valueY -= 12.5;
         });
-        y -= rowHeight;
+        cardY -= Math.max(18, group.lines.length * 12.5);
       });
-      y -= 12;
-    }
+      y -= height + 10;
+    });
+  };
+  const renderBlock = (block = {}) => {
+    if (block.type === 'paragraph') paragraph(block.content);
+    else if (block.type === 'callout') renderCallout(block);
+    else if (block.type === 'list') renderList(block.items, block.title);
+    else if (block.type === 'mechanism_flow') renderFlow(block);
+    else if (block.type === 'table') renderTable(block);
+    else if (block.type === 'confusion_cards') renderConfusionCards(block.cards);
+  };
+  const renderSection = (section = {}) => {
+    ensure(74);
+    const pageNumber = pageNo;
+    const item = {
+      id: slugify(section.title),
+      title: section.title,
+      level: 1,
+      pageNumber,
+    };
+    if (/en yüksek getirili|sınav|karıştırılmaması|tek sayfalık final/iu.test(section.title)) highYieldAnchors.push(item);
+    else outline.push(item);
+    rect(MARGIN.left - 7, y + 14, 4, 26, [0.05, 0.45, 0.72]);
+    wrapText(section.title, 15.5, CONTENT_WIDTH).forEach((line) => {
+      textLine(line, MARGIN.left, y, 15.5, 'F2', [0.04, 0.11, 0.23]);
+      y -= 20;
+    });
+    y -= 5;
+    section.blocks.forEach(renderBlock);
+  };
+
+  startPage();
+  const titleLines = wrapText(document.title, 19, CONTENT_WIDTH).slice(0, 2);
+  titleLines.forEach((line) => {
+    textLine(line, MARGIN.left, y, 19, 'F2', [0.04, 0.11, 0.23]);
+    y -= 24;
   });
-  if (current.length) addPage();
+  paragraph(document.subtitle, { size: 10.5, leading: 14.5, color: [0.28, 0.34, 0.43] });
+  const metaLine = [metadata.classYear ? `${metadata.classYear}. sınıf` : '', metadata.committee, metadata.learningTarget].filter(Boolean).join(' / ');
+  if (metaLine) paragraph(metaLine, { size: 9.5, leading: 13, color: [0.38, 0.44, 0.52] });
+
+  if (document.sections.length) {
+    ensure(70);
+    rect(MARGIN.left, y + 8, CONTENT_WIDTH, 38 + Math.min(document.sections.length, 8) * 14, [0.96, 0.98, 1], [0.82, 0.88, 0.94]);
+    textLine('Yol haritası', MARGIN.left + 12, y - 9, 10.8, 'F2', [0.04, 0.28, 0.52]);
+    y -= 25;
+    document.sections.slice(0, 8).forEach((section, index) => {
+      const label = `${index + 1}. ${section.title}`;
+      textLine(limitAtWord(label, 86), MARGIN.left + 14, y, 9.2, 'F1', [0.16, 0.22, 0.3]);
+      y -= 14;
+    });
+    y -= 12;
+  }
+
+  document.sections.forEach(renderSection);
+  if (current.length) finishPage();
 
   const manifest = {
     lessonId,
-    title,
-    subtitle,
+    title: document.title,
+    subtitle: document.subtitle,
     language: 'tr',
     level: 'Tıp fakültesi komite düzeyi',
     estimatedStudyTime: outline.length >= 7 ? 'Yaklaşık 60-90 dakika' : 'Yaklaşık 35-60 dakika',
@@ -472,9 +830,9 @@ function buildPdfFromMarkdown(markdown = '', payload = {}) {
     sourceFiles,
     outline: outline.slice(0, 16),
     highYieldAnchors: highYieldAnchors.length ? highYieldAnchors : outline.slice(-3),
-    qualityNote: '',
+    qualityNote: document.qualityNote || '',
   };
-  const pdfBuffer = createPdfBuffer(pages, { title });
+  const pdfBuffer = createPdfBuffer(pages, { title: document.title });
   return { pdfBuffer, manifest };
 }
 
@@ -527,8 +885,8 @@ export default async function handler(req, res) {
 
     const prompt = buildPrompt(payload);
     const model = process.env.OPENAI_KOMITE_MODEL || process.env.OPENAI_MODEL || DEFAULT_MODEL;
-    const markdown = await requestMarkdown({ apiKey, model, prompt });
-    const { pdfBuffer, manifest } = buildPdfFromMarkdown(markdown, payload);
+    const document = await requestLessonDocument({ apiKey, model, prompt, sourcePayload: payload });
+    const { pdfBuffer, manifest } = buildPdfFromDocument(document, payload);
     const pdfDataUrl = `data:application/pdf;base64,${pdfBuffer.toString('base64')}`;
     manifest.pdfUrl = pdfDataUrl;
 
@@ -542,7 +900,6 @@ export default async function handler(req, res) {
         pdfUrl: pdfDataUrl,
         pdfDataUrl,
         manifest,
-        markdownPreview: markdown.slice(0, 1800),
         createdAt: manifest.createdAt,
         sourceFiles: manifest.sourceFiles,
       },

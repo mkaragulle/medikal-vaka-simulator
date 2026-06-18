@@ -4,6 +4,19 @@ function compactText(value = '') {
   return String(value || '').replace(/\s+/g, ' ').trim();
 }
 
+function cleanPdfTitle(value = '', fallback = 'Komite konu anlatımı') {
+  const cleaned = compactText(value)
+    .replace(/^#{1,6}\s*/u, '')
+    .replace(/>\s*\[![^\]]+\]\s*/gu, '')
+    .replace(/\s*\|\s*/gu, ' / ')
+    .trim();
+  if (!cleaned) return fallback;
+  if (cleaned.length <= 60) return cleaned;
+  const cut = cleaned.slice(0, 61);
+  const boundary = cut.lastIndexOf(' ');
+  return (boundary > 18 ? cut.slice(0, boundary) : cleaned.slice(0, 60)).replace(/[.,;:!?-]+$/u, '').trim();
+}
+
 function normalizeManifest(rawManifest = {}, pdfUrl = '') {
   const outline = Array.isArray(rawManifest.outline)
     ? rawManifest.outline
@@ -29,7 +42,7 @@ function normalizeManifest(rawManifest = {}, pdfUrl = '') {
 
   return {
     lessonId: compactText(rawManifest.lessonId) || `komite-pdf-${Date.now().toString(36)}`,
-    title: compactText(rawManifest.title) || 'Komite konu anlatımı',
+    title: cleanPdfTitle(rawManifest.title),
     subtitle: compactText(rawManifest.subtitle) || 'Konu anlatımı, klinik mantık ve sınav odaklı tekrar',
     language: rawManifest.language || 'tr',
     level: rawManifest.level || 'Tıp fakültesi komite düzeyi',
@@ -53,7 +66,7 @@ function normalizePdfLesson(rawLesson = {}) {
     id: compactText(rawLesson.id) || manifest.lessonId,
     type: 'pdfLesson',
     status: 'completed',
-    title: compactText(rawLesson.title) || manifest.title,
+    title: cleanPdfTitle(rawLesson.title, manifest.title),
     subtitle: compactText(rawLesson.subtitle) || manifest.subtitle,
     pdfUrl,
     pdfDataUrl: pdfUrl.startsWith('data:') ? pdfUrl : '',
