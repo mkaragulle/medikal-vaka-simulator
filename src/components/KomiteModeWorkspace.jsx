@@ -450,7 +450,7 @@ function improveLessonIntro(text = '', title = '') {
     .replace(/\s+/g, ' ')
     .trim();
   if (clean && clean.length >= 80 && !TECHNICAL_LESSON_NOTE_PATTERN.test(clean)) return clean;
-  return `${title || 'Bu ders'}, konuyu anlaşılır bir sıraya yerleştirir; temel kavramları, ilişkileri ve öğrenme açısından önemli noktaları açık bir anlatımla özetler.`;
+  return '';
 }
 
 function normalizeSourceText(material = {}) {
@@ -1492,12 +1492,14 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
 
   return (
     <div className="komite-lesson-view komite-lesson-view-pro">
-      <div className="komite-lesson-hero komite-lesson-hero-pro komite-lesson-brief-card">
-        <div className="komite-lesson-brief">
-          <span className="komite-kicker"><Icon name="BookOpen" size={16} /> Ders Anlatımı</span>
-          <p><GlossaryText text={improveLessonIntro(lesson.shortSubtitle || lesson.shortIntro || lesson.overview, lesson.title)} enabled revealMode="postAnswer" maxTerms={4} /></p>
+      {improveLessonIntro(lesson.shortSubtitle || lesson.shortIntro || lesson.overview, lesson.title) ? (
+        <div className="komite-lesson-hero komite-lesson-hero-pro komite-lesson-brief-card">
+          <div className="komite-lesson-brief">
+            <span className="komite-kicker"><Icon name="BookOpen" size={16} /> Ders Anlatımı</span>
+            <p><GlossaryText text={improveLessonIntro(lesson.shortSubtitle || lesson.shortIntro || lesson.overview, lesson.title)} enabled revealMode="postAnswer" maxTerms={4} /></p>
+          </div>
         </div>
-      </div>
+      ) : null}
 
       <div className="komite-lesson-pro-layout">
         <aside className="komite-lesson-sidebar" aria-label="Ders navigasyonu">
@@ -1544,21 +1546,29 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
 
           {sections.map((section, index) => {
             const teachingText = sanitizeTeachingTextForDisplay(section.teachingText || section.content);
-            const flowSteps = formatMechanismSteps([
+            const rawFlowSteps = formatMechanismSteps([
               ...(Array.isArray(section.algorithmSteps) ? section.algorithmSteps : []),
               ...(Array.isArray(section.mechanismFlow) ? section.mechanismFlow : []),
             ]).filter((item) => !displayList([teachingText], 1).some((main) => item.length > 42 && main.includes(item)));
+            const flowSteps = rawFlowSteps.length >= 2 ? rawFlowSteps : [];
             const tableInsights = displayList(section.tableInsights, 4, [teachingText, section.examAngle, section.clinicalConnection])
               .filter((item) => /\b(?:tablo|sınıflama|karşılaştır|fark|ayır|patern|grup|tip|evre|skor|kriter)\b/iu.test(item));
             const comparisonPoints = displayList(section.comparisonPoints, 4, [teachingText, section.commonTrap]);
             const visualNotes = displayList(section.visualNotes, 4, [teachingText, ...tableInsights])
               .filter((item) => /\b(?:şema|algoritma|akış|caption|başlık|okunabilen|karar|süreç)\b/iu.test(item));
+            const subHeadings = displayList(section.subHeadings || section.subtopics || [], 5)
+              .filter((item) => !GENERIC_COMPONENT_TITLE_PATTERN.test(item));
             const keyBoxes = displayKeyBoxes(section.keyBoxes, [teachingText, section.examAngle, section.commonTrap, section.clinicalConnection]);
             return (
               <article id={sectionAnchors[index]?.id} className="komite-lesson-section komite-lesson-section-pro" key={`${section.heading}-${index}`} style={lessonAccentStyle(index)}>
                 <div className="komite-section-index">{String(index + 1).padStart(2, '0')}</div>
                 <div className="komite-section-body">
                   <h3>{section.heading}</h3>
+                  {subHeadings.length ? (
+                    <div className="komite-section-subtopic-list" aria-label="Bölüm alt başlıkları">
+                      {subHeadings.map((subHeading, subIndex) => <span key={`${subHeading}-${subIndex}`}>{`${index + 1}.${subIndex + 1} ${subHeading}`}</span>)}
+                    </div>
+                  ) : null}
                   <LessonText text={teachingText} />
                   {keyBoxes.length ? (
                     <div className="komite-key-box-grid">

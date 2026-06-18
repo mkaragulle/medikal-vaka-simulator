@@ -13,6 +13,8 @@ function compactText(value = '') {
 const TECHNICAL_LESSON_NOTE_PATTERN = /\b(?:dosya bazl[ıi]|materyal(?:ler)?(?:inden|in)?\s+(?:ana konusu|çıkarılan|temsil)|aşağıda yapılandırıldı|temsil edildi|materyal kapsam|coverageSummary|materialCoverage|sourceManifest|sourceFingerprint|MATERIAL_DIGEST|chunk|grup\s*\d+|üretim süreci|teknik nedenle|extraction warning|ayrıştırılan metin|API bağlamı|öğretici excerpt|her dosyanın ana konusu|ilişkili başlıklar birleştirildi|farklı konular tek başlıkta ezilmedi)\b/iu;
 const RAW_SOURCE_LINE_PATTERN = /^(?:[A-ZÇĞİÖŞÜ0-9][A-ZÇĞİÖŞÜ0-9\s/():,._-]{10,}|(?:prof\.?|doç\.?|dr\.?|öğr\.?\s*gör\.?)\b|.*\.(?:pdf|pptx|ppt|docx|txt)\b)/iu;
 const BAD_OBJECTIVE_PATTERN = /\b(?:odağında klinik, mekanistik ve sınav bağlamıyla yorumlayabilmek|bilgisini açıklamak ve soruda ayırt etmek|dosya bazlı|materyal(?:ler)?inden|sınavda .* sorulabilir odağında)\b/iu;
+const GENERIC_HEADING_PATTERN = /^(?:bölüm|konu bölümü|section|part)\s*\d+$/iu;
+const GENERIC_SUBHEADING_PATTERN = /^(?:akış|tablo|ayrım|şema|bilgi|özet|klinik|tedavi|sınav ipucu|sık hata|akılda tut|son kontrol|görsel yorumu)$/iu;
 
 function stripTechnicalLessonSentences(text = '') {
   return String(text || '')
@@ -69,7 +71,7 @@ function uniqueTexts(items = [], maxItems = 12, exclude = new Set()) {
 
 function cleanTopic(value = '', fallback = '') {
   const text = cleanGeneratedText(value, { allowShort: true });
-  if (text && !/ana konu|belirtilmedi|net çıkarılamadı|unknown topic/iu.test(text) && !TECHNICAL_LESSON_NOTE_PATTERN.test(text) && !RAW_SOURCE_LINE_PATTERN.test(text)) return text;
+  if (text && !/ana konu|belirtilmedi|net çıkarılamadı|unknown topic/iu.test(text) && !GENERIC_HEADING_PATTERN.test(text) && !TECHNICAL_LESSON_NOTE_PATTERN.test(text) && !RAW_SOURCE_LINE_PATTERN.test(text)) return text;
   const fromFile = cleanGeneratedText(fallback, { allowShort: true }).replace(/\.[a-z0-9]+$/iu, '').replace(/[_-]+/g, ' ');
   return fromFile || 'Komite materyali';
 }
@@ -114,16 +116,20 @@ function objectiveFocusFromSection(section = {}) {
 
 function buildLearningObjective(section = {}) {
   const heading = cleanTopic(section.heading || section.title, 'Komite materyali');
+  const subtopics = Array.isArray(section.subHeadings) ? section.subHeadings.slice(0, 2).join(', ') : '';
+  if (subtopics) {
+    return `${heading} kapsamında ${subtopics} arasındaki ilişkiyi kurup temel öğrenme mantığını açıklayabilmek.`;
+  }
   if (section.algorithmSteps?.length || section.mechanismFlow?.length) {
-    return `${heading} başlığındaki mekanizma veya karar basamaklarını neden-sonuç ilişkisi içinde açıklayabilmek.`;
+    return `${heading} için temel mekanizmanın bulgu, tanı veya yönetim kararına nasıl yansıdığını açıklayabilmek.`;
   }
   if (section.comparisonPoints?.length || section.commonTrap) {
-    return `${heading} içinde karışabilecek kavramları ayırt ettiren temel ipuçlarını kullanabilmek.`;
+    return `${heading} ile ilişkili benzer durumları ayırt ettiren klinik veya laboratuvar ipuçlarını kullanabilmek.`;
   }
   if (section.clinicalConnection || section.examAngle) {
-    return `${heading} bilgisini klinik bulgular, tanı yaklaşımı veya sınav sorusu bağlamında yorumlayabilmek.`;
+    return `${heading} bilgisini vaka, tanı yaklaşımı ve sınav sorusu içinde doğru yorumlayabilmek.`;
   }
-  return `${heading} konusunun temel kavramlarını ve öğrenme açısından kritik bağlantılarını açıklayabilmek.`;
+  return `${heading} konusunun temel kavramlarını, neden önemli olduğunu ve sınavda ayırt ettiren bağlantılarını açıklayabilmek.`;
 }
 
 function isUsableLearningObjective(item = '') {
@@ -132,6 +138,20 @@ function isUsableLearningObjective(item = '') {
   if (BAD_OBJECTIVE_PATTERN.test(text) || TECHNICAL_LESSON_NOTE_PATTERN.test(text) || RAW_SOURCE_LINE_PATTERN.test(text)) return false;
   if (/[,:;(-]\s*$/u.test(text)) return false;
   return true;
+}
+
+function enrichTeachingText(base = '', section = {}) {
+  const cleanBase = cleanGeneratedText(base);
+  if (cleanBase.split(/\s+/u).length >= 90) return cleanBase;
+  const extras = [
+    cleanGeneratedText(section.clinicalConnection || section.clinicalOrPracticalConnection),
+    cleanGeneratedText(section.examAngle || section.examConnection || section.examFocus),
+    cleanGeneratedText(section.commonTrap || section.commonConfusions),
+    ...normalizeTextList(section.algorithmSteps || section.algorithmFlow || section.decisionSteps || section.decisionFlow, 3),
+    ...normalizeTextList(section.tableInsights || section.tableNotes || section.tablesAndVisualNotes || section.classificationTable, 2),
+    ...normalizeTextList(section.comparisonPoints || section.comparisons || section.differentials, 2),
+  ].filter(Boolean);
+  return uniqueTexts([cleanBase, ...extras], 8).join(' ');
 }
 
 function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
@@ -144,8 +164,11 @@ function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
     id: section.id || `komite-section-${index + 1}`,
     heading: cleanTopic(section.heading || section.title, section.sourceRefs?.[0] || `Bölüm ${index + 1}`),
     level: Number(section.level) || 2,
-    teachingText: cleanGeneratedText(section.teachingText || section.content || section.coreExplanation || section.bigPicture || section.summary),
-    content: cleanGeneratedText(section.content || section.teachingText || section.coreExplanation || section.bigPicture || section.summary),
+    subHeadings: normalizeTextList(section.subHeadings || section.subtopics || section.learningSubtopics || section.outline, 5)
+      .filter((item) => !GENERIC_SUBHEADING_PATTERN.test(item))
+      .filter((item) => !GENERIC_HEADING_PATTERN.test(item)),
+    teachingText: enrichTeachingText(section.teachingText || section.content || section.coreExplanation || section.bigPicture || section.summary, section),
+    content: enrichTeachingText(section.content || section.teachingText || section.coreExplanation || section.bigPicture || section.summary, section),
     mechanismFlow: Array.isArray(section.mechanismFlow) ? uniqueTexts(section.mechanismFlow, 5) : [],
     algorithmSteps: normalizeTextList(section.algorithmSteps || section.algorithmFlow || section.decisionSteps || section.decisionFlow, 7),
     tableInsights: normalizeTextList(section.tableInsights || section.tableNotes || section.tablesAndVisualNotes || section.classificationTable, 5),
@@ -178,6 +201,7 @@ function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
         id: 'komite-section-1',
         heading: cleanTopic(rawLesson.title || rawLesson.inferredTitle, 'Konu anlatımı'),
         level: 2,
+        subHeadings: [],
         teachingText: fallbackText,
         content: fallbackText,
         mechanismFlow: [],

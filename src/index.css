@@ -57947,6 +57947,21 @@ html[data-theme="dark"] .tus-generation-countdown-live.tus-generation-compact-st
   font-weight: 780;
 }
 
+.komite-section-subtopic-list {
+  display: grid;
+  gap: 0.34rem;
+  margin: -0.15rem 0 0.85rem;
+  padding-left: 0.85rem;
+  border-left: 2px solid var(--komite-section-accent-soft, rgba(20, 184, 166, 0.14));
+}
+
+.komite-section-subtopic-list span {
+  color: #475569;
+  font-size: 0.88rem;
+  font-weight: 760;
+  line-height: 1.38;
+}
+
 .komite-learning-block-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -58034,6 +58049,9 @@ html[data-theme="dark"] .tus-generation-countdown-live.tus-generation-compact-st
   display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 0.85rem !important;
+  margin-top: 1.35rem !important;
+  padding-top: 1.05rem !important;
+  border-top: 1px solid rgba(148, 163, 184, 0.18) !important;
 }
 
 .komite-summary-grid-pro > div {

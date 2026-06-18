@@ -3,7 +3,7 @@ const DEFAULT_MODEL = 'gpt-5.4-mini';
 const FALLBACK_MODEL = 'gpt-5.4-nano';
 
 const KIND_LIMITS = {
-  lesson: { maxSourceChars: 18_000, maxTokens: 6800 },
+  lesson: { maxSourceChars: 28_000, maxTokens: 9000 },
   questions: { maxSourceChars: 26_000, maxTokens: 6200 },
   cards: { maxSourceChars: 22_000, maxTokens: 5200 },
 };
@@ -251,6 +251,8 @@ function compactLine(value = '') {
 const TECHNICAL_LESSON_NOTE_PATTERN = /\b(?:dosya bazl[ıi]|materyal(?:ler)?(?:inden|in)?\s+(?:ana konusu|çıkarılan|temsil)|aşağıda yapılandırıldı|temsil edildi|materyal kapsam|coverageSummary|materialCoverage|sourceManifest|sourceFingerprint|MATERIAL_DIGEST|chunk|grup\s*\d+|üretim süreci|teknik nedenle|extraction warning|ayrıştırılan metin|API bağlamı|öğretici excerpt|her dosyanın ana konusu|ilişkili başlıklar birleştirildi|farklı konular tek başlıkta ezilmedi)\b/iu;
 const RAW_SOURCE_LINE_PATTERN = /^(?:[A-ZÇĞİÖŞÜ0-9][A-ZÇĞİÖŞÜ0-9\s/():,._-]{10,}|(?:prof\.?|doç\.?|dr\.?|öğr\.?\s*gör\.?)\b|.*\.(?:pdf|pptx|ppt|docx|txt)\b)/iu;
 const BAD_OBJECTIVE_PATTERN = /\b(?:odağında klinik, mekanistik ve sınav bağlamıyla yorumlayabilmek|bilgisini açıklamak ve soruda ayırt etmek|dosya bazlı|materyal(?:ler)?inden|sınavda .* sorulabilir odağında)\b/iu;
+const GENERIC_HEADING_PATTERN = /^(?:bölüm|konu bölümü|section|part)\s*\d+$/iu;
+const GENERIC_SUBHEADING_PATTERN = /^(?:akış|tablo|ayrım|şema|bilgi|özet|klinik|tedavi|sınav ipucu|sık hata|akılda tut|son kontrol|görsel yorumu)$/iu;
 
 function stripTechnicalLessonSentences(text = '') {
   return String(text || '')
@@ -698,7 +700,7 @@ function buildLessonPrompt({ metadata, context }) {
     'Dosya sayısı ve konu dağılımına göre 4-6 ana bölüm üret. Farklı ana konuları sırf kısaltmak için aynı başlıkta birleştirme.',
     '',
     'Zorunlu JSON şekli:',
-    '{"lesson":{"title":"","shortIntro":"","overview":"","learningObjectives":[],"sections":[{"heading":"","level":2,"teachingText":"","mechanismFlow":[],"algorithmSteps":[],"tableInsights":[],"comparisonPoints":[],"visualNotes":[],"clinicalConnection":"","examAngle":"","commonTrap":"","keyBoxes":[],"sourceRefs":[]}],"highYieldPoints":[],"mustKnow":[],"finalReview":[],"materialCoverage":[],"coverageSummary":""}}',
+    '{"lesson":{"title":"","shortIntro":"","overview":"","learningObjectives":[],"sections":[{"heading":"","level":2,"subHeadings":[],"teachingText":"","mechanismFlow":[],"algorithmSteps":[],"tableInsights":[],"comparisonPoints":[],"visualNotes":[],"clinicalConnection":"","examAngle":"","commonTrap":"","keyBoxes":[],"sourceRefs":[]}],"highYieldPoints":[],"mustKnow":[],"finalReview":[],"materialCoverage":[],"coverageSummary":""}}',
     '',
     'Kapsam kuralları:',
     '- Her MATERIAL_DIGEST için detectedTopic ve mustRepresent alanlarını özellikle dikkate al.',
@@ -712,6 +714,9 @@ function buildLessonPrompt({ metadata, context }) {
     '- Ders anlatımı teknik girişle başlamasın. "Dosya bazlı çıkarıldı", "materyal temsil edildi", "aşağıda yapılandırıldı" veya üretim sürecini anlatan cümle yazma.',
     '- shortIntro ve bigPicture yalnızca konuya özgü öğrenme çerçevesi içersin; sistemin dosyaları nasıl işlediğini anlatmasın.',
     '- Her bölümde mümkünse büyük resim, temel kavram, sınıflama/mekanizma, klinik-pratik bağlantı, tanı/test/lab veya yönetim bilgisi ve sınav ayırt ettiricisi işlensin; materyalde yoksa uydurma.',
+    '- Her ana section tek paragrafla geçiştirilmesin. Geniş bir konuysa teachingText en az birkaç açıklayıcı paragraf içersin; tanım, mekanizma, klinik/pratik yansıma ve sınav ayrımı arasında bağ kur.',
+    '- subHeadings alanına yalnızca gerçek öğrenme alt başlıklarını yaz. "Akış", "Tablo", "Ayrım", "Şema", "Bilgi", "Özet", "Klinik", "Tedavi" gibi tek kelimelik bileşen adı yazma.',
+    '- Geniş bir bölümde subHeadings, öğrencinin bölüm içinde hangi basamakları okuyacağını göstermeli: temel mantık, mekanizma, tanı/ayırıcı düşünme, yönetim veya sınav ayrımı gibi konuya özgü başlıklar.',
     '- classificationOrAlgorithm, diagnosticOrLabPoints, treatmentOrManagementPoints ve tablesAndVisualNotes alanları varsa bunları teachingText içinde ayrı küçük açıklama olarak derse dönüştür.',
     '- Metin olarak ayrıştırılmış tablo, algoritma veya şema/caption bilgisi sadece “var” diye geçilmesin; ne öğrettiği ve sınavda nasıl sorulabileceği açıklansın.',
     '- tableInsights, algorithmSteps, comparisonPoints, visualNotes ve keyBoxes alanlarını her bölümde zorunlu doldurma; yalnızca gerçekten öğrenme değeri varsa kullan.',
@@ -790,13 +795,16 @@ function buildLessonBatchPrompt({ metadata, context, batchIndex = 0, totalBatche
     'Bu çağrı yalnızca aşağıdaki MATERIAL_DIGEST dosyalarını anlatır; başka dosyaların konusunu uydurma.',
     '',
     'Zorunlu JSON şekli:',
-    '{"lesson":{"sections":[{"heading":"","level":2,"teachingText":"","mechanismFlow":[],"algorithmSteps":[],"tableInsights":[],"comparisonPoints":[],"visualNotes":[],"clinicalConnection":"","examAngle":"","commonTrap":"","keyBoxes":[],"sourceRefs":[]}],"highYieldPoints":[],"mustKnow":[],"finalReview":[],"materialCoverage":[],"coverageSummary":""}}',
+    '{"lesson":{"sections":[{"heading":"","level":2,"subHeadings":[],"teachingText":"","mechanismFlow":[],"algorithmSteps":[],"tableInsights":[],"comparisonPoints":[],"visualNotes":[],"clinicalConnection":"","examAngle":"","commonTrap":"","keyBoxes":[],"sourceRefs":[]}],"highYieldPoints":[],"mustKnow":[],"finalReview":[],"materialCoverage":[],"coverageSummary":""}}',
     '',
     'Kalite kuralları:',
     '- Teknik üretim raporu yazma. "Bu materyal temsil edildi", "dosya bazlı çıkarıldı", "aşağıda yapılandırıldı" gibi cümleler yasaktır.',
     '- Her dosyanın detectedTopic ve mustRepresent maddeleri anlatımda görünür biçimde temsil edilsin.',
     '- Tek materyalde birden fazla ana başlık varsa 2-4 ayrı section yaz; tek dosyayı yüzeysel tek paragrafta bırakma.',
     '- Farklı ana konuları aynı heading altında ezme; gerekirse aynı dosya için birden fazla section yaz.',
+    '- Her section öğretici derinlik taşısın: teachingText genellikle 2-4 açıklayıcı paragraf düzeyinde olsun; yalnızca 2-3 cümlelik özetle yetinme.',
+    '- Her section için subHeadings alanına 2-5 gerçek alt konu başlığı yaz; bunlar bölüm içi öğrenme basamakları olsun, bileşen/tag adı olmasın.',
+    '- teachingText içinde subHeadings ile uyumlu akış kur: önce kavramı açıkla, sonra mekanizma veya sınıflamayı anlat, ardından klinik/tanı/yönetim ve sınav ayrımına bağla.',
     '- classificationOrAlgorithm, diagnosticOrLabPoints, treatmentOrManagementPoints ve tablesAndVisualNotes alanları varsa teachingText içinde açıkça derse dönüştür.',
     '- Tablo varsa karşılaştırma mantığını doğal bir cümleyle açıkla; algoritma varsa karar basamaklarını sırayla anlat; metinleşmiş şema/caption varsa yalnızca okunabilen mesajını işle.',
     '- tableInsights, algorithmSteps, comparisonPoints ve visualNotes alanlarını yalnızca gerçekten gerekli olduğunda doldur; her bölümde zorunlu bileşen üretme.',
@@ -869,12 +877,21 @@ function lessonFromParsedPayload(parsed = {}) {
 }
 
 function normalizeGeneratedSection(section = {}, fallbackIndex = 0) {
-  const heading = cleanOutputText(section.heading || section.title, { allowShort: true }) || `Konu bölümü ${fallbackIndex + 1}`;
+  const rawHeading = cleanOutputText(section.heading || section.title, { allowShort: true });
+  const sourceFallback = Array.isArray(section.sourceRefs || section.relatedSourceFiles)
+    ? cleanOutputText((section.sourceRefs || section.relatedSourceFiles)[0], { allowShort: true })
+    : '';
+  const heading = rawHeading && !GENERIC_HEADING_PATTERN.test(rawHeading)
+    ? rawHeading
+    : sourceFallback || `Komite konusu ${fallbackIndex + 1}`;
   const teachingText = cleanOutputText(section.teachingText || section.content || section.summary || section.coreExplanation);
   if (!teachingText) return null;
   return {
     heading,
     level: Number(section.level) || 2,
+    subHeadings: normalizeOutputList(section.subHeadings || section.subtopics || section.learningSubtopics || section.outline, 5)
+      .filter((item) => !GENERIC_SUBHEADING_PATTERN.test(item))
+      .filter((item) => !GENERIC_HEADING_PATTERN.test(item)),
     teachingText,
     content: teachingText,
     mechanismFlow: Array.isArray(section.mechanismFlow) ? dedupeStrings(section.mechanismFlow, 5) : [],
@@ -905,16 +922,20 @@ function normalizeGeneratedSection(section = {}, fallbackIndex = 0) {
 
 function buildServerLearningObjective(section = {}) {
   const heading = cleanOutputText(section.heading, { allowShort: true }) || 'Bu konu';
+  const subtopics = Array.isArray(section.subHeadings) ? section.subHeadings.slice(0, 2).join(', ') : '';
+  if (subtopics) {
+    return `${heading} kapsamında ${subtopics} arasındaki ilişkiyi kurup temel öğrenme mantığını açıklayabilmek.`;
+  }
   if (section.algorithmSteps?.length || section.mechanismFlow?.length) {
-    return `${heading} başlığındaki mekanizma veya karar basamaklarını neden-sonuç ilişkisi içinde açıklayabilmek.`;
+    return `${heading} için temel mekanizmanın bulgu, tanı veya yönetim kararına nasıl yansıdığını açıklayabilmek.`;
   }
   if (section.comparisonPoints?.length || section.commonTrap) {
-    return `${heading} içinde karışabilecek kavramları ayırt ettiren temel ipuçlarını kullanabilmek.`;
+    return `${heading} ile ilişkili benzer durumları ayırt ettiren klinik veya laboratuvar ipuçlarını kullanabilmek.`;
   }
   if (section.clinicalConnection || section.examAngle) {
-    return `${heading} bilgisini klinik bulgular, tanı yaklaşımı veya sınav sorusu bağlamında yorumlayabilmek.`;
+    return `${heading} bilgisini vaka, tanı yaklaşımı ve sınav sorusu içinde doğru yorumlayabilmek.`;
   }
-  return `${heading} konusunun temel kavramlarını ve öğrenme açısından kritik bağlantılarını açıklayabilmek.`;
+  return `${heading} konusunun temel kavramlarını, neden önemli olduğunu ve sınavda ayırt ettiren bağlantılarını açıklayabilmek.`;
 }
 
 function isUsableLearningObjective(item = '') {
@@ -958,6 +979,13 @@ function fallbackLessonFragmentFromDigest({ context = {}, partialText = '', batc
       sections: [{
         heading: topic,
         level: 2,
+        subHeadings: dedupeStrings([
+          coreDefinitions.length ? 'Temel kavram ve ana çerçeve' : '',
+          classifications.length ? 'Mekanizma, sınıflama veya süreç mantığı' : '',
+          diagnostics.length ? 'Tanı ve ayırıcı düşünme' : '',
+          treatments.length ? 'Yönetim veya yaklaşım bağlantısı' : '',
+          highYield.length ? 'Sınavda ayırt ettiren bilgi' : '',
+        ], 5),
         teachingText: teachingParts.join(' '),
         mechanismFlow: dedupeStrings(classifications, 4),
         algorithmSteps: dedupeStrings([...classifications, ...diagnostics, ...treatments], 6),
