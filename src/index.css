@@ -58418,3 +58418,86 @@ html[data-theme='dark'] .komite-learning-block.visual {
     max-height: none !important;
   }
 }
+
+/* KOMITE lesson final alignment: keep the lesson surface inside KlinikIQ's existing theme. */
+.komite-lesson-view-pro {
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: inherit !important;
+}
+
+.komite-lesson-top-toc {
+  display: none !important;
+}
+
+.komite-lesson-view-pro :where(.komite-sidebar-card, .komite-objectives-pro, .komite-big-picture-section, .komite-context-line, .komite-lesson-section-pro, .komite-summary-grid-pro > div) {
+  border-radius: 8px !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  color: #172033 !important;
+}
+
+.komite-lesson-view-pro :where(h3, strong, .komite-sidebar-card strong, .komite-objectives-pro > strong, .komite-summary-lines > div > strong) {
+  color: #0f172a !important;
+}
+
+.komite-lesson-view-pro :where(p, li, .komite-sidebar-card a, .komite-sidebar-subitems a, .komite-section-subtopic-list span) {
+  color: #334155 !important;
+}
+
+.komite-lesson-subsection > strong {
+  display: none !important;
+}
+
+.komite-section-subtopic-list span {
+  background: rgba(20, 184, 166, 0.08) !important;
+}
+
+.komite-mechanism-step > span,
+.komite-mechanism-step > .glossary-text,
+.komite-mechanism-step > :not(em) {
+  background: rgba(20, 184, 166, 0.11) !important;
+  color: #0f766e !important;
+}
+
+.komite-markdown-table {
+  color: #1f2937;
+}
+
+.komite-markdown-table tr:nth-child(even) td {
+  background: rgba(15, 23, 42, 0.04);
+}
+
+html[data-theme='dark'] .komite-lesson-view-pro :where(.komite-sidebar-card, .komite-objectives-pro, .komite-big-picture-section, .komite-context-line, .komite-lesson-section-pro, .komite-summary-grid-pro > div) {
+  border-color: rgba(148, 163, 184, 0.16) !important;
+  background: rgba(15, 23, 42, 0.72) !important;
+  color: #e2e8f0 !important;
+}
+
+html[data-theme='dark'] .komite-lesson-view-pro :where(h3, strong, .komite-sidebar-card strong, .komite-objectives-pro > strong, .komite-summary-lines > div > strong) {
+  color: #f8fafc !important;
+}
+
+html[data-theme='dark'] .komite-lesson-view-pro :where(p, li, .komite-sidebar-card a, .komite-sidebar-subitems a, .komite-section-subtopic-list span) {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme='dark'] .komite-section-subtopic-list span {
+  background: rgba(20, 184, 166, 0.12) !important;
+}
+
+html[data-theme='dark'] .komite-mechanism-step > span,
+html[data-theme='dark'] .komite-mechanism-step > .glossary-text,
+html[data-theme='dark'] .komite-mechanism-step > :not(em) {
+  background: rgba(20, 184, 166, 0.13) !important;
+  color: #ccfbf1 !important;
+}
+
+html[data-theme='dark'] .komite-markdown-table {
+  color: #e2e8f0;
+}
+
+html[data-theme='dark'] .komite-markdown-table tr:nth-child(even) td {
+  background: rgba(15, 23, 42, 0.32);
+}
