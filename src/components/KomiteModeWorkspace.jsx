@@ -1557,7 +1557,7 @@ function StartFlow({ onCreate, onCancel }) {
       <div className="komite-upload-hero">
         <div className="komite-upload-hero-copy">
           <h2>Materyal yükle</h2>
-          <p>Komite materyallerini ekle; çalışma alanı açıldıktan sonra PDF tabanlı konu anlatımını Ders Anlatımı sekmesinden oluşturabilirsin.</p>
+          <p>Komite materyallerini ekle; çalışma alanı açıldıktan sonra tek parça, scroll edilebilir konu anlatımını Ders Anlatımı sekmesinden oluşturabilirsin. PDF çıktısı indirme seçeneği olarak korunur.</p>
         </div>
         <button type="button" className="btn btn-secondary komite-upload-cancel-top" onClick={onCancel}>Vazgeç</button>
       </div>
@@ -1667,7 +1667,7 @@ function CommitteePdfSidebar({ manifest = {}, currentPage = 1, onGoToPage }) {
     ...anchors.map((item) => ({ ...item, level: 1, highYield: true })),
   ];
   return (
-    <aside className="komite-pdf-sidebar" aria-label="PDF hızlı erişim">
+    <aside className="komite-pdf-sidebar" aria-label="Ders anlatımı hızlı erişim">
       <div className="komite-pdf-sidebar-card">
         <strong>Hızlı erişim</strong>
         {manifest.estimatedStudyTime ? <small>{manifest.estimatedStudyTime}</small> : null}
@@ -1782,7 +1782,7 @@ function CommitteePdfLessonViewer({ lesson = {} }) {
   };
 
   if (!pdfUrl) {
-    return <EmptyState title="PDF konu anlatımı bulunamadı" text="Bu ders kaydında görüntülenecek PDF yok. Konu anlatımını yeniden oluşturmayı deneyebilirsin." />;
+    return <EmptyState title="Konu anlatımı bulunamadı" text="Bu ders kaydında görüntülenecek konu anlatımı yok. Konu anlatımını yeniden oluşturmayı deneyebilirsin." />;
   }
 
   return (
@@ -1792,7 +1792,7 @@ function CommitteePdfLessonViewer({ lesson = {} }) {
         <div className="komite-pdf-toolbar">
           <div>
             <strong>{manifest.title || lesson.title || 'Komite konu anlatımı'}</strong>
-            <small>{manifest.subtitle || lesson.subtitle || 'PDF konu anlatımı'}</small>
+            <small>{manifest.subtitle || lesson.subtitle || 'Konu anlatımı'}</small>
           </div>
           <div className="komite-pdf-controls">
             <button type="button" onClick={() => goToPage(pageNumber - 1)} disabled={pageNumber <= 1} aria-label="Önceki sayfa"><Icon name="ChevronLeft" size={16} /></button>
@@ -1817,7 +1817,7 @@ function CommitteePdfLessonViewer({ lesson = {} }) {
         <div className="komite-pdf-stage" data-status={status}>
           {status === 'loading' ? <div className="komite-pdf-loading"><span className="komite-spinner" aria-hidden="true" /> PDF hazırlanıyor…</div> : null}
           {status === 'error' ? <EmptyState title="PDF görüntülenemedi" text="PDF oluşturuldu ancak görüntüleyici dosyayı açamadı. İndirme bağlantısını deneyebilirsin." action={<a className="btn btn-primary" href={pdfUrl} download="komite-konu-anlatimi.pdf">PDF indir</a>} /> : null}
-          <canvas ref={canvasRef} aria-label="Komite PDF konu anlatımı" />
+          <canvas ref={canvasRef} aria-label="Komite Konu anlatımı" />
         </div>
       </main>
     </div>
@@ -1868,6 +1868,16 @@ function calloutLabel(block = {}) {
     final_review: 'Final tekrar',
   };
   return block.title || map[block.variant] || 'Not';
+}
+
+function lessonSectionTone(title = '') {
+  const clean = String(title || '').toLocaleLowerCase('tr');
+  if (/en yüksek|getirili|sınav bilgileri|sinav bilgileri|sınavda|sinavda/iu.test(clean)) return 'exam-focus';
+  if (/karıştır|karistir|ayırıcı|ayirici/iu.test(clean)) return 'confusion-focus';
+  if (/tek sayfalık|tek sayfalik|final tekrar|son tekrar/iu.test(clean)) return 'final-focus';
+  if (/tedavi|yönetim|yonetim|yaklaşım|yaklasim/iu.test(clean)) return 'treatment-focus';
+  if (/tanı|tani|laboratuvar|kriter/iu.test(clean)) return 'diagnosis-focus';
+  return '';
 }
 
 function ScrollLessonBlock({ block = {} }) {
@@ -2051,8 +2061,8 @@ function CommitteeScrollableLessonView({ lesson = {} }) {
               <input value={query} onChange={(event) => setQuery(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter') runSearch(); }} placeholder="Ders içinde ara" />
               <button type="button" onClick={runSearch}>Ara</button>
             </div>
-            <button type="button" className="komite-scroll-pdf-link" onClick={printLesson}><Icon name="Download" size={16} /> PDF indir</button>
-            {pdfUrl ? <a className="komite-scroll-raw-pdf-link" href={pdfUrl} download={`${String(lessonDoc.title || 'komite-konu-anlatimi').replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-+|-+$/g, '') || 'komite-konu-anlatimi'}.pdf`} title="Sistem tarafından oluşturulan PDF dosyasını indir">PDF dosyası</a> : null}
+            <button type="button" className="komite-scroll-pdf-link" onClick={printLesson} title="Bu ekrandaki temiz HTML konu anlatımını PDF olarak kaydet"><Icon name="Download" size={16} /> PDF indir</button>
+            {pdfUrl ? <a className="komite-scroll-raw-pdf-link" href={pdfUrl} download={`${String(lessonDoc.title || 'komite-konu-anlatimi').replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-+|-+$/g, '') || 'komite-konu-anlatimi'}.pdf`} title="Sunucu tarafından oluşturulan yedek PDF dosyasını indir">Yedek PDF</a> : null}
           </div>
         </header>
 
@@ -2064,7 +2074,7 @@ function CommitteeScrollableLessonView({ lesson = {} }) {
           </section>
 
           {sections.map((section, index) => (
-            <section id={section.id} className="komite-scroll-section" key={section.id} style={lessonAccentStyle(index)}>
+            <section id={section.id} className={`komite-scroll-section ${lessonSectionTone(section.title)}`.trim()} key={section.id} style={lessonAccentStyle(index)}>
               <div className="komite-scroll-section-kicker">{String(index + 1).padStart(2, '0')}</div>
               <h3>{section.title}</h3>
               {section.mainIdea ? <aside className="komite-scroll-callout main_idea"><strong>Ana fikir</strong><p>{section.mainIdea}</p></aside> : null}

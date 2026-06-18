@@ -139,6 +139,8 @@ function buildPrompt(payload = {}) {
     'Kullanıcının yüklediği materyalleri bağımsız, Türkçe, bilimsel, sınav odaklı ve web arayüzünde tek parça scroll edilecek PDF kalitesinde bir konu anlatımına dönüştür.',
     'Amacın özet çıkarmak değildir; öğrencinin konuyu gerçekten anlamasını sağlayan detaylı, klinik mantığı güçlü, takip edilebilir ve çalışılabilir ders notu üretmelisin.',
     'Çıktı kısa not gibi kalmamalı. Gereksiz tekrara düşmeden, kaynak materyaldeki bilimsel kapsamı koruyan ve eksik bağlamları güvenli şekilde tamamlayan tam bir konu anlatımı üretmelisin.',
+    '8.5-9/10 kalite hedefi: her bölüm öğrencinin neden-sonuç ilişkisini kurmasına yardım etmeli; yalnız başlık veya liste değil, klinik karar mantığı ve sınavda ayırt ettirici noktalar da anlatılmalı.',
+    'Türkçe karakterleri aynen koru: ş, ğ, ı, İ, ö, ü, ç harflerini ASCII karşılıklarına çevirme. "sınav", "tanı", "düşünme", "başlangıç", "karıştırma" gibi kelimeler Türkçe yazılmalı.',
     '',
     'ÇIKTI YALNIZCA GEÇERLİ JSON NESNESİ OLSUN. Markdown, HTML, kod bloğu, üretim raporu veya açıklama yazma.',
     'Ham Markdown kesinlikle kullanma: ##, ###, ####, > [!Ana fikir], > [!Sınav ipucu], Markdown tablo çizgileri, ham tire listesi veya ok karakteriyle yazılmış düz akış üretme. Ana çıktı PDF değildir; kontrollü JSON, frontend tarafından tek uzun HTML ders dokümanı olarak render edilecektir.',
@@ -188,8 +190,13 @@ function buildPrompt(payload = {}) {
     '- Her table block için rows içindeki her satır columns ile aynı sayıda hücre taşısın.',
     '- Mekanizma akışlarını sadece mechanism_flow block olarak ver; steps içine ok, tire, yıldız veya soru işareti koyma.',
     '- Konu anlatımı sonunda examFocus, doNotConfuse ve finalReview alanlarını mutlaka doldur; bu alanlar ana bölümlerde zaten geçen bilgileri birebir tekrar etmek yerine sınav öncesi rafine tekrar gibi yazılsın.',
-    '- Tedavi anlatılan konularda sadece ilaç/yöntem adı verme; tedavinin mantığını, hangi durumda seçildiğini ve pratik karar noktasını açıkla.',
-    '- Tanı anlatılan konularda yalnız eşik verme; testin ne zaman tercih edildiğini, neyle karışabileceğini ve klinik bağlamı açıklayan yorum ekle.',
+    '- Tedavi anlatılan konularda sadece ilaç/yöntem adı verme; tedavinin mantığını, hangi durumda seçildiğini, izlemde nelere dikkat edildiğini ve pratik karar noktasını açıkla.',
+    '- Tanı anlatılan konularda yalnız eşik verme; testin ne zaman tercih edildiğini, neyle karışabileceğini, hangi durumda yanıltabileceğini ve klinik bağlamı açıklayan yorum ekle.',
+    '- Konuya özel hard-code kullanma: diyabet, anemi, büyüme bozukluğu, immünoloji, enfeksiyon, farmakoloji, anatomi veya başka herhangi bir başlık için ayrı sabit kural/case/cache oluşturma. Yüklenen materyalin konusunu önce kendin analiz et; kaliteyi global öğretim mimarisiyle yükselt.',
+    '- Konu türünü otomatik belirle ve uygun anlatım omurgasını seç: hastalık konularında tanım-normal fizyoloji-patofizyoloji-klinik-tanı-ayırıcı tanı-tedavi-izlem-komplikasyon; fizyoloji konularında normal mekanizma-regülasyon-geri bildirim-klinik korelasyon; farmakoloji konularında etki mekanizması-endikasyon-kontrendikasyon-yan etki-etkileşim-izlem; mikrobiyoloji/immünoloji konularında etken/hücre-mekanizma-klinik sendrom-tanı-tedavi/korunma; anatomi/histoloji konularında yapı-ilişki-fonksiyon-klinik önem akışı kullanılmalı.',
+    '- Her konuda, o konunun kendi kritik güvenlik ve karar noktalarını çıkar: acil durum varsa ilk yaklaşım ve stabilizasyon mantığı, laboratuvar varsa testin yorumu ve yanıltıcı durumları, tedavi varsa seçim gerekçesi ve izlem noktaları, sınıflama varsa ayırıcı özellikler ve sınavda karışan eşikler açıklanmalı.',
+    '- Global yüksek verim kuralı: kaynakta geçen veya konu mantığı için zorunlu olan sayısal eşikler, tanı kriterleri, sınıflamalar, mekanizma zincirleri, komplikasyonlar, kontraendikasyonlar, tedavi basamakları ve sık karıştırılan ayrımlar korunmalı; bunlar konuya göre otomatik seçilmeli, tek bir hastalığa özel sabit listeye bağlı kalınmamalı.',
+    '- Final bölümleri rafine tekrar gibi olmalı: examFocus kısa yüksek getirili maddeler, doNotConfuse kartları gerçek karışan ayrımlar, finalReview ise tek bakışta çalışılacak son tekrar maddeleri olarak yazılsın.',
     '',
     'Callout variant seçenekleri:',
     'main_idea, clinical_logic, exam_tip, dont_confuse, warning, update_note, final_review',
@@ -661,15 +668,15 @@ function validateLessonDocument(document = {}) {
   if (/^\s*Bölüm\s+\d+\s*$/imu.test(text)) throw new Error('Komite lesson contains generic section titles.');
 }
 
-const TURKISH_BYTE_MAP = new Map();
+const TURKISH_BYTE_MAP = new Map([
+  ['Ğ', 128], ['ğ', 129],
+  ['Ş', 130], ['ş', 131],
+  ['İ', 132], ['ı', 133],
+]);
 
 function pdfTextFallback(value = '') {
-  // Backend fallback PDF uses built-in PDF fonts. Some viewers omit Turkish glyphs that are not in the base font.
-  // The HTML lesson view and browser print export preserve real Turkish characters; this only prevents blank glyphs in the server PDF data URL.
-  return String(value || '')
-    .replace(/Ğ/g, 'G').replace(/ğ/g, 'g')
-    .replace(/Ş/g, 'S').replace(/ş/g, 's')
-    .replace(/İ/g, 'I').replace(/ı/g, 'i');
+  // Keep real Turkish characters. Custom single-byte mappings and ToUnicode CMap below preserve both visual rendering and copy/search text.
+  return String(value || '');
 }
 
 function textToPdfHex(value = '') {
@@ -952,6 +959,30 @@ function buildPdfFromDocument(document = {}, payload = {}) {
   return { pdfBuffer, manifest };
 }
 
+function createTurkishToUnicodeCMap() {
+  return `/CIDInit /ProcSet findresource begin
+12 dict begin
+begincmap
+/CIDSystemInfo << /Registry (Adobe) /Ordering (UCS) /Supplement 0 >> def
+/CMapName /KlinikIQTurkish def
+/CMapType 2 def
+1 begincodespacerange
+<00> <FF>
+endcodespacerange
+6 beginbfchar
+<80> <011E>
+<81> <011F>
+<82> <015E>
+<83> <015F>
+<84> <0130>
+<85> <0131>
+endbfchar
+endcmap
+CMapName currentdict /CMap defineresource pop
+end
+end`;
+}
+
 function createPdfBuffer(pageStreams = [], info = {}) {
   const objects = [];
   const add = (body) => {
@@ -959,8 +990,13 @@ function createPdfBuffer(pageStreams = [], info = {}) {
     return objects.length;
   };
   const fontEncoding = '<< /Type /Encoding /BaseEncoding /WinAnsiEncoding /Differences [128 /Gbreve /gbreve /Scedilla /scedilla /Idotaccent /dotlessi] >>';
-  const font1 = add(`<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding ${fontEncoding} >>`);
-  const font2 = add(`<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding ${fontEncoding} >>`);
+  const toUnicodeCMap = createTurkishToUnicodeCMap();
+  const toUnicodeId = add(`<< /Length ${Buffer.byteLength(toUnicodeCMap, 'binary')} >>
+stream
+${toUnicodeCMap}
+endstream`);
+  const font1 = add(`<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding ${fontEncoding} /ToUnicode ${toUnicodeId} 0 R >>`);
+  const font2 = add(`<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding ${fontEncoding} /ToUnicode ${toUnicodeId} 0 R >>`);
   const contentIds = pageStreams.map((stream) => add(`<< /Length ${Buffer.byteLength(stream, 'binary')} >>\nstream\n${stream}\nendstream`));
   const pageIds = contentIds.map((contentId) => add(`<< /Type /Page /Parent 0 0 R /MediaBox [0 0 ${A4.width} ${A4.height}] /Resources << /Font << /F1 ${font1} 0 R /F2 ${font2} 0 R >> >> /Contents ${contentId} 0 R >>`));
   const pagesId = add(`<< /Type /Pages /Kids [${pageIds.map((id) => `${id} 0 R`).join(' ')}] /Count ${pageIds.length} >>`);

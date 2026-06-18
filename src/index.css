@@ -59481,3 +59481,99 @@ html[data-theme='dark'] .komite-scroll-callout.main_idea {
     page-break-inside: avoid;
   }
 }
+
+/* KOMITE lesson v4: 8.5+ quality pass — section tones, premium final cards, Turkish-safe print */
+.komite-scroll-section.exam-focus,
+.komite-scroll-section.final-focus,
+.komite-scroll-section.confusion-focus {
+  border-color: rgba(14, 116, 144, 0.18) !important;
+}
+
+.komite-scroll-section.exam-focus {
+  background: linear-gradient(180deg, #ffffff 0%, #fffdf5 100%) !important;
+}
+
+.komite-scroll-section.confusion-focus {
+  background: linear-gradient(180deg, #ffffff 0%, #fff8f8 100%) !important;
+}
+
+.komite-scroll-section.final-focus {
+  background: linear-gradient(180deg, #ffffff 0%, #f7fffb 100%) !important;
+}
+
+.komite-scroll-section.exam-focus .komite-scroll-list-block ul,
+.komite-scroll-section.final-focus .komite-scroll-list-block ul {
+  display: grid;
+  gap: 10px;
+  padding-left: 0 !important;
+  list-style: none;
+}
+
+.komite-scroll-section.exam-focus .komite-scroll-list-block li,
+.komite-scroll-section.final-focus .komite-scroll-list-block li {
+  position: relative;
+  margin: 0 !important;
+  padding: 12px 14px 12px 42px;
+  border: 1px solid rgba(203, 213, 225, 0.78);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.04);
+}
+
+.komite-scroll-section.exam-focus .komite-scroll-list-block li::before,
+.komite-scroll-section.final-focus .komite-scroll-list-block li::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 1.15em;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--lesson-accent, #0ea5e9);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--lesson-accent, #0ea5e9) 14%, white);
+}
+
+.komite-scroll-confusion-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.komite-scroll-confusion-card {
+  border-left: 4px solid rgba(225, 29, 72, 0.56) !important;
+  box-shadow: 0 10px 24px rgba(225, 29, 72, 0.035) !important;
+}
+
+.komite-scroll-confusion-card p {
+  grid-template-columns: 122px minmax(0, 1fr) !important;
+  gap: 10px !important;
+}
+
+.komite-scroll-confusion-card b {
+  font-size: 0.84rem;
+  letter-spacing: 0.01em;
+}
+
+.komite-scroll-section.diagnosis-focus .komite-scroll-table-wrap th,
+.komite-scroll-section.treatment-focus .komite-scroll-table-wrap th {
+  background: #0e7490 !important;
+}
+
+.komite-scroll-raw-pdf-link {
+  opacity: 0.72;
+}
+
+.komite-scroll-raw-pdf-link:hover {
+  opacity: 1;
+}
+
+@media print {
+  .komite-scroll-section.exam-focus .komite-scroll-list-block li,
+  .komite-scroll-section.final-focus .komite-scroll-list-block li,
+  .komite-scroll-confusion-card {
+    box-shadow: none !important;
+    background: #fff !important;
+  }
+
+  .komite-scroll-raw-pdf-link {
+    display: none !important;
+  }
+}
