@@ -1,4 +1,4 @@
-const DEFAULT_MODEL = 'gpt-5.1';
+const DEFAULT_MODEL = 'gpt-5.4-nano';
 const ERROR_MESSAGE = 'Sistem şu anda konu anlatımını oluşturamadı. Lütfen tekrar deneyin.';
 const A4 = { width: 595.28, height: 841.89 };
 const MARGIN = { top: 44, right: 46, bottom: 46, left: 46 };
@@ -103,9 +103,9 @@ function getSourceFiles(materialPacket = {}) {
     .filter((file) => file.text.length > 80);
 }
 
-function buildSourceContext(payload = {}) {
+function buildSourceContext(payload = {}, options = {}) {
   const files = getSourceFiles(payload.materialPacket || {});
-  const totalBudget = 120_000;
+  const totalBudget = Number(options.totalBudget || 120_000);
   const perFile = files.length ? Math.max(8_000, Math.floor(totalBudget / files.length)) : totalBudget;
   const sourceBlocks = files.map((file, index) => {
     const text = file.text.length > perFile
@@ -122,8 +122,8 @@ function buildSourceContext(payload = {}) {
   return { files, sourceText: sourceBlocks.join('\n\n') };
 }
 
-function buildPrompt(payload = {}) {
-  const { files, sourceText } = buildSourceContext(payload);
+function buildPrompt(payload = {}, options = {}) {
+  const { files, sourceText } = buildSourceContext(payload, options);
   const metadata = payload.metadata || {};
   const metaBlock = [
     `Sınıf: ${metadata.classYear || 'Belirtilmedi'}`,
@@ -229,27 +229,60 @@ function extractResponseText(payload = {}) {
   return contentItems.map((content) => content?.text || content?.output_text || '').filter(Boolean).join('\n');
 }
 
-async function requestLessonDocument({ apiKey, model, prompt, sourcePayload }) {
+
+function uniqueModelCandidates(primary = '') {
+  return [
+    primary,
+    process.env.OPENAI_KOMITE_FALLBACK_MODEL,
+    DEFAULT_MODEL,
+    'gpt-5.4-nano',
+  ]
+    .map((item) => String(item || '').trim())
+    .filter(Boolean)
+    .filter((item, index, array) => array.indexOf(item) === index);
+}
+
+function shouldRetryWithFallback(error = null) {
+  const message = String(error?.message || error || '').toLocaleLowerCase('tr');
+  return /model|not found|does not exist|unsupported|invalid|rate|timeout|tokens|context|incomplete|json|parse|schema|maximum|length|output/i.test(message);
+}
+
+function getPreferredOutputTokenCandidates() {
+  const configured = Number.parseInt(process.env.OPENAI_KOMITE_MAX_TOKENS || process.env.OPENAI_KOMITE_PDF_MAX_TOKENS || '', 10);
+  return [configured, 22000, 16000, 10000, 7000]
+    .filter((item) => Number.isFinite(item) && item > 0)
+    .filter((item, index, array) => array.indexOf(item) === index);
+}
+
+async function requestLessonDocument({ apiKey, model, prompt, sourcePayload, maxOutputTokens, includeTemperature = true, timeoutMs = 24000 }) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  const requestBody = {
+    model,
+    input: [
+      { role: 'system', content: 'Yalnızca geçerli JSON üret. Markdown, HTML, kod bloğu veya kaynak işleme açıklaması yazma.' },
+      { role: 'user', content: prompt },
+    ],
+    max_output_tokens: maxOutputTokens,
+  };
+  if (includeTemperature) {
+    requestBody.temperature = Number.parseFloat(process.env.OPENAI_KOMITE_TEMPERATURE || process.env.OPENAI_TEMPERATURE || '0.2');
+  }
+
   const response = await fetch('https://api.openai.com/v1/responses', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${apiKey}`,
     },
-    body: JSON.stringify({
-      model,
-      input: [
-        { role: 'system', content: 'Yalnızca geçerli JSON üret. Markdown, HTML, kod bloğu veya kaynak işleme açıklaması yazma.' },
-        { role: 'user', content: prompt },
-      ],
-      max_output_tokens: Number.parseInt(process.env.OPENAI_KOMITE_MAX_TOKENS || process.env.OPENAI_KOMITE_PDF_MAX_TOKENS || '', 10) || 16000,
-      temperature: Number.parseFloat(process.env.OPENAI_KOMITE_TEMPERATURE || process.env.OPENAI_TEMPERATURE || '0.2'),
-    }),
-  });
+    body: JSON.stringify(requestBody),
+    signal: controller.signal,
+  }).finally(() => clearTimeout(timeout));
 
   const payload = await response.json().catch(() => ({}));
   if (!response.ok) {
-    throw new Error(payload?.error?.message || `OpenAI request failed: ${response.status}`);
+    const message = payload?.error?.message || payload?.error || `OpenAI request failed: ${response.status}`;
+    throw new Error(String(message));
   }
   if (payload.status === 'incomplete') {
     const reason = payload?.incomplete_details?.reason || 'unknown';
@@ -258,6 +291,44 @@ async function requestLessonDocument({ apiKey, model, prompt, sourcePayload }) {
   const text = extractResponseText(payload);
   if (!text) throw new Error('OpenAI response did not include text output.');
   return normalizeLessonDocument(parseJsonObject(text), sourcePayload);
+}
+
+async function generateLessonDocumentWithFallbacks({ apiKey, preferredModel, sourcePayload }) {
+  if (!apiKey) {
+    return buildLocalLessonDocument(sourcePayload, 'OPENAI_API_KEY tanımlı olmadığı için kaynak metinden güvenli yerel konu anlatımı oluşturuldu.');
+  }
+
+  const modelCandidates = uniqueModelCandidates(preferredModel).slice(0, 3);
+  const tokenCandidates = getPreferredOutputTokenCandidates().slice(0, 3);
+  const attempts = [
+    { model: modelCandidates[0], totalBudget: 80_000, maxOutputTokens: tokenCandidates[0] || 18000, includeTemperature: true },
+    { model: modelCandidates[1] || modelCandidates[0], totalBudget: 45_000, maxOutputTokens: tokenCandidates[1] || 12000, includeTemperature: false },
+    { model: modelCandidates[2] || modelCandidates[0], totalBudget: 22_000, maxOutputTokens: tokenCandidates[2] || 8000, includeTemperature: false },
+  ].filter((attempt, index, array) => attempt.model && array.findIndex((item) => `${item.model}-${item.totalBudget}-${item.maxOutputTokens}-${item.includeTemperature}` === `${attempt.model}-${attempt.totalBudget}-${attempt.maxOutputTokens}-${attempt.includeTemperature}`) === index);
+  let lastError = null;
+
+  for (const attempt of attempts) {
+    try {
+      const prompt = buildPrompt(sourcePayload, { totalBudget: attempt.totalBudget });
+      return await requestLessonDocument({
+        apiKey,
+        model: attempt.model,
+        prompt,
+        sourcePayload,
+        maxOutputTokens: attempt.maxOutputTokens,
+        includeTemperature: attempt.includeTemperature,
+        timeoutMs: Number.parseInt(process.env.OPENAI_KOMITE_REQUEST_TIMEOUT_MS || '', 10) || 24000,
+      });
+    } catch (error) {
+      lastError = error;
+      const message = error?.name === 'AbortError' ? 'OpenAI request timed out.' : (error?.message || String(error));
+      console.error('[generate-komite-scroll-lesson:attempt-failed]', { ...attempt, message });
+      if (!shouldRetryWithFallback(error)) break;
+    }
+  }
+
+  console.error('[generate-komite-scroll-lesson:local-fallback]', lastError?.message || lastError || 'unknown');
+  return buildLocalLessonDocument(sourcePayload, `AI üretimi tamamlanamadığı için kaynak metinden güvenli yerel konu anlatımı oluşturuldu. Teknik neden: ${String(lastError?.message || lastError || 'bilinmiyor').slice(0, 180)}`);
 }
 
 function slugify(value = '') {
@@ -581,6 +652,156 @@ function compressCoreLessonSections(sections = [], maxSections = 8) {
     next.splice(index, 2, mergeLessonSectionPair(next[index], next[index + 1]));
   }
   return next.map((section, index) => ({ ...section, id: section.id || slugify(section.title || `bolum-${index + 1}`) }));
+}
+
+
+function cleanupSourceForFallback(text = '') {
+  return stripMarkdownArtifacts(String(text || '')
+    .replace(/\[[^\]]{1,80}\]/gu, ' ')
+    .replace(/\b(?:Sayfa|Slayt)\s+\d+\b/giu, ' ')
+    .replace(/\s+/g, ' ')
+    .trim());
+}
+
+function splitFallbackSentences(text = '') {
+  return cleanupSourceForFallback(text)
+    .split(/(?<=[.!?])\s+/u)
+    .map((item) => stripMarkdownArtifacts(item))
+    .filter((item) => item.length >= 35 && item.length <= 420)
+    .slice(0, 500);
+}
+
+function pickFallbackSentences(sentences = [], patterns = [], count = 4, used = new Set()) {
+  const chosen = [];
+  const normalizedPatterns = patterns.map((pattern) => pattern instanceof RegExp ? pattern : new RegExp(String(pattern), 'iu'));
+  for (const sentence of sentences) {
+    const key = sentence.toLocaleLowerCase('tr');
+    if (used.has(key)) continue;
+    if (!normalizedPatterns.length || normalizedPatterns.some((pattern) => pattern.test(sentence))) {
+      chosen.push(sentence);
+      used.add(key);
+      if (chosen.length >= count) break;
+    }
+  }
+  return chosen;
+}
+
+function fallbackParagraphs(sentences = [], patterns = [], used = new Set(), min = 2) {
+  let picked = pickFallbackSentences(sentences, patterns, 4, used);
+  if (picked.length < min) picked = picked.concat(pickFallbackSentences(sentences, [], min - picked.length, used));
+  const joined = [];
+  for (let i = 0; i < picked.length; i += 2) joined.push(picked.slice(i, i + 2).join(' '));
+  return joined.filter(Boolean).slice(0, 2);
+}
+
+function inferFallbackTitle(payload = {}) {
+  const metadata = payload.metadata || {};
+  const course = metadata.course || metadata.committee || metadata.title || '';
+  if (course) return sanitizeTitle(course, 'Komite konu anlatımı');
+  const files = getSourceFiles(payload.materialPacket || {});
+  const firstText = files[0]?.text || '';
+  const line = String(firstText).split(/\n+/u).map(stripMarkdownArtifacts).find((item) => item.length >= 4 && item.length <= 70);
+  return sanitizeTitle(line || files[0]?.fileName || 'Komite konu anlatımı', 'Komite konu anlatımı');
+}
+
+function buildLocalLessonDocument(payload = {}, reason = '') {
+  const files = getSourceFiles(payload.materialPacket || {});
+  const title = inferFallbackTitle(payload);
+  const allText = files.map((file) => file.text).join('\n\n');
+  const sentences = splitFallbackSentences(allText);
+  const used = new Set();
+  const sectionSpecs = [
+    {
+      title: 'Temel tanım ve büyük resim',
+      mainIdea: `${title} konusunu anlamanın ilk adımı temel tanımı, normal işleyişi ve klinik önemini birlikte kurmaktır.`,
+      patterns: [/tanım|definition|temel|fizyoloji|normal|insülin|insulin|hormon|metabol/iu],
+      flow: ['Temel kavram belirlenir', 'Normal fizyoloji ile ilişki kurulur', 'Klinik tablo bu mekanizma üzerinden yorumlanır'],
+    },
+    {
+      title: 'Mekanizma ve patofizyolojik mantık',
+      mainIdea: 'Patofizyoloji, bulguların neden ortaya çıktığını ve hangi bilginin sınavda ayırt ettirici olduğunu gösterir.',
+      patterns: [/patofizyoloji|mekanizma|eksiklik|direnç|hiperglisemi|glukoz|keton|osmotik|diürez|katabol/iu],
+      flow: ['Birincil bozukluk gelişir', 'Metabolik yanıt ve kompansasyon başlar', 'Klinik bulgular ortaya çıkar'],
+    },
+    {
+      title: 'Klinik bulgular ve klinik yorum',
+      mainIdea: 'Klinik bulgular tek tek ezberlenmemeli; altta yatan mekanizmanın hasta üzerindeki yansıması olarak okunmalıdır.',
+      patterns: [/klinik|bulgu|semptom|poliüri|polidipsi|kilo|halsizlik|kusma|karın|dehidrat|kussmaul|koma/iu],
+    },
+    {
+      title: 'Tanı, laboratuvar ve karar eşikleri',
+      mainIdea: 'Tanısal değerlendirme, klinik şüpheyi objektif eşikler ve destekleyici laboratuvar bulgularıyla birleştirir.',
+      patterns: [/tanı|kriter|eşik|laboratuvar|glukoz|HbA1c|OGTT|C-peptid|antikor|pH|bikarbonat|keton/iu],
+    },
+    {
+      title: 'Sınıflama ve ayırıcı düşünme',
+      mainIdea: 'Benzer görünen alt tipleri ayırmak tedavi kararını, acil riski ve takip yaklaşımını doğrudan değiştirir.',
+      patterns: [/sınıflama|tip 1|tip 2|monogenik|ayırıcı|otoimmün|obez|akantozis|HLA|aile|sekonder/iu],
+    },
+    {
+      title: 'Tedavi ve güvenlik mantığı',
+      mainIdea: 'Tedavi yalnızca isim ezberi değildir; hangi bozukluğu düzelttiği ve hangi güvenlik risklerini taşıdığı anlaşılmalıdır.',
+      patterns: [/tedavi|insülin|metformin|sıvı|potasyum|rejim|bazal|bolus|egzersiz|diyet|güvenlik|serebral/iu],
+    },
+    {
+      title: 'Sınav odaklı klinik ayrımlar',
+      mainIdea: 'Sınavda doğru cevap çoğu zaman tek bir bulgudan değil, mekanizma, zamanlama, laboratuvar ve risk profilinin birlikte yorumlanmasından çıkar.',
+      patterns: [/sınav|ipucu|karıştır|ayrım|tipik|dikkat|önemli|risk|komplikasyon/iu],
+    },
+  ];
+
+  const sections = sectionSpecs.map((spec) => {
+    const paragraphs = fallbackParagraphs(sentences, spec.patterns, used, 2);
+    const blocks = [
+      ...paragraphs.map((content) => ({ type: 'paragraph', content })),
+      { type: 'callout', variant: spec.title.includes('Sınav') ? 'exam_tip' : 'clinical_logic', content: spec.mainIdea },
+    ];
+    if (spec.flow) blocks.push({ type: 'mechanism_flow', title: 'Klinik zincir', steps: spec.flow });
+    return { title: spec.title, mainIdea: spec.mainIdea, blocks };
+  });
+
+  const examFocus = [
+    'Tanı eşikleri, sınıflama ayrımları ve tedavinin altta yatan mekanizmayla ilişkisi birlikte çalışılmalıdır.',
+    'Klinik bulguların neden ortaya çıktığı açıklanabiliyorsa sınavdaki çeldiriciler daha kolay elenir.',
+    'Acil veya güvenlik riski taşıyan tablolar ayrı bir karar noktası olarak değerlendirilmelidir.',
+    ...pickFallbackSentences(sentences, [/sınav|önemli|dikkat|tanı|tedavi|risk|kriter/iu], 6, used),
+  ].slice(0, 10);
+  const doNotConfuse = [
+    {
+      confusingPoint: 'Benzer klinik bulguların aynı hastalık anlamına geldiğini düşünmek.',
+      correctDistinction: 'Semptomun mekanizması, zamanlaması, laboratuvar eşikleri ve risk profili birlikte yorumlanmalıdır.',
+      memoryMessage: 'Bulguyu değil, bulgunun nedenini ayırt et.',
+    },
+    {
+      confusingPoint: 'Tedavi adını bilmenin yeterli olduğunu düşünmek.',
+      correctDistinction: 'Tedavinin hangi patofizyolojik basamağı düzelttiği ve hangi güvenlik riskini taşıdığı bilinmelidir.',
+      memoryMessage: 'Tedavi mantığı, ilaç isminden önce gelir.',
+    },
+  ];
+  const finalReview = [
+    `${title} çalışırken önce temel tanımı ve normal fizyolojiyi kur, sonra patofizyoloji üzerinden klinik bulguları bağla.`,
+    'Tanı kriterlerini yalnız ezber olarak değil, klinik şüpheyi doğrulayan eşikler olarak düşün.',
+    'Ayırıcı tanıda başlangıç hızı, hasta profili, laboratuvar desteği ve acil risk birlikte değerlendirilir.',
+    'Tedavide amaç yalnız semptomu baskılamak değil, altta yatan bozukluğu ve güvenlik risklerini yönetmektir.',
+    ...pickFallbackSentences(sentences, [/temel|klinik|tanı|tedavi|mekanizma|önemli/iu], 4, used),
+  ].slice(0, 12);
+
+  return normalizeLessonDocument({
+    title,
+    subtitle: 'Konu anlatımı, klinik mantık ve sınav odaklı tekrar',
+    level: payload.metadata?.classYear ? `${payload.metadata.classYear}. sınıf komite düzeyi` : 'Tıp fakültesi komite düzeyi',
+    estimatedStudyTime: '35-60 dk',
+    qualityNote: reason,
+    learningObjectives: [
+      `${title} konusunun temel tanımını ve klinik önemini açıklayabilir.`,
+      'Patofizyolojik mekanizmaları klinik bulgularla ilişkilendirebilir.',
+      'Tanı, ayırıcı tanı ve tedavi yaklaşımını sınav odaklı yorumlayabilir.',
+    ],
+    sections,
+    examFocus,
+    doNotConfuse,
+    finalReview,
+  }, payload);
 }
 
 function normalizeLessonDocument(raw = {}, payload = {}) {
@@ -1027,7 +1248,6 @@ export default async function handler(req, res) {
 
   try {
     const apiKey = process.env.OPENAI_API_KEY;
-    if (!apiKey) throw new Error('OPENAI_API_KEY is missing.');
     const body = typeof req.body === 'string' ? parseJsonObject(req.body) : req.body || {};
     if (body.kind && body.kind !== 'lesson') {
       return res.status(410).json({ error: 'Komite konu anlatımı akışı yalnızca Ders Anlatımı için kullanılabilir.', code: 'KOMITE_LESSON_ONLY' });
@@ -1036,9 +1256,8 @@ export default async function handler(req, res) {
     const { files } = buildSourceContext(payload);
     if (!files.length) return res.status(400).json({ error: 'Yüklenen materyalde konu anlatımı oluşturmaya yetecek okunabilir metin bulunamadı.', code: 'NO_SOURCE_TEXT' });
 
-    const prompt = buildPrompt(payload);
     const model = process.env.OPENAI_KOMITE_MODEL || process.env.OPENAI_MODEL || DEFAULT_MODEL;
-    const document = await requestLessonDocument({ apiKey, model, prompt, sourcePayload: payload });
+    const document = await generateLessonDocumentWithFallbacks({ apiKey, preferredModel: model, sourcePayload: payload });
     const sourceFiles = getSourceFiles(payload.materialPacket || {}).map((file) => ({ fileName: file.fileName, fileType: file.fileType }));
     const createdAt = new Date().toISOString();
     const lessonId = `komite-lesson-${Date.now().toString(36)}`;
@@ -1085,7 +1304,16 @@ export default async function handler(req, res) {
       },
     });
   } catch (error) {
+    const message = String(error?.message || error || '');
     console.error('[generate-komite-scroll-lesson]', error);
-    return res.status(500).json({ error: ERROR_MESSAGE, code: 'KOMITE_LESSON_GENERATION_FAILED' });
+    let code = 'KOMITE_LESSON_GENERATION_FAILED';
+    if (/model|does not exist|not found|unsupported/i.test(message)) code = 'KOMITE_MODEL_OR_API_FAILED';
+    else if (/context|maximum|tokens|length|incomplete/i.test(message)) code = 'KOMITE_CONTEXT_OR_TOKEN_LIMIT';
+    else if (/json|parse|schema|markdown|validation/i.test(message)) code = 'KOMITE_JSON_NORMALIZATION_FAILED';
+    return res.status(500).json({
+      error: ERROR_MESSAGE,
+      code,
+      detail: process.env.NODE_ENV === 'development' ? message.slice(0, 500) : undefined,
+    });
   }
 }
