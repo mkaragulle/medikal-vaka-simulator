@@ -1824,11 +1824,251 @@ function CommitteePdfLessonViewer({ lesson = {} }) {
   );
 }
 
+function getScrollableLessonDocument(lesson = {}) {
+  const document = lesson.document || lesson.lessonDocument || lesson;
+  if (!document || document.type === 'pdfLesson') return null;
+  const sections = Array.isArray(document.sections) ? document.sections : [];
+  if (!sections.length) return null;
+  return {
+    ...document,
+    title: document.title || lesson.title || 'Komite konu anlatımı',
+    subtitle: document.subtitle || lesson.subtitle || 'Konu anlatımı, klinik mantık ve sınav odaklı tekrar',
+    sections,
+    pdfUrl: document.pdfUrl || lesson.pdfUrl || lesson.pdfDataUrl || '',
+  };
+}
+
+function blockText(block = {}) {
+  const chunks = [block.title, block.content, block.leftTitle, block.rightTitle, block.leftContent, block.rightContent];
+  if (Array.isArray(block.items)) chunks.push(...block.items);
+  if (Array.isArray(block.steps)) chunks.push(...block.steps);
+  if (Array.isArray(block.columns)) chunks.push(...block.columns);
+  if (Array.isArray(block.rows)) block.rows.forEach((row) => chunks.push(...row));
+  if (Array.isArray(block.cards)) block.cards.forEach((card) => chunks.push(card.confusingPoint, card.correctDistinction, card.memoryMessage));
+  return chunks.filter(Boolean).join(' ');
+}
+
+function sectionText(section = {}) {
+  return [section.title, section.mainIdea, ...(Array.isArray(section.blocks) ? section.blocks.map(blockText) : [])].filter(Boolean).join(' ');
+}
+
+function calloutClass(variant = '') {
+  const key = String(variant || 'main_idea').replace(/[^a-z_]/g, '');
+  return `komite-scroll-callout ${key || 'main_idea'}`;
+}
+
+function calloutLabel(block = {}) {
+  const map = {
+    main_idea: 'Ana fikir',
+    clinical_logic: 'Klinik mantık',
+    exam_tip: 'Sınav ipucu',
+    dont_confuse: 'Karıştırma',
+    warning: 'Dikkat',
+    update_note: 'Güncellik notu',
+    final_review: 'Final tekrar',
+  };
+  return block.title || map[block.variant] || 'Not';
+}
+
+function ScrollLessonBlock({ block = {} }) {
+  if (block.type === 'paragraph') {
+    return <p className="komite-scroll-paragraph"><GlossaryText text={block.content || ''} enabled revealMode="postAnswer" maxTerms={5} /></p>;
+  }
+  if (block.type === 'callout') {
+    return (
+      <aside className={calloutClass(block.variant)}>
+        <strong>{calloutLabel(block)}</strong>
+        <p><GlossaryText text={block.content || ''} enabled revealMode="postAnswer" maxTerms={4} /></p>
+      </aside>
+    );
+  }
+  if (block.type === 'bullet_list' || block.type === 'list') {
+    const items = Array.isArray(block.items) ? block.items : [];
+    return items.length ? (
+      <div className="komite-scroll-list-block">
+        {block.title ? <h4>{block.title}</h4> : null}
+        <ul>{items.map((item, index) => <li key={`${item}-${index}`}><GlossaryText text={item} enabled revealMode="postAnswer" maxTerms={3} /></li>)}</ul>
+      </div>
+    ) : null;
+  }
+  if (block.type === 'numbered_list') {
+    const items = Array.isArray(block.items) ? block.items : [];
+    return items.length ? (
+      <div className="komite-scroll-list-block numbered">
+        {block.title ? <h4>{block.title}</h4> : null}
+        <ol>{items.map((item, index) => <li key={`${item}-${index}`}><GlossaryText text={item} enabled revealMode="postAnswer" maxTerms={3} /></li>)}</ol>
+      </div>
+    ) : null;
+  }
+  if (block.type === 'mechanism_flow') {
+    const steps = Array.isArray(block.steps) ? block.steps : [];
+    return steps.length ? (
+      <div className="komite-scroll-flow">
+        {block.title ? <h4>{block.title}</h4> : null}
+        <div className="komite-scroll-flow-steps">
+          {steps.map((step, index) => (
+            <div className="komite-scroll-flow-step" key={`${step}-${index}`}>
+              <span>{index + 1}</span>
+              <p><GlossaryText text={step} enabled revealMode="postAnswer" maxTerms={3} /></p>
+            </div>
+          ))}
+        </div>
+      </div>
+    ) : null;
+  }
+  if (block.type === 'table') {
+    const columns = Array.isArray(block.columns) ? block.columns : [];
+    const rows = Array.isArray(block.rows) ? block.rows : [];
+    return columns.length && rows.length ? (
+      <div className="komite-scroll-table-block">
+        {block.title ? <h4>{block.title}</h4> : null}
+        <div className="komite-scroll-table-wrap">
+          <table>
+            <thead><tr>{columns.map((column, index) => <th key={`${column}-${index}`}>{column}</th>)}</tr></thead>
+            <tbody>{rows.map((row, rowIndex) => <tr key={`row-${rowIndex}`}>{columns.map((_column, colIndex) => <td key={`cell-${rowIndex}-${colIndex}`}>{row?.[colIndex] || ''}</td>)}</tr>)}</tbody>
+          </table>
+        </div>
+        {block.note ? <p className="komite-scroll-table-note"><GlossaryText text={block.note} enabled revealMode="postAnswer" maxTerms={2} /></p> : null}
+      </div>
+    ) : null;
+  }
+  if (block.type === 'confusion_cards') {
+    const cards = Array.isArray(block.cards) ? block.cards : [];
+    return cards.length ? (
+      <div className="komite-scroll-confusion-grid">
+        {cards.map((card, index) => (
+          <article className="komite-scroll-confusion-card" key={`${card.confusingPoint || 'karisma'}-${index}`}>
+            {card.confusingPoint ? <p><b>Karışan nokta</b><span>{card.confusingPoint}</span></p> : null}
+            {card.correctDistinction ? <p><b>Doğru ayrım</b><span>{card.correctDistinction}</span></p> : null}
+            {card.memoryMessage ? <p><b>Akılda kalacak mesaj</b><span>{card.memoryMessage}</span></p> : null}
+          </article>
+        ))}
+      </div>
+    ) : null;
+  }
+  if (block.type === 'definition_card' || block.type === 'mini_case') {
+    return (
+      <aside className={`komite-scroll-card-block ${block.type}`}>
+        <strong>{block.title || (block.type === 'mini_case' ? 'Mini klinik örnek' : 'Tanım')}</strong>
+        <p><GlossaryText text={block.content || ''} enabled revealMode="postAnswer" maxTerms={4} /></p>
+      </aside>
+    );
+  }
+  if (block.type === 'comparison_card') {
+    return (
+      <div className="komite-scroll-comparison-card">
+        {block.title ? <h4>{block.title}</h4> : null}
+        <div>
+          <article><strong>{block.leftTitle || 'A'}</strong><p>{block.leftContent}</p></article>
+          <article><strong>{block.rightTitle || 'B'}</strong><p>{block.rightContent}</p></article>
+        </div>
+      </div>
+    );
+  }
+  if (block.type === 'divider') return <hr className="komite-scroll-divider" />;
+  const fallback = block.content || block.text || '';
+  return fallback ? <p className="komite-scroll-paragraph"><GlossaryText text={fallback} enabled revealMode="postAnswer" maxTerms={4} /></p> : null;
+}
+
+function CommitteeScrollableLessonView({ lesson = {} }) {
+  const lessonDoc = getScrollableLessonDocument(lesson);
+  const [activeId, setActiveId] = useState('');
+  const [query, setQuery] = useState('');
+  const sections = useMemo(() => {
+    const raw = Array.isArray(lessonDoc?.sections) ? lessonDoc.sections : [];
+    return raw.map((section, index) => ({
+      ...section,
+      id: section.id || createLessonAnchorId(section.title, index),
+      textIndex: sectionText(section).toLocaleLowerCase('tr'),
+    }));
+  }, [lessonDoc]);
+  const navItems = useMemo(() => sections.map((section) => ({ id: section.id, title: section.title })), [sections]);
+
+  useEffect(() => {
+    if (!navItems.length || typeof IntersectionObserver === 'undefined') return undefined;
+    const nodes = navItems.map((item) => window.document?.getElementById?.(item.id)).filter(Boolean);
+    if (!nodes.length) return undefined;
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => Math.abs(a.boundingClientRect.top) - Math.abs(b.boundingClientRect.top))[0];
+      if (visible?.target?.id) setActiveId(visible.target.id);
+    }, { rootMargin: '-16% 0px -72% 0px', threshold: [0, 0.12, 0.3] });
+    nodes.forEach((node) => observer.observe(node));
+    return () => observer.disconnect();
+  }, [navItems.map((item) => item.id).join('|')]);
+
+  const scrollToId = (id) => {
+    const node = window.document?.getElementById?.(id);
+    if (node) node.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  const runSearch = () => {
+    const clean = query.trim().toLocaleLowerCase('tr');
+    if (!clean) return;
+    const target = sections.find((section) => section.textIndex.includes(clean));
+    if (target) scrollToId(target.id);
+  };
+
+  if (!lessonDoc) return null;
+  const pdfUrl = lessonDoc.pdfUrl || lesson.pdfUrl || lesson.pdfDataUrl || '';
+
+  return (
+    <div className="komite-scroll-lesson-view">
+      <aside className="komite-scroll-sidebar" aria-label="Ders hızlı erişim">
+        <div className="komite-scroll-sidebar-card">
+          <strong>Hızlı erişim</strong>
+          {lessonDoc.estimatedStudyTime ? <small>{lessonDoc.estimatedStudyTime}</small> : null}
+          <nav>
+            {navItems.slice(0, 18).map((item) => (
+              <button type="button" key={item.id} className={activeId === item.id ? 'active' : ''} onClick={() => scrollToId(item.id)}>
+                <span>{item.title}</span>
+              </button>
+            ))}
+          </nav>
+        </div>
+      </aside>
+      <main className="komite-scroll-main">
+        <header className="komite-scroll-toolbar">
+          <div>
+            <strong>{lessonDoc.title}</strong>
+            <small>{lessonDoc.subtitle}</small>
+          </div>
+          <div className="komite-scroll-toolbar-actions">
+            <div className="komite-scroll-search">
+              <input value={query} onChange={(event) => setQuery(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter') runSearch(); }} placeholder="Ders içinde ara" />
+              <button type="button" onClick={runSearch}>Ara</button>
+            </div>
+            {pdfUrl ? <a className="komite-scroll-pdf-link" href={pdfUrl} download={`${String(lessonDoc.title || 'komite-konu-anlatimi').replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-+|-+$/g, '') || 'komite-konu-anlatimi'}.pdf`}><Icon name="Download" size={16} /> PDF indir</a> : null}
+          </div>
+        </header>
+
+        <article className="komite-scroll-document">
+          <section className="komite-scroll-intro-card">
+            <span>Ders Anlatımı</span>
+            <h2>{lessonDoc.title}</h2>
+            <p>{lessonDoc.subtitle}</p>
+            {lessonDoc.sourceQualityNote ? <div className="komite-scroll-quality-note"><b>Güncellik notu</b><span>{lessonDoc.sourceQualityNote}</span></div> : null}
+          </section>
+
+          {sections.map((section, index) => (
+            <section id={section.id} className="komite-scroll-section" key={section.id} style={lessonAccentStyle(index)}>
+              <div className="komite-scroll-section-kicker">{String(index + 1).padStart(2, '0')}</div>
+              <h3>{section.title}</h3>
+              {section.mainIdea ? <aside className="komite-scroll-callout main_idea"><strong>Ana fikir</strong><p>{section.mainIdea}</p></aside> : null}
+              {(Array.isArray(section.blocks) ? section.blocks : [])
+                .filter((block, blockIndex) => !(blockIndex === 0 && block.type === 'callout' && block.variant === 'main_idea' && block.content === section.mainIdea))
+                .map((block, blockIndex) => <ScrollLessonBlock block={block} key={`${section.id}-block-${blockIndex}`} />)}
+            </section>
+          ))}
+        </article>
+      </main>
+    </div>
+  );
+}
+
 function LessonView({ material, onGenerate, status = 'idle' }) {
   const lesson = material.lesson;
-  if (lesson?.type === 'pdfLesson' || lesson?.pdfUrl || lesson?.pdfDataUrl) {
-    return <CommitteePdfLessonViewer lesson={lesson} />;
-  }
   const sections = Array.isArray(lesson?.sections)
     ? lesson.sections.map((section, index) => {
       const inferredHeading = inferLessonHeadingFromContent(section, index);
@@ -1875,7 +2115,7 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
 
   if (!lesson) {
     const hasExtractedText = combinedPacketToSourceText(buildCombinedMaterialPacket(material)).length > 120;
-    return <EmptyState title="PDF konu anlatımı henüz hazır değil" text={hasExtractedText ? "Materyal hazır. Profesyonel PDF konu anlatımına dönüştürmek için butona basabilirsin." : "Bu materyalden çalışılabilir metin alınamadı. Daha okunabilir dosya yükleyebilir veya metni ek not alanına yapıştırabilirsin."} action={<LoadingPrimaryButton status={status} idleLabel="PDF konu anlatımına dönüştür" loadingLabel="PDF konu anlatımı hazırlanıyor…" onClick={onGenerate} />} />;
+    return <EmptyState title="Ders anlatımı henüz hazır değil" text={hasExtractedText ? "Materyal hazır. Profesyonel konu anlatımına dönüştürmek için butona basabilirsin." : "Bu materyalden çalışılabilir metin alınamadı. Daha okunabilir dosya yükleyebilir veya metni ek not alanına yapıştırabilirsin."} action={<LoadingPrimaryButton status={status} idleLabel="Ders anlatımına dönüştür" loadingLabel="Ders anlatımı hazırlanıyor…" onClick={onGenerate} />} />;
   }
 
   const rawObjectives = Array.isArray(lesson.learningObjectives) ? lesson.learningObjectives : [];
@@ -1912,6 +2152,13 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
       return new Set(parts).size >= 2;
     });
   const hasFinalPrep = highYield.length || commonReviewCards.length || examScenarios.length;
+
+  if (lesson?.type === 'lessonDocument' || (Array.isArray(lesson?.sections) && lesson?.sections?.[0]?.blocks)) {
+    return <CommitteeScrollableLessonView lesson={lesson} />;
+  }
+  if (lesson?.type === 'pdfLesson') {
+    return <CommitteePdfLessonViewer lesson={lesson} />;
+  }
 
   return (
     <div className="komite-lesson-view komite-lesson-view-pro">
@@ -2233,7 +2480,7 @@ function ReviewCenter({ materials, activeMaterial, onOpenMaterial }) {
   ].filter(Boolean);
   const weakFocus = [...new Set(weakFocusItems.map((item) => String(item).replace(/\s+/g, ' ').trim()).filter(Boolean))].slice(0, 4);
   const lessonReviewItems = scopeMaterials.flatMap((material) => [
-    ...(material.lesson?.finalReview || []).map((item) => ({ text: item, kind: 'Son gün', material })),
+    ...(Array.isArray(material.lesson?.finalReview) ? material.lesson.finalReview : Array.isArray(material.lesson?.finalReview?.content) ? material.lesson.finalReview.content : []).map((item) => ({ text: item, kind: 'Son gün', material })),
     ...(material.lesson?.highYieldPoints || []).slice(0, 4).map((item) => ({ text: item, kind: 'Yüksek verim', material })),
     ...(material.lesson?.commonConfusions || []).slice(0, 3).map((item) => ({ text: formatLessonListItem(item), kind: 'Sık karışır', material })),
   ]).filter((item) => item.text);
@@ -2354,7 +2601,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
       return;
     }
 
-    setModuleActionStatus(kind, 'loading', kind === 'lesson' ? 'PDF konu anlatımı hazırlanıyor…' : kind === 'questions' ? 'Sorular bu PDF akışında üretilmez.' : 'Hap kartlar bu PDF akışında üretilmez.');
+    setModuleActionStatus(kind, 'loading', kind === 'lesson' ? 'Ders anlatımı hazırlanıyor…' : kind === 'questions' ? 'Sorular bu PDF akışında üretilmez.' : 'Hap kartlar bu PDF akışında üretilmez.');
     try {
       const payload = buildKomiteGenerationPayload(material, kind);
       const result = await generateKomiteStudyContent({ kind, payload });
@@ -2365,7 +2612,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
       } else if (kind === 'cards') {
         onPatchMaterial(material.id, { flashcardDeck: result.flashcardDeck });
       }
-      setModuleActionStatus(kind, 'success', kind === 'lesson' ? 'PDF konu anlatımı hazır.' : 'İçerik hazır.');
+      setModuleActionStatus(kind, 'success', kind === 'lesson' ? 'Ders anlatımı hazır.' : 'İçerik hazır.');
       window.setTimeout(() => setModuleActionStatus(kind, 'idle', ''), 1800);
     } catch (error) {
       console.error('[komite-generate]', error);

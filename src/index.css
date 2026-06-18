@@ -58755,3 +58755,496 @@ html[data-theme='dark'] .komite-pdf-stage {
     justify-content: flex-start;
   }
 }
+
+/* KlinikIQ Komite: scrollable HTML lesson document (PDF viewer replacement) */
+.komite-scroll-lesson-view {
+  display: grid;
+  grid-template-columns: minmax(230px, 300px) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  width: 100%;
+}
+
+.komite-scroll-sidebar {
+  position: sticky;
+  top: 96px;
+  align-self: start;
+  max-height: calc(100vh - 116px);
+  overflow: auto;
+}
+
+.komite-scroll-sidebar-card {
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+  padding: 16px;
+}
+
+.komite-scroll-sidebar-card > strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #0f172a;
+  margin-bottom: 3px;
+}
+
+.komite-scroll-sidebar-card > small {
+  display: block;
+  color: #64748b;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.komite-scroll-sidebar-card nav {
+  display: grid;
+  gap: 8px;
+}
+
+.komite-scroll-sidebar-card button {
+  width: 100%;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #334155;
+  text-align: left;
+  border-radius: 14px;
+  padding: 10px 12px;
+  font: inherit;
+  font-weight: 750;
+  line-height: 1.35;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.komite-scroll-sidebar-card button:hover,
+.komite-scroll-sidebar-card button.active {
+  background: #e8fbfa;
+  color: #0f766e;
+  border-color: rgba(20, 184, 166, 0.28);
+  transform: translateX(2px);
+}
+
+.komite-scroll-main {
+  min-width: 0;
+  display: grid;
+  gap: 18px;
+}
+
+.komite-scroll-toolbar {
+  position: sticky;
+  top: 12px;
+  z-index: 8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  padding: 14px 16px;
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.07);
+}
+
+.komite-scroll-toolbar strong {
+  display: block;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.komite-scroll-toolbar small {
+  display: block;
+  margin-top: 2px;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.komite-scroll-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.komite-scroll-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: min(420px, 100%);
+}
+
+.komite-scroll-search input {
+  min-width: 240px;
+  flex: 1;
+  border: 1px solid rgba(203, 213, 225, 0.95);
+  background: #fff;
+  color: #0f172a;
+  border-radius: 14px;
+  padding: 10px 12px;
+  font: inherit;
+  outline: none;
+}
+
+.komite-scroll-search input:focus {
+  border-color: rgba(20, 184, 166, 0.55);
+  box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.12);
+}
+
+.komite-scroll-search button,
+.komite-scroll-pdf-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid rgba(203, 213, 225, 0.95);
+  background: #fff;
+  color: #0f172a;
+  text-decoration: none;
+  border-radius: 14px;
+  padding: 10px 13px;
+  font: inherit;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.komite-scroll-pdf-link:hover,
+.komite-scroll-search button:hover {
+  border-color: rgba(20, 184, 166, 0.42);
+  color: #0f766e;
+}
+
+.komite-scroll-document {
+  display: grid;
+  gap: 22px;
+  min-width: 0;
+}
+
+.komite-scroll-intro-card,
+.komite-scroll-section {
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  background: #fff;
+  border-radius: 26px;
+  box-shadow: 0 20px 54px rgba(15, 23, 42, 0.08);
+}
+
+.komite-scroll-intro-card {
+  padding: 28px 30px;
+}
+
+.komite-scroll-intro-card > span {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(20, 184, 166, 0.2);
+  background: #ecfeff;
+  color: #0f766e;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.komite-scroll-intro-card h2 {
+  margin: 14px 0 6px;
+  font-size: clamp(1.55rem, 2vw, 2.1rem);
+  line-height: 1.12;
+  color: #0f172a;
+}
+
+.komite-scroll-intro-card p {
+  margin: 0;
+  color: #64748b;
+  font-weight: 750;
+}
+
+.komite-scroll-quality-note {
+  margin-top: 16px;
+  border-left: 4px solid #64748b;
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 12px 14px;
+  color: #334155;
+}
+
+.komite-scroll-quality-note b {
+  display: block;
+  margin-bottom: 4px;
+  color: #1e293b;
+}
+
+.komite-scroll-section {
+  position: relative;
+  scroll-margin-top: 112px;
+  padding: 28px 32px;
+  overflow: hidden;
+}
+
+.komite-scroll-section::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: var(--lesson-accent, #0ea5e9);
+  opacity: 0.95;
+}
+
+.komite-scroll-section-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 28px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--lesson-accent, #0ea5e9) 12%, white);
+  color: var(--lesson-accent, #0ea5e9);
+  font-weight: 950;
+  font-size: 0.82rem;
+  margin-bottom: 10px;
+}
+
+.komite-scroll-section h3 {
+  margin: 0 0 15px;
+  font-size: clamp(1.35rem, 1.7vw, 1.8rem);
+  line-height: 1.18;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.komite-scroll-section h4 {
+  margin: 18px 0 10px;
+  color: #0f4776;
+  font-size: 1.03rem;
+  line-height: 1.3;
+}
+
+.komite-scroll-paragraph {
+  margin: 12px 0 0;
+  color: #1f2937;
+  font-size: 1.03rem;
+  line-height: 1.72;
+}
+
+.komite-scroll-callout,
+.komite-scroll-card-block {
+  margin: 16px 0;
+  border: 1px solid rgba(14, 116, 144, 0.24);
+  border-left-width: 5px;
+  background: #effafe;
+  border-radius: 16px;
+  padding: 14px 16px;
+}
+
+.komite-scroll-callout strong,
+.komite-scroll-card-block strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #075985;
+  font-size: 0.93rem;
+}
+
+.komite-scroll-callout p,
+.komite-scroll-card-block p {
+  margin: 0;
+  color: #1e293b;
+  line-height: 1.58;
+}
+
+.komite-scroll-callout.clinical_logic { background: #f3f1ff; border-color: rgba(99, 102, 241, 0.36); }
+.komite-scroll-callout.clinical_logic strong { color: #4338ca; }
+.komite-scroll-callout.exam_tip { background: #fffbeb; border-color: rgba(217, 119, 6, 0.38); }
+.komite-scroll-callout.exam_tip strong { color: #92400e; }
+.komite-scroll-callout.dont_confuse { background: #fff1f2; border-color: rgba(225, 29, 72, 0.36); }
+.komite-scroll-callout.dont_confuse strong { color: #be123c; }
+.komite-scroll-callout.warning { background: #fff7ed; border-color: rgba(234, 88, 12, 0.36); }
+.komite-scroll-callout.warning strong { color: #c2410c; }
+.komite-scroll-callout.update_note { background: #f8fafc; border-color: rgba(71, 85, 105, 0.32); }
+.komite-scroll-callout.update_note strong { color: #334155; }
+.komite-scroll-callout.final_review { background: #ecfdf5; border-color: rgba(5, 150, 105, 0.34); }
+.komite-scroll-callout.final_review strong { color: #047857; }
+
+.komite-scroll-list-block ul,
+.komite-scroll-list-block ol {
+  margin: 8px 0 0;
+  padding-left: 1.15rem;
+  color: #1f2937;
+  line-height: 1.65;
+}
+
+.komite-scroll-list-block li + li {
+  margin-top: 7px;
+}
+
+.komite-scroll-flow {
+  margin: 18px 0;
+}
+
+.komite-scroll-flow-steps {
+  display: grid;
+  gap: 9px;
+}
+
+.komite-scroll-flow-step {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+
+.komite-scroll-flow-step span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(14, 116, 144, 0.3);
+  background: #ecfeff;
+  color: #0369a1;
+  border-radius: 12px;
+  font-weight: 950;
+}
+
+.komite-scroll-flow-step p {
+  margin: 0;
+  border: 1px solid rgba(203, 213, 225, 0.85);
+  background: #f8fdff;
+  border-radius: 12px;
+  padding: 9px 12px;
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+.komite-scroll-table-block {
+  margin: 20px 0;
+}
+
+.komite-scroll-table-wrap {
+  overflow-x: auto;
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.komite-scroll-table-wrap table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+}
+
+.komite-scroll-table-wrap th {
+  background: #0f74aa;
+  color: #fff;
+  text-align: left;
+  padding: 12px 14px;
+  line-height: 1.32;
+}
+
+.komite-scroll-table-wrap td {
+  border-top: 1px solid rgba(203, 213, 225, 0.8);
+  padding: 12px 14px;
+  color: #1f2937;
+  line-height: 1.46;
+  vertical-align: top;
+}
+
+.komite-scroll-table-wrap tr:nth-child(even) td {
+  background: #f8fbfd;
+}
+
+.komite-scroll-table-note {
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.komite-scroll-confusion-grid {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.komite-scroll-confusion-card {
+  border: 1px solid rgba(225, 29, 72, 0.22);
+  background: #fff7f7;
+  border-radius: 16px;
+  padding: 14px 16px;
+}
+
+.komite-scroll-confusion-card p {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 12px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.komite-scroll-confusion-card p + p {
+  margin-top: 9px;
+}
+
+.komite-scroll-confusion-card b {
+  color: #be123c;
+}
+
+.komite-scroll-comparison-card > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.komite-scroll-comparison-card article {
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.komite-scroll-divider {
+  border: 0;
+  border-top: 1px solid rgba(203, 213, 225, 0.9);
+  margin: 22px 0;
+}
+
+@media (max-width: 980px) {
+  .komite-scroll-lesson-view {
+    grid-template-columns: 1fr;
+  }
+  .komite-scroll-sidebar {
+    position: static;
+    max-height: none;
+  }
+  .komite-scroll-sidebar-card nav {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  .komite-scroll-sidebar-card button {
+    min-width: 220px;
+  }
+  .komite-scroll-toolbar {
+    position: static;
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .komite-scroll-toolbar-actions,
+  .komite-scroll-search {
+    width: 100%;
+  }
+  .komite-scroll-search input {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .komite-scroll-section,
+  .komite-scroll-intro-card {
+    padding: 22px 18px;
+    border-radius: 20px;
+  }
+  .komite-scroll-confusion-card p,
+  .komite-scroll-comparison-card > div {
+    grid-template-columns: 1fr;
+  }
+}

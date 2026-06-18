@@ -56,7 +56,57 @@ function normalizeManifest(rawManifest = {}, pdfUrl = '') {
   };
 }
 
+function normalizeLessonSections(rawSections = []) {
+  return (Array.isArray(rawSections) ? rawSections : [])
+    .map((section, index) => ({
+      id: compactText(section.id) || `section-${index + 1}`,
+      title: compactText(section.title) || `Bölüm ${index + 1}`,
+      mainIdea: compactText(section.mainIdea || section.main_idea),
+      blocks: Array.isArray(section.blocks) ? section.blocks : [],
+    }))
+    .filter((section) => section.title && section.blocks.length)
+    .slice(0, 14);
+}
+
+function normalizeScrollableLesson(rawLesson = {}) {
+  const document = rawLesson.document || rawLesson.lessonDocument || rawLesson;
+  const title = cleanPdfTitle(document.title || rawLesson.title, 'Komite konu anlatımı');
+  const subtitle = compactText(document.subtitle || rawLesson.subtitle) || 'Konu anlatımı, klinik mantık ve sınav odaklı tekrar';
+  const sections = normalizeLessonSections(document.sections);
+  if (!sections.length) throw new Error(KOMITE_GENERATION_ERROR_MESSAGE);
+  const pdfUrl = compactText(rawLesson.pdfUrl || rawLesson.pdfDataUrl || document.pdfUrl || document.pdfDataUrl);
+  const outline = Array.isArray(rawLesson.outline || document.outline)
+    ? (rawLesson.outline || document.outline)
+    : sections.map((section) => ({ id: section.id, title: section.title }));
+  return {
+    id: compactText(rawLesson.id || document.id) || `komite-lesson-${Date.now().toString(36)}`,
+    type: 'lessonDocument',
+    status: 'completed',
+    title,
+    subtitle,
+    language: document.language || 'tr',
+    level: compactText(document.level || rawLesson.level) || 'Tıp fakültesi komite düzeyi',
+    estimatedStudyTime: compactText(document.estimatedStudyTime || rawLesson.estimatedStudyTime),
+    sourceQualityNote: compactText(document.sourceQualityNote || document.qualityNote || rawLesson.qualityNote),
+    sections,
+    roadmap: Array.isArray(document.roadmap) ? document.roadmap : outline,
+    outline,
+    examFocus: document.examFocus || rawLesson.examFocus || null,
+    doNotConfuse: document.doNotConfuse || rawLesson.doNotConfuse || null,
+    finalReview: document.finalReview || rawLesson.finalReview || null,
+    highYieldPoints: Array.isArray(rawLesson.highYieldPoints) ? rawLesson.highYieldPoints : [],
+    commonConfusions: Array.isArray(rawLesson.commonConfusions) ? rawLesson.commonConfusions : [],
+    pdfUrl,
+    pdfDataUrl: pdfUrl.startsWith('data:') ? pdfUrl : '',
+    createdAt: rawLesson.createdAt || document.createdAt || new Date().toISOString(),
+    sourceFiles: Array.isArray(rawLesson.sourceFiles || document.sourceFiles) ? (rawLesson.sourceFiles || document.sourceFiles) : [],
+  };
+}
+
 function normalizePdfLesson(rawLesson = {}) {
+  if (rawLesson?.type === 'lessonDocument' || rawLesson?.document || rawLesson?.sections) {
+    return normalizeScrollableLesson(rawLesson);
+  }
   const pdfUrl = compactText(rawLesson.pdfUrl || rawLesson.pdfDataUrl);
   if (!pdfUrl || !/^data:application\/pdf;base64,|^https?:\/\//iu.test(pdfUrl)) {
     throw new Error(KOMITE_GENERATION_ERROR_MESSAGE);
@@ -78,7 +128,7 @@ function normalizePdfLesson(rawLesson = {}) {
 
 export async function generateKomiteStudyContent({ kind = 'lesson', payload, signal } = {}) {
   if (kind !== 'lesson') {
-    throw new Error('Bu yeni akış yalnızca PDF konu anlatımı üretir.');
+    throw new Error('Bu yeni akış yalnızca Ders Anlatımı üretir.');
   }
 
   const response = await fetch('/api/generate-komite-study', {

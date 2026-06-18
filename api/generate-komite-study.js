@@ -136,11 +136,11 @@ function buildPrompt(payload = {}) {
 
   return [
     'Sen KlinikIQ Komite modülü için çalışan kıdemli bir tıp eğitimi editörü, klinik akıl yürütme anlatıcısı ve öğretici içerik mimarısın.',
-    'Kullanıcının yüklediği materyalleri bağımsız, Türkçe, bilimsel, sınav odaklı ve PDF kalitesinde bir konu anlatımına dönüştür.',
+    'Kullanıcının yüklediği materyalleri bağımsız, Türkçe, bilimsel, sınav odaklı ve web arayüzünde tek parça scroll edilecek PDF kalitesinde bir konu anlatımına dönüştür.',
     'Amacın özet çıkarmak değildir; öğrencinin konuyu gerçekten anlamasını sağlayan detaylı, klinik mantığı güçlü ve çalışılabilir ders notu üretmelisin.',
     '',
     'ÇIKTI YALNIZCA GEÇERLİ JSON NESNESİ OLSUN. Markdown, HTML, kod bloğu, üretim raporu veya açıklama yazma.',
-    'Ham Markdown kesinlikle kullanma: ##, ###, ####, > [!Ana fikir], > [!Sınav ipucu], Markdown tablo çizgileri, ham tire listesi veya ok karakteriyle yazılmış düz akış üretme.',
+    'Ham Markdown kesinlikle kullanma: ##, ###, ####, > [!Ana fikir], > [!Sınav ipucu], Markdown tablo çizgileri, ham tire listesi veya ok karakteriyle yazılmış düz akış üretme. Ana çıktı PDF değildir; kontrollü JSON, frontend tarafından tek uzun HTML ders dokümanı olarak render edilecektir.',
     '',
     'JSON şeması:',
     safeJson({
@@ -155,7 +155,7 @@ function buildPrompt(payload = {}) {
             { type: 'callout', variant: 'clinical_logic', content: 'Kısa kutu metni' },
             { type: 'mechanism_flow', title: 'Mekanizma özeti', steps: ['İlk olay', 'Ara süreç', 'Klinik sonuç'] },
             { type: 'table', title: 'Tablo başlığı', columns: ['Özellik', 'Durum A', 'Durum B'], rows: [['Mekanizma', 'Açıklama', 'Açıklama']] },
-            { type: 'list', title: 'Kısa liste başlığı', items: ['Liste maddesi'] },
+            { type: 'bullet_list', title: 'Kısa liste başlığı', items: ['Liste maddesi'] },
           ],
         },
       ],
@@ -173,7 +173,7 @@ function buildPrompt(payload = {}) {
     '',
     'İçerik kuralları:',
     '- title kısa ve temiz olmalı; ilk paragrafı, dosya adını veya uzun otomatik başlığı title yapma.',
-    '- İlk sayfa için ayrı kapak üretilecekmiş gibi dev başlık yazma; içerik doğrudan çalışılabilir olmalı.',
+    '- Ayrı kapak, A4 sayfa mantığı veya PDF viewer varsayımı üretme; içerik tek parça scroll edilen web dokümanı gibi çalışılabilir olmalı.',
     '- Kaynak formatını hatırlatan "slayt", "sunum", "bu sayfada", "dokümanda", "PDF’de", "yüklü dosyada" gibi ifadeler kullanma.',
     '- Dosya sırasını körü körüne takip etme; öğrenme akışına göre 5-8 güçlü ana bölüm oluştur.',
     '- Her ana bölümde tanım, mekanizma/patofizyoloji, klinik bağlantı, tanı/laboratuvar, ayırıcı düşünme, yönetim ve sınav odağından konuya uygun olanları derinlikli işle.',
@@ -184,7 +184,7 @@ function buildPrompt(payload = {}) {
     '- Tablolar yalnız tanı kriteri, ayırıcı tanı, sınıflama, tedavi karşılaştırması veya laboratuvar yorumu gerçekten kolaylaştırıyorsa kullanılsın.',
     '- Her table block için rows içindeki her satır columns ile aynı sayıda hücre taşısın.',
     '- Mekanizma akışlarını sadece mechanism_flow block olarak ver; steps içine ok, tire, yıldız veya soru işareti koyma.',
-    '- PDF sonunda examFocus, doNotConfuse ve finalReview alanlarını mutlaka doldur.',
+    '- Konu anlatımı sonunda examFocus, doNotConfuse ve finalReview alanlarını mutlaka doldur.',
     '',
     'Callout variant seçenekleri:',
     'main_idea, clinical_logic, exam_tip, dont_confuse, warning, update_note, final_review',
@@ -231,7 +231,7 @@ async function requestLessonDocument({ apiKey, model, prompt, sourcePayload }) {
         { role: 'system', content: 'Yalnızca geçerli JSON üret. Markdown, HTML, kod bloğu veya kaynak işleme açıklaması yazma.' },
         { role: 'user', content: prompt },
       ],
-      max_output_tokens: Number.parseInt(process.env.OPENAI_KOMITE_PDF_MAX_TOKENS || '', 10) || 14000,
+      max_output_tokens: Number.parseInt(process.env.OPENAI_KOMITE_MAX_TOKENS || process.env.OPENAI_KOMITE_PDF_MAX_TOKENS || '', 10) || 16000,
       temperature: Number.parseFloat(process.env.OPENAI_KOMITE_TEMPERATURE || process.env.OPENAI_TEMPERATURE || '0.2'),
     }),
   });
@@ -394,8 +394,18 @@ function normalizeTableBlock(block = {}) {
   }];
 }
 
+function coerceItemsArray(value = null, keys = ['items', 'content']) {
+  if (Array.isArray(value)) return value;
+  if (value && typeof value === 'object') {
+    for (const key of keys) {
+      if (Array.isArray(value[key])) return value[key];
+    }
+  }
+  return [];
+}
+
 function normalizeConfusionItems(items = []) {
-  return (Array.isArray(items) ? items : [])
+  return coerceItemsArray(items, ['items', 'cards', 'content'])
     .map((item) => {
       if (typeof item === 'string') {
         const clean = stripMarkdownArtifacts(item);
@@ -432,14 +442,41 @@ function normalizeBlock(block = {}) {
       content: block.content || block.text || '',
     }).flatMap((item) => (item.type === 'paragraph' ? normalizeBlock(item) : [item]));
   }
-  if (type === 'list' || type === 'bullets') {
+  if (type === 'list' || type === 'bullet_list' || type === 'bullets') {
     const title = stripMarkdownArtifacts(block.title || '');
     const items = (Array.isArray(block.items) ? block.items : [])
       .map(stripMarkdownArtifacts)
       .filter(Boolean)
       .slice(0, 24);
-    return items.length ? [{ type: 'list', title, items }] : [];
+    return items.length ? [{ type: 'bullet_list', title, items }] : [];
   }
+  if (type === 'numbered_list' || type === 'ordered_list') {
+    const title = stripMarkdownArtifacts(block.title || '');
+    const items = (Array.isArray(block.items) ? block.items : [])
+      .map(stripMarkdownArtifacts)
+      .filter(Boolean)
+      .slice(0, 24);
+    return items.length ? [{ type: 'numbered_list', title, items }] : [];
+  }
+  if (type === 'definition_card') {
+    const title = stripMarkdownArtifacts(block.title || block.term || 'Tanım');
+    const content = stripMarkdownArtifacts(block.content || block.definition || block.text || '');
+    return content ? [{ type: 'definition_card', title, content }] : [];
+  }
+  if (type === 'comparison_card') {
+    const title = stripMarkdownArtifacts(block.title || 'Karşılaştırma');
+    const leftTitle = stripMarkdownArtifacts(block.leftTitle || block.conceptA || block.left || 'A');
+    const rightTitle = stripMarkdownArtifacts(block.rightTitle || block.conceptB || block.right || 'B');
+    const leftContent = stripMarkdownArtifacts(block.leftContent || block.a || block.contentA || '');
+    const rightContent = stripMarkdownArtifacts(block.rightContent || block.b || block.contentB || '');
+    return (leftContent || rightContent) ? [{ type: 'comparison_card', title, leftTitle, rightTitle, leftContent, rightContent }] : [];
+  }
+  if (type === 'mini_case') {
+    const title = stripMarkdownArtifacts(block.title || 'Mini klinik örnek');
+    const content = stripMarkdownArtifacts(block.content || block.case || block.text || '');
+    return content ? [{ type: 'mini_case', title, content }] : [];
+  }
+  if (type === 'divider') return [{ type: 'divider' }];
   if (type === 'mechanism_flow' || type === 'flow' || type === 'mechanism') {
     const rawSteps = Array.isArray(block.steps)
       ? block.steps
@@ -482,19 +519,19 @@ function normalizeLessonDocument(raw = {}, payload = {}) {
       (Array.isArray(section?.blocks) ? section.blocks : []).forEach((block) => {
         blocks.push(...normalizeBlock(block));
       });
-      return blocks.length ? { title: sectionTitle, blocks } : null;
+      return blocks.length ? { id: slugify(sectionTitle), title: sectionTitle, mainIdea, blocks } : null;
     })
     .filter(Boolean)
     .slice(0, 10);
 
-  const examFocus = (Array.isArray(raw.examFocus) ? raw.examFocus : []).map(stripMarkdownArtifacts).filter(Boolean).slice(0, 18);
-  const doNotConfuse = normalizeConfusionItems(raw.doNotConfuse || raw.dontConfuse || []);
-  const finalReview = (Array.isArray(raw.finalReview) ? raw.finalReview : []).map(stripMarkdownArtifacts).filter(Boolean).slice(0, 24);
+  const examFocus = coerceItemsArray(raw.examFocus, ['items', 'content']).map(stripMarkdownArtifacts).filter(Boolean).slice(0, 18);
+  const doNotConfuse = normalizeConfusionItems(raw.doNotConfuse || raw.dontConfuse || raw.do_not_confuse || []);
+  const finalReview = coerceItemsArray(raw.finalReview, ['items', 'content']).map(stripMarkdownArtifacts).filter(Boolean).slice(0, 24);
 
   if (examFocus.length) {
     sections.push({
       title: 'En Yüksek Getirili Sınav Bilgileri',
-      blocks: [{ type: 'list', title: '', items: examFocus }],
+      blocks: [{ type: 'bullet_list', title: '', items: examFocus }],
     });
   }
   if (doNotConfuse.length) {
@@ -513,7 +550,7 @@ function normalizeLessonDocument(raw = {}, payload = {}) {
           title: CALLOUT_META.final_review.title,
           content: 'Bu bölüm, sınav öncesi son tekrar için en yüksek getirili bilgileri tek yerde toplar.',
         },
-        { type: 'list', title: '', items: finalReview },
+        { type: 'bullet_list', title: '', items: finalReview },
       ],
     });
   }
@@ -521,8 +558,18 @@ function normalizeLessonDocument(raw = {}, payload = {}) {
   const normalized = {
     title,
     subtitle,
+    language: 'tr',
+    level: stripMarkdownArtifacts(raw.level || (metadata.classYear ? `${metadata.classYear}. sınıf komite düzeyi` : 'Tıp fakültesi komite düzeyi')),
+    estimatedStudyTime: stripMarkdownArtifacts(raw.estimatedStudyTime || (sections.length >= 7 ? '60-90 dk' : '35-60 dk')),
+    sourceQualityNote: stripMarkdownArtifacts(raw.sourceQualityNote || raw.qualityNote || ''),
     sections,
-    qualityNote: stripMarkdownArtifacts(raw.qualityNote || ''),
+    roadmap: sections.map((section) => ({ id: section.id, title: section.title })),
+    outline: sections.map((section) => ({ id: section.id, title: section.title })),
+    examFocus: { id: 'exam-focus', title: 'En Yüksek Getirili Sınav Bilgileri', items: examFocus },
+    doNotConfuse: { id: 'do-not-confuse', title: 'Karıştırılmaması Gerekenler', items: doNotConfuse.map((item) => ({ wrongIdea: item.confusingPoint, correctDistinction: item.correctDistinction, memoryHook: item.memoryMessage })) },
+    finalReview: { id: 'final-review', title: 'Tek Sayfalık Final Tekrar', content: finalReview },
+    highYieldPoints: examFocus,
+    commonConfusions: doNotConfuse.map((item) => [item.confusingPoint, item.correctDistinction, item.memoryMessage].filter(Boolean).join(' — ')),
   };
   validateLessonDocument(normalized);
   return normalized;
@@ -535,6 +582,7 @@ function collectDocumentText(document = {}) {
     (section.blocks || []).forEach((block) => {
       chunks.push(block.title, block.content);
       if (Array.isArray(block.items)) chunks.push(...block.items);
+      chunks.push(block.leftTitle, block.rightTitle, block.leftContent, block.rightContent);
       if (Array.isArray(block.steps)) chunks.push(...block.steps);
       if (Array.isArray(block.columns)) chunks.push(...block.columns);
       if (Array.isArray(block.rows)) block.rows.forEach((row) => chunks.push(...row));
@@ -547,12 +595,12 @@ function collectDocumentText(document = {}) {
 }
 
 function validateLessonDocument(document = {}) {
-  if (!document.title || document.title.length > MAX_TITLE_LENGTH) throw new Error('Invalid title for PDF lesson.');
-  if (!Array.isArray(document.sections) || !document.sections.length) throw new Error('PDF lesson has no sections.');
+  if (!document.title || document.title.length > MAX_TITLE_LENGTH) throw new Error('Invalid title for Komite lesson.');
+  if (!Array.isArray(document.sections) || !document.sections.length) throw new Error('Komite lesson has no sections.');
   const text = collectDocumentText(document);
   const forbidden = /(^|\n)\s*#{2,6}\s|>\s*\[!|```|\|[^|\n]{2,}\|/u;
-  if (forbidden.test(text)) throw new Error('PDF lesson still contains raw Markdown markers.');
-  if (/^\s*Bölüm\s+\d+\s*$/imu.test(text)) throw new Error('PDF lesson contains generic section titles.');
+  if (forbidden.test(text)) throw new Error('Komite lesson still contains raw Markdown markers.');
+  if (/^\s*Bölüm\s+\d+\s*$/imu.test(text)) throw new Error('Komite lesson contains generic section titles.');
 }
 
 const TURKISH_BYTE_MAP = new Map([
@@ -767,7 +815,9 @@ function buildPdfFromDocument(document = {}, payload = {}) {
   const renderBlock = (block = {}) => {
     if (block.type === 'paragraph') paragraph(block.content);
     else if (block.type === 'callout') renderCallout(block);
-    else if (block.type === 'list') renderList(block.items, block.title);
+    else if (block.type === 'list' || block.type === 'bullet_list' || block.type === 'numbered_list') renderList(block.items, block.title);
+    else if (block.type === 'definition_card' || block.type === 'mini_case') renderCallout({ variant: block.type === 'mini_case' ? 'clinical_logic' : 'main_idea', content: `${block.title ? `${block.title}: ` : ''}${block.content || ''}` });
+    else if (block.type === 'comparison_card') renderTable({ title: block.title || 'Karşılaştırma', columns: [block.leftTitle || 'A', block.rightTitle || 'B'], rows: [[block.leftContent || '', block.rightContent || '']] });
     else if (block.type === 'mechanism_flow') renderFlow(block);
     else if (block.type === 'table') renderTable(block);
     else if (block.type === 'confusion_cards') renderConfusionCards(block.cards);
@@ -877,7 +927,7 @@ export default async function handler(req, res) {
     if (!apiKey) throw new Error('OPENAI_API_KEY is missing.');
     const body = typeof req.body === 'string' ? parseJsonObject(req.body) : req.body || {};
     if (body.kind && body.kind !== 'lesson') {
-      return res.status(410).json({ error: 'Komite PDF konu anlatımı akışı yalnızca Ders Anlatımı için kullanılabilir.', code: 'KOMITE_PDF_ONLY' });
+      return res.status(410).json({ error: 'Komite konu anlatımı akışı yalnızca Ders Anlatımı için kullanılabilir.', code: 'KOMITE_LESSON_ONLY' });
     }
     const payload = body.payload || body;
     const { files } = buildSourceContext(payload);
@@ -893,10 +943,22 @@ export default async function handler(req, res) {
     return res.status(200).json({
       lesson: {
         id: manifest.lessonId,
-        type: 'pdfLesson',
+        type: 'lessonDocument',
         status: 'completed',
-        title: manifest.title,
-        subtitle: manifest.subtitle,
+        title: document.title,
+        subtitle: document.subtitle,
+        language: document.language || 'tr',
+        level: document.level || manifest.level,
+        estimatedStudyTime: document.estimatedStudyTime || manifest.estimatedStudyTime,
+        sourceQualityNote: document.sourceQualityNote || manifest.qualityNote,
+        sections: document.sections,
+        roadmap: document.roadmap,
+        outline: document.outline,
+        examFocus: document.examFocus,
+        doNotConfuse: document.doNotConfuse,
+        finalReview: document.finalReview,
+        highYieldPoints: document.highYieldPoints,
+        commonConfusions: document.commonConfusions,
         pdfUrl: pdfDataUrl,
         pdfDataUrl,
         manifest,
@@ -905,7 +967,7 @@ export default async function handler(req, res) {
       },
     });
   } catch (error) {
-    console.error('[generate-komite-pdf-lesson]', error);
-    return res.status(500).json({ error: ERROR_MESSAGE, code: 'KOMITE_PDF_GENERATION_FAILED' });
+    console.error('[generate-komite-scroll-lesson]', error);
+    return res.status(500).json({ error: ERROR_MESSAGE, code: 'KOMITE_LESSON_GENERATION_FAILED' });
   }
 }
