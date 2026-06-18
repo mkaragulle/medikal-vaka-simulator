@@ -2,12 +2,136 @@ export const KOMITE_GENERATION_ERROR_MESSAGE = 'Komite çalışma içeriği şu 
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 
+function getKomiteGenerationErrorMessage(code = '', fallback = '', status = '') {
+  const cleanCode = String(code || '').trim();
+  if (cleanCode === 'OPENAI_AUTH') return 'Komite yapay zeka ayari eksik veya gecersiz. OpenAI API anahtarini kontrol edip tekrar deneyin.';
+  if (cleanCode === 'OPENAI_MODEL') return 'Komite ders anlatimi modeli erisilebilir degil. OPENAI_KOMITE_MODEL ayarini veya model erisimini kontrol edip tekrar deneyin.';
+  if (cleanCode === 'OPENAI_PARAM') return 'Komite ders anlatimi icin gonderilen yapay zeka parametrelerinden biri uyumsuz. Model ve reasoning ayarlarini kontrol edip tekrar deneyin.';
+  if (cleanCode === 'AI_INCOMPLETE') return 'Komite ders anlatimi yaniti yarim kaldi. Sistem materyalden toparlanmis ders notu uretmeye calisacak; devam ederse tekrar deneyin.';
+  if (cleanCode === 'AI_JSON') return 'Komite ders anlatimi yaniti okunabilir formata donusmedi. Lutfen yeniden olusturmayi deneyin.';
+  if (cleanCode === 'NO_SOURCE_TEXT') return 'Yuklenen materyalde ders anlatimi olusturmaya yetecek okunabilir metin bulunamadi.';
+  const base = compactText(fallback) || KOMITE_GENERATION_ERROR_MESSAGE;
+  return status ? `${base} (Kod: ${status})` : base;
+}
+
 function compactText(value = '') {
   if (Array.isArray(value)) return value.map(compactText).filter(Boolean).join(' ');
   if (value && typeof value === 'object') {
     return compactText(value.text || value.content || value.explanation || value.summary || value.value || '');
   }
   return String(value || '').replace(/\s+/g, ' ').trim();
+}
+
+function sentenceList(text = '', maxItems = 18) {
+  return String(text || '')
+    .replace(/\r/g, '\n')
+    .split(/(?<=[.!?])\s+|\n+/u)
+    .map((item) => cleanGeneratedText(item))
+    .filter((item) => item && item.split(/\s+/u).length >= 6)
+    .slice(0, maxItems);
+}
+
+function sourceTitleFromFile(file = {}, index = 0) {
+  const topic = Array.isArray(file.detectedTopics)
+    ? file.detectedTopics.map((item) => compactText(item?.title || item?.topic || item)).find(Boolean)
+    : '';
+  return cleanTopic(topic || file.fileName || file.name || `Komite konusu ${index + 1}`, `Komite konusu ${index + 1}`);
+}
+
+function prioritySourceLines(file = {}, maxItems = 16) {
+  const text = String(file.cleanedExtractedText || file.text || '');
+  const lines = text
+    .replace(/\r/g, '\n')
+    .split(/\n+/u)
+    .map((line) => cleanGeneratedText(line))
+    .filter((line) => line && line.split(/\s+/u).length >= 5)
+    .filter((line) => /(?:tanı|tedavi|mekanizma|patofizyoloji|klinik|bulgu|laboratuvar|algoritma|sınıflama|komplikasyon|risk|ayırıcı|yönetim|önemli|yüksek|kritik|diagnos|treat|clinical|mechanism|classification|criteria|symptom|sign|management|complication|risk)/iu.test(line));
+  const structured = Array.isArray(file.detectedStructure)
+    ? file.detectedStructure.map((item) => cleanGeneratedText(`${item?.label || item?.type || ''} ${item?.preview || item?.text || ''}`)).filter(Boolean)
+    : [];
+  const emphasis = Array.isArray(file.emphasisNotes)
+    ? file.emphasisNotes.map((item) => cleanGeneratedText(item?.text || item)).filter(Boolean)
+    : [];
+  return uniqueTexts([...emphasis, ...structured, ...lines], maxItems);
+}
+
+function buildLocalLessonSection(file = {}, index = 0) {
+  const rawText = String(file.cleanedExtractedText || file.text || '').trim();
+  const heading = sourceTitleFromFile(file, index);
+  const coreSentences = sentenceList(rawText.slice(0, 18_000), 14);
+  const priorityLines = prioritySourceLines(file, 14);
+  const teachingText = uniqueTexts([
+    ...coreSentences.slice(0, 8),
+    ...priorityLines.slice(0, 10),
+    ...coreSentences.slice(8, 14),
+  ], 24).join(' ');
+  if (!teachingText) return null;
+  const diagnosisLines = priorityLines.filter((line) => /(?:tanı|laboratuvar|test|kriter|ayırıcı|diagnos|criteria|laboratory)/iu.test(line));
+  const managementLines = priorityLines.filter((line) => /(?:tedavi|yönetim|yaklaşım|algoritma|management|treat)/iu.test(line));
+  const mechanismLines = priorityLines.filter((line) => /(?:mekanizma|patofizyoloji|neden|sonuç|artar|azalır|mechanism|pathophysiology)/iu.test(line));
+  return {
+    heading,
+    level: 2,
+    subHeadings: uniqueTexts([
+      mechanismLines.length ? 'Temel mekanizma ve neden-sonuç ilişkisi' : '',
+      diagnosisLines.length ? 'Tanı, laboratuvar ve ayırıcı düşünme' : '',
+      managementLines.length ? 'Yönetim yaklaşımı ve sınav odağı' : '',
+    ], 4),
+    teachingText,
+    mechanismFlow: mechanismLines,
+    algorithmSteps: uniqueTexts([...diagnosisLines, ...managementLines], 7),
+    tableInsights: priorityLines.filter((line) => /(?:tablo|sınıflama|classification|criteria|tip|type)/iu.test(line)).slice(0, 5),
+    comparisonPoints: priorityLines.filter((line) => /(?:ayırıcı|karış|fark|versus|vs|differential)/iu.test(line)).slice(0, 5),
+    visualNotes: [],
+    clinicalConnection: priorityLines.find((line) => /(?:klinik|bulgu|semptom|hasta|clinical|symptom|sign)/iu.test(line)) || '',
+    examAngle: priorityLines.find((line) => /(?:önemli|kritik|yüksek|sınav|ayırt|risk|important|high yield)/iu.test(line)) || priorityLines[0] || '',
+    commonTrap: priorityLines.find((line) => /(?:karış|ayırıcı|differential|versus|vs)/iu.test(line)) || '',
+    keyBoxes: priorityLines[0] ? [{ label: 'Öne çıkan nokta', text: priorityLines[0] }] : [],
+  };
+}
+
+function buildLocalKomiteLessonFromPayload(payload = {}) {
+  const materialPacket = payload.materialPacket || {};
+  const files = Array.isArray(materialPacket.files)
+    ? materialPacket.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
+    : [];
+  const sections = files.slice(0, 10).map(buildLocalLessonSection).filter(Boolean);
+  if (!sections.length) return null;
+  const courseTitle = compactText(payload.metadata?.course || payload.metadata?.committee || materialPacket.courseName || materialPacket.committeeName || 'Komite ders anlatımı');
+  const introSource = sections.slice(0, 3).map((section) => section.heading).filter(Boolean).join(', ');
+  return {
+    title: courseTitle,
+    inferredTitle: courseTitle,
+    shortIntro: introSource ? `Bu ders notu ${introSource} başlıklarını temel kavram, mekanizma, klinik ilişki ve sınav odağı ekseninde çalışılabilir bir sıraya yerleştirir.` : '',
+    overview: '',
+    bigPicture: '',
+    learningObjectives: sections.slice(0, 5).map(buildLearningObjective).filter(Boolean),
+    sections,
+    highYieldPoints: uniqueTexts(sections.flatMap((section) => [section.examAngle, section.clinicalConnection, section.commonTrap]), 10),
+    mustKnow: uniqueTexts(sections.flatMap((section) => [section.heading, section.clinicalConnection]), 10),
+    finalReview: uniqueTexts(sections.flatMap((section) => [section.examAngle, section.heading]), 10),
+    commonConfusions: uniqueTexts(sections.map((section) => section.commonTrap), 8),
+    mainConcepts: sections.map((section) => section.heading),
+    clinicalExamRelevance: '',
+  };
+}
+
+const TECHNICAL_LESSON_NOTE_PATTERN = /\b(?:dosya bazl[ıi]|dosya işleme|materyal(?:ler)?(?:inden|in)?\s+(?:ana konusu|çıkarılan|temsil)|materyaller temsil edildi|çalışma notları yapılandırıldı|ana konular aşağıda yapılandırıldı|aşağıda yapılandırıldı|temsil edildi|materyal kapsam|coverageSummary|materialCoverage|sourceManifest|sourceFingerprint|source coverage|output structure|MATERIAL_DIGEST|chunk|grup\s*\d+|üretim süreci|teknik nedenle|extraction warning|extraction|ayrıştırılan metin|API bağlamı|öğretici excerpt|görsel sekmesi için|ana konu belirtildi|her dosyanın ana konusu|ilişkili başlıklar birleştirildi|farklı konular tek başlıkta ezilmedi)\b/iu;
+const RAW_SOURCE_LINE_PATTERN = /^(?:[A-ZÇĞİÖŞÜ0-9][A-ZÇĞİÖŞÜ0-9\s/():,._-]{10,}|(?:prof\.?|doç\.?|dr\.?|öğr\.?\s*gör\.?)\b|.*\.(?:pdf|pptx|ppt|docx|txt)\b)/iu;
+const BAD_OBJECTIVE_PATTERN = /\b(?:odağında klinik, mekanistik ve sınav bağlamıyla yorumlayabilmek|temel öğrenme mantığını açıklayabilmek|bilgisini açıklamak ve soruda ayırt etmek|dosya bazlı|materyal(?:ler)?inden|sınavda .* sorulabilir odağında)\b/iu;
+const GENERIC_HEADING_PATTERN = /^(?:bölüm|konu bölümü|section|part)\s*\d+$/iu;
+const GENERIC_SUBHEADING_PATTERN = /^(?:akış|tablo|ayrım|şema|bilgi|özet|klinik|tedavi|sınav ipucu|kritik güvenlik|sık hata|bilgi kutusu|akılda tut|son kontrol|mini tekrar|görsel yorumu|tablonun ana mesajı|şema açıklaması|süreç mantığı)$/iu;
+
+function stripTechnicalLessonSentences(text = '') {
+  return String(text || '')
+    .split(/(?<=[.!?])\s+|\n+/u)
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .filter((part) => !TECHNICAL_LESSON_NOTE_PATTERN.test(part))
+    .filter((part) => !RAW_SOURCE_LINE_PATTERN.test(part))
+    .join(' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function cleanGeneratedText(value = '', { allowShort = false } = {}) {
@@ -24,6 +148,7 @@ function cleanGeneratedText(value = '', { allowShort = false } = {}) {
     .replace(/\b(?:Ana konu belirtilmedi|Konu belirtilmedi|Unknown topic|Grup\s*\d+|Chunk\s*\d+)\b/giu, '')
     .replace(/\s+/g, ' ')
     .trim();
+  text = stripTechnicalLessonSentences(text);
   if (!text) return '';
   if (/^[,.;:!?'"`-]+$/u.test(text)) return '';
   if (!allowShort && text.split(/\s+/u).length < 3) return '';
@@ -51,10 +176,44 @@ function uniqueTexts(items = [], maxItems = 12, exclude = new Set()) {
 }
 
 function cleanTopic(value = '', fallback = '') {
-  const text = cleanGeneratedText(value, { allowShort: true });
-  if (text && !/ana konu|belirtilmedi|net çıkarılamadı|unknown topic/iu.test(text)) return text;
+  const text = naturalizeLessonHeading(value);
+  if (text && !/ana konu|belirtilmedi|net çıkarılamadı|unknown topic/iu.test(text) && !GENERIC_HEADING_PATTERN.test(text) && !TECHNICAL_LESSON_NOTE_PATTERN.test(text) && !RAW_SOURCE_LINE_PATTERN.test(text)) return text;
   const fromFile = cleanGeneratedText(fallback, { allowShort: true }).replace(/\.[a-z0-9]+$/iu, '').replace(/[_-]+/g, ' ');
   return fromFile || 'Komite materyali';
+}
+
+function naturalizeLessonHeading(value = '') {
+  const raw = cleanGeneratedText(value, { allowShort: true });
+  if (!raw) return '';
+  const withoutPresenter = raw
+    .replace(/\b(?:prof\.?|doç\.?|dr\.?|öğr\.?\s*gör\.?)\s+[A-ZÇĞİÖŞÜa-zçğıöşü .-]{2,80}$/u, '')
+    .replace(/\b\S+\.(?:pdf|pptx|ppt|docx|txt)\b/giu, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const sourceLike = RAW_SOURCE_LINE_PATTERN.test(raw) || /[/|_]{1,}/u.test(raw);
+  if (!sourceLike && !GENERIC_HEADING_PATTERN.test(withoutPresenter) && !TECHNICAL_LESSON_NOTE_PATTERN.test(withoutPresenter)) return withoutPresenter;
+  const normalized = withoutPresenter
+    .split(/\s*(?:\/|\||-|–|—|:)\s*/u)
+    .map((part) => cleanGeneratedText(part, { allowShort: true }))
+    .filter((part) => part && !/^(?:sunum|lecture|slide|slayt|başlık|title)$/iu.test(part))
+    .slice(0, 3)
+    .join(' ')
+    .replace(/\bPHYSIOPATHOLOGY\b/giu, 'Patofizyoloji')
+    .replace(/\bPATHOPHYSIOLOGY\b/giu, 'Patofizyoloji')
+    .replace(/\bTREATMENT\b/giu, 'Tedavi yaklaşımı')
+    .replace(/\bMANAGEMENT\b/giu, 'Yönetim yaklaşımı')
+    .replace(/\bDIAGNOSIS\b/giu, 'Tanı yaklaşımı')
+    .replace(/\bCLASSIFICATION\b/giu, 'Sınıflama mantığı')
+    .replace(/\bCRITERIA\b/giu, 'Tanı ölçütleri')
+    .replace(/\bSIGNS?\s+AND\s+SYMPTOMS\b/giu, 'Klinik bulgular')
+    .replace(/\bTYPE\b/giu, 'Tip')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!normalized || GENERIC_HEADING_PATTERN.test(normalized) || TECHNICAL_LESSON_NOTE_PATTERN.test(normalized)) return '';
+  if (/^[A-ZÇĞİÖŞÜ0-9\s/():,._-]{10,}$/u.test(normalized)) {
+    return normalized.toLocaleLowerCase('tr').replace(/(^|\s)(\p{L})/gu, (_, space, letter) => `${space}${letter.toLocaleUpperCase('tr')}`);
+  }
+  return normalized;
 }
 
 function normalizeKeyBoxes(boxes = []) {
@@ -67,6 +226,7 @@ function normalizeKeyBoxes(boxes = []) {
     .filter((box) => {
       const key = compareText(box.text);
       if (!box.text || box.text.length < 18 || box.text.split(/\s+/u).length < 4 || seen.has(key)) return false;
+      if (/kritik güvenlik/iu.test(box.label) && !/\b(?:acil|hayati|kontrendike|risk|şok|kanama|hava yolu|resüsitasyon|mortalite|toksisite|doz|hasta güvenliği|öncelik)\b/iu.test(box.text)) return false;
       seen.add(key);
       return true;
     })
@@ -79,6 +239,18 @@ function normalizeTextList(value = [], maxItems = 6) {
     if (!item || typeof item !== 'object') return item;
     return item.text || item.content || item.message || item.point || item.summary || item.description || Object.values(item).filter(Boolean).join(' ');
   }), maxItems);
+}
+
+function isUsefulProcessStep(item = '') {
+  const text = cleanGeneratedText(item);
+  if (!text || GENERIC_SUBHEADING_PATTERN.test(text)) return false;
+  const wordCount = text.split(/\s+/u).length;
+  if (wordCount < 7) return false;
+  return /(?:çünkü|bu nedenle|sonuçta|böylece|ardından|sonrasında|neden|yol aç|geliş|oluş|artar|azalır|yansır|klinik|laboratuvar|tanı|tedavi|yönetim|karar|mekanizma|bulgu|risk|komplikasyon|→|>)/iu.test(text);
+}
+
+function normalizeProcessList(value = [], maxItems = 6) {
+  return normalizeTextList(value, maxItems).filter(isUsefulProcessStep);
 }
 
 function normalizeDifficulty(value = 'medium') {
@@ -96,11 +268,56 @@ function objectiveFocusFromSection(section = {}) {
 
 function buildLearningObjective(section = {}) {
   const heading = cleanTopic(section.heading || section.title, 'Komite materyali');
-  const focus = objectiveFocusFromSection(section);
-  if (focus && compareText(focus) !== compareText(heading)) {
-    return `${heading} konusunu ${focus} odağında klinik, mekanistik ve sınav bağlamıyla yorumlayabilmek.`;
+  const subtopics = Array.isArray(section.subHeadings)
+    ? section.subHeadings.slice(0, 2).map((item) => cleanGeneratedText(item, { allowShort: true })).filter(Boolean).join(' ve ')
+    : '';
+  if (subtopics) {
+    return `${heading} → ${subtopics} başlıklarını aynı klinik veya mekanistik çerçevede ilişkilendirerek açıklayabilmek.`;
   }
-  return `${heading} konusundaki temel kavramları, ayırt ettirici noktaları ve materyalde vurgulanan sınav bağlantılarını açıklayabilmek.`;
+  if (section.algorithmSteps?.length || section.mechanismFlow?.length) {
+    return `${heading} → Mekanizmanın bulgu, laboratuvar, tanı basamağı veya yönetim kararına nasıl yansıdığını kurabilmek.`;
+  }
+  if (section.comparisonPoints?.length || section.commonTrap) {
+    return `${heading} → Karışabilecek durumları ayırt ettiren klinik, laboratuvar veya kavramsal ipuçlarını kullanabilmek.`;
+  }
+  if (section.clinicalConnection || section.examAngle) {
+    return `${heading} → Vaka kurgusunda tanı, ayırıcı tanı, yönetim veya sınav sorusu mantığına bağlayabilmek.`;
+  }
+  return `${heading} → Temel kavramları ve sınavda ayırt ettiren bağlantıları gerekçesiyle açıklayabilmek.`;
+}
+
+function normalizeLearningObjective(item = '', index = 0, sections = []) {
+  const text = cleanGeneratedText(item);
+  if (!text) return '';
+  if (/→/u.test(text)) return text;
+  const heading = cleanTopic(sections[index]?.heading || sections[index]?.title || sections[0]?.heading || 'Bu konu', 'Bu konu');
+  const body = text
+    .replace(new RegExp(`^${String(heading).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*(?:konusunda|bölümünde|ile)?\\s*`, 'iu'), '')
+    .replace(/^\s*(?:bu konu|bu bölüm)\s*(?:ile|için|kapsamında)?\s*/iu, '')
+    .trim();
+  return `${heading} → ${body.charAt(0).toLocaleUpperCase('tr') + body.slice(1)}`;
+}
+
+function isUsableLearningObjective(item = '') {
+  const text = cleanGeneratedText(item);
+  if (!text || text.split(/\s+/u).length < 5) return false;
+  if (BAD_OBJECTIVE_PATTERN.test(text) || TECHNICAL_LESSON_NOTE_PATTERN.test(text) || RAW_SOURCE_LINE_PATTERN.test(text)) return false;
+  if (/[,:;(-]\s*$/u.test(text)) return false;
+  return true;
+}
+
+function enrichTeachingText(base = '', section = {}) {
+  const cleanBase = cleanGeneratedText(base);
+  if (cleanBase.split(/\s+/u).length >= 90) return cleanBase;
+  const extras = [
+    cleanGeneratedText(section.clinicalConnection || section.clinicalOrPracticalConnection),
+    cleanGeneratedText(section.examAngle || section.examConnection || section.examFocus),
+    cleanGeneratedText(section.commonTrap || section.commonConfusions),
+    ...normalizeTextList(section.algorithmSteps || section.algorithmFlow || section.decisionSteps || section.decisionFlow, 3),
+    ...normalizeTextList(section.tableInsights || section.tableNotes || section.tablesAndVisualNotes || section.classificationTable, 2),
+    ...normalizeTextList(section.comparisonPoints || section.comparisons || section.differentials, 2),
+  ].filter(Boolean);
+  return uniqueTexts([cleanBase, ...extras], 8).join(' ');
 }
 
 function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
@@ -111,23 +328,23 @@ function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
       : [];
   const normalizedSections = sections.map((section, index) => ({
     id: section.id || `komite-section-${index + 1}`,
-    heading: cleanTopic(section.heading || section.title, section.sourceRefs?.[0] || `Bölüm ${index + 1}`),
+    heading: cleanTopic(section.heading || section.title, `Bölüm ${index + 1}`),
     level: Number(section.level) || 2,
-    teachingText: cleanGeneratedText(section.teachingText || section.content || section.coreExplanation || section.bigPicture || section.summary),
-    content: cleanGeneratedText(section.content || section.teachingText || section.coreExplanation || section.bigPicture || section.summary),
-    mechanismFlow: Array.isArray(section.mechanismFlow) ? uniqueTexts(section.mechanismFlow, 5) : [],
-    algorithmSteps: normalizeTextList(section.algorithmSteps || section.algorithmFlow || section.decisionSteps || section.decisionFlow, 7),
+    subHeadings: normalizeTextList(section.subHeadings || section.subtopics || section.learningSubtopics || section.outline, 5)
+      .filter((item) => !GENERIC_SUBHEADING_PATTERN.test(item))
+      .filter((item) => !GENERIC_HEADING_PATTERN.test(item)),
+    teachingText: enrichTeachingText(section.teachingText || section.content || section.coreExplanation || section.bigPicture || section.summary, section),
+    content: enrichTeachingText(section.content || section.teachingText || section.coreExplanation || section.bigPicture || section.summary, section),
+    mechanismFlow: normalizeProcessList(section.mechanismFlow, 5),
+    algorithmSteps: normalizeProcessList(section.algorithmSteps || section.algorithmFlow || section.decisionSteps || section.decisionFlow, 7),
     tableInsights: normalizeTextList(section.tableInsights || section.tableNotes || section.tablesAndVisualNotes || section.classificationTable, 5),
     comparisonPoints: normalizeTextList(section.comparisonPoints || section.comparisons || section.differentials || section.commonConfusions, 5),
-    visualNotes: normalizeTextList(section.visualNotes || section.schemaNotes, 5),
-    miniReview: normalizeTextList(section.miniReview || section.sectionReview || section.takeHomeMessages || section.keyTakeaways, 5),
+    visualNotes: normalizeTextList(section.visualNotes || section.schemaNotes, 4),
+    miniReview: [],
     clinicalConnection: cleanGeneratedText(section.clinicalConnection || section.clinicalOrPracticalConnection),
     examAngle: cleanGeneratedText(section.examAngle || section.examConnection || section.examFocus),
     commonTrap: cleanGeneratedText(section.commonTrap || section.commonConfusions),
     keyBoxes: normalizeKeyBoxes(section.keyBoxes),
-    sourceRefs: Array.isArray(section.sourceRefs || section.relatedSourceFiles)
-      ? (section.sourceRefs || section.relatedSourceFiles).map((item) => cleanGeneratedText(item, { allowShort: true })).filter(Boolean)
-      : [],
   })).filter((section) => section.heading && section.teachingText);
   const fallbackText = cleanGeneratedText(
     rawLesson.teachingText
@@ -147,6 +364,7 @@ function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
         id: 'komite-section-1',
         heading: cleanTopic(rawLesson.title || rawLesson.inferredTitle, 'Konu anlatımı'),
         level: 2,
+        subHeadings: [],
         teachingText: fallbackText,
         content: fallbackText,
         mechanismFlow: [],
@@ -159,50 +377,44 @@ function normalizeLesson(rawLesson = {}, sourceFingerprint = '') {
         examAngle: cleanGeneratedText(rawLesson.examFocus),
         commonTrap: '',
         keyBoxes: [],
-        sourceRefs: [],
       }]
       : [];
   const derivedHighYield = [
     ...(Array.isArray(rawLesson.highYieldPoints) ? rawLesson.highYieldPoints : []),
     ...lessonSections.flatMap((section) => [section.examAngle, section.commonTrap, section.clinicalConnection]),
   ].map(cleanGeneratedText).filter(Boolean);
-  const highYieldPoints = uniqueTexts(derivedHighYield, 9);
+  const highYieldPoints = uniqueTexts(derivedHighYield, 12);
   const highYieldKeys = new Set(highYieldPoints.map(compareText));
-  const mustKnow = uniqueTexts(Array.isArray(rawLesson.mustKnow) ? rawLesson.mustKnow : [], 8, highYieldKeys);
+  const mustKnow = uniqueTexts(Array.isArray(rawLesson.mustKnow) ? rawLesson.mustKnow : [], 10, highYieldKeys);
   const fallbackMustKnow = uniqueTexts(lessonSections.flatMap((section) => [section.clinicalConnection, section.examAngle, section.commonTrap]), 6, highYieldKeys);
   const outputMustKnow = mustKnow.length ? mustKnow : fallbackMustKnow;
   const usedAfterMustKnow = new Set([...highYieldKeys, ...outputMustKnow.map(compareText)]);
-  const finalReview = uniqueTexts(Array.isArray(rawLesson.finalReview) ? rawLesson.finalReview : [], 8, usedAfterMustKnow);
+  const finalReview = uniqueTexts(Array.isArray(rawLesson.finalReview) ? rawLesson.finalReview : [], 12, usedAfterMustKnow);
   const derivedObjectives = Array.isArray(rawLesson.learningObjectives) && rawLesson.learningObjectives.length
-    ? rawLesson.learningObjectives.map((item) => cleanGeneratedText(item)).filter((item) => item && !/\bbilgisini açıklamak ve soruda ayırt etmek\b/iu.test(item))
+    ? rawLesson.learningObjectives.map((item, index) => normalizeLearningObjective(item, index, lessonSections)).filter(isUsableLearningObjective)
     : [];
   const learningObjectives = uniqueTexts(
-    derivedObjectives.length >= 3 ? derivedObjectives : lessonSections.slice(0, 6).map(buildLearningObjective),
-    8,
+    derivedObjectives.length >= 3 ? derivedObjectives : lessonSections.slice(0, 5).map(buildLearningObjective),
+    5,
   );
+  const cleanShortIntro = cleanGeneratedText(rawLesson.shortIntro || rawLesson.summary || rawLesson.overview);
+  const cleanOverview = cleanGeneratedText(rawLesson.overview || rawLesson.shortIntro);
+  const cleanBigPicture = cleanGeneratedText(rawLesson.bigPicture || rawLesson.overview);
+  const cleanClinicalRelevance = cleanGeneratedText(rawLesson.clinicalExamRelevance);
   const lesson = {
     title: cleanTopic(rawLesson.title || rawLesson.inferredTitle, 'Komite ders anlatımı'),
     inferredTitle: cleanTopic(rawLesson.inferredTitle || rawLesson.title, 'Komite ders anlatımı'),
-    shortIntro: cleanGeneratedText(rawLesson.shortIntro || rawLesson.summary || rawLesson.overview),
-    overview: cleanGeneratedText(rawLesson.overview || rawLesson.shortIntro),
-    bigPicture: cleanGeneratedText(rawLesson.bigPicture || rawLesson.overview),
+    shortIntro: cleanShortIntro,
+    overview: cleanOverview,
+    bigPicture: cleanBigPicture,
     learningObjectives,
     mainConcepts: Array.isArray(rawLesson.mainConcepts) ? uniqueTexts(rawLesson.mainConcepts, 10) : [],
-    clinicalExamRelevance: cleanGeneratedText(rawLesson.clinicalExamRelevance),
+    clinicalExamRelevance: cleanClinicalRelevance,
     commonConfusions: Array.isArray(rawLesson.commonConfusions) ? uniqueTexts(rawLesson.commonConfusions, 8) : [],
     sections: lessonSections,
     highYieldPoints,
     mustKnow: outputMustKnow,
     finalReview: finalReview.length ? finalReview : uniqueTexts(lessonSections.map((section) => section.heading), 6, usedAfterMustKnow),
-    materialCoverage: Array.isArray(rawLesson.materialCoverage)
-      ? rawLesson.materialCoverage.map((item, index) => ({
-        fileName: cleanGeneratedText(item.fileName, { allowShort: true }) || `Materyal ${index + 1}`,
-        detectedMainTopic: cleanTopic(item.detectedTopic || item.detectedMainTopic || item.topic, item.fileName || `Materyal ${index + 1}`),
-        representedIn: cleanGeneratedText(item.representedIn, { allowShort: true }),
-        coverageNote: cleanGeneratedText(item.coverageNote),
-      })).filter((item) => item.fileName)
-      : [],
-    coverageSummary: cleanGeneratedText(rawLesson.coverageSummary),
     tableOfContents: lessonSections.map((section) => section.heading),
     sourceFingerprint,
     generatedAt: Date.now(),
@@ -295,12 +507,21 @@ function normalizeFlashcardDeck(rawDeck = {}, sourceFingerprint = '') {
 }
 
 export async function generateKomiteStudyContent({ kind, payload, signal } = {}) {
-  const response = await fetch('/api/generate-komite-study', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ kind, ...(payload || {}) }),
-    signal,
-  });
+  let response = null;
+  try {
+    response = await fetch('/api/generate-komite-study', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ kind, ...(payload || {}) }),
+      signal,
+    });
+  } catch (error) {
+    if (kind === 'lesson') {
+      const localLesson = buildLocalKomiteLessonFromPayload(payload);
+      if (localLesson) return { lesson: normalizeLesson(localLesson, payload?.sourceFingerprint || '') };
+    }
+    throw error;
+  }
 
   let data = null;
   try {
@@ -313,8 +534,12 @@ export async function generateKomiteStudyContent({ kind, payload, signal } = {})
     if (data?.debugReason) {
       console.error('[komite-study-api]', data.debugReason);
     }
-    const error = new Error(data?.error || KOMITE_GENERATION_ERROR_MESSAGE);
-    error.code = data?.errorCode || '';
+    if (kind === 'lesson') {
+      const localLesson = buildLocalKomiteLessonFromPayload(payload);
+      if (localLesson) return { lesson: normalizeLesson(localLesson, data?.sourceFingerprint || payload?.sourceFingerprint || '') };
+    }
+    const error = new Error(getKomiteGenerationErrorMessage(data?.errorCode, data?.error, response.status));
+    error.code = data?.errorCode || response.status || '';
     throw error;
   }
 
@@ -324,6 +549,10 @@ export async function generateKomiteStudyContent({ kind, payload, signal } = {})
     if (kind === 'cards') return { flashcardDeck: normalizeFlashcardDeck(data?.flashcardDeck, data?.sourceFingerprint || payload?.sourceFingerprint || '') };
   } catch (error) {
     console.error('[komite-study-api]', error);
+    if (kind === 'lesson') {
+      const localLesson = buildLocalKomiteLessonFromPayload(payload);
+      if (localLesson) return { lesson: normalizeLesson(localLesson, data?.sourceFingerprint || payload?.sourceFingerprint || '') };
+    }
     throw new Error(KOMITE_GENERATION_ERROR_MESSAGE);
   }
 
