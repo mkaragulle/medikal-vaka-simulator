@@ -1870,6 +1870,21 @@ function calloutLabel(block = {}) {
   return block.title || map[block.variant] || 'Not';
 }
 
+
+function sectionKindClass(title = '') {
+  const clean = String(title || '').toLocaleLowerCase('tr');
+  if (/en yüksek|getirili|sınav bilgileri|exam/iu.test(clean)) return 'exam-focus';
+  if (/karıştır|karistir|confuse/iu.test(clean)) return 'do-not-confuse';
+  if (/tek sayfalık|final tekrar|final review/iu.test(clean)) return 'final-review';
+  return 'standard';
+}
+
+function lessonPrintTitle(title = '') {
+  return String(title || 'komite-konu-anlatimi')
+    .replace(/[^\p{L}\p{N}]+/gu, '-')
+    .replace(/^-+|-+$/g, '') || 'komite-konu-anlatimi';
+}
+
 function ScrollLessonBlock({ block = {} }) {
   if (block.type === 'paragraph') {
     return <p className="komite-scroll-paragraph"><GlossaryText text={block.content || ''} enabled revealMode="postAnswer" maxTerms={5} /></p>;
@@ -2012,6 +2027,18 @@ function CommitteeScrollableLessonView({ lesson = {} }) {
 
   if (!lessonDoc) return null;
   const pdfUrl = lessonDoc.pdfUrl || lesson.pdfUrl || lesson.pdfDataUrl || '';
+  const learningObjectives = Array.isArray(lessonDoc.learningObjectives) ? lessonDoc.learningObjectives.filter(Boolean).slice(0, 5) : [];
+  const roadmap = (Array.isArray(lessonDoc.roadmap) && lessonDoc.roadmap.length ? lessonDoc.roadmap : navItems)
+    .map((item, index) => ({ id: item.id || navItems[index]?.id, title: item.title || String(item || '') }))
+    .filter((item) => item.id && item.title)
+    .slice(0, 10);
+
+  const exportToPdf = () => {
+    const previousTitle = window.document?.title;
+    if (window.document) window.document.title = `${lessonPrintTitle(lessonDoc.title)}.pdf`;
+    window.print();
+    setTimeout(() => { if (window.document && previousTitle) window.document.title = previousTitle; }, 300);
+  };
 
   return (
     <div className="komite-scroll-lesson-view">
@@ -2039,7 +2066,7 @@ function CommitteeScrollableLessonView({ lesson = {} }) {
               <input value={query} onChange={(event) => setQuery(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter') runSearch(); }} placeholder="Ders içinde ara" />
               <button type="button" onClick={runSearch}>Ara</button>
             </div>
-            {pdfUrl ? <a className="komite-scroll-pdf-link" href={pdfUrl} download={`${String(lessonDoc.title || 'komite-konu-anlatimi').replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-+|-+$/g, '') || 'komite-konu-anlatimi'}.pdf`}><Icon name="Download" size={16} /> PDF indir</a> : null}
+            <button type="button" className="komite-scroll-pdf-link" onClick={exportToPdf}><Icon name="Download" size={16} /> PDF indir</button>
           </div>
         </header>
 
@@ -2048,11 +2075,28 @@ function CommitteeScrollableLessonView({ lesson = {} }) {
             <span>Ders Anlatımı</span>
             <h2>{lessonDoc.title}</h2>
             <p>{lessonDoc.subtitle}</p>
+            <div className="komite-scroll-meta-row" aria-label="Ders bilgileri">
+              {lessonDoc.level ? <span>{lessonDoc.level}</span> : null}
+              {lessonDoc.estimatedStudyTime ? <span>{lessonDoc.estimatedStudyTime}</span> : null}
+              {Array.isArray(lessonDoc.sourceFiles) && lessonDoc.sourceFiles.length ? <span>{lessonDoc.sourceFiles.length} kaynak</span> : null}
+            </div>
+            {learningObjectives.length ? (
+              <div className="komite-scroll-objectives">
+                <strong>Bu anlatım sonunda</strong>
+                <ul>{learningObjectives.map((item, index) => <li key={`${item}-${index}`}>{item}</li>)}</ul>
+              </div>
+            ) : null}
+            {roadmap.length ? (
+              <div className="komite-scroll-roadmap" aria-label="Yol haritası">
+                <strong>Yol haritası</strong>
+                <div>{roadmap.map((item, index) => <button type="button" key={`${item.id}-${index}`} onClick={() => scrollToId(item.id)}><em>{String(index + 1).padStart(2, '0')}</em><span>{item.title}</span></button>)}</div>
+              </div>
+            ) : null}
             {lessonDoc.sourceQualityNote ? <div className="komite-scroll-quality-note"><b>Güncellik notu</b><span>{lessonDoc.sourceQualityNote}</span></div> : null}
           </section>
 
           {sections.map((section, index) => (
-            <section id={section.id} className="komite-scroll-section" key={section.id} style={lessonAccentStyle(index)}>
+            <section id={section.id} className={`komite-scroll-section ${sectionKindClass(section.title)}`} key={section.id} style={lessonAccentStyle(index)}>
               <div className="komite-scroll-section-kicker">{String(index + 1).padStart(2, '0')}</div>
               <h3>{section.title}</h3>
               {section.mainIdea ? <aside className="komite-scroll-callout main_idea"><strong>Ana fikir</strong><p>{section.mainIdea}</p></aside> : null}

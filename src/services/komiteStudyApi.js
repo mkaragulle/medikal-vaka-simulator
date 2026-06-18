@@ -88,6 +88,7 @@ function normalizeScrollableLesson(rawLesson = {}) {
     level: compactText(document.level || rawLesson.level) || 'Tıp fakültesi komite düzeyi',
     estimatedStudyTime: compactText(document.estimatedStudyTime || rawLesson.estimatedStudyTime),
     sourceQualityNote: compactText(document.sourceQualityNote || document.qualityNote || rawLesson.qualityNote),
+    learningObjectives: Array.isArray(document.learningObjectives || rawLesson.learningObjectives) ? (document.learningObjectives || rawLesson.learningObjectives) : [],
     sections,
     roadmap: Array.isArray(document.roadmap) ? document.roadmap : outline,
     outline,
