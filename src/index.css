@@ -59577,3 +59577,129 @@ html[data-theme='dark'] .komite-scroll-callout.main_idea {
     display: none !important;
   }
 }
+
+
+/* KOMITE lesson v5: final global polish — no topic-specific styling, print-safe typography, premium recap cards */
+.komite-scroll-lesson-view,
+.komite-scroll-document,
+.komite-scroll-document * {
+  font-family: Inter, "Segoe UI", Arial, system-ui, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+.komite-scroll-intro-card p,
+.komite-scroll-paragraph,
+.komite-scroll-callout p,
+.komite-scroll-list-block li,
+.komite-scroll-table-wrap td,
+.komite-scroll-flow-step p,
+.komite-scroll-confusion-card span {
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.komite-scroll-section.exam-focus .komite-scroll-list-block,
+.komite-scroll-section.final-focus .komite-scroll-list-block {
+  margin-top: 16px;
+}
+
+.komite-scroll-section.exam-focus .komite-scroll-list-block li,
+.komite-scroll-section.final-focus .komite-scroll-list-block li {
+  border-color: rgba(14, 116, 144, 0.16) !important;
+}
+
+.komite-scroll-section.exam-focus .komite-scroll-list-block li {
+  background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(255,251,235,0.72)) !important;
+}
+
+.komite-scroll-section.final-focus .komite-scroll-list-block li {
+  background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(236,253,245,0.76)) !important;
+}
+
+.komite-scroll-section.confusion-focus .komite-scroll-confusion-grid {
+  margin-top: 18px;
+}
+
+.komite-scroll-section.confusion-focus .komite-scroll-confusion-card {
+  background: linear-gradient(180deg, #fff, #fff7f7) !important;
+}
+
+.komite-scroll-table-wrap table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.komite-scroll-flow-step p {
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+}
+
+@media print {
+  html,
+  body,
+  .komite-scroll-document,
+  .komite-scroll-document * {
+    font-family: Arial, "Segoe UI", "Helvetica Neue", sans-serif !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    text-rendering: geometricPrecision !important;
+  }
+
+  .komite-scroll-document {
+    font-size: 10.5pt !important;
+  }
+
+  .komite-scroll-section.exam-focus .komite-scroll-list-block ul,
+  .komite-scroll-section.final-focus .komite-scroll-list-block ul {
+    display: block !important;
+  }
+
+  .komite-scroll-section.exam-focus .komite-scroll-list-block li,
+  .komite-scroll-section.final-focus .komite-scroll-list-block li {
+    border: 1px solid #d7dee8 !important;
+    border-left: 3px solid #0e7490 !important;
+    border-radius: 8px !important;
+    padding: 8px 10px 8px 24px !important;
+    margin: 0 0 6px !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .komite-scroll-section.exam-focus .komite-scroll-list-block li::before,
+  .komite-scroll-section.final-focus .komite-scroll-list-block li::before {
+    left: 9px !important;
+    top: 1em !important;
+    width: 6px !important;
+    height: 6px !important;
+    box-shadow: none !important;
+  }
+
+  .komite-scroll-confusion-grid {
+    display: block !important;
+  }
+
+  .komite-scroll-confusion-card {
+    border: 1px solid #e5e7eb !important;
+    border-left: 3px solid #e11d48 !important;
+    border-radius: 8px !important;
+    padding: 9px 10px !important;
+    margin: 0 0 8px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .komite-scroll-confusion-card p {
+    display: grid !important;
+    grid-template-columns: 112px minmax(0, 1fr) !important;
+    gap: 8px !important;
+    margin: 0 0 4px !important;
+  }
+
+  .komite-scroll-table-wrap th,
+  .komite-scroll-table-wrap td {
+    padding: 6px 7px !important;
+  }
+}

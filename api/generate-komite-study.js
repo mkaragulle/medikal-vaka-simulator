@@ -190,13 +190,15 @@ function buildPrompt(payload = {}) {
     '- Her table block için rows içindeki her satır columns ile aynı sayıda hücre taşısın.',
     '- Mekanizma akışlarını sadece mechanism_flow block olarak ver; steps içine ok, tire, yıldız veya soru işareti koyma.',
     '- Konu anlatımı sonunda examFocus, doNotConfuse ve finalReview alanlarını mutlaka doldur; bu alanlar ana bölümlerde zaten geçen bilgileri birebir tekrar etmek yerine sınav öncesi rafine tekrar gibi yazılsın.',
+    '- mainIdea zaten her bölüm başında ayrı kutu olarak render edilir; blocks içinde ayrıca main_idea / Ana fikir callout üretme. Ek kutu gerekiyorsa clinical_logic, exam_tip, warning veya update_note gibi gerçekten farklı işlevli bir varyant kullan.',
     '- Tedavi anlatılan konularda sadece ilaç/yöntem adı verme; tedavinin mantığını, hangi durumda seçildiğini, izlemde nelere dikkat edildiğini ve pratik karar noktasını açıkla.',
     '- Tanı anlatılan konularda yalnız eşik verme; testin ne zaman tercih edildiğini, neyle karışabileceğini, hangi durumda yanıltabileceğini ve klinik bağlamı açıklayan yorum ekle.',
     '- Konuya özel hard-code kullanma: diyabet, anemi, büyüme bozukluğu, immünoloji, enfeksiyon, farmakoloji, anatomi veya başka herhangi bir başlık için ayrı sabit kural/case/cache oluşturma. Yüklenen materyalin konusunu önce kendin analiz et; kaliteyi global öğretim mimarisiyle yükselt.',
     '- Konu türünü otomatik belirle ve uygun anlatım omurgasını seç: hastalık konularında tanım-normal fizyoloji-patofizyoloji-klinik-tanı-ayırıcı tanı-tedavi-izlem-komplikasyon; fizyoloji konularında normal mekanizma-regülasyon-geri bildirim-klinik korelasyon; farmakoloji konularında etki mekanizması-endikasyon-kontrendikasyon-yan etki-etkileşim-izlem; mikrobiyoloji/immünoloji konularında etken/hücre-mekanizma-klinik sendrom-tanı-tedavi/korunma; anatomi/histoloji konularında yapı-ilişki-fonksiyon-klinik önem akışı kullanılmalı.',
-    '- Her konuda, o konunun kendi kritik güvenlik ve karar noktalarını çıkar: acil durum varsa ilk yaklaşım ve stabilizasyon mantığı, laboratuvar varsa testin yorumu ve yanıltıcı durumları, tedavi varsa seçim gerekçesi ve izlem noktaları, sınıflama varsa ayırıcı özellikler ve sınavda karışan eşikler açıklanmalı.',
+    '- Her konuda, o konunun kendi kritik güvenlik ve karar noktalarını çıkar: acil durum varsa ilk yaklaşım, stabilizasyon mantığı, hayatı tehdit eden bulgular ve izlem güvenliği; laboratuvar varsa testin yorumu, yanıltıcı durumları ve klinik bağlamı; tedavi varsa seçim gerekçesi, izlem noktası, yan etki/komplikasyon uyarısı ve pratik karar cümlesi; sınıflama varsa ayırıcı özellikler ve sınavda karışan eşikler açıklanmalı.',
+    '- Klinik/acil tablo içeren herhangi bir konuda konuya özel hard-code yapmadan şu genel çerçeveyi uygula: önce hastayı güvenli hale getiren önceliği belirt, sonra tanı kanıtını, mekanizmayı, izlem parametresini ve yanlış yönetimde doğacak riski kısa ama net açıkla.',
     '- Global yüksek verim kuralı: kaynakta geçen veya konu mantığı için zorunlu olan sayısal eşikler, tanı kriterleri, sınıflamalar, mekanizma zincirleri, komplikasyonlar, kontraendikasyonlar, tedavi basamakları ve sık karıştırılan ayrımlar korunmalı; bunlar konuya göre otomatik seçilmeli, tek bir hastalığa özel sabit listeye bağlı kalınmamalı.',
-    '- Final bölümleri rafine tekrar gibi olmalı: examFocus kısa yüksek getirili maddeler, doNotConfuse kartları gerçek karışan ayrımlar, finalReview ise tek bakışta çalışılacak son tekrar maddeleri olarak yazılsın.',
+    '- Final bölümleri rafine tekrar gibi olmalı: examFocus kısa yüksek getirili maddeler, doNotConfuse kartları gerçek karışan ayrımlar, finalReview ise tek bakışta çalışılacak son tekrar maddeleri olarak yazılsın. Bu üç alanın maddeleri birbirinin kopyası olmamalı; examFocus sınav bilgisi, doNotConfuse yanlış ayrım düzeltmesi, finalReview ise bütün konuyu bağlayan son tekrar işlevi görmeli.',
     '- Final/sınav/karıştırma tekrarlarını sections içine ayrıca bölüm olarak yazma; bu üç alan yalnızca top-level examFocus, doNotConfuse ve finalReview içinde yer almalı. Böylece aynı yüksek getirili bilgiler PDF ve HTML çıktıda iki kez tekrar etmez.',
     '',
     'Callout variant seçenekleri:',
@@ -485,7 +487,9 @@ function dedupeBlocks(blocks = [], mainIdea = '') {
   return (Array.isArray(blocks) ? blocks : [])
     .filter((block) => {
       if (!block || typeof block !== 'object') return false;
-      if (block.type === 'callout' && normalizeVariant(block.variant || block.title) === 'main_idea' && comparableTextKey(block.content || '') === mainIdeaKey) {
+      // Section mainIdea is rendered as a dedicated card. Dropping extra main_idea callouts
+      // keeps the page from repeating "Ana fikir" boxes while preserving all non-main callouts.
+      if (block.type === 'callout' && normalizeVariant(block.variant || block.title) === 'main_idea') {
         return false;
       }
       const key = blockComparableKey(block);
@@ -598,7 +602,10 @@ function normalizeLessonDocument(raw = {}, payload = {}) {
 
   const examFocus = dedupeStrings(coerceItemsArray(raw.examFocus, ['items', 'content']), 18);
   const doNotConfuse = normalizeConfusionItems(raw.doNotConfuse || raw.dontConfuse || raw.do_not_confuse || []);
-  const finalReview = dedupeStrings(coerceItemsArray(raw.finalReview, ['items', 'content']), 24);
+  const examFocusKeys = new Set(examFocus.map(comparableTextKey));
+  const finalReview = dedupeStrings(coerceItemsArray(raw.finalReview, ['items', 'content']), 24)
+    .filter((item) => !examFocusKeys.has(comparableTextKey(item)))
+    .slice(0, 18);
 
   // Global dedupe: models sometimes put final/high-yield/confusion summaries both in sections
   // and in top-level final fields. Keep the dedicated top-level fields and remove duplicate
