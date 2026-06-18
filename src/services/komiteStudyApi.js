@@ -22,6 +22,100 @@ function compactText(value = '') {
   return String(value || '').replace(/\s+/g, ' ').trim();
 }
 
+function sentenceList(text = '', maxItems = 18) {
+  return String(text || '')
+    .replace(/\r/g, '\n')
+    .split(/(?<=[.!?])\s+|\n+/u)
+    .map((item) => cleanGeneratedText(item))
+    .filter((item) => item && item.split(/\s+/u).length >= 6)
+    .slice(0, maxItems);
+}
+
+function sourceTitleFromFile(file = {}, index = 0) {
+  const topic = Array.isArray(file.detectedTopics)
+    ? file.detectedTopics.map((item) => compactText(item?.title || item?.topic || item)).find(Boolean)
+    : '';
+  return cleanTopic(topic || file.fileName || file.name || `Komite konusu ${index + 1}`, `Komite konusu ${index + 1}`);
+}
+
+function prioritySourceLines(file = {}, maxItems = 16) {
+  const text = String(file.cleanedExtractedText || file.text || '');
+  const lines = text
+    .replace(/\r/g, '\n')
+    .split(/\n+/u)
+    .map((line) => cleanGeneratedText(line))
+    .filter((line) => line && line.split(/\s+/u).length >= 5)
+    .filter((line) => /(?:tanı|tedavi|mekanizma|patofizyoloji|klinik|bulgu|laboratuvar|algoritma|sınıflama|komplikasyon|risk|ayırıcı|yönetim|önemli|yüksek|kritik|diagnos|treat|clinical|mechanism|classification|criteria|symptom|sign|management|complication|risk)/iu.test(line));
+  const structured = Array.isArray(file.detectedStructure)
+    ? file.detectedStructure.map((item) => cleanGeneratedText(`${item?.label || item?.type || ''} ${item?.preview || item?.text || ''}`)).filter(Boolean)
+    : [];
+  const emphasis = Array.isArray(file.emphasisNotes)
+    ? file.emphasisNotes.map((item) => cleanGeneratedText(item?.text || item)).filter(Boolean)
+    : [];
+  return uniqueTexts([...emphasis, ...structured, ...lines], maxItems);
+}
+
+function buildLocalLessonSection(file = {}, index = 0) {
+  const rawText = String(file.cleanedExtractedText || file.text || '').trim();
+  const heading = sourceTitleFromFile(file, index);
+  const coreSentences = sentenceList(rawText.slice(0, 18_000), 14);
+  const priorityLines = prioritySourceLines(file, 14);
+  const teachingText = uniqueTexts([
+    ...coreSentences.slice(0, 8),
+    ...priorityLines.slice(0, 10),
+    ...coreSentences.slice(8, 14),
+  ], 24).join(' ');
+  if (!teachingText) return null;
+  const diagnosisLines = priorityLines.filter((line) => /(?:tanı|laboratuvar|test|kriter|ayırıcı|diagnos|criteria|laboratory)/iu.test(line));
+  const managementLines = priorityLines.filter((line) => /(?:tedavi|yönetim|yaklaşım|algoritma|management|treat)/iu.test(line));
+  const mechanismLines = priorityLines.filter((line) => /(?:mekanizma|patofizyoloji|neden|sonuç|artar|azalır|mechanism|pathophysiology)/iu.test(line));
+  return {
+    heading,
+    level: 2,
+    subHeadings: uniqueTexts([
+      mechanismLines.length ? 'Temel mekanizma ve neden-sonuç ilişkisi' : '',
+      diagnosisLines.length ? 'Tanı, laboratuvar ve ayırıcı düşünme' : '',
+      managementLines.length ? 'Yönetim yaklaşımı ve sınav odağı' : '',
+    ], 4),
+    teachingText,
+    mechanismFlow: mechanismLines,
+    algorithmSteps: uniqueTexts([...diagnosisLines, ...managementLines], 7),
+    tableInsights: priorityLines.filter((line) => /(?:tablo|sınıflama|classification|criteria|tip|type)/iu.test(line)).slice(0, 5),
+    comparisonPoints: priorityLines.filter((line) => /(?:ayırıcı|karış|fark|versus|vs|differential)/iu.test(line)).slice(0, 5),
+    visualNotes: [],
+    clinicalConnection: priorityLines.find((line) => /(?:klinik|bulgu|semptom|hasta|clinical|symptom|sign)/iu.test(line)) || '',
+    examAngle: priorityLines.find((line) => /(?:önemli|kritik|yüksek|sınav|ayırt|risk|important|high yield)/iu.test(line)) || priorityLines[0] || '',
+    commonTrap: priorityLines.find((line) => /(?:karış|ayırıcı|differential|versus|vs)/iu.test(line)) || '',
+    keyBoxes: priorityLines[0] ? [{ label: 'Öne çıkan nokta', text: priorityLines[0] }] : [],
+  };
+}
+
+function buildLocalKomiteLessonFromPayload(payload = {}) {
+  const materialPacket = payload.materialPacket || {};
+  const files = Array.isArray(materialPacket.files)
+    ? materialPacket.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
+    : [];
+  const sections = files.slice(0, 10).map(buildLocalLessonSection).filter(Boolean);
+  if (!sections.length) return null;
+  const courseTitle = compactText(payload.metadata?.course || payload.metadata?.committee || materialPacket.courseName || materialPacket.committeeName || 'Komite ders anlatımı');
+  const introSource = sections.slice(0, 3).map((section) => section.heading).filter(Boolean).join(', ');
+  return {
+    title: courseTitle,
+    inferredTitle: courseTitle,
+    shortIntro: introSource ? `Bu ders notu ${introSource} başlıklarını temel kavram, mekanizma, klinik ilişki ve sınav odağı ekseninde çalışılabilir bir sıraya yerleştirir.` : '',
+    overview: '',
+    bigPicture: '',
+    learningObjectives: sections.slice(0, 5).map(buildLearningObjective).filter(Boolean),
+    sections,
+    highYieldPoints: uniqueTexts(sections.flatMap((section) => [section.examAngle, section.clinicalConnection, section.commonTrap]), 10),
+    mustKnow: uniqueTexts(sections.flatMap((section) => [section.heading, section.clinicalConnection]), 10),
+    finalReview: uniqueTexts(sections.flatMap((section) => [section.examAngle, section.heading]), 10),
+    commonConfusions: uniqueTexts(sections.map((section) => section.commonTrap), 8),
+    mainConcepts: sections.map((section) => section.heading),
+    clinicalExamRelevance: '',
+  };
+}
+
 const TECHNICAL_LESSON_NOTE_PATTERN = /\b(?:dosya bazl[ıi]|dosya işleme|materyal(?:ler)?(?:inden|in)?\s+(?:ana konusu|çıkarılan|temsil)|materyaller temsil edildi|çalışma notları yapılandırıldı|ana konular aşağıda yapılandırıldı|aşağıda yapılandırıldı|temsil edildi|materyal kapsam|coverageSummary|materialCoverage|sourceManifest|sourceFingerprint|source coverage|output structure|MATERIAL_DIGEST|chunk|grup\s*\d+|üretim süreci|teknik nedenle|extraction warning|extraction|ayrıştırılan metin|API bağlamı|öğretici excerpt|görsel sekmesi için|ana konu belirtildi|her dosyanın ana konusu|ilişkili başlıklar birleştirildi|farklı konular tek başlıkta ezilmedi)\b/iu;
 const RAW_SOURCE_LINE_PATTERN = /^(?:[A-ZÇĞİÖŞÜ0-9][A-ZÇĞİÖŞÜ0-9\s/():,._-]{10,}|(?:prof\.?|doç\.?|dr\.?|öğr\.?\s*gör\.?)\b|.*\.(?:pdf|pptx|ppt|docx|txt)\b)/iu;
 const BAD_OBJECTIVE_PATTERN = /\b(?:odağında klinik, mekanistik ve sınav bağlamıyla yorumlayabilmek|temel öğrenme mantığını açıklayabilmek|bilgisini açıklamak ve soruda ayırt etmek|dosya bazlı|materyal(?:ler)?inden|sınavda .* sorulabilir odağında)\b/iu;
@@ -401,12 +495,21 @@ function normalizeFlashcardDeck(rawDeck = {}, sourceFingerprint = '') {
 }
 
 export async function generateKomiteStudyContent({ kind, payload, signal } = {}) {
-  const response = await fetch('/api/generate-komite-study', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ kind, ...(payload || {}) }),
-    signal,
-  });
+  let response = null;
+  try {
+    response = await fetch('/api/generate-komite-study', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ kind, ...(payload || {}) }),
+      signal,
+    });
+  } catch (error) {
+    if (kind === 'lesson') {
+      const localLesson = buildLocalKomiteLessonFromPayload(payload);
+      if (localLesson) return { lesson: normalizeLesson(localLesson, payload?.sourceFingerprint || '') };
+    }
+    throw error;
+  }
 
   let data = null;
   try {
@@ -419,6 +522,10 @@ export async function generateKomiteStudyContent({ kind, payload, signal } = {})
     if (data?.debugReason) {
       console.error('[komite-study-api]', data.debugReason);
     }
+    if (kind === 'lesson') {
+      const localLesson = buildLocalKomiteLessonFromPayload(payload);
+      if (localLesson) return { lesson: normalizeLesson(localLesson, data?.sourceFingerprint || payload?.sourceFingerprint || '') };
+    }
     const error = new Error(getKomiteGenerationErrorMessage(data?.errorCode, data?.error, response.status));
     error.code = data?.errorCode || response.status || '';
     throw error;
@@ -430,6 +537,10 @@ export async function generateKomiteStudyContent({ kind, payload, signal } = {})
     if (kind === 'cards') return { flashcardDeck: normalizeFlashcardDeck(data?.flashcardDeck, data?.sourceFingerprint || payload?.sourceFingerprint || '') };
   } catch (error) {
     console.error('[komite-study-api]', error);
+    if (kind === 'lesson') {
+      const localLesson = buildLocalKomiteLessonFromPayload(payload);
+      if (localLesson) return { lesson: normalizeLesson(localLesson, data?.sourceFingerprint || payload?.sourceFingerprint || '') };
+    }
     throw new Error(KOMITE_GENERATION_ERROR_MESSAGE);
   }
 
