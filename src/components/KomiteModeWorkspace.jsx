@@ -1,9 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import * as pdfjsLib from 'pdfjs-dist';
+import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.mjs?url';
 import { Icon } from './ui.jsx';
 import GlossaryText from './GlossaryTooltip.jsx';
 import { localBackend } from '../services/localBackend.js';
 import { generateKomiteStudyContent, KOMITE_GENERATION_ERROR_MESSAGE } from '../services/komiteStudyApi.js';
 import { extractKomiteFile, getKomiteFileExtension } from '../utils/komiteFileExtraction.js';
+
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
 
 const KOMITE_MATERIALS_STORAGE_KEY = 'komite-materials-v1';
 const KOMITE_SOURCE_SCHEMA_VERSION = 3;
@@ -1472,7 +1476,7 @@ function StartFlow({ onCreate, onCancel }) {
   const update = (field, value) => setForm((current) => ({ ...current, [field]: value }));
 
   const processFiles = async (files) => {
-    const unique = Array.from(files || []).filter(Boolean).filter((file, index, arr) => arr.findIndex((item) => `${item.name}-${item.size}` === `${file.name}-${file.size}`) === index);
+    const unique = Array.from(files || []).filter(Boolean).filter((file, index, arr) => arr.findIndex((item) => `${item.name}-${item.size}` === `${file.name}-${file.size}`) === index).slice(0, 10);
     setSelectedFiles(unique);
     setFileText('');
     setFileNotice('');
@@ -1553,7 +1557,7 @@ function StartFlow({ onCreate, onCancel }) {
       <div className="komite-upload-hero">
         <div className="komite-upload-hero-copy">
           <h2>Materyal yükle</h2>
-          <p>Komite materyallerini ekle; çalışma alanı açıldıktan sonra ders anlatımı, soru ve hap kartları ilgili sekmelerden AI ile oluşturabilirsin.</p>
+          <p>Komite materyallerini ekle; çalışma alanı açıldıktan sonra PDF tabanlı konu anlatımını Ders Anlatımı sekmesinden oluşturabilirsin.</p>
         </div>
         <button type="button" className="btn btn-secondary komite-upload-cancel-top" onClick={onCancel}>Vazgeç</button>
       </div>
@@ -1645,8 +1649,186 @@ function StartFlow({ onCreate, onCancel }) {
   );
 }
 
+function pdfDataUrlToBytes(url = '') {
+  if (!String(url).startsWith('data:')) return null;
+  const base64 = String(url).split(',')[1] || '';
+  const binary = atob(base64);
+  const bytes = new Uint8Array(binary.length);
+  for (let index = 0; index < binary.length; index += 1) bytes[index] = binary.charCodeAt(index);
+  return bytes;
+}
+
+function CommitteePdfSidebar({ manifest = {}, currentPage = 1, onGoToPage }) {
+  const outline = Array.isArray(manifest.outline) ? manifest.outline : [];
+  const anchors = Array.isArray(manifest.highYieldAnchors) ? manifest.highYieldAnchors : [];
+  const items = [
+    { id: 'start', title: 'Kapak / Başlangıç', pageNumber: 1, level: 1 },
+    ...outline,
+    ...anchors.map((item) => ({ ...item, level: 1, highYield: true })),
+  ];
+  return (
+    <aside className="komite-pdf-sidebar" aria-label="PDF hızlı erişim">
+      <div className="komite-pdf-sidebar-card">
+        <strong>Hızlı erişim</strong>
+        {manifest.estimatedStudyTime ? <small>{manifest.estimatedStudyTime}</small> : null}
+        <div className="komite-pdf-nav-list">
+          {items.slice(0, 24).map((item) => {
+            const page = Math.max(1, Number(item.pageNumber) || 1);
+            return (
+              <button
+                type="button"
+                key={`${item.id}-${page}`}
+                className={`${page === currentPage ? 'active' : ''} ${item.highYield ? 'high-yield' : ''}`.trim()}
+                style={{ '--depth': Math.max(0, Number(item.level || 1) - 1) }}
+                onClick={() => onGoToPage(page)}
+              >
+                <span>{item.title}</span>
+                <em>{page}</em>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </aside>
+  );
+}
+
+function CommitteePdfLessonViewer({ lesson = {} }) {
+  const manifest = lesson.manifest || {};
+  const pdfUrl = lesson.pdfUrl || lesson.pdfDataUrl || manifest.pdfUrl || '';
+  const canvasRef = useRef(null);
+  const renderTaskRef = useRef(null);
+  const [pdfDoc, setPdfDoc] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
+  const [pageCount, setPageCount] = useState(0);
+  const [zoom, setZoom] = useState(1.08);
+  const [status, setStatus] = useState('loading');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [pageTexts, setPageTexts] = useState([]);
+
+  useEffect(() => {
+    let cancelled = false;
+    setStatus('loading');
+    setPdfDoc(null);
+    setPageTexts([]);
+    const bytes = pdfDataUrlToBytes(pdfUrl);
+    const loadingTask = pdfjsLib.getDocument(bytes ? { data: bytes } : { url: pdfUrl });
+    loadingTask.promise
+      .then((doc) => {
+        if (cancelled) return null;
+        setPdfDoc(doc);
+        setPageCount(doc.numPages || 0);
+        setPageNumber(1);
+        setStatus('ready');
+        return Promise.all(Array.from({ length: doc.numPages || 0 }, async (_item, index) => {
+          const page = await doc.getPage(index + 1);
+          const content = await page.getTextContent();
+          return (content.items || []).map((textItem) => textItem.str || '').join(' ');
+        }));
+      })
+      .then((texts) => {
+        if (!cancelled && Array.isArray(texts)) setPageTexts(texts);
+      })
+      .catch((error) => {
+        console.error('[komite-pdf-viewer]', error);
+        if (!cancelled) setStatus('error');
+      });
+    return () => {
+      cancelled = true;
+      loadingTask.destroy?.();
+    };
+  }, [pdfUrl]);
+
+  useEffect(() => {
+    if (!pdfDoc || !canvasRef.current) return undefined;
+    let cancelled = false;
+    const canvas = canvasRef.current;
+    const context = canvas.getContext('2d');
+    renderTaskRef.current?.cancel?.();
+    pdfDoc.getPage(pageNumber)
+      .then((page) => {
+        if (cancelled) return null;
+        const viewport = page.getViewport({ scale: zoom });
+        canvas.width = Math.floor(viewport.width);
+        canvas.height = Math.floor(viewport.height);
+        canvas.style.width = `${Math.floor(viewport.width)}px`;
+        canvas.style.height = `${Math.floor(viewport.height)}px`;
+        const task = page.render({ canvasContext: context, viewport });
+        renderTaskRef.current = task;
+        return task.promise;
+      })
+      .catch((error) => {
+        if (error?.name !== 'RenderingCancelledException') console.error('[komite-pdf-render]', error);
+      });
+    return () => {
+      cancelled = true;
+      renderTaskRef.current?.cancel?.();
+    };
+  }, [pdfDoc, pageNumber, zoom]);
+
+  const goToPage = (nextPage) => {
+    const target = Math.min(Math.max(1, Number(nextPage) || 1), pageCount || 1);
+    setPageNumber(target);
+  };
+
+  const searchPdf = () => {
+    const query = searchQuery.trim().toLocaleLowerCase('tr');
+    if (!query || !pageTexts.length) return;
+    const start = Math.max(0, pageNumber - 1);
+    const ordered = [...pageTexts.slice(start + 1), ...pageTexts.slice(0, start + 1)];
+    const foundOffset = ordered.findIndex((text) => text.toLocaleLowerCase('tr').includes(query));
+    if (foundOffset < 0) return;
+    goToPage(((start + 1 + foundOffset) % pageTexts.length) + 1);
+  };
+
+  if (!pdfUrl) {
+    return <EmptyState title="PDF konu anlatımı bulunamadı" text="Bu ders kaydında görüntülenecek PDF yok. Konu anlatımını yeniden oluşturmayı deneyebilirsin." />;
+  }
+
+  return (
+    <div className="komite-pdf-lesson-view">
+      <CommitteePdfSidebar manifest={manifest} currentPage={pageNumber} onGoToPage={goToPage} />
+      <main className="komite-pdf-main">
+        <div className="komite-pdf-toolbar">
+          <div>
+            <strong>{manifest.title || lesson.title || 'Komite konu anlatımı'}</strong>
+            <small>{manifest.subtitle || lesson.subtitle || 'PDF konu anlatımı'}</small>
+          </div>
+          <div className="komite-pdf-controls">
+            <button type="button" onClick={() => goToPage(pageNumber - 1)} disabled={pageNumber <= 1} aria-label="Önceki sayfa"><Icon name="ChevronLeft" size={16} /></button>
+            <span>{pageNumber} / {pageCount || '-'}</span>
+            <button type="button" onClick={() => goToPage(pageNumber + 1)} disabled={pageCount ? pageNumber >= pageCount : true} aria-label="Sonraki sayfa"><Icon name="ChevronRight" size={16} /></button>
+            <button type="button" onClick={() => setZoom((value) => Math.max(0.72, value - 0.12))} aria-label="Uzaklaştır">-</button>
+            <button type="button" onClick={() => setZoom((value) => Math.min(1.7, value + 0.12))} aria-label="Yakınlaştır">+</button>
+            <a href={pdfUrl} download={`${(manifest.title || 'komite-konu-anlatimi').replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-+|-+$/g, '') || 'komite-konu-anlatimi'}.pdf`}>
+              <Icon name="Download" size={16} /> PDF
+            </a>
+          </div>
+        </div>
+        <div className="komite-pdf-search">
+          <input
+            value={searchQuery}
+            onChange={(event) => setSearchQuery(event.target.value)}
+            onKeyDown={(event) => { if (event.key === 'Enter') searchPdf(); }}
+            placeholder="PDF içinde ara"
+          />
+          <button type="button" onClick={searchPdf}>Ara</button>
+        </div>
+        <div className="komite-pdf-stage" data-status={status}>
+          {status === 'loading' ? <div className="komite-pdf-loading"><span className="komite-spinner" aria-hidden="true" /> PDF hazırlanıyor…</div> : null}
+          {status === 'error' ? <EmptyState title="PDF görüntülenemedi" text="PDF oluşturuldu ancak görüntüleyici dosyayı açamadı. İndirme bağlantısını deneyebilirsin." action={<a className="btn btn-primary" href={pdfUrl} download="komite-konu-anlatimi.pdf">PDF indir</a>} /> : null}
+          <canvas ref={canvasRef} aria-label="Komite PDF konu anlatımı" />
+        </div>
+      </main>
+    </div>
+  );
+}
+
 function LessonView({ material, onGenerate, status = 'idle' }) {
   const lesson = material.lesson;
+  if (lesson?.type === 'pdfLesson' || lesson?.pdfUrl || lesson?.pdfDataUrl) {
+    return <CommitteePdfLessonViewer lesson={lesson} />;
+  }
   const sections = Array.isArray(lesson?.sections)
     ? lesson.sections.map((section, index) => {
       const inferredHeading = inferLessonHeadingFromContent(section, index);
@@ -1693,7 +1875,7 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
 
   if (!lesson) {
     const hasExtractedText = combinedPacketToSourceText(buildCombinedMaterialPacket(material)).length > 120;
-    return <EmptyState title="Ders anlatımı henüz hazır değil" text={hasExtractedText ? "Materyal hazır. Ders anlatımını oluşturmak için butona basabilirsin." : "Bu materyalden çalışılabilir metin alınamadı. Daha okunabilir dosya yükleyebilir veya metni ek not alanına yapıştırabilirsin."} action={<LoadingPrimaryButton status={status} idleLabel="Ders Anlatımı oluştur" loadingLabel="Ders Anlatımı oluşturuyor…" onClick={onGenerate} />} />;
+    return <EmptyState title="PDF konu anlatımı henüz hazır değil" text={hasExtractedText ? "Materyal hazır. Profesyonel PDF konu anlatımına dönüştürmek için butona basabilirsin." : "Bu materyalden çalışılabilir metin alınamadı. Daha okunabilir dosya yükleyebilir veya metni ek not alanına yapıştırabilirsin."} action={<LoadingPrimaryButton status={status} idleLabel="PDF konu anlatımına dönüştür" loadingLabel="PDF konu anlatımı hazırlanıyor…" onClick={onGenerate} />} />;
   }
 
   const rawObjectives = Array.isArray(lesson.learningObjectives) ? lesson.learningObjectives : [];
@@ -2168,11 +2350,11 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
 
     const packet = buildCombinedMaterialPacket(material);
     if (combinedPacketToSourceText(packet).length < 80) {
-      setModuleActionStatus(kind, 'error', 'Bu çalışma alanında AI içeriği oluşturmak için yeterli okunabilir metin yok.');
+      setModuleActionStatus(kind, 'error', 'Bu çalışma alanında konu anlatımı oluşturmak için yeterli okunabilir metin yok.');
       return;
     }
 
-    setModuleActionStatus(kind, 'loading', kind === 'lesson' ? 'Ders anlatımı oluşturuluyor…' : kind === 'questions' ? 'Sorular oluşturuluyor…' : 'Hap kartlar oluşturuluyor…');
+    setModuleActionStatus(kind, 'loading', kind === 'lesson' ? 'PDF konu anlatımı hazırlanıyor…' : kind === 'questions' ? 'Sorular bu PDF akışında üretilmez.' : 'Hap kartlar bu PDF akışında üretilmez.');
     try {
       const payload = buildKomiteGenerationPayload(material, kind);
       const result = await generateKomiteStudyContent({ kind, payload });
@@ -2183,7 +2365,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
       } else if (kind === 'cards') {
         onPatchMaterial(material.id, { flashcardDeck: result.flashcardDeck });
       }
-      setModuleActionStatus(kind, 'success', 'İçerik hazır.');
+      setModuleActionStatus(kind, 'success', kind === 'lesson' ? 'PDF konu anlatımı hazır.' : 'İçerik hazır.');
       window.setTimeout(() => setModuleActionStatus(kind, 'idle', ''), 1800);
     } catch (error) {
       console.error('[komite-generate]', error);

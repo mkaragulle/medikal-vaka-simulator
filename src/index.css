@@ -58501,3 +58501,257 @@ html[data-theme='dark'] .komite-markdown-table {
 html[data-theme='dark'] .komite-markdown-table tr:nth-child(even) td {
   background: rgba(15, 23, 42, 0.32);
 }
+
+.komite-pdf-lesson-view {
+  display: grid;
+  grid-template-columns: minmax(210px, 280px) minmax(0, 1fr);
+  gap: clamp(0.9rem, 2vw, 1.2rem);
+  align-items: start;
+}
+
+.komite-pdf-sidebar {
+  position: sticky;
+  top: 92px;
+  max-height: calc(100vh - 118px);
+  overflow: auto;
+}
+
+.komite-pdf-sidebar-card,
+.komite-pdf-main {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08);
+}
+
+.komite-pdf-sidebar-card {
+  display: grid;
+  gap: 0.72rem;
+  padding: 0.9rem;
+}
+
+.komite-pdf-sidebar-card > strong {
+  color: #0f172a;
+  font-size: 0.98rem;
+}
+
+.komite-pdf-sidebar-card > small {
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.komite-pdf-nav-list {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.komite-pdf-nav-list button {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.55rem;
+  width: 100%;
+  padding: 0.55rem 0.62rem 0.55rem calc(0.62rem + (var(--depth, 0) * 0.8rem));
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #334155;
+  text-align: left;
+  cursor: pointer;
+}
+
+.komite-pdf-nav-list button span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.komite-pdf-nav-list button em {
+  color: #64748b;
+  font-style: normal;
+  font-size: 0.78rem;
+}
+
+.komite-pdf-nav-list button:hover,
+.komite-pdf-nav-list button.active {
+  border-color: rgba(20, 184, 166, 0.2);
+  background: rgba(20, 184, 166, 0.1);
+  color: #0f766e;
+}
+
+.komite-pdf-nav-list button.high-yield {
+  border-color: rgba(245, 158, 11, 0.18);
+  background: rgba(245, 158, 11, 0.08);
+}
+
+.komite-pdf-main {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.komite-pdf-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.komite-pdf-toolbar > div:first-child {
+  display: grid;
+  gap: 0.18rem;
+  min-width: 0;
+}
+
+.komite-pdf-toolbar strong {
+  color: #0f172a;
+  overflow-wrap: anywhere;
+}
+
+.komite-pdf-toolbar small {
+  color: #64748b;
+}
+
+.komite-pdf-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.38rem;
+}
+
+.komite-pdf-controls button,
+.komite-pdf-controls a,
+.komite-pdf-search button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 34px;
+  padding: 0.42rem 0.62rem;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 8px;
+  background: #fff;
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.komite-pdf-controls button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.komite-pdf-controls span {
+  min-width: 74px;
+  text-align: center;
+  color: #475569;
+  font-weight: 800;
+}
+
+.komite-pdf-search {
+  display: flex;
+  gap: 0.45rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.komite-pdf-search input {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 8px;
+  padding: 0.58rem 0.7rem;
+  background: #fff;
+  color: #0f172a;
+}
+
+.komite-pdf-stage {
+  position: relative;
+  display: grid;
+  place-items: start center;
+  min-height: 680px;
+  overflow: auto;
+  padding: clamp(0.75rem, 2vw, 1.2rem);
+  background: #e5e7eb;
+}
+
+.komite-pdf-stage canvas {
+  max-width: 100%;
+  height: auto !important;
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.24);
+}
+
+.komite-pdf-loading {
+  position: absolute;
+  inset: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  color: #334155;
+  font-weight: 800;
+}
+
+html[data-theme='dark'] .komite-pdf-sidebar-card,
+html[data-theme='dark'] .komite-pdf-main {
+  border-color: rgba(148, 163, 184, 0.16);
+  background: rgba(15, 23, 42, 0.74);
+  box-shadow: none;
+}
+
+html[data-theme='dark'] .komite-pdf-sidebar-card > strong,
+html[data-theme='dark'] .komite-pdf-toolbar strong {
+  color: #f8fafc;
+}
+
+html[data-theme='dark'] .komite-pdf-sidebar-card > small,
+html[data-theme='dark'] .komite-pdf-toolbar small,
+html[data-theme='dark'] .komite-pdf-nav-list button,
+html[data-theme='dark'] .komite-pdf-controls span {
+  color: #cbd5e1;
+}
+
+html[data-theme='dark'] .komite-pdf-toolbar,
+html[data-theme='dark'] .komite-pdf-search {
+  border-color: rgba(148, 163, 184, 0.16);
+}
+
+html[data-theme='dark'] .komite-pdf-controls button,
+html[data-theme='dark'] .komite-pdf-controls a,
+html[data-theme='dark'] .komite-pdf-search button,
+html[data-theme='dark'] .komite-pdf-search input {
+  border-color: rgba(148, 163, 184, 0.18);
+  background: rgba(15, 23, 42, 0.92);
+  color: #f8fafc;
+}
+
+html[data-theme='dark'] .komite-pdf-stage {
+  background: rgba(2, 6, 23, 0.72);
+}
+
+@media (max-width: 920px) {
+  .komite-pdf-lesson-view {
+    grid-template-columns: 1fr;
+  }
+
+  .komite-pdf-sidebar {
+    position: static;
+    max-height: none;
+  }
+
+  .komite-pdf-nav-list {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .komite-pdf-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .komite-pdf-controls {
+    justify-content: flex-start;
+  }
+}
