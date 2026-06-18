@@ -190,20 +190,20 @@ function buildPrompt(payload = {}) {
     '- Her table block için rows içindeki her satır columns ile aynı sayıda hücre taşısın.',
     '- Mekanizma akışlarını sadece mechanism_flow block olarak ver; steps içine ok, tire, yıldız veya soru işareti koyma.',
     '- Konu anlatımı sonunda examFocus, doNotConfuse ve finalReview alanlarını mutlaka doldur; bu alanlar ana bölümlerde zaten geçen bilgileri birebir tekrar etmek yerine sınav öncesi rafine tekrar gibi yazılsın.',
-    '- sections dizisi içine ayrıca "En Yüksek Getirili Sınav Bilgileri", "Karıştırılmaması Gerekenler" veya "Tek Sayfalık Final Tekrar" bölümü yazma; bu üç final alanı yalnızca examFocus, doNotConfuse ve finalReview kök alanlarından oluşturulacaktır. Böylece tekrar ve çift başlık oluşmaz.',
     '- Tedavi anlatılan konularda sadece ilaç/yöntem adı verme; tedavinin mantığını, hangi durumda seçildiğini, izlemde nelere dikkat edildiğini ve pratik karar noktasını açıkla.',
     '- Tanı anlatılan konularda yalnız eşik verme; testin ne zaman tercih edildiğini, neyle karışabileceğini, hangi durumda yanıltabileceğini ve klinik bağlamı açıklayan yorum ekle.',
-    '- Konuya özel hard-code kullanma: hiçbir hastalık, sistem, ders, branş veya alt başlık için ayrı sabit kural/case/cache oluşturma. Yüklenen materyalin konusunu önce kendin analiz et; kaliteyi global öğretim mimarisiyle yükselt.',
+    '- Konuya özel hard-code kullanma: diyabet, anemi, büyüme bozukluğu, immünoloji, enfeksiyon, farmakoloji, anatomi veya başka herhangi bir başlık için ayrı sabit kural/case/cache oluşturma. Yüklenen materyalin konusunu önce kendin analiz et; kaliteyi global öğretim mimarisiyle yükselt.',
     '- Konu türünü otomatik belirle ve uygun anlatım omurgasını seç: hastalık konularında tanım-normal fizyoloji-patofizyoloji-klinik-tanı-ayırıcı tanı-tedavi-izlem-komplikasyon; fizyoloji konularında normal mekanizma-regülasyon-geri bildirim-klinik korelasyon; farmakoloji konularında etki mekanizması-endikasyon-kontrendikasyon-yan etki-etkileşim-izlem; mikrobiyoloji/immünoloji konularında etken/hücre-mekanizma-klinik sendrom-tanı-tedavi/korunma; anatomi/histoloji konularında yapı-ilişki-fonksiyon-klinik önem akışı kullanılmalı.',
     '- Her konuda, o konunun kendi kritik güvenlik ve karar noktalarını çıkar: acil durum varsa ilk yaklaşım ve stabilizasyon mantığı, laboratuvar varsa testin yorumu ve yanıltıcı durumları, tedavi varsa seçim gerekçesi ve izlem noktaları, sınıflama varsa ayırıcı özellikler ve sınavda karışan eşikler açıklanmalı.',
     '- Global yüksek verim kuralı: kaynakta geçen veya konu mantığı için zorunlu olan sayısal eşikler, tanı kriterleri, sınıflamalar, mekanizma zincirleri, komplikasyonlar, kontraendikasyonlar, tedavi basamakları ve sık karıştırılan ayrımlar korunmalı; bunlar konuya göre otomatik seçilmeli, tek bir hastalığa özel sabit listeye bağlı kalınmamalı.',
     '- Final bölümleri rafine tekrar gibi olmalı: examFocus kısa yüksek getirili maddeler, doNotConfuse kartları gerçek karışan ayrımlar, finalReview ise tek bakışta çalışılacak son tekrar maddeleri olarak yazılsın.',
+    '- Final/sınav/karıştırma tekrarlarını sections içine ayrıca bölüm olarak yazma; bu üç alan yalnızca top-level examFocus, doNotConfuse ve finalReview içinde yer almalı. Böylece aynı yüksek getirili bilgiler PDF ve HTML çıktıda iki kez tekrar etmez.',
     '',
     'Callout variant seçenekleri:',
     'main_idea, clinical_logic, exam_tip, dont_confuse, warning, update_note, final_review',
     '',
     'İyi anlatım standardı:',
-    'Bir bulgu, laboratuvar sonucu veya tedavi basamağı verildiğinde yalnız adını yazma; önce temel mekanizmayı kur, sonra bu mekanizmanın klinik bulguya, tanısal karara veya tedavi seçimine nasıl bağlandığını kısa ve anlaşılır bir neden-sonuç zinciriyle açıkla.',
+    'Kötü anlatım yalnızca bulguları art arda dizer. İyi anlatım ise temel bozukluğu, ara mekanizmayı ve klinik sonucu neden-sonuç zinciriyle açıklar: önce normal işleyişi kur, sonra bozulmanın hangi basamakları değiştirdiğini ve bunun hangi bulguya/tanıya/tedavi kararına bağlandığını göster.',
     '',
     'Meta bilgi:',
     metaBlock,
@@ -464,69 +464,6 @@ function dedupeStrings(items = [], limit = 24) {
     .slice(0, limit);
 }
 
-
-function textTokens(value = '') {
-  return comparableTextKey(value)
-    .split(/\s+/u)
-    .filter((token) => token.length > 2)
-    .filter((token) => !/^(olan|icin|için|gibi|daha|çok|cok|veya|olan|ile|bir|tek|her|ama|fakat|olarak)$/iu.test(token));
-}
-
-function isSemanticallyClose(a = '', b = '') {
-  const keyA = comparableTextKey(a);
-  const keyB = comparableTextKey(b);
-  if (!keyA || !keyB) return false;
-  if (keyA === keyB) return true;
-  if (Math.min(keyA.length, keyB.length) > 38 && (keyA.includes(keyB) || keyB.includes(keyA))) return true;
-  const aTokens = new Set(textTokens(keyA));
-  const bTokens = new Set(textTokens(keyB));
-  if (aTokens.size < 4 || bTokens.size < 4) return false;
-  const overlap = [...aTokens].filter((token) => bTokens.has(token)).length;
-  const ratio = overlap / Math.min(aTokens.size, bTokens.size);
-  return ratio >= 0.72;
-}
-
-function dedupeStringsAgainst(items = [], references = [], limit = 24) {
-  const refs = dedupeStrings(references, 80);
-  const kept = [];
-  (Array.isArray(items) ? items : [])
-    .map(stripMarkdownArtifacts)
-    .filter(Boolean)
-    .forEach((item) => {
-      const pool = refs.concat(kept);
-      if (pool.some((ref) => isSemanticallyClose(item, ref))) return;
-      kept.push(item);
-    });
-  return kept.slice(0, limit);
-}
-
-function isFinalSummaryTitle(title = '') {
-  const clean = comparableTextKey(title);
-  return /(?:en yuksek getirili|yuksek getirili|sinav ozeti|sinav bilgileri|sinavda one cikan|kritik sinav|karistirilmamasi|karisan noktalar|tek sayfalik|final tekrar|son tekrar|high yield|do not confuse|final review)/iu.test(clean);
-}
-
-function sectionContainsOnlyFinalReview(section = {}) {
-  const titleKey = comparableTextKey(section.title || '');
-  if (isFinalSummaryTitle(titleKey)) return true;
-  const text = comparableTextKey(sectionTextLike(section));
-  const hasFinalSignals = /(?:en yuksek getirili|sinav bilgileri|karisan nokta|dogru ayrim|akilda kalacak mesaj|tek sayfalik final|final tekrar)/iu.test(text);
-  const hasTeachingSignals = /(?:tanım|tanim|fizyoloji|patofizyoloji|mekanizma|klinik|tedavi|tani|tanı|laboratuvar|ayirici|ayırıcı|siniflama|sınıflama)/iu.test(titleKey);
-  return hasFinalSignals && !hasTeachingSignals;
-}
-
-function sectionTextLike(section = {}) {
-  const chunks = [section.title, section.mainIdea];
-  (Array.isArray(section.blocks) ? section.blocks : []).forEach((block) => {
-    chunks.push(block.title, block.content);
-    if (Array.isArray(block.items)) chunks.push(...block.items);
-    if (Array.isArray(block.steps)) chunks.push(...block.steps);
-    if (Array.isArray(block.columns)) chunks.push(...block.columns);
-    if (Array.isArray(block.rows)) block.rows.forEach((row) => chunks.push(...row));
-    if (Array.isArray(block.cards)) block.cards.forEach((card) => chunks.push(card.confusingPoint, card.correctDistinction, card.memoryMessage));
-  });
-  return chunks.filter(Boolean).join(' ');
-}
-
 function blockComparableKey(block = {}) {
   if (!block || typeof block !== 'object') return '';
   const core = [block.type, block.variant, block.title, block.content, block.leftTitle, block.rightTitle, block.leftContent, block.rightContent].filter(Boolean).join(' ');
@@ -562,6 +499,12 @@ function dedupeBlocks(blocks = [], mainIdea = '') {
 function hasSectionTitle(sections = [], title = '') {
   const key = comparableTextKey(title);
   return sections.some((section) => comparableTextKey(section.title) === key);
+}
+
+function isFinalSummarySectionTitle(title = '') {
+  const key = comparableTextKey(title);
+  if (!key) return false;
+  return /(?:en yuksek getirili|yuksek getirili|sinav ozeti|sinav bilgileri|sinavda one cikan|karisan noktalar|karistirilmamasi gerekenler|tek sayfalik final|final tekrar|son tekrar|final pekistirme)/u.test(key);
 }
 
 function appendSectionOnce(sections = [], section = {}) {
@@ -639,7 +582,7 @@ function normalizeLessonDocument(raw = {}, payload = {}) {
   const title = sanitizeTitle(raw.title, titleFallback);
   const subtitle = stripMarkdownArtifacts(raw.subtitle || 'Konu anlatımı, klinik mantık ve sınav odaklı tekrar');
   const rawSections = Array.isArray(raw.sections) ? raw.sections : [];
-  const sections = rawSections
+  let sections = rawSections
     .map((section, index) => {
       const sectionTitle = sanitizeSectionTitle(section?.title || '', section || {}, index, title);
       const mainIdea = stripMarkdownArtifacts(section?.mainIdea || section?.main_idea || '');
@@ -655,20 +598,14 @@ function normalizeLessonDocument(raw = {}, payload = {}) {
 
   const examFocus = dedupeStrings(coerceItemsArray(raw.examFocus, ['items', 'content']), 18);
   const doNotConfuse = normalizeConfusionItems(raw.doNotConfuse || raw.dontConfuse || raw.do_not_confuse || []);
-  const confusionReferenceText = doNotConfuse
-    .flatMap((item) => [item.confusingPoint, item.correctDistinction, item.memoryMessage])
-    .filter(Boolean);
-  const finalReview = dedupeStringsAgainst(
-    coerceItemsArray(raw.finalReview, ['items', 'content']),
-    examFocus.concat(confusionReferenceText),
-    24,
-  );
+  const finalReview = dedupeStrings(coerceItemsArray(raw.finalReview, ['items', 'content']), 24);
 
-  const hasCanonicalFinalBlocks = examFocus.length || doNotConfuse.length || finalReview.length;
-  const coreSections = hasCanonicalFinalBlocks
-    ? sections.filter((section) => !sectionContainsOnlyFinalReview(section))
-    : sections;
-  sections.splice(0, sections.length, ...coreSections);
+  // Global dedupe: models sometimes put final/high-yield/confusion summaries both in sections
+  // and in top-level final fields. Keep the dedicated top-level fields and remove duplicate
+  // terminal summary sections. This is topic-agnostic and prevents repeated final pages.
+  if (examFocus.length || doNotConfuse.length || finalReview.length) {
+    sections = sections.filter((section) => !isFinalSummarySectionTitle(section.title));
+  }
 
   if (examFocus.length) {
     sections.splice(0, sections.length, ...appendSectionOnce(sections, {
@@ -1072,8 +1009,8 @@ function createPdfBuffer(pageStreams = [], info = {}) {
 stream
 ${toUnicodeCMap}
 endstream`);
-  const font1 = add(`<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding ${fontEncoding} /ToUnicode ${toUnicodeId} 0 R >>`);
-  const font2 = add(`<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding ${fontEncoding} /ToUnicode ${toUnicodeId} 0 R >>`);
+  const font1 = add(`<< /Type /Font /Subtype /Type1 /BaseFont /ArialMT /Encoding ${fontEncoding} /ToUnicode ${toUnicodeId} 0 R >>`);
+  const font2 = add(`<< /Type /Font /Subtype /Type1 /BaseFont /Arial-BoldMT /Encoding ${fontEncoding} /ToUnicode ${toUnicodeId} 0 R >>`);
   const contentIds = pageStreams.map((stream) => add(`<< /Length ${Buffer.byteLength(stream, 'binary')} >>\nstream\n${stream}\nendstream`));
   const pageIds = contentIds.map((contentId) => add(`<< /Type /Page /Parent 0 0 R /MediaBox [0 0 ${A4.width} ${A4.height}] /Resources << /Font << /F1 ${font1} 0 R /F2 ${font2} 0 R >> >> /Contents ${contentId} 0 R >>`));
   const pagesId = add(`<< /Type /Pages /Kids [${pageIds.map((id) => `${id} 0 R`).join(' ')}] /Count ${pageIds.length} >>`);

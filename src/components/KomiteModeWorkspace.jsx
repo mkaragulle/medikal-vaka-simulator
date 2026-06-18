@@ -2062,6 +2062,7 @@ function CommitteeScrollableLessonView({ lesson = {} }) {
               <button type="button" onClick={runSearch}>Ara</button>
             </div>
             <button type="button" className="komite-scroll-pdf-link" onClick={printLesson} title="Bu ekrandaki temiz HTML konu anlatımını PDF olarak kaydet"><Icon name="Download" size={16} /> PDF indir</button>
+            {pdfUrl ? <a className="komite-scroll-raw-pdf-link" href={pdfUrl} download={`${String(lessonDoc.title || 'komite-konu-anlatimi').replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-+|-+$/g, '') || 'komite-konu-anlatimi'}.pdf`} title="Sunucu tarafından oluşturulan yedek PDF dosyasını indir">Yedek PDF</a> : null}
           </div>
         </header>
 
