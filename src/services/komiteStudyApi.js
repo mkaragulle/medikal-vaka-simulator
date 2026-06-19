@@ -17,6 +17,31 @@ function cleanPdfTitle(value = '', fallback = 'Komite konu anlatımı') {
   return (boundary > 18 ? cut.slice(0, boundary) : cleaned.slice(0, 60)).replace(/[.,;:!?-]+$/u, '').trim();
 }
 
+const SECTION_TITLE_FALLBACKS = [
+  'Temel kavramlar ve klinik çerçeve',
+  'Mekanizma ve patofizyolojik süreçler',
+  'Klinik bulgular ve tanısal yaklaşım',
+  'Ayırıcı tanı ve belirleyici özellikler',
+  'Tedavi stratejisi, izlem ve komplikasyonlar',
+];
+
+function cleanLessonSectionTitle(section = {}, index = 0, lessonTitle = '') {
+  const raw = compactText(section.title)
+    .replace(/^#{1,6}\s*/u, '')
+    .replace(/[.!?;:]+$/u, '')
+    .trim();
+  const generic = !raw || /^(?:bölüm|section|part)\s*\d+$/iu.test(raw);
+  if (!generic) return raw.length > 72 ? `${raw.slice(0, 69).trim()}...` : raw;
+
+  const blockTitle = (Array.isArray(section.blocks) ? section.blocks : [])
+    .map((block) => compactText(block?.title))
+    .find((title) => title && !/^(?:mekanizma özeti|tablo|liste|not)$/iu.test(title));
+  if (blockTitle) return blockTitle.length > 72 ? `${blockTitle.slice(0, 69).trim()}...` : blockTitle;
+
+  if (index === 0 && lessonTitle) return `${lessonTitle}: Temel kavramlar ve klinik çerçeve`;
+  return SECTION_TITLE_FALLBACKS[index] || `${lessonTitle || 'Konu'}: Klinik çalışma odağı`;
+}
+
 function normalizeManifest(rawManifest = {}, pdfUrl = '') {
   const outline = Array.isArray(rawManifest.outline)
     ? rawManifest.outline
@@ -56,11 +81,11 @@ function normalizeManifest(rawManifest = {}, pdfUrl = '') {
   };
 }
 
-function normalizeLessonSections(rawSections = []) {
+function normalizeLessonSections(rawSections = [], lessonTitle = '') {
   return (Array.isArray(rawSections) ? rawSections : [])
     .map((section, index) => ({
       id: compactText(section.id) || `section-${index + 1}`,
-      title: compactText(section.title) || `Bölüm ${index + 1}`,
+      title: cleanLessonSectionTitle(section, index, lessonTitle),
       mainIdea: compactText(section.mainIdea || section.main_idea),
       blocks: Array.isArray(section.blocks) ? section.blocks : [],
     }))
@@ -72,12 +97,10 @@ function normalizeScrollableLesson(rawLesson = {}) {
   const document = rawLesson.document || rawLesson.lessonDocument || rawLesson;
   const title = cleanPdfTitle(document.title || rawLesson.title, 'Komite konu anlatımı');
   const subtitle = compactText(document.subtitle || rawLesson.subtitle) || 'Konu anlatımı, klinik mantık ve sınav odaklı tekrar';
-  const sections = normalizeLessonSections(document.sections);
+  const sections = normalizeLessonSections(document.sections, title);
   if (!sections.length) throw new Error(KOMITE_GENERATION_ERROR_MESSAGE);
   const pdfUrl = compactText(rawLesson.pdfUrl || rawLesson.pdfDataUrl || document.pdfUrl || document.pdfDataUrl);
-  const outline = Array.isArray(rawLesson.outline || document.outline)
-    ? (rawLesson.outline || document.outline)
-    : sections.map((section) => ({ id: section.id, title: section.title }));
+  const outline = sections.map((section) => ({ id: section.id, title: section.title }));
   return {
     id: compactText(rawLesson.id || document.id) || `komite-lesson-${Date.now().toString(36)}`,
     type: 'lessonDocument',
@@ -89,7 +112,7 @@ function normalizeScrollableLesson(rawLesson = {}) {
     estimatedStudyTime: compactText(document.estimatedStudyTime || rawLesson.estimatedStudyTime),
     sourceQualityNote: compactText(document.sourceQualityNote || document.qualityNote || rawLesson.qualityNote),
     sections,
-    roadmap: Array.isArray(document.roadmap) ? document.roadmap : outline,
+    roadmap: outline,
     outline,
     examFocus: document.examFocus || rawLesson.examFocus || null,
     doNotConfuse: document.doNotConfuse || rawLesson.doNotConfuse || null,

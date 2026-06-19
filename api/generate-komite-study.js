@@ -4,6 +4,12 @@ const A4 = { width: 595.28, height: 841.89 };
 const MARGIN = { top: 44, right: 46, bottom: 46, left: 46 };
 const CONTENT_WIDTH = A4.width - MARGIN.left - MARGIN.right;
 const MAX_TITLE_LENGTH = 60;
+const MAX_SECTION_TITLE_LENGTH = 72;
+const FINAL_SECTION_TITLES = {
+  examFocus: 'Sınavda Öne Çıkan Bilgiler',
+  doNotConfuse: 'Sık Karışan Klinik Ayrımlar',
+  finalReview: 'Son Tekrar: Temel Bilgiler',
+};
 
 const CALLOUT_META = {
   main_idea: {
@@ -179,6 +185,11 @@ function buildPrompt(payload = {}) {
     '- Ayrı kapak, A4 sayfa mantığı veya PDF viewer varsayımı üretme; içerik tek parça scroll edilen web dokümanı gibi çalışılabilir olmalı.',
     '- Kaynak formatını hatırlatan "slayt", "sunum", "bu sayfada", "dokümanda", "PDF’de", "yüklü dosyada" gibi ifadeler kullanma.',
     '- Dosya sırasını körü körüne takip etme; öğrenme akışına göre 6-8 güçlü ana bölüm oluştur. Konu çok dar ise 5 bölüm kabul edilebilir.',
+    '- Bölüm başlıkları hem hızlı erişimde hem ders içeriğinde aynen görünecektir. Bu nedenle her başlığı kısa, akademik, konuya özgü ve ilk bakışta kapsamı anlaşılır bir isim tamlaması olarak yaz.',
+    '- Başlıklar tercihen 4-9 kelime ve en fazla 72 karakter olsun. Başlıklarda cümle kurma; "anlamak", "öğrenmek", "yorumlamak" gibi fiiller, "büyük resim", "genel bakış", "kritik noktalar" ve "çeşitli konular" gibi belirsiz ifadeler kullanma.',
+    '- Aynı kavramı iki başlıkta tekrarlama. Örneğin etiyoloji ve doğal seyir bir bölümdeyse, epidemiyoloji ve risk profili ayrı ve net bir kapsam taşımalıdır.',
+    '- Başlıklar render bileşenini değil, gerçek tıbbi içeriği adlandırmalıdır. "Klinik tablo ve tanıya yaklaşım" yerine "Klinik bulgular ve tanısal yaklaşım"; "Tedavi mantığı ve akut yönetim" yerine konuya uygun biçimde "Tedavi stratejisi ve akut dönem yönetimi" düzeyinde profesyonel başlıklar üret.',
+    '- İlk bölüm başlığı konu adını nesne halinde kullanan "Astımı/Diyabeti büyük resimle anlamak" benzeri bir ifade olmasın. Bunun yerine konuya göre "Astım: Temel kavramlar ve klinik çerçeve" benzeri, doğal ve akademik bir başlık üret. Bu örneği sabit şablon olarak kopyalama.',
     '- İlk ana bölüm mutlaka büyük resmi kurmalı: temel tanım, normal fizyoloji veya ana mekanizma ve öğrencinin konuyu nasıl düşünmesi gerektiği açıklanmalı. Konu doğrudan patofizyolojiyle başlamamalı.',
     '- Her ana bölümde konuya uygunsa tanım, normal işleyiş, mekanizma/patofizyoloji, klinik bağlantı, tanı/laboratuvar, ayırıcı düşünme, yönetim/tedavi mantığı ve sınav odağı derinlikli işlenmeli.',
     '- Komite öğrencisi için detay seviyesi yeterli olmalı: ana bölümlerde yalnızca 1 kısa paragrafla geçme; gerekli yerlerde 2-4 akıcı paragraf, kısa liste, klinik mantık kutusu veya tablo kullan.',
@@ -324,25 +335,65 @@ function isGenericSectionTitle(value = '') {
     || /^bölüm\s*\d+$/iu.test(clean)
     || /^b.?l.?m\s*\d+$/iu.test(clean)
     || /^section\s*\d+$/iu.test(clean)
-    || /^(temel açıklama|klinik tablo|mekanizma|mekanizma \/ patofizyoloji|patofizyoloji|tanı \/ laboratuvar)$/iu.test(clean);
+    || /^(temel açıklama|klinik tablo|mekanizma|mekanizma \/ patofizyoloji|patofizyoloji|tanı \/ laboratuvar|genel bakış|büyük resim|kritik noktalar)$/iu.test(clean);
+}
+
+function topicFromLearningPhrase(value = '') {
+  return stripMarkdownArtifacts(value)
+    .replace(/\s+(?:büyük resmiyle|büyük resimle)\s+(?:anlamak|öğrenmek|yorumlamak)$/iu, '')
+    .replace(/['’]?(?:yı|yi|yu|yü|ı|i|u|ü)$/iu, '')
+    .trim();
+}
+
+function professionalizeSectionTitle(value = '', documentTitle = '') {
+  let clean = stripMarkdownArtifacts(value)
+    .replace(/[.!?;:]+$/u, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!clean) return '';
+
+  if (/\b(?:büyük resmiyle|büyük resimle)\s+(?:anlamak|öğrenmek|yorumlamak)\b/iu.test(clean)) {
+    const topic = topicFromLearningPhrase(clean) || stripMarkdownArtifacts(documentTitle);
+    clean = topic ? `${topic}: Temel kavramlar ve klinik çerçeve` : 'Temel kavramlar ve klinik çerçeve';
+  }
+
+  clean = clean
+    .replace(/^etiyoloji\s*,?\s*risk\s+ve\s+doğal\s+seyir$/iu, 'Etiyoloji ve doğal seyir')
+    .replace(/^risk faktörleri\s+ve\s+epidemiyoloji$/iu, 'Epidemiyoloji ve risk profili')
+    .replace(/\bklinik tablo\b/giu, 'Klinik bulgular')
+    .replace(/\btanıya yaklaşım\b/giu, 'tanısal yaklaşım')
+    .replace(/^ayırıcı tanı\s+ve\s+taklit eden durumlar$/iu, 'Ayırıcı tanıda taklit eden durumlar')
+    .replace(/tedavi mantığı/giu, 'Tedavi stratejisi')
+    .replace(/\bakut yönetim\b/giu, 'akut dönem yönetimi')
+    .replace(/\bsınavda kritik noktalar\b/giu, 'klinik öncelikler')
+    .replace(/\bkomplikasyon\b(?=\s+ve|\s*,|$)/giu, 'komplikasyonlar')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  if (/^(?:en yüksek getirili sınav bilgileri|sınav bilgileri|sınav özeti)$/iu.test(clean)) return FINAL_SECTION_TITLES.examFocus;
+  if (/^(?:karıştırılmaması gerekenler|karışan noktalar)$/iu.test(clean)) return FINAL_SECTION_TITLES.doNotConfuse;
+  if (/^(?:tek sayfalık final tekrar|final tekrar|son tekrar)$/iu.test(clean)) return FINAL_SECTION_TITLES.finalReview;
+
+  const first = clean.charAt(0).toLocaleUpperCase('tr');
+  return limitAtWord(`${first}${clean.slice(1)}`, MAX_SECTION_TITLE_LENGTH);
 }
 
 function sanitizeSectionTitle(value = '', section = {}, index = 0, documentTitle = '') {
-  if (!isGenericSectionTitle(value)) return limitAtWord(stripMarkdownArtifacts(value), 86);
+  if (!isGenericSectionTitle(value)) return professionalizeSectionTitle(value, documentTitle);
   const firstBlockTitle = Array.isArray(section.blocks)
     ? section.blocks.map((block) => block?.title || block?.heading || '').find((title) => !isGenericSectionTitle(title))
     : '';
-  if (firstBlockTitle) return limitAtWord(stripMarkdownArtifacts(firstBlockTitle), 86);
+  if (firstBlockTitle) return professionalizeSectionTitle(firstBlockTitle, documentTitle);
   const idea = stripMarkdownArtifacts(section.mainIdea || '');
-  if (idea) return limitAtWord(idea, 74);
+  if (idea) return professionalizeSectionTitle(limitAtWord(idea, 68), documentTitle);
   const stems = [
-    'Temel kavram ve klinik çerçeve',
-    'Mekanizma ve patofizyolojik mantık',
-    'Klinik bulguların yorumlanması',
-    'Tanı, laboratuvar ve ayırıcı düşünme',
-    'Yönetim, tedavi ve sınav odağı',
+    `${documentTitle || 'Konu'}: Temel kavramlar ve klinik çerçeve`,
+    'Mekanizma ve patofizyolojik süreçler',
+    'Klinik bulgular ve tanısal yaklaşım',
+    'Ayırıcı tanı ve belirleyici özellikler',
+    'Tedavi stratejisi, izlem ve komplikasyonlar',
   ];
-  return stems[index] || `${documentTitle || 'Konu'}: çalışma odağı`;
+  return professionalizeSectionTitle(stems[index] || `${documentTitle || 'Konu'}: Klinik çalışma odağı`, documentTitle);
 }
 
 function normalizeVariant(value = '') {
@@ -508,7 +559,7 @@ function hasSectionTitle(sections = [], title = '') {
 function isFinalSummarySectionTitle(title = '') {
   const key = comparableTextKey(title);
   if (!key) return false;
-  return /(?:en yuksek getirili|yuksek getirili|sinav ozeti|sinav bilgileri|sinavda one cikan|karisan noktalar|karistirilmamasi gerekenler|tek sayfalik final|final tekrar|son tekrar|final pekistirme)/u.test(key);
+  return /(?:en yuksek getirili|yuksek getirili|sinav ozeti|sinav bilgileri|sinavda one cikan|karisan noktalar|karistirilmamasi gerekenler|sik karisan klinik ayrimlar|tek sayfalik final|final tekrar|son tekrar|son tekrar temel bilgiler|final pekistirme)/u.test(key);
 }
 
 function appendSectionOnce(sections = [], section = {}) {
@@ -616,19 +667,19 @@ function normalizeLessonDocument(raw = {}, payload = {}) {
 
   if (examFocus.length) {
     sections.splice(0, sections.length, ...appendSectionOnce(sections, {
-      title: 'En Yüksek Getirili Sınav Bilgileri',
+      title: FINAL_SECTION_TITLES.examFocus,
       blocks: [{ type: 'bullet_list', title: '', items: examFocus }],
     }));
   }
   if (doNotConfuse.length) {
     sections.splice(0, sections.length, ...appendSectionOnce(sections, {
-      title: 'Karıştırılmaması Gerekenler',
+      title: FINAL_SECTION_TITLES.doNotConfuse,
       blocks: [{ type: 'confusion_cards', cards: doNotConfuse }],
     }));
   }
   if (finalReview.length) {
     sections.splice(0, sections.length, ...appendSectionOnce(sections, {
-      title: 'Tek Sayfalık Final Tekrar',
+      title: FINAL_SECTION_TITLES.finalReview,
       blocks: [
         {
           type: 'callout',
@@ -651,9 +702,9 @@ function normalizeLessonDocument(raw = {}, payload = {}) {
     sections,
     roadmap: sections.map((section) => ({ id: section.id, title: section.title })),
     outline: sections.map((section) => ({ id: section.id, title: section.title })),
-    examFocus: { id: 'exam-focus', title: 'En Yüksek Getirili Sınav Bilgileri', items: examFocus },
-    doNotConfuse: { id: 'do-not-confuse', title: 'Karıştırılmaması Gerekenler', items: doNotConfuse.map((item) => ({ wrongIdea: item.confusingPoint, correctDistinction: item.correctDistinction, memoryHook: item.memoryMessage })) },
-    finalReview: { id: 'final-review', title: 'Tek Sayfalık Final Tekrar', content: finalReview },
+    examFocus: { id: 'exam-focus', title: FINAL_SECTION_TITLES.examFocus, items: examFocus },
+    doNotConfuse: { id: 'do-not-confuse', title: FINAL_SECTION_TITLES.doNotConfuse, items: doNotConfuse.map((item) => ({ wrongIdea: item.confusingPoint, correctDistinction: item.correctDistinction, memoryHook: item.memoryMessage })) },
+    finalReview: { id: 'final-review', title: FINAL_SECTION_TITLES.finalReview, content: finalReview },
     highYieldPoints: examFocus,
     commonConfusions: doNotConfuse.map((item) => [item.confusingPoint, item.correctDistinction, item.memoryMessage].filter(Boolean).join(' — ')),
   };
@@ -924,7 +975,7 @@ function buildPdfFromDocument(document = {}, payload = {}) {
       level: 1,
       pageNumber,
     };
-    if (/en yüksek getirili|sınav|karıştırılmaması|tek sayfalık final/iu.test(section.title)) highYieldAnchors.push(item);
+    if (/sınav|karışan|karıştırılmaması|klinik ayrımlar|final tekrar|son tekrar/iu.test(section.title)) highYieldAnchors.push(item);
     else outline.push(item);
     rect(MARGIN.left - 7, y + 14, 4, 26, [0.05, 0.45, 0.72]);
     wrapText(section.title, 15.5, CONTENT_WIDTH).forEach((line) => {
