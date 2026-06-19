@@ -1919,7 +1919,7 @@ function ScrollLessonBlock({ block = {} }) {
           {steps.map((step, index) => (
             <div className="komite-scroll-flow-step" key={`${step}-${index}`}>
               <span>{index + 1}</span>
-              <p><GlossaryText text={step} enabled revealMode="postAnswer" maxTerms={3} /></p>
+              <p>{step}</p>
             </div>
           ))}
         </div>
@@ -2040,7 +2040,6 @@ function CommitteeScrollableLessonView({ lesson = {} }) {
       <aside className="komite-scroll-sidebar" aria-label="Ders hızlı erişim">
         <div className="komite-scroll-sidebar-card">
           <strong>Hızlı erişim</strong>
-          {lessonDoc.estimatedStudyTime ? <small>{lessonDoc.estimatedStudyTime}</small> : null}
           <nav>
             {navItems.slice(0, 18).map((item) => (
               <button type="button" key={item.id} className={activeId === item.id ? 'active' : ''} onClick={() => scrollToId(item.id)}>
@@ -2052,30 +2051,25 @@ function CommitteeScrollableLessonView({ lesson = {} }) {
       </aside>
       <main className="komite-scroll-main">
         <header className="komite-scroll-toolbar">
-          <div>
+          <div className="komite-scroll-toolbar-title">
             <strong>{lessonDoc.title}</strong>
-            <small>{lessonDoc.subtitle}</small>
           </div>
           <div className="komite-scroll-toolbar-actions">
             <div className="komite-scroll-search">
               <input value={query} onChange={(event) => setQuery(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter') runSearch(); }} placeholder="Ders içinde ara" />
               <button type="button" onClick={runSearch}>Ara</button>
             </div>
-            <button type="button" className="komite-scroll-pdf-link" onClick={printLesson} title="Bu ekrandaki temiz HTML konu anlatımını PDF olarak kaydet"><Icon name="Download" size={16} /> PDF indir</button>
-            {pdfUrl ? <a className="komite-scroll-raw-pdf-link" href={pdfUrl} download={`${String(lessonDoc.title || 'komite-konu-anlatimi').replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-+|-+$/g, '') || 'komite-konu-anlatimi'}.pdf`} title="Sunucu tarafından oluşturulan yedek PDF dosyasını indir">Yedek PDF</a> : null}
+            {pdfUrl ? <a className="komite-scroll-raw-pdf-link" href={pdfUrl} download={`${String(lessonDoc.title || 'komite-konu-anlatimi').replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-+|-+$/g, '') || 'komite-konu-anlatimi'}.pdf`} title="Sunucu tarafından oluşturulan yedek PDF dosyasını indir"><Icon name="Download" size={16} /> PDF</a> : null}
           </div>
         </header>
 
         <article className="komite-scroll-document">
-          <section className="komite-scroll-intro-card">
+          <section className="komite-scroll-intro-card komite-scroll-print-header" aria-hidden="true">
             <h2>{lessonDoc.title}</h2>
-            <p>{lessonDoc.subtitle}</p>
-            {lessonDoc.sourceQualityNote ? <div className="komite-scroll-quality-note"><b>Güncellik notu</b><span>{lessonDoc.sourceQualityNote}</span></div> : null}
           </section>
 
           {sections.map((section, index) => (
             <section id={section.id} className={`komite-scroll-section ${lessonSectionTone(section.title)}`.trim()} key={section.id} style={lessonAccentStyle(index)}>
-              <div className="komite-scroll-section-kicker">{String(index + 1).padStart(2, '0')}</div>
               <h3>{section.title}</h3>
               {section.mainIdea ? <aside className="komite-scroll-callout main_idea"><strong>Ana fikir</strong><p>{section.mainIdea}</p></aside> : null}
               {(Array.isArray(section.blocks) ? section.blocks : [])
