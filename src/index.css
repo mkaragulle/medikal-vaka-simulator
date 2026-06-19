@@ -60206,3 +60206,92 @@ html[data-theme='dark'] .komite-scroll-callout.main_idea {
     padding: 0 !important;
   }
 }
+
+/* KOMITE lesson v7: mechanism flow stability — no glossary badges inside flow steps */
+.komite-scroll-flow {
+  overflow: visible !important;
+}
+
+.komite-scroll-flow-steps {
+  display: grid !important;
+  gap: 12px !important;
+}
+
+.komite-scroll-flow-step {
+  display: grid !important;
+  grid-template-columns: 42px minmax(0, 1fr) !important;
+  align-items: stretch !important;
+  column-gap: 14px !important;
+  min-width: 0 !important;
+}
+
+.komite-scroll-flow-step > span {
+  flex: none !important;
+  align-self: start !important;
+  width: 42px !important;
+  min-width: 42px !important;
+  height: 42px !important;
+  min-height: 42px !important;
+}
+
+.komite-scroll-flow-step > p {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 42px !important;
+  margin: 0 !important;
+  padding: 12px 16px !important;
+  line-height: 1.62 !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+}
+
+.komite-scroll-flow-step > p .glossary-term,
+.komite-scroll-flow-step > p .glossary-text-flow,
+.komite-scroll-flow-step > p [data-glossary-context-mode] {
+  display: inline !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: inherit !important;
+  font: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+
+.komite-scroll-flow-step > p .komite-search-hit {
+  display: inline !important;
+  width: auto !important;
+  min-width: 0 !important;
+  padding: 0.04em 0.18em !important;
+  border-radius: 0.25em !important;
+  line-height: inherit !important;
+  white-space: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+
+@media (max-width: 640px) {
+  .komite-scroll-flow-step {
+    grid-template-columns: 36px minmax(0, 1fr) !important;
+    column-gap: 10px !important;
+  }
+  .komite-scroll-flow-step > span {
+    width: 36px !important;
+    min-width: 36px !important;
+    height: 36px !important;
+    min-height: 36px !important;
+  }
+}

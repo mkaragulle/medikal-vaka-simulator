@@ -1947,6 +1947,35 @@ function HighlightedGlossaryText({ text = '', searchState = null, maxTerms = 4 }
 }
 
 
+function HighlightedPlainText({ text = '', searchState = null }) {
+  const source = String(text || '');
+  const term = searchState?.term || '';
+  const ranges = lessonSearchRanges(source, term);
+  if (!ranges.length) return <>{source}</>;
+  const parts = [];
+  let cursor = 0;
+  ranges.forEach(([start, end], index) => {
+    if (start > cursor) parts.push(source.slice(cursor, start));
+    const hitIndex = searchState.counter.value;
+    searchState.counter.value += 1;
+    const isActive = hitIndex === searchState.activeIndex;
+    parts.push(
+      <mark
+        className={`komite-search-hit ${isActive ? 'active' : ''}`.trim()}
+        data-search-hit="true"
+        data-search-index={hitIndex}
+        key={`plain-hit-${hitIndex}-${index}`}
+      >
+        {source.slice(start, end)}
+      </mark>
+    );
+    cursor = end;
+  });
+  if (cursor < source.length) parts.push(source.slice(cursor));
+  return <>{parts}</>;
+}
+
+
 function ScrollLessonBlock({ block = {}, searchState = null }) {
   if (block.type === 'paragraph') {
     return <p className="komite-scroll-paragraph"><HighlightedGlossaryText text={block.content || ''} searchState={searchState} maxTerms={5} /></p>;
@@ -1981,12 +2010,12 @@ function ScrollLessonBlock({ block = {}, searchState = null }) {
     const steps = Array.isArray(block.steps) ? block.steps : [];
     return steps.length ? (
       <div className="komite-scroll-flow">
-        {block.title ? <h4><HighlightedGlossaryText text={block.title} searchState={searchState} maxTerms={0} /></h4> : null}
+        {block.title ? <h4><HighlightedPlainText text={block.title} searchState={searchState} /></h4> : null}
         <div className="komite-scroll-flow-steps">
           {steps.map((step, index) => (
             <div className="komite-scroll-flow-step" key={`${step}-${index}`}>
               <span>{index + 1}</span>
-              <p><HighlightedGlossaryText text={step} searchState={searchState} maxTerms={3} /></p>
+              <p><HighlightedPlainText text={step} searchState={searchState} /></p>
             </div>
           ))}
         </div>
