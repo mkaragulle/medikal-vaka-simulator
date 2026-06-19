@@ -88,25 +88,93 @@ function normalizeLessonSections(rawSections = [], lessonTitle = '') {
       title: cleanLessonSectionTitle(section, index, lessonTitle),
       mainIdea: compactText(section.mainIdea || section.main_idea),
       blocks: Array.isArray(section.blocks) ? section.blocks : [],
+      topicGroupId: compactText(section.topicGroupId),
+      topicGroupTitle: compactText(section.topicGroupTitle),
     }))
     .filter((section) => section.title && section.blocks.length)
     .slice(0, 14);
+}
+
+function normalizeLessonItems(value = null, keys = ['items', 'content']) {
+  if (Array.isArray(value)) return value.map(compactText).filter(Boolean);
+  if (value && typeof value === 'object') {
+    for (const key of keys) {
+      if (Array.isArray(value[key])) return value[key].map(compactText).filter(Boolean);
+    }
+  }
+  return [];
+}
+
+function normalizeLessonConfusions(value = null) {
+  const items = Array.isArray(value) ? value : Array.isArray(value?.items) ? value.items : [];
+  return items
+    .map((item) => ({
+      confusingPoint: compactText(item?.confusingPoint || item?.wrongIdea || item?.title),
+      correctDistinction: compactText(item?.correctDistinction || item?.correct || item?.distinction),
+      memoryMessage: compactText(item?.memoryMessage || item?.memoryHook || item?.message),
+    }))
+    .filter((item) => item.confusingPoint || item.correctDistinction || item.memoryMessage)
+    .slice(0, 10);
+}
+
+function normalizeTopicGroups(rawGroups = [], lessonTitle = '') {
+  return (Array.isArray(rawGroups) ? rawGroups : [])
+    .map((group, index) => {
+      const firstSectionTitle = cleanLessonSectionTitle(group?.sections?.[0] || {}, 0, lessonTitle);
+      const title = cleanPdfTitle(group?.title, firstSectionTitle || lessonTitle || 'Komite konu paketi');
+      const id = compactText(group?.id) || `topic-group-${index + 1}`;
+      const sections = normalizeLessonSections(group?.sections, title).map((section) => ({
+        ...section,
+        id: section.id.startsWith(`${id}-`) ? section.id : `${id}-${section.id}`,
+        topicGroupId: id,
+        topicGroupTitle: title,
+      }));
+      if (!sections.length) return null;
+      return {
+        id,
+        title,
+        mainIdea: compactText(group?.mainIdea || group?.main_idea),
+        studyDirection: compactText(group?.studyDirection || group?.study_direction),
+        coverageWeight: ['high', 'medium', 'low'].includes(group?.coverageWeight) ? group.coverageWeight : 'medium',
+        sections,
+        examFocus: normalizeLessonItems(group?.examFocus),
+        doNotConfuse: normalizeLessonConfusions(group?.doNotConfuse || group?.dontConfuse),
+        finalReview: normalizeLessonItems(group?.finalReview),
+      };
+    })
+    .filter(Boolean)
+    .slice(0, 8);
 }
 
 function normalizeScrollableLesson(rawLesson = {}) {
   const document = rawLesson.document || rawLesson.lessonDocument || rawLesson;
   const title = cleanPdfTitle(document.title || rawLesson.title, 'Komite konu anlatımı');
   const subtitle = compactText(document.subtitle || rawLesson.subtitle) || 'Konu anlatımı, klinik mantık ve sınav odaklı tekrar';
-  const sections = normalizeLessonSections(document.sections, title);
+  const documentSections = normalizeLessonSections(document.sections, title);
+  const topicGroups = normalizeTopicGroups(document.topicGroups || rawLesson.topicGroups, title);
+  const groupedSectionIds = new Set(topicGroups.flatMap((group) => group.sections.map((section) => section.id)));
+  const sections = topicGroups.length
+    ? topicGroups.flatMap((group) => group.sections).concat(documentSections.filter((section) => !groupedSectionIds.has(section.id) && !section.topicGroupId))
+    : documentSections;
   if (!sections.length) throw new Error(KOMITE_GENERATION_ERROR_MESSAGE);
   const pdfUrl = compactText(rawLesson.pdfUrl || rawLesson.pdfDataUrl || document.pdfUrl || document.pdfDataUrl);
-  const outline = sections.map((section) => ({ id: section.id, title: section.title }));
+  const lessonMode = topicGroups.length > 1 || document.lessonMode === 'multi_topic_bundle' ? 'multi_topic_bundle' : 'single_topic';
+  const topicSectionIds = new Set(topicGroups.flatMap((group) => group.sections.map((section) => section.id)));
+  const outline = lessonMode === 'multi_topic_bundle'
+    ? topicGroups.flatMap((group) => [
+      { id: group.id, title: group.title, level: 1, topicGroupId: group.id },
+      ...group.sections.map((section) => ({ id: section.id, title: section.title, level: 2, topicGroupId: group.id })),
+    ]).concat(sections.filter((section) => !topicSectionIds.has(section.id)).map((section) => ({ id: section.id, title: section.title, level: 1 })))
+    : sections.map((section) => ({ id: section.id, title: section.title, level: 1 }));
   return {
     id: compactText(rawLesson.id || document.id) || `komite-lesson-${Date.now().toString(36)}`,
     type: 'lessonDocument',
     status: 'completed',
     title,
     subtitle,
+    lessonMode,
+    sourceAnalysis: document.sourceAnalysis || rawLesson.sourceAnalysis || null,
+    topicGroups,
     language: document.language || 'tr',
     level: compactText(document.level || rawLesson.level) || 'Tıp fakültesi komite düzeyi',
     estimatedStudyTime: compactText(document.estimatedStudyTime || rawLesson.estimatedStudyTime),
@@ -117,6 +185,9 @@ function normalizeScrollableLesson(rawLesson = {}) {
     examFocus: document.examFocus || rawLesson.examFocus || null,
     doNotConfuse: document.doNotConfuse || rawLesson.doNotConfuse || null,
     finalReview: document.finalReview || rawLesson.finalReview || null,
+    globalExamFocus: normalizeLessonItems(document.globalExamFocus || rawLesson.globalExamFocus),
+    globalDoNotConfuse: normalizeLessonConfusions(document.globalDoNotConfuse || rawLesson.globalDoNotConfuse),
+    globalFinalReview: normalizeLessonItems(document.globalFinalReview || rawLesson.globalFinalReview),
     highYieldPoints: Array.isArray(rawLesson.highYieldPoints) ? rawLesson.highYieldPoints : [],
     commonConfusions: Array.isArray(rawLesson.commonConfusions) ? rawLesson.commonConfusions : [],
     pdfUrl,

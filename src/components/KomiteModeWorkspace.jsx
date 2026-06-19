@@ -1852,6 +1852,14 @@ function sectionText(section = {}) {
   return [section.title, section.mainIdea, ...(Array.isArray(section.blocks) ? section.blocks.map(blockText) : [])].filter(Boolean).join(' ');
 }
 
+function topicGroupText(group = {}) {
+  const chunks = [group.title, group.mainIdea, group.studyDirection];
+  (group.sections || []).forEach((section) => chunks.push(sectionText(section)));
+  chunks.push(...(group.examFocus || []), ...(group.finalReview || []));
+  (group.doNotConfuse || []).forEach((card) => chunks.push(card.confusingPoint, card.correctDistinction, card.memoryMessage));
+  return chunks.filter(Boolean).join(' ');
+}
+
 function calloutClass(variant = '') {
   const key = String(variant || 'main_idea').replace(/[^a-z_]/g, '');
   return `komite-scroll-callout ${key || 'main_idea'}`;
@@ -2076,12 +2084,72 @@ function ScrollLessonBlock({ block = {}, searchState = null }) {
   return fallback ? <p className="komite-scroll-paragraph"><HighlightedGlossaryText text={fallback} searchState={searchState} maxTerms={4} /></p> : null;
 }
 
+function ScrollableLessonSection({ section = {}, index = 0, searchState = null }) {
+  return (
+    <section id={section.id} className={`komite-scroll-section ${lessonSectionTone(section.title)}`.trim()} style={lessonAccentStyle(index)}>
+      <h3><HighlightedGlossaryText text={section.title} searchState={searchState} maxTerms={0} /></h3>
+      {section.mainIdea ? <aside className="komite-scroll-callout main_idea"><strong>Ana fikir</strong><p><HighlightedGlossaryText text={section.mainIdea} searchState={searchState} maxTerms={4} /></p></aside> : null}
+      {(Array.isArray(section.blocks) ? section.blocks : [])
+        .filter((block, blockIndex) => !(blockIndex === 0 && block.type === 'callout' && block.variant === 'main_idea' && block.content === section.mainIdea))
+        .map((block, blockIndex) => <ScrollLessonBlock block={block} searchState={searchState} key={`${section.id}-block-${blockIndex}`} />)}
+    </section>
+  );
+}
+
+function TopicGroupReview({ group = {}, searchState = null }) {
+  const hasExamFocus = Array.isArray(group.examFocus) && group.examFocus.length;
+  const hasConfusions = Array.isArray(group.doNotConfuse) && group.doNotConfuse.length;
+  const hasFinalReview = Array.isArray(group.finalReview) && group.finalReview.length;
+  if (!hasExamFocus && !hasConfusions && !hasFinalReview) return null;
+  return (
+    <section className="komite-topic-group-review" aria-label={`${group.title} pekiştirme`}>
+      <header>
+        <span>Konuya özel pekiştirme</span>
+        <h3>{group.title}</h3>
+      </header>
+      <div className="komite-topic-group-review-grid">
+        {hasExamFocus ? (
+          <article className="exam">
+            <h4>Sınavda öne çıkanlar</h4>
+            <ScrollLessonBlock block={{ type: 'bullet_list', items: group.examFocus }} searchState={searchState} />
+          </article>
+        ) : null}
+        {hasConfusions ? (
+          <article className="confusions">
+            <h4>Sık karışan ayrımlar</h4>
+            <ScrollLessonBlock block={{ type: 'confusion_cards', cards: group.doNotConfuse }} searchState={searchState} />
+          </article>
+        ) : null}
+        {hasFinalReview ? (
+          <article className="review">
+            <h4>Mini tekrar</h4>
+            <ScrollLessonBlock block={{ type: 'bullet_list', items: group.finalReview }} searchState={searchState} />
+          </article>
+        ) : null}
+      </div>
+    </section>
+  );
+}
+
 function CommitteeScrollableLessonView({ lesson = {} }) {
   const lessonDoc = getScrollableLessonDocument(lesson);
   const [activeId, setActiveId] = useState('');
   const [query, setQuery] = useState('');
   const [activeSearchIndex, setActiveSearchIndex] = useState(-1);
   const [lastSearchTerm, setLastSearchTerm] = useState('');
+  const topicGroups = useMemo(() => {
+    const rawGroups = Array.isArray(lessonDoc?.topicGroups) ? lessonDoc.topicGroups : [];
+    return rawGroups.map((group, groupIndex) => ({
+      ...group,
+      id: group.id || createLessonAnchorId(group.title, groupIndex),
+      sections: (Array.isArray(group.sections) ? group.sections : []).map((section, sectionIndex) => ({
+        ...section,
+        id: section.id || createLessonAnchorId(`${group.title}-${section.title}`, sectionIndex),
+        topicGroupId: group.id || createLessonAnchorId(group.title, groupIndex),
+      })),
+    }));
+  }, [lessonDoc]);
+  const isMultiTopic = lessonDoc?.lessonMode === 'multi_topic_bundle' && topicGroups.length > 1;
   const sections = useMemo(() => {
     const raw = Array.isArray(lessonDoc?.sections) ? lessonDoc.sections : [];
     return raw.map((section, index) => ({
@@ -2090,9 +2158,21 @@ function CommitteeScrollableLessonView({ lesson = {} }) {
       textIndex: sectionText(section).toLocaleLowerCase('tr'),
     }));
   }, [lessonDoc]);
-  const navItems = useMemo(() => sections.map((section) => ({ id: section.id, title: section.title })), [sections]);
+  const groupedSectionIds = useMemo(() => new Set(topicGroups.flatMap((group) => group.sections.map((section) => section.id))), [topicGroups]);
+  const ungroupedSections = useMemo(() => sections.filter((section) => !groupedSectionIds.has(section.id)), [sections, groupedSectionIds]);
+  const navItems = useMemo(() => {
+    if (!isMultiTopic) return sections.map((section) => ({ id: section.id, title: section.title }));
+    return topicGroups.flatMap((group) => [
+      { id: group.id, title: group.title, topicGroupId: group.id, isGroup: true },
+      ...group.sections.map((section) => ({ id: section.id, title: section.title, topicGroupId: group.id })),
+    ]).concat(ungroupedSections.map((section) => ({ id: section.id, title: section.title })));
+  }, [isMultiTopic, sections, topicGroups, ungroupedSections]);
   const cleanSearchQuery = useMemo(() => normalizeLessonSearchTerm(query), [query]);
-  const searchableLessonText = useMemo(() => sections.map(sectionText).join('\n'), [sections]);
+  const searchableLessonText = useMemo(() => (
+    isMultiTopic
+      ? topicGroups.map(topicGroupText).concat(ungroupedSections.map(sectionText)).join('\n')
+      : sections.map(sectionText).join('\n')
+  ), [isMultiTopic, sections, topicGroups, ungroupedSections]);
   const searchTotal = useMemo(() => countLessonSearchMatches(searchableLessonText, cleanSearchQuery), [searchableLessonText, cleanSearchQuery]);
 
   useEffect(() => {
@@ -2164,14 +2244,46 @@ function CommitteeScrollableLessonView({ lesson = {} }) {
   const searchState = cleanSearchQuery
     ? { term: cleanSearchQuery, activeIndex: lastSearchTerm === cleanSearchQuery ? activeSearchIndex : -1, counter: searchCounter }
     : null;
+  const activeGroupId = isMultiTopic
+    ? (topicGroups.find((group) => group.id === activeId || group.sections.some((section) => section.id === activeId))?.id || '')
+    : '';
 
   return (
     <div className="komite-scroll-lesson-view">
       <aside className="komite-scroll-sidebar" aria-label="Ders hızlı erişim">
         <div className="komite-scroll-sidebar-card">
           <strong>Hızlı erişim</strong>
-          <nav>
-            {navItems.slice(0, 18).map((item) => (
+          <nav className={isMultiTopic ? 'grouped' : ''}>
+            {isMultiTopic ? (
+              <>
+                {topicGroups.map((group) => (
+                  <div className={`komite-scroll-nav-group ${activeGroupId === group.id ? 'active' : ''}`.trim()} key={group.id}>
+                    <button type="button" className="komite-scroll-nav-group-title" onClick={() => scrollToId(group.id)}>
+                      <span>{group.title}</span>
+                    </button>
+                    <div className="komite-scroll-nav-children">
+                      {group.sections.slice(0, 8).map((section) => (
+                        <button type="button" key={section.id} className={activeId === section.id ? 'active' : ''} onClick={() => scrollToId(section.id)}>
+                          <span>{section.title}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+                {ungroupedSections.length ? (
+                  <div className="komite-scroll-nav-group final">
+                    <span className="komite-scroll-nav-label">Genel pekiştirme</span>
+                    <div className="komite-scroll-nav-children">
+                      {ungroupedSections.slice(0, 4).map((section) => (
+                        <button type="button" key={section.id} className={activeId === section.id ? 'active' : ''} onClick={() => scrollToId(section.id)}>
+                          <span>{section.title}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+              </>
+            ) : navItems.slice(0, 18).map((item) => (
               <button type="button" key={item.id} className={activeId === item.id ? 'active' : ''} onClick={() => scrollToId(item.id)}>
                 <span>{item.title}</span>
               </button>
@@ -2199,14 +2311,30 @@ function CommitteeScrollableLessonView({ lesson = {} }) {
             <h2>{lessonDoc.title}</h2>
           </section>
 
-          {sections.map((section, index) => (
-            <section id={section.id} className={`komite-scroll-section ${lessonSectionTone(section.title)}`.trim()} key={section.id} style={lessonAccentStyle(index)}>
-              <h3><HighlightedGlossaryText text={section.title} searchState={searchState} maxTerms={0} /></h3>
-              {section.mainIdea ? <aside className="komite-scroll-callout main_idea"><strong>Ana fikir</strong><p><HighlightedGlossaryText text={section.mainIdea} searchState={searchState} maxTerms={4} /></p></aside> : null}
-              {(Array.isArray(section.blocks) ? section.blocks : [])
-                .filter((block, blockIndex) => !(blockIndex === 0 && block.type === 'callout' && block.variant === 'main_idea' && block.content === section.mainIdea))
-                .map((block, blockIndex) => <ScrollLessonBlock block={block} searchState={searchState} key={`${section.id}-block-${blockIndex}`} />)}
-            </section>
+          {isMultiTopic ? (
+            <>
+              {topicGroups.map((group, groupIndex) => (
+                <section id={group.id} className="komite-topic-group" key={group.id}>
+                  <header className="komite-topic-group-header">
+                    <span>{`Konu ${groupIndex + 1}`}</span>
+                    <h2><HighlightedPlainText text={group.title} searchState={searchState} /></h2>
+                    {group.mainIdea ? <p><HighlightedGlossaryText text={group.mainIdea} searchState={searchState} maxTerms={4} /></p> : null}
+                    {group.studyDirection ? <small><HighlightedGlossaryText text={group.studyDirection} searchState={searchState} maxTerms={3} /></small> : null}
+                  </header>
+                  <div className="komite-topic-group-sections">
+                    {group.sections.map((section, sectionIndex) => (
+                      <ScrollableLessonSection section={section} index={groupIndex + sectionIndex} searchState={searchState} key={section.id} />
+                    ))}
+                  </div>
+                  <TopicGroupReview group={group} searchState={searchState} />
+                </section>
+              ))}
+              {ungroupedSections.map((section, index) => (
+                <ScrollableLessonSection section={section} index={topicGroups.length + index} searchState={searchState} key={section.id} />
+              ))}
+            </>
+          ) : sections.map((section, index) => (
+            <ScrollableLessonSection section={section} index={index} searchState={searchState} key={section.id} />
           ))}
         </article>
       </main>

@@ -153,43 +153,81 @@ function buildPrompt(payload = {}) {
     '',
     'JSON şeması:',
     safeJson({
+      lessonMode: 'single_topic veya multi_topic_bundle',
       title: 'Kısa konu adı, en fazla 60 karakter',
       subtitle: 'Konu anlatımı, klinik mantık ve sınav odaklı tekrar',
-      sections: [
+      sourceAnalysis: {
+        relationshipSummary: 'Dosyalar arasındaki konu ilişkisinin kısa teknik özeti',
+        topicCoverageWarnings: [],
+        files: [
+          {
+            sourceId: 'KAYNAK_1',
+            mainTopic: 'Dosyanın ana konusu',
+            subtopics: ['Alt konu'],
+            relationship: 'Aynı ana konu / yakın ilişkili alt konu / farklı ana konu',
+            coverageWeight: 'high / medium / low',
+          },
+        ],
+      },
+      topicGroups: [
         {
-          title: 'Ana bölüm başlığı',
-          mainIdea: 'Bu bölümün kısa ana fikri',
-          blocks: [
-            { type: 'paragraph', content: 'Akıcı ve bilimsel paragraf metni' },
-            { type: 'callout', variant: 'clinical_logic', content: 'Kısa kutu metni' },
-            { type: 'mechanism_flow', title: 'Mekanizma özeti', steps: ['İlk olay', 'Ara süreç', 'Klinik sonuç'] },
-            { type: 'table', title: 'Tablo başlığı', columns: ['Özellik', 'Durum A', 'Durum B'], rows: [['Mekanizma', 'Açıklama', 'Açıklama']] },
-            { type: 'bullet_list', title: 'Kısa liste başlığı', items: ['Liste maddesi'] },
+          id: 'konu-grubu-id',
+          title: 'Ana konu başlığı',
+          mainIdea: 'Bu konu grubunun ana fikri',
+          studyDirection: 'Kısa ve konuya özgü çalışma yönü',
+          coverageWeight: 'high / medium / low',
+          sections: [
+            {
+              title: 'Ana bölüm başlığı',
+              mainIdea: 'Bu bölümün kısa ana fikri',
+              blocks: [
+                { type: 'paragraph', content: 'Akıcı ve bilimsel paragraf metni' },
+                { type: 'callout', variant: 'clinical_logic', content: 'Kısa kutu metni' },
+                { type: 'mechanism_flow', title: 'Mekanizma özeti', steps: ['İlk olay', 'Ara süreç', 'Klinik sonuç'] },
+                { type: 'table', title: 'Tablo başlığı', columns: ['Özellik', 'Durum A', 'Durum B'], rows: [['Mekanizma', 'Açıklama', 'Açıklama']] },
+                { type: 'bullet_list', title: 'Kısa liste başlığı', items: ['Liste maddesi'] },
+              ],
+            },
           ],
+          examFocus: ['Bu konu grubuna özgü sınav bilgisi'],
+          doNotConfuse: [
+            {
+              confusingPoint: 'Konu grubuna özgü karışan nokta',
+              correctDistinction: 'Doğru ayrım',
+              memoryMessage: 'Akılda kalacak mesaj',
+            },
+          ],
+          finalReview: ['Bu konu grubuna özgü mini final tekrar'],
         },
       ],
-      examFocus: ['Somut sınav odaklı bilgi'],
-      doNotConfuse: [
+      globalExamFocus: ['Konular arasında bağ kuran sınav bilgisi; gerekmiyorsa boş dizi'],
+      globalDoNotConfuse: [
         {
-          confusingPoint: 'Karışan nokta',
+          confusingPoint: 'Konular arasında karışan nokta',
           correctDistinction: 'Doğru ayrım',
           memoryMessage: 'Akılda kalacak mesaj',
         },
       ],
-      finalReview: ['Tek sayfalık final tekrar maddesi'],
+      globalFinalReview: ['Bütün paketi bağlayan son tekrar maddesi; gerekmiyorsa boş dizi'],
       qualityNote: '',
     }),
     '',
     'İçerik kuralları:',
+    '- İçeriği yazmadan önce sourceAnalysis alanını doldur: her KAYNAK_n için ana konuyu, alt konuları, diğer dosyalarla ilişkisini ve kaynak kapsamına göre derinlik ağırlığını belirle. Bu analiz kullanıcıya ders metni olarak yazılmayacak; yalnız yapıyı kurmak için kullanılacak.',
+    '- Kararı dosya sayısına göre verme. Dosyalar aynı ana konunun parçalarıysa lessonMode=single_topic ve tek topicGroup üret. Yakın ilişkili alt konuları aynı topicGroup içinde belirgin sections olarak birleştir. Birbirinden bağımsız kapsamlı ana konular varsa lessonMode=multi_topic_bundle ve her ana konu için ayrı topicGroup üret.',
+    '- Belirli hastalık, branş, ders veya dosya adına göre özel kural uygulama. İlişki sınıflaması yalnız içerik benzerliği, öğrenme bağı ve kaynak kapsamına dayanmalı.',
+    '- Her kapsamlı kaynak en az bir topicGroup veya section içinde anlamlı derinlikte temsil edilmeli. En uzun ya da ilk dosyayı otomatik merkez kabul etme; topicCoverageWarnings alanına yalnız gerçekten eksik veya güvenilmez kapsam varsa kısa uyarı ekle.',
+    '- single_topic modunda topicGroups yine kullanılmalı ve tam olarak bir grup içermeli. multi_topic_bundle modunda konu grupları birbirine karıştırılmamalı; her grubun kendi mainIdea, sections, examFocus, doNotConfuse ve finalReview alanları doldurulmalı.',
+    '- Çok konulu paketin title alanı ilk dosyayı veya yalnız en uzun konuyu değil bütün paketi temsil etmeli. Ortak kısa üst başlık bulunamıyorsa sade ve nötr bir Komite Konu Paketi başlığı kullan; konu adlarını uzun bir başlıkta art arda dizme.',
     '- title kısa ve temiz olmalı; ilk paragrafı, dosya adını veya uzun otomatik başlığı title yapma.',
     '- Ayrı kapak, A4 sayfa mantığı veya PDF viewer varsayımı üretme; içerik tek parça scroll edilen web dokümanı gibi çalışılabilir olmalı.',
     '- Kaynak formatını hatırlatan "slayt", "sunum", "bu sayfada", "dokümanda", "PDF’de", "yüklü dosyada" gibi ifadeler kullanma.',
-    '- Dosya sırasını körü körüne takip etme; öğrenme akışına göre 6-8 güçlü ana bölüm oluştur. Konu çok dar ise 5 bölüm kabul edilebilir.',
+    '- Dosya sırasını körü körüne takip etme. Tek konu modunda öğrenme akışına göre 5-8 güçlü bölüm oluştur. Çok konu modunda her topicGroup için kaynak kapsamıyla orantılı, genellikle 3-7 anlamlı bölüm oluştur; dar bir konuyu gereksiz büyütme, kapsamlı bir konuyu tek küçük başlıkla geçiştirme.',
     '- Bölüm başlıkları hem hızlı erişimde hem ders içeriğinde aynen görünecektir. Bu nedenle her başlığı kısa, akademik, konuya özgü ve ilk bakışta kapsamı anlaşılır bir isim tamlaması olarak yaz.',
     '- Başlıklar tercihen 4-9 kelime ve en fazla 72 karakter olsun. Başlıklarda cümle kurma; "anlamak", "öğrenmek", "yorumlamak" gibi fiiller, "büyük resim", "genel bakış", "kritik noktalar" ve "çeşitli konular" gibi belirsiz ifadeler kullanma.',
     '- Aynı kavramı iki başlıkta tekrarlama. Örneğin etiyoloji ve doğal seyir bir bölümdeyse, epidemiyoloji ve risk profili ayrı ve net bir kapsam taşımalıdır.',
     '- Başlıklar render bileşenini değil, gerçek tıbbi içeriği adlandırmalıdır. "Klinik tablo ve tanıya yaklaşım" yerine "Klinik bulgular ve tanısal yaklaşım"; "Tedavi mantığı ve akut yönetim" yerine konuya uygun biçimde "Tedavi stratejisi ve akut dönem yönetimi" düzeyinde profesyonel başlıklar üret.',
-    '- İlk bölüm başlığı konu adını nesne halinde kullanan "Astımı/Diyabeti büyük resimle anlamak" benzeri bir ifade olmasın. Bunun yerine konuya göre "Astım: Temel kavramlar ve klinik çerçeve" benzeri, doğal ve akademik bir başlık üret. Bu örneği sabit şablon olarak kopyalama.',
+    '- İlk bölüm başlığında konu adını nesne halinde kullanıp "büyük resimle anlamak" gibi bir cümle kurma. Konu adını ve bölüm kapsamını doğal, kısa ve akademik bir isim tamlamasıyla ifade et.',
     '- İlk ana bölüm mutlaka büyük resmi kurmalı: temel tanım, normal fizyoloji veya ana mekanizma ve öğrencinin konuyu nasıl düşünmesi gerektiği açıklanmalı. Konu doğrudan patofizyolojiyle başlamamalı.',
     '- Her ana bölümde konuya uygunsa tanım, normal işleyiş, mekanizma/patofizyoloji, klinik bağlantı, tanı/laboratuvar, ayırıcı düşünme, yönetim/tedavi mantığı ve sınav odağı derinlikli işlenmeli.',
     '- Komite öğrencisi için detay seviyesi yeterli olmalı: ana bölümlerde yalnızca 1 kısa paragrafla geçme; gerekli yerlerde 2-4 akıcı paragraf, kısa liste, klinik mantık kutusu veya tablo kullan.',
@@ -200,17 +238,17 @@ function buildPrompt(payload = {}) {
     '- Tablolar yalnız tanı kriteri, ayırıcı tanı, sınıflama, tedavi karşılaştırması veya laboratuvar yorumu gerçekten kolaylaştırıyorsa kullanılsın.',
     '- Her table block için rows içindeki her satır columns ile aynı sayıda hücre taşısın.',
     '- Mekanizma akışlarını sadece mechanism_flow block olarak ver; steps içine ok, tire, yıldız veya soru işareti koyma.',
-    '- Konu anlatımı sonunda examFocus, doNotConfuse ve finalReview alanlarını mutlaka doldur; bu alanlar ana bölümlerde zaten geçen bilgileri birebir tekrar etmek yerine sınav öncesi rafine tekrar gibi yazılsın.',
+    '- Her topicGroup sonunda examFocus, doNotConfuse ve finalReview alanlarını mutlaka doldur; bu alanlar ana bölümlerde zaten geçen bilgileri birebir tekrar etmek yerine o konuya özgü rafine tekrar gibi yazılsın. global alanları yalnız konular arasında gerçek bir bağ veya ortak ayrım varsa doldur.',
     '- mainIdea zaten her bölüm başında ayrı kutu olarak render edilir; blocks içinde ayrıca main_idea / Ana fikir callout üretme. Ek kutu gerekiyorsa clinical_logic, exam_tip, warning veya update_note gibi gerçekten farklı işlevli bir varyant kullan.',
     '- Tedavi anlatılan konularda sadece ilaç/yöntem adı verme; tedavinin mantığını, hangi durumda seçildiğini, izlemde nelere dikkat edildiğini ve pratik karar noktasını açıkla.',
     '- Tanı anlatılan konularda yalnız eşik verme; testin ne zaman tercih edildiğini, neyle karışabileceğini, hangi durumda yanıltabileceğini ve klinik bağlamı açıklayan yorum ekle.',
-    '- Konuya özel hard-code kullanma: diyabet, anemi, büyüme bozukluğu, immünoloji, enfeksiyon, farmakoloji, anatomi veya başka herhangi bir başlık için ayrı sabit kural/case/cache oluşturma. Yüklenen materyalin konusunu önce kendin analiz et; kaliteyi global öğretim mimarisiyle yükselt.',
+    '- Konuya özel hard-code kullanma: herhangi bir hastalık, branş veya ders başlığı için ayrı sabit kural, case ya da cache oluşturma. Yüklenen materyalin konusunu önce kendin analiz et; kaliteyi global öğretim mimarisiyle yükselt.',
     '- Konu türünü otomatik belirle ve uygun anlatım omurgasını seç: hastalık konularında tanım-normal fizyoloji-patofizyoloji-klinik-tanı-ayırıcı tanı-tedavi-izlem-komplikasyon; fizyoloji konularında normal mekanizma-regülasyon-geri bildirim-klinik korelasyon; farmakoloji konularında etki mekanizması-endikasyon-kontrendikasyon-yan etki-etkileşim-izlem; mikrobiyoloji/immünoloji konularında etken/hücre-mekanizma-klinik sendrom-tanı-tedavi/korunma; anatomi/histoloji konularında yapı-ilişki-fonksiyon-klinik önem akışı kullanılmalı.',
     '- Her konuda, o konunun kendi kritik güvenlik ve karar noktalarını çıkar: acil durum varsa ilk yaklaşım, stabilizasyon mantığı, hayatı tehdit eden bulgular ve izlem güvenliği; laboratuvar varsa testin yorumu, yanıltıcı durumları ve klinik bağlamı; tedavi varsa seçim gerekçesi, izlem noktası, yan etki/komplikasyon uyarısı ve pratik karar cümlesi; sınıflama varsa ayırıcı özellikler ve sınavda karışan eşikler açıklanmalı.',
     '- Klinik/acil tablo içeren herhangi bir konuda konuya özel hard-code yapmadan şu genel çerçeveyi uygula: önce hastayı güvenli hale getiren önceliği belirt, sonra tanı kanıtını, mekanizmayı, izlem parametresini ve yanlış yönetimde doğacak riski kısa ama net açıkla.',
     '- Global yüksek verim kuralı: kaynakta geçen veya konu mantığı için zorunlu olan sayısal eşikler, tanı kriterleri, sınıflamalar, mekanizma zincirleri, komplikasyonlar, kontraendikasyonlar, tedavi basamakları ve sık karıştırılan ayrımlar korunmalı; bunlar konuya göre otomatik seçilmeli, tek bir hastalığa özel sabit listeye bağlı kalınmamalı.',
-    '- Final bölümleri rafine tekrar gibi olmalı: examFocus kısa yüksek getirili maddeler, doNotConfuse kartları gerçek karışan ayrımlar, finalReview ise tek bakışta çalışılacak son tekrar maddeleri olarak yazılsın. Bu üç alanın maddeleri birbirinin kopyası olmamalı; examFocus sınav bilgisi, doNotConfuse yanlış ayrım düzeltmesi, finalReview ise bütün konuyu bağlayan son tekrar işlevi görmeli.',
-    '- Final/sınav/karıştırma tekrarlarını sections içine ayrıca bölüm olarak yazma; bu üç alan yalnızca top-level examFocus, doNotConfuse ve finalReview içinde yer almalı. Böylece aynı yüksek getirili bilgiler PDF ve HTML çıktıda iki kez tekrar etmez.',
+    '- Final bölümleri rafine tekrar gibi olmalı: topicGroup.examFocus kısa yüksek getirili maddeler, topicGroup.doNotConfuse kartları gerçek karışan ayrımlar, topicGroup.finalReview ise tek bakışta çalışılacak mini tekrar maddeleri olarak yazılsın. Bu üç alanın maddeleri birbirinin kopyası olmamalı.',
+    '- Final/sınav/karıştırma tekrarlarını sections içine ayrıca bölüm olarak yazma; bunları yalnız ilgili topicGroup alanlarında ve gerekiyorsa global alanlarda tut. Böylece aynı yüksek getirili bilgiler HTML ve PDF çıktıda iki kez tekrar etmez.',
     '',
     'Callout variant seçenekleri:',
     'main_idea, clinical_logic, exam_tip, dont_confuse, warning, update_note, final_review',
@@ -257,7 +295,7 @@ async function requestLessonDocument({ apiKey, model, prompt, sourcePayload }) {
         { role: 'system', content: 'Yalnızca geçerli JSON üret. Markdown, HTML, kod bloğu veya kaynak işleme açıklaması yazma.' },
         { role: 'user', content: prompt },
       ],
-      max_output_tokens: Number.parseInt(process.env.OPENAI_KOMITE_MAX_TOKENS || process.env.OPENAI_KOMITE_PDF_MAX_TOKENS || '', 10) || 16000,
+      max_output_tokens: Number.parseInt(process.env.OPENAI_KOMITE_MAX_TOKENS || process.env.OPENAI_KOMITE_PDF_MAX_TOKENS || '', 10) || 24000,
       temperature: Number.parseFloat(process.env.OPENAI_KOMITE_TEMPERATURE || process.env.OPENAI_TEMPERATURE || '0.2'),
     }),
   });
@@ -631,30 +669,140 @@ function normalizeBlock(block = {}) {
   return fallback ? [{ type: 'paragraph', content: fallback }] : [];
 }
 
-function normalizeLessonDocument(raw = {}, payload = {}) {
-  const metadata = payload.metadata || {};
-  const titleFallback = metadata.course || metadata.committee || 'Komite konu anlatımı';
-  const title = sanitizeTitle(raw.title, titleFallback);
-  const subtitle = stripMarkdownArtifacts(raw.subtitle || 'Konu anlatımı, klinik mantık ve sınav odaklı tekrar');
-  const rawSections = Array.isArray(raw.sections) ? raw.sections : [];
-  let sections = rawSections
+function normalizeCoverageWeight(value = '') {
+  const clean = stripMarkdownArtifacts(value).toLocaleLowerCase('tr');
+  if (/high|yuksek|yüksek/iu.test(clean)) return 'high';
+  if (/low|dusuk|düşük/iu.test(clean)) return 'low';
+  return 'medium';
+}
+
+function normalizeContentSections(rawSections = [], documentTitle = '', topicGroup = null) {
+  const groupId = topicGroup?.id || '';
+  const groupTitle = topicGroup?.title || '';
+  return (Array.isArray(rawSections) ? rawSections : [])
     .map((section, index) => {
-      const sectionTitle = sanitizeSectionTitle(section?.title || '', section || {}, index, title);
+      const sectionTitle = sanitizeSectionTitle(section?.title || '', section || {}, index, groupTitle || documentTitle);
       const mainIdea = stripMarkdownArtifacts(section?.mainIdea || section?.main_idea || '');
       const blocks = [];
       (Array.isArray(section?.blocks) ? section.blocks : []).forEach((block) => {
         blocks.push(...normalizeBlock(block));
       });
       const cleanBlocks = dedupeBlocks(blocks, mainIdea);
-      return (cleanBlocks.length || mainIdea) ? { id: slugify(sectionTitle), title: sectionTitle, mainIdea, blocks: cleanBlocks } : null;
+      if (!cleanBlocks.length && !mainIdea) return null;
+      const sectionId = slugify(section?.id || sectionTitle);
+      return {
+        id: groupId ? `${groupId}-${sectionId}` : sectionId,
+        title: sectionTitle,
+        mainIdea,
+        blocks: cleanBlocks,
+        ...(groupId ? { topicGroupId: groupId, topicGroupTitle: groupTitle } : {}),
+      };
     })
     .filter(Boolean)
     .slice(0, 10);
+}
 
-  const examFocus = dedupeStrings(coerceItemsArray(raw.examFocus, ['items', 'content']), 18);
-  const doNotConfuse = normalizeConfusionItems(raw.doNotConfuse || raw.dontConfuse || raw.do_not_confuse || []);
+function normalizeSourceAnalysis(rawAnalysis = {}) {
+  const files = (Array.isArray(rawAnalysis.files) ? rawAnalysis.files : [])
+    .map((file, index) => ({
+      sourceId: stripMarkdownArtifacts(file?.sourceId || file?.sourceRef || `KAYNAK_${index + 1}`),
+      mainTopic: stripMarkdownArtifacts(file?.mainTopic || file?.topic || ''),
+      subtopics: dedupeStrings(file?.subtopics, 10),
+      relationship: stripMarkdownArtifacts(file?.relationship || ''),
+      coverageWeight: normalizeCoverageWeight(file?.coverageWeight),
+    }))
+    .filter((file) => file.mainTopic || file.subtopics.length)
+    .slice(0, 10);
+  return {
+    relationshipSummary: stripMarkdownArtifacts(rawAnalysis.relationshipSummary || ''),
+    topicCoverageWarnings: dedupeStrings(rawAnalysis.topicCoverageWarnings, 10),
+    files,
+  };
+}
+
+function normalizeTopicGroup(rawGroup = {}, index = 0, documentTitle = '') {
+  const rawSections = Array.isArray(rawGroup.sections) ? rawGroup.sections : [];
+  const firstSectionTitle = rawSections.find((section) => stripMarkdownArtifacts(section?.title || ''))?.title || '';
+  const requestedTitle = stripMarkdownArtifacts(rawGroup.title || '');
+  const genericTitle = !requestedTitle || /^(?:konu|topic|grup|group)\s*\d+$/iu.test(requestedTitle);
+  const title = sanitizeTitle(genericTitle ? firstSectionTitle : requestedTitle, documentTitle || firstSectionTitle || 'Komite konusu');
+  const id = slugify(rawGroup.id || title || `konu-${index + 1}`);
+  const sections = normalizeContentSections(rawSections, documentTitle, { id, title });
+  if (!sections.length) return null;
+  return {
+    id,
+    title,
+    mainIdea: stripMarkdownArtifacts(rawGroup.mainIdea || rawGroup.main_idea || ''),
+    studyDirection: stripMarkdownArtifacts(rawGroup.studyDirection || rawGroup.study_direction || ''),
+    coverageWeight: normalizeCoverageWeight(rawGroup.coverageWeight),
+    sections,
+    examFocus: dedupeStrings(coerceItemsArray(rawGroup.examFocus, ['items', 'content']), 14),
+    doNotConfuse: normalizeConfusionItems(rawGroup.doNotConfuse || rawGroup.dontConfuse || []),
+    finalReview: dedupeStrings(coerceItemsArray(rawGroup.finalReview, ['items', 'content']), 14),
+  };
+}
+
+function normalizeLessonMode(value = '', topicGroups = []) {
+  const clean = stripMarkdownArtifacts(value).toLocaleLowerCase('tr');
+  if (topicGroups.length > 1 || /multi|bundle|paket|cok|çok/iu.test(clean)) return 'multi_topic_bundle';
+  return 'single_topic';
+}
+
+function normalizeLessonDocument(raw = {}, payload = {}) {
+  const metadata = payload.metadata || {};
+  const titleFallback = metadata.course || metadata.committee || 'Komite konu anlatımı';
+  let title = sanitizeTitle(raw.title, titleFallback);
+  const subtitle = stripMarkdownArtifacts(raw.subtitle || 'Konu anlatımı, klinik mantık ve sınav odaklı tekrar');
+  let topicGroups = (Array.isArray(raw.topicGroups) ? raw.topicGroups : [])
+    .map((group, index) => normalizeTopicGroup(group, index, title))
+    .filter(Boolean)
+    .slice(0, 8);
+
+  if (!topicGroups.length) {
+    const legacySections = normalizeContentSections(raw.sections, title);
+    if (legacySections.length) {
+      topicGroups = [{
+        id: slugify(title),
+        title,
+        mainIdea: '',
+        studyDirection: '',
+        coverageWeight: 'high',
+        sections: legacySections,
+        examFocus: [],
+        doNotConfuse: [],
+        finalReview: [],
+      }];
+    }
+  }
+
+  const lessonMode = normalizeLessonMode(raw.lessonMode, topicGroups);
+  const sourceAnalysis = normalizeSourceAnalysis(raw.sourceAnalysis || {});
+  if (lessonMode === 'multi_topic_bundle') {
+    const titleKey = comparableTextKey(title);
+    const representsOnlyOneGroup = topicGroups.some((group) => comparableTextKey(group.title) === titleKey);
+    if (representsOnlyOneGroup) title = 'Komite Konu Paketi';
+  }
+  const legacyExamFocus = dedupeStrings(coerceItemsArray(raw.examFocus, ['items', 'content']), 18);
+  const legacyDoNotConfuse = normalizeConfusionItems(raw.doNotConfuse || raw.dontConfuse || raw.do_not_confuse || []);
+  const legacyFinalReview = dedupeStrings(coerceItemsArray(raw.finalReview, ['items', 'content']), 24);
+
+  if (lessonMode === 'single_topic' && topicGroups[0]) {
+    topicGroups[0].examFocus = topicGroups[0].examFocus.length ? topicGroups[0].examFocus : legacyExamFocus;
+    topicGroups[0].doNotConfuse = topicGroups[0].doNotConfuse.length ? topicGroups[0].doNotConfuse : legacyDoNotConfuse;
+    topicGroups[0].finalReview = topicGroups[0].finalReview.length ? topicGroups[0].finalReview : legacyFinalReview;
+  }
+
+  let sections = topicGroups.flatMap((group) => group.sections);
+  const examFocus = lessonMode === 'multi_topic_bundle'
+    ? dedupeStrings(coerceItemsArray(raw.globalExamFocus || raw.examFocus, ['items', 'content']), 18)
+    : (topicGroups[0]?.examFocus || legacyExamFocus);
+  const doNotConfuse = lessonMode === 'multi_topic_bundle'
+    ? normalizeConfusionItems(raw.globalDoNotConfuse || raw.doNotConfuse || raw.dontConfuse || [])
+    : (topicGroups[0]?.doNotConfuse || legacyDoNotConfuse);
   const examFocusKeys = new Set(examFocus.map(comparableTextKey));
-  const finalReview = dedupeStrings(coerceItemsArray(raw.finalReview, ['items', 'content']), 24)
+  const finalReview = (lessonMode === 'multi_topic_bundle'
+    ? dedupeStrings(coerceItemsArray(raw.globalFinalReview || raw.finalReview, ['items', 'content']), 24)
+    : (topicGroups[0]?.finalReview || legacyFinalReview))
     .filter((item) => !examFocusKeys.has(comparableTextKey(item)))
     .slice(0, 18);
 
@@ -692,19 +840,34 @@ function normalizeLessonDocument(raw = {}, payload = {}) {
     }));
   }
 
+  const topicSectionIds = new Set(topicGroups.flatMap((group) => group.sections.map((section) => section.id)));
+  const summarySections = sections.filter((section) => !topicSectionIds.has(section.id));
+  const navigation = lessonMode === 'multi_topic_bundle'
+    ? topicGroups.flatMap((group) => [
+      { id: group.id, title: group.title, level: 1, topicGroupId: group.id },
+      ...group.sections.map((section) => ({ id: section.id, title: section.title, level: 2, topicGroupId: group.id })),
+    ]).concat(summarySections.map((section) => ({ id: section.id, title: section.title, level: 1 })))
+    : sections.map((section) => ({ id: section.id, title: section.title, level: 1 }));
+
   const normalized = {
     title,
     subtitle,
+    lessonMode,
+    sourceAnalysis,
+    topicGroups,
     language: 'tr',
     level: stripMarkdownArtifacts(raw.level || (metadata.classYear ? `${metadata.classYear}. sınıf komite düzeyi` : 'Tıp fakültesi komite düzeyi')),
     estimatedStudyTime: stripMarkdownArtifacts(raw.estimatedStudyTime || (sections.length >= 7 ? '60-90 dk' : '35-60 dk')),
     sourceQualityNote: stripMarkdownArtifacts(raw.sourceQualityNote || raw.qualityNote || ''),
     sections,
-    roadmap: sections.map((section) => ({ id: section.id, title: section.title })),
-    outline: sections.map((section) => ({ id: section.id, title: section.title })),
+    roadmap: navigation,
+    outline: navigation,
     examFocus: { id: 'exam-focus', title: FINAL_SECTION_TITLES.examFocus, items: examFocus },
     doNotConfuse: { id: 'do-not-confuse', title: FINAL_SECTION_TITLES.doNotConfuse, items: doNotConfuse.map((item) => ({ wrongIdea: item.confusingPoint, correctDistinction: item.correctDistinction, memoryHook: item.memoryMessage })) },
     finalReview: { id: 'final-review', title: FINAL_SECTION_TITLES.finalReview, content: finalReview },
+    globalExamFocus: examFocus,
+    globalDoNotConfuse: doNotConfuse,
+    globalFinalReview: finalReview,
     highYieldPoints: examFocus,
     commonConfusions: doNotConfuse.map((item) => [item.confusingPoint, item.correctDistinction, item.memoryMessage].filter(Boolean).join(' — ')),
   };
@@ -714,6 +877,11 @@ function normalizeLessonDocument(raw = {}, payload = {}) {
 
 function collectDocumentText(document = {}) {
   const chunks = [document.title, document.subtitle, document.qualityNote];
+  (document.topicGroups || []).forEach((group) => {
+    chunks.push(group.title, group.mainIdea, group.studyDirection);
+    chunks.push(...(group.examFocus || []), ...(group.finalReview || []));
+    (group.doNotConfuse || []).forEach((card) => chunks.push(card.confusingPoint, card.correctDistinction, card.memoryMessage));
+  });
   (document.sections || []).forEach((section) => {
     chunks.push(section.title);
     (section.blocks || []).forEach((block) => {
@@ -808,6 +976,8 @@ function rgb(values = [0, 0, 0], op = 'rg') {
 function buildPdfFromDocument(document = {}, payload = {}) {
   const metadata = payload.metadata || {};
   const sourceFiles = getSourceFiles(payload.materialPacket || {}).map((file) => ({ fileName: file.fileName, fileType: file.fileType }));
+  const topicGroups = Array.isArray(document.topicGroups) ? document.topicGroups : [];
+  const isMultiTopic = document.lessonMode === 'multi_topic_bundle' && topicGroups.length > 1;
   const lessonId = `komite-pdf-${Date.now().toString(36)}`;
   const outline = [];
   const highYieldAnchors = [];
@@ -966,13 +1136,13 @@ function buildPdfFromDocument(document = {}, payload = {}) {
     else if (block.type === 'table') renderTable(block);
     else if (block.type === 'confusion_cards') renderConfusionCards(block.cards);
   };
-  const renderSection = (section = {}) => {
+  const renderSection = (section = {}, level = 1) => {
     ensure(74);
     const pageNumber = pageNo;
     const item = {
       id: slugify(section.title),
       title: section.title,
-      level: 1,
+      level,
       pageNumber,
     };
     if (/sınav|karışan|karıştırılmaması|klinik ayrımlar|final tekrar|son tekrar/iu.test(section.title)) highYieldAnchors.push(item);
@@ -986,6 +1156,36 @@ function buildPdfFromDocument(document = {}, payload = {}) {
     if (section.mainIdea) renderCallout({ type: 'callout', variant: 'main_idea', content: section.mainIdea });
     section.blocks.forEach(renderBlock);
   };
+  const renderTopicGroupHeader = (group = {}, index = 0) => {
+    ensure(92);
+    const pageNumber = pageNo;
+    outline.push({ id: group.id || slugify(group.title), title: group.title, level: 1, pageNumber });
+    rect(MARGIN.left, y + 12, CONTENT_WIDTH, 54, [0.94, 0.98, 0.99], [0.34, 0.72, 0.72]);
+    textLine(`Konu ${index + 1}`, MARGIN.left + 14, y - 7, 9.2, 'F2', [0.05, 0.45, 0.42]);
+    wrapText(group.title, 16, CONTENT_WIDTH - 28).slice(0, 2).forEach((line) => {
+      textLine(line, MARGIN.left + 14, y - 27, 16, 'F2', [0.04, 0.11, 0.23]);
+      y -= 19;
+    });
+    y -= 23;
+    if (group.mainIdea) renderCallout({ type: 'callout', variant: 'main_idea', content: group.mainIdea });
+    if (group.studyDirection) paragraph(group.studyDirection, { size: 9.8, leading: 14, color: [0.28, 0.34, 0.43] });
+  };
+  const topicGroupReviewSections = (group = {}) => {
+    const sections = [];
+    if (group.examFocus?.length) sections.push({
+      title: limitAtWord(`${group.title}: Sınav odağı`, MAX_SECTION_TITLE_LENGTH),
+      blocks: [{ type: 'bullet_list', title: '', items: group.examFocus }],
+    });
+    if (group.doNotConfuse?.length) sections.push({
+      title: limitAtWord(`${group.title}: Sık karışan ayrımlar`, MAX_SECTION_TITLE_LENGTH),
+      blocks: [{ type: 'confusion_cards', cards: group.doNotConfuse }],
+    });
+    if (group.finalReview?.length) sections.push({
+      title: limitAtWord(`${group.title}: Mini tekrar`, MAX_SECTION_TITLE_LENGTH),
+      blocks: [{ type: 'bullet_list', title: '', items: group.finalReview }],
+    });
+    return sections;
+  };
 
   startPage();
   const titleLines = wrapText(document.title, 19, CONTENT_WIDTH).slice(0, 2);
@@ -997,20 +1197,30 @@ function buildPdfFromDocument(document = {}, payload = {}) {
   const metaLine = [metadata.classYear ? `${metadata.classYear}. sınıf` : '', metadata.committee, metadata.learningTarget].filter(Boolean).join(' / ');
   if (metaLine) paragraph(metaLine, { size: 9.5, leading: 13, color: [0.38, 0.44, 0.52] });
 
-  if (document.sections.length) {
+  const roadmapItems = isMultiTopic ? topicGroups : document.sections;
+  if (roadmapItems.length) {
     ensure(70);
-    rect(MARGIN.left, y + 8, CONTENT_WIDTH, 38 + Math.min(document.sections.length, 8) * 14, [0.96, 0.98, 1], [0.82, 0.88, 0.94]);
+    rect(MARGIN.left, y + 8, CONTENT_WIDTH, 38 + Math.min(roadmapItems.length, 8) * 14, [0.96, 0.98, 1], [0.82, 0.88, 0.94]);
     textLine('Yol haritası', MARGIN.left + 12, y - 9, 10.8, 'F2', [0.04, 0.28, 0.52]);
     y -= 25;
-    document.sections.slice(0, 8).forEach((section, index) => {
-      const label = `${index + 1}. ${section.title}`;
+    roadmapItems.slice(0, 8).forEach((item, index) => {
+      const label = `${index + 1}. ${item.title}`;
       textLine(limitAtWord(label, 86), MARGIN.left + 14, y, 9.2, 'F1', [0.16, 0.22, 0.3]);
       y -= 14;
     });
     y -= 12;
   }
 
-  document.sections.forEach(renderSection);
+  if (isMultiTopic) {
+    topicGroups.forEach((group, index) => {
+      renderTopicGroupHeader(group, index);
+      group.sections.forEach((section) => renderSection(section, 2));
+      topicGroupReviewSections(group).forEach((section) => renderSection(section, 2));
+    });
+    document.sections.filter((section) => !section.topicGroupId).forEach((section) => renderSection(section, 1));
+  } else {
+    document.sections.forEach((section) => renderSection(section, 1));
+  }
   if (current.length) finishPage();
 
   const manifest = {
@@ -1121,6 +1331,9 @@ export default async function handler(req, res) {
         status: 'completed',
         title: document.title,
         subtitle: document.subtitle,
+        lessonMode: document.lessonMode,
+        sourceAnalysis: document.sourceAnalysis,
+        topicGroups: document.topicGroups,
         language: document.language || 'tr',
         level: document.level || manifest.level,
         estimatedStudyTime: document.estimatedStudyTime || manifest.estimatedStudyTime,
@@ -1131,6 +1344,9 @@ export default async function handler(req, res) {
         examFocus: document.examFocus,
         doNotConfuse: document.doNotConfuse,
         finalReview: document.finalReview,
+        globalExamFocus: document.globalExamFocus,
+        globalDoNotConfuse: document.globalDoNotConfuse,
+        globalFinalReview: document.globalFinalReview,
         highYieldPoints: document.highYieldPoints,
         commonConfusions: document.commonConfusions,
         pdfUrl: pdfDataUrl,
