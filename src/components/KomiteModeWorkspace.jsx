@@ -1880,15 +1880,82 @@ function lessonSectionTone(title = '') {
   return '';
 }
 
-function ScrollLessonBlock({ block = {} }) {
+
+function normalizeLessonSearchTerm(value = '') {
+  return String(value || '').trim().toLocaleLowerCase('tr');
+}
+
+function countLessonSearchMatches(text = '', term = '') {
+  const clean = normalizeLessonSearchTerm(term);
+  if (!clean) return 0;
+  const source = String(text || '').toLocaleLowerCase('tr');
+  let count = 0;
+  let position = 0;
+  while (position <= source.length) {
+    const found = source.indexOf(clean, position);
+    if (found < 0) break;
+    count += 1;
+    position = found + Math.max(clean.length, 1);
+  }
+  return count;
+}
+
+function lessonSearchRanges(text = '', term = '') {
+  const clean = normalizeLessonSearchTerm(term);
+  if (!clean) return [];
+  const sourceText = String(text || '');
+  const source = sourceText.toLocaleLowerCase('tr');
+  const ranges = [];
+  let position = 0;
+  while (position <= source.length) {
+    const found = source.indexOf(clean, position);
+    if (found < 0) break;
+    ranges.push([found, found + clean.length]);
+    position = found + Math.max(clean.length, 1);
+  }
+  return ranges;
+}
+
+function HighlightedGlossaryText({ text = '', searchState = null, maxTerms = 4 }) {
+  const source = String(text || '');
+  const term = searchState?.term || '';
+  const ranges = lessonSearchRanges(source, term);
+  if (!ranges.length) {
+    return <GlossaryText text={source} enabled revealMode="postAnswer" maxTerms={maxTerms} />;
+  }
+  const parts = [];
+  let cursor = 0;
+  ranges.forEach(([start, end], index) => {
+    if (start > cursor) parts.push(source.slice(cursor, start));
+    const hitIndex = searchState.counter.value;
+    searchState.counter.value += 1;
+    const isActive = hitIndex === searchState.activeIndex;
+    parts.push(
+      <mark
+        className={`komite-search-hit ${isActive ? 'active' : ''}`.trim()}
+        data-search-hit="true"
+        data-search-index={hitIndex}
+        key={`hit-${hitIndex}-${index}`}
+      >
+        {source.slice(start, end)}
+      </mark>
+    );
+    cursor = end;
+  });
+  if (cursor < source.length) parts.push(source.slice(cursor));
+  return <>{parts}</>;
+}
+
+
+function ScrollLessonBlock({ block = {}, searchState = null }) {
   if (block.type === 'paragraph') {
-    return <p className="komite-scroll-paragraph"><GlossaryText text={block.content || ''} enabled revealMode="postAnswer" maxTerms={5} /></p>;
+    return <p className="komite-scroll-paragraph"><HighlightedGlossaryText text={block.content || ''} searchState={searchState} maxTerms={5} /></p>;
   }
   if (block.type === 'callout') {
     return (
       <aside className={calloutClass(block.variant)}>
         <strong>{calloutLabel(block)}</strong>
-        <p><GlossaryText text={block.content || ''} enabled revealMode="postAnswer" maxTerms={4} /></p>
+        <p><HighlightedGlossaryText text={block.content || ''} searchState={searchState} maxTerms={4} /></p>
       </aside>
     );
   }
@@ -1896,8 +1963,8 @@ function ScrollLessonBlock({ block = {} }) {
     const items = Array.isArray(block.items) ? block.items : [];
     return items.length ? (
       <div className="komite-scroll-list-block">
-        {block.title ? <h4>{block.title}</h4> : null}
-        <ul>{items.map((item, index) => <li key={`${item}-${index}`}><GlossaryText text={item} enabled revealMode="postAnswer" maxTerms={3} /></li>)}</ul>
+        {block.title ? <h4><HighlightedGlossaryText text={block.title} searchState={searchState} maxTerms={0} /></h4> : null}
+        <ul>{items.map((item, index) => <li key={`${item}-${index}`}><HighlightedGlossaryText text={item} searchState={searchState} maxTerms={3} /></li>)}</ul>
       </div>
     ) : null;
   }
@@ -1905,8 +1972,8 @@ function ScrollLessonBlock({ block = {} }) {
     const items = Array.isArray(block.items) ? block.items : [];
     return items.length ? (
       <div className="komite-scroll-list-block numbered">
-        {block.title ? <h4>{block.title}</h4> : null}
-        <ol>{items.map((item, index) => <li key={`${item}-${index}`}><GlossaryText text={item} enabled revealMode="postAnswer" maxTerms={3} /></li>)}</ol>
+        {block.title ? <h4><HighlightedGlossaryText text={block.title} searchState={searchState} maxTerms={0} /></h4> : null}
+        <ol>{items.map((item, index) => <li key={`${item}-${index}`}><HighlightedGlossaryText text={item} searchState={searchState} maxTerms={3} /></li>)}</ol>
       </div>
     ) : null;
   }
@@ -1914,12 +1981,12 @@ function ScrollLessonBlock({ block = {} }) {
     const steps = Array.isArray(block.steps) ? block.steps : [];
     return steps.length ? (
       <div className="komite-scroll-flow">
-        {block.title ? <h4>{block.title}</h4> : null}
+        {block.title ? <h4><HighlightedGlossaryText text={block.title} searchState={searchState} maxTerms={0} /></h4> : null}
         <div className="komite-scroll-flow-steps">
           {steps.map((step, index) => (
             <div className="komite-scroll-flow-step" key={`${step}-${index}`}>
               <span>{index + 1}</span>
-              <p>{step}</p>
+              <p><HighlightedGlossaryText text={step} searchState={searchState} maxTerms={3} /></p>
             </div>
           ))}
         </div>
@@ -1931,14 +1998,14 @@ function ScrollLessonBlock({ block = {} }) {
     const rows = Array.isArray(block.rows) ? block.rows : [];
     return columns.length && rows.length ? (
       <div className="komite-scroll-table-block">
-        {block.title ? <h4>{block.title}</h4> : null}
+        {block.title ? <h4><HighlightedGlossaryText text={block.title} searchState={searchState} maxTerms={0} /></h4> : null}
         <div className="komite-scroll-table-wrap">
           <table>
-            <thead><tr>{columns.map((column, index) => <th key={`${column}-${index}`}>{column}</th>)}</tr></thead>
-            <tbody>{rows.map((row, rowIndex) => <tr key={`row-${rowIndex}`}>{columns.map((_column, colIndex) => <td key={`cell-${rowIndex}-${colIndex}`}>{row?.[colIndex] || ''}</td>)}</tr>)}</tbody>
+            <thead><tr>{columns.map((column, index) => <th key={`${column}-${index}`}><HighlightedGlossaryText text={column} searchState={searchState} maxTerms={0} /></th>)}</tr></thead>
+            <tbody>{rows.map((row, rowIndex) => <tr key={`row-${rowIndex}`}>{columns.map((_column, colIndex) => <td key={`cell-${rowIndex}-${colIndex}`}><HighlightedGlossaryText text={row?.[colIndex] || ''} searchState={searchState} maxTerms={2} /></td>)}</tr>)}</tbody>
           </table>
         </div>
-        {block.note ? <p className="komite-scroll-table-note"><GlossaryText text={block.note} enabled revealMode="postAnswer" maxTerms={2} /></p> : null}
+        {block.note ? <p className="komite-scroll-table-note"><HighlightedGlossaryText text={block.note} searchState={searchState} maxTerms={2} /></p> : null}
       </div>
     ) : null;
   }
@@ -1948,9 +2015,9 @@ function ScrollLessonBlock({ block = {} }) {
       <div className="komite-scroll-confusion-grid">
         {cards.map((card, index) => (
           <article className="komite-scroll-confusion-card" key={`${card.confusingPoint || 'karisma'}-${index}`}>
-            {card.confusingPoint ? <p><b>Karışan nokta</b><span>{card.confusingPoint}</span></p> : null}
-            {card.correctDistinction ? <p><b>Doğru ayrım</b><span>{card.correctDistinction}</span></p> : null}
-            {card.memoryMessage ? <p><b>Akılda kalacak mesaj</b><span>{card.memoryMessage}</span></p> : null}
+            {card.confusingPoint ? <p><b>Karışan nokta</b><span><HighlightedGlossaryText text={card.confusingPoint} searchState={searchState} maxTerms={2} /></span></p> : null}
+            {card.correctDistinction ? <p><b>Doğru ayrım</b><span><HighlightedGlossaryText text={card.correctDistinction} searchState={searchState} maxTerms={2} /></span></p> : null}
+            {card.memoryMessage ? <p><b>Akılda kalacak mesaj</b><span><HighlightedGlossaryText text={card.memoryMessage} searchState={searchState} maxTerms={2} /></span></p> : null}
           </article>
         ))}
       </div>
@@ -1960,30 +2027,32 @@ function ScrollLessonBlock({ block = {} }) {
     return (
       <aside className={`komite-scroll-card-block ${block.type}`}>
         <strong>{block.title || (block.type === 'mini_case' ? 'Mini klinik örnek' : 'Tanım')}</strong>
-        <p><GlossaryText text={block.content || ''} enabled revealMode="postAnswer" maxTerms={4} /></p>
+        <p><HighlightedGlossaryText text={block.content || ''} searchState={searchState} maxTerms={4} /></p>
       </aside>
     );
   }
   if (block.type === 'comparison_card') {
     return (
       <div className="komite-scroll-comparison-card">
-        {block.title ? <h4>{block.title}</h4> : null}
+        {block.title ? <h4><HighlightedGlossaryText text={block.title} searchState={searchState} maxTerms={0} /></h4> : null}
         <div>
-          <article><strong>{block.leftTitle || 'A'}</strong><p>{block.leftContent}</p></article>
-          <article><strong>{block.rightTitle || 'B'}</strong><p>{block.rightContent}</p></article>
+          <article><strong><HighlightedGlossaryText text={block.leftTitle || 'A'} searchState={searchState} maxTerms={0} /></strong><p><HighlightedGlossaryText text={block.leftContent || ''} searchState={searchState} maxTerms={2} /></p></article>
+          <article><strong><HighlightedGlossaryText text={block.rightTitle || 'B'} searchState={searchState} maxTerms={0} /></strong><p><HighlightedGlossaryText text={block.rightContent || ''} searchState={searchState} maxTerms={2} /></p></article>
         </div>
       </div>
     );
   }
   if (block.type === 'divider') return <hr className="komite-scroll-divider" />;
   const fallback = block.content || block.text || '';
-  return fallback ? <p className="komite-scroll-paragraph"><GlossaryText text={fallback} enabled revealMode="postAnswer" maxTerms={4} /></p> : null;
+  return fallback ? <p className="komite-scroll-paragraph"><HighlightedGlossaryText text={fallback} searchState={searchState} maxTerms={4} /></p> : null;
 }
 
 function CommitteeScrollableLessonView({ lesson = {} }) {
   const lessonDoc = getScrollableLessonDocument(lesson);
   const [activeId, setActiveId] = useState('');
   const [query, setQuery] = useState('');
+  const [activeSearchIndex, setActiveSearchIndex] = useState(-1);
+  const [lastSearchTerm, setLastSearchTerm] = useState('');
   const sections = useMemo(() => {
     const raw = Array.isArray(lessonDoc?.sections) ? lessonDoc.sections : [];
     return raw.map((section, index) => ({
@@ -1993,8 +2062,26 @@ function CommitteeScrollableLessonView({ lesson = {} }) {
     }));
   }, [lessonDoc]);
   const navItems = useMemo(() => sections.map((section) => ({ id: section.id, title: section.title })), [sections]);
+  const cleanSearchQuery = useMemo(() => normalizeLessonSearchTerm(query), [query]);
+  const searchableLessonText = useMemo(() => sections.map(sectionText).join('\n'), [sections]);
+  const searchTotal = useMemo(() => countLessonSearchMatches(searchableLessonText, cleanSearchQuery), [searchableLessonText, cleanSearchQuery]);
 
   useEffect(() => {
+    setActiveSearchIndex(-1);
+    setLastSearchTerm('');
+  }, [cleanSearchQuery]);
+
+  useEffect(() => {
+    if (!cleanSearchQuery || lastSearchTerm !== cleanSearchQuery || activeSearchIndex < 0) return undefined;
+    const frame = window.requestAnimationFrame(() => {
+      const activeHit = window.document?.querySelector?.('.komite-search-hit.active');
+      activeHit?.scrollIntoView?.({ behavior: 'smooth', block: 'center' });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [activeSearchIndex, cleanSearchQuery, lastSearchTerm]);
+
+  useEffect(() => {
+
     if (!navItems.length || typeof IntersectionObserver === 'undefined') return undefined;
     const nodes = navItems.map((item) => window.document?.getElementById?.(item.id)).filter(Boolean);
     if (!nodes.length) return undefined;
@@ -2014,10 +2101,18 @@ function CommitteeScrollableLessonView({ lesson = {} }) {
   };
 
   const runSearch = () => {
-    const clean = query.trim().toLocaleLowerCase('tr');
+    const clean = cleanSearchQuery;
     if (!clean) return;
-    const target = sections.find((section) => section.textIndex.includes(clean));
-    if (target) scrollToId(target.id);
+    if (!searchTotal) {
+      setLastSearchTerm(clean);
+      setActiveSearchIndex(-1);
+      return;
+    }
+    const nextIndex = lastSearchTerm === clean && activeSearchIndex >= 0
+      ? (activeSearchIndex + 1) % searchTotal
+      : 0;
+    setLastSearchTerm(clean);
+    setActiveSearchIndex(nextIndex);
   };
 
   if (!lessonDoc) return null;
@@ -2034,6 +2129,12 @@ function CommitteeScrollableLessonView({ lesson = {} }) {
       }, 250);
     }
   };
+
+  const visibleSearchIndex = lastSearchTerm === cleanSearchQuery && activeSearchIndex >= 0 ? activeSearchIndex + 1 : 0;
+  const searchCounter = { value: 0 };
+  const searchState = cleanSearchQuery
+    ? { term: cleanSearchQuery, activeIndex: lastSearchTerm === cleanSearchQuery ? activeSearchIndex : -1, counter: searchCounter }
+    : null;
 
   return (
     <div className="komite-scroll-lesson-view">
@@ -2057,6 +2158,7 @@ function CommitteeScrollableLessonView({ lesson = {} }) {
           <div className="komite-scroll-toolbar-actions">
             <div className="komite-scroll-search">
               <input value={query} onChange={(event) => setQuery(event.target.value)} onKeyDown={(event) => { if (event.key === 'Enter') runSearch(); }} placeholder="Ders içinde ara" />
+              {cleanSearchQuery ? <span className="komite-scroll-search-count" aria-live="polite">{`${visibleSearchIndex}/${searchTotal}`}</span> : null}
               <button type="button" onClick={runSearch}>Ara</button>
             </div>
             {pdfUrl ? <a className="komite-scroll-raw-pdf-link" href={pdfUrl} download={`${String(lessonDoc.title || 'komite-konu-anlatimi').replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-+|-+$/g, '') || 'komite-konu-anlatimi'}.pdf`} title="Sunucu tarafından oluşturulan yedek PDF dosyasını indir"><Icon name="Download" size={16} /> PDF</a> : null}
@@ -2070,11 +2172,11 @@ function CommitteeScrollableLessonView({ lesson = {} }) {
 
           {sections.map((section, index) => (
             <section id={section.id} className={`komite-scroll-section ${lessonSectionTone(section.title)}`.trim()} key={section.id} style={lessonAccentStyle(index)}>
-              <h3>{section.title}</h3>
-              {section.mainIdea ? <aside className="komite-scroll-callout main_idea"><strong>Ana fikir</strong><p>{section.mainIdea}</p></aside> : null}
+              <h3><HighlightedGlossaryText text={section.title} searchState={searchState} maxTerms={0} /></h3>
+              {section.mainIdea ? <aside className="komite-scroll-callout main_idea"><strong>Ana fikir</strong><p><HighlightedGlossaryText text={section.mainIdea} searchState={searchState} maxTerms={4} /></p></aside> : null}
               {(Array.isArray(section.blocks) ? section.blocks : [])
                 .filter((block, blockIndex) => !(blockIndex === 0 && block.type === 'callout' && block.variant === 'main_idea' && block.content === section.mainIdea))
-                .map((block, blockIndex) => <ScrollLessonBlock block={block} key={`${section.id}-block-${blockIndex}`} />)}
+                .map((block, blockIndex) => <ScrollLessonBlock block={block} searchState={searchState} key={`${section.id}-block-${blockIndex}`} />)}
             </section>
           ))}
         </article>
